@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ *  Module to enable adding a view menu item.
+ *
+ *  This allows an admin to select a view for a menu item instead of a title and link. When
+ *  the link is rendered, the view is inserted instead of the link. In addition, if the
+ *  parent item of the menu is a node page, the node id is passed to the view as an argument
+ *
+ *  Written by Randall Knutson & Mark Carver - LevelTen Interactive - http://www.leveltendesign.com
+ */
+
+/**
+ * Implements hook_menu().
+ * Fake callback, needed for menu item add/edit validation.
+ */
+function menu_views_menu() {
+  return array(
+    '<view>' => array(
+      'page callback' => 'drupal_not_found',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+    ),
+  );
+}
+
+/**
+ * Implements hook_permission().
+ */
+function menu_views_permission() {
+  return array(
+    'administer menu views' => array(
+      'title' => t('Administer menu views'),
+      'description' => t('Allows administrators to attach views to individual menu items and alter the view\'s configuration.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_init().
+ */
+function menu_views_init() {
+  $includes = array('form', 'theme', 'tokens');
+  foreach ($includes as $include) {
+    module_load_include('inc', 'menu_views', 'includes/' . $include);
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ * Intercepts hook_link().
+ */
+function menu_views_theme_registry_alter(&$registry) {
+  // Save previous value from registry in case another module/theme overwrites link
+  $registry['menu_views_link_default'] = $registry['link'];
+  $registry['link']['function'] = 'menu_views_link';
+}
+
+/**
+ * Drupal wrapper for MenuViews class.
+ */
+function menu_views($form = array(), $form_state = array()) {
+  $menu_views = &drupal_static(__FUNCTION__);
+  if (!isset($menu_views)) {
+    module_load_include('inc', 'menu_views', 'includes/menu_views.class');
+    $menu_views = new MenuViews;
+  }
+  if (!empty($form)) {
+    $menu_views->load($form, $form_state);
+  }
+  return $menu_views;
+}

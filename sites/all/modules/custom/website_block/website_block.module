@@ -1,0 +1,145 @@
+<?php
+
+
+function website_block_form($form, &$form_state) {
+    
+  $form = array();
+
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('Search Site'),
+    '#size'  => 40,
+    '#required' => TRUE,
+    '#default_value' => variable_get('website_search_hint')
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+   //$form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
+   $form['#validate'] = array('website_block_form_validate');
+   $form['#target'] = "_parent";
+   $form['#method'] = "get";
+   return $form;
+
+}
+
+function website_block_form_validate($form, &$form_state) {
+  
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('website_search_hint')) {
+    form_set_error('term', t('Enter Search Terms'));
+  }
+}
+
+function website_block_contents() {
+  return drupal_get_form('website_block_form'); // must define a function 
+}
+
+
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ *
+function website_block_menu() {
+  $items['website_block'] = array(
+    'page callback' => 'website_block_page',
+    'access callback' => TRUE,
+    'title' => 'Website Search',
+  );
+  return $items;
+}
+*/
+/**
+ * Implements hook_page()
+ * 
+ */
+ /*
+function website_block_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The Website Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+*/
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function website_block_block_info() {
+  
+  $blocks['website_search'] = array(
+      // info: The name of the block.
+      'info' => t('Site Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function website_block_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'website_search') { //in this case the delta is the name of block
+
+    $form['website_search_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Block contents'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when website search box is displayed.'),
+      '#default_value' => variable_get('website_search_hint',  t('Hint you want to display.')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function website_block_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'website_search') {
+    // Have Drupal save the string to the database.
+    variable_set('website_search_hint', $edit['website_search_hint']);
+  }
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function website_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  if ($delta == 'website_search') {
+    $block['subject'] = t('Site Search');
+    $block['content'] = website_block_contents($delta);
+  }
+  drupal_add_css(drupal_get_path('module', 'website_block') .'/website_block.css');
+  drupal_add_js(drupal_get_path('module', 'website_block') .'/website_block.js');
+  
+  return $block;
+}
+
+
+
+

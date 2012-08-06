@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Articles and Databases feature.
+ */
+
+include_once 'articles_and_databases.features.inc';

@@ -1,0 +1,12 @@
+name = Database Keyword Search View
+description = Depends on PUL Articles and Databases Content Typle
+core = 7.x
+package = PUL Custom Features
+php = 5.2.4
+version = 7.x-1.0-dev1
+project = database_keyword_search_view
+dependencies[] = articles_and_databases
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = database_keyword_search

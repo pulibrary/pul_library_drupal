@@ -1,0 +1,12 @@
+div.messages.status.view {
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  display: inline;
+  font-size: x-small;
+  font-style: italic;
+  margin: 0;
+  padding: 2px 8px;
+}

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the catalog_search module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function address_block_uninstall() {
+    
+  variable_del('pul_library_address');
+  variable_del('pul_university_address_logo');
+  variable_del('pul_university_address');
+  
+}

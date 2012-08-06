@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the catalog_search module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function catalog_block_uninstall() {
+  variable_del('catalog_search_hint');
+}

@@ -1,0 +1,5 @@
+name = Creates A Princeton Address Block
+description = Inserts an Address Block
+package = PUL Custom Features
+core = 7.x
+dependencies[] = block

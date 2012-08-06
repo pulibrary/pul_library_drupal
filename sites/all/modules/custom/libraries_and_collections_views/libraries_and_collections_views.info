@@ -1,0 +1,13 @@
+name = Libraries and Collections Views
+description = Contains the views for listing the libraries and collections from the taxonomies.
+core = 7.x
+package = PUL Custom Features
+php = 5.2.4
+version = 7.x-1.0
+project = libraries_and_collections_views
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = libraries_and_collections
+project status url = http://library.princeton.edu/projects/custom/pul_libraries_collections_views

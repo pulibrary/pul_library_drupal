@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Enables backward compatibility with old tpl.php files.
+ */
+
+/**
+ * Implements hook_fullcalendar_api().
+ */
+function fullcalendar_tpl_fullcalendar_api() {
+  return array(
+    'api' => fullcalendar_api_version(),
+    'path' => drupal_get_path('module', 'fullcalendar_tpl') . '/includes',
+  );
+}
+
+/**
+ * Implements hook_process_fullcalendar().
+ */
+function fullcalendar_tpl_process_fullcalendar(&$variables) {
+  if (empty($variables['options']['fullcalendar_tpl']['fullcalendar_tpl'])) {
+    return;
+  }
+
+  $variables['items'] = $variables['rows'];
+  $variables['rows'] = array();
+  foreach ($variables['element']['content']['events'] as $event) {
+    $variables['rows'][] = drupal_render($event);
+  }
+  drupal_process_attached($variables['element']);
+}
+
+/**
+ * Implements hook_process_fullcalendar_event().
+ */
+function fullcalendar_tpl_preprocess_fullcalendar_event(&$variables) {
+  if (empty($variables['entity']->options['fullcalendar_tpl']['fullcalendar_tpl'])) {
+    return;
+  }
+
+  $variables['data'] = array();
+  foreach ($variables['event'] as $event) {
+    $variables['data'][] = drupal_render($event);
+  }
+}

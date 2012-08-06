@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Libraries and Collections Landing Pages feature.
+ */
+
+include_once 'pul_libraries_and_collections_landing_pages.features.inc';

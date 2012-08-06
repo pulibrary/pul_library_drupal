@@ -1,0 +1,147 @@
+<?php
+
+
+function catalog_block_form($form, &$form_state) {
+    
+  $form = array();
+
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('Search Catalog'),
+    '#size'  => 40,
+    '#default_value' => variable_get('catalog_search_hint')
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+   $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
+   $form['#target'] = "_parent";
+   $form['#method'] = "get";
+   return $form;
+
+}
+
+function catalog_block_form_validate($form, &$form_state) {
+  
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('catalog_search_hint')) {
+    form_set_error('term', t('Enter Search Terms'));
+  }
+}
+
+
+function catalog_block_contents() {
+  return drupal_get_form('catalog_block_form'); // must define a function 
+}
+
+
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ *
+function catalog_block_menu() {
+  $items['catalog_block'] = array(
+    'page callback' => 'catalog_block_page',
+    'access callback' => TRUE,
+    'title' => 'Catalog Search',
+  );
+  return $items;
+}
+*/
+/**
+ * Implements hook_page()
+ * 
+ */
+ 
+function catalog_block_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The Books+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function catalog_block_block_info() {
+  
+  $blocks['catalog_search'] = array(
+      // info: The name of the block.
+      'info' => t('Catalog Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function catalog_block_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'catalog_search') { //in this case the delta is the name of block
+
+    $form['catalog_search_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Block contents'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
+      '#default_value' => variable_get('catalog_search_hint',  t('Hint you want to display.')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function catalog_block_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'catalog_search') {
+    // Have Drupal save the string to the database.
+    variable_set('catalog_search_hint', $edit['catalog_search_hint']);
+  }
+  
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function catalog_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  if ($delta == 'catalog_search') {
+    $block['subject'] = t('Catalog Search');
+    $block['content'] = catalog_block_contents($delta);
+  }
+  
+  drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
+  drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
+  drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
+  
+  return $block;
+}
+
+
+
+

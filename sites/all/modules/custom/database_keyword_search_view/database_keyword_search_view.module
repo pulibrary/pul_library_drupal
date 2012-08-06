@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Database Keyword Search View feature.
+ */
+
+include_once 'database_keyword_search_view.features.inc';

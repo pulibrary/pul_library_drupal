@@ -1,0 +1,20 @@
+name = Menu Views
+description = "Provides a solution for embedding a view into a menu item. Useful for creating mega menus."
+core = 7.x
+package = "Views"
+dependencies[] = menu
+dependencies[] = views
+
+files[] = menu_views.install
+files[] = menu_views.module
+files[] = includes/menu_views.class.inc
+files[] = includes/form.inc
+files[] = includes/theme.inc
+files[] = includes/tokens.inc
+
+; Information added by drupal.org packaging script on 2012-03-11
+version = "7.x-1.3"
+core = "7.x"
+project = "menu_views"
+datestamp = "1331490349"
+

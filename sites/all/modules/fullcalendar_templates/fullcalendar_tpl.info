@@ -1,0 +1,11 @@
+name = FullCalendar Templates
+description = Enables backward compatibility with old tpl.php files.
+core = 7.x
+dependencies[] = fullcalendar_options
+
+; Information added by drupal.org packaging script on 2011-12-10
+version = "7.x-1.0"
+core = "7.x"
+project = "fullcalendar_templates"
+datestamp = "1323561341"
+

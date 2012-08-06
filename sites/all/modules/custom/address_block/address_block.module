@@ -1,0 +1,129 @@
+<?php
+
+function address_block_contents($delta = '') {
+  if($delta == 'pul_library_address') {
+     //$service = wsclient_service_load('twitter_search');
+     //$result = $service->search('rumorhasit');
+     //print_r($result);
+    return variable_get('pul_library_address');// . dpm($result['responseData']['translatedText']);
+  } 
+  elseif($delta == 'pul_university_logo') {
+    return variable_get('pul_university_logo');
+  } 
+  elseif($delta == 'pul_university_address') {
+    return variable_get('pul_university_address');
+  }
+}
+
+  
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function address_block_block_info() {
+  
+  $blocks['pul_library_address'] = array(
+      // info: The name of the block.
+      'info' => t('Library Address'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   $blocks['pul_university_logo'] = array(
+      // info: The name of the block.
+      'info' => t('University Logo'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+     $blocks['pul_university_address'] = array(
+      // info: The name of the block.
+      'info' => t('University Address'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+
+function address_block_block_configure($delta = '') {
+  $form = array();
+  if ($delta == 'pul_library_address') {
+    $form['pul_library_address'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Address contents'),
+      '#size' => 5,
+      '#description' => t('Library Address.'),
+      '#default_value' => variable_get('pul_library_address',  t('Library Address.')),
+    );
+ 
+  } 
+  if ($delta == 'pul_university_logo') {
+    $form['pul_university_logo'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Address contents'),
+      '#size' => 5,
+      '#description' => t('Library Address.'),
+      '#default_value' => variable_get('pul_university_logo',  t('University Address.')),
+    );
+  }
+  if ($delta == 'pul_university_address') {
+    $form['pul_university_address'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Address contents'),
+      '#size' => 5,
+      '#description' => t('Library Address.'),
+      '#default_value' => variable_get('pul_university_address',  t('University Address.')),
+    );
+  } 
+  
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function address_block_block_save($delta = '', $edit = array()) {
+  if ($delta == 'pul_library_address') {
+    variable_set('pul_library_address', $edit['pul_library_address']);
+  }
+  elseif ($delta == 'pul_university_logo') {
+    variable_set('pul_university_logo', $edit['pul_university_logo']);
+  }
+  elseif ($delta == 'pul_university_address') {
+    variable_set('pul_university_address', $edit['pul_university_address']);
+  } 
+  
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function address_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+   if ($delta == 'pul_library_address') {
+    $block['content'] = address_block_contents($delta);
+  }
+  elseif ($delta == 'pul_university_logo') {
+    $block['content'] = address_block_contents($delta);
+  }
+  elseif ($delta == 'pul_university_address') {
+    $block['content'] = address_block_contents($delta);
+  } 
+  return $block;
+}

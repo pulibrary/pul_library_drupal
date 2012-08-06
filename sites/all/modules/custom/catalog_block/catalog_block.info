@@ -1,0 +1,6 @@
+name = Books+ Search Block
+description = Create a search box that can be used as a block
+package = PUL Custom Features
+core = 7.x
+dependencies[] = block
+dependencies[] = menu

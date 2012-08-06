@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Library News feature.
+ */
+
+include_once 'library_news.features.inc';

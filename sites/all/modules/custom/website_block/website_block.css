@@ -1,0 +1,6 @@
+/*
+ * All Search Block CSS
+ */
+
+#website-block-form label { display: none; }
+#website-block-form .form-item-query { display: inline; }

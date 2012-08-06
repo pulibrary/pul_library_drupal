@@ -1,0 +1,12 @@
+name = PUL Libraries and Collections Landing Pages
+description = Provides a structure to incorporate related content on a landing page from the libraries and collections.
+core = 7.x
+package = PUL Custom Features
+php = 5.2.4
+version = 7.x-1.0
+project = pul_libraries_and_collections_landing_pages
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:1
+project status url = http://library.princeton.edu/projects/custom/pul_library_collections_pages

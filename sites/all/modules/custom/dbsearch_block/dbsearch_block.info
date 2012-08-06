@@ -1,0 +1,6 @@
+name = Databases Search Block
+description = Create a Databases Quick Search Block
+package = PUL Custom Features
+core = 7.x
+dependencies[] = block
+dependencies[] = menu
