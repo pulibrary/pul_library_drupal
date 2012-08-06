@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Fields for Basic Pages feature.
+ */
+
+include_once 'pul_fields_for_basic_pages.features.inc';
