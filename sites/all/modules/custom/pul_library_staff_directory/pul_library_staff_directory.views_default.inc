@@ -326,7 +326,7 @@ function pul_library_staff_directory_views_default_views() {
   /* Display: Subject Specialist Finder Page */
   $handler = $view->new_display('page', 'Subject Specialist Finder Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'databases/find/specialists';
+  $handler->display->display_options['path'] = 'about/staff/specialists';
 
   /* Display: Subject Specialist Finder Block */
   $handler = $view->new_display('block', 'Subject Specialist Finder Block', 'block');
