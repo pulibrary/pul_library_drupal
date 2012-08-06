@@ -12,6 +12,7 @@ dependencies[] = field_group
 dependencies[] = field_sql_storage
 dependencies[] = list
 dependencies[] = options
+dependencies[] = pul_library_taxonomy
 dependencies[] = taxonomy
 dependencies[] = text
 features[ctools][] = feeds:feeds_importer_default:1

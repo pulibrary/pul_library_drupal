@@ -31,14 +31,93 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'view_user' => 'view_user',
+    'name' => 'name',
     'field_puluser_fname' => 'field_puluser_fname',
     'field_puluser_lname' => 'field_puluser_lname',
+    'field_puluser_formalname' => 'field_puluser_formalname',
+    'mail' => 'mail',
+    'field_puluser_displaytitle' => 'field_puluser_displaytitle',
+    'field_puluser_office' => 'field_puluser_office',
+    'field_puluser_phone_number' => 'field_puluser_phone_number',
+    'field_puluser_sublibrarian' => 'field_puluser_sublibrarian',
   );
-  $handler->display->display_options['row_options']['hide_empty'] = 0;
-  $handler->display->display_options['row_options']['default_field_elements'] = 1;
+  $handler->display->display_options['style_options']['default'] = 'field_puluser_lname';
+  $handler->display->display_options['style_options']['info'] = array(
+    'view_user' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_fname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_lname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_formalname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_displaytitle' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_office' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_phone_number' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_sublibrarian' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = 1;
+  $handler->display->display_options['style_options']['sticky'] = 0;
+  $handler->display->display_options['style_options']['empty_table'] = 0;
   /* Field: User: Link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
@@ -150,7 +229,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['make_link'] = 1;
-  $handler->display->display_options['fields']['field_puluser_formalname']['alter']['path'] = '[view_user]';
+  $handler->display->display_options['fields']['field_puluser_formalname']['alter']['path'] = 'staff/[name]';
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['replace_spaces'] = 0;
@@ -162,7 +241,6 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_puluser_formalname']['element_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = 0;
@@ -177,6 +255,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['mail']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['mail']['alter']['path'] = 'staff/[name]/contact';
   $handler->display->display_options['fields']['mail']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['mail']['alter']['external'] = 0;
   $handler->display->display_options['fields']['mail']['alter']['replace_spaces'] = 0;
@@ -193,7 +272,6 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['mail']['hide_empty'] = 0;
   $handler->display->display_options['fields']['mail']['empty_zero'] = 0;
   $handler->display->display_options['fields']['mail']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['mail']['link_to_user'] = 'user';
   /* Field: User: Display Title */
   $handler->display->display_options['fields']['field_puluser_displaytitle']['id'] = 'field_puluser_displaytitle';
   $handler->display->display_options['fields']['field_puluser_displaytitle']['table'] = 'field_data_field_puluser_displaytitle';
@@ -322,10 +400,53 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: User: Formal Name (field_puluser_formalname) */
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['id'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['table'] = 'field_data_field_puluser_formalname';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['field'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator_id'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['label'] = 'Formal Name (field_puluser_formalname)';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['identifier'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['multiple'] = FALSE;
 
   /* Display: Subject Specialist Finder Page */
   $handler = $view->new_display('page', 'Subject Specialist Finder Page', 'page');
-  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Find Specialist';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 1;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: PUL Subject Librarian (field_puluser_sublibrarian) */
+  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['id'] = 'field_puluser_sublibrarian_value';
+  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['table'] = 'field_data_field_puluser_sublibrarian';
+  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['field'] = 'field_puluser_sublibrarian_value';
+  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: User: Formal Name (field_puluser_formalname) */
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['id'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['table'] = 'field_data_field_puluser_formalname';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['field'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator_id'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['label'] = 'Specialist Name';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['identifier'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['multiple'] = FALSE;
   $handler->display->display_options['path'] = 'about/staff/specialists';
 
   /* Display: Subject Specialist Finder Block */
@@ -338,24 +459,12 @@ function pul_library_staff_directory_views_default_views() {
   $handler = $view->new_display('page', 'PUL Library User Directory', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Library Staff';
-  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 0;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User: Last Name (field_puluser_lname:format) */
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['id'] = 'field_puluser_lname_format';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['table'] = 'field_data_field_puluser_lname';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['field'] = 'field_puluser_lname_format';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['default_argument_options']['argument'] = 'a';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['specify_validation'] = 1;
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['validate']['fail'] = 'ignore';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['glossary'] = 0;
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['limit'] = '0';
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['transform_dash'] = 0;
-  $handler->display->display_options['arguments']['field_puluser_lname_format']['break_phrase'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -364,7 +473,19 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['path'] = 'about/staff-list';
+  /* Filter criterion: User: Last Name (field_puluser_lname) */
+  $handler->display->display_options['filters']['field_puluser_lname_value']['id'] = 'field_puluser_lname_value';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['table'] = 'field_data_field_puluser_lname';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['field'] = 'field_puluser_lname_value';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['operator_id'] = 'field_puluser_lname_value_op';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['operator'] = 'field_puluser_lname_value_op';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['identifier'] = 'field_puluser_lname_value';
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['field_puluser_lname_value']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'directory';
   $export['specialist_finder'] = $view;
 
   return $export;

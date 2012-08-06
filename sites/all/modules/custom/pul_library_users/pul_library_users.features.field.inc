@@ -55,7 +55,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '9',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'above',
@@ -122,7 +122,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'inline',
@@ -189,11 +189,10 @@ function pul_library_users_field_default_fields() {
       'description' => 'Import ID for subject librarians attached to DMG group. ',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '14',
+          'type' => 'hidden',
+          'weight' => '10',
         ),
         'full' => array(
           'label' => 'above',
@@ -334,7 +333,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'above',
@@ -400,11 +399,10 @@ function pul_library_users_field_default_fields() {
       'description' => 'Libguide Author ID. Used to enhance subject librarian pages. ',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '13',
+          'type' => 'hidden',
+          'weight' => '11',
         ),
         'full' => array(
           'label' => 'above',
@@ -479,7 +477,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '10',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'above',
@@ -542,11 +540,10 @@ function pul_library_users_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '8',
+          'type' => 'hidden',
+          'weight' => '14',
         ),
         'full' => array(
           'label' => 'above',
@@ -683,11 +680,10 @@ function pul_library_users_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '6',
+          'type' => 'hidden',
+          'weight' => '13',
         ),
         'full' => array(
           'label' => 'above',
@@ -757,7 +753,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '8',
         ),
         'full' => array(
           'label' => 'inline',
@@ -828,7 +824,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'above',
@@ -898,7 +894,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '15',
+          'weight' => '9',
         ),
         'full' => array(
           'label' => 'inline',
@@ -965,11 +961,10 @@ function pul_library_users_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '7',
+          'type' => 'hidden',
+          'weight' => '12',
         ),
         'full' => array(
           'label' => 'above',
@@ -1040,7 +1035,7 @@ function pul_library_users_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '11',
+          'weight' => '7',
         ),
         'full' => array(
           'label' => 'above',
