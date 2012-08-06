@@ -3383,6 +3383,15 @@ function articles_and_databases_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'insert' => 0,
+          'insert_class' => '',
+          'insert_default' => array(
+            0 => 'auto',
+          ),
+          'insert_styles' => array(
+            0 => 'auto',
+          ),
+          'insert_width' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -4176,6 +4185,7 @@ function articles_and_databases_field_default_fields() {
   t('Special Proxy Configuration Rule');
   t('Subject Import ID');
   t('Subject Librarian');
+  t('Subject Specialist');
   t('Tier One Resources');
   t('Tier Two Resources');
   t('Tier one resources attached to this resource type. ');
