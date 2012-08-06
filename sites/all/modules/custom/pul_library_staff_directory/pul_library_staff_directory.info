@@ -1,7 +1,7 @@
 name = PUL Library Staff Directory
 description = Library Staff Directory, Subject Librarian Directory
 core = 7.x
-package = Features
+package = PUL Custom Features
 version = 7.x-1.0-dev1
 project = pul_library_staff_directory
 dependencies[] = ctools
