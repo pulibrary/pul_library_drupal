@@ -1,0 +1,11 @@
+name = PUL Library Staff Directory
+description = Library Staff Directory, Subject Librarian Directory
+core = 7.x
+package = Features
+version = 7.x-1.0-dev1
+project = pul_library_staff_directory
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = specialist_finder
