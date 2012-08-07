@@ -433,10 +433,11 @@ function webform_component_edit_form($form, $form_state, $node, $component, $clo
     }
     $form['display']['title_display']['#weight'] = 8;
     $form['display']['title_display']['#parents'] = array('extra', 'title_display');
+  }
 
-    if (webform_component_feature($component['type'], 'private')) {
+  if (webform_component_feature($component['type'], 'private')) {
     // May user mark fields as Private?
-      $form['display']['private'] = array(
+    $form['display']['private'] = array(
       '#type' => 'checkbox',
       '#title' => t('Private'),
       '#default_value' => ($component['extra']['private'] == '1' ? TRUE : FALSE),
@@ -444,8 +445,7 @@ function webform_component_edit_form($form, $form_state, $node, $component, $clo
       '#weight' => 45,
       '#parents' => array('extra', 'private'),
       '#disabled' => !webform_results_access($node),
-      );
-    }
+    );
   }
 
   // Validation settings.
@@ -600,6 +600,13 @@ function webform_component_edit_form($form, $form_state, $node, $component, $clo
     '#value' => t('Save component'),
     '#weight' => 50,
   );
+
+  // Remove fieldsets without any child form controls.
+  foreach ($form as $group_key => $group) {
+    if (isset($group['#type']) && $group['#type'] === 'fieldset' && !element_children($group)) {
+      unset($form[$group_key]);
+    }
+  }
 
   return $form;
 }
@@ -829,7 +836,7 @@ function webform_component_delete($node, $component) {
     $submissions = webform_get_submissions($node->nid);
     foreach ($submissions as $submission) {
       if (isset($submission->data[$component['cid']])) {
-        webform_component_invoke($component['type'], 'delete', $component, $submission->data[$component['cid']]['value']);
+        webform_component_invoke($component['type'], 'delete', $component, $submission->data[$component['cid']]);
       }
     }
   }
@@ -908,6 +915,19 @@ function webform_component_feature($type, $feature) {
     'private' => TRUE,
   );
   return isset($components[$type]['features'][$feature]) ? $components[$type]['features'][$feature] : !empty($defaults[$feature]);
+}
+
+/**
+ * Get a component property from the component definition.
+ *
+ * @see hook_webform_component_info()
+ */
+function webform_component_property($type, $property) {
+  $components = webform_components();
+  $defaults = array(
+    'conditional_type' => 'string',
+  );
+  return isset($components[$type][$property]) ? $components[$type][$property] : $defaults[$property];
 }
 
 /**
