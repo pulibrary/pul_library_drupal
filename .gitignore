@@ -4,4 +4,8 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+# ignore tarballs
 *.tar
+# ignore eclipse system files
+.settings/*
+.project
