@@ -35,7 +35,12 @@ function catalog_block_contents() {
   return drupal_get_form('catalog_block_form'); // must define a function 
 }
 
-
+function catalog_search_results_content() {
+  $block_content = array(
+    '#markup' => "<div id='catalog-search-results'>" . t('data goes here') . "</div>",
+  ); 
+  return $block_content;
+}
 
 
 /**
@@ -81,6 +86,11 @@ function catalog_block_block_info() {
       // Block caching options (per role, per user, etc.)
       'cache' => DRUPAL_CACHE_PER_ROLE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   $blocks['catalog_search_results'] = array(
+      // block for search results from "books+" aka primo
+      'info' => t('Books+ Search Results'),
+      'cache' => DRUPAL_NO_CACHE,
    );
    
    return $blocks;
@@ -133,12 +143,14 @@ function catalog_block_block_view($delta = '') {
   if ($delta == 'catalog_search') {
     $block['subject'] = t('Catalog Search');
     $block['content'] = catalog_block_contents($delta);
-  }
-  
-  drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
-  drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
-  drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
-  
+    drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
+    drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
+  } elseif ($delta == 'catalog_search_results') {
+    $block['subject'] = t('Books+ Search Results');
+    $block['content'] = catalog_search_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_search_results.js');  
+  } 
   return $block;
 }
 
