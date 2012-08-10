@@ -2,3 +2,34 @@
 .view-id-libraries_and_collections.view-display-id-block_1 { 
   display: none;
 }
+
+
+
+/* =============================================================================
+   Menu
+   ========================================================================== */
+#block-system-main-menu ul.menu li{
+float: left;
+}
+
+#zone-user .block-inner{
+background:url(../images/user-right.gif) no-repeat right top transparent;
+}
+
+#superfish-1{
+padding:0 17px;
+font-size:0.917em;
+background:url(../images/user-left.gif) no-repeat left top transparent;
+}
+
+.sf-menu.sf-style-space-orange li,
+.sf-menu.sf-style-space-orange li li,
+.sf-menu.sf-style-space-orange li li li,
+.sf-menu.sf-style-space-orange.sf-navbar{
+background:transparent;
+}
+
+.sf-menu.sf-style-space-orange a{
+border:none;
+text-decoration:none;
+}
