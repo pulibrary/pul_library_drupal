@@ -26,4 +26,4 @@ features[field][] = node-library_hours-field_open_hours
 features[field_group][] = group_displaygroup|node|library_hours|form
 features[node][] = library_hours
 features[views_view][] = library_hours_calendar
-project status url = http://library.princeton.edu/projects/custom/pul_library_hours
+; project status url = http://library.princeton.edu/projects/custom/pul_library_hours
