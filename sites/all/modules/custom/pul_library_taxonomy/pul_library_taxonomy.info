@@ -40,4 +40,4 @@ features[field_group][] = group_lib_campus_address|taxonomy_term|libraries|form
 features[field_group][] = group_lib_mailing_address|taxonomy_term|libraries|form
 features[field_group][] = group_tax_listings|taxonomy_term|libraries|form
 features[taxonomy][] = libraries
-project status url = http://library.princeton.edu/projects/custom/pul_library_taxonomy
+; project status url = http://library.princeton.edu/projects/custom/pul_library_taxonomy
