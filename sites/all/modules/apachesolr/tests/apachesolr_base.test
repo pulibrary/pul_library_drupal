@@ -325,7 +325,7 @@ class DrupalSolrOfflineSearchPagesWebTestCase extends DrupalWebTestCase {
     // Remove the same environment
     $this->clickLink(t('Delete'));
     $this->assertText(t('search page configuration will be deleted.This action cannot be undone.'), t('Delete confirmation page was succesfully loaded'));
-    $this->drupalPost($this->getUrl(), array(), t('Delete page'));
+    $this->drupalPost($this->getUrl(), array(), t('Delete'));
     $this->assertResponse(200);
     drupal_static_reset('apachesolr_search_page_load');
     $this->drupalGet('admin/config/search/apachesolr/search-pages');

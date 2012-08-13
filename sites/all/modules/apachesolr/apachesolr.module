@@ -1042,8 +1042,11 @@ function apachesolr_get_solr($env_id = NULL) {
   $solr_cache = &drupal_static(__FUNCTION__);
   $environments = apachesolr_load_all_environments();
 
-  if (empty($env_id) || empty($environments[$env_id])) {
+  if (empty($env_id)) {
     $env_id = apachesolr_default_environment();
+  }
+  elseif (empty($environments[$env_id])) {
+    throw new Exception(t('Invalid Apache Solr environment: @env_id.', array('@env_id' => $env_id)));
   }
 
   if (isset($environments[$env_id])) {
@@ -1074,6 +1077,14 @@ function apachesolr_get_solr($env_id = NULL) {
 function apachesolr_load_all_environments() {
   $environments = &drupal_static(__FUNCTION__);
 
+  // Sometimes this function is called when the 'apachesolr_index_bundles' is
+  // not created yet.
+  if (!db_table_exists('apachesolr_index_bundles')) {
+    return array();
+  }
+  if (!db_table_exists('apachesolr_environment')) {
+    return array();
+  }
   if (isset($environments)) {
     return $environments;
   }
@@ -1083,23 +1094,27 @@ function apachesolr_load_all_environments() {
     $environments = $cache->data;
   }
   else {
-    $environments = db_query('SELECT * FROM {apachesolr_environment}')->fetchAllAssoc('env_id', PDO::FETCH_ASSOC);
-    foreach ($environments as $id => &$environment) {
-      $environment['conf'] = array();
-      $conf = db_query('SELECT name, value FROM {apachesolr_environment_variable} WHERE env_id = :env_id', array('env_id' => $id))->fetchAllAssoc('name', PDO::FETCH_ASSOC);
-      foreach ($conf as $name => $data) {
-        $environment['conf'][$name] = unserialize($data['value']);
-      }
-    }
-
+    // If ctools is available use it's crud functions to load the environments.
     if (module_exists('ctools')) {
       ctools_include('export');
-      $defaults = ctools_export_load_object('apachesolr_environment', 'all');
-      foreach ($defaults as $env_id => $default) {
-        if (!isset($environments[$env_id])) {
-          $environments[$env_id] = (array) $default;
-        }
+      $environments = ctools_export_load_object('apachesolr_environment', 'all');
+      // Convert environments to array.
+      foreach ($environments as &$environment) {
+        $environment = (array) $environment;
       }
+    }
+    else {
+      $environments = db_query('SELECT * FROM {apachesolr_environment}')->fetchAllAssoc('env_id', PDO::FETCH_ASSOC);
+    }
+
+    // Load conf and index bundles. We don't use 'subrecords callback' property
+    // of ctools export API.
+    apachesolr_environment_load_subrecords($environments);
+
+    // Allow overrides of environments from settings.php
+    $conf_environments = variable_get('apachesolr_environments', array());
+    if (!empty($conf_environments)) {
+      $environments = drupal_array_merge_deep($environments, $conf_environments);
     }
 
     cache_set('apachesolr:environments', $environments, 'cache_apachesolr');
@@ -1151,6 +1166,9 @@ function apachesolr_environment_delete($env_id) {
       ->condition('env_id', $env_id)
       ->execute();
     db_delete('apachesolr_environment_variable')
+      ->condition('env_id', $env_id)
+      ->execute();
+    db_delete('apachesolr_index_bundles')
       ->condition('env_id', $env_id)
       ->execute();
 
@@ -1234,6 +1252,11 @@ function apachesolr_environment_save($environment) {
   $is_new = FALSE;
   if (!$old_environment || isset($old_environment['in_code_only'])) {
     $is_new = TRUE;
+  }
+  // No need to save if there are no changes
+  if ($old_environment == $environment) {
+    // No need to do anything
+    return;
   }
 
   $conf = isset($environment['conf']) ? $environment['conf'] : array();
@@ -1388,19 +1411,21 @@ function apachesolr_do_query(DrupalSolrQueryInterface $current_query) {
 
   $query = apachesolr_current_query($env_id, $current_query);
 
-  // This hook allows modules to modify the query and params objects.
-  drupal_alter('apachesolr_query', $query);
-
+  // Verify if this query was already executed in the same page load
   if ($response = apachesolr_static_response_cache($searcher)) {
     // Return cached query object
     return array($query, $response);
   }
+  $query->addParam('start', $query->page * $query->getParam('rows'));
+
+  // This hook allows modules to modify the query and params objects.
+  drupal_alter('apachesolr_query', $query);
 
   if ($query->abort_search) {
     // A module implementing HOOK_apachesolr_query_alter() aborted the search.
     return array(NULL, array());
   }
-  $query->addParam('start', $query->page * $query->getParam('rows'));
+  
 
   $keys = $query->getParam('q');
 
@@ -1752,15 +1777,8 @@ function apachesolr_entity_info_alter(&$entity_info) {
  *   The bundles that should be indexed.
  */
 function apachesolr_get_index_bundles($env_id, $entity_type) {
-  // This could be called before the schema is installed so it is wise to
-  // Verify this
-  if (db_table_exists('apachesolr_index_bundles')) {
-    return db_query("SELECT bundle FROM {apachesolr_index_bundles} WHERE env_id = :env_id AND entity_type = :entity_type", array(
-      ':env_id' => $env_id,
-      ':entity_type' => $entity_type,
-      ))->fetchCol();
-  }
-  return array();
+  $environment = apachesolr_environment_load($env_id);
+  return !empty($environment['index_bundles'][$entity_type]) ? $environment['index_bundles'][$entity_type] : array();
 }
 
 /**
@@ -1805,7 +1823,7 @@ function apachesolr_entity_update($entity, $type) {
     list($id, $vid, $bundle) = entity_extract_ids($type, $entity);
 
     // Check status callback before sending to the index
-    $status_callbacks = apachesolr_entity_get_callback($type, 'status callback');
+    $status_callbacks = apachesolr_entity_get_callback($type, 'status callback', $bundle);
 
     $status = TRUE;
     if (is_array($status_callbacks)) {
@@ -2546,6 +2564,79 @@ function theme_apachesolr_settings_title($vars) {
 }
 
 /**
+ * Export callback to load the view subrecords, which are the index bundles.
+ */
+function apachesolr_environment_load_subrecords(&$environments) {
+  // This could be called before the schema is installed so it is wise to
+  // Verify this
+  if (db_table_exists('apachesolr_index_bundles')) {
+    $all_index_bundles = db_select('apachesolr_index_bundles', 'ib')
+      ->fields('ib', array('env_id', 'entity_type', 'bundle'))
+      ->condition('env_id', array_keys($environments), 'IN')
+      ->orderBy('env_id')
+      ->orderBy('entity_type')
+      ->orderBy('bundle')
+      ->execute()
+      ->fetchAll(PDO::FETCH_ASSOC);
+
+    $all_index_bundles_keyed = array();
+    foreach ($all_index_bundles as $env_info) {
+      extract($env_info);
+      $all_index_bundles_keyed[$env_id][$entity_type][] = $bundle;
+    }
+  }
+  
+  $all_variables = db_select('apachesolr_environment_variable', 'v')
+    ->fields('v', array('env_id', 'name', 'value'))
+    ->condition('env_id', array_keys($environments), 'IN')
+    ->orderBy('env_id')
+    ->orderBy('name')
+    ->orderBy('value')
+    ->execute()
+    ->fetchAll(PDO::FETCH_ASSOC);
+
+  $variables = array();
+  foreach ($all_variables as $variable) {
+    extract($variable);
+    $variables[$env_id][$name] = unserialize($value);
+  }
+
+  foreach ($environments as $env_id => &$environment) {
+    $index_bundles = !empty($all_index_bundles_keyed[$env_id]) ? $all_index_bundles_keyed[$env_id] : array();
+    $conf = !empty($variables[$env_id]) ? $variables[$env_id] : array();
+    if (is_array($environment)) {
+      // Environment is an array.
+      // If we have different values in the database compared with what we
+      // have in the given environment argument we allow the admin to revert
+      // the db values so we can stick with a consistent system
+      if (!empty($environment['index_bundles']) && !empty($index_bundles) && $environment['index_bundles'] !== $index_bundles) {
+        unset($environment['in_code_only']);
+        $environment['type'] = 'Overridden';
+      }
+      if (!empty($environment['conf']) && !empty($conf) && $environment['conf'] !== $conf) {
+        unset($environment['in_code_only']);
+        $environment['type'] = 'Overridden';
+      }
+      $environment['index_bundles'] = (empty($environment['index_bundles']) || !empty($index_bundles)) ? $index_bundles : $environment['index_bundles'];
+      $environment['conf'] = (empty($environment['conf']) || !empty($conf)) ? $conf : $environment['conf'];
+    }
+    elseif (is_object($environment)) {
+      // Environment is an object.
+      if ($environment->index_bundles !== $index_bundles && !empty($index_bundles)) {
+        unset($environment->in_code_only);
+        $environment->type = 'Overridden';
+      }
+      if ($environment->conf !== $conf && !empty($conf)) {
+        unset($environment->in_code_only);
+        $environment->type = 'Overridden';
+      }
+      $environment->index_bundles = (empty($environment->index_bundles) || !empty($index_bundles)) ? $index_bundles : $environment->index_bundles;
+      $environment->conf = (empty($environment->conf) || !empty($conf)) ? $conf : $environment->conf;
+    }
+  }
+}
+
+/**
  * Callback for saving Apache Solr environment CTools exportables.
  *
  * CTools uses objects, while Apache Solr uses arrays; turn CTools value into an
@@ -2588,7 +2679,14 @@ function apachesolr_ctools_environment_export($environment, $indent) {
   // Re-load the enviroment, since in some cases the conf
   // is stripped since it's not in the actual schema.
   $environment = (object) apachesolr_environment_load($environment->env_id);
+
+  $index_bundles = array();
+  foreach (entity_get_info() as $type => $info) {
+    if ($bundles = apachesolr_get_index_bundles($environment->env_id, $type)) {
+      $index_bundles[$type] = $bundles;
+    }
+  }
   $additions_top = array();
-  $additions_bottom = array('conf' => $environment->conf);
+  $additions_bottom = array('conf' => $environment->conf, 'index_bundles' => $index_bundles);
   return ctools_export_object('apachesolr_environment', $environment, $indent, NULL, $additions_top, $additions_bottom);
 }

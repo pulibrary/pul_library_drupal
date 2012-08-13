@@ -15,12 +15,18 @@ function apachesolr_environment_delete_form($form, &$form_state, $environment) {
     '#type' => 'value',
     '#value' => $environment['env_id'],
   );
+  if (isset($environment['export_type']) && $environment['export_type'] == 3) {
+    $verb = t('Revert');
+  }
+  else {
+    $verb = t('Delete');
+  }
   return confirm_form(
     $form,
-    t('Are you sure you want to delete search environment %name?', array('%name' => $environment['name'])),
+    t('Are you sure you want to !verb search environment %name?', array('%name' => $environment['name'], '!verb' => strtolower($verb))),
     'admin/config/search/apachesolr',
     t('This action cannot be undone.'),
-    t('Delete'),
+    $verb,
     t('Cancel')
   );
 }
@@ -149,6 +155,12 @@ function apachesolr_environment_edit_form($form, &$form_state, $environment = NU
     '#submit' => array('apachesolr_environment_edit_submit'),
     '#value' => t('Save'),
   );
+  $form['actions']['save_edit'] = array(
+    '#type' => 'submit',
+    '#validate' => array('apachesolr_environment_edit_validate'),
+    '#submit' => array('apachesolr_environment_edit_submit'),
+    '#value' => t('Save and edit'),
+  );
   $form['actions']['test'] = array(
     '#type' => 'submit',
     '#validate' => array('apachesolr_environment_edit_validate'),
@@ -168,7 +180,7 @@ function apachesolr_environment_edit_form($form, &$form_state, $environment = NU
     $destination = $_GET['destination'];
   }
   else {
-    $destination = 'admin/config/search/apachesolr';
+    $destination = 'admin/config/search/apachesolr/settings';
   }
   $form['actions']['cancel'] = array(
     '#type' => 'link',
@@ -219,7 +231,16 @@ function apachesolr_environment_edit_submit($form, &$form_state) {
   }
   cache_clear_all('apachesolr:environments', 'cache_apachesolr');
   drupal_set_message(t('The %name search environment has been saved.', array('%name' => $form_state['values']['name'])));
-  $form_state['redirect'] = 'admin/config/search/apachesolr/settings';
+  if ($form_state['values']['op'] == t('Save')) {
+    $form_state['redirect'] = 'admin/config/search/apachesolr/settings';
+  }
+  else {
+    $form_state['redirect'] = current_path();
+  }
+  // Regardlessly of the destination parameter we want to go to another page
+  unset($_GET['destination']);
+  drupal_static_reset('drupal_get_destination');
+  drupal_get_destination();
 }
 
 /**
@@ -305,20 +326,34 @@ function apachesolr_settings($form, &$form_state) {
       ),
     );
     $env_name = l($data['name'], 'admin/config/search/apachesolr/settings/' . $data['env_id'] . '/edit', array('query' => array('destination' => $_GET['q'])));
+
     // Is this row our default environment?
     if ($environment_id == $default_environment) {
       $env_name = t('!environment <em>(Default)</em>', array('!environment' => $env_name));
       $env_class_row = 'default-environment';
-      $ops['delete'] = '';
     }
     else {
       $env_class_row = '';
-      // For every non-default we add a delete link
-      $ops['delete'] = array(
-        'class' => 'operation',
-        'data' => l(t('Delete'), 'admin/config/search/apachesolr/settings/' . $data['env_id'] . '/delete'),
-      );
     }
+    // For every non-default we add a delete link
+    // Allow to revert a search environment or to delete it
+    $delete_value = '';
+    if (!isset($data['in_code_only'])) {
+      if ((isset($data['type']) && $data['type'] == 'Overridden')) {
+        $delete_value = array(
+          'class' => 'operation',
+          'data' => l(t('Revert'), 'admin/config/search/apachesolr/settings/' . $data['env_id'] . '/delete'),
+        );
+      }
+      // don't allow the deletion of the default environment
+      elseif ($environment_id != $default_environment) {
+        $delete_value = array(
+          'class' => 'operation',
+          'data' => l(t('Delete'), 'admin/config/search/apachesolr/settings/' . $data['env_id'] . '/delete'),
+        );
+      }
+    }
+    $ops['delete'] = $delete_value;
 
     // When we are receiving a http POST (so the page does not show) we do not
     // want to check the statusses of any environment
@@ -1094,7 +1129,7 @@ function apachesolr_index_config_form_submit($form, &$form_state) {
 
   // Clear the entity cache, since we will be changing its data.
   entity_info_cache_clear();
-
+  cache_clear_all('apachesolr:environments', 'cache_apachesolr');
   drupal_set_message(t('Your settings have been saved.'));
 }
 

@@ -93,8 +93,15 @@ Once this module is enabled, enable blocks for facets first at
 Administer > Site configuration > Apache Solr > Enabled filters
 then position them as you like at Administer > Site building > Blocks.
 
+Settings.php
+------------
+You can override environment settings using the following syntax in your
+settings.php
+
+$conf['apachesolr_environments']['my_env_id']['url'] = 'http://localhost:8983';
+
 Configuration variables
---------------
+-----------------------
 
 The module provides some (hidden) variables that can be used to tweak its
 behavior:
@@ -130,8 +137,11 @@ behavior:
    each Solr request, such as when making {apachesolr_search_node} consistent
    with {node}.
 
+ - apachesolr_index_user: Define with which user you want the index process to
+   happen.
+
 Troubleshooting
---------------
+---------------
 Problem:
 Links to nodes appear in the search results with a different host name or
 subdomain than is preferred.  e.g. sometimes at http://example.com

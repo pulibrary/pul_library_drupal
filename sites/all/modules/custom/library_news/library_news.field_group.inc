@@ -24,8 +24,9 @@ function library_news_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_news_categories',
-      1 => 'field_news_more_information',
-      2 => 'field_news_library_contact',
+      1 => 'field_news_library_contact',
+      2 => 'field_news_more_information',
+      3 => 'field_news_rel_audiences',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

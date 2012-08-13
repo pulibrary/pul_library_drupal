@@ -18,4 +18,4 @@ features[field][] = taxonomy_term-collections-field_col_short_display_title
 features[field][] = taxonomy_term-collections-field_collection_url
 features[field][] = taxonomy_term-collections-field_libs_cols_main_menu
 features[taxonomy][] = collections
-project status url = http://library.princeton.edu/projects/custom/pul_collections_taxonomy
+; project status url = http://library.princeton.edu/projects/custom/pul_collections_taxonomy
