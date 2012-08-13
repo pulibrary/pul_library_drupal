@@ -148,7 +148,7 @@ function apachesolr_index_entity_to_documents($item, $env_id) {
   $document = _apachesolr_index_process_entity_get_document($entity, $entity_type);
 
   //Get the callback array to add stuff to the document
-  $callbacks = apachesolr_entity_get_callback($entity_type, 'document callback');
+  $callbacks = apachesolr_entity_get_callback($entity_type, 'document callback', $bundle);
   $documents = array();
   foreach ($callbacks as $callback) {
     // Call a type-specific callback to add stuff to the document.
@@ -187,7 +187,12 @@ function apachesolr_index_entity_to_documents($item, $env_id) {
   }
 
   // Now allow modules to alter each other's additions for maximum flexibility.
-  drupal_alter('apachesolr_index_documents', $documents, $entity, $entity_type, $env_id);
+
+  // Hook to allow modifications of the retrieved results
+  foreach (module_implements('apachesolr_index_documents_alter') as $module) {
+    $function = $module . '_apachesolr_index_documents_alter';
+    $function($documents, $entity, $entity_type, $env_id);
+  }
 
   // Restore the user.
   $user = $saved_user;
@@ -620,7 +625,7 @@ function apachesolr_index_node_solr_document(ApacheSolrDocument $document, $node
   $document->label = apachesolr_clean_text($node->title);
 
   // Build the node body.
-  $build = node_view($node, 'search_index');
+  $build = node_view($node, 'search_index', !empty($node->language) ? $node->language : LANGUAGE_NONE);
   // Remove useless html crap out of the render.
   unset($build['#theme']);
   $text = drupal_render($build);
@@ -922,17 +927,16 @@ function apachesolr_fields_default_indexing_callback($entity, $field_name, $inde
         'key' => $index_key,
         'value' => $function($values[$i]['value']),
       );
-
-      // Only store the first value of the field in a singular index
-      if ($numeric && ($i == 0)) {
-        $singular_field_info = $field_info;
-        $singular_field_info['multiple'] = FALSE;
-        $single_key = apachesolr_index_key($singular_field_info);
-        $fields[] = array(
-          'key' => $single_key,
-          'value' => $function($values[$i]['value']),
-        );
-      }
+    }
+    // Also store the first value of the field in a singular index for multi value fields
+    if ($field_info['multiple'] && $numeric && !empty($values[0])) {
+      $singular_field_info = $field_info;
+      $singular_field_info['multiple'] = FALSE;
+      $single_key = apachesolr_index_key($singular_field_info);
+      $fields[] = array(
+        'key' => $single_key,
+        'value' => $function($values[0]['value']),
+      );
     }
   }
   return $fields;
@@ -1154,11 +1158,11 @@ function apachesolr_index_node_check_table() {
 
   // Check for deleted content that wasn't deleted from the index.
   $query = db_select($table, 'aien')
-    ->fields('aien', array('entity_id'))
     ->isNull('n.nid')
     ->range(0, ($limit*2));
+  $query->addExpression('aien.entity_id', 'nid');
   $query->leftJoin('node', 'n', 'n.nid = aien.entity_id');
-  $nodes = $query->execute()->fetchAllAssoc('entity_id');
+  $nodes = $query->execute()->fetchAllAssoc('nid');
   $node_lists = array_chunk($nodes, $limit, TRUE);
 
   foreach ($node_lists as $nodes) {

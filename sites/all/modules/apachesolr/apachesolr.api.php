@@ -270,6 +270,13 @@ function hook_apachesolr_entity_info_alter(&$entity_info) {
   $entity_info['node']['cron_check'] = 'apachesolr_index_node_check_table';
   // Specific output processing for the results
   $entity_info['node']['apachesolr']['result callback'] = 'apachesolr_search_node_result';
+
+  // BUNDLE SPECIFIC OVERRIDES
+  // The following can be overridden on a per-bundle basis.
+  // The bundle-specific settings will take precedence over the entity settings.
+  $entity_info['node']['bundles']['page']['apachesolr']['result callback'] = 'apachesolr_search_node_result';
+  $entity_info['node']['bundles']['page']['apachesolr']['status callback'][] = 'apachesolr_index_node_status_callback';
+  $entity_info['node']['bundles']['page']['apachesolr']['document callback'][] = 'apachesolr_index_node_solr_document';
 }
 
 

@@ -1,6 +1,34 @@
 Apache Solr integration 7.x-1.x-xxxx, xxxx-xx-xx
 ------------------------------
 
+Apache Solr integration 7.x-1.0-rc3, 08-10-2012
+------------------------------
+#1682004 by Nick_vh: Add template hints for search results based on search page.
+#1722012 by mkalkbrenner, Nick_vh: fix for Missing argument 4 for apachesolr_multilingual_apachesolr_index_documents_alter().
+#1717490 by pwolanin: fix for Search result template suggestions relies on non-required fields.
+#1708212 by ianmthomasuk, Nick_vh: Fixed Duplicate field error when indexing single value fields.
+#1702788 by mkalkbrenner: Fixed content and teaser are empty if node->language is not default.
+#1708166 by ianmthomasuk: Fixed Thow exception if asked for invalid solr environment.
+#1717628 by Nick_vh | cpliakas: Added 'Save and Edit" functionality for configuration pages.
+#1718172 by Nick_vh, pwolanin: Fixed Move search result alter hook earlier, and make sure needed data is set.
+#1702526 by Nick_vh: Fixed apachesolr_search_page_load() is quirky.
+#1717958 by pwolanin: Fix for text_und fields should be exposed for searching in the admin section.
+#1708538 by Nick_vh: Fixed Move the start param above the query alter.
+#1700472 by pwolanin: Make 'apachesolr_search_process_response_callback' a search environment variable.
+#1439564 by recidive, neochief, Nick_vh, dawehner, jhedstrom: Added Index bundles Export/Import.
+#1652746 by martins.bertins | chrisssi: Fixed Notice: Undefined offset: 3 in _menu_translate().
+#1670198 by alanmackenzie | ruedu: Fixed Unable to export/import settings using features module.
+#1681946 by Josh Waihi: Fixed apachesolr_index_nodeapi_mass_delete() doesn't work.
+#1650096 by Nick_vh | cappadona: Fixed addParam() creates duplicate filters when dealing with fq.
+#1677050 by cpliakas: Fix for Cancel link when creating a new environment.
+#1673086 by pwolanin: Add drush commands to get, set, del environment variables.
+#1682004 by cpliakas: Added template hints for search results based on search page.
+#1672738 by Nick_vh: Added Allow a dynamic apachesolr_process_results() function.
+#1473722 by levialliance: Added Bundle specific overrides.
+#1408844 by Nick_vh, jrbeeman: Added As a site builder I want to override the environment settings in settings.php.
+#1652746 by chrisssi: Fixed Notice: Undefined offset: 3 in _menu_translate() (Zeile 775 von /var/www/includes/menu.inc).
+#1402748 by Nick_vh, killua99: Fixed Check in apachesolr_do_query() if the static of the query with that name already exists, and if so return it.
+
 Apache Solr integration 7.x-1.0-rc2, 06-21-2012
 ------------------------------
 Renamed schema.xml and solrconfig.xml to rc2
