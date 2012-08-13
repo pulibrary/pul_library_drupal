@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Style the combobox in the Views field handler.
+ *
+ * @see SarniaViewsHandlerField::options_form()
+ * @see combobox.js
+ * @see http://jqueryui.com/demos/autocomplete/#theming
+ */
+
+ul.ui-autocomplete {
+  max-height: 15em;
+  overflow-y: auto;
+  padding-right: 20px;
+  font-size: 81.3%;
+}
+
+ul.ui-autocomplete li a {
+  color: inherit;
+}
+
+ul.ui-autocomplete li a.ui-state-hover,
+ul.ui-autocomplete li a.ui-state-active {
+  background-color: #E0E0D8;
+  margin: 0;
+}
+
+.combobox-element button.ui-button-icon-only {
+  border: none;
+}
