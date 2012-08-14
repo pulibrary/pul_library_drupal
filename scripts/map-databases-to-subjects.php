@@ -133,7 +133,7 @@ foreach($altTitleMembers['node'] as $node) {
  * 2. Check to so if key is present in either database or alt title mappings
  *
  */
-echo count($subject_db_title_mappings) . "\n";
+drush_print(count($subject_db_title_mappings) . " Total Mappings");
 $missing_mappings = array();
 foreach($subject_db_title_mappings as $mapping) {
   //find the matching node
@@ -146,11 +146,11 @@ foreach($subject_db_title_mappings as $mapping) {
   
   if(!is_null($term_to_attach_field_to)) {
     if(array_key_exists($mapping['titleID'], $database_mappings)) {
-      //echo "Standard Database Entry\n";
+      echo "Standard Database Entry\n";
       $node_to_map = $database_mappings[$mapping['titleID']];
     }
     elseif(array_key_exists($mapping['titleID'], $alternative_title_mappings)) {
-      //echo "Alt Database Title\n";
+      echo "Alt Database Title\n";
       $node_to_map = $alternative_title_mappings[$mapping['titleID']];
     } else { // the orphans 
       //echo "No Mappings for this id {$mapping['titleID']}\n";
@@ -162,23 +162,51 @@ foreach($subject_db_title_mappings as $mapping) {
   
     // load the term 
     $term_data = taxonomy_term_load($term_to_attach_field_to);
+    $target_id_to_store = array('target_id' => $node_to_map);
     //print_r($term_data);
     
     //field_subs_specialist
     //field_subs_tier_one_resources
     //field_subs_tier_two_resources
-    
+    //print_r($term_data);
+    if(!is_null($node_to_map)) {
     if(is_tier_one($mapping['rank'])) {
-      echo "adding tier one resource {$node_to_map} to term id {$term_to_attach_field_to}\n";
+      if(isset($term_data->field_subs_tier_one_resources['und'])) {
+        //print_r($term_data->field_subs_tier_one_resources);
+        drush_print("adding tier one resource {$node_to_map} to term id {$term_to_attach_field_to}");
+        //array_push($target_id_to_store, $term_data->field_subs_tier_one_resources['und']);
+        drush_print(count($term_data->field_subs_tier_one_resources['und']) . " num of attached items");
+        $num_matches = count($term_data->field_subs_tier_one_resources['und']);
+        $term_data->field_subs_tier_one_resources['und'][$num_matches]['target_id'] = $node_to_map;
+        //$term_data->field_subs_tier_one_resources['und'] = $target_id_to_store;
+        //print_r($term_data->field_subs_tier_one_resources);
+        //field_sql_storage_field_storage_write('database_subjects', $term_to_attach_field_to, 'update', $term_data->field_subs_tier_one_resources);
+      } else {
+        $term_data->field_subs_tier_one_resources = array('und' => array('target_id' => $node_to_map));
+        //echo $node_to_map;
+      }
       //create a tier one resource
       //echo "tier one\n";
       //print_r($mapping);  
+      //field_attach_update('taxonomy_term', $term_to_attach_field_to);
     } else {
-      echo "adding tier two resource {$node_to_map} to term id {$term_to_attach_field_to}\n";
+      if(isset($term_data->field_subs_tier_two_resources['und'])) {
+        //print_r($term_data);
+        $num_matches = count($term_data->field_subs_tier_two_resources['und']);
+        $term_data->field_subs_tier_two_resources['und'][$num_matches]['target_id'] = $node_to_map;
+        drush_print("adding tier two resource {$node_to_map} to term id {$term_to_attach_field_to}");
+        drush_print( count($term_data->field_subs_tier_two_resources['und']) . " num of attached items");
+        //array_push($target_id_to_store, $term_data->field_subs_tier_two_resources['und']);
+        //print_r($term_data->field_subs_tier_two_resources);
+      } else {
+        $term_data->field_subs_tier_two_resources['und'][0]['target_id'] = $node_to_map;
+        //echo $node_to_map;
+      }
       //create a tier two resource
       //echo "tier two\n";
       //print_r($mapping);
-      //special case 
+      //special case
+       
       if(!is_null_or_empty($mapping['descriptionSpecial'])) {
         //load this resource into the alternative description nid present
         // overridden description 
@@ -189,12 +217,19 @@ foreach($subject_db_title_mappings as $mapping) {
         
       }
     }
+    }
+    //print_r($term_data);
+    //save field that has just been term
+    field_attach_presave('taxonomy_term', $term_data);
+    field_attach_update('taxonomy_term', $term_data);
+    //print_r($term_data);
+    //taxonomy_term_save($term_data);
 
 
   }
 }
 //  
-echo count($missing_mappings) . "missing\n";
+drush_print(count($missing_mappings) . "missing mappings");
 //print_r($subject_mappings);
 // Deal with Overridden Descriptions
 // Deal with tools 
