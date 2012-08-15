@@ -67,7 +67,7 @@ html {
     font-size: 0.75em; /* 1 */
     -webkit-text-size-adjust: 0.75em; /* 2 */
     -ms-text-size-adjust: 0.75em; /* 2 */
-    background:url(../images/home-BG.gif) repeat-x 0 0 #fff;
+    /* background:url(../images/home-BG.gif) repeat-x 0 0 #fff; */
 }
 
 /*
