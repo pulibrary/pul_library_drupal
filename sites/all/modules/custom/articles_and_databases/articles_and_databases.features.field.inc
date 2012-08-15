@@ -474,11 +474,11 @@ function articles_and_databases_field_default_fields() {
           'weight' => '1',
         ),
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -582,7 +582,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '15',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -798,11 +798,11 @@ function articles_and_databases_field_default_fields() {
           'weight' => '11',
         ),
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '7',
+          'weight' => '4',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -904,7 +904,8 @@ function articles_and_databases_field_default_fields() {
       'bundle' => 'database',
       'default_value' => array(
         0 => array(
-          'value' => 'The blurb. ',
+          'value' => '<p>This publication or database and the information in it is protected by copyright. All reproductions of this copyrighted material must be for non-commercial educational “fair use” as defined by 17 U.S.C. 107.</p><table><thead><tr><th>You May</th><th>You May Not</th></tr></thead><tbody><tr><td><ul><li>Access, search and browse the database or publication.</li><li>Print or download a limited number of articles, records, abstracts, or parts of chapters for personal use.</li></ul></td><td><ul><li>Sell copies of items printed or downloaded.</li><li>Print or download entire electronic books or entire issues of journals.</li><li>Distribute copies of any portions of this resource to anyone not affiliated with Princeton University. Sharing information with colleagues for scholarly, educational, or scientific research or professional use is permitted.</li></ul></td></tr></tbody></table>',
+          'format' => 'full_html',
         ),
       ),
       'deleted' => '0',
@@ -918,7 +919,7 @@ function articles_and_databases_field_default_fields() {
           'weight' => '9',
         ),
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -962,10 +963,10 @@ function articles_and_databases_field_default_fields() {
       'entity_type' => 'node',
       'fences_wrapper' => 'div',
       'field_name' => 'field_db_copyright_information',
-      'label' => 'Copyright Information',
+      'label' => 'Copyright Statement',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1016,11 +1017,11 @@ function articles_and_databases_field_default_fields() {
       'description' => 'Date of materials stored in database. ',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '10',
+          'weight' => '3',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1101,10 +1102,9 @@ function articles_and_databases_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '9',
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1182,10 +1182,9 @@ function articles_and_databases_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '8',
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1289,12 +1288,9 @@ function articles_and_databases_field_default_fields() {
         ),
         'default' => array(
           'label' => 'inline',
-          'module' => 'entityreference',
-          'settings' => array(
-            'view_mode' => 'teaser',
-          ),
-          'type' => 'entityreference_entity_view',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '12',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -1402,7 +1398,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '16',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1502,7 +1498,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '19',
         ),
         'override_db_title' => array(
           'label' => 'hidden',
@@ -1596,11 +1592,11 @@ function articles_and_databases_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '13',
+          'weight' => '5',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1624,7 +1620,7 @@ function articles_and_databases_field_default_fields() {
       'entity_type' => 'node',
       'fences_wrapper' => 'div',
       'field_name' => 'field_db_keywords',
-      'label' => 'keywords',
+      'label' => 'Database Keywords',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1678,11 +1674,11 @@ function articles_and_databases_field_default_fields() {
       'description' => 'Physical Location Notes. ',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '4',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -1769,7 +1765,7 @@ function articles_and_databases_field_default_fields() {
           'weight' => '8',
         ),
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
@@ -1876,7 +1872,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '13',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -1971,10 +1967,9 @@ function articles_and_databases_field_default_fields() {
         ),
         'default' => array(
           'label' => 'inline',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '4',
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'override_db_title' => array(
           'label' => 'inline',
@@ -2078,7 +2073,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '14',
         ),
         'override_db_title' => array(
           'label' => 'hidden',
@@ -2170,7 +2165,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '11',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -2243,11 +2238,11 @@ function articles_and_databases_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '1',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -2327,10 +2322,9 @@ function articles_and_databases_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '14',
+          'type' => 'hidden',
+          'weight' => '10',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -2418,7 +2412,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '17',
         ),
         'override_db_title' => array(
           'label' => 'above',
@@ -2468,7 +2462,7 @@ function articles_and_databases_field_default_fields() {
         'module' => 'date',
         'settings' => array(
           'display_all_day' => 0,
-          'increment' => 15,
+          'increment' => 1,
           'input_format' => 'Y-m-d H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
@@ -2528,7 +2522,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '18',
         ),
         'override_db_title' => array(
           'label' => 'hidden',
@@ -2624,7 +2618,7 @@ function articles_and_databases_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '23',
+          'weight' => '20',
         ),
         'override_db_title' => array(
           'label' => 'hidden',
@@ -4144,8 +4138,9 @@ function articles_and_databases_field_default_fields() {
   t('Alternative URLs');
   t('Configuration File');
   t('Contains the ID of the database used in the previous dmg system. ');
-  t('Copyright Information');
+  t('Copyright Statement');
   t('Database Import ID');
+  t('Database Keywords');
   t('Database that you wish to override. ');
   t('Date Coverage');
   t('Date of materials stored in database. ');
@@ -4196,7 +4191,6 @@ function articles_and_databases_field_default_fields() {
   t('Use EZproxy');
   t('Use if the resource is a member of a particular database grouping like gale, ebscohost, or Adams Mitchell. ');
   t('Voyager ID');
-  t('keywords');
 
   return $fields;
 }

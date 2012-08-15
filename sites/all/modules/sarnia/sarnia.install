@@ -1,0 +1,196 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function sarnia_schema() {
+  $schema['sarnia_entity_type'] = array(
+    'description' => 'Store information about defined Sarnia bundles.',
+    'fields' => array(
+      'machine_name' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'label' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'search_api_server' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'search_api_index' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'id_field' => array(
+        'type' => 'varchar',
+        'length' => 255, // @TODO Solr has arbitrary length fields. Is 255 characters sufficient?
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('machine_name'),
+  );
+
+  $schema['sarnia_solr_service_schema'] = array(
+    'description' => 'Map behaviors of Solr fields',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'search_api_server' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'behavior' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'match_type' => array(
+        'description' => '"name", "dynamicbase", or "type"',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'match_value' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'effect' => array(
+        'description' => '"disable" or "replace"',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'replacement' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'enabled' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+        'size' => 'tiny',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
+
+function sarnia_install() {
+  $query = db_insert('sarnia_solr_service_schema')
+    ->fields(array(
+      'search_api_server',
+      'behavior',
+      'match_type',
+      'match_value',
+      'effect',
+      'replacement',
+    ));
+  foreach (sarnia_solr_service_schema_defaults() as $values) {
+    $query->values($values);
+  }
+  $query->execute();
+}
+
+function sarnia_solr_service_schema_defaults() {
+  return array(
+    //search_api_server,  behavior,   match_type,     match_value,   effect,     replacement
+    array('',             'display',  'name',         'content',     'disable',  ''),
+    array('',             'display',  'name',         'spell',       'disable',  ''),
+    array('',             'fulltext', 'dynamicBase',  'sort_*',      'disable',  ''),
+    array('',             'sort',     'name',         'content',     'disable',  ''),
+    array('',             'sort',     'name',         'spell',       'disable',  ''),
+    array('',             'sort',     'dynamicBase',  'sort_*',      'replace',  'ss_*'),
+    array('',             'sort',     'dynamicBase',  'iss_*',       'replace',  'is_*'),
+  );
+}
+
+/**
+ * This update function was faulty, and has been replaced by update 7001.
+ */
+function sarnia_update_7000() {}
+
+/**
+ * Create the new {sarnia_solr_service_schema} table. Replaces update 7000.
+ */
+function sarnia_update_7001() {
+  if (db_table_exists('sarnia_solr_service_schema')) {
+    return t('The Sarnia schema table already exists.');
+  }
+
+  $sarnia_solr_service_schema = array(
+    'description' => 'Map behaviors of Solr fields',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'search_api_server' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'behavior' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'match_type' => array(
+        'description' => '"name", "dynamicbase", or "type"',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'match_value' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'effect' => array(
+        'description' => '"disable" or "replace"',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'replacement' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'enabled' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+        'size' => 'tiny',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  db_create_table('sarnia_solr_service_schema', $sarnia_solr_service_schema);
+  $query = db_insert('sarnia_solr_service_schema')
+    ->fields(array(
+      'search_api_server',
+      'behavior',
+      'match_type',
+      'match_value',
+      'effect',
+      'replacement',
+    ));
+  foreach (sarnia_solr_service_schema_defaults() as $values) {
+    $query->values($values);
+  }
+  $query->execute();
+
+  return t('Created and populated the Sarnia schema table.');
+}

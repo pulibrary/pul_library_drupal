@@ -1,0 +1,14 @@
+name = Articles and Databases Display Pages
+description = Displays the subjects pages for articles and databases
+core = 7.x
+package = PUL Custom Features
+php = 5.2.4
+version = 7.x-1.0-dev1
+project = articles_and_databases_display_pages
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:1
+features[page_manager_handlers][] = term_view_panel_context
+features[page_manager_handlers][] = term_view_panel_context_2
+features[page_manager_handlers][] = term_view_panel_context_3
