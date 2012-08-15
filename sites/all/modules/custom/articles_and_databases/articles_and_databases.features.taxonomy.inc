@@ -36,7 +36,7 @@ function articles_and_databases_taxonomy_default_vocabularies() {
       'name' => 'Database Subjects',
       'machine_name' => 'database_subjects',
       'description' => 'Research Disciplines at PUL',
-      'hierarchy' => '0',
+      'hierarchy' => '1',
       'module' => 'taxonomy',
       'weight' => '0',
       'rdf_mapping' => array(

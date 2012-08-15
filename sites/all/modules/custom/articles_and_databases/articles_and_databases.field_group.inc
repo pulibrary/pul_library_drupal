@@ -76,6 +76,63 @@ function articles_and_databases_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_db_copyright_access|node|database|default';
+  $field_group->group_name = 'group_db_copyright_access';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'database';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Copyright & Access',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_db_access_note',
+      1 => 'field_db_copyright_information',
+      2 => 'field_db_mobile_support',
+      3 => 'field_db_location_access_note',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_db_copyright_access|node|database|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_db_display_otherurls|node|database|default';
+  $field_group->group_name = 'group_db_display_otherurls';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'database';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Links',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_db_alternative_urls',
+      1 => 'field_db_keywords',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Links',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_db_display_otherurls|node|database|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_db_ezproxyifno|node|database|form';
   $field_group->group_name = 'group_db_ezproxyifno';
   $field_group->entity_type = 'node';
