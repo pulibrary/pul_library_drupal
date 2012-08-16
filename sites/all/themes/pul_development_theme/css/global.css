@@ -128,8 +128,11 @@ h1 {
     margin: 0.67em 0;
 }
 
-h2 {
+h2,
+h2.block-title{
+    font-family: Arvo, sans-serif;
     font-size: 1.5em;
+    font-weight:normal;
     margin: 0.83em 0;
 }
 
@@ -503,6 +506,7 @@ table {
 }
 
 
+<<<<<<< HEAD
 /* =============================================================================
    Menu
    ========================================================================== */
@@ -524,3 +528,5 @@ ul li.leaf {
     background: none repeat scroll 0 0 transparent;
     color: #FFFFFF;
 }
+=======
+>>>>>>> CSS & Font Your Face
