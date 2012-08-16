@@ -504,29 +504,3 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
-
-<<<<<<< HEAD
-/* =============================================================================
-   Menu
-   ========================================================================== */
-
-
-ul li.leaf {
-    list-style-image:none;
-    list-style-type: none;
-}
-
-
-.sf-menu.sf-style-space-orange li:hover,
-.sf-menu.sf-style-space-orange li.sfHover,
-.sf-menu.sf-style-space-orange li.active a,
-.sf-menu.sf-style-space-orange a:focus,
-.sf-menu.sf-style-space-orange a:hover,
-.sf-menu.sf-style-space-orange a:active,
-.sf-menu.sf-style-space-orange.sf-navbar li li {
-    background: none repeat scroll 0 0 transparent;
-    color: #FFFFFF;
-}
-=======
->>>>>>> CSS & Font Your Face
