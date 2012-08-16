@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Databases by Subject feature.
+ */
+
+include_once 'databases_by_subject.features.inc';
