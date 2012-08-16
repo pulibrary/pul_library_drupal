@@ -2,13 +2,17 @@
   $(document).ready(function() {
   	
 	//	$('#catalog-search-results').replaceWith('<p>Crazy Time</p>')	
-	var query = "cats";
+	var query = "firestone";
 	console.log(query);
-        $.getJSON('/searchit/find/any/cats', function(data) {
+        $.getJSON('/searchit/find/any/'+query, function(data) {
   		var items = [];
-
-  		$.each(data, function(key, val) {
-    			items.push('<li id="' + key + '">' + val + '</li>');
+		var more_link = data.more;
+		var num_results = data.number;
+		var records = data.records;
+		console.log(records);
+  		$.each(records, function(result) {
+			console.log(records[0]);
+    			items.push('<li><a href="' + result.url + '" target="_blank">' + result.title + '</a></li>');
   		});
                 console.log(items);
   		$('<ul/>', {
