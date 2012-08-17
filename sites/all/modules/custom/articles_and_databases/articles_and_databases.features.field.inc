@@ -3525,7 +3525,163 @@ function articles_and_databases_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '31',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-database_subjects-field_subs_other_guides'.
+  $fields['taxonomy_term-database_subjects-field_subs_other_guides'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_subs_other_guides',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'database_subjects',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Additional Library Guides for Subject. ',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 5,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_subs_other_guides',
+      'label' => 'Other Guides',
+      'required' => 1,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'default',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'required',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-database_subjects-field_subs_primary_library_guide'.
+  $fields['taxonomy_term-database_subjects-field_subs_primary_library_guide'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_subs_primary_library_guide',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'database_subjects',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'URL of Primary Library Guide for the subject. ',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 4,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_subs_primary_library_guide',
+      'label' => 'Primary Library Guide',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'default',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'value',
+        'title_maxlength' => '128',
+        'title_value' => 'Library Guide',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '9',
       ),
     ),
   );
@@ -3617,7 +3773,7 @@ function articles_and_databases_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '32',
+        'weight' => '6',
       ),
     ),
   );
@@ -3712,7 +3868,7 @@ function articles_and_databases_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '1',
+        'weight' => '3',
       ),
     ),
   );
@@ -3807,7 +3963,7 @@ function articles_and_databases_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -4134,6 +4290,7 @@ function articles_and_databases_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Access URL');
+  t('Additional Library Guides for Subject. ');
   t('Affected Databases');
   t('Alternative URLs');
   t('Configuration File');
@@ -4166,7 +4323,9 @@ function articles_and_databases_field_default_fields() {
   t('Main URL users should use to access this resource. ');
   t('Mobile Support');
   t('On Campus Only');
+  t('Other Guides');
   t('Physical Location Notes. ');
+  t('Primary Library Guide');
   t('Provide the description you would like to use instead of the original title of the resource. ');
   t('Proxy Configuration');
   t('Requires Special EZproxy Configuration');
@@ -4188,6 +4347,7 @@ function articles_and_databases_field_default_fields() {
   t('Title Overrides');
   t('Trial');
   t('Trial Start Date');
+  t('URL of Primary Library Guide for the subject. ');
   t('Use EZproxy');
   t('Use if the resource is a member of a particular database grouping like gale, ebscohost, or Adams Mitchell. ');
   t('Voyager ID');

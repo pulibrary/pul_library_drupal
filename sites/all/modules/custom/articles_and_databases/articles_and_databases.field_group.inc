@@ -307,5 +307,117 @@ function articles_and_databases_field_group_info() {
   );
   $export['group_dboverride_admininfo|node|alternative_database_title|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sub_guides|taxonomy_term|database_subjects|form';
+  $field_group->group_name = 'group_sub_guides';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'database_subjects';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Library Guides',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_subs_primary_library_guide',
+      1 => 'field_subs_other_guides',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_sub_guides|taxonomy_term|database_subjects|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_subs_specialist_info|taxonomy_term|database_subjects|form';
+  $field_group->group_name = 'group_subs_specialist_info';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'database_subjects';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Subject Specialist Info',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_subs_import_id',
+      1 => 'field_subs_specialist',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_subs_specialist_info|taxonomy_term|database_subjects|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_subs_tier_one_list|taxonomy_term|database_subjects|form';
+  $field_group->group_name = 'group_subs_tier_one_list';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'database_subjects';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tier One Resource List',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_subs_tier_one_resources',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Tier One Resource List',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_subs_tier_one_list|taxonomy_term|database_subjects|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_subs_tier_two_list|taxonomy_term|database_subjects|form';
+  $field_group->group_name = 'group_subs_tier_two_list';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'database_subjects';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tier Two Resource List',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_subs_tier_two_resources',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Tier Two Resource List',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_subs_tier_two_list|taxonomy_term|database_subjects|form'] = $field_group;
+
   return $export;
 }
