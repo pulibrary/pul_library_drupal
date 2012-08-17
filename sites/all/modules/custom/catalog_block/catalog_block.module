@@ -138,6 +138,7 @@ function catalog_block_block_save($delta = '', $edit = array()) {
  * 
  * Adds URL contextual filter to json request.
  */
+/*
 function catalog_block_block_view_alter(&$data, $block) {
   if($block->delta == "catalog_search_results") {
     echo "Testing";
@@ -145,6 +146,7 @@ function catalog_block_block_view_alter(&$data, $block) {
     //dpm("block time");
   }
 }
+*/
 
 
 /**
