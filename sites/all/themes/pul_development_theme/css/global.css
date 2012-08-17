@@ -128,8 +128,11 @@ h1 {
     margin: 0.67em 0;
 }
 
-h2 {
+h2,
+h2.block-title{
+    font-family: Arvo, sans-serif;
     font-size: 1.5em;
+    font-weight:normal;
     margin: 0.83em 0;
 }
 
@@ -500,27 +503,4 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-
-/* =============================================================================
-   Menu
-   ========================================================================== */
-
-
-ul li.leaf {
-    list-style-image:none;
-    list-style-type: none;
-}
-
-
-.sf-menu.sf-style-space-orange li:hover,
-.sf-menu.sf-style-space-orange li.sfHover,
-.sf-menu.sf-style-space-orange li.active a,
-.sf-menu.sf-style-space-orange a:focus,
-.sf-menu.sf-style-space-orange a:hover,
-.sf-menu.sf-style-space-orange a:active,
-.sf-menu.sf-style-space-orange.sf-navbar li li {
-    background: none repeat scroll 0 0 transparent;
-    color: #FFFFFF;
 }
