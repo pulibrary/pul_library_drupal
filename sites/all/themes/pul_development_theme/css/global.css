@@ -67,7 +67,7 @@ html {
     font-size: 0.75em; /* 1 */
     -webkit-text-size-adjust: 0.75em; /* 2 */
     -ms-text-size-adjust: 0.75em; /* 2 */
-    /* background:url(../images/home-BG.gif) repeat-x 0 0 #fff; */
+    
 }
 
 /*
@@ -88,6 +88,11 @@ textarea {
 
 body {
     margin: 0;
+background:url(../images/BG.gif) repeat-x 0 0 #fff;
+}
+
+body.front {
+background:url(../images/home-BG.gif) repeat-x 0 0 #fff;
 }
 
 
@@ -130,6 +135,7 @@ h1 {
 
 h2,
 h2.block-title{
+    color:#0098f4;
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
