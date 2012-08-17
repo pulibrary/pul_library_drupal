@@ -37,7 +37,7 @@ function catalog_block_contents() {
 
 function catalog_search_results_content() {
   $block_content = array(
-    '#markup' => "<div id='catalog-search-results'>" . t('data goes here') . "</div>",
+    '#markup' => "<div id='catalog-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
@@ -134,6 +134,20 @@ function catalog_block_block_save($delta = '', $edit = array()) {
 }
 
 /**
+ * Implmennts hook_block_view_alter()
+ * 
+ * Adds URL contextual filter to json request.
+ */
+function catalog_block_block_view_alter(&$data, $block) {
+  if($block->delta == "catalog_search_results") {
+    echo "Testing";
+    var_dump($block);
+    //dpm("block time");
+  }
+}
+
+
+/**
  * Implements hook_block_view().
  *
  * This hook generates the contents of the blocks themselves.
@@ -149,6 +163,7 @@ function catalog_block_block_view($delta = '') {
   } elseif ($delta == 'catalog_search_results') {
     $block['subject'] = t('Books+ Search Results');
     $block['content'] = catalog_search_results_content($delta);
+    drupal_add_js(array('catalog_block' => array('request' => 'query')), 'setting');
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_search_results.js');  
   } 
   return $block;
