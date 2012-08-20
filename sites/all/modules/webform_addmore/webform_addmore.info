@@ -1,0 +1,16 @@
+; $Id$
+name = Webform Add More
+description = Webform add more fieldset setting.
+package = Webform
+
+dependencies[] = webform
+
+files[] = webform_addmore.install
+files[] = webform_addmore.module
+
+; Information added by drupal.org packaging script on 2012-01-22
+version = "7.x-1.01"
+core = "7.x"
+project = "webform_addmore"
+datestamp = "1327219861"
+
