@@ -56,6 +56,8 @@ function font_awesome_menu() {
 
 /**
  * Implementation of hook_wysiwyg_editor_settings_alter().
+ *
+ * See discussion at http://drupal.org/node/440552
  * 
  */
 function font_awesome_wysiwyg_editor_settings_alter(&$settings, $context) {
