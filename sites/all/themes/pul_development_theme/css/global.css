@@ -79,7 +79,8 @@ button,
 input,
 select,
 textarea {
-    font-family: sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    color:#666;
 }
 
 /*
@@ -129,8 +130,11 @@ a:active {
  */
 
 h1 {
+    color:#F58026;
+    font-family: Arvo, sans-serif;
     font-size: 2em;
     margin: 0.67em 0;
+    font-weight:normal;
 }
 
 h2,
@@ -160,6 +164,13 @@ h5 {
 h6 {
     font-size: 0.75em;
     margin: 2.33em 0;
+}
+
+#section-footer h2.block-title{
+color:#3c3c3c;
+font-size: 1.167em;
+margin:0;
+padding:10px 0 5px 0;
 }
 
 /*
@@ -509,4 +520,8 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+#section-content{
+padding:0 0 2em 0;
 }

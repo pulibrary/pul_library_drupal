@@ -326,18 +326,18 @@ display:block;
    ========================================================================== */
 
 
-#block-menu-menu-get-help-menu{
+.front #block-menu-menu-get-help-menu{
 padding: 23px 0 0 0;
 margin-left:-11px;
 }
 
-#block-menu-menu-get-help-menu .content{
+.front #block-menu-menu-get-help-menu .content{
 background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 padding:0;
 height: 137px;
 }
 
-#block-menu-menu-get-help-menu h2.block-title{
+.front #block-menu-menu-get-help-menu h2.block-title{
 padding:3px 0 3px 48px;
 margin:0;
 color:#ffffff;
@@ -350,32 +350,32 @@ border-right:1px solid #000;
 border-bottom:1px solid #000;*/
 }
 
-#block-menu-menu-get-help-menu ul.menu{
-padding:14px 12px 11px 12px;
+.front #block-menu-menu-get-help-menu ul.menu{
+padding:7px 12px 9px 12px;
 background:url(../images/gethelpmenu-top.gif) no-repeat -1px 0 transparent;
 }
 
-#block-menu-menu-get-help-menu .block-inner{
+.front #block-menu-menu-get-help-menu .block-inner{
 border-left:1px solid #000;
 }
 
-#block-menu-menu-get-help-menu ul.menu li a{
+.front #block-menu-menu-get-help-menu ul.menu li a{
 color:#c78654;
 text-decoration:none;
-font-size:0.917em;
+font-size:0.833em;
 }
 
-#block-menu-menu-get-help-menu ul.menu li a:hover{
+.front #block-menu-menu-get-help-menu ul.menu li a:hover{
 color:#333;
 }
 
-#block-menu-menu-get-help-menu ul.menu li{
+.front #block-menu-menu-get-help-menu ul.menu li{
 border-bottom:1px dotted #b3b4b5;
 margin:0;
-padding:1px 0;
+padding:0;
 }
 
-#block-menu-menu-get-help-menu ul.menu li.last{
+.front #block-menu-menu-get-help-menu ul.menu li.last{
 border-bottom:none;
 }
 
@@ -388,14 +388,25 @@ margin:0;
    ========================================================================== */
 
 #block-menu-menu-secondary-research-links-ho{
+display:block;
+float:left;
+padding:0 0 0 45px;
+}
+
+#block-menu-menu-secondary-research-links-ho .block-inner{
+display:block;
 padding:31px 0 0 21px;
 background:url(../images/research-menu-left.png) no-repeat 0 31px transparent;
 }
 
-#block-menu-menu-secondary-research-links-ho ul.menu{
+#block-menu-menu-secondary-research-links-ho .block-inner .content{
 display:block;
 padding:0 21px 0 0;
 background:url(../images/research-menu-right.png) no-repeat right center transparent;
+}
+
+#block-menu-menu-secondary-research-links-ho ul.menu{
+display:block;
 }
 
 #block-menu-menu-secondary-research-links-ho ul.menu li{
@@ -414,3 +425,65 @@ font-size:0.917em;
 #block-menu-menu-secondary-research-links-ho ul.menu li a:hover{
 color:#333;
 }
+
+
+/* =============================================================================
+   RENOVATION NEWS
+   ========================================================================== */
+
+#renovation-news-block img{
+float:left;
+padding:0 10px 10px 0;
+}
+
+#region-postscript-second .region-postscript-second-inner{
+padding:0 28px;
+}
+
+
+/* =============================================================================
+   SLIDER
+   ========================================================================== */
+
+.slides li img{
+display:block;
+height:105px;
+}
+
+
+
+/* =============================================================================
+   FOOTER
+   ========================================================================== */
+
+#section-footer{
+padding-bottom:1em;
+height:100%;
+}
+
+#section-footer ul.menu li{
+padding:0;
+margin:0;
+font-size:0.833em;
+}
+
+#section-footer ul.menu li a{
+color:#505050;
+text-decoration:none;
+}
+
+#section-footer ul.menu li a:hover{
+color:#F58026;
+}
+
+#section-footer .block-menu{
+border-left:1px solid #fff;
+padding-left:8px;
+min-height:225px;
+}
+
+#section-footer #footer-logo-block{
+padding:10px 0 0 0;
+font-size:0.833em;
+}
+
