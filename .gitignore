@@ -6,6 +6,8 @@ sites/*/files
 sites/*/private
 # ignore tarballs
 *.tar
+# ignore zip files
+*.zip
 # ignore eclipse system files
 .settings/*
 .project
