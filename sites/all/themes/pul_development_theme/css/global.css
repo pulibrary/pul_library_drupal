@@ -619,3 +619,11 @@ background-position: -42px -28px;
 border-top:1px dotted #bfbfbf;
 border-bottom:1px dotted #bfbfbf;
 }
+
+/* ========================================================================
+   Set bases styles for certain elements in mobile view
+ * ======================================================================== */
+
+.view-id-libraries_and_collections.view-display-id-block_1 {
+  display: none;
+}
