@@ -91,28 +91,29 @@ width:320px;
 clear:none;
 display:block;
 float:right;
-width:570px;
 height:50px;
-padding:0 4px;
+padding:0;
+}
+
+#zone-branding-wrapper #block-system-main-menu .block-inner{
+background:url(../images/mainnav-bg-left.png) no-repeat left center transparent;
+height:50px;
+padding-left:5px;
+}
+
+#zone-branding-wrapper #block-system-main-menu .block-inner .content{
+background:url(../images/mainnav-bg-last.png) no-repeat right center transparent;
+height:50px;
+padding-right:5px;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li{
 display:block;
 height:40px;
-margin:0;
-padding:5px 0;
-background:url(../images/mainnav-bg-tile.png) repeat-x left top transparent;
+padding:0;
+margin:5px 0 0 0;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li.first{
-padding-left:5px;
-background:url(../images/mainnav-bg-first.png) no-repeat left top transparent;
-}
-
-#zone-branding-wrapper #block-system-main-menu ul.menu li.last{
-padding-right:5px;
-background:url(../images/mainnav-bg-last.png) no-repeat right top transparent;
-}
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li a{
 display:block;
@@ -132,15 +133,10 @@ background-position:left center;
 background-image:none;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li a:hover{
-color:#83d5fe;
-}
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li a:hover,
+#zone-branding-wrapper #block-system-main-menu ul.menu li:hover,
 #zone-branding-wrapper #block-system-main-menu ul.menu li a.active{
 color:#fff;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
 -webkit-box-shadow: 0px 0px 2px #666666;
 -moz-box-shadow: 0px 0px 2px #666666;
 text-shadow: 1px 1px 3px #666666;
@@ -150,7 +146,7 @@ background: -moz-linear-gradient(top, #00aafe, #007ae3);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#00aafe, endColorStr=#007ae3);
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li + li a:hover{
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover{
 background: #00aafe; /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYWFmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwOThmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
@@ -178,7 +174,7 @@ font-style:italic;
 clear:none;
 display:block;
 float:left;
-width:180px;
+width:175px;
 padding:0 20px 0 0;
 }
 
@@ -219,6 +215,7 @@ background-color:#0098F4;
 position:absolute;
 z-index:100;
 padding:10px 20px;
+top:43px;
 }
 
 .view-id-libraries_and_collections.view-display-id-block_1 h3{
