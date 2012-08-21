@@ -1,0 +1,96 @@
+<?php
+// $Id$
+
+/**
+ * Implements hook_form_alter_X().
+ *
+ * Add setting to webform fieldset components.
+ */
+function webform_addmore_form_webform_component_edit_form_alter(&$form, $form_state) {
+  if ($form['type']['#value'] != 'fieldset') {
+    return;
+  }
+  $settings = variable_get('webform_addmore_' . $form['nid']['#value'], array());
+
+  $form['display']['addmore'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add More fieldset'),
+    '#description' => t('A single Add More fieldset will be displayed with an Add More button.'),
+    '#default_value' => isset($settings[$form['cid']['#value']]) ? $settings[$form['cid']['#value']] : 0,
+    '#weight' => 99,
+  );
+}
+
+/**
+ * Save webform fieldset setting.
+ *
+ * @param $component
+ *   The Webform component being saved.
+ */
+function webform_addmore_webform_component_presave(&$component) {
+  if ($component['type'] != 'fieldset') {
+    return;
+  }
+
+  $settings = variable_get('webform_addmore_' . $component['nid'], array());
+  $settings[$component['cid']] = $component['display']['addmore'];
+  variable_set('webform_addmore_' . $component['nid'], $settings);
+}
+
+/**
+ * Implements hook_form_alter_X().
+ *
+ * Add setting to webform configure.
+ */
+function webform_addmore_form_webform_configure_form_alter(&$form, $form_state) {
+  $settings = variable_get('webform_addmore_' . $form['nid']['#value'], array());
+
+  $form['advanced']['addmore'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Add More button text'),
+    '#default_value' => $settings['label'],
+  );
+
+  $form['#submit'][] = 'webform_addmore_webform_configure_submit';
+}
+
+/**
+ * Save webform configure setting.
+ *
+ * @param $component
+ *   The Webform component being saved.
+ */
+function webform_addmore_webform_configure_submit($form, &$form_state) {
+  $settings = variable_get('webform_addmore_' . $form_state['values']['nid'], array());
+  $settings['label'] = $form_state['values']['addmore'];
+  variable_set('webform_addmore_' . $form_state['values']['nid'], $settings);
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Find form_key from cid and add JS.
+ */
+function webform_addmore_form_alter(&$form, &$form_state, $form_id) {
+  if (substr($form_id, 0, 19) != 'webform_client_form') {
+    return;
+  }
+
+  // Find form_key from cid.
+  $form_key = array();
+  $settings = variable_get('webform_addmore_' . $form['#node']->nid, array());
+  foreach ($settings as $cid => $enabled) {
+    if (is_int($cid) && $enabled) {
+      $form_key[] = 'webform-component-' . $form['#node']->webform['components'][$cid]['form_key'];
+    }
+  }
+
+  // Add JS.
+  if (count($form_key) > 1) {
+    drupal_add_js(drupal_get_path('module', 'webform_addmore') . '/js/webform_addmore.js');
+    drupal_add_js(array('webform_addmore' => array(
+        'fieldsets' => $form_key,
+        'label' => $settings['label'] ? t($settings['label']) : t('Add more'),
+      )), array('type' => 'setting', 'scope' => JS_DEFAULT));
+  }
+}
