@@ -10,4 +10,3 @@ dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[views_view][] = libraries_and_collections
-; project status url = http://library.princeton.edu/projects/custom/pul_libraries_collections_views

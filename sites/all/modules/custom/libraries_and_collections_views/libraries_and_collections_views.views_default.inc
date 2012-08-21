@@ -63,7 +63,6 @@ function libraries_and_collections_views_views_default_views() {
   $handler->display->display_options['filters']['vid']['value'] = array(
     7 => '7',
     8 => '8',
-    4 => '4',
   );
 
   /* Display: Libraries and Collections List */
@@ -194,15 +193,28 @@ function libraries_and_collections_views_views_default_views() {
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
   $handler->display->display_options['filters']['vid']['id'] = 'vid';
   $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['filters']['vid']['field'] = 'vid';
   $handler->display->display_options['filters']['vid']['value'] = array(
-    7 => '7',
     8 => '8',
   );
+  $handler->display->display_options['filters']['vid']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Add to Libraries &amp; Collections Dropdown Menu (field_libs_cols_main_menu) */
+  $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['id'] = 'field_libs_cols_main_menu_value';
+  $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['table'] = 'field_data_field_libs_cols_main_menu';
+  $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['field'] = 'field_libs_cols_main_menu_value';
+  $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['group'] = 2;
   $handler->display->display_options['block_description'] = 'Libraries List Block';
 
   /* Display: Subject List */
