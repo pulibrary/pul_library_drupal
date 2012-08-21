@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for Awesome.
+ */
+
+// Include the Font Awesome utilities
+module_load_include('inc', 'font_awesome', 'font_awesome.util');
+
+/**
+ * Implements hook_requirements().
+ */
+function font_awesome_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+
+  if (!font_awesome_check_library()) {
+    $requirements['font_awesome'] = array(
+      'title' => $t('Font Awesome'), 
+      'value' => $t('Broken'), 
+      'description' => $t('Ensure that the Font Awesome library is within the libraries 
+			directory and named "font_awesome".'), 
+      'severity' => REQUIREMENT_ERROR,
+    );
+  }
+  else {
+    $requirements['font_awesome'] = array(
+      'title' => $t('Font Awesome'), 
+      'value' => $t('Enabled'), 
+    );
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function font_awesome_menu() {
+  $items = array();
+
+  $items['admin/config/font-awesome'] = array(
+    'title' => 'Font Awesome Demo', 
+    'page callback' => 'font_awesome_demo', 
+    'access arguments' => array('access content'),
+    'file' => 'font_awesome.page.inc', 
+    'type' => MENU_CALLBACK,
+  ); 
+
+  return $items;
+}
+
+
+
+
+/**
+ * Implementation of hook_wysiwyg_editor_settings_alter().
+ *
+ * See discussion at http://drupal.org/node/440552
+ * 
+ */
+function font_awesome_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if ($context['profile']->editor == 'tinymce') {
+    // Add complete DIV Tag setting if not existing
+    $settings['extended_valid_elements'] .= ',i[class|style|align]';
+  }
+}
+
+
+
+/**
+ * Implements hook_page_init().
+ */
+function font_awesome_init() {
+  if ($font_awesome_css = font_awesome_check_library()) {
+    // Add the Font Awesome library
+    drupal_add_css($font_awesome_css);
+  }
+}

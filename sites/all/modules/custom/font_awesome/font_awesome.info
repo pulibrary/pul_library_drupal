@@ -1,0 +1,6 @@
+name = Font Awesome
+description = Make Font Awesome Icons available
+package = PUL Utilities
+core = 7.x
+files[] = font_awesome.util.inc
+dependencies[] = libraries
