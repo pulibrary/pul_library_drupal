@@ -28,6 +28,33 @@ function summon_block_contents() {
 }
 
 
+function summon_search_results_content() {
+  $block_content = array(
+    '#markup' => "<div id='summon-search-results'>" . t('') . "</div>",
+  ); 
+  return $block_content;
+}
+
+function summon_search_guide_content() {
+  $block_content = array(
+    '#markup' => "<div id='summon-guide-results'>" . t('') . "</div>",
+  ); 
+  return $block_content;
+}
+
+function summon_search_recommendations_content() {
+  $block_content = array(
+    '#markup' => "<div id='summon-recommendation-results'>" . t('') . "</div>",
+  ); 
+  return $block_content;
+}
+
+function summon_search_spelling_suggestions_content() {
+  $block_content = array(
+    '#markup' => "<div id='summon-spelling-results'>" . t('') . "</div>",
+  ); 
+  return $block_content;
+}
 
 
 /**
@@ -75,7 +102,23 @@ function summon_block_block_info() {
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
-   return $blocks;
+  $blocks['summon_search_results'] = array(
+    'info' => t('Articles+ Search Results'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['summon_guide_results'] = array(
+    'info' => t('Library Guide Results'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['summon_recommendation_results'] = array(
+    'info' => t('Database Recommendations'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['summon_spelling_suggestion'] = array(
+    'info' => t('Did You Mean?'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
 }
 
 /**
@@ -124,11 +167,26 @@ function summon_block_block_view($delta = '') {
   if ($delta == 'summon_search') {
     $block['subject'] = t('Articles Search');
     $block['content'] = summon_block_contents($delta);
-  }
-  drupal_add_css(drupal_get_path('module', 'summon_block') .'/summon_block.css');
-  drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
-  drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
-  
+    drupal_add_css(drupal_get_path('module', 'summon_block') .'/summon_block.css');
+    drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
+  } elseif ($delta == 'summon_search_results') {
+    $block['subject'] = t('Articles+ Search Results');
+    $block['content'] = summon_search_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_search_results.js');  
+  } elseif ($delta == 'summon_guide_results') {
+    $block['subject'] = t('Library Guides');
+    $block['content'] = summon_search_guide_content($delta);
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_guide_results.js');  
+  } elseif ($delta == 'summon_recommendation_results') {
+    $block['subject'] = t('Database Recommendations');
+    $block['content'] = summon_search_recommendations_content($delta);
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_recommendation_results.js');  
+  } elseif ($delta == 'summon_spelling_suggestion') {
+    $block['subject'] = t('Spelling Suggestions');
+    $block['content'] = summon_search_spelling_suggestions_content($delta);
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_spelling_suggestion.js');  
+  } 
   return $block;
 }
 
