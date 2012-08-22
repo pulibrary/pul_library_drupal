@@ -8,7 +8,7 @@ function dbsearch_block_form($form, &$form_state) {
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
-    '#size'  => 40,
+    '#size'  => 20,
     '#default_value' => variable_get('db_search_hint')
   );
   $form['submit'] = array(
