@@ -15,13 +15,13 @@
 			var num_results = data.number;
 			var records = data.records;
   			$.each(records, function(index, result) {
-    				items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></li>');
+    				items.push('<li><a title="'+result['abstract'] + '" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="summon-format-type">' + result['format'] + '</span></li>');
 			});
   			$('<ul/>', {
     				'class': 'summon-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-results"><a href="'+more_link+'">'+data.number+' More Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="more-results"><a href="'+more_link+'">See '+data.number+' More Articles+ Results</a></div>"').appendTo('#summon-search-results');
 		});
 	}	
   });

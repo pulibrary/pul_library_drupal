@@ -26,7 +26,7 @@
       var spelling_suggestion = data[0];
       if(spelling_suggestion != undefined) {
         var suggested_search = base_url + spelling_suggestion; 
-        $('<span class="summon-suggestion">' + spelling_suggestion + "</span>").appendTo('#summon-spelling-results');
+        $('<span class="summon-suggestion">Did you Mean? <a href="'+ suggested_search + '" class="summon-suggestion-string">' + spelling_suggestion + "</a></span>").appendTo('#summon-spelling-results');
       } else {
         $('span class="no-summon-suggestions"></span>').appendTo('#summon-spelling-results');
       }
