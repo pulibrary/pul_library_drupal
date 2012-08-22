@@ -428,9 +428,7 @@ background:url(../images/gethelp.gif) no-repeat -1px 0 #0098f4;
 -webkit-border-top-right-radius: 4px;
 -moz-border-radius-topright: 4px;
 border-top-right-radius: 4px;
-/*border-top:1px solid #000;
-border-right:1px solid #000;
-border-bottom:1px solid #000;*/
+border-bottom:none;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
@@ -571,7 +569,8 @@ border-radius: 3px;
 margin:-32px 0 0 0;
 }
 
-#block-menu-menu-user-group-portals h2.block-title{
+#block-menu-menu-user-group-portals h2.block-title,
+#region-sidebar-second h2.block-title{
 color:#5c5e66;
 border-bottom:1px dotted #e5e5e5;
 margin-left:-10px;
@@ -580,12 +579,14 @@ margin-bottom:10px;
 padding:0 12px;
 }
 
-#block-menu-menu-user-group-portals ul.menu li a{
+#block-menu-menu-user-group-portals ul.menu li a,
+#region-sidebar-second ul.menu li a{
 color:#F58026;
 text-decoration:none;
 }
 
-#block-menu-menu-user-group-portals ul.menu li a:hover{
+#block-menu-menu-user-group-portals ul.menu li a:hover,
+#region-sidebar-second ul.menu li a:hover{
 color:#333;
 }
 
