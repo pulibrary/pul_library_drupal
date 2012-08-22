@@ -671,12 +671,65 @@ border-bottom:1px dotted #bfbfbf;
 
 .fc-event-time{
 display:block;
-padding:2px 0 0 2px;
+padding:0 0 2px 0;
 }
 
 .fullcalendar tbody td{
-padding:5px;
+padding:12px;
 }
+
+.fullcalendar table.fc-header{
+border:none;
+background-color:#fcfcfc;
+}
+
+.fc-header-title h2{
+margin:0;
+}
+
+.fc-event-default,
+.fc-event-default .fc-event-skin,
+.fc-event-default .fc-event-time,
+.fc-event-default a{
+background-color:#eee;
+border:none;
+color:#333;
+}
+
+a.fc-event{
+border-top:none;
+border-right:none;
+border-left:none;
+border-bottom:1px dotted #fff;
+}
+
+.fc-border-separate tr.fc-last th,
+.fc-border-separate tr.fc-last td{
+border-right:2px solid #fff;
+border-left:none;
+border-bottom:none;
+background-color:#f1f1f1;
+}
+
+table.fc-border-separate{
+border:none;
+}
+
+table.fc-border-separate tr th{
+border:none;
+font-weight:bold;
+font-size:1.167em;
+color:#0098F4;
+padding:10px 0 10px 10px;
+text-align:left;
+}
+
+.fc-event-inner{
+padding:10px 3px;
+line-height:1.2em;
+}
+
+
 
 
 /* ========================================================================
