@@ -28,19 +28,21 @@ function allsearch_block_form($form, &$form_state) {
     '#value' => t('Search'),
    );
    $form['#validate'] = array('allsearch_block_form_validate');
-   $form['#action'] = url('/find/all/cats', array('external' => true));
-   //$form['#redirect'] = url('find/all/');
-   #$form['#target'] = "_parent";
+   $form['#submit'] = array('allsearch_block_form_redirect');
    $form['#method'] = "post";
    return $form;
 
+}
+
+function allsearch_block_form_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'find/all/' . $form_state['values']['query'];
 }
 
 function allsearch_block_form_validate($form, &$form_state) {
   
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('all_search_hint')) {
-    form_set_error('term', t('Enter Search Terms'));
+    form_set_error('term', t('What do you want to search for?'));
   }
 }
 
