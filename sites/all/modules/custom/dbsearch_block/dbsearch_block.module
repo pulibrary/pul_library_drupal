@@ -15,9 +15,10 @@ function dbsearch_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
-   //$form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
+   $form['#validate'] = array('dbsearch_block_form_validate');
+   $form['#submit'] = array('dbsearch_block_form_redirect');
    $form['#target'] = "_parent";
-   $form['#method'] = "get";
+   $form['#method'] = "post";
    return $form;
 
 }
@@ -30,11 +31,17 @@ function dbsearch_block_form_validate($form, &$form_state) {
   }
 }
 
+function dbsearch_block_form_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'databases-results/' . $form_state['values']['query'];
+}
+
 function dbsearch_block_contents() {
   return drupal_get_form('dbsearch_block_form'); // must define a function 
 }
 
-
+function dbsearch_block_form_submit($form, &$form_state) {
+  drupal_set_message(t('Submitting values: @values', array('@values' => var_export($form_state['values'], TRUE))));
+}
 
 
 /**
