@@ -407,6 +407,10 @@ vertical-align:middle;
 display:block;
 }
 
+.front #allsearch-block-form .form-item-query{
+display:inline;
+}
+
 /* =============================================================================
    GET HELP
    ========================================================================== */
