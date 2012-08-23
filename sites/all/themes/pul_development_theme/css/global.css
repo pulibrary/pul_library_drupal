@@ -158,7 +158,7 @@ h3 {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.17em;
     margin: 1em 0;
-    color:#71e5ff;
+    color:#0098F4;
 }
 
 h4 {
@@ -532,6 +532,12 @@ table {
     border-spacing: 0;
 }
 
+tr:hover td,
+tr.even:hover td.active,
+tr.odd:hover td.active {
+background: transparent;
+}
+
 /* ========================================================================
    LAYOUT
  * ======================================================================== */
@@ -553,15 +559,32 @@ background:none;
    FORMS
  * ======================================================================== */
 
-input[type="text"]{
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"]{
 border:1px solid #727272;
 padding:5px 0 5px 10px;
+}
+
+select{
+padding:2px 3px;
 }
 
 button, input[type="reset"],
 input[type="submit"],
 input[type="button"]{
-border-top: 1px solid #888888;
 background: #f36e20;
 background: -webkit-gradient(linear, left top, left bottom, from(#f7952c), to(#f36e20));
 background: -webkit-linear-gradient(top, #f7952c, #f36e20);
@@ -569,9 +592,9 @@ background: -moz-linear-gradient(top, #f7952c, #f36e20);
 background: -ms-linear-gradient(top, #f7952c, #f36e20);
 background: -o-linear-gradient(top, #f7952c, #f36e20);
 padding: 4px 10px 3px 10px;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
 text-shadow: rgba(0,0,0,.4) 0 1px 0;
 color: white;
 text-decoration: none;
@@ -580,6 +603,13 @@ font-family: 'PT Sans', sans-serif;
 font-weight:normal;
 }
 
+.form-item{
+padding:0 0 10px 0;
+}
+
+.webform-container-inline label{
+display:block;
+}
 
 /* =============================================================================
    FLEX SLIDER
@@ -675,53 +705,159 @@ padding:0 0 2px 0;
 }
 
 .fullcalendar tbody td{
+padding:4px;
+}
+
+.page-hours .fullcalendar tbody td{
 padding:12px;
 }
 
 .fullcalendar table.fc-header{
+border-top:none;
+border-right:2px solid #fff;
+border-left:none;
+border-bottom:1px solid #999;
+background-color:#F58026;
+margin-bottom:0;
+}
+
+.panel-col-last .fullcalendar table.fc-header{
 border:none;
-background-color:#fcfcfc;
+background-color:transparent;
+margin-bottom:0;
+}
+
+.panel-col-last .fc-border-separate tr.fc-last td.fc-today{
+border-left:1px solid #ddd;
+}
+
+.panel-col-last .fc-border-separate tr.fc-last th{
+border:1px solid #ddd;
+background-color: #EFFCFF;
+font-size:1.167em;
+}
+
+.panel-col-last .fc-border-separate tr.fc-last th.fc-last{
+border-width:1px;
 }
 
 .fc-header-title h2{
-margin:0;
+margin:4px 0 0 0;
+color:#fff;
+font-size:1.167em;
+}
+
+.page-hours .fc-header-title h2{
+font-size:1.667em;
 }
 
 .fc-event-default,
 .fc-event-default .fc-event-skin,
 .fc-event-default .fc-event-time,
 .fc-event-default a{
-background-color:#eee;
+background-color:transparent;
 border:none;
-color:#333;
+color:#666;
 }
 
-a.fc-event{
+.fc-event-title{
+color:#0098F4;
+}
+
+a.fc-event .fc-event-inner{
 border-top:none;
 border-right:none;
 border-left:none;
-border-bottom:1px dotted #fff;
+border-bottom:1px dashed #ddd;
 }
 
-.fc-border-separate tr.fc-last th,
 .fc-border-separate tr.fc-last td{
-border-right:2px solid #fff;
-border-left:none;
-border-bottom:none;
-background-color:#f1f1f1;
+border-left:2px solid #fff;
+border-right:none;
+border-bottom:1px solid #ddd;
+}
+
+.fc-border-separate tr.fc-last td.fc-first{
+border-left:1px solid #ddd;
+}
+
+.fc-border-separate tr.fc-last td.fc-last{
+border-right:1px solid #ddd;
+}
+
+.fc-border-separate tr.fc-last td.fc-today,
+.fc-border-separate tr.fc-last td.fc-today + td{
+border-left:2px solid #ddd;
+}
+
+.fc-border-separate tr.fc-last th{
+border-left:2px solid #ddd;
+border-right:none;
+border-bottom:2px solid #ddd;
+border-top:none;
+}
+
+.fc-border-separate tr.fc-last th.fc-last{
+border-right:2px solid #ddd;
+}
+
+.fc-border-separate tr.fc-last td{
+background-color:#effcff;
+}
+
+.fc-border-separate tr.fc-last td.fc-today{
+background-color:#fff;
+}
+
+.fc-border-separate tr.fc-last td.fc-today div{
+background:url(../images/today-bg.png) no-repeat -37px 0 #fff;
+margin:-60px -4px -4px -4px;
+padding:48px 4px 0 4px;
+}
+
+.page-hours .fc-border-separate tr.fc-last td.fc-today div{
+background:url(../images/today-bg.png) no-repeat 0 0 #fff;
+width:108px;
+min-height: 645px;
+padding:48px 12px 0 12px;
+margin:-60px -12px -12px -12px;
+}
+
+.fc-view-basicDay .fc-border-separate tr.fc-last td.fc-today div{
+background:none;
+margin:0;
+padding:0;
+}
+
+.fc-border-separate tr.fc-last td.fc-today div > div,
+.page-hours .fc-border-separate tr.fc-last td.fc-today div > div{
+background:none;
+margin:0;
+padding:0;
+width:auto;
+height:auto;
+border:none;
 }
 
 table.fc-border-separate{
-border:none;
+border-top:none;
+border-right:2px solid #FCFCFC;
+border-bottom:none;
+border-left:none;
 }
 
 table.fc-border-separate tr th{
+background-color:#fff;
+padding:10px 0;
 border:none;
-font-weight:bold;
-font-size:1.167em;
-color:#0098F4;
-padding:10px 0 10px 10px;
-text-align:left;
+font-weight:normal;
+font-size:.750em;
+color:#333;
+text-align:center;
+}
+
+.page-hours table.fc-border-separate tr th{
+font-size:1.333em;
 }
 
 .fc-event-inner{
@@ -730,7 +866,61 @@ line-height:1.2em;
 }
 
 
+.fc-state-default .fc-button-effect span{
+display:none;
+}
 
+.fc-state-default, .fc-state-default .fc-button-inner{
+border:none;
+background-color:transparent;
+color:#fff;
+}
+
+/*.fc-header-left .fc-state-default,
+.fc-header-right .fc-state-default{
+   border-top: 1px solid #f5ab71;
+   background: #b8601e;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff8528), to(#de7422));
+   background: -webkit-linear-gradient(top, #ff8528, #de7422);
+   background: -moz-linear-gradient(top, #ff8528, #de7422);
+   background: -ms-linear-gradient(top, #ff8528, #de7422);
+   background: -o-linear-gradient(top, #ff8528, #de7422);
+   padding: 3px 6px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+-moz-box-shadow: 0 0 2px 0 #5a2f0e;
+-webkit-box-shadow: 0 0 2px 0 #5a2f0e;
+box-shadow: 0 0 2px 0 #5a2f0e;
+   color: white;
+   text-decoration: none;
+   vertical-align: middle;
+}*/
+
+.fc-state-default{
+    margin-top:3px;
+   border: 1px solid #333333;
+   background: #b8601e;
+   background: -webkit-gradient(linear, left top, left bottom, from(#777777), to(#535353));
+   background: -webkit-linear-gradient(top, #777777, #535353);
+   background: -moz-linear-gradient(top, #777777, #535353);
+   background: -ms-linear-gradient(top, #777777, #535353);
+   background: -o-linear-gradient(top, #777777, #535353);
+   padding: 0px 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+-moz-box-shadow: 0 0 2px 0 #5e310f;
+-webkit-box-shadow: 0 0 2px 0 #5e310f;
+box-shadow: 0 0 2px 0 #5e310f;
+   color: white;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
+.fc .fc-header-space {
+    padding-left: 20px;
+}
 
 /* ========================================================================
    Set bases styles for certain elements in mobile view
