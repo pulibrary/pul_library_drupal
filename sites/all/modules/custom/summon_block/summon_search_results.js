@@ -6,6 +6,7 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(path.lastIndexOf('/') + 1); //FIXME 
+        query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
@@ -21,7 +22,7 @@
     				'class': 'summon-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-results"><a href="'+more_link+'">See '+data.number+' More Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="more-results"><a href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 		});
 	}	
   });

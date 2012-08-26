@@ -21,9 +21,9 @@
     				'class': 'summon-guide-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-				$('<div class="more-results"><a href="'+data.more+'">More Research Guides</a></div>"').appendTo('#summon-guide-results');
+				$('<div class="more-results">See all <a href="'+data.more+'"> Research Guides</a></div>"').appendTo('#summon-guide-results');
 			} else {
-				$('<div class="more-results"><a href="'+libguides_url+'">Browse Research Guides</a></div>"').appendTo('#summon-guide-results');
+				$('<div class="more-results"><a href="'+libguides_url+'">Browse Library Research Guides</a></div>"').appendTo('#summon-guide-results');
 			}
 		});
 	}	

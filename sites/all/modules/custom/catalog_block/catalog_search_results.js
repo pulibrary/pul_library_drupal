@@ -6,6 +6,7 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
+	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
 	} else {
@@ -19,9 +20,9 @@
     					'class': 'catalog-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-				$('<div class="more-results"><a href="'+data.more+'">See '+data.number+ ' More Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				$('<div class="more-results"><a href="'+data.more+'">See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 			} else {
-				$('<div class="no-results">No Results from Books+</div>"').appendTo('#catalog-search-results');
+				$('<div class="no-results">No Results from Books+ for '+query+'</div>"').appendTo('#catalog-search-results');
 			}
 		});
 	}	

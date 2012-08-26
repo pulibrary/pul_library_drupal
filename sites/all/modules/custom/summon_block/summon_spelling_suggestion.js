@@ -6,7 +6,7 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(path.lastIndexOf('/') + 1); //FIXME 
-  var base_url = "/find/all/";
+        var base_url = "/find/all/";
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-spelling-results');
 	} else {

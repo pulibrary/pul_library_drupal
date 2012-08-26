@@ -10,6 +10,8 @@ function allsearch_block_form($form, &$form_state) {
   $path = allsearch_block_get_current_filter($_GET['q']);
   
   if(isset($path)) {
+    // strip out slashes 
+    
     $default_value = $path;
   } else {
     $default_value = variable_get('all_search_hint');
