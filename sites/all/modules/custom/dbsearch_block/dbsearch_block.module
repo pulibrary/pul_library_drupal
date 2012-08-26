@@ -14,6 +14,7 @@ function dbsearch_block_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
+    '#suffix' => '<div style="clear: both;">Browse <a href="/find/databases/">A to Z</a> | <a href="/find/databases/subjects">By Subject</a></div>',
    );
    $form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
