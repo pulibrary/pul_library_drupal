@@ -1,19 +1,22 @@
 <?php
-/*
-function allsearch_block_menu() {
-  $items = array();
-  $items['allsearch_block/form'] = array(
-    'title' => t('All Search Block'),
-    'page callback' => 'allsearch_block_form',
-    'access arguments' => array('access content'),
-    'description' => t('My form'),
-    'type' => MENU_CALLBACK,
-  );
-  return $items;
+function allsearch_block_get_current_filter($path) {
+  $path_parts = explode("find/all/", $path);
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
 }
-*/
+
 function allsearch_block_form($form, &$form_state) {
+  $path = allsearch_block_get_current_filter($_GET['q']);
+  
+  if(isset($path)) {
+    // strip out slashes 
     
+    $default_value = $path;
+  } else {
+    $default_value = variable_get('all_search_hint');
+  }
+  
   $form = array();
 
   $form['query'] = array (
@@ -21,26 +24,28 @@ function allsearch_block_form($form, &$form_state) {
     '#title' =>  t('All Search'),
     '#size'  => 40,
     '#required' => TRUE,
-    '#default_value' => variable_get('all_search_hint')
+    '#default_value' => $default_value
   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
    );
    $form['#validate'] = array('allsearch_block_form_validate');
-   $form['#action'] = url('/find/all/cats', array('external' => true));
-   //$form['#redirect'] = url('find/all/');
-   #$form['#target'] = "_parent";
+   $form['#submit'] = array('allsearch_block_form_redirect');
    $form['#method'] = "post";
    return $form;
 
+}
+
+function allsearch_block_form_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'find/all/' . $form_state['values']['query'];
 }
 
 function allsearch_block_form_validate($form, &$form_state) {
   
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('all_search_hint')) {
-    form_set_error('term', t('Enter Search Terms'));
+    form_set_error('term', t('What do you want to search for?'));
   }
 }
 

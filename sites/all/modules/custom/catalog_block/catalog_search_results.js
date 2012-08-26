@@ -6,22 +6,24 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
+	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
 	} else {
         	$.getJSON('/searchit/find/any/'+query, function(data) {
   			var items = [];
-			var more_link = data.more;
-			var num_results = data.number;
-			var records = data.records;
-  			$.each(records, function(index, result) {
-    				items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></li>');
-			});
-  			$('<ul/>', {
-    				'class': 'catalog-search-results-list',
-    				html: items.join('')
-  			}).appendTo('#catalog-search-results');
-			$('<div class="more-results"><a href="'+more_link+'">More Books+ Results</a></div>"').appendTo('#catalog-search-results');
+			if(data.number > 0) {
+  				$.each(data.records, function(index, result) {
+    					items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="format-type">' + result['format'] + '</span></li>');
+				});
+  				$('<ul/>', {
+    					'class': 'catalog-search-results-list',
+    					html: items.join('')
+  				}).appendTo('#catalog-search-results');
+				$('<div class="more-results"><a href="'+data.more+'">See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
+			} else {
+				$('<div class="no-results">No Results from Books+ for '+query+'</div>"').appendTo('#catalog-search-results');
+			}
 		});
 	}	
   });
