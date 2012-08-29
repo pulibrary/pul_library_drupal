@@ -151,7 +151,7 @@ h2.block-title{
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
-    padding: 0.83em 0;
+    padding: 0.23em 0;
 }
 
 h3 {
@@ -849,7 +849,9 @@ top:88px;
 }
 
 
-
+.homepage-tab-form-message {
+clear: both;
+}
 
 
 
