@@ -19,7 +19,7 @@
     				items.push('<li><a title="'+result['abstract'] + '" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="summon-format-type">' + result['format'] + '</span></li>');
 			});
   			$('<ul/>', {
-    				'class': 'summon-search-results-list',
+    				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
 			$('<div class="more-results"><a href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');

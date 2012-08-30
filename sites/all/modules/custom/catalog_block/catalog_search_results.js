@@ -17,7 +17,7 @@
     					items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="format-type">' + result['format'] + '</span></li>');
 				});
   				$('<ul/>', {
-    					'class': 'catalog-search-results-list',
+    					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
 				$('<div class="more-results"><a href="'+data.more+'">See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');

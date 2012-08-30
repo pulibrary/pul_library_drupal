@@ -837,3 +837,40 @@ padding:10px 0 0 0;
 font-size:0.833em;
 }
 
+
+/* =============================================================================
+   Find & Databases
+   ========================================================================== */
+
+.panel-separator  {
+padding:10px 10px 0 0;
+}
+
+#find-databases-home .grid-3 h2.pane-title, .database-resource-page .grid-3 h2.pane-title {
+border-bottom: 1px dotted #E5E5E5;
+color: #5C5E66;
+}
+
+
+/* ===========================================================================
+   All Search Page /find/all
+   ========================================================================== */
+
+#all-search-page .panel-separator {
+border-bottom: 1px solid #E5E5E5;
+}
+
+#all-search-page .more-results {
+padding-left: 50px;
+}
+
+.all-search-results-list {
+list-style-type: none;
+}
+
+.all-search-results-list li {
+padding: 5px 0 0 0;
+}
+
+#all-search-page .views-field-title {
+}
