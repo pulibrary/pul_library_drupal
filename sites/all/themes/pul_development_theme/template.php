@@ -11,3 +11,11 @@
  * for more information on this topic.
  */
 
+// Call Some Basic Drupal Styles
+// drupal_add_library calls do not seem to work
+// in Omega's ./preocess/preprocess-html.inc file
+
+drupal_add_library('system', 'ui.accordion');
+drupal_add_library('system', 'ui.button');
+drupal_add_library('system', 'ui.progressbar');
+
