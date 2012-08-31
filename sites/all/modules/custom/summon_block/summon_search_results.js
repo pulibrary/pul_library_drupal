@@ -1,6 +1,8 @@
 (function ($) {
   $(document).ready(function() {
-  	
+        //$( "#summon-progressbar" ).progressbar({
+	//		value: 37
+	//	});	
 	//var query = "firestone";
 	//var request = Drupal.settings.sy_block.request;
 	//console.log(document.location.href);

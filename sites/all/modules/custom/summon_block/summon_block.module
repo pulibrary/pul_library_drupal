@@ -30,7 +30,7 @@ function summon_block_contents() {
 
 function summon_search_results_content() {
   $block_content = array(
-    '#markup' => "<div id='summon-search-results'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-search-results'>" . "<div id='summon-progressbar'></div>" . "</div>",
   ); 
   return $block_content;
 }
