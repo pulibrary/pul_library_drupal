@@ -29,8 +29,10 @@ function summon_block_contents() {
 
 
 function summon_search_results_content() {
+  $path = $_GET['q'];
+  //print_r(drupal_parse_url($path));
   $block_content = array(
-    '#markup' => "<div id='summon-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/$path' id='summon-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }

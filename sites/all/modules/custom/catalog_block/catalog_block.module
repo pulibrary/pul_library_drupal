@@ -36,8 +36,9 @@ function catalog_block_contents() {
 }
 
 function catalog_search_results_content() {
+  $path = $_GET['q'];
   $block_content = array(
-    '#markup' => "<div id='catalog-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/{$path}' id='catalog-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }

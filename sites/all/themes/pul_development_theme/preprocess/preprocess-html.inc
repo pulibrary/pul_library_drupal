@@ -13,5 +13,6 @@ function pul_development_theme_preprocess_html(&$variables) {
   else {
     $variables['attributes_array']['class'][] = 'no-sidebars';
   }
+
 }
 ?>
