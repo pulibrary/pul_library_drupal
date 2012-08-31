@@ -21,7 +21,7 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-				$('<div class="more-results">See all <a href="'+data.more+'"> Research Guides</a></div>"').appendTo('#summon-guide-results');
+				$('<div class="more-results"><i class="icon-arrow-right"></i>See all <a href="'+data.more+'"> Research Guides</a></div>"').appendTo('#summon-guide-results');
 			} else {
 				$('<div class="no-results"><a href="'+libguides_url+'">Browse Library Research Guides</a></div>"').appendTo('#summon-guide-results');
 			}
