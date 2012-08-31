@@ -30,7 +30,16 @@ function dbsearch_block_form_validate($form, &$form_state) {
   if($term == "" || $term == variable_get('db_search_hint')) {
     form_set_error('term', t('Enter Search Terms'));
   }
+  
+  return $form;
+  
 }
+
+/*
+function dbsearch_block_form_validate($form, &$form_state) {
+  $query = 
+}
+*/
 
 function dbsearch_block_form_redirect($form, &$form_state) {
   $form_state['redirect'] = 'databases-results/' . $form_state['values']['query'];

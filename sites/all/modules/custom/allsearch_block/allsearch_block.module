@@ -10,13 +10,10 @@ function allsearch_block_form($form, &$form_state) {
   $path = allsearch_block_get_current_filter($_GET['q']);
   
   if(isset($path)) {
-    // strip out slashes 
-    
     $default_value = $path;
   } else {
     $default_value = variable_get('all_search_hint');
   }
-  
   $form = array();
 
   $form['query'] = array (
@@ -31,8 +28,13 @@ function allsearch_block_form($form, &$form_state) {
     '#value' => t('Search'),
    );
    $form['#validate'] = array('allsearch_block_form_validate');
-   $form['#submit'] = array('allsearch_block_form_redirect');
+
+
+   //$form['#redirect'] = url('find/all/');
+   #$form['#target'] = "_parent";
+   //$form['#action'] = url('/find/all/cats');
    $form['#method'] = "post";
+   $form['#submit'] = array('allsearch_block_form_redirect');
    return $form;
 
 }
@@ -45,14 +47,17 @@ function allsearch_block_form_validate($form, &$form_state) {
   
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('all_search_hint')) {
+
     form_set_error('term', t('What do you want to search for?'));
-  }
+  } 
 }
 
-//function allsearch_block_form_submit($form, &$form_state) {
-//  drupal_set_message(t('Submitting values: @values', array('@values' => var_export($form_state['values'], TRUE))));
-//}
 
+
+function allsearch_block_form_submit($form, &$form_state) {
+  //drupal_set_message(t('Submitting values: @values', array('@values' => var_export($form_state['values'], TRUE))));
+  //print_r(&$form_state);
+}
 
 function allsearch_block_contents() {
   return drupal_get_form('allsearch_block_form'); // must define a function 
