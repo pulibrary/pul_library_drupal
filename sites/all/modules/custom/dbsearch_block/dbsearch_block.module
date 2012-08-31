@@ -1,20 +1,39 @@
 <?php
 
+function dbsearch_block_get_current_filter($path) {
+  $path_parts = explode("find/databases/search/", $path);
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
+}
 
 function dbsearch_block_form($form, &$form_state) {
-    
+  $path = $_GET['q'];
+  $query = dbsearch_block_get_current_filter($path);
+  if(isset($query)) {
+    $default_value = $query;
+  } else {
+    $default_value = variable_get('db_search_hint');
+  }
+
+  if($path == "node/1") { // should keyed off <front>
+    $form_suffix = '<div class="homepage-tab-form-message">Browse <a href="/find/databases/">A to Z</a> | <a href="/find/databases/subjects">By Subject</a></div>';
+  } else {
+    $form_suffix = "";
+  }  
+
   $form = array();
 
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
     '#size'  => 20,
-    '#default_value' => variable_get('db_search_hint')
+    '#default_value' => $default_value
   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
-    '#suffix' => '<div class="homepage-tab-form-message">Browse <a href="/find/databases/">A to Z</a> | <a href="/find/databases/subjects">By Subject</a></div>',
+    '#suffix' => $form_suffix,
    );
    $form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
@@ -33,7 +52,7 @@ function dbsearch_block_form_validate($form, &$form_state) {
 }
 
 function dbsearch_block_form_redirect($form, &$form_state) {
-  $form_state['redirect'] = 'databases-results/' . $form_state['values']['query'];
+  $form_state['redirect'] = 'find/databases/search/' . $form_state['values']['query'];
 }
 
 function dbsearch_block_contents() {
