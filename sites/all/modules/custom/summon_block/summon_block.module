@@ -32,7 +32,7 @@ function summon_search_results_content() {
   $path = $_GET['q'];
   //print_r(drupal_parse_url($path));
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/$path' id='summon-search-results'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-search-results'>" . "<div id='summon-progressbar'></div>" . "</div>",
   ); 
   return $block_content;
 }

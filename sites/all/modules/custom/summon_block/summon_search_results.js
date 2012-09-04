@@ -1,6 +1,8 @@
 (function ($) {
   $(document).ready(function() {
-  	
+        //$( "#summon-progressbar" ).progressbar({
+	//		value: 37
+	//	});	
 	//var query = "firestone";
 	//var request = Drupal.settings.sy_block.request;
 	//console.log(document.location.href);
@@ -22,7 +24,7 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-results"><a href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="more-results"><i class="icon-arrow-right"></i><a href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 		});
 	}	
   });
