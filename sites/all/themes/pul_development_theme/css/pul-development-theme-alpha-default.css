@@ -890,3 +890,15 @@ background-color: #0062A0;
 */
 }
 
+/* =======================================================================
+   Search Box Tweeks
+   ===================================================================== */
+
+.homepage-tab-form-message {
+  font-size: 80%;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
