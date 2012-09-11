@@ -1,0 +1,11 @@
+name = Token formatters
+description = Provides additional formatters for various field types.
+core = 7.x
+dependencies[] = token
+
+; Information added by drupal.org packaging script on 2012-09-08
+version = "7.x-1.0"
+core = "7.x"
+project = "token_formatters"
+datestamp = "1347118469"
+
