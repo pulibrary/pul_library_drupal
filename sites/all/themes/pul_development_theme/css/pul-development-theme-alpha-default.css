@@ -876,7 +876,7 @@ padding: 5px 0 0 0;
 }
 
 /* ========================================================================
-   buttons use Jquery UI
+   Access URL
    ======================================================================== */
 
 .field-name-field-db-access-url {
@@ -901,4 +901,10 @@ background-color: #0062A0;
   padding-right: 10px;
 }
 
+/* ========================================================================
+   Library News /news and Information for Landing Pages
+   ===================================================================== */
 
+.pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
+  font-size: .8em;
+}
