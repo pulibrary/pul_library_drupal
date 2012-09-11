@@ -52,8 +52,8 @@ function pul_development_theme_link(&$variables) {
     return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
     drupal_attributes($variables['options']['attributes']) . '><i class="icon-phone"></i>' . 
     ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
-  } elseif(($variables['path'] == 'http://libguides.princeton.edu')) {
-
+  } elseif(($variables['path'] == 'http://libguides.princeton.edu') && ($variables['options']['menu_views']['mlid'] == 630)) {
+    
     return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
     drupal_attributes($variables['options']['attributes']) . '><i class="icon-list-alt"></i>' . 
     ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
