@@ -30,6 +30,10 @@ function sort_mapping_by_dbID($a, $b) {
 $subject_db_title_mappings = json_decode(file_get_contents('scripts/subjectDBtitleMappings.json'), TRUE);
 $subject_specs_dbs = json_decode(file_get_contents('scripts/subjectSpecsDBsmappings.json'), TRUE);  
 $resource_type_mappings = json_decode(file_get_contents('scripts/resourceTypesDBtitleMappings.json'), TRUE);
+// need to map the ID 
+$subject_guide_mappings = json_decode(file_get_contents('scripts/library-archive-subject-guide-links.json'), TRUE);
+
+
 
 usort($subject_db_title_mappings, "sort_mapping_by_dbID");
 usort($resource_type_mappings, "sort_mapping_by_dbID");
@@ -204,6 +208,9 @@ foreach($subject_db_title_mappings as $mapping) {
           drush_print("adding tier one resource {$node_to_map} to term id {$term_to_attach_field_to}");
           //array_push($target_id_to_store, $term_data->field_subs_tier_one_resources['und']);
           drush_print(count($term_data->field_subs_tier_one_resources['und']) . " num of attached items");
+          // get the sort 
+          $sort = $mapping['sort']; //going to have to pull the array at a later point and refer back to the sort or find a way to sort the array in place here by compare
+          // the current $sort value against the total number of items 
           $num_matches = count($term_data->field_subs_tier_one_resources['und']);
           $term_data->field_subs_tier_one_resources['und'][$num_matches]['target_id'] = $node_to_map;
           //$term_data->field_subs_tier_one_resources['und'] = $target_id_to_store;
