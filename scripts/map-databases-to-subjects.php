@@ -27,6 +27,32 @@ function sort_mapping_by_dbID($a, $b) {
   return strcmp($a['dbID'], $b['dbID']);
 }
 
+
+function chngNdx($array,$ndex,$val){
+    $aCount = count($array);
+
+    for($x=($aCount)-1;$x>=$ndex;$x--){
+        $array[($x+1)] = $array[$x];
+    }
+
+    $array[$ndex] = $val;
+
+    return $array;
+}
+
+
+function tier_one_insert_at_index($current_tier_one_array, $rank_to_insert, $current_size, $insert_value) {
+  $tier_one_resources = $current_tier_one_array;  
+  if($current_size < $rank_to_insert) {
+    $tier_one_resources[] = array('target_id' => $insert_value);
+  } else {
+    $tier_one_resources = chngNdx($tier_one_resources, $rank_to_insert, array('target_id' => $insert_value));
+  }
+  
+  return $tier_one_resources;
+}
+
+
 $subject_db_title_mappings = json_decode(file_get_contents('scripts/subjectDBtitleMappings.json'), TRUE);
 $subject_specs_dbs = json_decode(file_get_contents('scripts/subjectSpecsDBsmappings.json'), TRUE);  
 $resource_type_mappings = json_decode(file_get_contents('scripts/resourceTypesDBtitleMappings.json'), TRUE);
@@ -210,9 +236,12 @@ foreach($subject_db_title_mappings as $mapping) {
           drush_print(count($term_data->field_subs_tier_one_resources['und']) . " num of attached items");
           // get the sort 
           $sort = $mapping['sort']; //going to have to pull the array at a later point and refer back to the sort or find a way to sort the array in place here by compare
-          // the current $sort value against the total number of items 
+          // the current $sort value against the total number of items '
+          echo $sort . " = " . $node_to_map;
           $num_matches = count($term_data->field_subs_tier_one_resources['und']);
-          $term_data->field_subs_tier_one_resources['und'][$num_matches]['target_id'] = $node_to_map;
+          $sorted_tier_one = tier_one_insert_at_index($term_data->field_subs_tier_one_resources['und'], $sort, $num_matches, $node_to_map);
+          print_r($sorted_tier_one);
+          $term_data->field_subs_tier_one_resources['und'] = $sorted_tier_one; //[$num_matches]['target_id'] = $node_to_map;
           //$term_data->field_subs_tier_one_resources['und'] = $target_id_to_store;
           //print_r($term_data->field_subs_tier_one_resources);
           //field_sql_storage_field_storage_write('database_subjects', $term_to_attach_field_to, 'update', $term_data->field_subs_tier_one_resources);
