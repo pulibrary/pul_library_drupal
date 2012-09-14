@@ -271,7 +271,7 @@ border-top-left-radius: 4px;
 
 .ui-tabs .ui-tabs-panel{
 background:url(../images/searchit-bg.gif) no-repeat left bottom transparent;
-height:74px;
+height:94px; /*moved from 74px to 94px, Antonio - 9/10/12 */
 padding:29px 0 0 44px;
 }
 
@@ -422,7 +422,9 @@ margin-left:-11px;
 .front #block-menu-menu-get-help-menu .content{
 background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 padding:0;
-height: 137px;
+font-size: 1.2em; /*temporary font upscale Antonio 9/12/12 */
+background-color: #ffffff; /*added to mask background cages... needs the background image to fill space. Antonio 9/10/12 */
+height: 157px; /* changed from 137px Antonio 9/10/12 */
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
