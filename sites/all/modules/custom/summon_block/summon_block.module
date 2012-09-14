@@ -4,7 +4,12 @@
 function summon_block_form($form, &$form_state) {
     
   $form = array();
-
+  $path = $_GET['q'];
+  if($path == "node/1") { // should keyed off <front>
+    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a href="http://sfx.princeton.edu:9003/sfx_pul/cgi/core/citation-linker.cgi">Citation Finder</a></div>';
+  } else {
+    $form_suffix = "";
+  }  
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Articles'),
@@ -18,6 +23,7 @@ function summon_block_form($form, &$form_state) {
    $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/summon', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
+   $form['#suffix'] = $form_suffix;
    return $form;
 
 }

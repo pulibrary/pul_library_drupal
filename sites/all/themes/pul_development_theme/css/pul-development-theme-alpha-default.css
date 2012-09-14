@@ -908,3 +908,11 @@ background-color: #0062A0;
 .pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
   font-size: .8em;
 }
+
+/* =====================================================================
+   All Search Box in Preface Region
+   ==================================================================== */
+
+.zone-preface .block-all-search-block form div.form-type-textfield{
+  display: inline;
+} 

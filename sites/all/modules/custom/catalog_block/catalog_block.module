@@ -4,6 +4,12 @@
 function catalog_block_form($form, &$form_state) {
     
   $form = array();
+  $path = $_GET['q']; 
+  if($path == "node/1") { // should keyed off <front>
+    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://catalog.princeton.edu/">Main Catalog</a> | <a href="/reserves">Reserves</a> | <a href="/services/borrowdirect">Borrow Direct</a> | <a href="/services/ill/">Interlibrary Loan</a></div>';
+  } else {
+    $form_suffix = "";
+  }  
 
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -18,6 +24,7 @@ function catalog_block_form($form, &$form_state) {
    $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
+   $form['#suffix'] = $form_suffix;
    return $form;
 
 }
