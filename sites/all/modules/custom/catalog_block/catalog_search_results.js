@@ -20,7 +20,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-				$('<div class="more-results"><i class="icon-arrow-right"></i><a href="'+data.more+'">See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				$('<div class="more-results"><i class="icon-external-link"></i>&nbsp;<a href="'+data.more+'">See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 			} else {
 				$('<div class="no-results">No Results from Books+ for '+query+'</div>"').appendTo('#catalog-search-results');
 			}

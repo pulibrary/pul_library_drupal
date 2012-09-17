@@ -20,7 +20,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#journal-search-results');
-				$('<div class="more-results"><i class="icon-arrow-right"></i><a href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
+				$('<div class="more-results"><i class="icon-external-link"></i>&nbsp;<a href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
 			} else {
 				$('<div class="no-results">No Journal titles match '+query+'</div>"').appendTo('#journal-search-results');
 			}
