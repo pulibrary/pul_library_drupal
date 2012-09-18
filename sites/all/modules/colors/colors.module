@@ -457,3 +457,9 @@ if (module_exists('og') && !function_exists('og_colors_api')) {
     return colors_colors_api();
   }
 }
+
+if (module_exists('field_collection') && !function_exists('field_collection_colors_api')) {
+  function field_collection_colors_api() {
+    return colors_colors_api();
+  }
+}

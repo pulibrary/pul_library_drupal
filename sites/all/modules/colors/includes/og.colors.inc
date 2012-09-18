@@ -44,7 +44,7 @@ function og_colors_classes($entity) {
     list($id) = entity_extract_ids($entity->entity_type, $entity);
     if (!empty($id)) {
       foreach (og_get_entity_groups($entity->entity_type, $entity) as $gid) {
-        $class_names[] = 'colors_og' . $gid;
+        $class_names[] = 'colors_og_' . $gid;
       }
     }
   }
