@@ -390,7 +390,7 @@ vertical-align:middle;
 display:block;
 }
 
-.front #allsearch-block-form .form-item-query{
+.front #allsearch-block-form .form-item-query, .page-find-all #allsearch-block-form .form-item-query{
 display:inline;
 }
 
@@ -837,3 +837,84 @@ padding:10px 0 0 0;
 font-size:0.833em;
 }
 
+
+/* =============================================================================
+   Find & Databases
+   ========================================================================== */
+
+.panel-separator  {
+padding:10px 10px 0 0;
+}
+
+#find-databases-home .grid-3 h2.pane-title, .database-resource-page .grid-3 h2.pane-title {
+border-bottom: 1px dotted #E5E5E5;
+color: #5C5E66;
+}
+
+
+/* ===========================================================================
+   All Search Page /find/all
+   ========================================================================== */
+/*
+#all-search-page .panel-separator {
+border-bottom: 1px solid #E5E5E5;
+}
+*/
+
+#all-search-page .more-results {
+padding-left: 50px;
+}
+
+.all-search-results-list {
+list-style-type: none;
+}
+/*
+.all-search-results-list li {
+padding: 5px 0 0 0;
+}
+*/
+#all-search-page .views-field-title {
+}
+
+/* ========================================================================
+   Access URL
+   ======================================================================== */
+
+.field-name-field-db-access-url {
+padding: 20px 20px 20px 20px;
+}
+
+.field-name-field-db-access-url a{
+font-size: 140%;
+color: #FFFFFF;
+background-color: #0062A0;
+
+}
+
+
+.known-issue-status-field { 
+padding-top: 20px;
+}
+
+.known-issue-status-field span div {
+display: inline;
+}
+
+/* =======================================================================
+   Search Box Tweeks
+   ===================================================================== */
+
+.homepage-tab-form-message {
+  font-size: 80%;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ========================================================================
+   Library News /news and Information for Landing Pages
+   ===================================================================== */
+
+.pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
+  font-size: .8em;
+}

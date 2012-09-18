@@ -142,8 +142,8 @@ function ctools_block_content_type_render($subtype, $conf) {
     // Allow modules to modify the block before it is viewed, via either
     // hook_block_view_alter() or hook_block_view_MODULE_DELTA_alter().
     drupal_alter(array('block_view', "block_view_{$module}_{$delta}"), $block, $info);
-    $block = (object) $block;
   }
+  $block = (object) $block;
 
   if (empty($block)) {
     return;
@@ -152,7 +152,7 @@ function ctools_block_content_type_render($subtype, $conf) {
   $block->module = $module;
   $block->delta = $delta;
 
-  if ($module == 'block') {
+  if ($module == 'block' && !empty($info) && isset($info->title)) {
     $block->title = $info->title;
   }
   else if (isset($block->subject)) {

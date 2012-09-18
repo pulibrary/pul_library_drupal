@@ -11,3 +11,56 @@
  * for more information on this topic.
  */
 
+// Call Some Basic Drupal Styles
+// drupal_add_library calls do not seem to work
+// in Omega's ./preocess/preprocess-html.inc file
+
+drupal_add_library('system', 'ui.accordion');
+drupal_add_library('system', 'ui.button');
+drupal_add_library('system', 'ui.progressbar');
+
+
+// hacky way to rewrite menu html
+function pul_development_theme_link(&$variables) {
+  if(($variables['path'] == 'hours') && isset($variables['options']['attributes']['class'][0])) { //only for menu items with class
+    
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-time"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'node/1907')) {
+
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-user"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'node/3483')) {
+
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-comment"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'node/1913')) {
+
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-time"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'node/1912')) {
+
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-envelope"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'node/1934')) {
+
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-phone"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } elseif(($variables['path'] == 'http://libguides.princeton.edu') && ($variables['options']['menu_views']['mlid'] == 630)) {
+    
+    return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '><i class="icon-list-alt"></i>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  } else {
+ 
+  return '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . 
+    drupal_attributes($variables['options']['attributes']) . '>' . 
+    ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
+  }
+}

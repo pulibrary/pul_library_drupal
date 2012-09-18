@@ -1,0 +1,4 @@
+<?php
+
+// Include the field hooks until they can be autoloaded.
+module_load_include('inc', 'token_formatters', 'token_formatters.field');
