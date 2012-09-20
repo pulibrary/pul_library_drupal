@@ -37,5 +37,10 @@ function shortcut_per_role_admin_form() {
     '#markup' => '<h3 class="title">' . l(t('Add a shortcut set'), 
     'admin/config/user-interface/shortcut/add-set') . '</h3>',
   );
-  return system_settings_form($form);
+  $form['#submit'] = array('shortcut_per_role_admin_form_submit');
+   return system_settings_form($form);
+}
+
+function shortcut_per_role_admin_form_submit($form, &$form_state) {
+  variable_set('shortcut_per_role', $form_state['values']['shortcut_per_role']);
 }
