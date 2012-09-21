@@ -1,5 +1,5 @@
 <?php
-function pul_development_theme_preprocess_html(&$variables) {
+function pul_development_theme_alpha_preprocess_html(&$variables) {
   // Add information about the number of sidebars.
   if (!empty($variables['page']['content']['content']['sidebar_first']) && !empty($variables['page']['content']['content']['sidebar_second'])) {
     $variables['attributes_array']['class'][] = 'two-sidebars sidebar-first sidebar-second';
@@ -15,4 +15,3 @@ function pul_development_theme_preprocess_html(&$variables) {
   }
 
 }
-?>

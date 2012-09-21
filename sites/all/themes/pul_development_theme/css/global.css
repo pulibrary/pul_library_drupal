@@ -141,7 +141,7 @@ h1 {
     color:#F58026;
     font-family: Arvo, sans-serif;
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0.67em 0 0.167em 0;
     font-weight:normal;
 }
 
@@ -157,23 +157,23 @@ h2.block-title{
 h3 {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.17em;
-    margin: 1em 0;
+    margin: 1em 0 0.5em;
     color:#0098F4;
 }
 
 h4 {
     font-size: 1em;
-    margin: 1.33em 0;
+    margin: 1.33em 0 0.867em 0;
 }
 
 h5 {
     font-size: 0.83em;
-    margin: 1.67em 0;
+    margin: 1.67em 0 1em 0;
 }
 
 h6 {
     font-size: 0.75em;
-    margin: 2.33em 0;
+    margin: 2.33em 0 1em 0;
 }
 
 #section-footer h2.block-title{
@@ -296,6 +296,11 @@ sup {
 
 sub {
     bottom: -0.25em;
+}
+
+.views-field-created{
+color:#999;
+font-style:italic;
 }
 
 
@@ -588,12 +593,17 @@ padding: 4px 10px 3px 10px;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
-text-shadow: rgba(0,0,0,.4) 0 1px 0;
+text-shadow: rgba(0,0,0, 0) 0 1px 0;
 color: white;
 text-decoration: none;
 vertical-align: middle;
 font-family: 'PT Sans', sans-serif;
 font-weight:normal;
+}
+
+.form-actions input:hover{
+background: #f36e20;
+color:#000;
 }
 
 .form-item{
@@ -607,6 +617,10 @@ display:block;
 ul li.leaf {
     list-style-image:none;
     list-style-type: none;
+}
+
+#edit-comment-body{
+padding-bottom:1em;
 }
 
 
@@ -853,8 +867,13 @@ top:88px;
 clear: both;
 }
 
+/* =============================================================================
+   NEWS
+   ========================================================================== */
 
-
+.pane-node-comments h2{
+border-bottom:1px dotted #ccc;
+}
 
 
 /* =============================================================================
