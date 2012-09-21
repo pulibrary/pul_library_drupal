@@ -53,7 +53,7 @@ function tier_one_insert_at_index($current_tier_one_array, $rank_to_insert, $cur
 }
 
 
-$subject_db_title_mappings = json_decode(file_get_contents('scripts/subjectDBtitleMappings.json'), TRUE);
+$subject_db_title_mappings = json_decode(file_get_contents('scripts/subjectsdbs.json'), TRUE);
 $subject_specs_dbs = json_decode(file_get_contents('scripts/subjectSpecsDBsmappings.json'), TRUE);  
 $resource_type_mappings = json_decode(file_get_contents('scripts/resourceTypesDBtitleMappings.json'), TRUE);
 // need to map the ID 
@@ -166,7 +166,8 @@ foreach($altTitleMembers['node'] as $node) {
     if(array_key_exists($alternative_title_import_id, $database_mappings)) {
       echo "alt title key {$alternative_title_import_id} Already Exists\n";
     } else {
-      $alternative_title_mappings[$attached_db_import_id] = $node->nid;
+      //$alternative_title_mappings[$attached_db_import_id] = $node->nid;
+      $alternative_title_mappings[$alternative_title_import_id] = $node->nid;
     }
     
 }
@@ -240,7 +241,7 @@ foreach($subject_db_title_mappings as $mapping) {
           echo $sort . " = " . $node_to_map;
           $num_matches = count($term_data->field_subs_tier_one_resources['und']);
           $sorted_tier_one = tier_one_insert_at_index($term_data->field_subs_tier_one_resources['und'], $sort, $num_matches, $node_to_map);
-          print_r($sorted_tier_one);
+          //print_r($sorted_tier_one);
           $term_data->field_subs_tier_one_resources['und'] = $sorted_tier_one; //[$num_matches]['target_id'] = $node_to_map;
           //$term_data->field_subs_tier_one_resources['und'] = $target_id_to_store;
           //print_r($term_data->field_subs_tier_one_resources);
@@ -315,7 +316,7 @@ foreach($resource_type_mappings as $mapping) {
 
 
 //print_r($subject_specs_dbs);
-
+/*
 foreach($subject_specs_dbs as $mapping) {
   //print_r($mapping);
   $subject_librarian_id = $subject_librarian_mappings[$mapping['specialistID']];
@@ -342,4 +343,4 @@ foreach($subject_specs_dbs as $mapping) {
     //print_r($subject_data);
     }
 }
-
+*/
