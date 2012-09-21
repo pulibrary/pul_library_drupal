@@ -238,7 +238,7 @@ foreach($subject_db_title_mappings as $mapping) {
           // get the sort 
           $sort = $mapping['sort']; //going to have to pull the array at a later point and refer back to the sort or find a way to sort the array in place here by compare
           // the current $sort value against the total number of items '
-          echo $sort . " = " . $node_to_map;
+          //echo $sort . " = " . $node_to_map;
           $num_matches = count($term_data->field_subs_tier_one_resources['und']);
           $sorted_tier_one = tier_one_insert_at_index($term_data->field_subs_tier_one_resources['und'], $sort, $num_matches, $node_to_map);
           //print_r($sorted_tier_one);
