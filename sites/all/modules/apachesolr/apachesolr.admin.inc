@@ -227,7 +227,7 @@ function apachesolr_environment_edit_validate($form, &$form_state) {
 function apachesolr_environment_edit_submit($form, &$form_state) {
   apachesolr_environment_save($form_state['values']);
   if (!empty($form_state['values']['make_default'])) {
-    variable_set('apachesolr_default_environment', $form_state['values']['env_id']);
+    apachesolr_set_default_environment($form_state['values']['env_id']);
   }
   cache_clear_all('apachesolr:environments', 'cache_apachesolr');
   drupal_set_message(t('The %name search environment has been saved.', array('%name' => $form_state['values']['name'])));
@@ -1046,7 +1046,7 @@ function apachesolr_index_batch_index_finished($success, $results, $operations) 
   else {
     // An error occurred. $operations contains the unprocessed operations.
     $error_operation = reset($operations);
-    $message .= ' ' . t('An error occurred while processing @num with arguments :', array('@num' => $error_operation[0])) . print_r($error_operation[0], TRUE);
+    $message .= ' ' . t('An error occurred while processing @num with arguments: @args', array('@num' => $error_operation[0], '@args' => print_r($error_operation[0], TRUE)));
     $type = 'error';
   }
   drupal_set_message($message, $type);
@@ -1123,7 +1123,7 @@ function apachesolr_index_config_form_submit($form, &$form_state) {
       }
     }
     else {
-      drupal_set_message(t('The Apache Solr search engine is not available. Please contact your site administrator.'), 'error');
+      drupal_set_message(t('Search is temporarily unavailable. If the problem persists, please contact the site administrator.'), 'error');
     }
   }
 

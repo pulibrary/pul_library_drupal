@@ -117,7 +117,7 @@ class DrupalApacheSolrNodeAccess extends DrupalWebTestCase {
 
     $this->assertEqual($expected_criterion, $found_criterion, 'All Criteria was accounted for in fields. If not accounted for, Unaccounted Criteria [' . var_export(array_diff($expected_criterion, $found_criterion), 1) . ']');
     // Run a query through the MLT code to be sure access filters are added.
-    $solr = new DummySolr();
+    $solr = new DummySolr($url = NULL, $env_id);
     $settings = apachesolr_search_mlt_block_defaults();
     // Dummy value
     $id = apachesolr_document_id($author_restricted_node->nid);
