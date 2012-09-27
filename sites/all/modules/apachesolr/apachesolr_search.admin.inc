@@ -400,7 +400,8 @@ function apachesolr_search_page_settings_form($form, &$form_state, $search_page 
 
   $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Save configuration'),
+    '#redirect' => 'admin/config/search/apachesolr/search-pages',
+    '#value' => t('Save'),
   );
   $form['actions']['submit_edit'] = array(
     '#type' => 'submit',
@@ -511,8 +512,8 @@ function apachesolr_search_page_settings_form_submit($form, &$form_state) {
 
   // Saves our values in the database, sets redirect path on success.
   drupal_set_message(t('The configuration options have been saved for %page.', array('%page' => $form_state['values']['label'])));
-  if ($form_state['values']['op'] == t('Save')) {
-    $form_state['redirect'] = 'admin/config/search/apachesolr/search-pages';
+  if (isset($form_state['clicked_button']['#redirect'])) {
+    $form_state['redirect'] = $form_state['clicked_button']['#redirect'];
   }
   else {
     $form_state['redirect'] = current_path();

@@ -531,7 +531,6 @@ function apachesolr_index_mark_for_reindex($env_id, $entity_type = NULL) {
   cache_clear_all('*', 'cache_apachesolr', TRUE);
 }
 
-
 /**
  * Sets what bundles on the specified entity type should be indexed.
  *

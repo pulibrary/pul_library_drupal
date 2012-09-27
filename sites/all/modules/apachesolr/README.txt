@@ -10,15 +10,18 @@ must be used in your Solr installation.
 
 This module depends on the search framework in core.  When used in combination
 with core search module, Apache Solr is not the default search. Access it via a
-new tab on the default search page, called "Search".  You may configure it
+new tab on the default search page, called "Site".  You may configure it
 to be default at ?q=admin/config/search/settings
 
 Updating from 6.x
 -----------------
-Make sure that you have first updated to the latest 6.x version on the relevant
-branch and that you have run all schema updates.  You will have to install the
-new schema.xml and solrconfig.xml files, and restart the Solr server (or core)
-and delete your index and reindex all content.
+
+IMPORTANT: there is no upgrade path from 6.x-1.x or 6.x-2.x. If you previously
+installed those modules you must disable and uninstall them prior to
+installing 7.x-1.x.
+
+You will have to install the new schema.xml and solrconfig.xml files, and restart
+the Solr server (or core) and delete your index and reindex all content.
 
 Installation
 ------------
@@ -35,12 +38,13 @@ subscribed to a service like Acquia Search.
 The Debian/Ubuntu packages for Solr should NOT be used to install Solr.
 For example, do NOT install the solr or solr-jetty packages.
 
-Download the latest Solr 1.4.x or 3.x release (e.g. 1.4.1 or 3.5.0) from:
+Download the latest Solr 1.4.x or 3.x release (e.g. 1.4.1 or 3.6.1) from:
 http://www.apache.org/dyn/closer.cgi/lucene/solr/
 
 Apache Lucene 3.1, 3.2 or 3.3, have a possible index corruption bug on
-server crash or power loss (LUCENE-3418). Solr 3.4 has a problem
-with SortMissingLast so Solr  3.5.0 is preferred.
+server crash or power loss (LUCENE-3418) and have bugs that interfere
+with the Drupal admin reports. Solr 3.4 has a problem with
+SortMissingLast so Solr 3.5.0 or later is strongly preferred.
 
 Unpack the tarball somewhere not visible to the web (not in your webserver
 docroot and not inside of your Drupal directory).
