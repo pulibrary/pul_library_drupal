@@ -770,7 +770,7 @@ function apachesolr_search_search_page($results) {
  *   the search page that is requesting an output
  */
 function apachesolr_search_search_page_custom($results, $search_page, $build = array()) {
-  if (!empty($search_page['apachesolr_search_spellcheck'])) {
+  if (!empty($search_page['settings']['apachesolr_search_spellcheck'])) {
     // Retrieve suggestion
     $suggestions = apachesolr_search_get_search_suggestions($search_page['env_id']);
     if ($search_page && !empty($suggestions)) {

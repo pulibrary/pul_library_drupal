@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements MenuViews() class
+ * Implements MenuViews() class.
  */
 Class MenuViews {
   /**
@@ -16,7 +16,12 @@ Class MenuViews {
   public $display = FALSE;
   public $arguments = '';
   public $mlid = 0;
-  public $tree = FALSE;
+
+  /**
+   * Private Properties
+  */
+  private $options = FALSE;
+  private $tree = FALSE;
 
   /**
    * Filters arguments and tokens for view argument.
@@ -37,6 +42,13 @@ Class MenuViews {
     }
     return implode('/', $args);
   }
+  
+  /**
+   * Returns the parent string for where menu views is located in the form.
+   */
+  public function formParents() {
+    return ($this->options && $this->tree ? 'options][' : '') . 'menu_views][';
+  }
 
   public function load($form = array(), $form_state = array()) {
     $this->name = FALSE;
@@ -44,14 +56,13 @@ Class MenuViews {
     $this->arguments = '';
     $this->mlid = 0;
     $this->tree = FALSE;
+    // Setup the appropriate paths for each $form and $form_state variance.
+    if (isset($form['options'])) {
+      $this->options = $form['options'];
+    }
     // Set the tree variable to reflect the #tree condition of $form['options'], required in case other modules alter the form.
     if (isset($form['options']['#tree'])) {
       $this->tree = $form['options']['#tree'];
-    }
-    // Setup the appropriate paths for each $form and $form_state variance.
-    $form_options = FALSE;
-    if (isset($form['options'])) {
-      $form_options = $form['options'];
     }
     $form_original_values = FALSE;
     if (isset($form['original_item']['#value']['options'])) {
@@ -62,19 +73,19 @@ Class MenuViews {
       $form_state_values = $this->tree && isset($form_state['values']['options']) ? $form_state['values']['options'] : $form_state['values'];
     }
     // Recurse through $form and $form_state for possible values for the current state of the attached view.
-    $objects = array('name', 'display', 'arguments', 'mlid');
-    foreach ($objects as $object) {
+    $properties = array('name', 'display', 'arguments', 'mlid');
+    foreach ($properties as $property) {
       // Check for submitted values in $form_state first.
-      if ($form_state_values && isset($form_state_values['menu_views'][$object])) {
-        $this->$object = $form_state_values['menu_views'][$object];
+      if ($form_state_values && isset($form_state_values['menu_views'][$property])) {
+        $this->$property = $form_state_values['menu_views'][$property];
       }
       // Check for an existing attached view in the menu link item.
-      elseif ($form_original_values && isset($form_original_values['menu_views'][$object])) {
-        $this->$object = $form_original_values['menu_views'][$object];
+      elseif ($form_original_values && isset($form_original_values['menu_views'][$property])) {
+        $this->$property = $form_original_values['menu_views'][$property];
       }
       // Check for a default form value.
-      elseif ($form_options && isset($form_options['menu_views'][$object])) {
-        $this->$object = $form_options['menu_views'][$object];
+      elseif ($this->options && isset($this->options['menu_views'][$property])) {
+        $this->$property = $this->options['menu_views'][$property];
       }
     }
     $views = array_keys(views_get_enabled_views());

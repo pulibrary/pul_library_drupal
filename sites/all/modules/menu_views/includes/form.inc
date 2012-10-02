@@ -154,8 +154,11 @@ function menu_views_ajax_callback($form, $form_state) {
 function menu_views_menu_edit_item_validate($form, &$form_state) {
   // Only run this validation when the form is fully submitted.
   if ($form_state['submitted']) {
-    if ($form_state['values']['link_path'] == '<view>' && $form_state['values']['menu_views']['name'] == '') {
-      form_set_error('menu_views][name', t('The link path has been set to %view. You must select a view to attach to this menu item.', array('%view' => '<view>')));
+    if ($form_state['values']['link_path'] == '<view>') {
+      $view = menu_views($form, $form_state);
+      if (!$view->name) {
+        form_set_error($view->formParents() . 'name', t('The link path has been set to %view. You must select a view to attach to this menu item.', array('%view' => '<view>')));
+      }
     }
   }
 }
