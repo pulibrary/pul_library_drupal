@@ -2,12 +2,36 @@
 
 /**
  * @file
- *   Functions used when indexing content to Apache Solr.
+ * Functions related to Apache Solr indexing operations.
  */
 
-
 /**
- * Send up to $limit entities of each type into the index.
+ * Processes all index queues associated with the passed environment.
+ *
+ * An environment usually indexes one or more entity types. Each entity type
+ * stores its queue in a database table that is defined in the entity type's
+ * info array. This function processes N number of items in each queue table,
+ * where N is the limit passed as the second argument.
+ *
+ * The indexing routine allows developers to selectively bypass indexing on a
+ * per-entity basis by implementing the following hooks:
+ * - hook_apachesolr_exclude()
+ * - hook_apachesolr_ENTITY_TYPE_exclude()
+ *
+ * @param string $env_id
+ *   The machine name of the environment.
+ * @param int $limit
+ *   The number of items to process per queue table. For example, if there are
+ *   two entities that are being indexed in this environment and they each have
+ *   their own queue table, setting a limit of 50 will send a maximum number of
+ *   100 documents to the Apache Solr server.
+ *
+ * @return int
+ *   The total numer of documents sent to the Apache Solr server for indexing.
+ *
+ * @see apachesolr_index_get_entities_to_index()
+ * @see apachesolr_index_entity_to_documents()
+ * @see apachesolr_index_send_to_solr()
  */
 function apachesolr_index_entities($env_id, $limit) {
   $documents_submitted = 0;
@@ -67,7 +91,20 @@ function apachesolr_index_entities($env_id, $limit) {
 }
 
 /**
- * Helper function for modules implementing hook_search's 'status' op.
+ * Returns the total number of documents that are able to be indexed and the
+ * number of documents left to be indexed.
+ *
+ * This is a helper function for modules that implement hook_search_status().
+ *
+ * @param string $env_id
+ *   The machine name of the environment.
+ *
+ * @return array
+ *   An associative array with the key-value pairs:
+ *   - remaining: The number of items left to index.
+ *   - total: The total number of items to index.
+ *
+ * @see hook_search_status()
  */
 function apachesolr_index_status($env_id) {
   $remaining = 0;
@@ -108,10 +145,43 @@ function apachesolr_index_status($env_id) {
 }
 
 /**
- * Worker callback for apachesolr_index_entities.
+ * Worker callback for apachesolr_index_entities().
+ *
+ * Loads and proccesses the entity queued for indexing and converts into one or
+ * more documents that are sent to the Apache Solr server for indexing.
+ *
+ * The entity is loaded as the user specified in the "apachesolr_index_user"
+ * system variable in order to prevent sentive data from being indexed and
+ * displayed to underprivileged users in search results. The index user defaults
+ * to a user ID of "0", which is the anonymous user.
+ *
+ * After the entity is loaded, it is converted to an array via the callback
+ * specified in the entity type's info array. The array that the entity is
+ * converted to is the model of the document sent to the Apache Solr server for
+ * indexing. This function allows develoeprs to modify the document by
+ * implementing the following hooks:
+ * - apachesolr_index_document_build()
+ * - apachesolr_index_document_build_ENTITY_TYPE()
+ * - apachesolr_index_documents_alter()
+ *
+ * @param stdClass $item
+ *   The data returned by the queue table containing:
+ *   - entity_id: An integer containing the unique identifier of the entity, for
+ *     example a node ID or comment ID.
+ *   - entity_type: The unique identifier for the entity, i.e. "node", "file".
+ *   - bundle: The machine-readable name of the bundle the passed entity is
+ *     associated with.
+ *   - status: The "published" status of the entity. The status will also be set
+ *     to "0" when entity is deleted but the Apache Solr server is unavailable.
+ *   - changed: A timestamp flagging when the entity was last modified.
+ * @param string $env_id
+ *   The machine name of the environment.
+ *
+ * @return array
+ *   An associative array of documents that are sent to the Apache Solr server
+ *   for indexing.
  *
  * @see apachesolr_index_nodes() for the old-skool version.
- * @return array of documents that need to be sent to the index of solr
  */
 function apachesolr_index_entity_to_documents($item, $env_id) {
 
@@ -255,7 +325,7 @@ function apachesolr_index_send_to_solr($env_id, $documents) {
  *
  * $text must be stripped of control characters before hand.
  */
-function apachesolr_index_add_tags_to_document(&$document, $text) {
+function apachesolr_index_add_tags_to_document($document, $text) {
   $tags_to_index = variable_get('apachesolr_tags_to_index', array(
     'h1' => 'tags_h1',
     'h2' => 'tags_h2_h3',
