@@ -56,13 +56,19 @@ function local_fonts_form_alter(&$form, &$form_state, $form_id) {
   } // if
   elseif ($form_id == 'fontyourface_ui_admin_edit_form') {
 
-    // Add delete button.
+    $font = fontyourface_get_font($form['fid']['#value']);
 
-    $form['buttons']['delete'] = array(
-      '#type' => 'submit',
-      '#value' => t('Delete font record'),
-      '#submit' => array('local_fonts_delete_button_submit'),
-    );
+    // Add delete button for local fonts.
+
+    if ($font->provider == 'local_fonts') {
+
+      $form['buttons']['delete'] = array(
+        '#type' => 'submit',
+        '#value' => t('Delete font record'),
+        '#submit' => array('local_fonts_delete_button_submit'),
+      );
+
+    } // if
 
   } // elseif
 
@@ -406,6 +412,13 @@ function local_fonts_delete_form_submit($form, &$form_state) {
  * Deletes given font.
  */
 function local_fonts_delete_font($font) {
+
+  // Bail out if attempting to delete a non-local font.
+
+  if ($font->provider != 'local_fonts') {
+    drupal_set_message(t('This is not a local font and cannot be deleted.'));
+    return TRUE;
+  } // if
 
   $metadata = unserialize($font->metadata);
 

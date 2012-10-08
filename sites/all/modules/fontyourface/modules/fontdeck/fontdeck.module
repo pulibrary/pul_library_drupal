@@ -37,7 +37,7 @@ function fontdeck_fontyourface_import() {
       $data = json_decode($response->data);
 
       if (isset($data->error)) {
-        drupal_set_message(t($data->error), 'error');
+        drupal_set_message($data->error, 'error');
         return;
       }
 
