@@ -350,7 +350,9 @@ class FeedsEnclosure extends FeedsElement {
           $filename = transliteration_clean_filename($filename);
         }
         if(file_uri_target($destination)) {
-          $destination .= trim($destination, '/') . '/';
+          // see note @ http://drupal.org/node/1715662 #5
+          // $destination .= trim($destination, '/') . '/';
+          $destination = trim($destination, '/') . '/';
         }
         $file = file_save_data($this->getContent(), $destination . $filename);
       }
