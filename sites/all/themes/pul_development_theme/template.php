@@ -21,6 +21,7 @@ drupal_add_library('system', 'ui.progressbar');
 
 
 // hacky way to rewrite menu html
+/*
 function pul_development_theme_link(&$variables) {
   if(($variables['path'] == 'hours') && isset($variables['options']['attributes']['class'][0])) { //only for menu items with class
     
@@ -64,3 +65,4 @@ function pul_development_theme_link(&$variables) {
     ($variables['options']['html'] ? $variables['text'] : check_plain($variables['text'])) . '</a>';
   }
 }
+*/
