@@ -6,8 +6,8 @@ function pul_development_theme_alpha_preprocess_html(&$variables) {
   // This isn't contextual node_view and term_view are global settings, need to find a toggle point for the variants of those 
   $nine_three_panels = array(
     "page-databases_landing_page",
-    "node_view",
-    "term_view",
+    //"node_view",
+    //"term_view",
   );
 
   $page_manager_data = page_manager_get_current_page();
