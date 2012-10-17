@@ -385,7 +385,6 @@ class DrupalSolrOfflineSearchPagesWebTestCase extends DrupalSolrOfflineWebTestCa
     $query = apachesolr_current_query('DummySolr');
     $this->assertEqual($query->getParam('rows'), 5, 'Passed in rows param overrode default');
   }
-
 }
 
 class DrupalSolrNodeTestCase extends DrupalWebTestCase {
@@ -419,17 +418,58 @@ class DrupalSolrNodeTestCase extends DrupalWebTestCase {
 
     $this->drupalLogin($admin_user);
 
-    //Create 2 nodes
-    $edit = array();
-    $edit['uid'] = $admin_user->uid;
-    $node = $this->drupalCreateNode($edit);
+    // enable our bundles to be indexed, and clear caches
+    apachesolr_index_set_bundles('solr', 'node', array('page', 'article'));
+    entity_info_cache_clear();
+    apachesolr_environments_clear_cache();
 
-    $this->drupalGet('admin/content/node');
-    // Remove the same node
-    $this->clickLink(t('delete'));
-    $this->assertText(t('Are you sure you want to delete'), t('Delete confirmation page was succesfully loaded'));
-    $this->drupalPost($this->getUrl(), array(), t('Delete'));
-    $this->assertResponse(200);
+    // Define types of node bundles that we want to index
+    $types = array('page', 'article');
+
+    foreach ($types as $type) {
+      $edit = array();
+      // Create a node of the type $type.
+      $edit['uid'] = $admin_user->uid;
+      $edit['type'] = $type;
+      $edit['title'] = $this->randomName(16);
+      $node = $this->drupalCreateNode($edit);
+      $this->assertTrue(is_object($node) && isset($node->nid), t('Article type @type has been created.', array('@type' => $type)));
+
+      // Check that the node has been created.
+      $node = $this->drupalGetNodeByTitle($edit['title']);
+      $this->assertTrue($node, t('Created article @type found in database.', array('@type' => $type)));
+
+      // Check that the node has status 1
+      $indexer_table = apachesolr_get_indexer_table('node');
+      $query = db_select($indexer_table, 'aien')
+        ->condition('entity_id', $node->nid)
+        ->fields('aien', array('entity_id', 'status'));
+      $db_node = $query->execute()->fetchObject();
+      $this->assertEqual($db_node->status, 1, t('Node @entity_id has status 1', array('@entity_id' => $db_node->entity_id)));
+
+      // Delete the node
+      $this->drupalPost('node/' . $node->nid . '/delete', array(), t('Delete'));
+
+      // check if the entity delete does its work. It should have set the
+      // status to 0 so it will be deleted when solr comes online
+      $indexer_table = apachesolr_get_indexer_table('node');
+      $query = db_select($indexer_table, 'aien')
+        ->condition('entity_id', $node->nid)
+        ->fields('aien', array('entity_id', 'status'));
+      $db_node = $query->execute()->fetchObject();
+
+      // Check that all of the nodes (should only have 1) have status 0, it
+      // is set as 0 because it is pending to be deleted
+      $this->assertEqual($db_node->status, 0, t('Node @entity_id has status 0', array('@entity_id' => $db_node->entity_id)));
+
+      // Check that all the nodes have been deleted.
+      $count = db_select('node', 'n')
+        ->condition('n.nid', $node->nid)
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+      $this->assertEqual($count, 0, t('No more nodes left in the node table.'));
+    }
   }
 }
 

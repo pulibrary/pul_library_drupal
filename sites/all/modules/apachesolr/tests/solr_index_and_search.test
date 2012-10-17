@@ -130,7 +130,8 @@ class DrupalSolrOnlineWebTestCase extends AbstractDrupalSolrOnlineWebTestCase {
   function setUp() {
     parent::setUp();
     parent::setUpSolr(
-      dirname(__FILE__) . '/../solr-conf/*',
+      // The Solr 1.4 conf will work in both 1.4 and 3.5.
+      dirname(__FILE__) . '/../solr-conf/solr-1.4/*',
       dirname(__FILE__) . '/conf/*'
     );
   }

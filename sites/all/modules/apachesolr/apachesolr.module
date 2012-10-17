@@ -681,7 +681,7 @@ function apachesolr_node_type_delete($info) {
 }
 
 /**
- * Implements of hook_node_type_update().
+ * Implements hook_node_type_update().
  *
  * @see http://drupal.org/node/592522
  *   Performance issue with Mysql
@@ -719,6 +719,30 @@ function apachesolr_node_type_update($info) {
       ->fields(array('bundle' => $info->type))
       ->execute();
     apachesolr_environments_clear_cache();
+  }
+}
+
+/**
+ * Implements hook_node_type_insert().
+ *
+ * Insert our new type into all the environments as indexable bundle type
+ * @param array $info
+ */
+function apachesolr_node_type_insert($info) {
+  module_load_include('inc', 'apachesolr', 'apachesolr.index');
+  // Get all our environments
+  $envs = apachesolr_load_all_environments();
+  $bundles = array();
+  foreach($envs as $env) {
+    if (isset($env['index_bundles']['node'])) {
+      $bundles = $env['index_bundles']['node'];
+    }
+    // Is the bundle already marked?
+    if (!in_array($info->type, $bundles)) {
+      $bundles[] = $info->type;
+      // Set the new bundle as indexable for all environments
+      apachesolr_index_set_bundles($env['env_id'], 'node', $bundles);
+    }
   }
 }
 

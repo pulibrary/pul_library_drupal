@@ -46,24 +46,37 @@ server crash or power loss (LUCENE-3418) and have bugs that interfere
 with the Drupal admin reports. Solr 3.4 has a problem with
 SortMissingLast so Solr 3.5.0 or later is strongly preferred.
 
-Unpack the tarball somewhere not visible to the web (not in your webserver
-docroot and not inside of your Drupal directory).
+Unpack the Solr tarball somewhere not visible to the web (not in your
+webserver docroot and not inside of your Drupal directory).
 
 The Solr download comes with an example application that you can use for
 testing, development, and even for smaller production sites. This
 application is found at apache-solr-1.4.1/example.
 
+You must use 3 Solr configuration files that come with the Drupal
+module or the integration will not work correctly.
+
+For Solr 1.4 use the ones found in:
+solr-conf/solr-1.4/
+
+for Solr 3.5.0 or 3.6.1 use:
+solr-conf/solr-3.x/
+
+While the Solr 1.4 files will work for Solr 3.5+, they are not optimal
+and you will be missing important new features.
+
+For example, when deploying solr 1.4:
+
 Move apache-solr-1.4.1/example/solr/conf/schema.xml and rename it to
-something like schema.bak. Then move the solr-conf/schema.xml that
-comes with this Drupal module to take its place. If you are using
-Solr 3.5 or later, you can use solr-conf/schema-solr3x.xml instead.
+something like schema.bak. Then move the solr-conf/solr-1.4/schema.xml
+that comes with this Drupal module to take its place.
 
 Similarly, move apache-solr-1.4.1/example/solr/conf/solrconfig.xml and rename
-it like solrconfig.bak. Then move the solr-conf/solrconfig.xml that comes
-with this module to take its place.
+it like solrconfig.bak. Then move the solr-conf/solr-1.4/solrconfig.xml
+that comes with this module to take its place.
 
-Finally, move apache-solr-1.4.1/example/solr/conf/protwords.txt and rename
-it like protwords.bak. Then move the solr-conf/protwords.txt that comes
+Finally, move apache-solr-1.4.1/example/solr/conf/protwords.txt and rename it
+protwords.bak. Then move the solr-conf/solr-1.4/protwords.txt that comes
 with this module to take its place.
 
 Make sure that the conf directory includes the following files - the Solr core
@@ -146,6 +159,13 @@ behavior:
 
 Troubleshooting
 ---------------
+Problem:
+You use http basic auth to limit access to your Solr server.
+
+Solution:
+Set the Server URL to include the username and password like
+http://username:password@example.com:8080/solr
+
 Problem:
 Links to nodes appear in the search results with a different host name or
 subdomain than is preferred.  e.g. sometimes at http://example.com

@@ -1,5 +1,25 @@
-Apache Solr integration 7.x-1.x-xxxx, xxxx-xx-xx
+Apache Solr integration 7.x-1.x, xxxx-xx-xx
 -----------------------------
+
+Apache Solr integration 7.x-1.1, 2012-10-15
+-----------------------------
+#1780200 by pwolanin: document basic auth in README.
+#1226274 by pwolanin: Fixes for schema.xml version numbering and organization.
+
+Apache Solr integration 7.x-1.0, 2012-10-13
+-----------------------------
+#761990 by pwolanin, jhedstrom, Nick_vh, jpmckinney | morningtime: Fixed 400 Bad Status if URL length limit exceeded.
+#1811364 by Nick_vh: Fixed Add newly created content type to the indexed bundles for all environments.
+#1811456 by rupl: Fixed Improve documentation of addFilter in apachesolr.api.php.
+#1773506 by drzraf: Fixed drush solr-search notice when file entity are part of the result.
+#1688150 by HalfChem, cam8001, jhedstrom, Nick_vh: Fixed Search query string gets double encoded when core Search block form is submitted.
+#1794602 by pwolanin, Nick_vh | ppmr: Fixed Undefined index: path in ApacheSolrDocument->__get() (line 304 of ...\apachesolr\Apache_Solr_Document.
+#1773506 by drzraf: Fixed drush solr-search notice when file entity are part of the result.
+#1764334 by cpliakas: Fixed Negative percentage of documents sent to the server for indexing.
+#1806300 by Nick_vh: Separate out the creation of the document from the index process.
+#1807552 by Nick_vh, wimvds: Fixed Site and url wrong when indexing multilingual content (using i18n module).
+#1759190 by mkalkbrenner: Fixed obsolete form code?.
+#1802288 by Nick_vh: Fixed Improve testing of node deletion.
 
 Apache Solr integration 7.x-1.0-rc5, 2012-10-01
 -----------------------------

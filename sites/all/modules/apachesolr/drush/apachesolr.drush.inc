@@ -266,9 +266,13 @@ function apachesolr_drush_solr_search() {
   $args = func_get_args();
   $keys = implode(' ', $args);
   foreach (apachesolr_search_search_execute($keys) as $result) {
-    $output = 'node/' . $result['node']->entity_id . ' ' . dt('by @name (user/@uid)', array('@name' => strip_tags($result['user']), '@uid' => $result['node']->is_uid)) . "\n";
+    $output = $result['fields']['path'];
+    if(isset($result['user']) && isset($result['node']->is_uid)) {
+      $output .= ' ' . dt('by @name (user/@uid)', array('@name' => strip_tags($result['user']), '@uid' => $result['node']->is_uid));
+    }
+    $output .= "\n";
     $output .= dt('title: ') . $result['title'] . "\n";
-    $output .= preg_replace('/[\s]+/', ' ', strip_tags($result['snippet'])) . "\n\n";
+    $output .= trim(preg_replace('/\s+/', ' ', strip_tags($result['snippet']))) . "\n\n";
     drush_print($output);
   }
 }

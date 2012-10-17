@@ -40,31 +40,8 @@ function apachesolr_index_entities($env_id, $limit) {
     $rows = apachesolr_index_get_entities_to_index($env_id, $entity_type, $limit);
     $documents = array();
     foreach ($rows as $row) {
-      if (!empty($row->status)) {
-        // Let any module exclude this entity from the index.
-        $build_document = TRUE;
-        foreach (module_implements('apachesolr_exclude') as $module) {
-          $exclude = module_invoke($module, 'apachesolr_exclude', $row->entity_id, $entity_type, $row, $env_id);
-          // If the hook returns TRUE we should exclude the entity
-          if (!empty($exclude)) {
-            $build_document = FALSE;
-          }
-        }
-        foreach (module_implements('apachesolr_' . $entity_type . '_exclude') as $module) {
-          $exclude = module_invoke($module, 'apachesolr_' . $entity_type . '_exclude', $row->entity_id, $row, $env_id);
-          // If the hook returns TRUE we should exclude the entity
-          if (!empty($exclude)) {
-            $build_document = FALSE;
-          }
-        }
-        if ($build_document) {
-          $documents = array_merge($documents, apachesolr_index_entity_to_documents($row, $env_id));
-        }
-      }
-      else {
-        // Delete the entity from our index if the status callback returned 0
-        apachesolr_remove_entity($env_id, $row->entity_type, $row->entity_id);
-      }
+      $row_documents = apachesolr_index_entities_document($row, $entity_type, $env_id);
+      $documents = array_merge($documents, $row_documents);
     }
 
     $indexed = apachesolr_index_send_to_solr($env_id, $documents);
@@ -90,6 +67,35 @@ function apachesolr_index_entities($env_id, $limit) {
   return $documents_submitted;
 }
 
+function apachesolr_index_entities_document($row, $entity_type, $env_id) {
+  $documents = array();
+  if (!empty($row->status)) {
+    // Let any module exclude this entity from the index.
+    $build_document = TRUE;
+    foreach (module_implements('apachesolr_exclude') as $module) {
+      $exclude = module_invoke($module, 'apachesolr_exclude', $row->entity_id, $entity_type, $row, $env_id);
+      // If the hook returns TRUE we should exclude the entity
+      if (!empty($exclude)) {
+        $build_document = FALSE;
+      }
+    }
+    foreach (module_implements('apachesolr_' . $entity_type . '_exclude') as $module) {
+      $exclude = module_invoke($module, 'apachesolr_' . $entity_type . '_exclude', $row->entity_id, $row, $env_id);
+      // If the hook returns TRUE we should exclude the entity
+      if (!empty($exclude)) {
+        $build_document = FALSE;
+      }
+    }
+    if ($build_document) {
+      $documents = array_merge($documents, apachesolr_index_entity_to_documents($row, $env_id));
+    }
+  }
+  else {
+    // Delete the entity from our index if the status callback returned 0
+    apachesolr_remove_entity($env_id, $row->entity_type, $row->entity_id);
+  }
+  return $documents;
+}
 /**
  * Returns the total number of documents that are able to be indexed and the
  * number of documents left to be indexed.
@@ -127,6 +133,7 @@ function apachesolr_index_status($env_id) {
     // that we get a definitive order.
     $query = db_select($table, 'aie')
       ->condition('aie.bundle', $bundles)
+      ->condition('aie.status', 1)
       ->condition(db_or()
         ->condition('aie.changed', $last_changed, '>')
         ->condition(db_and()
@@ -375,8 +382,16 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
 
   $document = new ApacheSolrDocument();
 
+  // Define our url options in advance. This differs depending on the
+  // language
+  $languages = language_list();
+  $url_options = array('absolute' => TRUE);
+  if (isset($entity->language) && isset($languages[$entity->language])) {
+    $url_options = $url_options + array('language' => $languages[$entity->language]);
+  }
+
   $document->id = apachesolr_document_id($entity_id, $entity_type);
-  $document->site = url(NULL, array('absolute' => TRUE));
+  $document->site = url(NULL, $url_options);
   $document->hash = apachesolr_site_hash();
 
   $document->entity_id = $entity_id;
@@ -384,12 +399,6 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
   $document->bundle = $bundle;
   $document->bundle_name = entity_bundle_label($entity_type, $bundle);
 
-  $path = entity_uri($entity_type, $entity);
-  // A path is not a requirement of an entity
-  if (!empty($path)) {
-    $document->path = $path['path'];
-    $document->url = url($path['path'], $path['options'] + array('absolute' => TRUE));
-  }
   if (empty($entity->language)) {
     // 'und' is the language-neutral code in Drupal 7.
     $document->language = LANGUAGE_NONE;
@@ -398,14 +407,20 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
     $document->language = $entity->language;
   }
 
-  // Path aliases can have important information about the content.
-  // Add them to the index as well.
-  if (function_exists('drupal_get_path_alias')) {
-    // Add any path alias to the index, looking first for language specific
-    // aliases but using language neutral aliases otherwise.
-    $output = drupal_get_path_alias($document->path, $document->language);
-    if ($output && $output != $document->path) {
-      $document->path_alias = $output;
+  $path = entity_uri($entity_type, $entity);
+  // A path is not a requirement of an entity
+  if (!empty($path)) {
+    $document->path = $path['path'];
+    $document->url = url($path['path'], $path['options'] + $url_options);
+    // Path aliases can have important information about the content.
+    // Add them to the index as well.
+    if (function_exists('drupal_get_path_alias')) {
+      // Add any path alias to the index, looking first for language specific
+      // aliases but using language neutral aliases otherwise.
+      $output = drupal_get_path_alias($document->path, $document->language);
+      if ($output && $output != $document->path) {
+        $document->path_alias = $output;
+      }
     }
   }
   return $document;

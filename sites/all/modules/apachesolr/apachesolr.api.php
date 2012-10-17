@@ -182,7 +182,13 @@ function hook_apachesolr_field_name_map_alter(&$map) {
  *   An object implementing DrupalSolrQueryInterface. No need for &.
  */
 function hook_apachesolr_query_alter($query) {
-  // I only want to see articles by the admin!
+  // I only want to see articles by the admin.
+  //
+  // NOTE: this "is_uid" filter does NOT refer to the English word "is"
+  // It is a combination of flags representing Integer-Single, which is
+  // abbreviated with the letters i and s.
+  //
+  // @see the <dynamicField> definitions in schema.xml or schema-solr3.xml
   $query->addFilter("is_uid", 1);
 
   // Only search titles.
