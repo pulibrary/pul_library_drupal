@@ -334,7 +334,6 @@ function webform_components_form_submit($form, &$form_state) {
 
   drupal_set_message(t('The component positions and mandatory values have been updated.'));
 }
-
 /**
  * Submit handler for webform_components_form() that adds a new component.
  */
@@ -483,22 +482,21 @@ function webform_component_edit_form($form, $form_state, $node, $component, $clo
     '#attributes' => array('class' => array('webform-position')),
   );
 
-  if (!empty($node->webform['components'])) {
-    $options = array('0' => t('Root'));
-    foreach ($node->webform['components'] as $existing_cid => $value) {
-      if (webform_component_feature($value['type'], 'group') && (!isset($component['cid']) || $existing_cid != $component['cid'])) {
-        $options[$existing_cid] = $value['name'];
-      }
+  $options = array('0' => t('Root'));
+  foreach ($node->webform['components'] as $existing_cid => $value) {
+    if (webform_component_feature($value['type'], 'group') && (!isset($component['cid']) || $existing_cid != $component['cid'])) {
+      $options[$existing_cid] = $value['name'];
     }
-    $form['position']['pid'] = array(
-      '#type' => 'select',
-      '#title' => t('Parent'),
-      '#default_value' => $component['pid'],
-      '#description' => t('Optional. You may organize your form by placing this component inside another fieldset.'),
-      '#options' => $options,
-      '#weight' => 3,
-    );
   }
+  $form['position']['pid'] = array(
+    '#type' => 'select',
+    '#title' => t('Parent'),
+    '#default_value' => $component['pid'],
+    '#description' => t('Optional. You may organize your form by placing this component inside another fieldset.'),
+    '#options' => $options,
+    '#access' => count($options) > 1,
+    '#weight' => 3,
+  );
   $form['position']['weight'] = array(
     '#type' => 'textfield',
     '#size' => 4,
@@ -855,6 +853,7 @@ function webform_component_feature($type, $feature) {
     'group' => FALSE,
     'attachment' => FALSE,
     'private' => TRUE,
+    'views_range' => FALSE,
   );
   return isset($components[$type]['features'][$feature]) ? $components[$type]['features'][$feature] : !empty($defaults[$feature]);
 }

@@ -62,7 +62,7 @@
  * methods for pinging, adding, deleting, committing, optimizing and searching.
  */
 
-class DrupalApacheSolrService {
+class DrupalApacheSolrService implements DrupalApacheSolrServiceInterface {
   /**
    * How NamedLists should be formatted in the output.  This specifically effects facet counts. Valid values
    * are 'map' (default) or 'flat'.
@@ -143,7 +143,7 @@ class DrupalApacheSolrService {
    * @return
    *   (array) With all the system info
    */
-  public function setSystemInfo() {
+  protected function setSystemInfo() {
     $url = $this->_constructUrl(self::SYSTEM_SERVLET, array('wt' => 'json'));
     if ($this->env_id) {
       $this->system_info_cid = $this->env_id . ":system:" . drupal_hash_base64($url);
@@ -425,7 +425,7 @@ class DrupalApacheSolrService {
    *
    * This is just a wrapper around drupal_http_request().
    */
-  protected function _makeHttpRequest($url, $options = array()) {
+  protected function _makeHttpRequest($url, array $options = array()) {
     if (!isset($options['method']) || $options['method'] == 'GET' || $options['method'] == 'HEAD') {
       // Make sure we are not sending a request body.
       $options['data'] = NULL;
@@ -734,7 +734,7 @@ class DrupalApacheSolrService {
   /**
    * Like PHP's built in http_build_query(), but uses rawurlencode() and no [] for repeated params.
    */
-  public function httpBuildQuery(array $query, $parent = '') {
+  protected function httpBuildQuery(array $query, $parent = '') {
     $params = array();
 
     foreach ($query as $key => $value) {
@@ -766,10 +766,7 @@ class DrupalApacheSolrService {
    *
    * @throws Exception If an error occurs during the service call
    */
-  public function search($query = '', $params = array(), $method = 'GET') {
-    if (!is_array($params)) {
-      $params = array();
-    }
+  public function search($query = '', array $params = array(), $method = 'GET') {
     // Always use JSON. See http://code.google.com/p/solr-php-client/issues/detail?id=6#c1 for reasoning
     $params['wt'] = 'json';
     // Additional default params.
@@ -782,9 +779,15 @@ class DrupalApacheSolrService {
     // PHP's built in http_build_query() doesn't give us the format Solr wants.
     $queryString = $this->httpBuildQuery($params);
     // Check string length of the query string, change method to POST
-    // if longer than 4000 characters (typical server handles 4096 max).
-    // @todo - make this a per-server setting.
-    if (strlen($queryString) > variable_get('apachesolr_search_post_threshold', 4000)) {
+    $len = strlen($queryString);
+    // Fetch our threshold to find out when to flip to POST
+    $max_len = apachesolr_environment_variable_get($this->env_id, 'apachesolr_search_post_threshold', 3600);
+
+    // if longer than $max_len (default 3600) characters
+    // we should switch to POST (a typical server handles 4096 max).
+    // If this class is used independently (without environments), we switch automatically to POST at an
+    // limit of 1800 chars.
+    if (($len > 1800) && (empty($this->env_id) || ($len > $max_len))) {
       $method = 'POST';
     }
 

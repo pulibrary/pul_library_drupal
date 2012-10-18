@@ -37,6 +37,22 @@ function apachesolr_drush_command() {
     'callback' => 'apachesolr_drush_solr_index',
     'description' => dt('Reindexes content marked for (re)indexing.'),
   );
+  $items['solr-get-last-indexed'] = array(
+    'callback' => 'apachesolr_drush_solr_get_last_indexed',
+    'description' => dt('Get the ID of the last document indexed.'),
+    'arguments' => array(
+      'environment-id' => dt('Optional. The environment ID, uses the default if not passed.'),
+      'entity-type' => dt('Optional. The machine name of the entity, defaults to "node".'),
+    ),
+  );
+  $items['solr-get-next-indexed'] = array(
+    'callback' => 'apachesolr_drush_solr_get_next_indexed',
+    'description' => dt('Get the ID of the next document to be indexed.'),
+    'arguments' => array(
+      'environment-id' => dt('Optional. The environment ID, uses the default if not passed.'),
+      'entity-type' => dt('Optional. The machine name of the entity, defaults to "node".'),
+    ),
+  );
   $items['solr-search'] = array(
     'callback' => 'apachesolr_drush_solr_search',
     'description' => dt('Search the site for keywords using Apache Solr'),
@@ -95,13 +111,8 @@ function apachesolr_drush_command() {
       'drush solr-vget user' => 'List all variables containing the string "user".',
     ),
     'options' => array(
-      'id' => array(
-         'description' => 'Apache Solr environment ID to use (uses the default environment if not specified)',
-      ),
-      'format' => array(
-        'description' => 'Format to output the object. Use "print_r" for print_r (default), "export" for var_export, and "json" for JSON.',
-        'example-value' => 'export',
-      ),
+      'id' => 'Apache Solr environment ID to use (uses the default environment if not specified)',
+      'format' => 'Format to output the object. Use "print_r" for print_r (default), "export" for var_export, and "json" for JSON.',
       'pipe' => 'A synonym for --format=export. Useful for pasting into code.',
     ),
     'aliases' => array('solr-vget'),
@@ -114,15 +125,10 @@ function apachesolr_drush_command() {
     ),
     'required-arguments' => TRUE,
     'options' => array(
-      'id' => array(
-         'description' => 'Apache Solr environment ID to use (uses the default environment if not specified)',
-      ),
+      'id' => 'Apache Solr environment ID to use (uses the default environment if not specified)',
       'yes' => 'Skip confirmation if only one variable name matches.',
       'always-set' => 'Always skip confirmation.',
-      'format' => array(
-        'description' => 'Format to parse the object. Use "auto" to detect format from value (default), "string", "integer" or "boolean" for corresponding primitive type, and "json" for JSON.',
-        'example-value' => 'boolean',
-      ),
+      'format' => 'Format to parse the object. Use "auto" to detect format from value (default), "string", "integer" or "boolean" for corresponding primitive type, and "json" for JSON.',
     ),
     'examples' => array(
       'drush solr-vset --yes apachesolr_read_only 1' => 'Set the apachesolr_read_only variable to 1. Skip confirmation if variable already exists.',
@@ -238,13 +244,35 @@ function apachesolr_drush_solr_index() {
   drush_backend_batch_process();
 }
 
+function apachesolr_drush_solr_get_last_indexed($env_id = NULL, $entity_type = 'node') {
+  if (NULL === $env_id) {
+    $env_id = apachesolr_default_environment();
+  }
+  $return = apachesolr_get_last_index_position($env_id, $entity_type);
+  drush_print($return['last_entity_id']);
+}
+
+function apachesolr_drush_solr_get_next_indexed($env_id = NULL, $entity_type = 'node') {
+  module_load_include('inc', 'apachesolr', 'apachesolr.index');
+  if (NULL === $env_id) {
+    $env_id = apachesolr_default_environment();
+  }
+  $return = apachesolr_index_get_entities_to_index($env_id, $entity_type, 1);
+  $output = (isset($return[0]->entity_id)) ? $return[0]->entity_id : '0';
+  drush_print($output);
+}
+
 function apachesolr_drush_solr_search() {
   $args = func_get_args();
   $keys = implode(' ', $args);
   foreach (apachesolr_search_search_execute($keys) as $result) {
-    $output = 'node/' . $result['node']->entity_id . ' ' . dt('by @name (user/@uid)', array('@name' => strip_tags($result['user']), '@uid' => $result['node']->is_uid)) . "\n";
+    $output = $result['fields']['path'];
+    if(isset($result['user']) && isset($result['node']->is_uid)) {
+      $output .= ' ' . dt('by @name (user/@uid)', array('@name' => strip_tags($result['user']), '@uid' => $result['node']->is_uid));
+    }
+    $output .= "\n";
     $output .= dt('title: ') . $result['title'] . "\n";
-    $output .= preg_replace('/[\s]+/', ' ', strip_tags($result['snippet'])) . "\n\n";
+    $output .= trim(preg_replace('/\s+/', ' ', strip_tags($result['snippet']))) . "\n\n";
     drush_print($output);
   }
 }

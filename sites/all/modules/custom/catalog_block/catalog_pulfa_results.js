@@ -20,7 +20,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
-				$('<div class="more-results"><i class="icon-arrow-right"></i><a href="'+data.more+'">See all '+data.number+ ' Results from Library Archives</a></div>"').appendTo('#pulfa-search-results');
+				$('<div class="more-results"><i class="icon-arrow-right"></i><a href="'+data.more+'">See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 			} else {
 				$('<div class="no-results">No Archives Content match '+query+'</div>"').appendTo('#-search-results');
 			}

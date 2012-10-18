@@ -114,7 +114,7 @@ height:40px;
 padding:0;
 }
 
-
+#zone-branding-wrapper #block-system-main-menu ul.menu li span.main-menu-item-title,
 #zone-branding-wrapper #block-system-main-menu ul.menu li a{
 display:block;
 color:#fff;
@@ -390,7 +390,7 @@ vertical-align:middle;
 display:block;
 }
 
-.front #allsearch-block-form .form-item-query{
+.front #allsearch-block-form .form-item-query, .page-find-all #allsearch-block-form .form-item-query{
 display:inline;
 }
 
@@ -857,10 +857,11 @@ color: #5C5E66;
 /* ===========================================================================
    All Search Page /find/all
    ========================================================================== */
-
+/*
 #all-search-page .panel-separator {
 border-bottom: 1px solid #E5E5E5;
 }
+*/
 
 #all-search-page .more-results {
 padding-left: 50px;
@@ -869,11 +870,11 @@ padding-left: 50px;
 .all-search-results-list {
 list-style-type: none;
 }
-
+/*
 .all-search-results-list li {
 padding: 5px 0 0 0;
 }
-
+*/
 #all-search-page .views-field-title {
 }
 
@@ -890,6 +891,15 @@ font-size: 140%;
 color: #FFFFFF;
 background-color: #0062A0;
 
+}
+
+
+.known-issue-status-field { 
+padding-top: 20px;
+}
+
+.known-issue-status-field span div {
+display: inline;
 }
 
 /* =======================================================================

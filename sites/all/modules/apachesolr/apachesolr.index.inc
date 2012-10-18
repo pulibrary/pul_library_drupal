@@ -2,12 +2,36 @@
 
 /**
  * @file
- *   Functions used when indexing content to Apache Solr.
+ * Functions related to Apache Solr indexing operations.
  */
 
-
 /**
- * Send up to $limit entities of each type into the index.
+ * Processes all index queues associated with the passed environment.
+ *
+ * An environment usually indexes one or more entity types. Each entity type
+ * stores its queue in a database table that is defined in the entity type's
+ * info array. This function processes N number of items in each queue table,
+ * where N is the limit passed as the second argument.
+ *
+ * The indexing routine allows developers to selectively bypass indexing on a
+ * per-entity basis by implementing the following hooks:
+ * - hook_apachesolr_exclude()
+ * - hook_apachesolr_ENTITY_TYPE_exclude()
+ *
+ * @param string $env_id
+ *   The machine name of the environment.
+ * @param int $limit
+ *   The number of items to process per queue table. For example, if there are
+ *   two entities that are being indexed in this environment and they each have
+ *   their own queue table, setting a limit of 50 will send a maximum number of
+ *   100 documents to the Apache Solr server.
+ *
+ * @return int
+ *   The total numer of documents sent to the Apache Solr server for indexing.
+ *
+ * @see apachesolr_index_get_entities_to_index()
+ * @see apachesolr_index_entity_to_documents()
+ * @see apachesolr_index_send_to_solr()
  */
 function apachesolr_index_entities($env_id, $limit) {
   $documents_submitted = 0;
@@ -16,31 +40,8 @@ function apachesolr_index_entities($env_id, $limit) {
     $rows = apachesolr_index_get_entities_to_index($env_id, $entity_type, $limit);
     $documents = array();
     foreach ($rows as $row) {
-      if (!empty($row->status)) {
-        // Let any module exclude this entity from the index.
-        $build_document = TRUE;
-        foreach (module_implements('apachesolr_exclude') as $module) {
-          $exclude = module_invoke($module, 'apachesolr_exclude', $row->entity_id, $entity_type, $row, $env_id);
-          // If the hook returns TRUE we should exclude the entity
-          if (!empty($exclude)) {
-            $build_document = FALSE;
-          }
-        }
-        foreach (module_implements('apachesolr_' . $entity_type . '_exclude') as $module) {
-          $exclude = module_invoke($module, 'apachesolr_' . $entity_type . '_exclude', $row->entity_id, $row, $env_id);
-          // If the hook returns TRUE we should exclude the entity
-          if (!empty($exclude)) {
-            $build_document = FALSE;
-          }
-        }
-        if ($build_document) {
-          $documents = array_merge($documents, apachesolr_index_entity_to_documents($row, $env_id));
-        }
-      }
-      else {
-        // Delete the entity from our index if the status callback returned 0
-        apachesolr_remove_entity($env_id, $row->entity_type, $row->entity_id);
-      }
+      $row_documents = apachesolr_index_entities_document($row, $entity_type, $env_id);
+      $documents = array_merge($documents, $row_documents);
     }
 
     $indexed = apachesolr_index_send_to_solr($env_id, $documents);
@@ -66,8 +67,50 @@ function apachesolr_index_entities($env_id, $limit) {
   return $documents_submitted;
 }
 
+function apachesolr_index_entities_document($row, $entity_type, $env_id) {
+  $documents = array();
+  if (!empty($row->status)) {
+    // Let any module exclude this entity from the index.
+    $build_document = TRUE;
+    foreach (module_implements('apachesolr_exclude') as $module) {
+      $exclude = module_invoke($module, 'apachesolr_exclude', $row->entity_id, $entity_type, $row, $env_id);
+      // If the hook returns TRUE we should exclude the entity
+      if (!empty($exclude)) {
+        $build_document = FALSE;
+      }
+    }
+    foreach (module_implements('apachesolr_' . $entity_type . '_exclude') as $module) {
+      $exclude = module_invoke($module, 'apachesolr_' . $entity_type . '_exclude', $row->entity_id, $row, $env_id);
+      // If the hook returns TRUE we should exclude the entity
+      if (!empty($exclude)) {
+        $build_document = FALSE;
+      }
+    }
+    if ($build_document) {
+      $documents = array_merge($documents, apachesolr_index_entity_to_documents($row, $env_id));
+    }
+  }
+  else {
+    // Delete the entity from our index if the status callback returned 0
+    apachesolr_remove_entity($env_id, $row->entity_type, $row->entity_id);
+  }
+  return $documents;
+}
 /**
- * Helper function for modules implementing hook_search's 'status' op.
+ * Returns the total number of documents that are able to be indexed and the
+ * number of documents left to be indexed.
+ *
+ * This is a helper function for modules that implement hook_search_status().
+ *
+ * @param string $env_id
+ *   The machine name of the environment.
+ *
+ * @return array
+ *   An associative array with the key-value pairs:
+ *   - remaining: The number of items left to index.
+ *   - total: The total number of items to index.
+ *
+ * @see hook_search_status()
  */
 function apachesolr_index_status($env_id) {
   $remaining = 0;
@@ -90,6 +133,7 @@ function apachesolr_index_status($env_id) {
     // that we get a definitive order.
     $query = db_select($table, 'aie')
       ->condition('aie.bundle', $bundles)
+      ->condition('aie.status', 1)
       ->condition(db_or()
         ->condition('aie.changed', $last_changed, '>')
         ->condition(db_and()
@@ -108,10 +152,43 @@ function apachesolr_index_status($env_id) {
 }
 
 /**
- * Worker callback for apachesolr_index_entities.
+ * Worker callback for apachesolr_index_entities().
+ *
+ * Loads and proccesses the entity queued for indexing and converts into one or
+ * more documents that are sent to the Apache Solr server for indexing.
+ *
+ * The entity is loaded as the user specified in the "apachesolr_index_user"
+ * system variable in order to prevent sentive data from being indexed and
+ * displayed to underprivileged users in search results. The index user defaults
+ * to a user ID of "0", which is the anonymous user.
+ *
+ * After the entity is loaded, it is converted to an array via the callback
+ * specified in the entity type's info array. The array that the entity is
+ * converted to is the model of the document sent to the Apache Solr server for
+ * indexing. This function allows develoeprs to modify the document by
+ * implementing the following hooks:
+ * - apachesolr_index_document_build()
+ * - apachesolr_index_document_build_ENTITY_TYPE()
+ * - apachesolr_index_documents_alter()
+ *
+ * @param stdClass $item
+ *   The data returned by the queue table containing:
+ *   - entity_id: An integer containing the unique identifier of the entity, for
+ *     example a node ID or comment ID.
+ *   - entity_type: The unique identifier for the entity, i.e. "node", "file".
+ *   - bundle: The machine-readable name of the bundle the passed entity is
+ *     associated with.
+ *   - status: The "published" status of the entity. The status will also be set
+ *     to "0" when entity is deleted but the Apache Solr server is unavailable.
+ *   - changed: A timestamp flagging when the entity was last modified.
+ * @param string $env_id
+ *   The machine name of the environment.
+ *
+ * @return array
+ *   An associative array of documents that are sent to the Apache Solr server
+ *   for indexing.
  *
  * @see apachesolr_index_nodes() for the old-skool version.
- * @return array of documents that need to be sent to the index of solr
  */
 function apachesolr_index_entity_to_documents($item, $env_id) {
 
@@ -255,7 +332,7 @@ function apachesolr_index_send_to_solr($env_id, $documents) {
  *
  * $text must be stripped of control characters before hand.
  */
-function apachesolr_index_add_tags_to_document(&$document, $text) {
+function apachesolr_index_add_tags_to_document($document, $text) {
   $tags_to_index = variable_get('apachesolr_tags_to_index', array(
     'h1' => 'tags_h1',
     'h2' => 'tags_h2_h3',
@@ -305,8 +382,16 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
 
   $document = new ApacheSolrDocument();
 
+  // Define our url options in advance. This differs depending on the
+  // language
+  $languages = language_list();
+  $url_options = array('absolute' => TRUE);
+  if (isset($entity->language) && isset($languages[$entity->language])) {
+    $url_options = $url_options + array('language' => $languages[$entity->language]);
+  }
+
   $document->id = apachesolr_document_id($entity_id, $entity_type);
-  $document->site = url(NULL, array('absolute' => TRUE));
+  $document->site = url(NULL, $url_options);
   $document->hash = apachesolr_site_hash();
 
   $document->entity_id = $entity_id;
@@ -314,12 +399,6 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
   $document->bundle = $bundle;
   $document->bundle_name = entity_bundle_label($entity_type, $bundle);
 
-  $path = entity_uri($entity_type, $entity);
-  // A path is not a requirement of an entity
-  if (!empty($path)) {
-    $document->path = $path['path'];
-    $document->url = url($path['path'], $path['options'] + array('absolute' => TRUE));
-  }
   if (empty($entity->language)) {
     // 'und' is the language-neutral code in Drupal 7.
     $document->language = LANGUAGE_NONE;
@@ -328,14 +407,20 @@ function _apachesolr_index_process_entity_get_document($entity, $entity_type) {
     $document->language = $entity->language;
   }
 
-  // Path aliases can have important information about the content.
-  // Add them to the index as well.
-  if (function_exists('drupal_get_path_alias')) {
-    // Add any path alias to the index, looking first for language specific
-    // aliases but using language neutral aliases otherwise.
-    $output = drupal_get_path_alias($document->path, $document->language);
-    if ($output && $output != $document->path) {
-      $document->path_alias = $output;
+  $path = entity_uri($entity_type, $entity);
+  // A path is not a requirement of an entity
+  if (!empty($path)) {
+    $document->path = $path['path'];
+    $document->url = url($path['path'], $path['options'] + $url_options);
+    // Path aliases can have important information about the content.
+    // Add them to the index as well.
+    if (function_exists('drupal_get_path_alias')) {
+      // Add any path alias to the index, looking first for language specific
+      // aliases but using language neutral aliases otherwise.
+      $output = drupal_get_path_alias($document->path, $document->language);
+      if ($output && $output != $document->path) {
+        $document->path_alias = $output;
+      }
     }
   }
   return $document;
@@ -530,7 +615,6 @@ function apachesolr_index_mark_for_reindex($env_id, $entity_type = NULL) {
   apachesolr_clear_last_index_position($env_id, $entity_type);
   cache_clear_all('*', 'cache_apachesolr', TRUE);
 }
-
 
 /**
  * Sets what bundles on the specified entity type should be indexed.

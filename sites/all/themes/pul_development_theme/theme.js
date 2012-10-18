@@ -12,6 +12,7 @@
 
 	$( "a", ".field-name-field-db-access-url" ).button();
         //$( "a", ".field-name-field-db-access-url" ).click(function() { return false; });
-    
+        //$("a", ".service-button-link").button();
+        $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
   });
 }(jQuery));

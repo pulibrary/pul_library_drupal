@@ -22,6 +22,12 @@ function user_colors_info() {
       'long_description' => t('A color for the current user. If enabled, you may set one color for items the current user has authored.'),
       'function' => '_user_current',
     ),
+    'users' => array(
+      'title' => 'Users',
+      'short_description' => t('Enable colors for each user'),
+      'long_description' => t('Colors for users. If enabled, you may set colors for each user below.'),
+      'function' => '_colors_users',
+    ),
   );
 }
 
@@ -41,8 +47,13 @@ function user_colors_classes($entity) {
   }
   if (variable_get('colors_user_current_enabled', FALSE)) {
     global $user;
-    if ($user->uid == $entity->uid) {
+    if (!empty($entity->uid) && $user->uid == $entity->uid) {
       $class_names[] = 'colors-user-current-0';
+    }
+  }
+  if (variable_get('colors_users_enabled', FALSE)) {
+    if ($entity->entity_type == 'user' || $entity->entity_type == 'node') {
+      $class_names[] = 'colors-users-' . $entity->uid;
     }
   }
   return $class_names;
@@ -50,4 +61,17 @@ function user_colors_classes($entity) {
 
 function _user_current() {
   return array('Current user');
+}
+
+function _colors_users() {
+  $users = entity_load('user');
+
+  $result = array();
+  foreach ($users as $user) {
+    if (!empty($user->name)) {
+      $result[$user->uid] =  $user->name;
+    }
+  }
+
+  return $result;
 }
