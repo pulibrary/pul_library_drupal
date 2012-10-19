@@ -161,26 +161,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', end
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer{
 clear:both;
+border-top:1px dotted #fff;
 padding:10px 4px 4px 4px;
 text-align:center;
 }
 
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer h3 {
+font-style:normal;
+font-size:125%;
+}
+
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer a{
 font-family: Arvo, sans-serif;
-font-style:italic;
+font-style:normal;
 color:#ccc;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list{
 clear:none;
 display:block;
+border-right:1px dotted #fff;
 float:left;
 width:175px;
 padding:0 20px 0 0;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content div.item-list +  div.item-list{
-border-left:1px dotted #fff;
+/* border-left:1px dotted #fff; */
+border:none;
 padding:0 0 0 20px;
 }
 
