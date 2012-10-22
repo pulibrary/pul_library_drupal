@@ -14,6 +14,6 @@
         //$( "a", ".field-name-field-db-access-url" ).click(function() { return false; });
         //$("a", ".service-button-link").button();
         $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
-        $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li><a href='/collections' title='All Collections'>More Collections</a></li>");
+        $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
   });
 }(jQuery));

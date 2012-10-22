@@ -233,6 +233,12 @@ color:#71e5ff;
 text-shadow:none;
 }
 
+/* insert rule to deal with "more collections" link */
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 li.last.more {
+  font-style:italic;
+  text-align: right;
+}
+
 #zone-branding-wrapper #block-system-main-menu ul.menu li + li .view-id-libraries_and_collections.view-display-id-block_1 { 
   display: none;
 }
