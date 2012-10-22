@@ -171,8 +171,6 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
     // Create AJAX wrapper around the menu edit form element.
     $element['#prefix'] = '<div id="menu-edit-item-wrapper">';
     $element['#suffix'] = '</div>';
-    // Alter terminology.
-    $element['parent']['#title'] = t('Parent Item');
   }
     
   // Get values for the new menu views item, existing menu views item or submitted form values.
@@ -180,6 +178,15 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
 
   // Use the loaded node if it exists.
   $node = isset($form['#node']) ? $form['#node'] : FALSE;
+  
+  // Get the original menu link, if it exists.
+  $menu_link = array();
+  if (isset($form['original_item']['#value'])) {
+    $menu_link = $form['original_item']['#value'];
+  }
+  elseif ($node && isset($node->menu)) {
+    $menu_link = $node->menu;
+  }
   
   // Determine which menu item type is visible.
   $visible = !($item['type'] == 'view');
@@ -251,10 +258,17 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
   }
   $element['menu_item_settings']['expanded'] = $element['expanded'];
   unset($element['expanded']);
-  $type = isset($node) && isset($node->type) ? $node->type : 'main-menu:0';
-  $element['parent']['#options'] = _menu_views_parent_options(menu_get_menus(), $item['mlid'] ? $item : $type, $type);
+  
+  // Replace Parent Menu Options
+  $options = _menu_views_parent_options(menu_get_menus(), $menu_link);
+  if ($node && isset($node->type)) {
+    $options = _menu_views_parent_options(menu_get_menus(), $menu_link['mlid'] ? $menu_link : $node->type, $node->type);
+  }
+  $element['parent']['#title'] = t('Parent Item');
+  $element['parent']['#options'] = $options;
   $element['menu_item_settings']['parent'] = $element['parent'];
   unset($element['parent']);
+  
   $element['menu_item_settings']['weight'] = $element['weight'];
   unset($element['weight']);
   

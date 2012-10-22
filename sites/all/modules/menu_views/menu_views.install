@@ -131,7 +131,8 @@ function menu_views_update_7200(&$sandbox) {
     if (isset($options['menu_views'])) {
       $item = _menu_views_default_values();
       $item['mlid'] = $link->mlid;
-      $item['type'] = !empty($name) && !empty($display) ? 'view' : 'link';
+      $item['type'] = (isset($options['menu_views']['name']) && !empty($options['menu_views']['name']))
+                      && (isset($options['menu_views']['display']) && !empty($options['menu_views']['display'])) ? 'view' : 'link';
       $item['original_path'] = $link->link_path != '<view>' ? $link->link_path : '';
       $item['view']['name'] = isset($options['menu_views']['name']) ? $options['menu_views']['name'] : '';;
       $item['view']['display'] = isset($options['menu_views']['display']) ? $options['menu_views']['display'] : '';
