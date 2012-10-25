@@ -22,7 +22,8 @@
   <h3 class="title"><?php echo $entity->title; ?></h3>
   <?php foreach ($data as $row): ?>
     <div class="fullcalendar-instance">
-      <?php print $row; ?>
+     	<?php print $data['start']; ?>
+	/*  <?php print $row; ?> */
     </div>
   <?php endforeach; ?>
 <?php endif; ?>
