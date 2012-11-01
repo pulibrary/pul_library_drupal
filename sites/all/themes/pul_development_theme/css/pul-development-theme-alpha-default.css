@@ -581,7 +581,8 @@ border-top:1px dotted #bfbfbf;
 text-align:right;
 }
 
-.read-more a{
+.read-more a,
+a.views-more-link{
 font-family: Arvo, sans-serif;
 font-style:italic;
 font-weight:normal;
@@ -593,6 +594,14 @@ text-decoration:none;
 -webkit-border-radius: 3px;
 -moz-border-radius: 3px;
 border-radius: 3px;
+}
+
+
+a.views-more-link{
+margin:1em 0 0 0;
+float:right;
+display:block;
+clear:both;
 }
 
 
