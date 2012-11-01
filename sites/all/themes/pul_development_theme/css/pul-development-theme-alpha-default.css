@@ -13,6 +13,37 @@ background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 background:none;
 }
 
+#breadcrumb .breadcrumb{
+padding:.75em 0 0 0;
+}
+
+#breadcrumb .breadcrumb a{
+background:url(../images/breadcrumb-divider.png) no-repeat right center #87e4ff;
+color:#fff;
+text-decoration:none;
+padding:2px 14px 2px 8px;
+font-size:0.833em;
+
+}
+
+#breadcrumb .breadcrumb a:first-child{
+-webkit-border-top-left-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+}
+
+#breadcrumb .breadcrumb a:last-child{
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+background-image:none;
+}
 
 
 /* =============================================================================
@@ -185,7 +216,7 @@ display:block;
 border-right:1px dotted #fff;
 float:left;
 width:175px;
-padding:0 20px 0 0;
+padding:0 20px 10px 0;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content div.item-list +  div.item-list{
@@ -336,7 +367,7 @@ li + li.ui-state-active,
 .ui-widget-header li.ui-state-active,
 .ui-widget-header li + li.ui-state-active,
 .ui-widget-header li + li + li + li.ui-state-active{
-background:url(../images/searchit-bg.gif) no-repeat left top transparent;
+background:url(../images/searchit-bg.gif) no-repeat 0 -15px transparent;
 }
 
 .ui-corner-bottom{
@@ -463,14 +494,14 @@ margin-left:-11px;
 .front #block-menu-menu-get-help-menu .content{
 background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 padding:0;
-height: 151px;
+height: 156px;
 -webkit-border-bottom-right-radius: 4px;
 -moz-border-radius-bottomright: 4px;
 border-bottom-right-radius: 4px;
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
-padding:3px 0 3px 48px;
+padding:3px 0 4px 48px;
 margin:0;
 color:#ffffff;
 background:url(../images/gethelp.gif) no-repeat -1px 0 #0098f4;
@@ -613,22 +644,26 @@ clear:both;
 margin:-32px 0 0 0;
 }
 
-#block-menu-menu-user-group-portals h2.block-title,
+.panel-panel.grid-3 h2.pane-title,
+#region-postscript-third h2.block-title,
 #region-sidebar-second h2.block-title{
 color:#5c5e66;
 border-bottom:1px dotted #e5e5e5;
 margin-left:-10px;
 margin-right:10px;
 margin-bottom:10px;
-padding:0 12px;
+padding:0 12px 6px 10px;
+line-height:1.2em;
 }
 
-#block-menu-menu-user-group-portals ul.menu li a,
+.panel-panel.grid-3 ul.menu li a,
+#region-postscript-third ul.menu li a,
 #region-sidebar-second ul.menu li a{
 color:#F58026;
 text-decoration:none;
 }
 
+.panel-panel.grid-3 ul.menu li a:hover,
 #block-menu-menu-user-group-portals ul.menu li a:hover,
 #region-sidebar-second ul.menu li a:hover{
 color:#333;

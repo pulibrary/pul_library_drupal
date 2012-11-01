@@ -132,6 +132,10 @@ a:active {
    Typography
    ========================================================================== */
 
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset{
+margin-bottom:0;
+}
+
 /*
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
@@ -151,7 +155,6 @@ h2.block-title{
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
-    padding: 0.23em 0;
 }
 
 h3 {
@@ -552,6 +555,24 @@ padding:0 0 3em 0;
 background-color:#fff;
 }
 
+#region-postscript-third .block + .block{
+padding-top:2em;
+}
+
+.panel-panel.grid-3 .panel-separator{
+clear:both;
+}
+
+.panel-panel.grid-3 .panel-pane{
+display:block;
+padding:0 0 2em 0;
+overflow:auto;
+}
+
+.views-row{
+padding-bottom:1em;
+}
+
 
 /* ========================================================================
    FORMS
@@ -573,7 +594,17 @@ input[type="time"],
 input[type="url"],
 input[type="week"]{
 border:1px solid #727272;
-padding:5px 0 5px 10px;
+padding:5px;
+}
+
+textarea,
+input[type="text"]{
+width:350px;
+}
+
+.panel-panel.grid-3 textarea,
+.panel-panel.grid-3 input[type="text"]{
+width:210px;
 }
 
 select{
@@ -599,6 +630,14 @@ text-decoration: none;
 vertical-align: middle;
 font-family: 'PT Sans', sans-serif;
 font-weight:normal;
+}
+
+.panel-panel.grid-3 button,
+.panel-panel.grid-3 input[type="reset"],
+.panel-panel.grid-3 input[type="submit"],
+.panel-panel.grid-3 input[type="button"]{
+margin:5px 10px 0 0;
+float:right;
 }
 
 .form-actions input:hover{
