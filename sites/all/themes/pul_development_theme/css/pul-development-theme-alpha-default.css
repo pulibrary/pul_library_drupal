@@ -57,14 +57,16 @@ display:block;
 float: left;
 }
 
-#zone-user .block-inner{
-background:url(../images/user-right.gif) no-repeat right top transparent;
+#superfish-1 li.last{
+padding:0 17px 0 0;
+background:url(../images/user-right.png) no-repeat right top transparent;
 }
 
 #superfish-1{
-padding:0 17px;
+float:right;
+padding:0 0 0 17px;
 font-size:0.917em;
-background:url(../images/user-left.gif) no-repeat left top transparent;
+background:url(../images/user-left.png) no-repeat left top transparent;
 }
 
 .sf-menu.sf-style-space-orange li,
@@ -286,7 +288,7 @@ border-top-left-radius: 4px;
 .ui-tabs .ui-tabs-panel{
 background:url(../images/searchit-bg.gif) no-repeat left bottom transparent;
 height:74px;
-padding:29px 0 0 44px;
+padding:29px 0 14px 44px;
 }
 
 .ui-tabs .ui-tabs-nav{
@@ -295,10 +297,24 @@ padding:0;
 border-radius:0;
 }
 
-.ui-state-default,
-.ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default{
-background:none;
+li.ui-state-default,
+.ui-widget-content li.ui-state-default,
+.ui-widget-header li.ui-state-default{
+background:url(../images/searchit-tab-bg01.gif) no-repeat 0 -4px transparent;
+border:none;
+}
+
+li + li.ui-state-default,
+.ui-widget-content li + li.ui-state-default,
+.ui-widget-header li + li.ui-state-default{
+background:url(../images/searchit-tab-bg.gif) no-repeat 0 -4px transparent;
+border:none;
+}
+
+li + li + li + li.ui-state-default,
+.ui-widget-content li + li + li + li.ui-state-default,
+.ui-widget-header li + li + li + li.ui-state-default{
+background:url(../images/searchit-tab-bg04.gif) no-repeat 0 -4px transparent;
 border:none;
 }
 
@@ -311,9 +327,15 @@ border:none;
 padding:0;
 }
 
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active{
+li.ui-state-active,
+li + li.ui-state-active,
+li + li.ui-state-active,
+.ui-widget-content li.ui-state-active,
+.ui-widget-content li + li.ui-state-active,
+.ui-widget-content li + li + li + li.ui-state-active,
+.ui-widget-header li.ui-state-active,
+.ui-widget-header li + li.ui-state-active,
+.ui-widget-header li + li + li + li.ui-state-active{
 background:url(../images/searchit-bg.gif) no-repeat left top transparent;
 }
 
@@ -334,11 +356,16 @@ border-top-right-radius: 0;
 }
 
 .ui-tabs .ui-tabs-nav li a{
-padding:9px 46px 0 45px;
+padding:9px 0 0 0;
 color:#fff;
 height:25px;
 background-color:transparent;
-width:auto;
+width:178px;
+text-align:center;
+}
+
+.ui-tabs .ui-tabs-nav li + li a{
+width:177px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active a{
@@ -436,7 +463,10 @@ margin-left:-11px;
 .front #block-menu-menu-get-help-menu .content{
 background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 padding:0;
-height: 137px;
+height: 151px;
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
@@ -451,7 +481,7 @@ border-bottom:none;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-padding:7px 12px 9px 12px;
+padding:8px 12px 0 12px;
 background:url(../images/gethelpmenu-top.gif) no-repeat -1px 0 transparent;
 }
 
@@ -462,7 +492,7 @@ border-left:1px solid #000;
 .front #block-menu-menu-get-help-menu ul.menu li a{
 color:#c78654;
 text-decoration:none;
-font-size:0.833em;
+font-size:0.917em;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li a:hover{
@@ -472,7 +502,7 @@ color:#333;
 .front #block-menu-menu-get-help-menu ul.menu li{
 border-bottom:1px dotted #b3b4b5;
 margin:0;
-padding:0;
+padding:1px 0;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li.last{
@@ -487,43 +517,28 @@ margin:0;
    SECONDARY RESEARCH MENU
    ========================================================================== */
 
-#block-menu-menu-secondary-research-links-ho{
+
+.homepage-tab-form-message {
+padding: 10px 0 0 0;
+text-indent:-9999px;
+}
+
+.homepage-tab-form-message a{
 display:block;
 float:left;
-padding:0 0 0 45px;
-}
-
-#block-menu-menu-secondary-research-links-ho .block-inner{
-display:block;
-padding:0 0 0 21px;
-background:url(../images/research-menu-left.png) no-repeat 0 31px transparent;
-}
-
-#block-menu-menu-secondary-research-links-ho .block-inner .content{
-display:block;
-padding:0 21px 0 0;
-background:url(../images/research-menu-right.png) no-repeat right center transparent;
-}
-
-#block-menu-menu-secondary-research-links-ho ul.menu{
-display:block;
-}
-
-#block-menu-menu-secondary-research-links-ho ul.menu li{
-float:left;
-background-color:#f1f1f1;
-margin:0;
-padding:4px 13px;
-}
-
-#block-menu-menu-secondary-research-links-ho ul.menu li a{
-color:#f58026;
+clear:none;
+background-color:#bbb;
+color:#5d5e63;
 text-decoration:none;
-font-size:0.917em;
-}
-
-#block-menu-menu-secondary-research-links-ho ul.menu li a:hover{
-color:#333;
+width:106px;
+padding:1px 0;
+text-align:center;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+text-indent:0px;
+margin:0 10px 0 0;
+font-size:0.833em;
 }
 
 
@@ -570,6 +585,7 @@ text-align:right;
 font-family: Arvo, sans-serif;
 font-style:italic;
 font-weight:normal;
+font-size:.833em;
 background-color:#63c0f8;
 color:#fff;
 padding:3px 5px;
@@ -914,16 +930,8 @@ padding-top: 20px;
 display: inline;
 }
 
-/* =======================================================================
-   Search Box Tweeks
-   ===================================================================== */
 
-.homepage-tab-form-message {
-  font-size: 80%;
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+
 
 /* ========================================================================
    Library News /news and Information for Landing Pages
