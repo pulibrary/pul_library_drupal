@@ -288,7 +288,7 @@ clear:none;
 }
 
 #block-quicktabs-homepage-search-tabs{
-padding:23px 0 0 0;
+padding:11px 0 0 0;
 width: 709px;
 background-color:transparent;
 margin-right:-12px;
@@ -367,7 +367,7 @@ li + li.ui-state-active,
 .ui-widget-header li.ui-state-active,
 .ui-widget-header li + li.ui-state-active,
 .ui-widget-header li + li + li + li.ui-state-active{
-background:url(../images/searchit-bg.gif) no-repeat 0 -15px transparent;
+background:url(../images/searchit-bg.gif) no-repeat 0 -13px transparent;
 }
 
 .ui-corner-bottom{
@@ -387,9 +387,9 @@ border-top-right-radius: 0;
 }
 
 .ui-tabs .ui-tabs-nav li a{
-padding:9px 0 0 0;
+padding:11px 0 0 0;
 color:#fff;
-height:25px;
+height:28px;
 background-color:transparent;
 width:178px;
 text-align:center;
@@ -487,7 +487,7 @@ position:static;
 
 
 .front #block-menu-menu-get-help-menu{
-padding: 23px 0 0 0;
+padding: 11px 0 0 0;
 margin-left:-11px;
 }
 
@@ -501,7 +501,7 @@ border-bottom-right-radius: 4px;
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
-padding:3px 0 4px 48px;
+padding:7px 0 5px 48px;
 margin:0;
 color:#ffffff;
 background:url(../images/gethelp.gif) no-repeat -1px 0 #0098f4;
@@ -512,7 +512,7 @@ border-bottom:none;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-padding:8px 12px 0 12px;
+padding:12px 12px 0 12px;
 background:url(../images/gethelpmenu-top.gif) no-repeat -1px 0 transparent;
 }
 
@@ -873,6 +873,26 @@ box-shadow: 0 0 2px 0 #5e310f;
 
 .fc .fc-header-space {
     padding-left: 20px;
+}
+
+
+/* =============================================================================
+   LIBRARIES & COLLECTIONS
+   ========================================================================== */
+
+.view-libraries-and-collections .views-row{
+display:block;
+clear:both;
+overflow:auto;
+}
+
+.view-libraries-and-collections p{
+margin:.25em 0;
+}
+
+.view-libraries-and-collections .lib-info{
+float:left;
+padding:0 16px 0 0;
 }
 
 

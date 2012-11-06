@@ -186,6 +186,12 @@ margin:0;
 padding:10px 0 5px 0;
 }
 
+h2 a:link,
+h2 a:visited{
+color:#7F3D00;
+text-decoration:none;
+}
+
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
@@ -570,9 +576,17 @@ overflow:auto;
 }
 
 .views-row{
-padding-bottom:1em;
+padding-bottom:1.5em;
 }
 
+
+.grid-3 .views-row{
+padding-bottom:.75em;
+}
+
+.alpha{
+margin-left:10px;
+}
 
 /* ========================================================================
    FORMS
