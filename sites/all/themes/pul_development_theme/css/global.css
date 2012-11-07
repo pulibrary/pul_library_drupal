@@ -150,7 +150,8 @@ h1 {
 }
 
 h2,
-h2.block-title{
+h2.block-title,
+h2.node-title{
     color:#0098f4;
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
@@ -160,8 +161,8 @@ h2.block-title{
 h3 {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.17em;
-    margin: 1em 0 0.5em;
-    color:#0098F4;
+    margin: 1em 0 0 0;
+    color:#777;
 }
 
 h4 {
@@ -187,7 +188,9 @@ padding:10px 0 5px 0;
 }
 
 h2 a:link,
-h2 a:visited{
+h2 a:visited,
+h3 a:link,
+h3 a:visited{
 color:#7F3D00;
 text-decoration:none;
 }
@@ -340,6 +343,14 @@ menu,
 ol,
 ul {
     padding: 0 0 0 40px;
+}
+
+.collections ul{
+padding:0;
+}
+
+li{
+padding-bottom:8px;
 }
 
 /*
@@ -544,13 +555,45 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    border:none;
 }
 
-tr:hover td,
-tr.even:hover td.active,
-tr.odd:hover td.active {
+th.active,
+td.active{
+border-left:none;
+border-right:none;
+background-color:#666;
+}
+
+tr:hover td{
 background: transparent;
 }
+
+tr.even, tr.odd{
+border-bottom: 1px dotted #CCCCCC;
+background-color:transparent;
+}
+
+tr.odd:hover td.active,
+tr.odd td.active,
+tr.odd td{
+background-color:#f5f5f5;
+}
+
+tr.even:hover td.active,
+tr.even td.active,
+tr.even td{
+background-color:transparent;
+}
+
+td, th{
+padding:10px;
+}
+
+th a img {
+margin: 0 0 3px 8px;
+}
+
 
 /* ========================================================================
    LAYOUT
@@ -573,19 +616,103 @@ clear:both;
 display:block;
 padding:0 0 2em 0;
 overflow:auto;
+margin-left:-10px;
+margin-right:10px;
+}
+
+.panel-panel.grid-3 .panel-pane .pane-content{
+padding:0 0 0 10px;
 }
 
 .views-row{
 padding-bottom:1.5em;
 }
 
-
 .grid-3 .views-row{
 padding-bottom:.75em;
 }
 
+.grid-9 .inside{
+padding-right:1em;
+}
+
 .alpha{
 margin-left:10px;
+}
+
+.item-list .pager {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    border-top:1px dotted #999;
+}
+
+.pager {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 transparent;
+    border-color: transparent;
+    border-image: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+}
+
+
+.pager li.first,
+.pager li.first a,
+.pager li.first a:hover {
+    border-radius: 0;
+}
+
+.pager li {
+    border-color: #DDDDDD #BBBBBB #999999;
+    border: none;
+    color: #333333;
+    font-family: Arvo, serif;
+    font-weight:normal;
+    font-size:1em;
+    outline: 0 none;
+}
+
+.pager li.pager-first a,
+.pager li.pager-previous a,
+.pager li.pager-next a,
+.pager li.pager-last a {
+    padding: 4px;
+    text-align: center;
+    width: auto;
+}
+
+.pager li a {
+    background: none;
+    cursor: pointer;
+}
+
+.pager li a:hover{
+background:none;
+text-decoration:underline;
+}
+
+.pager li.pager-ellipsis,
+.pager li.pager-current,
+.pager li a {
+    color:#B9554A;
+}
+
+.pager li.pager-current {
+    background: none;
+    color: #777;
+    outline: 0 none;
+}
+
+.pager li.pager-next {
+    border-color: #DDDDDD #BBBBBB #999999;
+    border-left: none;
 }
 
 /* ========================================================================
@@ -667,9 +794,14 @@ padding:0 0 10px 0;
 display:block;
 }
 
-ul li.leaf {
+ul li.leaf,
+.collections ul li{
     list-style-image:none;
     list-style-type: none;
+}
+
+.collections ul li{
+margin: 0 0 0.25em 1.5em;
 }
 
 #edit-comment-body{
@@ -929,6 +1061,23 @@ clear: both;
 border-bottom:1px dotted #ccc;
 }
 
+.panel-panel.grid-3 .pane-node-field-news-featured-graphic img{
+width:210px;
+}
+
+.panel-panel.grid-3 .flexslider{
+border:none;
+background-color:transparent;
+}
+
+.panel-panel.grid-3 .flex-nav-container{
+margin-bottom:0;
+}
+
+.panel-panel.grid-3 .flexslider .slides li{
+height:auto;
+}
+
 
 /* =============================================================================
    FLEX SLIDER
@@ -947,6 +1096,11 @@ padding-top:10px;
 
 .flexslider .slides li{
 height:250px;
+padding-bottom:0;
+}
+
+.flex-direction-nav li{
+padding-bottom:0;
 }
 
 .flex-control-nav{
@@ -955,6 +1109,7 @@ bottom:-49px;
 
 .flex-control-nav li{
 margin: 0 0 0 2px;
+padding-bottom:0;
 }
 
 .flex-direction-nav li a{
@@ -1012,6 +1167,29 @@ background-position: -42px -28px;
 .front #block-views-library-news-block{
 border-top:1px dotted #bfbfbf;
 border-bottom:1px dotted #bfbfbf;
+}
+
+
+/* =============================================================================
+   GLOSSARY
+   ========================================================================== */
+
+.view-clone-of-glossary .attachment{
+padding:.75em 0;
+}
+
+.view-clone-of-glossary table .views-field-title a{
+font-size:1em;
+padding-top:0;
+}
+
+.view-clone-of-glossary table th.views-field-title a{
+color:#fff;
+}
+
+
+.view-libraries-and-collections .views-row{
+margin:0;
 }
 
 /* ========================================================================
