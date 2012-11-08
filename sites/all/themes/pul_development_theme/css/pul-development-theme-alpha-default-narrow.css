@@ -2,3 +2,8 @@
 /* If you are using the default media queries provided by Omega, these styles will also
  *  apply to the normal and widescreen layouts. You may override these styles in the normal 
  *  and widescreen CSS files as appropriate. */
+
+.ui-tabs .ui-tabs-nav li{
+border-bottom:none !important;
+border-top:none !important;
+}

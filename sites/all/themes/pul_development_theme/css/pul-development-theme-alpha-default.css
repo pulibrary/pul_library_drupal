@@ -285,10 +285,13 @@ text-shadow:none;
 .ui-tabs .ui-tabs-nav li{
 float:left;
 clear:none;
+top:0;
+margin:0;
+background-color:transparent;
+width: auto;
 }
 
 #block-quicktabs-homepage-search-tabs{
-padding:11px 0 0 0;
 width: 709px;
 background-color:transparent;
 margin-right:-12px;
@@ -306,13 +309,12 @@ box-shadow:0px 0px 0px #000000;
 }
 
 #block-quicktabs-homepage-search-tabs h2.block-title{
-padding:3px 0 3px 48px;
-margin:0;
-color:#ffffff;
-background:url(../images/searchit-icon.gif) no-repeat left top #0098f4;
 -webkit-border-top-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
 border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 0;
+-moz-border-radius-topright: 0;
+border-top-right-radius: 0;
 }
 
 
@@ -370,15 +372,12 @@ li + li.ui-state-active,
 background:url(../images/searchit-bg.gif) no-repeat 0 -13px transparent;
 }
 
-.ui-corner-bottom{
-border-bottom-right-radius: 0;
+.ui-tabs .ui-tabs-nav li + li{
+border-bottom:none !important;
 }
 
-.ui-tabs .ui-tabs-nav li{
-top:0;
-margin:0;
-background-color:transparent;
-width: auto;
+.ui-corner-bottom{
+border-bottom-right-radius: 0;
 }
 
 .ui-corner-top{
@@ -415,13 +414,19 @@ height:45px;
 border-top:1px solid #727272;
 border-bottom:1px solid #727272;
 border-left:1px solid #727272;
-border-right:none;
+border-right:none !important;
 -webkit-border-top-left-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
 -moz-border-radius-bottomleft: 4px;
 border-top-left-radius: 4px;
 border-bottom-left-radius: 4px;
+-webkit-border-top-right-radius:0;
+-webkit-border-bottom-right-radius: 0;
+-moz-border-radius-topright: 0;
+-moz-border-radius-bottomright: 0;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
 padding:5px 0 5px 10px;
 }
 
@@ -450,7 +455,7 @@ border-bottom-left-radius: 0;
 padding:0;
 color:#fff;
 text-shadow: 0 0 0 #FFFFFF;
-margin-left:-5px;
+margin-left:-7px;
 font-family: "PT Sans", sans-serif;
 font-size:1.333em;
 font-weight:normal;
@@ -480,6 +485,30 @@ display:inline;
 position:static;
 }
 
+#dbsearch-block-form .form-item-query {
+display: block;
+float:left;
+margin-right:.5em;
+}
+
+.ui-tabs-panel.ui-corner-bottom {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+}
+
+
+.homepage-tab-form-message{
+padding:10px 0 0 0;
+}
+
+.homepage-tab-form-message a{
+margin:0 10px 0 0;
+}
+
+#qt-homepage_search_tabs-ui-tabs4{
+border-bottom:none;
+}
+
 
 /* =============================================================================
    GET HELP
@@ -492,48 +521,33 @@ margin-left:-11px;
 }
 
 .front #block-menu-menu-get-help-menu .content{
-background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 padding:0;
 height: 156px;
 -webkit-border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 0;
 -moz-border-radius-bottomright: 4px;
+-moz-border-radius-bottomleft: 0;
 border-bottom-right-radius: 4px;
+border-bottom-left-radius: 0;
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
-padding:7px 0 5px 48px;
-margin:0;
-color:#ffffff;
-background:url(../images/gethelp.gif) no-repeat -1px 0 #0098f4;
+-webkit-border-top-left-radius: 0;
 -webkit-border-top-right-radius: 4px;
+-moz-border-radius-topleft: 0;
 -moz-border-radius-topright: 4px;
+border-top-left-radius: 0;
 border-top-right-radius: 4px;
-border-bottom:none;
+background-position:-1px 0;
+padding:7px 0 5px 48px;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-padding:12px 12px 0 12px;
 background:url(../images/gethelpmenu-top.gif) no-repeat -1px 0 transparent;
 }
 
 .front #block-menu-menu-get-help-menu .block-inner{
 border-left:1px solid #000;
-}
-
-.front #block-menu-menu-get-help-menu ul.menu li a{
-color:#c78654;
-text-decoration:none;
-font-size:0.917em;
-}
-
-.front #block-menu-menu-get-help-menu ul.menu li a:hover{
-color:#333;
-}
-
-.front #block-menu-menu-get-help-menu ul.menu li{
-border-bottom:1px dotted #b3b4b5;
-margin:0;
-padding:1px 0;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li.last{
@@ -544,32 +558,8 @@ border-bottom:none;
 margin:0;
 }
 
-/* =============================================================================
-   SECONDARY RESEARCH MENU
-   ========================================================================== */
-
-
-.homepage-tab-form-message {
-padding: 10px 0 0 0;
-text-indent:-9999px;
-}
-
-.homepage-tab-form-message a{
-display:block;
-float:left;
-clear:none;
-background-color:#bbb;
-color:#5d5e63;
-text-decoration:none;
-width:106px;
-padding:1px 0;
-text-align:center;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-text-indent:0px;
-margin:0 10px 0 0;
-font-size:0.833em;
+.front #block-menu-menu-get-help-menu ul.menu li a{
+font-size:0.917em;
 }
 
 

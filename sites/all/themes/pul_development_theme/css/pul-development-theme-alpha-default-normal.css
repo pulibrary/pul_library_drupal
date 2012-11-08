@@ -6,3 +6,8 @@
 .alpha {
     margin-left: 10px !important;
 }
+
+.ui-tabs .ui-tabs-nav li{
+border-bottom:none !important;
+border-top:none !important;
+}
