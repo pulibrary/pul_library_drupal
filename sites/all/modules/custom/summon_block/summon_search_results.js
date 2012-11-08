@@ -8,11 +8,11 @@
 	//console.log(document.location.href);
         var path = $(location).attr('pathname');
         var query = path.substr(10);
-        query = query.replace("/", "");
+        //query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
-    $.getJSON('/searchit/articles/any/'+query, function(data) {
+    $.getJSON('/searchit/articles/any?query='+query, function(data) {
   	var items = [];
 		var more_link = data.more;
 			var num_results = data.number;

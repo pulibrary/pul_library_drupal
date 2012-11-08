@@ -10,7 +10,7 @@
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
 	} else {
-        	$.getJSON('/searchit/find/title/'+query+'?limit=exact&format=journals', function(data) {
+        	$.getJSON('/searchit/find/title?query='+query+'&limit=exact&format=journals', function(data) {
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {

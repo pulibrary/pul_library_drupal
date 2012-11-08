@@ -10,7 +10,7 @@
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
 	} else {
-        	$.getJSON('/searchit/find/any/'+query, function(data) {
+        	$.getJSON('/searchit/find/any?query='+query, function(data) {
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {

@@ -6,11 +6,11 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
-	query = query.replace("/", "");
+	//query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
 	} else {
-        	$.getJSON('/searchit/pulfa/any/'+query, function(data) {
+        	$.getJSON('/searchit/pulfa/any?query='+query, function(data) {
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {

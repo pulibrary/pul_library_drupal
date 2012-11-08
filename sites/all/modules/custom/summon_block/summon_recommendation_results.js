@@ -6,12 +6,12 @@
 	//console.log(document.location.href);
             var path = $(location).attr('pathname');
         var query = path.substr(10);
-        query = query.replace("/", "");
+        //query = query.replace("/", "");
 
 	  if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-recommendation-results');
 	  } else {
-    	  	$.getJSON('/searchit/articles/recommendations/'+query, function(data) {
+    	  	$.getJSON('/searchit/articles/recommendations?query='+query, function(data) {
 			if(data.recommendations) {
   	  		var items = [];
 			$('<h3>Recommended Databases</h3>').appendTo('#summon-recommendation-results');

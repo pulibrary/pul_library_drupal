@@ -6,13 +6,13 @@
 	//console.log(document.location.href);
         var path = $(location).attr('pathname');
         var query = path.substr(10);
-        query = query.replace("/", "");
+        //query = query.replace("/", "");
 
         var base_url = "/find/all/";
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-spelling-results');
 	} else {
-    $.getJSON('/searchit/articles/spelling/'+query, function(data) {
+    $.getJSON('/searchit/articles/spelling?query='+query, function(data) {
   	var items = [];
 		//var more_link = data.more;
 		//	var num_results = data.number;

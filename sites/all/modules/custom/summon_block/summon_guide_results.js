@@ -6,13 +6,13 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
         var query = path.substr(10);
-        query = query.replace("/", "");
+        //query = query.replace("/", "");
 
         var libguides_url = "http://libguides.princeton.edu/";
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-guide-results');
 	} else {
-    $.getJSON('/searchit/articles/guide/'+query, function(data) {
+    $.getJSON('/searchit/articles/guide?query='+query, function(data) {
   	var items = [];
 		if(data.number > 0) {
 			
