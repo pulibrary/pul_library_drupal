@@ -1006,3 +1006,11 @@ display: inline;
 .pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
   font-size: .8em;
 }
+
+
+/* =====================================================================
+ * zone-preface = homepage alerts
+ * ==================================================================== */
+
+#zone-preface-wrapper { background-color: ffffff; }
+#zone-preface { background-color: red; } 

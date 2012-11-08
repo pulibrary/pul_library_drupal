@@ -18,6 +18,7 @@
 drupal_add_library('system', 'ui.accordion');
 drupal_add_library('system', 'ui.button');
 drupal_add_library('system', 'ui.progressbar');
+drupal_add_library('system', 'ui.dialog');
 
 function pul_development_theme_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
