@@ -612,12 +612,16 @@ border-top:1px dotted #bfbfbf;
 text-align:right;
 }
 
+.node-links ul li.node-readmore a,
 .read-more a,
 a.views-more-link{
 font-family: Arvo, sans-serif;
 font-style:italic;
 font-weight:normal;
 font-size:.833em;
+background:none;
+border:none;
+text-shadow:none;
 background-color:#63c0f8;
 color:#fff;
 padding:3px 5px;
@@ -649,21 +653,19 @@ margin:-32px 0 0 0;
 #region-sidebar-second h2.block-title{
 color:#5c5e66;
 border-bottom:1px dotted #e5e5e5;
-margin-left:-10px;
-margin-right:10px;
 margin-bottom:10px;
 padding:0 12px 6px 10px;
 line-height:1.2em;
 }
 
-.panel-panel.grid-3 ul.menu li a,
+.panel-panel.grid-3 ul li a,
 #region-postscript-third ul.menu li a,
 #region-sidebar-second ul.menu li a{
 color:#F58026;
 text-decoration:none;
 }
 
-.panel-panel.grid-3 ul.menu li a:hover,
+.panel-panel.grid-3 ul li a:hover,
 #block-menu-menu-user-group-portals ul.menu li a:hover,
 #region-sidebar-second ul.menu li a:hover{
 color:#333;
