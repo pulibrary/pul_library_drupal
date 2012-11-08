@@ -6,8 +6,8 @@
 	//var query = "firestone";
 	//var request = Drupal.settings.sy_block.request;
 	//console.log(document.location.href);
-	var path = $(location).attr('pathname');
-	var query = path.substr(path.lastIndexOf('/') + 1); //FIXME 
+        var path = $(location).attr('pathname');
+        var query = path.substr(10);
         query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
