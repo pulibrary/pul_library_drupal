@@ -13,6 +13,10 @@ background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 background:none;
 }
 
+#breadcrumb{
+visibility:visible;
+}
+
 #breadcrumb .breadcrumb{
 padding:.75em 0 0 0;
 }
@@ -43,6 +47,10 @@ border-bottom-left-radius: 3px;
 border-top-right-radius: 3px;
 border-bottom-right-radius: 3px;
 background-image:none;
+}
+
+#section-content{
+padding:0 0 3em 0;
 }
 
 
@@ -562,73 +570,30 @@ margin:0;
 font-size:0.917em;
 }
 
+/* =============================================================================
+   FLEX SLIDER
+   ========================================================================== */
+
+.front #region-postscript-first{
+padding:0;
+}
+
+.flexslider ul.slides li img{
+max-width:296px;
+}
+
 
 /* =============================================================================
    RENOVATION NEWS
    ========================================================================== */
 
-.front #zone-postscript-wrapper{
-padding:50px 0 0 0;
-}
-
-#renovation-news-block img{
-float:left;
-padding:0 10px 0 0;
-}
-
-#region-postscript-second .region-postscript-second-inner{
+.front #region-postscript-second .region-postscript-second-inner{
 padding:0 28px;
 }
 
-.front #zone-postscript #region-postscript-first h2.block-title,
-.front #zone-postscript #region-postscript-second h2.block-title{
-float:left;
-display:block;
-background-color:#fff;
-padding:0 8px;
-margin:-17px 0 10px 20px;
+.front #region-postscript-second{
+margin-top:0;
 }
-
-.front #zone-postscript .content{
-clear:both;
-display:block;
-}
-
-.front #zone-postscript #block-block-2{
-border-top:1px dotted #bfbfbf;
-}
-
-.read-more{
-text-align:right;
-}
-
-.node-links ul li.node-readmore a,
-.read-more a,
-a.views-more-link{
-font-family: Arvo, sans-serif;
-font-style:italic;
-font-weight:normal;
-font-size:.833em;
-background:none;
-border:none;
-text-shadow:none;
-background-color:#63c0f8;
-color:#fff;
-padding:3px 5px;
-text-decoration:none;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-}
-
-
-a.views-more-link{
-margin:1em 0 0 0;
-float:right;
-display:block;
-clear:both;
-}
-
 
 /* =============================================================================
    INFORMATION FOR
@@ -638,28 +603,14 @@ clear:both;
 margin:-32px 0 0 0;
 }
 
-.panel-panel.grid-3 h2.pane-title,
-#region-postscript-third h2.block-title,
-#region-sidebar-second h2.block-title{
-color:#5c5e66;
-border-bottom:1px dotted #e5e5e5;
-margin-bottom:10px;
-padding:0 12px 6px 10px;
-line-height:1.2em;
+.front #region-postscript-third .region-postscript-third-inner{
+background-color:transparent;
+margin-top:0;
+margin-left:0;
+margin-right:0;
+padding:0;
 }
 
-.panel-panel.grid-3 ul li a,
-#region-postscript-third ul.menu li a,
-#region-sidebar-second ul.menu li a{
-color:#F58026;
-text-decoration:none;
-}
-
-.panel-panel.grid-3 ul li a:hover,
-#block-menu-menu-user-group-portals ul.menu li a:hover,
-#region-sidebar-second ul.menu li a:hover{
-color:#333;
-}
 
 /* ========================================================================
    HOURS
@@ -892,30 +843,28 @@ padding:0 16px 0 0;
    FOOTER
    ========================================================================== */
 
-#section-footer{
-padding-bottom:3em;
-min-height:100%;
-}
+
 
 #section-footer ul.menu li{
-padding:0;
-margin:0;
 font-size:0.833em;
-}
-
-#section-footer ul.menu li a{
-color:#505050;
-text-decoration:none;
-}
-
-#section-footer ul.menu li a:hover{
-color:#F58026;
 }
 
 #section-footer .block-menu{
 border-left:1px solid #fff;
-padding-left:8px;
 min-height:225px;
+}
+
+#section-footer #footer-logo-block{
+padding:10px 0 0 0;
+font-size:0.833em;
+}
+
+#section-footer h2.block-title{
+border-bottom:none;
+color:#3c3c3c;
+font-size: 1.167em;
+margin:0;
+padding:10px 0 5px 0;
 }
 
 #section-footer #footer-logo-block{

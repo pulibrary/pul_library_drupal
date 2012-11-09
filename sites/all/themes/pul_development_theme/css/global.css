@@ -180,12 +180,6 @@ h6 {
     margin: 2.33em 0 1em 0;
 }
 
-#section-footer h2.block-title{
-color:#3c3c3c;
-font-size: 1.167em;
-margin:0;
-padding:10px 0 5px 0;
-}
 
 h2 a:link,
 h2 a:visited,
@@ -627,7 +621,7 @@ margin: 0 0 3px 8px;
  * ======================================================================== */
 
 #section-content{
-padding:0 0 3em 0;
+padding:0;
 background-color:#fff;
 }
 
@@ -741,6 +735,11 @@ text-decoration:underline;
     border-color: #DDDDDD #BBBBBB #999999;
     border-left: none;
 }
+
+#breadcrumb{
+visibility:hidden;
+}
+
 
 /* ========================================================================
    FORMS
@@ -1314,11 +1313,125 @@ left:40px
 background-position: -42px -28px;
 }
 
+.front #region-postscript-first{
+padding:1em 0 0 0;
+}
 
 .front #block-views-library-news-block{
 border-top:1px dotted #bfbfbf;
 border-bottom:1px dotted #bfbfbf;
 }
+
+.flexslider ul.slides li img{
+max-width:280px;
+}
+
+
+/* =============================================================================
+   RENOVATION NEWS
+   ========================================================================== */
+
+.front #zone-postscript-wrapper{
+padding:50px 0 0 0;
+}
+
+.front #region-postscript-second .region-postscript-second-inner{
+padding:0 10px;
+}
+
+.front #renovation-news-block img{
+float:left;
+padding:0 10px 0 0;
+}
+
+.front #region-postscript-second{
+margin-top:6em;
+}
+
+.front #zone-postscript #region-postscript-first h2.block-title,
+.front #zone-postscript #region-postscript-second h2.block-title{
+float:left;
+display:block;
+background-color:#fff;
+padding:0 8px;
+margin:-17px 0 10px 20px;
+}
+
+.front #zone-postscript .content{
+clear:both;
+display:block;
+}
+
+.front #zone-postscript #block-block-2{
+border-top:1px dotted #bfbfbf;
+}
+
+.read-more{
+text-align:right;
+}
+
+.node-links ul li.node-readmore a,
+.read-more a,
+a.views-more-link{
+font-family: Arvo, sans-serif;
+font-style:italic;
+font-weight:normal;
+font-size:.833em;
+background:none;
+border:none;
+text-shadow:none;
+background-color:#63c0f8;
+color:#fff;
+padding:3px 5px;
+text-decoration:none;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+
+a.views-more-link{
+margin:1em 0 0 0;
+float:right;
+display:block;
+clear:both;
+}
+
+/* =============================================================================
+   INFORMATION FOR
+   ========================================================================== */
+
+.front #region-postscript-third .region-postscript-third-inner{
+background-color:#F1FCFF;
+margin-top:1em;
+margin-left:-10px;
+margin-right:-10px;
+padding:1em .75em;
+}
+
+.panel-panel.grid-3 h2.pane-title,
+#region-postscript-third h2.block-title,
+#region-sidebar-second h2.block-title{
+color:#5c5e66;
+border-bottom:1px dotted #e5e5e5;
+margin-bottom:10px;
+padding:0 12px 6px 10px;
+line-height:1.2em;
+}
+
+.panel-panel.grid-3 ul li a,
+#region-postscript-third ul.menu li a,
+#region-sidebar-second ul.menu li a{
+color:#F58026;
+text-decoration:none;
+}
+
+.panel-panel.grid-3 ul li a:hover,
+#block-menu-menu-user-group-portals ul.menu li a:hover,
+#region-sidebar-second ul.menu li a:hover{
+color:#333;
+}
+
 
 
 /* =============================================================================
@@ -1349,6 +1462,51 @@ margin:0;
 
 #HelpPanel .omega p{
 margin-top:0;
+}
+
+/* =============================================================================
+   FOOTER
+   ========================================================================== */
+
+#section-footer{
+padding-bottom:3em;
+min-height:100%;
+}
+
+#section-footer ul.menu li{
+padding:0;
+margin:0;
+font-size:1em;
+}
+
+#section-footer ul.menu li a{
+color:#505050;
+text-decoration:none;
+}
+
+#section-footer ul.menu li a:hover{
+color:#F58026;
+}
+
+#section-footer .block-menu{
+padding-left:8px;
+}
+
+#section-footer #footer-logo-block{
+padding:10px;
+font-size:1em;
+}
+
+#section-footer #pu-footer-logo{
+padding:10px 0 0 0;
+}
+
+#section-footer h2.block-title{
+border-bottom:1px solid #fff;
+color:#3c3c3c;
+font-size: 1.167em;
+margin:0 0 5px 0;
+padding:10px 0 5px 0;
 }
 
 
