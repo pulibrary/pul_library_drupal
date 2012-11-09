@@ -823,6 +823,14 @@ box-shadow: 0 0 2px 0 #5e310f;
     padding-left: 20px;
 }
 
+#more-events-calendar{
+padding-top:5px;
+}
+
+.fc-button-content{
+color:#fff;
+}
+
 
 /* =============================================================================
    LIBRARIES & COLLECTIONS
@@ -834,7 +842,9 @@ clear:both;
 overflow:auto;
 }
 
-.view-libraries-and-collections p{
+.view-libraries-and-collections p,
+.view-tier-one-resources p,
+.view-tier-two-resources p{
 margin:.25em 0;
 }
 
@@ -920,9 +930,6 @@ padding: 5px 0 0 0;
    Access URL
    ======================================================================== */
 
-.field-name-field-db-access-url {
-padding: 20px 20px 20px 20px;
-}
 
 .field-name-field-db-access-url a{
 font-size: 140%;
@@ -931,6 +938,7 @@ background-color: #0062A0;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
+text-decoration:none;
 }
 
 
@@ -954,9 +962,30 @@ display: inline;
 }
 
 
+.view-library-news .field-name-field-news-featured-graphic img{
+float:left;
+margin:1em .75em .167em 0;
+}
+
+.view-library-news .views-row{
+padding-bottom:2em;
+}
+
+.view-library-news .item-list ul,
+.view-library-news .item-list ul li{
+margin:0;
+}
+
+.node .view-library-news ol,
+.node .view-library-news ul {
+padding-left: 0;
+}
+
+
+
 /* =====================================================================
  * zone-preface = homepage alerts
  * ==================================================================== */
 
-#zone-preface-wrapper { background-color: ffffff; }
+#zone-preface-wrapper { background-color:#ffffff; }
 #zone-preface { background-color: red; } 

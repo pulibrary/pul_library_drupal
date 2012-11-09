@@ -104,6 +104,12 @@ background:url(../images/sidebar-bg.gif) repeat-y center top transparent;
 min-height:100%;    
 }
 
+.comment-submitted{
+font-style:italic;
+color:#999;
+}
+
+
 
 /* =============================================================================
    Links
@@ -151,11 +157,17 @@ h1 {
 
 h2,
 h2.block-title,
-h2.node-title{
+h2.node-title,
+.view-grouping-header{
     color:#0098f4;
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
+}
+
+.views-field-title h2 a,
+.view-grouping-header a{
+font-size:1.167em;
 }
 
 h3 {
@@ -184,7 +196,8 @@ h6 {
 h2 a:link,
 h2 a:visited,
 h3 a:link,
-h3 a:visited{
+h3 a:visited,
+.view-grouping-header a{
 color:#7F3D00;
 text-decoration:none;
 }
@@ -579,11 +592,13 @@ table {
     border:none;
 }
 
+th,
 th.active,
 td.active{
 border-left:none;
 border-right:none;
 background-color:#666;
+color:#fff;
 }
 
 tr:hover td{
@@ -736,6 +751,12 @@ text-decoration:underline;
 visibility:hidden;
 }
 
+
+.container-12 .block .omega-grid,
+.container-16 .block .omega-grid,
+.container-24 .block .omega-grid{
+padding:0 10px;
+}
 
 /* ========================================================================
    FORMS
@@ -1373,7 +1394,8 @@ text-align:right;
 
 .node-links ul li.node-readmore a,
 .read-more a,
-a.views-more-link{
+a.views-more-link,
+.comment-links ul li a{
 font-family: Arvo, sans-serif;
 font-style:italic;
 font-weight:normal;
@@ -1383,11 +1405,16 @@ border:none;
 text-shadow:none;
 background-color:#63c0f8;
 color:#fff;
-padding:3px 5px;
+padding:3px 7px;
 text-decoration:none;
 -webkit-border-radius: 3px;
 -moz-border-radius: 3px;
 border-radius: 3px;
+}
+
+.comment-links ul li a:hover{
+color:#333;
+background-color:#63c0f8;
 }
 
 
@@ -1522,6 +1549,25 @@ margin-top:10px;
 
 .pane-dbsearch-block-dbsearch-search{
 padding-bottom:5px;
+}
+
+/* =============================================================================
+   COMMENTS
+   ========================================================================== */
+
+.pane-node-comments{
+padding-top:2em;
+}
+
+
+article.comment{
+padding-bottom:.75em;
+margin-bottom:.75em;
+border-bottom:1px dashed #e5e5e5;
+}
+
+.user-picture img{
+margin:0 .75em .167em 0;
 }
 
 
