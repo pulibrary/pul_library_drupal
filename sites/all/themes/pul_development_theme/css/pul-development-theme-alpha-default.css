@@ -1,12 +1,12 @@
 /* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
 
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li + li > .view-id-libraries_and_collections.view-display-id-block_1 { 
-  display: none;
+.grid-9 .inside{
+padding-right:1em;
 }
 
-.sidebar-second #section-content{
-background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li > .view-id-libraries_and_collections.view-display-id-block_1 { 
+display: none;
 }
 
 .front .sidebar-second #section-content{
@@ -27,7 +27,6 @@ color:#fff;
 text-decoration:none;
 padding:2px 14px 2px 8px;
 font-size:0.833em;
-
 }
 
 #breadcrumb .breadcrumb a:first-child{
@@ -51,6 +50,39 @@ background-image:none;
 
 #section-content{
 padding:0 0 3em 0;
+}
+
+#pu-footer-logo img{
+width:200px;
+}
+
+.panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"],
+select{
+width: 210px;
+}
+
+textarea,
+input[type="text"]{
+width:350px;
+}
+
+/* =============================================================================
+   DATABASES
+   ========================================================================== */
+
+.pane-dbsearch-block-dbsearch-search{
+padding-bottom:0;
+}
+
+.pane-dbsearch-block-dbsearch-search input#edit-submit{
+margin-top:0;
+}
+
+.panel-panel.grid-3 button,
+.panel-panel.grid-3 input[type="reset"],
+.panel-panel.grid-3 input[type="submit"],
+.panel-panel.grid-3 input[type="button"]{
+margin:5px 0 0 0;
 }
 
 
@@ -129,7 +161,6 @@ text-decoration:none;
 #zone-branding-wrapper .branding-data{
 clear:none;
 float:left;
-width:320px;
 }
 
 #logo{
@@ -151,20 +182,11 @@ float:right;
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li{
 display:block;
-height:40px;
 padding:0;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li span.main-menu-item-title,
 #zone-branding-wrapper #block-system-main-menu ul.menu li a{
-display:block;
-color:#fff;
-text-decoration:none;
-font-size:1.167em;
-font-weight:normal;
-font-family: Varela, sans-serif;
-padding:9px 36px;
-text-shadow: 1px 1px 1px #000000;
 background-image:url(../images/mainnav-rule.gif);
 background-repeat:no-repeat;
 background-position:left center;
@@ -300,10 +322,8 @@ width: auto;
 }
 
 #block-quicktabs-homepage-search-tabs{
-width: 709px;
 background-color:transparent;
 margin-right:-12px;
-height:203px;
 }
 
 
@@ -394,16 +414,9 @@ border-top-right-radius: 0;
 }
 
 .ui-tabs .ui-tabs-nav li a{
-padding:11px 0 0 0;
 color:#fff;
-height:28px;
 background-color:transparent;
-width:178px;
 text-align:center;
-}
-
-.ui-tabs .ui-tabs-nav li + li a{
-width:177px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active a{
@@ -417,8 +430,6 @@ background-color:#e2e2e2;
 #block-quicktabs-homepage-search-tabs input[type="text"]{
 float:left;
 display:block;
-width:490px;
-height:45px;
 border-top:1px solid #727272;
 border-bottom:1px solid #727272;
 border-left:1px solid #727272;
@@ -435,14 +446,11 @@ border-bottom-left-radius: 4px;
 -moz-border-radius-bottomright: 0;
 border-top-right-radius: 0;
 border-bottom-right-radius: 0;
-padding:5px 0 5px 10px;
 }
 
 #block-quicktabs-homepage-search-tabs input[type="submit"]{
 clear:none;
 float:left;
-height:45px;
-width:115px;
 background:url(../images/search-button-home.gif) no-repeat 0 0 #fff;
 border-top:1px solid #727272;
 border-right:1px solid #727272;
@@ -460,10 +468,8 @@ border-bottom-right-radius: 4px;
 -moz-border-radius-bottomleft: 0;
 border-top-left-radius: 0;
 border-bottom-left-radius: 0;
-padding:0;
 color:#fff;
 text-shadow: 0 0 0 #FFFFFF;
-margin-left:-7px;
 font-family: "PT Sans", sans-serif;
 font-size:1.333em;
 font-weight:normal;
@@ -493,7 +499,7 @@ display:inline;
 position:static;
 }
 
-#dbsearch-block-form .form-item-query {
+.not-front #dbsearch-block-form .form-item-query {
 display: block;
 float:left;
 margin-right:.5em;
@@ -502,6 +508,16 @@ margin-right:.5em;
 .ui-tabs-panel.ui-corner-bottom {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 0;
+}
+
+#qt-homepage_search_tabs-ui-tabs4,
+.ui-tabs .ui-tabs-nav li + li + li + li{
+-webkit-border-bottom-right-radius: 0;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomright: 0;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 4px;
 }
 
 
@@ -570,30 +586,20 @@ margin:0;
 font-size:0.917em;
 }
 
+
 /* =============================================================================
    FLEX SLIDER
    ========================================================================== */
 
-.front #region-postscript-first{
-padding:0;
+
+.front #zone-postscript #region-postscript-first h2.block-title,
+.front #zone-postscript #region-postscript-second h2.block-title{
+padding:0 8px;
+margin:-17px 0 10px 14px;
+font-size:1.5em;
 }
 
-.flexslider ul.slides li img{
-max-width:296px;
-}
 
-
-/* =============================================================================
-   RENOVATION NEWS
-   ========================================================================== */
-
-.front #region-postscript-second .region-postscript-second-inner{
-padding:0 28px;
-}
-
-.front #region-postscript-second{
-margin-top:0;
-}
 
 /* =============================================================================
    INFORMATION FOR
@@ -733,8 +739,7 @@ padding:48px 4px 0 4px;
 }
 
 .page-hours .fc-border-separate tr.fc-last td.fc-today div{
-background:url(../images/today-bg.png) no-repeat 0 0 #fff;
-width:108px;
+background:url(../images/today-bg.png) no-repeat center top #fff;
 min-height: 645px;
 padding:48px 12px 0 12px;
 margin:-60px -12px -12px -12px;
@@ -923,7 +928,9 @@ padding: 20px 20px 20px 20px;
 font-size: 140%;
 color: #FFFFFF;
 background-color: #0062A0;
-
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
 }
 
 

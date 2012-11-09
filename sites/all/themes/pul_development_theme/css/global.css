@@ -653,10 +653,6 @@ padding-bottom:1.5em;
 padding-bottom:.75em;
 }
 
-.grid-9 .inside{
-padding-right:1em;
-}
-
 .alpha{
 margin-left:10px;
 }
@@ -769,7 +765,7 @@ border-radius: 4px;
 
 textarea,
 input[type="text"]{
-width:350px;
+width:280px;
 height:24px;
 }
 
@@ -808,7 +804,7 @@ font-weight:normal;
 .panel-panel.grid-3 input[type="reset"],
 .panel-panel.grid-3 input[type="submit"],
 .panel-panel.grid-3 input[type="button"]{
-margin:5px 0 0 0;
+margin:0;
 float:right;
 }
 
@@ -1302,11 +1298,11 @@ background-position: 0 -28px;
 
 .flex-direction-nav li .next {
 background-position: -42px 0;
-right:39px
+right:32px;
 }
 
 .flex-direction-nav li .prev {
-left:40px
+left:32px;
 }
 
 .flex-direction-nav li .next:hover {
@@ -1324,6 +1320,13 @@ border-bottom:1px dotted #bfbfbf;
 
 .flexslider ul.slides li img{
 max-width:280px;
+}
+
+.front #zone-postscript #region-postscript-first h2.block-title,
+.front #zone-postscript #region-postscript-second h2.block-title{
+padding:0 8px;
+margin:-17px 0 10px 14px;
+font-size:1.5em;
 }
 
 
@@ -1353,8 +1356,6 @@ margin-top:6em;
 float:left;
 display:block;
 background-color:#fff;
-padding:0 8px;
-margin:-17px 0 10px 20px;
 }
 
 .front #zone-postscript .content{
@@ -1507,6 +1508,20 @@ color:#3c3c3c;
 font-size: 1.167em;
 margin:0 0 5px 0;
 padding:10px 0 5px 0;
+}
+
+/* =============================================================================
+   DATABASES
+   ========================================================================== */
+
+
+
+.pane-dbsearch-block-dbsearch-search input#edit-submit{
+margin-top:10px;
+}
+
+.pane-dbsearch-block-dbsearch-search{
+padding-bottom:5px;
 }
 
 

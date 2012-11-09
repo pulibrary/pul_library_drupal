@@ -7,3 +7,149 @@
 border-bottom:none !important;
 border-top:none !important;
 }
+
+#zone-branding-wrapper .branding-data{
+width:250px;
+}
+
+#logo{
+padding:8px 0;
+max-width:250px;
+}
+
+.sidebar-second #section-content{
+background:url(../images/sidebar-narrow-bg.gif) repeat-y center top #fff;
+}
+
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list{
+clear:both;
+}
+
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content div.item-list +  div.item-list{
+padding:0 0 10px 0;
+}
+
+
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list{
+border-right:none;
+}
+
+.panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"] {
+width: 150px;
+}
+
+select {
+width: 150px;
+}
+
+
+/* =============================================================================
+   MAIN MENU
+   ========================================================================== */
+
+#zone-branding-wrapper #block-system-main-menu ul.menu li span.main-menu-item-title,
+#zone-branding-wrapper #block-system-main-menu ul.menu li a{
+font-size:1em;
+padding:7px 20px 8px 20px;
+}
+
+#zone-branding-wrapper #block-system-main-menu ul.menu li{
+height:35px;
+}
+
+#block-system-main-menu{
+margin-top:10px;
+}
+
+
+/* =============================================================================
+   SEARCH
+   ========================================================================== */
+
+#block-quicktabs-homepage-search-tabs{
+width: 529px;
+height:203px;
+}
+
+
+.ui-tabs .ui-tabs-nav li a{
+padding:11px 0 0 0;
+height:28px;
+width:133px;
+}
+
+
+.ui-tabs .ui-tabs-nav li + li a{
+width:132px;
+}
+
+
+#block-quicktabs-homepage-search-tabs input[type="text"]{
+width:330px;
+height:45px;
+padding:5px 0 5px 10px;
+}
+
+#block-quicktabs-homepage-search-tabs input[type="submit"]{
+height:45px;
+width:115px;
+padding:0;
+margin-left:-7px;
+}
+
+
+/* =============================================================================
+   FLEX SLIDER
+   ========================================================================== */
+
+.front #region-postscript-first{
+padding:0;
+}
+
+.flexslider ul.slides li img{
+max-width:216px;
+}
+
+.front #zone-postscript #region-postscript-first h2.block-title,
+.front #zone-postscript #region-postscript-second h2.block-title{
+padding:0 8px;
+margin:-14px 0 10px 14px;
+font-size:1.333em;
+}
+
+.flex-direction-nav li .next {
+right:0;
+}
+
+.flex-direction-nav li .prev {
+left:-1px;
+}
+
+
+
+/* =============================================================================
+   RENOVATION NEWS
+   ========================================================================== */
+
+.front #region-postscript-second .region-postscript-second-inner{
+padding:0 28px;
+}
+
+.front #region-postscript-second{
+margin-top:0;
+}
+
+
+
+#pu-footer-logo img{
+width:160px;
+}
+
+
+
+
+
+
+
+
+
