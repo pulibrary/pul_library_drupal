@@ -153,6 +153,7 @@ h1 {
     font-size: 2em;
     margin: 0.67em 0 0.167em 0;
     font-weight:normal;
+    padding-left:10px;
 }
 
 h2,
@@ -652,8 +653,16 @@ clear:both;
 display:block;
 padding:0 0 2em 0;
 overflow:auto;
+}
+
+.panel-panel.grid-3 .inside{
 margin-left:-10px;
-margin-right:10px;
+padding:0 10px 0 0;
+}
+
+#region-content.grid-12 .region-inner{
+margin-left:-10px;
+margin-right:-10px;
 }
 
 .panel-panel.grid-3 .panel-pane .pane-content{

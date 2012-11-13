@@ -3,9 +3,6 @@
  *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
 
 
-.alpha {
-    margin-left: 10px !important;
-}
 
 .ui-tabs .ui-tabs-nav li{
 border-bottom:none !important;
