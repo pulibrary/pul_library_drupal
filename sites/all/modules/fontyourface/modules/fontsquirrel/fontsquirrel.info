@@ -4,9 +4,9 @@ dependencies[] = fontyourface
 package = @font-your-face
 core = 7.x
 php = 5.2.0
-; Information added by drupal.org packaging script on 2012-10-05
-version = "7.x-2.5"
+; Information added by drupal.org packaging script on 2012-11-13
+version = "7.x-2.6"
 core = "7.x"
 project = "fontyourface"
-datestamp = "1349395315"
+datestamp = "1352782302"
 
