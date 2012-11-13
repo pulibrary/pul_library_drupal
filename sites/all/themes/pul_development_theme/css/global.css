@@ -1580,6 +1580,27 @@ float:left;
 margin:0 .75em .167em 0;
 }
 
+.pane-user-contact{
+margin-top:2em;
+padding-bottom:1.5em;
+border-bottom: 1px dotted #BFBFBF;
+border-top: 1px dotted #BFBFBF;
+}
+
+.staff-member-page .pane-user-contact h2.pane-title {
+font-size: 1.5em;
+margin: -17px 0 10px 14px;
+padding: 0 8px;
+background-color: #FFFFFF;
+display: block;
+float:left;
+color:#666;
+}
+
+.staff-member-page .pane-user-contact .pane-content{
+clear:both;
+}
+
 
 /* ========================================================================
    Set bases styles for certain elements in mobile view
