@@ -78,11 +78,11 @@ padding-bottom:0;
 margin-top:0;
 }
 
-.panel-panel.grid-3 button,
-.panel-panel.grid-3 input[type="reset"],
-.panel-panel.grid-3 input[type="submit"],
-.panel-panel.grid-3 input[type="button"]{
-margin:5px 0 0 0;
+.grid-3 button,
+.grid-3 input[type="reset"],
+.grid-3 input[type="submit"],
+.grid-3 input[type="button"]{
+margin:5px 10px 0 0;
 }
 
 

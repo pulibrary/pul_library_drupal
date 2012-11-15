@@ -153,7 +153,6 @@ h1 {
     font-size: 2em;
     margin: 0.67em 0 0.167em 0;
     font-weight:normal;
-    padding-left:10px;
 }
 
 h2,
@@ -594,6 +593,7 @@ table {
 }
 
 th,
+thead th,
 th.active,
 td.active{
 border-left:none;
@@ -645,29 +645,15 @@ background-color:#fff;
 padding-top:2em;
 }
 
-.panel-panel.grid-3 .panel-separator{
+.grid-3 .panel-separator{
 clear:both;
 }
 
-.panel-panel.grid-3 .panel-pane{
+.grid-3 .panel-pane{
 display:block;
-padding:0 0 2em 0;
-overflow:auto;
+padding:0 0 32px 0;
 }
 
-.panel-panel.grid-3 .inside{
-margin-left:-10px;
-padding:0 10px 0 0;
-}
-
-#region-content.grid-12 .region-inner{
-margin-left:-10px;
-margin-right:-10px;
-}
-
-.panel-panel.grid-3 .panel-pane .pane-content{
-padding:0 0 0 10px;
-}
 
 .views-row{
 padding-bottom:1.5em;
@@ -761,11 +747,24 @@ visibility:hidden;
 }
 
 
-.container-12 .block .omega-grid,
-.container-16 .block .omega-grid,
-.container-24 .block .omega-grid{
-padding:0 10px;
+.view-grouping{
+padding-bottom:1.5em;
 }
+
+.grid-3 .item-list ul li{
+margin-left:0;
+}
+
+.container-12 .block .omega-grid{
+margin:0;
+}
+
+.container-12 .block .omega-grid .grid-3,
+.container-12 .block .omega-grid .grid-6,
+.container-12 .block .omega-grid .grid-9{
+margin-right:0 !important;
+}
+
 
 /* ========================================================================
    FORMS
@@ -834,7 +833,6 @@ font-weight:normal;
 .panel-panel.grid-3 input[type="reset"],
 .panel-panel.grid-3 input[type="submit"],
 .panel-panel.grid-3 input[type="button"]{
-margin:0;
 float:right;
 }
 
@@ -858,7 +856,7 @@ ul li.leaf,
 }
 
 .collections ul li{
-margin: 0 0 0.25em 1.5em;
+margin: 0 0 0.25em 0;
 }
 
 #edit-comment-body{
@@ -1475,18 +1473,18 @@ padding:1em .75em;
 color:#5c5e66;
 border-bottom:1px dotted #e5e5e5;
 margin-bottom:10px;
-padding:0 12px 6px 10px;
+padding:0 12px 6px 0;
 line-height:1.2em;
 }
 
-.panel-panel.grid-3 ul li a,
+.grid-3 ul li a,
 #region-postscript-third ul.menu li a,
 #region-sidebar-second ul.menu li a{
 color:#F58026;
 text-decoration:none;
 }
 
-.panel-panel.grid-3 ul li a:hover,
+.grid-3 ul li a:hover,
 #block-menu-menu-user-group-portals ul.menu li a:hover,
 #region-sidebar-second ul.menu li a:hover{
 color:#333;
@@ -1679,6 +1677,8 @@ font-size:1.5em;
 
 .view-emergency-alert-content-block p{
 color:#fff;
+margin:0;
+line-height: 1.333em;
 }
 
 
