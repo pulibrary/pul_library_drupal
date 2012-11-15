@@ -1645,3 +1645,45 @@ display: none;
 .view-id-libraries_and_collections.view-display-id-block_1 {
   display: none;
 }
+
+
+/* =====================================================================
+ * zone-preface = homepage alerts
+ * ==================================================================== */
+
+#zone-preface-wrapper{
+background-color:#ffffff;
+}
+
+.view-emergency-alert-content-block{
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+background-color: red;
+padding:10px 20px 0 20px;
+margin:14px 0;
+}
+
+.view-emergency-alert-content-block h3{
+margin:0;
+font-family: Arvo,sans-serif;
+font-weight:normal;
+}
+
+.view-emergency-alert-content-block h3 a{
+background:url(../images/emergency.png) no-repeat left center transparent;
+color:#fffc00;
+padding:4px 0 4px 30px;
+font-size:1.5em;
+}
+
+.view-emergency-alert-content-block p{
+color:#fff;
+}
+
+
+
+
+
+
+
