@@ -1187,7 +1187,30 @@ padding:12px;
 color:#c78654;
 text-decoration:none;
 font-size:1em;
+padding-left:18px;
+background:url(../images/chat.png) no-repeat left center transparent;
 }
+
+.front #block-menu-menu-get-help-menu ul.menu li + li a{
+background:url(../images/appt.png) no-repeat left center transparent;
+}
+
+.front #block-menu-menu-get-help-menu ul.menu li + li + li a{
+background:url(../images/walk.png) no-repeat left center transparent;
+}
+
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li a{
+background:url(../images/email.png) no-repeat left center transparent;
+}
+
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li a{
+background:url(../images/phone.png) no-repeat left center transparent;
+}
+
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li + li a{
+background:url(../images/guide.png) no-repeat left center transparent;
+}
+
 
 .front #block-menu-menu-get-help-menu ul.menu li a:hover{
 color:#333;

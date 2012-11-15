@@ -135,7 +135,7 @@ background:url(../images/user-right.png) no-repeat right top transparent;
 
 #superfish-1{
 float:right;
-padding:0 0 0 17px;
+padding:0 0 5px 17px;
 font-size:0.917em;
 background:url(../images/user-left.png) no-repeat left top transparent;
 }
@@ -147,11 +147,30 @@ background:url(../images/user-left.png) no-repeat left top transparent;
 background:transparent;
 }
 
-.sf-menu.sf-style-space-orange a{
+.sf-menu.sf-style-space-orange li a{
 border:none;
 text-decoration:none;
+background:url(../images/hours.png) no-repeat 0 8px transparent;
+padding:9px 16px 5px 17px;
 }
 
+.sf-menu.sf-style-space-orange li + li a{
+background:none;
+padding-left:1em;
+}
+
+.sf-menu.sf-style-space-orange li.first{
+border-right:1px solid #9f5d2a;
+}
+
+.sf-menu.sf-style-space-orange li.middle{
+border-right:1px solid #9f5d2a;
+border-left:1px solid #f8b078;
+}
+
+.sf-menu.sf-style-space-orange li.last{
+border-right:none;
+}
 
 
 /* =============================================================================
