@@ -631,6 +631,10 @@ th a img {
 margin: 0 0 3px 8px;
 }
 
+table tr td p{
+margin:0;
+}
+
 
 /* ========================================================================
    LAYOUT
@@ -1518,13 +1522,32 @@ font-size:1em;
 padding-top:0;
 }
 
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
 .view-clone-of-glossary table th.views-field-title a{
 color:#fff;
+}
+
+.ui-state-default a:hover,
+.view-clone-of-glossary table th.views-field-title a:hover{
+color:#999;
 }
 
 
 .view-libraries-and-collections .views-row{
 margin:0;
+}
+
+.ui-state-default .ui-icon {
+background-image: url(../images/sprite.png);
+background-position: -32px -16px;
+}
+
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+background-image: url(../images/sprite.png);
+background-position: -64px -16px;
 }
 
 /* =============================================================================
