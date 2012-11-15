@@ -654,6 +654,19 @@ display:block;
 padding:0 0 32px 0;
 }
 
+.block-menu-menu-social-media ul li{
+padding-bottom:8px;
+}
+
+.block-menu-menu-social-media ul li a{
+background:url(../images/facebook.png) no-repeat 0 0 transparent;
+padding:4px 0 4px 30px;
+}
+
+.block-menu-menu-social-media ul li + li a{
+background:url(../images/twitter.png) no-repeat 0 0 transparent;
+}
+
 
 .views-row{
 padding-bottom:1.5em;
