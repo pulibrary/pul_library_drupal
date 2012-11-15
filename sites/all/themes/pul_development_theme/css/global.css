@@ -398,6 +398,10 @@ nav ol {
 }
 
 
+.item-list ul li {
+    margin: 0 0 0.25em 0;
+}
+
 /* =============================================================================
    Embedded content
    ========================================================================== */
@@ -635,6 +639,14 @@ table tr td p{
 margin:0;
 }
 
+.view-library-news table td,
+.view-library-news table th{
+vertical-align:top;
+}
+
+.context-students .pane-library-news-panel-pane-5{
+margin-top:3em;
+}
 
 /* ========================================================================
    LAYOUT
@@ -777,6 +789,7 @@ margin:0;
 }
 
 .container-12 .block .omega-grid .grid-3,
+.container-12 .block .omega-grid .grid-4,
 .container-12 .block .omega-grid .grid-6,
 .container-12 .block .omega-grid .grid-9{
 margin-right:0 !important;
@@ -1419,6 +1432,7 @@ padding:0 10px 0 0;
 margin-top:6em;
 }
 
+.context-students .pane-library-news-panel-pane-5 h2.pane-title,
 .front #zone-postscript #region-postscript-first h2.block-title,
 .front #zone-postscript #region-postscript-second h2.block-title{
 float:left;
@@ -1431,14 +1445,24 @@ clear:both;
 display:block;
 }
 
+.context-students .pane-library-news-panel-pane-5,
 .front #zone-postscript #block-block-2{
 border-top:1px dotted #bfbfbf;
+}
+
+.context-students .pane-library-news-panel-pane-5 .pane-content{
+clear:both;
+}
+
+.context-students .pane-library-news-panel-pane-5 h3{
+margin:0;
 }
 
 .read-more{
 text-align:right;
 }
 
+.more-link a,
 .node-links ul li.node-readmore a,
 .read-more a,
 a.views-more-link,
