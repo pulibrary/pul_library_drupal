@@ -151,7 +151,7 @@ h1 {
     color:#F58026;
     font-family: Arvo, sans-serif;
     font-size: 2em;
-    margin: 0.67em 0 0.167em 0;
+    margin: 0 0 0.167em 0;
     font-weight:normal;
 }
 
@@ -790,7 +790,6 @@ margin:0;
 
 .container-12 .block .omega-grid .grid-3,
 .container-12 .block .omega-grid .grid-4,
-.container-12 .block .omega-grid .grid-6,
 .container-12 .block .omega-grid .grid-9{
 margin-right:0 !important;
 }
@@ -1000,6 +999,11 @@ background: -o-linear-gradient(top,  #00aafe 0%,#0098f4 50%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top,  #00aafe 0%,#0098f4 50%); /* IE10+ */
 background: linear-gradient(to bottom,  #00aafe 0%,#0098f4 50%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', endColorstr='#0098f4',GradientType=0 ); /* IE6-8 */
+}
+
+
+.grid-3 .panel-pane.pane-menu-menu-ofa-main-menu{
+padding-top:1em;
 }
 
 
