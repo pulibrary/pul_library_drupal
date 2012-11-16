@@ -3,9 +3,9 @@ description = "Adds a formatter for text/list fields to render as CSS classes on
 package = Fields
 core = 7.x
 files[] = field_formatter_css_class.module
-; Information added by drupal.org packaging script on 2012-11-04
-version = "7.x-1.0"
+; Information added by drupal.org packaging script on 2012-11-15
+version = "7.x-1.1"
 core = "7.x"
 project = "field_formatter_css_class"
-datestamp = "1352042213"
+datestamp = "1353011243"
 
