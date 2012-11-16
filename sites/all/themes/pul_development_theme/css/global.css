@@ -790,6 +790,7 @@ margin:0;
 
 .container-12 .block .omega-grid .grid-3,
 .container-12 .block .omega-grid .grid-4,
+.container-12 .block .omega-grid.omega-12-twocol-6-6 .grid-6,
 .container-12 .block .omega-grid .grid-9{
 margin-right:0 !important;
 }
