@@ -142,6 +142,10 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset{
 margin-bottom:0;
 }
 
+h1, h2, h3, h4, h5, h6{
+letter-spacing:0em;
+}
+
 /*
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
@@ -151,7 +155,7 @@ h1 {
     color:#F58026;
     font-family: Arvo, sans-serif;
     font-size: 2em;
-    margin: 0 0 0.167em 0;
+    margin: 0.5em 0 0.167em;
     font-weight:normal;
 }
 
@@ -178,18 +182,26 @@ h3 {
 }
 
 h4 {
+    font-family: 'PT Sans', sans-serif;
     font-size: 1em;
     margin: 1.33em 0 0.867em 0;
+    color:#F58026;
+    font-weight:bold;
 }
 
 h5 {
+    font-family: 'PT Sans', sans-serif;
     font-size: 0.83em;
     margin: 1.67em 0 1em 0;
+    font-weight:bold;
+    color: #0098F4;
 }
 
 h6 {
+    font-family: 'PT Sans', sans-serif;
     font-size: 0.75em;
     margin: 2.33em 0 1em 0;
+    font-weight:bold;
 }
 
 
@@ -1007,6 +1019,137 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', end
 padding-top:1em;
 }
 
+/* =============================================================================
+   SUB NAV
+   ========================================================================== */
+
+.region-sidebar-first .block-book-navigation{
+padding:0 2em 0 0;
+}
+
+
+.region-sidebar-first .block-book-navigation ul.menu{
+font-size:1.167em;
+border-right:1px solid #00d4e4;
+padding:1em 0;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li{
+line-height:1.333em;
+padding:0;
+margin:0;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li.expanded{
+background-color:#b4feff;
+padding-bottom:8px;
+-webkit-border-top-left-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li a{
+display:block;
+padding:6px 24px 6px 8px;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li ul.menu li{
+font-size:.75em;
+padding:0 0 0 16px;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li ul.menu{
+border-right:none;
+padding:0;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li.expanded ul.menu li a.active,
+.region-sidebar-first .block-book-navigation ul.menu li a.active,
+.region-sidebar-first .block-book-navigation ul.menu li.expanded a.active{
+background-color:#00d4e4;
+color:#fff;
+-webkit-border-top-left-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li.expanded a.active{
+border-bottom-left-radius: 0;
+-moz-border-radius-bottomleft: 0;
+-webkit-border-bottom-left-radius: 0;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li.expanded a{
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+background-color:#b4feff;
+color:#888;
+}
+
+.region-sidebar-first .block-book-navigation ul.menu li.expanded a:hover{
+color:#333;
+}
+
+
+.region-sidebar-first .block-book-navigation ul.menu li.collapsed,
+.region-sidebar-first .block-book-navigation ul.menu li.expanded{
+list-style-image:none;
+list-style-type:none;
+}
+
+/* =============================================================================
+   BOOK NAV
+   ========================================================================== */
+
+.book-navigation .page-links {
+    border-bottom: none;
+    border-top:1px solid #63C0F8;
+    padding: 0 0 0.5em 0;
+    text-align: center;
+}
+
+
+.book-navigation .page-up,
+.book-navigation .page-previous,
+.book-navigation .page-next{
+background: none repeat scroll 0 0 #63C0F8;
+border: medium none;
+-webkit-border-bottom-right-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+color: #FFFFFF;
+font-family: Arvo,sans-serif;
+font-size: 0.833em;
+font-style: italic;
+font-weight: normal;
+padding: 3px 7px;
+text-decoration: none;
+text-shadow: none;
+width: auto;
+}
+
+
+.book-navigation .page-up{
+position: absolute;
+left: 50%;
+background: none repeat scroll 0 0 #bbb;
+margin:0;
+width:30px;
+}
+
+.book-navigation .page-links{
+text-align:center;
+}
 
 /* =============================================================================
    SEARCH
