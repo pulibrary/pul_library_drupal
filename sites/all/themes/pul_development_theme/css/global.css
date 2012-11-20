@@ -891,6 +891,10 @@ padding:0 0 10px 0;
 display:block;
 }
 
+.webform-container-inline .form-type-radio label{
+display:inline;
+}
+
 ul li.leaf,
 .collections ul li{
     list-style-image:none;
