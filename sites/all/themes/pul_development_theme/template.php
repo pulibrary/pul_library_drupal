@@ -34,6 +34,13 @@ function pul_development_theme_breadcrumb($variables) {
   }
 }
 
+function pul_development_theme_preprocess_region(&$vars) {
+  $theme = alpha_get_theme();
+
+  if ($vars['elements']['#region'] == 'content') {
+    $vars['breadcrumb'] = $theme->page['breadcrumb'];
+  }
+}
 
 // hacky way to rewrite menu html
 /*

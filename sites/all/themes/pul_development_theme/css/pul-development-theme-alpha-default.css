@@ -56,8 +56,9 @@ padding:0 0 3em 0;
 width:200px;
 }
 
-.panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"],
-select{
+.panel-panel.grid-3 textarea,
+.panel-panel.grid-3 input[type="text"],
+.panel-panel.grid-3 select{
 width: 210px;
 }
 
