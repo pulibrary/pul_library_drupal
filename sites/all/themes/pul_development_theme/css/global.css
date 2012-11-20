@@ -1015,31 +1015,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', end
 }
 
 
-.grid-3 .panel-pane.pane-menu-menu-ofa-main-menu{
-padding-top:1em;
-}
-
 /* =============================================================================
    SUB NAV
    ========================================================================== */
 
+.grid-3 .pane-menu-menu-ofa-main-menu,
 .region-sidebar-first .block-book-navigation{
 padding:0 2em 0 0;
 }
 
-
+.pane-menu-menu-ofa-main-menu ul.menu,
 .region-sidebar-first .block-book-navigation ul.menu{
 font-size:1.167em;
-border-right:1px solid #00d4e4;
+border-right:1px solid #63C0F8;
 padding:1em 0;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li,
 .region-sidebar-first .block-book-navigation ul.menu li{
 line-height:1.333em;
 padding:0;
 margin:0;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded{
 background-color:#b4feff;
 padding-bottom:8px;
@@ -1051,25 +1050,31 @@ border-top-left-radius: 4px;
 border-bottom-left-radius: 4px;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li a,
 .region-sidebar-first .block-book-navigation ul.menu li a{
 display:block;
 padding:6px 24px 6px 8px;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li ul.menu li,
 .region-sidebar-first .block-book-navigation ul.menu li ul.menu li{
 font-size:.75em;
 padding:0 0 0 16px;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li ul.menu,
 .region-sidebar-first .block-book-navigation ul.menu li ul.menu{
 border-right:none;
 padding:0;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded ul.menu li a.active,
+.pane-menu-menu-ofa-main-menu ul.menu li a.active,
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded ul.menu li a.active,
 .region-sidebar-first .block-book-navigation ul.menu li a.active,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded a.active{
-background-color:#00d4e4;
+background-color:#63C0F8;
 color:#fff;
 -webkit-border-top-left-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
@@ -1079,12 +1084,14 @@ border-top-left-radius: 4px;
 border-bottom-left-radius: 4px;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded a.active{
 border-bottom-left-radius: 0;
 -moz-border-radius-bottomleft: 0;
 -webkit-border-bottom-left-radius: 0;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded a,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded a{
 -webkit-border-top-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
@@ -1093,11 +1100,13 @@ background-color:#b4feff;
 color:#888;
 }
 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded a:hover,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded a:hover{
 color:#333;
 }
 
-
+.pane-menu-menu-ofa-main-menu ul.menu li.collapsed,
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded,
 .region-sidebar-first .block-book-navigation ul.menu li.collapsed,
 .region-sidebar-first .block-book-navigation ul.menu li.expanded{
 list-style-image:none;
