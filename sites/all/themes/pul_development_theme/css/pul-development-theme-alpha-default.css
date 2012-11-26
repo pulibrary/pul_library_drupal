@@ -48,8 +48,12 @@ border-bottom-right-radius: 3px;
 background-image:none;
 }
 
-#section-content{
+.not-front #region-content .region-inner.region-content-inner{
 padding:0 0 3em 0;
+}
+
+.front #zone-postscript-wrapper{
+padding-bottom:3em;
 }
 
 #pu-footer-logo img{
@@ -155,9 +159,17 @@ background:url(../images/hours.png) no-repeat 0 8px transparent;
 padding:9px 16px 5px 17px;
 }
 
+.sf-menu.sf-style-space-orange li a:hover{
+background:url(../images/hours.png) no-repeat 0 8px transparent;
+}
+
 .sf-menu.sf-style-space-orange li + li a{
 background:none;
 padding-left:1em;
+}
+
+.sf-menu.sf-style-space-orange li + li a:hover{
+background:none;
 }
 
 .sf-menu.sf-style-space-orange li.first{
