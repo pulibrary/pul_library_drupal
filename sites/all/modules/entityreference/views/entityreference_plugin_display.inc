@@ -76,12 +76,7 @@ class entityreference_plugin_display extends views_plugin_display {
       foreach ($style_options['search_fields'] as $field_alias) {
         if (!empty($field_alias)) {
           // Get the table and field names for the checked field
-          if (empty($this->view->field[$field_alias]->field_info)) 
-            $field = $this->view->query->fields[$this->view->field[$field_alias]->field_alias];
-          else {
-            $this->view->query->add_field($this->view->field[$field_alias]->options['table'], $this->view->field[$field_alias]->real_field, $this->view->field[$field_alias]->options['field'], array());
-            $field = $this->view->query->fields[$this->view->field[$field_alias]->options['field']];
-          }
+          $field = $this->view->query->fields[$this->view->field[$field_alias]->field_alias];
           // Add an OR condition for the field
           $conditions->condition($field['table'] . '.' . $field['field'], $value, 'LIKE');
         }
