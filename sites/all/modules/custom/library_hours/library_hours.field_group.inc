@@ -20,19 +20,22 @@ function library_hours_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Groupings',
-    'weight' => '1',
+    'label' => 'Details',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_cal_associated_library',
+      0 => 'field_open_hours',
+      1 => 'field_hours_library_status',
+      2 => 'field_hrs_lib_calendar',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Details',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_displaygroup|node|library_hours|form'] = $field_group;
