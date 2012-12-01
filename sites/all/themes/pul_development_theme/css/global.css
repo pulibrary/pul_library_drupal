@@ -1926,9 +1926,16 @@ line-height: 1.333em;
 
 
 /* =====================================================================
- * LOGGED in User Tweaks 
+ * General Fixes for Specific pages 
  * ===================================================================*/
 
+/* hide edit controls on homepage */ 
 .front.logged-in #zone-content .tabs.clearfix{
 display: none;
 }
+
+
+/* hide doubled pane title on the ofa home page */
+#ofa-landing-page .inside .pane-title {
+display: none;
+} 
