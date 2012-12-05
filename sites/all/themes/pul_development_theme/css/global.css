@@ -1935,7 +1935,12 @@ display: none;
 }
 
 
-/* hide doubled pane title on the ofa home page */
-#ofa-landing-page .inside .pane-title {
+/* hide doubled pane title on the ofa home page */ 
+.committee-landing-page .inside .pane-title, #ofa-landing-page .inside .pane-title {
 display: none;
+}
+
+/* hide subtitles in main h1 on panel pages */
+.subnav-hidden-title{
+  display: none;
 } 
