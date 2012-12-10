@@ -851,12 +851,14 @@ padding:5px;
 border-radius: 4px;
 }
 
-textarea,
+
 input[type="text"]{
 width:280px;
 height:24px;
 }
-
+textarea {
+	width: 280px;
+}
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"]{
 width:210px;
