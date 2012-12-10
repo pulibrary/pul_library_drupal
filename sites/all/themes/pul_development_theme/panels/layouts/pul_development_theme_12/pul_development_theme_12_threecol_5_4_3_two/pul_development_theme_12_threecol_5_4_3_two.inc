@@ -16,7 +16,7 @@ function pul_development_theme_pul_development_theme_12_threecol_5_4_3_two_panel
       'right_top' => t('Right top'),
       'left_bottom' => t('Left bottom'),
       'middle_bottom' => t('Middle bottom'),
-      'right_bottom' => t('Right bottom'),
+      'bottom' => t('Bottom'),
     ),
   );
 
