@@ -676,9 +676,6 @@ margin:0;
 vertical-align:top;
 }
 
-.context-students .pane-library-news-panel-pane-5{
-margin-top:3em;
-}
 
 /* ========================================================================
    LAYOUT
@@ -1494,7 +1491,7 @@ height:auto;
 
 .views-field-title a{
 display:block;
-font-size:1.5em;
+font-size:1.1em;
 text-decoration:none;
 color:#f58026;
 font-family: 'PT Sans', sans-serif;
@@ -1614,7 +1611,6 @@ padding:0 10px 0 0;
 margin-top:6em;
 }
 
-.context-students .pane-library-news-panel-pane-5 h2.pane-title,
 .front #zone-postscript #region-postscript-first h2.block-title,
 .front #zone-postscript #region-postscript-second h2.block-title{
 float:left;
@@ -1627,17 +1623,8 @@ clear:both;
 display:block;
 }
 
-.context-students .pane-library-news-panel-pane-5,
 .front #zone-postscript #block-block-2{
 border-top:1px dotted #bfbfbf;
-}
-
-.context-students .pane-library-news-panel-pane-5 .pane-content{
-clear:both;
-}
-
-.context-students .pane-library-news-panel-pane-5 h3{
-margin:0;
 }
 
 .read-more{
@@ -1944,3 +1931,47 @@ display: none;
 .subnav-hidden-title{
   display: none;
 } 
+
+/* add a bit of spacing above h2 on audience pages */
+
+.context-staff h2.pane-title,
+.context-alumni h2.pane-title,
+.context-visitors h2.pane-title,
+.context-students h2.pane-title,
+.context-faculty h2.pane-title {
+  margin-top: 1em;
+}
+/* Library Audience News Sections */
+
+.pane-library-news-panel-pane {
+  margin-top:3em;
+}
+.pane-library-news-panel-pane h2.pane-title {
+  float:left;
+  display:block;
+  background-color:#fff;
+}
+
+.pane-library-news-panel-pane {
+  border-top:1px dotted #bfbfbf;
+}
+
+.pane-library-news-panel-pane .pane-content {
+  clear:both;
+}
+
+.pane-library-news-panel-pane h3 {
+  margin:0;
+}
+
+.pane-library-news-panel-pane .pane-content {
+  clear:both;
+}
+
+/* slightly reducing sidebar titles in right sidebar pages */
+
+.omega-12-threecol-5-4-3 h2.pane-title,
+.omega-12-twocol-9-3 .grid-3 h2.pane-title {
+  font-size: 1.3em;
+}
+news-item-title
