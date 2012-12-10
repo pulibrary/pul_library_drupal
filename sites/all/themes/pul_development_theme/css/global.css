@@ -1974,4 +1974,11 @@ display: none;
 .omega-12-twocol-9-3 .grid-3 h2.pane-title {
   font-size: 1.3em;
 }
-news-item-title
+
+/* match the margin header of right columns on block based pages and panel based pages */
+
+
+.not-front #region-sidebar-second {
+	padding-top: 2em;
+}
+
