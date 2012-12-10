@@ -1984,3 +1984,10 @@ display: none;
 	padding-top: 2em;
 }
 
+/* footer - address header style */
+
+#lib-address h2 {
+	font-size: 1.2em;
+	color: #3C3C3C;
+	margin-bottom: 1.0em;
+}
