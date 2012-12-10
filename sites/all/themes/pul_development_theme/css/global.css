@@ -851,12 +851,14 @@ padding:5px;
 border-radius: 4px;
 }
 
-textarea,
+
 input[type="text"]{
 width:280px;
 height:24px;
 }
-
+textarea {
+	width: 280px;
+}
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"]{
 width:210px;
@@ -1974,4 +1976,18 @@ display: none;
 .omega-12-twocol-9-3 .grid-3 h2.pane-title {
   font-size: 1.3em;
 }
-news-item-title
+
+/* match the margin header of right columns on block based pages and panel based pages */
+
+
+.not-front #region-sidebar-second {
+	padding-top: 2em;
+}
+
+/* footer - address header style */
+
+#lib-address h2 {
+	font-size: 1.2em;
+	color: #3C3C3C;
+	margin-bottom: 1.0em;
+}
