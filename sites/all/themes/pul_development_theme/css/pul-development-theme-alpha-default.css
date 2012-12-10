@@ -623,7 +623,6 @@ font-size:0.917em;
    FLEX SLIDER
    ========================================================================== */
 
-.context-students .pane-library-news-panel-pane-5 h2.pane-title,
 .front #zone-postscript #region-postscript-first h2.block-title,
 .front #zone-postscript #region-postscript-second h2.block-title{
 padding:0 8px;
@@ -1013,4 +1012,8 @@ margin:0;
 padding-left: 0;
 }
 
-
+.pane-library-news-panel-pane h2.pane-title {
+padding:0 8px;
+margin:-17px 0 10px 14px;
+font-size:1.5em;
+}
