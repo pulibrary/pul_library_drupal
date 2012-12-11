@@ -1,0 +1,113 @@
+<?php
+/**
+ * @file
+ * Module file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function feedback_simple_menu() {
+  $items['admin/appearance/feedback-simple'] = array(
+    'title' => 'Feedback Simple',
+    'description' => 'Configure the Feedback Simple tab.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('feedback_simple_system_settings'),
+    'access arguments' => array('administer feedback simple'),
+    'file' => 'feedback_simple.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function feedback_simple_permission() {
+  $permissions['administer feedback simple'] = array(
+    'title' => t('Configure the Feedback Simple tab.'),
+  );
+
+  return $permissions;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function feedback_simple_theme($existing, $type, $theme, $path) {
+  $variables = _feedback_simple_variable_get();
+  $image = image_get_info($variables['image']);
+
+  $registry['feedback_simple'] = array(
+    'variables' => array(
+      'enabled' => $variables['enabled'],
+      'link' => $variables['link'],
+      'target' => $variables['target'],
+      'class' => $variables['class'],
+      'align' => $variables['align'],
+      'top' => $variables['top'],
+      'image' => $variables['image'],
+      'alt' => $variables['alt'],
+      'deny' => $variables['deny'],
+      'allow' => $variables['allow'],
+      // Computed from image.
+      'height' => $image['height'],
+      'width' => $image['width'],
+    ),
+    'template' => 'feedback_simple',
+  );
+
+  return $registry;
+}
+
+/**
+ * Implements hook_preprocess_feedback_simple().
+ */
+function feedback_simple_preprocess_feedback_simple(&$variables) {
+  // Hide the tab when on the $link page.
+  if (current_path() == $variables['link']) {
+    $variables['enabled'] = FALSE;
+  }
+
+  // Allow Drupal to apply base_path and locale prefix outside of the
+  // theme registry cache.
+  $variables['link'] = url($variables['link']);
+
+  // Prevent breakage in subdirectory and multi-language sites.
+  $variables['image'] = base_path() . $variables['image'];
+
+  // Deny and allow rules.
+  if (drupal_match_path(current_path(), $variables['deny'])) {
+    $variables['enabled'] = FALSE;
+  }
+  if (drupal_match_path(current_path(), $variables['allow'])) {
+    $variables['enabled'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_page_build().
+ */
+function feedback_simple_page_build(&$page) {
+  $page['page_bottom']['feedback_simple'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('feedback_simple'),
+    '#attached' => array(
+      'css' => array(drupal_get_path('module', 'feedback_simple') . '/feedback_simple.css'),
+    ),
+  );
+}
+
+/**
+ * Variable get.
+ */
+function _feedback_simple_variable_get($key = NULL) {
+  $variables = variable_get('feedback_simple', array());
+
+  if (!empty($key)) {
+    return isset($variables[$key]) ? $variables[$key] : NULL;
+  }
+
+  return $variables;
+}

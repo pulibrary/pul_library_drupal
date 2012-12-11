@@ -6,10 +6,9 @@
 class Redis_Lock_Backend_PhpRedis extends Redis_Lock_Backend_Default {
 
   public function lockAcquire($name, $timeout = 30.0) {
-    $client  = Redis_Client::getClient();
-    $key     = 'lock:' . $name;
-    $keyOwn  = $key . ':owner';
-    $id      = $this->getLockId();
+    $client = Redis_Client::getClient();
+    $key    = $this->getLockKeyName($name);
+    $id     = $this->getLockId();
 
     // Insure that the timeout is at least 1 second, we cannot do otherwise with
     // Redis, this is a minor change to the function signature, but in real life
@@ -21,25 +20,24 @@ class Redis_Lock_Backend_PhpRedis extends Redis_Lock_Backend_Default {
     if (isset($this->_locks[$name])) {
 
       // Create a new transaction, for atomicity.
-      $client->watch($keyOwn);
+      $client->watch($key);
 
       // Global tells us we are the owner, but in real life it could have expired
       // and another process could have taken it, check that.
-      if ($client->get($keyOwn) != $id) {
+      if ($client->get($key) != $id) {
         // Explicit UNWATCH we are not going to run the MULTI/EXEC block.
-        $client->unwatch($keyOwn);
+        $client->unwatch();
         unset($this->_locks[$name]);
         return FALSE;
       }
 
       $result = $client
         ->multi()
-        ->expire($key, $timeout)
-        ->setex($keyOwn, $timeout, $id)
+        ->setex($key, $timeout, $id)
         ->exec();
 
       // Did it broke?
-      if (FALSE === $result || 1 != $result[1]) {
+      if (FALSE === $result) {
         unset($this->_locks[$name]);
         return FALSE;
       }
@@ -48,58 +46,58 @@ class Redis_Lock_Backend_PhpRedis extends Redis_Lock_Backend_Default {
     }
     else {
       $client->watch($key);
+      $owner = $client->get($key);
+
+      // If the $key is set they lock is not available
+      if (!empty($owner) && $id != $owner) {
+        $client->unwatch();
+        return FALSE;
+      }
 
       $result = $client
         ->multi()
-        ->incr($key)
-        // The INCR command should reset the EXPIRE state, so we are now the
-        // official owner. Set the owner flag and real EXPIRE delay.
-        ->expire($key, $timeout)
-        ->setex($key . ':owner', $timeout, $id)
+        ->setex($key, $timeout, $id)
         ->exec();
 
       // If another client modified the $key value, transaction will be discarded
       // $result will be set to FALSE. This means atomicity have been broken and
-      // the other client took the lock instead of us. The another condition is
-      // the INCR result test. If we succeeded in incrementing the counter but
-      // that counter was more than 0, then someone else already have the lock
-      // case in which we cannot proceed.
-      if (FALSE === $result || 1 != $result[0]) {
+      // the other client took the lock instead of us.
+      if (FALSE === $result) {
         return FALSE;
       }
 
       // Register the lock.
       return ($this->_locks[$name] = TRUE);
     }
+
     return FALSE;
   }
 
   public function lockMayBeAvailable($name) {
-    $client  = Redis_Client::getClient();
-    $key     = 'lock:' . $name;
-    $id      = $this->getLockId();
+    $client = Redis_Client::getClient();
+    $key    = $this->getLockKeyName($name);
+    $id     = $this->getLockId();
 
-    list($value, $owner) = $client->mget(array($key, $key . ':owner'));
+    $value = $client->get($key);
 
-    return FALSE === $value || $id == $owner;
+    return FALSE === $value || $id == $value;
   }
 
   public function lockRelease($name) {
-    $client  = Redis_Client::getClient();
-    $key     = 'lock:' . $name;
-    $keyOwn  = $key . ':owner';
-    $id      = $this->getLockId();
+    $client = Redis_Client::getClient();
+    $key    = $this->getLockKeyName($name);
+    $id     = $this->getLockId();
 
     unset($this->_locks[$name]);
 
     // Ensure the lock deletion is an atomic transaction. If another thread
     // manages to removes all lock, we can not alter it anymore else we will
     // release the lock for the other thread and cause race conditions.
-    $client->watch($keyOwn);
+    $client->watch($key);
 
-    if ($client->get($keyOwn) == $id) {
+    if ($client->get($key) == $id) {
       $client->multi();
-      $client->del(array($key, $keyOwn));
+      $client->delete($key);
       $client->exec();
     }
     else {
@@ -108,22 +106,21 @@ class Redis_Lock_Backend_PhpRedis extends Redis_Lock_Backend_Default {
   }
 
   public function lockReleaseAll($lock_id = NULL) {
-    if (!isset($lock_id) && empty($locks)) {
+    if (!isset($lock_id) && empty($this->_locks)) {
       return;
     }
 
-    $client  = Redis_Client::getClient();
-    $id      = isset($lock_id) ? $lock_id : $this->getLockId();
+    $client = Redis_Client::getClient();
+    $id     = isset($lock_id) ? $lock_id : $this->getLockId();
 
     // We can afford to deal with a slow algorithm here, this should not happen
     // on normal run because we should have removed manually all our locks.
     foreach ($this->_locks as $name => $foo) {
-      $key    = 'lock:' . $name;
-      $keyOwn = $key . ':owner';
-      $owner  = $client->get($keyOwn);
+      $key   = $this->getLockKeyName($name);
+      $owner = $client->get($key);
 
       if (empty($owner) || $owner == $id) {
-        $client->del(array($key, $keyOwn));
+        $client->delete($key);
       }
     }
   }

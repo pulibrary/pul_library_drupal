@@ -1,0 +1,20 @@
+#feedback_simple a {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  position: fixed;
+  text-decoration: none !important;
+  z-index: 9999;
+}
+
+#feedback_simple img {
+  border: none;
+}
+
+.feedback_simple-left {
+  left: -2px;
+}
+
+.feedback_simple-right {
+  right: -2px;
+}

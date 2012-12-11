@@ -57,6 +57,36 @@ function menu_views_theme_registry_alter(&$registry) {
 }
 
 /**
+ * Implements HOOK_menu_position_rule_plugins().
+ */
+function menu_views_menu_position_rule_plugins() {
+  return array('menu_views' => array(
+    'form_callback' => 'menu_views_menu_position_rule_menu_views_form',
+    'condition_callback' => 'menu_views_menu_position_condition_menu_views',
+    'file' => 'menu_position.menu_views.inc',
+  ));
+}
+
+/**
+ * Implements HOOK_menu_position_rule_alter().
+ */
+function menu_views_menu_position_rule_alter(&$rule, &$context) {
+  // Don't process the Menu View items twice.
+  $processed = &drupal_static(__FUNCTION__, FALSE);
+  if ($processed) {
+    return;
+  }
+  $processed = TRUE;
+  
+  // Process Menu Views plugin in this rule.
+  if (isset($rule->conditions['menu_views']) && $rule->conditions['menu_views']['menu_views']) {
+    // dpm($rule);
+    // dpm($context);
+  }
+}
+
+
+/**
  * Implements theme_menu_link().
  * Overrides default theming function to intercept views.
  */
@@ -91,7 +121,7 @@ function menu_views_superfish_menu_item_link(array $variables) {
  */
 function menu_views_menu_breadcrumb_alter(&$active_trail, $item) {
   foreach ($active_trail as $key => $parent) {
-    if ($parent['link_path'] == '<view>') {
+    if (isset($parent['link_path']) && $parent['link_path'] == '<view>') {
       $menu_view = _menu_views_get_item($parent);
       _menu_views_tokenize($menu_view);
       // Remove this breadcrumb if the menu item view wants it hidden.
@@ -158,6 +188,22 @@ function _menu_views_replace_menu_item($element) {
             }
           }
           $output .= $view->preview();
+          if (count($view->result)) {
+            $view_data = _views_fetch_data($view->base_table);
+            if (isset($view_data['table']['entity type']) &&
+            isset($view_data['table']['base']['field']) &&
+            isset($view->result[0]->{$view_data['table']['base']['field']})
+            ) {
+              foreach ($view->result as $result) {
+                if (isset($result->{$view_data['table']['base']['field']})) {
+                  $entity = entity_load($view_data['table']['entity type'], array($result->{$view_data['table']['base']['field']}));
+                  $entity = $entity ? reset($entity) : FALSE;
+                  // dpm($entity);
+                }
+              }
+            }
+          }
+          // dpm($view_data);
           $view->destroy();
         }
       }
@@ -304,6 +350,46 @@ function menu_views_menu_link_alter(&$link) {
 }
 
 /**
+ * Helper function to return the menu link item based on it's original path.
+ *
+ * @param (string) $original_path
+ *   The [node] path for which to search for in menu views.
+ * @param (string)|(array) $menu_name
+ *   Limit the search of menu view items to the specified menu names.
+ * @return
+ *   (array) $mlids
+ *   A keyed array containing the identification integers matching the original path of menu items in the {menu_links} table,
+ *   or an empty array if no menu items were found.
+ *
+ * @see: menu_views_node_prepare() and menu_views_node_delete().
+ */
+function _menu_views_items_from_original_path($original_path, $menu_name = NULL) {
+  $mlids = array();
+  // Build the query.
+  $query = db_select('menu_links', 'm')
+            ->fields('m', array('mlid', 'options'))
+            ->condition('module', 'menu')
+            ->condition('link_path', '<view>');
+  // Set the menu_name condition if present.
+  if (!empty($menu_name)) {
+    $query = $query->condition('menu_name', $menu_name);
+  }
+  // Execute the query.
+  $query = $query->execute();
+  // Iterate through all available menu items that are views to match against the original path.
+  while($link = $query->fetchObject()) {
+    if ($options = unserialize($link->options)) {
+      $item = _menu_views_get_item($options);
+      if ($item['original_path'] == $original_path) {
+        $mlids[] = $link->mlid;
+        break;
+      }
+    }
+  }
+  return $mlids;
+}
+
+/**
  * Implements hook_node_prepare().
  */
 function menu_views_node_prepare($node) {
@@ -311,48 +397,18 @@ function menu_views_node_prepare($node) {
     // Prepare the node for the edit form so that $node->menu always exists.
     $menu_name = strtok(variable_get('menu_parent_' . $node->type, 'main-menu:0'), ':');
     $item = array();
-    $mlid = FALSE;
+    $mlids = array();
     // Give priority to the default menu.
     $type_menus = variable_get('menu_options_' . $node->type, array('main-menu' => 'main-menu'));
     if (in_array($menu_name, $type_menus)) {
-      // Iterate through all available menu items that are views to match against the original path.
-      $result = db_select('menu_links', 'm')
-                  ->fields('m', array('options'))
-                  ->condition('module', 'menu')
-                  ->condition('link_path', '<view>')
-                  ->condition('menu_name', $menu_name)
-                  ->execute();
-      while($options = unserialize($result->fetchField())) {
-        if ($options) {
-          $item = _menu_views_get_item($options);
-          if ($item['original_path'] == 'node/' . $node->nid) {
-            $mlid = $item['mlid'];
-            break;
-          }
-        }
-      }
+      $mlids = _menu_views_items_from_original_path('node/' . $node->nid, $menu_name);
     }
     // Check all allowed menus if a link does not exist in the default menu.
-    if (!$mlid && !empty($type_menus)) {
-      // Iterate through all available menu items that are views to match against the original path.
-      $result = db_select('menu_links', 'm')
-                  ->fields('m', array('options'))
-                  ->condition('module', 'menu')
-                  ->condition('link_path', '<view>')
-                  ->condition('menu_name', array_values($type_menus))
-                  ->execute();
-      while($options = unserialize($result->fetchField())) {
-        if ($options) {
-          $item = _menu_views_get_item($options);
-          if ($item['original_path'] == 'node/' . $node->nid) {
-            $mlid = $item['mlid'];
-            break;
-          }
-        }
-      }
+    if (empty($mlid) && !empty($type_menus)) {
+      $mlids = _menu_views_items_from_original_path('node/' . $node->nid, array_values($type_menus));
     }
     // Load the menu link if one was found.
-    $item = $mlid ? menu_link_load($mlid) : array();
+    $item = empty($mlids) ? array() : menu_link_load(reset($mlids));
     // Set default values.
     $default = array(
       'link_title' => '',
@@ -377,10 +433,44 @@ function menu_views_node_prepare($node) {
 }
 
 /**
+ * Implements hook_node_delete().
+ */
+function menu_views_node_delete($node) {
+  $mlids = _menu_views_items_from_original_path('node/' . $node->nid);
+  foreach ($mlids as $mlid) {
+    menu_link_delete($mlid);
+  }
+}
+
+/**
  * Implements hook_node_insert().
  */
 function menu_views_node_insert($node) {
   menu_views_node_save($node);
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function menu_views_node_presave($node) {
+  if (isset($node->menu)) {
+    $link = &$node->menu;
+    $item = _menu_views_get_item($link);
+    // Ensure the enabled property is set.
+    if (!isset($link['enabled'])) {
+      $link['enabled'] = !(bool) $link['hidden'];
+    }
+    // If this is a menu view item, override properties on the link so this module handles the save.
+    if ($link['enabled'] && $item['type'] == 'view') {
+      // Save the mlid in the menu_views array so the menu module doesn't delete the link when it detects the mlid.
+      if (!empty($link['mlid'])) {
+        $link['options']['menu_views']['mlid'] = $link['mlid'];
+        $link['mlid'] = 0;
+      }
+      // Ensure there is no title so the menu module doesn't try to save this menu item.
+      $link['link_title'] = '';
+    }
+  }
 }
 
 /**
@@ -396,12 +486,30 @@ function menu_views_node_update($node) {
 function menu_views_node_save($node) {
   if (isset($node->menu)) {
     $link = &$node->menu;
-    if (empty($link['enabled'])) {
-      if (!empty($link['mlid'])) {
-        menu_link_delete($link['mlid']);
+    $item = _menu_views_get_item($link);
+    // Check to see if Menu Views should handle the menu item save.
+    if (!empty($link['enabled']) && $item['type'] == 'view') {
+      // If this an existing menu item, check to see if the mlid was saved in the menu view options array.
+      if (!empty($item['mlid']) && empty($link['mlid'])) {
+        $link['mlid'] = $item['mlid'];
       }
-    }
-    else {
+      // This is a new menu link, create one so we can get the mlid.
+      // Note: This will save the menu link twice on new nodes, which is unavoidable since
+      // we need the mlid to be saved in the menu views options array.
+      elseif (empty($link['mlid'])) {
+        if (!menu_link_save($link)) {
+          drupal_set_message(t('There was an error saving the menu link.'), 'error');
+          return;
+        }
+      }
+      // Ensure mlid is properly set.
+      $item['mlid'] = $link['mlid'];
+      // Ensure link_path is properly set.
+      $link['link_path'] = '<view>';
+      // Ensure original_path is properly set.
+      $item['original_path'] = 'node/' . $node->nid;
+      // Replace the menu view options in the link and save it.
+      $link['options']['menu_views'] = $item;
       if (!menu_link_save($link)) {
         drupal_set_message(t('There was an error saving the menu link.'), 'error');
       }
