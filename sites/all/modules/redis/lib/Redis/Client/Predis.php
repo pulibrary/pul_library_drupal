@@ -18,7 +18,7 @@ class Redis_Client_Predis implements Redis_Client_Interface {
    * ensure we are not in the class loading process anymore.
    */
   public static function setPredisAutoload() {
-    if (!class_exists('Predis\Client')) {
+    if (!class_exists('Predis\Client', FALSE)) {
       if (!defined('PREDIS_BASE_PATH')) {
         $search = DRUPAL_ROOT . '/sites/all/libraries/predis/lib/';
         if (is_dir($search)) {

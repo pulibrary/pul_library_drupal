@@ -90,6 +90,13 @@ margin-top:0;
 margin:5px 10px 0 0;
 }
 
+.view-tier-one-resources .views-row, view-tier-two-resources .views-row{
+padding-bottom: 1em;
+}
+
+.views-tier-one-resources .views-row h3, .views-tier-two-resources .views-row h3{
+margin-top: .5em;
+}
 
 /* =============================================================================
    HEADER
@@ -962,7 +969,7 @@ padding: 5px 0 0 0;
    ======================================================================== */
 
 
-.field-name-field-db-access-url a{
+#borrow-direct-connect a, .field-name-field-db-access-url a{
 font-size: 140%;
 color: #FFFFFF;
 background-color: #0062A0;
@@ -982,7 +989,10 @@ display: inline;
 }
 
 
-
+.db-date-coverage{
+  font-size: .8em;
+  color: blue;
+}
 
 /* ========================================================================
    Library News /news and Information for Landing Pages
