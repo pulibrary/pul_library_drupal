@@ -7,3 +7,4 @@ sites/*/private
 
 #local environment files
 .project
+*/.DS_Store
