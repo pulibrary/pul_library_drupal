@@ -192,6 +192,7 @@ h2.node-title,
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
+    margin-top:8px;
 }
 
 .views-field-title h2 a,
@@ -839,7 +840,6 @@ margin-right:0 !important;
  * ======================================================================== */
 
 textarea,
-select,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -875,6 +875,8 @@ border:1px solid #727272;
 }
 
 select{
+background-image:none;
+-webkit-appearance: menulist;
 padding:2px 3px;
 }
 
@@ -2053,7 +2055,7 @@ display: none;
 
 
 .not-front #region-sidebar-second {
-	padding-top: 2em;
+	padding: 2em 0;
 }
 
 /* footer - address header style */
