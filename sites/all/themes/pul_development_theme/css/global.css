@@ -1926,6 +1926,17 @@ line-height: 1.333em;
 }
 
 
+/* ====================================================================
+ * Department Library Fixes
+ * ===================================================================*/
+.view-grouping-content table .field-name-field-puluser-section{
+font-weight: bold;
+font-size: 1.2em;
+}
+
+.view-grouping-content table .field-name-field-puluser-section a{
+text-decoration:none;
+}
 
 /* =====================================================================
  * General Fixes for Specific pages 
