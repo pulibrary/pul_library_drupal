@@ -71,6 +71,31 @@ input[type="text"]{
 width:350px;
 }
 
+#region-sidebar-second .login_field input[type="text"],
+#region-sidebar-second .login_field input[type="password"]{
+width:200px;
+}
+
+#region-sidebar-second .login_field input[type="submit"]{
+float:right;
+margin:0 20px 0 0;
+}
+
+#region-sidebar-second .login_field p{
+margin-top:0;
+}
+
+#region-sidebar-second .login_field h4{
+margin-bottom:0;
+}
+
+#illiad-first-time{
+clear:both;
+font-style:italic;
+padding-top:5px;
+}
+
+
 /* =============================================================================
    DATABASES
    ========================================================================== */
