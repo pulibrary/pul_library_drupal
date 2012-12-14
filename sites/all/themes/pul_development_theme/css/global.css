@@ -2065,3 +2065,58 @@ display: none;
 	color: #3C3C3C;
 	margin-bottom: 1.0em;
 }
+
+/*#####
+ *  
+ * Accordion style for FAQs
+ *
+ *##### */
+
+body.faq .ui-corner-bottom, body.faq .ui-corner-all {
+	border-radius: 0;
+}
+body.faq .ui-accordion .ui-accordion-header a {
+	font-size: 0.9em;
+	padding: 0.2em 0.2em 0.2em 2.2em;
+	font-weight: normal;
+}
+body.faq .views-accordion-header {
+	background-color: #FFF;
+	border-bottom: 1px dotted #E5E5E5;
+	padding: 0.1em;
+}
+body.faq .views-accordion-header h3 {
+	height: auto;	
+}
+body.faq .views-accordion-header h3 a {
+	color: #7F3D00;
+}
+body.faq .views-accordion-header .ui-state-default h3 a{
+	color: #3C3C3C;
+	background-color: #FFF;
+}
+body.faq .views-accordion-header .ui-state-active h3 a {
+	color: #FFF;
+	background-color: #3C3C3C;
+}
+body.faq .ui-accordion .ui-accordion-content p {
+	font-size: 1.1em;
+}
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.ui-accordion .ui-accordion-header { display: block; cursor: pointer; position: relative; margin-top: 2px; padding: .5em .5em .5em .7em; zoom: 1; }
+.ui-accordion .ui-accordion-icons { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-noicons { padding-left: .7em; }
+.ui-accordion .ui-accordion-icons .ui-accordion-icons { padding-left: 2.2em; }
+body.faq .ui-accordion .ui-accordion-header .ui-accordion-header-icon { position: absolute; left: .5em;  margin-top: 0px; }
+.ui-accordion .ui-accordion-content { padding: 0.5em 2.2em; border-top: 0; overflow: auto; zoom: 1; }
+
+/* Component containers
+----------------------------------*/
+.faq .ui-widget { }
+.faq .ui-widget .ui-widget { font-size: 1em; }
+.faq .ui-widget input, .faq .ui-widget select, .faq .ui-widget textarea, .faq .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+.faq .ui-widget-content {font-size: 0.8em; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.faq .ui-widget-content a { color: #222222; }
+.faq .ui-widget-header { background: #cccccc 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.faq .ui-widget-header a { color: #222222; }
