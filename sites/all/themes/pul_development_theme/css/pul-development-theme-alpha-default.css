@@ -984,7 +984,7 @@ border-bottom: 1px solid #E5E5E5;
 */
 
 #all-search-page .more-results {
-padding-left: 50px;
+float:right;
 }
 
 .all-search-results-list {
@@ -997,6 +997,32 @@ padding: 5px 0 0 0;
 */
 #all-search-page .views-field-title {
 }
+
+.page-find div#all-search-page div div.inside{
+padding:0;
+}
+
+.page-find div#all-search-page div + div div.inside{
+padding:0 2em 0 0;
+}
+
+.page-find div#all-search-page div + div + div div.inside{
+padding:0 2em;
+}
+
+.page-find div#all-search-page div + div + div + div div.inside{
+padding:0 0 0 2em;
+}
+
+.page-find div#all-search-page div + div + div + div + div div.inside{
+padding:0;
+}
+
+.view-general-site-keyword-search h3,
+.view-general-site-keyword-search h3{
+margin:0;
+}
+
 
 /* ========================================================================
    Access URL
@@ -1065,3 +1091,4 @@ padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
 }
+
