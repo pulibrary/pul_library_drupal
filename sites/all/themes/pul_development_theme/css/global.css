@@ -2066,6 +2066,17 @@ display: none;
 	margin-bottom: 1.0em;
 }
 
+
+/* not found page */
+.page-not-found .grid-12 .pane-content li{
+  list-style:none;
+} 
+
+.page-not-found .grid-12 .pane-content li a{
+text-decoration:none;
+font-size: 1.2em;
+}
+
 /*#####
  *  
  * Accordion style for FAQs
