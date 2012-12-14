@@ -2077,7 +2077,6 @@ body.faq .ui-corner-bottom, body.faq .ui-corner-all {
 }
 body.faq .ui-accordion .ui-accordion-header a {
 	font-size: 0.9em;
-	padding: 0.2em 0.2em 0.2em 2.2em;
 	font-weight: normal;
 }
 body.faq .views-accordion-header {
@@ -2086,7 +2085,8 @@ body.faq .views-accordion-header {
 	padding: 0.1em;
 }
 body.faq .views-accordion-header h3 {
-	height: auto;	
+	margin: 0;
+	padding-top: 5px 0 5px 0;
 }
 body.faq .views-accordion-header h3 a {
 	color: #7F3D00;
