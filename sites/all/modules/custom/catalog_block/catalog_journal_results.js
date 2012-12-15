@@ -6,6 +6,7 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
+	var refine_tooltip = "Refine your journal search in Books+";
 	var display_query = decodeURI(query);
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
@@ -21,7 +22,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#journal-search-results');
-				$('<div class="more-link"><i class="icon-arrow-right"></i>&nbsp;<a href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
+				$('<div class="more-link"><i class="icon-arrow-right"></i>&nbsp;<a title="'+refine_tooltip+'" href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
 			} else {
 				$('<div class="no-results">No Journal titles match '+display_query+'</div>"').appendTo('#journal-search-results');
 			}
