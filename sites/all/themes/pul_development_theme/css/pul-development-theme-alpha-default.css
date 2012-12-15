@@ -983,6 +983,21 @@ border-bottom: 1px solid #E5E5E5;
 }
 */
 
+
+/* 4-4-4 panels */
+.page-find div#all-search-page .panel-panel.grid-4{
+border-right:1px dotted #BFBFBF;
+}
+
+.page-find div#all-search-page .panel-panel.grid-4:last-child{
+border-right:none;
+}
+
+.page-find div#all-search-page .panel-panel.grid-4 .panel-separator{
+border-top:1px dotted #BFBFBF;
+margin-top:10px;
+}
+
 #all-search-page .more-results {
 float:right;
 }
