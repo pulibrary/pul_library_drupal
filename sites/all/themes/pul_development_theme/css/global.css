@@ -1867,14 +1867,18 @@ padding-bottom:5px;
 /*
 */
 .subject-landing-page .grid-9 .views-row-odd, .subject-landing-page .grid-9 .views-row-even{
-border-bottom: 1px dotted #CCCCCC;
-background-color:transparent; 
+/*border-bottom: 1px dotted #CCCCCC;*/
+background-color:transparent;
+padding-right:.4em;
+padding-left: .4em;
+padding-bottom:.1em;
+margin-top:.1emm;
 }
-/*
+
 .subject-landing-page .grid-9 .views-row-odd{
-background-color:#CCFFFF;
+background-color:whiteSmoke;
 }
-*/
+
 /* =============================================================================
    COMMENTS
    ========================================================================== */
