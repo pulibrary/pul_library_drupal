@@ -6,7 +6,7 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
-	var display_query = decodeURI(query);
+	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>"; 
 	//query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
@@ -21,7 +21,9 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
-				$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a href="'+data.more+'">See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
+				if(data.number > 3) {
+					$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a href="'+data.more+'">See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
+				}
 			} else {
 				$('<div class="no-results">No results match '+display_query+'.</div>"').appendTo('#pulfa-search-results');
 			}

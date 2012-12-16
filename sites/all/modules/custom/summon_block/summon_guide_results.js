@@ -10,7 +10,7 @@
                 var query = path.substr(23);
         }
 
-	display_query = decodeURI(query);
+	display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
         var tooltip = "Browse Related Library Guides";
         var libguides_url = "http://libguides.princeton.edu/";
 	if(query === "" || query == undefined) {

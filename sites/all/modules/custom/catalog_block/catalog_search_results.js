@@ -1,12 +1,10 @@
 (function ($) {
   $(document).ready(function() {
   	
-	//var query = "firestone";
 	var request = Drupal.settings.catalog_block.request;
-	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
-	var display_query = decodeURI(query); //FIXE. This should highlighted
+	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	var refine_tooltip = "Refine your search in Books+";
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {

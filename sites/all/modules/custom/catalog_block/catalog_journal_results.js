@@ -7,7 +7,7 @@
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
 	var refine_tooltip = "Refine your journal search in Books+";
-	var display_query = decodeURI(query);
+	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
