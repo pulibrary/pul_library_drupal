@@ -16,13 +16,15 @@
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
-    					items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="format-type">' + result['format'] + '</span></li>');
+    					items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3> <span class="format-type">' + result['format'] + '</span></li>');
 				});
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#journal-search-results');
-				$('<div class="more-link"><i class="icon-arrow-right"></i>&nbsp;<a title="'+refine_tooltip+'" href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
+				if(data.number > 3) {
+					$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a title="'+refine_tooltip+'" href="'+data.more+'">See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
+				}
 			} else {
 				$('<div class="no-results">No Journal titles match '+display_query+'</div>"').appendTo('#journal-search-results');
 			}

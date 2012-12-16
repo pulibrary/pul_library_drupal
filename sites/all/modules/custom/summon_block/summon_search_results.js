@@ -23,13 +23,13 @@
 			var num_results = data.number;
 			var records = data.records;
   			$.each(records, function(index, result) {
-    				items.push('<li><a title="'+result['abstract'] + '" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a> <span class="summon-format-type">' + result['format'] + '</span></li>');
+    				items.push('<li><h3><a title="'+result['abstract'] + '" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3><span class="summon-format-type">' + result['format'] + '</span></li>');
 			});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-link"><i class="icon-arrow-right"></i>&nbsp;<a title="'+tooltip+'" href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a title="'+tooltip+'" href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 	} else {
         $('<div class="no-results">No matches in Articles+ for '+display_query+'.</div>"').appendTo('#summon-search-results');
         }

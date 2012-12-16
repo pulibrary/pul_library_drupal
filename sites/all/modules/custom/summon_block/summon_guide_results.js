@@ -25,13 +25,13 @@
 		if(data.number > 0) {
 			
   			$.each(data.records, function(index, result) {
-    				items.push('<li><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></li>');
+    				items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3></li>');
 				});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-				$('<div class="more-link"><i class="icon-arrow-right"></i><a title="'+tooltip+'" href="'+data.more+'">See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
+				$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a title="'+tooltip+'" href="'+data.more+'">See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 			} else {
 				$('<div class="no-results">No guides match '+display_query+'. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>"').appendTo('#summon-guide-results');
 			}

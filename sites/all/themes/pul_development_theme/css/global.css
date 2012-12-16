@@ -2156,3 +2156,38 @@ body.faq .ui-widget-header a { color: #222222; }
 	padding: 0 2px 0 2px;
 	margin: 0 1px 0 1px;
 }
+
+
+/***************************
+ * All Search Page Fixes 
+ * *************************/
+.pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:1px dotted #BFBFBF;
+}
+
+.page-find .all-search-title, .page-find .breadcrumb{
+display:none;
+}
+
+.view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+padding:0;
+margin:0;
+border:0;
+}
+
+.page-find .view-best-bets-pul a{
+text-decoration:none;
+} 
+
+.page-find .views-row{
+padding-bottom:.5em;
+}
+
+.page-find .all-search-results-list li{
+padding-bottom:.5em;
+}
+.page-find .all-search-results-list li h3{
+margin-top:.5em;
+}
