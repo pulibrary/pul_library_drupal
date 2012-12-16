@@ -1483,7 +1483,7 @@ padding:1px 0;
 
 
 /* =============================================================================
-   SECONDARY RESEARCH MENU
+   SECONDARY RESEARCH MENU & All Search Box message
    ========================================================================== */
 
 
@@ -2179,6 +2179,10 @@ display:none;
 display:none;
 }
 
+/*hide the form suffix */
+.all-search-form-suffix{
+display:none;
+}
 
 /* lines for panel panes on mobile */
 

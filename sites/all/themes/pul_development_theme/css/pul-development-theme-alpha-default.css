@@ -988,6 +988,22 @@ border-bottom: 1px solid #E5E5E5;
 display:none;
 }
 
+
+.page-find-all #allsearch-block-form label {
+display:inline;
+}
+/* all search help message */
+.all-search-form-suffix{
+display:block;
+align:right;
+padding-top:.2em;
+padding-bottom:0;
+}
+
+.all-search-form-suffix a{
+text-decoration:none;
+}
+
 /* block titles */
 .page-find-all h2 {
 font-size:1.4em;

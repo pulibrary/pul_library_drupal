@@ -17,8 +17,10 @@ function allsearch_block_form($form, &$form_state) {
   $form = array();
   if($page != "node/1") {
     $prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
+    $suffix = "<div class='all-search-form-suffix'><a title='What is the All Search?' href='/faq/all-search'>What is the All Search?</a>";
   } else {
     $prefix = "";
+    $suffix = "";
   }
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -33,7 +35,7 @@ function allsearch_block_form($form, &$form_state) {
    );
    $form['#validate'] = array('allsearch_block_form_validate');
    $form['#prefix'] = $prefix;
-
+   $form['#suffix'] = $suffix;
    //$form['#redirect'] = url('find/all/');
    #$form['#target'] = "_parent";
    //$form['#action'] = url('/find/all/cats');
