@@ -984,18 +984,20 @@ border-bottom: 1px solid #E5E5E5;
 */
 
 
-/* 4-4-4 panels */
+/* 4-4-4 panel borders */
 .page-find div#all-search-page .panel-panel.grid-4{
 border-right:1px dotted #BFBFBF;
 }
-
-.page-find div#all-search-page .panel-panel.grid-4:last-child{
+/* not sure why hte last 4-4-4 column is the fourth child here */
+.page-find div#all-search-page .panel-panel.grid-4:nth-child(4){
 border-right:none;
 }
 
 .page-find div#all-search-page .panel-panel.grid-4 .panel-separator{
 border-top:1px dotted #BFBFBF;
 margin-top:10px;
+padding-bottom:5px;
+padding-top:5px;
 }
 
 #all-search-page .more-results {
@@ -1003,6 +1005,7 @@ float:right;
 }
 
 .all-search-results-list {
+padding:0;
 list-style-type: none;
 }
 /*

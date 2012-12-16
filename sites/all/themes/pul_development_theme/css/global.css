@@ -2159,8 +2159,12 @@ body.faq .ui-widget-header a { color: #222222; }
 
 
 /***************************
- * All Search Page Fixes 
+ * All Search Page Global Overrides
  * *************************/
+.page-find-all h2 {
+font-size:1.2em;
+}
+
 .pane-allsearch-block-allsearch-search{
 margin:1em 0 0 0;
 padding-bottom:1em;
@@ -2174,7 +2178,11 @@ display:none;
 display:none;
 }
 
-.view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+.pane-best-bets-pul-panel-pane-2 h3 {
+margin:0;
+}
+
+.page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
 padding:0;
 margin:0;
 border:0;
@@ -2185,12 +2193,14 @@ text-decoration:none;
 } 
 
 .page-find .views-row{
-padding-bottom:.5em;
+padding-bottom:.3em;
 }
 
 .page-find .all-search-results-list li{
-padding-bottom:.5em;
+padding-bottom:.3em;
 }
 .page-find .all-search-results-list li h3{
-margin-top:.5em;
+margin-top:.3em;
 }
+
+
