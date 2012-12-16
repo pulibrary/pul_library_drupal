@@ -2178,6 +2178,14 @@ display:none;
 display:none;
 }
 
+
+/* lines for panel panes on mobile */
+
+.page-find-all .panel-panel.grid-4 .panel-pane{
+margin-top:.5em;
+border-top:1px dotted #BFBFBF;
+}
+
 .pane-best-bets-pul-panel-pane-2 h3 {
 margin:0;
 }
@@ -2212,4 +2220,8 @@ margin-left:1em;
 .page-find-all .more-link{
 text-align:left;
 margin-top:.3em;
+}
+
+.view-id-database_subject_search h3{
+margin-top:.1em;
 }

@@ -1067,13 +1067,19 @@ margin:0;
 text-align:right;
 }
 
+/* overrides for individual pane border */
+.page-find-all .panel-panel.grid-4 .panel-pane{
+margin-top:0;
+border-top:0;
+}
+
 /* styles for the "view-footer" block for database subjects */
 .view-id-database_subject_search{
 padding-left:.3em;
 }
 
 .view-id-database_subject_search h3{
-padding-top:.3em;
+padding-top:.1em;
 }
 
 .view-id-database_subject_search ul{
