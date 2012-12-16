@@ -2166,6 +2166,9 @@ margin:1em 0 0 0;
 padding-bottom:1em;
 border-bottom:1px dotted #BFBFBF;
 }
+.page-find-all #page-title{
+display:none;
+}
 
 .page-find .all-search-title, .page-find .breadcrumb{
 display:none;
