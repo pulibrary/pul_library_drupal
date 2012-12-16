@@ -2161,12 +2161,13 @@ body.faq .ui-widget-header a { color: #222222; }
 /***************************
  * All Search Page Global Overrides
  * *************************/
-
+/*
 .pane-allsearch-block-allsearch-search{
 margin:1em 0 0 0;
 padding-bottom:1em;
 border-bottom:1px dotted #BFBFBF;
 }
+*/
 .page-find .all-search-title{
 padding-top:.5em;
 }

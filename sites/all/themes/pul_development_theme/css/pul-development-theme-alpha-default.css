@@ -994,6 +994,13 @@ font-size:1.4em;
 margin-top:0;
 }
 
+/* search box sizing */
+.pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:1px dotted #BFBFBF;
+}
+
 /* 4-4-4 panel borders */
 .page-find div#all-search-page .panel-panel.grid-4{
 border-right:1px dotted #BFBFBF;
