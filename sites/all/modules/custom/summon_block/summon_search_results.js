@@ -29,7 +29,7 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-link"><i class="icon-external-link"></i>&nbsp;<a title="'+tooltip+'" href="'+more_link+'">See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="more-link"><a title="'+tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 	} else {
         $('<div class="no-results">No matches in Articles+ for '+display_query+'.</div>"').appendTo('#summon-search-results');
         }
