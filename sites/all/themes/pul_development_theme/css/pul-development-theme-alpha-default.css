@@ -983,6 +983,15 @@ border-bottom: 1px solid #E5E5E5;
 }
 */
 
+/* hide search block title on larger screens */
+.page-find .all-search-title{
+display:none;
+}
+
+/* block titles */
+.page-find-all h2 {
+font-size:1.4em;
+}
 
 /* 4-4-4 panel borders */
 .page-find div#all-search-page .panel-panel.grid-4{
@@ -1002,6 +1011,17 @@ padding-top:5px;
 
 #all-search-page .more-results {
 float:right;
+}
+
+/* list overrides */
+.page-find-all .pane-views-panes ul li{
+list-style-type:none;
+margin-left:0;
+}
+
+/* h3 that are used as search titles in view panes */
+.page-find-all .pane-views-panes h3{
+margin-top:0;
 }
 
 .all-search-results-list {
@@ -1042,6 +1062,23 @@ padding:0;
 margin:0;
 }
 
+/* more link aligns right large screen */
+.page-find-all .more-link{
+text-align:right;
+}
+
+/* styles for the "view-footer" block for database subjects */
+.view-id-database_subject_search{
+padding-left:.3em;
+}
+
+.view-id-database_subject_search h3{
+padding-top:.3em;
+}
+
+.view-id-database_subject_search ul{
+margin-left:.2em;
+}
 
 /* ========================================================================
    Access URL
