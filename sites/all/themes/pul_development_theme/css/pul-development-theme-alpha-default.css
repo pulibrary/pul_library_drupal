@@ -71,6 +71,31 @@ input[type="text"]{
 width:350px;
 }
 
+#region-sidebar-second .login_field input[type="text"],
+#region-sidebar-second .login_field input[type="password"]{
+width:200px;
+}
+
+#region-sidebar-second .login_field input[type="submit"]{
+float:right;
+margin:0 20px 0 0;
+}
+
+#region-sidebar-second .login_field p{
+margin-top:0;
+}
+
+#region-sidebar-second .login_field h4{
+margin-bottom:0;
+}
+
+#illiad-first-time{
+clear:both;
+font-style:italic;
+padding-top:5px;
+}
+
+
 /* =============================================================================
    DATABASES
    ========================================================================== */
@@ -171,11 +196,20 @@ background:url(../images/hours.png) no-repeat 0 8px transparent;
 }
 
 .sf-menu.sf-style-space-orange li + li a{
+background:url(../images/search-tb.png) no-repeat 5px 8px transparent;
+padding:9px 16px 5px 22px;
+}
+
+.sf-menu.sf-style-space-orange li + li a:hover{
+background:url(../images/hours.png) no-repeat 0 8px transparent;
+}
+
+.sf-menu.sf-style-space-orange li + li + li a{
 background:none;
 padding-left:1em;
 }
 
-.sf-menu.sf-style-space-orange li + li a:hover{
+.sf-menu.sf-style-space-orange li + li + li a:hover{
 background:none;
 }
 
@@ -949,11 +983,74 @@ border-bottom: 1px solid #E5E5E5;
 }
 */
 
+/* hide search block title on larger screens */
+.page-find .all-search-title{
+display:none;
+}
+
+
+.page-find-all #allsearch-block-form label {
+display:inline;
+}
+/* all search help message */
+.all-search-form-suffix{
+display:block;
+align:right;
+padding-top:.2em;
+padding-bottom:0;
+}
+
+.all-search-form-suffix a{
+text-decoration:none;
+}
+
+/* block titles */
+.page-find-all h2 {
+font-size:1.4em;
+margin-top:0;
+}
+
+/* search box sizing */
+.pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:1px dotted #BFBFBF;
+}
+
+/* 4-4-4 panel borders */
+.page-find div#all-search-page .panel-panel.grid-4{
+border-right:1px dotted #BFBFBF;
+}
+/* not sure why hte last 4-4-4 column is the fourth child here */
+.page-find div#all-search-page .panel-panel.grid-4:nth-child(4){
+border-right:none;
+}
+
+.page-find div#all-search-page .panel-panel.grid-4 .panel-separator{
+border-top:1px dotted #BFBFBF;
+margin-top:10px;
+padding-bottom:5px;
+padding-top:5px;
+}
+
 #all-search-page .more-results {
-padding-left: 50px;
+float:right;
+}
+
+/* list overrides */
+.page-find-all .pane-views-panes ul li{
+list-style-type:none;
+margin-left:0;
+}
+
+/* h3 that are used as search titles in view panes */
+.page-find-all .pane-views-panes h3{
+margin-top:0;
 }
 
 .all-search-results-list {
+margin:0 0;
+padding:0;
 list-style-type: none;
 }
 /*
@@ -964,9 +1061,62 @@ padding: 5px 0 0 0;
 #all-search-page .views-field-title {
 }
 
+.page-find div#all-search-page div div.inside{
+padding:0;
+}
+
+.page-find div#all-search-page div + div div.inside{
+padding:0 2em 0 0;
+}
+
+.page-find div#all-search-page div + div + div div.inside{
+padding:0 2em;
+}
+
+.page-find div#all-search-page div + div + div + div div.inside{
+padding:0 0 0 2em;
+}
+
+.page-find div#all-search-page div + div + div + div + div div.inside{
+padding:0;
+}
+
+.view-general-site-keyword-search h3,
+.view-general-site-keyword-search h3{
+margin:0;
+}
+
+/* more link aligns right large screen */
+.page-find-all .more-link{
+text-align:right;
+}
+
+/* overrides for individual pane border */
+.page-find-all .panel-panel.grid-4 .panel-pane{
+margin-top:0;
+border-top:0;
+}
+
+/* styles for the "view-footer" block for database subjects */
+.view-id-database_subject_search{
+padding-left:.3em;
+}
+
+.view-id-database_subject_search h3{
+padding-top:.1em;
+}
+
+.view-id-database_subject_search ul{
+margin-left:.2em;
+}
+
 /* ========================================================================
    Access URL
    ======================================================================== */
+
+.node-type-alternative-database-title .field-name-field-db-access-url, .database-resource-page .field-name-field-db-access-url {
+text-align: center;
+}
 
 
 #borrow-direct-connect a, .field-name-field-db-access-url a{
@@ -1027,3 +1177,4 @@ padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
 }
+

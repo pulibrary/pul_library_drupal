@@ -165,6 +165,11 @@ h1, h2, h3, h4, h5, h6{
 letter-spacing:0em;
 }
 
+dt{
+font-size:inherit;
+}
+
+
 /*
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
@@ -187,6 +192,7 @@ h2.node-title,
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
+    margin-top:8px;
 }
 
 .views-field-title h2 a,
@@ -398,7 +404,7 @@ ul {
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0 0 8px 20px;
 }
 
 /*
@@ -408,7 +414,7 @@ dd {
 menu,
 ol,
 ul {
-    padding: 0 0 0 40px;
+    padding: 0 0 0 20px;
 }
 
 .collections ul{
@@ -676,6 +682,10 @@ margin:0;
 vertical-align:top;
 }
 
+.grid-3 table{
+width:200px !important;
+}
+
 
 /* ========================================================================
    LAYOUT
@@ -830,7 +840,6 @@ margin-right:0 !important;
  * ======================================================================== */
 
 textarea,
-select,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -866,6 +875,8 @@ border:1px solid #727272;
 }
 
 select{
+background-image:none;
+-webkit-appearance: menulist;
 padding:2px 3px;
 }
 
@@ -926,6 +937,45 @@ margin: 0 0 0.25em 0;
 
 #edit-comment-body{
 padding-bottom:1em;
+}
+
+/* ========================================================================
+   HELP
+* ======================================================================== */
+
+i{
+padding:0 9px;
+margin:0 4px 0 0;
+}
+
+
+
+i.chat{
+background:url(../images/chat-lrg.png) no-repeat 0 4px transparent;
+}
+
+i.appt{
+background:url(../images/appt-lrg.png) no-repeat 0 4px transparent;
+}
+
+i.walkin{
+background:url(../images/walk-lrg.png) no-repeat 0 4px transparent;
+}
+
+i.email{
+background:url(../images/email-lrg.png) no-repeat 0 2px transparent;
+}
+
+i.phone{
+background:url(../images/phone-lrg.png) no-repeat 0 2px transparent;
+}
+
+i.text{
+background:url(../images/text-lrg.png) no-repeat 0 2px transparent;
+}
+
+i.guide{
+background:url(../images/guide-lrg.png) no-repeat 0 2px transparent;
 }
 
 
@@ -1433,7 +1483,7 @@ padding:1px 0;
 
 
 /* =============================================================================
-   SECONDARY RESEARCH MENU
+   SECONDARY RESEARCH MENU & All Search Box message
    ========================================================================== */
 
 
@@ -1817,12 +1867,16 @@ padding-bottom:5px;
 /*
 */
 .subject-landing-page .grid-9 .views-row-odd, .subject-landing-page .grid-9 .views-row-even{
-border-bottom: 1px dotted #CCCCCC;
-background-color:transparent; 
+/*border-bottom: 1px dotted #CCCCCC;*/
+background-color:transparent;
+padding-right:.4em;
+padding-left: .4em;
+padding-bottom:.1em;
+margin-top:.1emm;
 }
 
 .subject-landing-page .grid-9 .views-row-odd{
-background-color:#CCCCCC;
+background-color:whiteSmoke;
 }
 
 /* =============================================================================
@@ -1926,6 +1980,17 @@ line-height: 1.333em;
 }
 
 
+/* ====================================================================
+ * Department Library Fixes
+ * ===================================================================*/
+.view-staff-by-division table caption, .view-grouping-content table .field-name-field-puluser-section{
+font-weight: bold;
+font-size: 1.2em;
+}
+
+.view-staff-by-division table caption a, .view-grouping-content table .field-name-field-puluser-section a{
+text-decoration:none;
+}
 
 /* =====================================================================
  * General Fixes for Specific pages 
@@ -1994,7 +2059,7 @@ display: none;
 
 
 .not-front #region-sidebar-second {
-	padding-top: 2em;
+	padding: 2em 0;
 }
 
 /* footer - address header style */
@@ -2003,4 +2068,169 @@ display: none;
 	font-size: 1.2em;
 	color: #3C3C3C;
 	margin-bottom: 1.0em;
+}
+
+
+/* not found page */
+.page-not-found .grid-12 .pane-content li{
+  list-style:none;
+} 
+
+.page-not-found .grid-12 .pane-content li a{
+text-decoration:none;
+font-size: 1.2em;
+}
+
+/*#####
+ *  
+ * Accordion style for FAQs
+ *
+ *##### */
+
+body.faq .ui-corner-bottom, body.faq .ui-corner-all {
+	border-radius: 0;
+}
+body.faq .ui-accordion .ui-accordion-header a {
+	font-size: 0.9em;
+	font-weight: normal;
+}
+body.faq .views-accordion-header {
+	background-color: #FFF;
+	border-bottom: 1px dotted #E5E5E5;
+	padding: 0.1em;
+}
+body.faq .views-accordion-header h3 {
+	margin: 0;
+	padding-top: 5px 0 5px 0;
+}
+body.faq .views-accordion-header h3 a {
+	color: #7F3D00;
+}
+body.faq .views-accordion-header .ui-state-default h3 a{
+	color: #3C3C3C;
+	background-color: #FFF;
+}
+body.faq .views-accordion-header .ui-state-active h3 a {
+	color: #FFF;
+	background-color: #3C3C3C;
+}
+body.faq .ui-accordion .ui-accordion-content p {
+	font-size: 1.1em;
+}
+/* Overlays */
+body.faq .ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+body.faq .ui-accordion .ui-accordion-header { display: block; cursor: pointer; position: relative; margin-top: 2px; padding: .5em .5em .5em .7em; zoom: 1; }
+body.faq .ui-accordion .ui-accordion-icons { padding-left: 2.2em; }
+body.faq .ui-accordion .ui-accordion-noicons { padding-left: .7em; }
+body.faq .ui-accordion .ui-accordion-icons .ui-accordion-icons { padding-left: 2.2em; }
+body.faq .ui-accordion .ui-accordion-header .ui-accordion-header-icon { position: absolute; left: .5em;  margin-top: 0px; }
+body.faq .ui-accordion .ui-accordion-content { padding: 0.5em 2.2em; border-top: 0; overflow: auto; zoom: 1; }
+
+/* Component containers
+----------------------------------*/
+body.faq .ui-widget { }
+body.faq .ui-widget .ui-widget { font-size: 1em; }
+body.faq .ui-widget input, .faq .ui-widget select, .faq .ui-widget textarea, .faq .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+body.faq .ui-widget-content {font-size: 0.8em; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+body.faq .ui-widget-content a { color: #222222; }
+body.faq .ui-widget-header { background: #cccccc 50% 50% repeat-x; color: #222222; font-weight: bold; }
+body.faq .ui-widget-header a { color: #222222; }
+
+
+/* Date Picker */
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background-color: #999999; color: #222222;	
+}
+
+/* Reduce padding for Libraries and Collections page icons */
+.view-libraries-and-collections .views-row {
+		border-bottom: 1px dotted #E5E5E5;
+
+}
+.library-info {
+	font-size: 1.1em;
+	margin-right: 10px;
+}
+.library-info i {
+	padding: 0 2px 0 2px;
+	margin: 0 1px 0 1px;
+}
+
+
+/***************************
+ * All Search Page Global Overrides
+ * *************************/
+/*
+.pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:1px dotted #BFBFBF;
+}
+*/
+.page-find .all-search-title{
+padding-top:.5em;
+}
+.page-find-all #page-title{
+display:none;
+}
+
+.page-find .breadcrumb{
+display:none;
+}
+
+/*hide the form suffix */
+.all-search-form-suffix{
+display:none;
+}
+
+/* lines for panel panes on mobile */
+
+.page-find-all .panel-panel.grid-4 .panel-pane{
+margin-top:.5em;
+border-top:1px dotted #BFBFBF;
+}
+
+.pane-best-bets-pul-panel-pane-2 h3 {
+margin:0;
+}
+
+.page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+padding:0;
+margin:0;
+border:0;
+}
+
+.page-find .view-best-bets-pul a{
+text-decoration:none;
+} 
+
+.page-find .views-row{
+padding-bottom:.3em;
+}
+
+.page-find .all-search-results-list li{
+padding-bottom:.3em;
+}
+.page-find .all-search-results-list li h3{
+margin-top:.3em;
+}
+
+.page-find-all .pane-views-panes ul li{
+list-style-type:disc;
+margin-left:1em;
+}
+
+/* more link aligns left */
+.page-find-all .more-link{
+text-align:left;
+margin-top:.3em;
+}
+
+.view-id-database_subject_search h3{
+margin-top:.1em;
+}
+
+.page-find-all .searchword{
+font-weight:bold;
 }
