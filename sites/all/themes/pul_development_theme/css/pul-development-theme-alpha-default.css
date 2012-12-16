@@ -991,6 +991,7 @@ display:none;
 /* block titles */
 .page-find-all h2 {
 font-size:1.4em;
+margin-top:0;
 }
 
 /* 4-4-4 panel borders */
