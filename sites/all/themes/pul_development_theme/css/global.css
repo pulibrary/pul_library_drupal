@@ -2178,6 +2178,9 @@ display:none;
 .page-find .breadcrumb{
 display:none;
 }
+.page-find-all .pane-content h3{
+font-size:1.05em;
+}
 
 /*hide the form suffix */
 .all-search-form-suffix{
