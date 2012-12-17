@@ -32,7 +32,7 @@
 				$('<div class="more-link"><a title="'+tooltip+'" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
 			} else {
-				$('<div class="no-results">No guides match '+display_query+'. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>"').appendTo('#summon-guide-results');
+				$('<div class="no-results">No guides match '+display_query+'. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
 			}
 		});
 	}	
