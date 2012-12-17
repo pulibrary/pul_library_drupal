@@ -1097,19 +1097,6 @@ margin-top:0;
 border-top:0;
 }
 
-/* styles for the "view-footer" block for database subjects */
-.view-id-database_subject_search{
-padding-left:.3em;
-}
-
-.view-id-database_subject_search h3{
-padding-top:.1em;
-}
-
-.view-id-database_subject_search ul{
-margin-left:.2em;
-}
-
 /* ========================================================================
    Access URL
    ======================================================================== */
