@@ -146,6 +146,35 @@ width:160px;
 }
 
 
+/* Feedback Button */
+
+
+#feedback-button {
+	width: 100px;
+	height: auto;
+	display: block;
+
+	position: fixed;
+	padding: 10px;
+	text-decoration: none;
+	right: -40px;
+	top: 50%;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	background-color: orange;
+	border: 1px solid black;
+
+}
+#feedback-button a {
+	text-decoration: none;
+	color: black;
+	margin: 0 auto 0 auto;
+	display: block;
+}
+#feedback-button:hover {
+	
+}
 
 
 
