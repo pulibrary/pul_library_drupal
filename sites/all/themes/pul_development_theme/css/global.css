@@ -2198,7 +2198,7 @@ border-top:1px dotted #BFBFBF;
 margin:0;
 }
 
-.page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+.page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
 padding:0;
 margin:0;
 border:0;
