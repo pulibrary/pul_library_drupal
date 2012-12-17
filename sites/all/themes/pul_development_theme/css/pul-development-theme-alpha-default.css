@@ -984,20 +984,28 @@ border-bottom: 1px solid #E5E5E5;
 */
 
 /* hide search block title on larger screens */
-.page-find .all-search-title{
+.page-find-all .all-search-title{
 display:none;
 }
 
+.find-all-search-page-empty.page-find-all .all-search-title{
+display: block;
+}
 
-.page-find-all #allsearch-block-form label {
+
+.page-find-all-results.page-find-all #allsearch-block-form label {
 display:inline;
 }
 /* all search help message */
-.all-search-form-suffix{
+.page-find-all-results.page-find-all .all-search-form-suffix{
 display:block;
 align:right;
 padding-top:.2em;
 padding-bottom:0;
+}
+.find-all-search-page-empty .all-search-form-suffix {
+display:block;
+font-size: 1.4em;
 }
 
 .all-search-form-suffix a{
@@ -1017,8 +1025,15 @@ padding-bottom:1em;
 border-bottom:1px dotted #BFBFBF;
 }
 
+.find-all-search-page-empty .pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:0;
+}
+
+
 /* 4-4-4 panel borders */
-.page-find div#all-search-page .panel-panel.grid-4{
+.page-find-all div#all-search-page .panel-panel.grid-4{
 border-right:1px dotted #BFBFBF;
 }
 /* not sure why hte last 4-4-4 column is the fourth child here */
