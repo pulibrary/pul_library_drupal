@@ -20,7 +20,7 @@
 					var breadcrumbs = "";
 					if(result['breadcrumb'].length > 0) {
 						// iterate over javascript array
-						result['breadcrumb'].forEach(function(crumb) {
+						_.each(result['breadcrumb'], function(crumb) {
         						var formatted_crumb = "<br/><span class='crumb'>"+
 										breadcrumb_label +
 										crumb.text +

@@ -26,7 +26,7 @@
                                                                         "</span><br/>";
                                         }
                                         if(result['holdings'].length > 0) {
-                                                result['holdings'].forEach(function(holding) {
+                                                _.each(result['holdings'], function(holding) {
                                                         for (var key in holding) {
                                                                 if(key !== "ONLINE") {
                                                                 var location = holding[key];

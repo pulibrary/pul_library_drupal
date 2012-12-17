@@ -24,17 +24,18 @@
 									"</span><br/>";
 					}
 					if(result['holdings'].length > 0) {
-						result['holdings'].forEach(function(holding) {
+						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
-								if(key !== "ONLINE") {
-								var location = holding[key];
-								location['library_label'];
-								location['location_code'];
-								holdings_list += "<br/><span class='holdings-item'>"+
-										location['library_label']+
-										"</span>&nbsp;";
-								}
-							}
+                                                                if(key !== "ONLINE") {
+                                                                var location = holding[key];
+                                                                location['library_label'];
+                                                                location['location_code'];
+                                                                holdings_list += "<br/><span class='holdings-item'>"+
+                                                                                location['library_label']+
+                                                                                "</span>&nbsp;";
+                                                                }
+                                                        }
+
 						});
 					}
     					items.push('<li><h3><a href="' + 
