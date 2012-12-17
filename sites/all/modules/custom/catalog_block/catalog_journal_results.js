@@ -17,7 +17,40 @@
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
-    					items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3> <span class="format-type">' + result['format'] + '</span></li>');
+					var online_avail = "";
+                                        var holdings_list = "";
+                                        if(result['fulltextavail'] == "Y") {
+                                                online_avail = "<span class='all-full-text'>"+
+                                                                        "<i class='icon-link'></i>&nbsp;"+
+                                                                        'Online Access'+
+                                                                        "</span><br/>";
+                                        }
+                                        if(result['holdings'].length > 0) {
+                                                result['holdings'].forEach(function(holding) {
+                                                        for (var key in holding) {
+                                                                if(key !== "ONLINE") {
+                                                                var location = holding[key];
+                                                                location['library_label'];
+                                                                location['location_code'];
+                                                                holdings_list += "<br/><span class='holdings-item'>"+
+                                                                                location['library_label']+
+                                                                                "</span>&nbsp;";
+                                                                }
+                                                        }
+                                                });
+                                        }
+
+    					items.push('<li><h3><a href="'+ 
+							result['url'] + 
+							'" target="_blank">' + 
+							result['title'] + 
+							'</a></h3>'+
+							online_avail+
+							' <span class="format-type">' + 
+							result['format'] + 
+							'</span>'+
+							holdings_list+
+							'</li>');
 				});
   				$('<ul/>', {
     					'class': 'all-search-results-list',

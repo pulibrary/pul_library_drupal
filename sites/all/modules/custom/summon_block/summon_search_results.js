@@ -28,6 +28,11 @@
 				} else {
 					var holdings_statement = "";
 				}
+				if(result['publication_date']) {
+					var pub_date = '<br/><span>'+result['publication_date']+'</span>';
+				} else {
+					var pub_date = "";
+				}
     				items.push('<li><h3><a title="'+
 					result['abstract'] + 
 					'" href="' + 
@@ -37,7 +42,7 @@
 					'</a></h3><span class="summon-format-type">' + 
 					result['format'] + '</span><br/>'+
 					holdings_statement+
-					'<br/><span>'+result['publication_date']+'</span></li>');
+					pub_date+'</li>');
 			});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
