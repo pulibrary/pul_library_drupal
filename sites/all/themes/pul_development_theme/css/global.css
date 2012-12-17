@@ -2237,3 +2237,10 @@ margin-top:.1em;
 .page-find-all .searchword{
 font-weight:bold;
 }
+
+/* Feedback Button Hide in small screen*/
+
+
+#feedback-button {
+	display: none;
+}
