@@ -2261,11 +2261,11 @@ font-weight:bold;
  * ******************************************/
 
 
-.page-find-databases-subjects .views-view-grid tr .field-content{
+.page-subjects .views-view-grid tr .field-content, .page-find-databases-subjects .views-view-grid tr .field-content{
 font-size:1.17em;
 }
 
-.page-find-databases-subjects .views-view-grid tr .field-content a{
+.page-subjects .views-view-grid tr .field-content a, .page-find-databases-subjects .views-view-grid tr .field-content a{
 color: #7F3D00;
 text-decoration: none;
 }
