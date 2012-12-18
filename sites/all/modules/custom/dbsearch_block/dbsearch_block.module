@@ -47,7 +47,7 @@ function dbsearch_block_form_validate($form, &$form_state) {
   
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('db_search_hint')) {
-    form_set_error('term', t('Enter Search Terms'));
+    form_set_error('term', t('Enter a Database or Topic'));
   }
   
   return $form;
