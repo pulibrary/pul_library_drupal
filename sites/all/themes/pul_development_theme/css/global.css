@@ -2198,10 +2198,16 @@ border-top:1px dotted #BFBFBF;
 margin:0;
 }
 
-.page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+
+/* global spacing resets for icons */
+.subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
 padding:0;
 margin:0;
 border:0;
+}
+
+.subject-landing-page .views-field.views-field-mail a{
+text-decoration: none;
 }
 
 .page-find .view-best-bets-pul a{
@@ -2248,4 +2254,20 @@ font-weight:bold;
 
 #feedback-button {
 	display: none;
+}
+
+/*********************************************
+ * /subjects and /find/databases/subjects 
+ * ******************************************/
+
+
+.page-find-databases-subjects .views-view-grid tr .field-content{
+font-size:1.17em;
+}
+
+.page-find-databases-subjects .views-view-grid tr .field-content a{
+color: #7F3D00;
+text-decoration: none;
+}
+
 }
