@@ -20,13 +20,17 @@
 					var online_avail = "";
 					var holdings_list = "";
 					if(result['fulltextavail'] == "Y") {
-						online_avail = "<span class='all-full-text'>"+
-									"<i class='icon-link'></i>&nbsp;"+
+						online_avail = "<div class='all-full-text'>"+
+									"<i class='icon-external-link'></i>&nbsp;"+
 									'Online Access'+
-									"</span><br/>";
+									"</div>";
 					}
-					if(result['holdings'].length > 0) {
+					if((result['holdings'].length == 1) && (result['fulltextavail'] == "Y")) {
+				        	//return false;	
+					} 
+					else if(result['holdings'].length > 0) {
 						// use underscore 
+						holdings_list += "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
 						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
                                                                 if(key !== "ONLINE") {
@@ -41,6 +45,11 @@
                                                         }
 
 						});
+						holdings_list += "</div>";
+					}
+					var creation_date = "";
+					if(result['creationdate']) {
+						creation_date = "<div class='all-result-date'>"+result['creationdate']+"</div>";
 					}
     					items.push('<li><h3><a href="' + 
 						result['url'] + 
@@ -51,6 +60,7 @@
 						'<span class="format-type">' + 
 						result['format'] +
 						holdings_list +
+						creation_date+
 						 '</span></li>');
 				});
   				$('<ul/>', {
