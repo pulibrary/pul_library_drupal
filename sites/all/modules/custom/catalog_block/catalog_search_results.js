@@ -7,6 +7,8 @@
 	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	var refine_tooltip = "Refine your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
+	var request_hint = 'See Available Items at ';
+	var availability_hint = "Check Availability";
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
@@ -24,15 +26,17 @@
 									"</span><br/>";
 					}
 					if(result['holdings'].length > 0) {
+						// use underscore 
 						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
                                                                 if(key !== "ONLINE") {
                                                                 var location = holding[key];
-                                                                location['library_label'];
-                                                                location['location_code'];
-                                                                holdings_list += "<br/><span class='holdings-item'>"+
+                                                                holdings_list += "<span class='holdings-item "+
+										location['location_code']+"'>"+
+										'<a href="'+location['request_link']+'" title="'+
+										request_hint+'">'+
                                                                                 location['library_label']+
-                                                                                "</span>&nbsp;";
+                                                                                "</a></span>&nbsp;";
                                                                 }
                                                         }
 
@@ -53,7 +57,9 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-				$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				if(data.number > 3) {
+					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				}
 			} else {
 				$('<div class="no-results">No matches in Books+ for '+display_query+'.</div>"').appendTo('#catalog-search-results');
 			}
