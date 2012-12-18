@@ -1,7 +1,7 @@
 <?php print $doctype; ?>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf->version . $rdf->namespaces; ?>>
 <head<?php print $rdf->profile; ?>>
-  <!--[if lt IE 9]><meta http-equiv="x-ua-compatible" content="IE=8"><![endif]-->
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>  
   <?php print $styles; ?>
