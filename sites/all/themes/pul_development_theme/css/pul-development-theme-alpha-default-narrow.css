@@ -157,6 +157,7 @@ width:160px;
 	-webkit-transform:rotate(90deg);
 	-moz-transform:rotate(90deg);
 	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 	background-color: #0098F4;
 	border: 2px solid #cccccc;
 	-webkit-border-bottom-left-radius: 4px;
