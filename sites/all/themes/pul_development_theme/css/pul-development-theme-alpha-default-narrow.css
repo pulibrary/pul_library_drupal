@@ -145,6 +145,7 @@ margin-top:0;
 width:160px;
 }
 
+/* Feedback Button */
 
 #feedback-button {
 
@@ -175,6 +176,8 @@ width:160px;
 	width: 100px;
 	height: auto;
 	padding: 10px 10px 5px 10px;
+	text-align: center;
+	font-size: 1.2em;
 
 }
 #feedback-button:hover {
