@@ -1121,7 +1121,7 @@ text-align: center;
 }
 
 
-#borrow-direct-connect a, .field-name-field-db-access-url a{
+.service-connect-btn a, .field-name-field-db-access-url a{
 font-size: 140%;
 color: #FFFFFF;
 background-color: #0062A0;

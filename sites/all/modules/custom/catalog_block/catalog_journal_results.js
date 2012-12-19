@@ -7,50 +7,70 @@
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
 	var refine_tooltip = "Refine your journal search in Books+";
-	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp';
+	var request_hint = 'Check Journal Locations and Availability';
+	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';//FIXME move these to Drupal config settings
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
 	} else {
-        	$.getJSON('/searchit/find/title?query='+query+'&limit=exact&format=journals', function(data) {
+        	   $.ajax({
+                        url: '/searchit/find/title?query='+query+'&limit=exact&format=journals',
+                        async: true,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
 					var online_avail = "";
                                         var holdings_list = "";
                                         if(result['fulltextavail'] == "Y") {
-                                                online_avail = "<span class='all-full-text'>"+
-                                                                        "<i class='icon-link'></i>&nbsp;"+
+
+                                                online_avail = "<div class='all-full-text'>"+
+                                                                        icon_hint+
+                                                                        '<a class="all-search-link" href="'+pul_resolver+result['full_text_link']+
+                                                                        '" title="Go to Resource">'+
                                                                         'Online Access'+
-                                                                        "</span><br/>";
+                                                                        "</a></div>";
                                         }
-                                        if(result['holdings'].length > 0) {
+                                        if((result['holdings'].length == 1) && (result['fulltextavail'] == "Y")) {
+                                                //return false; 
+                                        }
+                                        else if(result['holdings'].length > 0) {
+                                                // use underscore 
+                                                holdings_list += "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
                                                 _.each(result['holdings'], function(holding) {
                                                         for (var key in holding) {
                                                                 if(key !== "ONLINE") {
                                                                 var location = holding[key];
-                                                                location['library_label'];
-                                                                location['location_code'];
-                                                                holdings_list += "<br/><span class='holdings-item'>"+
+                                                                holdings_list += "<span class='holdings-item "+
+                                                                                location['location_code']+"'>"+
+                                                                                '<a href="'+location['request_link']+'" title="'+
+                                                                                request_hint+'">'+
                                                                                 location['library_label']+
-                                                                                "</span>&nbsp;";
+                                                                                "</a></span>&nbsp;";
                                                                 }
                                                         }
-                                                });
-                                        }
 
-    					items.push('<li><h3><a href="'+ 
-							result['url'] + 
-							'" target="_blank">' + 
-							result['title'] + 
-							'</a></h3>'+
-							online_avail+
-							' <span class="format-type">' + 
-							result['format'] + 
-							'</span>'+
-							holdings_list+
-							'</li>');
+                                                });
+                                                holdings_list += "</div>";
+                                        }
+                                        var creation_date = "";
+                                        if(result['creationdate']) {
+                                                creation_date = "<div class='all-result-date'>"+result['creationdate']+"</div>";
+                                        }
+                                        items.push('<li><h3><a href="' +
+                                                result['url'] +
+                                                '" target="_blank">' +
+                                                result['title'] +
+                                                '</a></h3> ' +
+                                                online_avail +
+                                                '<span class="format-type">' +
+                                                //result['format'] +
+                                                holdings_list +
+                                                creation_date+
+                                                 '</span></li>');
 				});
   				$('<ul/>', {
     					'class': 'all-search-results-list',
@@ -60,8 +80,12 @@
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
 				}
 			} else {
-				$('<div class="no-results">No Journal titles match '+display_query+'</div>"').appendTo('#journal-search-results');
+				$('<div class="no-results">No matching journal titles.</div>"').appendTo('#journal-search-results');
 			}
+			},
+			 error: function(data){
+              			$('<div class="all-fail-to-load-results">Journal results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+            			}
 		});
 	}	
   });
