@@ -201,7 +201,7 @@ padding:9px 16px 5px 22px;
 }
 
 .sf-menu.sf-style-space-orange li + li a:hover{
-background:url(../images/hours.png) no-repeat 0 8px transparent;
+background:url(../images/search-tb.png) no-repeat 5px 8px transparent;
 }
 
 .sf-menu.sf-style-space-orange li + li + li a{
@@ -421,7 +421,7 @@ border-top-right-radius: 0;
 
 .ui-tabs .ui-tabs-panel{
 background:url(../images/searchit-bg.gif) no-repeat left bottom transparent;
-height:74px;
+height:73px;
 padding:29px 0 14px 44px;
 }
 
@@ -984,20 +984,28 @@ border-bottom: 1px solid #E5E5E5;
 */
 
 /* hide search block title on larger screens */
-.page-find .all-search-title{
+.page-find-all .all-search-title{
 display:none;
 }
 
+.find-all-search-page-empty.page-find-all .all-search-title{
+display: block;
+}
 
-.page-find-all #allsearch-block-form label {
+
+.page-find-all-results.page-find-all #allsearch-block-form label {
 display:inline;
 }
 /* all search help message */
-.all-search-form-suffix{
+.page-find-all-results.page-find-all .all-search-form-suffix{
 display:block;
 align:right;
 padding-top:.2em;
 padding-bottom:0;
+}
+.find-all-search-page-empty .all-search-form-suffix {
+display:block;
+font-size: 1.4em;
 }
 
 .all-search-form-suffix a{
@@ -1017,8 +1025,15 @@ padding-bottom:1em;
 border-bottom:1px dotted #BFBFBF;
 }
 
+.find-all-search-page-empty .pane-allsearch-block-allsearch-search{
+margin:1em 0 0 0;
+padding-bottom:1em;
+border-bottom:0;
+}
+
+
 /* 4-4-4 panel borders */
-.page-find div#all-search-page .panel-panel.grid-4{
+.page-find-all div#all-search-page .panel-panel.grid-4{
 border-right:1px dotted #BFBFBF;
 }
 /* not sure why hte last 4-4-4 column is the fourth child here */
@@ -1097,19 +1112,6 @@ margin-top:0;
 border-top:0;
 }
 
-/* styles for the "view-footer" block for database subjects */
-.view-id-database_subject_search{
-padding-left:.3em;
-}
-
-.view-id-database_subject_search h3{
-padding-top:.1em;
-}
-
-.view-id-database_subject_search ul{
-margin-left:.2em;
-}
-
 /* ========================================================================
    Access URL
    ======================================================================== */
@@ -1177,4 +1179,5 @@ padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
 }
+
 

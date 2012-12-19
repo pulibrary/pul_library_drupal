@@ -187,6 +187,7 @@ function catalog_block_block_view_alter(&$data, $block) {
  */
 function catalog_block_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
+  
   if ($delta == 'catalog_search') {
     $block['subject'] = t('Catalog Search');
     $block['content'] = catalog_block_contents($delta);

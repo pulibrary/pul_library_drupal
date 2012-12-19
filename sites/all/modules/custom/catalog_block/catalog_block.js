@@ -12,8 +12,10 @@
     	if ($(this).find("input:first").val() == "" || $(this).find("input:first").val() == Drupal.settings.catalog_block.catalog_search_hint) {
     		//$("span").text("Not valid!").show();
     		//this really only works with omega theme
-    		$("#content,#section-content").prepend("<div id='messages'><div class='messages error'><h2>Supply a Search Term</h2></div></div>");
-    		return false;
+		if($('#books-plus-error').length == 0) {
+    		$("<div id='messages' class='grid-12'><div id='books-plus-error' class='messages error'><h2 class='element-invisible'>Error message</h2>Supply a Search Term</h2></div></div>").insertBefore('#region-content');
+    		}
+		return false;
     	}
     	
     	return true;

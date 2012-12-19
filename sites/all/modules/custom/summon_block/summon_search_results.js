@@ -23,7 +23,26 @@
 			var num_results = data.number;
 			var records = data.records;
   			$.each(records, function(index, result) {
-    				items.push('<li><h3><a title="'+result['abstract'] + '" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3><span class="summon-format-type">' + result['format'] + '</span></li>');
+				if(result['fulltextavail']) {
+					var holdings_statement= "<span class='all-full-text'><i class='icon-file'></i>&nbsp;Full-Text Available</span>";
+				} else {
+					var holdings_statement = "";
+				}
+				if(result['publication_date']) {
+					var pub_date = '<br/><span>'+result['publication_date']+'</span>';
+				} else {
+					var pub_date = "";
+				}
+    				items.push('<li><h3><a title="'+
+					result['abstract'] + 
+					'" href="' + 
+					result['url'] + 
+					'" target="_blank">' + 
+					result['title'] + 
+					'</a></h3><span class="summon-format-type">' + 
+					result['format'] + '</span><br/>'+
+					holdings_statement+
+					pub_date+'</li>');
 			});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
