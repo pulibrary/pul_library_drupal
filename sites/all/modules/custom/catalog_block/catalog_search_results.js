@@ -8,7 +8,8 @@
 	var refine_tooltip = "Refine your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
-	var availability_hint = "Check Availability";
+	var availability_hint = "Check for Available Copies";
+	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
@@ -20,10 +21,13 @@
 					var online_avail = "";
 					var holdings_list = "";
 					if(result['fulltextavail'] == "Y") {
+
 						online_avail = "<div class='all-full-text'>"+
-									"<i class='icon-external-link'></i>&nbsp;"+
+									icon_hint+
+									'<a class="all-search-link" href="'+pul_resolver+result['full_text_link']+
+									'" title="Go to Resource">'+
 									'Online Access'+
-									"</div>";
+									"</a></div>";
 					}
 					if((result['holdings'].length == 1) && (result['fulltextavail'] == "Y")) {
 				        	//return false;	
