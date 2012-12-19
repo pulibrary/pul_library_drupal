@@ -10,15 +10,20 @@
                 var query = path.substr(23);
         }
 
-	display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
         var tooltip = "Browse Related Library Guides";
         var libguides_url = "http://libguides.princeton.edu/";
         var icon_hint = "<i class='icon-external-link'></i>&nbsp;";
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-guide-results');
 	} else {
-    $.getJSON('/searchit/articles/guide?query='+query, function(data) {
-  	var items = [];
+	$.ajax({
+	     url: '/searchit/articles/guide?query='+query,
+	     async: true,
+             type: 'GET',
+             dataType: 'json',
+             success: function(data) {
+
+  		var items = [];
 		if(data.number > 0) {
 			
   			$.each(data.records, function(index, result) {
@@ -32,8 +37,12 @@
 				$('<div class="more-link"><a title="'+tooltip+'" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
 			} else {
-				$('<div class="no-results">No guides match '+display_query+'. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
+				$('<div class="no-results">No matching guides match. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
 			}
+		},
+ 	error: function(data){
+              $('<div class="all-fail-to-load-results">Guide results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+            }
 		});
 	}	
   });
