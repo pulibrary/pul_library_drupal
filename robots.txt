@@ -16,10 +16,9 @@
 # For syntax checking, see:
 # http://www.sxw.org.uk/computing/robots/check.html
 
+Disallow: /
 User-agent: *
 Crawl-delay: 10
-# Form Preview Period NO Crawling
-Disallow: /
 # Directories
 Disallow: /includes/
 Disallow: /misc/
