@@ -11,19 +11,27 @@
 	  if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-recommendation-results');
 	  } else {
-    	  	$.getJSON('/searchit/articles/recommendations?query='+query, function(data) {
-			if(data.recommendations) {
-  	  		var items = [];
-			$('<h3>Recommended Databases</h3>').appendTo('#summon-recommendation-results');
-  	  		$.each(data.recommendations, function(index, result) {
-        			items.push('<li><a href="' + result.link	 + '" target="_blank" title="' + result.description+'">' + result.title + '</a></li>');
-	  		});
-  	  		$('<ul/>', {
-        			'class': 'summon-recommendation-results-list',
-    	  			html: items.join('')
-  	  		}).appendTo('#summon-recommendation-results');
-   		}
+    	  	//$.getJSON('/searchit/articles/recommendations?query='+query, function(data) {
+    	  	$.ajax({
+			url: '/searchit/articles/recommendations?query='+query,
+			async: true,
+		        type: 'GET',
+            		dataType: 'json',
+            		success: function(data) {
+
+				if(data.recommendations) {
+  	  				var items = [];
+					$('<h3>Recommended Databases</h3>').appendTo('#summon-recommendation-results');
+  	  				$.each(data.recommendations, function(index, result) {
+        					items.push('<li><a href="' + result.link	 + '" target="_blank" title="' + result.description+'">' + result.title + '</a></li>');
+	  				});
+  	  				$('<ul/>', {
+        					'class': 'summon-recommendation-results-list',
+    	  					html: items.join('')
+  	  				}).appendTo('#summon-recommendation-results');
+   				}
+			},
 		});
-	  }	
+	}	
   });
 }(jQuery));

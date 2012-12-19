@@ -7,3 +7,5 @@ sites/*/private
 
 #local environment files
 .project
+*.swp
+*/.DS_Store

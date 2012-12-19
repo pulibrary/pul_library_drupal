@@ -1,0 +1,5 @@
+name = Princeton Library Utilities and overrides
+description = Where the overrides go
+package = PUL Custom Features
+core = 7.x
+files[] = pul_library_utils.module

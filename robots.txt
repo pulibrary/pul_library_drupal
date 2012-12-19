@@ -18,6 +18,8 @@
 
 User-agent: *
 Crawl-delay: 10
+# Form Preview Period NO Crawling
+Disallow: /
 # Directories
 Disallow: /includes/
 Disallow: /misc/
