@@ -19,7 +19,7 @@
 	} else {
   		 $.ajax({
 			url:'/searchit/pulfa/any?query='+query,
-		 	async: false,
+		 	async: true,
  			type: 'GET',
  			dataType: 'json',
  			success: function(data) {

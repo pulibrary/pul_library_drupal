@@ -2,7 +2,7 @@
   $(document).ready(function() {
 
 	$( "a", ".field-name-field-db-access-url" ).button();
-        $( "a", "#borrow-direct-connect" ).button();
+        $( "a", ".service-connect-btn" ).button();
         
         $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
         $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
