@@ -8,7 +8,8 @@
 	var refine_tooltip = "Refine your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
-	var availability_hint = "Check Availability";
+	var availability_hint = "Check for Available Copies";
+	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
@@ -20,13 +21,20 @@
 					var online_avail = "";
 					var holdings_list = "";
 					if(result['fulltextavail'] == "Y") {
-						online_avail = "<span class='all-full-text'>"+
-									"<i class='icon-link'></i>&nbsp;"+
+
+						online_avail = "<div class='all-full-text'>"+
+									icon_hint+
+									'<a class="all-search-link" href="'+pul_resolver+result['full_text_link']+
+									'" title="Go to Resource">'+
 									'Online Access'+
-									"</span><br/>";
+									"</a></div>";
 					}
-					if(result['holdings'].length > 0) {
+					if((result['holdings'].length == 1) && (result['fulltextavail'] == "Y")) {
+				        	//return false;	
+					} 
+					else if(result['holdings'].length > 0) {
 						// use underscore 
+						holdings_list += "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
 						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
                                                                 if(key !== "ONLINE") {
@@ -41,6 +49,11 @@
                                                         }
 
 						});
+						holdings_list += "</div>";
+					}
+					var creation_date = "";
+					if(result['creationdate']) {
+						creation_date = "<div class='all-result-date'>"+result['creationdate']+"</div>";
 					}
     					items.push('<li><h3><a href="' + 
 						result['url'] + 
@@ -51,6 +64,7 @@
 						'<span class="format-type">' + 
 						result['format'] +
 						holdings_list +
+						creation_date+
 						 '</span></li>');
 				});
   				$('<ul/>', {
