@@ -7,7 +7,6 @@
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
 	var refine_tooltip = "Refine your journal search in Books+";
-	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp';
 	var request_hint = 'Check Journal Locations and Availability';
 	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';//FIXME move these to Drupal config settings
@@ -15,7 +14,12 @@
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
 	} else {
-        	$.getJSON('/searchit/find/title?query='+query+'&limit=exact&format=journals', function(data) {
+        	   $.ajax({
+                        url: '/searchit/find/title?query='+query+'&limit=exact&format=journals',
+                        async: true,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
   			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
@@ -76,8 +80,12 @@
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
 				}
 			} else {
-				$('<div class="no-results">No Journal titles match '+display_query+'</div>"').appendTo('#journal-search-results');
+				$('<div class="no-results">No matching journal titles.</div>"').appendTo('#journal-search-results');
 			}
+			},
+			 error: function(data){
+              			$('<div class="all-fail-to-load-results">Journal results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+            			}
 		});
 	}	
   });
