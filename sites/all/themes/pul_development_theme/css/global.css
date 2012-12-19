@@ -2200,13 +2200,17 @@ margin:0;
 
 
 /* global spacing resets for icons */
-.subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+.topic-page i, .subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
 padding:0;
 margin:0;
 border:0;
 }
 
-.subject-landing-page .views-field.views-field-mail a{
+.topic-page .field-name-field-puluser-formalname{
+font-size: 1.17em;
+}
+
+.topic-page .views-field.views-field-mail a, .subject-landing-page .views-field.views-field-mail a{
 text-decoration: none;
 }
 
@@ -2247,7 +2251,7 @@ font-weight:bold;
 /* all details */
 .all-pulfa-breadcrumb {
 margin-left:2em;
-
+}
 
 /*
 .view-libraries-and-collections {                                                          

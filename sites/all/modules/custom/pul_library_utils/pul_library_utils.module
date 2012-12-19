@@ -1,0 +1,31 @@
+<?php
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ *
+function pul_library_utils_menu() {
+    $items = array();
+
+    $items['pul_library_utils/hello_world'] = array(
+        'title' => 'PUL Library Utilities',
+        'page callback' => 'say_hello_world',
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK,
+     );
+
+    return $items;
+}
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * We want to change the menu-items on the login form.
+ */
+function pul_library_utils_menu_alter(&$items) {
+  //$items['user/register']['type'] = MENU_CALLBACK;
+  $items['user/password']['type'] = MENU_CALLBACK;
+	$items['user/password']['access callback'] = FALSE;
+	$items['user/regsiter']['access callback'] = FALSE;
+}
+
