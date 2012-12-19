@@ -8,14 +8,19 @@
 	//console.log(document.location.href);
         var path = $(location).attr('pathname');
         var query = path.substr(10);
-	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>";
 	var tooltip = "Refine Your Search in Articles+";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
         //query = query.replace("/", "");
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
-    $.getJSON('/searchit/articles/any?query='+query, function(data) {
+        //$.getJSON('/searchit/articles/any?query='+query, function(data) {
+         $.ajax({
+	    url: '/searchit/articles/any?query='+query,
+            async: true,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
 	if(data.number > 0) 
 	{
   		var items = [];
@@ -49,10 +54,13 @@
     				html: items.join('')
   			}).appendTo('#summon-search-results');
 			$('<div class="more-link"><a title="'+tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
-	} else {
-        $('<div class="no-results">No matches in Articles+ for '+display_query+'.</div>"').appendTo('#summon-search-results');
-        }
-
+	} else {	
+        	$('<div class="no-results">No matches in Articles+.</div>"').appendTo('#summon-search-results');
+        	}
+	},
+	 error: function(data){
+              $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+            }
 		});
 	}	
   });

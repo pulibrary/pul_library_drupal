@@ -6,7 +6,6 @@
 	//console.log(document.location.href);
 	var path = $(location).attr('pathname');
 	var query = path.substr(10);
-	var display_query = "<span class='searchword'>"+decodeURI(query)+"</span>"; 
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var file_icon = 'icon-file';
 	var series_icon = 'icon-folder-closed';
@@ -18,10 +17,9 @@
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
 	} else {
-        	//$.getJSON('/searchit/pulfa/any?query='+query, function(data, status, xhr) {
   		 $.ajax({
 			url:'/searchit/pulfa/any?query='+query,
-		 	async: false,
+		 	async: true,
  			type: 'GET',
  			dataType: 'json',
  			success: function(data) {
@@ -30,7 +28,6 @@
   				$.each(data.records, function(index, result) {
 					var breadcrumbs = "";
 					if(result['breadcrumb'].length > 0) {
-						// iterate over javascript array
 						_.each(result['breadcrumb'], function(crumb) {
 							if(crumb.level == 'collection') {
         							var formatted_crumb = "<div class='all-pulfa-breadcrumb'>"+
@@ -69,20 +66,13 @@
 					$('<div class="more-link"><a href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
 			} else {
-				$('<div class="no-results">No results match '+display_query+'.</div>"').appendTo('#pulfa-search-results');
+				$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
 			}
 		},
 		error: function(data) {
-			console.log(data);
-			 $('<div class="all-fail-to-load-results">Results Not Available at This Time.</div>"').appendTo('#pulfa-search-results');
+			 $('<div class="all-fail-to-load-results">Finding Aids results are not available at this time.</div>"').appendTo('#pulfa-search-results');
 		}
 	});
      }	
   });
 }(jQuery));
-		//error: function(data){
-		//	$('<div class="all-fail-to-load-results">Finding Aids Results Not Available at This Time.</div>"').appendTo('#pulfa-search-results');
-		//	}
-   		//});
-//});
-	
