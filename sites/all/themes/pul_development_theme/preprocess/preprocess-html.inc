@@ -11,7 +11,11 @@ function pul_development_theme_alpha_preprocess_html(&$variables) {
   );
 
   $page_manager_data = page_manager_get_current_page();
-  if (!empty($variables['page']['content']['content']['sidebar_first']) && !empty($variables['page']['content']['content']['sidebar_second'])) {
+  if (!empty($page_manager_data)) {
+    if(in_array($page_manager_data['name'],$nine_three_panels)) {
+      $variables['attributes_array']['class'][] = 'one-sidebar sidebar-second';
+    }
+  } elseif (!empty($variables['page']['content']['content']['sidebar_first']) && !empty($variables['page']['content']['content']['sidebar_second'])) {
     $variables['attributes_array']['class'][] = 'two-sidebars sidebar-first sidebar-second';
   }
   elseif (!empty($variables['page']['content']['content']['sidebar_first'])) {
@@ -20,14 +24,10 @@ function pul_development_theme_alpha_preprocess_html(&$variables) {
   elseif (!empty($variables['page']['content']['content']['sidebar_second'])) {
     $variables['attributes_array']['class'][] = 'one-sidebar sidebar-second';
   }
-  elseif (!empty($page_manager_data)) {
-    if(in_array($page_manager_data['name'],$nine_three_panels)) {
-      $variables['attributes_array']['class'][] = 'one-sidebar sidebar-second';
-    }
-  }
   else {
     $variables['attributes_array']['class'][] = 'no-sidebars';
   }
   
 
 }
+

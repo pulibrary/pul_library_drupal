@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * Install file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function feedback_simple_install() {
+  $t = get_t();
+  variable_set('feedback_simple', array(
+    'enabled' => TRUE,
+    'link' => 'contact',
+    'target' => '_self',
+    'class' => array('feedback_simple'),
+    'align' => 'right',
+    'top' => '75%',
+    'image' => drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
+    'alt' => $t('Feedback'),
+    'deny' => 'admin*',
+    'allow' => 'admin/appearance/feedback-simple',
+  ));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function feedback_simple_uninstall() {
+  variable_del('feedback_simple');
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function feedback_simple_update_7101() {
+  // Add target, #1826198.
+  $settings = variable_get('feedback_simple', array());
+  $settings['target'] = '_self';
+  variable_set('feedback_simple', $settings);
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function feedback_simple_update_7100() {
+  // Add admin settings, #1407784.
+  feedback_simple_install();
+}

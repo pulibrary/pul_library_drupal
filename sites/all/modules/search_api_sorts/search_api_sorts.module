@@ -5,9 +5,7 @@
  */
 function search_api_sorts_help($path, array $arg) {
   if ($path == 'admin/config/search/search_api/index/%/sorts') {
-    return t('Select the indexed fields for which you want to enable sorting. ' .
-        'Before the sort blocks is actually displayed, you will have to enable and configure it at the <a href="!url">block administration page</a>.',
-        array('!url' => url('admin/structure/block')));
+    return t('Select the indexed fields for which you want to enable sorting. ' . 'Before the sort blocks is actually displayed, you will have to enable and configure it at the <a href="!url">block administration page</a>.', array('!url' => url('admin/structure/block')));
   }
 }
 
@@ -19,7 +17,10 @@ function search_api_sorts_menu() {
     'title' => 'Sorts',
     'description' => 'Select the sort fields to display.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('search_api_sorts_index_select', 5),
+    'page arguments' => array(
+      'search_api_sorts_index_select',
+      5
+    ),
     'access arguments' => array('administer search_api'),
     'weight' => -1,
     'type' => MENU_LOCAL_TASK,
@@ -87,25 +88,31 @@ function search_api_sorts_entity_info() {
  * Implements hook_permission().
  */
 function search_api_sorts_permission() {
-  return array(
-    'use search_api_sorts' => array(
-      'title' => t('Use search sorts'),
-    ),
-  );
+  return array('use search_api_sorts' => array('title' => t('Use search sorts'), ), );
 }
 
 /**
  * Implements hook_block_info().
  */
 function search_api_sorts_block_info() {
-  $blocks = array(
-    'search-sorts' => array(
-      'info'   => t('Search sorts'),
-      'cache'  => DRUPAL_NO_CACHE,
+  $blocks = array('search-sorts' => array(
+      'info' => t('Search sorts'),
+      'cache' => DRUPAL_NO_CACHE,
       'weight' => 4,
-    ),
-  );
+    ), );
   return $blocks;
+}
+
+/**
+ * Implements hook_ctools_block_info().
+ *
+ * @see http://drupal.org/node/1763954
+ */
+function search_api_sorts_ctools_block_info($module, $delta, &$info) {
+  // Give the Search API Sorts block it's own category.
+  $info['category'] = t('Search API Sorts');
+  // Allow blocks to be used before the search results in Panels.
+  $info['render last'] = TRUE;
 }
 
 /**
@@ -128,12 +135,14 @@ function search_api_sorts_block_view($delta = '') {
 function search_api_sorts_search_sorts($index_id, $enabled = 1, $reset = FALSE) {
   $cache = &drupal_static(__FUNCTION__, array());
   if (!isset($cache[$index_id . '_' . $enabled]) || $reset) {
-    $query = db_select('search_api_sort', 's')
-    ->fields('s', array('field', 'name', 'default_sort', 'default_sort_no_terms', 'default_order', 'weight'))
-    ->condition('index_id', $index_id)
-    ->condition('enabled', $enabled)
-    ->orderby('weight', 'ASC')
-    ->execute();
+    $query = db_select('search_api_sort', 's')->fields('s', array(
+      'field',
+      'name',
+      'default_sort',
+      'default_sort_no_terms',
+      'default_order',
+      'weight'
+    ))->condition('index_id', $index_id)->condition('enabled', $enabled)->orderby('weight', 'ASC')->execute();
 
     $data = array();
     while ($row = $query->fetch()) {
@@ -159,8 +168,24 @@ function search_api_sorts_block_search_sorts_view() {
     return;
   }
 
-  $path = $_GET['q'];
-  $params = drupal_get_query_parameters($_GET, array('q', 'page'));
+  $item = menu_get_item();
+  $path = $item['href'];
+  $params = drupal_get_query_parameters($_GET, array(
+    'q',
+    'page'
+  ));
+
+  //Override the path if facetapi_pretty_paths is enabled
+  if (module_exists('facetapi_pretty_paths')) {
+    // Get the facet api adapter by the machine readable name of searcher.
+    $adapter = facetapi_adapter_load('search_api@' . $index['id']);
+    // Get the url processor and check if it uses pretty paths.
+    $urlProcessor = $adapter->getUrlProcessor();
+    if ($urlProcessor instanceof FacetapiUrlProcessorPrettyPaths) {
+      // Retrieve the full path from the url processor.
+      $path = $urlProcessor->getFullPath();
+    }
+  }
 
   if (isset($params['search_api_views_fulltext'])) {
     $default_sort = _search_api_sorts_get_default_sort($search_sorts, $params['search_api_views_fulltext']);
@@ -168,7 +193,7 @@ function search_api_sorts_block_search_sorts_view() {
   else {
     $default_sort = _search_api_sorts_get_default_sort($search_sorts);
   }
-  
+
   $sort = $default_sort->field;
   if (isset($params['sort']) && !empty($params['sort'])) {
     $sort = $params['sort'];
@@ -181,22 +206,22 @@ function search_api_sorts_block_search_sorts_view() {
 
   $items = array();
   foreach ($search_sorts as $key => $data) {
-    $path = $_GET['q'];
     $options = array(
       'query' => array(
         'sort' => $data->field,
         'order' => $data->default_order,
       ) + $params,
-      'attributes' => array(
-        'class' => array('sort-item'),
-      ),
+      'attributes' => array('class' => array('sort-item'), ),
     );
 
     // active sort field logic
     if ($sort == $data->field) {
 
       // add some extra classes
-      $options['attributes']['class'] += array('active', 'sort-' . $order);
+      $options['attributes']['class'] += array(
+        'active',
+        'sort-' . $order
+      );
 
       // create a copy of the options, for use in the order-link
       $order_options = $options;
@@ -211,7 +236,7 @@ function search_api_sorts_block_search_sorts_view() {
 
       $items[] = array(
         '#theme' => 'search_api_sorts_sort',
-        '#name'  => $data->name,
+        '#name' => t($data->name),
         '#path' => $path,
         '#options' => $options,
         '#order_options' => $order_options,
@@ -224,7 +249,7 @@ function search_api_sorts_block_search_sorts_view() {
       // regular sort field logic
       $items[] = array(
         '#theme' => 'search_api_sorts_sort',
-        '#name'  => $data->name,
+        '#name' => t($data->name),
         '#path' => $path,
         '#options' => $options,
         '#active' => FALSE,
@@ -301,7 +326,10 @@ function search_api_sorts_search_api_query_alter(SearchApiQueryInterface $query)
 
   // alter sort field and sort order
   $sort = $default_sort->field;
-  $params = drupal_get_query_parameters($_GET, array('q', 'page'));
+  $params = drupal_get_query_parameters($_GET, array(
+    'q',
+    'page'
+  ));
   if (isset($params['sort']) && !empty($params['sort'])) {
     $sort = $params['sort'];
   }

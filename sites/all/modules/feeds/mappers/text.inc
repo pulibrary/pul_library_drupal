@@ -66,11 +66,12 @@ function text_feeds_set_target($source, $entity, $target, $value) {
 
     if (is_scalar($v)) {
       $field['und'][$delta]['value'] = $v;
-      $delta++;
 
       if (isset($format)) {
         $field['und'][$delta]['format'] = $format;
       }
+
+      $delta++;
     }
   }
 

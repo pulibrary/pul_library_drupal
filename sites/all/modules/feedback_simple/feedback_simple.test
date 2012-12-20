@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Test file.
+ */
+
+/**
+ * Functional tests.
+ */
+class FeedbackSimpleTestCase extends DrupalWebTestCase {
+  public static function getInfo() {
+    return array(
+      'name' => 'Feedback Simple',
+      'description' => 'Tests if the Feedback Simple tab is enabled.',
+      'group' => 'Feedback Simple',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('feedback_simple');
+    $web_user = $this->drupalCreateUser(array('access content'));
+    $this->drupalLogin($web_user);
+  }
+
+  public function testFeedbackSimple() {
+    $this->drupalGet('<front>');
+    $this->assertRaw("<div id='feedback_simple'>", 'The Feedback Simple tab is present.');
+  }
+}

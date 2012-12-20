@@ -1,0 +1,99 @@
+<?php
+/**
+ * @file
+ * adds a formatter for text fields that render as css classes.
+ *
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function field_formatter_css_class_field_formatter_info() {
+  return array(
+    'cssclass_formatter' => array(
+      'label' => t('CSS Class'),
+      'field types' => array('list_boolean', 'list_text', 'text', 'taxonomy_term_reference'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function field_formatter_css_class_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  return array(); // nothing to show
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Runs a entity specific preprocess function, if it exists.
+ */
+function field_formatter_css_class_preprocess_entity(&$variables, $hook) {
+  $function = __FUNCTION__ . '_' . $variables['entity_type'];
+  if (function_exists($function)) {
+    $function($variables, $hook);
+  }
+}
+
+/**
+ * Implements CUSTOM hook_preprocess_entity_ENTITY().
+ */
+function field_formatter_css_class_preprocess_entity_field_collection_item(&$variables, $hook) {
+  _field_formatter_css_class_preprocess_add_css_class($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function field_formatter_css_class_preprocess_node(&$variables) {
+  _field_formatter_css_class_preprocess_add_css_class($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function field_formatter_css_class_preprocess_fieldable_panels_pane(&$variables) {
+  _field_formatter_css_class_preprocess_add_css_class($variables);
+}
+
+/**
+ * Scan a node / entity for CSS Class fields and push to the classes array.
+ */
+function _field_formatter_css_class_preprocess_add_css_class(&$variables) {
+  $elements = $variables['elements'];
+  $entity_type = $elements['#entity_type']; // 'node', 'field_collection_item'
+  $theme = $elements['#theme']; // 'node', 'entity'
+  $entity = $elements['#' . $theme]; // this looks strange, but is probably the right way to do it.
+  $bundle_name = $elements['#bundle'];
+  $view_mode = $elements['#view_mode'];
+
+  $fields_info = field_info_instances($entity_type, $bundle_name);
+  $tids = array();
+  foreach ($fields_info as $field_name => $instance) {
+    $display = field_get_display($instance, $view_mode, $entity);
+
+    if ($display['type'] == 'cssclass_formatter') {
+      $field_info = field_info_field($field_name);
+      $values = field_get_items($entity_type, $entity, $field_name);
+
+      if ($values != FALSE) {
+        foreach ($values as $delta => $field) {
+          if ($field_info['type'] == 'list_boolean') {
+            $variables['classes_array'][] = drupal_html_class($field_info['settings']['allowed_values'][$field['value']]);
+          } else if ($field_info['type'] == 'taxonomy_term_reference'){
+            $tids[] = $field['tid']; //store the terms ids and just do taxonomy_term_load_multiple once at the end
+          } else {
+            $variables['classes_array'][] = drupal_html_class($field['value']);
+          }
+        }
+      }
+    }
+  }
+  if (count($tids) > 0){
+    foreach(taxonomy_term_load_multiple($tids) as $term){
+      $variables['classes_array'][] = drupal_html_class($term->vocabulary_machine_name.'-'.$term->name);
+    }
+  }
+}

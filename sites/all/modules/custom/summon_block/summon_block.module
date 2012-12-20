@@ -104,7 +104,7 @@ function summon_block_block_info() {
   
   $blocks['summon_search'] = array(
       // info: The name of the block.
-      'info' => t('Articles Search'),
+      'info' => t('Articles+ Search'),
       // Block caching options (per role, per user, etc.)
       'cache' => DRUPAL_CACHE_PER_ROLE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,

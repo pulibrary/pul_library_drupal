@@ -4,3 +4,8 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+#local environment files
+.project
+*.swp
+*/.DS_Store

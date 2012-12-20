@@ -26,6 +26,7 @@ function fieldable_panels_panes_entity_info() {
         'revision' => 'vid',
         'bundle' => 'bundle',
         'label' => 'admin_title',
+        'language' => 'language',
         'uuid' => 'uuid',
         'revision uuid' => 'vuuid',
       ),
@@ -52,10 +53,20 @@ function fieldable_panels_panes_entity_info() {
       ),
 
       // entity module callbacks
-      'view callback' => 'entity_metadata_view_single',
+      'view callback' => 'fieldable_panels_panes_view',
       'creation callback' => 'fieldable_panels_panes_create',
       'access callback' => 'fieldable_panels_panes_access',
       'save callback' => 'fieldable_panels_panes_save',
+
+      // Entity translation support
+      'translation' => array(
+        'entity_translation' => array(
+          'class' => 'EntityTranslationFieldablePanelsPaneHandler',
+          'base path' =>  'admin/structure/fieldable-panels-panes/view/%fieldable_panels_panes',
+          'edit path' =>  'admin/structure/fieldable-panels-panes/view/%fieldable_panels_panes/edit',
+          'path wildcard' => '%fieldable_panels_panes',
+        ),
+      ),
     ),
   );
 }
@@ -285,7 +296,7 @@ function fieldable_panels_panes_menu() {
     'page callback' => 'fieldable_panels_panes_entities_add_page',
     'page arguments' => array(4),
     'access callback' => 'fieldable_panels_panes_access',
-    'access arguments' => array('create', 5),
+    'access arguments' => array('create', 4),
     'type' => MENU_LOCAL_TASK,
   ) + $base;
 
@@ -677,6 +688,12 @@ function fieldable_panels_panes_delete_multiple($fpids) {
  * @see node_view()
  */
 function fieldable_panels_panes_view($entity, $view_mode = 'full', $langcode = NULL) {
+  // If this function is being called by the Entity API callback, then the
+  // first argument will be an array of just one entity.
+  if (is_array($entity)) {
+    $entity = reset($entity);
+  }
+
   return entity_get_controller('fieldable_panels_pane')->view($entity, $view_mode, $langcode);
 }
 
@@ -760,6 +777,13 @@ function fieldable_panels_panes_get_base_context($entity = NULL) {
  */
 function fieldable_panels_panes_entity_edit_form($form, &$form_state) {
   $entity = $form_state['entity'];
+
+  // Map these properties for entity translations.
+  $form['#entity_type'] = array(
+    '#type' => 'value',
+    '#value' => $entity->bundle,
+  );
+  $form_state['fieldable_panels_pane'] = $form_state['entity'];
 
   // fixes a bug in wysiwyg
   // oh wysiwyg. We need a better way to address this.
@@ -859,7 +883,12 @@ function fieldable_panels_panes_entity_edit_form($form, &$form_state) {
     '#default_value' => '',
   );
 
-  field_attach_form('fieldable_panels_pane', $entity, $form, $form_state);
+  $language = NULL;
+  if (function_exists('entity_language')) {
+    // entity_language() was added in Drupal 7.15.
+    $language = entity_language('fieldable_panels_pane', $entity);
+  }
+  field_attach_form('fieldable_panels_pane', $entity, $form, $form_state, $language);
 
   if (!empty($form_state['add submit'])) {
     $form['actions'] = array(

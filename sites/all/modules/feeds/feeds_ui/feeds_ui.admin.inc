@@ -519,6 +519,7 @@ function feeds_ui_mapping_form($form, &$form_state, $importer) {
   }
   $targets = $importer->processor->getMappingTargets();
   $target_options = _feeds_ui_format_options($targets);
+  $legend['targets'] = array();
   foreach ($targets as $k => $target) {
     $legend['targets'][$k]['name']['#markup'] = empty($target['name']) ? $k : $target['name'];
     $legend['targets'][$k]['description']['#markup'] = empty($target['description']) ? '' : $target['description'];
