@@ -10,7 +10,7 @@
         var query = path.substr(10);
 	var tooltip = "Refine Your Search in Articles+";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
-        //query = query.replace("/", "");
+	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
 	if(query === "" || query == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
@@ -28,6 +28,11 @@
 			var num_results = data.number;
 			var records = data.records;
   			$.each(records, function(index, result) {
+				if(index%2 == 0) {
+					var row_class="odd";
+				} else {
+					var row_class="even"
+				}
 				if(result['fulltextavail']) {
 					var holdings_statement= "<span class='all-full-text'><i class='icon-file'></i>&nbsp;Full-Text Available</span>";
 				} else {
@@ -38,7 +43,7 @@
 				} else {
 					var pub_date = "";
 				}
-    				items.push('<li><h3><a title="'+
+    				items.push('<li class="'+row_class+'"><h3><a title="'+
 					result['abstract'] + 
 					'" href="' + 
 					result['url'] + 
@@ -53,7 +58,10 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="more-link"><a title="'+tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			$('<div class="refine-link">'+refine_icon+'<a title="refine_tooltip" href="'+data.more+'">Refine</a><div>').insertBefore('#summon-search-results');
+			if(data.number > 3) {
+				$('<div class="more-link"><a title="'+tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+			}
 	} else {	
         	$('<div class="no-results">No matches in Articles+.</div>"').appendTo('#summon-search-results');
         	}

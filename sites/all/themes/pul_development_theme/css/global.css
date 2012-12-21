@@ -2181,7 +2181,8 @@ border-bottom:1px dotted #BFBFBF;
 .page-find .all-search-title{
 padding-top:.5em;
 }
-.page-find-all #page-title{
+
+.page-find-all-results.page-find-all #page-title{
 display:none;
 }
 
@@ -2210,7 +2211,7 @@ margin:0;
 
 
 /* global spacing resets for icons */
-.subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
+.refine-link i,.subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{
 padding:0;
 margin:0;
 border:0;
@@ -2270,6 +2271,22 @@ margin-left:2em;
 
 #feedback-button {
 	display: none;
+}
+
+.all-search-results-list li.odd{
+background-color:whiteSmoke;
+}
+
+/* refine links */
+.refine-link{
+text-align:right;
+padding-top: -1em;
+color:#F58026;
+}
+
+.refine-link a{
+text-decoration:none;
+color:#F58026;
 }
 
 /*********************************************
