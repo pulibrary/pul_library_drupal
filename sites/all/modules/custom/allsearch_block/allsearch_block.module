@@ -16,7 +16,8 @@ function allsearch_block_form($form, &$form_state) {
   }
   $form = array();
   if($page != "node/1") {
-    $prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
+    //$prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
+    $prefix = "";
     $suffix = "<div class='all-search-form-suffix'><a title='What is the All Search?' href='/faq/all-search'>What is the All Search?</a>";
   } else {
     $prefix = "";

@@ -17,7 +17,7 @@
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-guide-results');
 	} else {
 	$.ajax({
-	     url: '/searchit/articles/guide?query='+query,
+	     url: '/searchit/articles/guide?query='+query+'&number=3',
 	     async: true,
              type: 'GET',
              dataType: 'json',

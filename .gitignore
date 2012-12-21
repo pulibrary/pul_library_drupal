@@ -5,7 +5,6 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
-#local environment files
-.project
 *.swp
-*/.DS_Store
+*.project
+.settings/*
