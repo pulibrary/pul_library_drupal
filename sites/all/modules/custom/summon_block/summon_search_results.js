@@ -38,8 +38,13 @@
 				} else {
 					var holdings_statement = "";
 				}
-				if(result['publication_date']) {
-					var pub_date = '<br/><span>'+result['publication_date']+'</span>';
+				if(result['publication_title']) {
+					var pub_title = '<div><em>'+result['publication_title']+'</em></div>';
+				} else {
+					var pub_title = '';
+				}
+				if(result['publication_year']) {
+					var pub_date = '<div><span>Year: '+result['publication_year']+'</div>';
 				} else {
 					var pub_date = "";
 				}
@@ -49,9 +54,11 @@
 					result['url'] + 
 					'" target="_blank">' + 
 					result['title'] + 
-					'</a></h3><span class="summon-format-type">' + 
-					result['format'] + '</span><br/>'+
+					'</a></h3><div class="summon-format-type">' + 
+					result['format']+
 					holdings_statement+
+					"</div>"+
+					pub_title+
 					pub_date+'</li>');
 			});
   			$('<ul/>', {
