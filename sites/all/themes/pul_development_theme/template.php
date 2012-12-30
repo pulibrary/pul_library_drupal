@@ -44,16 +44,6 @@ function pul_development_theme_preprocess_region(&$vars) {
 
 
 
-/* Take User Password Request */
-/**
- * Implements hook_menu_alter().
- *
- * We want to change the menu-items on the login form.
- */
-function pul_development_theme_menu_alter(&$items) {
-  $items['user/register']['type'] = MENU_CALLBACK;
-  $items['user/password']['type'] = MENU_CALLBACK;
-}
 // hacky way to rewrite menu html
 /*
 function pul_development_theme_link(&$variables) {

@@ -12,6 +12,7 @@
 	var book_icon = 'icon-book';
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
+	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
 	
 	query = query.replace("/", "");
 	if(query === "" || query == undefined) {
@@ -28,6 +29,12 @@
   				$.each(data.records, function(index, result) {
 					var online_avail = "";
 					var holdings_list = "";
+					if(index%2 == 0) {
+	                                        var row_class="odd";
+        	                        } else {
+                	                        var row_class="even"
+                        	        }
+
 					if(result['fulltextavail'] == "Y") {
 
 						online_avail = "<div class='all-full-text'>"+
@@ -74,7 +81,7 @@
 						//icon_element = "<i class='"+icon_type+'"></i>';
 					}
 
-    					items.push('<li><h3><a href="' + 
+    					items.push('<li class="'+row_class+'"><h3><a href="' + 
 						result['url'] + 
 						'" target="_blank">' + 
 						result['title'] + 
@@ -92,6 +99,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
+                                $('<div class="refine-link">'+refine_icon+'<a title="refine_tooltip" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
 				if(data.number > 3) {
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
