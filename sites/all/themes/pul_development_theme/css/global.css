@@ -1114,7 +1114,7 @@ margin:0;
 
 .pane-menu-menu-ofa-main-menu ul.menu li.expanded,
 .region-sidebar-first ul.menu li.expanded{
-background-color:#b4feff;
+/* background-color:#b4feff; Original Lee Designed color */
 padding-bottom:8px;
 -webkit-border-top-left-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
@@ -1170,7 +1170,7 @@ border-bottom-left-radius: 0;
 -webkit-border-top-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
 border-top-left-radius: 4px;
-background-color:#b4feff;
+/* background-color:#b4feff;  Original Lee Designed Color */
 color:#888;
 }
 
