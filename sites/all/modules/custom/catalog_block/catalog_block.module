@@ -58,7 +58,7 @@ function catalog_search_results_content() {
 function catalog_journal_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}&format=journals' id='journal-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}&limit=exact&format=journals' id='journal-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
