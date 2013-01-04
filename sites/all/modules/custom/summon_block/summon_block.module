@@ -33,33 +33,41 @@ function summon_block_contents() {
   return drupal_get_form('summon_block_form'); // must define a function 
 }
 
+function summon_block_query_escape($drupal_path) {
+  $query = allsearch_block_get_current_filter($drupal_path);
+  return drupal_encode_path($query);
+}
+
 
 function summon_search_results_content() {
-  $path = $_GET['q'];
+  $path = summon_block_query_escape($_GET['q']);
   //print_r(drupal_parse_url($path));
   $block_content = array(
-    '#markup' => "<div id='summon-search-results'>" . "<div id='summon-progressbar'></div>" . "</div>",
+    '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}'>" . "<div id='summon-progressbar'></div>" . "</div>",
   ); 
   return $block_content;
 }
 
 function summon_search_guide_content() {
+  $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-guide-results'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-guide-results' data-source='/searchit/articles/guide?query={$path}&number=3'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function summon_search_recommendations_content() {
+  $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-recommendation-results'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-recommendation-results' data-source='/searchit/articles/recommendations?query={$path}'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function summon_search_spelling_suggestions_content() {
+  $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-spelling-results'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-spelling-results' data-source='/searchit/articles/spelling?query={$path}&number=3'>" . t('') . "</div>",
   ); 
   return $block_content;
 }

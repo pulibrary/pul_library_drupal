@@ -42,26 +42,31 @@ function catalog_block_contents() {
   return drupal_get_form('catalog_block_form'); // must define a function 
 }
 
+function catalog_block_query_escape($drupal_path) {
+  $query = allsearch_block_get_current_filter($drupal_path);
+  return drupal_encode_path($query);
+}
+
 function catalog_search_results_content() {
-  $path = $_GET['q'];
+  $path = catalog_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/{$path}' id='catalog-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}' id='catalog-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function catalog_journal_results_content() {
-  $path = $_GET['q'];
+  $path = catalog_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/{$path}' id='journal-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}&format=journals' id='journal-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function catalog_pulfa_results_content() {
-  $path = $_GET['q'];
+  $path = catalog_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/{$path}' id='pulfa-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/pulfa/any?query={$path}' id='pulfa-search-results'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
