@@ -4,3 +4,4 @@ package = PUL Custom Features
 core = 7.x
 dependencies[] = block
 dependencies[] = menu
+dependencies[] = allsearch_block

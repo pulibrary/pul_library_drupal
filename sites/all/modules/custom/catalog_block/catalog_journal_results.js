@@ -1,21 +1,16 @@
 (function ($) {
   $(document).ready(function() {
   	
-	//var query = "firestone";
-	var request = Drupal.settings.catalog_block.request;
-	//console.log(document.location.href);
-	var path = $(location).attr('pathname');
-	var query = path.substr(10);
+	var query_url = $('#journal-search-results').attr('data-source');
 	var refine_tooltip = "Refine your journal search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp';
 	var request_hint = 'Check Journal Locations and Availability';
 	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';//FIXME move these to Drupal config settings
-	query = query.replace("/", "");
-	if(query === "" || query == undefined) {
+	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
 	} else {
         	   $.ajax({
-                        url: '/searchit/find/title?query='+query+'&limit=exact&format=journals',
+                        url: query_url,
                         async: true,
                         type: 'GET',
                         dataType: 'json',

@@ -1,9 +1,7 @@
 (function ($) {
   $(document).ready(function() {
   	
-	var request = Drupal.settings.catalog_block.request;
-	var path = $(location).attr('pathname');
-	var query = path.substr(10);
+	var query_url = $('#catalog-search-results').attr('data-source');
 	var refine_tooltip = "Refine your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
@@ -14,12 +12,12 @@
 	var film_icon = 'icon-film';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
 	
-	query = query.replace("/", "");
-	if(query === "" || query == undefined) {
+	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
 	} else {
   		$.ajax({
-			url: '/searchit/find/any?query='+query,
+			
+			url: query_url, //'/searchit/find/any?query='+query,
 			async: true,
             		type: 'GET',
             		dataType: 'json',

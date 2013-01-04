@@ -4,19 +4,16 @@
 	//		value: 37
 	//	});	
 	//var query = "firestone";
-	//var request = Drupal.settings.sy_block.request;
-	//console.log(document.location.href);
-        var path = $(location).attr('pathname');
-        var query = path.substr(10);
+	var query_url = $('#summon-search-results').attr('data-source')
 	var tooltip = "Refine Your Search in Articles+";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
-	if(query === "" || query == undefined) {
+	if(query_url == "/find/all" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
         //$.getJSON('/searchit/articles/any?query='+query, function(data) {
          $.ajax({
-	    url: '/searchit/articles/any?query='+query,
+	    url: query_url,
             async: true,
             type: 'GET',
             dataType: 'json',

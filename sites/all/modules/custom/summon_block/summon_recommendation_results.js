@@ -1,19 +1,11 @@
 (function ($) {
   $(document).ready(function() {
-  	
-	//var query = "firestone";
-	//var request = Drupal.settings.sy_block.request;
-	//console.log(document.location.href);
-            var path = $(location).attr('pathname');
-        var query = path.substr(10);
-        //query = query.replace("/", "");
-
-	  if(query === "" || query == undefined) {
+	var query_url = $('#summon-recommendation-results').attr('data-source');	
+	  if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-recommendation-results');
 	  } else {
-    	  	//$.getJSON('/searchit/articles/recommendations?query='+query, function(data) {
     	  	$.ajax({
-			url: '/searchit/articles/recommendations?query='+query,
+			url: query_url,
 			async: true,
 		        type: 'GET',
             		dataType: 'json',
@@ -31,6 +23,9 @@
   	  				}).appendTo('#summon-recommendation-results');
    				}
 			},
+			error: function(data) {
+				$('<div class="all-fail-to-load-results">Guide results are not available at this time.</div>"').appendTo('#summon-recommendation-results');	
+			}
 		});
 	}	
   });
