@@ -6,7 +6,9 @@
 }
 
 .oh-display-label {
-  display: inline-block; // give each label the same width, to align the hours.
+  display: inline-block; /* give each label the same width, to align the hours. */
+/*  width: 9em;*/
+  min-width: 3em;
 }
 
 .oh-display-hours {
@@ -45,7 +47,7 @@ div.office-hours-block span.day {
 
 div.field-widget-office-hours table {
 /*  width: 770px; */
-  width: 45em;
+/*  width: 45em; */
 }
 
 div.field-widget-office-hours table tr td {

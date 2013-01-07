@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_views_handlers().
+ * Implements hook_views_handlers().
  */
 function office_hours_views_handlers() {
   return array(
