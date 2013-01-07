@@ -93,19 +93,22 @@
 						holdings_list+
 						 '</li>');
 				});
+				$('#catalog-search-results-spinner').hide();
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-                                $('<div class="refine-link">'+refine_icon+'<a title="refine_tooltip" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
+                                $('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
 				if(data.number > 3) {
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
 			} else {
+				$('#catalog-search-results-spinner').hide();
 				$('<div class="no-results">No matches in Books+.</div>"').appendTo('#catalog-search-results');
 			}
 			},
 			error: function(data){
+				$('#catalog-search-results-spinner').hide();
               			$('<div class="all-fail-to-load-results">Books+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
             }
 		});

@@ -60,7 +60,8 @@
 					$('<div class="more-link"><a href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
 			} else {
-				$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
+				//$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
+				$('.pane-catalog-block-catalog-pulfa-results').hide();
 			}
 		},
 		error: function(data) {
