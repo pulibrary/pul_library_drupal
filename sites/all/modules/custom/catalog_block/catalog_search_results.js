@@ -1,9 +1,7 @@
 (function ($) {
   $(document).ready(function() {
   	
-	var request = Drupal.settings.catalog_block.request;
-	var path = $(location).attr('pathname');
-	var query = path.substr(10);
+	var query_url = $('#catalog-search-results').attr('data-source');
 	var refine_tooltip = "Refine your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
@@ -14,12 +12,12 @@
 	var film_icon = 'icon-film';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
 	
-	query = query.replace("/", "");
-	if(query === "" || query == undefined) {
+	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
 	} else {
   		$.ajax({
-			url: '/searchit/find/any?query='+query,
+			
+			url: query_url, //'/searchit/find/any?query='+query,
 			async: true,
             		type: 'GET',
             		dataType: 'json',
@@ -95,19 +93,22 @@
 						holdings_list+
 						 '</li>');
 				});
+				$('#catalog-search-results-spinner').hide();
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-                                $('<div class="refine-link">'+refine_icon+'<a title="refine_tooltip" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
+                                $('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
 				if(data.number > 3) {
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
 			} else {
+				$('#catalog-search-results-spinner').hide();
 				$('<div class="no-results">No matches in Books+.</div>"').appendTo('#catalog-search-results');
 			}
 			},
 			error: function(data){
+				$('#catalog-search-results-spinner').hide();
               			$('<div class="all-fail-to-load-results">Books+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
             }
 		});

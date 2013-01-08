@@ -10,7 +10,7 @@ define( 'MOREHOURS', '1'); // index to differentiate hours vs. morehours
 /**
  * Implements hook_feeds_processor_targets_alter().
  *
- * @see FeedsNodeProcessor::getMappingTargets().
+ * @see \Feeds\FeedsNodeProcessor::getMappingTargets()
  */
 function office_hours_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
   foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
@@ -91,7 +91,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
   $start_end_field = isset($field[2]) ? $field[2] : '' ;
 
   $morehours = 0; // for hours / morehours
-  
+
   switch ($sub_field) {
     case 'day':
       // each OfficeHours-feeds line MUST start with a day-field; set new line
@@ -100,7 +100,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
           $sv_vid = $entity->vid;
           unset($entity->{$field_name});  // clear officeHours field - this should have been done before.
           $sv_index = 0;
-        } 
+        }
         else {
           // this is a new line in an existing entity
           $sv_index++;
@@ -116,7 +116,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
           case 'sun': //en
           case 'zon': //nl
           case 'søn': //da
-            $sv_day = '0'; 
+            $sv_day = '0';
             break;
           case 'mon': //en
           case 'maa': //nl
@@ -126,17 +126,17 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
           case 'tue': //en
           case 'din': //nl
           case 'tir': //da
-            $sv_day = '4'; 
+            $sv_day = '4';
             break;
-          case 'wed': 
-          case 'woe':  
+          case 'wed':
+          case 'woe':
           case 'ons':
             $sv_day = '6';
             break;
           case 'thu':
           case 'don':
           case 'tor':
-            $sv_day = '8'; 
+            $sv_day = '8';
             break;
           case 'fri':
           case 'vri':
@@ -144,7 +144,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
             $sv_day = '10';
             break;
           case 'sat':
-          case 'zat': 
+          case 'zat':
           case 'lør':
             $sv_day = '12';
             break;
@@ -158,7 +158,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
 //      $sv_office_hours['day'] = $sv_day;
       break;
 
-    case 'morehours': 
+    case 'morehours':
       // set warning if Morehours is processed, but Hours is not set yet.
       if (!isset($entity->{$field_name}[$entity->language][$sv_index])) {
         watchdog('feeds office_hours', 'only morehours is set, not hours for nid = %nid', array( '%nid' => $entity->vid));
@@ -167,11 +167,11 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
       $morehours = MOREHOURS;
       //break;  // do not break, proceed with 'hours'
 
-    case 'hours': 
+    case 'hours':
       //$morehours = 0;  // already set
-      // remove time delimiters & spaces: ' 10:00 - 18:00  ' --> '1000-1800'  
+      // remove time delimiters & spaces: ' 10:00 - 18:00  ' --> '1000-1800'
       // the following is not sufficient to strip all unvisible characters, therefor intval() is used later on
-      $feed_element = str_replace( ' ' , '' , $feed_element); 
+      $feed_element = str_replace( ' ' , '' , $feed_element);
       $feed_element = str_replace( ':' , '' , $feed_element);
       $feed_element = str_replace( '.' , '' , $feed_element);
       switch ($start_end_field) {
@@ -202,7 +202,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
   }
 
   if (isset($sv_office_hours['day']) && 1 == 0 ) {
-    // 
+    //
     $morehours = 0;
     $entity->{$field_name}[$entity->language][$sv_index]['day'] = $sv_office_hours['day'];
 
@@ -221,7 +221,7 @@ function office_hours_feeds_set_target($source, $entity, $target, $feed_element)
       $sv_index++;
     }
 
-    // prepare data for next day of office hours 
+    // prepare data for next day of office hours
     $sv_office_hours = NULL;  // apparently above line does not clear the whole structure..
   }
 

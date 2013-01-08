@@ -1114,7 +1114,8 @@ margin:0;
 
 .pane-menu-menu-ofa-main-menu ul.menu li.expanded,
 .region-sidebar-first ul.menu li.expanded{
-background-color:#b4feff;
+/* background-color:#b4feff; Original Lee Designed color */
+background-color: #F1FCFF;
 padding-bottom:8px;
 -webkit-border-top-left-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
@@ -1170,7 +1171,8 @@ border-bottom-left-radius: 0;
 -webkit-border-top-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
 border-top-left-radius: 4px;
-background-color:#b4feff;
+/* background-color:#b4feff;  /* Original Lee Designed Color */
+background-color: #F1FCFF;
 color:#888;
 }
 
@@ -2209,6 +2211,13 @@ border-top:1px dotted #BFBFBF;
 margin:0;
 }
 
+
+/* spacing for spinner blocks for ajax loading */
+.page-find-all-results .results-spinner-large {
+margin-top:1em;
+/* border-top:1px dotted #BFBFBF;*/
+text-align: center;
+}
 
 /* global spacing resets for icons */
 .refine-link i,.subject-landing-page i, .page-find-all .all-search-results-list i, .page-find .pane-title i, .view-general-site-user-search i, .page-find .view-best-bets-pul i, .page-find .more-link i{

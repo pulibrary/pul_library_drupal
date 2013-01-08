@@ -1,11 +1,6 @@
 (function ($) {
   $(document).ready(function() {
-  	
-	//var query = "firestone";
-	var request = Drupal.settings.catalog_block.request;
-	//console.log(document.location.href);
-	var path = $(location).attr('pathname');
-	var query = path.substr(10);
+ 	var query_url = $('#pulfa-search-results').attr('data-source');	
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var file_icon = 'icon-file';
 	var series_icon = 'icon-folder-closed';
@@ -13,12 +8,11 @@
 	var collection_icon = 'icon-hdd';
 	var default_icon = 'icon-tag';
 	var breadcrumb_label = "<span class='breadcrumb-label'><i class='icon-arrow-right'></i>&nbsp;</span>";
-	//query = query.replace("/", "");
-	if(query === "" || query == undefined) {
+	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
 	} else {
   		 $.ajax({
-			url:'/searchit/pulfa/any?query='+query,
+			url:query_url,
 		 	async: true,
  			type: 'GET',
  			dataType: 'json',
@@ -66,7 +60,8 @@
 					$('<div class="more-link"><a href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Results from Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
 			} else {
-				$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
+				//$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
+				$('.pane-catalog-block-catalog-pulfa-results').hide();
 			}
 		},
 		error: function(data) {
