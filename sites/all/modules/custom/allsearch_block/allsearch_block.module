@@ -21,8 +21,10 @@ function allsearch_block_form($form, &$form_state) {
     $suffix = "<div class='all-search-form-suffix'><a title='What is the All Search?' href='/faq/all-search'>What is the All Search?</a>";
   } else {
     $prefix = "";
-    $suffix = "";
+    $suffix = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
   }
+
+
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('All Search'),
