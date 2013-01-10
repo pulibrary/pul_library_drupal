@@ -2,7 +2,7 @@
   $(document).ready(function() {
   	
 	var query_url = $('#catalog-search-results').attr('data-source');
-	var refine_tooltip = "Refine your search in Books+";
+	var refine_tooltip = "Expand your search in Books+";
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
 	var availability_hint = "Check for Available Copies";

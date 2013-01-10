@@ -5,7 +5,7 @@
 	//	});	
 	//var query = "firestone";
 	var query_url = $('#summon-search-results').attr('data-source')
-	var refine_tooltip = "Refine your search in Articles+";
+	var refine_tooltip = "Expand your search beyond scholarly materials in Articles+.";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
 	if(query_url == "/find/all" || query_url == undefined) {
