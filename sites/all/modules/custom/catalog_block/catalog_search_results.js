@@ -17,7 +17,7 @@
 	} else {
   		$.ajax({
 			
-			url: query_url, //'/searchit/find/any?query='+query,
+			url: query_url,
 			async: true,
             		type: 'GET',
             		dataType: 'json',
@@ -54,7 +54,7 @@
                                                                 var location = holding[key];
                                                                 holdings_list += "<span class='holdings-item'> "+
 										'<a href="'+location['request_link']+'" title="'+
-										request_hint+'">'+
+										request_hint+location['library_label']+'">'+
                                                                                 location['library_label']+
                                                                                 "</a></span>&nbsp;";
                                                                 }
