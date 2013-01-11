@@ -99,7 +99,7 @@
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
                                 $('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
-				if(data.number > 3) {
+				if(data.number > 10) {
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
 			} else {

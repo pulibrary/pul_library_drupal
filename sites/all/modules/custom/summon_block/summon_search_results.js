@@ -64,7 +64,7 @@
     				html: items.join('')
   			}).appendTo('#summon-search-results');
 			$('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#summon-search-results');
-			if(data.number > 3) {
+			if(data.number > 10) {
 				$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
 	} else {	
