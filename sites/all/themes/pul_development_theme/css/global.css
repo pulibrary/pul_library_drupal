@@ -2328,6 +2328,11 @@ display: none;
 }
 
 
+/* For Subject Pages deal with embedded entities in overridden titles */
+.subject-landing-page .field-type-entityreference h2 {
+display: none;
+} 
+
 /****
  * Homepage Hours
  */
