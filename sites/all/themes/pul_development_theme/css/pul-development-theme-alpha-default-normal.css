@@ -90,11 +90,11 @@ max-width:296px;
 
 
 .flex-direction-nav li .next {
-right:39px
+right:17px
 }
 
 .flex-direction-nav li .prev {
-left:40px;
+left:18px;
 }
 
 /* =============================================================================
@@ -108,6 +108,7 @@ padding:0 28px;
 .front #region-postscript-second{
 margin-top:0;
 }
+
 
 /* =============================================================================
    INFORMATION FOR
