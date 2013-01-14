@@ -554,7 +554,7 @@ vertical-align:middle;
 display:block;
 }
 
-.front #allsearch-block-form .form-item-query, .page-find-all #allsearch-block-form .form-item-query{
+.front #allsearch-block-form .form-item-query, .page-node-3528 #allsearch-block-form .form-item-query, .page-find-all #allsearch-block-form .form-item-query{
 display:inline;
 }
 
@@ -990,7 +990,7 @@ display: block;
 }
 
 
-.page-find-all-results.page-find-all #allsearch-block-form label {
+.page-node-3528 #allsearch-block-form label, .page-find-all-results.page-find-all #allsearch-block-form label {
 display:inline;
 }
 /* all search help message */
@@ -1001,6 +1001,7 @@ padding-top:.2em;
 padding-bottom:0;
 }
 .find-all-search-page-empty .all-search-form-suffix {
+margin-top: 2em;
 display:block;
 font-size: 1.4em;
 }
