@@ -1445,10 +1445,11 @@ padding:12px;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li a{
+color: #7F3D00; /* red */
 color:#c78654; /* Original Lee Color */
-
+color:#333; /*dark gray */
 text-decoration:none;
-font-size:1.1em;
+font-size:1.0em;
 padding-left:18px;
 
 background:url(../images/chat.png) no-repeat left center transparent;
@@ -1479,6 +1480,7 @@ background:url(../images/guide.png) no-repeat left center transparent;
 
 .front #block-menu-menu-get-help-menu ul.menu li a:hover{
 color:#333;
+color:#c78654;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li{
@@ -1542,7 +1544,9 @@ margin-bottom:0;
 height:auto;
 }
 
-
+.front h3.library-news-homepage {
+	height: 125px;
+}
 /* =============================================================================
    FLEX SLIDER
    ========================================================================== */
@@ -1559,7 +1563,7 @@ padding-top:10px;
 }
 
 .flexslider .slides li{
-height:250px;
+height:225px;
 padding-bottom:0;
 }
 
@@ -1577,7 +1581,7 @@ padding-bottom:0;
 }
 
 .flex-direction-nav li a{
-top:284px;
+top:259px;
 }
 
 .flex-control-nav li a{
@@ -1646,7 +1650,12 @@ padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
 }
-
+#flexslider_views_slideshow_main_library_news-block {
+	margin-bottom: 10px;
+}
+.front #block-block-2 {
+	margin-top: 30px;
+}
 
 /* =============================================================================
    RENOVATION NEWS
@@ -1713,6 +1722,11 @@ border-radius: 3px;
 .comment-links ul li a:hover{
 color:#333;
 background-color:#63c0f8;
+}
+
+
+#read-more-renovation {
+	margin-bottom: 20px;
 }
 
 
@@ -2333,14 +2347,27 @@ display: none;
 display: none;
 } 
 
-/****
+/*********************************************
  * Homepage Hours
- */
+ * ******************************************/
 
 .front .date-nav {
 	display: none;
 }
 .front .view-library-hours td,.front .view-library-hours th {
-	font-size: 0.8em;
-	padding: 2px;
+	font-size: 1.0em;
+	padding: 4px;
+}
+
+.front #zone-postscript #block-views-library-hours-block-3{
+	border-top:1px dotted #bfbfbf;
+}
+
+/*********************************************
+ * Subject Specialists Page
+ * ******************************************/
+
+.view-specialist-finder td, .view-specialist-finder th { 
+	padding: 5px;
+	font-size: 0.9em;
 }
