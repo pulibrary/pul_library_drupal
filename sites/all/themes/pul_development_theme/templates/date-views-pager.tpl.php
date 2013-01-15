@@ -36,12 +36,12 @@
     <ul class="pager">
     <?php if (!empty($prev_url)) : ?>
       <li class="date-prev">
-        <?php print l('' . ($mini ? '' : ' ' . t('<i class=\'icon-caret-left icon-large\'> </i>', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
+        <?php print l('' . ($mini ? '' : '' . t('<i class=\'icon-caret-left icon-large\'> </i>', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
       &nbsp;</li>
     <?php endif; ?>
     <?php if (!empty($next_url)) : ?>
       <li class="date-next">&nbsp;
-        <?php print l(($mini ? '' : t('<i class=\'icon-caret-right icon-large\'> </i>', array(), array('context' => 'date_nav')) . ' ') . '', $next_url, $next_options); ?>
+        <?php print l(($mini ? '' : t('<i class=\'icon-caret-right icon-large\'> </i>', array(), array('context' => 'date_nav')) . '') . '', $next_url, $next_options); ?>
       </li>
     <?php endif; ?>
     </ul>
