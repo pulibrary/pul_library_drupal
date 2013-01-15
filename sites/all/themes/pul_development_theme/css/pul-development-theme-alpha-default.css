@@ -900,6 +900,200 @@ padding-top:5px;
 color:#fff;
 }
 
+/* =============================================================
+ * Calendar based Library Hours
+   ========================================================== */
+  
+.library-hours .view-header {
+border-top:none;
+border-right:2px solid #fff;
+border-left:none;
+border-bottom:1px solid #999;
+border: 1px solid black;
+background-color:#F58026;
+margin-bottom:0;
+height: auto;
+}
+.calendar-calendar .date-nav-wrapper {
+	height: 60px;
+}
+.calendar-calendar ul.pager {
+	border-top: none;
+}  
+
+.calendar-calendar .date-nav-wrapper .date-heading {
+	width: 300px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+	top: 30px;
+}
+
+.library-hours h3 {
+	font-family: Arvo, sans-serif;
+  color:#fff;
+  text-align: center;
+  font-weight: normal;
+  padding-top: 20px
+}
+.library-hours .date-nav-wrapper .date-nav {
+  width:100%;
+  margin:0;
+}
+
+.library-hours .item-list .pager {
+	border-top-style:none;
+
+}
+.library-hours .date-nav-wrapper .date-prev {
+  float:left;
+  position:relative;
+  right:0;
+  text-align:right;
+  padding:0px 0 0px 0;
+  width:30px;
+  height:20px;
+  margin-left: 20px;
+  top: -20px;
+  background-color: #000;
+  color: #CCCCCC;
+  border-radius:4px 4px 4px 4px;
+
+}
+.library-hours .date-nav-wrapper .date-next {
+  float:right;
+  position:relative;
+  right:20px;
+  text-align:left;
+  padding:0px;
+  width:30px;
+  height:20px;
+  top: -20px;
+  background-color: #000;
+  color: #CCCCCC;
+  border-radius:4px 4px 4px 4px;
+
+}
+.library-hours .date-nav-wrapper .date-prev, .library-hours .date-nav-wrapper .date-next {
+    margin-top: 3px;
+    border: 1px solid rgb(51, 51, 51);
+    background: none repeat scroll 0% 0% rgb(243, 243, 243);
+    background: -moz-linear-gradient(center top , rgb(119, 119, 119), rgb(83, 83, 83)) repeat scroll 0% 0% transparent;
+    padding: 0px 4px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 0px 2px 0px rgb(94, 49, 15);
+    color: white;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.library-hours .date-nav-wrapper .date-prev a {
+	font-size: 20px;
+	padding: 0;
+	width: 30px;
+	height: 20px;
+	text-align: left;
+	/*margin-left: -30px;*/
+	position: relative;
+	left: -10px;
+	top: -3px;
+}
+.library-hours .date-nav-wrapper .date-next a {
+	font-size: 20px;
+	padding: 0;
+	width: 30px;
+	height: 20px;
+	text-align: left;
+	/*margin-left: -30px;*/
+	position: relative;
+	left: -8px;
+	top: -17px;
+}
+.library-hours .date-nav-wrapper .date-next, .library-hours .date-nav-wrapper .date-prev{
+    margin-top:3px;
+   border: 1px solid #333333;
+   background: #b8601e;
+   background: -webkit-gradient(linear, left top, left bottom, from(#777777), to(#535353));
+   background: -webkit-linear-gradient(top, #777777, #535353);
+   background: -moz-linear-gradient(top, #777777, #535353);
+   background: -ms-linear-gradient(top, #777777, #535353);
+   background: -o-linear-gradient(top, #777777, #535353);
+   padding: 0px 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+	-moz-box-shadow: 0 0 2px 0 #5e310f;
+	-webkit-box-shadow: 0 0 2px 0 #5e310f;
+	box-shadow: 0 0 2px 0 #5e310f;
+   color: white;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.calendar-calendar th.days {
+	padding: 10px 20px 10px 20px;
+	font-size: 1.333em;
+	color: rgb(51, 51, 51);
+	font-family:'PT Sans',sans-serif;
+}
+.calendar-calendar .month-view .full tr.date-box,
+.calendar-calendar .month-view .full tr.date-box td,
+.calendar-calendar .month-view .full tr.multi-day,
+.calendar-calendar .month-view .full tr.multi-day td {
+  height: 40px;
+  max-height: 40px;
+}
+
+
+.calendar-calendar td .inner div.calendar div,
+.calendar-calendar td .inner div.calendar div a,
+.calendar-calendar .week-view .full div.single-day div.weekview,
+.calendar-calendar .day-view .full div.single-day div.dayview,
+.calendar-calendar .month-view .full td.single-day div.monthview,
+.calendar-calendar .week-view .full td.single-day div.weekview,
+.calendar-calendar .day-view .full td.single-day div.dayview {
+background-color:transparent;
+border:none;
+color:#666;
+}
+.calendar-calendar .single-day .contents,
+.calendar-calendar .multi-day .contents,
+.calendar-calendar td .inner div.calendar div,
+.calendar-calendar td .inner div.calendar div a,
+.calendar-calendar .week-view .full div.single-day div.weekview,
+.calendar-calendar .day-view .full div.single-day div.dayview  {
+	background-color: transparent;
+}
+.library-hours .single-day .contents
+.library-hours .multi-day .contents {
+color:#0098F4;
+}
+
+.calendar-calendar .month-view .full td.multi-day .calendar.monthview .contents, 
+.calendar-calendar .week-view .full td.multi-day .calendar.weekview .contents {
+	width: 96%;
+}
+
+.calendar-calendar .month-view .full td.multi-day .calendar.monthview .contents, 
+.calendar-calendar .week-view .full td.multi-day .calendar.weekview .contents, 
+.calendar-calendar .month-view .full td.single-day div.monthview, 
+.calendar-calendar .week-view .full td.single-day div.weekview, 
+.calendar-calendar .day-view .full td.single-day div.dayview {
+border-top:none;
+border-right:none;
+border-left:none;
+border-bottom:1px dashed #ddd;
+border-radius: 0;
+}
+.calendar-calendar .month-view .full td.multi-day div.monthview, .calendar-calendar .week-view .full td.multi-day div.weekview, .calendar-calendar .day-view .full td.multi-day div.dayview {
+	background-color: transparent;
+	overflow:visible;
+}
+.calendar-calendar .month-view .full td.multi-day .inner .monthview .continues, .calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff, .calendar-calendar .week-view .full td.multi-day .inner .weekview .continues, .calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff {
+	display:none;
+}
+.view .date-nav-wrapper .date-prev a {
+  margin-left: 0px;
+  font-weight: bold;
+}
 
 /* =============================================================================
    LIBRARIES & COLLECTIONS
