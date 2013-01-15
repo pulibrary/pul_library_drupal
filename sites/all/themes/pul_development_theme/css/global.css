@@ -2395,3 +2395,17 @@ display: none;
 	padding: 5px;
 	font-size: 0.9em;
 }
+
+/*********************************************
+ * Staff Pages
+ **********************************************/
+
+
+.view-staff-department-list td, .view-staff-department-list th { 
+	padding: 5px;
+	font-size: 0.9em;
+}
+.view-staff-department-list th a {
+	color: #FFF;
+	
+}
