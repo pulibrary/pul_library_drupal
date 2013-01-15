@@ -125,7 +125,9 @@ right:0;
 left:-1px;
 }
 
-
+.flex-control-nav li a{
+	padding: 4px 7px 6px 7px;
+}
 
 /* =============================================================================
    RENOVATION NEWS
