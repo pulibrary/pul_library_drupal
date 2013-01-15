@@ -1529,6 +1529,7 @@ border-bottom:1px dotted #ccc;
 
 .panel-panel.grid-3 .pane-node-field-news-featured-graphic img{
 width:210px;
+padding: 20px;
 }
 
 .panel-panel.grid-3 .flexslider{
@@ -1550,6 +1551,12 @@ height:150px;
 .front h3.library-news-homepage {
 	height: 125px;
 }
+.front .view-library-news .field-name-field-news-featured-graphic img {
+	float: left;
+}
+.front .flexslider ul.slides li img {
+	margin-bottom: 10px;
+}
 /* =============================================================================
    FLEX SLIDER
    ========================================================================== */
@@ -1566,7 +1573,7 @@ padding-top:10px;
 }
 
 .flexslider .slides li{
-height:225px;
+height:212px;
 padding-bottom:0;
 }
 
@@ -1575,7 +1582,7 @@ padding-bottom:0;
 }
 
 .flex-control-nav{
-top:277px;
+top:263px;
 }
 
 .flex-control-nav li{
@@ -1584,7 +1591,7 @@ padding-bottom:0;
 }
 
 .flex-direction-nav li a{
-top:290px;
+top:276px;
 }
 
 .flex-control-nav li a{

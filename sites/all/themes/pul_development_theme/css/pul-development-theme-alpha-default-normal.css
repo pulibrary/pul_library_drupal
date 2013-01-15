@@ -96,6 +96,9 @@ right:17px
 .flex-direction-nav li .prev {
 left:18px;
 }
+.flex-control-nav li a{
+	padding: 4px 14px 6px 14px;
+}
 
 /* =============================================================================
    RENOVATION NEWS
