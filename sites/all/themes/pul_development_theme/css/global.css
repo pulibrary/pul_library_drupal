@@ -2401,11 +2401,13 @@ display: none;
  **********************************************/
 
 
-.view-staff-department-list td, .view-staff-department-list th { 
+.view-staff-department-list td, .view-staff-department-list th, 
+.view-general-site-user-search td, .view-general-site-user-search th { 
 	padding: 5px;
 	font-size: 0.9em;
 }
-.view-staff-department-list th a {
+.view-staff-department-list th a,
+.view-general-site-user-search th a {
 	color: #FFF;
 	
 }
