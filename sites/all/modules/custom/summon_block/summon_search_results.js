@@ -8,6 +8,7 @@
 	var refine_tooltip = "Expand your search beyond scholarly materials in Articles+.";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+        var max_display_results = 5;
 	if(query_url == "/find/all" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
@@ -41,12 +42,17 @@
 					var pub_title = '';
 				}
 				if(result['publication_year']) {
-					var pub_date = '<div><span>Year: '+result['publication_year']+'</div>';
+					var pub_date = '<div><span>'+result['publication_year']+'</div>';
 				} else {
 					var pub_date = "";
 				}
+				if(result['abstract']) {
+					abstract = result['abstract'];
+				} else {
+					abstract = "Abstract not available.";
+				}
     				items.push('<li class="'+row_class+'"><h3><a title="'+
-					result['abstract'] + 
+					abstract + 
 					'" href="' + 
 					result['url'] + 
 					'" target="_blank">' + 
@@ -64,7 +70,7 @@
     				html: items.join('')
   			}).appendTo('#summon-search-results');
 			$('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#summon-search-results');
-			if(data.number > 10) {
+			if(data.number > max_display_results) {
 				$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
 	} else {	
