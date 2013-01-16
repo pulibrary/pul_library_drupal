@@ -29,9 +29,9 @@
 					var row_class="even"
 				}
 				if(result['fulltextavail']) {
-					var holdings_statement= "<span class='all-full-text'><i class='icon-file'></i>&nbsp;Full-Text Available</span>";
+					var holdings_statement= "<span class='all-full-text'><i class='icon-file'></i>&nbsp;"+result['format']+"&nbsp; - Full-Text Available</span>";
 				} else {
-					var holdings_statement = "";
+					var holdings_statement = result['format'];
 				}
 				if(result['publication_title']) {
 					var pub_title = '<div><em>'+result['publication_title']+'</em></div>';
@@ -61,7 +61,6 @@
 					result['title'] + 
 					'</a></h3>'+
 					author+'<div class="summon-format-type">' + 
-					result['format']+
 					holdings_statement+
 					"</div>"+
 					pub_title+

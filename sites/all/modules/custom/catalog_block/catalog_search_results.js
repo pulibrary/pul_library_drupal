@@ -11,6 +11,7 @@
 	var book_icon = 'icon-book';
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
+	var audio_icon = 'icon-headphones';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
         var max_display_results = 5;
 	
@@ -67,15 +68,23 @@
 					}
 					var creation_date = "";
 					var icon_element = "";
-					if(result['creationdate']) {
+					if(result['publisher']) {
+						creation_date = "<div>"+result['publisher']+"</div>";
+					}
+					else if(result['creationdate']) {
 						creation_date = "<div>"+result['creationdate']+"</div>";
 					}
 					if(result['format'] == 'book') {
 						var icon_type = book_icon;
 					} else if(result['format'] == 'video' || result['format'] == 'film') {
 						var icon_type = film_icon;
+					} else if(result['format'] == 'audio') {
+						var icon_type = audio_icon;
 					} else {
 						var icon_type = null;
+					}
+					if(icon_type) {
+						icon_element = "<i class='"+icon_type+"'></i>";
 					}
 					if(result['description']) {
 						var desc = result['description'];

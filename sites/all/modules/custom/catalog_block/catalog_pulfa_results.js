@@ -8,7 +8,7 @@
 	var subseries_icon = 'icon-folder-open';
 	var collection_icon = 'icon-hdd';
 	var default_icon = 'icon-tag';
-	var breadcrumb_label = "<span class='breadcrumb-label'><i class='icon-arrow-right'></i>&nbsp;</span>";
+	var breadcrumb_label = "<span class='breadcrumb-label'>Contained In:&nbsp;</span>";
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
 	} else {
