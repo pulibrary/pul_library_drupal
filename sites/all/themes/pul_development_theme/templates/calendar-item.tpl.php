@@ -39,6 +39,9 @@
  * @see template_preprocess_calendar_item.
  */
 $index = 0;
+
+if (substr($item->date_id, -1)==0) {
+
 ?>
 <div class="<?php print !empty($item->class) ? $item->class : 'item'; ?>">
   <div class="view-item view-item-<?php print $view->name ?>">
@@ -60,3 +63,6 @@ $index = 0;
   </div> 
   </div>   
 </div>
+<?php 
+}
+?>	
