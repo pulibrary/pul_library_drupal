@@ -712,7 +712,7 @@ clear:both;
 
 .grid-3 .panel-pane{
 display:block;
-padding:0 0 32px 0;
+padding:0 0 0.5em 0;
 }
 
 .block-menu-menu-social-media ul li{
@@ -2650,4 +2650,19 @@ padding: 2px;
 }
 #section-footer ul.menu li a:hover {
 	background-color: #FFFFFF;
+}
+
+/*
+ * Database Listings
+ */
+
+.page-find-databases td.resource-title {
+	
+}
+.page-find-databases td.databases-find-description {
+	width: auto;
+	min-width: 200px;
+}
+.find-databases-show-desc, .find-databases-close-desc {
+	text-align: right;
 }
