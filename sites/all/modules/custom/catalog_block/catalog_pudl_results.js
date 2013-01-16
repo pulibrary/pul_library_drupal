@@ -14,13 +14,15 @@
  			dataType: 'json',
  			success: function(data) {
 			var items = [];
+			// add an icon map for format types
+			var icon_type = "";
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
     					items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
-						 '<div class="all-search-excerpt">'+result['kwic']+'</div>'+
+						 '<div class="all-search-excerpt">Collection: '+result['collection']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
-						'</div>'+breadcrumbs+'</li>');
+						'</div></li>');
 				});
   				$('<ul/>', {
     					'class': 'all-search-results-list',
