@@ -10,7 +10,7 @@ display: none;
 }
 
 .front .sidebar-second #section-content{
-background:none;
+background:none; 
 }
 
 #breadcrumb{
@@ -964,7 +964,7 @@ font-size:0.833em;
    ========================================================================== */
 
 .panel-separator  {
-padding:2em 0 0 0;
+padding:0.5em 0 0 0;
 }
 
 #find-databases-home .grid-3 h2.pane-title, .database-resource-page .grid-3 h2.pane-title {
