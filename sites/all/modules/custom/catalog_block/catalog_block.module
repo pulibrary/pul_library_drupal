@@ -72,6 +72,14 @@ function catalog_pulfa_results_content() {
   return $block_content;
 }
 
+function catalog_pudl_results_content() {
+  $path = catalog_block_query_escape($_GET['q']);
+  $block_content = array(
+    '#markup' => "<div data-source='/searchit/pudl/any?query={$path}' id='pudl-search-results'>" . t('') . "</div>",
+  );
+  return $block_content;
+}
+
 
 /**
  * Implements hook_menu().
@@ -130,6 +138,10 @@ function catalog_block_block_info() {
       'info' => t('Archives Results'),
       'cache' => DRUPAL_NO_CACHE,
    );
+   $blocks['catalog_pudl_results'] = array(
+      'info' => t('Princeton University Digital Library'),
+      'cache' => DRUPAL_NO_CACHE,
+   );	
    return $blocks;
 }
 
@@ -213,6 +225,10 @@ function catalog_block_block_view($delta = '') {
     $block['subject'] = t('Library Archives Results');
     $block['content'] = catalog_pulfa_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfa_results.js');   
+  } elseif ($delta == 'catalog_pudl_results') {
+    $block['subject'] = t('Princeton University Digital Library');
+    $block['content'] = catalog_pudl_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pudl_results.js');
   }
   return $block;
 }
