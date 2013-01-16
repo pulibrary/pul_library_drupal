@@ -12,6 +12,39 @@
                 var resolvePrefix = "http://libwebprod.princeton.edu/resolve/lookup?url=";
 		$(this).attr('href', resolvePrefix+viewOnlineLink);
 	});
+	
 
+	/* toggle events for A to Z list */
+        $(".find-databases-show-desc").each(function(index) {
+		var id = $(this).attr('data-desc-id');
+		$('#open'+id).click( function () {
+			$('#desc'+id).toggle( function() {
+				//$('#close'+id).show();
+				//$('#close'+id).click(function () {
+			        $('#open'+id+' i').replaceWith('<i class="icon-minus-sign"></i>');		
+				//$('#open'+id).hide();
+			});
+		});
+	});
+	// empty descriptions
+	//$(".page-find-databases .databases-find-description ").each(function(index) {
+		
+	//});
+	$(".page-find-databases .resource-title a").each(function(index) {
+		var data_access = $(this).find('span').attr('data-ezproxy-access');
+		var access_url = $(this).find('span').attr('data-access-url');
+		if(data_access == 0) {
+			$(this).attr('href', access_url);
+		}
+	});
+//	
+//	 $(".find-databases-close-desc").each(function(index) {
+//		var id = $(this).attr('data-desc-id');
+//		 $('close'+id).click( function () {
+//                        $('#open'+id).show();
+//			$('#desc'+id).hide();
+//			$(this).hide();
+//                });
+//	});
   });
 }(jQuery));

@@ -11,6 +11,7 @@
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+        var max_display_results = 5;
 	
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
@@ -99,7 +100,7 @@
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
                                 $('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#catalog-search-results');
-				if(data.number > 10) {
+				if(data.number > max_display_results) {
 					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
 			} else {
