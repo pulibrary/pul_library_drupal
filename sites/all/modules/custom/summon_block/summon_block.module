@@ -42,8 +42,9 @@ function summon_block_query_escape($drupal_path) {
 function summon_search_results_content() {
   $path = summon_block_query_escape($_GET['q']);
   //print_r(drupal_parse_url($path));
+  $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}'>" . "<div id='summon-progressbar'></div>" . "</div>",
+    '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
