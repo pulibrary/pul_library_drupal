@@ -1917,6 +1917,12 @@ background-color:whiteSmoke;
 	color: #333;
 	border-bottom: 1px dotted #333;
 }
+
+/* Styles to toggle menu */
+.find-databases-close-desc{
+display:none;
+}
+
 /* =============================================================================
    COMMENTS
    ========================================================================== */
@@ -2360,11 +2366,14 @@ color: #333;
 font-size: 1.17em; 
 }
 
-/* Hide Description */
+/* Hide Description 
 .page-find-databases td div.field-type-text-with-summary{
 display: none;
 }
-
+*/
+.page-find-databases .database-description{
+display:none;
+}
 
 /* For Subject Pages deal with embedded entities in overridden titles */
 .subject-landing-page .field-type-entityreference h2 {
