@@ -666,7 +666,7 @@ background-color:transparent;
 }
 
 td, th{
-padding:10px;
+padding:3px;
 }
 
 th a img {
@@ -677,6 +677,12 @@ table tr td p{
 margin:0;
 }
 
+th a:link {
+	color: #FFFFFF;
+}
+th a:hover {
+    color: rgb(245, 128, 38);
+}
 .view-library-news table td,
 .view-library-news table th{
 vertical-align:top;
@@ -2631,4 +2637,17 @@ border-radius: 0;
 .view-general-site-user-search th a {
 	color: #FFF;
 	
+}
+
+/* 
+ * Footer style, mobile 
+ */
+
+#section-footer ul.menu li a {
+display: block;
+width: 100%;
+padding: 2px;
+}
+#section-footer ul.menu li a:hover {
+	background-color: #FFFFFF;
 }
