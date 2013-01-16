@@ -1,10 +1,8 @@
 (function ($) {
   $(document).ready(function() {
-        //$( "#summon-progressbar" ).progressbar({
-	//		value: 37
-	//	});	
-	//var query = "firestone";
+
 	var query_url = $('#summon-search-results').attr('data-source')
+	var refine_message = "See Scholarly Materials in Articles+";
 	var refine_tooltip = "Expand your search beyond scholarly materials in Articles+.";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
@@ -12,7 +10,6 @@
 	if(query_url == "/find/all" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
-        //$.getJSON('/searchit/articles/any?query='+query, function(data) {
          $.ajax({
 	    url: query_url,
             async: true,
@@ -41,8 +38,8 @@
 				} else {
 					var pub_title = '';
 				}
-				if(result['publication_year']) {
-					var pub_date = '<div><span>'+result['publication_year']+'</div>';
+				if(result['formatted_pub_date']) {
+					var pub_date = '<div><span>'+result['formatted_pub_date']+'</div>';
 				} else {
 					var pub_date = "";
 				}
@@ -51,13 +48,19 @@
 				} else {
 					abstract = "Abstract not available.";
 				}
+				if(result['author']) {
+					var author = '<div><span>'+result['author']+'</span></div>';
+				} else {
+					var author = "";
+				}
     				items.push('<li class="'+row_class+'"><h3><a title="'+
 					abstract + 
 					'" href="' + 
 					result['url'] + 
 					'" target="_blank">' + 
 					result['title'] + 
-					'</a></h3><div class="summon-format-type">' + 
+					'</a></h3>'+
+					author+'<div class="summon-format-type">' + 
 					result['format']+
 					holdings_statement+
 					"</div>"+
@@ -69,9 +72,9 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">Refine</a><div>').insertBefore('#summon-search-results');
+			$('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
-				$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all '+data.number+' Articles+ Results</a></div>"').appendTo('#summon-search-results');
+				$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
 	} else {	
 		$('#summon-search-results-spinner').hide();
