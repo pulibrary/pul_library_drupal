@@ -1511,11 +1511,15 @@ overflow:auto;
 display:block;
 float:left;
 clear:none;
-background-color:#bbb;
+/* Original choices 
+background-color:#bbb; 
 color:#5d5e63;
+*/
+background-color: #5d5e63;
+color:#fff;
 text-decoration:none;
 width:106px;
-padding:1px 0;
+padding:4px 0;
 text-align:center;
 -webkit-border-radius: 3px;
 -moz-border-radius: 3px;
@@ -1524,7 +1528,10 @@ text-indent:0px;
 margin:5px 10px 0 0;
 font-size:0.833em;
 }
-
+.homepage-tab-form-message a:hover {
+background-color:#F58026;
+color: #FFFFFF;
+}
 /* =============================================================================
    NEWS
    ========================================================================== */
@@ -1753,7 +1760,22 @@ float:right;
 display:block;
 clear:both;
 }
-
+.pane-library-news .views-row img {
+	max-width: 200px;
+	height: auto;
+}
+.pane-library-news .views-row a.views-more-link{
+margin:0.5em 0 0 90%;
+float:none;
+width: 40px;
+text-align: center;
+position:inherit;
+}
+.pane-library-news .news-related-to {
+	clear:right;
+	display: block;
+	
+}
 /* =============================================================================
    INFORMATION FOR
    ========================================================================== */
@@ -1928,6 +1950,7 @@ background-color:whiteSmoke;
 .find-databases-close-desc{
 display:none;
 }
+
 
 /* =============================================================================
    COMMENTS
@@ -2665,4 +2688,10 @@ padding: 2px;
 }
 .find-databases-show-desc, .find-databases-close-desc {
 	text-align: right;
+}
+.page-find-databases .views-summary .summary-count {
+	display: none;
+}
+.page-find-databases .views-summary a {
+	padding: 0 2px 0 4px;
 }
