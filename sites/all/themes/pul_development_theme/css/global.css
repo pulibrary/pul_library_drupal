@@ -2424,6 +2424,13 @@ display: none;
 .front #zone-postscript #block-views-library-hours-block-3{
 	border-top:1px dotted #bfbfbf;
 }
+.front .hours-Open, .front .hours-status-Closed, .front .hours-status-TBA {
+	display: inline;
+}
+.front .hours-Closed, .front .hours-TBA, .front .hours-status-Open {
+	display: none;
+}
+
 
 /* =============================================================
  * Calendar based Library Hours
@@ -2692,6 +2699,7 @@ padding: 2px;
 .page-find-databases .views-summary .summary-count {
 	display: none;
 }
-.page-find-databases .views-summary a {
+.page-find-databases .views-summary {
 	padding: 0 2px 0 4px;
 }
+
