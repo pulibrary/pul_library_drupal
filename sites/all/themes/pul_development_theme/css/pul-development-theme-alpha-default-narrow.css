@@ -147,3 +147,9 @@ margin-top:0;
 width:160px;
 }
 
+/* DB Suject Menu */
+
+.view-databases-by-subject select {
+	display: block;
+	margin-top: 0.5em;
+}

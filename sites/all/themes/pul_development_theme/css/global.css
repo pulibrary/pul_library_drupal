@@ -1951,6 +1951,7 @@ background-color:whiteSmoke;
 display:none;
 }
 
+
 /* =============================================================================
    COMMENTS
    ========================================================================== */
@@ -2687,4 +2688,10 @@ padding: 2px;
 }
 .find-databases-show-desc, .find-databases-close-desc {
 	text-align: right;
+}
+.page-find-databases .views-summary .summary-count {
+	display: none;
+}
+.page-find-databases .views-summary a {
+	padding: 0 2px 0 4px;
 }
