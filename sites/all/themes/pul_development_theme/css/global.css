@@ -187,7 +187,7 @@ h1 {
 h2,
 h2.block-title,
 h2.node-title,
-.view-grouping-header{
+.view-grouping-header .field-name-field-puluser-division{
     color:#0098f4;
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
@@ -200,14 +200,14 @@ h2.node-title,
 font-size:1.167em;
 }
 
-h3 {
+h3, .view-grouping-header .field-name-field-puluser-section {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.17em;
     margin: 1em 0 0 0;
     color:#777;
 }
 
-h4 {
+h4{
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
     margin: 1.33em 0 0.867em 0;
