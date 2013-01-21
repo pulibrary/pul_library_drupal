@@ -189,10 +189,20 @@ h2.block-title,
 h2.node-title,
 .view-grouping-header .field-name-field-puluser-division{
     color:#0098f4;
+    color: #5C5E66;/* Color Swap */
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
     margin-top:8px;
+}
+.context-students h2.pane-title {
+	border-bottom: 1px dotted #bfbfbf;
+	margin-bottom: 1.0em;
+	width: 80%;
+}
+.pane-library-news-panel-pane h2.pane-title {
+	border-bottom: 0;
+	width: auto;
 }
 
 .views-field-title h2 a,
@@ -1357,40 +1367,40 @@ border-radius:0;
 font-family: 'PT Sans', sans-serif;
 }
 
+/* Quicktab positioning */
+
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li,
 .ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li,
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li{
 position:absolute;
-top:188px;
+top:198px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li{
 position:absolute;
-top:142px;
+top:170px;
 }
-
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li{
-top:195px;
+top:180px;
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li + li{
-top:172px;
+top:170px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li{
 position:absolute;
-top:107px;
+top:136px;
 }
-
+ 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li{
 top:137px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li{
 position:absolute;
-top:72px;
+top:105px;
 }
-
 
 .homepage-tab-form-message {
 clear: both;
@@ -1516,6 +1526,7 @@ background-color:#bbb;
 color:#5d5e63;
 */
 background-color: #5d5e63;
+
 color:#fff;
 text-decoration:none;
 width:106px;
@@ -1527,9 +1538,17 @@ border-radius: 3px;
 text-indent:0px;
 margin:5px 10px 0 0;
 font-size:0.833em;
+/* Requested adjustments */
+background-color: #515156;
+font-size: 1em;
+width: 114px;
+padding: 2px;
 }
+
 .homepage-tab-form-message a:hover {
 background-color:#F58026;
+/* Color Swap */
+background-color: rgb(245, 128, 38);
 color: #FFFFFF;
 }
 /* =============================================================================
@@ -1734,7 +1753,8 @@ font-size:.833em;
 background:none;
 border:none;
 text-shadow:none;
-background-color:#63c0f8;
+background-color:#63c0f8; /* Color Swapping */
+background-color: rgb(245, 128, 38);
 color:#fff;
 padding:3px 7px;
 text-decoration:none;
@@ -2702,4 +2722,3 @@ padding: 2px;
 .page-find-databases .views-summary {
 	padding: 0 2px 0 4px;
 }
-
