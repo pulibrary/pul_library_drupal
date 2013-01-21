@@ -1516,6 +1516,7 @@ background-color:#bbb;
 color:#5d5e63;
 */
 background-color: #5d5e63;
+
 color:#fff;
 text-decoration:none;
 width:106px;
@@ -1527,7 +1528,14 @@ border-radius: 3px;
 text-indent:0px;
 margin:5px 10px 0 0;
 font-size:0.833em;
+/* Requested adjustments */
+background-color: #515156;
+font-size: 1em;
+width: 114px;
+padding: 2px;
 }
+rgb(81,81,86) and the font a bit larger (font-size:1em, width:114px, padding:2px).
+
 .homepage-tab-form-message a:hover {
 background-color:#F58026;
 color: #FFFFFF;
