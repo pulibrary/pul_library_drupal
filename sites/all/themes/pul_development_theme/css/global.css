@@ -1357,40 +1357,40 @@ border-radius:0;
 font-family: 'PT Sans', sans-serif;
 }
 
+/* Quicktab positioning */
+
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li,
 .ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li,
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li{
 position:absolute;
-top:188px;
+top:198px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li{
 position:absolute;
-top:142px;
+top:170px;
 }
-
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li{
-top:195px;
+top:180px;
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li + li{
-top:172px;
+top:170px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li{
 position:absolute;
-top:107px;
+top:136px;
 }
-
+ 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li{
 top:137px;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li{
 position:absolute;
-top:72px;
+top:105px;
 }
-
 
 .homepage-tab-form-message {
 clear: both;
