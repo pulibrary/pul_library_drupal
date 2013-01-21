@@ -2417,8 +2417,8 @@ display: none;
 	display: none;
 }
 .front .view-library-hours td,.front .view-library-hours th {
-	font-size: 1.0em;
-	padding: 2px;
+	font-size: 0.95em;
+	padding: 4px 0 4px 1px;
 }
 
 .front #zone-postscript #block-views-library-hours-block-3{
