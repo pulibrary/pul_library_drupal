@@ -1636,7 +1636,7 @@ display:block;
 font-size:1.1em;
 text-decoration:none;
 color:#f58026;
-color:#0098f4;
+
 font-family: 'PT Sans', sans-serif;
 font-weight:normal;
 line-height:1.2em;
@@ -1686,6 +1686,7 @@ color:#fff;
 
 .flex-control-nav li a.active{
 background-color:#f58026;
+background-color:#0098f4;
 color:#fff;
 }
 
