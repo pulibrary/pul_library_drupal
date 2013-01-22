@@ -260,14 +260,14 @@ border-top-right-radius: 4px;
 padding:3px 0 3px 48px;
 margin:0;
 color:#ffffff;
-background:url(../images/searchit-icon.gif) no-repeat left top #0098f4;
+background:url(../images/searchit-icon-org.gif) no-repeat left top #F58026; /* 0098f4; */
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
 padding:4px 0 4px 48px;
 margin:0;
 color:#ffffff;
-background:url(../images/gethelp.gif) no-repeat -2px 0 #0098f4;
+background:url(../images/gethelp-org.gif) no-repeat -2px 0 #F58026; /* 0098f4; */
 -webkit-border-top-left-radius: 4px;
 -webkit-border-top-right-radius: 4px;
 -moz-border-radius-topleft: 4px;
@@ -1443,7 +1443,7 @@ border-bottom-left-radius: 0;
    ========================================================================== */
 
 .front #block-menu-menu-get-help-menu .content{
-background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
+background:url(../images/searchit-bg-org.gif) no-repeat right bottom transparent;
 -webkit-border-bottom-right-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
 -moz-border-radius-bottomright: 4px;

@@ -426,7 +426,7 @@ padding:29px 0 14px 44px;
 }
 
 .ui-tabs .ui-tabs-nav{
-background:url(../images/searchnav-bg.gif) repeat-x 0 4px #0098F4;
+background:url(../images/searchnav-bg.gif) repeat-x 0 4px #f58026;
 padding:0;
 border-radius:0;
 }
@@ -434,21 +434,21 @@ border-radius:0;
 li.ui-state-default,
 .ui-widget-content li.ui-state-default,
 .ui-widget-header li.ui-state-default{
-background:url(../images/searchit-tab-bg01.gif) no-repeat 0 -4px transparent;
+background:url(../images/searchit-tab-bg01-org.gif) no-repeat 0 -4px transparent;
 border:none;
 }
 
 li + li.ui-state-default,
 .ui-widget-content li + li.ui-state-default,
 .ui-widget-header li + li.ui-state-default{
-background:url(../images/searchit-tab-bg.gif) no-repeat 0 -4px transparent;
+background:url(../images/searchit-tab-bg-org.gif) no-repeat 0 -4px transparent;
 border:none;
 }
 
 li + li + li + li.ui-state-default,
 .ui-widget-content li + li + li + li.ui-state-default,
 .ui-widget-header li + li + li + li.ui-state-default{
-background:url(../images/searchit-tab-bg04.gif) no-repeat 0 -4px transparent;
+background:url(../images/searchit-tab-bg04-org.gif) no-repeat 0 -4px transparent;
 border:none;
 }
 
@@ -586,11 +586,11 @@ margin-right:.5em;
 #qt-homepage_search_tabs-ui-tabs4,
 .ui-tabs .ui-tabs-nav li + li + li + li{
 -webkit-border-bottom-right-radius: 0;
--webkit-border-bottom-left-radius: 4px;
+-webkit-border-bottom-left-radius: 0px;
 -moz-border-radius-bottomright: 0;
--moz-border-radius-bottomleft: 4px;
+-moz-border-radius-bottomleft: 0px;
 border-bottom-right-radius: 0;
-border-bottom-left-radius: 4px;
+border-bottom-left-radius: 0px;
 }
 
 
@@ -640,7 +640,7 @@ padding:7px 0 5px 48px;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-background:url(../images/gethelpmenu-top.gif) no-repeat -1px 0 transparent;
+background:url(../images/gethelpmenu-top-org.gif) no-repeat -1px 0 transparent;
 }
 
 .front #block-menu-menu-get-help-menu .block-inner{
