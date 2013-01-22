@@ -1031,6 +1031,44 @@ max-width:280px;
 #block-superfish-1{
 display:none;
 }
+#zone-user-wrapper {
+	background-color: #000;
+	padding: 6px 0 2px 0;
+	font-size: 0.9em;
+	margin-bottom: 1em;
+}
+.region-user-second ul {
+	float: right;
+		margin: 0;
+	padding: 0;
+}
+.region-user-second li {
+	float: left;
+	line-height: 0.6em;
+	border-right: 1px dotted #666666;
+	margin: 0;
+	padding: 0;
+}
+.region-user-second li a {
+	display: block;
+	background-color: #000;
+	color: #FFF;
+	text-decoration: none;
+	width: auto;
+	text-align: center;
+	padding: 8px;
+	margin: 0 0 0 -4px;
+}
+.region-user-second li a:hover {
+	color: #000;
+	background-color: #F58026;
+}
+.region-user-second li.first  {
+	border-left: none;
+}
+.region-user-second li.last  {
+	border-right: none;
+}
 
 /* =============================================================================
    MAIN MENU
