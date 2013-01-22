@@ -83,6 +83,7 @@ select,
 textarea {
     font-family: 'PT Sans', sans-serif;
     color:#666;
+    color:#333333;
 }
 
 /*
@@ -1681,6 +1682,7 @@ line-height:1em;
 
 .flex-control-nav li a:hover{
 background-color:#999;
+background-color:#0098f4;
 color:#fff;
 }
 
@@ -1698,6 +1700,7 @@ width:42px;
 
 .flex-direction-nav li a:hover{
 background-position: 0 -28px;
+background-color:#0098f4;
 }
 
 .flex-direction-nav li .next {
@@ -1711,6 +1714,7 @@ left:32px;
 
 .flex-direction-nav li .next:hover {
 background-position: -42px -28px;
+
 }
 
 .front #region-postscript-first{
@@ -2662,6 +2666,7 @@ height: auto;
 background-color:transparent;
 border:none;
 color:#666;
+color:#333333;
 }
 .calendar-calendar .single-day .contents,
 .calendar-calendar .multi-day .contents,
