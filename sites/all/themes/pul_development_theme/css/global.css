@@ -1481,7 +1481,7 @@ border-bottom-left-radius: 0;
    ========================================================================== */
 
 .front #block-menu-menu-get-help-menu .content{
-background:url(../images/searchit-bg-org.gif) no-repeat right bottom transparent;
+background:url(../images/searchit-bg.gif) no-repeat right bottom transparent;
 -webkit-border-bottom-right-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
 -moz-border-radius-bottomright: 4px;
