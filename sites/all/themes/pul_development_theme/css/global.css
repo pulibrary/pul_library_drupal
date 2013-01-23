@@ -965,48 +965,36 @@ i{
 padding:0 9px;
 margin:0 4px 0 0;
 }
-i.text { 
+i.text, i.chat, i.appt, i.rept, i.email, i.phone, i.guide { 
+	font-style: normal;
+	font-family: FontAwesome;	
 	}
 i.chat:before {
-	font-style: normal;
-	font-family: FontAwesome;
 	content: "\f075";
 }
 
 i.appt:before {
-	font-family: FontAwesome;
 	content: "\f017";
-	font-style: normal;
 }
 
-i.walkin:before {
-	font-family: FontAwesome;
+i.rept:before {
 	content: "\f06a";
-	font-style: normal;
 }
 
 i.email:before {
-	font-family: FontAwesome;
 	content: "\f003";	
-	font-style: normal;
 }
 
 i.phone:before {
-	font-family: FontAwesome;
 	content: "\f095";
-	font-style: normal;
 }
 
 i.text:before {
-	font-family: FontAwesome;
 	content: "\f10b"; 	
-	font-style: normal;
 }
 
 i.guide:before {
-	font-family: FontAwesome;
 	content: "\f02d";	
-	font-style: normal;
 }
 
 /* =============================================================================
