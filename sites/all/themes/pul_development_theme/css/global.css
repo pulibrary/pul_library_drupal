@@ -2653,7 +2653,7 @@ height: auto;
 .calendar-calendar .day-view .full td.single-day div.dayview {
 background-color:transparent;
 border:none;
-color:#666;
+color:#333;
 }
 .calendar-calendar .single-day .contents,
 .calendar-calendar .multi-day .contents,
