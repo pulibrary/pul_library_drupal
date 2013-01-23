@@ -965,37 +965,49 @@ i{
 padding:0 9px;
 margin:0 4px 0 0;
 }
-
-
-
-i.chat{
-background:url(../images/chat-lrg.png) no-repeat 0 4px transparent;
+i.text { 
+	}
+i.chat:before {
+	font-style: normal;
+	font-family: FontAwesome;
+	content: "\f075";
 }
 
-i.appt{
-background:url(../images/appt-lrg.png) no-repeat 0 4px transparent;
+i.appt:before {
+	font-family: FontAwesome;
+	content: "\f017";
+	font-style: normal;
 }
 
-i.walkin{
-background:url(../images/walk-lrg.png) no-repeat 0 4px transparent;
+i.walkin:before {
+	font-family: FontAwesome;
+	content: "\f06a";
+	font-style: normal;
 }
 
-i.email{
-background:url(../images/email-lrg.png) no-repeat 0 2px transparent;
+i.email:before {
+	font-family: FontAwesome;
+	content: "\f003";	
+	font-style: normal;
 }
 
-i.phone{
-background:url(../images/phone-lrg.png) no-repeat 0 2px transparent;
+i.phone:before {
+	font-family: FontAwesome;
+	content: "\f095";
+	font-style: normal;
 }
 
-i.text{
-background:url(../images/text-lrg.png) no-repeat 0 2px transparent;
+i.text:before {
+	font-family: FontAwesome;
+	content: "\f10b"; 	
+	font-style: normal;
 }
 
-i.guide{
-background:url(../images/guide-lrg.png) no-repeat 0 2px transparent;
+i.guide:before {
+	font-family: FontAwesome;
+	content: "\f02d";	
+	font-style: normal;
 }
-
 
 /* =============================================================================
    HEADER
@@ -1468,61 +1480,67 @@ color:#c78654; /* Original Lee Color */
 color:#333; /*dark gray */
 text-decoration:none;
 font-size:1.0em;
-padding-left:18px;
+margin-left: 8px;
 
 /* background:url(../images/chat.png) no-repeat left center transparent; */
 
 }
-.front #block-menu-menu-get-help-menu ul.menu li a:before {
+.front #block-menu-menu-get-help-menu ul.menu li:before {
 	font-family: FontAwesome;
 	content: "\f075";
 	color: #555;
-	position: absolute;
-	left: 2px;
+	position: relative;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	text-align: center;
+	width: 15px;
+	
+
 }
 .front #block-menu-menu-user-group-portals a {
 	font-size: 1.1em;
 }
-.front #block-menu-menu-get-help-menu ul.menu li + li a:before {
+.front #block-menu-menu-get-help-menu ul.menu li + li:before {
 	font-family: FontAwesome;
 	content: "\f017";
 	color: #555;
-	position: absolute;
-	left: 2px;
+	position: relative;
 /* background:url(../images/appt.png) no-repeat left center transparent; */
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li a:before {
+.front #block-menu-menu-get-help-menu ul.menu li + li + li:before {
 /* background:url(../images/walk.png) no-repeat left center transparent;*/
 	font-family: FontAwesome;
 	content: "\f06a";
 	color: #555;
-	position: absolute;
-	left: 2px;
+	position: relative;
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li a:before{
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li:before{
 /* background:url(../images/email.png) no-repeat left center transparent; */
 	font-family: FontAwesome;
 	content: "\f003";
+	position: relative;
+
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li a:before{
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li:before{
 /* background:url(../images/phone.png) no-repeat left center transparent; */
 	font-family: FontAwesome;
 	content: "\f095";
 	color: #555;
-	position: absolute;
-	left: 2px;
+	position: relative;
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li + li a:before{
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li + li:before{
 /* background:url(../images/guide.png) no-repeat left center transparent; */
 	font-family: FontAwesome;
 	content: "\f02d";
 	color: #555;
-	position: absolute;
-	left: 2px;
+	position: relative;
+
 }
 
 
