@@ -965,37 +965,49 @@ i{
 padding:0 9px;
 margin:0 4px 0 0;
 }
-
-
-
-i.chat{
-background:url(../images/chat-lrg.png) no-repeat 0 4px transparent;
+i.text { 
+	}
+i.chat:before {
+	font-style: normal;
+	font-family: FontAwesome;
+	content: "\f075";
 }
 
-i.appt{
-background:url(../images/appt-lrg.png) no-repeat 0 4px transparent;
+i.appt:before {
+	font-family: FontAwesome;
+	content: "\f017";
+	font-style: normal;
 }
 
-i.walkin{
-background:url(../images/walk-lrg.png) no-repeat 0 4px transparent;
+i.walkin:before {
+	font-family: FontAwesome;
+	content: "\f06a";
+	font-style: normal;
 }
 
-i.email{
-background:url(../images/email-lrg.png) no-repeat 0 2px transparent;
+i.email:before {
+	font-family: FontAwesome;
+	content: "\f003";	
+	font-style: normal;
 }
 
-i.phone{
-background:url(../images/phone-lrg.png) no-repeat 0 2px transparent;
+i.phone:before {
+	font-family: FontAwesome;
+	content: "\f095";
+	font-style: normal;
 }
 
-i.text{
-background:url(../images/text-lrg.png) no-repeat 0 2px transparent;
+i.text:before {
+	font-family: FontAwesome;
+	content: "\f10b"; 	
+	font-style: normal;
 }
 
-i.guide{
-background:url(../images/guide-lrg.png) no-repeat 0 2px transparent;
+i.guide:before {
+	font-family: FontAwesome;
+	content: "\f02d";	
+	font-style: normal;
 }
-
 
 /* =============================================================================
    HEADER
