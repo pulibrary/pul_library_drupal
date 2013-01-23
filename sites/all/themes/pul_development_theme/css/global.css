@@ -1608,7 +1608,7 @@ margin-bottom:0;
 .panel-panel.grid-3 .flexslider .slides li{
 height:150px;
 }
-.view-library-news .views-more-link {
+.front .view-library-news .views-more-link {
 	position: relative;
 	top: 40px;
 }
@@ -2753,4 +2753,14 @@ padding: 2px;
 }
 .page-find-databases .views-summary {
 	padding: 0 2px 0 4px;
+}
+
+/****************************************
+ * Audience Page News
+ ***************************************/
+.pane-library-news-panel-pane .views-row h3.news-item-title {
+	font-size: 1.0em;
+}
+.pane-library-news-panel-pane .views-row {
+	margin-bottom: 2.0em;
 }
