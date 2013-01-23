@@ -83,6 +83,8 @@ select,
 textarea {
     font-family: 'PT Sans', sans-serif;
     color:#666;
+    color:#333333;
+
 }
 
 /*
@@ -1468,35 +1470,65 @@ text-decoration:none;
 font-size:1.0em;
 padding-left:18px;
 
-background:url(../images/chat.png) no-repeat left center transparent;
+/* background:url(../images/chat.png) no-repeat left center transparent; */
+
+}
+.front #block-menu-menu-get-help-menu ul.menu li a:before {
+	font-family: FontAwesome;
+	content: "\f075";
+	color: #555;
+	position: absolute;
+	left: 2px;
 }
 .front #block-menu-menu-user-group-portals a {
 	font-size: 1.1em;
 }
-.front #block-menu-menu-get-help-menu ul.menu li + li a{
-background:url(../images/appt.png) no-repeat left center transparent;
+.front #block-menu-menu-get-help-menu ul.menu li + li a:before {
+	font-family: FontAwesome;
+	content: "\f017";
+	color: #555;
+	position: absolute;
+	left: 2px;
+/* background:url(../images/appt.png) no-repeat left center transparent; */
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li a{
-background:url(../images/walk.png) no-repeat left center transparent;
+.front #block-menu-menu-get-help-menu ul.menu li + li + li a:before {
+/* background:url(../images/walk.png) no-repeat left center transparent;*/
+	font-family: FontAwesome;
+	content: "\f06a";
+	color: #555;
+	position: absolute;
+	left: 2px;
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li a{
-background:url(../images/email.png) no-repeat left center transparent;
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li a:before{
+/* background:url(../images/email.png) no-repeat left center transparent; */
+	font-family: FontAwesome;
+	content: "\f003";
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li a{
-background:url(../images/phone.png) no-repeat left center transparent;
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li a:before{
+/* background:url(../images/phone.png) no-repeat left center transparent; */
+	font-family: FontAwesome;
+	content: "\f095";
+	color: #555;
+	position: absolute;
+	left: 2px;
 }
 
-.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li + li a{
-background:url(../images/guide.png) no-repeat left center transparent;
+.front #block-menu-menu-get-help-menu ul.menu li + li + li + li + li + li a:before{
+/* background:url(../images/guide.png) no-repeat left center transparent; */
+	font-family: FontAwesome;
+	content: "\f02d";
+	color: #555;
+	position: absolute;
+	left: 2px;
 }
 
 
 .front #block-menu-menu-get-help-menu ul.menu li a:hover{
 color:#333;
-color:#c78654;
+color:#F58026;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu li{
@@ -1540,7 +1572,7 @@ margin:5px 10px 0 0;
 font-size:0.833em;
 /* Requested adjustments */
 background-color: #515156;
-font-size: 1em;
+font-size: 0.9em;
 width: 114px;
 padding: 2px;
 }
@@ -2621,7 +2653,7 @@ height: auto;
 .calendar-calendar .day-view .full td.single-day div.dayview {
 background-color:transparent;
 border:none;
-color:#666;
+color:#333;
 }
 .calendar-calendar .single-day .contents,
 .calendar-calendar .multi-day .contents,
