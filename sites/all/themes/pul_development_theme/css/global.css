@@ -219,7 +219,7 @@ h3, .view-grouping-header .field-name-field-puluser-section {
     color:#777;
 }
 
-h4{
+h4, table caption .field-name-field-puluser-unit {
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
     margin: 1.33em 0 0.867em 0;
@@ -2720,6 +2720,18 @@ border-radius: 0;
 	color: #FFF;
 	
 }
+
+table caption .field-name-field-puluser-unit {
+  text-align: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.17em;
+}
+
+table caption .field-name-field-puluser-unit a {
+  text-decoration: none;
+}
+
 
 /* 
  * Footer style, mobile 
