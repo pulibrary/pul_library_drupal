@@ -191,16 +191,16 @@ h2.block-title,
 h2.node-title,
 .view-grouping-header .field-name-field-puluser-division{
     color:#0098f4;
-    color: #5C5E66;/* Color Swap */
+    /* color: #5C5E66; Color Swap */
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
     margin-top:8px;
 }
 .context-students h2.pane-title {
-	border-bottom: 1px dotted #bfbfbf;
+	/* border-bottom: 1px dotted #bfbfbf;
 	margin-bottom: 1.0em;
-	width: 80%;
+	width: 80%; */
 }
 .pane-library-news-panel-pane h2.pane-title {
 	border-bottom: 0;
