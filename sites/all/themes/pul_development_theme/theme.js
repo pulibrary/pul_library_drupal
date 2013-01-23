@@ -13,6 +13,7 @@
 		console.log(undecodeViewOnline);
                 var resolvePrefix = "http://libwebprod.princeton.edu/resolve/lookup?url=";
 		$(this).attr('href', resolvePrefix+undecodeViewOnline);
+		$(this).attr('target', '_blank');
 	});
 	
 
@@ -37,6 +38,7 @@
 		var access_url = $(this).find('span').attr('data-access-url');
 		if(data_access == 0) {
 			$(this).attr('href', access_url);
+			$(this).attr('target', '_blank');
 		}
 	});
 //	
