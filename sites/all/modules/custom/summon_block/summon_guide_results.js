@@ -25,7 +25,7 @@
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
 			if(data.number > 3) {
-				$('<div class="more-link"><a title="'+tooltip+'" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
+				$('<div class="more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
 			} else {
 				$('<div class="no-results">No guides found. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
