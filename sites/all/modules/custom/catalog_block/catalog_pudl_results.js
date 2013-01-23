@@ -18,7 +18,7 @@
 			var icon_type = "";
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
-    					items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
+    					items.push('<li><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">Collection: '+result['collection']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
@@ -29,7 +29,7 @@
     					html: items.join('')
   				}).appendTo('#pudl-search-results');
 				if(data.number > 3) {
-					$('<div class="more-link"><a title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
+					$('<div class="more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
 				}
 			} else {
 				$('.pane-catalog-block-catalog-pudl-results').hide();

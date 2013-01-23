@@ -40,7 +40,7 @@
 
 						online_avail = "<div class='all-full-text'>"+
 									icon_hint+
-									'<a class="all-search-link" href="'+pul_resolver+result['full_text_link']+
+									'<a target="_blank" class="all-search-link" href="'+pul_resolver+result['full_text_link']+
 									'" title="Go to Resource">'+
 									'Online Access'+
 									"</a></div>";
@@ -56,7 +56,7 @@
                                                                 if(key !== "ONLINE") {
                                                                 var location = holding[key];
                                                                 holdings_list += "<span class='holdings-item'> "+
-										'<a href="'+location['request_link']+'" title="'+
+										'<a target="_blank" href="'+location['request_link']+'" title="'+
 										request_hint+location['library_label']+'">'+
                                                                                 location['library_label']+
                                                                                 "</a></span>&nbsp;";
@@ -120,9 +120,9 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-                                $('<div class="refine-link">'+refine_icon+'<a title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
+                                $('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
 				if(data.number > max_display_results) {
-					$('<div class="more-link"><a title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
+					$('<div class="more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
 			} else {
 				$('#catalog-search-results-spinner').hide();
