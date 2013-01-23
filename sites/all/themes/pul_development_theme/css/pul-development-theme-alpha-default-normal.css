@@ -118,3 +118,15 @@ margin-top:0;
    ========================================================================== */
 
 
+/****************************************
+ * Audience Page News
+ ***************************************/
+
+.pane-library-news-panel-pane .views-row {
+	width: 30%;
+	float: left;
+	padding-right: 20px;
+}
+.pane-library-news-panel-pane .views-row img {
+	max-width: 100%;
+}

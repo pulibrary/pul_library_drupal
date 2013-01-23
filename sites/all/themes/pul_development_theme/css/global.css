@@ -191,16 +191,16 @@ h2.block-title,
 h2.node-title,
 .view-grouping-header .field-name-field-puluser-division{
     color:#0098f4;
-    color: #5C5E66;/* Color Swap */
+    /* color: #5C5E66; Color Swap */
     font-family: Arvo, sans-serif;
     font-size: 1.5em;
     font-weight:normal;
     margin-top:8px;
 }
 .context-students h2.pane-title {
-	border-bottom: 1px dotted #bfbfbf;
+	/* border-bottom: 1px dotted #bfbfbf;
 	margin-bottom: 1.0em;
-	width: 80%;
+	width: 80%; */
 }
 .pane-library-news-panel-pane h2.pane-title {
 	border-bottom: 0;
@@ -1608,7 +1608,7 @@ margin-bottom:0;
 .panel-panel.grid-3 .flexslider .slides li{
 height:150px;
 }
-.view-library-news .views-more-link {
+.front .view-library-news .views-more-link {
 	position: relative;
 	top: 40px;
 }
@@ -1930,7 +1930,7 @@ font-size:1em;
 }
 
 #section-footer ul.menu li a{
-color:#505050;
+color:#222222;
 text-decoration:none;
 }
 
@@ -2201,7 +2201,7 @@ display: none;
 
 #lib-address h2 {
 	font-size: 1.4em;
-	color: #3C3C3C;
+	color: #333333;
 	margin-bottom: 0.5em;
 }
 
@@ -2753,4 +2753,18 @@ padding: 2px;
 }
 .page-find-databases .views-summary {
 	padding: 0 2px 0 4px;
+}
+
+/****************************************
+ * Audience Page News
+ ***************************************/
+
+h2.news-item-title {
+	font-size: 1.2em;
+}
+.pane-library-news-panel-pane .views-row h3.news-item-title {
+	font-size: 1.0em;
+}
+.pane-library-news-panel-pane .views-row {
+	margin-bottom: 2.0em;
 }
