@@ -136,7 +136,7 @@ function search_api_sorts_index_select(array $form, array &$form_state, SearchAp
           'default_sort' => 0,
           'default_sort_no_terms' => 0,
           'default_order' => 'desc',
-          'name' => t('!field', array('!field' => $field['name'])),
+          'name' => t('@field', array('@field' => $field['name'])),
           'enabled' => 0,
           'options' => array(),
           'status' => 0,
@@ -195,7 +195,7 @@ function search_api_sorts_index_select(array $form, array &$form_state, SearchAp
           $form['sorts'][$k]['status']['#markup'] = $sort->status ? theme('entity_status', array('status' => $sort->status)) : $empty_status;
         }
         $form['sorts'][$k]['field'] = array(
-          '#markup' => $field['name'],
+          '#markup' => check_plain($field['name']),
         );
         $form['sorts'][$k]['type'] = array(
           '#markup' => $type,
