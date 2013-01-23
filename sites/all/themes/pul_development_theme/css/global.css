@@ -2758,6 +2758,10 @@ padding: 2px;
 /****************************************
  * Audience Page News
  ***************************************/
+
+h2.news-item-title {
+	font-size: 1.2em;
+}
 .pane-library-news-panel-pane .views-row h3.news-item-title {
 	font-size: 1.0em;
 }
