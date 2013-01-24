@@ -9,7 +9,7 @@
 	//FIXME hack should be repaced by a module that allows viewOnlineLink to be set a drupal conf variable
 	$('.node-type-database .field-name-field-db-access-url a').each(function(index){
 		var viewOnlineLink = $(this).attr('href');
-		undecodeViewOnline = viewOnlineLink.replace( /\&amp%3B/g, '&' );
+		undecodeViewOnline = viewOnlineLink.replace( /\&amp%3B|&amp;/g, '&' );
 		console.log(undecodeViewOnline);
                 var resolvePrefix = "http://libwebprod.princeton.edu/resolve/lookup?url=";
 		$(this).attr('href', resolvePrefix+undecodeViewOnline);
