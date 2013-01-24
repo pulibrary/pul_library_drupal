@@ -196,12 +196,9 @@ h2.node-title,
     font-size: 1.5em;
     font-weight:normal;
     margin-top:8px;
+	margin-bottom: 0.5em;
 }
-.context-students h2.pane-title {
-	border-bottom: 1px dotted #bfbfbf;
-	margin-bottom: 1.0em;
-	width: 80%;
-}
+
 .pane-library-news-panel-pane h2.pane-title {
 	border-bottom: 0;
 	width: auto;
@@ -1038,23 +1035,49 @@ display:none;
 	padding: 6px 0 2px 0;
 	font-size: 0.9em;
 	margin-bottom: 1em;
+	background-color: rgb(226, 226, 226);
+	background-color: #fff;
+	border-bottom: 2px solid black;
+
 }
 .region-user-second ul {
 	float: right;
-		margin: 0;
+	margin: 5px 0;
 	padding: 0;
+	
 }
 .region-user-second li {
 	float: left;
-	line-height: 0.6em;
+	line-height: 0.4em;
 	border-right: 1px dotted #666666;
 	margin: 0;
 	padding: 0;
+	height: 10px;
+}
+.region-user-second li a {
+	position: relative;
+	top: -5px;
+}
+.region-user-second li a:before {
+	font-family: fontAwesome;
+	padding-right: 5px;
+	font-size: 1.1em;
+
+	content: "\f017";
+}
+.region-user-second li + li a:before {
+	font-family: fontAwesome;
+	padding-right: 5px;
+	font-size: 1.1em;
+	content: "\f002";
+}
+.region-user-second li + li + li a:before {
+	padding-right: 0;
+	content: "";
 }
 .region-user-second li a {
 	display: block;
-	background-color: #000;
-	color: #FFF;
+	color: #222;
 	text-decoration: none;
 	width: auto;
 	text-align: center;

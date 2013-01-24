@@ -352,21 +352,25 @@ color:#fff;
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 a:hover{
 color:#333;
+color:#F58026;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover .view-id-libraries_and_collections.view-display-id-block_1{
 display:block;
-background-color:#f58026;
+background-color:#5c5e66;
 position:absolute;
 z-index:100;
 padding:10px 20px;
 top:43px;
+border-width: 0 1px 1px 1px;
+border-color: black;
+
 }
 
 .view-id-libraries_and_collections.view-display-id-block_1 h3{
 margin:5px 0;
 letter-spacing: 0.1em;
-color:#000000;
+color:#0098f4;
 text-shadow:none;
 }
 
