@@ -1031,13 +1031,14 @@ max-width:280px;
 display:none;
 }
 #zone-user-wrapper {
-	background-color: #000;
+	background-color: #fff;
 	padding: 6px 0 2px 0;
 	font-size: 0.9em;
 	margin-bottom: 1em;
 	background-color: rgb(226, 226, 226);
-	background-color: #fff;
-	border-bottom: 2px solid black;
+	/* background-color: #fff; */
+	background-color: #000;
+	border-bottom: 2px solid orange;
 
 }
 .region-user-second ul {
@@ -1077,7 +1078,7 @@ display:none;
 }
 .region-user-second li a {
 	display: block;
-	color: #222;
+	color: #fff;
 	text-decoration: none;
 	width: auto;
 	text-align: center;
