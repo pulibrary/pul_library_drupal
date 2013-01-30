@@ -1083,7 +1083,7 @@ display:none;
 	padding-right: 5px;
 	font-size: 1.1em;
 
-	content: "\f017";
+	content: "\f073";
 }
 .region-user-second li + li a:before {
 	font-family: fontAwesome;
