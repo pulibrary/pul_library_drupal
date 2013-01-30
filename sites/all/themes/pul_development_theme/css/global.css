@@ -977,10 +977,10 @@ padding-bottom:1em;
    HELP
 * ======================================================================== */
 
-i{
+/* i {
 padding:0 9px;
 margin:0 4px 0 0;
-}
+} */
 i.text, i.chat, i.appt, i.rept, i.email, i.phone, i.guide { 
 	font-style: normal;
 	font-family: FontAwesome;	
@@ -1083,7 +1083,7 @@ display:none;
 	padding-right: 5px;
 	font-size: 1.1em;
 
-	content: "\f017";
+	content: "\f073";
 }
 .region-user-second li + li a:before {
 	font-family: fontAwesome;
