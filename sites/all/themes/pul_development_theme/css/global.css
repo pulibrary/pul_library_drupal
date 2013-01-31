@@ -898,9 +898,11 @@ border-radius: 4px;
 input[type="text"]{
 width:280px;
 height:24px;
+padding: 3px 5px;
 }
 textarea {
-	width: 280px;
+width: 280px;
+padding: 3px 5px;
 }
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"]{
