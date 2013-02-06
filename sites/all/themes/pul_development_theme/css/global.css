@@ -1048,74 +1048,11 @@ max-width:280px;
    USER MENU
    ========================================================================== */
 
-#block-superfish-1{
-display:none;
+#zone-user-wrapper{
+height:26px;
+display: none;
 }
-#zone-user-wrapper {
-	background-color: #fff;
-	padding: 6px 0 2px 0;
-	font-size: 0.9em;
-	margin-bottom: 1em;
-	background-color: rgb(226, 226, 226);
-	/* background-color: #fff; */
-	background-color: #000;
-	border-bottom: 2px solid orange;
 
-}
-.region-user-second ul {
-	float: right;
-	margin: 5px 0;
-	padding: 0;
-	
-}
-.region-user-second li {
-	float: left;
-	line-height: 0.4em;
-	border-right: 1px dotted #666666;
-	margin: 0;
-	padding: 0;
-	height: 10px;
-}
-.region-user-second li a {
-	position: relative;
-	top: -5px;
-}
-.region-user-second li a:before {
-	font-family: fontAwesome;
-	padding-right: 5px;
-	font-size: 1.1em;
-
-	content: "\f073";
-}
-.region-user-second li + li a:before {
-	font-family: fontAwesome;
-	padding-right: 5px;
-	font-size: 1.1em;
-	content: "\f002";
-}
-.region-user-second li + li + li a:before {
-	padding-right: 0;
-	content: "";
-}
-.region-user-second li a {
-	display: block;
-	color: #fff;
-	text-decoration: none;
-	width: auto;
-	text-align: center;
-	padding: 8px;
-	margin: 0 0 0 -4px;
-}
-.region-user-second li a:hover {
-	color: #000;
-	background-color: #F58026;
-}
-.region-user-second li.first  {
-	border-left: none;
-}
-.region-user-second li.last  {
-	border-right: none;
-}
 
 /* =============================================================================
    MAIN MENU
