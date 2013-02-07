@@ -481,6 +481,8 @@ nav ol {
 img {
     border: 0; /* 1 */
     -ms-interpolation-mode: bicubic; /* 2 */
+   max-width: 100%;
+   height: auto;
 }
 
 /*
@@ -2723,7 +2725,9 @@ border-radius: 0;
   margin-left: 0px;
   font-weight: bold;
 }
-
+.library-hours .month-view .full tr.single-day .no-entry .inner::before {
+	content: "TBA";
+}
 /*********************************************
  * Subject Specialists Page
  * ******************************************/
