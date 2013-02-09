@@ -36,16 +36,16 @@
 	$(".page-find-databases .resource-title a, .subject-landing-page .resource-title a").each(function(index) {
 		var data_access = $(this).find('span').attr('data-ezproxy-access');
 		var access_url = $(this).find('span').attr('data-access-url');
-		if(data_access == 0 || data_access == "No") {
+		if(data_access === "0" || data_access == "No") {
 			$(this).attr('href', access_url);
 			$(this).attr('target', '_blank');
 		}
-		var data_override_access = $(this).find('span').attr('data-override-proxy-access');
-                var override_access_url = $(this).find('span').attr('data-override-access-url');
-                if(data_access == "yes") {
-                        $(this).attr('href', override_access_url);
-                        $(this).attr('target', '_blank');
-                }
+		//var data_override_access = $(this).find('span').attr('data-override-proxy-access');
+                //var override_access_url = $(this).find('span').attr('data-override-access-url');
+                //if(data_override_access == "No") {
+                //        $(this).attr('href', override_access_url);
+                //        $(this).attr('target', '_blank');
+                //}
 
 	});
 //	
