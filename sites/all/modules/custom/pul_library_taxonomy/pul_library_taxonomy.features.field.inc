@@ -52,6 +52,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 1,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_address_1',
@@ -115,6 +121,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 2,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_address_2',
@@ -132,72 +144,6 @@ function pul_library_taxonomy_field_default_fields() {
         ),
         'type' => 'text_textfield',
         'weight' => '6',
-      ),
-    ),
-  );
-
-  // Exported field: 'taxonomy_term-libraries-field_assoc_collections'.
-  $fields['taxonomy_term-libraries-field_assoc_collections'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_assoc_collections',
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'collections',
-            'parent' => '0',
-          ),
-        ),
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'libraries',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'taxonomy',
-          'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 21,
-        ),
-      ),
-      'entity_type' => 'taxonomy_term',
-      'fences_wrapper' => 'div',
-      'field_name' => 'field_assoc_collections',
-      'label' => 'Associated Collections',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '18',
       ),
     ),
   );
@@ -242,6 +188,12 @@ function pul_library_taxonomy_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
       ),
@@ -307,6 +259,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 14,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_campus_address_1',
@@ -369,6 +327,12 @@ function pul_library_taxonomy_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 15,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -437,6 +401,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 16,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_campus_city',
@@ -453,7 +423,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '16',
       ),
     ),
   );
@@ -501,6 +471,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'link_default',
           'weight' => 9,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_campus_map_url',
@@ -530,7 +506,7 @@ function pul_library_taxonomy_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '10',
+        'weight' => '3',
       ),
     ),
   );
@@ -581,6 +557,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 18,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_campus_state',
@@ -597,7 +579,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -648,6 +630,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 17,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_campus_zip',
@@ -664,7 +652,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -714,6 +702,12 @@ function pul_library_taxonomy_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 3,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -765,6 +759,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'email_default',
           'weight' => 8,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_e_mail_address',
@@ -780,7 +780,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '9',
+        'weight' => '7',
       ),
     ),
   );
@@ -827,6 +827,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 7,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_fax',
@@ -843,7 +849,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '6',
       ),
     ),
   );
@@ -890,6 +896,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 19,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_full_library_name',
@@ -906,7 +918,232 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_hours_calendar'.
+  $fields['taxonomy_term-libraries-field_hours_calendar'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_hours_calendar',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'property' => 'name',
+            'type' => 'property',
+          ),
+          'target_bundles' => array(
+            'library_hours_calendars' => 'library_hours_calendars',
+          ),
+        ),
+        'target_type' => 'taxonomy_term',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 26,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_hours_calendar',
+      'label' => 'Hours Calendar',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '15',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_lib_hours_code'.
+  $fields['taxonomy_term-libraries-field_lib_hours_code'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_lib_hours_code',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 23,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_lib_hours_code',
+      'label' => 'Hours Code',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_lib_main_menu_link'.
+  $fields['taxonomy_term-libraries-field_lib_main_menu_link'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_lib_main_menu_link',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 25,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_lib_main_menu_link',
+      'label' => 'Main Menu Library Link',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '7',
       ),
     ),
   );
@@ -954,6 +1191,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'link_default',
           'weight' => 20,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_library_homepage',
@@ -984,6 +1227,147 @@ function pul_library_taxonomy_field_default_fields() {
         'settings' => array(),
         'type' => 'link_field',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_libs_cols_main_menu'.
+  $fields['taxonomy_term-libraries-field_libs_cols_main_menu'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_libs_cols_main_menu',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 24,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_libs_cols_main_menu',
+      'label' => 'Add to Libraries & Collections Dropdown Menu',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_long_description'.
+  $fields['taxonomy_term-libraries-field_long_description'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_long_description',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 27,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_long_description',
+      'label' => 'Long Description',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '3',
       ),
     ),
   );
@@ -1023,6 +1407,11 @@ function pul_library_taxonomy_field_default_fields() {
           'settings' => array(
             'closedformat' => 'Closed',
             'compress' => FALSE,
+            'current_status' => array(
+              'closed_text' => 'Currently closed',
+              'open_text' => 'Currently open!',
+              'position' => 'hide',
+            ),
             'daysformat' => 'long',
             'grouped' => FALSE,
             'hoursformat' => 0,
@@ -1032,9 +1421,16 @@ function pul_library_taxonomy_field_default_fields() {
             'separator_hours_hours' => '-',
             'separator_more_hours' => ', ',
             'showclosed' => FALSE,
+            'timezone_field' => '',
           ),
           'type' => 'office_hours',
           'weight' => 11,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -1056,7 +1452,7 @@ function pul_library_taxonomy_field_default_fields() {
         'module' => 'office_hours',
         'settings' => array(),
         'type' => 'office_hours',
-        'weight' => '12',
+        'weight' => '16',
       ),
     ),
   );
@@ -1103,6 +1499,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 6,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_phone',
@@ -1119,7 +1521,7 @@ function pul_library_taxonomy_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '5',
       ),
     ),
   );
@@ -1169,6 +1571,12 @@ function pul_library_taxonomy_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 4,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -1232,6 +1640,11 @@ function pul_library_taxonomy_field_default_fields() {
           'settings' => array(
             'closedformat' => 'Closed',
             'compress' => FALSE,
+            'current_status' => array(
+              'closed_text' => 'Currently closed',
+              'open_text' => 'Currently open!',
+              'position' => 'hide',
+            ),
             'daysformat' => 'long',
             'grouped' => FALSE,
             'hoursformat' => 0,
@@ -1241,9 +1654,16 @@ function pul_library_taxonomy_field_default_fields() {
             'separator_hours_hours' => '-',
             'separator_more_hours' => ', ',
             'showclosed' => FALSE,
+            'timezone_field' => '',
           ),
           'type' => 'office_hours',
           'weight' => 13,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -1264,7 +1684,85 @@ function pul_library_taxonomy_field_default_fields() {
         'module' => 'office_hours',
         'settings' => array(),
         'type' => 'office_hours',
-        'weight' => '13',
+        'weight' => '17',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-libraries-field_tags'.
+  $fields['taxonomy_term-libraries-field_tags'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_tags',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'tags',
+            'parent' => 0,
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'libraries',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 28,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_tags',
+      'label' => 'Tags',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '4',
       ),
     ),
   );
@@ -1315,6 +1813,12 @@ function pul_library_taxonomy_field_default_fields() {
           'type' => 'text_default',
           'weight' => 5,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_zip',
@@ -1338,20 +1842,25 @@ function pul_library_taxonomy_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add to Libraries & Collections Dropdown Menu');
   t('Address 1');
   t('Address 2');
-  t('Associated Collections');
   t('Building Name');
   t('Campus Map URL');
   t('City');
   t('E-Mail Address');
   t('Fax');
   t('Full Library Name');
+  t('Hours Calendar');
+  t('Hours Code');
   t('Library Homepage');
+  t('Long Description');
+  t('Main Menu Library Link');
   t('Phone');
   t('Standard Hours');
   t('State');
   t('Summer Hours');
+  t('Tags');
   t('Zip');
 
   return $fields;
