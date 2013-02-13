@@ -1,0 +1,11 @@
+name = PUL FAQ Topics Taxonomy
+description = Provides the FAQ Topics Taxonomy used by FAQ Content Type
+core = 7.x
+package = PUL Taxonomies
+php = 5.2.4
+version = 7.x-1.0
+project = pul_faq_topics_taxonomy
+dependencies[] = features
+dependencies[] = taxonomy
+features[features_api][] = api:1
+features[taxonomy][] = faq_topics
