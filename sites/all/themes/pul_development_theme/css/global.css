@@ -2618,19 +2618,19 @@ height: auto;
 }
 
 .library-hours .date-nav-wrapper .date-prev a {
-	font-size: 20px;
-	padding: 0;
+	font-size: 18px;
+	padding: 0 0 0 0;
 	width: 30px;
 	height: 20px;
 	text-align: left;
 	/*margin-left: -30px;*/
 	position: relative;
-	left: -10px;
+	left: 0px;
 	top: -3px;
 }
 .library-hours .date-nav-wrapper .date-next a {
-	font-size: 20px;
-	padding: 0;
+	font-size: 18px;
+	padding: 0 0 0 10px;
 	width: 30px;
 	height: 20px;
 	text-align: left;
@@ -2725,9 +2725,25 @@ border-radius: 0;
   margin-left: 0px;
   font-weight: bold;
 }
-.library-hours .month-view .full tr.single-day .no-entry .inner::before {
-	content: "TBA";
+.library-hours .month-view .full tr.single-day .no-entry .inner {
+	text-align: left;
 }
+.library-hours .month-view .full tr.single-day .no-entry .inner::after {
+	content: "TBA";
+	text-align: left;
+}
+.calendar-calendar .month-view .full td.single-day div.monthview .views-field-title {
+	font-size: 1.1em;
+	color: #F58026;
+}
+.calendar-calendar div.calendar {
+	font-size: 0.9em;
+}
+.calendar-calendar .date_status_Closed
+{
+	color: #333;
+}
+
 /*********************************************
  * Subject Specialists Page
  * ******************************************/
