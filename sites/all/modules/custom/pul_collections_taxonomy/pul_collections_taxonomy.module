@@ -3,3 +3,5 @@
  * @file
  * Drupal needs this blank file.
  */
+
+ include_once 'pul_collections_taxonomy.features.inc';
