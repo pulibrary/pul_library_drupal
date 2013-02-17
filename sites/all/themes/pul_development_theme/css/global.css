@@ -224,7 +224,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	padding: 4px 0 4px 30px;
 	margin: 0;
 	color: #ffffff;
-	background: url(../images/gethelp-org.gif) no-repeat -2px 0 #F58026; /* 0098f4; */
+	background: url(../images/gethelp-org.png) no-repeat -2px 0 #F58026; /* 0098f4; */
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topleft: 4px;
@@ -234,7 +234,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	border-bottom: none;
 	text-align: left;
 }
-.front #block-menu-menu-get-help-menu h2.block-title:before {
+/*.front #block-menu-menu-get-help-menu h2.block-title:before {
 	font-style: normal;
 	font-family: 'PT Sans', serif;
 	font-stretch: condensed;
@@ -246,7 +246,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	content: "?";
 	text-align: left;
 }
-/*
+
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
 
