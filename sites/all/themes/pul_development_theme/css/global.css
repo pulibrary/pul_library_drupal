@@ -2164,6 +2164,13 @@ body.faq .ui-widget-header a {
  border-bottom:1px dotted #BFBFBF;
  }
  */
+
+/*
+ *  * All Search Block CSS
+ */
+#allsearch-block-form label { display: none; }
+
+
 .page-find .all-search-title {
 	padding-top: .5em;
 }
