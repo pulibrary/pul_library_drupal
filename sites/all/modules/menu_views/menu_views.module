@@ -57,36 +57,6 @@ function menu_views_theme_registry_alter(&$registry) {
 }
 
 /**
- * Implements HOOK_menu_position_rule_plugins().
- */
-function menu_views_menu_position_rule_plugins() {
-  return array('menu_views' => array(
-    'form_callback' => 'menu_views_menu_position_rule_menu_views_form',
-    'condition_callback' => 'menu_views_menu_position_condition_menu_views',
-    'file' => 'menu_position.menu_views.inc',
-  ));
-}
-
-/**
- * Implements HOOK_menu_position_rule_alter().
- */
-function menu_views_menu_position_rule_alter(&$rule, &$context) {
-  // Don't process the Menu View items twice.
-  $processed = &drupal_static(__FUNCTION__, FALSE);
-  if ($processed) {
-    return;
-  }
-  $processed = TRUE;
-  
-  // Process Menu Views plugin in this rule.
-  if (isset($rule->conditions['menu_views']) && $rule->conditions['menu_views']['menu_views']) {
-    // dpm($rule);
-    // dpm($context);
-  }
-}
-
-
-/**
  * Implements theme_menu_link().
  * Overrides default theming function to intercept views.
  */
@@ -94,6 +64,14 @@ function menu_views_menu_link(array $variables) {
   // Only intercept if this menu link is a view.
   if (isset($variables['element']) && $view = _menu_views_replace_menu_item($variables['element'])) {
     $sub_menu = '';
+    $classes = isset($variables['element']['#attributes']['class']) ? $variables['element']['#attributes']['class'] : array();
+    $item = _menu_views_get_item($variables['element']);
+    foreach (explode(' ', $item['view']['settings']['wrapper_classes']) as $class) {
+      if (!in_array($class, $classes)) {
+        $classes[] = $class;
+      }
+    }
+    $variables['element']['#attributes']['class'] = $classes;
     if ($variables['element']['#below']) {
       $sub_menu = drupal_render($variables['element']['#below']);
     }
@@ -110,7 +88,8 @@ function menu_views_menu_link(array $variables) {
 function menu_views_superfish_menu_item_link(array $variables) {
   // Only intercept if this menu item link is a view.
   if (isset($variables['menu_item']['link']) && $view = _menu_views_replace_menu_item($variables['menu_item']['link'])) {
-    return '<div class="menu-view">' . $view . '</div>';
+    $item = _menu_views_get_item($variables['menu_item']['link']);
+    return '<div' . drupal_attributes(array('class' => explode(' ', $item['view']['settings']['wrapper_classes']))) . '>' . $view . '</div>';
   }
   // Otherwise, use the default theming function.
   return theme('menu_views_superfish_menu_item_link_default', $variables);
@@ -154,58 +133,46 @@ function menu_views_menu_breadcrumb_alter(&$active_trail, $item) {
 
 function _menu_views_replace_menu_item($element) {
   $output = FALSE;
-  // Only process menu links that are not on admin pages (see: http://drupal.org/node/1790444).
-  if (!path_is_admin(current_path())) {
-    $item = _menu_views_get_item($element);
-    _menu_views_tokenize($item);
-    if ($item['type'] == 'view' && $item['view']['name'] && $item['view']['display']) {
-      $element['#attributes']['class'][] = 'menu-views';
-      if ($view = views_get_view($item['view']['name'])) {
-        if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
-          $output = '';
-          $view->set_arguments(explode('/', $item['view']['arguments']));
-          // Provide title options for the view.
-          if ((bool)$item['view']['settings']['title']) {
-            $title = $item['view']['settings']['title_override'];
-            if (empty($title)) {
-              $title = $view->get_title();
-            }
-            if (!empty($title)) {
-              $wrapper = $item['view']['settings']['title_wrapper'];
-              if ($wrapper === '0') {
-                $wrapper = FALSE;
-              }
-              elseif ($wrapper === '') {
-                $wrapper = 'h3';
-              }
-              if ($wrapper) {
-                $output .= '<' . $wrapper . (!empty($item['view']['settings']['title_classes']) ? ' class="' . $item['view']['settings']['title_classes'] . '"' : '') . '>';
-              }
-              $output .= $title;
-              if ($wrapper) {
-                $output .= '</' . $wrapper . '>';
-              }
-            }
+  $item = _menu_views_get_item($element);
+  _menu_views_tokenize($item);
+  if ($item['type'] == 'view' && $item['view']['name'] && $item['view']['display']) {
+    $element['#attributes']['class'][] = 'menu-views';
+    if ($view = views_get_view($item['view']['name'])) {
+      if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
+        $output = '';
+        $arguments = explode('/', $item['view']['arguments']);
+        // Need to replace empty arguments with NULL values for views.
+        foreach ($arguments as $key => $value) {
+          if (empty($value)) {
+            $arguments[$key] = NULL;
           }
-          $output .= $view->preview();
-          if (count($view->result)) {
-            $view_data = _views_fetch_data($view->base_table);
-            if (isset($view_data['table']['entity type']) &&
-            isset($view_data['table']['base']['field']) &&
-            isset($view->result[0]->{$view_data['table']['base']['field']})
-            ) {
-              foreach ($view->result as $result) {
-                if (isset($result->{$view_data['table']['base']['field']})) {
-                  $entity = entity_load($view_data['table']['entity type'], array($result->{$view_data['table']['base']['field']}));
-                  $entity = $entity ? reset($entity) : FALSE;
-                  // dpm($entity);
-                }
-              }
-            }
-          }
-          // dpm($view_data);
-          $view->destroy();
         }
+        $view->set_arguments($arguments);
+        // Provide title options for the view.
+        if ((bool)$item['view']['settings']['title']) {
+          $title = $item['view']['settings']['title_override'];
+          if (empty($title)) {
+            $title = $view->get_title();
+          }
+          if (!empty($title)) {
+            $wrapper = $item['view']['settings']['title_wrapper'];
+            if ($wrapper === '0') {
+              $wrapper = FALSE;
+            }
+            elseif ($wrapper === '') {
+              $wrapper = 'h3';
+            }
+            if ($wrapper) {
+              $output .= '<' . $wrapper . (!empty($item['view']['settings']['title_classes']) ? ' class="' . $item['view']['settings']['title_classes'] . '"' : '') . '>';
+            }
+            $output .= $title;
+            if ($wrapper) {
+              $output .= '</' . $wrapper . '>';
+            }
+          }
+        }
+        $output .= $view->preview();
+        $view->destroy();
       }
     }
   }
@@ -222,6 +189,7 @@ function _menu_views_default_values() {
       'display' => FALSE,
       'arguments' => '',
       'settings' => array(
+        'wrapper_classes' => 'menu-views',
         'breadcrumb' => TRUE,
         'breadcrumb_title' => '',
         'breadcrumb_path' => '<front>',
@@ -393,6 +361,11 @@ function _menu_views_items_from_original_path($original_path, $menu_name = NULL)
  * Implements hook_node_prepare().
  */
 function menu_views_node_prepare($node) {
+  // Manually call menu's hook_node_prepare() if $node->menu doesn't exist.
+  // @see: drupal.org/node/1878968
+  if (!isset($node->menu) || empty($node->menu)) {
+    menu_node_prepare($node);
+  }
   if (isset($node->nid) && !$node->menu['mlid']) {
     // Prepare the node for the edit form so that $node->menu always exists.
     $menu_name = strtok(variable_get('menu_parent_' . $node->type, 'main-menu:0'), ':');
@@ -606,12 +579,11 @@ function menu_views_tokens($type, $tokens, array $data = array(), array $options
  * Helper function to tokenize a menu item view arguments and settings.
  * Alters the menu view item array and the original values are replaced.
  */
-function _menu_views_tokenize(&$item, $human_readable = FALSE) {
+function _menu_views_tokenize(&$item) {
   if (isset($item['mlid']) && $item['mlid'] > 0) {
     $context['menu-link'] = menu_link_load($item['mlid']);
     $options = array(
       'callback' => '_menu_views_tokenize_callback',
-      'human_readable' => $human_readable,
     );
     if (isset($item['view']['arguments']) && !empty($item['view']['arguments'])) {
       $item['view']['arguments'] = token_replace($item['view']['arguments'], $context, array_merge($options, array('urlencode' => TRUE, 'clear' => TRUE)));
@@ -634,26 +606,6 @@ function _menu_views_tokenize_callback(&$replacements, $data, $options) {
   foreach ($replacements as $token => $value) {
     if (isset($options['urlencode']) && $options['urlencode']) {
       $replacements[$token] = urlencode($value);
-    }
-    if (isset($options['human_readable']) && $options['human_readable']) {
-      if (is_bool($value)) {
-        $value = $value ? t('TRUE') : t('FALSE');
-      }
-      elseif (is_object($value)) {
-        $value = t('Object');
-      }
-      elseif (is_array($value)) {
-        $value = t('Array');
-      }
-      elseif (is_null($value)) {
-        $value = t('NULL');
-      }
-      else {
-        $value = (string) $value;
-      }
-      if ($value === '') {
-        $value = t('NULL');
-      }
     }
   }
 }
