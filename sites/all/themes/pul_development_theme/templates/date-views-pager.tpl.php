@@ -40,7 +40,7 @@
       &nbsp;</li>
     <?php endif; ?>
     <?php if (!empty($next_url)) : ?>
-      <li class="date-next">&nbsp;
+      <li class="date-next">
         <?php print l(($mini ? '' : t('<i class=\'icon-caret-right icon-large\'> </i>', array(), array('context' => 'date_nav')) . '') . '', $next_url, $next_options); ?>
       </li>
     <?php endif; ?>
