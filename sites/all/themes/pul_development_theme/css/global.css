@@ -2279,13 +2279,22 @@ body.faq .ui-widget-header a {
 	background-color: whiteSmoke;
 }	
 
+.page-find-all .view-database-subject-search {
+	margin-top: 1em;
+}
+.page-find-all .view-footer .view-database-subject-search .views-row-odd {
+	background-color: none;
+}
+
 /* refine links */
 .refine-link {
 	text-align: right;
 	padding-top: -1em;
 	color: #F58026;
 }
-
+.see-also-link {
+	font-size: 1.17em;
+}
 .refine-link a {
 	text-decoration: none;
 	color: #F58026;
