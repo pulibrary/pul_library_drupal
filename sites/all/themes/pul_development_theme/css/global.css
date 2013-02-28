@@ -2274,6 +2274,11 @@ body.faq .ui-widget-header a {
 	background-color: whiteSmoke;
 }
 
+
+.page-find-all .pane-views-panes .views-row-odd {	
+	background-color: whiteSmoke;
+}	
+
 /* refine links */
 .refine-link {
 	text-align: right;

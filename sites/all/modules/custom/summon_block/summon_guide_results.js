@@ -4,6 +4,9 @@
         var tooltip = "Browse Related Library Guides";
         var libguides_url = "http://libguides.princeton.edu/";
         var icon_hint = "<i class='icon-external-link'></i>&nbsp;";
+        var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+	var refine_tooltip = "See All Library Guides";
+	var refine_message = "See All Library Guides";
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-guide-results');
 	} else {
@@ -18,12 +21,24 @@
 		if(data.number > 0) {
 			
   			$.each(data.records, function(index, result) {
-    				items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3></li>');
+				if(index%2 == 0) {
+                                        var row_class="odd";
+                                } else {
+                                        var row_class="even"
+                                }
+				if(result['abstract']) {
+                                        var abstract = result['abstract'];
+                                } else {
+                                        var abstract = "Abstract not available.";
+                                }
+
+    				items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3></li>');
 				});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
+			$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
 			if(data.number > 3) {
 				$('<div class="more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
