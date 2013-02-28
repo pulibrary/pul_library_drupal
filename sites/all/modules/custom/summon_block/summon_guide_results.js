@@ -31,8 +31,13 @@
                                 } else {
                                         var abstract = "Abstract not available.";
                                 }
+				if(result['author']) {
+                                        var author = '<div><span>Author(s): '+result['author']+'</span></div>';
+                                } else {
+                                        var author = "";
+                                }
 
-    				items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3></li>');
+    				items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+author+'</li>');
 				});
   			$('<ul/>', {
     				'class': 'all-search-results-list',
