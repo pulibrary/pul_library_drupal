@@ -211,7 +211,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	padding: 3px 0 3px 10px;
 	margin: 0;
 	color: #ffffff;
-	background: url(../images/searchit-icon-org.gif) no-repeat left top #F58026; /* 0098f4; */
+	background: url(../images/searchit-icon-blk.png) no-repeat left top #F58026; /* 0098f4; F58026*/
 }
 #block-quicktabs-homepage-search-tabs h2.block-title:before {
 	font-style: normal;
@@ -224,7 +224,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	padding: 4px 0 4px 30px;
 	margin: 0;
 	color: #ffffff;
-	background: url(../images/gethelp-org.png) no-repeat -2px 0 #F58026; /* 0098f4; */
+	background: url(../images/gethelp-blk.png) no-repeat -2px 0 #F58026; /*#F58026 0098f4; */
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topleft: 4px;
@@ -657,7 +657,11 @@ th a:hover {
 	display: block;
 	padding: 0 0 0.5em 0;
 }
+.block-menu-menu-social-media {
+	margin-top: 2em;
+		border-top: 1px dotted #bfbfbf;
 
+}
 .block-menu-menu-social-media ul li {
 	padding-bottom: 8px;
 }
@@ -1563,10 +1567,6 @@ i.guide:before {
 	background-position: -42px -28px;
 }
 
-.front #region-postscript-first {
-	padding: 1em 0 0 0;
-}
-
 .front #block-views-library-news-block {
 	border-top: 1px dotted #bfbfbf;
 	border-bottom: 1px dotted #bfbfbf;
@@ -1609,7 +1609,7 @@ i.guide:before {
 	margin-top: 6em;
 }
 
-.front #zone-postscript #region-postscript-first h2.block-title, .front #zone-postscript #region-postscript-second h2.block-title {
+.front #zone-postscript #region-postscript-first h2.block-title, .front #zone-postscript #region-postscript-third h2.block-title, .front #zone-postscript #region-postscript-second h2.block-title {
 	float: left;
 	display: block;
 	background-color: #fff;
@@ -1680,29 +1680,51 @@ a.views-more-link {
  INFORMATION FOR
  ========================================================================== */
 
-.front #region-postscript-third .region-postscript-third-inner {
-	background-color: #F1FCFF;
-	margin-top: 1em;
+.front #region-postscript-first .region-postscript-first-inner {
+
 	margin-left: -10px;
 	margin-right: -10px;
-	padding: 1em .75em;
+	padding: 0 .75em;
 }
 
-.panel-panel.grid-3 h2.pane-title, #region-postscript-third h2.block-title, #region-sidebar-second h2.block-title {
+.front #zone-postscript #block-menu-menu-user-group-portals {
+	border-top: 1px dotted #bfbfbf;
+}
+/* .panel-panel.grid-3 h2.pane-title, #region-sidebar-second h2.block-title {
 	color: #5c5e66;
 	border-bottom: 1px dotted #e5e5e5;
 	margin: 10px 0;
 	padding: 0 12px 6px 0;
 	line-height: 1.2em;
-}
+}*/
 
-.grid-3 ul li a, #region-postscript-third ul.menu li a, #region-sidebar-second ul.menu li a {
+.grid-3 ul li a, #region-postscript-first ul.menu li a, #region-sidebar-second ul.menu li a {
 	color: #F58026;
 	text-decoration: none;
 }
 
 .grid-3 ul li a:hover, #block-menu-menu-user-group-portals ul.menu li a:hover, #region-sidebar-second ul.menu li a:hover {
 	color: #333;
+}
+
+#block-menu-menu-user-group-portals li {
+	padding-left: 60px;
+	line-height: 65px;
+	background: url("../images/faculty.png") no-repeat #fff;
+	background-position: 0 50%;
+	font-size: 1.15em;
+}
+#block-menu-menu-user-group-portals li + li {
+	background: url("../images/student.png") no-repeat #fff;
+	background-position: 0 50%;
+}
+#block-menu-menu-user-group-portals li + li + li {
+	background: url("../images/alum.png") no-repeat #fff;
+	background-position: 0 50%;
+}
+#block-menu-menu-user-group-portals li + li + li + li {
+	background: url("../images/visitor.png") no-repeat #fff;	
+	background-position: 0 50%;
 }
 
 /* =============================================================================
@@ -2347,7 +2369,13 @@ body.faq .ui-widget-header a {
 	font-size: 0.95em;
 	padding: 4px 0 4px 1px;
 }
-
+.front .view-library-hours td a {
+	text-decoration: none;
+    color: rgb(245, 128, 38);
+}
+.front .view-library-hours td a:hover {
+	color: #333;
+}
 .front #zone-postscript #block-views-library-hours-block-3 {
 	border-top: 1px dotted #bfbfbf;
 }

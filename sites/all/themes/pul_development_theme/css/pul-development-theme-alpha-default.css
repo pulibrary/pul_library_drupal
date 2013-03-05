@@ -639,7 +639,7 @@ height: 23px;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-background:url(../images/gethelpmenu-top-org.gif) no-repeat -1px 0 transparent;
+background:url(../images/gethelpmenu-top-blk.png) no-repeat -1px 0 transparent;
 }
 
 .front #block-menu-menu-get-help-menu .block-inner{
@@ -661,7 +661,8 @@ margin:0;
    ========================================================================== */
 
 .front #zone-postscript #region-postscript-first h2.block-title,
-.front #zone-postscript #region-postscript-second h2.block-title{
+.front #zone-postscript #region-postscript-second h2.block-title,
+.front #zone-postscript #region-postscript-third h2.block-title {
 padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
@@ -675,9 +676,6 @@ font-size:1.5em;
    INFORMATION FOR
    ========================================================================== */
 
-#block-menu-menu-user-group-portals{
-margin:-32px 0 0 0;
-}
 
 .front #region-postscript-third .region-postscript-third-inner{
 background-color:transparent;
