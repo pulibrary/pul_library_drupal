@@ -221,7 +221,7 @@ h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, .view-grouping-header a {
 	content: "\f002";
 }
 .front #block-menu-menu-get-help-menu h2.block-title {
-	padding: 4px 0 4px 30px;
+	padding: 4px 0 4px 50px;
 	margin: 0;
 	color: #ffffff;
 	background: url(../images/gethelp-blk.png) no-repeat -2px 0 #F58026; /*#F58026 0098f4; */
@@ -1690,13 +1690,13 @@ a.views-more-link {
 .front #zone-postscript #block-menu-menu-user-group-portals {
 	border-top: 1px dotted #bfbfbf;
 }
-/* .panel-panel.grid-3 h2.pane-title, #region-sidebar-second h2.block-title {
+.panel-panel.grid-3 h2.pane-title {
 	color: #5c5e66;
 	border-bottom: 1px dotted #e5e5e5;
 	margin: 10px 0;
 	padding: 0 12px 6px 0;
 	line-height: 1.2em;
-}*/
+}
 
 .grid-3 ul li a, #region-postscript-first ul.menu li a, #region-sidebar-second ul.menu li a {
 	color: #F58026;
