@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Libraries feature.
+ */
+
+include_once 'pul_libraries_ct.features.inc';
