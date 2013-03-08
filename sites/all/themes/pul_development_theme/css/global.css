@@ -2378,7 +2378,7 @@ body.faq .ui-widget-header a {
 .front .view-library-hours td a, .page-hours .view-library-hours td a {
 	padding-left: 5px;
 	text-decoration: none;
-    color: rgb(245, 128, 38);
+    color: #7F3D00;
 }
 .front .view-library-hours td a:hover {
 	color: #333;
@@ -2672,4 +2672,14 @@ h2.news-item-title {
 }
 .pane-library-news-panel-pane .views-row {
 	margin-bottom: 2.0em;
+}
+
+/********************************************
+ *  News, Mini Vertical 
+ *******************************************/
+
+.mini-vertical .date-heading {
+	color: white;
+	font-weight: bold;
+	width: 50px;
 }

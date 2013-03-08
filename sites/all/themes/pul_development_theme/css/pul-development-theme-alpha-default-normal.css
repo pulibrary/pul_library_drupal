@@ -20,7 +20,7 @@ width:320px;
 background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 }
 .front #section-content {
-	background: none;
+	background: #fff;
 	/* background:url(../images/sidebar-bg.gif) repeat-y center top #fff;*/
 }
 
