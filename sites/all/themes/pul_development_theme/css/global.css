@@ -2677,9 +2677,23 @@ h2.news-item-title {
 /********************************************
  *  News, Mini Vertical 
  *******************************************/
-
-.mini-vertical .date-heading {
+.mini-vertical .view-header {
+	height: 50px;
+}
+.mini-vertical .date-nav-wrapper .date-heading {
 	color: white;
 	font-weight: bold;
-	width: 50px;
+	width: 100px;
+	margin: 0 auto 0 auto;
+	white-space:normal;
+}
+.mini-vertical .date-nav-wrapper .date-prev {
+	margin-left: 10px;
+	width: 20px;
+	top: -30px;
+}
+.mini-vertical .date-nav-wrapper .date-next {
+	right: 10px;
+	width: 20px;
+	top: -30px;
 }
