@@ -2375,10 +2375,10 @@ body.faq .ui-widget-header a {
 	font-size: 0.95em;
 	padding: 4px 0 4px 1px;
 }
-.front .view-library-hours td a {
+.front .view-library-hours td a, .page-hours .view-library-hours td a {
 	padding-left: 5px;
 	text-decoration: none;
-    	color: rgb(245, 128, 38);
+    color: rgb(245, 128, 38);
 }
 .front .view-library-hours td a:hover {
 	color: #333;
