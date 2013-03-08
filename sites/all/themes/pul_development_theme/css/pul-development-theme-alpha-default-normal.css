@@ -21,7 +21,7 @@ background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 }
 .front #section-content {
 	background: none;
-	background-color: #fff;
+	background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 }
 
 /* =============================================================================

@@ -1614,7 +1614,10 @@ i.guide:before {
 	display: block;
 	background-color: #fff;
 }
+#zone-postscript #region-postscript-third #block-menu-menu-user-group-portals h2.block-title {
+	background-color: #f1fcff;
 
+}
 .front #zone-postscript .content {
 	clear: both;
 	display: block;
@@ -1725,6 +1728,9 @@ a.views-more-link {
 #block-menu-menu-user-group-portals li + li + li + li {
 	background: url("../images/visitor.png") no-repeat #fff;	
 	background-position: 0 50%;
+}
+#region-postscript-third #block-menu-menu-user-group-portals li {
+	background-color: #f1fcff;
 }
 
 /* =============================================================================
@@ -2390,6 +2396,9 @@ body.faq .ui-widget-header a {
  * Calendar based Library Hours
  ========================================================== */
 
+.calendar-calendar td span.date-display-single, .calendar-calendar td span.date-display-start, .calendar-calendar td span.date-display-end, .calendar-calendar td span.date-display-separator {
+	font-weight: normal;
+}	
 .library-hours .view-header {
 	border-top: none;
 	border-right: 2px solid #fff;
@@ -2521,7 +2530,7 @@ body.faq .ui-widget-header a {
 }
 .calendar-calendar th.days {
 	padding: 10px 20px 10px 20px;
-	font-size: 1.333em;
+	font-size: 1.25em;
 	color: rgb(51, 51, 51);
 	font-family: 'Roboto', sans-serif;
 }
@@ -2572,8 +2581,9 @@ body.faq .ui-widget-header a {
 	content: "TBA";
 	text-align: left;
 }
-.calendar-calendar .month-view .full td.single-day div.monthview .views-field-title {
-	font-size: 1.1em;
+.calendar-calendar td.single-day div.monthview .views-field-title, .calendar-calendar span.library-hours-status {
+	font-size: 1.0em;
+	font-weight: bold;
 	color: #F58026;
 }
 .calendar-calendar div.calendar {
