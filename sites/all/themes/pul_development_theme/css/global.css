@@ -2364,6 +2364,15 @@ body.faq .ui-widget-header a {
 	display: none;
 }
 
+/* For Database Search Result Pages */
+.page-find-databases-search .view-databases-keyword-search .views-row-odd {
+  background-color: whiteSmoke;
+}
+
+.page-find-databases-search .query {
+	font-style: italic;
+}
+
 /*********************************************
  * Homepage Hours
  * ******************************************/
