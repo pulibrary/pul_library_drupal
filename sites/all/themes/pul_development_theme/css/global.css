@@ -2679,7 +2679,12 @@ h2.news-item-title {
  *******************************************/
 .mini-vertical .view-header {
 	height: 50px;
+
 }
+.mini-vertical  {
+	width: 95%; 
+}
+
 .mini-vertical .date-nav-wrapper .date-heading {
 	color: white;
 	font-weight: bold;
@@ -2696,4 +2701,10 @@ h2.news-item-title {
 	right: 10px;
 	width: 20px;
 	top: -30px;
+}
+.mini-vertical table {
+	margin-top: 10px;
+	padding: 0;
+	width: 95% !important;
+	position: absolute;
 }
