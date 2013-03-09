@@ -7,7 +7,7 @@
         $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
         $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
 	//FIXME hack should be repaced by a module that allows viewOnlineLink to be set a drupal conf variable
-	$('.node-type-database .field-name-field-db-access-url a').each(function(index){
+	$('.node-type-database .field-name-field-db-access-url a, .node-type-alternative-database-title .field-name-field-db-access-url a').each(function(index){
 		var viewOnlineLink = $(this).attr('href');
 		undecodeViewOnline = viewOnlineLink.replace( /\&amp%3B|&amp;/g, '&' );
 		console.log(undecodeViewOnline);
@@ -33,7 +33,7 @@
 	//$(".page-find-databases .databases-find-description ").each(function(index) {
 		
 	//});
-	$(".page-find-databases .resource-title a, .subject-landing-page .resource-title a").each(function(index) {
+	$(".page-find-databases .resource-title a, .subject-landing-page .resource-title a, .page-find-databases-search a.database-title, .page-find-all-results a.database-title").each(function(index) {
 		var data_access = $(this).find('span').attr('data-ezproxy-access');
 		var access_url = $(this).find('span').attr('data-access-url');
 		if(data_access === "0" || data_access == "No") {
