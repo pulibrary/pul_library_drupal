@@ -1614,7 +1614,10 @@ i.guide:before {
 	display: block;
 	background-color: #fff;
 }
+#zone-postscript #region-postscript-third #block-menu-menu-user-group-portals h2.block-title {
+	background-color: #f1fcff;
 
+}
 .front #zone-postscript .content {
 	clear: both;
 	display: block;
@@ -1725,6 +1728,9 @@ a.views-more-link {
 #block-menu-menu-user-group-portals li + li + li + li {
 	background: url("../images/visitor.png") no-repeat #fff;	
 	background-position: 0 50%;
+}
+#region-postscript-third #block-menu-menu-user-group-portals li {
+	background-color: #f1fcff;
 }
 
 /* =============================================================================
@@ -2358,6 +2364,15 @@ body.faq .ui-widget-header a {
 	display: none;
 }
 
+/* For Database Search Result Pages */
+.page-find-databases-search .view-databases-keyword-search .views-row-odd {
+  background-color: whiteSmoke;
+}
+
+.page-find-databases-search .query {
+	font-style: italic;
+}
+
 /*********************************************
  * Homepage Hours
  * ******************************************/
@@ -2369,9 +2384,10 @@ body.faq .ui-widget-header a {
 	font-size: 0.95em;
 	padding: 4px 0 4px 1px;
 }
-.front .view-library-hours td a {
+.front .view-library-hours td a, .page-hours .view-library-hours td a {
+	padding-left: 5px;
 	text-decoration: none;
-    color: rgb(245, 128, 38);
+    color: #7F3D00;
 }
 .front .view-library-hours td a:hover {
 	color: #333;
@@ -2390,6 +2406,9 @@ body.faq .ui-widget-header a {
  * Calendar based Library Hours
  ========================================================== */
 
+.calendar-calendar td span.date-display-single, .calendar-calendar td span.date-display-start, .calendar-calendar td span.date-display-end, .calendar-calendar td span.date-display-separator {
+	font-weight: normal;
+}	
 .library-hours .view-header {
 	border-top: none;
 	border-right: 2px solid #fff;
@@ -2521,7 +2540,7 @@ body.faq .ui-widget-header a {
 }
 .calendar-calendar th.days {
 	padding: 10px 20px 10px 20px;
-	font-size: 1.333em;
+	font-size: 1.25em;
 	color: rgb(51, 51, 51);
 	font-family: 'Roboto', sans-serif;
 }
@@ -2572,8 +2591,9 @@ body.faq .ui-widget-header a {
 	content: "TBA";
 	text-align: left;
 }
-.calendar-calendar .month-view .full td.single-day div.monthview .views-field-title {
-	font-size: 1.1em;
+.calendar-calendar td.single-day div.monthview .views-field-title, .calendar-calendar span.library-hours-status {
+	font-size: 1.0em;
+	font-weight: bold;
 	color: #F58026;
 }
 .calendar-calendar div.calendar {
@@ -2661,4 +2681,39 @@ h2.news-item-title {
 }
 .pane-library-news-panel-pane .views-row {
 	margin-bottom: 2.0em;
+}
+
+/********************************************
+ *  News, Mini Vertical 
+ *******************************************/
+.mini-vertical .view-header {
+	height: 50px;
+
+}
+.mini-vertical  {
+	width: 95%; 
+}
+
+.mini-vertical .date-nav-wrapper .date-heading {
+	color: white;
+	font-weight: bold;
+	width: 100px;
+	margin: 0 auto 0 auto;
+	white-space:normal;
+}
+.mini-vertical .date-nav-wrapper .date-prev {
+	margin-left: 10px;
+	width: 20px;
+	top: -30px;
+}
+.mini-vertical .date-nav-wrapper .date-next {
+	right: 10px;
+	width: 20px;
+	top: -30px;
+}
+.mini-vertical table {
+	margin-top: 10px;
+	padding: 0;
+	width: 95% !important;
+	position: absolute;
 }
