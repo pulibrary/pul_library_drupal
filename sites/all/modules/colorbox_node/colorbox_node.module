@@ -1,0 +1,209 @@
+<?php
+
+/**
+ * @file
+ * Creates a menu callback with support for displaying a node inside of
+ * a colorbox.
+ */
+
+/*
+ * Implments hook_preprocess_html().
+ */
+function colorbox_node_preprocess_html() {
+  // We need to include our misc/ajax.js function all the time in case
+  // since we are using the built in AJAX Framework
+  drupal_add_library('system', 'drupal.ajax');
+}
+
+/*
+ * Implements hook_menu().
+ */
+function colorbox_node_menu() {
+  $items['colorbox/%colorbox_node_url'] = array(
+    'page callback' => 'colorbox_node_output',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'load arguments' => array('%map'),
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/*
+ * Displays a node view without the page template.
+ * Takes the path as our argument and from that we
+ * will determine the internal path and node id.
+ */
+function colorbox_node_output($path) {
+  // @TODO, we should be able to use this for users too,
+  // Lets beef this up and make it more intelligent around
+  // the system path.
+  if(!isset($_GET['destination'])) $_GET['destination'] = $path;
+
+  // Lets determine if this is a webform and add the
+  // nid to dynamically add ajax support.
+  $args = explode('/', $path);
+  if ($args[0] == 'node' && is_numeric($args[1])) {
+    $GLOBALS['colorbox_node_webform'] = $args[1];
+  }
+
+  // Fetch our callback based on our path.
+  $page_callback_result = menu_execute_active_handler($path, FALSE);
+
+  // If the callback is an integer, we have an error, lets
+  // render that out as a command.
+  if (is_int($page_callback_result)) {
+    $commands = ajax_prepare_response($page_callback_result);
+  }
+  else {
+    $commands = array();
+
+    // Is we have an array, lets assume we need to render it out.
+    if (is_array($page_callback_result)) {
+      // @TODO: Update this to reflect the correct method once this
+      // issue is resolved: http://drupal.org/node/1154382
+      if (isset($page_callback_result['nodes'])) {
+        $html = "";
+        foreach ($page_callback_result['nodes'] as $nid => $tmpNode) {
+          if (isset($tmpNode['#view_mode'])) {
+            $node_view = $tmpNode['#node'];
+            $html .= drupal_render(node_view($node_view, 'colorbox'));
+          }
+        }
+      } else {
+        $html = drupal_render($page_callback_result);
+      }
+      $commands[] = ajax_command_html('#cboxLoadedContent', $html);
+    }
+    else {
+      $commands[] = ajax_command_html('#cboxLoadedContent', $page_callback_result);
+    }
+  }
+
+  // Render our commands out to the browser.
+  return array('#type' => 'ajax', '#commands' => $commands);
+}
+
+/*
+ * Takes a path as an array of all our arguments from the
+ * url structure.  We then put that structure back together,
+ * find our system path and then return it.
+ */
+function colorbox_node_url_load($arg, $path = array()) {
+  // First lets remove colorbox
+  array_shift($path);
+
+  // Lets determine if we have a prefix from our languages.
+  if (module_exists('locale') && function_exists('language_url_split_prefix')) {
+    // Get our language list to pass into our url splitter.
+    $languages = language_list();
+    // Turn the path into a string so we can then remove our prefix.
+    $path_string = implode('/', $path);
+    $language_path = language_url_split_prefix($path_string, $languages);
+    // Separate out the returned path and language.  We should always
+    // have two indexes, the first is the language, second is the path.
+    $language = $language_path[0] ? $language_path[0]->language : '';
+    $final_path = $language_path[1];
+    // Lets find our path based on the current translation.
+    return drupal_get_normal_path($final_path, $language);
+  }
+  // Now lets buld our path to return our system path,
+  return drupal_get_normal_path(implode('/', $path));
+}
+
+/*
+ * Implements hook_form_alter().
+ */
+function colorbox_node_form_alter(&$form, &$form_state, $form_id) {
+  // Determine if our webform as been set for display inside a
+  // colorbox modal window.
+  if (isset($GLOBALS['colorbox_node_webform']) && $GLOBALS['colorbox_node_webform']) {
+    $webform_id = 'webform_client_form_'. $GLOBALS['colorbox_node_webform'];
+    // If we are altering our current webform to be displayed
+    // inside a modal box, lets add ajax support.
+    if ($form_id == $webform_id) {
+      // Add our ajax support for this webform dynamically.
+      $form['#prefix'] = '<div id="cboxNodeWrapper">';
+      $form['#suffix'] = '</div>';
+      $form['actions']['submit']['#id'] = 'cboxSubmit';
+      $form['actions']['submit']['#ajax'] = array(
+        'callback' => 'colorbox_node_webform_js_submit',
+        'wrapper' => 'cboxNodeWrapper',
+        'method' => 'replace',
+        'effect' => 'fade',
+      );
+    }
+  }
+}
+
+/*
+ * Javascript submit handler for our webform.
+ */
+function colorbox_node_webform_js_submit($form, &$form_state) {
+  // If we have a sid, then the form has been successfully submitted.
+  // Lets display our confirmation message.
+  if (!form_get_errors()) {
+    $node = node_load($form_state['values']['details']['nid']);
+
+    // Find out what we should be doing for the webform.
+    if($node->webform['redirect_url'] == '<confirmation>' || $node->webform['redirect_url'] == '<none>') {
+      // Display a confirmation message.
+      $markup = theme(array('webform_confirmation_' . $node->nid, 'webform_confirmation'), array('node' => $node));
+    }
+    else {
+      $path = $form_state['redirect'][0];
+      $options = $form_state['redirect'][1];
+      
+      drupal_alter('drupal_goto', $path, $options);
+    
+      // The 'Location' HTTP header must be absolute.
+      $options['absolute'] = TRUE;
+    
+      $url = url($path, $options);
+      // We are doing a redirect so we need to close the colorbox
+      // and then force a window.location on the passed in URL.
+      $markup = '
+      <script type="text/javascript">
+        (function ($) {
+          $(document).ready(function() {
+            $.fn.colorbox.close();
+            window.location = "'. $url .'";
+          });
+        })(jQuery);
+      </script>';
+    }
+    // Return our markup.
+    $confirmation = array(
+      '#type' => 'markup',
+      '#markup' => $markup,
+    );
+    return $confirmation;
+  }
+  else {
+    // We just pass through our $form
+    return $form;
+  }
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function colorbox_node_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['colorbox'] = array(
+    'label' => t('Colorbox'),
+    'custom settings' => FALSE,
+  );
+}
+
+
+/**
+ * Implements hook_views_api().
+ */
+function colorbox_node_views_api() {
+  return array(
+    'api' => 2,
+    'path' => drupal_get_path('module', 'colorbox_node') . '/views',
+  );
+}

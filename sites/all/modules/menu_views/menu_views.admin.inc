@@ -423,6 +423,20 @@ function _menu_views_form(&$item, &$element, &$form, &$form_state) {
       
       $settings = &$element['view']['settings'];
 
+      // Wrapper Class
+      $settings['wrapper_classes'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Wrapper Classes'),
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+        '#parents' => $parents,
+      );
+      $settings['wrapper_classes']['wrapper_classes'] = array(
+        '#type' => 'textfield',
+        '#description' => t('Provide any additional classes, separated by spaces.'),
+        '#default_value' => $item['view']['settings']['wrapper_classes'],
+      );
+
       // View Title
       $settings['title'] = array(
         '#type' => 'fieldset',

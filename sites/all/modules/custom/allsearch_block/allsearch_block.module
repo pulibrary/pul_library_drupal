@@ -16,12 +16,15 @@ function allsearch_block_form($form, &$form_state) {
   }
   $form = array();
   if($page != "node/1") {
-    $prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
-    $suffix = "<div class='all-search-form-suffix'><a title='What is the All Search?' href='/faq/all-search'>What is the All Search?</a>";
+    //$prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
+    $prefix = "";
+    $suffix = "<div class='all-search-form-suffix'><a title='What is the all search?' href='/faq/all-search'>What is the all search?</a>";
   } else {
     $prefix = "";
-    $suffix = "";
+    $suffix = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
   }
+
+
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('All Search'),
@@ -164,11 +167,13 @@ function allsearch_block_block_save($delta = '', $edit = array()) {
 function allsearch_block_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
   if ($delta == 'allsearch_search') {
+  
     $block['subject'] = t('All Search');
     $block['content'] = allsearch_block_contents($delta);
   }
   // add css block
   drupal_add_css(drupal_get_path('module', 'allsearch_block') .'/allsearch_block.css');
+  drupal_add_js(array('allsearch_block' => array('all_search_hint' => variable_get('all_search_hint'))), 'setting');
   drupal_add_js(drupal_get_path('module', 'allsearch_block') .'/allsearch_block.js');
   return $block;
 }

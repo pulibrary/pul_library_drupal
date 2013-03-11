@@ -1,28 +1,27 @@
 <?php
 /**
  * @file
- * Implements Views integration: day filter 
+ * Implements Views integration: day filter
  */
-// $Id: office_hours_handler_filter_day.inc,v 1.1.2.1 2009/03/07 22:13:50 ozeuss Exp $
 
 class office_hours_handler_filter_day extends content_handler_filter_many_to_one {
-  
+
   function construct() {
     parent::construct();
     $this->value_title = t('Day');
   }
-  
+
   function get_value_options() {
     $this->value_options = array( t('Sunday'), t('Monday'), t('Tuesday'),  t('Wednesday'), t('Thursday'), t('Friday'), t('Saturday') );
   }
-  
+
   function option_definition() {
     $options = parent::option_definition();
     $options['operator']['default'] = 'or';
     $options['value']['default'] = array();
     return $options;
   }
-  
+
   /**
    * Provide inclusive/exclusive matching
    */
@@ -32,7 +31,7 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
       'not in' => t('Is closed on one of the following days'),
     );
   }
- 
+
    /**
    * Provide the form
    */
@@ -69,7 +68,7 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
 
     $form['value'] = array(
       '#type' => $this->value_form_type,
-      '#title' => $this->value_title,
+      '#title' => check_plain($this->value_title),
       '#options' => $options,
       '#default_value' => $default_value,
       // These are only valid for 'select' type, but do no harm to checkboxes.
@@ -82,12 +81,13 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
     }
 
   }
-   function ensure_my_table() {
+
+  function ensure_my_table() {
     $this->helper->ensure_my_table();
   }
 
   function query() {
-   if (empty($this->value)) {
+    if (empty($this->value)) {
       return;
     }
     $this->ensure_my_table();
@@ -100,5 +100,5 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
     // array addition problems.
     $this->query->add_where($this->options['group'], "$this->table_alias.$this->real_field " . $this->operator . $in, array_keys($this->value));
   }
-  
+
 }

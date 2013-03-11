@@ -19,7 +19,10 @@ width:320px;
 .sidebar-second #section-content{
 background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 }
-
+.front #section-content {
+	background: #fff;
+	/* background:url(../images/sidebar-bg.gif) repeat-y center top #fff;*/
+}
 
 /* =============================================================================
    MAIN MENU
@@ -28,7 +31,7 @@ background:url(../images/sidebar-bg.gif) repeat-y center top #fff;
 #zone-branding-wrapper #block-system-main-menu ul.menu li span.main-menu-item-title,
 #zone-branding-wrapper #block-system-main-menu ul.menu li a{
 font-size:1.167em;
-padding:9px 36px;
+padding:9px 30px;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li{
@@ -90,11 +93,14 @@ max-width:296px;
 
 
 .flex-direction-nav li .next {
-right:39px
+right:17px
 }
 
 .flex-direction-nav li .prev {
-left:40px;
+left:18px;
+}
+.flex-control-nav li a{
+	padding: 4px 14px 6px 14px;
 }
 
 /* =============================================================================
@@ -109,8 +115,22 @@ padding:0 28px;
 margin-top:0;
 }
 
+
 /* =============================================================================
    INFORMATION FOR
    ========================================================================== */
 
 
+/****************************************
+ * Audience Page News
+ ***************************************/
+
+.pane-library-news-panel-pane .views-row {
+	width: 30%;
+	float: left;
+	padding-right: 20px;
+}
+.pane-library-news-panel-pane .views-row img {
+	float: none;
+	max-width: 100%;
+}

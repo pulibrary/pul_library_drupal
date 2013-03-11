@@ -1,9 +1,8 @@
 <?php
 /**
  * @file
- * Implements Views integration: hours filter 
+ * Implements Views integration: hours filter
  */
-// $Id: office_hours_handler_filter_hours.inc,v 1.1.2.1 2009/03/07 22:13:50 ozeuss Exp $
 
 class office_hours_handler_filter_hours extends views_handler_filter_numeric {
 
@@ -25,7 +24,7 @@ class office_hours_handler_filter_hours extends views_handler_filter_numeric {
 
     return $options;
   }
- 
+
   /* function operators() {
     $operators = array(
       '<' => array(
@@ -79,7 +78,7 @@ class office_hours_handler_filter_hours extends views_handler_filter_numeric {
     );
     return $operators;
   }
-*/
+ */
 
 /**
  * Provide a list of all the numeric operators
@@ -103,7 +102,7 @@ class office_hours_handler_filter_hours extends views_handler_filter_numeric {
 
     return $options;
   }
-*/
+ */
 
 /**
   * Provide the form
@@ -132,7 +131,7 @@ function value_form(&$form, &$form_state) {
       }
     }
 
-   if ($which == 'all') {
+    if ($which == 'all') {
       $form['value']['value'] = array(
         '#type' => 'select',
         '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
@@ -145,7 +144,7 @@ function value_form(&$form, &$form_state) {
       if (!empty($form_state['exposed']) && !isset($form_state['input'][$identifier]['value'])) {
         $form_state['input'][$identifier]['value'] = $this->value['value'];
       }
-   }
+    }
     elseif ($which == 'value') {
       // When exposed we drop the value-value and just do value if
       // the operator is locked.
@@ -171,7 +170,7 @@ function value_form(&$form, &$form_state) {
          '#type' => 'select',
         '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
         '#default_value' => $this->value['max'],
-        '#options' => $opt,  
+        '#options' => $opt,
       );
       if ($which == 'all') {
         $dependency = array(
@@ -189,5 +188,5 @@ function value_form(&$form, &$form_state) {
       }
     }
   }
-  
+
 }

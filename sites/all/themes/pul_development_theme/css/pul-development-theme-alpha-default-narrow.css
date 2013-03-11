@@ -20,7 +20,10 @@ max-width:250px;
 .sidebar-second #section-content{
 background:url(../images/sidebar-narrow-bg.gif) repeat-y center top #fff;
 }
-
+.front #section-content {
+	background: none;
+	background-color: #fff;
+}
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list{
 clear:both;
 }
@@ -50,7 +53,7 @@ width: 150px;
 #zone-branding-wrapper #block-system-main-menu ul.menu li span.main-menu-item-title,
 #zone-branding-wrapper #block-system-main-menu ul.menu li a{
 font-size:1em;
-padding:7px 20px 8px 20px;
+padding:7px 17px 8px 17px;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li{
@@ -111,7 +114,8 @@ max-width:216px;
 }
 
 .front #zone-postscript #region-postscript-first h2.block-title,
-.front #zone-postscript #region-postscript-second h2.block-title{
+.front #zone-postscript #region-postscript-second h2.block-title,
+.front #zone-postscript #region-postscript-third h2.block-title {
 padding:0 8px;
 margin:-14px 0 10px 14px;
 font-size:1.333em;
@@ -125,7 +129,9 @@ right:0;
 left:-1px;
 }
 
-
+.flex-control-nav li a{
+	padding: 4px 7px 6px 7px;
+}
 
 /* =============================================================================
    RENOVATION NEWS
@@ -145,3 +151,9 @@ margin-top:0;
 width:160px;
 }
 
+/* DB Suject Menu */
+
+.view-databases-by-subject select {
+	display: block;
+	margin-top: 0.5em;
+}

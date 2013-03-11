@@ -1,4 +1,21 @@
 
+Drupal 7.21, 2013-03-06
+-----------------------
+- Allowed sites using the 'image_allow_insecure_derivatives' variable to still
+  have partial protection from the security issues fixed in Drupal 7.20.
+
+Drupal 7.20, 2013-02-20
+-----------------------
+- Fixed security issues (denial of service). See SA-CORE-2013-002.
+
+Drupal 7.19, 2013-01-16
+-----------------------
+- Fixed security issues (multiple vulnerabilities). See SA-CORE-2013-001.
+
+Drupal 7.18, 2012-12-19
+-----------------------
+- Fixed security issues (multiple vulnerabilities). See SA-CORE-2012-004.
+
 Drupal 7.17, 2012-11-07
 -----------------------
 - Changed the default value of the '404_fast_html' variable to have a DOCTYPE
