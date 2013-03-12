@@ -2729,3 +2729,7 @@ h2.news-item-title {
 	width: 95% !important;
 	position: absolute;
 }
+
+.zone-footer .grid-3 ul.menu li {
+	font-size: .95em;
+}
