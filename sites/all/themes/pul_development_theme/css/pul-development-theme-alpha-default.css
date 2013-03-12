@@ -302,7 +302,7 @@ font-size:125%;
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer a{
-font-family: Arvo, sans-serif;
+font-family: "Droid Serif", sans-serif;
 font-style:normal;
 color:#ccc;
 }
@@ -427,7 +427,7 @@ border-radius:0;
 li.ui-state-default,
 .ui-widget-content li.ui-state-default,
 .ui-widget-header li.ui-state-default{
-background:url(../images/searchit-tab-bg01-org.gif) no-repeat 0 -4px transparent;
+background:url(../images/searchit-tab-bg01-blk.png) no-repeat 0 -4px transparent;
 border:none;
 }
 
@@ -536,7 +536,7 @@ border-top-left-radius: 0;
 border-bottom-left-radius: 0;
 color:#fff;
 text-shadow: 0 0 0 #FFFFFF;
-font-family: "PT Sans", sans-serif;
+font-family: "Roboto", sans-serif;
 font-size:1.333em;
 font-weight:normal;
 vertical-align:middle;
@@ -639,7 +639,7 @@ height: 23px;
 }
 
 .front #block-menu-menu-get-help-menu ul.menu{
-background:url(../images/gethelpmenu-top-org.gif) no-repeat -1px 0 transparent;
+background:url(../images/gethelpmenu-top-blk.png) no-repeat -1px 0 transparent;
 }
 
 .front #block-menu-menu-get-help-menu .block-inner{
@@ -661,7 +661,8 @@ margin:0;
    ========================================================================== */
 
 .front #zone-postscript #region-postscript-first h2.block-title,
-.front #zone-postscript #region-postscript-second h2.block-title{
+.front #zone-postscript #region-postscript-second h2.block-title,
+.front #zone-postscript #region-postscript-third h2.block-title {
 padding:0 8px;
 margin:-17px 0 10px 14px;
 font-size:1.5em;
@@ -675,9 +676,6 @@ font-size:1.5em;
    INFORMATION FOR
    ========================================================================== */
 
-#block-menu-menu-user-group-portals{
-margin:-32px 0 0 0;
-}
 
 .front #region-postscript-third .region-postscript-third-inner{
 background-color:transparent;
@@ -1015,6 +1013,7 @@ text-decoration:none;
 .page-find-all h2 {
 font-size:1.4em;
 margin-top:0;
+margin-bottom:0;
 }
 
 /* search box sizing */
@@ -1224,6 +1223,7 @@ font-size:1.5em;
 display: block;
 width: 100%;
 padding: 2px;
+font-size: 1.05em;
 }
 #section-footer ul.menu li a:hover {
 	background: none;

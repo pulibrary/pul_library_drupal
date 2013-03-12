@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Library Buildings feature.
+ */
+
+include_once 'library_buildings.features.inc';

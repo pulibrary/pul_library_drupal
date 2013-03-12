@@ -50,21 +50,28 @@
 					} 
 					else if(result['holdings'].length > 0) {
 						// use underscore 
+						var holdings_show = 0; 
 						holdings_list += "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
 						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
                                                                 if(key !== "ONLINE") {
-                                                                var location = holding[key];
-                                                                holdings_list += "<span class='holdings-item'> "+
+                                                                	var location = holding[key];
+                                                                	holdings_list += "<span class='holdings-item'> "+
 										'<a target="_blank" href="'+location['request_link']+'" title="'+
 										request_hint+location['library_label']+'">'+
                                                                                 location['library_label']+
                                                                                 "</a></span>&nbsp;";
+									holdings_show = 1;
                                                                 }
                                                         }
 
 						});
 						holdings_list += "</div>";
+						if(holdings_show == 1) {
+							var holdings_show_list = holdings_list;
+						} else {
+							var holdings_show_list = "";
+						}
 					}
 					var creation_date = "";
 					var icon_element = "";
@@ -112,7 +119,7 @@
 						result['format']+
 						'</div>'+
 						creation_date+
-						holdings_list+
+						holdings_show_list+
 						 '</li>');
 				});
 				$('#catalog-search-results-spinner').hide();
@@ -131,7 +138,7 @@
 			},
 			error: function(data){
 				$('#catalog-search-results-spinner').hide();
-              			$('<div class="all-fail-to-load-results">Books+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+              			$('<div class="all-fail-to-load-results">Books+ results are not available at this time.</div>"').appendTo('#catalog-search-results');
             }
 		});
 	}	

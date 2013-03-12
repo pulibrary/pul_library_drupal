@@ -9,6 +9,8 @@
 	var collection_icon = 'icon-hdd';
 	var default_icon = 'icon-tag';
 	var breadcrumb_label = "<span class='breadcrumb-label'>Contained In:&nbsp;</span>";
+        var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+	var refine_message = "See All Finding Aids";
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
 	} else {
@@ -21,6 +23,12 @@
 			var items = [];
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
+					if(index%2 == 0) {
+                                                var row_class="odd";
+                                        } else {
+                                                var row_class="even"
+                                        }
+
 					var breadcrumbs = "";
 					if(result['breadcrumb'].length > 0) {
 						_.each(result['breadcrumb'], function(crumb) {
@@ -47,7 +55,7 @@
 					} else {
 						icon_type = default_icon;
 					} 
-    					items.push('<li><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
+    					items.push('<li class="'+row_class+'"><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">'+result['kwic']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
@@ -57,6 +65,7 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
+				$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
 				if(data.number > 3) {
 					$('<div class="more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
