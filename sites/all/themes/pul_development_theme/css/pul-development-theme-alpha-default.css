@@ -60,6 +60,7 @@ padding-bottom:3em;
 width:200px;
 }
 
+.grid-3.region.region-sidebar-second input[type="text"],
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"],
 .panel-panel.grid-3 select{
