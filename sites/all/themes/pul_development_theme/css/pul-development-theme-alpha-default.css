@@ -930,7 +930,8 @@ padding:0 16px 0 0;
 
 
 #section-footer ul.menu li{
-font-size:0.833em;
+/* font-size:0.833em; */
+font-size: .933em;
 }
 
 #section-footer .block-menu{
@@ -1224,7 +1225,7 @@ font-size:1.5em;
 display: block;
 width: 100%;
 padding: 2px;
-font-size: 1.05em;
+/* font-size: 1.05em; */
 }
 #section-footer ul.menu li a:hover {
 	background: none;
