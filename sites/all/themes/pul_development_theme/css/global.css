@@ -2307,7 +2307,7 @@ body.faq .ui-widget-header a {
 
 /* Feedback Button Hide in small screen*/
 
-#feedback-button {
+#feedback-button, #feedback_simple {
 	display: none;
 }
 
