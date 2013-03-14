@@ -134,3 +134,9 @@ margin-top:0;
 	float: none;
 	max-width: 100%;
 }
+
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}

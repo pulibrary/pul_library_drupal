@@ -1217,6 +1217,13 @@ font-size:1.5em;
 
 }
 
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}
+
+
 /* 
  * Footer style normal 
  */
