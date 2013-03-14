@@ -160,6 +160,6 @@ width:160px;
 
 /* Feedback button */
 
-#feedback_simple {
+#feedback-button, #feedback_simple {
 	display: block;
 }
