@@ -60,6 +60,7 @@ padding-bottom:3em;
 width:200px;
 }
 
+.grid-3.region.region-sidebar-second input[type="text"],
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"],
 .panel-panel.grid-3 select{
@@ -929,7 +930,8 @@ padding:0 16px 0 0;
 
 
 #section-footer ul.menu li{
-font-size:0.833em;
+/* font-size:0.833em; */
+font-size: .933em;
 }
 
 #section-footer .block-menu{
@@ -1215,6 +1217,13 @@ font-size:1.5em;
 
 }
 
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}
+
+
 /* 
  * Footer style normal 
  */
@@ -1223,6 +1232,7 @@ font-size:1.5em;
 display: block;
 width: 100%;
 padding: 2px;
+/* font-size: 1.05em; */
 }
 #section-footer ul.menu li a:hover {
 	background: none;

@@ -1443,6 +1443,12 @@ i.guide:before {
 	background-color: rgb(245, 128, 38);
 	color: #FFFFFF;
 }
+
+.not-front .homepage-tab-form-message {
+	display: none;
+}
+
+
 /* =============================================================================
  NEWS
  ========================================================================== */
@@ -2197,7 +2203,14 @@ body.faq .ui-widget-header a {
  *  * All Search Block CSS
  */
 #allsearch-block-form label { display: none; }
+#catalog-block-form label { display: none; }
+#catalog-block-form .form-item-query { display: inline; }
 
+#summon-block-form label { display: none; }
+#summon-block-form .form-item-query { display: inline; }
+
+#dbsearch-block-form label { display: none; }
+#dbsearch-block-form .form-item-query { display: inline; }
 
 .page-find .all-search-title {
 	padding-top: .5em;
@@ -2294,7 +2307,7 @@ body.faq .ui-widget-header a {
 
 /* Feedback Button Hide in small screen*/
 
-#feedback-button {
+#feedback-button, #feedback_simple {
 	display: none;
 }
 
@@ -2366,6 +2379,11 @@ body.faq .ui-widget-header a {
 
 /* For Database Search Result Pages */
 .page-find-databases-search .view-databases-keyword-search .views-row-odd {
+  background-color: whiteSmoke;
+}
+
+/* for website earch page */
+.page-find-website .region-content .views-row-odd {
   background-color: whiteSmoke;
 }
 
@@ -2716,4 +2734,8 @@ h2.news-item-title {
 	padding: 0;
 	width: 95% !important;
 	position: absolute;
+}
+
+.zone-footer .grid-3 ul.menu li {
+	font-size: .95em;
 }

@@ -14,6 +14,7 @@
 		 	async: true,
  			type: 'GET',
  			dataType: 'json',
+			contentType: "application/json; charset=utf-8",
  			success: function(data) {
 			var items = [];
 			// add an icon map for format types

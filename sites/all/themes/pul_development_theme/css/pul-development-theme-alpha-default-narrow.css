@@ -157,3 +157,9 @@ width:160px;
 	display: block;
 	margin-top: 0.5em;
 }
+
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}
