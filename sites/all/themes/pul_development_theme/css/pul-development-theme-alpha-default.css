@@ -129,13 +129,15 @@ margin-top: .5em;
    ========================================================================== */
 
 #section-header{
-height:126px;
-background:url(../images/BG.gif) repeat-x 0 0 #fff;
+height:146px;
+background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
 
 .front #zone-content-wrapper{
-background:url(../images/home-BG.gif) repeat-x 0 -126px transparent;
+background:url(../images/home-BG.gif) repeat-x 0 -126px transparent; /*without advert bar */
+background:url(../images/home-BG.gif) repeat-x 0 -121px transparent;
+
 }
 
 
@@ -1237,5 +1239,3 @@ padding: 2px;
 #section-footer ul.menu li a:hover {
 	background: none;
 }
-
-
