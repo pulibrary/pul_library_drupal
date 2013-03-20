@@ -2,7 +2,7 @@
   <div<?php print $content_attributes; ?>>
     <a id="main-content"></a>
     <?php if ($breadcrumb): ?>
-      <div id="breadcrumb" class="grid-<?php print $columns; ?>"><?php print $breadcrumb; ?></div>
+      <div id="breadcrumb" class="grid-<?php if($columns): print $columns; endif; ?>"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
