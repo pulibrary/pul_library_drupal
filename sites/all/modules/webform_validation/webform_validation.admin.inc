@@ -146,6 +146,16 @@ function webform_validation_manage_rule($form, $form_state, $node, $action = 'ad
     );
   }
 
+  if (isset($rule_validator['negatable'])) {
+    $form['rule']['negate'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Negate rule'),
+      '#description' => t('Valide the inverse of the rule.'),
+      '#default_value' => $rule['negate'],
+      '#weight' => 5,
+    );
+  }
+
   if (isset($rule_validator['custom_error'])) {
     $form['rule']['error_message'] = array(
       '#type' => 'textfield',
@@ -161,7 +171,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action = 'ad
 
   $form['rule']['submit'] = array(
     '#type' => 'submit',
-    '#value' => (isset($rule['ruleid'])) ? t('Edit rule') : t('Add rule'),
+    '#value' => (isset($rule['ruleid'])) ? t('Save rule') : t('Add rule'),
     '#weight' => 25,
   );
 
@@ -181,17 +191,17 @@ function webform_validation_manage_rule_validate($form, &$form_state) {
 
   $rule_validator = webform_validation_get_validator_info($values['validator']);
   $selected_components = count(array_filter($values['rule_components']));
+  // Check validator min_components and min_components property when they are equal.
+  if (isset($rule_validator['min_components']) && isset($rule_validator['max_components']) && $rule_validator['min_components'] === $rule_validator['max_components'] && $selected_components !== $rule_validator['min_components']) {
+      form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component', 'You need to select exactly @count components'));
+  }
   // check validator min_components property
-  if (isset($rule_validator['min_components']) && $rule_validator['min_components'] > 0) {
-    if ($rule_validator['min_components'] > $selected_components) {
+  elseif (isset($rule_validator['min_components']) && $selected_components < $rule_validator['min_components']) {
       form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select at least @count component', 'You need to select at least @count components'));
-    }
   }
   // check validator max_components property
-  if (isset($rule_validator['max_components']) && $rule_validator['max_components'] > 0) {
-    if ($rule_validator['max_components'] < $selected_components) {
+  elseif (isset($rule_validator['max_components']) && $selected_components > $rule_validator['max_components']) {
       form_set_error('rule_components', format_plural($rule_validator['max_components'], 'You can select @count component at most', 'You can select @count components at most'));
-    }
   }
 }
 
