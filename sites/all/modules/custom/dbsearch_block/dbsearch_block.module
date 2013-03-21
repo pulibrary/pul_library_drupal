@@ -35,6 +35,7 @@ function dbsearch_block_form($form, &$form_state) {
     '#value' => t('Search'),
     '#suffix' => $form_suffix,
    );
+   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
    $form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
    $form['#target'] = "_parent";
@@ -167,8 +168,6 @@ function dbsearch_block_block_view($delta = '') {
   if ($delta == 'dbsearch_search') {
     $block['content'] = dbsearch_block_contents($delta);
   }
-  drupal_add_css(drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.css');
-  drupal_add_js(drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js');
   
   return $block;
 }

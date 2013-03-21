@@ -36,6 +36,12 @@ function allsearch_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
+    $form['#attached']['js'][] = drupal_get_path('module', 'allsearch_block') .'/allsearch_block.js'; 
+    $hint_settings = array('all_search_hint' => variable_get('all_search_hint'));   
+    $form['#attached']['js'][] = array(
+      'data' => array('allsearch_block' => $hint_settings),
+      'type' => 'setting',
+     );
    $form['#validate'] = array('allsearch_block_form_validate');
    $form['#prefix'] = $prefix;
    $form['#suffix'] = $suffix;
@@ -171,10 +177,7 @@ function allsearch_block_block_view($delta = '') {
     $block['subject'] = t('All Search');
     $block['content'] = allsearch_block_contents($delta);
   }
-  // add css block
-  drupal_add_css(drupal_get_path('module', 'allsearch_block') .'/allsearch_block.css');
-  drupal_add_js(array('allsearch_block' => array('all_search_hint' => variable_get('all_search_hint'))), 'setting');
-  drupal_add_js(drupal_get_path('module', 'allsearch_block') .'/allsearch_block.js');
+ 
   return $block;
 }
 

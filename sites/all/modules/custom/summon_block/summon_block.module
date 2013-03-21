@@ -184,7 +184,6 @@ function summon_block_block_view($delta = '') {
   if ($delta == 'summon_search') {
     $block['subject'] = t('Articles Search');
     $block['content'] = summon_block_contents($delta);
-    drupal_add_css(drupal_get_path('module', 'summon_block') .'/summon_block.css');
     drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
     drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
   } elseif ($delta == 'summon_search_results') {
