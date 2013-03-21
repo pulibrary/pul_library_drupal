@@ -104,12 +104,13 @@ function webform_validation_validate($form, &$form_state) {
   $values = isset($form_state['values']['submitted']) ? $form_state['values']['submitted'] : NULL;
   $flat_values = _webform_client_form_submit_flatten($node, $values);
   $rules = webform_validation_get_node_rules($nid);
+  $sid = empty($form_state['values']['details']['sid']) ? 0 : $form_state['values']['details']['sid'];
 
   // Get number of pages for this webform
   if (isset($form_state['webform']['page_count'])) {
     $page_count = $form_state['webform']['page_count'];
   }
-  else if (isset($form_state['storage']['page_count'])) {
+  elseif (isset($form_state['storage']['page_count'])) {
     $page_count = $form_state['storage']['page_count'];
   }
 
@@ -151,6 +152,7 @@ function webform_validation_validate($form, &$form_state) {
       // prefix array keys to avoid reindexing by the module_invoke_all function call
       $items = webform_validation_prefix_keys($items);
       $component_definitions = webform_validation_prefix_keys($node->webform['components']);
+      $rule['sid'] = $sid;
       // have the submitted values validated
       $errors = module_invoke_all("webform_validation_validate", $rule['validator'], $items, $component_definitions, $rule);
       if ($errors) {
@@ -379,10 +381,10 @@ function _webform_validation_get_component_type($node, $component_key) {
 /**
  * Get all webform components that are defined as a group
  */
-function _webform_validation_get_group_types(){
+function _webform_validation_get_group_types() {
   $types = array();
-  foreach(webform_components() as $name => $component){
-    if(isset($component['features']['group']) && $component['features']['group']){
+  foreach (webform_components() as $name => $component) {
+    if (isset($component['features']['group']) && $component['features']['group']) {
       $types[] = $name;
     }
   }
@@ -390,7 +392,7 @@ function _webform_validation_get_group_types(){
 }
 
 /**
- * Implementation of hook_webform_validator_alter().
+ * Implements hook_webform_validator_alter().
  */
 function webform_validation_webform_validator_alter(&$validators) {
   // Add support for the Select (or Other) module
