@@ -1479,7 +1479,7 @@ i.guide:before {
 	top: 40px;
 }
 .front h3.library-news-homepage {
-	height: 125px;
+	height: auto;
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: left;
@@ -2740,6 +2740,31 @@ h2.news-item-title {
 	font-size: .95em;
 }
 
+/* 
+ * Alpha Zone
+ */
+
+#zone-alpha-wrapper {
+	height: 30px;
+	background-color: #FFFF00;
+	background-color: #BBEE77;
+	border-bottom: 3px solid #BBEE77;
+
+	color: black;
+	font-size: 1.1em;
+}
+#zone-alpha, #region-advert-1, #region-advert-2 {
+	height: 30px;
+}
+#region-advert-1 p, #region-advert-2 p {
+	margin-top: 8px;
+}
+#region-advert-1 a, #region-advert-2 a {
+	color: black;
+}
+#region-advert-2 p {
+	text-align: right;
+}
 
 /*********************************************
  * Department Listing Fixes
