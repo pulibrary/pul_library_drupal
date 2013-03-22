@@ -66,9 +66,11 @@ width:200px;
 .panel-panel.grid-3 select{
 width: 210px;
 }
-
-textarea,
-input[type="text"]{
+.panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"] {
+	width: 210px;
+	border: 1px solid #727272;
+}
+textarea, input[type="text"], input[type="email"] {
 width:350px;
 }
 
@@ -602,6 +604,49 @@ margin:0 10px 0 0;
 #qt-homepage_search_tabs-ui-tabs4{
 border-bottom:none;
 }
+/* =============================================================================
+ SECONDARY RESEARCH MENU & All Search Box message
+ ========================================================================== */
+
+.homepage-tab-form-message {
+	text-indent: -9999px;
+	padding: 5px 0 0 0;
+	overflow: auto;
+}
+
+.homepage-tab-form-message a {
+	display: block;
+	float: left;
+	clear: none;
+	/* Original choices
+	 background-color:#bbb;
+	 color:#5d5e63;
+	 */
+	background-color: #5d5e63;
+	color: #fff;
+	text-decoration: none;
+	width: 106px;
+	padding: 4px 0;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-indent: 0px;
+	margin: 5px 10px 0 0;
+	font-size: 0.833em;
+	/* Requested adjustments */
+	background-color: #515156;
+	font-size: 0.9em;
+	width: 114px;
+	padding: 2px;
+}
+
+.homepage-tab-form-message a:hover {
+	background-color: #F58026;
+	/* Color Swap */
+	background-color: rgb(245, 128, 38);
+	color: #FFFFFF;
+}
 
 
 /* =============================================================================
@@ -687,6 +732,10 @@ margin-top:0;
 margin-left:0;
 margin-right:0;
 padding:0;
+
+}
+.front #region-postscript-third {
+height:auto;
 }
 
 

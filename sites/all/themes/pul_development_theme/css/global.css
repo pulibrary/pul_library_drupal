@@ -796,7 +796,7 @@ textarea {
 	padding: 3px 5px;
 }
 .panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"] {
-	width: 210px;
+	width: 80%;
 	border: 1px solid #727272;
 }
 
@@ -1132,7 +1132,7 @@ i.guide:before {
 
 #block-quicktabs-homepage-search-tabs {
 	padding: 11px 0 0 0;
-	height: 280px;
+	height: 250px;
 }
 
 #block-quicktabs-homepage-search-tabs input[type="text"] {
@@ -1245,28 +1245,28 @@ i.guide:before {
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li {
 	position: absolute;
-	top: 170px;
+	top: 160px; /* Tab 4 when tab 1 is active*/
 }
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li {
-	top: 180px;
+	top: 160px; /* Tab 4 when tab 3 is active */
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li + li {
-	top: 170px;
+	top: 162px; /* Tab 4 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li {
 	position: absolute;
-	top: 136px;
+	top: 127px; /* Tab 3 when tab 1 is active*/
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li {
-	top: 137px;
+	top: 130px; /* Tab 3 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li {
 	position: absolute;
-	top: 105px;
+	top: 95px; /* Tab 2 when tab 1 is active */
 }
 
 .homepage-tab-form-message {
@@ -1400,50 +1400,6 @@ i.guide:before {
 	padding: 1px 0;
 }
 
-/* =============================================================================
- SECONDARY RESEARCH MENU & All Search Box message
- ========================================================================== */
-
-.homepage-tab-form-message {
-	text-indent: -9999px;
-	padding: 5px 0 0 0;
-	overflow: auto;
-}
-
-.homepage-tab-form-message a {
-	display: block;
-	float: left;
-	clear: none;
-	/* Original choices
-	 background-color:#bbb;
-	 color:#5d5e63;
-	 */
-	background-color: #5d5e63;
-	color: #fff;
-	text-decoration: none;
-	width: 106px;
-	padding: 4px 0;
-	text-align: center;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	text-indent: 0px;
-	margin: 5px 10px 0 0;
-	font-size: 0.833em;
-	/* Requested adjustments */
-	background-color: #515156;
-	font-size: 0.9em;
-	width: 114px;
-	padding: 2px;
-}
-
-.homepage-tab-form-message a:hover {
-	background-color: #F58026;
-	/* Color Swap */
-	background-color: rgb(245, 128, 38);
-	color: #FFFFFF;
-}
-
 .not-front .homepage-tab-form-message {
 	display: none;
 }
@@ -1483,6 +1439,9 @@ i.guide:before {
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: left;
+	width: 50%;
+	margin-right: 5px;
+	
 }
 .front .flexslider ul.slides li img {
 	margin-bottom: 10px;
@@ -1578,8 +1537,8 @@ i.guide:before {
 	border-bottom: 1px dotted #bfbfbf;
 }
 
-.flexslider ul.slides li img {
-	max-width: 280px;
+.flexslider ul.slides li  {
+	width: 280px;
 }
 
 .front #zone-postscript #region-postscript-first h2.block-title, .front #zone-postscript #region-postscript-second h2.block-title {
@@ -2401,6 +2360,7 @@ body.faq .ui-widget-header a {
 .front .view-library-hours td, .front .view-library-hours th {
 	font-size: 0.95em;
 	padding: 4px 0 4px 1px;
+	vertical-align:top;
 }
 .front .view-library-hours td a, .page-hours .view-library-hours td a {
 	padding-left: 5px;
@@ -2419,7 +2379,9 @@ body.faq .ui-widget-header a {
 .front .hours-Closed, .front .hours-TBA, .front .hours-status-Open {
 	display: none;
 }
-
+#block-quicktabs-homepage-search-tabs input[type="text"] {
+	width: 80%;
+}
 /* =============================================================
  * Calendar based Library Hours
  ========================================================== */
@@ -2781,4 +2743,16 @@ h2.news-item-title {
 	text-align: left;
 	padding-top: .1em;
 	padding-bottom: .1em;
+}
+
+
+/* Form fitting */
+
+textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+}
+input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:1em;}
+
+#region-postscript-third {
+height:400px;
 }
