@@ -129,8 +129,8 @@ margin-top: .5em;
    ========================================================================== */
 
 #section-header{
-height:146px;  //* height for advert */
-height: 126px; //* height for standard version */
+height:146px;  /* height for advert */
+height: 126px; /* height for standard version */
 background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
