@@ -2739,3 +2739,21 @@ h2.news-item-title {
 .zone-footer .grid-3 ul.menu li {
 	font-size: .95em;
 }
+
+
+/*********************************************
+ * Department Listing Fixes
+ *********************************************/
+
+.page-staff-departments .views-row {
+	padding-bottom: 0;
+}
+
+.single-department-page .grid-9 h3 {
+	padding-top: 0;
+}
+.single-department-page .grid-9 caption h4 {
+	text-align: left;
+	padding-top: .1em;
+	padding-bottom: .1em;
+}
