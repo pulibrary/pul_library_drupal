@@ -129,14 +129,15 @@ margin-top: .5em;
    ========================================================================== */
 
 #section-header{
-height:146px;
+height:146px;  //* height for advert */
+height: 126px; //* height for standard version */
 background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
 
 .front #zone-content-wrapper{
+background:url(../images/home-BG.gif) repeat-x 0 -121px transparent; /*with advert bar */
 background:url(../images/home-BG.gif) repeat-x 0 -126px transparent; /*without advert bar */
-background:url(../images/home-BG.gif) repeat-x 0 -121px transparent;
 
 }
 
