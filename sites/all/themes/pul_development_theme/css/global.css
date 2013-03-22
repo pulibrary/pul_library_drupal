@@ -2220,9 +2220,12 @@ body.faq .ui-widget-header a {
 	display: none;
 }
 
+/*
 .page-find .breadcrumb {
 	display: none;
 }
+*/
+
 .page-find-all .pane-content h3 {
 	font-size: 1.05em;
 }
