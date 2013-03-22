@@ -1132,7 +1132,7 @@ i.guide:before {
 
 #block-quicktabs-homepage-search-tabs {
 	padding: 11px 0 0 0;
-	height: 250px;
+	height: 270px;
 }
 
 #block-quicktabs-homepage-search-tabs input[type="text"] {
@@ -1198,6 +1198,7 @@ i.guide:before {
 .ui-tabs .ui-tabs-panel {
 	background-color: #E5E6E9;
 	padding: 0 1.4em 1em 1.4em;
+	height: 70px;
 }
 
 .ui-state-active, .ui-widget-content
@@ -1238,35 +1239,37 @@ i.guide:before {
 
 /* Quicktab positioning */
 
-.ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li, .ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li, .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li {
+.ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li, 
+.ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li, 
+.ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li {
 	position: absolute;
-	top: 198px;
+	top: 198px; /* Tab 5, not in use */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li {
 	position: absolute;
-	top: 160px; /* Tab 4 when tab 1 is active*/
+	top: 180px; /* Tab 4 when tab 1 is active*/
 }
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li {
-	top: 160px; /* Tab 4 when tab 3 is active */
+	top: 170px; /* Tab 4 when tab 3 is active */
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li + li {
-	top: 162px; /* Tab 4 when tab 2 is active */
+	top: 172px; /* Tab 4 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li {
 	position: absolute;
-	top: 127px; /* Tab 3 when tab 1 is active*/
+	top: 147px; /* Tab 3 when tab 1 is active*/
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li {
-	top: 130px; /* Tab 3 when tab 2 is active */
+	top: 140px; /* Tab 3 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li {
 	position: absolute;
-	top: 95px; /* Tab 2 when tab 1 is active */
+	top: 115px; /* Tab 2 when tab 1 is active */
 }
 
 .homepage-tab-form-message {
@@ -2751,7 +2754,7 @@ h2.news-item-title {
 textarea, input[type="text"], input[type="email"] {
     width: 100%;
 }
-input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:1em;}
+input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:16px;}
 
 #region-postscript-third {
 height:400px;
