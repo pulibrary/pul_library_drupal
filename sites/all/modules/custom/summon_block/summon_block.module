@@ -42,8 +42,20 @@ function summon_block_contents() {
 }
 
 function summon_block_query_escape($drupal_path) {
-  $query = allsearch_block_get_current_filter($drupal_path);
+  $query = summon_block_get_current_filter($drupal_path);
   return drupal_encode_path($query);
+}
+
+
+function summon_block_get_current_filter($path) {
+  if (preg_match('/^find\/databases\/search\//', $path)) {
+    $path_parts = explode("find/databases/search", $path);
+  } else {
+    $path_parts = explode("find/all/", $path);
+  }
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
 }
 
 
