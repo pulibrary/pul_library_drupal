@@ -1229,6 +1229,7 @@ display: inline;
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: none;
+	width: 100%;
 }
 
 .view-library-news .field-name-field-news-featured-graphic img{
