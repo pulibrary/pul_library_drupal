@@ -1314,3 +1314,5 @@ padding: 2px;
 #section-footer ul.menu li a:hover {
 	background: none;
 }
+
+input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:0.9em;}
