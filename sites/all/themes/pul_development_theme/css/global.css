@@ -2182,9 +2182,12 @@ body.faq .ui-widget-header a {
 	display: none;
 }
 
+/*
 .page-find .breadcrumb {
 	display: none;
 }
+*/
+
 .page-find-all .pane-content h3 {
 	font-size: 1.05em;
 }
@@ -2651,6 +2654,15 @@ table caption .field-name-field-puluser-unit a {
 .page-find-databases .views-summary {
 	padding: 0 2px 0 4px;
 }
+
+.page-find-databases .views-field-title.resource-title a span {
+	display:inline;
+}
+
+.page-find-databases .views-field-title.resource-title a .db-date-coverage {
+	padding-left: .4em;
+}
+
 
 /****************************************
  * Audience Page News
