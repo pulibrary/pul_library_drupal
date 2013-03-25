@@ -40,16 +40,23 @@ function webform_validation_schema() {
         'length' => 255,
       ),
       'data' => array(
-        'type' => 'varchar',
+        'type' => 'text',
         'description' => 'Additional rule data',
         'not null' => FALSE,
-        'length' => 255,
       ),
       'error_message' => array(
         'type' => 'varchar',
         'description' => 'Rule error message',
         'not null' => FALSE,
         'length' => 255,
+      ),
+      'negate' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'description' => 'Validate the inverse of the rule',
+        'not null' => TRUE,
+        'default' => 0,
       ),
     ),
     'primary key' => array('ruleid'),
@@ -82,7 +89,11 @@ function webform_validation_schema() {
 }
 
 /**
- * Implementation of hook_update_X().
+ * Implements hook_update_N().
+ */
+
+/**
+ * Update numeric validator range to new syntax.
  */
 function webform_validation_update_1() {
   $ret = array();
@@ -100,7 +111,7 @@ function webform_validation_update_1() {
     ->execute();
   }
   if ($has_numeric_validator) {
-    $warning_message = t('IMPORTANT: the numeric validation rule range syntax has changed with this release. Existing numeric validation rules were found and updated. Please verify that they still work as expected!');
+    $warning_message = t('The numeric validation rule range syntax has changed with this release. Existing numeric validation rules were found and updated. Please verify that they still work as expected!');
     drupal_set_message($warning_message, 'warning');
   }
   return $ret;
@@ -116,7 +127,7 @@ function _webform_validation_update_range_syntax($range) {
   }
 
   // replace "0-VAL" with "|VAL" as indicator for less than or equal to
-  if (substr($range, 0, 2) == "0-" || (substr($range, 0, 3) == "0 -")) {
+  if (preg_match('/^0 ?-/', $range)) {
     $range_arr = explode('-', $range);
     $range_end = $range_arr[1];
     return "|" . trim($range_end);
@@ -125,4 +136,44 @@ function _webform_validation_update_range_syntax($range) {
   // replace "-" as separator between range values in favor of "|"
   $range = str_replace("-", "|", $range);
   return $range;
+}
+
+/**
+ * Add column to track negated rules.
+ * Remove explicit length limit on data field.
+ * Remove regex escaping of blacklist data.
+ */
+function webform_validation_update_7101() {
+  db_add_field('webform_validation_rule', 'negate', array(
+    'type' => 'int',
+    'size' => 'tiny',
+    'unsigned' => TRUE,
+    'description' => 'Valide the inverse of the rule',
+    'not null' => TRUE,
+    'default' => 0,
+  ));
+
+  db_change_field('webform_validation_rule', 'data', 'data', array(
+    'type' => 'text',
+    'description' => 'Additional rule data',
+    'not null' => FALSE,
+  ));
+
+  $replace = array('.', '\\', '+', '*', '?', '[', '^', ']', '$', '(', ')', '{', '}', '=', '!', '<', '>', '|', ':', '-', '/');
+  $search = array();
+  foreach ($replace as $value) {
+    $search[] = '\\' . $value;
+  }
+  $result = db_query("SELECT DISTINCT data FROM {webform_validation_rule} WHERE validator = 'blacklist'");
+  foreach ($result as $row) {
+    $data_new = str_replace($search, $replace, $row->data);
+    if ($row->data !== $data_new) {
+      db_update('webform_validation_rule')
+        ->fields(array(
+          'data' => $data_new,
+        ))
+        ->condition('data', $row->data, '=')
+        ->execute();
+    }
+  }
 }
