@@ -37,12 +37,14 @@ function allsearch_block_form($form, &$form_state) {
     '#value' => t('Search'),
    );
     $form['#attached']['js'][] = drupal_get_path('module', 'allsearch_block') .'/allsearch_block.js'; 
-    $hint_settings = array('all_search_hint' => variable_get('all_search_hint'));   
+    $hint_settings = array('all_search_hint' => variable_get('all_search_hint'),
+                           'all_search_error' => variable_get('all_search_error')
+                           );   
     $form['#attached']['js'][] = array(
       'data' => array('allsearch_block' => $hint_settings),
       'type' => 'setting',
      );
-   $form['#validate'] = array('allsearch_block_form_validate');
+   //$form['#validate'] = array('allsearch_block_form_validate');
    $form['#prefix'] = $prefix;
    $form['#suffix'] = $suffix;
    //$form['#redirect'] = url('find/all/');
@@ -141,10 +143,17 @@ function allsearch_block_block_configure($delta = '') {
 
     $form['all_search_hint'] = array(
       '#type' => 'textfield',
-      '#title' => t('Block contents'),
+      '#title' => t('Search Box Box Hint Text'),
       '#size' => 60,
       '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
       '#default_value' => variable_get('all_search_hint',  t('Hint you want to display.')),
+    );
+    $form['all_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Empty Search Error Message'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the error menssage when a user supplies and empty search.'),
+      '#default_value' => variable_get('all_search_error',  t('Message you want to display when user submits an empty search.')),
     );
   }
   return $form;
@@ -161,6 +170,7 @@ function allsearch_block_block_save($delta = '', $edit = array()) {
   if ($delta == 'allsearch_search') {
     // Have Drupal save the string to the database.
     variable_set('all_search_hint', $edit['all_search_hint']);
+    variable_set('all_search_error', $edit['all_search_error']);
   }
   return;
 }
