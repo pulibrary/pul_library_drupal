@@ -21,6 +21,12 @@ function catalog_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
+       $form['#attached']['js'][] = drupal_get_path('module', 'catalog_block') .'/catalog_block.js'; 
+    $hint_settings = array('catalog_search_hint' => variable_get('catalog_search_hint'));   
+    $form['#attached']['js'][] = array(
+      'data' => array('catalog_block' => $hint_settings),
+      'type' => 'setting',
+     );
    $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
@@ -209,9 +215,9 @@ function catalog_block_block_view($delta = '') {
   if ($delta == 'catalog_search') {
     $block['subject'] = t('Catalog Search');
     $block['content'] = catalog_block_contents($delta);
-    drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
-    drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
-    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
+    //drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
+    //drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
+    //drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
   } elseif ($delta == 'catalog_search_results') {
     $block['subject'] = t('Books+ Search Results');
     $block['content'] = catalog_search_results_content($delta);
