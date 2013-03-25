@@ -163,3 +163,19 @@ width:160px;
 #feedback-button, #feedback_simple {
 	display: block;
 }
+
+/********************************************
+ *  Hours, Mini Vertical 
+ *******************************************/
+
+.mini-vertical .views-field-field-hours-library-status .date-display-single {
+	display: inline-block;
+	text-align: left;
+	padding: 0;
+}
+.mini-vertical .date-nav-wrapper .date-prev {
+	top: -20px;
+}
+.mini-vertical .date-nav-wrapper .date-next {
+	top: -20px;
+}
