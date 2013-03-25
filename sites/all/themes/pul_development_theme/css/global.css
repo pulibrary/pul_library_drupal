@@ -2690,6 +2690,15 @@ table caption .field-name-field-puluser-unit a {
 	padding: 0 2px 0 4px;
 }
 
+.page-find-databases .views-field-title.resource-title a span {
+	display:inline;
+}
+
+.page-find-databases .views-field-title.resource-title a .db-date-coverage {
+	padding-left: .4em;
+}
+
+
 /****************************************
  * Audience Page News
  ***************************************/
