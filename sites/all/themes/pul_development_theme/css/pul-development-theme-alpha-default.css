@@ -952,6 +952,28 @@ padding-top:5px;
 color:#fff;
 }
 
+/********************************************
+ *  Hours, Mini Vertical 
+ *******************************************/
+
+.mini-vertical table {
+	position: absolute;
+}
+.mini-vertical table td {
+	font-size: 0.9em;
+}
+
+.mini-vertical .views-field-field-hours-library-status .date-display-single {
+	display: block;
+}
+
+
+.mini-vertical .date-nav-wrapper .date-prev {
+	top: -30px;
+}
+.mini-vertical .date-nav-wrapper .date-next {
+	top: -30px;
+}
 
 /* =============================================================================
    LIBRARIES & COLLECTIONS
