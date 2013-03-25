@@ -1205,7 +1205,9 @@ display: inline;
 .pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
   font-size: 1.0em;
 }
-
+.front .view-library-news .field-name-field-news-featured-graphic img {
+	float: none;
+}
 
 .view-library-news .field-name-field-news-featured-graphic img{
 float:left;
