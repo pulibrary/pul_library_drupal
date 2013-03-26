@@ -6,7 +6,7 @@ function summon_block_form($form, &$form_state) {
   $form = array();
   $path = $_GET['q'];
   if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a href="http://sfx.princeton.edu:9003/sfx_pul/cgi/core/citation-linker.cgi">Citation Finder</a> | <a href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message"><a onClick="_gaq.push(\'_trackEvent\', \'Tab Link\', \'E-Journal A to Z\', \'Articles+ Tab\']);" href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a onClick="_gaq.push(\'_trackEvent\', \'Tab Link\', \'Cite Finder\', \'Articles+ Tab\']);" href="http://sfx.princeton.edu:9003/sfx_pul/cgi/core/citation-linker.cgi">Citation Finder</a> | <a onClick="_gaq.push(\'_trackEvent\', \'Tab Link\', \'Advanced Search\', \'Articles+ Tab\']);" href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
   }  
@@ -42,8 +42,20 @@ function summon_block_contents() {
 }
 
 function summon_block_query_escape($drupal_path) {
-  $query = allsearch_block_get_current_filter($drupal_path);
+  $query = summon_block_get_current_filter($drupal_path);
   return drupal_encode_path($query);
+}
+
+
+function summon_block_get_current_filter($path) {
+  if (preg_match('/^find\/databases\/search\//', $path)) {
+    $path_parts = explode("find/databases/search", $path);
+  } else {
+    $path_parts = explode("find/all/", $path);
+  }
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
 }
 
 
