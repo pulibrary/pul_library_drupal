@@ -2192,6 +2192,13 @@ body.faq .ui-widget-header a {
 	font-size: 1.05em;
 }
 
+
+/* padding rules for individual search results */
+.page-find-all .pane-content li > h3, .page-find-all .pane-content li div {
+ 	padding-left:5px;
+ 	padding-right:5px;
+}
+
 /*hide the form suffix */
 .all-search-form-suffix {
 	display: none;
@@ -2221,6 +2228,7 @@ body.faq .ui-widget-header a {
 	margin: 0;
 	border: 0;
 }
+
 
 .subject-landing-page .views-field.views-field-mail a {
 	text-decoration: none;
