@@ -17,7 +17,7 @@ function dbsearch_block_form($form, &$form_state) {
   }
 
   if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message">Browse: <a onClick="_gaq.push(\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/find/databases/">A to Z</a> | <a onClick="_gaq.push(\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/find/databases/subjects">By Subject</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message">Browse: <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/find/databases/">A to Z</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/find/databases/subjects">By Subject</a></div>';
   } else {
     $form_suffix = "";
   }  
