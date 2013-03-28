@@ -335,9 +335,29 @@ function example_form_example_search_form_alter(array &$form, array &$form_state
   // Look up the corresponding autocompletion configuration, if it exists.
   $search = search_api_autocomplete_search_load($search_id);
   // Check whether autocompletion for the search is enabled.
+  // (This is also checked automatically later, so could be skipped here.)
   if (!empty($search->enabled)) {
     // If it is, pass the textfield for the search keywords to the
     // alterElement() method of the search object.
     $search->alterElement($form['keys']);
+  }
+}
+
+/**
+ * Implements hook_search_api_query_alter().
+ *
+ * This example hook implementation shows how a custom module could fix the
+ * problem with Views contextual filters in a specific context.
+ */
+function example_search_api_query_alter(SearchApiQueryInterface $query) {
+  // Check whether this is an appropriate automcomplete query.
+  if ($query->getOption('search id') === 'search_api_autocomplete:example') {
+    // If it is, add the necessary filters that would otherwise be added by
+    // contextual filters. This is easy if the argument comes from the global
+    // user or a similar global source. If the argument comes from the URL or
+    // some other page-specific source, however, you would need to somehow pass
+    // that information along to this function.
+    global $user;
+    $query->condition('group', $user->data['group']);
   }
 }
