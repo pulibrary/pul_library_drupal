@@ -48,6 +48,7 @@ class SearchApiAutocompleteSearch extends Entity {
    * An array of options for this search, containing any of the following:
    * - results: Boolean indicating whether to also list the estimated number of
    *   results for each suggestion (if possible).
+   * - fields: Array containing the fulltext fields to use for autocompletion.
    * - custom: An array of type-specific settings.
    *
    * @var array
@@ -121,10 +122,15 @@ class SearchApiAutocompleteSearch extends Entity {
   /**
    * Helper method for altering a textfield form element to use autocompletion.
    */
-  public function alterElement(array &$element) {
-    if (user_access('use search_api_autocomplete') && $this->supportsAutocompletion()) {
+  public function alterElement(array &$element, array $fields = array()) {
+    if (search_api_autocomplete_access($this)) {
+      $fields_string = $fields ? implode(' ', $fields) : ' ';
       $element['#attached']['css'][] = drupal_get_path('module', 'search_api_autocomplete') . '/search_api_autocomplete.css';
-      $element['#autocomplete_path'] = 'search_api_autocomplete/' . $this->machine_name;
+      $element['#attached']['js'][] = drupal_get_path('module', 'search_api_autocomplete') . '/search_api_autocomplete.js';
+      $element['#autocomplete_path'] = 'search_api_autocomplete/' . $this->machine_name . '/' . $fields_string;
+      $element += array('#attributes' => array());
+      $element['#attributes'] += array('class'=> array());
+      $element['#attributes']['class'][] = 'auto_submit';
     }
   }
 

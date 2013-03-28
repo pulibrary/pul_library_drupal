@@ -15,7 +15,7 @@ function search_api_autocomplete_form_search_api_page_search_form_alter(array &$
   if (isset($form['form'])) {
     $form = &$form['form'];
   }
-  $id = 'search_api_page_' . $form['id']['#value'];
+  $id = 'search_api_page_' . $form_state['build_info']['args'][0]->machine_name;
   $search = search_api_autocomplete_search_load($id);
   if ($search && $search->enabled) {
     $search->alterElement($form['keys_' . $form['id']['#value']]);
@@ -39,9 +39,9 @@ function search_api_autocomplete_form_search_api_page_search_form_alter(array &$
 function search_api_autocomplete_pages_searches(SearchApiIndex $index) {
   $ret = array();
   foreach (search_api_page_load_multiple(FALSE, array('index_id' => $index->machine_name)) as $page) {
-    $id = 'search_api_page_' . $page->id;
+    $id = 'search_api_page_' . $page->machine_name;
     $ret[$id]['name'] = $page->name;
-    $ret[$id]['options']['custom']['page_id'] = $page->id;
+    $ret[$id]['options']['custom']['page_id'] = $page->machine_name;
   }
   return $ret;
 }
