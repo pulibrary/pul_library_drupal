@@ -31,6 +31,7 @@ function search_api_autocomplete_search_api_autocomplete_types() {
       'description' => t('Searches provided by the <em>Search views</em> module.'),
       'list searches' => 'search_api_autocomplete_views_searches',
       'create query' => 'search_api_autocomplete_views_query',
+      'config form' => 'search_api_autocomplete_views_config_form',
     );
   }
 
@@ -46,7 +47,8 @@ function search_api_autocomplete_menu() {
     'title' => 'Search API autocomplete',
     'page callback' => 'search_api_autocomplete_autocomplete',
     'page arguments' => array(1),
-    'access arguments' => array('use search_api_autocomplete'),
+    'access callback' => 'search_api_autocomplete_access',
+    'access arguments' => array(1),
     'type' => MENU_CALLBACK,
     'file' => 'search_api_autocomplete.pages.inc',
   );
@@ -127,11 +129,29 @@ function search_api_autocomplete_entity_info() {
  * Implements hook_permission().
  */
 function search_api_autocomplete_permission() {
-  return array(
-    'use search_api_autocomplete' => array(
-      'title' => t('Use search autocomplete'),
-    ),
-  );
+  $perms = array();
+  foreach (search_api_autocomplete_search_load_multiple() as $id => $search) {
+    $perms['use search_api_autocomplete for ' . $id] = array(
+      'title' => t('Use autocomplete for the %search search', array('%search' => $search->name)),
+    );
+  }
+  return $perms;
+}
+
+/**
+ * Access callback for search autocompletion.
+ *
+ * @param $search
+ *   The autocomplete search which is being accessed.
+ * @param $account
+ *   (optional) The account to check, if not given use currently logged in user.
+ *
+ * @return
+ *   TRUE, if the search is enabled, supports autocompletion and the user has
+ *   the necessary permission. FALSE otherwise.
+ */
+function search_api_autocomplete_access(SearchApiAutocompleteSearch $search, $account = NULL) {
+  return $search->enabled && user_access('use search_api_autocomplete for ' . $search->machine_name, $account) && $search->supportsAutocompletion();
 }
 
 /**

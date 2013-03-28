@@ -68,6 +68,7 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
         );
         $search['options'] += array(
           'result count' => TRUE,
+          'fields' => array(),
         );
         $types[$type]['searches'][$id] = entity_create('search_api_autocomplete_search', $search);
       }
@@ -166,14 +167,22 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
  * @see search_api_autocomplete_admin_overview()
  */
 function search_api_autocomplete_admin_overview_submit(array $form, array &$form_state) {
+  $msg = t('The settings have been saved.');
   foreach ($form_state['values']['searches'] as $id => $enabled) {
     $search = $form_state['searches'][$id];
     if ($search->enabled != $enabled) {
+      $change = TRUE;
+      if (!empty($search->is_new)) {
+        $options['query']['destination'] = $_GET['q'];
+        $options['fragment'] = 'module-search_api_autocomplete';
+        $vars['@perm_url'] = url('admin/people/permissions', $options);
+        $msg = t('The settings have been saved. Please remember to set the <a href="@perm_url">permissions</a> for the newly enabled searches.', $vars);
+      }
       $search->enabled = $enabled;
       $search->save();
     }
   }
-  drupal_set_message(t('The settings have been saved.'));
+  drupal_set_message(empty($change) ? t('No values were changed.') : $msg);
 }
 
 /**
@@ -227,6 +236,23 @@ function search_api_autocomplete_admin_search_edit(array $form, array &$form_sta
         'This option might not have an effect for some servers or types of suggestion.'),
     '#default_value' => !empty($search->options['results']),
   );
+
+  // Add a list of fields to include for autocomplete searches.
+  $fields = $search->index()->getFields();
+  $fulltext_fields = $search->index()->getFulltextFields();
+  $options = array();
+  foreach ($fulltext_fields as $field) {
+    $options[$field] = $fields[$field]['name'];
+  }
+  $form['options']['fields'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Fields to use'),
+    '#description' => t('Select the fields which should be searched for matches when looking for autocompletion suggestions. Leave blank to use the same fields as the underlying search.'),
+    '#options' => $options,
+    '#default_value' => empty($search->options['fields']) ? array() : drupal_map_assoc($search->options['fields']),
+    '#attributes' => array('class' => array('search-api-checkboxes-list')),
+  );
+
   $custom_form = empty($form['options']['custom']) ? array() : $form['options']['custom'];
   if (!empty($type['config form']) && function_exists($type['config form']) && is_array($custom_form = $type['config form']($custom_form, $form_state, $search))) {
     $form['options']['custom'] = $custom_form;
@@ -275,6 +301,7 @@ function search_api_autocomplete_admin_search_edit_submit(array $form, array &$f
   $search = $form_state['search'];
   $search->enabled = $values['enabled'];
   $search->options['results'] = $values['options']['results'];
+  $search->options['fields'] = array_keys(array_filter($values['options']['fields']));
   if (isset($values['options']['custom'])) {
     // Take care of custom options that aren't changed in the config form.
     $old = empty($search->options['custom']) ? array() : $search->options['custom'];
