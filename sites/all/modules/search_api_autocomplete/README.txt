@@ -16,11 +16,33 @@ Currently, only the Solr service class [1] is known to support this feature.
 
 [1] http://drupal.org/project/search_api_solr
 
+- Necessary setup
+
+After having installed and enabled the module, you have to do some
+administrative steps to activate the autocomplete functionality. Autocompletion
+can be enabled and configured for each search separately.
+
+To activate autocompletion for an index's searches, go to the index's
+„Autocomplete“ tab. There, you see all available searches for the index and can
+enable (and afterwards configure) autocompletion for each of them. All fulltext
+key fields on the searches should then become autocompletion fields.
+
 - Supported searches
 
 Currently, only search forms built by search pages or search views are
 supported directly. However, other modules can easily also use this
 functionality. See the "Information for developers" for details.
+
+  - Caution! -
+  If your view uses contextual filters, those can generally not be inferred in
+  the autocompletion function which might lead to problems of different kinds,
+  including display of confidential information (if such information would be
+  available without contextual filters), wrong suggestions or complete absence
+  of suggestions.
+  Therefore, you should create another display without contextual filters, if
+  necessary, and make sure that this doesn't lead to any leaks.
+  If you want to fix this in a custom way for your site, take a look at
+  example_search_api_query_alter() for suggestions.
 
 
 Information for developers
@@ -30,7 +52,7 @@ Information for developers
 
 To support autocompletion with a service class, the class has to support the
 "search_api_autocomplete" feature. This will necessitate the service class to
-have a getAutocompleteSuggestions() method as detailled in the interface in
+have a getAutocompleteSuggestions() method as detailed in the interface in
 search_api_autocomplete.interface.php.
 
 - Supporting autocompletion on a search form
