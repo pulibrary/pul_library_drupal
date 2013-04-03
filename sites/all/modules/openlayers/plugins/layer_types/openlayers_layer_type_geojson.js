@@ -10,13 +10,13 @@
 
 Drupal.openlayers.layer.geojson = function(title, map, options) {
   var features = null;
-  options.projection = 'EPSG:' + options.projection;
+  options.projection = new OpenLayers.Projection(options.projection);
   options.styleMap = Drupal.openlayers.getStyleMap(map, options.drupalID);
 
   // GeoJSON Projection handling
   var geojson_options = {
-    'internalProjection': new OpenLayers.Projection('EPSG:' + map.projection),
-    'externalProjection': new OpenLayers.Projection(options.projection)
+    'internalProjection': new OpenLayers.Projection(map.projection),
+    'externalProjection': options.projection
   };
 
   // If GeoJSON data is provided with the layer, use that.  Otherwise
@@ -53,10 +53,30 @@ Drupal.openlayers.layer.geojson = function(title, map, options) {
       // @see http://dev.openlayers.org/releases/OpenLayers-2.12/doc/apidocs/files/OpenLayers/Strategy/Fixed-js.html
       options.strategies = [new OpenLayers.Strategy.Fixed()];
     }
-    options.protocol = new OpenLayers.Protocol.HTTP({
-      url: options.url,
-      format: new OpenLayers.Format.GeoJSON()
-    });
+    if(options.useScript){
+      //use Script protocol to get around xss issues and 405 error
+      options.protocol = new OpenLayers.Protocol.Script({
+        url: options.url,
+        callbackKey: options.callbackKey,
+        callbackPrefix: "callback:",
+        filterToParams: function(filter, params) {
+         // example to demonstrate BBOX serialization
+         if (filter.type === OpenLayers.Filter.Spatial.BBOX) {
+           params.bbox = filter.value.toArray();
+           if (filter.projection) {
+              params.bbox.push(filter.projection.getCode());
+            }
+          }
+          return params;
+        }
+      });
+    }
+    else{
+      options.protocol = new OpenLayers.Protocol.HTTP({
+        url: options.url,
+        format: new OpenLayers.Format.GeoJSON()
+      });
+    }
     var layer = new OpenLayers.Layer.Vector(title, options);
   }
 

@@ -12,7 +12,6 @@ Drupal.openlayers.layer.xyz = function(title, map, options) {
   if (options.maxExtent !== undefined) {
     options.maxExtent = new OpenLayers.Bounds.fromArray(options.maxExtent) || new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34);
   }
-  options.projection = 'EPSG:' + options.projection;
 
   // Legacy goodnes
   if (typeof options.base_url == 'string' && typeof options.url == 'undefined') {
@@ -30,6 +29,8 @@ Drupal.openlayers.layer.xyz = function(title, map, options) {
   if (OpenLayers.VERSION_NUMBER.indexOf('2.10') >= 0) {
     options.wrapDateLine = null;
   }
+
+  options.projection = new OpenLayers.Projection(options.projection);
 
   var layer = new OpenLayers.Layer.XYZ(title, options.url, options);
   layer.styleMap = styleMap;

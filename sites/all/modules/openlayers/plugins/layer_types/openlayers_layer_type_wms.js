@@ -19,8 +19,24 @@ Drupal.openlayers.layer.wms = function(title, map, options) {
   }
 
   options.params.drupalID = options.drupalID;
-  var layer = new OpenLayers.Layer.WMS(title,
-    options.base_url, options.options, options.params);
+
+  // Set isBaseLayer explicitly so that OpenLayers does not guess from transparency
+  options.params.isBaseLayer = Boolean(options.isBaseLayer);
+
+  // Convert to representation that match with WMS specification
+  var optionsClone = jQuery.extend(true, {}, options.options);
+  if(optionsClone.hasOwnProperty("TRANSPARENT") && optionsClone.TRANSPARENT===0){
+    optionsClone.TRANSPARENT = "FALSE";
+  }
+  if(optionsClone.hasOwnProperty("TRANSPARENT") && optionsClone.TRANSPARENT===1){
+    optionsClone.TRANSPARENT = "FALSE";
+  }
+
+  var paramsClone = jQuery.extend(true, {}, options.params);
+  // OpenLayers can calculate the resolutions usually if provided with the number of zoom levels and tile sizes
+  paramsClone.numZoomLevels=18;
+
+  var layer = new OpenLayers.Layer.WMS(title, options.base_url, optionsClone, paramsClone);
   layer.styleMap = styleMap;
   return layer;
 };
