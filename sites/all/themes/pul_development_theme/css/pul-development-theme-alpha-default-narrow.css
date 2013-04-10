@@ -163,7 +163,9 @@ width:160px;
 #feedback-button, #feedback_simple {
 	display: block;
 }
-
+#region-advert-2 {
+	display: block;
+}
 /********************************************
  *  Hours, Mini Vertical 
  *******************************************/
