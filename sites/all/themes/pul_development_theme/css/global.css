@@ -2746,11 +2746,13 @@ h2.news-item-title {
 	color: #000000;
 	font-size: 1.1em;
 }
+
+
 #zone-alpha, #region-advert-1, #region-advert-2 {
 	height: 30px;
 }
 #region-advert-1 p, #region-advert-2 p {
-	margin-top: 8px;
+  	margin-top: 4px;
 }
 #region-advert-1 a, #region-advert-2 a {
 	color: #000000;
@@ -2761,6 +2763,13 @@ h2.news-item-title {
 #region-advert-2 {
 	display: none;
 }
+
+#region-advert-2 a {
+  text-decoration: none;
+}
+
+
+
 /*********************************************
  * Department Listing Fixes
  *********************************************/
