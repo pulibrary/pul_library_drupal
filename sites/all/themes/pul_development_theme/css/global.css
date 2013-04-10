@@ -2741,11 +2741,9 @@ h2.news-item-title {
 
 #zone-alpha-wrapper {
 	height: 30px;
-	background-color: #FFFF00;
-	background-color: #BBEE77;
-	border-bottom: 3px solid #BBEE77;
-
-	color: black;
+	background-color: #FFFF99; /* yellow */
+	border-bottom: 3px solid #000000;
+	color: #000000;
 	font-size: 1.1em;
 }
 #zone-alpha, #region-advert-1, #region-advert-2 {
@@ -2755,12 +2753,14 @@ h2.news-item-title {
 	margin-top: 8px;
 }
 #region-advert-1 a, #region-advert-2 a {
-	color: black;
+	color: #000000;
 }
 #region-advert-2 p {
 	text-align: right;
 }
-
+#region-advert-2 {
+	display: none;
+}
 /*********************************************
  * Department Listing Fixes
  *********************************************/
