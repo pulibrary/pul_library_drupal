@@ -1583,7 +1583,7 @@ i.guide:before {
 	background-color: #fff;
 }
 #zone-postscript #region-postscript-third #block-menu-menu-user-group-portals h2.block-title {
-	background-color: #f1fcff;
+	/* background-color: #f1fcff; */
 
 }
 .front #zone-postscript .content {
@@ -1679,26 +1679,26 @@ a.views-more-link {
 }
 
 #block-menu-menu-user-group-portals li {
-	padding-left: 60px;
-	line-height: 65px;
-	background: url("../images/faculty.png") no-repeat #fff;
-	background-position: 0 50%;
+	padding-left: 20px;
+	line-height: 30px;
+	/* background: url("../images/faculty.png") no-repeat #fff;
+	background-position: 0 50%; */
 	font-size: 1.15em;
 }
 #block-menu-menu-user-group-portals li + li {
-	background: url("../images/student.png") no-repeat #fff;
-	background-position: 0 50%;
+	/* background: url("../images/student.png") no-repeat #fff;
+	background-position: 0 50%; */
 }
 #block-menu-menu-user-group-portals li + li + li {
-	background: url("../images/alum.png") no-repeat #fff;
-	background-position: 0 50%;
+	/* background: url("../images/alum.png") no-repeat #fff;
+	background-position: 0 50%; */
 }
 #block-menu-menu-user-group-portals li + li + li + li {
-	background: url("../images/visitor.png") no-repeat #fff;	
-	background-position: 0 50%;
+	/* background: url("../images/visitor.png") no-repeat #fff;	
+	background-position: 0 50%; */
 }
 #region-postscript-third #block-menu-menu-user-group-portals li {
-	background-color: #f1fcff;
+	/* background-color: #f1fcff; */
 }
 
 /* =============================================================================
@@ -2746,11 +2746,13 @@ h2.news-item-title {
 	color: #000000;
 	font-size: 1.1em;
 }
+
+
 #zone-alpha, #region-advert-1, #region-advert-2 {
 	height: 30px;
 }
 #region-advert-1 p, #region-advert-2 p {
-	margin-top: 8px;
+  	margin-top: 4px;
 }
 #region-advert-1 a, #region-advert-2 a {
 	color: #000000;
@@ -2761,6 +2763,13 @@ h2.news-item-title {
 #region-advert-2 {
 	display: none;
 }
+
+#region-advert-2 a {
+  text-decoration: none;
+}
+
+
+
 /*********************************************
  * Department Listing Fixes
  *********************************************/
