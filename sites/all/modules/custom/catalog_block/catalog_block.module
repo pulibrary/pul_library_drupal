@@ -6,7 +6,7 @@ function catalog_block_form($form, &$form_state) {
   $form = array();
   $path = $_GET['q']; 
   if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://catalog.princeton.edu/">Main Catalog</a> | <a href="http://searchit.princeton.edu/primo_library/libweb/action/search.do?mode=Advanced">Advanced Search</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'Books+ Tab\']);" href="http://catalog.princeton.edu/">Main Catalog</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Advanced Search\', \'Books+ Tab\']);" href="http://searchit.princeton.edu/primo_library/libweb/action/search.do?mode=Advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
   }  
@@ -21,6 +21,14 @@ function catalog_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
+    $form['#attached']['js'][] = drupal_get_path('module', 'catalog_block') .'/catalog_block.js'; 
+    $hint_settings = array('catalog_search_hint' => variable_get('catalog_search_hint'),
+                           'catalog_search_error' => variable_get('catalog_search_error')
+                           );   
+    $form['#attached']['js'][] = array(
+      'data' => array('catalog_block' => $hint_settings),
+      'type' => 'setting',
+     );
    $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
@@ -157,10 +165,17 @@ function catalog_block_block_configure($delta = '') {
 
     $form['catalog_search_hint'] = array(
       '#type' => 'textfield',
-      '#title' => t('Block contents'),
+      '#title' => t('Search Box Hint Text'),
       '#size' => 60,
       '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
       '#default_value' => variable_get('catalog_search_hint',  t('Hint you want to display.')),
+    );
+    $form['catalog_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Invalid Search Error'),
+      '#size' => 60,
+      '#description' => t('This message will display when the user submits and empty search for the Books+ Block.'),
+      '#default_value' => variable_get('catalog_search_error',  t('Supply a Books+ Search Term.')),
     );
   }
   return $form;
@@ -177,6 +192,7 @@ function catalog_block_block_save($delta = '', $edit = array()) {
   if ($delta == 'catalog_search') {
     // Have Drupal save the string to the database.
     variable_set('catalog_search_hint', $edit['catalog_search_hint']);
+    variable_set('catalog_search_error', $edit['catalog_search_error']);
   }
   
   return;
@@ -209,9 +225,7 @@ function catalog_block_block_view($delta = '') {
   if ($delta == 'catalog_search') {
     $block['subject'] = t('Catalog Search');
     $block['content'] = catalog_block_contents($delta);
-    drupal_add_css(drupal_get_path('module', 'catalog_block') .'/catalog_block.css');
-    drupal_add_js(array('catalog_block' => array('catalog_search_hint' => variable_get('catalog_search_hint'))), 'setting');
-    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_block.js');
+ 
   } elseif ($delta == 'catalog_search_results') {
     $block['subject'] = t('Books+ Search Results');
     $block['content'] = catalog_search_results_content($delta);

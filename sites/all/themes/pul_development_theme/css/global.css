@@ -796,7 +796,7 @@ textarea {
 	padding: 3px 5px;
 }
 .panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"] {
-	width: 210px;
+	width: 80%;
 	border: 1px solid #727272;
 }
 
@@ -983,23 +983,23 @@ i.guide:before {
 	-webkit-box-shadow: 0px 0px 2px #666666;
 	-moz-box-shadow: 0px 0px 2px #666666;
 	text-shadow: 1px 1px 3px #666666;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f16900), to(#f58026));
-	background: -moz-linear-gradient(top, #f16900, #f58026);
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#f58026, endColorStr=#f58026);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#f16900, endColorStr=#f58026);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#00aafe), to(#007ae3));
+	background: -moz-linear-gradient(top, #00aafe, #007ae3);
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#00aafe, endColorStr=#007ae3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#00aafe, endColorStr=#007ae3);
 }
 
 #zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover {
 	background: #f16900; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYWFmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwOThmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-	background: -moz-linear-gradient(top,  #f16900 0%, #f58026 50%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f16900), color-stop(50%,#f58026)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #f16900 0%,#f58026 50%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #f16900 0%,#f58026 50%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #f16900 0%,#f58026 50%); /* IE10+ */
-	background: linear-gradient(to bottom,  #f16900 0%,#f58026 50%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16900', endColorstr='#f58026',GradientType=0 ); /* IE6-8 */
+	background: -moz-linear-gradient(top,  #00aafe 0%, #007ae3 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00aafe), color-stop(50%,#007ae3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #00aafe 0%,#007ae3 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #00aafe 0%,#007ae3 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #00aafe 0%,#007ae3 50%); /* IE10+ */
+	background: linear-gradient(to bottom,  #00aafe 0%,#007ae3 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', endColorstr='#007ae3',GradientType=0 ); /* IE6-8 */
 }
 
 /* =============================================================================
@@ -1132,7 +1132,7 @@ i.guide:before {
 
 #block-quicktabs-homepage-search-tabs {
 	padding: 11px 0 0 0;
-	height: 280px;
+	height: 270px;
 }
 
 #block-quicktabs-homepage-search-tabs input[type="text"] {
@@ -1198,6 +1198,7 @@ i.guide:before {
 .ui-tabs .ui-tabs-panel {
 	background-color: #E5E6E9;
 	padding: 0 1.4em 1em 1.4em;
+	height: 75px;
 }
 
 .ui-state-active, .ui-widget-content
@@ -1238,35 +1239,37 @@ i.guide:before {
 
 /* Quicktab positioning */
 
-.ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li, .ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li, .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li {
+.ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li + li, 
+.ui-tabs .ui-tabs-nav li + li + li + li.ui-state-active + li, 
+.ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li + li {
 	position: absolute;
-	top: 198px;
+	top: 198px; /* Tab 5, not in use */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li + li {
 	position: absolute;
-	top: 170px;
+	top: 180px; /* Tab 4 when tab 1 is active*/
 }
 .ui-tabs .ui-tabs-nav li + li + li.ui-state-active + li {
-	top: 180px;
+	top: 170px; /* Tab 4 when tab 3 is active */
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li + li {
-	top: 170px;
+	top: 172px; /* Tab 4 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li + li {
 	position: absolute;
-	top: 136px;
+	top: 147px; /* Tab 3 when tab 1 is active*/
 }
 
 .ui-tabs .ui-tabs-nav li + li.ui-state-active + li {
-	top: 137px;
+	top: 140px; /* Tab 3 when tab 2 is active */
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-active + li {
 	position: absolute;
-	top: 105px;
+	top: 115px; /* Tab 2 when tab 1 is active */
 }
 
 .homepage-tab-form-message {
@@ -1400,49 +1403,11 @@ i.guide:before {
 	padding: 1px 0;
 }
 
-/* =============================================================================
- SECONDARY RESEARCH MENU & All Search Box message
- ========================================================================== */
-
-.homepage-tab-form-message {
-	text-indent: -9999px;
-	padding: 5px 0 0 0;
-	overflow: auto;
+.not-front .homepage-tab-form-message {
+	display: none;
 }
 
-.homepage-tab-form-message a {
-	display: block;
-	float: left;
-	clear: none;
-	/* Original choices
-	 background-color:#bbb;
-	 color:#5d5e63;
-	 */
-	background-color: #5d5e63;
-	color: #fff;
-	text-decoration: none;
-	width: 106px;
-	padding: 4px 0;
-	text-align: center;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	text-indent: 0px;
-	margin: 5px 10px 0 0;
-	font-size: 0.833em;
-	/* Requested adjustments */
-	background-color: #515156;
-	font-size: 0.9em;
-	width: 114px;
-	padding: 2px;
-}
 
-.homepage-tab-form-message a:hover {
-	background-color: #F58026;
-	/* Color Swap */
-	background-color: rgb(245, 128, 38);
-	color: #FFFFFF;
-}
 /* =============================================================================
  NEWS
  ========================================================================== */
@@ -1473,10 +1438,13 @@ i.guide:before {
 	top: 40px;
 }
 .front h3.library-news-homepage {
-	height: 125px;
+	height: auto;
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: left;
+	width: 50%;
+	margin-right: 5px;
+	
 }
 .front .flexslider ul.slides li img {
 	margin-bottom: 10px;
@@ -1572,8 +1540,8 @@ i.guide:before {
 	border-bottom: 1px dotted #bfbfbf;
 }
 
-.flexslider ul.slides li img {
-	max-width: 280px;
+.flexslider ul.slides li  {
+	width: 280px;
 }
 
 .front #zone-postscript #region-postscript-first h2.block-title, .front #zone-postscript #region-postscript-second h2.block-title {
@@ -1615,7 +1583,7 @@ i.guide:before {
 	background-color: #fff;
 }
 #zone-postscript #region-postscript-third #block-menu-menu-user-group-portals h2.block-title {
-	background-color: #f1fcff;
+	/* background-color: #f1fcff; */
 
 }
 .front #zone-postscript .content {
@@ -1711,26 +1679,26 @@ a.views-more-link {
 }
 
 #block-menu-menu-user-group-portals li {
-	padding-left: 60px;
-	line-height: 65px;
-	background: url("../images/faculty.png") no-repeat #fff;
-	background-position: 0 50%;
+	padding-left: 20px;
+	line-height: 30px;
+	/* background: url("../images/faculty.png") no-repeat #fff;
+	background-position: 0 50%; */
 	font-size: 1.15em;
 }
 #block-menu-menu-user-group-portals li + li {
-	background: url("../images/student.png") no-repeat #fff;
-	background-position: 0 50%;
+	/* background: url("../images/student.png") no-repeat #fff;
+	background-position: 0 50%; */
 }
 #block-menu-menu-user-group-portals li + li + li {
-	background: url("../images/alum.png") no-repeat #fff;
-	background-position: 0 50%;
+	/* background: url("../images/alum.png") no-repeat #fff;
+	background-position: 0 50%; */
 }
 #block-menu-menu-user-group-portals li + li + li + li {
-	background: url("../images/visitor.png") no-repeat #fff;	
-	background-position: 0 50%;
+	/* background: url("../images/visitor.png") no-repeat #fff;	
+	background-position: 0 50%; */
 }
 #region-postscript-third #block-menu-menu-user-group-portals li {
-	background-color: #f1fcff;
+	/* background-color: #f1fcff; */
 }
 
 /* =============================================================================
@@ -2197,7 +2165,14 @@ body.faq .ui-widget-header a {
  *  * All Search Block CSS
  */
 #allsearch-block-form label { display: none; }
+#catalog-block-form label { display: none; }
+#catalog-block-form .form-item-query { display: inline; }
 
+#summon-block-form label { display: none; }
+#summon-block-form .form-item-query { display: inline; }
+
+#dbsearch-block-form label { display: none; }
+#dbsearch-block-form .form-item-query { display: inline; }
 
 .page-find .all-search-title {
 	padding-top: .5em;
@@ -2207,11 +2182,21 @@ body.faq .ui-widget-header a {
 	display: none;
 }
 
+/*
 .page-find .breadcrumb {
 	display: none;
 }
+*/
+
 .page-find-all .pane-content h3 {
 	font-size: 1.05em;
+}
+
+
+/* padding rules for individual search results */
+.page-find-all .pane-content li > h3, .page-find-all .pane-content li div {
+ 	padding-left:5px;
+ 	padding-right:5px;
 }
 
 /*hide the form suffix */
@@ -2243,6 +2228,7 @@ body.faq .ui-widget-header a {
 	margin: 0;
 	border: 0;
 }
+
 
 .subject-landing-page .views-field.views-field-mail a {
 	text-decoration: none;
@@ -2294,7 +2280,7 @@ body.faq .ui-widget-header a {
 
 /* Feedback Button Hide in small screen*/
 
-#feedback-button {
+#feedback-button, #feedback_simple {
 	display: none;
 }
 
@@ -2369,6 +2355,11 @@ body.faq .ui-widget-header a {
   background-color: whiteSmoke;
 }
 
+/* for website earch page */
+.page-find-website .region-content .views-row-odd {
+  background-color: whiteSmoke;
+}
+
 .page-find-databases-search .query {
 	font-style: italic;
 }
@@ -2383,6 +2374,7 @@ body.faq .ui-widget-header a {
 .front .view-library-hours td, .front .view-library-hours th {
 	font-size: 0.95em;
 	padding: 4px 0 4px 1px;
+	vertical-align:top;
 }
 .front .view-library-hours td a, .page-hours .view-library-hours td a {
 	padding-left: 5px;
@@ -2401,7 +2393,9 @@ body.faq .ui-widget-header a {
 .front .hours-Closed, .front .hours-TBA, .front .hours-status-Open {
 	display: none;
 }
-
+#block-quicktabs-homepage-search-tabs input[type="text"] {
+	width: 80%;
+}
 /* =============================================================
  * Calendar based Library Hours
  ========================================================== */
@@ -2669,6 +2663,15 @@ table caption .field-name-field-puluser-unit a {
 	padding: 0 2px 0 4px;
 }
 
+.page-find-databases .views-field-title.resource-title a span {
+	display:inline;
+}
+
+.page-find-databases .views-field-title.resource-title a .db-date-coverage {
+	padding-left: .4em;
+}
+
+
 /****************************************
  * Audience Page News
  ***************************************/
@@ -2684,7 +2687,7 @@ h2.news-item-title {
 }
 
 /********************************************
- *  News, Mini Vertical 
+ *  Hours, Mini Vertical 
  *******************************************/
 .mini-vertical .view-header {
 	height: 50px;
@@ -2711,9 +2714,87 @@ h2.news-item-title {
 	width: 20px;
 	top: -30px;
 }
+.mini-vertical {
+	min-height:250px;
+}
 .mini-vertical table {
 	margin-top: 10px;
 	padding: 0;
 	width: 95% !important;
 	position: absolute;
+}
+.mini-vertical table td { 
+	vertical-align: top;
+}
+.mini-vertical .views-field-field-hours-library-status .date-display-single {
+	display: inline-block;
+	padding-left: 40px;
+}
+
+.zone-footer .grid-3 ul.menu li {
+	font-size: .95em;
+}
+
+/* 
+ * Alpha Zone
+ */
+
+#zone-alpha-wrapper {
+	height: 30px;
+	background-color: #FFFF99; /* yellow */
+	border-bottom: 3px solid #000000;
+	color: #000000;
+	font-size: 1.1em;
+}
+
+
+#zone-alpha, #region-advert-1, #region-advert-2 {
+	height: 30px;
+}
+#region-advert-1 p, #region-advert-2 p {
+  	margin-top: 4px;
+}
+#region-advert-1 a, #region-advert-2 a {
+	color: #000000;
+}
+#region-advert-2 p {
+	text-align: right;
+}
+#region-advert-2 {
+	display: none;
+}
+
+#region-advert-2 a {
+  text-decoration: none;
+}
+
+
+
+/*********************************************
+ * Department Listing Fixes
+ *********************************************/
+
+.page-staff-departments .views-row {
+	padding-bottom: 0;
+}
+
+.single-department-page .grid-9 h3 {
+	padding-top: 0;
+}
+.single-department-page .grid-9 caption h4 {
+	text-align: left;
+	padding-top: .1em;
+	padding-bottom: .1em;
+}
+
+
+/* Form fitting */
+
+textarea, input[type="text"], input[type="email"] {
+    width: 100%;
+}
+input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:16px;}
+
+#region-postscript-third {
+height:400px;
 }

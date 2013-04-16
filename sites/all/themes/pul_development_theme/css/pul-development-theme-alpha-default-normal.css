@@ -134,3 +134,23 @@ margin-top:0;
 	float: none;
 	max-width: 100%;
 }
+
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}
+
+/********************************************
+ *  Hours, Mini Vertical 
+ *******************************************/
+ 
+.mini-vertical .views-field-field-hours-library-status .date-display-single {
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.mini-vertical table td {
+	font-size: 1.0em;
+}
+

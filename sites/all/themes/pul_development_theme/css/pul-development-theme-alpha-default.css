@@ -60,14 +60,17 @@ padding-bottom:3em;
 width:200px;
 }
 
+.grid-3.region.region-sidebar-second input[type="text"],
 .panel-panel.grid-3 textarea,
 .panel-panel.grid-3 input[type="text"],
 .panel-panel.grid-3 select{
 width: 210px;
 }
-
-textarea,
-input[type="text"]{
+.panel-panel.grid-3 textarea, .panel-panel.grid-3 input[type="text"] {
+	width: 210px;
+	border: 1px solid #727272;
+}
+textarea, input[type="text"], input[type="email"] {
 width:350px;
 }
 
@@ -97,8 +100,8 @@ padding-top:5px;
 
 
 /* =============================================================================
-   DATABASES
-   ========================================================================== */
+ *    DATABASES
+ *       ========================================================================== */
 
 .pane-dbsearch-block-dbsearch-search{
 padding-bottom:0;
@@ -124,23 +127,27 @@ margin-top: .5em;
 }
 
 /* =============================================================================
-   HEADER
-   ========================================================================== */
+ *    HEADER
+ *       ========================================================================== */
 
 #section-header{
-height:126px;
-background:url(../images/BG.gif) repeat-x 0 0 #fff;
+height: 126px; /* height for standard version */
+height:146px;  /* height for advert */
+
+background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
 
 .front #zone-content-wrapper{
-background:url(../images/home-BG.gif) repeat-x 0 -126px transparent;
+background:url(../images/home-BG.gif) repeat-x 0 -126px transparent; /*without advert bar */
+background:url(../images/home-BG.gif) repeat-x 0 -121px transparent; /*with advert bar */
+
 }
 
 
 /* =============================================================================
-   USER MENU
-   ========================================================================== */
+ *    USER MENU
+ *       ========================================================================== */
 
 #zone-user-wrapper{
 height:26px;
@@ -218,8 +225,8 @@ display: block;
 
 
 /* =============================================================================
-   BRANDING
-   ========================================================================== */
+ *    BRANDING
+ *       ========================================================================== */
 
 #zone-branding-wrapper .branding-data{
 clear:none;
@@ -233,8 +240,8 @@ max-width:320px;
 
 
 /* =============================================================================
-   MAIN MENU
-   ========================================================================== */
+ *    MAIN MENU
+ *       ========================================================================== */
 
 #block-system-main-menu ul.menu li{
 float: left;
@@ -374,8 +381,8 @@ text-shadow:none;
 }
 
 /* =============================================================================
-   SEARCH
-   ========================================================================== */
+ *    SEARCH
+ *       ========================================================================== */
 
 
 .ui-tabs .ui-tabs-nav li{
@@ -414,8 +421,8 @@ border-top-right-radius: 0;
 
 .ui-tabs .ui-tabs-panel{
 background:url(../images/searchit-bg.gif) no-repeat left bottom transparent;
-height:94px; /*moved from 74px to 94px, Antonio - 9/10/12 */
-padding:29px 0 0 44px;
+height:73px;
+padding:29px 0 14px 44px;
 }
 
 .ui-tabs .ui-tabs-nav{
@@ -598,11 +605,54 @@ margin:0 10px 0 0;
 #qt-homepage_search_tabs-ui-tabs4{
 border-bottom:none;
 }
+/* =============================================================================
+ *  SECONDARY RESEARCH MENU & All Search Box message
+ *   ========================================================================== */
+
+.homepage-tab-form-message {
+	text-indent: -9999px;
+	padding: 5px 0 0 0;
+	overflow: auto;
+}
+
+.homepage-tab-form-message a {
+	display: block;
+	float: left;
+	clear: none;
+	/* Original choices
+ * 	 background-color:#bbb;
+ * 	 	 color:#5d5e63;
+ * 	 	 	 */
+	background-color: #5d5e63;
+	color: #fff;
+	text-decoration: none;
+	width: 106px;
+	padding: 4px 0;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-indent: 0px;
+	margin: 5px 10px 0 0;
+	font-size: 0.833em;
+	/* Requested adjustments */
+	background-color: #515156;
+	font-size: 0.9em;
+	width: 114px;
+	padding: 2px;
+}
+
+.homepage-tab-form-message a:hover {
+	background-color: #F58026;
+	/* Color Swap */
+	background-color: rgb(245, 128, 38);
+	color: #FFFFFF;
+}
 
 
 /* =============================================================================
-   GET HELP
-   ========================================================================== */
+ *    GET HELP
+ *       ========================================================================== */
 
 
 .front #block-menu-menu-get-help-menu{
@@ -612,11 +662,6 @@ margin-left:-11px;
 
 .front #block-menu-menu-get-help-menu .content{
 padding:0;
-<<<<<<< HEAD
-font-size: 1.2em; /*temporary font upscale Antonio 9/12/12 */
-background-color: #ffffff; /*added to mask background cages... needs the background image to fill space. Antonio 9/10/12 */
-height: 157px; /* changed from 137px Antonio 9/10/12 */
-=======
 height: 156px;
 -webkit-border-bottom-right-radius: 4px;
 -webkit-border-bottom-left-radius: 0;
@@ -624,7 +669,6 @@ height: 156px;
 -moz-border-radius-bottomleft: 0;
 border-bottom-right-radius: 4px;
 border-bottom-left-radius: 0;
->>>>>>> 6e0708811706304124fc9020e4b7e827e7a80c89
 }
 
 .front #block-menu-menu-get-help-menu h2.block-title{
@@ -663,8 +707,8 @@ margin:0;
 
 
 /* =============================================================================
-   FLEX SLIDER
-   ========================================================================== */
+ *    FLEX SLIDER
+ *       ========================================================================== */
 
 .front #zone-postscript #region-postscript-first h2.block-title,
 .front #zone-postscript #region-postscript-second h2.block-title,
@@ -679,8 +723,8 @@ font-size:1.5em;
 	padding: 4px 14px 6px 14px;
 }
 /* =============================================================================
-   INFORMATION FOR
-   ========================================================================== */
+ *    INFORMATION FOR
+ *       ========================================================================== */
 
 
 .front #region-postscript-third .region-postscript-third-inner{
@@ -689,12 +733,16 @@ margin-top:0;
 margin-left:0;
 margin-right:0;
 padding:0;
+
+}
+.front #region-postscript-third {
+height:auto;
 }
 
 
 /* ========================================================================
-   HOURS
- * ======================================================================== */
+ *    HOURS
+ *     * ======================================================================== */
 
 .fc-event-time{
 display:block;
@@ -905,10 +953,32 @@ padding-top:5px;
 color:#fff;
 }
 
+/********************************************
+ *  *  Hours, Mini Vertical 
+ *   *******************************************/
+
+.mini-vertical table {
+	position: absolute;
+}
+.mini-vertical table td {
+	font-size: 0.9em;
+}
+
+.mini-vertical .views-field-field-hours-library-status .date-display-single {
+	display: block;
+}
+
+
+.mini-vertical .date-nav-wrapper .date-prev {
+	top: -30px;
+}
+.mini-vertical .date-nav-wrapper .date-next {
+	top: -30px;
+}
 
 /* =============================================================================
-   LIBRARIES & COLLECTIONS
-   ========================================================================== */
+ *    LIBRARIES & COLLECTIONS
+ *       ========================================================================== */
 
 .view-libraries-and-collections .views-row{
 display:block;
@@ -929,13 +999,14 @@ padding:0 16px 0 0;
 
 
 /* =============================================================================
-   FOOTER
-   ========================================================================== */
+ *    FOOTER
+ *       ========================================================================== */
 
 
 
 #section-footer ul.menu li{
-font-size:0.833em;
+/* font-size:0.833em; */
+font-size: .933em;
 }
 
 #section-footer .block-menu{
@@ -963,8 +1034,8 @@ font-size:0.833em;
 
 
 /* =============================================================================
-   Find & Databases
-   ========================================================================== */
+ *    Find & Databases
+ *       ========================================================================== */
 
 .panel-separator  {
 padding:0.5em 0 0 0;
@@ -977,13 +1048,13 @@ color: #5C5E66;
 
 
 /* ===========================================================================
-   All Search Page /find/all
-   ========================================================================== */
+ *    All Search Page /find/all
+ *       ========================================================================== */
 /*
-#all-search-page .panel-separator {
-border-bottom: 1px solid #E5E5E5;
-}
-*/
+ * #all-search-page .panel-separator {
+ * border-bottom: 1px solid #E5E5E5;
+ * }
+ * */
 
 /* hide search block title on larger screens */
 .page-find-all .all-search-title{
@@ -1073,10 +1144,10 @@ padding:0;
 list-style-type: none;
 }
 /*
-.all-search-results-list li {
-padding: 5px 0 0 0;
-}
-*/
+ * .all-search-results-list li {
+ * padding: 5px 0 0 0;
+ * }
+ * */
 #all-search-page .views-field-title {
 }
 
@@ -1117,8 +1188,8 @@ border-top:0;
 }
 
 /* ========================================================================
-   Access URL
-   ======================================================================== */
+ *    Access URL
+ *       ======================================================================== */
 
 .node-type-alternative-database-title .field-name-field-db-access-url, .database-resource-page .field-name-field-db-access-url {
 text-align: center;
@@ -1151,22 +1222,16 @@ display: inline;
 }
 
 /* ========================================================================
-   Library News /news and Information for Landing Pages
-   ===================================================================== */
+ *    Library News /news and Information for Landing Pages
+ *       ===================================================================== */
 
 .pane-library-news-panel-pane-3 .views-field-title h3.news-item-title {
   font-size: 1.0em;
 }
-
-<<<<<<< HEAD
-/* =====================================================================
-   All Search Box in Preface Region
-   ==================================================================== */
-
-.zone-preface .block-all-search-block form div.form-type-textfield{
-  display: inline;
-} 
-=======
+.front .view-library-news .field-name-field-news-featured-graphic img {
+	float: none;
+	width: 100%;
+}
 
 .view-library-news .field-name-field-news-featured-graphic img{
 float:left;
@@ -1229,22 +1294,26 @@ font-size:1.5em;
 	font-size: 1.2em;
 
 }
-<<<<<<< HEAD
->>>>>>> 6e0708811706304124fc9020e4b7e827e7a80c89
-=======
+
+/* Feedback button */
+
+#feedback-button, #feedback_simple {
+	display: block;
+}
+
 
 /* 
- * Footer style normal 
- */
+ *  * Footer style normal 
+ *   */
 
 #section-footer ul.menu li a {
 display: block;
 width: 100%;
 padding: 2px;
+/* font-size: 1.05em; */
 }
 #section-footer ul.menu li a:hover {
 	background: none;
 }
 
-
->>>>>>> e1bd457f3fc9365976a8359b5996f8ec5fc857b0
+input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:0.9em;}

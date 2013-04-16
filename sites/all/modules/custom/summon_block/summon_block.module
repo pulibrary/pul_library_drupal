@@ -6,7 +6,7 @@ function summon_block_form($form, &$form_state) {
   $form = array();
   $path = $_GET['q'];
   if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a href="http://sfx.princeton.edu:9003/sfx_pul/cgi/core/citation-linker.cgi">Citation Finder</a> | <a href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'E-Journal A to Z\', \'Articles+ Tab\']);" href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Cite Finder\', \'Articles+ Tab\']);" href="http://sfx.princeton.edu:9003/sfx_pul/cgi/core/citation-linker.cgi">Citation Finder</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Advanced Search\', \'Articles+ Tab\']);" href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
   }  
@@ -15,6 +15,14 @@ function summon_block_form($form, &$form_state) {
     '#title' =>  t('Search Articles'),
     '#size'  => 40,
     '#default_value' => variable_get('summon_search_hint')
+  );
+  $form['#attached']['js'][] = drupal_get_path('module', 'summon_block') .'/summon_block.js'; 
+  $hint_settings = array('summon_search_hint' => variable_get('summon_search_hint'),
+                          'summon_search_error' => variable_get('summon_search_error')
+                          );   
+  $form['#attached']['js'][] = array(
+      'data' => array('summon_block' => $hint_settings),
+      'type' => 'setting',
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -34,8 +42,20 @@ function summon_block_contents() {
 }
 
 function summon_block_query_escape($drupal_path) {
-  $query = allsearch_block_get_current_filter($drupal_path);
+  $query = summon_block_get_current_filter($drupal_path);
   return drupal_encode_path($query);
+}
+
+
+function summon_block_get_current_filter($path) {
+  if (preg_match('/^find\/databases\/search\//', $path)) {
+    $path_parts = explode("find/databases/search", $path);
+  } else {
+    $path_parts = explode("find/all/", $path);
+  }
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
 }
 
 
@@ -150,10 +170,17 @@ function summon_block_block_configure($delta = '') {
 
     $form['summon_search_hint'] = array(
       '#type' => 'textfield',
-      '#title' => t('Block contents'),
+      '#title' => t('Articles+ Search Hint'),
       '#size' => 60,
-      '#description' => t('This text will appear as the hint when the articles (Summon) box is displayed.'),
+      '#description' => t('This text will appear as the hint when the Articles+ (Summon) box is displayed.'),
       '#default_value' => variable_get('summon_search_hint',  t('Hint you want to display.')),
+    );
+    $form['summon_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Articles+ Search Error Message'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the warning message when an invalid Articles+ (Summon) box is displayed.'),
+      '#default_value' => variable_get('summon_search_error',  t('Please Supply an Articles+ Search Term.')),
     );
   }
   return $form;
@@ -170,6 +197,7 @@ function summon_block_block_save($delta = '', $edit = array()) {
   if ($delta == 'summon_search') {
     // Have Drupal save the string to the database.
     variable_set('summon_search_hint', $edit['summon_search_hint']);
+    variable_set('summon_search_error', $edit['summon_search_error']);
   }
   return;
 }
@@ -184,9 +212,8 @@ function summon_block_block_view($delta = '') {
   if ($delta == 'summon_search') {
     $block['subject'] = t('Articles Search');
     $block['content'] = summon_block_contents($delta);
-    drupal_add_css(drupal_get_path('module', 'summon_block') .'/summon_block.css');
-    drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
-    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
+    //drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
+    //drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
   } elseif ($delta == 'summon_search_results') {
     $block['subject'] = t('Articles+ Search Results');
     $block['content'] = summon_search_results_content($delta);

@@ -17,7 +17,7 @@ function dbsearch_block_form($form, &$form_state) {
   }
 
   if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message">Browse: <a href="/find/databases/">A to Z</a> | <a href="/find/databases/subjects">By Subject</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message">Browse: <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/find/databases/">A to Z</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/find/databases/subjects">By Subject</a></div>';
   } else {
     $form_suffix = "";
   }  
@@ -30,12 +30,21 @@ function dbsearch_block_form($form, &$form_state) {
     '#size'  => 20,
     '#default_value' => $default_value
   );
+  $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
+  $hint_settings = array('db_search_hint' => variable_get('db_search_hint'),
+                         'db_search_error' => variable_get('db_search_error')
+                         );   
+  $form['#attached']['js'][] = array(
+    'data' => array('dbsearch_block' => $hint_settings),
+    'type' => 'setting',
+   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
     '#suffix' => $form_suffix,
    );
-   $form['#validate'] = array('dbsearch_block_form_validate');
+   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
+   //$form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
    $form['#target'] = "_parent";
    $form['#method'] = "post";
@@ -133,10 +142,17 @@ function dbsearch_block_block_configure($delta = '') {
 
     $form['db_search_hint'] = array(
       '#type' => 'textfield',
-      '#title' => t('Block contents'),
+      '#title' => t('Search Box Hints'),
       '#size' => 60,
       '#description' => t('This text will appear as the hint when database search box is displayed.'),
       '#default_value' => variable_get('db_search_hint',  t('Hint you want to display.')),
+    );
+    $form['db_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Error Message'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the error message when the user submits an empty query.'),
+      '#default_value' => variable_get('db_search_error',  t('Supply a Database Name or a Topic.')),
     );
   }
   return $form;
@@ -153,6 +169,7 @@ function dbsearch_block_block_save($delta = '', $edit = array()) {
   if ($delta == 'dbsearch_search') {
     // Have Drupal save the string to the database.
     variable_set('db_search_hint', $edit['db_search_hint']);
+    variable_set('db_search_error', $edit['db_search_error']);
   }
   return;
 }
@@ -167,8 +184,6 @@ function dbsearch_block_block_view($delta = '') {
   if ($delta == 'dbsearch_search') {
     $block['content'] = dbsearch_block_contents($delta);
   }
-  drupal_add_css(drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.css');
-  drupal_add_js(drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js');
   
   return $block;
 }
