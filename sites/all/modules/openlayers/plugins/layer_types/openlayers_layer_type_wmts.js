@@ -19,8 +19,11 @@ Drupal.openlayers.layer.wmts = function(title, map, options) {
     style: options.style,
     matrixSet: options.matrixSet,
     formatSuffix: options.formatSuffix,
-    maxExtent: OpenLayers.Bounds.fromArray(options.maxExtent)
+    isBaseLayer: options.isBaseLayer
   };
+  if (OpenLayers.Util.isArray(options.maxExtent)) {
+    layer_options.maxExtent = OpenLayers.Bounds.fromArray(options.maxExtent);
+  }
 
   if (options.resolutions) {
     layer_options.resolutions = jQuery.parseJSON('['+options.resolutions+']');

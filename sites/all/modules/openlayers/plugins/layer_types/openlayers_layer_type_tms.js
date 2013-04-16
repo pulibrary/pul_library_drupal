@@ -8,8 +8,8 @@
  * Openlayer layer handler for TMS layer
  */
 Drupal.openlayers.layer.tms = function(title, map, options) {
-  if (options.maxExtent !== undefined) {
-    options.maxExtent = new OpenLayers.Bounds.fromArray(options.maxExtent);
+  if (OpenLayers.Util.isArray(options.maxExtent)) {
+    options.maxExtent = OpenLayers.Bounds.fromArray(options.maxExtent);
   }
 
   if (options.maptiler == true) {
