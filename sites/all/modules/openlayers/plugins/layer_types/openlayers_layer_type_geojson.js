@@ -6,8 +6,6 @@
 /**
  * Openlayer layer handler for KML layer
  */
-(function($) {
-
 Drupal.openlayers.layer.geojson = function(title, map, options) {
   var features = null;
   options.projection = new OpenLayers.Projection(options.projection);
@@ -82,5 +80,3 @@ Drupal.openlayers.layer.geojson = function(title, map, options) {
 
   return layer;
 };
-
-})(jQuery);

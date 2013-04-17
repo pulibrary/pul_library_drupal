@@ -185,6 +185,28 @@ function openlayers_build_map($map = array()) {
   $map['behaviors'] = _openlayers_behaviors_render($map['behaviors'], $map);
   $map['styles'] = _openlayers_styles_process($map['styles'], $map['layer_styles'], $map['layer_styles_select'], $map);
 
+  // Restrict map to its projection extent (data outwith cannot be represented).
+  // Layer can additionally specfiy their maxExtent in case they use
+  // non-default grids.
+  $projection = openlayers_get_projection_by_identifier($map['projection']);
+  $map['maxExtent'] = $projection->getProjectedExtent();
+
+  // In case the layer offers the same projection as the map, use this and do not provide
+  // projection definition to client. Otherwise rely on the client to reproject on the fly.
+  foreach ($map['layers'] as $layer_name => $layer) {
+    if(in_array($map['projection'], $map['layers'][$layer_name]['projection'])){
+      $map['layers'][$layer_name]['projection'] = $map['projection'];
+    } else {
+      // Client is able to reproject any possible projection because their definitions need to be
+      // known to be able to set up a layer with a certain projection. Thus choice does not matter.
+      $layerProjectionIdentifier = $map['layers'][$layer_name]['projection'][0];
+      $map['layers'][$layer_name]['projection'] = $layerProjectionIdentifier;
+    }
+
+    // Ensure JavaScript gets proper type.
+    $map['layers'][$layer_name]['isBaseLayer'] = (boolean)($map['layers'][$layer_name]['isBaseLayer']);
+  }
+
   // Hook to alter map one last time.  Final modification to existing
   // styles, behaviors, layers can happen here, but adding new styles,
   // behaviors will not get rendered.
@@ -212,8 +234,7 @@ function openlayers_build_map($map = array()) {
 function openlayers_render_map_data($map = array()) {
   // Run map through build process
   $map = openlayers_build_map($map);
-  $projection = openlayers_get_projection_by_identifier($map['projection']);
-  $map['maxExtent'] = $projection->getProjectedExtent();
+
   $output = '';
 
   // Given hide_empty_map flag, check if the map has any features
@@ -242,30 +263,22 @@ function openlayers_render_map_data($map = array()) {
 
   // Return themed map if no errors found
   if (empty($map['errors'])) {
+
     // In case the layer offers the same projection as the map, use this and do not provide
     // projection definition to client. Otherwise rely on the client to reproject on the fly.
     foreach ($map['layers'] as $layer_name => $layer) {
-      if(in_array($map['projection'], $map['layers'][$layer_name]['projection'])){
-        $map['layers'][$layer_name]['projection'] = $map['projection'];
-      } else {
-        // Client is able to reproject any possible projection because their definitions need to be
-        // known to be able to set up a layer with a certain projection. Thus choice does not matter.
-        $layerProjectionIdentifier = $map['layers'][$layer_name]['projection'][0];
-        $map['layers'][$layer_name]['projection'] = $layerProjectionIdentifier;
         // Provide client with projection definition so that it can reproject
         openlayers_add_js_projection_definition(
-          openlayers_get_projection_by_identifier($layerProjectionIdentifier)
+          openlayers_get_projection_by_identifier($map['layers'][$layer_name]['projection'])
         );
-      }
     }
+
+    // Ensure projections in use are known to the client (loads Proj4js if required)
+    openlayers_add_js_projection_definition(openlayers_get_projection_by_identifier($map['projection']));
+    openlayers_add_js_projection_definition(openlayers_get_projection_by_identifier($map['displayProjection']));
 
     $js = array('openlayers' => array('maps' => array($map['id'] => $map)));
     drupal_add_js($js, 'setting');
-
-    // Ensure projections in use are known to the client (loads Proj4js if required)
-    openlayers_add_js_projection_definition($projection);
-    $display_projection = openlayers_get_projection_by_identifier($map['displayProjection']);
-    openlayers_add_js_projection_definition($display_projection);
 
     // Push map through theme function and return
     $output = theme('openlayers_map', array(
@@ -439,7 +452,10 @@ function openlayers_layer_definition_check($definition) {
   foreach ($mandatory_fields as $field) {
     $missing = drupal_array_nested_key_exists($definition, $field);
     if (!$missing) {
-      drupal_set_message(t("There's a problem in the plugin definition of the layer type <em>!type</em>. The layer will be disabled.", array('!type' => htmlspecialchars($definition['name']))), 'warning');
+      drupal_set_message(t("Key !key is missing in in the plugin definition of the layer type <em>!type</em>. The layer will be disabled.", array(
+        '!key' => htmlspecialchars(implode(', ', $field)),
+        '!type' => htmlspecialchars($definition['name']),
+      )), 'warning');
       watchdog('openlayers', 'Layer !layer is unavailable because its
                                 plugin definition is incomplete.',
         array('!layer' => $definition['name']),
@@ -474,7 +490,10 @@ function openlayers_behavior_definition_check($definition) {
   foreach ($mandatory_fields as $field) {
     $missing = drupal_array_nested_key_exists($definition, $field);
     if (!$missing) {
-      drupal_set_message(t("There's a problem in the definition of the behavior <em>!behavior</em>. The behavior will be disabled.", array('!behavior' => htmlspecialchars($definition['name']))), 'warning');
+      drupal_set_message(t("Key !key is missing in the definition of the behavior <em>!behavior</em>. The behavior will be disabled.", array(
+        '!key' => htmlspecialchars(implode(', ', $field)),
+        '!behavior' => htmlspecialchars($definition['name']),
+      )), 'warning');
       watchdog('openlayers', 'Behavior !behavior is unavailable because its
                                 plugin definition is incomplete.',
         array('!behavior' => $definition['name']),
@@ -926,7 +945,7 @@ class openlayers_projection {
    * @return array Boundaries of projection in projected coordinates
    */
   public function getProjectedExtent() {
-    return array($this->projectedextentleft, $this->projectedextentbottom, $this->projectedextentright, $this->projectedextenttop);
+    return array_map('floatval', array($this->projectedextentleft, $this->projectedextentbottom, $this->projectedextentright, $this->projectedextenttop));
   }
 
   /**
@@ -1223,7 +1242,6 @@ class openlayers_layer_type {
       // TODO: Remove hard-coded resolutions
       'projection' => array('EPSG:900913'),
       'serverResolutions' => openlayers_get_resolutions('EPSG:900913'),
-      'maxExtent' => openlayers_get_extent('EPSG', '900913'),
       'resolutions' => openlayers_get_resolutions('EPSG:900913'),
       'base_url' => NULL,
       'transitionEffect' => 'resize',
@@ -1279,10 +1297,9 @@ class openlayers_layer_type {
    */
   function options_form_submit($form, &$form_state) {
     $form_state['values']['data']['projection'] = array_keys($form_state['values']['data']['projection']);
-    // TODO Resolutions and maximum extent should be processed only in layers
+    // TODO Resolutions should be processed only in layers
     // that provide a form field for it.
     $form_state['values']['data']['resolutions'] = array_map('floatval', array_values($form_state['values']['data']['resolutions']));
-    $form_state['values']['data']['maxExtent'] = array_map('floatval', $form_state['values']['data']['maxExtent']);
   }
 
   /**
