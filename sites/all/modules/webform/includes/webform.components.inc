@@ -334,7 +334,6 @@ function webform_components_form_submit($form, &$form_state) {
 
   drupal_set_message(t('The component positions and mandatory values have been updated.'));
 }
-
 /**
  * Submit handler for webform_components_form() that adds a new component.
  */
