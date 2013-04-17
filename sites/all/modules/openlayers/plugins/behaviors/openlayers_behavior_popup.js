@@ -69,6 +69,9 @@ Drupal.openlayers.addBehavior('openlayers_behavior_popup', function (data, optio
           null,
           true,
           function(evt) {
+            while( map.popups.length ) {
+              map.removePopup(map.popups[0]);
+              }
             Drupal.openlayers.popup.popupSelect.unselect(selectedFeature);
           }
         );
@@ -85,6 +88,7 @@ Drupal.openlayers.addBehavior('openlayers_behavior_popup', function (data, optio
         map.removePopup(feature.popup);
         feature.popup.destroy();
         feature.popup = null;
+        this.unselectAll();
       }
     }
   );

@@ -80,7 +80,7 @@ class openlayers_layer_type_wmts extends openlayers_layer_type {
         '#type' => 'textfield',
         '#title' => t('Max Extent'),
         '#default_value' => isset($this->data['maxExtent']) ? implode(', ', $this->data['maxExtent']) : '',
-        '#description' => t('Should consist of four values (left, bottom, right, top). The maximum extent for the layer. Defaults to null.'),
+        '#description' => t('Should consist of four values (left, bottom, right, top). The maximum extent for the layer.'),
       ),
       'resolutions' => array(
         '#type' => 'textfield',
