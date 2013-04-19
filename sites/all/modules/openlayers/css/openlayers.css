@@ -62,7 +62,7 @@ body .olImageLoadError {
  * Make OpenLayers img tag behave correctly with responsive stuff.
  * See #1816826
  */
-.openlayers-container img {
+div.olLayerDiv img.olTileImage {
   max-width: none;
 }
 

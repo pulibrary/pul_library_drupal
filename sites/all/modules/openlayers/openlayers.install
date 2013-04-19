@@ -564,3 +564,24 @@ function openlayers_update_7208() {
     ctools_export_crud_save('openlayers_maps', $map);
   }
 }
+
+/**
+ * Drop maxExtent from layers where layers don't handle it. OpenLayers will
+ * then take the property from the map for the affected layers.
+ */
+function openlayers_update_7209(){
+  foreach (openlayers_layers_load(TRUE) as $key => $layer) {
+    if($layer instanceof openlayers_layer_type_google
+        || $layer instanceof openlayers_layer_type_bing
+        || $layer instanceof openlayers_layer_type_cloudmade
+        || $layer instanceof openlayers_layer_type_geojson
+        || $layer instanceof openlayers_layer_type_kml
+        || $layer instanceof openlayers_layer_type_osm
+        || $layer instanceof openlayers_layer_type_raw
+        || $layer instanceof openlayers_layer_type_wms
+            ){
+      unset($layer->data['maxExtent']);
+    }
+    ctools_export_crud_save('openlayers_layers', $layer);
+  }
+}

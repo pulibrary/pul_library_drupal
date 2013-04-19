@@ -255,6 +255,7 @@ function hook_openlayers_maps() {
   $default->description = t('This is the default map that comes with the OpenLayers module.');
   $default->data = array(
     'projection' => 'EPSG:900913',
+    'displayProjection' => 'EPSG:4326',
     'width' => 'auto',
     'default_layer' => 'osm_mapnik',
     'height' => '400px',
@@ -263,10 +264,6 @@ function hook_openlayers_maps() {
         'centerpoint' => '0,0',
         'zoom' => '2'
       )
-    ),
-    'options' => array(
-      'displayProjection' => 'EPSG:4326',
-      'maxExtent' => openlayers_get_extent('EPSG', '4326'),
     ),
     'behaviors' => array(
       'openlayers_behavior_panzoombar' => array(),
