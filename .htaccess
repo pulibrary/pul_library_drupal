@@ -63,16 +63,6 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTPS} on
   RewriteRule ^ - [E=protossl:s]
 
-  # send certain traffic to https
-  RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} admin 
-  RewriteRule ^(.*)$ https://library-stage.princeton.edu/$1 [R,L]
-
-  RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} user 
-  RewriteRule ^(.*)$ https://library-stage.princeton.edu/$1 [R,L]
-
-
   # Block access to "hidden" directories whose names begin with a period. This
   # includes directories used by version control systems such as Subversion or
   # Git to store control files. Files whose names begin with a period, as well
