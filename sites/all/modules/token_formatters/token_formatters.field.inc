@@ -44,6 +44,16 @@ function token_formatters_field_formatter_info() {
       'check_access' => TRUE,
     ),
   );
+  $info['token_formatters_file'] = array(
+    'label' => t('Tokenized text'),
+    'description' => t('Display tokenized text as an optional link with tokenized destination.'),
+    'field types' => array('file', 'image'),
+    'settings' => array(
+      'text' => '[file:basename]',
+      'link' => '[file:url]',
+      'check_access' => TRUE,
+    ),
+  );
 
   return $info;
 }
@@ -70,6 +80,11 @@ function token_formatters_field_formatter_settings_form($field, $instance, $view
       $element += _token_formatters_field_formatter_settings_form('taxonomy_term', $settings);
       // Terms don't really have any form of access.
       $element['check_access']['#access'] = FALSE;
+      break;
+    case 'token_formatters_file':
+      $element += _token_formatters_field_formatter_settings_form('file', $settings);
+      // Access for files is provided by file_entity.
+      $element['check_access']['#access'] = module_exists('file_entity');
       break;
   }
 
@@ -117,6 +132,7 @@ function token_formatters_field_formatter_settings_summary($field, $instance, $v
     case 'token_formatters_node_reference':
     case 'token_formatters_user_reference':
     case 'token_formatters_term_reference':
+    case 'token_formatters_file':
       $summary += _token_formatters_field_formatter_settings_summary($settings);
       break;
   }
@@ -301,6 +317,35 @@ function _token_formatters_field_formatter_prepare_view_user_reference($entity_t
 }
 
 /**
+ * Duplicate of user_reference_field_formatter_prepare_view() that optionally checks view access.
+ */
+function _token_formatters_field_formatter_prepare_view_file($entity_type, $entities, $field, $instances, $langcode, &$items, $displays) {
+  // Iterate through the fieldable entities again to attach the loaded data.
+  foreach ($entities as $id => $entity) {
+    $rekey = FALSE;
+
+    // Support an optional entity_access() check here.
+    $check_access = $displays[$id]['type'] != 'token_formatters_file' || !empty($displays[$id]['settings']['check_access']);
+
+    foreach ($items[$id] as $delta => $item) {
+      // Re-check access because user_reference does a half-ass job of it.
+      $item['access'] = function_exists('file_entity_access') ? file_entity_access('view', (object) $item) : TRUE;
+
+      // Check whether the referenced entity could be loaded and that the user has access to it.
+      if ($check_access && !$item['access']) {
+        unset($items[$id][$delta]);
+        $rekey = TRUE;
+      }
+    }
+
+    if ($rekey) {
+      // Rekey the items array.
+      $items[$id] = array_values($items[$id]);
+    }
+  }
+}
+
+/**
  * Implements hook_field_formatter_view().
  */
 function token_formatters_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
@@ -320,6 +365,9 @@ function token_formatters_field_formatter_view($entity_type, $entity, $field, $i
         break;
       case 'token_formatters_term_reference':
         $element[$delta] = _token_formatters_field_formatter_view('taxonomy_term', $item['taxonomy_term'], $settings);
+        break;
+      case 'token_formatters_file':
+        $element[$delta] = _token_formatters_field_formatter_view('file', (object) $item, $settings);
         break;
     }
   }
