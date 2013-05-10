@@ -47,6 +47,13 @@ function token_formatters_tokens($type, $tokens, array $data = array(), array $o
     $entity_type = $data['entity_type'];
 
     foreach ($tokens as $name => $original) {
+      // Prevent tokensn like [entity:url] from getting a replacement value
+      // when the entity type already has a token with the same name. For
+      // example, [file:url].
+      if (!empty($data['token_type']) && token_get_info($data['token_type'], $name)) {
+        break;
+      }
+
       switch ($name) {
         case 'id':
           list($id) = entity_extract_ids($entity_type, $entity);
