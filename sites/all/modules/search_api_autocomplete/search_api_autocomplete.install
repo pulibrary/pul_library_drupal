@@ -124,6 +124,9 @@ function search_api_autocomplete_update_7101() {
  * Convert settings for search pages to use machine names instead of IDs.
  */
 function search_api_autocomplete_update_7102() {
+  if (!db_table_exists('search_api_page')) {
+    return;
+  }
   try {
     $tx = db_transaction();
 
