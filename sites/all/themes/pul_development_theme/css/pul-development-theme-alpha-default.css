@@ -5,7 +5,8 @@
 padding-right:1em;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li + li > .view-id-libraries_and_collections.view-display-id-block_1 { 
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li > .view-id-libraries_and_collections.view-display-id-block_1, 
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li > .libraries-collections-menu  { 
 display: none;
 }
 
@@ -296,25 +297,29 @@ background: linear-gradient(to bottom,  #00aafe 0%,#0098f4 50%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aafe', endColorstr='#0098f4',GradientType=0 ); /* IE6-8 */
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer, 
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-footer {
 clear:both;
 border-top:1px dotted #fff;
 padding:10px 4px 4px 4px;
 text-align:center;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer h3 {
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer h3,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-footer h3 {
 font-style:normal;
 font-size:125%;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer a{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-footer a,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-footer a{
 font-family: "Droid Serif", sans-serif;
 font-style:normal;
 color:#ccc;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-content .item-list{
 clear:none;
 display:block;
 border-right:1px dotted #fff;
@@ -323,18 +328,21 @@ width:175px;
 padding:0 20px 10px 0;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content div.item-list +  div.item-list{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content div.item-list +  div.item-list,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-content div.item-list +  div.item-list{
 /* border-left:1px dotted #fff; */
 border:none;
 padding:0 0 0 20px;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list ul{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list ul,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-content .item-list ul{
 padding:0;
 margin:0;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list ul li{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 .view-content .item-list ul li,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu .view-content .item-list ul li{
 float:none;
 background:none;
 display:list-item;
@@ -343,7 +351,8 @@ padding:3px 0;
 line-height:1em;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 a{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 a,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu a{
 background:none;
 padding:0;
 text-shadow:none;
@@ -351,11 +360,13 @@ font-size:0.857em;
 color:#fff;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 a:hover{
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 a:hover,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu a:hover{
 color:#333;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover .view-id-libraries_and_collections.view-display-id-block_1{
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover .view-id-libraries_and_collections.view-display-id-block_1,
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li:hover .libraries-collections-menu {
 display:block;
 background-color:#0098F4;
 position:absolute;
@@ -364,19 +375,22 @@ padding:10px 20px;
 top:43px;
 }
 
-.view-id-libraries_and_collections.view-display-id-block_1 h3{
+.view-id-libraries_and_collections.view-display-id-block_1 h3,
+.libraries-collections-menu h3{
 margin:5px 0;
 color:#71e5ff;
 text-shadow:none;
 }
 
 /* insert rule to deal with "more collections" link */
-#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 li.last.more {
+#zone-branding-wrapper #block-system-main-menu ul.menu li .view-id-libraries_and_collections.view-display-id-block_1 li.last.more,
+#zone-branding-wrapper #block-system-main-menu ul.menu li .libraries-collections-menu li.last.more {
   font-style:italic;
   text-align: right;
 }
 
-#zone-branding-wrapper #block-system-main-menu ul.menu li + li .view-id-libraries_and_collections.view-display-id-block_1 { 
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li .view-id-libraries_and_collections.view-display-id-block_1,
+#zone-branding-wrapper #block-system-main-menu ul.menu li + li .libraries-collections-menu { 
   display: none;
 }
 

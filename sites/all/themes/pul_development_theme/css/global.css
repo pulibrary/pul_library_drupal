@@ -1889,7 +1889,9 @@ article.comment {
 .view-id-libraries_and_collections.view-display-id-block_1 {
 	display: none;
 }
-
+.libraries-collections-menu {
+	display: none;
+}
 /* =====================================================================
  * zone-postscript-top = homepage alerts
  * ==================================================================== */
@@ -2395,6 +2397,11 @@ body.faq .ui-widget-header a {
 }
 #block-quicktabs-homepage-search-tabs input[type="text"] {
 	width: 80%;
+}
+.front .view-library-hours .views-field-title a {
+	font-size: 0.95em;
+	padding-top: 2px;
+
 }
 /* =============================================================
  * Calendar based Library Hours
