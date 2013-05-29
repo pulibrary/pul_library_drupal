@@ -438,6 +438,46 @@ function library_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_news_item-field_news_libraries'
+  $field_instances['node-library_news_item-field_news_libraries'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_news_libraries',
+    'label' => 'Libraries',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 35,
+    ),
+  );
+
   // Exported field_instance: 'node-library_news_item-field_news_library_contact'
   $field_instances['node-library_news_item-field_news_library_contact'] = array(
     'bundle' => 'library_news_item',
@@ -690,6 +730,7 @@ function library_news_field_default_field_instances() {
   t('Free tags that can be associated with items. ');
   t('Images');
   t('Images to be inserted inline into post content. ');
+  t('Libraries');
   t('Library Contact');
   t('Link to More Information');
   t('Location of event. ');
