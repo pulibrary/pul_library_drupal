@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Libraries and Collections Views feature.
- */
-
-include_once 'libraries_and_collections_views.features.inc';
