@@ -73,6 +73,7 @@ features[page_manager_handlers][] = node_view_panel_context_24
 features[page_manager_pages][] = libraries
 features[taxonomy][] = tags
 features[views_view][] = libraries
+features[views_view][] = libraries_and_collections_combined
 features[views_view][] = library_information
 features_exclude[dependencies][strongarm] = strongarm
 features_exclude[dependencies][services_views] = services_views
