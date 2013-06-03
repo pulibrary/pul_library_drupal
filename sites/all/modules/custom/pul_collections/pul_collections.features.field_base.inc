@@ -88,7 +88,7 @@ function pul_collections_field_default_field_bases() {
   // Exported field_base: 'field_coll_libraries_held_in'
   $field_bases['field_coll_libraries_held_in'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_coll_libraries_held_in',
