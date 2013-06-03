@@ -19,6 +19,13 @@ function pul_collections_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function pul_collections_views_api() {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function pul_collections_node_info() {
