@@ -114,8 +114,7 @@ function library_news_strongarm() {
   $strongarm->name = 'node_options_library_news_item';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
-    2 => 'revision',
+    1 => 'revision',
   );
   $export['node_options_library_news_item'] = $strongarm;
 

@@ -92,7 +92,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 36,
+      'weight' => 35,
     ),
   );
 
@@ -474,7 +474,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 35,
+      'weight' => 37,
     ),
   );
 
@@ -610,7 +610,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 36,
     ),
   );
 
