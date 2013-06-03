@@ -183,3 +183,11 @@ width:160px;
 .mini-vertical .date-nav-wrapper .date-next {
 	top: -20px;
 }
+
+/*********
+ * Page Title
+ ********/
+
+.sidebar-second #page-title {
+	max-width: 520px;
+}
