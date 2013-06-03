@@ -3966,14 +3966,12 @@ class MollomAnalysisTestCase extends MollomWebTestCase {
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId');
-    $this->assertResponseIDInForm('captchaId');
     $this->assertNoCaptchaField();
     $edit = array(
       'body' => 'unsure unsure unsure',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId');
-    $this->assertResponseIDInForm('captchaId');
     $this->assertNoCaptchaField();
     $edit = array(
       'title' => 'unsure',
@@ -3986,14 +3984,11 @@ class MollomAnalysisTestCase extends MollomWebTestCase {
 
   /**
    * Tests unsure posts turning into ham.
-   *
-   * @todo CAPTCHA ID should stay the same.
-   * @see http://drupal.org/node/1959904
    */
   function subtestUnsureHam() {
     $this->drupalGet('mollom-test/form');
     $this->assertNoCaptchaField();
-    // Posting ham as title would submit the form, so post as body instead.
+    // Posting unsure as title would submit the form, so post as body instead.
     $edit = array(
       'body' => 'unsure',
     );
@@ -4004,10 +3999,10 @@ class MollomAnalysisTestCase extends MollomWebTestCase {
     // Turn the post into ham.
     $edit = array(
       'body' => 'ham',
+      'mollom[captcha]' => 'correct',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId');
-//    $this->assertResponseIDInForm('captchaId');
     $this->assertNoCaptchaField();
     // Turn the post back into unsure.
     $edit = array(
@@ -4015,12 +4010,10 @@ class MollomAnalysisTestCase extends MollomWebTestCase {
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId');
-//    $this->assertResponseIDInForm('captchaId');
-    $this->assertCaptchaField();
+    $this->assertNoCaptchaField();
 
     $edit = array(
       'title' => 'irrelevant',
-      'mollom[captcha]' => 'correct',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertNoCaptchaField();
@@ -4037,31 +4030,33 @@ class MollomAnalysisTestCase extends MollomWebTestCase {
     $this->drupalGet('mollom-test/form');
     $this->assertNoCaptchaField();
     $edit = array(
-      'title' => 'unsure',
+      'body' => 'unsure',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId', TRUE);
     $this->assertResponseIDInForm('captchaId', TRUE);
     $this->assertCaptchaField();
+
+    $edit = array(
+      'mollom[captcha]' => 'correct',
+    );
+    $this->drupalPost(NULL, $edit, 'Submit');
+    $this->assertResponseIDInForm('contentId');
+    $this->assertNoCaptchaField();
+
     // Turn the post into spam.
     $edit = array(
       'title' => 'spam',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertResponseIDInForm('contentId');
-//    $this->assertResponseIDInForm('captchaId');
     $this->assertNoCaptchaField();
+    $this->assertText($this->spam_message);
+    $this->assertNoText('Successful form submission.');
+
     // Turn the post back into unsure.
     $edit = array(
       'title' => 'unsure',
-    );
-    $this->drupalPost(NULL, $edit, 'Submit');
-    $this->assertResponseIDInForm('contentId');
-//    $this->assertResponseIDInForm('captchaId');
-    $this->assertCaptchaField();
-
-    $edit = array(
-      'mollom[captcha]' => 'correct',
     );
     $this->drupalPost(NULL, $edit, 'Submit');
     $this->assertNoCaptchaField();
@@ -4376,8 +4371,8 @@ class MollomAnalysisOptionsTestCase extends MollomWebTestCase {
     $this->drupalLogout();
     $expectations = array(
       'ham' => array('spamScore' => 0.0, 'spamClassification' => 'ham', 'profanityScore' => 0),
-      'unsure' => array('spamScore' => 0.5, 'spamClassification' => 'unsure', 'profanityScore' => 0),
-      $this->randomString() => array('spamScore' => 0.5, 'spamClassification' => 'unsure', 'profanityScore' => 0),
+      'unsure' => array('spamScore' => 0.0, 'spamClassification' => 'unsure', 'profanityScore' => 0),
+      $this->randomString() => array('spamScore' => 0.0, 'spamClassification' => 'unsure', 'profanityScore' => 0),
     );
     foreach ($expectations as $body => $expected) {
       $edit = array(
@@ -4387,6 +4382,7 @@ class MollomAnalysisOptionsTestCase extends MollomWebTestCase {
       $this->drupalPost('mollom-test/form', $edit, 'Submit');
       if ($expected['spamClassification'] == 'unsure') {
         $this->postCorrectCaptcha(NULL, array(), 'Submit');
+        $expected['spamClassification'] = 'ham';
       }
       $mid = $this->assertTestSubmitData();
       $data = $this->assertMollomData('mollom_test', $mid);

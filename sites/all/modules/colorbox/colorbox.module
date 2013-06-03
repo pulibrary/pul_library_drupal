@@ -267,7 +267,7 @@ function _colorbox_doheader() {
  */
 function colorbox_get_version($colorbox_js = NULL) {
   $version = 0;
-  $pattern = '#ColorBox v([0-9\.a-z]+)#';
+  $pattern = '@(?i:Colorbox) v([0-9\.a-z]+)@';
 
   // No file is passed in so use the default location.
   if (is_null($colorbox_js)) {
@@ -276,12 +276,11 @@ function colorbox_get_version($colorbox_js = NULL) {
 
   // Return the version of Colorbox plugin, it it exists.
   if (file_exists($colorbox_js)) {
-    $colorbox_plugin = file_get_contents($colorbox_js, NULL, NULL, 0, 32);
+    $colorbox_plugin = file_get_contents($colorbox_js, NULL, NULL, 0, 64);
     if (preg_match($pattern, $colorbox_plugin, $matches)) {
       $version = $matches[1];
     }
   }
-
   return $version;
 }
 
