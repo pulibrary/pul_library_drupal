@@ -687,7 +687,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: : field_building_name */
   $handler->display->display_options['fields']['field_building_name']['id'] = 'field_building_name';
   $handler->display->display_options['fields']['field_building_name']['table'] = 'field_data_field_building_name';
   $handler->display->display_options['fields']['field_building_name']['field'] = 'field_building_name';
@@ -725,10 +725,11 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_zip']['field'] = 'field_zip';
   $handler->display->display_options['fields']['field_zip']['label'] = '';
   $handler->display->display_options['fields']['field_zip']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: : field_campus_map_url */
   $handler->display->display_options['fields']['field_campus_map_url']['id'] = 'field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['table'] = 'field_data_field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['field'] = 'field_campus_map_url';
+  $handler->display->display_options['fields']['field_campus_map_url']['click_sort_column'] = 'url';
   /* Field: Content: E-Mail Address */
   $handler->display->display_options['fields']['field_e_mail_address']['id'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['table'] = 'field_data_field_e_mail_address';
@@ -797,14 +798,16 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: : field_campus_map_url */
   $handler->display->display_options['fields']['field_campus_map_url']['id'] = 'field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['table'] = 'field_data_field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['field'] = 'field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['label'] = '';
   $handler->display->display_options['fields']['field_campus_map_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_campus_map_url']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_campus_map_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_campus_map_url']['type'] = 'link_plain';
+  /* Field: : field_building_name */
   $handler->display->display_options['fields']['field_building_name']['id'] = 'field_building_name';
   $handler->display->display_options['fields']['field_building_name']['table'] = 'field_data_field_building_name';
   $handler->display->display_options['fields']['field_building_name']['field'] = 'field_building_name';
@@ -961,14 +964,16 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: : field_campus_map_url */
   $handler->display->display_options['fields']['field_campus_map_url']['id'] = 'field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['table'] = 'field_data_field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['field'] = 'field_campus_map_url';
   $handler->display->display_options['fields']['field_campus_map_url']['label'] = '';
   $handler->display->display_options['fields']['field_campus_map_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_campus_map_url']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_campus_map_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_campus_map_url']['type'] = 'link_plain';
+  /* Field: : field_building_name */
   $handler->display->display_options['fields']['field_building_name']['id'] = 'field_building_name';
   $handler->display->display_options['fields']['field_building_name']['table'] = 'field_data_field_building_name';
   $handler->display->display_options['fields']['field_building_name']['field'] = 'field_building_name';
