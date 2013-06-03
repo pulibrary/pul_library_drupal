@@ -76,7 +76,7 @@ function pul_collections_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -144,7 +144,7 @@ function pul_collections_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 42,
+      'weight' => 10,
     ),
   );
 
@@ -209,7 +209,66 @@ function pul_collections_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 44,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-collection-field_coll_full_title'
+  $field_instances['node-collection-field_coll_full_title'] = array(
+    'bundle' => 'collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_coll_full_title',
+    'label' => 'Full Title',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -273,7 +332,7 @@ function pul_collections_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -338,7 +397,7 @@ function pul_collections_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 33,
+      'weight' => 5,
     ),
   );
 
@@ -417,7 +476,7 @@ function pul_collections_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 37,
+      'weight' => 7,
     ),
   );
 
@@ -485,7 +544,7 @@ function pul_collections_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 39,
+      'weight' => 8,
     ),
   );
 
@@ -550,7 +609,7 @@ function pul_collections_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 35,
+      'weight' => 6,
     ),
   );
 
@@ -560,6 +619,7 @@ function pul_collections_field_default_field_instances() {
   t('Body');
   t('Collection URL');
   t('Displayed on the full content page.');
+  t('Full Title');
   t('Individual Contact');
   t('Introductory text which displays on the Collections listing page.');
   t('Item should show on top-level libraries and collections menu. ');
