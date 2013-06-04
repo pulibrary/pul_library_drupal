@@ -34,7 +34,7 @@ Drupal.openlayers.addBehavior('openlayers_behavior_fullscreen', function (data, 
  */
 Drupal.openlayers.fullscreenToggle = function () {
   var $map = jQuery(this.openlayers.div);
-  var extent = map.getExtent();
+  var extent = this.openlayers.getExtent();
 
   $map.parent().toggleClass('openlayers_map_fullscreen');
   $map.toggleClass('openlayers_map_fullscreen');

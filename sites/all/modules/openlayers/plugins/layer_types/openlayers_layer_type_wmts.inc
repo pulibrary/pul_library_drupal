@@ -5,22 +5,6 @@
  */
 
 /**
- * Define the Ctools plugin options.
- */
-function openlayers_openlayers_layer_type_wmts_openlayers_layer_types() {
-  return array(
-    'title' => t('WMTS'),
-    'description' => t('<a href="!url">Web Map Tile Service</a>',
-      array('!url' => 'http://en.wikipedia.org/wiki/Tile_Map_Service')),
-    'layer_type' => array(
-      'file' => 'openlayers_layer_type_wmts.inc',
-      'class' => 'openlayers_layer_type_wmts',
-      'parent' => 'openlayers_layer_type',
-    ),
-  );
-}
-
-/**
  * OpenLayers TMS Layer Type class
  */
 class openlayers_layer_type_wmts extends openlayers_layer_type {
@@ -70,6 +54,17 @@ class openlayers_layer_type_wmts extends openlayers_layer_type {
         '#default_value' => isset($this->data['matrixSet']) ? $this->data['matrixSet'] : '',
         '#description' => t('One of the advertised matrix set identifiers. Must be provided.'),
       ),
+      'format' => array(
+        '#type' => 'select',
+        '#title' => t('Tile format'),
+        '#options' => array(
+          'image/png' => 'image/png',
+          'image/gif' => 'image/gif',
+          'image/jpeg' => 'image/jpeg'
+        ),
+        '#default_value' => isset($this->data['format']) ? $this->data['format'] : 'image/jpeg',
+        '#description' => t('The image MIME type.  Default is "image/jpeg".'),
+      ),
       'formatSuffix' => array(
         '#type' => 'textfield',
         '#title' => t('Format Suffix'),
@@ -111,6 +106,9 @@ class openlayers_layer_type_wmts extends openlayers_layer_type {
     $form_state['data']['serverResolutions'] = array_map('floatval', explode(' ', $form_state['data']['serverResolutions']));
     $form_state['data']['url'] = explode("\n", $form_state['data']['url']);
     $form_state['data']['maxExtent'] = array_map('floatval', explode(",", $form_state['data']['maxExtent']));
+    if (empty($form_state['data']['formatSuffix'])) {
+      $form_state['data']['formatSuffix'] = NULL;
+    }
   }
 
   function options_form_submit($form, &$form_state) {
