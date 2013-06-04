@@ -5,22 +5,6 @@
  */
 
 /**
- * Define the Ctools plugin options.
- */
-function openlayers_openlayers_layer_type_geojson_openlayers_layer_types() {
-  return array(
-    'title' => t('GeoJSON'),
-    'description' => t('Provides a vector layer based on <a href="!url">GeoJSON</a>.',
-      array('!url' => 'http://geojson.org/')),
-    'layer_type' => array(
-      'file' => 'openlayers_layer_type_geojson.inc',
-      'class' => 'openlayers_layer_type_geojson',
-      'parent' => 'openlayers_layer_type',
-    ),
-  );
-}
-
-/**
  * OpenLayers GeoJSON Layer Type class
  */
 class openlayers_layer_type_geojson extends openlayers_layer_type {

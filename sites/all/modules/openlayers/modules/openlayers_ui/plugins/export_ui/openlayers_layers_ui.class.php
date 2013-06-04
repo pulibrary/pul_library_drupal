@@ -89,9 +89,20 @@ class openlayers_layers_ui extends ctools_export_ui {
     );
 
     $form += $layers_options;
+
+    $form['buttons']['submit']['#weight'] = 0;
+    $form['buttons']['delete']['#weight'] = 20;
+
+    $form['buttons']['saveandedit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save and edit'),
+      '#weight' => 10
+    );
   }
 
   function edit_form_validate(&$form, &$form_state) {
+    ctools_get_plugins('openlayers', 'layer_types');
+
     $layer = openlayers_layer_type_load($form_state['values']['layer_type']);
     $form_state['values']['data'] = $form_state['values'][$form_state['values']['layer_type']];
 
@@ -126,6 +137,36 @@ class openlayers_layers_ui extends ctools_export_ui {
     $layer->options_form_submit($form, $form_state);
 
     parent::edit_form_submit($form, $form_state);
+  }
+
+  /**
+   * Implements ctools_export_ui::edit_execute_form().
+   *
+   * This is hacky, but since CTools Export UI uses drupal_goto() we have to
+   * effectively change the plugin to modify the redirect path dynamically.
+   */
+  function edit_execute_form(&$form_state) {
+    $output = parent::edit_execute_form($form_state);
+    if (!empty($form_state['executed'])) {
+      $clicked = $form_state['clicked_button']['#value'];
+      if (t('Save and edit') == $clicked) {
+        // We always want to redirect back to this page when adding an item,
+        // but we want to preserve the destination so we can be redirected back
+        // to where we came from after clicking "Save".
+        $options = array();
+        if (!empty($_GET['destination'])) {
+          $options['query']['destination'] = $_GET['destination'];
+          unset($_GET['destination']);
+        }
+
+        // Sets redirect path and options.
+        $op = $form_state['op'];
+        $name = $form_state['values']['name'];
+        $path = ('add' != $op) ? current_path() : 'admin/structure/openlayers/layers/list/' . $name . '/edit';
+        $this->plugin['redirect'][$op] = array($path, $options);
+      }
+    }
+    return $output;
   }
 
   /**

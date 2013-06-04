@@ -69,19 +69,14 @@ function openlayers_theme($existing, $type, $theme, $path) {
  * Implements hook_ctools_plugin_directory().
  */
 function openlayers_ctools_plugin_directory($module, $plugin) {
-  if ($plugin == 'content_types' && !empty($plugin)) {
-    return 'includes/' . $plugin;
-  }
-  if ($module == 'openlayers' && !empty($plugin)) {
-    return 'plugins/' . $plugin;
-  }
+  return 'plugins/' . $plugin;
 }
 
 /**
  * Implements hook_ctools_plugin_type().
  */
 function openlayers_ctools_plugin_type() {
-  // For backwards compatability, we allow for the use
+  // For backwards compatibility, we allow for the use
   // of hooks to define these plugins.
   //
   // This should be removed in 7.x-3.x
@@ -115,7 +110,7 @@ function openlayers_include() {
     if (!isset($once)) {
       $once = TRUE;
 
-      $path = check_plain(variable_get('openlayers_source', OPENLAYERS_DEFAULT_LIBRARY));
+      $path = check_plain(variable_get('openlayers_source_external', OPENLAYERS_DEFAULT_LIBRARY));
 
       // Correctly handle URLs beginning with a double backslash, see RFC 1808 Section 4
       if (substr($path, 0, 2) == '//') {
@@ -179,11 +174,12 @@ function openlayers_build_map($map = array()) {
   $map['styles'] = isset($map['styles']) ? $map['styles'] : array();
   $map['layer_styles'] = isset($map['layer_styles']) ? $map['layer_styles'] : array();
   $map['layer_styles_select'] = isset($map['layer_styles_select']) ? $map['layer_styles_select'] : array();
+  $map['layer_styles_temporary'] = isset($map['layer_styles_temporary']) ? $map['layer_styles_temporary'] : array();
 
   // Process map parts.
   $map['layers'] = _openlayers_layers_process($map['layers'], $map);
   $map['behaviors'] = _openlayers_behaviors_render($map['behaviors'], $map);
-  $map['styles'] = _openlayers_styles_process($map['styles'], $map['layer_styles'], $map['layer_styles_select'], $map);
+  $map['styles'] = _openlayers_styles_process($map['styles'], $map['layer_styles'], $map['layer_styles_select'], $map['layer_styles_temporary'], $map);
 
   // Restrict map to its projection extent (data outwith cannot be represented).
   // Layer can additionally specfiy their maxExtent in case they use
@@ -194,17 +190,24 @@ function openlayers_build_map($map = array()) {
   // In case the layer offers the same projection as the map, use this and do not provide
   // projection definition to client. Otherwise rely on the client to reproject on the fly.
   foreach ($map['layers'] as $layer_name => $layer) {
-    if(in_array($map['projection'], $map['layers'][$layer_name]['projection'])){
+    if(in_array($map['projection'], $layer['projection'])){
       $map['layers'][$layer_name]['projection'] = $map['projection'];
     } else {
       // Client is able to reproject any possible projection because their definitions need to be
       // known to be able to set up a layer with a certain projection. Thus choice does not matter.
-      $layerProjectionIdentifier = $map['layers'][$layer_name]['projection'][0];
+      $layerProjectionIdentifier = reset($layer['projection']);
+      if($layerProjectionIdentifier===FALSE){
+        throw new Exception(
+          t('Layer !title lacks its projection. Please edit it to select a projection.', array(
+              '!title' => $layer['title']
+          ))
+        );
+      }
       $map['layers'][$layer_name]['projection'] = $layerProjectionIdentifier;
     }
 
     // Ensure JavaScript gets proper type.
-    $map['layers'][$layer_name]['isBaseLayer'] = (boolean)($map['layers'][$layer_name]['isBaseLayer']);
+    $map['layers'][$layer_name]['isBaseLayer'] = (boolean)($layer['isBaseLayer']);
   }
 
   // Hook to alter map one last time.  Final modification to existing
@@ -391,16 +394,6 @@ function openlayers_layer_load($name, $reset = FALSE) {
   if (is_array($layer) && isset($layer[$name])) {
     $layer_object = openlayers_get_layer_object($layer[$name]);
     if (openlayers_layer_sanity_check($layer_object)) {
-      // Automatic layer load for layers.
-      /*
-      $definitions = ctools_get_plugins('openlayers', 'layer_types');
-      $type = get_class($layer_object);
-      $base = basename($definitions[$type]['file'], '.inc');
-      $js = $definitions[$type]['path'] . '/' . $base .'.js';
-      $css = $definitions[$type]['path'] . '/' . $base .'.css';
-      drupal_add_js($js);
-      drupal_add_css($css);
-      */
       return $layer_object;
     }
   }
@@ -418,12 +411,16 @@ function openlayers_layer_load($name, $reset = FALSE) {
  * @return array
  *   array of layer info
  */
-function openlayers_layers_load($reset = FALSE) {
+function openlayers_layers_load($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('export');
   $layer_objects = array();
   if ($reset) ctools_export_load_object_reset('openlayers_layers');
   $layers = ctools_export_load_object('openlayers_layers', 'all', array());
   foreach ($layers as $layer) {
+    if (!$include_disabled && isset($layer->disabled) && $layer->disabled) {
+      continue;
+    }
+
     $layer_objects[$layer->name] = openlayers_get_layer_object($layer);
   }
 
@@ -591,9 +588,15 @@ function openlayers_layer_delete($layer) {
  * @return
  *   Array of layer type info.
  */
-function openlayers_layer_types($reset = FALSE) {
+function openlayers_layer_types($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('plugins');
   $layers = ctools_get_plugins('openlayers', 'layer_types');
+
+  if (!$include_disabled) {
+    $layers = array_filter($layers, function($layer) {
+      return (!isset($layer->disabled) || !$layer->disabled);
+    });
+  }
 
   return array_filter($layers, 'openlayers_layer_definition_check');
 }
@@ -634,9 +637,16 @@ function openlayers_layer_type_load($name, $reset = FALSE) {
  * @return
  *   Array of behavior info.
  */
-function openlayers_behaviors($reset = FALSE) {
+function openlayers_behaviors($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('plugins');
   $behaviors = ctools_get_plugins('openlayers', 'behaviors');
+
+  if (!$include_disabled) {
+    $behaviors = array_filter($behaviors, function($behavior) {
+      return (!isset($behavior->disabled) || !$behavior->disabled);
+    });
+  }
+
   return array_filter($behaviors, 'openlayers_behavior_definition_check');
 
 }
@@ -651,13 +661,20 @@ function openlayers_behaviors($reset = FALSE) {
  * @return
  *   Array of all available styles.
  */
-function openlayers_styles($reset = FALSE) {
+function openlayers_styles($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('export');
   if ($reset) {
     ctools_export_load_object_reset('openlayers_styles');
   }
 
   $styles = ctools_export_load_object('openlayers_styles', 'all', array());
+
+  if (!$include_disabled) {
+    $styles = array_filter($styles, function($style) {
+      return !(isset($style->disabled) && $style->disabled);
+    });
+  }
+
   return $styles;
 }
 
@@ -728,14 +745,20 @@ function openlayers_style_delete($style) {
  * @return
  *   Return array of maps.
  */
-function openlayers_maps($reset = FALSE) {
+function openlayers_maps($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('export');
   if ($reset) {
     ctools_export_load_object_reset('openlayers_maps');
   }
 
-  $maps = ctools_export_load_object(
-    'openlayers_maps', 'all', array());
+  $maps = ctools_export_load_object('openlayers_maps', 'all', array());
+
+  if (!$include_disabled) {
+    $maps = array_filter($maps, function($map) {
+      return !(isset($map->disabled) && $map->disabled);
+    });
+  }
+
   return $maps;
 }
 
@@ -1007,11 +1030,15 @@ function openlayers_get_projection_by_identifier($identifier) {
 /**
  * @return array<openlayers_projection>
  */
-function openlayers_get_all_projections() {
+function openlayers_get_all_projections($reset = FALSE, $include_disabled = FALSE) {
   ctools_include('export');
   $projections = array();
 
-  foreach (ctools_export_crud_load_all('openlayers_projections') as $record) {
+  foreach (ctools_export_crud_load_all('openlayers_projections', $reset) as $record) {
+    if (!$include_disabled && isset($record->disabled) && $record->disabled) {
+      continue;
+    }
+
     $projections[] = openlayers_projection_from_record($record);
   }
 
@@ -1355,6 +1382,22 @@ function openlayers_ctools_plugin_api($module, $api) {
 }
 
 /**
+ * Implements hook_openlayers_behaviors().
+ */
+function openlayers_openlayers_behaviors() {
+  module_load_include('inc', 'openlayers', 'includes/openlayers.behaviors');
+  return _openlayers_openlayers_behaviors();
+}
+
+/**
+ * Implements hook_openlayers_layer_types().
+ */
+function openlayers_openlayers_layer_types() {
+  module_load_include('inc', 'openlayers', 'includes/openlayers.layer_types');
+  return _openlayers_openlayers_layer_types();
+}
+
+/**
  * Implements hook_openlayers_layers().
  */
 function openlayers_openlayers_layers() {
@@ -1363,8 +1406,7 @@ function openlayers_openlayers_layers() {
 }
 
 /**
- * Gather list of default projections
- * @return array<openlayers_projection>
+ * Implements hook_openlayers_projections().
  */
 function openlayers_openlayers_projections() {
   module_load_include('inc', 'openlayers', 'includes/openlayers.projections');

@@ -70,6 +70,7 @@ function openlayers_ui_maps_form_process($values = array()) {
     'layer_weight',
     'layer_styles',
     'layer_styles_select',
+    'layer_styles_temporary',
     'layer_activated',
     'layer_switcher',
     'projections',
@@ -124,6 +125,7 @@ function openlayers_ui_maps_form_process($values = array()) {
       case 'layer_weight':
       case 'layer_styles':
       case 'layer_styles_select':
+      case 'layer_styles_temporary':
       case 'layer_activated':
       case 'layer_switcher':
       case 'projections':
@@ -140,7 +142,7 @@ function openlayers_ui_maps_form_process($values = array()) {
   }
 
   // Ensure these values are arrays
-  $ensure_array = array('behaviors', 'layers', 'layer_weight', 'layer_styles', 'layer_styles_select', 'styles');
+  $ensure_array = array('behaviors', 'layers', 'layer_weight', 'layer_styles', 'layer_styles_select', 'layer_styles_temporary', 'styles');
   foreach ($ensure_array as $key) {
     if (empty($processed[$key])) {
       $processed[$key] = array();
@@ -156,6 +158,7 @@ function openlayers_ui_maps_form_process($values = array()) {
 function openlayers_ui_get_behavior_options($type, $defaults) {
   $form = array();
   $behaviors = openlayers_behaviors();
+  $enabled_behaviors = array();
 
   foreach ($defaults['behaviors'] as $key => $options) {
     $enabled_behaviors[$key] = $behaviors[$key];

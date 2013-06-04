@@ -51,7 +51,7 @@ function token_formatters_tokens($type, $tokens, array $data = array(), array $o
       // when the entity type already has a token with the same name. For
       // example, [file:url].
       if (!empty($data['token_type']) && token_get_info($data['token_type'], $name)) {
-        break;
+        continue;
       }
 
       switch ($name) {

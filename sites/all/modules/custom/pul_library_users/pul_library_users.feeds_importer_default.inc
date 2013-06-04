@@ -42,92 +42,133 @@ function pul_library_users_feeds_importer_default() {
           4 => 0,
           6 => 0,
         ),
-        'update_existing' => 0,
+        'update_existing' => 1,
         'status' => '1',
         'mappings' => array(
           0 => array(
-            'source' => 'name',
-            'target' => 'name',
-            'unique' => 1,
-          ),
-          1 => array(
-            'source' => 'mail',
-            'target' => 'mail',
-            'unique' => 1,
-          ),
-          2 => array(
-            'source' => 'created',
-            'target' => 'created',
-            'unique' => FALSE,
-          ),
-          3 => array(
             'source' => 'idStaff',
             'target' => 'field_puluser_librarystaffid',
             'unique' => FALSE,
           ),
-          4 => array(
+          1 => array(
             'source' => 'PUID',
             'target' => 'field_puluser_princetonid',
             'unique' => FALSE,
           ),
-          5 => array(
-            'source' => 'Staff Name',
-            'target' => 'field_puluser_formalname',
-            'unique' => FALSE,
-          ),
-          6 => array(
-            'source' => 'Title',
-            'target' => 'field_puluser_officialtitle',
-            'unique' => FALSE,
-          ),
-          7 => array(
+          2 => array(
             'source' => 'LibraryTitle',
             'target' => 'field_puluser_displaytitle',
             'unique' => FALSE,
           ),
-          8 => array(
-            'source' => 'Abbreviation',
-            'target' => 'field_puluser_department',
-            'unique' => FALSE,
-          ),
-          9 => array(
-            'source' => 'SubjectSpec',
-            'target' => 'field_puluser_sublibrarian',
-            'unique' => FALSE,
-          ),
-          10 => array(
+          3 => array(
             'source' => 'fname',
             'target' => 'field_puluser_fname',
             'unique' => FALSE,
           ),
-          11 => array(
+          4 => array(
             'source' => 'lname',
             'target' => 'field_puluser_lname',
             'unique' => FALSE,
           ),
-          12 => array(
+          5 => array(
             'source' => 'office',
             'target' => 'field_puluser_office',
             'unique' => FALSE,
           ),
-          13 => array(
+          6 => array(
             'source' => 'specID',
             'target' => 'field_puluser_dmgimport_id',
             'unique' => FALSE,
           ),
-          14 => array(
+          7 => array(
             'source' => 'Phone',
             'target' => 'field_puluser_phone_number',
             'unique' => FALSE,
           ),
-          15 => array(
-            'source' => 'name',
+          8 => array(
+            'source' => 'Department',
+            'target' => 'field_puluser_department',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'Division',
+            'target' => 'field_puluser_division',
+            'unique' => FALSE,
+          ),
+          10 => array(
+            'source' => 'Section',
+            'target' => 'field_puluser_section',
+            'unique' => FALSE,
+          ),
+          11 => array(
+            'source' => 'NetID',
+            'target' => 'name',
+            'unique' => 1,
+          ),
+          12 => array(
+            'source' => 'Email',
+            'target' => 'mail',
+            'unique' => 1,
+          ),
+          13 => array(
+            'source' => 'LongTitle',
+            'target' => 'field_puluser_officialtitle',
+            'unique' => FALSE,
+          ),
+          14 => array(
+            'source' => 'NetID',
             'target' => 'field_puluser_netid',
             'unique' => FALSE,
           ),
+          15 => array(
+            'source' => 'StartDate',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
+          16 => array(
+            'source' => 'Title',
+            'target' => 'field_puluser_short_title',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Name',
+            'target' => 'field_puluser_formalname',
+            'unique' => FALSE,
+          ),
+          18 => array(
+            'source' => 'subjectSpec',
+            'target' => 'field_puluser_sublibrarian',
+            'unique' => FALSE,
+          ),
+          19 => array(
+            'source' => 'StaffSort',
+            'target' => 'field_pul_user_staff_sort',
+            'unique' => FALSE,
+          ),
+          20 => array(
+            'source' => 'UnitSort',
+            'target' => 'field_puluser_unit_sort',
+            'unique' => FALSE,
+          ),
+          21 => array(
+            'source' => 'DeptSort',
+            'target' => 'field_puluser_department_sort',
+            'unique' => FALSE,
+          ),
+          22 => array(
+            'source' => 'Unit',
+            'target' => 'field_puluser_unit',
+            'unique' => FALSE,
+          ),
+          23 => array(
+            'source' => 'DivSect',
+            'target' => 'field_puluser_divsect',
+            'unique' => FALSE,
+          ),
         ),
-        'defuse_mail' => 1,
+        'defuse_mail' => 0,
         'input_format' => 'plain_text',
+        'skip_hash_check' => FALSE,
       ),
     ),
     'content_type' => '',
