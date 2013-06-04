@@ -87,8 +87,8 @@ function articles_and_databases_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'resource_list_importer';
   $feeds_importer->config = array(
-    'name' => 'Resource List Importer',
-    'description' => 'Import Electronic Resource Items',
+    'name' => 'DMG Resource List Importer',
+    'description' => 'Import DMG Resources',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
@@ -106,7 +106,6 @@ function articles_and_databases_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'database',
         'update_existing' => '1',
         'expire' => '-1',
         'mappings' => array(
@@ -181,18 +180,19 @@ function articles_and_databases_feeds_importer_default() {
             'unique' => FALSE,
           ),
           14 => array(
-            'source' => 'keywords',
-            'target' => 'field_db_keywords',
-            'unique' => FALSE,
-          ),
-          15 => array(
             'source' => 'titleID',
             'target' => 'field_db_title_import_id',
             'unique' => FALSE,
           ),
+          15 => array(
+            'source' => 'keywords',
+            'target' => 'field_db_keywords',
+            'unique' => FALSE,
+          ),
         ),
-        'input_format' => 'plain_text',
-        'author' => '1',
+        'input_format' => 'full_html',
+        'author' => '650',
+        'bundle' => 'database',
       ),
     ),
     'content_type' => '',
@@ -200,7 +200,7 @@ function articles_and_databases_feeds_importer_default() {
     'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
-    'process_in_background' => FALSE,
+    'process_in_background' => 0,
   );
   $export['resource_list_importer'] = $feeds_importer;
 
@@ -279,7 +279,6 @@ function articles_and_databases_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
-        'vocabulary' => 'database_subjects',
         'force_update' => 1,
         'mappings' => array(
           0 => array(
@@ -297,9 +296,15 @@ function articles_and_databases_feeds_importer_default() {
             'target' => 'field_subs_import_id',
             'unique' => FALSE,
           ),
+          3 => array(
+            'source' => 'dbs',
+            'target' => 'field_subs_browse_hide',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '0',
         'input_format' => 'plain_text',
+        'bundle' => 'database_subjects',
       ),
     ),
     'content_type' => '',
