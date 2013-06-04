@@ -18,6 +18,7 @@ Drupal.openlayers.layer.wmts = function(title, map, options) {
     url: options.url,
     style: options.style,
     matrixSet: options.matrixSet,
+    format: options.format,
     formatSuffix: options.formatSuffix,
     isBaseLayer: options.isBaseLayer
   };

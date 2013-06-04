@@ -1,9 +1,17 @@
 <?php
+
 /**
  * @file
- * Defines default projections so that most users don't need to bother about setting up projections.
- * 
- * @return array<stdClass>
+ * This file contains projections implementations.
+ *
+ * @ingroup openlayers
+ */
+
+/**
+ * Internal callback
+ * Helper function to return default projections.
+ *
+ * @return mixed
  */
 function _openlayers_openlayers_projections() {
   $projections = array();

@@ -175,7 +175,9 @@ function _token_formatters_field_formatter_prepare_view_entityreference($entity_
   // Collect every possible entity attached to any of the entities.
   foreach ($entities as $id => $entity) {
     foreach ($items[$id] as $delta => $item) {
-      if (!empty($item['target_id'])) {
+      // Do not use !empty() here because this could be referencing an entity
+      // with ID = 0 (anonymous user).
+      if (isset($item['target_id'])) {
         $target_ids[] = $item['target_id'];
       }
     }
@@ -273,7 +275,9 @@ function _token_formatters_field_formatter_prepare_view_user_reference($entity_t
   // Collect every possible entity attached to any of the entities.
   foreach ($entities as $id => $entity) {
     foreach ($items[$id] as $delta => $item) {
-      if (!empty($item['uid'])) {
+      // Do not use !empty() here because this could be referencing an entity
+      // with ID = 0 (anonymous user).
+      if (isset($item['uid'])) {
         $target_uids[] = $item['uid'];
       }
     }

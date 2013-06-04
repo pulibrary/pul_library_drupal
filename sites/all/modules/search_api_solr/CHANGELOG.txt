@@ -1,6 +1,20 @@
 Search API Solr search 1.x, dev (xx/xx/xxxx):
 ---------------------------------------------
 
+Search API Solr search 1.0, RC 5 (05/17/2013):
+----------------------------------------------
+- #1190462 by drunken monkey: Documented that enabling HTML filter makes sense.
+- #1986284 by drunken monkey: Updated common configs to the latest version.
+- #1990422 by populist, drunken monkey: Added support for custom stream contexts
+  for HTTP requests.
+- #1957890 by drunken monkey, jwilson3: Fixed several bugs for facets.
+- #1676224 by dasjo, morningtime, drunken monkey: Added support for Solr 4.x.
+- #1985522 by chaby: Fixed use of instance method in static escape() method.
+- #1979102 by drunken monkey: Fixed wrong limit for limit-less searches.
+- #1978632 by chaby, drunken monkey: Fixed wrong check on softCommit.
+- #1978600 by chaby: Fixed hook_requirements() for install phase.
+- #1976930 by drunken monkey: Fixed duplicate method in SearchApiSolrField.
+
 Search API Solr search 1.0, RC 4 (04/22/2013):
 ----------------------------------------------
 - #1744250 by mollux, drunken monkey, das-peter: Added support for

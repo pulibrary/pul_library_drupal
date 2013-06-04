@@ -21,7 +21,7 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basic Info',
-    'weight' => '3',
+    'weight' => '1',
     'children' => array(
       0 => 'field_puluser_department',
       1 => 'field_puluser_displaytitle',
@@ -30,11 +30,15 @@ function pul_library_users_field_group_info() {
       4 => 'field_puluser_library',
       5 => 'field_puluser_lname',
       6 => 'field_puluser_officialtitle',
-      7 => 'picture',
+      7 => 'field_puluser_division',
+      8 => 'field_puluser_section',
+      9 => 'field_puluser_short_title',
+      10 => 'field_puluser_unit',
+      11 => 'picture',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -55,13 +59,17 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administrative Info',
-    'weight' => '14',
+    'weight' => '4',
     'children' => array(
       0 => 'field_puluser_dmgimport_id',
       1 => 'field_puluser_librarystaffid',
       2 => 'field_puluser_netid',
       3 => 'field_puluser_princetonid',
-      4 => 'timezone',
+      4 => 'field_pul_user_staff_sort',
+      5 => 'field_puluser_unit_sort',
+      6 => 'field_puluser_department_sort',
+      7 => 'field_puluser_divsect',
+      8 => 'timezone',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -86,7 +94,7 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact Info',
-    'weight' => '12',
+    'weight' => '2',
     'children' => array(
       0 => 'field_puluser_office',
       1 => 'field_puluser_phone_number',
@@ -114,10 +122,11 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subject Librarian Details',
-    'weight' => '13',
+    'weight' => '3',
     'children' => array(
       0 => 'field_puluser_libguide_author_id',
       1 => 'field_puluser_sublibrarian',
+      2 => 'field_puluser_appt_calendar',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

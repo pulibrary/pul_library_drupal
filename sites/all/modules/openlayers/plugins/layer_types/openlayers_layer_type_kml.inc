@@ -5,22 +5,6 @@
  */
 
 /**
- * Define the Ctools plugin options.
- */
-function openlayers_openlayers_layer_type_kml_openlayers_layer_types() {
-  return array(
-    'title' => t('KML'),
-    'description' => t('<a href="!url">KML</a> overlay.',
-      array('!url' => 'http://en.wikipedia.org/wiki/Keyhole_Markup_Language')),
-    'layer_type' => array(
-      'file' => 'openlayers_layer_type_kml.inc',
-      'class' => 'openlayers_layer_type_kml',
-      'parent' => 'openlayers_layer_type',
-    ),
-  );
-}
-
-/**
  * OpenLayers KML Layer Type class
  */
 class openlayers_layer_type_kml extends openlayers_layer_type {
@@ -160,6 +144,7 @@ class openlayers_layer_type_kml extends openlayers_layer_type {
    */
   function options_form_submit($form, &$form_state) {
     parent::options_form_submit($form, $form_state);
+    global $user;
 
     $item = $form_state['item'];
     if (isset($item->data['file']) && $file = file_load($item->data['file'])) {
@@ -169,6 +154,7 @@ class openlayers_layer_type_kml extends openlayers_layer_type {
     if (isset($form_state['values']['data']['file']) && $file = file_load($form_state['values']['data']['file'])) {
       $file->status = FILE_STATUS_PERMANENT;
       file_save($file);
+      file_usage_add($file, 'openlayers', 'layer_type', $user->uid);
       $form_state['values']['data']['url'] = file_create_url($file->uri);
     }
   }

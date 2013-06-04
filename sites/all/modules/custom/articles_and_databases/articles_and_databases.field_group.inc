@@ -26,9 +26,10 @@ function articles_and_databases_field_group_info() {
       0 => 'field_db_access_note',
       1 => 'field_db_mobile_support',
       2 => 'field_db_on_campus_only',
-      3 => 'field_db_restricted_access',
-      4 => 'field_db_access_onsite',
-      5 => 'field_db_location_access_note',
+      3 => 'field_db_access_onsite',
+      4 => 'field_db_location_access_note',
+      5 => 'field_db_restricted_access',
+      6 => 'field_db_alumni_access',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -58,7 +59,8 @@ function articles_and_databases_field_group_info() {
       0 => 'field_db_voyager_id',
       1 => 'field_db_importid',
       2 => 'field_db_title_import_id',
-      3 => 'path',
+      3 => 'field_db_suppressed',
+      4 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -84,12 +86,13 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Copyright & Access',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_db_access_note',
-      1 => 'field_db_copyright_information',
-      2 => 'field_db_mobile_support',
-      3 => 'field_db_location_access_note',
+      1 => 'field_db_access_url',
+      2 => 'field_db_copyright_information',
+      3 => 'field_db_mobile_support',
+      4 => 'field_db_location_access_note',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -105,6 +108,33 @@ function articles_and_databases_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_db_desc_group|node|database|default';
+  $field_group->group_name = 'group_db_desc_group';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'database';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Description',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_db_date_coverage',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_db_desc_group|node|database|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_db_display_otherurls|node|database|default';
   $field_group->group_name = 'group_db_display_otherurls';
   $field_group->entity_type = 'node';
@@ -113,10 +143,9 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_db_alternative_urls',
-      1 => 'field_db_keywords',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -176,10 +205,9 @@ function articles_and_databases_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_db_copyright_information',
-      2 => 'field_db_display_active',
-      3 => 'field_db_date_coverage',
-      4 => 'field_db_short_description',
-      5 => 'field_db_keywords',
+      2 => 'field_db_date_coverage',
+      3 => 'field_db_display_active',
+      4 => 'field_db_keywords',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -289,10 +317,10 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administrative Info',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
-      0 => 'field_dboverride_title_import_id',
-      1 => 'field_dboverride_dbmport_id',
+      0 => 'field_dboverride_dbmport_id',
+      1 => 'field_dboverride_title_import_id',
       2 => 'path',
     ),
     'format_type' => 'tab',
@@ -320,8 +348,8 @@ function articles_and_databases_field_group_info() {
     'label' => 'Library Guides',
     'weight' => '6',
     'children' => array(
-      0 => 'field_subs_primary_library_guide',
-      1 => 'field_subs_other_guides',
+      0 => 'field_subs_other_guides',
+      1 => 'field_subs_primary_library_guide',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -338,6 +366,34 @@ function articles_and_databases_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_subs_display_flags|taxonomy_term|database_subjects|form';
+  $field_group->group_name = 'group_subs_display_flags';
+  $field_group->entity_type = 'taxonomy_term';
+  $field_group->bundle = 'database_subjects';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Display Flags',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_subs_browse_hide',
+      1 => 'field_subs_hide_on_specialist',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_subs_display_flags|taxonomy_term|database_subjects|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_subs_specialist_info|taxonomy_term|database_subjects|form';
   $field_group->group_name = 'group_subs_specialist_info';
   $field_group->entity_type = 'taxonomy_term';
@@ -346,7 +402,7 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subject Specialist Info',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_subs_import_id',
       1 => 'field_subs_specialist',
@@ -374,19 +430,18 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tier One Resource List',
-    'weight' => '2',
+    'weight' => '4',
     'children' => array(
       0 => 'field_subs_tier_one_resources',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Tier One Resource List',
+      'formatter' => 'closed',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => '',
         'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsible',
     ),
   );
   $export['group_subs_tier_one_list|taxonomy_term|database_subjects|form'] = $field_group;
@@ -402,19 +457,18 @@ function articles_and_databases_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tier Two Resource List',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_subs_tier_two_resources',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Tier Two Resource List',
+      'formatter' => 'closed',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => '',
         'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsed',
     ),
   );
   $export['group_subs_tier_two_list|taxonomy_term|database_subjects|form'] = $field_group;
