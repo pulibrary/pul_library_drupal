@@ -1439,6 +1439,7 @@ i.guide:before {
 }
 .front h3.library-news-homepage {
 	height: auto;
+	margin-top: 10px;
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: left;
@@ -1460,8 +1461,8 @@ i.guide:before {
 	color: #f58026;
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
-	line-height: 1.2em;
-	padding-top: 10px;
+	line-height: 1.0em;
+	padding-top: 0px;
 }
 
 .flexslider .slides li {
