@@ -35,7 +35,7 @@
 	//$(".page-find-databases .databases-find-description ").each(function(index) {
 		
 	//});
-	$(".page-find-databases .resource-title a, .subject-landing-page .resource-title a, .page-find-databases-search a.database-title, .page-find-all-results a.database-title").each(function(index) {
+	$(".page-research-databases .resource-title a, .subject-landing-page .resource-title a, .page-research-databases-search a.database-title, .page-find-all-results a.database-title").each(function(index) {
 		var data_access = $(this).find('span').attr('data-ezproxy-access');
 		var access_url = $(this).find('span').attr('data-access-url');
 		if(data_access === "0" || data_access == "No") {
