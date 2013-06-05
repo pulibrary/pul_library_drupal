@@ -53,11 +53,13 @@
 				} else {
 					var author = "";
 				}
-    				items.push('<li class="'+row_class+'"><h3><a title="'+
+                result_position = parseInt(index) + 1;
+                ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Summon Title\', \'Position '+result_position+'\']);"';
+    		    items.push('<li class="'+row_class+'"><h3><a title="'+
 					abstract + 
 					'" href="' + 
 					result['url'] + 
-					'" target="_blank">' + 
+					'" target="_blank"'+ga_track_code+'>' +
 					result['title'] + 
 					'</a></h3>'+
 					author+'<div class="summon-format-type">' + 
@@ -82,7 +84,7 @@
 	},
 	 error: function(data){
 	       $('#summon-search-results-spinner').hide();
-               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#summon-search-results');
             }
 		});
 	}	

@@ -26,8 +26,9 @@
                                         } else {
                                                 var row_class="even"
                                         }
-
-    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
+                    result_position = parseInt(index) + 1;
+                    ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PUDL Title\', \'Position '+result_position+'\']);"';
+    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank"'+ ga_track_code +'>' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">Collection: '+result['collection']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 

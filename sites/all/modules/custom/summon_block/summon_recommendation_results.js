@@ -15,6 +15,7 @@
   	  				var items = [];
 					$('<h3>Recommended Databases</h3>').appendTo('#summon-recommendation-results');
   	  				$.each(data.recommendations, function(index, result) {
+
         					items.push('<li><a href="' + result.link	 + '" target="_blank" title="' + result.description+'">' + result.title + '</a></li>');
 	  				});
   	  				$('<ul/>', {

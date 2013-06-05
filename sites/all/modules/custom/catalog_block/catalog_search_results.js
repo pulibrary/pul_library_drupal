@@ -13,7 +13,7 @@
 	var film_icon = 'icon-film';
 	var audio_icon = 'icon-headphones';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
-        var max_display_results = 5;
+    var max_display_results = 5;
 	
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
@@ -106,10 +106,15 @@
 					} else {
 						var creator = "";
 					}
+                    //set up position tracking for GA
+                    result_position = parseInt(index) + 1;
+                    ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Books+ Title\', \'Position '+result_position+'\']);"';
     					items.push('<li class="'+row_class+'"><h3><a href="' + 
 						result['url'] + 
-						'" title="'+desc+'" target="_blank">' + 
-						result['title'] + 
+						'" title="'+desc+'" target="_blank" '+
+                        ga_track_code +
+                        '>' +
+						result['title'] +
 						'</a></h3> ' +
 						creator +
 						online_avail +
@@ -130,6 +135,8 @@
 				if(data.number > max_display_results) {
 					$('<div class="more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
+                // call  to add event tracking links
+
 			} else {
 				$('#catalog-search-results-spinner').hide();
 				$('<div class="no-results">No matches in Books+.</div>"').appendTo('#catalog-search-results');

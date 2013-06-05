@@ -48,23 +48,30 @@ function summon_block_query_escape($drupal_path) {
 
 
 function summon_block_get_current_filter($path) {
-  if (preg_match('/^find\/databases\/search\//', $path)) {
-    $path_parts = explode("find/databases/search", $path);
+  if (preg_match('/^research\/databases\/search\//', $path)) {
+    $path_parts = explode("research/databases/search", $path);
   } else {
     $path_parts = explode("find/all/", $path);
   }
   if(isset($path_parts[1])) {
-    return $path_parts[1];
+    return filter_xss($path_parts[1]);
   }
 }
 
+/*
+ * Add an Source ID (SID) value to tell the target app where the query came from
+ */
+function summon_block_get_sid() {
+    return "library-main-summon";
+}
 
 function summon_search_results_content() {
   $path = summon_block_query_escape($_GET['q']);
   //print_r(drupal_parse_url($path));
+  $sid = summon_block_get_sid();
   $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
@@ -72,7 +79,7 @@ function summon_search_results_content() {
 function summon_search_guide_content() {
   $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-guide-results' data-source='/searchit/articles/guide?query={$path}&number=3'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-guide-results' data-source='/searchit/articles/guide?query={$path}&number=3&sid={$sid}'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
@@ -80,7 +87,7 @@ function summon_search_guide_content() {
 function summon_search_recommendations_content() {
   $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-recommendation-results' data-source='/searchit/articles/recommendations?query={$path}'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-recommendation-results' data-source='/searchit/articles/recommendations?query={$path}&sid={$sid}'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
@@ -88,7 +95,7 @@ function summon_search_recommendations_content() {
 function summon_search_spelling_suggestions_content() {
   $path = summon_block_query_escape($_GET['q']);
   $block_content = array(
-    '#markup' => "<div id='summon-spelling-results' data-source='/searchit/articles/spelling?query={$path}&number=3'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-spelling-results' data-source='/searchit/articles/spelling?query={$path}&number=3&sid={$sid}'>" . t('') . "</div>",
   ); 
   return $block_content;
 }
