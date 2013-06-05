@@ -219,7 +219,7 @@ function library_news_field_default_field_instances() {
   $field_instances['node-library_news_item-field_news_featured_graphic'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
-    'description' => 'Assign A Featured Graphic to the News Item.  Image will be scaled and cropped to 296x105 in order to fit into allocated space on homepage slideshow. ',
+    'description' => 'Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -248,14 +248,14 @@ function library_news_field_default_field_instances() {
     'label' => 'Featured Graphic',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'news-images',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -273,6 +273,8 @@ function library_news_field_default_field_instances() {
           'colorbox__large' => 0,
           'colorbox__library-news' => 0,
           'colorbox__medium' => 0,
+          'colorbox__news-image' => 0,
+          'colorbox__profile-photo' => 0,
           'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
@@ -280,6 +282,8 @@ function library_news_field_default_field_instances() {
           'image_large' => 0,
           'image_library-news' => 0,
           'image_medium' => 0,
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -716,7 +720,6 @@ function library_news_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Article "teaser" to be displayed on homepage and in search results. Use HTML carefully since this snippet will be displayed on the homepage slider view. Mal-formed HTML can cause display errors. ');
   t('Article Snippet');
-  t('Assign A Featured Graphic to the News Item.  Image will be scaled and cropped to 296x105 in order to fit into allocated space on homepage slideshow. ');
   t('Audiences');
   t('Body');
   t('Category');
@@ -728,6 +731,7 @@ function library_news_field_default_field_instances() {
   t('File Attachments');
   t('Files to be inserted into news items when needed. ');
   t('Free tags that can be associated with items. ');
+  t('Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.');
   t('Images');
   t('Images to be inserted inline into post content. ');
   t('Libraries');
