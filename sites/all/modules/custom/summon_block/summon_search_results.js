@@ -82,7 +82,7 @@
 	},
 	 error: function(data){
 	       $('#summon-search-results-spinner').hide();
-               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#summon-search-results');
             }
 		});
 	}	
