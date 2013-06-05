@@ -36,8 +36,9 @@
                                 } else {
                                         var author = "";
                                 }
-
-    				items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+author+'</li>');
+                result_position = parseInt(index) + 1;
+                ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Library Guide Title\', \'Position '+result_position+'\']);"';
+    			items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank"'+ga_track_code+'>' + result['title'] + '</a></h3>'+author+'</li>');
 				});
   			$('<ul/>', {
     				'class': 'all-search-results-list',

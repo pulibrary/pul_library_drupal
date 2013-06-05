@@ -2321,30 +2321,30 @@ body.faq .ui-widget-header a {
  * /find/databases /subjects and /find/databases/subjects
  * ******************************************/
 
-.page-subjects .views-view-grid tr .field-content, .page-find-databases-subjects .views-view-grid tr .field-content {
+.page-subjects .views-view-grid tr .field-content, .page-research-databases-subjects .views-view-grid tr .field-content {
 	font-size: 1.17em;
 }
 
-.page-find-databases tbody .views-field.views-field-title a, .page-subjects .views-view-grid tr .field-content a, .page-find-databases-subjects .views-view-grid tr .field-content a {
+.page-research-databases tbody .views-field.views-field-title a, .page-subjects .views-view-grid tr .field-content a, .page-research-databases-subjects .views-view-grid tr .field-content a {
 	color: #7F3D00;
 	text-decoration: none;
 }
-.page-find-databases tbody .views-field.views-field-title a:hover, .page-subjects .views-view-grid tr .field-content a:hover, .page-find-databases-subjects .views-view-grid tr .field-content a:hover {
+.page-research-databases tbody .views-field.views-field-title a:hover, .page-subjects .views-view-grid tr .field-content a:hover, .page-research-databases-subjects .views-view-grid tr .field-content a:hover {
 	border-bottom: 1px #CCC dotted;
 	color: #333;
 }
 
 /* A to Z Style List */
-.page-find-databases .view.view-clone-of-glossary.view-id-clone_of_glossary.view-display-id-attachment .views-summary.views-summary-unformatted a {
+.page-research-databases .view.view-clone-of-glossary.view-id-clone_of_glossary.view-display-id-attachment .views-summary.views-summary-unformatted a {
 	font-size: 1.17em;
 }
 
 /* Hide Description
- .page-find-databases td div.field-type-text-with-summary{
+ .page-research-databases td div.field-type-text-with-summary{
  display: none;
  }
  */
-.page-find-databases .database-description {
+.page-research-databases .database-description {
 	display: none;
 }
 
@@ -2354,7 +2354,7 @@ body.faq .ui-widget-header a {
 }
 
 /* For Database Search Result Pages */
-.page-find-databases-search .view-databases-keyword-search .views-row-odd {
+.page-research-databases-search .view-databases-keyword-search .views-row-odd {
   background-color: whiteSmoke;
 }
 
@@ -2363,7 +2363,7 @@ body.faq .ui-widget-header a {
   background-color: whiteSmoke;
 }
 
-.page-find-databases-search .query {
+.page-research-databases-search .query {
 	font-style: italic;
 }
 
@@ -2654,28 +2654,28 @@ table caption .field-name-field-puluser-unit a {
  * Database Listings
  */
 
-.page-find-databases td.resource-title {
+.page-research-databases td.resource-title {
 
 }
-.page-find-databases td.databases-find-description {
+.page-research-databases td.databases-find-description {
 	width: auto;
 	min-width: 200px;
 }
 .find-databases-show-desc, .find-databases-close-desc {
 	text-align: right;
 }
-.page-find-databases .views-summary .summary-count {
+.page-research-databases .views-summary .summary-count {
 	display: none;
 }
-.page-find-databases .views-summary {
+.page-research-databases .views-summary {
 	padding: 0 2px 0 4px;
 }
 
-.page-find-databases .views-field-title.resource-title a span {
+.page-research-databases .views-field-title.resource-title a span {
 	display:inline;
 }
 
-.page-find-databases .views-field-title.resource-title a .db-date-coverage {
+.page-research-databases .views-field-title.resource-title a .db-date-coverage {
 	padding-left: .4em;
 }
 
