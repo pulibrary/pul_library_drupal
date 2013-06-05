@@ -1,14 +1,9 @@
 (function ($) {
   $(document).ready(function() {
-	var query_url = $('#summon-spelling-results').attr('data-source')  	
-	//var query = "firestone";
-	//var request = Drupal.settings.sy_block.request;
-	//console.log(document.location.href);
-        //var path = $(location).attr('pathname');
-        //var query = path.substr(10);
-        //query = query.replace("/", "");
 
-        var base_url = "/find/all/";
+    var query_url = $('#summon-spelling-results').attr('data-source')
+    var base_url = "/find/all/";
+
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-spelling-results');
 	} else {

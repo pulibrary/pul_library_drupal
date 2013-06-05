@@ -44,9 +44,11 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-			$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
+            refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Library Guides\', \'Top\']);"'
+			$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
 			if(data.number > 3) {
-				$('<div class="more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
+                more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Library Guides\', \'Bottom\']);"'
+				$('<div class="more-link"><a '+more_link_track_code+' title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
 			} else {
 				$('<div class="no-results">No guides found. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
