@@ -231,13 +231,13 @@ function library_hours_field_default_field_instances() {
     'label' => 'Academic Year Hours',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => FALSE,
       0 => 'hoursformat',
       1 => 'granularity',
       2 => 'limitstart',
       3 => 'limitend',
       4 => 'valhrs',
       5 => 'addhrs',
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
@@ -287,13 +287,13 @@ function library_hours_field_default_field_instances() {
     'label' => 'Summer Hours',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => FALSE,
       0 => 'hoursformat',
       1 => 'granularity',
       2 => 'limitstart',
       3 => 'limitend',
       4 => 'valhrs',
       5 => 'addhrs',
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
@@ -336,40 +336,6 @@ function library_hours_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_hrs_library'
-  $field_instances['taxonomy_term-library_hours_calendars-field_hrs_library'] = array(
-    'bundle' => 'library_hours_calendars',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_hrs_library',
-    'label' => 'Library Associated',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
     ),
   );
 
@@ -501,7 +467,6 @@ function library_hours_field_default_field_instances() {
   t('Hours');
   t('Hours Code');
   t('Library');
-  t('Library Associated');
   t('Library Status');
   t('List On Homepage');
   t('Service URL');
