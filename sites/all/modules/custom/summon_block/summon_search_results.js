@@ -53,8 +53,8 @@
 				} else {
 					var author = "";
 				}
-                result_position = parseInt(index) + 1;
-                ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Summon Title\', \'Position '+result_position+'\']);"';
+                var result_position = parseInt(index) + 1;
+                var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Summon Title\', \'Position '+result_position+'\']);"';
     		    items.push('<li class="'+row_class+'"><h3><a title="'+
 					abstract + 
 					'" href="' + 
@@ -73,7 +73,7 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-            refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Top\']);"'
+            var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Top\']);"'
 			$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
                 more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Bottom\']);"'

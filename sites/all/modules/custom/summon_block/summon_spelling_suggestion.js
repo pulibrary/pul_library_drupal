@@ -18,14 +18,16 @@
       				var spelling_suggestion = data[0];
       				if(spelling_suggestion != undefined) {
         				var suggested_search = base_url + spelling_suggestion;
-                        ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Did You Mean\', \'Position 1\']);"';
+                        var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Did You Mean\', \'Position 1\']);"';
         				$('<span class="summon-suggestion">Did you mean? <a '+ga_track_code+'href="'+ suggested_search + '" class="summon-suggestion-string">' + spelling_suggestion + "</a></span>").appendTo('#summon-spelling-results');
       				} else {
         				$('span class="no-summon-suggestions"></span>').appendTo('#summon-spelling-results');
       				}
 			},
  			error: function(data){
-              				$('<span class="summon-spelling-failure">Search suggestions are not available at this time.</span>"').appendTo('#summon-spelling-results');
+                            //fail silently for now
+                            console.log("Summon Failed to Respond to Spellcheck");
+              				//$('<span class="summon-spelling-failure">Search suggestions are not available at this time.</span>"').appendTo('#summon-spelling-results');
             			}
                 	});
 	}
