@@ -26,6 +26,7 @@
 .olImageLoadError,
 .openlayers-map .olImageLoadError {
   background-color: transparent;
+  display: none !important;
 }
 
 /**

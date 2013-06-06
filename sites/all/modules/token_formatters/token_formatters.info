@@ -3,9 +3,9 @@ description = Provides additional formatters for various field types.
 core = 7.x
 dependencies[] = token
 
-; Information added by drupal.org packaging script on 2013-04-23
-version = "7.x-1.1"
+; Information added by drupal.org packaging script on 2013-05-17
+version = "7.x-1.2"
 core = "7.x"
 project = "token_formatters"
-datestamp = "1366685412"
+datestamp = "1368810913"
 

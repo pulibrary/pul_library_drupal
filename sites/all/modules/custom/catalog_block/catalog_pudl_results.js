@@ -26,26 +26,32 @@
                                         } else {
                                                 var row_class="even"
                                         }
-
-    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
+                    var result_position = parseInt(index) + 1;
+                    var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PUDL Title\', \'Position '+result_position+'\']);"';
+    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank"'+ ga_track_code +'>' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">Collection: '+result['collection']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
 						'</div></li>');
 				});
+                $('#pudl-search-results-spinner').hide();
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pudl-search-results');
-				$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
+                var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pudl\', \'Top\']);"'
+				$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
 				if(data.number > 3) {
-					$('<div class="more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
+                    more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pudl\', \'Bottom\']);"'
+					$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
 				}
 			} else {
+                $('#pudl-search-results-spinner').hide();
 				$('.pane-catalog-block-catalog-pudl-results').hide();
 			}
 		},
 		error: function(data) {
+            $('#pudl-search-results-spinner').hide();
 			 $('<div class="all-fail-to-load-results">Princeton University Digital Library  results are not available at this time.</div>"').appendTo('#pudl-search-results');
 		}
 	});

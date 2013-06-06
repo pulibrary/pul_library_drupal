@@ -71,6 +71,7 @@ function theme_openlayers_ui_maps_form_layers($args) {
         drupal_render($form['layer_switcher'][$key]),
         drupal_render($form['layer_styles'][$key]),
         drupal_render($form['layer_styles_select'][$key]),
+        drupal_render($form['layer_styles_temporary'][$key]),
       ),
       'class' => array('draggable')
     );
@@ -79,7 +80,8 @@ function theme_openlayers_ui_maps_form_layers($args) {
     array(
       'header' => array(
         t('Overlay layers'), t('Weight'), t('Enabled'),
-        t('Activated'), t('In Switcher'), t('Style'), t('Select Style')
+        t('Activated'), t('In Switcher'), t('Style'), t('Select Style'),
+        ('Temporary Style')
       ),
       'rows' => $rows,
       array('id' => 'overlay-layer-table')

@@ -53,11 +53,13 @@
 				} else {
 					var author = "";
 				}
-    				items.push('<li class="'+row_class+'"><h3><a title="'+
+                var result_position = parseInt(index) + 1;
+                var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Summon Title\', \'Position '+result_position+'\']);"';
+    		    items.push('<li class="'+row_class+'"><h3><a title="'+
 					abstract + 
 					'" href="' + 
 					result['url'] + 
-					'" target="_blank">' + 
+					'" target="_blank"'+ga_track_code+'>' +
 					result['title'] + 
 					'</a></h3>'+
 					author+'<div class="summon-format-type">' + 
@@ -71,9 +73,11 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-			$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
+            var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Top\']);"'
+			$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
-				$('<div class="more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
+                more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Bottom\']);"'
+				$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
 	} else {	
 		$('#summon-search-results-spinner').hide();
@@ -82,7 +86,7 @@
 	},
 	 error: function(data){
 	       $('#summon-search-results-spinner').hide();
-               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#pulfa-search-results');
+               $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#summon-search-results');
             }
 		});
 	}	

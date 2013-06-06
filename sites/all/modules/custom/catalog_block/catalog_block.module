@@ -38,7 +38,6 @@ function catalog_block_form($form, &$form_state) {
 }
 
 function catalog_block_form_validate($form, &$form_state) {
-  
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('catalog_search_hint')) {
     form_set_error('term', t('Enter Search Terms'));
@@ -50,40 +49,59 @@ function catalog_block_contents() {
   return drupal_get_form('catalog_block_form'); // must define a function 
 }
 
+function catalog_block_get_current_filter($path) {
+    $path_parts = explode("find/all/", $path);
+    if(isset($path_parts[1])) {
+        //return filter_xss($path_parts[1]);
+        return $path_parts[1];
+    }
+}
+
 function catalog_block_query_escape($drupal_path) {
-  $query = allsearch_block_get_current_filter($drupal_path);
+  $query = catalog_block_get_current_filter($drupal_path);
   return drupal_encode_path($query);
+}
+
+function catalog_block_get_sid() {
+    return "library-main";
 }
 
 function catalog_search_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function catalog_journal_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='journal-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}&limit=exact&format=journals' id='journal-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}&limit=exact&format=journals&sid={$sid}' id='journal-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function catalog_pulfa_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='pulfa-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/pulfa/any?query={$path}' id='pulfa-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/pulfa/any?query={$path}&sid={$sid}' id='pulfa-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
 
 function catalog_pudl_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='pudl-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/pudl/any?query={$path}' id='pudl-search-results'>" . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -197,22 +215,6 @@ function catalog_block_block_save($delta = '', $edit = array()) {
   
   return;
 }
-
-/**
- * Implmennts hook_block_view_alter()
- * 
- * Adds URL contextual filter to json request.
- */
-/*
-function catalog_block_block_view_alter(&$data, $block) {
-  if($block->delta == "catalog_search_results") {
-    echo "Testing";
-    var_dump($block);
-    //dpm("block time");
-  }
-}
-*/
-
 
 /**
  * Implements hook_block_view().

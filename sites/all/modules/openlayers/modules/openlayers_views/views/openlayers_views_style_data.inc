@@ -334,6 +334,8 @@ class openlayers_views_style_data extends views_plugin_style {
           }
 
           // Handle rendering of a node view.
+          // TODO: This can be handled through the entity API module
+          // TODO: who provides a field: 'Rendered entity'.
           if ($this->options['data_source']['description_field'] === '#node' &&
             is_object($record) && isset($record->nid)) {
             $view_mode = $this->options['data_source']['view_mode'] ? $this->options['data_source']['view_mode'] : 'full';

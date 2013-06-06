@@ -54,27 +54,34 @@
 						icon_type = subseries_icon;
 					} else {
 						icon_type = default_icon;
-					} 
-    					items.push('<li class="'+row_class+'"><h3><a href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
+					}
+                    var result_position = parseInt(index) + 1;
+                    var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PULFA Title\', \'Position '+result_position+'\']);"';
+    					items.push('<li class="'+row_class+'"><h3><a href="' + result['url'] + '" target="_blank"'+ga_track_code+'>' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">'+result['kwic']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
 						'</div>'+breadcrumbs+'</li>');
 				});
+                $('#pulfa-search-results-spinner').hide();
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
-				$('<div class="refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
+                var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pulfa\', \'Top\']);"'
+				$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
 				if(data.number > 3) {
-					$('<div class="more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
+                    more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pulfa\', \'Bottom\']);"'
+					$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
 			} else {
+                $('#pulfa-search-results-spinner').hide();
 				//$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
 				$('.pane-catalog-block-catalog-pulfa-results').hide();
 			}
 		},
 		error: function(data) {
+            $('#pulfa-search-results-spinner').hide();
 			 $('<div class="all-fail-to-load-results">Finding Aids results are not available at this time.</div>"').appendTo('#pulfa-search-results');
 		}
 	});

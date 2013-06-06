@@ -136,7 +136,7 @@ function entity_view_mode_edit_form($form, &$form_state, $entity_type, $machine_
   );
 
   $bundle_options = entity_view_mode_get_possible_bundles($entity_type);
-  $bundle_values = isset($machine_name) ? entity_view_mode_get_enabled_bundles($entity_type, $machine_name) : array_keys($bundle_options);
+  $bundle_values = !empty($machine_name) ? array_keys(entity_view_mode_get_enabled_bundles($entity_type, $machine_name)) : array_keys($bundle_options);
 
   $form['enabled_bundles'] = array(
     '#type' => 'checkboxes',

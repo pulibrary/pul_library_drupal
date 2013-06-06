@@ -12,10 +12,10 @@ function articles_and_databases_taxonomy_default_vocabularies() {
     'database_keywords' => array(
       'name' => 'Database Keywords',
       'machine_name' => 'database_keywords',
-      'description' => 'Keywords for database. ',
-      'hierarchy' => '0',
+      'description' => 'Keywords Assigned to Library Databases Content Type',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -36,9 +36,9 @@ function articles_and_databases_taxonomy_default_vocabularies() {
       'name' => 'Database Subjects',
       'machine_name' => 'database_subjects',
       'description' => 'Research Disciplines at PUL',
-      'hierarchy' => '1',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -59,9 +59,9 @@ function articles_and_databases_taxonomy_default_vocabularies() {
       'name' => 'Resource Types',
       'machine_name' => 'resource_types',
       'description' => 'Classification of Electronic Resources',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

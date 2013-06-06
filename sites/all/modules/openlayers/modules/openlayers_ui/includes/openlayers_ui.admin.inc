@@ -113,6 +113,21 @@ function openlayers_ui_admin_settings() {
 }
 
 /**
+ * Settings form validation
+ *
+ * @param $form
+ * @param $form_state
+ */
+function openlayers_ui_admin_settings_validate($form, &$form_state) {
+  if ($form_state['values']['openlayers_source_type'] == 'external') {
+    $url = $form_state['values']['openlayers_source_external'];
+    if (!valid_url($url, TRUE) && !url_is_external($url)) {
+      form_set_error('openlayers_source_external', 'The source must be a valid external URL, beginning with http(s).');
+    }
+  }
+}
+
+/**
  * Callback endpoint for sending in OL version from client JS.
  */
 function openlayers_ui_version_check($version = 0) {

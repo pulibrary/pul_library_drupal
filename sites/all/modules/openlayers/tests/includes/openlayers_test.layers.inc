@@ -19,6 +19,12 @@ function _openlayers_test_openlayers_layers() {
     'projection' => array('EPSG:4326'),
     'isBaseLayer' => FALSE,
     'vector' => TRUE,
+    'method' => 'file',
+    'formatOptions' => array(
+      'extractStyles' => TRUE,
+      'extractTracks' => FALSE,
+      'extractAttributes' => TRUE,
+    ),
     'url' => url(drupal_get_path('module', 'openlayers_test') . '/data/openlayers_test.kml'),
   );
   $layers[$layer->name] = $layer;

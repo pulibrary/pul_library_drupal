@@ -1,26 +1,9 @@
 <?php
-
 /**
  * @file
  *
  * OpenLayers CloudMade layer type
  */
-
-/**
- * Define the Ctools plugin options.
- */
-function openlayers_openlayers_layer_type_cloudmade_openlayers_layer_types() {
-  return array(
-    'title' => t('CloudMade'),
-    'description' => t('<a href="!url">CloudMade</a> Custom Map',
-      array('!url' => 'http://cloudmade.com/')),
-    'layer_type' => array(
-      'file' => 'openlayers_layer_type_cloudmade.inc',
-      'class' => 'openlayers_layer_type_cloudmade',
-      'parent' => 'openlayers_layer_type',
-    ),
-  );
-}
 
 /**
  * OpenLayers CloudMade Layer Type class
