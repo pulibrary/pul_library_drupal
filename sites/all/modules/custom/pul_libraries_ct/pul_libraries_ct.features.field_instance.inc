@@ -1179,13 +1179,13 @@ function pul_libraries_ct_field_default_field_instances() {
     'label' => 'Standard Hours',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => FALSE,
       0 => 'hoursformat',
       1 => 'granularity',
       2 => 'limitstart',
       3 => 'limitend',
       4 => 'valhrs',
       5 => 'addhrs',
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
@@ -1330,13 +1330,13 @@ function pul_libraries_ct_field_default_field_instances() {
     'label' => 'Summer Hours',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => FALSE,
       0 => 'hoursformat',
       1 => 'granularity',
       2 => 'limitstart',
       3 => 'limitend',
       4 => 'valhrs',
       5 => 'addhrs',
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
