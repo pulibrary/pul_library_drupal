@@ -50,6 +50,131 @@
                 //}
 
 	});
+
+
+    // ADD GA Tracking Code to Internal All Search Block Pages
+    //
+    $('.page-find-all .view-databases-keyword-search .item-list .database-title').each(function(index,value) {
+            result_position = parseInt(index) + 1;
+            $(this).click( function() {
+                _gaq.push(["_trackEvent", "All Search", "Database Title", 'Position'+result_position]);
+            });
+        }
+    );
+
+    // for subjects block
+    $('.page-find-all .view-database-subject-search .item-list a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "All Search", 'Database Subject', 'Position'+result_position]);
+              });
+          }
+      );
+
+    //general keyword search view
+      $('.page-find-all .view-general-site-keyword-search .item-list .database-titles a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "All Search", "Website Search", 'Position'+result_position]);
+              });
+          }
+      );
+
+    //people search
+      $('.page-find-all .view-general-site-user-search .item-list .user-link').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "All Search", "People Search", 'Position'+result_position]);
+              });
+          }
+      );
+
+      // Add tracking codes to expand links on all search
+      // refine-link = top class more-link - bottom
+      $('.page-find-all .view-databases-keyword-search .refine-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Database", 'Top']);
+              });
+          }
+      );
+
+      // website search
+      $('.page-find-all .view-general-site-keyword-search .refine-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Website Search", 'Top']);
+              });
+          }
+      );
+
+
+      $('.page-find-all .view-databases-keyword-search .more-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Database", 'Bottom']);
+              });
+          }
+      );
+
+      $('.page-find-all .view-databases-subject-search .more-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Subject Browse", 'Bottom']);
+              });
+          }
+      );
+
+      $('.page-find-all .view-general-site-user-search .more-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "People Search", 'Bottom']);
+              });
+          }
+      );
+
+      $('.page-find-all .view-general-site-keyword-search .more-link a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Website Search", 'Bottom']);
+              });
+          }
+      );
+      // homepage news
+      $('.front .block-library-news-block .views-more-link').each(function(index,value) {
+            $(this).click( function() {
+                _gaq.push(["_trackEvent", "Homepage", "More", 'News']);
+            });
+      });
+
+      //.flexslider
+      $('.front .flex-slider h3 a').each(function(index,value) {
+          result_position = parseInt(index) + 1;
+          $(this).click( function() {
+              _gaq.push(["_trackEvent", "Homepage", "News Headline", 'Placement'+result_position]);
+          });
+      });
+
+      //user portals .block-menu-menu-user-group-portals
+      $('.front .block-menu-menu-user-group-portals li a').each(function(index,value) {
+          $(this).click( function() {
+              _gaq.push(["_trackEvent", "Homepage", "Portal Link", $(this).text()]);
+          });
+      });
+
+      // hours
+      $('.front .view-library-hours .views-more-link').each(function(index,value) {
+          $(this).click( function() {
+              _gaq.push(["_trackEvent", "Homepage", "More", 'Hours']);
+          });
+      });
+
+      // each news item
+      $('.front .view-library-hours table td a').each(function(index,value) {
+          $(this).click( function() {
+              _gaq.push(["_trackEvent", "Homepage", "Hours", $(this).text()]);
+          });
+      });
 //	
 //	 $(".find-databases-close-desc").each(function(index) {
 //		var id = $(this).attr('data-desc-id');
