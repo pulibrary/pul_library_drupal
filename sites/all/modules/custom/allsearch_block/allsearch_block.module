@@ -10,7 +10,7 @@ function allsearch_block_form($form, &$form_state) {
   $page = $_GET['q'];
   $path = allsearch_block_get_current_filter($page);
   if(isset($path)) {
-    $default_value = $path;
+    $default_value = htmlspecialchars_decode($path); //FIXME
   } else {
     $default_value = variable_get('all_search_hint');
   }
