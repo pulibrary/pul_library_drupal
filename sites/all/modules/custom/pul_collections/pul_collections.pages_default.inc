@@ -279,7 +279,7 @@ function pul_collections_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-collections one-sidebar sidebar-second',
+    'body_classes_to_add' => 'one-sidebar sidebar-second page-collections',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -348,13 +348,10 @@ function pul_collections_default_page_manager_pages() {
     $pane->pid = 'new-3';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'libraries_and_collections-panel_pane_1';
+    $pane->subtype = 'libraries-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Libraries',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
