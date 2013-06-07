@@ -61,7 +61,7 @@ function library_hours_field_default_field_instances() {
     'bundle' => 'library_hours',
     'default_value' => array(
       0 => array(
-        'value' => 'TBA',
+        'value' => 'Open',
       ),
     ),
     'deleted' => 0,
