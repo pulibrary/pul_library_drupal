@@ -45,7 +45,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
     'boolean' => 'b',
     'uri' => 's',
     'location' => 'loc',
-    'geohash' => 'geohash',
+    'geohash' => 'geo',
   );
 
   /**
@@ -84,15 +84,15 @@ class SearchApiSolrService extends SearchApiAbstractService {
   public function configurationForm(array $form, array &$form_state) {
     if ($this->options) {
       // Editing this server
-      $url = 'http://' . $this->options['host'] . ':' . $this->options['port'] . $this->options['path'];
       $form['server_description'] = array(
         '#type' => 'item',
         '#title' => t('Solr server URI'),
-        '#description' => l($url, $url),
+        '#description' => $this->getServerLink(),
       );
     }
 
     $options = $this->options + array(
+      'scheme' => 'http',
       'host' => 'localhost',
       'port' => '8983',
       'path' => '/solr',
@@ -104,6 +104,17 @@ class SearchApiSolrService extends SearchApiAbstractService {
       'http_method' => 'POST',
       'autocorrect_spell' => TRUE,
       'autocorrect_suggest_words' => TRUE,
+    );
+
+    $form['scheme'] = array(
+      '#type' => 'select',
+      '#title' => t('HTTP protocol'),
+      '#description' => t('The HTTP protocol to use for sending queries.'),
+      '#default_value' => $options['scheme'],
+      '#options' => array(
+        'http' => 'http',
+        'https' => 'https',
+      ),
     );
 
     $form['host'] = array(
@@ -142,7 +153,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $form['http']['http_pass'] = array(
       '#type' => 'password',
       '#title' => t('Password'),
-      '#default_value' => $options['http_pass'],
+      '#description' => t('If this field is left blank and the HTTP username is filled out, the current password will not be changed.'),
     );
 
     $form['advanced'] = array(
@@ -233,8 +244,17 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $values += $values['advanced'];
     $values += !empty($values['autocomplete']) ? $values['autocomplete'] : array();
     unset($values['http'], $values['advanced'], $values['autocomplete']);
+
     // Highlighting retrieved data only makes sense when we retrieve data.
     $values['highlight_data'] &= $values['retrieve_data'];
+
+    // For password fields, there is no default value, they're empty by default.
+    // Therefore we ignore empty submissions if the user didn't change either.
+    if ($values['http_pass'] === ''
+        && isset($this->options['http_user'])
+        && $values['http_user'] === $this->options['http_user']) {
+      $values['http_pass'] = $this->options['http_pass'];
+    }
 
     parent::configurationFormSubmit($form, $values, $form_state);
   }
@@ -247,6 +267,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
       'search_api_autocomplete',
       'search_api_facets',
       'search_api_facets_operator_or',
+      'search_api_grouping',
       'search_api_mlt',
       'search_api_multi',
       'search_api_spellcheck',
@@ -263,11 +284,10 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $output = '';
     $options = $this->options;
 
-    $url = 'http://' . $options['host'] . ':' . $options['port'] . $options['path'];
     $output .= "<dl>\n  <dt>";
     $output .= t('Solr server URI');
     $output .= "</dt>\n  <dd>";
-    $output .= l($url, $url);
+    $output .= $this->getServerLink();
     $output .= '</dd>';
     if ($options['http_user']) {
       $output .= "\n  <dt>";
@@ -281,6 +301,21 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $output .= "\n</dl>";
 
     return $output;
+  }
+
+  /**
+   * Returns a link to the Solr server, if the necessary options are set.
+   */
+  public function getServerLink() {
+    if (!$this->options) {
+      return '';
+    }
+    $host = $this->options['host'];
+    if ($host == 'localhost' && !empty($_SERVER['SERVER_NAME'])) {
+      $host = $_SERVER['SERVER_NAME'];
+    }
+    $url = $this->options['scheme'] . '://' . $host . ':' . $this->options['port'] . $this->options['path'];
+    return l($url, $url);
   }
 
   /**
@@ -549,6 +584,9 @@ class SearchApiSolrService extends SearchApiAbstractService {
     // Get field information.
     $index = $query->getIndex();
     $fields = $this->getFieldNames($index);
+    // Get Solr connection.
+    $this->connect();
+    $version = $this->solr->getSolrVersion();
 
     // Extract keys.
     $keys = $query->getKeys();
@@ -598,6 +636,11 @@ class SearchApiSolrService extends SearchApiAbstractService {
       // The fields to look for similarities in.
       $mlt_fl = array();
       foreach($mlt['fields'] as $f) {
+        // Solr 4 has a bug which results in numeric and date fields not being
+        // supported in MLT queries.
+        if ($version == 4 && in_array($fields[$f][0], array('i', 'f', 'd'))) {
+          continue;
+        }
         $mlt_fl[] = $fields[$f];
         // For non-text fields, set minimum word length to 0.
         if (isset($index->options['fields'][$f]['type']) && !search_api_is_text_type($index->options['fields'][$f]['type'])) {
@@ -687,6 +730,66 @@ class SearchApiSolrService extends SearchApiAbstractService {
       }
     }
 
+    // Handle field collapsing / grouping.
+    $grouping = $query->getOption('search_api_grouping');
+    if (!empty($grouping['use_grouping'])) {
+      $group_params['group'] = 'true';
+      // We always want the number of groups returned so that we get pagers done
+      // right.
+      $group_params['group.ngroups'] = 'true';
+      if (!empty($grouping['truncate'])) {
+        $group_params['group.truncate'] = 'true';
+      }
+      if (!empty($grouping['group_facet'])) {
+        $group_params['group.facet'] = 'true';
+      }
+      foreach ($grouping['fields'] as $collapse_field) {
+        $type = $index_fields[$collapse_field]['type'];
+        // Only single-valued fields are supported.
+        if ($version < 4) {
+          // For Solr 3.x, only string and boolean fields are supported.
+          if (search_api_is_list_type($type) || !search_api_is_text_type($type, array('string', 'boolean', 'uri'))) {
+            $warnings[] = t('Grouping is not supported for field @field. ' .
+                'Only single-valued fields of type "String", "Boolean" or "URI" are supported.',
+                array('@field' => $index_fields[$collapse_field]['name']));
+            continue;
+          }
+        }
+        else {
+          if (search_api_is_list_type($type) || search_api_is_text_type($type)) {
+            $warnings[] = t('Grouping is not supported for field @field. ' .
+                'Only single-valued fields not indexed as "Fulltext" are supported.',
+                array('@field' => $index_fields[$collapse_field]['name']));
+            continue;
+          }
+        }
+        $group_params['group.field'][] = $fields[$collapse_field];
+      }
+      if (empty($group_params['group.field'])) {
+        unset($group_params);
+      }
+      else {
+        if (!empty($grouping['group_sort'])) {
+          foreach ($grouping['group_sort'] as $group_sort_field => $order) {
+            if (isset($fields[$group_sort_field])) {
+              $f = $fields[$group_sort_field];
+              if (substr($f, 0, 3) == 'ss_') {
+                $f = 'sort_' . substr($f, 3);
+              }
+              $order = strtolower($order);
+              $group_params['group.sort'][] = $f . ' ' . $order;
+            }
+          }
+          if (!empty($group_params['group.sort'])) {
+            $group_params['group.sort'] = implode(', ', $group_params['group.sort']);
+          }
+        }
+        if (!empty($grouping['group_limit']) && ($grouping['group_limit'] != 1)) {
+          $group_params['group.limit'] = $grouping['group_limit'];
+        }
+      }
+    }
+
     // Set defaults.
     if (!$keys) {
       $keys = NULL;
@@ -717,8 +820,8 @@ class SearchApiSolrService extends SearchApiAbstractService {
     if (!empty($mlt_params['mlt.fl'])) {
       $params += $mlt_params;
     }
-    if (!empty($spatial_params)) {
-      $params += $spatial_params;
+    if (!empty($group_params)) {
+      $params += $group_params;
     }
     if (!empty($this->options['retrieve_data'])) {
       $params['fl'] = '*,score';
@@ -738,7 +841,6 @@ class SearchApiSolrService extends SearchApiAbstractService {
     try {
       // Send search request.
       $time_processing_done = microtime(TRUE);
-      $this->connect();
       drupal_alter('search_api_solr_query', $call_args, $query);
       $this->preQuery($call_args, $query);
 
@@ -747,6 +849,11 @@ class SearchApiSolrService extends SearchApiAbstractService {
 
       // Extract results.
       $results = $this->extractResults($query, $response);
+
+      // Add warnings, if present.
+      if (!empty($warnings)) {
+        $results['warnings'] = isset($results['warnings']) ? array_merge($warnings, $results['warnings']) : $warnings;
+      }
 
       // Extract facets.
       if ($facets = $this->extractFacets($query, $response)) {
@@ -794,14 +901,35 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $results['results'] = array();
     // In some rare cases (e.g., MLT query with nonexistent ID) the response
     // will be NULL.
-    if (!isset($response->response)) {
+    if (!isset($response->response) && !isset($response->grouped)) {
       $results['result count'] = 0;
       return $results;
     }
-    $results['result count'] = $response->response->numFound;
+
+    // If field collapsing has been enabled for this query, we need to process
+    // the results differently.
+    $grouping = $query->getOption('search_api_grouping');
+    if (!empty($grouping['use_grouping']) && !empty($response->grouped)) {
+      $docs = array();
+      $results['result count'] = 0;
+      foreach ($grouping['fields'] as $field) {
+        if (!empty($response->grouped->{$fields[$field]})) {
+          $results['result count'] += $response->grouped->{$fields[$field]}->ngroups;
+          foreach ($response->grouped->{$fields[$field]}->groups as $group) {
+            foreach ($group->doclist->docs as $doc) {
+              $docs[] = $doc;
+            }
+          }
+        }
+      }
+    }
+    else {
+      $results['result count'] = $response->response->numFound;
+      $docs = $response->response->docs;
+    }
 
     // Add each search result to the results array.
-    foreach ($response->response->docs as $doc) {
+    foreach ($docs as $doc) {
       // Blank result array.
       $result = array(
         'id' => NULL,
@@ -1773,7 +1901,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
    */
   public function setConnectionClass($class) {
     $this->connection_class = $class;
-    unset($this->solr);
+    $this->solr = NULL;
   }
 
   /**
