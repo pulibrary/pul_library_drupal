@@ -15,9 +15,9 @@ features[rules_config][] = rules_access_rule
 features[rules_config][] = rules_submission_rule_msg
 features[rules_config][] = rules_validation_rule
 
-; Information added by drupal.org packaging script on 2012-11-13
-version = "7.x-1.0"
+; Information added by drupal.org packaging script on 2013-06-05
+version = "7.x-1.1"
 core = "7.x"
 project = "entityform"
-datestamp = "1352773320"
+datestamp = "1370455555"
 

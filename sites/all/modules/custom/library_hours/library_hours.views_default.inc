@@ -469,8 +469,8 @@ function library_hours_views_default_views() {
 
   $view = new view();
   $view->name = 'library_hours';
-  $view->description = '';
-  $view->tag = 'Calendar';
+  $view->description = 'Contains calendar views for the Hours content type';
+  $view->tag = 'Hours';
   $view->base_table = 'node';
   $view->human_name = 'Library Hours';
   $view->core = 7;
@@ -1457,11 +1457,11 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  $handler->display->display_options['sorts']['name']['relationship'] = 'field_hrs_library_target_id';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['relationship'] = 'field_library_hrs_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -1727,12 +1727,6 @@ function library_hours_views_default_views() {
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['table'] = 'field_data_field_hrs_lib_calendar';
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['field'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['label'] = 'The Calendar';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['id'] = 'field_hrs_library_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['table'] = 'field_data_field_hrs_library';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['field'] = 'field_hrs_library_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['relationship'] = 'field_hrs_lib_calendar_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['label'] = 'The Library';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
@@ -2491,8 +2485,8 @@ function library_hours_views_default_views() {
 
   $view = new view();
   $view->name = 'library_hours_editors';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Creates a view for listing of Hours nodes for editors';
+  $view->tag = 'Hours';
   $view->base_table = 'node';
   $view->human_name = 'Library Hours Editors';
   $view->core = 7;
@@ -2518,12 +2512,6 @@ function library_hours_views_default_views() {
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['table'] = 'field_data_field_hrs_lib_calendar';
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['field'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['label'] = 'Calendar';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['id'] = 'field_hrs_library_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['table'] = 'field_data_field_hrs_library';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['field'] = 'field_hrs_library_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['relationship'] = 'field_hrs_lib_calendar_target_id';
-  $handler->display->display_options['relationships']['field_hrs_library_target_id']['label'] = 'Library';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

@@ -510,6 +510,44 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Libraries List */
+  $handler = $view->new_display('panel_pane', 'Libraries List', 'panel_pane_3');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Content: Library Homepage */
+  $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
+  $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';
+  $handler->display->display_options['fields']['field_library_homepage']['field'] = 'field_library_homepage';
+  $handler->display->display_options['fields']['field_library_homepage']['label'] = '';
+  $handler->display->display_options['fields']['field_library_homepage']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_library_homepage']['alter']['text'] = '<a href="[field_library_homepage-url]">[title]</a>';
+  $handler->display->display_options['fields']['field_library_homepage']['alter']['path'] = '[field_library_homepage-url]';
+  $handler->display->display_options['fields']['field_library_homepage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_library_homepage']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_library_homepage']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_library_homepage']['type'] = 'link_plain';
   $export['libraries'] = $view;
 
   $view = new view();
