@@ -211,3 +211,8 @@ function entityform_update_7004(&$sandbox = NULL) {
     $entityform_type->save();
   }
 }
+/**
+ * Update 7005 is unused.
+ */
+function entityform_update_7005(&$sandbox = NULL) {
+}

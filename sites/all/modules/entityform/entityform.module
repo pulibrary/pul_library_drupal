@@ -411,30 +411,34 @@ function entityform_get_types($type_name = NULL, $reset = FALSE) {
 }
 
 /**
- * Get all the submissions for a user
+ * Get all the submissions for a user.
+ *
  * @param string $type
- *   The EntityformType to restrict submissions for
+ *   The EntityformType to restrict submissions for.
  * @param int $uid
- *   uid of user to get submissions for
+ *   uid of user to get submissions for.
  * @param int $draft
  * @return array
  */
 function entityform_get_submissions($type = NULL, $uid = NULL, $draft = 0) {
-  if ($uid) {
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', "entityform");
-    if ($type) {
-      $query->propertyCondition('type', $type);
-    }
-    $query->propertyCondition('uid', $uid);
-    $query->propertyCondition('draft', $draft);
-    $result = $query->execute();
-    if (isset($result['entityform'])) {
-      return $result['entityform'];
-    }
+  $submissions = array();
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', "entityform");
+  if ($type) {
+    $query->propertyCondition('type', $type);
   }
-  return array();
+  // uid = 0 for anonymous users.
+  if (isset($uid)) {
+    $query->propertyCondition('uid', $uid);
+  }
+  $query->propertyCondition('draft', $draft);
+  $result = $query->execute();
+  if (isset($result['entityform'])) {
+    $submissions = $result['entityform'];
+  }
+  return $submissions;
 }
+
 /**
  * Get the current draft submission if any for a user
  * @param string $type
@@ -774,12 +778,14 @@ function entityform_entity_presave($entity, $type) {
       if (isset($entity->paths)) {
         $original_entity = $entity->original;
         foreach ($entity->paths as $key => $path) {
-          $original_path = isset($original_entity->paths[$key]) ? $original_entity->paths[$key] : array();
           $path = $entity->paths[$key];
           $path['alias'] = trim($path['alias']);
-          // Delete old alias if user erased it.
-          if (!empty($original_path['pid']) && empty($path['alias'])) {
-            path_delete($original_path['pid']);
+          // Delete old alias if user erased or changed it.
+          if (isset($original_entity->paths[$key])) {
+            $original_path = $original_entity->paths[$key];
+            if (!empty($original_path['alias']) && empty($path['alias']) || ($path['alias'] != $original_path['alias'])) {
+              path_delete($original_path);
+            }
           }
           if (!empty($path['alias'])) {
             // Ensure fields for programmatic executions.
@@ -793,9 +799,6 @@ function entityform_entity_presave($entity, $type) {
             }
             // Entityform Types aren't translateable
             $path['language'] = LANGUAGE_NONE;
-            if (!empty($original_path['pid'])) {
-              $path['pid'] = $original_path['pid'];
-            }
             if (_entityform_alias_is_used($path)) {
               watchdog('entityform', "Could not create alias @alias for EntityformType entity '@type'",
               array(
@@ -849,8 +852,8 @@ function _entityform_alias_is_used($path) {
   $query = db_select('url_alias')
   ->condition('alias', $path['alias'])
   ->condition('language', $path['language']);
-  if (!empty($path['pid'])) {
-    $query->condition('pid', $path['pid'], '<>');
+  if (!empty($path['source'])) {
+    $query->condition('source', $path['source'], '<>');
   }
   $query->addExpression('1');
   $query->range(0, 1);
@@ -877,7 +880,7 @@ function entityform_submission_page($entityform_type , $display_id = NULL, $mode
     $output['return_link'] = array(
         '#theme' => 'link',
         '#path' => "eform/submit/{$entityform_type->type}",
-        '#text' => 'Return to form',
+        '#text' => t('Return to form'),
         '#options' => array('attributes' => array(), 'html' => FALSE),
     );
   }
@@ -1124,9 +1127,13 @@ class EntityformType extends Entity {
   }
   /*
    * Get the redirect path for this EntityformType with tokens replaced
-  */
+   */
   public function get_redirect_path($entityform = NULL) {
-    return _entityform_format_text($this->data['redirect_path'], array('entityform_type' => $this, 'entityform' => $entityform));
+    if ($this->data['redirect_path'] == '<front>') {
+      return $this->data['redirect_path'];
+    }
+    return _entityform_format_text($this->data['redirect_path'],
+      array('entityform_type' => $this, 'entityform' => $entityform));
   }
 
 }
@@ -1171,7 +1178,7 @@ class EntityformController extends EntityAPIController {
    * Overriding the buldContent function to add entity specific fields
    */
   public function buildContent($entity, $view_mode = 'full', $langcode = NULL, $content = array()) {
-    $content['submission'] = parent::buildContent($entity, $view_mode, $langcode, $content);
+    $content = parent::buildContent($entity, $view_mode, $langcode, $content);
     $content['info']['user'] =  array(
         '#markup' => _entityform_get_submit_info($entity),
         '#weight' => -100,
@@ -1271,6 +1278,18 @@ class EntityformTypeController extends EntityAPIControllerExportable {
       }
       parent::delete($ids, $transaction);
     }
+  }
+  /*
+   * Overridden to exclude pid in alias Export
+   */
+  public function export($entity, $prefix = '') {
+    if (module_exists('path')) {
+      $path_types = _entityform_type_get_path_types($entity->type);
+      foreach ($path_types as $key => $path_type) {
+        unset($entity->paths[$key]['pid']);
+      }
+    }
+    return parent::export($entity, $prefix);
   }
 }
 function _entityform_type_get_path_types($type) {
@@ -1575,7 +1594,12 @@ function _entityform_format_text($text_value, $token_types = array()) {
  */
 function entityform_views_query_alter(&$view, &$query) {
   global $user;
-  if ($view->base_table == 'entityform' && !user_access('view any entityform')) {
+  // Check for 3 conditions
+  // 1. 'user_access' tag is on query
+  // 2. Base table is 'entityform'
+  // 3. User doesn't have 'view any entityform'
+  if (!empty($view->query->tags) && in_array('user_access', $view->query->tags)
+    && $view->base_table == 'entityform' && !user_access('view any entityform')) {
     // @todo user $query to make sure this is the alias
     $table_alias = 'entityform';
     if (user_access('view own entityform')) {

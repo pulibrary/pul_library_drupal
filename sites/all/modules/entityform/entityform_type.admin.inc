@@ -105,6 +105,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     '#required' => TRUE,
     '#size' => 30,
     '#weight' => -50,
+    '#maxlength' => 255,
   );
 
   // Machine-readable type name.
@@ -267,7 +268,6 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
       '#markup' => '<p>' . t('Enable the <a href="@drupal-token">Token module</a> to view the available token browser.', array('@drupal-token' => 'http://drupal.org/project/token')) . '</p>',
     );
   }
-
   return $form;
 }
 /**
@@ -539,7 +539,7 @@ function _entityform_paths_form_element_validate($element, &$form_state, $comple
       ->condition('alias', $path['alias'])
       ->condition('language', LANGUAGE_NONE);
       if (!empty($original_entityform_type->paths[$path_type])) {
-        $query->condition('pid', $original_entityform_type->paths[$path_type]['pid'], '<>');
+        $query->condition('source', $original_entityform_type->paths[$path_type]['source'], '<>');
       }
       $query->addExpression('1');
       $query->range(0, 1);

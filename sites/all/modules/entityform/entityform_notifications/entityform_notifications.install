@@ -6,7 +6,7 @@
 /**
  * Change email variables to use new tokens from Rules.
  */
-function entityform_update_7005(&$sandbox = NULL) {
+function entityform_notifications_update_7001(&$sandbox = NULL) {
   $old_token = '[submitted-entityform';
   $new_token = '[entityform';
   $var_names = array(
