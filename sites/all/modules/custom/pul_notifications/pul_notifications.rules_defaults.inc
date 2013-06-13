@@ -9,11 +9,42 @@
  */
 function pul_notifications_default_rules_configuration() {
   $items = array();
+  $items['rules_dmg_resource_update'] = entity_import('rules_config', '{ "rules_dmg_resource_update" : {
+      "LABEL" : "DMG Resource Update",
+      "PLUGIN" : "rule",
+      "TAGS" : [ "entity_rules_update" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "entity" : { "label" : "Entity", "type" : "node" },
+        "continue" : { "label" : "Continue Rules", "type" : "boolean" }
+      },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "entity" ],
+            "type" : { "value" : {
+                "alternative_database_title" : "alternative_database_title",
+                "database" : "database"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "3" : "3" } },
+            "subject" : "A DMG resource has been updated. ",
+            "message" : "A DMG [entity:content-type] at [entity:url] has been updated by "
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "continue" ]
+    }
+  }');
   $items['rules_new_database_notification'] = entity_import('rules_config', '{ "rules_new_database_notification" : {
       "LABEL" : "New Database Notification",
       "PLUGIN" : "rule",
       "TAGS" : [ "entity_rules_create" ],
-      "REQUIRES" : [ "rules", "variable_email" ],
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "entity" : { "label" : "Entity", "type" : "node" },
         "continue" : { "label" : "Continue Rules", "type" : "boolean" },
@@ -28,10 +59,31 @@ function pul_notifications_default_rules_configuration() {
         { "entity_is_new" : { "entity" : [ "entity" ] } }
       ],
       "DO" : [
-        { "variable_email_mail" : {
-            "to" : "kr2@princeton.edu",
-            "variable" : "entityform_notify_admin_[mail_part]",
-            "language" : "en"
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "3" : "3" } },
+            "subject" : "A new DMG Resource has been created. ",
+            "message" : "A new primary DMG has been created at [entity:url]. It\\u0027s proxy value is \\ufeff\\ufeff\\ufeff[entity:field-db-use-proxy]. "
+          }
+        }
+      ],
+      "PROVIDES VARIABLES" : [ "continue" ]
+    }
+  }');
+  $items['rules_new_node_added'] = entity_import('rules_config', '{ "rules_new_node_added" : {
+      "LABEL" : "New Node Added",
+      "PLUGIN" : "rule",
+      "TAGS" : [ "entity_rules_create" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "entity" : { "label" : "Entity", "type" : "node" },
+        "continue" : { "label" : "Continue Rules", "type" : "boolean" }
+      },
+      "IF" : [ { "entity_is_new" : { "entity" : [ "entity" ] } } ],
+      "DO" : [
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "3" : "3" } },
+            "subject" : "New [entity:content-type] has been added",
+            "message" : "A new [entity:content-type], \\u0022[entity:title]\\u0022 has been created at [entity:url] at [entity:created]. "
           }
         }
       ],
@@ -55,8 +107,8 @@ function pul_notifications_default_rules_configuration() {
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "3" : "3" } },
-            "subject" : "[term:name] updated",
-            "message" : "A term was updated, [term:name]."
+            "subject" : "[term:name] updated ",
+            "message" : "A term was updated, [term:name] in [term:vocabulary]."
           }
         }
       ]
