@@ -17,7 +17,7 @@ function library_faq_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -14;
   $handler->conf = array(
     'title' => 'FAQ Page',
     'no_blocks' => 0,
