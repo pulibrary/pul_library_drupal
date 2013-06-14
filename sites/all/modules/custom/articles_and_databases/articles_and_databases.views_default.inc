@@ -25,7 +25,11 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['title'] = 'New Databases';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -386,7 +390,7 @@ function articles_and_databases_views_default_views() {
   $handler = $view->new_display('attachment', 'Attachment', 'attachment');
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
-  $handler->display->display_options['link_url'] = 'find/databases/!1';
+  $handler->display->display_options['link_url'] = 'research/databases/!1';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -400,7 +404,7 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['arguments']['title']['default_argument_options']['argument'] = 'a';
   $handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['title']['summary']['format'] = 'unformatted_summary';
-  $handler->display->display_options['arguments']['title']['summary_options']['base_path'] = 'find/databases';
+  $handler->display->display_options['arguments']['title']['summary_options']['base_path'] = 'research/databases';
   $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['title']['summary_options']['inline'] = TRUE;
   $handler->display->display_options['arguments']['title']['summary_options']['separator'] = ' | ';

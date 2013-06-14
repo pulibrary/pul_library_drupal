@@ -1,0 +1,16 @@
+name = PUL Notifications
+description = Various notifications for PUL library functionality
+core = 7.x
+package = PUL Custom Features
+php = 5.2.4
+version = 7.x-1.0-alpha
+project = pul_notifications
+dependencies[] = entity
+dependencies[] = rules
+dependencies[] = taxonomy
+dependencies[] = variable_email
+features[features_api][] = api:2
+features[rules_config][] = rules_dmg_resource_update
+features[rules_config][] = rules_new_database_notification
+features[rules_config][] = rules_new_node_added
+features[rules_config][] = rules_warn_of_term_edit
