@@ -43,21 +43,14 @@ function pul_libraries_ct_default_services_endpoint() {
         ),
       ),
     ),
-    'libraries' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'locations' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
     'hours' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'libraries' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
