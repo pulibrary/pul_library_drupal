@@ -1,12 +1,13 @@
 name = Libraries and Collections Search Results
 core = 7.x
-package = Features
+package = PUL Search Views
+php = 5.2.4
 version = 7.x-1.0-dev
 project = libraries_and_collections_search_results
+dependencies[] = ctools
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = search_libraries_and_collections
-features_exclude[dependencies][ctools] = ctools
 project path = sites/all/modules/custom
