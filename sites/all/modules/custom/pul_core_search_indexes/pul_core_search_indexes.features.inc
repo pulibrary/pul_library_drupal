@@ -391,9 +391,7 @@ function pul_core_search_indexes_default_search_api_index() {
             "bundles" : {
               "page" : "page",
               "book" : "book",
-              "collection" : "collection",
               "frequently_asked_question" : "frequently_asked_question",
-              "libraries" : "libraries",
               "library_committee" : "library_committee",
               "library_committee_with_terms" : "library_committee_with_terms",
               "library_meeting_space_locations" : "library_meeting_space_locations",
@@ -597,15 +595,18 @@ function pul_core_search_indexes_default_search_api_index() {
       "fields" : {
         "nid" : { "type" : "integer" },
         "title" : { "type" : "text" },
+        "field_campus_building_loc_id" : { "type" : "integer" },
         "field_e_mail_address" : { "type" : "text" },
         "field_fax" : { "type" : "text" },
         "field_full_library_name" : { "type" : "text" },
         "field_phone" : { "type" : "text" },
         "field_lib_main_menu_link" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
+        "field_tags:tid" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_library_homepage:url" : { "type" : "uri" },
         "field_long_description:value" : { "type" : "text" },
+        "field_building:title" : { "type" : "text" },
         "field_collection_url:url" : { "type" : "uri" }
       },
       "data_alter_callbacks" : {

@@ -2,6 +2,7 @@ name = PUL Core Search Indexes
 description = Search Indexes for PUL
 core = 7.x
 package = Features
+php = 5.2.4
 version = 7.x-1.0-dev
 project = pul_core_search_indexes
 dependencies[] = entity
