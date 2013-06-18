@@ -113,6 +113,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class="icon-envelope-alt">&nbsp;</i>[field_e_mail_address] ';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_e_mail_address']['type'] = 'email_plain';
   /* Contextual filter: Search: Fulltext search */
   $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_libraries_and_collections';
