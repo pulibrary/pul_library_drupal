@@ -17,7 +17,7 @@ function library_hours_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -19;
+  $handler->weight = -15;
   $handler->conf = array(
     'title' => 'Individual Date Page',
     'no_blocks' => 0,
