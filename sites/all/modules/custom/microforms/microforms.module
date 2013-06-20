@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Microforms feature.
+ */
+
+include_once 'microforms.features.inc';
