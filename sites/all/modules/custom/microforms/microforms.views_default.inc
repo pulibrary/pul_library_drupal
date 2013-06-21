@@ -329,7 +329,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    0 => '4558',
+    0 => '4502',
   );
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'newspaper_countries';
   $handler->display->display_options['allow']['use_pager'] = 0;

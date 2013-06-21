@@ -120,7 +120,7 @@ function library_hours_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -16;
+  $handler->weight = -18;
   $handler->conf = array(
     'title' => 'Library Hours Calendar',
     'no_blocks' => 0,
