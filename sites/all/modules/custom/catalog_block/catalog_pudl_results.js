@@ -14,7 +14,7 @@
 		 	async: true,
  			type: 'GET',
  			dataType: 'json',
-			contentType: "application/json; charset=utf-8",
+			//contentType: "application/json; charset=utf-8",
  			success: function(data) {
 			var items = [];
 			// add an icon map for format types
@@ -22,10 +22,10 @@
 			if(data.number > 0) {
   				$.each(data.records, function(index, result) {
 					if(index%2 == 0) {
-                                                var row_class="odd";
-                                        } else {
-                                                var row_class="even"
-                                        }
+                        var row_class="odd";
+                    } else {
+                        var row_class="even"
+                    }
                     var result_position = parseInt(index) + 1;
                     var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PUDL Title\', \'Position '+result_position+'\']);"';
     					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank"'+ ga_track_code +'>' + result['title'] + '</a></h3>'+
