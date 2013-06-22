@@ -1,0 +1,12 @@
+name = All Search Page Configuration
+description = All Search Page Configuration
+core = 7.x
+package = PUL Search Views
+version = 7.x-1.0-dev
+project = all_search_page_configuration
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = all_search_view
+project path = sites/all/modules/custom

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the All Search Page Configuration feature.
+ */
+
+include_once 'all_search_page_configuration.features.inc';
