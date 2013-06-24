@@ -134,6 +134,64 @@ function microforms_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Newspapers by Country', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'International Newspapers';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
+  $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';
+  $handler->display->display_options['fields']['field_microforms_country']['field'] = 'field_microforms_country';
+  $handler->display->display_options['fields']['field_microforms_country']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_country']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_country']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_country']['field_api_classes'] = TRUE;
+  /* Field: Content: City */
+  $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
+  $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
+  $handler->display->display_options['fields']['field_microforms_city']['field'] = 'field_microforms_city';
+  $handler->display->display_options['fields']['field_microforms_city']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_city']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_city']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_city']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_microforms_city']['field_api_classes'] = TRUE;
+  /* Field: Content: US State */
+  $handler->display->display_options['fields']['field_microforms_us_states']['id'] = 'field_microforms_us_states';
+  $handler->display->display_options['fields']['field_microforms_us_states']['table'] = 'field_data_field_microforms_us_states';
+  $handler->display->display_options['fields']['field_microforms_us_states']['field'] = 'field_microforms_us_states';
+  $handler->display->display_options['fields']['field_microforms_us_states']['label'] = 'States';
+  $handler->display->display_options['fields']['field_microforms_us_states']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_microforms_us_states']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_us_states']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_us_states']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_us_states']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_us_states']['field_api_classes'] = TRUE;
+  /* Field: Content: Call Number */
+  $handler->display->display_options['fields']['field_microforms_call_number']['id'] = 'field_microforms_call_number';
+  $handler->display->display_options['fields']['field_microforms_call_number']['table'] = 'field_data_field_microforms_call_number';
+  $handler->display->display_options['fields']['field_microforms_call_number']['field'] = 'field_microforms_call_number';
+  $handler->display->display_options['fields']['field_microforms_call_number']['label'] = 'Call #';
+  $handler->display->display_options['fields']['field_microforms_call_number']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_call_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_call_number']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_call_number']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_call_number']['field_api_classes'] = TRUE;
+  /* Field: Content: Holdings Date */
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['id'] = 'field_microforms_holdings_date';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['table'] = 'field_data_field_microforms_holdings_date';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['field'] = 'field_microforms_holdings_date';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['label'] = 'Dates';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_microforms_holdings_date']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
