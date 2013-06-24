@@ -17,7 +17,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -8;
+  $handler->weight = -6;
   $handler->conf = array(
     'title' => 'Branch Pages',
     'no_blocks' => 0,
@@ -224,7 +224,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = -7;
   $handler->conf = array(
     'title' => 'Stokes Library',
     'no_blocks' => 0,
@@ -387,7 +387,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -20;
   $handler->conf = array(
     'title' => 'Firestone Library',
     'no_blocks' => 0,
