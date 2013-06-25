@@ -453,6 +453,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
+  $handler->display->display_options['fields']['field_news_article_snippet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['max_length'] = '100';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_text'] = 'More News';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_path'] = '/news';
