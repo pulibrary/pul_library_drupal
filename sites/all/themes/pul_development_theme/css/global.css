@@ -1438,8 +1438,11 @@ i.guide:before {
 	top: 40px;
 }
 .front h3.library-news-homepage {
-	height: auto;
+	height: 2.0em;
 	margin-top: 10px;
+}
+.front .view-library-news .views-field-title a {
+	line-height: 1.5em;
 }
 .front .view-library-news .field-name-field-news-featured-graphic img {
 	float: left;
@@ -1573,7 +1576,15 @@ i.guide:before {
 	float: left;
 	padding: 0 10px 0 0;
 }
-
+.front #renovation-news-block {
+	padding-left: 10px;
+}
+.front #read-more-renovation {
+	display: none;
+}
+.front #renovation-news-block a {
+	text-decoration: none;
+}
 .front #region-postscript-second {
 	margin-top: 6em;
 }
@@ -1680,12 +1691,13 @@ a.views-more-link {
 }
 
 #block-menu-menu-user-group-portals li {
-	padding-left: 20px;
+	padding-left: 10px;
 	line-height: 30px;
 	/* background: url("../images/faculty.png") no-repeat #fff;
 	background-position: 0 50%; */
 	font-size: 1.15em;
 }
+
 #block-menu-menu-user-group-portals li + li {
 	/* background: url("../images/student.png") no-repeat #fff;
 	background-position: 0 50%; */
