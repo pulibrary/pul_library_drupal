@@ -89,8 +89,9 @@ function _menu_views_form_parents($form) {
   $parents = array();
   if (isset($form['#node'])) {
     $parents[] = 'menu';
+    $parents[] = 'options';
   }
-  if (_menu_views_options_tree($form)) {
+  elseif (_menu_views_options_tree($form)) {
     $parents[] = 'options';
   }
   $parents[] = 'menu_views';
@@ -175,7 +176,6 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
     
   // Get values for the new menu views item, existing menu views item or submitted form values.
   $item = _menu_views_get_item($form, $form_state);
-
   // Use the loaded node if it exists.
   $node = isset($form['#node']) ? $form['#node'] : FALSE;
   
@@ -189,22 +189,22 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
   }
   
   // Determine which menu item type is visible.
-  $visible = !($item['type'] == 'view');
+  $visible = !('view' === $item['type']);
   
   // Determine the correct link path to show or set values for.
   if (isset($element['link_path'])) {
-    if ($item['type'] == 'link' && $element['link_path']['#default_value'] == '<view>') {
+    if ('link' === $item['type'] && !empty($element['link_path']['#default_value']) && '<view>' === $element['link_path']['#default_value']) {
       $element['link_path']['#default_value'] = $item['original_path'];
     }
-    elseif ($item['type'] == 'view') {
-      if (isset($element['link_path']['#default_value']) && $element['link_path']['#default_value'] != '<view>') {
+    elseif ('view' === $item['type']) {
+      if (!empty($element['link_path']['#default_value']) && '<view>' !== $element['link_path']['#default_value']) {
         $item['original_path'] = $element['link_path']['#default_value'];
       }
       $element['link_path']['#default_value'] = '<view>';
     }
   }
   elseif ($node) {
-    if ($item['type'] == 'view') {
+    if ('view' === $item['type']) {
       $element['link_path'] = array(
         '#type' => 'value',
         '#value' => '<view>',
@@ -243,22 +243,6 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
     }
   }
   
-  // Move general menu item settings into a container.
-  $element['menu_item_settings'] = array(
-    '#access' => $access,
-    '#type' => 'fieldset',
-    '#title' => t('Menu item settings'),
-    '#parents' => isset($form['#node']) ? array('menu') : array(),
-    '#weight' => $item['type'] == 'view' ? 50 : 1,
-    '#attributes' => array('id' => 'menu_item_settings', 'class' => array('menu-item-settings')),
-  );
-  if (isset($element['enabled'])) {
-    $element['menu_item_settings']['enabled'] = $element['enabled'];
-    unset($element['enabled']);
-  }
-  $element['menu_item_settings']['expanded'] = $element['expanded'];
-  unset($element['expanded']);
-  
   // Replace Parent Menu Options
   $options = _menu_views_parent_options(menu_get_menus(), $menu_link);
   if ($node && isset($node->type)) {
@@ -266,11 +250,29 @@ function _menu_views_form_alter(array &$element, array &$form, array &$form_stat
   }
   $element['parent']['#title'] = t('Parent Item');
   $element['parent']['#options'] = $options;
-  $element['menu_item_settings']['parent'] = $element['parent'];
-  unset($element['parent']);
+
+  // Move general menu item settings into a container.
+  if ($access) {
+    $element['menu_item_settings'] = array(
+      '#access' => $access,
+      '#type' => 'fieldset',
+      '#title' => t('Menu item settings'),
+      '#parents' => isset($form['#node']) ? array('menu') : array(),
+      '#weight' => $item['type'] == 'view' ? 50 : 1,
+      '#attributes' => array('id' => 'menu_item_settings', 'class' => array('menu-item-settings')),
+    );
+    if (isset($element['enabled'])) {
+      $element['menu_item_settings']['enabled'] = $element['enabled'];
+      unset($element['enabled']);
+    }
+    $element['menu_item_settings']['expanded'] = $element['expanded'];
+    unset($element['expanded']);
+    $element['menu_item_settings']['parent'] = $element['parent'];
+    unset($element['parent']);
+    $element['menu_item_settings']['weight'] = $element['weight'];
+    unset($element['weight']);
+  }
   
-  $element['menu_item_settings']['weight'] = $element['weight'];
-  unset($element['weight']);
   
   // Create a radio toggle for menu item types: link or view.
   $element['menu_item_type'] = array(
@@ -358,12 +360,25 @@ function _menu_views_form(&$item, &$element, &$form, &$form_state) {
     '#access' => $item['type'] == 'view' ? TRUE : FALSE,
   );
 
-  $options = array();
-  $views = views_get_enabled_views();
-  foreach ($views as $name => $view) {
-    $options[$name] = $view->human_name . ' (' . $name . ')';
+  $view_options = array();
+  $display_options = array();
+  foreach (views_get_enabled_views() as $view_name => $view) {
+    $view_options[$view_name] = $view->human_name . ' (' . $view_name . ')';
+    foreach ($view->display as $display_name => $display) {
+      if ('default' !== $display_name && 'page' !== $display_name && 'rss' !== $display_name) {
+        $display_options[$view_name][$display_name] = $display->display_title . ' (' . $display_name . ')';
+      }
+    }
+    // If view has no compatiable displays, remove the view as an option.
+    if (empty($display_options[$view_name])) {
+      unset($view_options[$view_name]);
+    }
+    else {
+      // Sort the displays for the view.
+      ksort($display_options[$view_name]);
+    }
   }
-  ksort($options);
+  ksort($view_options);
   $element['view']['container'] = array(
     '#type' => 'fieldset',
     '#title' => t('View'),
@@ -373,29 +388,24 @@ function _menu_views_form(&$item, &$element, &$form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Name'),
     '#empty_option' => t('- Select View -'),
-    '#description' => t('Select the name of a view to use.'),
+    '#description' => t('Select the name of a view to use. The following view displays cannot be used: Master (default), Page and RSS. If the view or display you are looking for does not exist, create a block display in that view.'),
     '#required' => TRUE,
     '#default_value' => $item['view']['name'],
-    '#options' => $options,
+    '#options' => $view_options,
     '#ajax' => array(
       'callback' => '_menu_views_form_ajax',
       'wrapper' => 'menu-edit-item-wrapper',
     ),
   );
-  if ($item['view']['name']) {
-    $view = views_get_view($item['view']['name']);
-    $options = array();
-    foreach ($view->display as $name => $display) {
-      $options[$name] = $display->display_title . ' (' . $name . ')';
-    }
+  if ($item['view']['name'] && !empty($display_options[$item['view']['name']])) {
     $element['view']['container']['display'] = array(
       '#type' => 'select',
       '#title' => t('Display'),
-      '#description' => t('Select the name of a view display to use.'),
+      '#description' => t('Select the name of a view display to use. The following view displays cannot be used: Master (default), Page and RSS. If the view or display you are looking for does not exist, create a block display in that view.'),
       '#required' => TRUE,
       '#empty_option' => t('- Select Display -'),
       '#default_value' => $item['view']['display'],
-      '#options' => $options,
+      '#options' => $display_options[$item['view']['name']],
       '#ajax' => array(
         'callback' => '_menu_views_form_ajax',
         'wrapper' => 'menu-edit-item-wrapper',
@@ -587,7 +597,6 @@ function _menu_views_form_submit($form, &$form_state) {
     // The menu item will get updated with the rest of the values again shortly.
     if (!$values['mlid']) {
       $values['hidden'] = (int) !$values['enabled'];
-      unset($values['enabled']);
       $values['options']['attributes']['title'] = $values['description'];
       list($values['menu_name'], $values['plid']) = explode(':', $values['parent']);
       if (!$values['mlid'] = menu_link_save($values)) {
@@ -696,20 +705,17 @@ function _menu_views_parents_recurse($tree, $menu_name, $indent, &$options, $exc
       $item = _menu_views_get_item($data['link']);
       _menu_views_tokenize($item);
       if ($item['type'] == 'view' && $item['view']['name'] && $item['view']['display']) {
-        if ($view = views_get_view($item['view']['name'])) {
+        $title = t($item['view']['name']) . '-' . t($item['view']['display']);
+        $view_title = $item['view']['settings']['title_override'];
+        if (empty($view_title) && ($view = views_get_view($item['view']['name']))) {
           if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
-            $output = '';
             $view->set_arguments(explode('/', $item['view']['arguments']));
-            // Provide title options for the view.
-            $title = $item['view']['settings']['title_override'];
-            if (empty($title)) {
-              $title = $view->get_title();
-            }
-            if (empty($title)) {
-              $title = t($item['view']['name']) . '-' . t($item['view']['display']);
-            }
+            $view_title = $view->get_title();
           }
           $view->destroy();
+        }
+        if (!empty($view_title)) {
+          $title = $view_title . ' (' . $title . ')';
         }
         $title = $indent . ' [view] ' . truncate_utf8($title, 30, TRUE, FALSE);
       }

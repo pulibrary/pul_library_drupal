@@ -62,20 +62,24 @@ function menu_views_theme_registry_alter(&$registry) {
  */
 function menu_views_menu_link(array $variables) {
   // Only intercept if this menu link is a view.
-  if (isset($variables['element']) && $view = _menu_views_replace_menu_item($variables['element'])) {
-    $sub_menu = '';
-    $classes = isset($variables['element']['#attributes']['class']) ? $variables['element']['#attributes']['class'] : array();
-    $item = _menu_views_get_item($variables['element']);
-    foreach (explode(' ', $item['view']['settings']['wrapper_classes']) as $class) {
-      if (!in_array($class, $classes)) {
-        $classes[] = $class;
+  $view = _menu_views_replace_menu_item($variables['element']);
+  if ($view !== FALSE) {
+    if (!empty($view)) {
+      $sub_menu = '';
+      $classes = isset($variables['element']['#attributes']['class']) ? $variables['element']['#attributes']['class'] : array();
+      $item = _menu_views_get_item($variables['element']);
+      foreach (explode(' ', $item['view']['settings']['wrapper_classes']) as $class) {
+        if (!in_array($class, $classes)) {
+          $classes[] = $class;
+        }
       }
+      $variables['element']['#attributes']['class'] = $classes;
+      if ($variables['element']['#below']) {
+        $sub_menu = drupal_render($variables['element']['#below']);
+      }
+      return '<li' . drupal_attributes($variables['element']['#attributes']) . '>' . $view . $sub_menu . "</li>\n";
     }
-    $variables['element']['#attributes']['class'] = $classes;
-    if ($variables['element']['#below']) {
-      $sub_menu = drupal_render($variables['element']['#below']);
-    }
-    return '<li' . drupal_attributes($variables['element']['#attributes']) . '>' . $view . $sub_menu . "</li>\n";
+    return '';
   }
   // Otherwise, use the default theming function.
   return theme('menu_views_menu_link_default', $variables);
@@ -136,6 +140,7 @@ function _menu_views_replace_menu_item($element) {
   $item = _menu_views_get_item($element);
   _menu_views_tokenize($item);
   if ($item['type'] == 'view' && $item['view']['name'] && $item['view']['display']) {
+    $output = '';
     $element['#attributes']['class'][] = 'menu-views';
     if ($view = views_get_view($item['view']['name'])) {
       if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
@@ -172,7 +177,27 @@ function _menu_views_replace_menu_item($element) {
           }
         }
         $output .= $view->preview();
+        $build = array(
+          'output' => array(
+            '#markup' => $output
+          ),
+        );
+        // Add contextual links if allowed and if views_ui module is enabled.
+        if (user_access('access contextual links') && module_exists('views_ui')) {
+          views_add_contextual_links($build, 'special_block_-exp', $view, $item['view']['display']);
+          if (!empty($build['#contextual_links'])) {
+            $build['#prefix'] = '<div class="contextual-links-region">';
+            $build['#suffix'] = '</div>';
+            $build['contextual_links'] = array(
+              '#type' => 'contextual_links',
+              '#contextual_links' => $build['#contextual_links'],
+              '#element' => $build,
+              '#weight' => -1,
+            );
+          }
+        }
         $view->destroy();
+        return drupal_render($build);
       }
     }
   }
@@ -206,7 +231,7 @@ function _menu_views_default_values() {
  * Helper function to determine whether the form menu item options are a tree.
  */
 function _menu_views_options_tree($form) {
-  return ((isset($form['options']['#tree']) && $form['options']['#tree']) || (isset($form['#node']) && isset($form['menu']['link']['options']['#tree']) && $form['menu']['link']['options']['#tree']));
+  return ((isset($form['#node']) && isset($form['menu']['link']['options']['#tree']) && $form['menu']['link']['options']['#tree']) || (isset($form['options']['#tree']) && $form['options']['#tree']));
 }
 
 /**
@@ -236,6 +261,7 @@ function _menu_views_get_item(array &$element = array(), array &$form_state = ar
   }
   // $form_state should be set when used in forms, otherwise this function will not work.
   else {
+    $original_element = $element;
     $values = &$form_state['values'];
     // Determine if this is a node form.
     if (isset($element['#node'])) {
@@ -246,6 +272,9 @@ function _menu_views_get_item(array &$element = array(), array &$form_state = ar
     if (isset($values['menu_item_type'])) {
       $ajax_type = $values['menu_item_type'];
     }
+    elseif (isset($values['menu']['menu_views']['menu_item_type'])) {
+      $ajax_type = $values['menu']['menu_views']['menu_item_type'];
+    }
     // Save the menu item provided for initial form population.
     if (isset($element['original_item']['#value']['options']['menu_views'])) {
       $provided = &$element['original_item']['#value']['options']['menu_views'];
@@ -253,8 +282,14 @@ function _menu_views_get_item(array &$element = array(), array &$form_state = ar
         $item['type'] = $provided['type'];
       }
     }
+    elseif (isset($original_element['#node']->menu['options']['menu_views'])) {
+      $provided = &$original_element['#node']->menu['options']['menu_views'];
+      if (isset($provided['type'])) {
+        $item['type'] = $provided['type'];
+      }
+    }
     // Determine if the options has a tree value.
-    if (_menu_views_options_tree($element)) {
+    if (_menu_views_options_tree($original_element)) {
       $element = &$element['options'];
       $values = &$values['options'];
     }
@@ -262,7 +297,7 @@ function _menu_views_get_item(array &$element = array(), array &$form_state = ar
       if (isset($element['menu_views']['#value'])) {
         $provided = $element['menu_views']['#value'];
       }
-      else {
+      elseif (isset($element['menu_views'])) {
         $provided = $element['menu_views'];
       }
     }
@@ -521,55 +556,35 @@ function menu_views_tokens($type, $tokens, array $data = array(), array $options
     $language_code = NULL;
   }
   $sanitize = !empty($options['sanitize']);
-
   $replacements = array();
-  $node = FALSE;
-  $parent = FALSE;
   // Menu link tokens.
   if ($type == 'menu-link' && !empty($data['menu-link'])) {
     $link = (array) $data['menu-link'];
-    foreach ($tokens as $name => $original) {
-      switch ($name) {
-        case 'node':
-          $node = menu_get_object('node', 1, $link['link_path']);
-          if ($node && $node->nid) {
-            $title = $node->title;
-            $replacements[$original] = $sanitize ? filter_xss($title) : $title;
-          }
-          else {
-            $replacements[$original] = NULL;
-          }
-          break;
-        case 'parent':
-          if (isset($link['plid']) &&
-            !empty($link['plid']) &&
-            ($parent = menu_link_load($link['plid'])) &&
-            ($node = menu_get_object('node', 1, $parent['link_path'])) &&
-            $node->nid
-          ) {
-            $title = $node->title;
-            $replacements[$original] = $sanitize ? filter_xss($title) : $title;
-          }
-          else {
-            $replacements[$original] = NULL;
-          }
-          break;
+    // menu-link:node tokens.
+    if ($node_tokens = token_find_with_prefix($tokens, 'node')) {
+      $node = menu_get_object('node', 1, $link['link_path']);
+      if (!$node && '<view>' === $link['link_path'] && !empty($link['options']['menu_views']['original_path'])) {
+        $node = menu_get_object('node', 1, $link['options']['menu_views']['original_path']);
+      }
+      if ($node) {
+        $replacements += token_generate('node', $node_tokens, array('node' => $node), $options);
+      }
+      else {
+        $replacements += token_generate('node', $node_tokens, array('node' => NULL), $options);
       }
     }
-    // Chained token relationships.
-    if (($node_tokens = token_find_with_prefix($tokens, 'node')) &&
-      $node = menu_get_object('node', 1, $link['link_path'])
-    ) {
-      $replacements += token_generate('node', $node_tokens, array('node' => $node), $options);
-    }
-    if (($parent_tokens = token_find_with_prefix($tokens, 'parent')) &&
-      isset($link['plid']) &&
-      !empty($link['plid']) &&
-      ($parent = menu_link_load($link['plid'])) &&
-      ($node = menu_get_object('node', 1, $parent['link_path'])) &&
-      $node->nid
-    ) {
-      $replacements += token_generate('node', $parent_tokens, array('node' => $node), $options);
+    // menu-link:parent tokens.
+    elseif (($parent_tokens = token_find_with_prefix($tokens, 'parent')) && !empty($link['plid']) && ($parent = menu_link_load($link['plid']))) {
+      $node = menu_get_object('node', 1, $parent['link_path']);
+      if (!$node && '<view>' === $parent['link_path'] && !empty($parent['options']['menu_views']['original_path'])) {
+        $node = menu_get_object('node', 1, $parent['options']['menu_views']['original_path']);
+      }
+      if ($node) {
+        $replacements += token_generate('node', $parent_tokens, array('node' => $node), $options);
+      }
+      else {
+        $replacements += token_generate('node', $parent_tokens, array('node' => NULL), $options);
+      }
     }
   }
   return $replacements;
