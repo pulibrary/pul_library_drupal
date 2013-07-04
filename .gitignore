@@ -7,3 +7,5 @@ sites/*/private
 
 .project
 .idea
+nbproject/*
+.settings/*
