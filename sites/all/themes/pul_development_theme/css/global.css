@@ -2287,6 +2287,17 @@ body.faq .ui-widget-header a {
 .all-pulfa-breadcrumb {
 	margin-left: 0em;
 }
+
+.all-search-results-list {
+    margin:0 0;
+    padding:0;
+    list-style-type: none;
+}
+
+.page-find-all .pane-views-panes ul li{
+    list-style-type:none;
+    margin-left:0;
+}
 /*
  .view-libraries-and-collections {
 
