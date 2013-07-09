@@ -1409,7 +1409,7 @@ input[type='text'],input[type='email'],input[type='phone'],input[type='address']
 .context-alumni .grid-5 .pane-content ul.menu li:before{
   font-family: fontAwesome;
   padding-right: 10px;
-  font-size: .9em;
+  font-size: .7em;
   content: "\F054";
  
 }
