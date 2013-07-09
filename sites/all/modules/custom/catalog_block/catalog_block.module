@@ -148,25 +148,25 @@ function catalog_block_block_info() {
       // info: The name of the block.
       'info' => t('Catalog Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    $blocks['catalog_search_results'] = array(
       // block for search results from "books+" aka primo
       'info' => t('Books+ Search Results'),
-      'cache' => DRUPAL_NO_CACHE,
+      'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_journal_results'] = array(
       'info' => t('Journal Results'),
-      'cache' => DRUPAL_NO_CACHE,
+      'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_pulfa_results'] = array(
       'info' => t('Archives Results'),
-      'cache' => DRUPAL_NO_CACHE,
+      'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_pudl_results'] = array(
       'info' => t('Princeton University Digital Library'),
-      'cache' => DRUPAL_NO_CACHE,
+      'cache' => DRUPAL_CACHE_PER_PAGE,
    );	
    return $blocks;
 }

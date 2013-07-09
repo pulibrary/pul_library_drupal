@@ -146,25 +146,25 @@ function summon_block_block_info() {
       // info: The name of the block.
       'info' => t('Articles+ Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
   $blocks['summon_search_results'] = array(
     'info' => t('Articles+ Search Results'),
-    'cache' => DRUPAL_NO_CACHE,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   $blocks['summon_guide_results'] = array(
     'info' => t('Library Guide Results'),
-    'cache' => DRUPAL_NO_CACHE,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   $blocks['summon_recommendation_results'] = array(
     'info' => t('Database Recommendations'),
-    'cache' => DRUPAL_NO_CACHE,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   $blocks['summon_spelling_suggestion'] = array(
     'info' => t('Did You Mean?'),
-    'cache' => DRUPAL_NO_CACHE,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   return $blocks;
 }

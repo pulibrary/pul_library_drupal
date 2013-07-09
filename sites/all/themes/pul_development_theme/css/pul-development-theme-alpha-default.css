@@ -1334,3 +1334,102 @@ padding: 2px;
 }
 
 input[type='text'],input[type='email'],input[type='phone'],input[type='address'],textarea {font-size:0.9em;}
+
+
+/**********************************************
+ * TOP LEVEL PAGE Styles
+ **********************************************/
+
+.context-research .panel-pane h2.pane-title,
+.context-help .panel-pane h2,
+.context-about .panel-pane h2.pane-title,
+.context-staff .panel-pane h2.pane-title,
+.context-faculty .grid-5 .panel-pane h2.pane-title,
+.context-faculty .grid-4 .panel-pane h2.pane-title,
+.context-visitors .grid-5 .panel-pane h2.pane-title,
+.context-visitors .grid-4 .panel-pane h2.pane-title,
+.context-alumni .grid-5 .panel-pane h2.pane-title,
+.context-alumni .grid-4 .panel-pane h2.pane-title,
+.context-students .grid-5 .panel-pane h2.pane-title,
+.context-students .grid-4 .panel-pane h2.pane-title {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: rgb(229, 229, 229);
+    margin-right: 20%;
+}
+
+/* arrow content: "\f061"; */
+/* 
+.context-research .panel-pane h2.pane-title:after,
+.context-help .panel-pane h2:after,
+.context-about .panel-pane h2.pane-title:after,
+.context-staff .panel-pane h2.pane-title:after,
+.context-faculty .grid-5 .panel-pane h2.pane-title:after,
+.context-faculty .grid-4 .panel-pane h2.pane-title:after,
+.context-visitors .grid-5 .panel-pane h2.pane-title:after,
+.context-visitors .grid-4 .panel-pane h2.pane-title:after,
+.context-alumni .grid-5 .panel-pane h2.pane-title:after,
+.context-alumni .grid-4 .panel-pane h2.pane-title:after,
+.context-students .grid-5 .panel-pane h2.pane-title:after,
+.context-students .grid-4 .panel-pane h2.pane-title:after{
+    
+      font-family: fontAwesome;
+  padding-left: 10px;
+  font-size: .9em;
+  content: "\F063";
+}
+*/
+.context-research .field-item ul li,
+.context-help .field-item ul li,
+.context-services .field-item ul li,
+.context-about .field-item ul li,
+.context-staff .field-item ul li,
+.context-faculty .field-item ul li,
+.context-students .field-item ul li,
+.context-alumni .field-item ul li,
+.context-visitors .field-item ul li,
+ ul li.expanded{
+    list-style-type: none;
+    list-style-image: none;
+    
+    
+}
+
+.context-research .field-item ul li:before,
+.context-help .field-item ul li:before,
+.context-services .field-item ul li:before,
+.context-about .field-item ul li:before,
+.context-staff .pane-content ul.menu li:before,
+.context-faculty .grid-5 .pane-content ul.menu li:before,
+.context-faculty .grid-4 .pane-content ul.menu li:before,
+.context-students .grid-5 .pane-content ul.menu li:before,
+.context-students .grid-4 .pane-content ul.menu li:before,
+.context-visitors .grid-5 .pane-content ul li:before,
+.context-alumni .grid-4 .pane-content ul.menu li:before,
+.context-alumni .grid-5 .pane-content ul.menu li:before{
+  font-family: fontAwesome;
+  padding-right: 10px;
+  font-size: .7em;
+  content: "\F054";
+ 
+}
+
+.context-research .field-item ul li a,
+.context-help .field-item ul li a,
+.context-about .field-item ul li a,
+.context-services .field-item ul li a,
+.context-staff .pane-content ul.menu li a,
+.context-faculty .pane-content ul.menu li a,
+.context-visitors .pane-content ul li a,
+.context-alumni .pane-content ul.menu li a,
+.context-students .pane-content ul.menu li a{
+    text-decoration: none;
+}
+
+/* Library Landing Pages */
+.node-type-libraries .grid-3 .view-id-libraries .view-content a{
+    text-decoration: none;
+}
+.node-type-libraries .grid-3 .view-id-libraries .view-content i {
+    margin-right: 5px;
+}
