@@ -350,7 +350,7 @@ function library_hours_default_page_manager_pages() {
     $pane->panel = 'left';
     $pane->type = 'views';
     $pane->subtype = 'emergency_alert_content_block';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
