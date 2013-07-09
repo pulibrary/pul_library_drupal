@@ -564,6 +564,7 @@ function pul_libraries_ct_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Libraries';
   $handler->display->display_options['css_class'] = 'libraries_collections_menu';
+  $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'More Collections';

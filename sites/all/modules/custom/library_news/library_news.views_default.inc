@@ -156,14 +156,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_news_categories']['id'] = 'field_news_categories';
-  $handler->display->display_options['fields']['field_news_categories']['table'] = 'field_data_field_news_categories';
-  $handler->display->display_options['fields']['field_news_categories']['field'] = 'field_news_categories';
-  $handler->display->display_options['fields']['field_news_categories']['label'] = 'Related to:';
-  $handler->display->display_options['fields']['field_news_categories']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_news_categories']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_news_categories']['element_default_classes'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -486,6 +478,7 @@ function library_news_views_default_views() {
 
   /* Display: Library News Per Audience */
   $handler = $view->new_display('page', 'Library News Per Audience', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
