@@ -1,0 +1,5 @@
+name = EZproxy Utilities
+description = Drush Commands related to EZproxy
+package = PUL Custom Features
+core = 7.x
+dependencies[] = articles_and_databases

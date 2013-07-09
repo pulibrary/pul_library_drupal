@@ -123,7 +123,7 @@ function dbsearch_block_block_info() {
       // info: The name of the block.
       'info' => t('Database Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_PAGE, //DRUPAL_CACHE_PER_ROLE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
