@@ -52,6 +52,16 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
+# Redirect Rules
+RedirectPermanent /about/hours /hours
+RedirectPermanent /about/hours.php /hours
+RedirectPermanent /guide http://libguides.princeton.edu/guide
+RedirectPermanent /catalogs/articles.php /research/databases
+RedirectPermanent /catalogs/other.php /research/catalogs
+RedirectPermanent /libraries/collections.php /collections
+RedirectPermanent /hr /staff/hr
+RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
+RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
@@ -65,12 +75,11 @@ DirectoryIndex index.php index.html index.htm
 
   # send certain traffic to https
   RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} admin 
+  RewriteCond %{REQUEST_URI} admin|user
+  RewriteCond %{SERVER_NAME} !lib-drupal
   RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
 
-  RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} user 
-  RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
+
 
 
   # Block access to "hidden" directories whose names begin with a period. This
