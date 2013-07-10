@@ -62,6 +62,15 @@ RedirectPermanent /libraries/collections.php /collections
 RedirectPermanent /hr /staff/hr
 RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
 RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
+Redirect /catalogs/newtitles.php http://library2.princeton.edu/catalogs/newtitles.php
+Redirect /libraries/locations.php http://library2.princeton.edu/libraries/locations.php
+Redirect /services/annex.php http://library2.princeton.edu/services/annex.php
+Redirect /services/inprocess.php http://library2.princeton.edu/services/inprocess.php
+Redirect /services/trace.php http://library2.princeton.edu/services/trace.php
+RedirectPermanent /services/bdinfo.php /services/borrowdirect
+RedirectPermanent /search /find/all
+RedirectPermanent /libraries/map.php /about/locations
+
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
