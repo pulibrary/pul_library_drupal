@@ -1348,6 +1348,167 @@ collections/microforms/*',
   $handler->conf['display'] = $display;
   $export['term_view_panel_context_22'] = $handler;
 
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'term_view_panel_context_6';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -11;
+  $handler->conf = array(
+    'title' => 'Microforms Newspaper - By City',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'subsite',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term_vocabulary',
+          'settings' => array(
+            'vids' => array(
+              25 => '25',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-39';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-microforms';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'left-col-menu',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-39'] = $pane;
+    $display->panels['left'][0] = 'new-39';
+    $pane = new stdClass();
+    $pane->pid = 'new-40';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-selected-collections-and-ti';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-40'] = $pane;
+    $display->panels['left'][1] = 'new-40';
+    $pane = new stdClass();
+    $pane->pid = 'new-41';
+    $pane->panel = 'left';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-selected-research-guides';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-41'] = $pane;
+    $display->panels['left'][2] = 'new-41';
+    $pane = new stdClass();
+    $pane->pid = 'new-42';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'microforms_states_and_countries-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-42'] = $pane;
+    $display->panels['right'][0] = 'new-42';
+    $pane = new stdClass();
+    $pane->pid = 'new-43';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'microforms-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '%term:tid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '%term:name',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-43'] = $pane;
+    $display->panels['right'][1] = 'new-43';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-40';
+  $handler->conf['display'] = $display;
+  $export['term_view_panel_context_6'] = $handler;
+
   return $export;
 }
 
