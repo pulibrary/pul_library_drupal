@@ -61,3 +61,5 @@ Disallow: /?q=user/logout/
 # PUL Specific Rules
 Disallow: /sites/default/files/newsletters/
 Disallow: /find/all/
+Disallow: /services/hours
+Disallow: /services/libraries
