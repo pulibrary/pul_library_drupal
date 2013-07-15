@@ -52,6 +52,35 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
+# Redirect Rules
+RedirectPermanent /about/hours /hours
+RedirectPermanent /about/hours.php /hours
+RedirectPermanent /guide http://libguides.princeton.edu/guide
+RedirectPermanent /catalogs/articles.php /research/databases
+RedirectPermanent /catalogs/other.php /research/catalogs
+RedirectPermanent /libraries/collections.php /collections
+RedirectPermanent /hr /staff/hr
+RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
+RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
+Redirect /catalogs/newtitles.php http://library2.princeton.edu/catalogs/newtitles.php
+Redirect /libraries/locations.php http://library2.princeton.edu/libraries/locations.php
+Redirect /services/annex.php http://library2.princeton.edu/services/annex.php
+Redirect /services/inprocess.php http://library2.princeton.edu/services/inprocess.php
+Redirect /services/trace.php http://library2.princeton.edu/services/trace.php
+Redirect /services/ilslendingform.php http://library2.princeton.edu/services/ilslendingform.php
+Redirect /favicon.ico /sites/default/files/libicon_0.ico
+Redirect /cdforum http://library2.princeton.edu/cdforum
+Redirect /collectiondevelopment http://library2.princeton.edu/collectiondevelopment
+Redirect /departments/collectiondevelopment http://library2.princeton.edu/departments/collectiondevelopment
+RedirectPermanent /services/bdinfo.php /services/borrowdirect
+RedirectPermanent /search /find/all
+RedirectPermanent /libraries/map.php /about/locations
+RedirectPermanent /services/purchase.php http://library.princeton.edu/help/recommend-purchase
+Redirect /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
+Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
+Redirect /departments/systems_office/supply_request.php http://library2.princeton.edu/departments/systems_office/supply_request.php
+RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
+#RedirectPermanent /departments/tsd /departments/tsd/tech
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
@@ -63,15 +92,23 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTPS} on
   RewriteRule ^ - [E=protossl:s]
 
+  #RewriteCond %{HTTP_HOST} !^library.princeton.edu/$
+  #RewriteRule (.*) http://library.princeton.edu/$1 [R=301,L]
+
+  # send certain traffic to https
+  # took this out b/c it sends all paths with either string to https
+  # can't get the right formula here. 
   # send certain traffic to https
   RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} admin 
+  RewriteCond %{REQUEST_URI} /^admin|/^user
+  RewriteCond %{SERVER_NAME} !lib-drupal
   RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
+  #RewriteCond %{HTTPS} !=on
+  #RewriteRule ^/user(.*)$ https://%{SERVER_NAME}/user [R]
+  #RewriteCond %{HTTPS} !=on
 
-  RewriteCond %{SERVER_PORT} 80 
-  RewriteCond %{REQUEST_URI} user 
-  RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
 
+  
 
   # Block access to "hidden" directories whose names begin with a period. This
   # includes directories used by version control systems such as Subversion or
