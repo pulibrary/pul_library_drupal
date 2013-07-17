@@ -311,6 +311,9 @@ function library_news_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_news_library_contact',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'users' => array(
         'columns' => array(
@@ -336,7 +339,6 @@ function library_news_field_default_field_bases() {
         ),
         'sort' => array(
           'direction' => 'ASC',
-          'field' => 'field_puluser_fname:value',
           'property' => 'name',
           'type' => 'property',
         ),
