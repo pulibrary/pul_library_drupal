@@ -59,6 +59,7 @@ allow from all
 
 
 # Redirect Rules
+RedirectPermanent /about/contact.php /about/contact-us
 RedirectPermanent /about/hours /hours
 RedirectPermanent /about/hours.php /hours
 RedirectPermanent /guide http://libguides.princeton.edu/guide
