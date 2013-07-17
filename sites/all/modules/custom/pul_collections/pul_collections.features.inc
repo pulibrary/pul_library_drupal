@@ -31,7 +31,7 @@ function pul_collections_views_api() {
 function pul_collections_node_info() {
   $items = array(
     'collection' => array(
-      'name' => t('Collection'),
+      'name' => t('Collections'),
       'base' => 'node_content',
       'description' => t('University Library Collection'),
       'has_title' => '1',

@@ -266,6 +266,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'More';
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path]';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
@@ -807,10 +808,10 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['max_length'] = '250';
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_text'] = 'Read More';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_path'] = '[path]';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_article_snippet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_article_snippet']['element_wrapper_type'] = '0';
