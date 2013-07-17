@@ -52,6 +52,12 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
+## BAD IPs
+order allow,deny 
+deny from 128.112.132.117
+allow from all
+
+
 # Redirect Rules
 RedirectPermanent /about/hours /hours
 RedirectPermanent /about/hours.php /hours
