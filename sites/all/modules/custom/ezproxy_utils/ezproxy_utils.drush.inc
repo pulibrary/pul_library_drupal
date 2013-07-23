@@ -37,11 +37,36 @@ function ezproxy_utils_drush_command() {
         'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
                 
     );
+    $items['total-overrides'] = array(
+        'description' => dt('Show total number of exiting overrides. Default shows active nodes only'),
+        'arguments' => array(
+            'inactive' => dt('Show only inactive overrides'),
+            ),
+        
+        'examples' => array(
+            'Standard' => 'drush total-overrides',
+            'Inactive' => 'drush total-overrides inactive',
+            
+        ),
+        'aliases' => array('showoverrides'),
+        'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
+                
+    );
     $items['ezproxy-build-config'] = array(
         
     ); 
     return $items;
     
+}
+
+function drush_ezproxy_utils_total_overrides($inactive = false) {
+    $db_query = new EntityFieldQuery();
+    $override_databases = $db_query->entityCondition('entity_type', 'node')
+        ->propertyCondition('type', 'alternative_database_title') //use bundle type 
+        ->propertyOrderBy('title')
+        ->execute(); 
+    
+    drush_print(count($override_databases['node']) . " Total Overrides");
 }
 
 function drush_ezproxy_utils_total_databases($inactive = false) {
@@ -69,6 +94,7 @@ function drush_ezproxy_utils_build_config() {
         ->execute(); 
     
     //build the packages 
+    drush_print("how");
     
     
 }
