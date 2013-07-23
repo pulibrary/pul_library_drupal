@@ -140,6 +140,25 @@
               });
           }
       );
+      // libraries and collections
+      $('.page-find-all .view-search-libraries-and-collections h3 a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Libraries and Collections", 'Title']);
+              });
+          }
+      );
+      
+      $('.page-find-all .view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function(index,value) {
+              result_position = parseInt(index) + 1;
+              $(this).click( function() {
+                  _gaq.push(["_trackEvent", "Expand All Search", "Libraries and Collections", 'Homepage URL']);
+              });
+          }
+      );
+      
+      
+      
       // homepage news
       $('.front .block-library-news-block .views-more-link').each(function(index,value) {
             $(this).click( function() {
