@@ -88,6 +88,9 @@ Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
 Redirect /departments/systems_office/supply_request.php http://library2.princeton.edu/departments/systems_office/supply_request.php
 RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
 Redirect /catalogs/rssfeeds/newtitles.php http://library2.princeton.edu/catalogs/rssfeeds/newtitles.php
+Redirect /style http://library2.princeton.edu/style
+Redirect /styles http://library2.princeton.edu/styles
+Redirect /images http://library2.princeton.edu/images
 
 #RedirectPermanent /departments/tsd /departments/tsd/tech
 # Various rewrite rules.
