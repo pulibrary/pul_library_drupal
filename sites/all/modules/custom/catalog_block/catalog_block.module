@@ -21,6 +21,10 @@ function catalog_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
+   $form['sid'] = array(
+     '#type' => 'hidden',
+     '#value' => t("library-core"),
+   );
     $form['#attached']['js'][] = drupal_get_path('module', 'catalog_block') .'/catalog_block.js'; 
     $hint_settings = array('catalog_search_hint' => variable_get('catalog_search_hint'),
                            'catalog_search_error' => variable_get('catalog_search_error')
@@ -29,7 +33,7 @@ function catalog_block_form($form, &$form_state) {
       'data' => array('catalog_block' => $hint_settings),
       'type' => 'setting',
      );
-   $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/location', array('external' => true));
+   $form['#action'] = url('http://library.princeton.edu/searchit/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;

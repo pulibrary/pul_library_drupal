@@ -28,7 +28,11 @@ function summon_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
-   $form['#action'] = url('http://libwebprod.princeton.edu/searchit/search/summon', array('external' => true));
+   $form['sid'] = array(
+     '#type' => 'hidden',
+     '#value' => t("library-core"),
+   );
+   $form['#action'] = url('http://library.princeton.edu/searchit/search/summon', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;
