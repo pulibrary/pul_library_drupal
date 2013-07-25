@@ -56,7 +56,7 @@ function catalog_block_contents() {
 function catalog_block_get_current_filter($path) {
     $path_parts = explode("find/all/", $path);
     if(isset($path_parts[1])) {
-        //return filter_xss($path_parts[1]);
+        return filter_xss($path_parts[1]);
         return $path_parts[1];
     }
 }
@@ -66,7 +66,7 @@ function catalog_block_query_escape($drupal_path) {
   return drupal_encode_path($query);
 }
 
-function catalog_block_get_sid() {
+function  catalog_block_get_sid() {
     return "library-main";
 }
 
