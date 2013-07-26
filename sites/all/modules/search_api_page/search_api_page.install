@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Search pages module.
+ */
 
 /**
  * Implements hook_schema().
@@ -34,7 +38,7 @@ function search_api_page_schema() {
       'machine_name' => array(
         'description' => 'The machine name for a search page.',
         'type' => 'varchar',
-        'length' => 50,
+        'length' => 32,
         'not null' => TRUE,
       ),
       'description' => array(
@@ -145,7 +149,7 @@ function search_api_page_update_7102() {
         if (drupal_strlen($name) > 50) {
           $suffix_len = drupal_strlen('_' . $i);
           $base = drupal_substr($base, 0, 50 - $suffix_len);
-          $name = $base . '_' . ++$i;
+          $name = $base . '_' . $i;
         }
       }
       $names[$name] = TRUE;
@@ -188,6 +192,49 @@ function search_api_page_update_7102() {
     catch (Exception $e1) {
       // Ignore.
     }
-    throw new DrupalUpdateException(t('An exception occurred during the update: !msg.', array('!msg' => $e->getMessage())));
+    throw new DrupalUpdateException(t('An exception occurred during the update: @msg.', array('@msg' => $e->getMessage())));
+  }
+}
+
+/**
+ * Restrict Search API Page machine names to 32 characters.
+ */
+function search_api_page_update_7103() {
+  $tx = db_transaction();
+  try {
+    foreach (db_query('SELECT machine_name FROM {search_api_page} WHERE LENGTH(machine_name) > 32')->fetchCol() as $old_name) {
+      if (!isset($existing)) {
+        $existing = db_query('SELECT machine_name FROM {search_api_page}')->fetchAllAssoc('machine_name');
+      }
+      $base = $name = substr($old_name, 0, 32);
+      $i = 0;
+      while (isset($existing[$name])) {
+        $name = $base . '_' . ++$i;
+        if (strlen($name) > 32) {
+          $suffix_len = strlen('_' . $i);
+          $base = substr($base, 0, 32 - $suffix_len);
+          $name = $base . '_' . $i;
+        }
+      }
+      $existing[$name] = TRUE;
+      db_update('search_api_page')
+        ->fields(array(
+          'machine_name' => $name,
+        ))
+        ->condition('machine_name', $old_name)
+        ->execute();
+    }
+
+    $spec = array(
+      'description' => 'The machine name for a search page.',
+      'type' => 'varchar',
+      'length' => 32,
+      'not null' => TRUE,
+    );
+    db_change_field('search_api_page', 'machine_name', 'machine_name', $spec);
+  }
+  catch (Exception $e) {
+    $tx->rollback();
+    throw new DrupalUpdateException(t('An exception occurred during the update: @msg.', array('@msg' => $e->getMessage())));
   }
 }
