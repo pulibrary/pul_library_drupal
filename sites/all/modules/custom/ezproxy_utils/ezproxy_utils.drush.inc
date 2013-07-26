@@ -215,8 +215,9 @@ function drush_ezproxy_utils_build_special_config() {
     //build the packages 
     
     foreach($databases['node'] as $database) {
-        drush_print("#NID" . $database->nid);
         $database_fields = entity_metadata_wrapper('node', $database->nid);
+        $changed = format_date($database_fields->changed->value());
+        drush_print("#NID" . $database->nid . " - " . $changed);
         drush_print('Title ' . trim($database_fields->title->value()));
         drush_print(trim($database_fields->field_db_proxy_configuration->value()));
         drush_print("");
@@ -236,7 +237,8 @@ function drush_ezproxy_utils_build_package_config() {
     drush_print("#Total Package Configs " . count($db_packages['node']));
     foreach($db_packages['node'] as $db_package) {
         $package_fields = entity_metadata_wrapper('node', $db_package->nid);
-        drush_print("#ID " . $db_package->nid);
+        $changed = format_date($package_fields->changed->value());
+        drush_print("#ID " . $db_package->nid . " - " . $changed);
         drush_print("#Title " . $package_fields->title->value());
         drush_print(trim($package_fields->field_dbgrp_proxy_configuration->value()));
     }
