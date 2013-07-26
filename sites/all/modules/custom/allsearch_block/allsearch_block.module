@@ -28,7 +28,7 @@ function allsearch_block_form($form, &$form_state) {
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('All Search'),
-    '#size'  => 40,
+    '#size'  => 80,
     '#required' => TRUE,
     '#default_value' => $default_value
   );

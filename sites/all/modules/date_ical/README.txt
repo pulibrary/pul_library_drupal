@@ -36,41 +36,52 @@ properly installed. If it's missing, you'll need to enable Date iCal and then
 come back to this page. 
 
 
-HOW TO CREATE AN ICAL FEED
+HOW TO CREATE AN ICAL FEED (using the iCal Entities plugin)
 
-- Go to the Manage Display page for the content type you want to export in an 
-  iCal feed. On the "Default" tab, check the box for "iCal" in the section 
-  titled "Use custom display settings for the following view modes", then click
-  Save.
-- Click the new "iCal" tab that now appears in the upper-right corner of the
-  Manage Display page for this content type.
-- Set up the iCal view mode to contain whatever should be exported as the
-  'Description' field for the iCal feed. You can trim the text to the desired
-  size, include additional information from other fields, etc.
-- Do this for each of the content types that you wish to include in your 
-  site's iCal feeds.
-- Create a new View that displays the entities that you want to include in the
-  iCal feed.
-- Add a "Feed" to the view. Change the Format to 'iCal Feed'. When you click 
-  Apply from that dialog, you'll be given the option to name the calendar. This
-  name will appear in your users' calendar clients as the calendar's title.
-- Change the Show setting to 'iCal Entity' (rather than 'Content' or 'Fields').
-- In the settings for iCal Entity, select the date field that should be used 
-  as the event date for the iCal feed. Make sure that you choose a field that
-  is a part of every entity that your View displays. Otherwise, the entities
-  which don't have that field will be left out of the iCal feed.
-- You may optionally choose a field that will be used to populate the Location
-  property of events in your iCal feed. This field can be either a text field
-  or a Node Reference field, in which case the title of the node will be used.
-- Give the feed a path like 'calendar/%/export.ics', where you have a
-  '/%/' for every contextual filter in the view.
-- Attach the feed to a page view.
-- Make sure the Pager options are set to "Display all items".
-- Add date filters or arguments that will constrain the view to the items you
-  want to be included in the iCal feed.
-- Navigate to the page view. You should see the iCal icon at the bottom of the
-  view. If you click on the icon it will download an .ics file with the events
-  that matched the view criteria.
+1.  Go to the Manage Display page for the content type you want to export in an 
+    iCal feed. On the "Default" tab, check the box for "iCal" in the section 
+    titled "Use custom display settings for the following view modes", then click
+    Save.
+2.  Click the new "iCal" tab that now appears in the upper-right corner of the
+    Manage Display page for this content type.
+3.  Set up the iCal view mode to contain whatever should be exported as the
+    'Description' field for the iCal feed. You can trim the text to the desired
+    size, include additional information from other fields, etc.
+4.  Do this for each of the content types that you wish to include in your 
+    site's iCal feeds.
+5.  Create a new View that displays the entities that you want to include in the
+    iCal feed.
+6.  Add a "Feed" to the view. Change the Format to 'iCal Feed'. When you click 
+    Apply from that dialog, you'll be given the option to name the calendar. This
+    name will appear in your users' calendar clients as the calendar's title.
+7.  Change the Show setting to 'iCal Entity' (rather than 'Content' or 'Fields').
+8.  In the settings for iCal Entity, select the date field that should be used 
+    as the event date for the iCal feed. Make sure that you choose a field that
+    is a part of every entity that your View displays. Otherwise, the entities
+    which don't have that field will be left out of the iCal feed.
+9.  You may optionally choose a field that will be used to populate the Location
+    property of events in your iCal feed. This field can be either a text field
+    or a Node Reference field, in which case the title of the node will be used.
+10. Give the feed a path like 'calendar/%/export.ics', where you have a
+    '/%/' for every contextual filter in the view.
+11. Attach the feed to a page view.
+12. Make sure the Pager options are set to "Display all items".
+13. Add date filters or arguments that will constrain the view to the items you
+    want to be included in the iCal feed.
+14. Navigate to the page view. You should see the iCal icon at the bottom of the
+    view. If you click on the icon it will download an .ics file with the events
+    that matched the view criteria.
+
+HOW TO CREATE AN ICAL FEED (using the iCal Fields plugin)
+1-6.These steps are the same as above.
+7.  Add views fields for each piece of information that you want to populate your
+    iCal feed with. A Date field is required, and fields that will act as the 
+    Title and Description of the events are reccomended. You can also include a
+    Location field.
+8.  Back in the FORMAT section, change the Show setting to 'iCal Fields'.
+9.  In the settings for iCal Fields, choose which views fields you want to use
+    for the Date, Title, Description, and Location.
+10+ These steps are the same as above. 
 
 
 HOW TO IMPORT AN ICAL FEED FROM ANOTHER SITE

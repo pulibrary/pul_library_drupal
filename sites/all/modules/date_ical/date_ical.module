@@ -8,6 +8,17 @@
  */
 
 /**
+ * The version number of the current release. This is inserted into the PRODID
+ * value of the iCal feeds created by Date iCal.
+ */
+define('DATE_ICAL_VERSION', '2.9');
+
+/**
+ * Exception for when the date field for a row in the ical_fields row plugin is blank.
+ */
+class BlankDateFieldException extends Exception { }
+
+/**
  * Implements hook_views_api().
  */
 function date_ical_views_api() {
@@ -184,16 +195,16 @@ function date_ical_feeds_processor_targets_alter(&$targets, $entity_type, $bundl
 
 /**
  * Reformats the provided text to be compliant with the iCal spec.
- * If the text contains HTML tags, those tags will be stripped
- * (with <p> tags converted to \n\n), and uneeded whitespace
- * will be cleaned up.
+ * If the text contains HTML tags, those tags will be stripped (with <p> tags
+ * converted to "\n\n" and link tags converted to footnotes), and uneeded
+ * whitespace will be cleaned up.
  *
  * @param $text
- *   The text to be reformatted.
+ *   The text to be sanitized.
  */
-function date_ical_format_text($text = '') {
+function date_ical_sanitize_text($text = '') {
   // Use Drupal's built-in HTML to Text converter, which does a mostly adequate
-  // job of making the text iCal-compliant. It's not prefect, though.
+  // job of making the text iCal-compliant.
   $text = trim(drupal_html_to_text($text));
   // Replace instances of more than one space with exactly one space. This
   // cleans up the whitespace mess that gets left behind by drupal_html_to_text().
