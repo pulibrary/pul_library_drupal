@@ -71,16 +71,16 @@ function ezproxy_utils_drush_command() {
             'Standard' => 'drush ezproxy-packages',
             
         ),
-        'aliases' => array('ez-packs'),
+        'aliases' => array('ez-pack-count'),
         'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
                 
     );
     
-    $items['ezproxy-build-config'] = array(
+    $items['build-standard-config'] = array(
         'description' => dt('Print out current Ezproxy Configuration File'),
         
         'examples' => array(
-            'Standard' => 'drush ezproxy-build-config',
+            'Standard' => 'drush build-standard-config',
             
         ),
         'aliases' => array('ez-bsc'),
@@ -90,10 +90,20 @@ function ezproxy_utils_drush_command() {
         'description' => dt('Print out current Ezproxy Configuration File'),
         
         'examples' => array(
-            'Standard' => 'drush ezproxy-build-config',
+            'Standard' => 'drush build-special-config',
             
         ),
         'aliases' => array('ez-bsp'),
+        'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
+    ); 
+    $items['build-package-config'] = array(
+        'description' => dt('Print out current Ezproxy Configuration File'),
+        
+        'examples' => array(
+            'Standard' => 'drush build-package-config',
+            
+        ),
+        'aliases' => array('ez-bpc'),
         'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
     ); 
     return $items;
@@ -159,16 +169,7 @@ function drush_ezproxy_utils_ezproxy_packages() {
     
 }
 
-function drush_ezproxy_utils_ezproxy_build_config() {
-    /* fill in when these are set up
-    $db_package_query = new EntityFieldQuery();
-    $db_packages = $db_package_query->entityCondition('entity_type', 'node')
-        ->propertyCondition('type', 'database_package') //use bundle type 
-        ->propertyCondition('status', 1)
-        ->propertyOrderBy('title')
-        ->execute(); 
-     * 
-     */
+function drush_ezproxy_utils_build_standard_config() {
     
     $db_query = new EntityFieldQuery();
     $databases = $db_query->entityCondition('entity_type', 'node')
@@ -176,7 +177,7 @@ function drush_ezproxy_utils_ezproxy_build_config() {
         ->propertyCondition('status', 1)
         ->fieldCondition('field_db_use_proxy', 'value', 1)
         ->fieldCondition('field_db_ezproxy_special', 'value', 0)
-        //->fieldCondition('field_db_grp_member_of')
+        //->fieldCondition('field_db_grp_member_of') //FIXME implement when group configs are set
         ->propertyOrderBy('title')
         ->execute(); 
     drush_print("# Total Standard Databases" . count($databases['node']));
@@ -184,8 +185,9 @@ function drush_ezproxy_utils_ezproxy_build_config() {
     //build the packages 
     
     foreach($databases['node'] as $database) {
-        drush_print("#NID" . $database->nid);
         $database_fields = entity_metadata_wrapper('node', $database->nid);
+        $changed = format_date($database_fields->changed->value());
+        drush_print("#NID" . $database->nid . " - " . $changed);
         drush_print('Title ' . trim($database_fields->title->value()));
         $access_url = $database_fields->field_db_access_url->value();
         drush_print('URL ' . trim($access_url['url']));
@@ -220,4 +222,24 @@ function drush_ezproxy_utils_build_special_config() {
         drush_print("");
         
     }
+}
+
+function drush_ezproxy_utils_build_package_config() {
+    
+    $db_package_query = new EntityFieldQuery();
+    $db_packages = $db_package_query->entityCondition('entity_type', 'node')
+        ->propertyCondition('type', 'database_package') //use bundle type 
+        ->propertyCondition('status', 1)
+        ->propertyOrderBy('title')
+        ->execute(); 
+    
+    drush_print("#Total Package Configs " . count($db_packages['node']));
+    foreach($db_packages['node'] as $db_package) {
+        $package_fields = entity_metadata_wrapper('node', $db_package->nid);
+        drush_print("#ID " . $db_package->nid);
+        drush_print("#Title " . $package_fields->title->value());
+        drush_print(trim($package_fields->field_dbgrp_proxy_configuration->value()));
+    }
+    drush_print("");
+     
 }
