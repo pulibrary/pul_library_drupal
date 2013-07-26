@@ -218,7 +218,7 @@ function drush_ezproxy_utils_build_special_config() {
         $database_fields = entity_metadata_wrapper('node', $database->nid);
         $changed = format_date($database_fields->changed->value());
         drush_print("#NID" . $database->nid . " - " . $changed);
-        drush_print('Title ' . trim($database_fields->title->value()));
+        drush_print('#Title ' . trim($database_fields->title->value()));
         drush_print(trim($database_fields->field_db_proxy_configuration->value()));
         drush_print("");
         
