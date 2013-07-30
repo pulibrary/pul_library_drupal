@@ -18,7 +18,7 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
   static protected $sources = array(
     'summary' => array(
       'name' => 'Summary',
-      'description' => 'A short summary or title for the calendar component.',
+      'description' => 'A short summary, or title, for the calendar component.',
       'date_ical_parse_handler' => 'formatText',
     ),
     'description' => array(
@@ -79,20 +79,14 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
   public function parse(FeedsSource $source, FeedsFetcherResult $fetcher_result) {
     self::loadLibrary();
     
-    // Get the path to the temporary file created by the feed download.
-    $filename = $fetcher_result->getFilePath();
-    $config = $source->getConfig();
+    // Read the iCal feed into memory.
+    $ical_feed_contents = $fetcher_result->getRaw();
     
-    //
-    // Create the calendar object and parse the file.
-    //
-    $config = array(
-      'unique_id' => '', // do we need one for incoming parsing?
-      'filename' => $config['FeedsHTTPFetcher']['source'],
-    );
-    $calendar = new vcalendar($config);
-    if (!$calendar->parse($fetcher_result->getRaw())) {
-      throw new DateIcalParseException(t('Error parsing iCal file: %file', array('%file' => $filename)));
+    // Create the calendar object and parse the feed.
+    $calendar = new vcalendar();
+    if (!$calendar->parse($ical_feed_contents)) {
+      $url = $source->config[$source->importer->config['fetcher']['plugin_key']]['source'];
+      throw new DateIcalParseException(t('Error parsing iCal feed: %url', array('%url' => $url)));
     }
     
     // Allow modules to alter the vcalendar object before we interpret its properties.
@@ -127,8 +121,8 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
     }
     
     // DEV NOTES:
-    // Due to the way that the loop after this one manipulates the $components array, and work that gets done in here
-    // is overriden. However, we probably *should* be using this, somehow, since I think it was in the old version
+    // Due to the way that the loop after this one manipulates the $components array, all the work that gets done in here
+    // gets overridden. However, we probably *should* be using this, somehow, since I think it was in the old version
     // in order to handle non-standard VTIMEZONES. Maybe?
     $components = array();
     while ($component = $calendar->getComponent('VTIMEZONE')) {
@@ -136,15 +130,15 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
     }
     $result->timezones = $components;
     
-    // Separate the individual feed items into DateIcalIcalcreatorComponent objects, to be treated as
-    // separate parsed elements.
+    // Separate the individual feed items into DateIcalIcalcreatorComponents.
     $components = array();
-    $component_types = array('vevent', 'vtodo', 'vjournal', 'vfreebusy', 'valarm'); // @todo: admin per feed configurable; check each makes sense.
+    $component_types = array('vevent', 'vtodo', 'vjournal', 'vfreebusy', 'valarm');
     foreach ($component_types as $component_type) {
       while ($component = $calendar->getComponent($component_type)) {
         $component = new DateIcalIcalcreatorComponent($component);
         
-        // Allow modules to alter the DateIcalIcalcreatorComponent before we parse it into Feeds-readable data.
+        // Allow modules to alter the DateIcalIcalcreatorComponent before we
+        // parse it into Feeds-readable data.
         $context = array(
           'calendar' => $calendar,
           'source' => $source,
@@ -164,7 +158,7 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
   /******
    * Source output formatters.
    *
-   * Could be in a class of their own?
+   * TODO: Could be in a class of their own?
    **/
   
   /**
@@ -210,7 +204,8 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
     $context = get_defined_vars();
     $date_array = $property['value'];
     
-    // It's frustrating that iCalcreator gives us date data in a different format than it expects to receive date data.
+    // It's frustrating that iCalcreator gives us date data in a different
+    // format than what it expects us to give back.
     if (isset($property['params']['TZID'])) {
       $date_array['tz'] = $property['params']['TZID'];
     }

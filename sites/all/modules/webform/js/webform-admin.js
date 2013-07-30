@@ -6,8 +6,6 @@
 
 Drupal.behaviors.webformAdmin = {};
 Drupal.behaviors.webformAdmin.attach = function(context) {
-  // Apply special behaviors to fields with default values.
-  Drupal.webform.defaultValues(context);
   // On click or change, make a parent radio button selected.
   Drupal.webform.setActive(context);
   // Update the template select list upon changing a template.
@@ -16,46 +14,22 @@ Drupal.behaviors.webformAdmin.attach = function(context) {
   Drupal.webform.selectCheckboxesLink(context);
   // Enhance the normal tableselect.js file to support indentations.
   Drupal.webform.tableSelectIndentation(context);
+  // Automatically download exports if available.
+  Drupal.webform.downloadExport(context);
   // Enhancements for the conditionals administrative page.
   Drupal.webform.conditionalAdmin(context);
 }
 
 Drupal.webform = Drupal.webform || {};
 
-Drupal.webform.defaultValues = function(context) {
-  var $fields = $('.webform-default-value:not(.error)', context);
-  var $forms = $fields.parents('form:first');
-  $fields.each(function() {
-    this.defaultValue = $(this).attr('rel');
-    if (this.value != this.defaultValue) {
-      $(this).removeClass('webform-default-value');
-    }
-    $(this).focus(function() {
-      if (this.value == this.defaultValue) {
-        this.value = '';
-        $(this).removeClass('webform-default-value');
-      }
-    });
-    $(this).blur(function() {
-      if (this.value == '') {
-        $(this).addClass('webform-default-value');
-        this.value = this.defaultValue;
-      }
-    });
-  });
-
-  // Clear all the form elements before submission.
-  $forms.submit(function() {
-    $fields.focus();
-  });
-};
-
 Drupal.webform.setActive = function(context) {
   var setActive = function(e) {
-    $('.form-radio', $(this).parent().parent()).attr('checked', true);
+    if ($(this).val()) {
+      $(this).closest('.form-type-radio').find('input[type=radio]').attr('checked', true);
+    }
     e.preventDefault();
   };
-  $('.webform-set-active', context).click(setActive).change(setActive);
+  $('.webform-set-active', context).change(setActive);
 };
 
 Drupal.webform.updateTemplate = function(context) {
@@ -116,6 +90,16 @@ Drupal.webform.tableSelectIndentation = function(context) {
       $rows.eq(n).find('input.form-checkbox').attr('checked', this.checked);
     }
   });
+}
+
+/**
+ * Attach behaviors for Webform results download page.
+ */
+Drupal.webform.downloadExport = function(context) {
+  if (context === document && Drupal.settings && Drupal.settings.webformExport && document.cookie.match(/webform_export_info=1/)) {
+    window.location = Drupal.settings.webformExport;
+    delete Drupal.settings.webformExport;
+  }
 }
 
 /**

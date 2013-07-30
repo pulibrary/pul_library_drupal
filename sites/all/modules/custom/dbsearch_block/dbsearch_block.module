@@ -27,7 +27,7 @@ function dbsearch_block_form($form, &$form_state) {
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
-    '#size'  => 20,
+    '#size'  => 80,
     '#default_value' => $default_value
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
