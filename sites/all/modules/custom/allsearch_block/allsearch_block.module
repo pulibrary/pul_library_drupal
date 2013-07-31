@@ -49,7 +49,12 @@ function allsearch_block_form($form, &$form_state) {
    $form['#suffix'] = $suffix;
    //$form['#redirect'] = url('find/all/');
    #$form['#target'] = "_parent";
-   //$form['#action'] = url('/find/all/cats');
+   /* 
+    * sending this to the empty path url('')
+    * will ensure this form always posts through the bare current path
+    * 
+    */
+   $form['#action'] = url('');
    $form['#method'] = "post";
    $form['#submit'] = array('allsearch_block_form_redirect');
    return $form;
