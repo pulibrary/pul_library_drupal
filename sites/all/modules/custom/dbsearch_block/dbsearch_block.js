@@ -1,8 +1,12 @@
 (function ($) {
   $(document).ready(function() {
     $('#dbsearch-block-form input').focus(function() {
-     	$(this).val('');
+     	if ($(this).val() == Drupal.settings.settings.dbsearch_block.db_search_hint) { 
+				$(this).val('');
+     	}
      }); 
+     
+     
      $('#dbsearch-block-form').submit(function() {
     	//alert($(this).find("input:first").val());
     	//console.log(Drupal.settings.catalog_block.catalog_search_hint);
