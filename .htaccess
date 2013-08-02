@@ -54,7 +54,13 @@ DirectoryIndex index.php index.html index.htm
 
 ## BAD IPs
 order allow,deny 
+# OIT crawler
 deny from 128.112.132.117
+## spam from death masks kootation.com
+deny from 131.253.24.22
+deny from 198.27.67.59
+# turkish media crawler
+deny from 5.47.49.252
 allow from all
 
 
