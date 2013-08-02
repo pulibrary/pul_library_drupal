@@ -43,6 +43,10 @@ function dbsearch_block_form($form, &$form_state) {
     '#value' => t('Search'),
     '#suffix' => $form_suffix,
    );
+   /*
+    * Force form to post through the base url
+    */
+   $form['#action'] = url('');
    $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
    //$form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
