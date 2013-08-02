@@ -1,7 +1,7 @@
 (function ($) {
   $(document).ready(function() {
     $('#dbsearch-block-form input').focus(function() {
-     	if ($(this).val() == Drupal.settings.settings.dbsearch_block.db_search_hint) { 
+     	if ($(this).val() == Drupal.settings.dbsearch_block.db_search_hint) { 
 				$(this).val('');
      	}
      }); 
