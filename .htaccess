@@ -81,6 +81,7 @@ Redirect /services/annex.php http://library2.princeton.edu/services/annex.php
 Redirect /services/inprocess.php http://library2.princeton.edu/services/inprocess.php
 Redirect /services/trace.php http://library2.princeton.edu/services/trace.php
 Redirect /services/ilslendingform.php http://library2.princeton.edu/services/ilslendingform.php
+Redirect /services/requests.php http://library2.princeton.edu/services/requests.php
 Redirect /favicon.ico /sites/default/files/libicon_0.ico
 Redirect /cdforum http://library2.princeton.edu/cdforum
 Redirect /collectiondevelopment http://library2.princeton.edu/collectiondevelopment
