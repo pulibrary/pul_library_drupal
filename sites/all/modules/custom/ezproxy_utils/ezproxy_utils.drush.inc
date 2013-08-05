@@ -274,7 +274,7 @@ function drush_ezproxy_utils_build_package_config() {
      
 }
 
-function drush_ezproxy_utils_databases_to_csv($filename = false, $inactive = false) {
+function drush_ezproxy_utils_databases_to_csv($filename = false, $use_proxy = 0, $inactive = false) {
     $db_query = new EntityFieldQuery();
     
     if($inactive) {
@@ -283,6 +283,15 @@ function drush_ezproxy_utils_databases_to_csv($filename = false, $inactive = fal
             ->propertyCondition('status', 0)
             ->propertyOrderBy('title')
             ->execute();  
+    } elseif ($use_proxy == 1) {
+        drush_print("Only ezproxy enabled resources returned");
+        $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyCondition('status', 1)
+            ->fieldCondition('field_db_use_proxy', 'value', 1)
+            ->propertyOrderBy('title')
+            ->execute();  
+        
     } else {
         $databases = $db_query->entityCondition('entity_type', 'node')
             ->propertyCondition('type', 'database') //use bundle type 
@@ -315,6 +324,11 @@ function drush_ezproxy_utils_databases_to_csv($filename = false, $inactive = fal
         $databases_csv_data[2] = trim($url_info['url']);
         $description = $database_fields->body->value();
         $databases_csv_data[3] = trim($description['safe_value']);
+        $databases_csv_data[4] = $database_fields->field_db_use_proxy->value();
+        
+        $group_membership = $database_fields->field_db_grp_member_of->value();
+        $databases_csv_data[5] = $group_membership->title;
+        
         array_push($csv_data, $databases_csv_data);
         fputcsv($fp, $databases_csv_data);
     }
