@@ -8,15 +8,18 @@ module_load_include('inc', 'ezproxy_utils', 'ezproxy_utils.drush.inc');
 
 function ezproxy_utils_get_domain($url) {
     
-    //preg_match("/^(https?:\/\/)?([^\/]+)/i", $url, $matches);
-    //$domain = $matches[2];
-    // get last two segments of host name
-    //preg_match("/[^\.\/]+\.[^\.\/]+$/", $domain, $matches);
-    //if($matches[0] == "co.uk" || $matches[0] == "ac.uk") {
-    // do nothing
-    //                            } else {
-    //return $matches[0];
     $url_components = parse_url($url);
     return $url_components['host'];
 
+}
+
+function ezproxy_utils_trim_field($field, $num_of_chars = 500) {
+
+    if (strlen($field) > $num_of_chars) {
+        $field_value = preg_replace('/\s+?(\S+)?$/', '', substr($field, 0, $num_of_chars));
+        drush_print("trimming");
+        return $field_value;
+    } else {
+        return $field;
+    }
 }
