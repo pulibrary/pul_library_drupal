@@ -305,8 +305,16 @@ function drush_ezproxy_utils_databases_to_csv($filename = false, $use_proxy = 0,
      */
     $csv_data = array();
     $fp = fopen($filename, 'w');
-
-
+    $headings = array(
+        //"Resource URL",
+        "LINK TITLE",
+        "LINK URL",
+        "DESCRIPTION",
+        //"Proxy Status",
+        //"Group Membership",
+        //"Last Updated"
+    );
+    fputcsv($fp,$headings);
 
 
     foreach($databases['node'] as $database) {
@@ -315,20 +323,21 @@ function drush_ezproxy_utils_databases_to_csv($filename = false, $use_proxy = 0,
         $database_fields = entity_metadata_wrapper('node', $database->nid);
         $changed = format_date($database_fields->changed->value());
         //drush_print("#NID" . $database->nid . " - " . $changed);
-        $databases_csv_data[0] = $base_url . $database->nid;
-        $databases_csv_data[1] = trim($database_fields->title->value());
         
+        $databases_csv_data[0] = trim($database_fields->title->value());
+        $databases_csv_data[1] = $base_url . $database->nid;
         #drush_print('#Title ' . trim($database_fields->title->value()));
         #drush_print(trim($database_fields->field_db_proxy_configuration->value()));
-        $url_info = $database_fields->field_db_access_url->value();
-        $databases_csv_data[2] = trim($url_info['url']);
+        //$url_info = $database_fields->field_db_access_url->value();
+        //$databases_csv_data[2] = trim($url_info['url']);
         $description = $database_fields->body->value();
-        $databases_csv_data[3] = trim($description['safe_value']);
-        $databases_csv_data[4] = $database_fields->field_db_use_proxy->value();
+        $description_value = trim($description['safe_value']);
+        $databases_csv_data[2] =  ezproxy_utils_trim_field($description_value);
+        //$databases_csv_data[4] = $database_fields->field_db_use_proxy->value();
         
-        $group_membership = $database_fields->field_db_grp_member_of->value();
-        $databases_csv_data[5] = $group_membership->title;
-        
+        //$group_membership = $database_fields->field_db_grp_member_of->value();
+        //$databases_csv_data[5] = $group_membership->title;
+        //$databases_csv_data[6] = $changed;
         array_push($csv_data, $databases_csv_data);
         fputcsv($fp, $databases_csv_data);
     }
@@ -375,6 +384,7 @@ function drush_ezproxy_utils_databases_to_json($filename = false, $inactive = fa
         $databases_csv_data[2] = trim($url_info['url']);
         $description = $database_fields->body->value();
         $databases_csv_data[3] = trim($description['safe_value']);
+        $databases_csv_data[4] = $changed;
         array_push($csv_data, $databases_csv_data);
     }
     ;
