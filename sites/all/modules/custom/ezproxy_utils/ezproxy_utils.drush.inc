@@ -106,6 +106,34 @@ function ezproxy_utils_drush_command() {
         'aliases' => array('ez-bpc'),
         'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
     ); 
+    $items['databases-to-csv'] = array(
+        'description' => dt('Dump Current Databases to CSV Format'),
+        'arguments' => array(
+            'filename' => dt('name of CSV file to write including path'),
+            'inactive' => dt('Show only inactive overrides'),
+            ),
+        
+        'examples' => array(
+            'Standard' => 'drush databases-to-csv',
+            
+        ),
+        'aliases' => array('db-csv'),
+        'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
+    ); 
+    $items['databases-to-json'] = array(
+        'description' => dt('Dump Current Databases to JSON Format'),
+        'arguments' => array(
+            'filename' => dt('name of CSV file to write including path'),
+            'inactive' => dt('Show only inactive overrides'),
+            ),
+        
+        'examples' => array(
+            'Standard' => 'drush databases-to-json',
+            
+        ),
+        'aliases' => array('db-json'),
+        'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
+    ); 
     return $items;
     
 }
@@ -245,3 +273,124 @@ function drush_ezproxy_utils_build_package_config() {
     drush_print("");
      
 }
+
+function drush_ezproxy_utils_databases_to_csv($filename = false, $use_proxy = 0, $inactive = false) {
+    $db_query = new EntityFieldQuery();
+    
+    if($inactive) {
+      $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyCondition('status', 0)
+            ->propertyOrderBy('title')
+            ->execute();  
+    } elseif ($use_proxy == 1) {
+        drush_print("Only ezproxy enabled resources returned");
+        $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyCondition('status', 1)
+            ->fieldCondition('field_db_use_proxy', 'value', 1)
+            ->propertyOrderBy('title')
+            ->execute();  
+        
+    } else {
+        $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyOrderBy('title')
+            ->execute(); 
+    }
+    drush_print(count($databases['node']) . " Total Databases");
+    /*
+     * Use this function
+     * http://php.net/manual/en/function.fputcsv.php
+     */
+    $csv_data = array();
+    $fp = fopen($filename, 'w');
+    $headings = array(
+        //"Resource URL",
+        "LINK TITLE",
+        "LINK URL",
+        "DESCRIPTION",
+        //"Proxy Status",
+        //"Group Membership",
+        //"Last Updated"
+    );
+    fputcsv($fp,$headings);
+
+
+    foreach($databases['node'] as $database) {
+        $base_url = "http://library.princeton.edu/resource/";
+        $databases_csv_data = array();
+        $database_fields = entity_metadata_wrapper('node', $database->nid);
+        $changed = format_date($database_fields->changed->value());
+        //drush_print("#NID" . $database->nid . " - " . $changed);
+        
+        $databases_csv_data[0] = trim($database_fields->title->value());
+        $databases_csv_data[1] = $base_url . $database->nid;
+        #drush_print('#Title ' . trim($database_fields->title->value()));
+        #drush_print(trim($database_fields->field_db_proxy_configuration->value()));
+        //$url_info = $database_fields->field_db_access_url->value();
+        //$databases_csv_data[2] = trim($url_info['url']);
+        $description = $database_fields->body->value();
+        $description_value = trim($description['safe_value']);
+        $databases_csv_data[2] =  ezproxy_utils_trim_field($description_value);
+        //$databases_csv_data[4] = $database_fields->field_db_use_proxy->value();
+        
+        //$group_membership = $database_fields->field_db_grp_member_of->value();
+        //$databases_csv_data[5] = $group_membership->title;
+        //$databases_csv_data[6] = $changed;
+        array_push($csv_data, $databases_csv_data);
+        fputcsv($fp, $databases_csv_data);
+    }
+
+    fclose($fp);
+    drush_print($filename . " created.");
+}
+
+function drush_ezproxy_utils_databases_to_json($filename = false, $inactive = false) {
+    $db_query = new EntityFieldQuery();
+    
+    if($inactive) {
+      $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyCondition('status', 0)
+            ->propertyOrderBy('title')
+            ->execute();  
+    } else {
+        $databases = $db_query->entityCondition('entity_type', 'node')
+            ->propertyCondition('type', 'database') //use bundle type 
+            ->propertyOrderBy('title')
+            ->execute(); 
+    }
+    drush_print(count($databases['node']) . " Total Databases");
+    /*
+     * Use this function
+     * http://php.net/manual/en/function.fputcsv.php
+     */
+    $csv_data = array();
+
+
+    foreach($databases['node'] as $database) {
+        $base_url = "http://library.princeton.edu/resource/";
+        $databases_csv_data = array();
+        $database_fields = entity_metadata_wrapper('node', $database->nid);
+        $changed = format_date($database_fields->changed->value());
+        //drush_print("#NID" . $database->nid . " - " . $changed);
+        $databases_csv_data[0] = $base_url . $database->nid;
+        $databases_csv_data[1] = trim($database_fields->title->value());
+        
+        #drush_print('#Title ' . trim($database_fields->title->value()));
+        #drush_print(trim($database_fields->field_db_proxy_configuration->value()));
+        $url_info = $database_fields->field_db_access_url->value();
+        $databases_csv_data[2] = trim($url_info['url']);
+        $description = $database_fields->body->value();
+        $databases_csv_data[3] = trim($description['safe_value']);
+        $databases_csv_data[4] = $changed;
+        array_push($csv_data, $databases_csv_data);
+    }
+    ;
+    file_put_contents($filename, json_encode($csv_data));
+
+    drush_print($filename . " created.");
+}
+
+
