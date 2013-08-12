@@ -387,7 +387,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -17;
+  $handler->weight = -13;
   $handler->conf = array(
     'title' => 'Firestone Library',
     'no_blocks' => 0,

@@ -17,7 +17,7 @@ function microforms_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -22;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'Microforms Pages',
     'no_blocks' => 0,
@@ -51,6 +51,12 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
@@ -219,7 +225,7 @@ collections/microforms/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Microforms Staff',
     'no_blocks' => 0,
@@ -263,6 +269,12 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
@@ -504,6 +516,14 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms
+Newspapers',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
@@ -717,6 +737,12 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms',
+    'panels_breadcrumbs_paths' => '/collections
+/collections/microforms',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_3_9';
@@ -868,6 +894,14 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms
+Newspapers',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_3_9';
@@ -1059,6 +1093,14 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms
+Newspapers',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_3_9';
@@ -1220,6 +1262,14 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms
+Newspapers',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_3_9';
@@ -1381,6 +1431,14 @@ collections/microforms/*',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collections
+Microforms
+Newspapers',
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_3_9';

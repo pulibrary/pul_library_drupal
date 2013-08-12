@@ -250,7 +250,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
-  $handler->display->display_options['fields']['field_news_article_snippet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_article_snippet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_article_snippet']['element_wrapper_type'] = '0';
@@ -261,6 +260,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '500';
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'More';

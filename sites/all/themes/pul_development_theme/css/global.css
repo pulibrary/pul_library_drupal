@@ -87,7 +87,9 @@ body {
 	min-height: 100%; /* real browsers */
 }
 
-.left-col-menu, #region-sidebar-first .region-inner.region-sidebar-first-inner .block-menu .block-inner .content, #region-sidebar-first .region-inner.region-sidebar-first-inner .block-book-navigation .block-inner .content {
+.left-col-menu, #region-sidebar-first .region-inner.region-sidebar-first-inner .block-menu .block-inner .content, 
+#region-sidebar-first .region-inner.region-sidebar-first-inner .block-book-navigation .block-inner .content,
+.pane-menu-menu-map-and-geospatial-main-m {
 	border-right: 1px solid #63C0F8;
 }
 
@@ -1006,22 +1008,26 @@ i.guide:before {
  SUB NAV
  ========================================================================== */
 
-.left-col-menu .inside, .grid-3 .pane-menu-menu-ofa-main-menu, .region-sidebar-first .region-sidebar-first-inner {
+.left-col-menu .inside, .grid-3 .pane-menu-menu-ofa-main-menu, 
+.region-sidebar-first .region-sidebar-first-inner, .pane-menu-menu-map-and-geospatial-main-m {
 	padding: 0 2em 0 0;
 }
 
-.left-col-menu ul.menu, .pane-menu-menu-ofa-main-menu ul.menu, .region-sidebar-first ul.menu {
+.left-col-menu ul.menu, .pane-menu-menu-ofa-main-menu ul.menu, .region-sidebar-first ul.menu, 
+.pane-menu-menu-map-and-geospatial-main-m ul.menu {
 	font-size: 1.167em;
 	padding: 1em 0;
 }
 
-.left-col-menu ul.menu li, .pane-menu-menu-ofa-main-menu ul.menu li, .region-sidebar-first ul.menu li {
+.left-col-menu ul.menu li, .pane-menu-menu-ofa-main-menu ul.menu li, 
+.region-sidebar-first ul.menu li, .pane-menu-menu-map-and-geospatial-main-m ul.menu li {
 	line-height: 1.333em;
 	padding: 0;
 	margin: 0;
 }
 
-.left-col-menu ul.menu li.expanded, .pane-menu-menu-ofa-main-menu ul.menu li.expanded, .region-sidebar-first ul.menu li.expanded {
+.left-col-menu ul.menu li.expanded, .pane-menu-menu-ofa-main-menu ul.menu li.expanded, 
+.region-sidebar-first ul.menu li.expanded, .pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded {
 	/* background-color:#b4feff; Original Lee Designed color */
 	background-color: #F1FCFF;
 	padding-bottom: 8px;
@@ -1033,22 +1039,32 @@ i.guide:before {
 	border-bottom-left-radius: 4px;
 }
 
-.left-col-menu ul.menu li a, .pane-menu-menu-ofa-main-menu ul.menu li a, .region-sidebar-first ul.menu li a {
+.left-col-menu ul.menu li a, .pane-menu-menu-ofa-main-menu ul.menu li a, 
+.region-sidebar-first ul.menu li a, .pane-menu-menu-map-and-geospatial-main-m ul.menu li a {
 	display: block;
 	padding: 6px 24px 6px 8px;
 }
 
-.left-col-menu ul.menu li ul.menu li, .pane-menu-menu-ofa-main-menu ul.menu li ul.menu li, .region-sidebar-first ul.menu li ul.menu li {
+.left-col-menu ul.menu li ul.menu li, .pane-menu-menu-ofa-main-menu ul.menu li ul.menu li, 
+.region-sidebar-first ul.menu li ul.menu li, .pane-menu-menu-map-and-geospatial-main-m ul.menu li ul.menu li {
 	font-size: .75em;
 	padding: 0 0 0 16px;
 }
 
-.left-col-menu ul.menu li ul.menu, .pane-menu-menu-ofa-main-menu ul.menu li ul.menu, .region-sidebar-first ul.menu li ul.menu {
+.left-col-menu ul.menu li ul.menu, .pane-menu-menu-ofa-main-menu ul.menu li ul.menu, 
+.region-sidebar-first ul.menu li ul.menu, .pane-menu-menu-map-and-geospatial-main-m ul.menu li ul.menu {
 	border-right: none;
 	padding: 0;
 }
 
-.left-col-menu ul.menu li.expanded ul.menu li a.active, .pane-menu-menu-ofa-main-menu ul.menu li.expanded ul.menu li a.active, .pane-menu-menu-ofa-main-menu ul.menu li a.active, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active, .region-sidebar-first ul.menu li.expanded ul.menu li a.active, .region-sidebar-first ul.menu li a.active, .region-sidebar-first ul.menu li.expanded a.active {
+.left-col-menu ul.menu li.expanded ul.menu li a.active, 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded ul.menu li a.active, 
+.pane-menu-menu-ofa-main-menu ul.menu li a.active, 
+.pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active, 
+.region-sidebar-first ul.menu li.expanded ul.menu li a.active, .region-sidebar-first ul.menu li a.active, 
+.region-sidebar-first ul.menu li.expanded a.active,
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded ul.menu li a.active, 
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li a.active,  {
 	background-color: #63C0F8;
 	color: #fff;
 	-webkit-border-top-left-radius: 4px;
@@ -1059,13 +1075,16 @@ i.guide:before {
 	border-bottom-left-radius: 4px;
 }
 
-.left-col-menu ul.menu li.expanded a.active, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active, .region-sidebar-first ul.menu li.expanded a.active {
+.left-col-menu ul.menu li.expanded a.active, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active, 
+.region-sidebar-first ul.menu li.expanded a.active, 
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded a.active {
 	border-bottom-left-radius: 0;
 	-moz-border-radius-bottomleft: 0;
 	-webkit-border-bottom-left-radius: 0;
 }
 
-.left-col-menu ul.menu li.expanded a, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a, .region-sidebar-first ul.menu li.expanded a {
+.left-col-menu ul.menu li.expanded a, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a, 
+.region-sidebar-first ul.menu li.expanded a, .pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded a {
 	-webkit-border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
 	border-top-left-radius: 4px;
@@ -1074,11 +1093,15 @@ i.guide:before {
 	color: #888;
 }
 
-.left-col-menu ul.menu li.expanded a:hover, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a:hover, .region-sidebar-first ul.menu li.expanded a:hover {
+.left-col-menu ul.menu li.expanded a:hover, .pane-menu-menu-ofa-main-menu ul.menu li.expanded a:hover, 
+.region-sidebar-first ul.menu li.expanded a:hover,
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded a:hover {
 	color: #333;
 }
 
-.left-col-menu ul.menu li.collapsed, .pane-menu-menu-ofa-main-menu ul.menu li.collapsed, .pane-menu-menu-ofa-main-menu ul.menu li.expanded, .region-sidebar-first ul.menu li.collapsed, .region-sidebar-first ul.menu li.expanded {
+.left-col-menu ul.menu li.collapsed, .pane-menu-menu-ofa-main-menu ul.menu li.collapsed, .pane-menu-menu-ofa-main-menu ul.menu li.expanded, 
+.region-sidebar-first ul.menu li.collapsed, .region-sidebar-first ul.menu li.expanded,
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li.collapsed, .pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded {
 	list-style-image: none;
 	list-style-type: none;
 }
