@@ -23,6 +23,7 @@ function library_hours_field_default_field_bases() {
     'module' => 'office_hours',
     'settings' => array(
       'addhrs' => 1,
+      'cardinality' => 2,
       'granularity' => 15,
       'hoursformat' => 1,
       'limitend' => '',
@@ -46,6 +47,7 @@ function library_hours_field_default_field_bases() {
     'module' => 'office_hours',
     'settings' => array(
       'addhrs' => 1,
+      'cardinality' => 2,
       'granularity' => 15,
       'hoursformat' => 1,
       'limitend' => '',
