@@ -788,8 +788,8 @@ textarea, input[type="date"], input[type="datetime"], input[type="datetime-local
 	border-radius: 4px;
 }
 
-input[type="text"] {
-	width: 280px;
+input[type="text"],input[type="email"]  {
+	/*width: 280px;*/
 	height: 24px;
 	padding: 3px 5px;
 }
@@ -841,7 +841,7 @@ button, input[type="reset"], input[type="submit"], input[type="button"] {
 }
 
 .webform-container-inline label {
-	display: block;
+	display: inline-block;
 }
 
 .webform-container-inline .form-type-radio label {
@@ -2851,4 +2851,13 @@ input[type='text'],input[type='email'],input[type='phone'],input[type='address']
 
 #region-postscript-third {
 height:400px;
+}
+
+/***
+ * WebForm Style Corrections
+ */
+
+.webform-component input[type="text"], .webform-component input[type="email"],
+.webform-component input[type='phone'], .webform-component input[type='address'] {
+	width: auto;
 }
