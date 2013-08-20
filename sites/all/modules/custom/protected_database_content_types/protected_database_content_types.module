@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Protected Database Content Types feature.
+ */
+
+include_once 'protected_database_content_types.features.inc';
