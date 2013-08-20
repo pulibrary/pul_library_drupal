@@ -1,0 +1,13 @@
+name = "ThemeKey Compatibility"
+description = "Integration of different theme switching modules into ThemeKey and its theme switching rule chain."
+core = 7.x
+dependencies[] = themekey
+package = ThemeKey
+configure = admin/config/user-interface/themekey/settings/compat
+
+; Information added by drupal.org packaging script on 2013-07-16
+version = "7.x-2.5"
+core = "7.x"
+project = "themekey"
+datestamp = "1373990478"
+
