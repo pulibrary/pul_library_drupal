@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Databases by URL DMG feature.
+ */
+
+include_once 'dbs_by_url_dmg.features.inc';
