@@ -166,7 +166,7 @@ function ip_protected_db_resources_views_default_views() {
 
   /* Display: IP Restricted Resources */
   $handler = $view->new_display('page', 'IP Restricted Resources', 'page');
-  $handler->display->display_options['path'] = 'resource/restricted/list';
+  $handler->display->display_options['path'] = 'resource/restricted/local/list';
   $export['ip_restricted_resource_lists'] = $view;
 
   return $export;
