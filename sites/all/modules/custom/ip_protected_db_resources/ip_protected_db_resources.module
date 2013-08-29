@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IP Protected Database Resources feature.
+ */
+
+include_once 'ip_protected_db_resources.features.inc';

@@ -73,7 +73,7 @@ function hook_webform_select_options_info_alter(&$items) {
  *   without the nesting.
  * @param $filter
  *   Boolean value indicating whether the included options should be passed
- *   through the _webform_filter_values() function for token replacement (only)
+ *   through the webform_replace_tokens() function for token replacement (only)
  *   needed if your list contains tokens).
  * @param $arguments
  *   The "options arguments" specified in hook_webform_select_options_info().
@@ -464,6 +464,36 @@ function hook_webform_component_info_alter(&$components) {
 }
 
 /**
+ * Alter the list of Webform component default values.
+ *
+ * @param $defaults
+ *   A list of component defaults as defined by _webform_defaults_COMPONENT().
+ * @param $type
+ *   The component type whose defaults are being provided.
+ *
+ * @see _webform_defaults_component()
+ */
+function hook_webform_component_defaults_alter(&$defaults, $type) {
+  // Alter a default for all component types.
+  $defaults['required'] = 1;
+
+  // Add a default for a new field added via hook_form_alter() or
+  // hook_form_FORM_ID_alter() for all component types.
+  $defaults['extra']['added_field'] = t('Added default value');
+
+  // Add or alter defaults for specific component types:
+  switch ($type) {
+    case 'select':
+      $defaults['extra']['optrand'] = 1;
+      break;
+
+    case 'textfield':
+    case 'textarea':
+      $defaults['extra']['another_added_field'] = t('Another added default value');
+  }
+}
+
+/**
  * Alter access to a Webform submission.
  *
  * @param $node
@@ -564,7 +594,7 @@ function _webform_attachments_component($component, $value) {
  * @see webform_node_defaults()
  */
 function hook_webform_node_defaults_alter(&$defaults) {
-  $defaults['teaser'] = '1';
+  $defaults['allow_draft'] = '1';
 }
 
 /**
@@ -658,11 +688,11 @@ function _webform_edit_component($component) {
 function _webform_render_component($component, $value = NULL, $filter = TRUE) {
   $form_item = array(
     '#type' => 'textfield',
-    '#title' => $filter ? _webform_filter_xss($component['name']) : $component['name'],
+    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
     '#required' => $component['required'],
     '#weight' => $component['weight'],
-    '#description'   => $filter ? _webform_filter_descriptions($component['extra']['description']) : $component['extra']['description'],
-    '#default_value' => $filter ? _webform_filter_values($component['value']) : $component['value'],
+    '#description'   => $filter ? webform_filter_descriptions($component['extra']['description']) : $component['extra']['description'],
+    '#default_value' => $filter ? webform_replace_tokens($component['value']) : $component['value'],
     '#prefix' => '<div class="webform-component-textfield" id="webform-component-' . $component['form_key'] . '">',
     '#suffix' => '</div>',
   );

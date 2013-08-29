@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Database Package Listings feature.
+ */
+
+include_once 'db_package_listings.features.inc';
