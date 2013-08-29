@@ -388,65 +388,6 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_form'
-  $field_instances['node-ip_protected_db_resource-field_ip_db_form'] = array(
-    'bundle' => 'ip_protected_db_resource',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Optional form code that will log into the resource if selected. ',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'overridden_title_in_lists' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_ip_db_form',
-    'label' => 'Form',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 10,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 32,
-    ),
-  );
-
   // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_password'
   $field_instances['node-ip_protected_db_resource-field_ip_db_password'] = array(
     'bundle' => 'ip_protected_db_resource',
@@ -644,11 +585,9 @@ function protected_database_content_types_field_default_field_instances() {
   t('DB Password');
   t('DB Username');
   t('Describe any special steps or conditions tied to access the resource.');
-  t('Form');
   t('Form Setup');
   t('Notes describing how to access resource.');
   t('Optional field containing form submission code.');
-  t('Optional form code that will log into the resource if selected. ');
   t('Password for resource. Use if no form can be constructed to auto login user to resource. ');
   t('Password user must supply to access resource. Use if no form code can be constructed to auto login user to resource.');
   t('Resource URL');
