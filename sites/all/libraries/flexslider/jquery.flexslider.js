@@ -258,7 +258,7 @@
       //Some brilliant concepts adapted from the following sources
       //Source: TouchSwipe - http://www.netcu.de/jquery-touchwipe-iphone-ipad-library
       //Source: SwipeJS - http://swipejs.com
-      if ('ontouchstart' in document.documentElement) {
+     /* if ('ontouchstart' in document.documentElement) {
         //For brevity, variables are named for x-axis scrolling
         //The variables are then swapped if vertical sliding is applied
         //This reduces redundant code...I think :)
@@ -275,7 +275,7 @@
           if ('ontouchstart' in document.documentElement) {
             this.addEventListener('touchstart', onTouchStart, false);
           }
-        });
+        }); */
         
         function onTouchStart(e) {
           if (slider.animating) {
