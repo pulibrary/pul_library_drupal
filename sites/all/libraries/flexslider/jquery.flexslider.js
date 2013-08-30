@@ -271,11 +271,11 @@
           startT,
           scrolling = false;
               
-        slider.each(function() {
-          if ('ontouchstart' in document.documentElement) {
-            this.addEventListener('touchstart', onTouchStart, false);
-          }
-        });
+        //slider.each(function() {
+        //  if ('ontouchstart' in document.documentElement) {
+        //    this.addEventListener('touchstart', onTouchStart, false);
+        //  }
+        //}); 
         
         function onTouchStart(e) {
           if (slider.animating) {
