@@ -2861,3 +2861,18 @@ height:400px;
 .webform-component input[type='phone'], .webform-component input[type='address'] {
 	width: auto;
 }
+#webform-component-media .webform-container-inline label,
+#webform-component-cleaning-supplies .webform-container-inline label,
+#webform-component-computer-accessories .webform-container-inline label,
+#webform-component-barcodes .webform-container-inline label {
+	width: 200px;
+	display: inline-block;
+}
+#webform-component-printerfieldset1 .webform-container-inline,
+#webform-component-miscellaneous-items .webform-container-inline {
+	float: left;
+	margin-right: 5px;
+}
+.qtywrapper {
+	display: inline-block;
+}

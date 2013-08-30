@@ -5,7 +5,7 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
+.idea/*
 .project
-.idea
-nbproject/*
 .settings/*
+nbproject/*
