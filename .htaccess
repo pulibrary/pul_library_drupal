@@ -68,7 +68,7 @@ allow from all
 RedirectPermanent /about/contact.php /about/contact-us
 RedirectPermanent /about/hours /hours
 RedirectPermanent /about/hours.php /hours
-RedirectPermanent /guide http://libguides.princeton.edu/guide
+RedirectPermanent /guide /sites/default/files/documents/Library_guide_08_2013.pdf
 RedirectPermanent /catalogs/articles.php /research/databases
 RedirectPermanent /catalogs/other.php /research/catalogs
 RedirectPermanent /libraries/collections.php /collections
@@ -76,7 +76,7 @@ RedirectPermanent /hr /staff/hr
 RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
 RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
 Redirect /catalogs/newtitles.php http://library2.princeton.edu/catalogs/newtitles.php
-Redirect /libraries/locations.php http://library2.princeton.edu/libraries/locations.php
+RedirectPermanent /libraries/locations.php /libraries/locations
 Redirect /services/annex.php http://library2.princeton.edu/services/annex.php
 Redirect /services/inprocess.php http://library2.princeton.edu/services/inprocess.php
 Redirect /services/trace.php http://library2.princeton.edu/services/trace.php
