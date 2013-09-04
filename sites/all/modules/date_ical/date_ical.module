@@ -11,7 +11,7 @@
  * The version number of the current release. This is inserted into the PRODID
  * value of the iCal feeds created by Date iCal.
  */
-define('DATE_ICAL_VERSION', '2.9');
+define('DATE_ICAL_VERSION', '2.10');
 
 /**
  * Exception for when the date field for a row in the ical_fields row plugin is blank.
@@ -209,7 +209,7 @@ function date_ical_sanitize_text($text = '') {
   // Replace instances of more than one space with exactly one space. This
   // cleans up the whitespace mess that gets left behind by drupal_html_to_text().
   $text = preg_replace("/  +/", " ", $text);
-  // The call to drupal_html_to_text() above converted <p> to /n/n, and also
+  // The call to drupal_html_to_text() above converted <p> to \n\n, and also
   // shoved a \n into the string every 80 characters. We don't want those
   // single \n's lying around, because iCalcreator will properly "fold" long
   // text fields for us. So, we need to remove all instances of \n which
@@ -392,7 +392,7 @@ function _date_ical_get_location_fields($base = 'node') {
     // Skip unsupported field types and fields that weren't defined through
     // the Field module.
     $info = field_info_field($field_name);
-    if (!$info || !in_array($info['type'], array('text', 'node_reference', 'addressfield'))) {
+    if (!$info || !in_array($info['type'], array('text', 'text_long', 'text_with_summary', 'node_reference', 'addressfield'))) {
       continue;
     }
     
@@ -469,7 +469,7 @@ function _date_ical_get_summary_fields($base = 'node') {
     // Skip unsupported field types and fields that weren't defined through
     // the Field module.
     $info = field_info_field($field_name);
-    if (!$info || !in_array($info['type'], array('text', 'node_reference', 'taxonomy_term_reference'))) {
+    if (!$info || !in_array($info['type'], array('text', 'text_long', 'text_with_summary', 'node_reference', 'taxonomy_term_reference'))) {
       continue;
     }
 

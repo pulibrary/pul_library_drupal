@@ -18,10 +18,12 @@ Date iCal has several required dependencies, and an optional one:
 - The Feeds module is optional, but it's needed to enable import of iCal feeds
     from other sites.
 
-To install the iCalcreator library, download it from 
-http://kigkonsult.se/downloads/index.php#iCalcreator and extract the zip file.
-Inside that file you'll find iCalcreator.class.php. Copy that file to a folder 
-in your Drupal site named "sites/all/libraries/iCalcreator".
+To install the iCalcreator library, you can download it from 
+http://kigkonsult.se/downloads/index.php#iCalcreator and extract the zip file,
+or get it from https://github.com/iCalcreator/iCalcreator.
+Inside the zip file you'll find iCalcreator.class.php. Copy that file to a 
+folder in your Drupal site named "sites/all/libraries/iCalcreator".
+
 Then clear the cache on your site, by using either "drush cc all"
 or logging in to your site and going to Configuration -> Development -> 
 Performance and click the "Clear all caches" button. This is necessary because
