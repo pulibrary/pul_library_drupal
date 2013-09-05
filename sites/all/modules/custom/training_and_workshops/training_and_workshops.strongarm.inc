@@ -299,5 +299,19 @@ function training_and_workshops_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_training_session'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_training_series_pattern';
+  $strongarm->value = 'training/series/[node:title]';
+  $export['pathauto_node_training_series_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_training_session_pattern';
+  $strongarm->value = 'training/sessions/[node:nid]';
+  $export['pathauto_node_training_session_pattern'] = $strongarm;
+
   return $export;
 }

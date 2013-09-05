@@ -43,6 +43,7 @@ features[variable][] = menu_parent_library_meeting_space_locations
 features[variable][] = node_options_library_meeting_space_locations
 features[variable][] = node_preview_library_meeting_space_locations
 features[variable][] = node_submitted_library_meeting_space_locations
+features[variable][] = pathauto_node_library_meeting_space_locations_pattern
 features[views_view][] = meeting_rooms
 features_exclude[dependencies][articles_and_databases] = articles_and_databases
 features_exclude[dependencies][ctools] = ctools
