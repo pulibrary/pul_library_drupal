@@ -148,7 +148,7 @@ function webform_validation_update_7101() {
     'type' => 'int',
     'size' => 'tiny',
     'unsigned' => TRUE,
-    'description' => 'Valide the inverse of the rule',
+    'description' => 'Validate the inverse of the rule',
     'not null' => TRUE,
     'default' => 0,
   ));
