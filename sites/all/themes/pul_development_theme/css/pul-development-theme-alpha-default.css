@@ -1223,6 +1223,10 @@ border-radius: 4px;
 text-decoration:none;
 }
 
+.service-connect-btn a {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
 
 .known-issue-status-field { 
 padding-top: 20px;
