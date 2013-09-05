@@ -280,9 +280,9 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
           $tz = new DateTimeZone($date_array['tz']);
         }
         catch (Exception $e) {
-          $source->log('parse', '"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() to fix this problem.',
+          $source->log('parse', '"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() in a custom module to fix this problem.',
             array('%tzid' => $date_array['tz']), WATCHDOG_WARNING);
-          drupal_set_message(t('"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() to fix this problem.',
+          drupal_set_message(t('"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() in a custom module to fix this problem.',
             array('%tzid' => $date_array['tz'])), 'warning');
         }
       }
