@@ -17,13 +17,13 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -3;
+  $handler->weight = -4;
   $handler->conf = array(
     'title' => 'Collections Landing Page',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second collection-landing-page',
+    'body_classes_to_add' => 'one-sidebar second-sidebar collections',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
