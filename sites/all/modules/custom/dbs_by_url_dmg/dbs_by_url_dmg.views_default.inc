@@ -297,7 +297,17 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['style_options']['replace_newlines'] = 1;
   $handler->display->display_options['style_options']['newline_replacement'] = '';
   $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['path'] = 'research/databases/dbs.csv';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+    'panel_pane_1' => 0,
+  );
 
   /* Display: Libguides CSV Export */
   $handler = $view->new_display('views_data_export', 'Libguides CSV Export', 'views_data_export_2');
