@@ -275,23 +275,24 @@ class date_ical_plugin_row_ical_entity extends views_plugin_row {
           // Make sure this Node Reference actually references a node.
           if ($summary_field['nid']) {
             $node = node_load($summary_field['nid']);
-            $summary = check_plain($node->title);
+            $summary = $node->title;
           }
         }
         elseif ($summary_info['type'] == 'taxonomy_term_reference') {
           $terms = taxonomy_term_load_multiple($items);
           // Make sure that there are terms that were loaded
           if ($terms) {
+            $term_names = array();
             foreach ($terms as $term) {
-              $summary .= check_plain($term->name) . ', ';
+              $term_names[] = $term->name;
             }
+            $summary = implode(', ', $term_names);
           }
-          $summary = trim($summary);
         }
         else {
-          $summary = check_plain($summary_field['value']);
+          $summary = trim($summary_field['value']);
         }
-      $data['summary'] = ($summary)? $summary : $data['summary'];
+      $data['summary'] = $summary ? $summary : $data['summary'];
       }
     }
     // Allow other modules to alter the HTML of the Summary and Description,
@@ -313,11 +314,15 @@ class date_ical_plugin_row_ical_entity extends views_plugin_row {
     $uri = entity_uri($this->entity_type, $entity);
     $uri['options']['absolute'] = TRUE;
     $event['url'] = url($uri['path'], $uri['options']);
-    $event['uid'] = !empty($entity->date_id) ? $entity->date_id[0] : $event['url'];
     $event['rrule'] = $is_field && array_key_exists('rrule', $date_field) ? $date_field['rrule'] : '';
     if ($location) {
       $event['location'] = $location;
     }
+    
+    // Generate a unique ID for this event.
+    $domain = check_plain($_SERVER['SERVER_NAME']);
+    $uniqid = uniqid(rand(), true);
+    $event['uid'] = "date_ical.$uniqid@$domain";
     
     // If we are using a repeat rule (and not just multi-day events)
     // we remove the item from the entities.

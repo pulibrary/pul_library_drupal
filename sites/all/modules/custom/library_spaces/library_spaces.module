@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Library Spaces feature.
+ */
+
+include_once 'library_spaces.features.inc';

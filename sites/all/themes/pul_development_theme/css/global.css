@@ -2644,6 +2644,9 @@ body.faq .ui-widget-header a {
 	font-weight: bold;
 	color: #F58026;
 }
+.calendar-calendar span.hours-status-month-Closed {
+	color: #333;
+}
 .calendar-calendar div.calendar {
 	font-size: 0.9em;
 }

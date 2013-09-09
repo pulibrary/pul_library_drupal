@@ -128,9 +128,10 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
     $uri['options']['absolute'] = TRUE;
     $event['url'] = url($uri['path'], $uri['options']);
 
-    // Generate a uid.
+    // Generate a unique ID for this event.
     $domain = check_plain($_SERVER['SERVER_NAME']);
-    $event['uid'] = "calendar." . $row->{$this->view->base_field} . "." . $this->options['date_field'] . "@" . $domain;
+    $uniqid = uniqid(rand(), true);
+    $event['uid'] = "date_ical.$uniqid@$domain";
 
     // Create the primary text fields.
     $text_fields['summary'] = $this->get_field($row_index, $this->options['title_field']);
@@ -221,8 +222,9 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
     // Set the display timezone to whichever tz is stored for this field.
     // If there isn't a stored TZ, use the site default.
     $timezone = isset($date_field['timezone']) ? $date_field['timezone'] : date_default_timezone(FALSE);
-    $start->setTimezone(new DateTimeZone($timezone));
-    $end->setTimezone(new DateTimeZone($timezone));
+    $dtz = new DateTimeZone($timezone);
+    $start->setTimezone($dtz);
+    $end->setTimezone($dtz);
 
     $granularity = 'second';
     if ($is_date_field) {
