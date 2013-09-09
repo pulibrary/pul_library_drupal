@@ -23,6 +23,8 @@
  * - $keys: The keywords of the executed search.
  * - $classes: String of CSS classes for search results.
  * - $page: The current Search API Page object.
+ * - $no_results_help: Help text to display under the header if no results were
+ *   found.
  *
  * View mode is set in the Search page settings. If you select
  * "Themed as search results", then the child template will be used for
@@ -33,18 +35,17 @@
  */
 
 ?>
-<?php if (!empty($result_count)) : ?>
-  <div class="<?php print $classes;?>">
-    <?php if ($result_count) : ?>
-      <?php print render($search_performance); ?>
-      <?php print render($spellcheck); ?>
-      <h2><?php print t('Search results');?></h2>
-      <ol class="search-results">
-        <?php print render($search_results); ?>
-      </ol>
-      <?php print render($pager); ?>
-    <?php else : ?>
-      <h2><?php print t('Your search yielded no results.');?></h2>
-    <?php endif; ?>
-  </div>
-<?php endif; ?>
+<div class="<?php print $classes;?>">
+  <?php if ($result_count) : ?>
+    <?php print render($search_performance); ?>
+    <?php print render($spellcheck); ?>
+    <h2><?php print t('Search results');?></h2>
+    <ol class="search-results">
+      <?php print render($search_results); ?>
+    </ol>
+    <?php print render($pager); ?>
+  <?php else : ?>
+    <h2><?php print t('Your search yielded no results.');?></h2>
+    <?php print $no_results_help; ?>
+  <?php endif; ?>
+</div>
