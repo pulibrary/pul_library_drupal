@@ -1061,10 +1061,11 @@ i.guide:before {
 .pane-menu-menu-ofa-main-menu ul.menu li.expanded ul.menu li a.active, 
 .pane-menu-menu-ofa-main-menu ul.menu li a.active, 
 .pane-menu-menu-ofa-main-menu ul.menu li.expanded a.active, 
-.region-sidebar-first ul.menu li.expanded ul.menu li a.active, .region-sidebar-first ul.menu li a.active, 
+.region-sidebar-first ul.menu li.expanded ul.menu li a.active, 
+.region-sidebar-first ul.menu li a.active, 
 .region-sidebar-first ul.menu li.expanded a.active,
 .pane-menu-menu-map-and-geospatial-main-m ul.menu li.expanded ul.menu li a.active, 
-.pane-menu-menu-map-and-geospatial-main-m ul.menu li a.active,  {
+.pane-menu-menu-map-and-geospatial-main-m ul.menu li a.active {
 	background-color: #63C0F8;
 	color: #fff;
 	-webkit-border-top-left-radius: 4px;
