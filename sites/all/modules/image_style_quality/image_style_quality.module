@@ -1,0 +1,230 @@
+<?php
+
+/**
+ * @file
+ * This module is intended to allow users to set custom quality settings
+ * on individual image styles with no core hacks. On a high level, the
+ * module creates a global image quality variable and then overrides the
+ * core image quality variable as required.
+ */
+
+
+/**
+ * Implements hook_init().
+ *
+ * As images load on a page, when an image style is applied it sets the
+ * sites quality value to match the quality value specified by the image
+ * style. As the next image is loaded, the sites quality remains at the
+ * quality of the previously loaded image. All we are doing on hook_init
+ * is checking that the sites quality matches our global quality. If it
+ * doesn't we set it back. The footprint of this call is quite low, since
+ * in most cases we are only doing a quick comparison.
+ */
+function image_style_quality_init() {
+
+  // Reset the value of 'image_jpeg_quality'.
+  _image_style_quality_reset_to_global();
+
+}
+
+
+/**
+ * Implements hook_image_effect_info().
+ */
+function image_style_quality_image_effect_info() {
+
+  $effects = array();
+  // Define all the paramters of our new style.
+  $effects['image_style_quality'] = array(
+    'label' => t('Quality'),
+    'help' => t('Define the image quality for JPEG manipulations. Ranges from 0 to 100. Higher values mean better image quality but bigger files.'),
+    'effect callback' => '_image_style_quality_apply',
+    'form callback' => 'image_style_quality_style_form',
+    'dimensions passthrough' => TRUE,
+    'summary theme' => 'image_style_quality_summary',
+  );
+  return $effects;
+
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function image_style_quality_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'system_image_toolkit_settings') {
+
+    // Get our global image quality.
+    $global_quality = variable_get('image_style_quality_global_quality', 75);
+
+    // Define our form element responsible for quality.
+    $quality = &$form['image_toolkit_settings']['image_jpeg_quality'];
+
+    // Set the value of the text element to match our global quality.
+    $quality['#default_value'] = $global_quality;
+
+    // After the form validates and is submitted, set our global quality.
+    $form['#submit'][] = 'image_style_quality_system_image_form_submit';
+
+  }
+
+}
+
+
+/**
+ * This function is executed when the user input a global quality value
+ * in the backend. We assign our global quality to be the one the user
+ * has submitted.
+ */
+function image_style_quality_system_image_form_submit($form, $form_state) {
+
+  $values = &$form_state['values'];
+
+  // Check which image quality was entered, and support imagemagick.
+  $submitted_quality = FALSE;
+  if (isset($form_state['values']['image_jpeg_quality'])) {
+    $submitted_quality = $form_state['values']['image_jpeg_quality'];
+  } else if (isset($values['image_toolkit']) && $values['image_toolkit'] == 'imagemagick') {
+    $submitted_quality = $form_state['values']['imagemagick_quality'];
+  }
+
+  // Set our global quality to match the one the user has submitted.
+  if ($submitted_quality) {
+    variable_set('image_style_quality_global_quality', $submitted_quality);
+  }
+
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function image_style_quality_help ($path, $arg) {
+
+  // Allow users to have some extra help on certain pages or args.
+  switch ($path) {
+
+    // If we are on this modules help page.
+    case 'admin/help#image_style_quality':
+      return
+        '<h3>' . t('About') . '</h3>
+        <p>' . t('This module is allows you to create new <em>Image 
+        style</em> effects to modify the quality of images. To use this
+        module all you have to do is navigate to your desired <em>Image
+        style</em> by clicking "Configuration" > "Image Styles" and then
+        "Edit" or "Add Style". You will have the option to "Change
+        Quality" in the "Add new effect" dropdown menu. You may use
+        this quality setting in any order, in combination with any
+        other set of effects.') . '</p>';
+      break;
+  }
+
+}
+
+
+/**
+ * The configuration form used to ask the user what quality their image
+ * should be.
+ */
+function image_style_quality_style_form($data) {
+
+  $form = array();
+
+  // Collect the quality of our image style, keep the default 75.
+  $form['quality'] = array(
+    '#title' => t('Image Quality'),
+    '#type' => 'textfield',
+    '#default_value' => isset($data['quality']) ? $data['quality'] : 75,
+    '#field_prefix' => '%',
+    '#size' => 4,
+    '#element_validate' => array('_image_style_quality_form_quality_validate'),
+    '#required' => TRUE,
+  );
+
+  // Return our form to hook_image_effect_info.
+  return $form;
+
+}
+
+
+/**
+ * This function validates the percentage input by a user to two conditions,
+ * it must be numeric and it must fall within 1 and 100.
+ */
+function _image_style_quality_form_quality_validate($element, &$form_state, $form) {
+
+  // Get the value entered by the user.
+  $value = $element['#value'];
+
+  // Make sure we are dealing with a number.
+  if (!is_numeric($value)) {
+    form_set_error('quality', t('Please enter a percentage as a single digit, eg "70"'));
+  }
+
+  // Make sure that number falls within a valid range.
+  if ($value <= 0 || $value > 100) {
+    form_set_error('quality', t('Please enter a percentage between 0 and 100.'));
+  }
+
+}
+
+
+/**
+ * This function is called when the image is ready for proccessing. It
+ * sets the sites quality setting to the percentage defined in our
+ * image style.
+ */
+function _image_style_quality_apply(&$image, $data) {
+
+  // Grab the quality from our image style.
+  $image_style_quality = $data['quality'];
+
+  // Set the sites internal quality to be the one defined by our image style.
+  variable_set('image_jpeg_quality', $image_style_quality);
+  variable_set('imagemagick_quality', $image_style_quality);
+
+}
+
+
+/**
+ * This function resets the sites image quality back to the original global
+ * quality defined in this module.
+ */
+function _image_style_quality_reset_to_global() {
+
+  // Get the sites quality and our global quality.
+  $global_quality = variable_get('image_style_quality_global_quality', 75);
+  $site_quality = variable_get('image_jpeg_quality', 75);
+
+  // If our sites jpeg quality is different from our global quality, update it.
+  if ($global_quality != $site_quality) {
+
+    // Reset the websites image style quality to the one the user has defined.
+    variable_set('image_jpeg_quality', $global_quality);
+    variable_set('imagemagick_quality', $global_quality);
+
+  }
+
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function image_style_quality_theme() {
+  return array(
+    'image_style_quality_summary' => array(
+      'variables' => array('data' => NULL),
+    ),
+  );
+}
+
+
+/**
+ * Theme function for formatting a percentage quality.
+ */
+function theme_image_style_quality_summary($variables) {
+  $data = $variables['data'];
+  return $data['quality'] . '%';
+}
