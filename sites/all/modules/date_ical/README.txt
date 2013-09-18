@@ -6,6 +6,9 @@ events for an iCal feed, as long as that entity contains a Date field. Date
 iCal creates a new iCal "view mode" for all entities, which is used to format
 the Description field of the events in the iCal feed.
 
+For an easier-to-read HTML version of these instructions, please go to 
+http://www.drupal.org/project/date_ical and click the "Read documentation" link
+in the Resources section of the right sidebar.
 
 INSTALLATION
 
@@ -18,11 +21,14 @@ Date iCal has several required dependencies, and an optional one:
 - The Feeds module is optional, but it's needed to enable import of iCal feeds
     from other sites.
 
-To install the iCalcreator library, you can download it from 
-http://kigkonsult.se/downloads/index.php#iCalcreator and extract the zip file,
-or get it from https://github.com/iCalcreator/iCalcreator.
-Inside the zip file you'll find iCalcreator.class.php. Copy that file to a 
-folder in your Drupal site named "sites/all/libraries/iCalcreator".
+To install the iCalcreator library, download it from http://github.com/iCalcreator/iCalcreator
+using either git clone or the "Download Zip" button. Inside you'll find the file
+iCalcreator.class.php. Copy that file to a folder in your Drupal site named
+sites/all/libraries/iCalcreator.
+
+Or, if you have drush, install iCalcreator by running this command from your 
+site's root directory:
+drush make sites/all/modules/date_ical/date_ical.make --no-core
 
 Then clear the cache on your site, by using either "drush cc all"
 or logging in to your site and going to Configuration -> Development -> 
@@ -66,13 +72,22 @@ HOW TO CREATE AN ICAL FEED (using the iCal Entities plugin)
     or a Node Reference field, in which case the title of the node will be used.
 10. Give the feed a path like 'calendar/%/export.ics', where you have a
     '/%/' for every contextual filter in the view.
-11. Attach the feed to a page view.
-12. Make sure the Pager options are set to "Display all items".
-13. Add date filters or arguments that will constrain the view to the items you
+11. Make sure the Pager options are set to "Display all items".
+12. Add date filters or arguments that will constrain the view to the items you
     want to be included in the iCal feed.
-14. Navigate to the page view. You should see the iCal icon at the bottom of the
-    view. If you click on the icon it will download an .ics file with the events
-    that matched the view criteria.
+13. Attach the feed to a another view (usually a Page view that is displaying 
+    the same events). Be aware, though, that attaching the feed to a view with
+    different output will not make the iCal feed include that output. It will
+    always include the events which match the feed's filters.
+14. Save the View.
+15. Navigate to a page which displays the attached view. You should see the iCal
+    icon at the bottom of the view's output. Clicking on the icon will subscribe
+    your preferred calendar app the iCal feed. However, if you don't have a 
+    calendar app set up on your computer, you'll want to go back to the View 
+    settings page, click the Settings link next to "Format:iCal Feed", and check
+    "Disable webcal://", then save your View. This will make the iCal icon 
+    download a .ics file with the events, instead of loading the events directly 
+    into a calendar app.
 
 HOW TO CREATE AN ICAL FEED (using the iCal Fields plugin)
 1-6.These steps are the same as above.

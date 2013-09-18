@@ -12,6 +12,9 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
    *
    * Includes additional field for the handler for output.
    *
+   * NOTE: The name and description strings would be t()'d, but PHP doesn't allow that:
+   * http://stackoverflow.com/questions/3960323/why-dont-php-attributes-allow-functions
+   *
    * @see DateIcalFeedsParser::getMappingSources().
    * @see DateIcalFeedsParser::getSourceElement().
    */
@@ -280,8 +283,8 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
           $tz = new DateTimeZone($date_array['tz']);
         }
         catch (Exception $e) {
-          $source->log('parse', '"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() in a custom module to fix this problem.',
-            array('%tzid' => $date_array['tz']), WATCHDOG_WARNING);
+          $source->log('parse', t('"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() in a custom module to fix this problem.',
+            array('%tzid' => $date_array['tz'])), array(), WATCHDOG_WARNING);
           drupal_set_message(t('"%tzid" is not recognized by PHP as a valid timezone, so UTC was used instead. Try implementing hook_date_ical_timezone_alter() in a custom module to fix this problem.',
             array('%tzid' => $date_array['tz'])), 'warning');
         }
