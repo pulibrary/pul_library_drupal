@@ -169,13 +169,16 @@ function _search_api_page_map_languages($lang) {
  *   - index: The index this search was executed on.
  *   - results: An array of search results, as returned by
  *     SearchApiQueryInterface::execute().
+ *   - view_mode: The view mode to use for results. Either one of the searched
+ *     entity's view modes (if applicable), or "search_api_page_result" to use
+ *     the module's builtin theme function to render results.
  *   - keys: The keywords of the executed search.
+ *   - page: The search page whose search results are being displayed.
  *
  * @see search-api-page-results.tpl.php
  */
 function template_preprocess_search_api_page_results(array &$variables) {
   $results = $variables['results'];
-  $keys = $variables['keys'];
 
   $variables['items'] = $variables['index']->loadItems(array_keys($variables['results']['results']));
   $variables['result_count'] = $results['result count'];
@@ -191,6 +194,38 @@ function template_preprocess_search_api_page_results(array &$variables) {
       '#prefix' => '<p class="search-performance">',
       '#suffix' => '</p>',
   );
+
+  // Make the help text depend on the parse mode used.
+  switch ($variables['page']->options['mode']) {
+    case 'direct':
+      if ($variables['index']->server()->class == 'search_api_solr') {
+        $variables['no_results_help'] = t('<ul>
+<li>Check if your spelling is correct.</li>
+<li>Remove quotes around phrases to search for each word individually. <em>bike shed</em> will often show more results than <em>&quot;bike shed&quot;</em>.</li>
+<li>Consider loosening your query with <em>OR</em>. <em>bike OR shed</em> will often show more results than <em>bike shed</em>.</li>
+</ul>');
+      }
+      else {
+        $variables['no_results_help'] = t('<ul>
+<li>Check if your spelling is correct.</li>
+<li>Use fewer keywords to increase the number of results.</li>
+</ul>');
+      }
+      break;
+    case 'single':
+      $variables['no_results_help'] = t('<ul>
+<li>Check if your spelling is correct.</li>
+<li>Use fewer keywords to increase the number of results.</li>
+</ul>');
+      break;
+    case 'terms':
+      $variables['no_results_help'] = t('<ul>
+<li>Check if your spelling is correct.</li>
+<li>Remove quotes around phrases to search for each word individually. <em>bike shed</em> will often show more results than <em>&quot;bike shed&quot;</em>.</li>
+<li>Use fewer keywords to increase the number of results.</li>
+</ul>');
+      break;
+  }
 
   // Prepare CSS classes.
   $classes_array = array(

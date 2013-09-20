@@ -287,6 +287,53 @@ function quicktabs_load_multiple($names = array()) {
 }
 
 /**
+ * Creates a new quicktab instance.
+ */
+function quicktabs_save($quicktab) {
+  module_invoke_all('quicktabs_presave', $quicktab);
+
+  $exists = quicktabs_load($quicktab->machine_name);
+  if ($exists && empty($exists->in_code_only)) {
+    $ret = drupal_write_record('quicktabs', $quicktab, 'machine_name');
+    if ($ret == SAVED_UPDATED) {
+      quicktabs_i18n_update_strings(array($quicktab->machine_name));
+    }
+    else {
+      return FALSE;
+    }
+  }
+  else {
+    $ret = drupal_write_record('quicktabs', $quicktab);
+    if ($ret == SAVED_NEW) {
+      quicktabs_i18n_update_strings(array($quicktab->machine_name));
+      module_invoke_all('quicktabs_insert', $quicktab);
+    }
+    else {
+      return FALSE;
+    }
+  }
+  module_invoke_all('quicktabs_save', $quicktab);
+  return $quicktab;
+}
+
+/**
+ * Updates an existing quicktab instance.
+ */
+function quicktabs_update($quicktab) {
+  quicktabs_save($quicktab);
+  module_invoke_all('quicktabs_update', $quicktab);
+  return $quicktab;
+}
+
+/**
+ * Deletes a quicktab instance.
+ */
+function quicktabs_delete($machine_name) {
+  db_query('DELETE FROM {quicktabs} WHERE machine_name = :machine_name', array(':machine_name' => $machine_name));
+  module_invoke_all('quicktabs_delete', $machine_name);
+}
+
+/**
  * Exports the specified Quicktabs instance with translatable strings.
  */
 function quicktabs_export($qt, $indent = '') {

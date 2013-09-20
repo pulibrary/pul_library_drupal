@@ -72,6 +72,7 @@ function search_api_page_theme() {
       'page' => NULL,
       'spellcheck' => NULL,
       'pager' => NULL,
+      'no_results_help'
     ),
     'file' => 'search_api_page.pages.inc',
     'template' => 'search-api-page-results',
@@ -436,14 +437,20 @@ function search_api_page_delete($id) {
 }
 
 /**
- * Display a search form.
+ * Displays a search form.
  *
  * @param Entity $page
  *   The search page for which this form is displayed.
- * @param $keys
- *   The search keys.
- * @param $compact
- *   Whether to display a compact form (e.g. for blocks) instead of a normal one.
+ * @param string|null $keys
+ *   (optional) The search keys.
+ * @param bool $compact
+ *   (optional) Whether to display a compact form (e.g. for blocks) instead of a
+ *   normal one.
+ *
+ * @see search_api_page_search_form_validate()
+ * @see search_api_page_search_form_submit()
+ *
+ * @ingroup forms
  */
 function search_api_page_search_form(array $form, array &$form_state, Entity $page, $keys = NULL, $compact = FALSE) {
   $form['keys_' . $page->id] = array(
@@ -482,7 +489,9 @@ function search_api_page_search_form(array $form, array &$form_state, Entity $pa
 }
 
 /**
- * Validation callback for search_api_page_search_form().
+ * Form validation handler for search_api_page_search_form().
+ *
+ * @see search_api_page_search_form_submit()
  */
 function search_api_page_search_form_validate(array $form, array &$form_state) {
   if (!trim($form_state['values']['keys_' . $form_state['values']['id']])) {
@@ -491,7 +500,9 @@ function search_api_page_search_form_validate(array $form, array &$form_state) {
 }
 
 /**
- * Submit callback for search_api_page_search_form().
+ * Form submission handler for search_api_page_search_form().
+ *
+ * @see user_login_form_validate()
  */
 function search_api_page_search_form_submit(array $form, array &$form_state) {
   $keys = trim($form_state['values']['keys_' . $form_state['values']['id']]);

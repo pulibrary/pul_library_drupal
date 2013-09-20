@@ -59,9 +59,8 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
       '#type' => 'textfield',
       '#title' => t('iCal Calendar Name'),
       '#default_value' => $this->_get_option('cal_name'),
-      '#description' => t('This will appear as the title of the iCal feed. If ' .
-        'left blank, the View Title will be used. If that is also blank, the site ' .
-        'name will be inserted as the iCal feed title.'),
+      '#description' => t('This will appear as the title of the iCal feed. If left blank, the View Title will be used.
+        If that is also blank, the site name will be inserted as the iCal feed title.'),
     );
     $form['no_calname'] = array(
       '#type' => 'checkbox',
@@ -196,8 +195,9 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
           module_load_include('inc', 'date_api', 'date_api_ical');
           module_load_include('inc', 'date_repeat', 'date_repeat_calc');
           list($rrule, $exceptions, $additions) = date_repeat_split_rrule($event['rrule']);
-          // Add the rrule itself. We need to massage the data a bit, since iCalcreator expects RRULEs to be
-          // in a different format than the Date API gives them to us.
+          // Add the rrule itself. We need to massage the data a bit, since
+          // iCalcreator expects RRULEs to be in a different format than how
+          // Date API gives them to us.
           $rrule = self::convert_rrule_for_icalcreator($rrule);
           $vevent->setRrule($rrule);
           // Process exceptions if there are any.
@@ -304,7 +304,7 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
     }
     else {
       // The iCalcreator library isn't available, so we can't output anything.
-      $output = 'Please install the iCalcreator library to enable iCal output.';
+      $output = t('Please install the iCalcreator library to enable iCal output.');
     }
     
     // These steps shouldn't be run when doing a Preview on the View config page.

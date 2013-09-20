@@ -1,6 +1,11 @@
 Search API Pages 1.x, dev (xx/xx/xxxx):
 ---------------------------------------
 
+Search API Pages 1.0 (09/01/2013):
+----------------------------------
+- #2071093 by drunken monkey, quiptime: Fixed logic error in template code.
+- #1442686 by drunken monkey: Documented pager issues.
+
 Search API Pages 1.0, RC 1 (07/10/2013):
 ----------------------------------------
 - #1313676 by tomogden, drunken monkey, aaronbauman, guillaumev: Added

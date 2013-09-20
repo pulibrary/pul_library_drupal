@@ -17,6 +17,7 @@ class colorbox_node_handler_field_colorbox_node_link extends views_handler_field
     $options['node_in_colorbox'] = array('default' => isset($this->definition['node_in_colorbox default']) ? $this->definition['node_in_colorbox default'] : FALSE, 'bool' => FALSE);
     $options['node_in_colorbox_width'] = array('default' => isset($this->definition['node_in_colorbox_width default']) ? $this->definition['node_in_colorbox_width default'] : FALSE, 'string' => '600');
     $options['node_in_colorbox_height'] = array('default' => isset($this->definition['node_in_colorbox_height default']) ? $this->definition['node_in_colorbox_height default'] : FALSE, 'string' => '600');
+    $options['node_in_colorbox_rel'] = array('default' => isset($this->definition['node_in_colorbox_rel default']) ? $this->definition['node_in_colorbox_rel default'] : FALSE, 'string' => '');
     return $options;
   }
 
@@ -58,6 +59,18 @@ class colorbox_node_handler_field_colorbox_node_link extends views_handler_field
       '#dependency_count' => 1,
       '#weight' => -95,
     );
+    $form['node_in_colorbox_rel'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Colorbox Rel'),
+      '#default_value' => !empty($this->options['node_in_colorbox_rel']) ? $this->options['node_in_colorbox_rel'] : '',
+      '#description' => t("Enter a rel attribute here to group colorbox node links into a gallery."),
+      '#dependency' => array(
+        'edit-options-link-to-node' => array(1),
+        'edit-options-node-in-colorbox' => array(1),
+      ),
+      '#dependency_count' => 2,
+      '#weight' => -94,
+    );
   }
 
   /**
@@ -68,7 +81,9 @@ class colorbox_node_handler_field_colorbox_node_link extends views_handler_field
     if (node_access('view', $node)) {
         if (!empty($this->options['node_in_colorbox'])) {
           $this->options['alter']['link_class'] = 'colorbox-node';
-          $this->options['alter']['query'] = array('width' => $this->options['node_in_colorbox_width'], 'height' => $this->options['node_in_colorbox_height']);
+          $this->options['alter']['link_attributes']['data-inner_width'] = $this->options['node_in_colorbox_width'];
+          $this->options['alter']['link_attributes']['data-inner_height'] = $this->options['node_in_colorbox_height'];
+          $this->options['alter']['rel'] = $this->options['node_in_colorbox_rel'];
         }
     }
     return parent::render_link($node, $values);

@@ -11,7 +11,7 @@
 function date_ical_requirements($phase) {
   $requirements = array();
   
-  // Ensure translations don't break at install time
+  // Ensure translations don't break at install time.
   $t = get_t();
   
   switch ($phase) {
