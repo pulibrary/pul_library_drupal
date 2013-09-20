@@ -57,7 +57,7 @@
     $('.page-find-all .view-databases-keyword-search .item-list .database-title').each(function(index,value) {
             result_position = parseInt(index) + 1;
             $(this).click( function() {
-                _gaq.push(["_trackEvent", "All Search", "Database Title", 'Position'+result_position]);
+                _gaq.push(["_trackEvent", "All Search", "Database Title", 'Position '+result_position]);
             });
         }
     );
@@ -66,7 +66,7 @@
     $('.page-find-all .view-database-subject-search .item-list a').each(function(index,value) {
               result_position = parseInt(index) + 1;
               $(this).click( function() {
-                  _gaq.push(["_trackEvent", "All Search", 'Database Subject', 'Position'+result_position]);
+                  _gaq.push(["_trackEvent", "All Search", 'Database Subject', 'Position '+result_position]);
               });
           }
       );
@@ -75,7 +75,7 @@
       $('.page-find-all .view-general-site-keyword-search .item-list .database-titles a').each(function(index,value) {
               result_position = parseInt(index) + 1;
               $(this).click( function() {
-                  _gaq.push(["_trackEvent", "All Search", "Website Search", 'Position'+result_position]);
+                  _gaq.push(["_trackEvent", "All Search", "Website Search", 'Position '+result_position]);
               });
           }
       );
@@ -84,7 +84,7 @@
       $('.page-find-all .view-general-site-user-search .item-list .user-link').each(function(index,value) {
               result_position = parseInt(index) + 1;
               $(this).click( function() {
-                  _gaq.push(["_trackEvent", "All Search", "People Search", 'Position'+result_position]);
+                  _gaq.push(["_trackEvent", "All Search", "People Search", 'Position '+result_position]);
               });
           }
       );
