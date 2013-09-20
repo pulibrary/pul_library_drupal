@@ -175,3 +175,35 @@ function quicktabs_update_7301() {
 function quicktabs_update_7302() {
   registry_rebuild();
 }
+
+/**
+ * Add support for view modes.
+ */
+function quicktabs_update_7303() {
+  foreach (quicktabs_load_multiple() as $quicktab) {
+    $updated = FALSE;
+
+    foreach ($quicktab->tabs as &$tab) {
+      if ($tab['type'] === 'node') {
+        $tab['view_mode'] = !empty($tab['teaser']) ? 'teaser' : 'full';
+        unset($tab['teaser']);
+        $updated = TRUE;
+      }
+    }
+
+    if (!$updated) {
+      continue;
+    }
+
+    if (empty($quicktab->in_code_only)) {
+      $result = drupal_write_record('quicktabs', $quicktab, 'machine_name');
+    }
+    else {
+      $result = drupal_write_record('quicktabs', $quicktab);
+    }
+    if (!$result) {
+      throw new DrupalUpdateException(t('Could not complete the update.'));
+    }
+  }
+  return 'Added support for view modes.';
+}

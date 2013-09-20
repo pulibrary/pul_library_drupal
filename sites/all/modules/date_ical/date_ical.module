@@ -11,7 +11,7 @@
  * The version number of the current release. This is inserted into the PRODID
  * value of the iCal feeds created by Date iCal.
  */
-define('DATE_ICAL_VERSION', '2.10');
+define('DATE_ICAL_VERSION', '2.12');
 
 /**
  * Exception for when the date field for a row in the ical_fields row plugin is blank.
@@ -118,8 +118,8 @@ function date_ical_entity_info_alter(&$entity_info) {
 function date_ical_libraries_info() {
   $libraries['iCalcreator'] = array(
     'name' => 'iCalcreator',
-    'vendor url' => 'http://kigkonsult.se/iCalcreator/index.php',
-    'download url' => 'http://kigkonsult.se/downloads/index.php#icalcreator',
+    'vendor url' => 'http://github.com/iCalcreator/iCalcreator',
+    'download url' => 'http://github.com/iCalcreator/iCalcreator',
     'version arguments' => array(
       'file' => 'iCalcreator.class.php',
       'pattern' => "/define\( 'ICALCREATOR_VERSION', 'iCalcreator ([\d\.]+)' \);/",
@@ -159,7 +159,7 @@ function date_ical_feeds_plugins() {
   );
   $info['DateIcalIcalcreatorParser'] = array(
     'name' => 'iCal parser',
-    'description' => 'Use the iCalcreator library to parse iCal feeds.',
+    'description' => t('Use the iCalcreator library to parse iCal feeds.'),
     'help' => 'Parse iCal feeds.',
     'handler' => array(
       'parent' => 'DateIcalFeedsParser',
