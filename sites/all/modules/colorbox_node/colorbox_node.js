@@ -63,8 +63,8 @@
             $this = $(this);
 
             // Lets extract our width and height giving priority to the data attributes.
-            var innerWidth = $this.data('inner_width');
-            var innerHeight = $this.data('inner_height');
+            var innerWidth = $this.data('inner-width');
+            var innerHeight = $this.data('inner-height');
             if (typeof innerWidth != 'undefined' && typeof innerHeight != 'undefined') {
                 var params = $.urlDataParams(innerWidth, innerHeight);
             } else {
@@ -75,9 +75,10 @@
             params.onComplete = function () {
                 $this.colorboxNodeGroup();
             }
+            params.open = true;
 
             // Launch our colorbox with the provided settings
-            $.colorbox($.extend({}, Drupal.settings.colorbox, params));
+            $(this).colorbox($.extend({}, Drupal.settings.colorbox, params));
         });
 
         // Log our click handler to our ajax object
@@ -101,6 +102,7 @@
         if ($('a[rel="' + rel + '"]:not("#colorbox a[rel="' + rel + '"]")').length > 1) {
             $related = $('a[rel="' + rel + '"]:not("#colorbox a[rel="' + rel + '"]")');
             var idx = $related.index($(this));
+            var tot = $related.length;
 
             // Show our gallery buttons
             $('#cboxPrevious, #cboxNext').show();
@@ -113,6 +115,28 @@
                 index = getIndex(-1);
                 $related[index].click();
             };
+
+            // Setup our current HTML
+            $('#cboxCurrent').html(Drupal.settings.colorbox.current.replace('{current}', idx + 1).replace('{total}', tot)).show();
+
+            var prefix = 'colorbox';
+            // Remove Bindings and re-add
+            // @TODO: There must be a better way?  If we don't remove it causes a memory to be exhausted.
+            $(document).unbind('keydown.' + prefix);
+
+            // Add Key Bindings
+            $(document).bind('keydown.' + prefix, function (e) {
+                var key = e.keyCode;
+                if ($related[1] && !e.altKey) {
+                    if (key === 37) {
+                        e.preventDefault();
+                        $.colorbox.prev();
+                    } else if (key === 39) {
+                        e.preventDefault();
+                        $.colorbox.next();
+                    }
+                }
+            });
         }
 
         function getIndex(increment) {
