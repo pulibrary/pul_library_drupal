@@ -15,7 +15,7 @@ function _webform_defaults_textfield() {
     'pid' => 0,
     'weight' => 0,
     'value' => '',
-    'required' => 0,
+    'mandatory' => 0,
     'extra' => array(
       'width' => '',
       'maxlength' => '',
@@ -25,7 +25,6 @@ function _webform_defaults_textfield() {
       'unique' => 0,
       'title_display' => 0,
       'description' => '',
-      'placeholder' => '',
       'attributes' => array(),
       'private' => FALSE,
     ),
@@ -53,7 +52,7 @@ function _webform_edit_textfield($component) {
     '#type' => 'textfield',
     '#title' => t('Default value'),
     '#default_value' => $component['value'],
-    '#description' => t('The default value of the field.') . ' ' . theme('webform_token_help'),
+    '#description' => t('The default value of the field.') . theme('webform_token_help'),
     '#size' => 60,
     '#maxlength' => 1024,
     '#weight' => 0,
@@ -68,14 +67,6 @@ function _webform_edit_textfield($component) {
     '#weight' => 0,
     '#parents' => array('extra', 'width'),
   );
-  $form['display']['placeholder'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Placeholder'),
-    '#default_value' => $component['extra']['placeholder'],
-    '#description' => t('The placeholder will be shown in the field until the user starts entering a value.'),
-    '#weight' => 1,
-    '#parents' => array('extra', 'placeholder'),
-  );
   $form['display']['field_prefix'] = array(
     '#type' => 'textfield',
     '#title' => t('Prefix text placed to the left of the textfield'),
@@ -83,7 +74,7 @@ function _webform_edit_textfield($component) {
     '#description' => t('Examples: $, #, -.'),
     '#size' => 20,
     '#maxlength' => 127,
-    '#weight' => 2.1,
+    '#weight' => 1.1,
     '#parents' => array('extra', 'field_prefix'),
   );
   $form['display']['field_suffix'] = array(
@@ -93,7 +84,7 @@ function _webform_edit_textfield($component) {
     '#description' => t('Examples: lb, kg, %.'),
     '#size' => 20,
     '#maxlength' => 127,
-    '#weight' => 2.2,
+    '#weight' => 1.2,
     '#parents' => array('extra', 'field_suffix'),
   );
   $form['display']['disabled'] = array(
@@ -135,22 +126,18 @@ function _webform_render_textfield($component, $value = NULL, $filter = TRUE) {
 
   $element = array(
     '#type' => 'textfield',
-    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
+    '#title' => $filter ? _webform_filter_xss($component['name']) : $component['name'],
     '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
-    '#default_value' => $filter ? webform_replace_tokens($component['value'], $node) : $component['value'],
-    '#required' => $component['required'],
+    '#default_value' => $filter ? _webform_filter_values($component['value'], $node, NULL, NULL, FALSE) : $component['value'],
+    '#required' => $component['mandatory'],
     '#weight' => $component['weight'],
-    '#field_prefix' => empty($component['extra']['field_prefix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_prefix']) : $component['extra']['field_prefix']),
-    '#field_suffix' => empty($component['extra']['field_suffix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_suffix']) : $component['extra']['field_suffix']),
-    '#description' => $filter ? webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
+    '#field_prefix' => empty($component['extra']['field_prefix']) ? NULL : ($filter ? _webform_filter_xss($component['extra']['field_prefix']) : $component['extra']['field_prefix']),
+    '#field_suffix' => empty($component['extra']['field_suffix']) ? NULL : ($filter ? _webform_filter_xss($component['extra']['field_suffix']) : $component['extra']['field_suffix']),
+    '#description' => $filter ? _webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
     '#attributes' => $component['extra']['attributes'],
     '#theme_wrappers' => array('webform_element'),
     '#translatable' => array('title', 'description', 'field_prefix', 'field_suffix'),
   );
-
-  if ($component['extra']['placeholder']) {
-    $element['#attributes']['placeholder'] = $component['extra']['placeholder'];
-  }
 
   if ($component['extra']['disabled']) {
     if ($filter) {
@@ -174,7 +161,7 @@ function _webform_render_textfield($component, $value = NULL, $filter = TRUE) {
     $element['#maxlength'] = $component['extra']['maxlength'];
   }
 
-  if (isset($value[0])) {
+  if (isset($value)) {
     $element['#default_value'] = $value[0];
   }
 
@@ -255,7 +242,7 @@ function _webform_csv_headers_textfield($component, $export_options) {
   $header = array();
   $header[0] = '';
   $header[1] = '';
-  $header[2] = $export_options['header_keys'] ? $component['form_key'] : $component['name'];
+  $header[2] = $component['name'];
   return $header;
 }
 

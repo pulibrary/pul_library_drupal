@@ -83,8 +83,8 @@ class colorbox_node_handler_field_colorbox_node extends views_handler_field_node
     if (!empty($this->options['link_to_node']) && !empty($this->additional_fields['nid'])) {
         if (!empty($this->options['node_in_colorbox'])) {
           $this->options['alter']['link_class'] = 'colorbox-node';
-          $this->options['alter']['link_attributes']['data-inner_width'] = $this->options['node_in_colorbox_width'];
-          $this->options['alter']['link_attributes']['data-inner_height'] = $this->options['node_in_colorbox_height'];
+          $this->options['alter']['link_attributes']['data-inner-width'] = $this->options['node_in_colorbox_width'];
+          $this->options['alter']['link_attributes']['data-inner-height'] = $this->options['node_in_colorbox_height'];
           $this->options['alter']['rel'] = $this->options['node_in_colorbox_rel'];
         }
     }

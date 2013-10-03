@@ -43,7 +43,7 @@ function _webform_edit_hidden($component) {
     '#type' => 'textarea',
     '#title' => t('Default value'),
     '#default_value' => $component['value'],
-    '#description' => t('The default value of the field.') . ' ' . theme('webform_token_help'),
+    '#description' => t('The default value of the field.') . theme('webform_token_help'),
     '#cols' => 60,
     '#rows' => 5,
     '#weight' => 0,
@@ -70,13 +70,17 @@ function _webform_edit_hidden($component) {
 function _webform_render_hidden($component, $value = NULL, $filter = TRUE) {
   $node = isset($component['nid']) ? node_load($component['nid']) : NULL;
 
-  $default_value = $filter ? webform_replace_tokens($component['value'], $node) : $component['value'];
+  // Set filtering options for "value" types, which are not displayed to the
+  // end user so they do not need to be sanitized.
+  $strict = $component['extra']['hidden_type'] != 'value';
+  $allow_anonymous = $component['extra']['hidden_type'] == 'value';
+  $default_value = $filter ? _webform_filter_values($component['value'], $node, NULL, NULL, $strict, $allow_anonymous) : $component['value'];
   if (isset($value[0])) {
     $default_value = $value[0];
   }
 
   $element = array(
-    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
+    '#title' => $filter ? _webform_filter_xss($component['name']) : $component['name'],
     '#weight' => $component['weight'],
     '#translatable' => array('title'),
   );
@@ -157,13 +161,13 @@ function _webform_table_hidden($component, $value) {
 }
 
 /**
- * Implements _webform_csv_headers_component().
+ * Implements _webform_csv_data_component().
  */
 function _webform_csv_headers_hidden($component, $export_options) {
   $header = array();
   $header[0] = '';
   $header[1] = '';
-  $header[2] = $export_options['header_keys'] ? $component['form_key'] : $component['name'];
+  $header[2] = $component['name'];
   return $header;
 }
 

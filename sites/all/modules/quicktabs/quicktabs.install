@@ -96,6 +96,21 @@ function quicktabs_schema() {
  */
 function quicktabs_update_7300() {
 
+  $output = array();
+
+  if (!db_field_exists('quicktabs', 'renderer')) {
+    // Add the renderer field
+    $renderer_field = array(
+      'description' => 'The rendering mechanism.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      'default' => 'quicktabs',
+    );
+    db_add_field('quicktabs', 'renderer', $renderer_field);
+    $output[] = "Added the renderer field";
+  }
+
   if (!db_field_exists('quicktabs', 'machine_name')) {
     // Pull all existing quicktabs, and then delete existing quicktabs. We will reinsert.
     $result = db_query("SELECT * FROM {quicktabs}");
@@ -113,7 +128,7 @@ function quicktabs_update_7300() {
     db_add_field('quicktabs', 'machine_name', $name_field);
     db_add_primary_key('quicktabs', array('machine_name'));
   
-    $output = $used = array();
+    $used = array();
     foreach ($result as $qt) {
       $row = (array)$qt;
       // Generate a machine-readable string
@@ -124,7 +139,7 @@ function quicktabs_update_7300() {
       }
       $row['machine_name'] = $used[] = $i == 0 ? $qt_name : "{$qt_name}_{$i}";
       unset($row['qtid']);
-      unset($row['style']);
+      $row['style'] = '';
       $row['renderer'] = 'tabs';
       $placeholders = implode(', ', array_keys($row));
       $values = array();
@@ -139,18 +154,6 @@ function quicktabs_update_7300() {
     }
   }
 
-  // Add the renderer field
-  $renderer_field = array(
-    'description' => 'The rendering mechanism.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-    'default' => 'quicktabs',
-  );
-  db_add_field('quicktabs', 'renderer', $renderer_field);
-  $output[] = "Added the renderer field";
-
-  
   return implode('<br />', $output);
 }
 
