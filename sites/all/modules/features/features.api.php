@@ -124,11 +124,32 @@ function hook_features_export($data, &$export, $module_name) {
  *
  * List all objects for a component that may be exported.
  *
+ * @param $feature
+ *   (optional) The feature object these options are for.
+ *
  * @return array
  *   A keyed array of items, suitable for use with a FormAPI select or
  *   checkboxes element.
  */
-function hook_features_export_options() {
+function hook_features_export_options($feature = NULL) {
+  $options = array();
+  foreach (mycomponent_load() as $mycomponent) {
+    $options[$mycomponent->name] = $mycomponent->title;
+  }
+  return $options;
+}
+
+/**
+ * Alter hook for options for a component.
+ *
+ * @param $options
+ *   The options for this current feature.
+ * @param $component
+ *   The component these options are for.
+ * @param $feature
+ *   (optional) The feature object these options are for.
+ */
+function hook_features_export_options_alter(&$options, $component, $feature) {
   $options = array();
   foreach (mycomponent_load() as $mycomponent) {
     $options[$mycomponent->name] = $mycomponent->title;

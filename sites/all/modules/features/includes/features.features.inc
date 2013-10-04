@@ -16,7 +16,7 @@ function features_features_api() {
 /**
  * Implements hook_features_export_options().
  */
-function dependencies_features_export_options() {
+function dependencies_features_export_options($feature = NULL) {
   // Excluded modules.
   $excluded = drupal_required_modules();
   $options = array();
@@ -24,6 +24,9 @@ function dependencies_features_export_options() {
     if (!in_array($module_name, $excluded) && $info->status && !empty($info->info)) {
       $options[$module_name] = $info->info['name'];
     }
+  }
+  if ($feature && !empty($feature->name)) {
+    unset($options[$feature->name]);
   }
   return $options;
 }
