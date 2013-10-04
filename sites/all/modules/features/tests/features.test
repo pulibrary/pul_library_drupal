@@ -287,3 +287,54 @@ class FeaturesCtoolsIntegrationTest extends DrupalWebTestCase {
     }
   }
 }
+
+
+
+/**
+ * Tests enabling of feature modules.
+ */
+class FeaturesDependencyOptionsTestCase extends DrupalWebTestCase {
+  protected $profile = 'testing';
+
+  /**
+   * Test info.
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('Features dependency options tests'),
+      'description' => t('Run tests for export options of feature components.') ,
+      'group' => t('Features'),
+    );
+  }
+
+  /**
+   * Set up test.
+   */
+  public function setUp() {
+    parent::setUp(array(
+      'features',
+      'help',
+    ));
+  }
+
+  /**
+   * Run test for features_get_components on enable.
+   */
+  public function testFeaturesExportOptionsSelfDepedency() {
+    // See that alter hook works.
+    // @see features_test_features_export_options_alter().
+    $options = features_get_export_options('dependencies');
+    $this->assertTrue(array_key_exists('help', $options), t('Help exists as option before alter called.'));
+
+    module_enable(array('features_test'));
+    features_get_modules(NULL, TRUE);
+    $options = features_get_export_options('dependencies');
+    $this->assertFalse(array_key_exists('help', $options), t('Help does not exists as option after alter called.'));
+
+    // See that current feature is not an depedency option.
+    $this->assertTrue(array_key_exists('features_test', $options), t('Key exists for dependency when options called without feature.'));
+
+    $options = features_get_export_options('dependencies', features_get_features('features_test'));
+    $this->assertFalse(array_key_exists('features_test', $options), t('Key does not exists for dependency when options called with feature.'));
+  }
+}
