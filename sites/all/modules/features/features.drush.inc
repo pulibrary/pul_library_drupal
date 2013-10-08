@@ -265,7 +265,7 @@ function drush_features_components() {
 function _drush_features_component_list() {
   $components = array();
   foreach (features_get_feature_components() as $source => $info) {
-    if ($options = features_get_export_options($source)) {
+    if ($options = features_invoke($source, 'features_export_options')) {
       foreach ($options as $name => $title) {
         $components[$source][$name] = $title;
       }
