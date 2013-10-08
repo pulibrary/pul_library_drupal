@@ -13,6 +13,34 @@ function library_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_cd_acquistions|node|library_news_item|form';
+  $field_group->group_name = 'group_cd_acquistions';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'library_news_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Collections Development Acquisitions',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_acquisition_type',
+      1 => 'field_material_access',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-cd-acquistions field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_cd_acquistions|node|library_news_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_news_attachments|node|library_news_item|form';
   $field_group->group_name = 'group_news_attachments';
   $field_group->entity_type = 'node';
