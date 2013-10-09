@@ -43,7 +43,7 @@ function pul_libraries_ct_default_services_endpoint() {
         ),
       ),
     ),
-    'hours' => array(
+    'locations' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
@@ -51,6 +51,20 @@ function pul_libraries_ct_default_services_endpoint() {
       ),
     ),
     'libraries' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'hours' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'library-user' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',

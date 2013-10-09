@@ -59,8 +59,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -116,8 +114,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title_1']['element_wrapper_class'] = 'library-info';
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: E-Mail Address */
   $handler->display->display_options['fields']['field_e_mail_address']['id'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['table'] = 'field_data_field_e_mail_address';
@@ -256,8 +252,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title_1']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: E-Mail Address */
   $handler->display->display_options['fields']['field_e_mail_address']['id'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['table'] = 'field_data_field_e_mail_address';
@@ -359,8 +353,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -495,8 +487,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_type'] = '0';
   $handler->display->display_options['fields']['nid']['element_label_type'] = '0';
   $handler->display->display_options['fields']['nid']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['path'] = 'libraries';
 
   /* Display: Detail List */
@@ -534,8 +524,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Library Homepage */
   $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';
@@ -611,8 +599,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';

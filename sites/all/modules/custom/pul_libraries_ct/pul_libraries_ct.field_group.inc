@@ -34,7 +34,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-lib-address field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -63,7 +63,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-lib-contact field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -93,7 +93,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-lib-hours field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -123,7 +123,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-lib-links field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -151,7 +151,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-loc-det field-group-tab',
         'required_fields' => 1,
       ),
     ),
