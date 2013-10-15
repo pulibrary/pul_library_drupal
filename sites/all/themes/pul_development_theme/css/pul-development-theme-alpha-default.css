@@ -136,7 +136,7 @@ height: 126px; /* height for standard version */
 background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
-.front.logged-in #section-header {
+.logged-in #section-header {
 	height:156px;  /* height for advert */
 }
 
