@@ -133,18 +133,17 @@ margin-top: .5em;
 
 #section-header{
 height: 126px; /* height for standard version */
-height:146px;  /* height for advert */
-
 background:url(../images/BG.gif) repeat-x 0 30px #fff;
 padding:0;
 }
-
-.front #zone-content-wrapper{
-background:url(../images/home-BG.gif) repeat-x 0 -126px transparent; /*without advert bar */
-background:url(../images/home-BG.gif) repeat-x 0 -121px transparent; /*with advert bar */
-
+.front.logged-in #section-header {
+	height:156px;  /* height for advert */
 }
 
+.front.not-logged-in #zone-content-wrapper{
+background:url(../images/home-BG.gif) repeat-x 0 -126px transparent; /*without advert bar */
+
+}
 
 /* =============================================================================
    USER MENU
