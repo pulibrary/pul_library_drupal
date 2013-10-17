@@ -26,12 +26,12 @@ function library_news_field_group_info() {
       0 => 'field_acquisition_type',
       1 => 'field_material_access',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-cd-acquistions field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -54,9 +54,9 @@ function library_news_field_group_info() {
       0 => 'field_news_images',
       1 => 'field_news_file_attachemtns',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -82,9 +82,9 @@ function library_news_field_group_info() {
       0 => 'field_pul_event_date',
       1 => 'field_news_event_location',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -115,9 +115,9 @@ function library_news_field_group_info() {
       5 => 'field_display_on_news_page',
       6 => 'field_news_libraries',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',

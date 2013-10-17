@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Lewis Library Forms feature.
+ */
+
+include_once 'lewis_library_forms.features.inc';
