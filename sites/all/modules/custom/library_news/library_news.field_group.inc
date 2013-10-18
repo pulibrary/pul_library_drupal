@@ -20,20 +20,22 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Collections Development Acquisitions',
+    'label' => 'Collections Development',
     'weight' => '7',
     'children' => array(
       0 => 'field_acquisition_type',
       1 => 'field_material_access',
+      2 => 'field_feat_collection',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Collections Development',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_cd_acquistions|node|library_news_item|form'] = $field_group;
