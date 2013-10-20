@@ -1635,7 +1635,8 @@ i.guide:before {
 	text-align: right;
 }
 
-.more-link a, .node-links ul li.node-readmore a, .read-more a, a.views-more-link, .comment-links ul li a {
+.more-link a, .node-links ul li.node-readmore a, .read-more a, a.views-more-link, .comment-links ul li a,
+.grid-3 ul li a.views-more-link {
 	font-family: "Droid Serif", sans-serif;
 	font-style: italic;
 	font-weight: normal;
