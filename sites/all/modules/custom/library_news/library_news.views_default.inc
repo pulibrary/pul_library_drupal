@@ -1230,20 +1230,16 @@ function library_news_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_news_featured_graphic']['field_api_classes'] = TRUE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
+  /* Field: Content: Article Snippet */
+  $handler->display->display_options['fields']['field_news_article_snippet']['id'] = 'field_news_article_snippet';
+  $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
+  $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
+  $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
+  $handler->display->display_options['fields']['field_news_article_snippet']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_news_article_snippet']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_news_article_snippet']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_article_snippet']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_news_article_snippet']['element_default_classes'] = FALSE;
   /* Field: Content: Libraries */
   $handler->display->display_options['fields']['field_news_libraries']['id'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
