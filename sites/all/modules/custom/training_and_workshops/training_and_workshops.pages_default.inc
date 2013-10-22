@@ -44,7 +44,7 @@ function training_and_workshops_default_page_manager_pages() {
         'identifier' => 'Registration form',
         'keyword' => 'registerform',
         'name' => 'entity:entityform_type',
-        'entity_id' => '3',
+        'entity_id' => '7',
         'id' => 1,
       ),
       1 => array(
