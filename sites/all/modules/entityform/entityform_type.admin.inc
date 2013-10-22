@@ -115,7 +115,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     '#maxlength' => 32,
     //    '#disabled' => $entityform_type->isLocked() && $op != 'clone',
     '#machine_name' => array(
-      'exists' => 'entityform_get_types',
+      'exists' => 'entityform_type_load',
       'source' => array('label'),
     ),
     '#weight' => -49,
@@ -261,6 +261,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     $form['tokens']['token_tree'] = array(
       '#theme' => 'token_tree',
       '#token_types' => array('global_types', 'entityform_type', 'entityform'),
+      '#dialog' => TRUE,
     );
   }
   else {
@@ -278,7 +279,7 @@ function entityform_type_prepare_edit(&$entityform_type) {
   if (module_exists('menu') && empty($entityform_type->menu)) {
     $item = array();
     $mlid = db_query_range("SELECT mlid FROM {menu_links} WHERE link_path = :path AND module = 'entityform' ORDER BY mlid ASC", 0, 1, array(
-        ':path' => 'eform/submit/' . $entityform_type->type,
+        ':path' => _entityform_type_get_submit_url($entityform_type->type),
     ))->fetchField();
     if ($mlid) {
       $item = menu_link_load($mlid);

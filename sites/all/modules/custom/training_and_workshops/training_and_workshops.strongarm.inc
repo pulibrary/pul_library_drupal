@@ -62,6 +62,13 @@ function training_and_workshops_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_libraries';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_libraries'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_training_series';
   $strongarm->value = '50';
   $export['comment_default_per_page_training_series'] = $strongarm;

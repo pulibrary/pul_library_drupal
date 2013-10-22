@@ -44,8 +44,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';
@@ -100,8 +98,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';
@@ -249,8 +245,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';

@@ -20,20 +20,22 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Collections Development Acquisitions',
+    'label' => 'Collections Development',
     'weight' => '7',
     'children' => array(
       0 => 'field_acquisition_type',
       1 => 'field_material_access',
+      2 => 'field_feat_collection',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Collections Development',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-cd-acquistions field-group-fieldset',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_cd_acquistions|node|library_news_item|form'] = $field_group;
@@ -54,9 +56,9 @@ function library_news_field_group_info() {
       0 => 'field_news_images',
       1 => 'field_news_file_attachemtns',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -82,9 +84,9 @@ function library_news_field_group_info() {
       0 => 'field_pul_event_date',
       1 => 'field_news_event_location',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
@@ -115,9 +117,9 @@ function library_news_field_group_info() {
       5 => 'field_display_on_news_page',
       6 => 'field_news_libraries',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
