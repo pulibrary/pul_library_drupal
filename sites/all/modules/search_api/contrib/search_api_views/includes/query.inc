@@ -180,7 +180,6 @@ class SearchApiViewsQuery extends views_plugin_query {
       '#options' => array(),
       '#default_value' => $this->options['parse_mode'],
     );
-    $modes = array();
     foreach ($this->query->parseModes() as $key => $mode) {
       $form['parse_mode']['#options'][$key] = $mode['name'];
       if (!empty($mode['description'])) {
@@ -262,6 +261,20 @@ class SearchApiViewsQuery extends views_plugin_query {
     if (!empty($this->options['search_api_bypass_access'])) {
       $this->query->setOption('search_api_bypass_access', TRUE);
     }
+
+    // If the View and the Panel conspire to provide an overridden path then
+    // pass that through as the base path.
+    if (!empty($this->view->override_path) && strpos(current_path(), $this->view->override_path) !== 0) {
+      $this->query->setOption('search_api_base_path', $this->view->override_path);
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function alter(&$view) {
+    parent::alter($view);
+    drupal_alter('search_api_views_query', $view, $this);
   }
 
   /**
@@ -285,6 +298,9 @@ class SearchApiViewsQuery extends views_plugin_query {
     }
 
     try {
+      // Trigger pager pre_execute().
+      $this->pager->pre_execute($this->query);
+
       $start = microtime(TRUE);
 
       // Execute the search.
@@ -304,6 +320,9 @@ class SearchApiViewsQuery extends views_plugin_query {
       // We shouldn't use $results['performance']['complete'] here, since
       // extracting the results probably takes considerable time as well.
       $view->execute_time = microtime(TRUE) - $start;
+
+      // Trigger pager post_execute().
+      $this->pager->post_execute($view->results);
     }
     catch (Exception $e) {
       $this->errors[] = $e->getMessage();
@@ -317,8 +336,14 @@ class SearchApiViewsQuery extends views_plugin_query {
    *
    * Used by handlers to flag a fatal error which shouldn't be displayed but
    * still lead to the view returning empty and the search not being executed.
+   *
+   * @param string|null $msg
+   *   Optionally, a translated, unescaped error message to display.
    */
-  public function abort() {
+  public function abort($msg = NULL) {
+    if ($msg) {
+      $this->errors[] = $msg;
+    }
     $this->abort = TRUE;
   }
 

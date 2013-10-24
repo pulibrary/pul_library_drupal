@@ -164,6 +164,7 @@ class SearchApiHighlight extends SearchApiAbstractProcessor {
    *   contained in them for the given result.
    */
   protected function getFulltextFields(array &$results, $i, $load = TRUE) {
+    global $language;
     $data = array();
     // Act as if $load is TRUE if we have a loaded item.
     $load |= !empty($result['entity']);
@@ -198,6 +199,7 @@ class SearchApiHighlight extends SearchApiAbstractProcessor {
       return $data;
     }
     $wrapper = $this->index->entityWrapper($result['entity'], FALSE);
+    $wrapper->language($language->language);
     $extracted = search_api_extract_fields($wrapper, $needs_extraction);
 
     foreach ($extracted as $field => $info) {

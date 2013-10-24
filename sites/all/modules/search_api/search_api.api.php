@@ -192,6 +192,8 @@ function hook_search_api_data_type_info_alter(array &$infos) {
 }
 
 /**
+ * Define available data alterations.
+ *
  * Registers one or more callbacks that can be called at index time to add
  * additional data to the indexed items (e.g. comments or attachments to nodes),
  * alter the data in other forms or remove items from the array.
@@ -227,6 +229,21 @@ function hook_search_api_alter_callback_info() {
 }
 
 /**
+ * Alter the available data alterations.
+ *
+ * @param array $callbacks
+ *   The callback information to be altered, keyed by callback IDs.
+ *
+ * @see hook_search_api_alter_callback_info()
+ */
+function hook_search_api_alter_callback_info_alter(array &$callbacks) {
+  if (!empty($callbacks['example_random_alter'])) {
+    $callbacks['example_random_alter']['name'] = t('Even more random alteration');
+    $callbacks['example_random_alter']['class'] = 'ExampleUltraRandomAlter';
+  }
+}
+
+/**
  * Registers one or more processors. These are classes implementing the
  * SearchApiProcessorInterface interface which can be used at index and search
  * time to pre-process item data or the search query, and at search time to
@@ -259,6 +276,20 @@ function hook_search_api_processor_info() {
   );
 
   return $callbacks;
+}
+
+/**
+ * Alter the available processors.
+ *
+ * @param array $processors
+ *   The processor information to be altered, keyed by processor IDs.
+ *
+ * @see hook_search_api_processor_info()
+ */
+function hook_search_api_processor_info_alter(array &$processors) {
+  if (!empty($processors['example_processor'])) {
+    $processors['example_processor']['weight'] = -20;
+  }
 }
 
 /**

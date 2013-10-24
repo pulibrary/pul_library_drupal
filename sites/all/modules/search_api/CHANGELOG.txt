@@ -1,6 +1,35 @@
 Search API 1.x, dev (xx/xx/xxxx):
 ---------------------------------
 
+Search API 1.9 (10/23/2013):
+----------------------------
+- #2113277 by moonray, drunken monkey: Fixed date facet count for active item.
+- #2086783 by drunken monkey: Removed Views field handlers for "virtual" fields.
+- #2114593 by drunken monkey: Added list of floats to test module.
+- #2109247 by mmikitka, drunken monkey: Exposed the status and module
+  properties to Entity API.
+- #2091499 by sammys, drunken monkey: Added Views contextual filter handler for
+  dates.
+- #2109537 by hefox, drunken monkey: Added alter hooks for workflow plugin
+  definitions.
+- #2102111 by sergei_brill: Added hook_search_api_views_query_alter().
+- #2110315 by drumm, drunken monkey: Added specialized Views filters for users
+  and terms.
+- #2111273 by drunken monkey: Fixed Javascript states for exposed filter
+  operator.
+- #2102353 by aaronbauman: Fixed "smaller than" to read "less than".
+- #2097559 by thijsvdanker: Fixed the language of created search excerpts.
+- #2096275 by andrewbelcher: Fixed calling of Views pager pre/post execute
+  callbacks.
+- #2093023 by maciej.zgadzaj: Added Drush commands to enable and disable
+  indexes.
+- #2088905 by queenvictoria, drunken monkey: Fixed handling of Views
+  override_path option.
+- #2083481 by drunken monkey, nickgs: Added "exclude" option for facets.
+- #2084953 by Yaron Tal: Fixed issue with theme initialization.
+- #2075839 by leeomara, drunken monkey: Added descriptions to field lists for
+  'Aggregated Fields'.
+
 Search API 1.8 (09/01/2013):
 ----------------------------
 - #1414048 by drunken monkey: Fixed exception in views.inc removes all Search
