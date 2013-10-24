@@ -137,6 +137,50 @@ function library_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_news_item-field_feat_collection'
+  $field_instances['node-library_news_item-field_feat_collection'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Flagging an item will make it appear on the collections page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_feat_collection',
+    'label' => 'Featured Collection',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-library_news_item-field_material_access'
   $field_instances['node-library_news_item-field_material_access'] = array(
     'bundle' => 'library_news_item',
@@ -807,9 +851,11 @@ function library_news_field_default_field_instances() {
   t('Enter the netid of the library staff contact for the news item. ');
   t('Event Dates');
   t('Event Location');
+  t('Featured Collection');
   t('Featured Graphic');
   t('File Attachments');
   t('Files to be inserted into news items when needed. ');
+  t('Flagging an item will make it appear on the collections page.');
   t('Free tags that can be associated with items. ');
   t('Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.');
   t('Images');
