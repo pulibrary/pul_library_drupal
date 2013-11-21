@@ -144,7 +144,9 @@ class EntityformCRUDTestCase extends EntityformTestCase {
 
   }
   private function updateEntityformType($machine_name, $properties, $data) {
-    $entityform_type = entityform_type_load($machine_name, TRUE);
+    // Force a clear of the entitytype cache.
+    entityform_type_cache_reset();
+    $entityform_type = entityform_type_load($machine_name);
     if (!empty($properties)) {
       foreach ($properties as $property => $value) {
         $entityform_type->{$property} = $value;
