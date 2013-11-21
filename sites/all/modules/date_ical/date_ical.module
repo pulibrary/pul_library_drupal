@@ -11,7 +11,7 @@
  * The version number of the current release. This is inserted into the PRODID
  * value of the iCal feeds created by Date iCal.
  */
-define('DATE_ICAL_VERSION', '2.12');
+define('DATE_ICAL_VERSION', '2.13');
 
 /**
  * Exception for when the date field for a row in the ical_fields row plugin is blank.

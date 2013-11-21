@@ -21,17 +21,9 @@ files[] = includes/DateIcalFeedsParser.inc
 files[] = includes/DateIcalIcalcreatorParser.inc
 files[] = includes/DateIcalDateModuleParser.inc
 
-; Tests
-files[] = tests/date_ical_parser.test
-files[] = tests/date_ical_parser_text.test
-files[] = tests/date_ical_parser_link.test
-files[] = tests/date_ical_parser_date.test
-files[] = tests/date_ical_parser_location.test
-files[] = tests/date_ical_parser_categories.test
-
-; Information added by drupal.org packaging script on 2013-09-11
-version = "7.x-2.12"
+; Information added by  packaging script on 2013-11-18
+version = "7.x-2.13"
 core = "7.x"
 project = "date_ical"
-datestamp = "1378940235"
+datestamp = "1384804110"
 
