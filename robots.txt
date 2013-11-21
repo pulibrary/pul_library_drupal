@@ -64,4 +64,5 @@ Disallow: /find/all/
 Disallow: /services/hours
 Disallow: /services/libraries
 Disallow: /research/databases/search/
+Disallow: /requests/
 
