@@ -8,9 +8,9 @@ dependencies[] = entityform
 dependencies[] = rules
 dependencies[] = variable_email
 
-; Information added by drupal.org packaging script on 2013-06-05
-version = "7.x-1.1"
+; Information added by  packaging script on 2013-11-12
+version = "7.x-1.3"
 core = "7.x"
 project = "entityform"
-datestamp = "1370455555"
+datestamp = "1384268911"
 

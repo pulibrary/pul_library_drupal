@@ -229,18 +229,10 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
           $start_array['tz'] =  $start_prop['params']['TZID'];
         }
         
-        // On single-day All Day events (the start date + 1 = the end date), just ignore the DTEND
-        // if the Date All Day module is installed. Otherwise it'll be displayed strangely.
-        if ($start_array['year']       == $date_array['year']
-            && $start_array['month']   == $date_array['month']
-            && $start_array['day'] + 1 == $date_array['day']
-            && module_exists('date_all_day')) {
-          return;
-        }
-        elseif (module_exists('date_all_day')) {
-          // When we add the time of 00:00:00 to our date explicitly
-          // the date that gets parsed for DTEND is 1 day ahead.
-          // so taking a day away before that (if date_all_day is found)
+        if (module_exists('date_all_day')) {
+          // If the Date All Day module is installed, we need to rewind the
+          // DTEND by one day, because of the problem with FeedsDateTime
+          // mentioned below.
           $date_array['day'] -= 1;
         }
       }
@@ -336,25 +328,13 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
     $context = get_defined_vars();
     // Allow modules to alter the RRULE before it's mapped to the target.
     drupal_alter('date_ical_feeds_object', $property, $context);
+    // RRULEs must have an INTERVAL, or Date Repeat will throw errors.
+    if (!isset($property['value']['INTERVAL'])) {
+      $property['value']['INTERVAL'] = '1';
+    }
     $item->setRrule($property);
-    /*
-    // I'm not really sure it makes sense to let users alter these, and since you can have more than one of each,
-    // it's probbaly not worth the effort to program it correctly. But here's my attempts so far, if anyone wants
-    // to finish it.
-    $rdate = $item->getProperty('rdate');
-    if (!empty($rdate)) {
-      $context['property_key'] = 'rdate';
-      drupal_alter('date_ical_feeds_object', $rdate, $context);
-      $item->setRdate($rdate);
-    }
-    $exdate = $item->getProperty('exdate');
-    if (!empty($rdate)) {
-      $context['property_key'] = 'exdate';
-      drupal_alter('date_ical_feeds_object', $exdate, $context);
-      $item->setExdate($exdate);
-    }
-    */
-    
+
+
     $rrule = $item->getRrule();
     $exdate = $item->getExdate();
     $rdate = $item->getRdate();
@@ -365,8 +345,10 @@ class DateIcalIcalcreatorParser extends DateIcalFeedsParser {
    * Load the iCalcreator library.
    */
   static public function loadLibrary() {
-    $creator_path = libraries_get_path('iCalcreator');
-    require_once($creator_path . '/iCalcreator.class.php');
+    $library = libraries_load('iCalcreator');
+    if (!$library['loaded']) {
+      throw new DateIcalParseException(t('Unable to load the iCalcreator library. Please ensure that it is properly installed.'));
+    }
   }
 }
 

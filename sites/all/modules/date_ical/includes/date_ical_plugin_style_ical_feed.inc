@@ -10,7 +10,7 @@
  */
 class date_ical_plugin_style_ical_feed extends views_plugin_style {
   
-  function _get_option($option_name) {
+  protected function _get_option($option_name) {
     return isset($this->options[$option_name]) ? $this->options[$option_name] : '';
   }
   
@@ -34,6 +34,10 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
     // Render the feed icon and header tag (except during a View Preview).
     if (empty($this->view->live_preview)) {
       $tooltip = t('Add to My Calendar');
+      if (!isset($this->view->feed_icon)) {
+        // In PHP 5.5, you're no longer allowed to concatinate onto a not-yet-existent property.
+        $this->view->feed_icon = '';
+      }
       $this->view->feed_icon .= theme('date_ical_icon', array('url' => check_url($url), 'tooltip' => $tooltip, 'view' => $this->view));
       drupal_add_html_head_link(array(
         'rel' => 'alternate',
@@ -47,8 +51,9 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
   function option_definition() {
     $options = parent::option_definition();
     $options['cal_name'] = array('default' => array());
-    $options['no_calname'] = array('default' => array());
-    $options['disable_webcal'] = array('default' => array());
+    $options['no_calname'] = array('default' => FALSE, 'bool' => TRUE);
+    $options['disable_webcal'] = array('default' => FALSE, 'bool' => TRUE);
+    $options['exclude_dtstamp'] = array('default' => FALSE, 'bool' => TRUE);
     return $options;
   }
   
@@ -78,11 +83,20 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
         clients to easily subscribe to the feed. If you want your users to instead download this iCal
         feed as a file, activate this option."),
     );
+    $form['exclude_dtstamp'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Exclude DTSTAMP'),
+      '#default_value' => $this->_get_option('exclude_dtstamp'),
+      '#description' => t("By default, the feed will set each event's DTSTAMP property to the time at which the feed got downloaded.
+        Some feed readers will (incorrectly) look at the DTSTAMP value when they compare different downloads of the same feed, and
+        conclcude that the event has been updated (even though it hasn't actually changed). Enable this option to exclude the DTSTAMP
+        field from your feeds, so that these buggy feed readers won't mark every event as updated every time they check."),
+    );
   }
   
   function render() {
-    if (empty($this->row_plugin) || !in_array($this->row_plugin->plugin_name, array('date_ical','date_ical_fields'))) {
-      debug('views_plugin_style_ical_feed: This style plugin supports only iCal Entity row and iCal Fields plugins.', NULL, TRUE);
+    if (empty($this->row_plugin) || !in_array($this->row_plugin->plugin_name, array('date_ical', 'date_ical_fields'))) {
+      debug('date_ical_plugin_style_ical_feed: This style plugin supports only the "iCal Entity" and "iCal Fields" row plugins.', NULL, TRUE);
       return t('To enable iCal output, this view\'s Format must be configured to Show: iCal Entity or iCal Fields.');
     }
     if ($this->row_plugin->plugin_name == 'date_ical_fields' && empty($this->row_plugin->options['date_field'])) {
@@ -103,11 +117,15 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
     }
     unset($this->view->row_index);
     
-    // Try to load the iCalcreator library, and check if that worked.
+    // Try to load the iCalcreator library.
     $library = libraries_load('iCalcreator');
-    if (!empty($library['loaded'])) {
+    if (!$library['loaded']) {
+      // The iCalcreator library isn't available, so we can't output anything.
+      $output = t('Please install the iCalcreator library to enable iCal output.');
+    }
+    else {
       // Create a vcalendar object using the iCalcreator library.
-      $config = array('unique_id' => 'Drupal: Date iCal v' . DATE_ICAL_VERSION);
+      $config = array('unique_id' => 'Date iCal v' . DATE_ICAL_VERSION);
       $vcalendar = new vcalendar($config);
       $vcalendar->setMethod('PUBLISH');
       
@@ -134,7 +152,8 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
       foreach ($events as $event) {
         if (empty($event)) {
           // The row plugin returned NULL for this row, which can happen due to
-          // various error conditions. The only thing we can do is skip it.
+          // either various error conditions, or because an RRULE is involved.
+          // When this happens, just skip it.
           continue;
         }
         
@@ -157,7 +176,8 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
             $start['hour'],
             $start['minute'],
             $start['second'],
-            $timezone);
+            $timezone
+          );
         }
         
         // Add the Timezone info to the start date, for use later.
@@ -166,7 +186,7 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
         // Only add the end date if there is one.
         if (!empty($event['end'])) {
           $end = $event['end']->toArray();
-          $timezone = $event['start']->getTimezone()->getName();
+          $timezone = $event['end']->getTimezone()->getName();
           $timezones[$timezone] = $timezone;
           
           if ($event['all_day']) {
@@ -181,9 +201,9 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
               $end['hour'],
               $end['minute'],
               $end['second'],
-              $timezone);
+              $timezone
+            );
           }
-          // Keep a copy of the end date, as it's useful later.
           $end['tz'] = $event['end']->getTimezone();
         }
         $vevent->setProperty('uid', $event['uid']);
@@ -191,16 +211,17 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
         
         // Handle repeating dates from the date_repeat module.
         if (!empty($event['rrule']) && module_exists('date_repeat')) {
-          // Split the rrule into the actual rule, exceptions, and additions.
+          // Split the rrule into an RRULE and any additions and exceptions.
           module_load_include('inc', 'date_api', 'date_api_ical');
           module_load_include('inc', 'date_repeat', 'date_repeat_calc');
           list($rrule, $exceptions, $additions) = date_repeat_split_rrule($event['rrule']);
-          // Add the rrule itself. We need to massage the data a bit, since
+          
+          // Add the RRULE itself. We need to massage the data a bit, since
           // iCalcreator expects RRULEs to be in a different format than how
           // Date API gives them to us.
-          $rrule = self::convert_rrule_for_icalcreator($rrule);
-          $vevent->setRrule($rrule);
-          // Process exceptions if there are any.
+          $vevent->setRrule(self::convert_rrule_for_icalcreator($rrule));
+          
+          // Convert any exceptions to EXDATE properties.
           if (!empty($exceptions)) {
             $exdates = array();
             foreach ($exceptions as $exception) {
@@ -211,38 +232,49 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
                 'year' =>  $exception_array['year'],
                 'month' => $exception_array['month'],
                 'day' =>   $exception_array['day'],
-                // Use the time information from the start date.
+                // Use the time information from the start date, since Date
+                // doesn't store time info for EXDATEs.
                 'hour' =>   $start['hour'],
                 'min' =>    $start['minute'],
                 'second' => $start['second'],
                 'tz' =>     $start['tz']->getName(),
               );
             }
-            // Add those exclusions as 'EXDATE's.
-            $vevent->setExdate($exdates);
+            // Add each exclusion as a separate EXDATE property.
+            // The spec supports putting multiple date values into one EXDATE,
+            // but several popular calendar clients (*cough* Apple *cough*)
+            // are bugged, and do not recognize multi-value EXDATEs.
+            foreach ($exdates as $exdate) {
+              $vevent->setExdate(array($exdate));
+            }
           }
-          // Process additions if there are any.
+          
+          // Convert any additions to RDATE properties.
           if (!empty($additions)) {
-            $add_dates = array();
+            $rdates = array();
             foreach ($additions as $addition) {
               $add = date_ical_date($addition, 'UTC');
               date_timezone_set($add, $start['tz']);
               $addition_array = $add->toArray();
               
-              $add_date = array(
+              $rdate = array(
                 'year' =>  $addition_array['year'],
                 'month' => $addition_array['month'],
                 'day' =>   $addition_array['day'],
-                // Use the time information from the start date.
+                // Use the time information from the start date, since Date
+                // doesn't store time info for RDATEs.
                 'hour' =>   $start['hour'],
                 'min' =>    $start['minute'],
                 'second' => $start['second'],
                 'tz' =>     $start['tz']->getName(),
               );
-              // If there was an end date specified, use that too.
-              if (!empty($event['end'])) {
-                $add_date = array($add_date);
-                $add_date[] = array(
+              
+              // If an end date was was calculated above, use that too.
+              // iCalcreator expects RDATEs that have end dates to be
+              // specified as array($start_rdate, $end_rdate).
+              if (isset($end)) {
+                $rdate_with_end = array($rdate);
+                $rdate_with_end[] = array(
                   'year' =>  $addition_array['year'],
                   'month' => $addition_array['month'],
                   'day' =>   $addition_array['day'],
@@ -252,12 +284,18 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
                   'second' => $end['second'],
                   'tz' =>     $end['tz']->getName(),
                 );
+                $rdate = $rdate_with_end;
               }
               
-              $add_dates[] = $add_date;
+              $rdates[] = $rdate;
             }
-            // Add the additions as 'RDATE's.
-            $vevent->setRdate($add_dates);
+            // Add each addition as a separate RDATE property.
+            // The spec supports putting multiple date values into one RDATE,
+            // but several popular calendar clients (*cough* Apple *cough*)
+            // are bugged, and do not recognize multi-value RDATEs.
+            foreach ($rdates as $rdate) {
+              $vevent->setRdate(array($rdate));
+            }
           }
         }
         if (!empty($event['url'])) {
@@ -281,30 +319,56 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
             $lm['timezone']
           );
         }
+        if (!empty($event['created'])) {
+          $created = $event['created']->toArray();
+          $vevent->setCreated(
+            $created['year'],
+            $created['month'],
+            $created['day'],
+            $created['hour'],
+            $created['minute'],
+            $created['second'],
+            $created['timezone']
+          );
+        }
         
         // Allow other modules to alter the VEVENT object.
         drupal_alter('date_ical_feed_ical_vevent_render', $vevent, $this->view, $event);
       }
       
-      // Now add all the timezones we just used to the calendar.
+      // Now add to the calendar all the timezones used by the events.
       foreach ($timezones as $timezone) {
-        iCalUtilityFunctions::createTimezone($vcalendar, $timezone);
+        if (strtoupper($timezone) != 'UTC') {
+          iCalUtilityFunctions::createTimezone($vcalendar, $timezone);
+        }
       }
       
       // Allow other modules to alter the calendar as a whole.
       drupal_alter('date_ical_feed_ical_vcalendar_render', $vcalendar, $this->view);
       
       $output = $vcalendar->createCalendar();
-      // For some unknown reason (overzealous spec comnpliance?), iCalcreator
+      // For some unknown reason (overzealous spec compliance?), iCalcreator
       // escapes all commas and semicolons in the strings that it outputs.
       // This unescapes them, though it does it with a pretty big hammer. This
       // might be going too far.
       $output = str_replace('\,', ',', $output);
       $output = str_replace('\;', ';', $output);
-    }
-    else {
-      // The iCalcreator library isn't available, so we can't output anything.
-      $output = t('Please install the iCalcreator library to enable iCal output.');
+      
+      // In order to respect the Exclude DTSTAMP option, we unfortunately have
+      // to parse out the DTSTAMP properties after they get rendered. Simply
+      // using deleteProperty('DTSTAMP') doesn't work, because iCalcreator
+      // considers the DTSTAMP to be essential, and will re-create it when
+      // createCalendar() is called.
+      if ($this->_get_option('exclude_dtstamp')) {
+        $filtered_lines = array();
+        foreach (explode("\r\n", $output) as $line) {
+          if (strpos($line, 'DTSTAMP') === 0) {
+            continue;
+          }
+          $filtered_lines[] = $line;
+        }
+        $output = implode("\r\n", $filtered_lines);
+      }
     }
     
     // These steps shouldn't be run when doing a Preview on the View config page.

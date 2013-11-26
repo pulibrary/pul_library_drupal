@@ -386,7 +386,7 @@ function entityform_edit_form($form, &$form_state, $entityform, $mode = 'submit'
  * @return array
  */
 function entityform_clear_required($form, &$form_state) {
-  if (!empty($form_state['input']) && isset($form_state['values']['save']) && count($form_state['input']) > 1 && isset($form_state['input']['op']) && $form_state['values']['save'] == $form_state['input']['op']  ) {
+  if (!empty($form_state['triggering_element']['#entityform_draft'])) {
     _entityform_set_all_nested_props($form, array('#required' => FALSE));
   }
   return $form;
