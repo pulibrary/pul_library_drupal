@@ -384,9 +384,10 @@ function _entityform_get_entityform_views_options() {
  * @return EntityformType[]
  *   Depending whether $type isset, an array of entityform types or a single one.
  */
-function entityform_get_types($type_name = NULL) {
+  function entityform_get_types($type_name = NULL) {
   // entity_load will get the Entity controller for our entityform entity and call the load
   // function of that object - we are loading entities by name here.
+
   // Use the advanced drupal_static() pattern since this is called very often.
   static $drupal_static_fast;
   $cache_key = 'entityform_types';
@@ -400,25 +401,24 @@ function entityform_get_types($type_name = NULL) {
     if ($cache = cache_get($cache_key)) {
       $entityform_types = $cache->data;
     }
-    else {
-      if (!isset($type_name)) {
-        $entityform_types = entity_load_multiple_by_name('entityform_type', FALSE);
-      }
-      else {
-        $types = entity_load_multiple_by_name('entityform_type', array($type_name));
-        if (empty($types)) {
-          return FALSE;
-        }
-        $entityform_types[$type_name] = array_shift($types);
-      }
-      cache_set($cache_key, $entityform_types);
+  }
+  // $entityform_types may be set but might not have our $type_name if called first for other $type_name
+  // @todo What if it is called first with $type_name set and then called without $type_name set.
+  //  wouldn't it return a single element array even if there were more entityform types.
+  if (empty($entityform_types) || (isset($type_name) && empty($entityform_types[$type_name]))) {
+    if (!isset($type_name)) {
+      $entityform_types = entity_load_multiple_by_name('entityform_type', FALSE);
     }
+    else {
+      $types = entity_load_multiple_by_name('entityform_type', array($type_name));
+      if (empty($types)) {
+        return FALSE;
+      }
+      $entityform_types[$type_name] = array_shift($types);
+    }
+    cache_set($cache_key, $entityform_types);
   }
-  if (isset($type_name)) {
-    // Even though $type_name was set it might not be valid
-    return isset($entityform_types[$type_name]) ? $entityform_types[$type_name] : NULL;
-  }
-  return $entityform_types;
+  return isset($type_name) ? $entityform_types[$type_name] : $entityform_types;
 }
 
 /**
@@ -834,6 +834,11 @@ function entityform_entity_presave($entity, $type) {
                 break;
             }
             // Entityform Types aren't translateable
+            // Check to see if alias is exact same as original
+            if (!empty($original_path['alias'])
+              && $original_path['alias'] == $path['alias'] && $path['source'] == $original_path['source']) {
+              continue;
+            }
             $path['language'] = LANGUAGE_NONE;
             if (_entityform_alias_is_used($path)) {
               watchdog('entityform', "Could not create alias @alias for EntityformType entity '@type'",
