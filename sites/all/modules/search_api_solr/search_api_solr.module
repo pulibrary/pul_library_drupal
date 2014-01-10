@@ -14,11 +14,12 @@ function search_api_solr_menu() {
     'description' => 'View Solr configuration files.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('search_api_solr_solr_config_form', 5),
-    'access callback' => 'search_api_access_server_files',
+    'access callback' => 'search_api_solr_access_server_files',
     'access arguments' => array(5),
     'file' => 'search_api_solr.admin.inc',
     'type' => MENU_LOCAL_TASK,
     'weight' => -1,
+    'context' => MENU_CONTEXT_INLINE | MENU_CONTEXT_PAGE,
   );
 
   return $items;
@@ -28,15 +29,18 @@ function search_api_solr_menu() {
  * Implements hook_search_api_service_info().
  */
 function search_api_solr_search_api_service_info() {
+  $variables = array(
+    '@solr_wiki_url' => url('http://wiki.apache.org/solr/SolrQuerySyntax'),
+    '@readme_url' => url(drupal_get_path('module', 'search_api_solr') . '/README.txt'),
+  );
   $services['search_api_solr_service'] = array(
     'name' => t('Solr service'),
-    'description' => t('<p>Index items using an Apache Solr search server.</p>' .
-        '<ul>' . '<li>All field types are supported and indexed in a special way, with URI/String and Integer/Duration being equivalent.</li>' .
-        '<li>See <a href="@url">the Solr wiki</a> for information about the "direct" parse mode.</li>' .
-        '<li>Supports the search_api_facets and search_api_multi features.</li>' .
-        '<li>Will use internal Solr preprocessors, so Search API preprocessors should for the most part be deactivated.</li>' .
-        '<li>See the README.txt file provided with this module for details.</li>' . '</ul>',
-        array('@url' => url('http://wiki.apache.org/solr/SolrQuerySyntax'))),
+    'description' => t('<p>Index items using an Apache Solr search server.</p>
+<ul>
+  <li>See <a href="@solr_wiki_url">the Solr wiki</a> for information about the "direct" parse mode.</li>
+  <li>Will use internal Solr preprocessors, so Search API preprocessors should for the most part be deactivated.</li>
+  <li>See the <a href="@readme_url">README.txt</a> file provided with this module for details.</li>
+</ul>', $variables),
     'class' => 'SearchApiSolrService',
   );
   return $services;
@@ -56,20 +60,6 @@ function search_api_solr_help($path, array $arg = array()) {
         $type = $req['severity'] == REQUIREMENT_ERROR ? 'error' : ($req['severity'] == REQUIREMENT_WARNING ? 'warning' : 'status');
         drupal_set_message($req['description'], $type);
       }
-    }
-  }
-  elseif ($path == 'admin/config/search/search_api/server/%' && !empty($arg[5])) {
-    $server = search_api_server_load($arg[5]);
-    if ($server && $server->enabled && $server->class == 'search_api_solr_service') {
-      $ping = $server->ping();
-      $type = $ping ? 'status' : 'error';
-      if ($ping) {
-        $msg = t('The Solr server could be reached (latency: @millisecs ms).', array('@millisecs' => $ping * 1000));
-      }
-      else {
-        $msg = t('The Solr server could not be reached.');
-      }
-      drupal_set_message($msg, $type);
     }
   }
 }
@@ -124,6 +114,99 @@ function search_api_solr_views_api() {
 }
 
 /**
+ * Retrieves Solr-specific data for available data types.
+ *
+ * Returns the data type information for both the default Search API data types
+ * and custom data types defined by hook_search_api_data_type_info(). Names for
+ * default data types are not included, since they are not relevant to the Solr
+ * service class.
+ *
+ * We're adding some extra Solr field information for the default search api
+ * data types (as well as on behalf of a couple contrib field types). The
+ * extra information we're adding is documented in
+ * search_api_solr_hook_search_api_data_type_info(). You can use the same
+ * additional keys in hook_search_api_data_type_info() to support custom
+ * dynamic fields in your indexes with Solr.
+ *
+ * @param string|null $type
+ *   (optional) A specific type for which the information should be returned.
+ *   Defaults to returning all information.
+ *
+ * @return array|null
+ *   If $type was given, information about that type or NULL if it is unknown.
+ *   Otherwise, an array of all types. The format in both cases is the same as
+ *   for search_api_get_data_type_info().
+ *
+ * @see search_api_get_data_type_info()
+ * @see search_api_solr_hook_search_api_data_type_info()
+ */
+function search_api_solr_get_data_type_info($type = NULL) {
+  $types = &drupal_static(__FUNCTION__);
+
+  if (!isset($types)) {
+    // Grab the stock search_api data types.
+    $types = search_api_get_data_type_info();
+
+    // Add our extras for the default search api fields.
+    $types += array(
+      'text' => array(
+        'prefix' => 'tm',
+        'always multiValued' => TRUE,
+      ),
+      'string' => array(
+        'prefix' => 's',
+      ),
+      'integer' => array(
+        'prefix' => 'i',
+      ),
+      'decimal' => array(
+        'prefix' => 'f',
+      ),
+      'date' => array(
+        'prefix' => 'd',
+      ),
+      'duration' => array(
+        'prefix' => 'i',
+      ),
+      'boolean' => array(
+        'prefix' => 'b',
+      ),
+      'uri' => array(
+        'prefix' => 's',
+      ),
+      'tokens' => array(
+        'prefix' => 'tm',
+        'always multiValued' => TRUE,
+      ),
+    );
+
+    // Extra data type info.
+    $extra_types_info = array(
+      'location' => array(
+        'prefix' => 'loc',
+      ),
+      'geohash' => array(
+        'prefix' => 'geo',
+      ),
+    );
+
+    // For the extra types, only add our extra info if it's already been defined.
+    foreach ($extra_types_info as $key => $info) {
+      if (array_key_exists($key, $types)) {
+        // Merge our extras into the data type info
+        $types[$key] += $info;
+      }
+    }
+  }
+
+  // Return the info.
+  if (isset($type)) {
+    return isset($types[$type]) ? $types[$type] : NULL;
+  }
+  return $types;
+}
+
+/**
  * Retrieves a list of all config files of a server.
  *
  * @param SearchApiServer $server
@@ -163,6 +246,15 @@ function search_api_solr_server_get_files(SearchApiServer $server, $dir_name = N
 }
 
 /**
+ * @deprecated
+ *
+ * @see search_api_solr_access_server_files()
+ */
+function search_api_access_server_files(SearchApiServer $server) {
+  return search_api_solr_access_server_files($server);
+}
+
+/**
  * Access callback for a server's "Files" tab.
  *
  * Grants access if the user has the "administer search_api" permission and the
@@ -174,7 +266,7 @@ function search_api_solr_server_get_files(SearchApiServer $server, $dir_name = N
  * @return bool
  *   TRUE if access should be granted, FALSE otherwise.
  */
-function search_api_access_server_files(SearchApiServer $server) {
+function search_api_solr_access_server_files(SearchApiServer $server) {
   if (!user_access('administer search_api')) {
     return FALSE;
   }

@@ -27,28 +27,6 @@ class SearchApiSolrService extends SearchApiAbstractService {
   protected $solr;
 
   /**
-   * An array of all recognized types.
-   *
-   * Maps the type names to the prefixes used for identifying them in the Solr
-   * schema.
-   *
-   * @var array
-   */
-  protected static $type_prefixes = array(
-    'text' => 'tm',
-    'tokens' => 'tm',
-    'string' => 's',
-    'integer' => 'i',
-    'decimal' => 'f',
-    'date' => 'd',
-    'duration' => 'i',
-    'boolean' => 'b',
-    'uri' => 's',
-    'location' => 'loc',
-    'geohash' => 'geo',
-  );
-
-  /**
    * Static cache for getFieldNames().
    *
    * @var array
@@ -288,9 +266,10 @@ class SearchApiSolrService extends SearchApiAbstractService {
   }
 
   /**
-   * Overrides SearchApiAbstractService::supportsFeature().
+   * {@inheritdoc}
    */
   public function supportsFeature($feature) {
+    // First, check the features we always support.
     $supported = drupal_map_assoc(array(
       'search_api_autocomplete',
       'search_api_facets',
@@ -298,37 +277,146 @@ class SearchApiSolrService extends SearchApiAbstractService {
       'search_api_grouping',
       'search_api_mlt',
       'search_api_multi',
+      'search_api_service_extra',
       'search_api_spellcheck',
       'search_api_data_type_location',
       'search_api_data_type_geohash',
     ));
-    return isset($supported[$feature]);
+    if (isset($supported[$feature])) {
+      return TRUE;
+    }
+
+    // If it is a custom data type, maybe we support it automatically via
+    // search_api_solr_hook_search_api_data_type_info().
+    if (substr($feature, 0, 21) != 'search_api_data_type_') {
+      return FALSE;
+    }
+    $type = substr($feature, 21);
+    $type = search_api_get_data_type_info($type);
+    // We only support it if the "prefix" key is set.
+    return $type && !empty($type['prefix']);
   }
 
   /**
    * Overrides SearchApiAbstractService::viewSettings().
+   *
+   * Returns an empty string since information is instead added via
+   * getExtraInformation().
    */
   public function viewSettings() {
-    $output = '';
-    $options = $this->options;
+    return '';
+  }
 
-    $output .= "<dl>\n  <dt>";
-    $output .= t('Solr server URI');
-    $output .= "</dt>\n  <dd>";
-    $output .= $this->getServerLink();
-    $output .= '</dd>';
-    if ($options['http_user']) {
-      $output .= "\n  <dt>";
-      $output .= t('Basic HTTP authentication');
-      $output .= "</dt>\n  <dd>";
-      $output .= t('Username: @user', array('@user' => $options['http_user']));
-      $output .= "</dd>\n  <dd>";
-      $output .= t('Password: @pass', array('@pass' => str_repeat('*', strlen($options['http_pass']))));
-      $output .= '</dd>';
+  /**
+   * {@inheritdoc}
+   */
+  public function getExtraInformation() {
+    $info = array();
+
+    $info[] = array(
+      'label' => t('Solr server URI'),
+      'info' => $this->getServerLink(),
+    );
+
+    if ($this->options['http_user']) {
+      $vars = array(
+        '@user' => $this->options['http_user'],
+        '@pass' => str_repeat('*', strlen($this->options['http_pass'])),
+      );
+      $http = t('Username: @user; Password: @pass', $vars);
+      $info[] = array(
+        'label' => t('Basic HTTP authentication'),
+        'info' => $http,
+      );
     }
-    $output .= "\n</dl>";
 
-    return $output;
+    if ($this->server->enabled) {
+      // If the server is enabled, check whether Solr can be reached.
+      $ping = $this->ping();
+      if ($ping) {
+        $msg = t('The Solr server could be reached (latency: @millisecs ms).', array('@millisecs' => $ping * 1000));
+      }
+      else {
+        $msg = t('The Solr server could not be reached. Further data is therefore unavailable.');
+      }
+      $info[] = array(
+        'label' => t('Connection'),
+        'info' => $msg,
+        'status' => $ping ? 'ok' : 'error',
+      );
+
+      if ($ping) {
+        try {
+          // If Solr can be reached, provide more information. This isn't done
+          // often (only when an admin views the server details), so we clear the
+          // cache to get the current data.
+          $this->connect();
+          $this->solr->clearCache();
+          $data = $this->solr->getLuke();
+          if (isset($data->index->numDocs)) {
+            // Collect the stats
+            $stats_summary = $this->solr->getStatsSummary();
+
+            $pending_msg = $stats_summary['@pending_docs'] ? t('(@pending_docs sent but not yet processed)', $stats_summary) : '';
+            $index_msg = $stats_summary['@index_size'] ? t('(@index_size on disk)', $stats_summary) : '';
+            $indexed_message = t('@num items !pending !index_msg', array(
+              '@num' => $data->index->numDocs,
+              '!pending' => $pending_msg,
+              '!index_msg' => $index_msg,
+            ));
+            $info[] = array(
+              'label' => t('Indexed'),
+              'info' => $indexed_message,
+            );
+
+            if (!empty($stats_summary['@deletes_total'])) {
+              $info[] = array(
+                'label' => t('Pending Deletions'),
+                'info' => $stats_summary['@deletes_total'],
+              );
+            }
+
+            $info[] = array(
+              'label' => t('Delay'),
+              'info' => t('@autocommit_time before updates are processed.', $stats_summary),
+            );
+
+            $status = 'ok';
+            if (substr($stats_summary['@schema_version'], 0, 10) == 'search-api') {
+              drupal_set_message(t('Your schema.xml version is too old. Please replace all configuration files with the ones packaged with this module and re-index you data.'), 'error');
+              $status = 'error';
+            }
+            elseif (substr($stats_summary['@schema_version'], 0, 9) != 'drupal-4.') {
+              $variables['@url'] = url(drupal_get_path('module', 'search_api_solr') . '/INSTALL.txt');
+              $message = t('You are using an incompatible schema.xml configuration file. Please follow the instructions in the <a href="@url">INSTALL.txt</a> file for setting up Solr.', $variables);
+              drupal_set_message($message, 'error');
+              $status = 'error';
+            }
+            $info[] = array(
+              'label' => t('Schema'),
+              'info' => $stats_summary['@schema_version'],
+              'status' => $status,
+            );
+
+            if (!empty($stats_summary['@core_name'])) {
+              $info[] = array(
+                'label' => t('Solr Core Name'),
+                'info' => $stats_summary['@core_name'],
+              );
+            }
+          }
+        }
+        catch (SearchApiException $e) {
+          $info[] = array(
+            'label' => t('Additional information'),
+            'info' => t('An error occurred while trying to retrieve additional information from the Solr server: @msg.', array('@msg' => $e->getMessage())),
+            'status' => 'error',
+          );
+        }
+      }
+    }
+
+    return $info;
   }
 
   /**
@@ -392,12 +480,12 @@ class SearchApiSolrService extends SearchApiAbstractService {
     $id = is_object($index) ? $index->machine_name : $index;
     // Only delete the index's data if the index isn't read-only.
     if (!is_object($index) || empty($index->read_only)) {
+      $this->connect();
       try {
-        $this->connect();
         $this->solr->deleteByQuery("index_id:" . $this->getIndexId($id));
       }
       catch (Exception $e) {
-        watchdog_exception('search_api_solr', $e, "%type while deleting an index's data: !message in %function (line %line of %file).");
+        throw new SearchApiException($e->getMessage());
       }
     }
   }
@@ -496,9 +584,10 @@ class SearchApiSolrService extends SearchApiAbstractService {
         }
 
         $inner_type = search_api_extract_inner_type($type);
-        $pref = isset(self::$type_prefixes[$inner_type]) ? self::$type_prefixes[$inner_type] : '';
-        if ($pref != 'tm') {
-          $pref .= $type == $inner_type ? 's' : 'm';
+        $type_info = search_api_solr_get_data_type_info($inner_type);
+        $pref = isset($type_info['prefix']) ? $type_info['prefix']: '';
+        if (empty($type_info['always multiValued'])) {
+          $pref .= ($type == $inner_type) ? 's' : 'm';
         }
         if (!empty($this->options['clean_ids'])) {
           $name = $pref . '_' . str_replace(':', '$', $key);
@@ -600,33 +689,28 @@ class SearchApiSolrService extends SearchApiAbstractService {
    * called in this fashion.
    */
   public function deleteItems($ids = 'all', SearchApiIndex $index = NULL) {
-    try {
-      $this->connect();
-      if ($index) {
-        $index_id = $this->getIndexId($index->machine_name);
-        if (is_array($ids)) {
-          $solr_ids = array();
-          foreach ($ids as $id) {
-            $solr_ids[] = $this->createId($index_id, $id);
-          }
-          $this->solr->deleteByMultipleIds($solr_ids);
+    $this->connect();
+    if ($index) {
+      $index_id = $this->getIndexId($index->machine_name);
+      if (is_array($ids)) {
+        $solr_ids = array();
+        foreach ($ids as $id) {
+          $solr_ids[] = $this->createId($index_id, $id);
         }
-        elseif ($ids == 'all') {
-          $this->solr->deleteByQuery("index_id:" . $index_id);
-        }
-        else {
-          $this->solr->deleteByQuery("index_id:" . $index_id . ' (' . $ids . ')');
-        }
+        $this->solr->deleteByMultipleIds($solr_ids);
+      }
+      elseif ($ids == 'all') {
+        $this->solr->deleteByQuery("index_id:" . $index_id);
       }
       else {
-        $q = $ids == 'all' ? '*:*' : $ids;
-        $this->solr->deleteByQuery($q);
+        $this->solr->deleteByQuery("index_id:" . $index_id . ' (' . $ids . ')');
       }
-      $this->scheduleCommit();
     }
-    catch(SearchApiException $e) {
-      watchdog_exception('search_api_solr', $e, '%type while deleting items from server @server: !message in %function (line %line of %file).', array('@server' => $this->server->name));
+    else {
+      $q = $ids == 'all' ? '*:*' : $ids;
+      $this->solr->deleteByQuery($q);
     }
+    $this->scheduleCommit();
   }
 
   /**
@@ -1264,7 +1348,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
     // #conjunction | #negation | return value
     // ----------------------------------------------------------------
     // AND          | FALSE     | A B C
-    // AND          | TRUE      | -(A B C)
+    // AND          | TRUE      | -(A AND B AND C)
     // OR           | FALSE     | ((A) OR (B) OR (C))
     // OR           | TRUE      | -A -B -C
 
@@ -1280,7 +1364,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
       }
       return '((' . implode(') OR (', $k) . '))';
     }
-    $k = implode(' ', $k);
+    $k = implode($neg ? ' AND ' : ' ', $k);
     return $neg ? "*:* AND -($k)" : $k;
   }
 
@@ -1896,7 +1980,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
             $terms = clone $terms;
             unset($terms->_empty_);
           }
-          $type = isset($index->options['fields'][$info['field']]['type']) ? search_api_extract_inner_type($index->options['fields'][$info['field']]['type']) : 'string';
+          $type = isset($fields[$info['field']]['type']) ? search_api_extract_inner_type($fields[$info['field']]['type']) : 'string';
           foreach ($terms as $term => $count) {
             if ($count >= $min_count) {
               if ($term === '_empty_') {
@@ -2061,8 +2145,10 @@ class SearchApiSolrService extends SearchApiAbstractService {
   /**
    * Prefixes an index ID as configured.
    *
-   * Prepends both a global and/or a per-index prefix to the index ID, if they
-   * are set.
+   * The resulting ID will be a concatenation of the following strings:
+   * - If set, the "search_api_solr_index_prefix" variable.
+   * - If set, the index-specific "search_api_solr_index_prefix_INDEX" variable.
+   * - The index's machine name.
    *
    * @param string $machine_name
    *   The index's machine name.
