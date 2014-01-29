@@ -2880,3 +2880,11 @@ height:400px;
 .qtywrapper {
 	display: inline-block;
 }
+
+/* Bottom Menu Links */
+
+.block-menu .block-title a:after {
+	font-family: fontAwesome;
+	padding-left: 5px;
+	content: "\F054\F054";
+}
