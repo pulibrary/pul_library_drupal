@@ -105,6 +105,31 @@ function hook_webform_submission_load(&$submissions) {
 }
 
 /**
+ * Respond to the creation of a new submission from form values.
+ *
+ * This hook is called when a user has completed a submission to initialize the
+ * submission object. After this object has its values populated, it will be
+ * saved by webform_submission_insert(). Note that this hook is only called for
+ * new submissions, not for submissions being edited. If responding to the
+ * saving of all submissions, it's recommended to use
+ * hook_webform_submission_presave().
+ *
+ * @param $submission
+ *   The submission object that has been created.
+ * @param $node
+ *   The Webform node for which this submission is being saved.
+ * @param $account
+ *   The user account that is creating the submission.
+ * @param $form_state
+ *   The contents of form state that is the basis for this submission.
+ *
+ * @see webform_submission_create()
+ */
+function hook_webform_submission_create($submission, $node, $account, $form_state) {
+  $submission->new_property = TRUE;
+}
+
+/**
  * Modify a Webform submission, prior to saving it in the database.
  *
  * @param $node
@@ -658,6 +683,50 @@ function _webform_attachments_component($component, $value) {
  */
 function hook_webform_node_defaults_alter(&$defaults) {
   $defaults['allow_draft'] = '1';
+}
+
+/**
+ * Add additional fields to submission data downloads.
+ *
+ * @return
+ *   Keys and titles for default submission information.
+ *
+ * @see hook_webform_results_download_submission_information_data()
+ */
+function hook_webform_results_download_submission_information_info() {
+  return array(
+    'field_key_1' => t('Field Title 1'),
+    'field_key_2' => t('Field Title 2'),
+  );
+}
+
+/**
+ * Return values for submission data download fields.
+ *
+ * @param $token
+ *   The name of the token being replaced.
+ * @param $submission
+ *   The data for an individual submission from webform_get_submissions().
+ * @param $options
+ *   A list of options that define the output format. These are generally passed
+ *   through from the GUI interface.
+ * @param $serial_start
+ *   The starting position for the Serial column in the output.
+ * @param $row_count
+ *   The number of the row being generated.
+ *
+ * @return
+ *   Value for requested submission information field.
+ *
+ * @see hook_webform_results_download_submission_information_info()
+ */
+function hook_webform_results_download_submission_information_data($token, $submission, array $options, $serial_start, $row_count) {
+  switch ($token) {
+    case 'field_key_1':
+      return 'Field Value 1';
+    case 'field_key_2':
+      return 'Field Value 2';
+  }
 }
 
 /**
