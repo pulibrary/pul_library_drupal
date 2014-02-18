@@ -74,8 +74,6 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
     $excluded_components = isset($email['excluded_components']) ? $email['excluded_components'] : array();
     $format = $sanitize ? 'html' : 'text';
 
-    $submission_renderable = webform_submission_render($node, $submission, $email, $format, $excluded_components);
-
     // Replace individual tokens that have an exact replacement.
     foreach ($tokens as $name => $original) {
       switch ($name) {
@@ -100,6 +98,7 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
           $replacements[$original] = url("node/{$node->nid}/submission/{$submission->sid}/edit", $url_options);
           break;
         case 'values':
+          $submission_renderable = webform_submission_render($node, $submission, $email, $format, $excluded_components);
           $replacements[$original] = drupal_render($submission_renderable);
           break;
       }
@@ -107,6 +106,10 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
 
     // Webform submission tokens for individual components.
     if ($value_tokens = token_find_with_prefix($tokens, 'values')) {
+      // Get the full submission renderable without $excluded_components so that
+      // individually referenced values are available.
+      $submission_renderable = webform_submission_render($node, $submission, $email, $format);
+
       foreach ($value_tokens as $name => $original) {
         foreach ($node->webform['components'] as $cid => $component) {
           // Build the list of parents for this component.
@@ -150,25 +153,25 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
                   break;
                 }
               }
-            }
-
-            if ($display_element) {
-              // Individual tokens always have access granted even if they're
-              // not displayed when printing the whole renderable.
-              $display_element['#access'] = TRUE;
-
-              if ($modifier === 'label') {
-                $replacements[$original] = webform_filter_xss($display_element['#title']);
-              }
-              else {
-                // Remove theme wrappers for the nolabel modifier.
-                if ($modifier === 'nolabel' || empty($modifier)) {
-                  $display_element['#theme_wrappers'] = array();
+              if ($display_element) {
+                // Individual tokens always have access granted even if they're
+                // not displayed when printing the whole renderable.
+                $display_element['#access'] = TRUE;
+  
+                if ($modifier === 'label') {
+                  $replacements[$original] = webform_filter_xss($display_element['#title']);
                 }
-                $replacements[$original] = render($display_element);
+                else {
+                  // Remove theme wrappers for the nolabel modifier.
+                  if ($modifier === 'nolabel' || empty($modifier)) {
+                    $display_element['#theme_wrappers'] = array();
+                  }
+                  $replacements[$original] = render($display_element);
+                }
+                break;
               }
-              break;
             }
+
           }
         }
 
