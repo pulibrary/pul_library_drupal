@@ -39,37 +39,6 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_cdl_acq_type'
-  $field_bases['field_cdl_acq_type'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_cdl_acq_type',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Books and Periodicals' => 'Books and Periodicals',
-        'Digital Materials' => 'Digital Materials',
-        'Rare Books and Manuscripts' => 'Rare Books and Manuscripts',
-        'Special Collections' => 'Special Collections',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_bibliographic_record'
   $field_bases['field_bibliographic_record'] = array(
     'active' => 1,
@@ -101,6 +70,37 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_cdl_acq_type'
+  $field_bases['field_cdl_acq_type'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_cdl_acq_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'Books and Periodicals' => 'Books and Periodicals',
+        'Digital Materials' => 'Digital Materials',
+        'Rare Books and Manuscripts' => 'Rare Books and Manuscripts',
+        'Special Collections' => 'Special Collections',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_description'
