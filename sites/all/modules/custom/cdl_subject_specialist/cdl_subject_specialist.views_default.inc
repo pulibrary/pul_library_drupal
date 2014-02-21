@@ -40,7 +40,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Content: Subject Area (field_subject_area) */
   $handler->display->display_options['sorts']['field_subject_area_value']['id'] = 'field_subject_area_value';
   $handler->display->display_options['sorts']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
   $handler->display->display_options['sorts']['field_subject_area_value']['field'] = 'field_subject_area_value';
@@ -133,14 +133,14 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Subject Area */
   $handler->display->display_options['fields']['field_subject_area']['id'] = 'field_subject_area';
   $handler->display->display_options['fields']['field_subject_area']['table'] = 'field_data_field_subject_area';
   $handler->display->display_options['fields']['field_subject_area']['field'] = 'field_subject_area';
   $handler->display->display_options['fields']['field_subject_area']['label'] = '';
   $handler->display->display_options['fields']['field_subject_area']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_subject_area']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Profile Image */
   $handler->display->display_options['fields']['field_profile_image']['id'] = 'field_profile_image';
   $handler->display->display_options['fields']['field_profile_image']['table'] = 'field_data_field_profile_image';
   $handler->display->display_options['fields']['field_profile_image']['field'] = 'field_profile_image';
@@ -154,19 +154,19 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Job Title */
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
-  /* Field: Broken/missing handler */
+  /* Field: Content: E-mail */
   $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
   $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
   $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Telephone */
   $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
   $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
   $handler->display->display_options['fields']['field_telephone']['field'] = 'field_telephone';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Last Name, First Name */
   $handler->display->display_options['fields']['field_last_name_first_name']['id'] = 'field_last_name_first_name';
   $handler->display->display_options['fields']['field_last_name_first_name']['table'] = 'field_data_field_last_name_first_name';
   $handler->display->display_options['fields']['field_last_name_first_name']['field'] = 'field_last_name_first_name';
@@ -174,11 +174,11 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_last_name_first_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_last_name_first_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Content: Subject Area (field_subject_area) */
   $handler->display->display_options['sorts']['field_subject_area_value']['id'] = 'field_subject_area_value';
   $handler->display->display_options['sorts']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
   $handler->display->display_options['sorts']['field_subject_area_value']['field'] = 'field_subject_area_value';
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Content: Last Name, First Name (field_last_name_first_name) */
   $handler->display->display_options['sorts']['field_last_name_first_name_value']['id'] = 'field_last_name_first_name_value';
   $handler->display->display_options['sorts']['field_last_name_first_name_value']['table'] = 'field_data_field_last_name_first_name';
   $handler->display->display_options['sorts']['field_last_name_first_name_value']['field'] = 'field_last_name_first_name_value';
@@ -212,7 +212,7 @@ function cdl_subject_specialist_views_default_views() {
     11 => 0,
     16 => 0,
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Last Name, First Name (field_last_name_first_name) */
   $handler->display->display_options['filters']['field_last_name_first_name_value']['id'] = 'field_last_name_first_name_value';
   $handler->display->display_options['filters']['field_last_name_first_name_value']['table'] = 'field_data_field_last_name_first_name';
   $handler->display->display_options['filters']['field_last_name_first_name_value']['field'] = 'field_last_name_first_name_value';
@@ -289,7 +289,7 @@ function cdl_subject_specialist_views_default_views() {
     11 => 0,
     16 => 0,
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Subject Area (field_subject_area) */
   $handler->display->display_options['filters']['field_subject_area_value']['id'] = 'field_subject_area_value';
   $handler->display->display_options['filters']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
   $handler->display->display_options['filters']['field_subject_area_value']['field'] = 'field_subject_area_value';
@@ -319,7 +319,7 @@ function cdl_subject_specialist_views_default_views() {
     11 => 0,
     16 => 0,
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Subject Specialties (field_subject_specialities) */
   $handler->display->display_options['filters']['field_subject_specialities_value']['id'] = 'field_subject_specialities_value';
   $handler->display->display_options['filters']['field_subject_specialities_value']['table'] = 'field_data_field_subject_specialities';
   $handler->display->display_options['filters']['field_subject_specialities_value']['field'] = 'field_subject_specialities_value';
