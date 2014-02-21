@@ -1,0 +1,11 @@
+name = CDL Pane Fragments
+description = CDL Pane Fragments
+core = 7.x
+package = CDL Features
+version = 7.x-1.0-dev
+project = cdl_pane_fragments
+dependencies[] = ctools
+dependencies[] = ctools_custom_content
+features[ctools][] = ctools_custom_content:ctools_content:1
+features[ctools_custom_content][] = cdl_new_acq_spotlight
+features[features_api][] = api:2
