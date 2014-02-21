@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Spotlight Content Types and Views feature.
+ */
+
+include_once 'spotlight_content_types_and_views.features.inc';
