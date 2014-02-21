@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CDL Layouts feature.
+ */
+
+include_once 'cdl_layouts.features.inc';
