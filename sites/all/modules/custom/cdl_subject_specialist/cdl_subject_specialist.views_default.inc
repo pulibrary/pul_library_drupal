@@ -188,7 +188,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -339,7 +339,7 @@ function cdl_subject_specialist_views_default_views() {
     11 => 0,
     16 => 0,
   );
-  $handler->display->display_options['path'] = 'subject-specialists';
+  $handler->display->display_options['path'] = 'collections/subject-specialists';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

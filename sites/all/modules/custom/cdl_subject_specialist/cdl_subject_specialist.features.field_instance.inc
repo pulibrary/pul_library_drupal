@@ -476,6 +476,66 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-subject_specialists-field_library_directory_profile'
+  $field_instances['node-subject_specialists-field_library_directory_profile'] = array(
+    'bundle' => 'subject_specialists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_library_directory_profile',
+    'label' => 'Library Directory Profile',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-subject_specialists-field_office_location'
   $field_instances['node-subject_specialists-field_office_location'] = array(
     'bundle' => 'subject_specialists',
@@ -576,19 +636,18 @@ function cdl_subject_specialist_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div',
     'field_name' => 'field_profile_image',
     'label' => 'Profile Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'profilepics',
+      'alt_field' => 0,
+      'default_image' => 96,
+      'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '100x100',
       'min_resolution' => '',
-      'title_field' => 1,
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -597,31 +656,16 @@ function cdl_subject_specialist_field_default_field_instances() {
       'settings' => array(
         'caption_from_title' => 1,
         'insert' => 0,
-        'insert_absolute' => 0,
+        'insert_absolute' => FALSE,
         'insert_class' => '',
-        'insert_default' => 'auto',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
         'insert_styles' => array(
-          'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
-          'icon_link' => 0,
-          'image' => 0,
-          'image_flexslider_full' => 0,
-          'image_large' => 0,
-          'image_library-news' => 0,
-          'image_medium' => 0,
-          'image_news-image' => 0,
-          'image_profile-photo' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
+          0 => 'auto',
         ),
         'insert_width' => '',
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'square_thumbnail',
         'progress_indicator' => 'bar',
       ),
       'type' => 'image_image',
@@ -697,6 +741,176 @@ function cdl_subject_specialist_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-subject_specialists-field_sel_library_department'
+  $field_instances['node-subject_specialists-field_sel_library_department'] = array(
+    'bundle' => 'subject_specialists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Departments for grouping selectors. CDL Manages. ',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 19,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_sel_library_department',
+    'label' => 'Selector Department',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-subject_specialists-field_sel_pul_library'
+  $field_instances['node-subject_specialists-field_sel_pul_library'] = array(
+    'bundle' => 'subject_specialists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Library selector is attached to. CDL Determines.',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 18,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_sel_pul_library',
+    'label' => 'Selector Library',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-subject_specialists-field_selector_subject_areas'
+  $field_instances['node-subject_specialists-field_selector_subject_areas'] = array(
+    'bundle' => 'subject_specialists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'General Area Selector Works in. Determined by CDL department. ',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_selector_subject_areas',
+    'label' => 'Selector Subject Areas',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 32,
     ),
   );
 
@@ -1005,13 +1219,20 @@ function cdl_subject_specialist_field_default_field_instances() {
   t('Collecting Policies');
   t('Collections Assistants');
   t('Department');
+  t('Departments for grouping selectors. CDL Manages. ');
   t('E-mail');
+  t('General Area Selector Works in. Determined by CDL department. ');
   t('Job Title');
   t('Last Name, First Name');
   t('Library');
+  t('Library Directory Profile');
+  t('Library selector is attached to. CDL Determines.');
   t('Office Location');
   t('Profile Image');
   t('Research Guides, Websites');
+  t('Selector Department');
+  t('Selector Library');
+  t('Selector Subject Areas');
   t('Subject Area');
   t('Subject Databases');
   t('Subject Specialties');

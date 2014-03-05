@@ -17,7 +17,7 @@ function cdl_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -1;
+  $handler->weight = -2;
   $handler->conf = array(
     'title' => 'Collection Development Landing Page',
     'no_blocks' => 1,
@@ -177,10 +177,10 @@ function cdl_layouts_default_page_manager_handlers() {
     $display->content['new-205996bb-27dd-4446-9d2b-5299fbbe4d7d'] = $pane;
     $display->panels['right'][1] = 'new-205996bb-27dd-4446-9d2b-5299fbbe4d7d';
     $pane = new stdClass();
-    $pane->pid = 'new-6520f680-ac1a-490d-9222-d7597b4f3d27';
+    $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
     $pane->panel = 'top';
     $pane->type = 'block';
-    $pane->subtype = 'nice_menus-1';
+    $pane->subtype = 'nice_menus-2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -195,9 +195,9 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '6520f680-ac1a-490d-9222-d7597b4f3d27';
-    $display->content['new-6520f680-ac1a-490d-9222-d7597b4f3d27'] = $pane;
-    $display->panels['top'][0] = 'new-6520f680-ac1a-490d-9222-d7597b4f3d27';
+    $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
+    $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
+    $display->panels['top'][0] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
     $pane = new stdClass();
     $pane->pid = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
     $pane->panel = 'top';
@@ -240,7 +240,7 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'tid' => '5031',
+        'tid' => '5028',
       ),
     );
     $pane->cache = array();

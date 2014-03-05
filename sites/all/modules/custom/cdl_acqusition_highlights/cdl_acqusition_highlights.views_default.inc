@@ -88,7 +88,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'thumbnail',
     'image_link' => '',
   );
   /* Field: Content: Bibliographic Record */
@@ -146,7 +146,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -183,7 +183,7 @@ function cdl_acqusition_highlights_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'acquisitions-highlights';
+  $handler->display->display_options['path'] = 'collections/acquisitions-highlights';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

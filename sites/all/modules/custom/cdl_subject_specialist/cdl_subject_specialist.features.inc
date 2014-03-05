@@ -26,7 +26,7 @@ function cdl_subject_specialist_views_api($module = NULL, $api = NULL) {
 function cdl_subject_specialist_node_info() {
   $items = array(
     'subject_specialists' => array(
-      'name' => t('Subject_Specialists'),
+      'name' => t('Subject Selector Profile'),
       'base' => 'node_content',
       'description' => t('Selectors, all departments'),
       'has_title' => '1',
