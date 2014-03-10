@@ -27,24 +27,63 @@ class ExpireAPI {
     // Allow other modules to modify the list prior to expiring.
     drupal_alter('expire_cache', $urls, $object_type, $object, $absolute_urls_passed);
 
-    // If was passed array with absolute URLs we should not do any job here.
+    // Nothing to expire, so exit.
+    if (empty($urls)) {
+      return;
+    }
+
+    // Check if base urls should be included.
+    $include_base_url = variable_get('expire_include_base_url', EXPIRE_INCLUDE_BASE_URL);
+
+    // Absolute urls may be passed from drush command or from rules action.
     if ($absolute_urls_passed) {
-      $wildcards = array();
-      $absolute_urls = $urls;
+
+      // If was passed array with absolute URLs, we need to add to them
+      // internal path first, because some external cache tools (like Varnish)
+      // works only with internal paths.
+      $urls = self::addInternalPaths($urls);
+
+      // If base url should not be include (for example, for Varnish or Acquia Purge),
+      // then remove it from values.
+      if (!$include_base_url) {
+        $urls = drupal_map_assoc(array_keys($urls));
+      }
+
+      // We not allow using wildcards for absolute urls.
+      $wildcards = array_fill_keys(array_keys($urls), FALSE);
     }
     else {
-      list($absolute_urls, $wildcards) = self::convertToAbsoluteUrls($urls);
+
+      // Define object languge. It will be used to define path aliases.
+      $language = NULL;
+      if (!empty($object_type) && !empty($object)) {
+        $language = entity_language($object_type, $object);
+      }
+
+      // Adds paths aliases, defines wildcards, etc.
+      list($urls, $wildcards) = self::processInternalPaths($urls, $language);
+
+      // If base site url should be included, then simply add it to the internal paths.
+      if ($include_base_url) {
+        foreach ($urls as $internal_path) {
+          $urls[$internal_path] = url($internal_path, array('absolute' => TRUE, 'alias' => TRUE));
+        }
+      }
     }
+
+    // Latest possibility to change urls that should be expired.
+    drupal_alter('expire_urls', $urls, $object_type, $object);
 
     // Write some debug information.
-    self::debugLog($absolute_urls, $wildcards, $object_type);
+    self::debugLog($urls, $wildcards, $object_type);
 
+    // Execute internal or external expiration.
     $status = variable_get('expire_status', EXPIRE_STATUS_DISABLED);
     if ($status == EXPIRE_STATUS_ENABLED_INTERNAL) {
-      self::executeInternalExpiration($absolute_urls, $wildcards);
+      self::executeInternalExpiration($urls, $wildcards);
     }
     elseif ($status == EXPIRE_STATUS_ENABLED_EXTERNAL) {
-      self::executeExternalExpiration($absolute_urls, $wildcards, $object_type, $object);
+      self::executeExternalExpiration($urls, $wildcards, $object_type, $object);
     }
   }
 
@@ -94,27 +133,34 @@ class ExpireAPI {
   }
 
   /**
-   * Find all taxonomy terms in node fields and build urls for them.
+   * Find all taxonomy terms in the entity fields and build urls for them.
    *
-   * @param $node
-   *   Node object.
+   * @param $entity
+   *   Entity object.
+   *
+   * @param $entity_type
+   *   Type of entity.
    *
    * @return array
    *   Term urls that should be flushed.
    */
-  public static function expireNodeTermPages($node) {
+  public static function expireTermPages($entity, $entity_type) {
 
     $terms = array();
-    $field_info = field_info_fields();
-    $field_instances = field_info_instances('node', $node->type);
+    list($id, $vid, $bundle_name) = entity_extract_ids($entity_type, $entity);
+    $field_instances = field_info_instances($entity_type, $bundle_name);
 
-    foreach ($field_instances as $name => $instance) {
-      if ($field_info[$name]['type'] == 'taxonomy_term_reference') {
-        $new_terms = field_get_items('node', $node, $name);
+    foreach ($field_instances as $field_name => $field_instance) {
+
+      // Load information about field.
+      $field_info = field_info_field($field_name);
+
+      if ($field_info['type'] == 'taxonomy_term_reference') {
+        $new_terms = field_get_items($entity_type, $entity, $field_name);
         if (is_array($new_terms) && !empty($new_terms)) {
           $terms = array_merge($new_terms, $terms);
         }
-        $old_terms = isset($node->original) && !empty($node->original) ? field_get_items('node', $node->original, $name) : array();
+        $old_terms = !empty($entity->original) ? field_get_items($entity_type, $entity->original, $field_name) : array();
         if (is_array($old_terms) && !empty($old_terms)) {
           $terms = array_merge($old_terms, $terms);
         }
@@ -130,36 +176,84 @@ class ExpireAPI {
   }
 
   /**
-   * Find all node references in node fields and build urls for them.
+   * Find all entity references in fields and build urls for them.
    *
-   * @param $node
-   *   Node object.
+   * @param $entity
+   *   Entity object.
+   *
+   * @param $entity_type
+   *   Type of entity.
    *
    * @return array
-   *   Node urls that should be flushed.
+   *   Entity references' urls that should be flushed.
    */
-  public static function expireNodeReferences($node) {
+  public static function expireReferences($entity, $entity_type) {
 
-    $references = array();
-    $field_info = field_info_fields();
-    $field_instances = field_info_instances('node', $node->type);
+    $field_references = array();
 
-    foreach ($field_instances as $name => $instance) {
-      if ($field_info[$name]['type'] == 'node_reference') {
-        $new_references = field_get_items('node', $node, $name);
-        if (is_array($new_references) && !empty($new_references)) {
-          $references = array_merge($new_references, $references);
+    list($id, $vid, $bundle_name) = entity_extract_ids($entity_type, $entity);
+
+    // Get all fields from current entity type.
+    $field_instances = field_info_instances($entity_type, $bundle_name);
+
+    foreach ($field_instances as $field_name => $field_instance) {
+
+      // Load information about field.
+      $field_info = field_info_field($field_name);
+
+      if (in_array($field_info['type'], array('node_reference', 'user_reference', 'entityreference'))) {
+
+        if (in_array($field_info['type'], array('node_reference', 'user_reference'))) {
+          $field_value_key = $field_info['type'] == 'node_reference' ? 'nid' : 'uid';
+          $field_entity_type = $field_info['type'] == 'node_reference' ? 'node' : 'user';
         }
-        $old_references = isset($node->original) && !empty($node->original) ? field_get_items('node', $node->original, $name) : array();
-        if (is_array($old_references) && !empty($old_references)) {
-          $references = array_merge($old_references, $references);
+        else {
+          $field_value_key = 'target_id';
+          $field_entity_type = $field_info['settings']['target_type'];
         }
+
+        // Get new values from reference field.
+        $new_references = field_get_items($entity_type, $entity, $field_name);
+
+        // Get old values from reference field.
+        $old_references = !empty($entity->original) ? field_get_items($entity_type, $entity->original, $field_name) : array();
+
+        $references = array();
+        if (!empty($new_references) && is_array($new_references)) {
+          $references = array_merge($references, $new_references);
+        }
+        if (!empty($old_references) && is_array($old_references)) {
+          $references = array_merge($references, $old_references);
+        }
+
+        foreach ($references as $reference) {
+          $field_entity_id = isset($reference[$field_value_key]) ? $reference[$field_value_key] : FALSE;
+          $field_references[$field_entity_type . $field_entity_id] = array(
+            'entity_type' => $field_entity_type,
+            'entity_id' => $field_entity_id,
+          );
+        }
+
       }
     }
 
+    // Collect urls of referenced entities.
     $urls = array();
-    foreach ($references as $reference) {
-      $urls['reference-' . $reference['nid']] = 'node/' . $reference['nid'];
+    foreach ($field_references as $field_reference) {
+
+      // Load entity.
+      $field_entity = entity_load_single($field_reference['entity_type'], $field_reference['entity_id']);
+      if (empty($field_entity)) {
+        continue;
+      }
+
+      // Get entity uri;
+      $field_entity_uri = entity_uri($field_reference['entity_type'], $field_entity);
+      if (empty($field_entity_uri['path'])) {
+        continue;
+      }
+
+      $urls['reference-' . $field_reference['entity_type'] . '-' . $field_reference['entity_id']] = $field_entity_uri['path'];
     }
 
     return $urls;
@@ -199,16 +293,43 @@ class ExpireAPI {
   }
 
   /**
-   * Convert internal path to absolute URLs.
+   * Add internal path as a keys to array with absolute urls.
+   *
+   * @param $absolute_urls
+   *   Array with absolute urls.
+   *
+   * @return array
+   *   Array, where key is internal path, and value - absolute url.
+   */
+  protected static function addInternalPaths($absolute_urls) {
+
+    $urls = array();
+    $base_path = url('<front>', array('absolute' => TRUE));
+    foreach ($absolute_urls as $absolute_url) {
+      if (strpos($absolute_url, $base_path) === 0) {
+        $internal_path = substr($absolute_url, strlen($base_path));
+        $urls[$internal_path] = $absolute_url;
+      }
+    }
+
+    return $urls;
+  }
+
+  /**
+   * Looks for aliases and wildcards in internal paths.
+   * If finds some - add to an array with expiration paths.
    *
    * @param $internal_paths
    *   Array of internal paths.
    *
+   * @param null $langcode
+   *   Language code of object that is expiring.
+   *
    * @return array
    */
-  protected static function convertToAbsoluteUrls($internal_paths) {
+  protected static function processInternalPaths($internal_paths, $langcode = NULL) {
 
-    $absolute_urls = array();
+    $urls = array();
     $wildcards = array();
 
     foreach ($internal_paths as $path) {
@@ -223,11 +344,19 @@ class ExpireAPI {
       }
 
       // Collect array with information about expired URLs and its wildcards.
-      $absolute_urls[$path] = url($path, array('absolute' => TRUE));
+      $urls[$path] = $path;
       $wildcards[$path] = $wildcard;
+
+      // Get the path alias for this path, and add it to the array if one was
+      // found.
+      $alias = drupal_get_path_alias($path, $langcode);
+      if ($alias != $path) {
+        $urls[$alias] = $alias;
+        $wildcards[$alias] = $wildcard;
+      }
     }
 
-    return array($absolute_urls, $wildcards);
+    return array($urls, $wildcards);
   }
 
   /**

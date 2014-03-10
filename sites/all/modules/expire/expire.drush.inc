@@ -82,7 +82,7 @@ function expire_drush_command() {
       'drush xp-comment 2 24 612' => 'Expire multiple comments by their IDs.',
     ),
     'aliases' => array('xp-comment'),
-    'drupal dependencies' => array('expire'),
+    'drupal dependencies' => array('expire', 'comment'),
     'callback' => 'drush_expire_comment'
   );
 

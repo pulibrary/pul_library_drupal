@@ -61,8 +61,6 @@ class ExpireFile implements ExpireInterface {
     }
 
     // Flush page cache for expired urls.
-    if (!empty($expire_urls)) {
-      ExpireAPI::executeExpiration($expire_urls, 'file', $file);
-    }
+    ExpireAPI::executeExpiration($expire_urls, 'file', $file);
   }
 }

@@ -9,14 +9,15 @@ files[] = includes/expire.api.inc
 files[] = includes/expire.comment.inc
 files[] = includes/expire.domain.inc
 files[] = includes/expire.interface.inc
+files[] = includes/expire.menu_link.inc
 files[] = includes/expire.node.inc
 files[] = includes/expire.user.inc
 files[] = includes/expire.votingapi.inc
 files[] = includes/expire.file.inc
 
-; Information added by drupal.org packaging script on 2013-07-01
-version = "7.x-2.0-beta2"
+; Information added by Drupal.org packaging script on 2014-02-20
+version = "7.x-2.0-rc2"
 core = "7.x"
 project = "expire"
-datestamp = "1372682163"
+datestamp = "1392904405"
 

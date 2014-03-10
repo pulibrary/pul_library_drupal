@@ -16,3 +16,10 @@ function expire_uninstall() {
 
   cache_clear_all('variables', 'cache_bootstrap');
 }
+
+/**
+ * Run updates to rebuild a registry.
+ */
+function expire_update_7201() {
+
+}
