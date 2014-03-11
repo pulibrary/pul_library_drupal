@@ -72,6 +72,196 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_background'
+  $field_instances['node-pul_landing_page-field_pul_landing_background'] = array(
+    'bundle' => 'pul_landing_page',
+    'deleted' => 0,
+    'description' => 'Background image for site header. ',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_pul_landing_background',
+    'label' => 'Background Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'caption_from_title' => 1,
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'colorbox__flexslider_full' => 0,
+          'colorbox__large' => 0,
+          'colorbox__library-news' => 0,
+          'colorbox__medium' => 0,
+          'colorbox__news-image' => 0,
+          'colorbox__profile-photo' => 0,
+          'colorbox__thumbnail' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_flexslider_full' => 0,
+          'image_large' => 0,
+          'image_library-news' => 0,
+          'image_medium' => 0,
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_logo'
+  $field_instances['node-pul_landing_page-field_pul_landing_logo'] = array(
+    'bundle' => 'pul_landing_page',
+    'deleted' => 0,
+    'description' => 'Departmental/Unit Graphic. Will be shown in place of department title if present.',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_pul_landing_logo',
+    'label' => 'Logo Graphic',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => 'logos',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'caption_from_title' => 1,
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'colorbox__flexslider_full' => 0,
+          'colorbox__large' => 0,
+          'colorbox__library-news' => 0,
+          'colorbox__medium' => 0,
+          'colorbox__news-image' => 0,
+          'colorbox__profile-photo' => 0,
+          'colorbox__thumbnail' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_flexslider_full' => 0,
+          'image_large' => 0,
+          'image_library-news' => 0,
+          'image_medium' => 0,
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'node-pul_landing_page-field_pul_landing_page_title'
   $field_instances['node-pul_landing_page-field_pul_landing_page_title'] = array(
     'bundle' => 'pul_landing_page',
@@ -417,9 +607,13 @@ function spotlight_content_types_and_views_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Background Image');
+  t('Background image for site header. ');
   t('Body');
+  t('Departmental/Unit Graphic. Will be shown in place of department title if present.');
   t('Image');
   t('Landing Page Title');
+  t('Logo Graphic');
   t('Tags');
   t('URL');
 
