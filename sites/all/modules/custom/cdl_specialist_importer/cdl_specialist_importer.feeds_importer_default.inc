@@ -73,52 +73,125 @@ function cdl_specialist_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           6 => array(
-            'source' => 'Job Title',
-            'target' => 'field_job_title',
-            'unique' => FALSE,
-          ),
-          7 => array(
             'source' => 'Last Name, First Name',
             'target' => 'field_last_name_first_name',
             'unique' => FALSE,
           ),
-          8 => array(
+          7 => array(
             'source' => 'Subject Area',
             'target' => 'field_subject_area',
             'unique' => FALSE,
           ),
-          9 => array(
+          8 => array(
             'source' => 'Subject Specialities',
             'target' => 'field_subject_specialities',
             'unique' => FALSE,
           ),
-          10 => array(
+          9 => array(
             'source' => 'Office Location',
             'target' => 'field_office_location',
             'unique' => FALSE,
           ),
-          11 => array(
+          10 => array(
             'source' => 'Library',
             'target' => 'field_library',
             'unique' => FALSE,
           ),
-          12 => array(
+          11 => array(
             'source' => 'Telephone',
             'target' => 'field_telephone',
             'unique' => FALSE,
           ),
+          12 => array(
+            'source' => 'First Name',
+            'target' => 'field_sel_first_name',
+            'unique' => FALSE,
+          ),
           13 => array(
-            'source' => 'Profile Image',
-            'target' => 'field_profile_image',
+            'source' => 'Last Name',
+            'target' => 'field_sel_last_name',
             'unique' => FALSE,
           ),
           14 => array(
             'source' => 'Title',
+            'target' => 'field_job_title',
+            'unique' => FALSE,
+          ),
+          15 => array(
+            'source' => 'Telephone',
+            'target' => 'field_telephone',
+            'unique' => FALSE,
+          ),
+          16 => array(
+            'source' => 'Url',
+            'target' => 'url',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Office Directions',
+            'target' => 'field_sel_office_directions',
+            'unique' => FALSE,
+          ),
+          18 => array(
+            'source' => 'SUBJECT SPECIALTY 01',
+            'target' => 'field_selector_subject_areas',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          19 => array(
+            'source' => 'SUBJECT SPECIALTY 02',
+            'target' => 'field_selector_subject_areas',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          20 => array(
+            'source' => 'SUBJECT SPECIALTY 03',
+            'target' => 'field_selector_subject_areas',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          21 => array(
+            'source' => 'SUBJECT SPECIALTY 04',
+            'target' => 'field_selector_subject_areas',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          22 => array(
+            'source' => 'Departments & Programs Served 01',
+            'target' => 'field_sel_library_department',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          23 => array(
+            'source' => 'Departments & Programs Served 02',
+            'target' => 'field_sel_library_department',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          24 => array(
+            'source' => 'Departments & Programs Served 03',
+            'target' => 'field_sel_library_department',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          25 => array(
+            'source' => 'Departments & Programs Served 04',
+            'target' => 'field_sel_library_department',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          26 => array(
+            'source' => 'Display Name',
             'target' => 'title',
             'unique' => FALSE,
           ),
+          27 => array(
+            'source' => 'NetID',
+            'target' => 'field_library_directory_profile:label',
+            'unique' => FALSE,
+          ),
         ),
-        'update_existing' => '0',
+        'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'subject_specialists',
@@ -126,10 +199,10 @@ function cdl_specialist_importer_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => 1800,
+    'import_period' => '-1',
     'expire_period' => 3600,
-    'import_on_create' => TRUE,
-    'process_in_background' => FALSE,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
   );
   $export['cdl_specialist_import'] = $feeds_importer;
 
