@@ -83,10 +83,17 @@ class ExpireComment implements ExpireInterface {
       $expire_urls = array_merge($expire_urls, $urls);
     }
 
+    // Expire comment's references.
+    $expire_references = variable_get('expire_comment_reference_pages' . $variable_suffix, EXPIRE_COMMENT_REFERENCE_PAGES);
+    if ((module_exists('node_reference') || module_exists('user_reference') || module_exists('entityreference')) && $expire_references) {
+      $urls = ExpireAPI::expireReferences($comment, 'comment');
+      $expire_urls = array_merge($expire_urls, $urls);
+    }
+
     // Expire comment's node references.
     $expire_node_references = variable_get('expire_comment_node_reference_pages' . $variable_suffix, EXPIRE_COMMENT_NODE_REFERENCE_PAGES);
-    if (module_exists('node_reference') && $expire_node_references) {
-      $urls = ExpireAPI::expireNodeReferences($node);
+    if ((module_exists('node_reference') || module_exists('user_reference') || module_exists('entityreference')) && $expire_node_references) {
+      $urls = ExpireAPI::expireReferences($node, 'node');
       $expire_urls = array_merge($expire_urls, $urls);
     }
 
@@ -99,10 +106,9 @@ class ExpireComment implements ExpireInterface {
     }
 
     // Flush page cache for expired urls.
-    if (!empty($expire_urls)) {
-      ExpireAPI::executeExpiration($expire_urls, 'comment', $comment);
-    }
+    ExpireAPI::executeExpiration($expire_urls, 'comment', $comment);
 
+    // Mark cache flushed as true, to avoid duplicate cache flushes in some cases.
     $cache_flushed = TRUE;
   }
 

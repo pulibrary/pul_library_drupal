@@ -98,9 +98,7 @@ class ExpireVotingapi implements ExpireInterface {
     }
 
     // Flush page cache for expired urls.
-    if (!empty($expire_urls)) {
-      ExpireAPI::executeExpiration($expire_urls, 'votingapi', $votes);
-    }
+    ExpireAPI::executeExpiration($expire_urls, 'votingapi', $votes);
 
     $cache_flushed = TRUE;
   }

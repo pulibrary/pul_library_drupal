@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Specialist Importer feature.
+ */
+
+include_once 'cdl_specialist_importer.features.inc';

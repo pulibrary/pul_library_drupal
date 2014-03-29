@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CDL Acqusition Highlights feature.
+ */
+
+include_once 'cdl_acqusition_highlights.features.inc';
