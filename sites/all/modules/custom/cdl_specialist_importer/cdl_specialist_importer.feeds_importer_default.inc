@@ -123,71 +123,71 @@ function cdl_specialist_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           16 => array(
-            'source' => 'Url',
-            'target' => 'url',
-            'unique' => FALSE,
-          ),
-          17 => array(
             'source' => 'Office Directions',
             'target' => 'field_sel_office_directions',
             'unique' => FALSE,
           ),
-          18 => array(
+          17 => array(
             'source' => 'SUBJECT SPECIALTY 01',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          19 => array(
+          18 => array(
             'source' => 'SUBJECT SPECIALTY 02',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          20 => array(
+          19 => array(
             'source' => 'SUBJECT SPECIALTY 03',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          21 => array(
+          20 => array(
             'source' => 'SUBJECT SPECIALTY 04',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          22 => array(
+          21 => array(
             'source' => 'Departments & Programs Served 01',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          23 => array(
+          22 => array(
             'source' => 'Departments & Programs Served 02',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          24 => array(
+          23 => array(
             'source' => 'Departments & Programs Served 03',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          25 => array(
+          24 => array(
             'source' => 'Departments & Programs Served 04',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
             'autocreate' => 1,
           ),
-          26 => array(
+          25 => array(
             'source' => 'Display Name',
             'target' => 'title',
             'unique' => FALSE,
           ),
-          27 => array(
+          26 => array(
             'source' => 'NetID',
             'target' => 'field_library_directory_profile:label',
+            'unique' => FALSE,
+          ),
+          27 => array(
+            'source' => 'Url',
+            'target' => 'field_research_guides_websites:url',
             'unique' => FALSE,
           ),
         ),
