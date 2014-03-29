@@ -33,6 +33,11 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '60';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['id'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['table'] = 'field_data_field_library_directory_profile';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['field'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -133,6 +138,15 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo';
   /* Field: Content: Subject Area */
   $handler->display->display_options['fields']['field_subject_area']['id'] = 'field_subject_area';
   $handler->display->display_options['fields']['field_subject_area']['table'] = 'field_data_field_subject_area';
@@ -158,14 +172,23 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
-  /* Field: Content: E-mail */
-  $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
-  $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
-  $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
-  /* Field: Content: Telephone */
-  $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
-  $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
-  $handler->display->display_options['fields']['field_telephone']['field'] = 'field_telephone';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Field: User: Phone Number */
+  $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_phone_number']['field_api_classes'] = TRUE;
   /* Field: Content: Last Name, First Name */
   $handler->display->display_options['fields']['field_last_name_first_name']['id'] = 'field_last_name_first_name';
   $handler->display->display_options['fields']['field_last_name_first_name']['table'] = 'field_data_field_last_name_first_name';
@@ -173,15 +196,22 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_last_name_first_name']['label'] = '';
   $handler->display->display_options['fields']['field_last_name_first_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_last_name_first_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Last Name */
+  $handler->display->display_options['fields']['field_sel_last_name']['id'] = 'field_sel_last_name';
+  $handler->display->display_options['fields']['field_sel_last_name']['table'] = 'field_data_field_sel_last_name';
+  $handler->display->display_options['fields']['field_sel_last_name']['field'] = 'field_sel_last_name';
+  $handler->display->display_options['fields']['field_sel_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_sel_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sel_last_name']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_sel_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_last_name']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_sel_last_name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_last_name']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Subject Area (field_subject_area) */
-  $handler->display->display_options['sorts']['field_subject_area_value']['id'] = 'field_subject_area_value';
-  $handler->display->display_options['sorts']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
-  $handler->display->display_options['sorts']['field_subject_area_value']['field'] = 'field_subject_area_value';
-  /* Sort criterion: Content: Last Name, First Name (field_last_name_first_name) */
-  $handler->display->display_options['sorts']['field_last_name_first_name_value']['id'] = 'field_last_name_first_name_value';
-  $handler->display->display_options['sorts']['field_last_name_first_name_value']['table'] = 'field_data_field_last_name_first_name';
-  $handler->display->display_options['sorts']['field_last_name_first_name_value']['field'] = 'field_last_name_first_name_value';
+  /* Sort criterion: Content: Last Name (field_sel_last_name) */
+  $handler->display->display_options['sorts']['field_sel_last_name_value']['id'] = 'field_sel_last_name_value';
+  $handler->display->display_options['sorts']['field_sel_last_name_value']['table'] = 'field_data_field_sel_last_name';
+  $handler->display->display_options['sorts']['field_sel_last_name_value']['field'] = 'field_sel_last_name_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -204,133 +234,6 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    26 => 0,
-    21 => 0,
-    31 => 0,
-    11 => 0,
-    16 => 0,
-  );
-  /* Filter criterion: Content: Last Name, First Name (field_last_name_first_name) */
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['id'] = 'field_last_name_first_name_value';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['table'] = 'field_data_field_last_name_first_name';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['field'] = 'field_last_name_first_name_value';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['value'] = array(
-    'all' => 'all',
-    'Acosta-Rodriguez, Fernando' => 'Acosta-Rodriguez, Fernando',
-    'Baruzzi, Andrea' => 'Baruzzi, Andrea',
-    'Belcher, Emily' => 'Belcher, Emily',
-    'Bennett, Elizabeth' => 'Bennett, Elizabeth',
-    'Bennett, Hannah' => 'Bennett, Hannah',
-    'Bielawski, Marvin' => 'Bielawski, Marvin',
-    'Bivens-Tatum, Wayne' => 'Bivens-Tatum, Wayne',
-    'Bordelon, Bobray' => 'Bordelon, Bobray',
-    'Broch, Elana' => 'Broch, Elana',
-    'Brooke, Sandra' => 'Brooke, Sandra',
-    'Darrington, Jeremy' => 'Darrington, Jeremy',
-    'Dawes, Trevor' => 'Dawes, Trevor',
-    'Deis, Louise' => 'Deis, Louise',
-    'Delaney, John' => 'Delaney, John',
-    'Donatiello, Joann' => 'Donatiello, Joann',
-    'Dressel, Willow' => 'Dressel, Willow',
-    'Emanuel, Tracie' => 'Emanuel, Tracie',
-    'Fabricand-Person, Nicole' => 'Fabricand-Person, Nicole',
-    'Farrell, Katharine' => 'Farrell, Katharine',
-    'Ferguson, Stephen' => 'Ferguson, Stephen',
-    'Friedman, Rebecca' => 'Friedman, Rebecca',
-    'Gaspari-Bridges, Patty' => 'Gaspari-Bridges, Patty',
-    'George, Mary' => 'George, Mary',
-    'Hatfield, Rex' => 'Hatfield, Rex',
-    'Hausman, Gary' => 'Hausman, Gary',
-    'Heijdra, Martin' => 'Heijdra, Martin',
-    'Hines, Todd' => 'Hines, Todd',
-    'Hollander, David' => 'Hollander, David',
-    'Holmquist, Jane' => 'Holmquist, Jane',
-    'Immel, Andrea' => 'Immel, Andrea',
-    'Jenkins, David' => 'Jenkins, David',
-    'Langley, Anne' => 'Langley, Anne',
-    'Lee, Hyoungbae' => 'Lee, Hyoungbae',
-    'Linke, Daniel' => 'Linke, Daniel',
-    'Logan, John' => 'Logan, John',
-    'Magier, David' => 'Magier, David',
-    'Makino, Yasuko' => 'Makino, Yasuko',
-    'Melby, Julie' => 'Melby, Julie',
-    'Nero, Neil' => 'Nero, Neil',
-    'Noguchi, Setsuko' => 'Noguchi, Setsuko',
-    'Oppenheim, Linda' => 'Oppenheim, Linda',
-    'Popescu, Adriana' => 'Popescu, Adriana',
-    'Pressman Levy, Nancy' => 'Pressman Levy, Nancy',
-    'Primer, Ben' => 'Primer, Ben',
-    'Rosenstock, Sandra' => 'Rosenstock, Sandra',
-    'Scott, Darwin' => 'Scott, Darwin',
-    'Shawa, Tsering Wangyal' => 'Shawa, Tsering Wangyal',
-    'Skemer, Don' => 'Skemer, Don',
-    'Stahl, Alan' => 'Stahl, Alan',
-    'Swift, Gabriel' => 'Swift, Gabriel',
-    'Trainer, Karin' => 'Trainer, Karin',
-    'Weinberger, James' => 'Weinberger, James',
-    'White, Susan Bennett' => 'White, Susan Bennett',
-    'Wishart, Kimberly' => 'Wishart, Kimberly',
-  );
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['operator_id'] = 'field_last_name_first_name_value_op';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['label'] = 'Our Specialists';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['operator'] = 'field_last_name_first_name_value_op';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['identifier'] = 'field_last_name_first_name_value';
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_last_name_first_name_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    26 => 0,
-    21 => 0,
-    31 => 0,
-    11 => 0,
-    16 => 0,
-  );
-  /* Filter criterion: Content: Subject Area (field_subject_area) */
-  $handler->display->display_options['filters']['field_subject_area_value']['id'] = 'field_subject_area_value';
-  $handler->display->display_options['filters']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
-  $handler->display->display_options['filters']['field_subject_area_value']['field'] = 'field_subject_area_value';
-  $handler->display->display_options['filters']['field_subject_area_value']['value'] = array(
-    'all' => 'all',
-    'Area Studies' => 'Area Studies',
-    'Arts' => 'Arts',
-    'Engineering' => 'Engineering',
-    'General' => 'General',
-    'Humanities and Social Sciences' => 'Humanities and Social Sciences',
-    'Rare Books and Special Collections' => 'Rare Books and Special Collections',
-    'Sciences' => 'Sciences',
-  );
-  $handler->display->display_options['filters']['field_subject_area_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_subject_area_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['operator_id'] = 'field_subject_area_value_op';
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['label'] = 'General Area';
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['operator'] = 'field_subject_area_value_op';
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['identifier'] = 'field_subject_area_value';
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_subject_area_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    26 => 0,
-    21 => 0,
-    31 => 0,
-    11 => 0,
-    16 => 0,
-  );
-  /* Filter criterion: Content: Subject Specialties (field_subject_specialities) */
-  $handler->display->display_options['filters']['field_subject_specialities_value']['id'] = 'field_subject_specialities_value';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['table'] = 'field_data_field_subject_specialities';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['field'] = 'field_subject_specialities_value';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['operator'] = 'word';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_subject_specialities_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_subject_specialities_value']['expose']['operator_id'] = 'field_subject_specialities_value_op';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['expose']['label'] = 'What subject are you researching?';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['expose']['operator'] = 'field_subject_specialities_value_op';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['expose']['identifier'] = 'field_subject_specialities_value';
-  $handler->display->display_options['filters']['field_subject_specialities_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     26 => 0,
