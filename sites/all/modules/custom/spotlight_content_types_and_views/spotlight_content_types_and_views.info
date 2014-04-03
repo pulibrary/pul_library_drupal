@@ -55,6 +55,7 @@ features[variable][] = node_preview_pul_landing_page
 features[variable][] = node_preview_pul_spotlight_graphic
 features[variable][] = node_submitted_pul_landing_page
 features[variable][] = node_submitted_pul_spotlight_graphic
+features[variable][] = pathauto_node_pul_spotlight_graphic_pattern
 features[views_view][] = news_spotlights_by_category
 features[views_view][] = spotlight_graphics
 features_exclude[dependencies][ctools] = ctools
