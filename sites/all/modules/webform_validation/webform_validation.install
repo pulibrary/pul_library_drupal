@@ -58,6 +58,13 @@ function webform_validation_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'weight' => array(
+        'description' => 'Weight of the rule order.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => FALSE,
+        'default' => 0,
+      ),
     ),
     'primary key' => array('ruleid'),
     'indexes' => array(
@@ -104,15 +111,14 @@ function webform_validation_update_1() {
     $range = $row->data;
     $range = _webform_validation_update_range_syntax($range);
     db_update('webform_validation_rule')
-    ->fields(array(
-      'data' => $range,
-    ))
-    ->condition('ruleid', $row->ruleid, '=')
-    ->execute();
+      ->fields(array(
+        'data' => $range,
+      ))
+      ->condition('ruleid', $row->ruleid, '=')
+      ->execute();
   }
   if ($has_numeric_validator) {
-    $warning_message = t('The numeric validation rule range syntax has changed with this release. Existing numeric validation rules were found and updated. Please verify that they still work as expected!');
-    drupal_set_message($warning_message, 'warning');
+    drupal_set_message(t('The numeric validation rule range syntax has changed with this release. Existing numeric validation rules were found and updated. Please verify that they still work as expected!'), 'warning');
   }
   return $ret;
 }
@@ -176,4 +182,31 @@ function webform_validation_update_7101() {
         ->execute();
     }
   }
+}
+
+/**
+ * Rename oneoftwo and oneofseveral to someofseveral and default data to 1.
+ */
+function webform_validation_update_7104() {
+  db_update('webform_validation_rule')
+    ->fields(array(
+      'validator' => 'someofseveral',
+      'data' => 1,
+    ))
+    ->condition('validator', array('oneoftwo', 'oneofseveral'), 'IN')
+    ->execute();
+}
+
+/**
+ * Add a weight field to webform_validation rules, so they can be sorted.
+ */
+function webform_validation_update_7105() {
+  $spec = array(
+    'description' => 'Weight of the rule order.',
+    'type' => 'int',
+    'not null' => TRUE,
+    'unsigned' => FALSE,
+    'default' => 0,
+  );
+  db_add_field('webform_validation_rule', 'weight', $spec);
 }

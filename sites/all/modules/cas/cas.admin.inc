@@ -310,11 +310,13 @@ function cas_admin_settings() {
       ),
     ),
   );
+
   $form['advanced']['cas_proxy_settings']['cas_pgtformat'] = array(
     '#type' => 'radios',
     '#title' => t('CAS PGT storage file format'),
     '#default_value' => variable_get('cas_pgtformat', 'plain'),
     '#options' => array('plain' => t('Plain Text'), 'xml' => t('XML')),
+    '#after_build' => array('cas_pgtformat_version_check'),
   );
 
   $form['advanced']['cas_proxy_settings']['cas_pgtpath'] = array(
@@ -323,6 +325,14 @@ function cas_admin_settings() {
     '#default_value' => variable_get('cas_pgtpath', ''),
     '#maxlength' => 255,
     '#description' => t("Only needed if 'Use CAS proxy initializer' is configured. Leave empty for default."),
+  );
+
+  $form['advanced']['cas_proxy_list'] = array(
+    '#type' => 'textarea',
+    '#title' => t('CAS proxy list'),
+    '#description' => t("If CAS client could be proxied, indicate each proxy server absolute url per line. If not provided, phpCAS will exclude by default all tickets provided by proxy. Each proxy server url could be a plain url or a regular expression. IMPORTANT : regular expression delimiter must be a slash. For example : https://proxy.example.com/ AND/OR regular expression : /^https:\/\/app[0-9]\.example\.com\/rest\//."),
+    '#default_value' => variable_get('cas_proxy_list', ''),
+    '#after_build' => array('cas_proxy_list_version_check'),
   );
 
   $form['advanced']['cas_debugfile'] = array(
@@ -356,6 +366,27 @@ function cas_library_version_check($element, &$form_state) {
   }
   else {
     $element['#suffix'] = '<div class="error messages">' . t('The phpCAS library was not found or could not be loaded.') . '</div>';
+  }
+  return $element;
+}
+
+/**
+ * Proxy chain object only exists with phpCAS version >= 1.3. As phpCAS CAS.php
+ * is include only after building element 'cas_library_dir', we must check it after it.
+ */
+function cas_proxy_list_version_check($element, &$form_state) {
+  if (!defined('PHPCAS_VERSION') || version_compare(PHPCAS_VERSION, '1.3', '<')) {
+    $element['#access'] = FALSE;
+  }
+  return $element;
+}
+
+/**
+ * Since 1.3, pgt format isn't supported and default to plain.
+ */
+function cas_pgtformat_version_check($element, &$form_state) {
+  if (!defined('PHPCAS_VERSION') || version_compare(PHPCAS_VERSION, '1.3', '>')) {
+    $element['#access'] = FALSE;
   }
   return $element;
 }

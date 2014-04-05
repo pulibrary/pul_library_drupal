@@ -238,5 +238,12 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_pul_spotlight_graphic'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pul_spotlight_graphic_pattern';
+  $strongarm->value = 'spotlights/[node:nid]';
+  $export['pathauto_node_pul_spotlight_graphic_pattern'] = $strongarm;
+
   return $export;
 }

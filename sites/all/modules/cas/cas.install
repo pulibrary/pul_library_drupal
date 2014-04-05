@@ -99,6 +99,7 @@ function cas_uninstall() {
   variable_del('cas_pgtpath');
   variable_del('cas_port');
   variable_del('cas_proxy');
+  variable_del('cas_proxy_list');
   variable_del('cas_registerURL');
   variable_del('cas_server');
   variable_del('cas_uri');

@@ -10,9 +10,12 @@
  */
 function webform_validation_manage($node) {
   $rules = webform_validation_get_webform_rules($node);
-  $output = '';
-  $output .= theme('webform_validation_manage_overview', array('rules' => $rules, 'node' => $node));
-  $output .= theme('webform_validation_manage_add_rule', array('nid' => $node->nid));
+  $output = array();
+  $output['webform_validation_manage_overview_form'] = drupal_get_form('webform_validation_manage_overview_form', $rules, $node);
+  $output['webform_validation_manage_add_rule'] = array(
+    '#theme' => 'webform_validation_manage_add_rule',
+    '#nid' => $node->nid,
+  );
   return $output;
 }
 
@@ -27,48 +30,126 @@ function webform_validation_get_webform_rules($node) {
   return $rules;
 }
 
-/**
- * Themable function to list the rules assigned to a webform
- */
-function theme_webform_validation_manage_overview($variables) {
-  $rules = $variables['rules'];
-  $node = $variables['node'];
 
-  $header = array(t('Rule name'), t('Validator'), t('Components'), array(
-      'data' => t('Operations'),
-      'colspan' => 2,
-    ));
-  $validators = webform_validation_get_validators_selection();
-  if (!empty($rules)) {
-    foreach ($rules as $rule) {
-      $component_info = webform_validation_rule_components_basic($rule['components']);
-      $row = array();
+/**
+ * Themable function to list and re-order the rules assigned to a webform
+ */
+function theme_webform_validation_manage_overview_form($variables) {
+  $form = $variables['form'];
+  $header = array(t('Rule name'), t('Validator'), t('Components'), t('Weight'), array(
+    'data' => t('Operations'),
+    'colspan' => 2,
+  ));
+
+  $rows = array();
+  foreach (element_children($form) as $rule) {
+    $row = array();
+    foreach (element_children($form[$rule]) as $item) {
+      //unset the titles of the form elements, since we are displaying them in a table with a header.
+      unset($form[$rule][$item]['#title']);
+      //add a class to the weight field
+      $form[$rule]['weight']['#attributes']['class'] = array('ruleid-weight');
       $row[] = array(
-        'data' => check_plain($rule['rulename']),
+        'data' => drupal_render($form[$rule][$item]),
       );
-      $row[] = array(
-        'data' => $validators[$rule['validator']],
+    }
+    if (count($row) > 1) {
+      $rows[] = array(
+        'data' => $row,
+        'class' => array('draggable'),
       );
-      $row[] = array(
-        'data' => theme('item_list', array('items' => $component_info)),
-      );
-      $row[] = array(
-        'data' => l(t('Edit'), 'node/' . $node->nid . '/webform/validation/edit/' . $rule['validator'] . '/' . $rule['ruleid'], array("query" => drupal_get_destination())),
-      );
-      $row[] = array(
-        'data' => l(t('Delete'), 'node/' . $node->nid . '/webform/validation/delete/' . $rule['ruleid'], array("query" => drupal_get_destination())),
-      );
-      $rows[] = $row;
+    }
+    // Hide any fieldsets, since we are displaying the form in a table.
+    if (isset($form[$rule]['#type']) && $form[$rule]['#type'] === 'fieldset') {
+      hide($form[$rule]);
     }
   }
-  else {
+  $drag = TRUE;
+  if (!$rows) {
+    $drag = FALSE;
     $rows[][] = array(
       'data' => t('No validation rules available.'),
       'colspan' => 5,
     );
   }
+  $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'webform-validation-overview-form')));
+  $output .= drupal_render_children($form);
+  if ($drag) {
+    drupal_add_tabledrag('webform-validation-overview-form', 'order', 'sibling', 'ruleid-weight');
+  }
+  return $output;
+}
 
-  return theme('table', array('header' => $header, 'rows' => $rows));
+/**
+ * Form to list and reorder the rules assigned to a webform
+ */
+function webform_validation_manage_overview_form($form, &$form_state, $rules, $node) {
+  $form = array();
+  $form['#tree'] = TRUE;
+  $validators = webform_validation_get_validators_selection();
+
+  foreach ($rules as $rule) {
+    $component_info = webform_validation_rule_components_basic($rule['components']);
+    $form[$rule['ruleid']] = array(
+      '#type' => 'fieldset',
+    );
+    $form[$rule['ruleid']]['name'] = array(
+      '#type' => 'item',
+      '#title' => t('Name'),
+      '#markup' => check_plain($rule['rulename']),
+    );
+    $form[$rule['ruleid']]['validator'] = array(
+      '#type' => 'item',
+      '#title' => t('Validator'),
+      '#markup' => $validators[$rule['validator']],
+    );
+    $form[$rule['ruleid']]['components'] = array(
+      '#type' => 'item',
+      '#title' => t('Components'),
+      '#markup' => theme('item_list', array('items' => $component_info)),
+    );
+    $form[$rule['ruleid']]['weight'] = array(
+      '#type' => 'weight',
+      '#title' => t('Weight'),
+      '#default_value' => $rule['weight'],
+      '#description' => t('Optional. By changing the order of validation rules, you can use code that relies on earlier validation functions being completed.'),
+    );
+    $form[$rule['ruleid']]['actions'] = array('#type' => 'actions');
+    $form[$rule['ruleid']]['actions']['edit'] = array(
+      '#type' => 'item',
+      '#markup' => l(t('Edit'), 'node/' . $node->nid . '/webform/validation/edit/' . $rule['validator'] . '/' . $rule['ruleid'], array("query" => drupal_get_destination())),
+    );
+    $form[$rule['ruleid']]['actions']['delete'] = array(
+      '#type' => 'item',
+      '#markup' => l(t('Delete'), 'node/' . $node->nid . '/webform/validation/delete/' . $rule['ruleid'], array("query" => drupal_get_destination())),
+    );
+  }
+  if (count($rules) > 1) {
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save rule order'),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Submit function for rule overview form.
+ */
+function webform_validation_manage_overview_form_submit($form, $form_state) {
+  //Save the rule weights.
+  foreach ($form_state['values'] as $ruleid => $value) {
+    if (is_numeric($ruleid)) {
+      $update = db_update('webform_validation_rule')
+        ->fields(array(
+          'weight' => $value['weight'],
+        ))
+        ->condition('ruleid', $ruleid)
+        ->execute();
+    }
+  }
+  drupal_set_message(t('The order of the validation rules has been saved.'));
 }
 
 /**
@@ -256,6 +337,6 @@ function webform_validation_delete_rule($form, &$form_state, $rule) {
  */
 function webform_validation_delete_rule_submit($form, &$form_state) {
   $ruleid = $form_state['values']['ruleid'];
-  webform_dynamic_delete_rule($ruleid);
   module_invoke_all('webform_validation', 'rule', 'delete', $ruleid);
+  webform_dynamic_delete_rule($ruleid);
 }

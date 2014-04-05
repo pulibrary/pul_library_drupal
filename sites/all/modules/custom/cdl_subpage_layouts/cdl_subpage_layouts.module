@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CDL Subpage Layouts feature.
+ */
+
+include_once 'cdl_subpage_layouts.features.inc';

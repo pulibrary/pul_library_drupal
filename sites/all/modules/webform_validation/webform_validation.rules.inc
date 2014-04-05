@@ -9,7 +9,7 @@
  * Get a rule entry
  */
 function webform_validation_get_rule($ruleid) {
-  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate FROM {webform_validation_rule} WHERE ruleid = :ruleid", array(':ruleid' => $ruleid), array('fetch' => PDO::FETCH_ASSOC));
+  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate, weight FROM {webform_validation_rule} WHERE ruleid = :ruleid", array(':ruleid' => $ruleid), array('fetch' => PDO::FETCH_ASSOC));
   $rule = $result->fetchAssoc();
   $rule['components'] = webform_validation_get_rule_components($ruleid, $rule['nid']);
   $rule['negate'] = (bool) $rule['negate'];
@@ -21,7 +21,7 @@ function webform_validation_get_rule($ruleid) {
  */
 function webform_validation_get_node_rules($nid) {
   $rules = array();
-  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate FROM {webform_validation_rule} WHERE nid = :nid ORDER BY ruleid DESC", array(':nid' => $nid), array('fetch' => PDO::FETCH_ASSOC));
+  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate, weight FROM {webform_validation_rule} WHERE nid = :nid ORDER BY weight ASC, ruleid DESC", array(':nid' => $nid), array('fetch' => PDO::FETCH_ASSOC));
   foreach ($result as $rule) {
     $rule['components'] = webform_validation_get_rule_components($rule['ruleid'], $rule['nid']);
     $rule['negate'] = (bool) $rule['negate'];
@@ -79,15 +79,18 @@ function webform_validation_rule_components_basic($components) {
 }
 
 /**
- * Delete a rule and dependencies
+ * Delete a rule and dependencies.
+ *
+ * @param int $ruleid
+ *   The ruleid of the rule to delete.
  */
 function webform_dynamic_delete_rule($ruleid) {
-  // delete rule
+  // Delete rule.
   db_delete('webform_validation_rule')
-  ->condition('ruleid', $ruleid)
-  ->execute();
-  // delete rule components
+    ->condition('ruleid', $ruleid)
+    ->execute();
+  // Delete rule components.
   db_delete('webform_validation_rule_components')
-  ->condition('ruleid', $ruleid)
-  ->execute();
+    ->condition('ruleid', $ruleid)
+    ->execute();
 }
