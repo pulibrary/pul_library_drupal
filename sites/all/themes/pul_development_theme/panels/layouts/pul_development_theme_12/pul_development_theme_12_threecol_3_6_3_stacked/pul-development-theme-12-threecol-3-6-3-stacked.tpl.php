@@ -1,5 +1,5 @@
 <div class="panel-display omega-grid omega-12-threecol-3-6-3" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="panel-panel grid-12">
+  <div class="top-region panel-panel grid-12">
     <div class="inside"><?php print $content['top']; ?></div>
   </div>
   <div class="panel-panel grid-3">
@@ -11,7 +11,7 @@
   <div class="panel-panel grid-3">
     <div class="inside"><?php print $content['right']; ?></div>
   </div>
-  <div class="panel-panel grid-12">
+  <div class="panel-panel bottom-region grid-12">
     <div class="inside"><?php print $content['bottom']; ?></div>
   </div>
 </div>

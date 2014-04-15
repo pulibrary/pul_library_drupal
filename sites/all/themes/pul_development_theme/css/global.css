@@ -2888,3 +2888,47 @@ height:400px;
 	padding-left: 5px;
 	content: "\F054\F054";
 }
+
+/* CDL Styles */
+
+/* .pane-node-field-pul-landing-logo { */
+.top-region.grid-12.panel-panel {
+  background-image:url(../images/trustee_reading_room_50.png);
+  clear: both;  
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+
+.pane-nice-menus-2 {
+  background-color: none;
+  clear: both;
+}
+
+
+ul.nice-menu.nice-menu-menu-collection-development-webs {
+  text-align: center;
+  z-index: 0;
+  background: none;
+  margin-top: 0px;
+  border-top: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li {
+ background: none;
+ border: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a {
+    font-size: 1em;
+    color: #000;
+    background: none;
+    padding-right: 1.7em;
+    padding-left: 1.7em;
+    text-decoration: none;
+  } 
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+    font-size: 100%;
+    color: #F58026;
+  }
