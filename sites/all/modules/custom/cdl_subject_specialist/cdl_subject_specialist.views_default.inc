@@ -37,7 +37,6 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['id'] = 'field_library_directory_profile_target_id';
   $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['table'] = 'field_data_field_library_directory_profile';
   $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['field'] = 'field_library_directory_profile_target_id';
-  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -153,13 +152,21 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_subject_area']['field'] = 'field_subject_area';
   $handler->display->display_options['fields']['field_subject_area']['label'] = '';
   $handler->display->display_options['fields']['field_subject_area']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_subject_area']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_subject_area']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subject_area']['delta_offset'] = '0';
   /* Field: Content: Profile Image */
   $handler->display->display_options['fields']['field_profile_image']['id'] = 'field_profile_image';
   $handler->display->display_options['fields']['field_profile_image']['table'] = 'field_data_field_profile_image';
   $handler->display->display_options['fields']['field_profile_image']['field'] = 'field_profile_image';
   $handler->display->display_options['fields']['field_profile_image']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_profile_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_profile_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_profile_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -255,6 +262,9 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Selector Profile List */
+  $handler = $view->new_display('panel_pane', 'Selector Profile List', 'panel_pane_1');
   $export['subject_specialists'] = $view;
 
   return $export;

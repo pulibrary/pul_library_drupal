@@ -160,9 +160,8 @@ function cdl_subject_specialist_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 12,
       ),
       'overridden_title_in_lists' => array(
@@ -769,9 +768,8 @@ function cdl_subject_specialist_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 20,
       ),
       'overridden_title_in_lists' => array(
@@ -827,10 +825,9 @@ function cdl_subject_specialist_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 21,
       ),
       'overridden_title_in_lists' => array(
@@ -941,9 +938,8 @@ function cdl_subject_specialist_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 22,
       ),
       'overridden_title_in_lists' => array(
@@ -1297,9 +1293,8 @@ function cdl_subject_specialist_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'overridden_title_in_lists' => array(
