@@ -20,6 +20,13 @@ function webform_schema() {
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
+      'next_serial' => array(
+        'description' => 'The serial number to give to the next submission to this webform.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1,
+      ),
       'confirmation' => array(
         'description' => 'The confirmation message or URL displayed to the user after submitting a form.',
         'type' => 'text',
@@ -34,7 +41,7 @@ function webform_schema() {
       'redirect_url' => array(
         'description' => 'The URL a user is redirected to after submitting a form.',
         'type' => 'varchar',
-        'length' => 255,
+        'length' => 2048,
         'default' => '<confirmation>',
       ),
       'status' => array(
@@ -221,8 +228,8 @@ function webform_schema() {
       ),
       'name' => array(
         'description' => 'The label for this component.',
-        'type' => 'varchar',
-        'length' => 255,
+        'type' => 'text',
+        'not null' => TRUE,
       ),
       'type' => array(
         'description' => 'The field type of this component (textfield, select, hidden, etc.).',
@@ -468,6 +475,12 @@ function webform_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'serial' => array(
+        'description' => 'The serial number of this submission.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
       'uid' => array(
         'description' => 'The id of the user that completed this submission.',
         'type' => 'int',
@@ -497,6 +510,7 @@ function webform_schema() {
     'primary key' => array('sid'),
     'unique keys' => array(
       'sid_nid' => array('sid', 'nid'),
+      'nid_serial' => array('nid', 'serial'),
     ),
     'indexes' => array(
       'nid_uid_sid' => array('nid', 'uid', 'sid'),
@@ -603,6 +617,16 @@ function webform_requirements($phase) {
       'value' => $t('Missing'),
       'severity' => REQUIREMENT_WARNING,
       'description' => $t('PHP does not have the zip archive extension available. Webform module requires zip support for exporting submissions to Microsoft Excel.'),
+    );
+  }
+  // Though the .info file specifies PHP version as well, this will prevent
+  // users from upgrading from 3.x if their PHP version is too old.
+  if (version_compare(phpversion(), '5.3') < 0) {
+    $requirements['webform_php'] = array(
+      'title' => $t('Webform PHP requirements'),
+      'value' => phpversion(),
+      'severity' => REQUIREMENT_ERROR,
+      'description' => $t('Webform requires PHP 5.3 or higher.'),
     );
   }
 
@@ -1232,6 +1256,18 @@ function _webform_update_7401_batch(&$sandbox, $patterns, $replacements, $dpatte
  * Add the webform_conditional database table.
  */
 function webform_update_7402() {
+  // Sanity checks.
+  if (db_table_exists('webform_conditional')) {
+    // Both tables exist, so these are Webform-core provided tables.
+    if (db_table_exists('webform_conditional_rules')) {
+      return;
+    }
+    // Webform Conditional module was installed previously but not uninstalled.
+    else {
+      throw new DrupalUpdateException(t('The "Webform Conditional" module has previously been installed on your site. Either uninstall the module or drop the database table "webform_conditional".'));
+    }
+  }
+
   $schema['webform_conditional'] = array(
     'description' => 'Holds information about conditional logic.',
     'fields' => array(
@@ -1548,7 +1584,9 @@ function webform_update_7408() {
     'not null' => TRUE,
     'default' => 0,
   );
-  db_change_field('webform_component', 'mandatory', 'required', $spec);
+  if (!db_field_exists('webform_component', 'required')) {
+    db_change_field('webform_component', 'mandatory', 'required', $spec);
+  }
 }
 
 /**
@@ -1720,4 +1758,103 @@ function webform_update_7414() {
   db_change_field('webform_emails', 'from_address', 'from_address', $schema['from_address']);
 
   return t('Custom email columns successfully changed.');
+}
+
+/**
+ * Increase length of webform.redirect_url.
+ */
+function webform_update_7415() {
+  $spec = array(
+    'description' => 'The URL a user is redirected to after submitting a form.',
+    'type' => 'varchar',
+    'length' => 2048,
+    'default' => '<confirmation>',
+  );
+  db_change_field('webform', 'redirect_url', 'redirect_url', $spec);
+}
+
+/**
+ * Add columns for serial numbered submissions. Add serial numbers to existing submissions.
+ */
+function webform_update_7416() {
+  // Delete stray entries from the Webform tables before adding serial numbers.
+  db_query("DELETE FROM {webform_submissions} WHERE nid NOT IN (SELECT nid FROM {webform})");
+  db_query("DELETE FROM {webform_submitted_data} WHERE nid NOT IN (SELECT nid FROM {webform})");
+
+  // Postgres has a transactional DDL.
+  db_transaction();
+
+  // Add next_serial column to webform.
+  $spec = array(
+    'description' => 'The serial number to give to the next submission to this webform.',
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'default' => 1,
+  );
+  if (!db_field_exists('webform', 'next_serial')) {
+    db_add_field('webform', 'next_serial', $spec);
+  }
+
+  // Add serial column to webform_submissions.
+  $spec = array(
+    'description' => 'The serial number of this submission.',
+    'type' => 'int',
+    'unsigned' => TRUE,
+  );
+  $keys = array(
+    'unique keys' => array(
+      'nid_serial' => array('nid', 'serial'),
+    ),
+  );
+  if (!db_field_exists('webform_submissions', 'serial')) {
+    db_add_field('webform_submissions', 'serial', $spec, $keys);
+  }
+
+  // Add serial numbers to all submissions.
+  // MySQL COMMITs transactions when it encounters a DDL change, so start the
+  // transaction. In Postgres transactions will nest, which is fine.
+  db_transaction();
+
+  // Repeat for every Webform.
+  $nids = db_select('webform', 'w')
+    ->fields('w', array('nid'))
+    ->execute();
+  while ($nid = $nids->fetchColumn()) {
+    $serial = 1;
+    // Repeat for every submission in this Webform.
+    $sids = db_select('webform_submissions', 'ws')
+      ->forUpdate()
+      ->fields('ws', array('sid'))
+      ->condition('nid', $nid)
+      ->orderBy('sid')
+      ->execute();
+    while ($sid = $sids->fetchColumn()) {
+      // Set the serial number.
+      db_update('webform_submissions')
+        ->fields(array('serial' => $serial))
+        ->condition('nid', $nid)
+        ->condition('sid', $sid)
+        ->execute();
+      $serial++;
+    }
+    // Set the next serial number.
+    db_update('webform')
+      ->fields(array('next_serial' => $serial))
+      ->condition('nid', $nid)
+      ->execute();
+  }
+
+  // Now that every submission has a serial number, make serial numbers required.
+  $spec['not null'] = TRUE;
+  db_change_field('webform_submissions', 'serial', 'serial', $spec);
+
+  return t('Columns for serial numbered submissions successfully added. Serial numbers added to existing submissions.');
+}
+
+/**
+ * Change webform_component.name to text to allow for longer labels.
+ */
+function webform_update_7417() {
+  db_change_field('webform_component', 'name', 'name', array('type' => 'text', 'not null' => TRUE));
 }

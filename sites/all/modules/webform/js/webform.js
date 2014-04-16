@@ -148,6 +148,7 @@ Drupal.webform.conditionalCheck = function(e) {
       }
 
       // Flip the result of the action is to hide.
+      var showComponent;
       if (ruleGroup['action'] == 'hide') {
         showComponent = !conditionalResult;
       }
@@ -250,15 +251,7 @@ Drupal.webform.conditionalOperatorStringEmpty = function(element, existingValue,
 };
 
 Drupal.webform.conditionalOperatorStringNotEmpty = function(element, existingValue, ruleValue) {
-  var currentValue = Drupal.webform.stringValue(element, existingValue);
-  var empty = false;
-  $.each(currentValue, function(n, value) {
-    if (value === '') {
-      empty = true;
-      return false; // break.
-    }
-  });
-  return !empty;
+  return !Drupal.webform.conditionalOperatorStringEmpty(element, existingValue, ruleValue);
 };
 
 Drupal.webform.conditionalOperatorNumericEqual = function(element, existingValue, ruleValue) {

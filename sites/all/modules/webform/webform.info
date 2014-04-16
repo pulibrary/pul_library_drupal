@@ -5,6 +5,7 @@ core = 7.x
 package = Webform
 configure = admin/config/content/webform
 php = 5.3
+dependencies[] = views
 
 ; Files that contain classes:
 files[] = includes/exporters/webform_exporter_delimited.inc
@@ -33,9 +34,9 @@ files[] = tests/permissions.test
 files[] = tests/submission.test
 files[] = tests/webform.test
 
-; Information added by Drupal.org packaging script on 2014-02-14
-version = "7.x-4.0-beta3"
+; Information added by Drupal.org packaging script on 2014-04-12
+version = "7.x-4.0-rc1"
 core = "7.x"
 project = "webform"
-datestamp = "1392366222"
+datestamp = "1397285354"
 
