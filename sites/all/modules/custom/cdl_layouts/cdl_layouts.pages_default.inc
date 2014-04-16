@@ -62,13 +62,14 @@ function cdl_layouts_default_page_manager_handlers() {
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'top' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'default' => NULL,
     ),
+    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = '';
@@ -139,8 +140,11 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'more_link' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'News and Events',
+      'arguments' => array(
+        'tid' => '3779',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -162,8 +166,8 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'more_link' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Library Exhibitions',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -191,7 +195,10 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'cdl-menu',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -240,7 +247,7 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'colorbox',
+      'formatter' => 'image',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
@@ -251,6 +258,8 @@ function cdl_layouts_default_page_manager_handlers() {
         'colorbox_gallery_custom' => '',
         'colorbox_caption' => 'auto',
         'colorbox_caption_custom' => '',
+        'image_style' => '',
+        'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
@@ -276,8 +285,10 @@ function cdl_layouts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'tid' => '5028',
+        'tid' => '5061',
       ),
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(

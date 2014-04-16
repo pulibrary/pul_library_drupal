@@ -80,7 +80,7 @@ function cdl_acqusition_highlights_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Field: Content: Image_New-Item */
+  /* Field: Content: Sample Graphic */
   $handler->display->display_options['fields']['field_image_new_item']['id'] = 'field_image_new_item';
   $handler->display->display_options['fields']['field_image_new_item']['table'] = 'field_data_field_image_new_item';
   $handler->display->display_options['fields']['field_image_new_item']['field'] = 'field_image_new_item';
@@ -88,7 +88,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'medium',
     'image_link' => '',
   );
   /* Field: Content: Bibliographic Record */
@@ -196,6 +196,9 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Acqusitions Highlights Table */
+  $handler = $view->new_display('panel_pane', 'Acqusitions Highlights Table', 'panel_pane_1');
   $export['acquisitions_highlights'] = $view;
 
   return $export;

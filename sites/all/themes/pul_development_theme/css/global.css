@@ -2888,3 +2888,94 @@ height:400px;
 	padding-left: 5px;
 	content: "\F054\F054";
 }
+
+/* CDL Styles */
+
+/* .pane-node-field-pul-landing-logo { */
+.top-region.grid-12.panel-panel {
+  background-image:url(../images/trustee_reading_room_50.png);
+  clear: both;  
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+
+.pane-nice-menus-2 {
+  background-color: none;
+  clear: both;
+}
+
+
+ul.nice-menu.nice-menu-menu-collection-development-webs {
+  text-align: center;
+  z-index: 0;
+  background: none;
+  margin-top: 0px;
+  border-top: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li {
+ background: none;
+ border: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a {
+    font-size: 1em;
+    color: #000;
+    background: none;
+    padding-right: 1.7em;
+    padding-left: 1.7em;
+    text-decoration: none;
+  } 
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+    font-size: 100%;
+    color: #F58026;
+  }
+
+
+/* Views Alighment for selector Profile Page */
+
+.node-type-subject-specialists .field-type-text {
+  display: inline;
+}
+
+
+.views-field-field-puluser-officialtitle h3, .node-type-subject-specialists .views-field-field-selector-subject-areas > h3.views-label-field-selector-subject-areas {
+  margin: 0 0 0 0;
+}
+
+.node-type-subject-specialists .views-field-field-selector-subject-areas {
+ clear: both;
+}
+
+.views-field-field-puluser-officialtitle h3 {
+  margin-bottom: .5em;
+}
+
+.views-field-field-selector-subject-areas, .node-type-subject-specialists .field-name-field-bio {
+  border-top: .1em solid #000;
+  padding-top: .5em;
+  margin-top: .5em;
+}
+
+.node-type-subject-specialists .views-field-picture {
+  width: 15em;
+  float: left;
+  padding-bottom: 1em;
+}
+
+.views-field .views-field-view {
+ 
+  padding-left: 1em; 
+  width: 30em;
+  float: right;
+  padding-bottom: 1em;
+}
+
+.node-type-subject-specialists .views-field-picture img {
+  vertical-align: middle;
+}
+
+.node-type-subject-specialists .view-id-cdl_subject_selector_bio.view-display-id-selector_directory_info {
+}
