@@ -11,6 +11,284 @@ function cdl_subject_specialist_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'cdl_subject_selector_bio';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Subject Selector Profile';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'picture' => 'picture',
+    'field_office_location' => 'field_office_location',
+    'field_puluser_phone_number' => 'field_puluser_phone_number',
+    'mail' => 'mail',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['id'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['table'] = 'field_data_field_library_directory_profile';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['field'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['id'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['field'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['relationship'] = 'field_library_directory_profile_target_id';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Office Location */
+  $handler->display->display_options['fields']['field_office_location']['id'] = 'field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['table'] = 'field_data_field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['field'] = 'field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['label'] = '';
+  $handler->display->display_options['fields']['field_office_location']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_office_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_office_location']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_office_location']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_office_location']['field_api_classes'] = TRUE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = 'email';
+  /* Field: User: Official Title */
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['table'] = 'field_data_field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['field'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['field_api_classes'] = TRUE;
+  /* Field: User: Phone Number */
+  $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['relationship'] = 'field_library_directory_profile_target_id';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['fields']['name']['label'] = 'Research Databases';
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'subject_specialists' => 'subject_specialists',
+  );
+
+  /* Display: Selector Profile Listing */
+  $handler = $view->new_display('panel_pane', 'Selector Profile Listing', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_class'] = 'selector-directory-profile';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'cdl_subject_selector_bio';
+  $handler->display->display_options['fields']['view']['display'] = 'selector_directory_info';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Content: Selector Subject Areas */
+  $handler->display->display_options['fields']['field_selector_subject_areas']['id'] = 'field_selector_subject_areas';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['table'] = 'field_data_field_selector_subject_areas';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['field'] = 'field_selector_subject_areas';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_selector_subject_areas']['multi_type'] = 'ul';
+  /* Field: Content: Department and Programs */
+  $handler->display->display_options['fields']['field_sel_library_department']['id'] = 'field_sel_library_department';
+  $handler->display->display_options['fields']['field_sel_library_department']['table'] = 'field_data_field_sel_library_department';
+  $handler->display->display_options['fields']['field_sel_library_department']['field'] = 'field_sel_library_department';
+  $handler->display->display_options['fields']['field_sel_library_department']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['field_sel_library_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sel_library_department']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_sel_library_department']['multi_type'] = 'ul';
+  /* Field: Content: Related Websites */
+  $handler->display->display_options['fields']['field_research_guides_websites']['id'] = 'field_research_guides_websites';
+  $handler->display->display_options['fields']['field_research_guides_websites']['table'] = 'field_data_field_research_guides_websites';
+  $handler->display->display_options['fields']['field_research_guides_websites']['field'] = 'field_research_guides_websites';
+  $handler->display->display_options['fields']['field_research_guides_websites']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['field_research_guides_websites']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_research_guides_websites']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_research_guides_websites']['multi_type'] = 'ul';
+  /* Field: Content: Bio */
+  $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
+  $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['field_api_classes'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Selector ID',
+    ),
+  );
+
+  /* Display: Selector Related Database Subjects */
+  $handler = $view->new_display('panel_pane', 'Selector Related Database Subjects', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Research Databases';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Selector ID',
+    ),
+  );
+
+  /* Display: Selector Profile Pic */
+  $handler = $view->new_display('panel_pane', 'Selector Profile Pic', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Selector Profile Bio Pic';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
+
+  /* Display: Selector Directory Information */
+  $handler = $view->new_display('panel_pane', 'Selector Directory Information', 'selector_directory_info');
+  $handler->display->display_options['display_description'] = 'Office Location, Telephone, e-mail';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Official Title */
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['table'] = 'field_data_field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['field'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Office Location */
+  $handler->display->display_options['fields']['field_office_location']['id'] = 'field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['table'] = 'field_data_field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['field'] = 'field_office_location';
+  $handler->display->display_options['fields']['field_office_location']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_office_location']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_office_location']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_office_location']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_office_location']['field_api_classes'] = TRUE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = 'email';
+  /* Field: User: Phone Number */
+  $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['relationship'] = 'field_library_directory_profile_target_id';
+  $export['cdl_subject_selector_bio'] = $view;
+
+  $view = new view();
   $view->name = 'subject_specialists';
   $view->description = 'Description here, hover.';
   $view->tag = 'default';
