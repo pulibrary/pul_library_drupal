@@ -2899,7 +2899,16 @@ height:400px;
   background-repeat: no-repeat;
 }
 
+/* Spotlight Graphic */
+.pane-spotlight-graphics-panel-pane-1 {
+ border: .2em solid #5c5e66;
+}
 
+.pane-spotlight-graphics-panel-pane-1 h3 {
+ text-align: center;
+}
+
+/* CDL Menu */
 .pane-nice-menus-2 {
   background-color: none;
   clear: both;
@@ -2934,7 +2943,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu
   }
 
 
-/* Views Alighment for selector Profile Page */
+/* Views Alignment for selector Profile Page */
 
 .node-type-subject-specialists .field-type-text {
   display: inline;
@@ -2978,4 +2987,13 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu
 }
 
 .node-type-subject-specialists .view-id-cdl_subject_selector_bio.view-display-id-selector_directory_info {
+}
+
+/* specialists table */
+.pane-subject-specialists-panel-pane-1 table caption {
+  text-align: left;
+  font-size: 1.37em;
+  color: #777;
+  padding: 0 0 0 0;
+  padding-bottom: .5em;
 }

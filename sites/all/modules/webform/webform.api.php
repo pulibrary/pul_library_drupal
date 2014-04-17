@@ -71,17 +71,13 @@ function hook_webform_select_options_info_alter(&$items) {
  *   of key => value pairs. Select components support up to one level of
  *   nesting, but when results are displayed, the list needs to be returned
  *   without the nesting.
- * @param $filter
- *   Boolean value indicating whether the included options should be passed
- *   through the webform_replace_tokens() function for token replacement (only)
- *   needed if your list contains tokens).
  * @param $arguments
  *   The "options arguments" specified in hook_webform_select_options_info().
  * @return
  *   An array of key => value pairs suitable for a select list's #options
  *   FormAPI property.
  */
-function webform_options_example($component, $flat, $filter, $arguments) {
+function webform_options_example($component, $flat, $arguments) {
   $options = array(
     'one' => t('Pre-built option one'),
     'two' => t('Pre-built option two'),
@@ -231,6 +227,25 @@ function hook_webform_submission_actions($node, $submission) {
   }
 
   return $actions;
+}
+
+/**
+ * Modify the draft to be presented for editing.
+ *
+ * When drafts are enabled for the webform, by default, a pre-existig draft is
+ * presented when the webform is displayed to that user. To allow multiple
+ * drafts, implement this alter function to set the $sid to NULL, or use your
+ * application's business logic to determine whether a new draft or which of
+ * he pre-existing drafts should be presented.
+ *
+ * @param integer $sid
+ *    The id of the most recent submission to be presented for editing. Change
+ *    to a different draft's sid or set to NULL for a new draft.
+ */
+function hook_webform_draft_alter(&$sid) {
+  if ($_GET['newdraft']) {
+    $sid = NULL;
+  }
 }
 
 /**
@@ -960,10 +975,9 @@ function _webform_submit_component($component, $value) {
  */
 function _webform_delete_component($component, $value) {
   // Delete corresponding files when a submission is deleted.
-  $filedata = unserialize($value['0']);
-  if (isset($filedata['filepath']) && is_file($filedata['filepath'])) {
-    unlink($filedata['filepath']);
-    db_query("DELETE FROM {files} WHERE filepath = '%s'", $filedata['filepath']);
+  if (!empty($value[0]) && ($file = webform_get_file($value[0]))) {
+    file_usage_delete($file, 'webform');
+    file_delete($file);
   }
 }
 
@@ -1180,6 +1194,18 @@ function _webform_csv_data_component($component, $export_options, $value) {
     $return[] = isset($value[$key]) ? $value[$key] : '';
   }
   return $return;
+}
+
+/**
+ * Modify the list of mail systems that are capable of sending HTML email.
+ *
+ * @param array &$systems
+ *   An array of mail system class names.
+ */
+function hook_webform_html_capable_mail_systems_alter(&$systems) {
+  if (module_exists('my_module')) {
+    $systems[] = 'MyModuleMailSystem';
+  }
 }
 
 /**

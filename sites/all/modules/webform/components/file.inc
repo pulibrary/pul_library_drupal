@@ -213,7 +213,7 @@ function _webform_edit_file_check_directory($element) {
   $scheme = $element['extra']['scheme']['#value'];
   $directory = $element['extra']['directory']['#value'];
 
-  $destination_dir = file_stream_wrapper_uri_normalize($scheme . '://' . $directory . '/webform');
+  $destination_dir = file_stream_wrapper_uri_normalize($scheme . '://webform/' . $directory);
 
   // Sanity check input to prevent use parent (../) directories.
   if (preg_match('/\.\.[\/\\\]/', $destination_dir . '/')) {
@@ -332,6 +332,8 @@ function _webform_render_file($component, $value = NULL, $filter = TRUE) {
     '#theme_wrappers' => array('webform_element'),
     '#translatable' => array('title', 'description'),
   );
+
+  $element['#description'] = theme('file_upload_help', array('description' => $element['#description'], 'upload_validators' => $element['#upload_validators']));
 
   return $element;
 }
