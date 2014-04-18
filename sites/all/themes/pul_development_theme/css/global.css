@@ -2902,10 +2902,26 @@ height:400px;
 /* Spotlight Graphic */
 .pane-spotlight-graphics-panel-pane-1 {
  border: .2em solid #5c5e66;
+ margin-top: 2em;
+ background-color: #000;
+  
 }
 
 .pane-spotlight-graphics-panel-pane-1 h3 {
- text-align: center;
+ padding:0;
+ padding-top: .2em;
+ margin:0;
+ text-align: left;
+}
+
+.pane-spotlight-graphics-panel-pane-1 h3 a {
+  padding-left: 2em;
+  color: #fff;
+  margin-bottom:0;
+}
+
+.pane-spotlight-graphics-panel-pane-1 h3 a:hover {
+  
 }
 
 /* CDL Menu */

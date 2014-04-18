@@ -181,31 +181,6 @@ function cdl_layouts_default_page_manager_handlers() {
     $display->content['new-205996bb-27dd-4446-9d2b-5299fbbe4d7d'] = $pane;
     $display->panels['right'][1] = 'new-205996bb-27dd-4446-9d2b-5299fbbe4d7d';
     $pane = new stdClass();
-    $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-    $pane->panel = 'top';
-    $pane->type = 'block';
-    $pane->subtype = 'nice_menus-2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'cdl-menu',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
-    $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
-    $display->panels['top'][0] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-    $pane = new stdClass();
     $pane->pid = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
@@ -233,11 +208,11 @@ function cdl_layouts_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
     $display->content['new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed'] = $pane;
-    $display->panels['top'][1] = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
+    $display->panels['top'][0] = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
     $pane = new stdClass();
     $pane->pid = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
     $pane->panel = 'top';
@@ -258,7 +233,7 @@ function cdl_layouts_default_page_manager_handlers() {
         'colorbox_gallery_custom' => '',
         'colorbox_caption' => 'auto',
         'colorbox_caption_custom' => '',
-        'image_style' => '',
+        'image_style' => 'pul_logo_file',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
@@ -271,11 +246,36 @@ function cdl_layouts_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '5d223fff-4316-4331-8440-b15d74d84da4';
     $display->content['new-5d223fff-4316-4331-8440-b15d74d84da4'] = $pane;
-    $display->panels['top'][2] = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
+    $display->panels['top'][1] = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
+    $pane = new stdClass();
+    $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
+    $pane->panel = 'top';
+    $pane->type = 'block';
+    $pane->subtype = 'nice_menus-2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'cdl-menu',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
+    $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
+    $display->panels['top'][2] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
     $pane = new stdClass();
     $pane->pid = 'new-85f01076-3188-439b-9c48-d32f147381b4';
     $pane->panel = 'top';

@@ -239,7 +239,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['field_pul_spotlight_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'pul_large_spotlight_graphic',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_pul_spotlight_image']['field_api_classes'] = TRUE;
