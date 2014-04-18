@@ -64,7 +64,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'rows' => 20,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 7,
     ),
   );
 
@@ -135,7 +135,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -192,7 +192,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 23,
     ),
   );
 
@@ -246,7 +246,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 21,
     ),
   );
 
@@ -304,7 +304,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 19,
     ),
   );
 
@@ -362,7 +362,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -416,7 +416,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -471,7 +471,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 20,
     ),
   );
 
@@ -533,7 +533,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 8,
     ),
   );
 
@@ -591,7 +591,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -670,7 +670,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'progress_indicator' => 'bar',
       ),
       'type' => 'image_image',
-      'weight' => 0,
+      'weight' => 16,
     ),
   );
 
@@ -743,7 +743,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -801,7 +801,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 3,
     ),
   );
 
@@ -857,7 +857,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 4,
     ),
   );
 
@@ -913,7 +913,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 18,
     ),
   );
 
@@ -971,7 +971,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 37,
+      'weight' => 11,
     ),
   );
 
@@ -1029,7 +1029,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 33,
+      'weight' => 10,
     ),
   );
 
@@ -1085,7 +1085,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 17,
     ),
   );
 
@@ -1139,7 +1139,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 16,
     ),
   );
 
@@ -1210,7 +1210,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 17,
     ),
   );
 
@@ -1268,7 +1268,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 18,
     ),
   );
 
@@ -1325,7 +1325,7 @@ function cdl_subject_specialist_field_default_field_instances() {
         'rows' => 20,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 24,
     ),
   );
 

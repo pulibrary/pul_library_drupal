@@ -1,7 +1,7 @@
 name = Spotlight Content Types and Views
 core = 7.x
 package = Landing Pages and Spotlights
-version = 7.x-1.0-dev
+version = 7.x-1.0-alpha
 project = spotlight_content_types_and_views
 dependencies[] = articles_and_databases
 dependencies[] = image
@@ -26,6 +26,8 @@ features[field_instance][] = node-pul_spotlight_graphic-body
 features[field_instance][] = node-pul_spotlight_graphic-field_pul_spotlight_image
 features[field_instance][] = node-pul_spotlight_graphic-field_pul_spotlight_tags
 features[field_instance][] = node-pul_spotlight_graphic-field_pul_spotlight_url
+features[image][] = pul_large_spotlight_graphic
+features[image][] = pul_logo_file
 features[node][] = pul_landing_page
 features[node][] = pul_spotlight_graphic
 features[taxonomy][] = pul_spotlight_tags

@@ -2902,10 +2902,26 @@ height:400px;
 /* Spotlight Graphic */
 .pane-spotlight-graphics-panel-pane-1 {
  border: .2em solid #5c5e66;
+ margin-top: 2em;
+ background-color: #000;
+  
 }
 
 .pane-spotlight-graphics-panel-pane-1 h3 {
- text-align: center;
+ padding:0;
+ padding-top: .2em;
+ margin:0;
+ text-align: left;
+}
+
+.pane-spotlight-graphics-panel-pane-1 h3 a {
+  padding-left: 2em;
+  color: #fff;
+  margin-bottom:0;
+}
+
+.pane-spotlight-graphics-panel-pane-1 h3 a:hover {
+  
 }
 
 /* CDL Menu */
@@ -2942,7 +2958,28 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu
     color: #F58026;
   }
 
+/* !Important Dropdowns */
+ul.nice-menu.nice-menu-menu-collection-development-webs ul {
+  top: 2.4em;
+  left: .lem;
+  background-color: #000;
+  z-index:9999;
+  padding:0;
+  border:0;
+  margin:0;
+}
 
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+  padding-right: 15px;
+  color: #fff;
+  font-size: 1em;
+  z-index: 9999; 
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+  padding-right: 15px;
+  color: #F58026;
+}
 /* Views Alignment for selector Profile Page */
 
 .node-type-subject-specialists .field-type-text {

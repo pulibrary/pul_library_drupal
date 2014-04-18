@@ -20,7 +20,7 @@ function cdl_pane_fragments_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => 'New Acquisitions Blurb',
     'title' => 'New Acquisitions',
-    'body' => '<p>Each year, Princeton University Library has the opportunity to add very special items to its holdings of print, digital, non-print and manuscript material either through acquisition or as gifts to the Library. We have chosen some of these titles added this year to highlight. They may also be found by searching the Library’s Online Catalog.</p><p><a href="collections/acquisitions-highlights">View Our Highlights</a></p>',
+    'body' => '<p>Each year, Princeton University Library has the opportunity to add very special items to its holdings of print, digital, non-print and manuscript material either through acquisition or as gifts to the Library. We have chosen some of these titles added this year to highlight. They may also be found by searching the Library’s Online Catalog.</p><p><a href="collections/highlights">View Our Highlights</a></p>',
     'format' => 'full_html',
     'substitute' => 1,
   );
