@@ -257,6 +257,26 @@ function cdl_subject_specialist_views_default_views() {
   /* Display: Selector Directory Information */
   $handler = $view->new_display('panel_pane', 'Selector Directory Information', 'selector_directory_info');
   $handler->display->display_options['display_description'] = 'Office Location, Telephone, e-mail';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['id'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['table'] = 'field_data_field_library_directory_profile';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['field'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['id'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['field'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['relationship'] = 'field_library_directory_profile_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_sel_pul_library_target_id']['id'] = 'field_sel_pul_library_target_id';
+  $handler->display->display_options['relationships']['field_sel_pul_library_target_id']['table'] = 'field_data_field_sel_pul_library';
+  $handler->display->display_options['relationships']['field_sel_pul_library_target_id']['field'] = 'field_sel_pul_library_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_building_target_id']['id'] = 'field_building_target_id';
+  $handler->display->display_options['relationships']['field_building_target_id']['table'] = 'field_data_field_building';
+  $handler->display->display_options['relationships']['field_building_target_id']['field'] = 'field_building_target_id';
+  $handler->display->display_options['relationships']['field_building_target_id']['relationship'] = 'field_sel_pul_library_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Official Title */
   $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
@@ -266,13 +286,49 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Selector Library */
+  $handler->display->display_options['fields']['field_sel_pul_library']['id'] = 'field_sel_pul_library';
+  $handler->display->display_options['fields']['field_sel_pul_library']['table'] = 'field_data_field_sel_pul_library';
+  $handler->display->display_options['fields']['field_sel_pul_library']['field'] = 'field_sel_pul_library';
+  $handler->display->display_options['fields']['field_sel_pul_library']['label'] = '';
+  $handler->display->display_options['fields']['field_sel_pul_library']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_sel_pul_library']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_pul_library']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_sel_pul_library']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_pul_library']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_sel_pul_library']['field_api_classes'] = TRUE;
+  /* Field: Content: Office Directions */
+  $handler->display->display_options['fields']['field_sel_office_directions']['id'] = 'field_sel_office_directions';
+  $handler->display->display_options['fields']['field_sel_office_directions']['table'] = 'field_data_field_sel_office_directions';
+  $handler->display->display_options['fields']['field_sel_office_directions']['field'] = 'field_sel_office_directions';
+  $handler->display->display_options['fields']['field_sel_office_directions']['label'] = '';
+  $handler->display->display_options['fields']['field_sel_office_directions']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sel_office_directions']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_office_directions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_office_directions']['type'] = 'text_plain';
+  /* Field: Content: Campus Building LOC ID */
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['id'] = 'field_campus_building_loc_id';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['table'] = 'field_data_field_campus_building_loc_id';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['field'] = 'field_campus_building_loc_id';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['relationship'] = 'field_building_target_id';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['label'] = '';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['alter']['text'] = '<i class=\'icon-map-marker icon-large\' > </i> <a title="[field_sel_office_directions]" href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">Campus Map</a>';
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_campus_building_loc_id']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
   /* Field: Content: Office Location */
   $handler->display->display_options['fields']['field_office_location']['id'] = 'field_office_location';
   $handler->display->display_options['fields']['field_office_location']['table'] = 'field_data_field_office_location';
   $handler->display->display_options['fields']['field_office_location']['field'] = 'field_office_location';
   $handler->display->display_options['fields']['field_office_location']['element_type'] = '0';
   $handler->display->display_options['fields']['field_office_location']['element_label_type'] = 'span';
-  $handler->display->display_options['fields']['field_office_location']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_office_location']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_office_location']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_office_location']['field_api_classes'] = TRUE;
   /* Field: User: E-mail */
