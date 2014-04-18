@@ -2958,7 +2958,28 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu
     color: #F58026;
   }
 
+/* !Important Dropdowns */
+ul.nice-menu.nice-menu-menu-collection-development-webs ul {
+  top: 2.4em;
+  left: .lem;
+  background-color: #000;
+  z-index:9999;
+  padding:0;
+  border:0;
+  margin:0;
+}
 
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+  padding-right: 15px;
+  color: #fff;
+  font-size: 1em;
+  z-index: 9999; 
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+  padding-right: 15px;
+  color: #F58026;
+}
 /* Views Alignment for selector Profile Page */
 
 .node-type-subject-specialists .field-type-text {
