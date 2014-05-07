@@ -754,6 +754,10 @@ function webform_theme() {
       'render element' => 'element',
       'file' => 'includes/webform.conditionals.inc',
     ),
+    'webform_conditional_group_row' => array(
+      'render element' => 'element',
+      'file' => 'includes/webform.conditionals.inc',
+    ),
     'webform_conditional' => array(
       'render element' => 'element',
       'file' => 'includes/webform.conditionals.inc',
@@ -3615,6 +3619,7 @@ function webform_replace_url_tokens($redirect_url, $node = NULL, $submission = N
       $parsed_redirect_url['query'][$key] = trim(webform_replace_tokens($value, $node, $submission));
     }
   }
+  $parsed_redirect_url['absolute'] = TRUE;
   $redirect_url = url($parsed_redirect_url['path'], $parsed_redirect_url);
   return $redirect_url;
 }
@@ -4382,6 +4387,7 @@ function webform_email_html_capable() {
   }
   if (module_exists('mimemail')) {
     $systems[] = 'MimeMailSystem';
+    $systems[] = 'MimeMailSystem__SmtpMailSystem';
   }
   if (module_exists('htmlmail')) {
     $systems[] = 'HTMLMailSystem';
