@@ -38,7 +38,7 @@ class ExpireUser implements ExpireInterface {
     // Expire front page.
     $expire_front_page = variable_get('expire_user_front_page', EXPIRE_USER_FRONT_PAGE);
     if ($expire_front_page) {
-      $expire_urls['front'] = '<front>';
+      $expire_urls = ExpireAPI::getFrontPageUrls();
     }
 
     // Expire user page.
@@ -57,7 +57,8 @@ class ExpireUser implements ExpireInterface {
     // Expire user reference's pages.
     $expire_references = variable_get('expire_user_reference_pages', EXPIRE_USER_REFERENCE_PAGES);
     if ((module_exists('node_reference') || module_exists('user_reference') || module_exists('entityreference')) && $expire_references) {
-      $urls = ExpireAPI::expireReferences($account, 'user');
+      $traverse_field_collection = module_exists('field_collection') && variable_get('expire_user_reference_field_collection_pages', EXPIRE_USER_REFERENCE_FC_PAGES);
+      $urls = ExpireAPI::expireReferences($account, 'user', $traverse_field_collection);
       $expire_urls = array_merge($expire_urls, $urls);
     }
 

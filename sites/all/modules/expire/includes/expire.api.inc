@@ -178,16 +178,18 @@ class ExpireAPI {
   /**
    * Find all entity references in fields and build urls for them.
    *
-   * @param $entity
+   * @param object $entity
    *   Entity object.
-   *
-   * @param $entity_type
+   * @param string $entity_type
    *   Type of entity.
+   * @param bool $traverse_field_collection
+   *   (optional) Whether or not to traverse references from field collections
+   *   attached to this entity. Defaults to FALSE.
    *
    * @return array
    *   Entity references' urls that should be flushed.
    */
-  public static function expireReferences($entity, $entity_type) {
+  public static function expireReferences($entity, $entity_type, $traverse_field_collection = FALSE) {
 
     $field_references = array();
 
@@ -196,10 +198,22 @@ class ExpireAPI {
     // Get all fields from current entity type.
     $field_instances = field_info_instances($entity_type, $bundle_name);
 
+    // Gather references across field_collections.
+    $field_collection_items = array();
     foreach ($field_instances as $field_name => $field_instance) {
 
       // Load information about field.
       $field_info = field_info_field($field_name);
+
+      // Collect field collection items.
+      if ($traverse_field_collection && $field_info['type'] == 'field_collection') {
+        $items = field_get_items($entity_type, $entity, $field_name);
+        if (!empty($items) && is_array($items)) {
+          foreach ($items as $item) {
+            $field_collection_items[] = $item['value'];
+          }
+        }
+      }
 
       if (in_array($field_info['type'], array('node_reference', 'user_reference', 'entityreference'))) {
 
@@ -256,6 +270,14 @@ class ExpireAPI {
       $urls['reference-' . $field_reference['entity_type'] . '-' . $field_reference['entity_id']] = $field_entity_uri['path'];
     }
 
+    // Traverse gathered field collections.
+    if ($field_collection_items) {
+      foreach (field_collection_item_load_multiple($field_collection_items) as $field_collection_item) {
+        $field_collection_urls = ExpireAPI::expireReferences($field_collection_item, 'field_collection_item');
+        $urls = array_merge($urls, $field_collection_urls);
+      }
+    }
+
     return $urls;
   }
 
@@ -289,6 +311,16 @@ class ExpireAPI {
       }
     }
 
+    return $urls;
+  }
+
+  /**
+   * Return urls for a front page.
+   */
+  public static function getFrontPageUrls() {
+    $urls = array();
+    $urls['front'] = '';
+    $urls['front-path'] = variable_get('site_frontpage', 'node');
     return $urls;
   }
 

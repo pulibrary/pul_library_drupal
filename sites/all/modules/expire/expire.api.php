@@ -42,6 +42,7 @@
  * @see expire.api.inc
  */
 function hook_expire_cache($urls, $wildcards, $object_type, $object) {
+  module_load_include('inc', 'purge');
   foreach ($urls as $url) {
     $full_path = url($url, array('absolute' => TRUE));
     purge_urls($full_path, $wildcards);

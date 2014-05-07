@@ -55,32 +55,35 @@ define('EXPIRE_MENU_LINK_DELETE', 3);
 // Debug levels.
 define('EXPIRE_DEBUG_DISABLED', 0);
 define('EXPIRE_DEBUG_WATCHDOG', 1);
-define('EXPIRE_DEBUG_FULL', 2);
+define('EXPIRE_DEBUG_FULL',     2);
 
 // Default values for cache expiration.
-define('EXPIRE_NODE_FRONT_PAGE'             , FALSE);
-define('EXPIRE_NODE_NODE_PAGE'              , TRUE);
-define('EXPIRE_NODE_TERM_PAGES'             , FALSE);
-define('EXPIRE_NODE_REFERENCE_PAGES'        , FALSE);
-define('EXPIRE_NODE_CUSTOM'                 , FALSE);
-define('EXPIRE_COMMENT_FRONT_PAGE'          , FALSE);
-define('EXPIRE_COMMENT_COMMENT_PAGE'        , TRUE);
-define('EXPIRE_COMMENT_REFERENCE_PAGES'     , FALSE);
-define('EXPIRE_COMMENT_NODE_PAGE'           , TRUE);
-define('EXPIRE_COMMENT_NODE_TERM_PAGES'     , FALSE);
-define('EXPIRE_COMMENT_NODE_REFERENCE_PAGES', FALSE);
-define('EXPIRE_COMMENT_CUSTOM'              , FALSE);
-define('EXPIRE_USER_FRONT_PAGE'             , FALSE);
-define('EXPIRE_USER_USER_PAGE'              , TRUE);
-define('EXPIRE_USER_TERM_PAGES'             , FALSE);
-define('EXPIRE_USER_REFERENCE_PAGES'        , FALSE);
-define('EXPIRE_USER_CUSTOM'                 , FALSE);
-define('EXPIRE_VOTINGAPI_ENTITY'            , FALSE);
-define('EXPIRE_VOTINGAPI_ENTITY_PAGE'       , FALSE);
-define('EXPIRE_VOTINGAPI_CUSTOM'            , FALSE);
-define('EXPIRE_FILE_FILE'                   , FALSE);
-define('EXPIRE_FILE_FRONT_PAGE'             , FALSE);
-define('EXPIRE_FILE_CUSTOM'                 , FALSE);
+define('EXPIRE_NODE_FRONT_PAGE'                 , FALSE);
+define('EXPIRE_NODE_NODE_PAGE'                  , TRUE);
+define('EXPIRE_NODE_TERM_PAGES'                 , FALSE);
+define('EXPIRE_NODE_REFERENCE_PAGES'            , FALSE);
+define('EXPIRE_NODE_REFERENCE_FC_PAGES'         , FALSE);
+define('EXPIRE_NODE_CUSTOM'                     , FALSE);
+define('EXPIRE_COMMENT_FRONT_PAGE'              , FALSE);
+define('EXPIRE_COMMENT_COMMENT_PAGE'            , TRUE);
+define('EXPIRE_COMMENT_REFERENCE_PAGES'         , FALSE);
+define('EXPIRE_COMMENT_NODE_PAGE'               , TRUE);
+define('EXPIRE_COMMENT_NODE_TERM_PAGES'         , FALSE);
+define('EXPIRE_COMMENT_NODE_REFERENCE_PAGES'    , FALSE);
+define('EXPIRE_COMMENT_NODE_REFERENCE_FC_PAGES' , FALSE);
+define('EXPIRE_COMMENT_CUSTOM'                  , FALSE);
+define('EXPIRE_USER_FRONT_PAGE'                 , FALSE);
+define('EXPIRE_USER_USER_PAGE'                  , TRUE);
+define('EXPIRE_USER_TERM_PAGES'                 , FALSE);
+define('EXPIRE_USER_REFERENCE_PAGES'            , FALSE);
+define('EXPIRE_USER_REFERENCE_FC_PAGES'         , FALSE);
+define('EXPIRE_USER_CUSTOM'                     , FALSE);
+define('EXPIRE_VOTINGAPI_ENTITY'                , FALSE);
+define('EXPIRE_VOTINGAPI_ENTITY_PAGE'           , FALSE);
+define('EXPIRE_VOTINGAPI_CUSTOM'                , FALSE);
+define('EXPIRE_FILE_FILE'                       , FALSE);
+define('EXPIRE_FILE_FRONT_PAGE'                 , FALSE);
+define('EXPIRE_FILE_CUSTOM'                     , FALSE);
 
 /**
  * Implementation of hook_menu().
