@@ -2897,6 +2897,7 @@ height:400px;
   clear: both;  
   background-position: center top;
   background-repeat: no-repeat;
+  background-color: #212121;
 }
 
 /* Spotlight Graphic */
@@ -2924,6 +2925,12 @@ height:400px;
   
 }
 
+/* CDL Overrides */
+.context-collections-and-collection-development h2, .context-collections h2 {
+  color: #212121;
+  }
+
+
 /* CDL Menu */
 .pane-nice-menus-2 {
   background-color: none;
@@ -2946,7 +2953,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li {
 
 ul.nice-menu.nice-menu-menu-collection-development-webs li a {
     font-size: 1em;
-    color: #000;
+    color: #fff;
     background: none;
     padding-right: 1.7em;
     padding-left: 1.7em;
