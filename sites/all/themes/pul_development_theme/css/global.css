@@ -2928,7 +2928,7 @@ height:400px;
 /* CDL Overrides */
 .context-collections-and-collection-development h2, .context-collections h2 {
   color: #212121;
-  }
+}
 
 
 /* CDL Menu */
@@ -2975,6 +2975,15 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
   border:0;
   margin:0;
 }
+
+/* Arrows 
+
+.context-collections ul.nice-menu.nice-menu-menu-collection-development-webs.nice-menu-down li.menuparent,
+.context-collections ul.nice-menu.nice-menu-menu-collection-development-webs.nice-menu-down li li.menuparent {
+  background: #000; url("../images/arrow-down.png") right center no-repeat;
+}
+*/
+
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
   padding-right: 15px;
@@ -3040,4 +3049,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   color: #777;
   padding: 0 0 0 0;
   padding-bottom: .5em;
+}
+
+.context-collections .views-field-field-puluser-phone-number {
+  display: block;
 }
