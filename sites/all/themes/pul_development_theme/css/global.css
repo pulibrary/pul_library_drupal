@@ -2655,6 +2655,11 @@ body.faq .ui-widget-header a {
 	color: #333;
 }
 
+/* Library HOurs Administrative Views */
+.view-id-library_hours_editors td.active {
+	color: #000;
+}
+
 /*********************************************
  * Subject Specialists Page
  * ******************************************/
