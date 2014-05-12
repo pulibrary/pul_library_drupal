@@ -2970,7 +2970,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
   top: 2.4em;
   left: .lem;
   background-color: #000;
-  z-index:9999;
   padding:0;
   border:0;
   margin:0;
@@ -2989,13 +2988,34 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
   padding-right: 15px;
   color: #fff;
   font-size: 1em;
-  z-index: 9999; 
 }
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-right: 15px;
   color: #F58026;
 }
+
+
+.context-collections .top-region.panel-panel.grid-12 {
+	z-index: 999;
+}
+/* Override for Z-index issue for CDL menu */
+.context-collections .panel-panel.grid-9, .context-collections .panel-panel.grid-3 {
+  z-index: 1;
+}
+
+.context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
+	z-index: 999999;
+}
+
+.context-collections-and-collection-development .panel-pane.panel-pane.pane-block.pane-nice-menus-2 {
+	z-index: 999;
+}
+
+.context-collections-and-collection-development .panel-pane.pane-views-panes.pane-spotlight-graphics-panel-pane-1 {
+	z-index: 1;
+}
+
 /* Views Alignment for selector Profile Page */
 
 .node-type-subject-specialists .field-type-text {
