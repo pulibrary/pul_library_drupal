@@ -2655,6 +2655,11 @@ body.faq .ui-widget-header a {
 	color: #333;
 }
 
+/* Library HOurs Administrative Views */
+.view-id-library_hours_editors td.active {
+	color: #000;
+}
+
 /*********************************************
  * Subject Specialists Page
  * ******************************************/
@@ -2897,6 +2902,7 @@ height:400px;
   clear: both;  
   background-position: center top;
   background-repeat: no-repeat;
+  background-color: #212121;
 }
 
 /* Spotlight Graphic */
@@ -2924,6 +2930,12 @@ height:400px;
   
 }
 
+/* CDL Overrides */
+.context-collections-and-collection-development h2, .context-collections h2 {
+  color: #212121;
+}
+
+
 /* CDL Menu */
 .pane-nice-menus-2 {
   background-color: none;
@@ -2946,7 +2958,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li {
 
 ul.nice-menu.nice-menu-menu-collection-development-webs li a {
     font-size: 1em;
-    color: #000;
+    color: #fff;
     background: none;
     padding-right: 1.7em;
     padding-left: 1.7em;
@@ -2963,23 +2975,68 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
   top: 2.4em;
   left: .lem;
   background-color: #000;
-  z-index:9999;
   padding:0;
   border:0;
   margin:0;
+}
+
+/* Arrows 
+
+.context-collections ul.nice-menu.nice-menu-menu-collection-development-webs.nice-menu-down li.menuparent,
+.context-collections ul.nice-menu.nice-menu-menu-collection-development-webs.nice-menu-down li li.menuparent {
+  background: #000; url("../images/arrow-down.png") right center no-repeat;
+}
+*/
+
+.context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
+	z-index: 1333;
+}
+
+.context-collections-and-collection-development #section-header, .context-collections #section-header {
+	z-index: 1666;
+}
+
+.context-collections-and-collection-development #section-content, .context-collections #section-content {
+	z-index: 1111;
 }
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
   padding-right: 15px;
   color: #fff;
   font-size: 1em;
-  z-index: 9999; 
 }
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-right: 15px;
   color: #F58026;
 }
+
+
+.context-collections .top-region.panel-panel.grid-12 {
+	z-index: 999;
+}
+/* Override for Z-index issue for CDL menu */
+.context-collections .panel-panel.grid-9, .context-collections .panel-panel.grid-3 {
+  z-index: 1;
+}
+
+.context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
+	z-index: 1222;
+}
+
+.context-collections-and-collection-development .panel-pane.panel-pane.pane-block.pane-nice-menus-2 {
+	z-index: 999;
+}
+
+.context-collections-and-collection-development .panel-pane.panel-pane.pane-block.pane-nice-menus-2 ul.nice-menu-menu-collection-development-webs {
+	z-index: 666;
+}
+
+
+.context-collections-and-collection-development .panel-pane.pane-views-panes.pane-spotlight-graphics-panel-pane-1 {
+	z-index: 1;
+}
+
 /* Views Alignment for selector Profile Page */
 
 .node-type-subject-specialists .field-type-text {
@@ -3033,4 +3090,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   color: #777;
   padding: 0 0 0 0;
   padding-bottom: .5em;
+}
+
+.context-collections .views-field-field-puluser-phone-number {
+  display: block;
 }

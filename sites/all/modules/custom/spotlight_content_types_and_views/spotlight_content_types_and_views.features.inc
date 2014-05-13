@@ -30,8 +30,24 @@ function spotlight_content_types_and_views_image_default_styles() {
   $styles['pul_large_spotlight_graphic'] = array(
     'name' => 'pul_large_spotlight_graphic',
     'label' => 'pul_large_spotlight_graphic',
-    'effects' => array(),
-  );
+    'effects' => array(
+      6 => array(
+      'data' => array(
+      'height' => 294,
+      'width' => 936,
+      ),
+    'dimensions callback' => 'image_scale_dimensions',
+    'effect callback' => 'image_scale_effect',
+    'form callback' => 'image_scale_form',
+    'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+    'label' => 'Scale',
+    'module' => 'image',
+    'name' => 'image_scale',
+    'summary theme' => 'image_scale_summary',
+    'weight' => 1,
+    ),
+  ),
+);
 
   // Exported image style: pul_logo_file.
   $styles['pul_logo_file'] = array(

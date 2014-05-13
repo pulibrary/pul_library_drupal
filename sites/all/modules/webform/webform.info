@@ -5,6 +5,7 @@ core = 7.x
 package = Webform
 configure = admin/config/content/webform
 php = 5.3
+dependencies[] = ctools
 dependencies[] = views
 
 ; Files that contain classes:
@@ -34,9 +35,9 @@ files[] = tests/permissions.test
 files[] = tests/submission.test
 files[] = tests/webform.test
 
-; Information added by Drupal.org packaging script on 2014-04-12
-version = "7.x-4.0-rc1"
+; Information added by Drupal.org packaging script on 2014-04-22
+version = "7.x-4.0-rc3"
 core = "7.x"
 project = "webform"
-datestamp = "1397285354"
+datestamp = "1398161330"
 
