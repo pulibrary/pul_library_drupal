@@ -3010,12 +3010,17 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 
 .context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
-	z-index: 999999;
+	z-index: 9999;
 }
 
 .context-collections-and-collection-development .panel-pane.panel-pane.pane-block.pane-nice-menus-2 {
 	z-index: 999;
 }
+
+.context-collections-and-collection-development .panel-pane.panel-pane.pane-block.pane-nice-menus-2 ul.nice-menu-menu-collection-development-webs {
+	z-index: 666;
+}
+
 
 .context-collections-and-collection-development .panel-pane.pane-views-panes.pane-spotlight-graphics-panel-pane-1 {
 	z-index: 1;
