@@ -2988,6 +2988,13 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
 }
 */
 
+.context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
+	z-index: 1000;
+}
+
+.context-collections-and-collection-development #section-header, .context-collections #section-header {
+	z-index: 1001;
+}
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
   padding-right: 15px;
