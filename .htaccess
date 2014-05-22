@@ -77,16 +77,15 @@ RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
 RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
 RedirectPermanent /libraries/locations.php /libraries/locations
 Redirect /favicon.ico /sites/default/files/libicon_0.ico
-Redirect /cdforum /collections/cdforum
-Redirect /collectiondevelopment /collections-and-collection-development
-Redirect /departments/collectiondevelopment /collections-and-collection-development
+RedirectPermanent /cdforum /collections/cdforum
+RedirectPermanent /collectiondevelopment /collections-and-collection-development
+RedirectPermanent /departments/collectiondevelopment /collections-and-collection-development
 RedirectPermanent /services/bdinfo.php /services/borrowdirect
 RedirectPermanent /search /find/all
 RedirectPermanent /libraries/map.php /about/locations
 RedirectPermanent /services/purchase.php http://library.princeton.edu/help/recommend-purchase
-Redirect /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
+RedirectPermanent /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
 Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
-Redirect /departments/systems_office/supply_request.php http://library2.princeton.edu/departments/systems_office/supply_request.php
 RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
 Redirect /digital_collections/princeton_only/ejournals.html http://library2.princeton.edu/digital_collections/princeton_only/ejournals.html
 
