@@ -192,7 +192,7 @@ function search_api_page_admin_add(array $form, array &$form_state) {
     'search_api_page_result' => t('Themed as search results'),
   );
   // For entities, we also add all entity view modes.
-  if ($entity_info = entity_get_info($index->item_type)) {
+  if ($index->getEntityType() && ($entity_info = entity_get_info($index->getEntityType()))) {
     foreach ($entity_info['view modes'] as $mode => $mode_info) {
       $view_modes[$mode] = $mode_info['label'];
     }
@@ -398,7 +398,7 @@ function search_api_page_admin_edit(array $form, array &$form_state, Entity $pag
     'search_api_page_result' => t('Themed as search results'),
   );
   // For entities, we also add all entity view modes.
-  if ($entity_info = entity_get_info($index->item_type)) {
+  if ($index->getEntityType() && ($entity_info = entity_get_info($index->getEntityType()))) {
     foreach ($entity_info['view modes'] as $mode => $mode_info) {
       $view_modes[$mode] = $mode_info['label'];
     }

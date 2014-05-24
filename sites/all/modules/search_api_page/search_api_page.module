@@ -48,7 +48,8 @@ function search_api_page_menu() {
         'description' => $page->description ? $page->description : '',
         'page callback' => 'search_api_page_view',
         'page arguments' => array((string) $page->machine_name),
-        'access arguments' => array('access search_api_page'),
+        'access callback' => 'search_api_page_access',
+        'access arguments' => array((string) $page->machine_name),
         'file' => 'search_api_page.pages.inc',
         'type' => MENU_SUGGESTED_ITEM,
       );
@@ -56,6 +57,14 @@ function search_api_page_menu() {
   }
 
   return $items;
+}
+
+/**
+ * Menu access callback for search pages.
+ */
+function search_api_page_access($page_machine_name) {
+  // Check for either individual page access or all pages access.
+  return user_access('access search_api_page') || user_access('access ' . $page_machine_name . ' search_api_page');
 }
 
 /**
@@ -108,12 +117,20 @@ function theme_search_api_page_search_performance($variables) {
  * Implements hook_permission().
  */
 function search_api_page_permission() {
-  return array(
+  $perms = array(
     'access search_api_page' => array(
-      'title' => t('Access search pages'),
-      'description' => t('Execute searches using the Search pages module.'),
+      'title' => t('Access all search pages'),
+      'description' => t('Execute searches using any of the search pages.'),
     ),
   );
+  // Allow separate permissions for each search page.
+  foreach (search_api_page_load_multiple(FALSE, array('enabled' => TRUE)) as $page) {
+    $perms['access ' . $page->machine_name . ' search_api_page'] = array(
+      'title' => t('Access %name search page', array('%name' => $page->name)),
+      'description' => t('Execute searches using the %name search page.', array('%name' => $page->name)),
+    );
+  }
+  return $perms;
 }
 
 /**
@@ -135,7 +152,7 @@ function search_api_page_block_info() {
  */
 function search_api_page_block_view($delta) {
   $page = search_api_page_load($delta);
-  if ($page) {
+  if ($page && $page->enabled) {
     $block = array();
     $block['subject'] = t($page->name);
     $block['content'] = drupal_get_form('search_api_page_search_form_' . $page->machine_name, $page, NULL, TRUE);
@@ -460,6 +477,9 @@ function search_api_page_search_form(array $form, array &$form_state, Entity $pa
     '#default_value' => $keys,
     '#size' => $compact ? 15 : 30,
   );
+  if ($compact) {
+    $form['keys_' . $page->id]['#attributes']['placeholder'] = t('Enter your keywords');
+  }
   $form['base_' . $page->id] = array(
     '#type' => 'value',
     '#value' => $page->path,

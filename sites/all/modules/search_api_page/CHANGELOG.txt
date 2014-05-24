@@ -1,5 +1,13 @@
-Search API Pages 1.x, dev (xx/xx/xxxx):
----------------------------------------
+Search API Pages 1.1 (05/24/2014):
+----------------------------------
+- #2259109 by DamienMcKenna, drunken monkey: Added a "placeholder" attribute
+  for the search block.
+- #1371482 by rooby, DamienMcKenna: Added per-page permissions.
+- #2189633 by acrazyanimal: Added the search page ID to the query options.
+- #2179399 by mparker17, drunken monkey: Fixed recognition of non-standard
+  entity indexes.
+- #2134731 by drunken monkey: Fixed notices when trying to display the block of
+  a disabled search page.
 
 Search API Pages 1.0 (09/01/2013):
 ----------------------------------
