@@ -59,6 +59,9 @@ function search_api_autocomplete_pages_searches(SearchApiIndex $index) {
  * @return SearchApiQueryInterface
  *   The query that would normally be executed when only $complete was entered
  *   as the search keys for the given search.
+ *
+ * @throws SearchApiException
+ *   If the query couldn't be created.
  */
 function search_api_autocomplete_pages_query(SearchApiAutocompleteSearch $search, $complete, $incomplete) {
   $page = search_api_page_load($search->options['custom']['page_id']);

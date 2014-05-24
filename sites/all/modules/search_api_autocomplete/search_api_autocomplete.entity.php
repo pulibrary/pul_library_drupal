@@ -92,8 +92,13 @@ class SearchApiAutocompleteSearch extends Entity {
   }
 
   /**
+   * Retrieves the server this search would at the moment be executed on.
+   *
    * @return SearchApiServer
    *   The server this search would at the moment be executed on.
+   *
+   * @throws SearchApiException
+   *   If a server is set for the index but it doesn't exist.
    */
   public function server() {
     if (!isset($this->server)) {
@@ -116,7 +121,12 @@ class SearchApiAutocompleteSearch extends Entity {
    *   autocompletion feature; FALSE otherwise.
    */
   public function supportsAutocompletion() {
-    return $this->server() && $this->server()->supportsFeature('search_api_autocomplete');
+    try {
+      return $this->server() && $this->server()->supportsFeature('search_api_autocomplete');
+    }
+    catch (Exception $e) {
+      return FALSE;
+    }
   }
 
   /**
@@ -131,6 +141,10 @@ class SearchApiAutocompleteSearch extends Entity {
       $element += array('#attributes' => array());
       $element['#attributes'] += array('class'=> array());
       $element['#attributes']['class'][] = 'auto_submit';
+      $options = $this->options + array('min_length' => 1);
+      if ($options['min_length'] > 1) {
+        $element['#attributes']['data-min-autocomplete-length'] = $options['min_length'];
+      }
     }
   }
 
@@ -148,8 +162,8 @@ class SearchApiAutocompleteSearch extends Entity {
     $keys = ltrim($keys);
     // If there is whitespace or a quote on the right, all words have been
     // completed.
-    if (rtrim($keys, " \t\n\r\0\x0B\"") != $keys) {
-      return array(rtrim($keys), '');
+    if (rtrim($keys, " \"") != $keys) {
+      return array(rtrim($keys, ' '), '');
     }
     if (preg_match('/^(.*?)\s*"?([\S]*)$/', $keys, $m)) {
       return array($m[1], $m[2]);
@@ -168,6 +182,9 @@ class SearchApiAutocompleteSearch extends Entity {
    * @return SearchApiQueryInterface
    *   The query that would normally be executed when only $complete was entered
    *   as the search keys for this search.
+   *
+   * @throws SearchApiException
+   *   If the query couldn't be created.
    */
   public function getQuery($complete, $incomplete) {
     $info = search_api_autocomplete_get_types($this->type);

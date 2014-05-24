@@ -12,9 +12,11 @@ Information for users
 The server on which the search will be executed has to support the
 "search_api_autocomplete" feature in order for autocompletion to work. Searches
 on other servers won't be affected by this module.
-Currently, only the Solr service class [1] is known to support this feature.
+Currently, the Solr service class [1] and the Database Search [2] are known to
+support this feature.
 
-[1] http://drupal.org/project/search_api_solr
+[1] https://drupal.org/project/search_api_solr
+[2] https://drupal.org/project/search_api_db
 
 - Necessary setup
 
@@ -26,6 +28,15 @@ To activate autocompletion for an index's searches, go to the index's
 „Autocomplete“ tab. There, you see all available searches for the index and can
 enable (and afterwards configure) autocompletion for each of them. All fulltext
 key fields on the searches should then become autocompletion fields.
+
+There is an autocomplete permission for each separate search. Therefore, after
+adding autocomplete to a new search, don't forget to set the appropriate
+permissions.
+
+NOTE: Searches using the "Multi-Index Searches" module [3] are currently not
+supported by this module.
+
+[3] https://drupal.org/project/search_api_multi
 
 - Supported searches
 
