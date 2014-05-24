@@ -68,37 +68,25 @@ allow from all
 RedirectPermanent /about/contact.php /about/contact-us
 RedirectPermanent /about/hours /hours
 RedirectPermanent /about/hours.php /hours
-RedirectPermanent /guide /sites/default/files/documents/Library_guide_08_2013.pdf
+Redirect /guide /sites/default/files/documents/Library_guide_08_2013.pdf
 RedirectPermanent /catalogs/articles.php /research/databases
 RedirectPermanent /catalogs/other.php /research/catalogs
 RedirectPermanent /libraries/collections.php /collections
 RedirectPermanent /hr /staff/hr
 RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
 RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
-Redirect /catalogs/newtitles.php http://library2.princeton.edu/catalogs/newtitles.php
 RedirectPermanent /libraries/locations.php /libraries/locations
-Redirect /services/annex.php http://library2.princeton.edu/services/annex.php
-Redirect /services/inprocess.php http://library2.princeton.edu/services/inprocess.php
-Redirect /services/trace.php http://library2.princeton.edu/services/trace.php
-Redirect /services/ilslendingform.php http://library2.princeton.edu/services/ilslendingform.php
-Redirect /services/requests.php http://library2.princeton.edu/services/requests.php
 Redirect /favicon.ico /sites/default/files/libicon_0.ico
-Redirect /cdforum http://library2.princeton.edu/cdforum
-Redirect /collectiondevelopment http://library2.princeton.edu/collectiondevelopment
-Redirect /departments/collectiondevelopment http://library2.princeton.edu/departments/collectiondevelopment
+RedirectPermanent /cdforum /collections/cdforum
+RedirectPermanent /collectiondevelopment /collections-and-collection-development
+RedirectPermanent /departments/collectiondevelopment /collections-and-collection-development
 RedirectPermanent /services/bdinfo.php /services/borrowdirect
 RedirectPermanent /search /find/all
 RedirectPermanent /libraries/map.php /about/locations
 RedirectPermanent /services/purchase.php http://library.princeton.edu/help/recommend-purchase
-Redirect /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
+RedirectPermanent /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
 Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
-Redirect /departments/systems_office/supply_request.php http://library2.princeton.edu/departments/systems_office/supply_request.php
 RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
-Redirect /catalogs/rssfeeds/newtitles.php http://library2.princeton.edu/catalogs/rssfeeds/newtitles.php
-Redirect /style http://library2.princeton.edu/style
-Redirect /styles http://library2.princeton.edu/styles
-Redirect /images http://library2.princeton.edu/images
-Redirect /services/ppl.php http://library2.princeton.edu/services/ppl.php
 Redirect /digital_collections/princeton_only/ejournals.html http://library2.princeton.edu/digital_collections/princeton_only/ejournals.html
 
 # Various rewrite rules.

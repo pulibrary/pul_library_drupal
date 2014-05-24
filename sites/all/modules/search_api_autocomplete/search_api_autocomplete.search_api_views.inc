@@ -90,14 +90,25 @@ function search_api_autocomplete_views_searches(SearchApiIndex $index) {
  * @return SearchApiQueryInterface
  *   The query that would normally be executed when only $complete was entered
  *   as the search keys for the given search.
+ *
+ * @throws SearchApiException
+ *   If the query couldn't be created.
  */
 function search_api_autocomplete_views_query(SearchApiAutocompleteSearch $search, $complete, $incomplete) {
   $views_id = substr($search->machine_name, 17);
   $view = views_get_view($views_id);
+  if (!$view) {
+    $vars['@view'] = $views_id;
+    throw new SearchApiException(t('Could not load view @view.', $vars));
+  }
   $view->set_display(isset($search->options['custom']['display']) ? $search->options['custom']['display'] : NULL);
   $view->pre_execute();
   $view->build();
   $query = $view->query->getSearchApiQuery();
+  if (!$query) {
+    $vars['@view'] = !empty($view->human_name) ? $view->human_name : $views_id;
+    throw new SearchApiException(t('Could not create query for view @view.', $vars));
+  }
   $query->keys($complete);
   return $query;
 }

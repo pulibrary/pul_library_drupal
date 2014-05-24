@@ -10,62 +10,79 @@
  */
 function search_api_autocomplete_autocomplete(SearchApiAutocompleteSearch $search, $fields, $keys = '') {
   $ret = array();
-  if ($search->supportsAutocompletion()) {
-    $server = $search->server();
-    list($complete, $incomplete) = $search->splitKeys($keys);
-    $keys = preg_replace('/\s+/', ' ', trim($keys));
-    $query = $search->getQuery($complete, $incomplete);
-    if ($query) {
-      // @todo Maybe make range configurable?
-      $query->range(0, 10);
-      $query->setOption('search id', 'search_api_autocomplete:' . $search->machine_name);
-      if (!empty($search->options['fields'])) {
-        $query->fields($search->options['fields']);
-      }
-      elseif ($fields != '-') {
-        $fields = explode(' ', $fields);
-        $query->fields($fields);
-      }
-      $query->preExecute();
-      $suggestions = $server->getAutocompleteSuggestions($query, $search, $incomplete, $keys);
-      if ($suggestions) {
-        foreach ($suggestions as $suggestion) {
-          // Convert suggestion strings into an array.
-          if (is_string($suggestion)) {
-            $pos = strpos($suggestion, $keys);
-            if ($pos === FALSE) {
-              $suggestion = array(
-                'user_input' => '',
-                'suggestion_suffix' => $suggestion,
-              );
+  try {
+    if ($search->supportsAutocompletion()) {
+      $server = $search->server();
+      list($complete, $incomplete) = $search->splitKeys($keys);
+      $query = $search->getQuery($complete, $incomplete);
+      if ($query) {
+        // @todo Maybe make range configurable?
+        $query->range(0, 10);
+        $query->setOption('search id', 'search_api_autocomplete:' . $search->machine_name);
+        if (!empty($search->options['fields'])) {
+          $query->fields($search->options['fields']);
+        }
+        elseif ($fields != '-') {
+          $fields = explode(' ', $fields);
+          $query->fields($fields);
+        }
+        $query->preExecute();
+        $suggestions = $server->getAutocompleteSuggestions($query, $search, $incomplete, $keys);
+        if ($suggestions) {
+          foreach ($suggestions as $suggestion) {
+            // Convert suggestion strings into an array.
+            if (is_string($suggestion)) {
+              $pos = strpos($suggestion, $keys);
+              if ($pos === FALSE) {
+                $suggestion = array(
+                  'user_input' => '',
+                  'suggestion_suffix' => $suggestion,
+                );
+              }
+              else {
+                $suggestion = array(
+                  'suggestion_prefix' => substr($suggestion, 0, $pos),
+                  'user_input' => $keys,
+                  'suggestion_suffix' => substr($suggestion, $pos + strlen($keys)),
+                );
+              }
             }
-            else {
-              $suggestion = array(
-                'suggestion_prefix' => substr($suggestion, 0, $pos),
-                'user_input' => $keys,
-                'suggestion_suffix' => substr($suggestion, $pos + strlen($keys)),
-              );
+            // Add defaults.
+            $suggestion += array(
+              'prefix' => NULL,
+              'suggestion_prefix' => '',
+              'user_input' => $keys,
+              'suggestion_suffix' => '',
+              'results' => NULL,
+            );
+            if (empty($search->options['results'])) {
+              unset($suggestion['results']);
+            }
+            $key = $suggestion['suggestion_prefix'] . $suggestion['user_input'] . $suggestion['suggestion_suffix'];
+            if (!isset($ret[$key])) {
+              $ret[$key] = $suggestion;
             }
           }
-          // Add defaults.
-          $suggestion += array(
-            'prefix' => NULL,
-            'suggestion_prefix' => '',
+
+          $alter_params = array(
+            'query' => $query,
+            'search' => $search,
+            'incomplete_key' => $incomplete,
             'user_input' => $keys,
-            'suggestion_suffix' => '',
-            'results' => NULL,
           );
-          if (empty($search->options['results'])) {
-            unset($suggestion['results']);
-          }
-          $key = $suggestion['suggestion_prefix'] . $suggestion['user_input'] . $suggestion['suggestion_suffix'];
-          if (!isset($ret[$key])) {
+          drupal_alter('search_api_autocomplete_suggestions', $ret, $alter_params);
+
+          foreach ($ret as $key => $suggestion) {
             $ret[$key] = theme('search_api_autocomplete_suggestion', $suggestion);
           }
         }
       }
     }
   }
+  catch (SearchApiException $e) {
+    watchdog_exception('search_api_autocomplete', $e, '%type while retrieving autocomplete suggestions: !message in %function (line %line of %file).');
+  }
+
   drupal_json_output($ret);
 }
 

@@ -36,9 +36,11 @@
 
 ?>
 <div class="<?php print $classes;?>">
-  <?php if ($result_count) : ?>
+  <?php if ($result_count): ?>
     <?php print render($search_performance); ?>
-    <?php print render($spellcheck); ?>
+  <?php endif; ?>
+  <?php print render($spellcheck); ?>
+  <?php if ($result_count): ?>
     <h2><?php print t('Search results');?></h2>
     <ol class="search-results">
       <?php print render($search_results); ?>

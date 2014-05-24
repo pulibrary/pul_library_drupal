@@ -210,9 +210,10 @@ function search_api_autocomplete_admin_overview_submit_delete(array $form, array
  * @param SearchApiAutocompleteSearch $search
  *   The search whose settings should be edited.
  *
+ * @ingroup forms
+ *
  * @see search_api_autocomplete_admin_search_edit_validate()
  * @see search_api_autocomplete_admin_search_edit_submit()
- * @ingroup forms
  */
 function search_api_autocomplete_admin_search_edit(array $form, array &$form_state, SearchApiAutocompleteSearch $search) {
   drupal_set_title(t('Edit %search', array('%search' => $search->name)), PASS_THROUGH);
@@ -228,6 +229,13 @@ function search_api_autocomplete_admin_search_edit(array $form, array &$form_sta
     '#type' => 'checkbox',
     '#title' => t('Enabled'),
     '#default_value' => $search->enabled,
+  );
+  $form['options']['min_length'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Minimum length of keywords for autocompletion'),
+    '#description' => t('If the entered keywords are shorter than this, no autocomplete suggestions will be displayed.'),
+    '#default_value' => isset($search->options['min_length']) ? $search->options['min_length'] : 1,
+    '#validate' => array('element_validate_integer_positive'),
   );
   $form['options']['results'] = array(
     '#type' => 'checkbox',
@@ -278,7 +286,7 @@ function search_api_autocomplete_admin_search_edit_validate(array $form, array &
   $f = $form_state['type']['config form'] . '_validate';
   if (function_exists($f)) {
     $custom_form = empty($form['options']['custom']) ? array() : $form['options']['custom'];
-    $f($form['options']['custom'], $form_state, $form_state['values']['options']['custom']);
+    $f($custom_form, $form_state, $form_state['values']['options']['custom']);
   }
 }
 
@@ -294,13 +302,14 @@ function search_api_autocomplete_admin_search_edit_submit(array $form, array &$f
     $f = $form_state['type']['config form'] . '_submit';
     if (function_exists($f)) {
       $custom_form = empty($form['options']['custom']) ? array() : $form['options']['custom'];
-      $f($form['options']['custom'], $form_state, $values['options']['custom']);
+      $f($custom_form, $form_state, $values['options']['custom']);
     }
   }
 
   $search = $form_state['search'];
   $search->enabled = $values['enabled'];
   $search->options['results'] = $values['options']['results'];
+  $search->options['min_length'] = $values['options']['min_length'];
   $search->options['fields'] = array_keys(array_filter($values['options']['fields']));
   if (isset($values['options']['custom'])) {
     // Take care of custom options that aren't changed in the config form.

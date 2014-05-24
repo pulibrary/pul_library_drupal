@@ -1,62 +1,73 @@
 (function ($) {
 
-/**
- * Handler for the "keyup" event.
- *
- * Overwritten from Drupal's autocomplete.js to automatically submit the form
- * when Enter is hit.
- */
-Drupal.jsAC.prototype.onkeyup = function (input, e) {
-  if (!e) {
-    e = window.event;
-  }
-  switch (e.keyCode) {
-    case 16: // Shift.
-    case 17: // Ctrl.
-    case 18: // Alt.
-    case 20: // Caps lock.
-    case 33: // Page up.
-    case 34: // Page down.
-    case 35: // End.
-    case 36: // Home.
-    case 37: // Left arrow.
-    case 38: // Up arrow.
-    case 39: // Right arrow.
-    case 40: // Down arrow.
-      return true;
-
-    case 9:  // Tab.
-    case 13: // Enter.
-    case 27: // Esc.
-      this.hidePopup(e.keyCode);
-      if (13 == e.keyCode && $(input).hasClass('auto_submit')) {
-        input.form.submit();
-      }
-      return true;
-
-    default: // All other keys.
-      if (input.value.length > 0)
-        this.populatePopup();
-      else
-        this.hidePopup(e.keyCode);
-      return true;
-  }
-};
-
 // Auto-submit main search input after autocomplete
-if ( typeof Drupal.jsAC != 'undefined') {
+if (typeof Drupal.jsAC != 'undefined') {
+
+  /**
+   * Handler for the "keyup" event.
+   *
+   * Extend from Drupal's autocomplete.js to automatically submit the form
+   * when Enter is hit.
+   */
+  Drupal.jsAC.defaultOnkeyup = Drupal.jsAC.prototype.onkeyup;
+  Drupal.jsAC.prototype.onkeyup = function (input, e) {
+    if (!e) {
+      e = window.event;
+    }
+    // Fire standard function.
+    $.proxy(Drupal.jsAC.defaultOnkeyup, this)(input, e);
+
+    if (13 == e.keyCode && $(input).hasClass('auto_submit')) {
+      $(':submit', input.form).trigger('click');
+    }
+  };
+
+  /**
+   * Handler for the "keyup" event.
+   *
+   * Extend from Drupal's autocomplete.js to avoid ajax interfering with the
+   * autocomplete.
+   */
+  Drupal.jsAC.defaultOnkeydown = Drupal.jsAC.prototype.onkeydown;
+  Drupal.jsAC.prototype.onkeydown = function (input, e) {
+    if (!e) {
+      e = window.event;
+    }
+    // Fire standard function.
+    $.proxy(Drupal.jsAC.defaultOnkeydown, this)(input, e);
+
+    // Prevent that the ajax handling of views fires to early and thus
+    // misses the form update.
+    if (13 == e.keyCode && $(input).hasClass('auto_submit')) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
+
   Drupal.jsAC.prototype.select = function(node) {
     this.input.value = $(node).data('autocompleteValue');
     if ($(this.input).hasClass('auto_submit')) {
-
       if (typeof Drupal.search_api_ajax != 'undefined') {
         // Use Search API Ajax to submit
         Drupal.search_api_ajax.navigateQuery($(this.input).val());
       } else {
-        this.input.form.submit();
+        $(':submit', this.input.form).trigger('click');
       }
-
+      return true;
     }
+  };
+
+  /**
+   * Overwrite default behaviour that would rely on synchronous jQuery animation
+   * in Drupal.jsAC.prototype.hidePopup() - which is simply impossible.
+   *
+   * Just don't return any boolean value.
+   */
+  Drupal.autocompleteSubmit = function () {
+    $('#autocomplete').each(function () {
+      this.owner.hidePopup();
+    });
   };
 }
 
@@ -64,20 +75,30 @@ if ( typeof Drupal.jsAC != 'undefined') {
 * Performs a cached and delayed search.
 */
 Drupal.ACDB.prototype.search = function (searchString) {
-  var db = this;
   this.searchString = searchString;
 
-  // See if this string needs to be searched for anyway.
-  searchString = searchString.replace(/^\s+|\s+$/, '');
-  if (searchString.length <= 0 ||
-    searchString.charAt(searchString.length - 1) == ',') {
+  // Check allowed length of string for autocompete.
+  var data = $(this.owner.input).first().data('min-autocomplete-length');
+  if (data && searchString.length < data) {
     return;
   }
+
+  // See if this string needs to be searched for anyway.
+  if (searchString.match(/^\s*$/)) {
+    return;
+  }
+
+  // Prepare search string.
+  searchString = searchString.replace(/^\s+/, '');
+  searchString = searchString.replace(/\s+/g, ' ');
 
   // See if this key has been searched for before.
   if (this.cache[searchString]) {
     return this.owner.found(this.cache[searchString]);
   }
+
+  var db = this;
+  this.searchString = searchString;
 
   // Initiate delayed search.
   if (this.timer) {

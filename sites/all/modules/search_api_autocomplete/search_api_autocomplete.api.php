@@ -167,6 +167,23 @@ function hook_default_search_api_autocomplete_search_alter(array &$defaults) {
 }
 
 /**
+ * Alter autocomplete suggestions.
+ *
+ * @param array $suggestions
+ *   Associative array where keys are the complete suggested keywords, and the
+ *   values are suggestion arrays as defined by
+ *   SearchApiAutocompleteInterface::getAutocompleteSuggestions().
+ * @param array $context
+ *   An associative array containing the parameters for the original
+ *   SearchApiAutocompleteInterface::getAutocompleteSuggestions() call, in the
+ *   keys "query", "search", "incomplete_key" and "user_input".
+ */
+function hook_search_api_autocomplete_suggestions_alter(array &$suggestions, array $context) {
+  // Sort suggestions in alphabetical order.
+  ksort($suggestions);
+}
+
+/**
  * @} End of "addtogroup hooks".
  */
 
@@ -221,6 +238,9 @@ function example_list_autocomplete_searches(SearchApiIndex $index) {
  * @return SearchApiQueryInterface
  *   The query that would normally be executed when only $complete was entered
  *   as the search keys for the given search.
+ *
+ * @throws SearchApiException
+ *   If the query couldn't be created.
  */
 function example_create_autocomplete_query(SearchApiAutocompleteSearch $search, $complete, $incomplete) {
   $query = search_api_query($search->index_id);
