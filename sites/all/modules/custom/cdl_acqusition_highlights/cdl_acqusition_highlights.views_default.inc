@@ -116,17 +116,24 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_cdl_acq_type']['field'] = 'field_cdl_acq_type';
   $handler->display->display_options['fields']['field_cdl_acq_type']['label'] = 'Type';
   $handler->display->display_options['fields']['field_cdl_acq_type']['delta_offset'] = '0';
-  /* Field: Content: Specialist */
-  $handler->display->display_options['fields']['field_specialist']['id'] = 'field_specialist';
-  $handler->display->display_options['fields']['field_specialist']['table'] = 'field_data_field_specialist';
-  $handler->display->display_options['fields']['field_specialist']['field'] = 'field_specialist';
-  $handler->display->display_options['fields']['field_specialist']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_specialist']['delta_offset'] = '0';
   /* Field: Content: Access */
   $handler->display->display_options['fields']['field_access']['id'] = 'field_access';
   $handler->display->display_options['fields']['field_access']['table'] = 'field_data_field_access';
   $handler->display->display_options['fields']['field_access']['field'] = 'field_access';
   $handler->display->display_options['fields']['field_access']['exclude'] = TRUE;
+  /* Field: Content: Contact for Further Information */
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['id'] = 'field_cdl_specialist_profile';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['table'] = 'field_data_field_cdl_specialist_profile';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['field'] = 'field_cdl_specialist_profile';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['label'] = 'Specialist';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_cdl_specialist_profile']['field_api_classes'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -156,30 +163,40 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'acquisitions_highlights' => 'acquisitions_highlights',
   );
-  /* Filter criterion: Content: Access (field_access) */
-  $handler->display->display_options['filters']['field_access_value']['id'] = 'field_access_value';
-  $handler->display->display_options['filters']['field_access_value']['table'] = 'field_data_field_access';
-  $handler->display->display_options['filters']['field_access_value']['field'] = 'field_access_value';
-  $handler->display->display_options['filters']['field_access_value']['value'] = array(
-    'all' => 'all',
-    'Open' => 'Open',
-    'Princeton Only' => 'Princeton Only',
-  );
-  $handler->display->display_options['filters']['field_access_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_access_value']['expose']['operator_id'] = 'field_access_value_op';
-  $handler->display->display_options['filters']['field_access_value']['expose']['label'] = 'Access';
-  $handler->display->display_options['filters']['field_access_value']['expose']['operator'] = 'field_access_value_op';
-  $handler->display->display_options['filters']['field_access_value']['expose']['identifier'] = 'field_access_value';
-  $handler->display->display_options['filters']['field_access_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Acquisition Type (field_cdl_acq_type) */
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['id'] = 'field_cdl_acq_type_value';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['table'] = 'field_data_field_cdl_acq_type';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['field'] = 'field_cdl_acq_type_value';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['operator_id'] = 'field_cdl_acq_type_value_op';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['operator'] = 'field_cdl_acq_type_value_op';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['identifier'] = 'field_cdl_acq_type_value';
+  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    26 => 0,
-    21 => 0,
-    31 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
     11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
     16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
   );
-  $handler->display->display_options['filters']['field_access_value']['expose']['reduce'] = TRUE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
