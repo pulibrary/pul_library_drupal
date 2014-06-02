@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Articles and Databases Display Pages feature.
- */
-
-include_once 'articles_and_databases_display_pages.features.inc';
