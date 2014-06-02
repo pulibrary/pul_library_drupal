@@ -280,6 +280,13 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['field'] = 'reverse_field_subs_specialist_taxonomy_term';
   $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
