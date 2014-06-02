@@ -71,6 +71,7 @@ features[views_view][] = calendar_date
 features[views_view][] = calendar_details
 features[views_view][] = library_hours
 features[views_view][] = library_hours_editors
+features_exclude[dependencies][articles_and_databases] = articles_and_databases
 features_exclude[field][node-library_hours-field_hours_library_status] = node-library_hours-field_hours_library_status
 features_exclude[field][node-library_hours-field_hrs_lib_calendar] = node-library_hours-field_hrs_lib_calendar
 features_exclude[field][node-library_hours-body] = node-library_hours-body
@@ -83,5 +84,4 @@ features_exclude[field][taxonomy_term-library_hours_calendars-field_cal_summer_h
 features_exclude[field][taxonomy_term-library_hours_calendars-field_list_on_homepage] = taxonomy_term-library_hours_calendars-field_list_on_homepage
 features_exclude[field][taxonomy_term-library_hours_calendars-field_library_hrs] = taxonomy_term-library_hours_calendars-field_library_hrs
 features_exclude[field_base][body] = body
-features_exclude[dependencies][articles_and_databases] = articles_and_databases
 no autodetect = 1
