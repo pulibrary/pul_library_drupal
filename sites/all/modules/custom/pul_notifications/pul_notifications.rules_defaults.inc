@@ -12,6 +12,7 @@ function pul_notifications_default_rules_configuration() {
   $items['rules_dmg_resource_update'] = entity_import('rules_config', '{ "rules_dmg_resource_update" : {
       "LABEL" : "DMG Resource Update",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "entity_rules_update" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
@@ -33,7 +34,7 @@ function pul_notifications_default_rules_configuration() {
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "3" : "3" } },
             "subject" : "A DMG resource has been updated. ",
-            "message" : "A DMG [entity:content-type] at [entity:url] has been updated by "
+            "message" : "A DMG [entity:content-type], [entity:title],  at [entity:url] has been updated by [site:current-user] created by [entity:author]"
           }
         }
       ],
@@ -43,6 +44,7 @@ function pul_notifications_default_rules_configuration() {
   $items['rules_new_database_notification'] = entity_import('rules_config', '{ "rules_new_database_notification" : {
       "LABEL" : "New Database Notification",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "entity_rules_create" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
@@ -72,6 +74,7 @@ function pul_notifications_default_rules_configuration() {
   $items['rules_new_node_added'] = entity_import('rules_config', '{ "rules_new_node_added" : {
       "LABEL" : "New Node Added",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "entity_rules_create" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
@@ -93,8 +96,9 @@ function pul_notifications_default_rules_configuration() {
   $items['rules_warn_of_term_edit'] = entity_import('rules_config', '{ "rules_warn_of_term_edit" : {
       "LABEL" : "Warn of Term Edit",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules", "taxonomy" ],
-      "ON" : [ "taxonomy_term_update" ],
+      "ON" : { "taxonomy_term_update" : [] },
       "IF" : [
         { "entity_is_of_type" : { "entity" : [ "term" ], "type" : "taxonomy_term" } },
         { "entity_is_of_bundle" : {
