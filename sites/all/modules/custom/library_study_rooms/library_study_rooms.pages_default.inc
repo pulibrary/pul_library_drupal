@@ -50,20 +50,25 @@ function library_study_rooms_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'Firestone Study Rooms';
+  $display->title = 'Firestone Reading and Graduate Study Rooms';
+  $display->uuid = 'f4eb48c6-0a7d-4bed-a025-0e1dd90a2fe2';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-0c592a3a-3259-4b26-a095-b1a9873c22b5';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'study_room_lists-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -72,8 +77,9 @@ function library_study_rooms_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['middle'][0] = 'new-1';
+    $pane->uuid = '0c592a3a-3259-4b26-a095-b1a9873c22b5';
+    $display->content['new-0c592a3a-3259-4b26-a095-b1a9873c22b5'] = $pane;
+    $display->panels['middle'][0] = 'new-0c592a3a-3259-4b26-a095-b1a9873c22b5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

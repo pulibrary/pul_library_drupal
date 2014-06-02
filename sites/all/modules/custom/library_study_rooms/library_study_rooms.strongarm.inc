@@ -147,6 +147,7 @@ function library_study_rooms_strongarm() {
   $strongarm->name = 'node_options_study_room';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_study_room'] = $strongarm;
 
