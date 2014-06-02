@@ -1,7 +1,6 @@
 name = Libraries and Collections Search Results
 core = 7.x
 package = PUL Search Views
-php = 5.2.4
 version = 7.x-1.0-alpha1
 project = libraries_and_collections_search_results
 dependencies[] = ctools
