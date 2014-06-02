@@ -448,7 +448,7 @@ function training_and_workshops_field_default_field_instances() {
     'bundle' => 'training_session',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use a Princeton Netid',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -698,6 +698,7 @@ function training_and_workshops_field_default_field_instances() {
   t('Session');
   t('Subtitle');
   t('Training Series');
+  t('Use a Princeton Netid');
 
   return $field_instances;
 }

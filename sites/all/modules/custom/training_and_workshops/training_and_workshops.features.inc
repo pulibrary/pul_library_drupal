@@ -40,7 +40,7 @@ function training_and_workshops_default_entityform_type() {
       "draft_save_text" : { "value" : "", "format" : "full_html" },
       "submission_rules" : { "rules_email_entityform_admin" : "rules_email_entityform_admin" },
       "notification_text" : "",
-      "notify_emails" : "abarrera@princeton.edu, abw@princeton.edu",
+      "notify_emails" : "kr2@princeton.edu, abw@princeton.edu",
       "validation_rules" : [],
       "submit_button_text" : "",
       "submission_page_title" : "Registration for Zotero Workshop",
@@ -71,7 +71,11 @@ function training_and_workshops_default_entityform_type() {
         "16" : 0,
         "17" : 0,
         "18" : 0,
-        "19" : 0
+        "19" : 0,
+        "20" : 0,
+        "21" : 0,
+        "22" : 0,
+        "23" : 0
       },
       "resubmit_action" : "new",
       "access_rules" : [],
@@ -112,7 +116,7 @@ function training_and_workshops_node_info() {
     'training_session' => array(
       'name' => t('Training Session'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Individual Training Session with a date and time. Attached to a training series.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
