@@ -41,7 +41,7 @@ function pul_library_users_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-puluser-basicinfo field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -76,7 +76,7 @@ function pul_library_users_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-admininfo field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -104,7 +104,7 @@ function pul_library_users_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-contact field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -133,7 +133,7 @@ function pul_library_users_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-sublibrarian field-group-tab',
         'required_fields' => 1,
       ),
     ),

@@ -2,7 +2,6 @@ name = PUL Library Users
 description = Creates Roles, Profile Fields for PUL Library Users
 core = 7.x
 package = PUL Custom Features
-php = 5.2.4
 version = 7.x-1.0
 project = pul_library_users
 dependencies[] = ctools
