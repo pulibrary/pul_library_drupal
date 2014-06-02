@@ -136,6 +136,7 @@ function cdl_subject_specialist_views_default_views() {
 
   /* Display: Selector Profile Listing */
   $handler = $view->new_display('panel_pane', 'Selector Profile Listing', 'panel_pane_1');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -143,6 +144,17 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['id'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['table'] = 'field_data_field_library_directory_profile';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['field'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['relationships']['field_library_directory_profile_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['id'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['field'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['relationship'] = 'field_library_directory_profile_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -178,10 +190,26 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_selector_subject_areas']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_selector_subject_areas']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_selector_subject_areas']['multi_type'] = 'ul';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['label'] = 'Departments and Programs';
+  $handler->display->display_options['fields']['view_1']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'cdl_subject_selector_bio';
+  $handler->display->display_options['fields']['view_1']['display'] = 'panel_pane_4';
+  $handler->display->display_options['fields']['view_1']['arguments'] = '[!nid] ';
   /* Field: Content: Department and Programs */
   $handler->display->display_options['fields']['field_sel_library_department']['id'] = 'field_sel_library_department';
   $handler->display->display_options['fields']['field_sel_library_department']['table'] = 'field_data_field_sel_library_department';
   $handler->display->display_options['fields']['field_sel_library_department']['field'] = 'field_sel_library_department';
+  $handler->display->display_options['fields']['field_sel_library_department']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sel_library_department']['alter']['text'] = '<a href="[field_cdl_department_url]">[field_sel_library_department]</a>';
+  $handler->display->display_options['fields']['field_sel_library_department']['alter']['path'] = '[field_cdl_department_url] ';
+  $handler->display->display_options['fields']['field_sel_library_department']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_sel_library_department']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_sel_library_department']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_sel_library_department']['element_label_type'] = 'h3';
   $handler->display->display_options['fields']['field_sel_library_department']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_sel_library_department']['delta_offset'] = '0';
@@ -342,6 +370,55 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['relationship'] = 'field_library_directory_profile_target_id';
+
+  /* Display: Selector Dept. Info */
+  $handler = $view->new_display('panel_pane', 'Selector Dept. Info', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Departments and Programs';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'picture' => 'picture',
+    'field_office_location' => 'field_office_location',
+    'field_puluser_phone_number' => 'field_puluser_phone_number',
+    'mail' => 'mail',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Department and Programs (field_sel_library_department) */
+  $handler->display->display_options['relationships']['field_sel_library_department_tid']['id'] = 'field_sel_library_department_tid';
+  $handler->display->display_options['relationships']['field_sel_library_department_tid']['table'] = 'field_data_field_sel_library_department';
+  $handler->display->display_options['relationships']['field_sel_library_department_tid']['field'] = 'field_sel_library_department_tid';
+  $handler->display->display_options['relationships']['field_sel_library_department_tid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Department URL */
+  $handler->display->display_options['fields']['field_cdl_department_url']['id'] = 'field_cdl_department_url';
+  $handler->display->display_options['fields']['field_cdl_department_url']['table'] = 'field_data_field_cdl_department_url';
+  $handler->display->display_options['fields']['field_cdl_department_url']['field'] = 'field_cdl_department_url';
+  $handler->display->display_options['fields']['field_cdl_department_url']['relationship'] = 'field_sel_library_department_tid';
+  $handler->display->display_options['fields']['field_cdl_department_url']['label'] = '';
+  $handler->display->display_options['fields']['field_cdl_department_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_cdl_department_url']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_cdl_department_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_cdl_department_url']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_cdl_department_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_cdl_department_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_cdl_department_url']['type'] = 'link_plain';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_sel_library_department_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="[field_cdl_department_url]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['path'] = '[field_cdl_department_url]';
+  $handler->display->display_options['fields']['name']['element_type'] = '0';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $export['cdl_subject_selector_bio'] = $view;
 
   $view = new view();
