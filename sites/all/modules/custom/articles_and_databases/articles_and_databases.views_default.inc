@@ -293,11 +293,8 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<span data-override-access-url="[field_db_access_url_1]" data-access-url="[field_db_access_url]" data-ezproxy-access="[field_db_use_proxy]" data-override-proxy-access="[field_db_use_proxy_1]">[title]</span><span class="db-date-coverage">[field_db_date_coverage]</span>';
   $handler->display->display_options['fields']['title']['element_class'] = 'resource-title';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -344,7 +341,6 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -436,7 +432,7 @@ function articles_and_databases_views_default_views() {
   /* Display: Trial Database Listings */
   $handler = $view->new_display('panel_pane', 'Trial Database Listings', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Active Trial Databases';
+  $handler->display->display_options['title'] = 'Trial Databases';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;

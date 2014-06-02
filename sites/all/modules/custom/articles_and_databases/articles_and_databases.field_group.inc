@@ -36,7 +36,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-access field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -67,7 +67,7 @@ function articles_and_databases_field_group_info() {
       'label' => 'Administrative Info',
       'instance_settings' => array(
         'required_fields' => 0,
-        'classes' => '',
+        'classes' => ' group-db-admininfo field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',
@@ -92,14 +92,13 @@ function articles_and_databases_field_group_info() {
       1 => 'field_db_access_url',
       2 => 'field_db_copyright_information',
       3 => 'field_db_mobile_support',
-      4 => 'field_db_location_access_note',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-copyright-access field-group-fieldset',
       ),
     ),
   );
@@ -120,13 +119,14 @@ function articles_and_databases_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_db_date_coverage',
+      2 => 'field_db_location_access_note',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-desc-group field-group-fieldset',
       ),
     ),
   );
@@ -151,7 +151,7 @@ function articles_and_databases_field_group_info() {
     'format_settings' => array(
       'label' => 'Links',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-db-display-otherurls field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -183,7 +183,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-ezproxyifno field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -214,7 +214,7 @@ function articles_and_databases_field_group_info() {
       'label' => 'Database Information',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-db-generalinfo field-group-tab',
         'description' => 'General Database Information',
       ),
       'formatter' => 'open',
@@ -243,7 +243,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-issue-status field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -271,7 +271,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-trial-info field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -299,7 +299,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-db-urlinfo field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -328,7 +328,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-dboverride-admininfo field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -356,7 +356,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-sub-guides field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -384,7 +384,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-subs-display-flags field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -412,7 +412,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-subs-specialist-info field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -439,7 +439,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-subs-tier-one-list field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -466,7 +466,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-subs-tier-two-list field-group-tab',
         'required_fields' => 1,
       ),
     ),

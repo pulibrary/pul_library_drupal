@@ -423,7 +423,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 12,
       ),
       'ical' => array(
         'label' => 'above',
@@ -687,7 +687,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'ical' => array(
         'label' => 'above',
@@ -951,7 +951,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',
@@ -1031,7 +1031,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 13,
       ),
       'ical' => array(
         'label' => 'above',
@@ -1310,7 +1310,7 @@ function articles_and_databases_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_db_grp_member_of',
-    'label' => 'EZproxy Database Group Member',
+    'label' => 'Belongs to Database Package',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1605,7 +1605,7 @@ function articles_and_databases_field_default_field_instances() {
     'label' => 'Location Access Note',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2861,8 +2861,9 @@ function articles_and_databases_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_plain',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -3404,6 +3405,7 @@ function articles_and_databases_field_default_field_instances() {
   t('Also Known As');
   t('Alternative URLs');
   t('Alumni Access');
+  t('Belongs to Database Package');
   t('Configuration File');
   t('Contains the ID of the database used in the previous dmg system. ');
   t('Copyright Statement');
@@ -3415,7 +3417,6 @@ function articles_and_databases_field_default_field_instances() {
   t('Description');
   t('Description Overrides');
   t('Display on A to Z');
-  t('EZproxy Database Group Member');
   t('Enter a Primary Resource for a subject.');
   t('Enter the name of the database that this title and description override.');
   t('Flag the resource as a trial. ');
