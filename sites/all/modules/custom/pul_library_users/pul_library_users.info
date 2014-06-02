@@ -77,4 +77,3 @@ features[user_role][] = Library Staff Member
 features[user_role][] = Subject Specialist
 features[user_role][] = Web Author
 features[user_role][] = Web Manager
-project status url = http://libwebprod.princeton.edu/features/users.xml
