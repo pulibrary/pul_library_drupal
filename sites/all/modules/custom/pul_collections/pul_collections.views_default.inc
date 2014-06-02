@@ -44,8 +44,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';
@@ -100,8 +98,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';
@@ -115,6 +111,13 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_collection_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['click_sort_column'] = 'url';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Collection';
   /* Field: Content: Short Description */
   $handler->display->display_options['fields']['field_coll_long_description']['id'] = 'field_coll_long_description';
   $handler->display->display_options['fields']['field_coll_long_description']['table'] = 'field_data_field_coll_long_description';
@@ -249,8 +252,6 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Collection URL */
   $handler->display->display_options['fields']['field_collection_url']['id'] = 'field_collection_url';
   $handler->display->display_options['fields']['field_collection_url']['table'] = 'field_data_field_collection_url';
