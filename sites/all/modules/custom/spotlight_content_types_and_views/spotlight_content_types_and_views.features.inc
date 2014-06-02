@@ -32,22 +32,22 @@ function spotlight_content_types_and_views_image_default_styles() {
     'label' => 'pul_large_spotlight_graphic',
     'effects' => array(
       6 => array(
-      'data' => array(
-      'height' => 294,
-      'width' => 936,
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'height' => 294,
+          'width' => 936,
+        ),
+        'weight' => 1,
       ),
-    'dimensions callback' => 'image_scale_dimensions',
-    'effect callback' => 'image_scale_effect',
-    'form callback' => 'image_scale_form',
-    'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-    'label' => 'Scale',
-    'module' => 'image',
-    'name' => 'image_scale',
-    'summary theme' => 'image_scale_summary',
-    'weight' => 1,
     ),
-  ),
-);
+  );
 
   // Exported image style: pul_logo_file.
   $styles['pul_logo_file'] = array(
