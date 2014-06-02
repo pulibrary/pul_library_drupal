@@ -40,6 +40,53 @@ function library_spaces_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_location_in_library'
+  $field_bases['field_location_in_library'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_location_in_library',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'field' => 'field_subject_specialist:target_id',
+          'property' => 'name',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'libraries' => 'libraries',
+        ),
+      ),
+      'handler_submit' => 'Change handler',
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_location_type'
   $field_bases['field_location_type'] = array(
     'active' => 1,

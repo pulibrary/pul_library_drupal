@@ -44,8 +44,6 @@ function library_spaces_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -54,11 +52,10 @@ function library_spaces_views_default_views() {
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Library */
   $handler->display->display_options['fields']['field_location_in_library']['id'] = 'field_location_in_library';
   $handler->display->display_options['fields']['field_location_in_library']['table'] = 'field_data_field_location_in_library';
   $handler->display->display_options['fields']['field_location_in_library']['field'] = 'field_location_in_library';
-  $handler->display->display_options['fields']['field_location_in_library']['label'] = 'Library';
   $handler->display->display_options['fields']['field_location_in_library']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_location_in_library']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_location_in_library']['element_wrapper_type'] = 'div';
@@ -171,8 +168,6 @@ function library_spaces_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -187,8 +182,6 @@ function library_spaces_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_meeting_library_target_id';
   $handler->display->display_options['fields']['title_1']['label'] = 'Library';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Location Type */
   $handler->display->display_options['fields']['field_location_type']['id'] = 'field_location_type';
   $handler->display->display_options['fields']['field_location_type']['table'] = 'field_data_field_location_type';
