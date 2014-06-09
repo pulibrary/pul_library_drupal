@@ -327,7 +327,13 @@ function protected_database_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-ip_protected_db_resource-body'
   $field_instances['node-ip_protected_db_resource-body'] = array(
     'bundle' => 'ip_protected_db_resource',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'summary' => '',
+        'value' => 'Manual login required for access to articles in the journals listed below. Please make a note of BOTH user name and password before following the "Access Resource" Button. You will need them later in order to view full text.',
+        'format' => 'filtered_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Describe any special steps or conditions tied to access the resource.',
     'display' => array(
@@ -385,6 +391,69 @@ function protected_database_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_copyright_info'
+  $field_instances['node-ip_protected_db_resource-field_ip_db_copyright_info'] = array(
+    'bundle' => 'ip_protected_db_resource',
+    'default_value' => array(
+      0 => array(
+        'value' => '<p>This publication or database and the information in it is protected by copyright. All reproductions of this copyrighted material must be for non-commercial educational “fair use” as defined by 17 U.S.C. 107.</p><table><thead><tr><th>You May</th><th>You May Not</th></tr></thead><tbody><tr><td><ul><li>Access, search and browse the database or publication.</li><li>Print or download a limited number of articles, records, abstracts, or parts of chapters for personal use.</li></ul></td><td><ul><li>Sell copies of items printed or downloaded.</li><li>Print or download entire electronic books or entire issues of journals.</li><li>Distribute copies of any portions of this resource to anyone not affiliated with Princeton University. Sharing information with colleagues for scholarly, educational, or scientific research or professional use is permitted.</li></ul></td></tr></tbody></table>',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_ip_db_copyright_info',
+    'label' => 'Copyright Information',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 36,
     ),
   );
 
@@ -582,6 +651,7 @@ function protected_database_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Access Note');
+  t('Copyright Information');
   t('DB Password');
   t('DB Username');
   t('Describe any special steps or conditions tied to access the resource.');
