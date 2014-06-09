@@ -1,0 +1,16 @@
+name = IP Protected Resource Layouts, Importer, Roles
+description = Import IP Protected Resources
+core = 7.x
+package = PUL Features
+version = 7.x-1.0-dev
+project = ip_protected_resource_layouts_importer_roles
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = feeds
+dependencies[] = page_manager
+features[ctools][] = feeds:feeds_importer_default:1
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = pul_ip_protected_resource_importer
+features[page_manager_handlers][] = node_view_panel_context_34
+features[user_role][] = IP Resource Manager
