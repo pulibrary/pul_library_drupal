@@ -83,7 +83,9 @@ function cas_server_update_7000() {
   );
 
   $ret = array();
-  db_create_table('cas_server_tickets', $schema['cas_server_tickets']);
+  if (!db_table_exists('cas_server_tickets')) {
+    db_create_table('cas_server_tickets', $schema['cas_server_tickets']);
+  }
   return $ret;
 }
 
@@ -91,5 +93,7 @@ function cas_server_update_7000() {
  * Adds valid field to indicate when ticket is valid for reuse.
  */
 function cas_server_update_7101() {
-  db_add_field('cas_server_tickets', 'valid', array('type' => 'int', 'not null' => TRUE, 'default' => 1, ));
+  if (!db_field_exists('cas_server_tickets', 'valid')) {
+    db_add_field('cas_server_tickets', 'valid', array('type' => 'int', 'not null' => TRUE, 'default' => 1, ));
+  }
 }

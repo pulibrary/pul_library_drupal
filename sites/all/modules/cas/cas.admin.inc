@@ -212,11 +212,16 @@ function cas_admin_settings() {
     '#collapsed' => TRUE,
   );
 
-  $form['pages']['cas_check_first'] = array(
-    '#type' => 'checkbox',
+  $form['pages']['cas_check_frequency'] = array(
+    '#type' => 'radios',
     '#title' => t('Check with the CAS server to see if the user is already logged in?'),
-    '#default_value' => variable_get('cas_check_first', 0),
-    '#description' => t('This implements the <a href="@cas-gateway">Gateway feature</a> of the CAS Protocol. The check is only performed the first time a user visits your site, so that the local drupal logout is still useful for site admins.', array('@cas-gateway' => 'https://wiki.jasig.org/display/CAS/gateway')),
+    '#default_value' => variable_get('cas_check_frequency', CAS_CHECK_NEVER),
+    '#options' => array(
+      CAS_CHECK_NEVER => 'Never',
+      CAS_CHECK_ONCE => 'Once per browser session',
+      CAS_CHECK_ALWAYS => 'Always (every page load)',
+    ),
+    '#description' => t('This implements the') . ' <a href="https://wiki.jasig.org/display/CAS/gateway">Gateway feature</a> ' . t('of the CAS Protocol.') . ' <strong>WARNING:</strong> ' . t('Enabling it at all will') . ' <em>' . t('completely disable page caching') . '</em>' . t(', and will prevent users from logging out locally unless also logged out of CAS. Setting it to "Always" will perform redirects on EVERY page load unless the user is already logged in, and is not recommended in most circumstances.'),
   );
 
   $form['pages']['cas_access'] = array(
@@ -337,10 +342,10 @@ function cas_admin_settings() {
 
   $form['advanced']['cas_debugfile'] = array(
     '#type' => 'textfield',
-    '#title' => t('CAS debugging output filename'),
+    '#title' => t('CAS debugging output file'),
     '#default_value' => variable_get('cas_debugfile', ''),
     '#maxlength' => 255,
-    '#description' => t("Leave empty if you don't want debugging output."),
+    '#description' => "<p>" . t("A file system path and filename where the CAS debug log will be written. May be either a full path or a path relative to the Drupal installation root. The directory and file must be writable by Drupal.") . "</p> <p>" . t("Leave blank to disable logging.") . "</p> <p><strong>" . t("Debugging should not be enabled on production systems.") . "</strong></p>",
   );
 
   return system_settings_form($form);

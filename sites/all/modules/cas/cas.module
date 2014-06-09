@@ -15,6 +15,11 @@ define('CAS_LOGIN_DRUPAL_INVITE_DEFAULT', 'Cancel CAS login');
 define('CAS_LOGIN_REDIR_MESSAGE', 'You will be redirected to the secure CAS login page.');
 define('CAS_EXCLUDE', 'services/*');
 
+// Frequency of CAS Gateway checking.
+define('CAS_CHECK_NEVER', -2);
+define('CAS_CHECK_ONCE', -1);
+define('CAS_CHECK_ALWAYS', 0);
+
 /**
  * Implements hook_init().
  *
@@ -36,7 +41,9 @@ function cas_init() {
   if (!$user->uid) {
     $force_authentication = _cas_force_login();
     $check_authentication = _cas_allow_check_for_login();
-    if ($force_authentication || $check_authentication) {
+    $request_type = $_SERVER['REQUEST_METHOD'];
+    $perform_login_check = $force_authentication || ($check_authentication && ($request_type == 'GET'));
+    if ($perform_login_check) {
       cas_login_check($force_authentication);
     }
   }
@@ -76,8 +83,6 @@ function cas_login_check($force_authentication = TRUE) {
   }
   else {
     $logged_in = phpCAS::checkAuthentication();
-    // Set the login tested cookie
-    setcookie('cas_login_checked', 'true');
 
     // We're done cause we're not logged in.
     if (!$logged_in) {
@@ -173,10 +178,13 @@ function cas_login_check($force_authentication = TRUE) {
       drupal_set_message(t('You will remain logged in on this computer even after you close your browser.'));
     }
 
-    cas_login_page($cas_first_login);
+    _cas_redirect_after_login($cas_first_login);
+
   }
   else {
     $user = drupal_anonymous_user();
+    unset($_SESSION['phpCAS']);
+
     // Only display error messages only if the user intended to log in.
     if ($force_authentication) {
       drupal_set_message(t('No account found for %cas_name.', array('%cas_name' => $cas_name)), 'error');
@@ -280,8 +288,8 @@ function cas_phpcas_init() {
     phpCAS::setNoCasServerValidation();
   }
 
-  $service = isset($_GET['q']) ? $_GET['q'] : 'cas';
-  phpCAS::setFixedServiceURL(url($service, array('query' => cas_login_destination(), 'absolute' => TRUE)));
+  phpCAS::setFixedServiceURL(url(current_path(), array('query' => drupal_get_query_parameters(), 'absolute' => TRUE)));
+  phpCAS::setCacheTimesForAuthRecheck((int) variable_get('cas_check_frequency', CAS_CHECK_NEVER));
 
   // Allow other modules to call phpCAS routines. We do not call
   // drupal_alter() since there are no parameters to pass.
@@ -334,7 +342,7 @@ function cas_menu() {
     'weight' => -10,
   );
   $items['admin/people/cas/create'] = array(
-    'title' => 'Add CAS user',
+    'title' => 'Add CAS user(s)',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cas_add_user_form'),
     'access arguments' => array('administer users'),
@@ -414,19 +422,6 @@ function cas_translated_menu_link_alter(&$item) {
   elseif ($item['href'] == 'caslogout' && !variable_get('cas_logout_destination', '')) {
     $item['localized_options']['query'] = drupal_get_destination();
   }
-}
-
-/**
- * Helper function to rewrite the destination to avoid redirecting to login page after login.
- *
- * Instead of the login page, we redirect to the front page.
- */
-function cas_login_destination() {
-  $destination = user_login_destination();
-  if ($destination['destination'] == 'cas') {
-    $destination['destination'] = '';
-  }
-  return $destination;
 }
 
 /**
@@ -631,26 +626,15 @@ function cas_user_load_by_name($cas_name, $alter = FALSE, $reset = FALSE) {
 }
 
 /**
- * Redirects to appropriate page based on user settings.
+ * This is the page callback for the /cas page, which is used only to
+ * trigger a forced CAS authentication.
  *
- * @param $cas_first_login
- *   TRUE if the user was just registered and they should be redirected to the
- *   configured 'Initial login landing page'.
+ * In almost all cases, the user will have been redirected before even
+ * hitting this page (see hook_init implementation). But as a stop gap
+ * just redirect to the homepage.
  */
-function cas_login_page($cas_first_login = FALSE) {
-  global $user;
-  $destination = '';
-  $query = array();
-  // If it is the user's first CAS login and initial login redirection is enabled, go to the set page
-  if ($cas_first_login && variable_get('cas_first_login_destination', '')) {
-    $destination = variable_get('cas_first_login_destination', '');
-    if (isset($_GET['destination']))
-      $query['destination'] = $_GET['destination'];
-    unset($_GET['destination']);
-  }
-
-  // Respect the query string, if transmitted.
-  drupal_goto($destination, array('query' => $query));
+function cas_login_page() {
+  drupal_goto('');
 }
 
 /**
@@ -770,13 +754,13 @@ function cas_login_block($form) {
  *   authenticated, FALSE otherwise.
  */
 function _cas_allow_check_for_login() {
-  if (!variable_get('cas_check_first', 0)) {
-    // The user has disabled the feature.
+  // Do not process in maintenance mode.
+  if (variable_get('maintenance_mode', 0)) {
     return FALSE;
   }
 
-  // Check to see if we already have.
-  if (!empty($_COOKIE['cas_login_checked'])) {
+  if (variable_get('cas_check_frequency', CAS_CHECK_NEVER) == CAS_CHECK_NEVER) {
+    // The user has disabled the feature.
     return FALSE;
   }
 
@@ -848,6 +832,11 @@ function _cas_force_login() {
   // The 'cas' page is a shortcut to force authentication.
   if (arg(0) == 'cas') {
     return TRUE;
+  }
+
+  // Do not process in maintenance mode.
+  if (variable_get('maintenance_mode', 0)) {
+    return FALSE;
   }
 
   // Do not force login for XMLRPC, Cron, or Drush.
@@ -1073,10 +1062,11 @@ function _cas_single_sign_out_check() {
       $namespaces = $cas_logout_request_xml->getNameSpaces();
       $xsearch = 'SessionIndex';
       if (isset($namespaces['samlp'])) {
-        $cas_logout_request_xml->registerXPathNamespace('samlp', $namespaces['samlp']);
-        $xsearch = 'samlp:SessionIndex';
+        $cas_session_indexes = $cas_logout_request_xml->children($namespaces['samlp'])->SessionIndex;
       }
-      $cas_session_indexes = $cas_logout_request_xml->xpath($xsearch);
+      else {
+        $cas_session_indexes = $cas_logout_request_xml->xpath($xsearch);
+      }
       if ($cas_session_indexes) {
         $cas_session_index = (string)$cas_session_indexes[0];
         // Log them out now.
@@ -1304,4 +1294,30 @@ function cas_views_api() {
     'api' => 3,
     'path' => drupal_get_path('module', 'cas') . '/includes/views',
   );
+}
+
+/**
+ * Redirect a user after they have logged into the website through CAS
+ *
+ * @param $cas_first_login - TRUE if this is the first time the CAS user
+ * logged into the site
+ */
+function _cas_redirect_after_login($cas_first_login) {
+  // When users first log in, we may want to redirect them to a special page if specified
+  if ($cas_first_login && variable_get('cas_first_login_destination', '')) {
+    $destination = variable_get('cas_first_login_destination', '');
+    drupal_goto($destination);
+  }
+  else {
+    // If logged in through forced authentication ('/cas'), then redirect user to the
+    // homepage, or to wherever the current "destination" parameter points.
+    if (current_path() == 'cas') {
+      drupal_goto('');
+    }
+    // If logged in through gateway feature, then just reload the current path
+    // and preserve any query string args that were set
+    else {
+      drupal_goto(current_path(), array('query' => drupal_get_query_parameters()));
+    }
+  }
 }
