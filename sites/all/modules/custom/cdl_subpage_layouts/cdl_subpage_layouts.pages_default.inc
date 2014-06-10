@@ -1195,7 +1195,7 @@ collections/adelman07102008',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
+      'label' => 'hidden',
       'formatter' => 'image',
       'delta_limit' => 0,
       'delta_offset' => '0',
@@ -1205,7 +1205,7 @@ collections/adelman07102008',
         'image_link' => '',
       ),
       'context' => 'context_entity:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -1227,7 +1227,7 @@ collections/adelman07102008',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
