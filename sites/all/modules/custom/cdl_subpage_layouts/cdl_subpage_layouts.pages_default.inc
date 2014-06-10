@@ -1063,6 +1063,187 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_35';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Collections Forum Layout',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Collection Development Home',
+        'keyword' => 'collections_dev_home',
+        'name' => 'entity:node',
+        'entity_id' => '12505',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'page' => 'page',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'collections/cdforum
+collections/cdforum/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Collection Development Home',
+    'panels_breadcrumbs_paths' => 'collections-and-collection-development',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'pul_development_theme_12_onecol_12_stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '09a533e2-37dc-48d9-8522-3c2d2d607d94';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ea8959d1-22dc-4b2c-9314-210fc121c247';
+    $pane->panel = 'bottom';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'markup' => 'h1',
+      'id' => '',
+      'class' => '',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ea8959d1-22dc-4b2c-9314-210fc121c247';
+    $display->content['new-ea8959d1-22dc-4b2c-9314-210fc121c247'] = $pane;
+    $display->panels['bottom'][0] = 'new-ea8959d1-22dc-4b2c-9314-210fc121c247';
+    $pane = new stdClass();
+    $pane->pid = 'new-fa195b1a-f834-4534-885b-a4243818faba';
+    $pane->panel = 'bottom';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '%title',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'fa195b1a-f834-4534-885b-a4243818faba';
+    $display->content['new-fa195b1a-f834-4534-885b-a4243818faba'] = $pane;
+    $display->panels['bottom'][1] = 'new-fa195b1a-f834-4534-885b-a4243818faba';
+    $pane = new stdClass();
+    $pane->pid = 'new-c8dbab16-e5a8-4308-be3e-bbac04afce79';
+    $pane->panel = 'top';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_pul_landing_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_style' => 'pul_logo_file',
+        'image_link' => '',
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c8dbab16-e5a8-4308-be3e-bbac04afce79';
+    $display->content['new-c8dbab16-e5a8-4308-be3e-bbac04afce79'] = $pane;
+    $display->panels['top'][0] = 'new-c8dbab16-e5a8-4308-be3e-bbac04afce79';
+    $pane = new stdClass();
+    $pane->pid = 'new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
+    $pane->panel = 'top';
+    $pane->type = 'block';
+    $pane->subtype = 'nice_menus-2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
+    $display->content['new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c'] = $pane;
+    $display->panels['top'][1] = 'new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-fa195b1a-f834-4534-885b-a4243818faba';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_35'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'term_view_panel_context_10';
   $handler->task = 'term_view';
   $handler->subtask = '';
