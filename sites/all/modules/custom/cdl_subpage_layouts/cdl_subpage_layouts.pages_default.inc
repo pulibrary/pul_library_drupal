@@ -1103,7 +1103,12 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'collections/cdforum
-collections/cdforum/*',
+collections/cdforum/*
+collections/reilly08202008
+collections/pathways10102010
+collections/futureaccess02262010
+collections/futureaccess02262010-bio
+collections/adelman07102008',
           ),
           'context' => 'empty',
           'not' => FALSE,
