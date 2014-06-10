@@ -17,7 +17,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 3;
+  $handler->weight = 4;
   $handler->conf = array(
     'title' => 'Collection Development Department Page',
     'no_blocks' => 1,
@@ -162,80 +162,6 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
     $pane->uuid = 'a3867681-2f6f-4fc7-afda-c33ae3d1062e';
     $display->content['new-a3867681-2f6f-4fc7-afda-c33ae3d1062e'] = $pane;
     $display->panels['left'][1] = 'new-a3867681-2f6f-4fc7-afda-c33ae3d1062e';
-    $pane = new stdClass();
-    $pane->pid = 'new-ec9a0ca6-4dfd-40b0-a313-9980b6d17b39';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'workgroup-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/staff',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '6557',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Administration',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ec9a0ca6-4dfd-40b0-a313-9980b6d17b39';
-    $display->content['new-ec9a0ca6-4dfd-40b0-a313-9980b6d17b39'] = $pane;
-    $display->panels['left'][2] = 'new-ec9a0ca6-4dfd-40b0-a313-9980b6d17b39';
-    $pane = new stdClass();
-    $pane->pid = 'new-6641d3c1-54b8-4356-9601-4e132f9174b0';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'workgroup-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/staff',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-    );
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '12775',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Support Staff',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '6641d3c1-54b8-4356-9601-4e132f9174b0';
-    $display->content['new-6641d3c1-54b8-4356-9601-4e132f9174b0'] = $pane;
-    $display->panels['left'][3] = 'new-6641d3c1-54b8-4356-9601-4e132f9174b0';
     $pane = new stdClass();
     $pane->pid = 'new-a977c0e3-d6cc-458b-9876-b1829eb2a3da';
     $pane->panel = 'right';
