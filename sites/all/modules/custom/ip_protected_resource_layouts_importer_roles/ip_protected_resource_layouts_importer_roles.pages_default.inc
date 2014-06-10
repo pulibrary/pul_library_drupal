@@ -17,7 +17,7 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 4;
+  $handler->weight = 5;
   $handler->conf = array(
     'title' => 'IP Protected Resource',
     'no_blocks' => 1,
