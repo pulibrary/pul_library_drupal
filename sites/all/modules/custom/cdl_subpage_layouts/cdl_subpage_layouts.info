@@ -1,7 +1,7 @@
 name = CDL Subpage Layouts
 core = 7.x
 package = CDL Features
-version = 7.x-1.0-beta
+version = 7.x-1.0-beta1
 project = cdl_subpage_layouts
 dependencies[] = ctools
 dependencies[] = page_manager
@@ -12,5 +12,6 @@ features[page_manager_handlers][] = node_view_panel_context_31
 features[page_manager_handlers][] = node_view_panel_context_32
 features[page_manager_handlers][] = node_view_panel_context_33
 features[page_manager_handlers][] = node_view_panel_context_35
+features[page_manager_handlers][] = node_view_panel_context_36
 features[page_manager_handlers][] = term_view_panel_context_10
 features[page_manager_handlers][] = term_view_panel_context_8

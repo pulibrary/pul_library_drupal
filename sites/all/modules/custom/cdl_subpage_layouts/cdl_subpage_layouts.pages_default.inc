@@ -1175,6 +1175,194 @@ collections/adelman07102008',
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_36';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 3;
+  $handler->conf = array(
+    'title' => 'Collection Development Staff Page',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Collection Dev Homepage ',
+        'keyword' => 'colldev_home',
+        'name' => 'entity:node',
+        'entity_id' => '12505',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'collections/staff',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'page' => 'page',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 0,
+  );
+  $display = new panels_display();
+  $display->layout = 'pul_development_theme_12_onecol_12_stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Collections and Collection Development';
+  $display->uuid = '4991b3f8-f0d6-443f-8126-703c8368e731';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-65a47843-ade8-473b-a592-cbd917a25c8c';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'workgroup-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '6557',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Administration',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '65a47843-ade8-473b-a592-cbd917a25c8c';
+    $display->content['new-65a47843-ade8-473b-a592-cbd917a25c8c'] = $pane;
+    $display->panels['bottom'][0] = 'new-65a47843-ade8-473b-a592-cbd917a25c8c';
+    $pane = new stdClass();
+    $pane->pid = 'new-f3ed9ea0-7669-4662-99dc-532484494519';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'workgroup-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '12775',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Support Staff',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f3ed9ea0-7669-4662-99dc-532484494519';
+    $display->content['new-f3ed9ea0-7669-4662-99dc-532484494519'] = $pane;
+    $display->panels['bottom'][1] = 'new-f3ed9ea0-7669-4662-99dc-532484494519';
+    $pane = new stdClass();
+    $pane->pid = 'new-795314d9-f44a-49fd-b7d1-03db93f48506';
+    $pane->panel = 'top';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_pul_landing_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'colorbox_node_style' => '',
+        'colorbox_image_style' => '',
+        'colorbox_gallery' => 'post',
+        'colorbox_gallery_custom' => '',
+        'colorbox_caption' => 'auto',
+        'colorbox_caption_custom' => '',
+        'image_style' => 'pul_logo_file',
+        'image_link' => '',
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '795314d9-f44a-49fd-b7d1-03db93f48506';
+    $display->content['new-795314d9-f44a-49fd-b7d1-03db93f48506'] = $pane;
+    $display->panels['top'][0] = 'new-795314d9-f44a-49fd-b7d1-03db93f48506';
+    $pane = new stdClass();
+    $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
+    $pane->panel = 'top';
+    $pane->type = 'block';
+    $pane->subtype = 'nice_menus-2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
+    $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
+    $display->panels['top'][1] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_36'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'term_view_panel_context_10';
   $handler->task = 'term_view';
   $handler->subtask = '';
