@@ -698,6 +698,8 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Libguides DB Export';
   $handler->display->display_options['display_description'] = 'Export Using Format Libguides Recommends';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
@@ -707,6 +709,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['style_options']['trim'] = 1;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -736,7 +739,22 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '500',
+  );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
+  /* Field: Content: General Access Note */
+  $handler->display->display_options['fields']['field_db_access_note']['id'] = 'field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['table'] = 'field_data_field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['field'] = 'field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['label'] = 'MORE INFORMATION';
+  $handler->display->display_options['fields']['field_db_access_note']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_db_access_note']['alter']['preserve_tags'] = '<a>';
+  $handler->display->display_options['fields']['field_db_access_note']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_access_note']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_access_note']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_access_note']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
