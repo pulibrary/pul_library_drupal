@@ -2905,10 +2905,14 @@ height:400px;
   background-color: #212121;
 }
 
+.node-type-pul-landing-page .pane-node-field-pul-landing-logo {
+	padding-bottom: .5em;
+}
+
 /* Spotlight Graphic */
 .pane-spotlight-graphics-panel-pane-1 {
  border: .2em solid #5c5e66;
- margin-top: 2em;
+ margin-top: 2.5em;
  background-color: #000;
   
 }
