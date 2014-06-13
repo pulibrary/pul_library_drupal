@@ -24,7 +24,10 @@ function ip_protected_db_resources_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'IP Restricted Resource Admin List';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -103,8 +106,6 @@ function ip_protected_db_resources_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -116,20 +117,18 @@ function ip_protected_db_resources_views_default_views() {
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
-  /* Field: Content: DB Username */
+  /* Field: Content: Username */
   $handler->display->display_options['fields']['field_ip_db_username']['id'] = 'field_ip_db_username';
   $handler->display->display_options['fields']['field_ip_db_username']['table'] = 'field_data_field_ip_db_username';
   $handler->display->display_options['fields']['field_ip_db_username']['field'] = 'field_ip_db_username';
-  $handler->display->display_options['fields']['field_ip_db_username']['label'] = 'Username';
   $handler->display->display_options['fields']['field_ip_db_username']['element_type'] = '0';
   $handler->display->display_options['fields']['field_ip_db_username']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_ip_db_username']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_ip_db_username']['field_api_classes'] = TRUE;
-  /* Field: Content: DB Password */
+  /* Field: Content: Password */
   $handler->display->display_options['fields']['field_ip_db_password']['id'] = 'field_ip_db_password';
   $handler->display->display_options['fields']['field_ip_db_password']['table'] = 'field_data_field_ip_db_password';
   $handler->display->display_options['fields']['field_ip_db_password']['field'] = 'field_ip_db_password';
-  $handler->display->display_options['fields']['field_ip_db_password']['label'] = 'Password';
   $handler->display->display_options['fields']['field_ip_db_password']['element_type'] = '0';
   $handler->display->display_options['fields']['field_ip_db_password']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_ip_db_password']['element_default_classes'] = FALSE;

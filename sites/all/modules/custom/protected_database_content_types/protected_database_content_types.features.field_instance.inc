@@ -499,7 +499,7 @@ function protected_database_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_ip_db_password',
-    'label' => 'DB Password',
+    'label' => 'Password',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -536,7 +536,7 @@ function protected_database_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -631,7 +631,7 @@ function protected_database_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_ip_db_username',
-    'label' => 'DB Username',
+    'label' => 'Username',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -658,12 +658,14 @@ function protected_database_content_types_field_default_field_instances() {
   t('Form Setup');
   t('Notes describing how to access resource.');
   t('Optional field containing form submission code.');
+  t('Password');
   t('Password for resource. Use if no form can be constructed to auto login user to resource. ');
   t('Password user must supply to access resource. Use if no form code can be constructed to auto login user to resource.');
   t('Resource URL');
   t('Shared username for the resource, if needed. Input this if no form can be constructed to auto login user to resource. ');
   t('Use if a form cannot be constructed to auto log user into resource. ');
   t('Use if no form can be constructed to auto login user into resource. ');
+  t('Username');
   t('Username attached to the resource if one is available. ');
 
   return $field_instances;
