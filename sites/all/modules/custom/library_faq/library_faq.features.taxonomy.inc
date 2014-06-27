@@ -13,7 +13,7 @@ function library_faq_taxonomy_default_vocabularies() {
       'name' => 'FAQ Topics',
       'machine_name' => 'faq_topics',
       'description' => 'Topics for FAQ - Sub topics included',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

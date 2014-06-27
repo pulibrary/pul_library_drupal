@@ -407,6 +407,9 @@ function articles_and_databases_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_db_grp_member_of',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -432,9 +435,8 @@ function articles_and_databases_field_default_field_bases() {
         ),
         'sort' => array(
           'direction' => 'ASC',
-          'field' => 'body:value',
-          'property' => 'nid',
-          'type' => 'none',
+          'property' => 'title',
+          'type' => 'property',
         ),
         'target_bundles' => array(
           'database_package' => 'database_package',
@@ -630,6 +632,9 @@ function articles_and_databases_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_db_location_access_note',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

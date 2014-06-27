@@ -139,7 +139,7 @@ function databases_by_subject_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'Browse Subjects';
-  $handler->display->display_options['footer']['area']['content'] = '<a class="all-browse-subjects" href="/find/databases/subjects">See All Subjects</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a class="all-browse-subjects" href="/research/databases/subjects">See All Subjects</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
@@ -256,7 +256,7 @@ function databases_by_subject_views_default_views() {
   /* Display: Active Subjects  */
   $handler = $view->new_display('page', 'Active Subjects ', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Subjects';
+  $handler->display->display_options['title'] = 'Topics';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['columns'] = '3';
@@ -322,7 +322,7 @@ function databases_by_subject_views_default_views() {
   $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['path'] = 'subjects';
+  $handler->display->display_options['path'] = 'topics';
   $export['databases_by_subject'] = $view;
 
   return $export;

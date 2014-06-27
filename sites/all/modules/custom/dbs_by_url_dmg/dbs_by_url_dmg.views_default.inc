@@ -24,7 +24,12 @@ function dbs_by_url_dmg_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Databases by URL';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    4 => '4',
+    8 => '8',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -112,15 +117,11 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = 'Resource ID';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Content: Access URL */
   $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
   $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
@@ -142,16 +143,12 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['title_1']['label'] = 'Belongs To';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['nid_1']['label'] = 'Platform ID';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Use EZproxy */
   $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
   $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
@@ -279,6 +276,335 @@ function dbs_by_url_dmg_views_default_views() {
 
   /* Display: Admin Browse Page of Databases */
   $handler = $view->new_display('page', 'Admin Browse Page of Databases', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Manage Databases by URL';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = 'Resource ID';
+  /* Field: Content: Access URL */
+  $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['field'] = 'field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['label'] = 'URL';
+  $handler->display->display_options['fields']['field_db_access_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_access_url']['empty'] = 'No URL Provided';
+  $handler->display->display_options['fields']['field_db_access_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_db_access_url']['type'] = 'link_url';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Last Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_db_grp_member_of_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Platform';
+  $handler->display->display_options['fields']['title_1']['empty'] = 'N/A';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_db_grp_member_of_target_id';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Platform ID';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  /* Field: Content: Use EZproxy */
+  $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['field'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['label'] = 'EZproxy Active';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_use_proxy']['field_api_classes'] = TRUE;
+  /* Field: Content: Requires Special EZproxy Configuration */
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['id'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['table'] = 'field_data_field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['label'] = 'EZProxy Special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_dmg_resource_update' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_library_news_item_alert' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'database::field_db_grp_member_of' => 'database::field_db_grp_member_of',
+        ),
+      ),
+    ),
+    'rules_component::rules_new_database_notification' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_new_node_added' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::auto_entitylabel_entity_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::pathauto_node_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'database' => 'database',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['title']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+  );
+  /* Filter criterion: Content: Access URL (field_db_access_url:url) */
+  $handler->display->display_options['filters']['field_db_access_url_url']['id'] = 'field_db_access_url_url';
+  $handler->display->display_options['filters']['field_db_access_url_url']['table'] = 'field_data_field_db_access_url';
+  $handler->display->display_options['filters']['field_db_access_url_url']['field'] = 'field_db_access_url_url';
+  $handler->display->display_options['filters']['field_db_access_url_url']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_db_access_url_url']['group'] = 1;
+  $handler->display->display_options['filters']['field_db_access_url_url']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['operator_id'] = 'field_db_access_url_url_op';
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['label'] = 'URL';
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['operator'] = 'field_db_access_url_url_op';
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['identifier'] = 'field_db_access_url_url';
+  $handler->display->display_options['filters']['field_db_access_url_url']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+  );
+  /* Filter criterion: Content: Use EZproxy (field_db_use_proxy) */
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['id'] = 'field_db_use_proxy_value';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['table'] = 'field_data_field_db_use_proxy';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['field'] = 'field_db_use_proxy_value';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['expose']['operator_id'] = 'field_db_use_proxy_value_op';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['expose']['label'] = 'EZproxy';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['expose']['operator'] = 'field_db_use_proxy_value_op';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['expose']['identifier'] = 'field_db_use_proxy_value';
+  $handler->display->display_options['filters']['field_db_use_proxy_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+  );
   $handler->display->display_options['path'] = 'research/databases/browse';
 
   /* Display: Admin Listings of Databases */
@@ -305,15 +631,11 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = 'Resource ID';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Content: Access URL */
   $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
   $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
@@ -335,16 +657,12 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['title_1']['label'] = 'Belongs To';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['nid_1']['label'] = 'Platform ID';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Use EZproxy */
   $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
   $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
@@ -370,8 +688,8 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['path'] = 'research/databases/dbs.csv';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
     'default' => 0,
+    'page' => 0,
     'panel_pane_1' => 0,
   );
 
@@ -380,6 +698,8 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Libguides DB Export';
   $handler->display->display_options['display_description'] = 'Export Using Format Libguides Recommends';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
@@ -389,6 +709,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['style_options']['trim'] = 1;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -399,8 +720,6 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -420,7 +739,22 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '500',
+  );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
+  /* Field: Content: General Access Note */
+  $handler->display->display_options['fields']['field_db_access_note']['id'] = 'field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['table'] = 'field_data_field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['field'] = 'field_db_access_note';
+  $handler->display->display_options['fields']['field_db_access_note']['label'] = 'MORE INFORMATION';
+  $handler->display->display_options['fields']['field_db_access_note']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_db_access_note']['alter']['preserve_tags'] = '<a>';
+  $handler->display->display_options['fields']['field_db_access_note']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_access_note']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_access_note']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_access_note']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -453,15 +787,11 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = 'Resource ID';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Content: Access URL */
   $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
   $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
@@ -483,16 +813,12 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['title_1']['label'] = 'Belongs To';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
   $handler->display->display_options['fields']['nid_1']['table'] = 'node';
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_db_grp_member_of_target_id';
   $handler->display->display_options['fields']['nid_1']['label'] = 'Platform ID';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid_1']['node_in_colorbox_height'] = '600';
   /* Field: Content: Use EZproxy */
   $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
   $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
@@ -518,9 +844,182 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['path'] = 'research/databaes/urls.xls';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
     'default' => 0,
+    'page' => 0,
     'panel_pane_1' => 0,
+  );
+
+  /* Display: Single Platform */
+  $handler = $view->new_display('panel_pane', 'Single Platform', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Attached Databases';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = 'Resource ID';
+  /* Field: Content: Access URL */
+  $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['field'] = 'field_db_access_url';
+  $handler->display->display_options['fields']['field_db_access_url']['label'] = 'URL';
+  $handler->display->display_options['fields']['field_db_access_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_access_url']['empty'] = 'No URL Provided';
+  $handler->display->display_options['fields']['field_db_access_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_db_access_url']['type'] = 'link_url';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Last Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Use EZproxy */
+  $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['field'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['label'] = 'EZproxy Active';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_use_proxy']['field_api_classes'] = TRUE;
+  /* Field: Content: Requires Special EZproxy Configuration */
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['id'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['table'] = 'field_data_field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['label'] = 'EZProxy Special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_db_grp_member_of_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'database' => 'database',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
+
+  /* Display: Single Database EZproxy Setttings */
+  $handler = $view->new_display('panel_pane', 'Single Database EZproxy Setttings', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Resource Status';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Last Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_db_grp_member_of_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Platform';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_db_grp_member_of_target_id';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'Platform ID';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  /* Field: Content: Use EZproxy */
+  $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['field'] = 'field_db_use_proxy';
+  $handler->display->display_options['fields']['field_db_use_proxy']['label'] = 'EZproxy Active';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_use_proxy']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_use_proxy']['field_api_classes'] = TRUE;
+  /* Field: Content: Requires Special EZproxy Configuration */
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['id'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['table'] = 'field_data_field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field'] = 'field_db_ezproxy_special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['label'] = 'EZProxy Special';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
+  /* Field: Content: Special Proxy Configuration Rule */
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['id'] = 'field_db_proxy_configuration';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['table'] = 'field_data_field_db_proxy_configuration';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['field'] = 'field_db_proxy_configuration';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['label'] = 'Special Configuration';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_db_proxy_configuration']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
   );
   $export['databases_by_url'] = $view;
 

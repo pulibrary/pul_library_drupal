@@ -490,28 +490,17 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
   $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
   $handler->display->display_options['fields']['link_entityform']['label'] = 'View';
-  $handler->display->display_options['fields']['link_entityform']['exclude'] = TRUE;
-  /* Field: Entityform: Edit Link */
-  $handler->display->display_options['fields']['edit_entityform']['id'] = 'edit_entityform';
-  $handler->display->display_options['fields']['edit_entityform']['table'] = 'entityform';
-  $handler->display->display_options['fields']['edit_entityform']['field'] = 'edit_entityform';
-  $handler->display->display_options['fields']['edit_entityform']['label'] = 'Edit';
-  /* Field: Entityform: Delete Link */
-  $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
-  $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
-  $handler->display->display_options['fields']['delete_entityform']['field'] = 'delete_entityform';
-  $handler->display->display_options['fields']['delete_entityform']['label'] = 'Delete';
-  $handler->display->display_options['fields']['delete_entityform']['hide_alter_empty'] = FALSE;
-  /* Sort criterion: Content: Date and Time -  start date (field_training_dtime) */
-  $handler->display->display_options['sorts']['field_training_dtime_value']['id'] = 'field_training_dtime_value';
-  $handler->display->display_options['sorts']['field_training_dtime_value']['table'] = 'field_data_field_training_dtime';
-  $handler->display->display_options['sorts']['field_training_dtime_value']['field'] = 'field_training_dtime_value';
-  $handler->display->display_options['sorts']['field_training_dtime_value']['relationship'] = 'field_zotero_reg_session_target_id';
   /* Sort criterion: Entityform: Date submitted */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'entityform';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Date and Time -  start date (field_training_dtime) */
+  $handler->display->display_options['sorts']['field_training_dtime_value']['id'] = 'field_training_dtime_value';
+  $handler->display->display_options['sorts']['field_training_dtime_value']['table'] = 'field_data_field_training_dtime';
+  $handler->display->display_options['sorts']['field_training_dtime_value']['field'] = 'field_training_dtime_value';
+  $handler->display->display_options['sorts']['field_training_dtime_value']['relationship'] = 'field_zotero_reg_session_target_id';
+  $handler->display->display_options['sorts']['field_training_dtime_value']['order'] = 'DESC';
   /* Filter criterion: Entityform: Draft */
   $handler->display->display_options['filters']['draft']['id'] = 'draft';
   $handler->display->display_options['filters']['draft']['table'] = 'entityform';
@@ -582,6 +571,18 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Zotero Registrations */
+  $handler = $view->new_display('panel_pane', 'Zotero Registrations', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['zotero_training_submissions'] = $view;
 
   return $export;

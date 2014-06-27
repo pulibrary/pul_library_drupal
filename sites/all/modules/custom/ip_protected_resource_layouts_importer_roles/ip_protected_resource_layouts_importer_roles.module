@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IP Protected Resource Layouts, Importer, Roles feature.
+ */
+
+include_once 'ip_protected_resource_layouts_importer_roles.features.inc';

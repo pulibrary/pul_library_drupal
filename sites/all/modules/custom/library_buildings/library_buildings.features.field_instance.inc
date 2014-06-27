@@ -378,7 +378,7 @@ function library_buildings_field_default_field_instances() {
     'bundle' => 'library_buildings',
     'default_value' => array(
       0 => array(
-        'value' => 8544,
+        'value' => '08544',
       ),
     ),
     'deleted' => 0,

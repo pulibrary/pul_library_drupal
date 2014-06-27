@@ -199,11 +199,11 @@ function library_study_rooms_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'node' => array(
+      'users' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'target_id' => 'uid',
         ),
-        'table' => 'node',
+        'table' => 'users',
       ),
     ),
     'indexes' => array(

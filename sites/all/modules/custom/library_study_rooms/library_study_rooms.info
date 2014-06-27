@@ -2,7 +2,6 @@ name = Library Study Rooms
 description = Provides landing, content type, basic CSV importer, and some basic veiws for study spaces
 core = 7.x
 package = PUL Custom Features
-php = 5.2.4
 version = 7.x-1.0-dev
 project = library_study_rooms
 dependencies[] = articles_and_databases

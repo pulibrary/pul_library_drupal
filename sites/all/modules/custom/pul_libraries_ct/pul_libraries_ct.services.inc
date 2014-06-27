@@ -15,7 +15,7 @@ function pul_libraries_ct_default_services_endpoint() {
   $endpoint->api_version = 3;
   $endpoint->name = 'voyager_locations';
   $endpoint->server = 'rest_server';
-  $endpoint->path = 'services';
+  $endpoint->path = 'services/voyager';
   $endpoint->authentication = array();
   $endpoint->server_settings = array(
     'formatters' => array(
@@ -43,20 +43,6 @@ function pul_libraries_ct_default_services_endpoint() {
         ),
       ),
     ),
-    'locations' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'libraries' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
     'hours' => array(
       'operations' => array(
         'index' => array(
@@ -64,7 +50,7 @@ function pul_libraries_ct_default_services_endpoint() {
         ),
       ),
     ),
-    'library-user' => array(
+    'libraries' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',

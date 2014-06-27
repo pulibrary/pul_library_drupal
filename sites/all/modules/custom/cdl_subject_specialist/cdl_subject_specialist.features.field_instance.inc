@@ -1387,12 +1387,62 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-selector_departments-field_cdl_department_url'
+  $field_instances['taxonomy_term-selector_departments-field_cdl_department_url'] = array(
+    'bundle' => 'selector_departments',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'URL of Department',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_cdl_department_url',
+    'label' => 'Department URL',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_maxlength' => 128,
+      'title_value' => 'Department Home',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Bio');
   t('Collecting Policies');
   t('Collections Assistants');
   t('Department');
+  t('Department URL');
   t('Department and Programs');
   t('Departments and Programs selector serves.');
   t('Directions to selector\'s office.');
@@ -1418,6 +1468,7 @@ function cdl_subject_specialist_field_default_field_instances() {
   t('Subject Specialties');
   t('Subjects');
   t('Telephone');
+  t('URL of Department');
   t('Use for libguides, departmental homepages, special projects the selector wishes to highlight. ');
 
   return $field_instances;

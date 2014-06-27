@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pul_featured_link_groups.features.taxonomy.inc
+ * pul_featured_link_type.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function pul_featured_link_groups_taxonomy_default_vocabularies() {
+function pul_featured_link_type_taxonomy_default_vocabularies() {
   return array(
     'featured_pul_link_categories' => array(
       'name' => 'Featured Link Categories',

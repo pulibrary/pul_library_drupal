@@ -31,7 +31,7 @@ function library_faq_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-faq-attachments field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -59,7 +59,7 @@ function library_faq_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-standard field-group-tab',
         'required_fields' => 1,
       ),
     ),

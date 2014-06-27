@@ -32,7 +32,7 @@ function library_hours_field_group_info() {
       'label' => 'Details',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-displaygroup field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',

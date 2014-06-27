@@ -129,7 +129,7 @@ function pul_featured_link_type_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_featured_pul_link',
-    'label' => 'featured_pul_link',
+    'label' => 'URL',
     'required' => 1,
     'settings' => array(
       'attributes' => array(
@@ -208,7 +208,7 @@ function pul_featured_link_type_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_featured_pul_terms',
-    'label' => 'featured_pul_terms',
+    'label' => 'Interested Group',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -222,12 +222,70 @@ function pul_featured_link_type_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-featured_pul_link-field_pul_featured_link_group'
+  $field_instances['node-featured_pul_link-field_pul_featured_link_group'] = array(
+    'bundle' => 'featured_pul_link',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Groups the link should be filed under.',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_pul_featured_link_group',
+    'label' => 'Featured Link Group',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 34,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Brief description of resource.');
   t('Description');
-  t('featured_pul_link');
-  t('featured_pul_terms');
+  t('Featured Link Group');
+  t('Groups the link should be filed under.');
+  t('Interested Group');
+  t('URL');
 
   return $field_instances;
 }

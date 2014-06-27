@@ -1,0 +1,11 @@
+name = PUL Tagging and Classification
+description = Reusable Tagging and Classification Constructs across Content Types
+core = 7.x
+package = PUL Features
+version = 7.x-1.0-alpha
+project = pul_tagging_and_classification
+dependencies[] = features
+dependencies[] = pul_libraries_ct
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[field_base][] = field_tags

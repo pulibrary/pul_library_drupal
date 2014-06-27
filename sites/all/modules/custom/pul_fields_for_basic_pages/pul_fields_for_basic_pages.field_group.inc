@@ -31,7 +31,7 @@ function pul_fields_for_basic_pages_field_group_info() {
       'label' => 'Atttachments',
       'instance_settings' => array(
         'required_fields' => 0,
-        'classes' => '',
+        'classes' => ' group-basic-page-attachments field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',

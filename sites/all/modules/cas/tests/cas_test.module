@@ -251,7 +251,7 @@ function cas_test_single_sign_out($cas_name, $double_encode=FALSE) {
     foreach ($tickets as $ticket) {
       // Generate posting:
       $data = array(
-        'logoutRequest' => t("<samlp:LogoutRequest ID=\"!id\" Version=\"2.0\" IssueInstant=\"!time\">\n<saml:NameID>@NOT_USED@</saml:NameID>\n<samlp:SessionIndex>!ticket</samlp:SessionIndex>\n</samlp:LogoutRequest>", array('!id' => user_password(10), '!time' => time(), '!ticket' => $ticket)),
+        'logoutRequest' => t("<samlp:LogoutRequest xmlns:samlp=\"urn:oasis:names:tc:SAML:2.0:protocol\" xmlns:saml=\"urn:oasis:names:tc:SAML:2.0:assertion\" ID=\"!id\" Version=\"2.0\" IssueInstant=\"!time\">\n<saml:NameID>@NOT_USED@</saml:NameID>\n<samlp:SessionIndex>!ticket</samlp:SessionIndex>\n</samlp:LogoutRequest>", array('!id' => user_password(10), '!time' => time(), '!ticket' => $ticket)),
       );
 
       if ($double_encode) {

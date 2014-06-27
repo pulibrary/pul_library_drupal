@@ -175,7 +175,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_department',
     'label' => 'PUL Department',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
     ),
@@ -286,7 +286,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_displaytitle',
     'label' => 'Display Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -495,7 +495,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_fname',
     'label' => 'First Name',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -550,7 +550,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_formalname',
     'label' => 'Formal Name',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -654,7 +654,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_librarystaffid',
     'label' => 'PUL Library Staff ID',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -708,7 +708,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_lname',
     'label' => 'Last Name',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -760,7 +760,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_netid',
     'label' => 'PUL Netid',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,
@@ -868,7 +868,7 @@ function pul_library_users_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_puluser_officialtitle',
     'label' => 'Official Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => 1,

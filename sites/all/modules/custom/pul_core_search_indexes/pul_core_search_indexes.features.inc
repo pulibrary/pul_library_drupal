@@ -20,8 +20,8 @@ function pul_core_search_indexes_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "nid" : { "type" : "integer" },
-        "title" : { "type" : "text", "boost" : "5.0" },
-        "search_api_language" : { "type" : "string" }
+        "search_api_language" : { "type" : "string" },
+        "title" : { "type" : "text", "boost" : "5.0" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -89,7 +89,6 @@ function pul_core_search_indexes_default_search_api_index() {
         "title" : { "type" : "text", "boost" : "21.0" },
         "url" : { "type" : "uri" },
         "status" : { "type" : "integer" },
-        "field_db_location_access_note" : { "type" : "text", "boost" : "0.3" },
         "field_db_restricted_access" : { "type" : "boolean" },
         "field_db_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_db_suppressed" : { "type" : "boolean" },
@@ -223,7 +222,6 @@ function pul_core_search_indexes_default_search_api_index() {
         "name" : { "type" : "text", "boost" : "5.0" },
         "description" : { "type" : "text" },
         "parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_col_custom_path" : { "type" : "uri" },
         "field_rsrc_tier_one_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
@@ -300,10 +298,10 @@ function pul_core_search_indexes_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "nid" : { "type" : "integer" },
-        "search_api_language" : { "type" : "string" },
         "field_db_access_url:url" : { "type" : "text", "boost" : "2.0" },
         "field_db_alternative_urls:url" : { "type" : "list\\u003Ctext\\u003E" },
+        "nid" : { "type" : "integer" },
+        "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
         "search_api_viewed" : { "type" : "text" }
       },
@@ -392,6 +390,7 @@ function pul_core_search_indexes_default_search_api_index() {
               "page" : "page",
               "book" : "book",
               "frequently_asked_question" : "frequently_asked_question",
+              "job_description" : "job_description",
               "library_committee" : "library_committee",
               "library_committee_with_terms" : "library_committee_with_terms",
               "library_meeting_space_locations" : "library_meeting_space_locations",
@@ -442,6 +441,17 @@ function pul_core_search_indexes_default_search_api_index() {
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "highlight" : "always"
+          }
         }
       },
       "fields" : {
@@ -476,29 +486,29 @@ function pul_core_search_indexes_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "nid" : { "type" : "integer" },
-        "is_new" : { "type" : "boolean" },
-        "type" : { "type" : "string" },
-        "title" : { "type" : "text", "boost" : "21.0" },
-        "url" : { "type" : "uri" },
-        "edit_url" : { "type" : "uri" },
-        "created" : { "type" : "date" },
-        "changed" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "body:format" : { "type" : "string" },
+        "body:summary" : { "type" : "text" },
+        "body:value" : { "type" : "text" },
+        "changed" : { "type" : "date" },
+        "created" : { "type" : "date" },
+        "edit_url" : { "type" : "uri" },
         "field_db_is_trial" : { "type" : "boolean" },
+        "field_db_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_db_keywords:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_db_keywords:tid" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_db_mobile_support" : { "type" : "boolean" },
         "field_db_use_proxy" : { "type" : "boolean" },
-        "field_db_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "search_api_language" : { "type" : "string" },
-        "search_api_url" : { "type" : "uri" },
-        "body:value" : { "type" : "text" },
-        "body:summary" : { "type" : "text" },
-        "body:format" : { "type" : "string" },
-        "field_db_keywords:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_db_keywords:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_dboverride_database:nid" : { "type" : "integer" },
         "field_dboverride_database:title" : { "type" : "text" },
-        "field_dboverride_database:url" : { "type" : "uri" }
+        "field_dboverride_database:url" : { "type" : "uri" },
+        "is_new" : { "type" : "boolean" },
+        "nid" : { "type" : "integer" },
+        "search_api_language" : { "type" : "string" },
+        "search_api_url" : { "type" : "uri" },
+        "title" : { "type" : "text", "boost" : "21.0" },
+        "type" : { "type" : "string" },
+        "url" : { "type" : "uri" }
       },
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 1, "weight" : "-50", "settings" : { "fields" : [] } },
@@ -593,21 +603,21 @@ function pul_core_search_indexes_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "nid" : { "type" : "integer" },
-        "title" : { "type" : "text" },
+        "field_building:title" : { "type" : "text" },
         "field_campus_building_loc_id" : { "type" : "integer" },
+        "field_collection_url:url" : { "type" : "uri" },
         "field_e_mail_address" : { "type" : "text" },
         "field_fax" : { "type" : "text" },
         "field_full_library_name" : { "type" : "text" },
-        "field_phone" : { "type" : "text" },
         "field_lib_main_menu_link" : { "type" : "text" },
-        "search_api_language" : { "type" : "string" },
-        "field_tags:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_library_homepage:url" : { "type" : "uri" },
         "field_long_description:value" : { "type" : "text" },
-        "field_building:title" : { "type" : "text" },
-        "field_collection_url:url" : { "type" : "uri" }
+        "field_phone" : { "type" : "text" },
+        "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_tags:tid" : { "type" : "list\\u003Cinteger\\u003E" },
+        "nid" : { "type" : "integer" },
+        "search_api_language" : { "type" : "string" },
+        "title" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : [] },
@@ -707,7 +717,6 @@ function pul_core_search_indexes_default_search_api_index() {
         "field_puluser_department" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_puluser_fname" : { "type" : "text" },
         "field_puluser_formalname" : { "type" : "string" },
-        "field_puluser_library" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_puluser_lname" : { "type" : "text" },
         "field_puluser_officialtitle" : { "type" : "text", "boost" : "2.0" },
         "field_puluser_phone_number" : { "type" : "text" },

@@ -139,8 +139,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
   $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';
@@ -234,8 +232,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
   $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';
@@ -334,8 +330,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -406,8 +400,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -511,8 +503,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -597,8 +587,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
   $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';
