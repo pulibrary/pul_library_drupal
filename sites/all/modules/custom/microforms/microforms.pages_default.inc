@@ -179,7 +179,7 @@ collections/microforms',
     $pane->panel = 'right';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -202,7 +202,7 @@ collections/microforms',
     $pane->panel = 'right';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_5';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -220,6 +220,32 @@ collections/microforms',
     $pane->uuid = 'df859910-1bcb-46cb-a394-39c9c5c31a7c';
     $display->content['new-df859910-1bcb-46cb-a394-39c9c5c31a7c'] = $pane;
     $display->panels['right'][1] = 'new-df859910-1bcb-46cb-a394-39c9c5c31a7c';
+    $pane = new stdClass();
+    $pane->pid = 'new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_hours-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'path' => 'calendar/week',
+      'arguments' => array(
+        'field_hrs_lib_calendar_target_id' => '3708',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Hours',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'd51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
+    $display->content['new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb'] = $pane;
+    $display->panels['right'][2] = 'new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2569cf90-7b85-47f9-a182-3e335be2761b';
   $handler->conf['display'] = $display;
