@@ -43,7 +43,8 @@ function microforms_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'collections/microforms*
-collections/microforms/*',
+collections/microforms/*
+microforms',
           ),
           'context' => 'empty',
           'not' => FALSE,
