@@ -45,7 +45,7 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     }
   }
 
-  function addTamperPlugin($importer_id, $source, $plugin_id, $settings = array(), $description = '', $id = NULL) {
+  protected function addTamperPlugin($importer_id, $source, $plugin_id, $settings = array(), $description = '', $id = NULL) {
     $plugin_info = feeds_tamper_get_plugin($plugin_id);
     if ($plugin_info['validate']) {
       $plugin_info['validate']($settings);
@@ -57,7 +57,7 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     $plugin->importer = $importer_id;
     $plugin->source = $source;
     $plugin->plugin_id = $plugin_id;
-    if (!isset($description)) {
+    if (!strlen($description)) {
       $description = $this->randomString(255);
     }
     if (!isset($id)) {
@@ -76,7 +76,7 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     return $id;
   }
 
-  function disableTamperPlugin($id) {
+  protected function disableTamperPlugin($id) {
     $plugin = feeds_tamper_load_instance($id);
     $plugin->disabled = TRUE;
     $this->assertEqual(SAVED_UPDATED, feeds_tamper_save_instance($plugin));
@@ -85,15 +85,15 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     $this->assertIdentical(TRUE, $plugin->disabled);
   }
 
-  function setTamperPluginWeight($importer_id, $source, $id, $weight) {
+  protected function setTamperPluginWeight($importer_id, $source, $id, $weight) {
   }
 
-  function deleteTamperPlugin($id) {
+  protected function deleteTamperPlugin($id) {
     feeds_tamper_delete_instance($id);
     //$source = db_query("SELECT * FROM {feeds_source} WHERE feed_nid = :nid", array(':nid' => $nid))->fetchObject();
   }
 
-  function assertUppercaseDevseedFeedContent() {
+  protected function assertUppercaseDevseedFeedContent() {
     $this->drupalGet('node');
     $this->assertText('SCALING THE OPEN ATRIUM UI');
     $this->assertText("PERU&#039;S SOFTWARE FREEDOM DAY: IMPRESSIONS &amp; PHOTOS");
@@ -106,7 +106,8 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     $this->assertText('WEEK IN DC TECH: OCTOBER 5TH EDITION');
     $this->assertText('OPEN ATRIUM TRANSLATION WORKFLOW: TWO WAY TRANSLATION UPDATES');
   }
-  function assertDevseedFeedContent() {
+
+  protected function assertDevseedFeedContent() {
     $this->drupalGet('node');
     $this->asserttext('Scaling the Open Atrium UI');
     $this->asserttext("Peru&#039;s Software Freedom Day: Impressions &amp; Photos");
@@ -119,7 +120,8 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     $this->asserttext('Week in DC Tech: October 5th Edition');
     $this->asserttext('Open Atrium Translation Workflow: Two Way Translation Updates');
   }
-  function assertHashedDevseedFeedContent() {
+
+  protected function assertHashedDevseedFeedContent() {
     $this->drupalGet('node');
     $this->asserttext('7e6719e920a73954fe94c931b2715efe');
     $this->asserttext('8ea53182dfa501e4aa997a6030931125');
@@ -132,6 +134,7 @@ class FeedsTamperWebTestHelper extends FeedsWebTestCase {
     $this->asserttext('b02c3e6bdcfdaac72b17a14f4f0eae27');
     $this->asserttext('a628fc19e8fcb2b9c987412a7fcd995c');
   }
+
 }
 
 /**
@@ -147,34 +150,37 @@ class FeedsTamperWebTestCase extends FeedsTamperWebTestHelper {
     );
   }
 
-  public function testBasic() {
-    $this->createImporterConfiguration();
-    $this->addMappings('syndication',
-      array(
-        array(
-          'source' => 'title',
-          'target' => 'title',
-          'unique' => FALSE,
-        ),
-        array(
-          'source' => 'guid',
-          'target' => 'guid',
-          'unique' => TRUE,
-        ),
-        array(
-          'source' => 'description',
-          'target' => 'body',
-        ),
-      )
-    );
-    // Set update existing.
-    $this->setSettings('syndication', 'FeedsNodeProcessor', array('update_existing' => 1));
+  public function setUp() {
+    parent::setUp();
 
+    $this->createImporterConfiguration();
+    $this->addMappings('syndication', array(
+      0 => array(
+        'source' => 'title',
+        'target' => 'title',
+        'unique' => FALSE,
+      ),
+      1 => array(
+        'source' => 'guid',
+        'target' => 'guid',
+        'unique' => TRUE,
+      ),
+      2 => array(
+        'source' => 'description',
+        'target' => 'body',
+      ),
+    ));
+    // Set update existing to simplify our lives.
+    $this->setSettings('syndication', 'FeedsNodeProcessor', array('update_existing' => 1));
+  }
+
+  public function testBasic() {
     // Test basic plugin adding.
-    $settings = array(
-      'mode' => 0,
-    );
-    $id = $this->addTamperPlugin('syndication', 'title', 'convert_case', $settings);
+    // Add a no-op explode/implode sequence to verify that we can switch types.
+    $this->addTamperPlugin('syndication', 'title', 'explode', array('separator' => '$', 'limit' => ''));
+    $id = $this->addTamperPlugin('syndication', 'title', 'convert_case', array('mode' => 0));
+    $this->addTamperPlugin('syndication', 'title', 'implode', array('glue' => ''));
+
     // Create feed node, running import automatically.
     $nid = $this->createFeedNode();
     // Assert that all titles were uppercased.
@@ -185,6 +191,43 @@ class FeedsTamperWebTestCase extends FeedsTamperWebTestHelper {
     $this->drupalPost('node/' . $nid . '/import', array(), 'Import');
     $this->assertText('Updated 10 nodes.');
     $this->assertDevseedFeedContent();
+  }
+
+  /**
+   * Integration tests for the copy plugin.
+   */
+  public function testCopyPlugin() {
+    $this->removeMappings('syndication', array(
+      2 => array(
+        'source' => 'description',
+        'target' => 'body',
+      ),
+    ));
+
+    $this->addMappings('syndication', array(
+      2 => array(
+        'source' => 'Blank source 1',
+        'target' => 'body',
+      ),
+    ));
+
+    // Test copy to.
+    // The case should get converted for the title, but not the body.
+    $copy = $this->addTamperPlugin('syndication', 'title', 'copy', array('to_from' => 'to', 'source' => 'Blank source 1'));
+    $convert_case = $this->addTamperPlugin('syndication', 'title', 'convert_case', array('mode' => 0));
+
+    // Create feed node, running import automatically.
+    $nid = $this->createFeedNode();
+    $this->drupalGet('node/2/edit');
+    $this->assertFieldByXPath("//textarea[@name='body[und][0][value]']", 'Open Atrium Translation Workflow: Two Way Translation Updates', 'The textfield widget is populated.');
+    $this->assertFieldByName('title', 'OPEN ATRIUM TRANSLATION WORKFLOW: TWO WAY TRANSLATION UPDATES');
+
+    $this->disableTamperPlugin($convert_case);
+    $this->addTamperPlugin('syndication', 'Blank source 1', 'convert_case', array('mode' => 0));
+    $this->drupalPost('node/' . $nid . '/import', array(), 'Import');
+    $this->drupalGet('node/2/edit');
+    $this->assertFieldByXPath("//textarea[@name='body[und][0][value]']", 'OPEN ATRIUM TRANSLATION WORKFLOW: TWO WAY TRANSLATION UPDATES', 'The textfield widget is populated.');
+    $this->assertFieldByName('title', 'Open Atrium Translation Workflow: Two Way Translation Updates');
   }
 
 }
@@ -212,7 +255,7 @@ class FeedsTamperCSVTestCase extends FeedsTamperWebTestHelper {
     // We have a space in the source cause that was a problem at one point.
     $mappings = array(
       0 => array(
-        'source' => 'a /Title',
+        'source' => 'a /T~!@#$%^&*()_+`<>;:itle✈',
         'target' => 'title',
       ),
       1 => array(
@@ -237,7 +280,7 @@ class FeedsTamperCSVTestCase extends FeedsTamperWebTestHelper {
     $settings = array(
       'mode' => 0,
     );
-    $id = $this->addTamperPlugin($importer_id, 'a /Title', 'convert_case', $settings);
+    $id = $this->addTamperPlugin($importer_id, 'a /T~!@#$%^&*()_+`<>;:itle✈', 'convert_case', $settings);
     $id2 = $this->addTamperPlugin($importer_id, 'a Body.', 'convert_case', $settings);
 
     // Verify that Blank source works for CSV parser.
@@ -276,7 +319,7 @@ class FeedsTamperCSVTestCase extends FeedsTamperWebTestHelper {
     // We have a space in the source cause that was a problem at one point.
     $mappings = array(
       0 => array(
-        'source' => 'a /Title',
+        'source' => 'a /T~!@#$%^&*()_+`<>;:itle✈',
         'target' => 'title',
       ),
       1 => array(
