@@ -52,6 +52,43 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
+## BAD IPs
+order allow,deny 
+# OIT crawler
+deny from 128.112.132.117
+## spam from death masks kootation.com
+deny from 131.253.24.22
+deny from 198.27.67.59
+# turkish media crawler
+deny from 5.47.49.252
+allow from all
+
+
+# Redirect Rules
+RedirectPermanent /about/contact.php /about/contact-us
+RedirectPermanent /about/hours /hours
+RedirectPermanent /about/hours.php /hours
+Redirect /guide /sites/default/files/documents/Library_guide_08_2013.pdf
+RedirectPermanent /catalogs/articles.php /research/databases
+RedirectPermanent /catalogs/other.php /research/catalogs
+RedirectPermanent /libraries/collections.php /collections
+RedirectPermanent /hr /staff/hr
+RedirectPermanent /help/remoteaccess.php /services/technology/off-campus-access
+RedirectPermanent /catalogs/searchit/feedback.php /help/searchit/feedback
+RedirectPermanent /libraries/locations.php /libraries/locations
+Redirect /favicon.ico /sites/default/files/libicon_0.ico
+RedirectPermanent /cdforum /collections/cdforum
+RedirectPermanent /collectiondevelopment /collections-and-collection-development
+RedirectPermanent /departments/collectiondevelopment /collections-and-collection-development
+RedirectPermanent /services/bdinfo.php /services/borrowdirect
+RedirectPermanent /search /find/all
+RedirectPermanent /libraries/map.php /about/locations
+RedirectPermanent /services/purchase.php http://library.princeton.edu/help/recommend-purchase
+RedirectPermanent /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
+Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
+RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
+Redirect /digital_collections/princeton_only/ejournals.html http://library2.princeton.edu/digital_collections/princeton_only/ejournals.html
+
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
