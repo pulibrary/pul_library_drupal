@@ -369,7 +369,7 @@ color:#333;
 display:block;
 background-color:#0098F4;
 position:absolute;
-z-index:1000;
+z-index:999;
 padding:10px 20px;
 top:43px;
 }
@@ -1436,4 +1436,17 @@ input[type='text'],input[type='email'],input[type='phone'],input[type='address']
 }
 .node-type-libraries .grid-3 .view-id-libraries .view-content i {
     margin-right: 5px;
+}
+
+
+/* CDL Subsite Overrides */
+
+/* padding fix */
+.context-collections .grid-12,
+.context-collections-and-collection-development .grid-12, 
+.context-collections-and-collection-development .grid-3 {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }

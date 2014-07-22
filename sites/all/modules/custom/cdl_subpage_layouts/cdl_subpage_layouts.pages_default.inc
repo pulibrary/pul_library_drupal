@@ -1538,3 +1538,169 @@ collections/adelman07102008',
 
   return $export;
 }
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function cdl_subpage_layouts_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'cdl_acquistions_highlight_page';
+  $page->task = 'page';
+  $page->admin_title = 'CDL Acquistions Highlight Page';
+  $page->admin_description = '';
+  $page->path = 'collections/highlights/archive';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_cdl_acquistions_highlight_page_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'cdl_acquistions_highlight_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Collection Dev Homepage',
+        'keyword' => 'collection_dev_home',
+        'name' => 'entity:node',
+        'entity_id' => '12505',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 0,
+  );
+  $display = new panels_display();
+  $display->layout = 'pul_development_theme_12_onecol_12_stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'a724ff46-d416-4cce-b361-ced2cb1ea4b1';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
+    $pane->panel = 'bottom';
+    $pane->type = 'views';
+    $pane->subtype = 'acquisitions_highlights';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'page',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '477bd6a1-68c5-4573-a687-e21f372f3c74';
+    $display->content['new-477bd6a1-68c5-4573-a687-e21f372f3c74'] = $pane;
+    $display->panels['bottom'][0] = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
+    $pane = new stdClass();
+    $pane->pid = 'new-ed1e57cf-3938-4f43-90f3-cfe743ab2424';
+    $pane->panel = 'top';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_pul_landing_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_style' => 'pul_logo_file',
+        'image_link' => '',
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ed1e57cf-3938-4f43-90f3-cfe743ab2424';
+    $display->content['new-ed1e57cf-3938-4f43-90f3-cfe743ab2424'] = $pane;
+    $display->panels['top'][0] = 'new-ed1e57cf-3938-4f43-90f3-cfe743ab2424';
+    $pane = new stdClass();
+    $pane->pid = 'new-eb236ed0-678e-4997-a361-591044984f05';
+    $pane->panel = 'top';
+    $pane->type = 'block';
+    $pane->subtype = 'nice_menus-2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'eb236ed0-678e-4997-a361-591044984f05';
+    $display->content['new-eb236ed0-678e-4997-a361-591044984f05'] = $pane;
+    $display->panels['top'][1] = 'new-eb236ed0-678e-4997-a361-591044984f05';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['cdl_acquistions_highlight_page'] = $page;
+
+  return $pages;
+
+}
