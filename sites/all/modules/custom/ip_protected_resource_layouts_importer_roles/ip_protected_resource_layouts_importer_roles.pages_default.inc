@@ -43,6 +43,10 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Databases',
+    'panels_breadcrumbs_paths' => 'research/databases',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_9_3';
