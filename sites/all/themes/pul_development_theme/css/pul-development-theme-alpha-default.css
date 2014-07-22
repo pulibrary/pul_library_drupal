@@ -1450,3 +1450,21 @@ input[type='text'],input[type='email'],input[type='phone'],input[type='address']
   margin-left: 0;
   margin-right: 0;
 }
+
+
+/* IP Protected Pages */
+.node-type-ip-protected-db-resource h3.field-label {
+  /* display: inline; */
+}
+
+.node-type-ip-protected-db-resource .field-name-field-ip-db-resource-url,
+.node-type-ip-protected-db-resource .field-name-field-ip-db-copyright-info {
+  padding-top: 20px;
+}
+
+.field-name-field-ip-db-username,
+.field-name-field-ip-db-password {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 120%;
+}
