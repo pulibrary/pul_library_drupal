@@ -24,12 +24,19 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Acquisitions Highlights';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '15';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_image_new_item' => 'field_image_new_item',
@@ -163,43 +170,14 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'acquisitions_highlights' => 'acquisitions_highlights',
   );
-  /* Filter criterion: Content: Acquisition Type (field_cdl_acq_type) */
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['id'] = 'field_cdl_acq_type_value';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['table'] = 'field_data_field_cdl_acq_type';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['field'] = 'field_cdl_acq_type_value';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['operator_id'] = 'field_cdl_acq_type_value_op';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['operator'] = 'field_cdl_acq_type_value_op';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['identifier'] = 'field_cdl_acq_type_value';
-  $handler->display->display_options['filters']['field_cdl_acq_type_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    8 => 0,
-    7 => 0,
-    5 => 0,
-    4 => 0,
-    6 => 0,
-    9 => 0,
-    10 => 0,
-    11 => 0,
-    12 => 0,
-    13 => 0,
-    14 => 0,
-    15 => 0,
-    16 => 0,
-    17 => 0,
-    18 => 0,
-    19 => 0,
-    20 => 0,
-    21 => 0,
-    22 => 0,
-    23 => 0,
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Acquisitions Highlights Archive';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['path'] = 'collections/acquisitions-highlights';
 
   /* Display: Block */
@@ -216,6 +194,17 @@ function cdl_acqusition_highlights_views_default_views() {
 
   /* Display: Acqusitions Highlights Table */
   $handler = $view->new_display('panel_pane', 'Acqusitions Highlights Table', 'panel_pane_1');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['link_url'] = 'collections/highlights/archive';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $export['acquisitions_highlights'] = $view;
 
   return $export;
