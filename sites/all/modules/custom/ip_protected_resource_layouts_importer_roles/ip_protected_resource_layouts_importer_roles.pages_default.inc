@@ -86,7 +86,7 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
     $pane->configuration = array(
       'links' => 0,
       'no_extras' => 1,
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'identifier' => '',
       'link' => 0,

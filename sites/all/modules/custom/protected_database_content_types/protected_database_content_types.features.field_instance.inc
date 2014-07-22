@@ -356,6 +356,13 @@ function protected_database_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -399,7 +406,30 @@ function protected_database_content_types_field_default_field_instances() {
     'bundle' => 'ip_protected_db_resource',
     'default_value' => array(
       0 => array(
-        'value' => '<p>This publication or database and the information in it is protected by copyright. All reproductions of this copyrighted material must be for non-commercial educational “fair use” as defined by 17 U.S.C. 107.</p><table><thead><tr><th>You May</th><th>You May Not</th></tr></thead><tbody><tr><td><ul><li>Access, search and browse the database or publication.</li><li>Print or download a limited number of articles, records, abstracts, or parts of chapters for personal use.</li></ul></td><td><ul><li>Sell copies of items printed or downloaded.</li><li>Print or download entire electronic books or entire issues of journals.</li><li>Distribute copies of any portions of this resource to anyone not affiliated with Princeton University. Sharing information with colleagues for scholarly, educational, or scientific research or professional use is permitted.</li></ul></td></tr></tbody></table>',
+        'value' => '<p>This publication or database and the information in it is protected by copyright. All reproductions of this copyrighted material must be for non-commercial educational “fair use” as defined by 17 U.S.C. 107.</p>
+<table>
+<thead>
+<tr><th>You May</th><th>You May Not</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<ul>
+<li>Access, search and browse the database or publication.</li>
+<li>Print or download a limited number of articles, records, abstracts, or parts of chapters for personal use.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Sell copies of items printed or downloaded.</li>
+<li>Print or download entire electronic books or entire issues of journals.</li>
+<li>Distribute copies of any portions of this resource to anyone not affiliated with Princeton University. Sharing information with colleagues for scholarly, educational, or scientific research or professional use is permitted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>',
+        'format' => 'filtered_html',
       ),
     ),
     'deleted' => 0,
@@ -419,6 +449,13 @@ function protected_database_content_types_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -483,6 +520,13 @@ function protected_database_content_types_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -536,6 +580,13 @@ function protected_database_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
@@ -610,6 +661,13 @@ function protected_database_content_types_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
