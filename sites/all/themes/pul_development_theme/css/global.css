@@ -2998,15 +2998,15 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
 */
 
 .context-collections-and-collection-development #block-system-main-menu, .context-collections #block-system-main-menu {
-	z-index: 1333;
+	z-index: 333;
 }
 
 .context-collections-and-collection-development #section-header, .context-collections #section-header {
-	z-index: 1666;
+	z-index: 666;
 }
 
 .context-collections-and-collection-development #section-content, .context-collections #section-content {
-	z-index: 1111;
+	z-index: 111;
 }
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {

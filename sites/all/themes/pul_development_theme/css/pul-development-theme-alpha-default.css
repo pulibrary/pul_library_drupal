@@ -369,7 +369,7 @@ color:#333;
 display:block;
 background-color:#0098F4;
 position:absolute;
-z-index:1000;
+z-index:999;
 padding:10px 20px;
 top:43px;
 }
