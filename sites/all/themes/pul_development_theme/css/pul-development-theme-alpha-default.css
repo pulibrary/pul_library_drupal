@@ -1213,7 +1213,8 @@ text-align: center;
 
 
 .service-connect-btn a, .field-name-field-db-access-url a,
-.field-name-field-ip-db-resource-url a {
+.field-name-field-ip-db-resource-url a,
+.field-name-field-cas-db-resource-url a {
 font-size: 140%;
 color: #FFFFFF;
 background-color: #0062A0;
