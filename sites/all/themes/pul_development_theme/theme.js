@@ -1,27 +1,28 @@
 (function ($) {
   $(document).ready(function() {
 
-	$( "a", ".field-name-field-db-access-url" ).button();
-        $( "a", ".service-connect-btn" ).button();
-        $(".field-name-field-ip-db-resource-url a").button();
-        
-        $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
-        $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
-        $('.view-libraries-and-collections-combined .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
+	  $( "a", ".field-name-field-db-access-url" ).button();
+    $( "a", ".service-connect-btn" ).button();
+    $(".field-name-field-ip-db-resource-url a").button();
+    $(".field-name-field-cas-db-resource-url a").button();
+
+    $('.main-menu-item-title').replaceWith('<a href="/libraries">Libraries and Collections</a>');
+    $('.view-display-id-block_1 .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
+    $('.view-libraries-and-collections-combined .item-list:eq(1) ul').append("<li class='last leaf more'><a href='/collections' title='See All Collections'>More Collections</a></li>");
 
         //FIXME hack should be repaced by a module that allows viewOnlineLink to be set a drupal conf variable
-	$('.node-type-database .field-name-field-db-access-url a, .node-type-alternative-database-title .field-name-field-db-access-url a').each(function(index){
-		var viewOnlineLink = $(this).attr('href');
-		undecodeViewOnline = viewOnlineLink.replace( /\&amp%3B|&amp;/g, '&' );
-		//console.log(undecodeViewOnline);
-                var resolvePrefix = "http://libwebprod.princeton.edu/resolve/lookup?url=";
-		$(this).attr('href', resolvePrefix+undecodeViewOnline);
-		$(this).attr('target', '_blank');
-	});
+  	$('.node-type-database .field-name-field-db-access-url a, .node-type-alternative-database-title .field-name-field-db-access-url a').each(function(index){
+  		var viewOnlineLink = $(this).attr('href');
+  		undecodeViewOnline = viewOnlineLink.replace( /\&amp%3B|&amp;/g, '&' );
+  		//console.log(undecodeViewOnline);
+                  var resolvePrefix = "http://libwebprod.princeton.edu/resolve/lookup?url=";
+  		$(this).attr('href', resolvePrefix+undecodeViewOnline);
+  		$(this).attr('target', '_blank');
+  	});
 	
 
-	/* toggle events for A to Z list */
-        $(".find-databases-show-desc").each(function(index) {
+	  /* toggle events for A to Z list */
+    $(".find-databases-show-desc").each(function(index) {
 		var id = $(this).attr('data-desc-id');
 		$('#open'+id).click( function () {
 			$('#desc'+id).toggle( function() {
