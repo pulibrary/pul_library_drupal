@@ -211,6 +211,17 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class="icon-envelope-alt">&nbsp;</i>[field_e_mail_address] ';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['type'] = 'email_plain';
+  /* Field: Indexed Content: Project URL */
+  $handler->display->display_options['fields']['field_digital_project_url']['id'] = 'field_digital_project_url';
+  $handler->display->display_options['fields']['field_digital_project_url']['table'] = 'search_api_index_libraries_and_collections';
+  $handler->display->display_options['fields']['field_digital_project_url']['field'] = 'field_digital_project_url';
+  $handler->display->display_options['fields']['field_digital_project_url']['label'] = '';
+  $handler->display->display_options['fields']['field_digital_project_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_digital_project_url']['alter']['text'] = '<i class="icon-home">&nbsp;</i><a href="[field_digital_project_url-url]">Project Website</a>';
+  $handler->display->display_options['fields']['field_digital_project_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_digital_project_url']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_digital_project_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_digital_project_url']['type'] = 'link_plain';
   $handler->display->display_options['argument_input'] = array(
     'search_api_views_fulltext' => array(
       'type' => 'panel',
