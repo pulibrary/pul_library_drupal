@@ -2197,10 +2197,6 @@ function webform_client_form($form, &$form_state, $node, $submission = FALSE, $i
   form_load_include($form_state, 'inc', 'webform', 'includes/webform.components');
   form_load_include($form_state, 'inc', 'webform', 'includes/webform.submissions');
 
-  $form['#process'] = array(
-    'webform_client_form_includes',
-  );
-
   // If in a multi-step form, a submission ID may be specified in form state.
   // Load this submission. This allows anonymous users to use auto-save.
   if (empty($submission) && !empty($form_state['values']['details']['sid'])) {
@@ -2230,7 +2226,9 @@ function webform_client_form($form, &$form_state, $node, $submission = FALSE, $i
   }
 
   $form['#submit'] = array('webform_client_form_pages', 'webform_client_form_submit');
-  $form['#validate'] = array('webform_client_form_prevalidate', 'webform_client_form_validate', 'webform_client_form_postvalidate');
+  $form['#validate'] = array('webform_client_form_validate');
+  // Add includes for used component types and pre/post validation handlers
+  $form['#process'] = array('webform_client_form_process');
 
   if (is_array($node->webform['components']) && !empty($node->webform['components'])) {
     // Prepare a new form array.
@@ -2320,8 +2318,7 @@ function webform_client_form($form, &$form_state, $node, $submission = FALSE, $i
 
     // Add the preview if needed.
     if ($node->webform['preview'] && $page_num === $page_count) {
-      $preview_submission = webform_submission_create($node, $user, $form_state);
-      $preview_submission->preview = TRUE;
+      $preview_submission = webform_submission_create($node, $user, $form_state, TRUE);
       $preview_message = $node->webform['preview_message'];
       $submit_button_text = empty($node->webform['submit_text']) ? t('Submit') : t($node->webform['submit_text']);
       if (strlen(trim(strip_tags($preview_message))) === 0) {
@@ -2335,6 +2332,7 @@ function webform_client_form($form, &$form_state, $node, $submission = FALSE, $i
       );
 
       $form['preview'] = webform_submission_render($node, $preview_submission, NULL, 'html', $node->webform['preview_excluded_components']);
+      $form['#attributes']['class'][] = 'preview';
     }
 
     // These form details help managing data upon submission.
@@ -2436,12 +2434,21 @@ function webform_client_form($form, &$form_state, $node, $submission = FALSE, $i
  * Process function for webform_client_form().
  *
  * Include all the enabled components for this form to ensure availability.
+ * Also adds the pre- and post-validators to ensure that hook_form_alters don't
+ * add their validation functions in the wrong order.
  */
-function webform_client_form_includes($form, $form_state) {
+function webform_client_form_process($form, $form_state) {
   $components = webform_components();
   foreach ($components as $component_type => $component) {
     webform_component_include($component_type);
   }
+
+  // Add the post validation to end of validators. Do this first on the off
+  // chance that an _alter function has unset form['#validate'].
+  $form['#validate'][] = 'webform_client_form_postvalidate';
+  // Add the pre-validator to the front of the list to run first
+  array_unshift($form['#validate'], 'webform_client_form_prevalidate');
+
   return $form;
 }
 
@@ -2546,7 +2553,15 @@ function _webform_client_form_rule_check($node, $component, $page_num, $input_va
 
         $source_values = array();
         if (isset($input_values[$source_cid])) {
-          $source_values = is_array($input_values[$source_cid]) ? $input_values[$source_cid] : array($input_values[$source_cid]);
+          $component_value = $input_values[$source_cid];
+          // For select_or_other components, use only the select values because $source_values must not be a nested array.
+          // During preview, the array is already flattened.
+          if ($source_component['type'] === 'select' &&
+              !empty($source_component['extra']['other_option']) &&
+              isset($component_value['select'])) {
+            $component_value = $component_value['select'];
+          }
+          $source_values = is_array($component_value) ? $component_value : array($component_value);
         }
 
         // Determine the operator and callback.
@@ -2860,11 +2875,39 @@ function _webform_client_form_validate(&$elements, &$form_state, $form_id = NULL
 /**
  * Saves submissions that fail validation as drafts.
  *
- * When a user attempts to submit an unfinished form and auto-save allowed,
+ * When a user attempts to submit an unfinished form and auto-save is allowed,
  * automatically save the form as a draft to allow the user to complete the
- * form later. This prevents the common failure of a user submitted a form and
- * failing to notice validation errors. The user then leaves the page without
- * realizing that the form hasn't been submitted.
+ * form later. This prevents the common failure of a user trying to submit a
+ * form and not noticing validation errors. The user then leaves the page
+ * without realizing that the form hasn't been submitted.
+ *
+ * THEORY OF OPERATION:
+ * The Drupal 7 Form API lacks an easy way to rebuild the form in the event of
+ * validation errors. The opertions is thus:
+ *
+ * 1) The form is first displayed. If it is an existing draft,
+ *    webform_client_form will generated a form to edit the draft submission.
+ *    Otherwise it creates a form for a new, empty submission. As usual.
+ * 2) The submit button is pressed. The form is retrieved from cache or is
+ *    recreated by webform_client_form. The values from the $_POST are merged in
+ *    and the validation routines are called. As usual.
+ * 3) The postvalidation routine, below, detects that validation errors should
+ *    be autosaved and calls the submit handlers on a copy of the form and
+ *    form_state. This creates the submission, or saves to the existing
+ *    submission. The original form and form_state are not modified (yet).
+ * 4) If a new submission was created, the form and form_state are updated with
+ *    the newly-created sid of the submission, which is returned to the
+ *    browser in the hidden field [details][sid]. The form is set to not be
+ *    cached, and any existing cached copy is cleared to force step 5. The form
+ *    is presented with validation errors as usual.
+ * 5) When the form is submitted again, the form must be rebuilt because it is
+ *    not in the cache. The existing draft detection in _webform_fetch_draft_sid
+ *    detects that a webform draft is being submitted, and uses its sid in
+ *    preference to any other stored draft sid in the database. In the event
+ *    that multiple drafts are being implemented by another module, this ensures
+ *    that the correct draft is edited.
+ * 6) Repeat from step 2 until the form is abandoned (leaving the draft) or
+ *    successfully submitted.
  */
 function webform_client_form_postvalidate(&$form, &$form_state) {
   $errors = form_get_errors();
@@ -2873,32 +2916,36 @@ function webform_client_form_postvalidate(&$form, &$form_state) {
   if (user_is_logged_in() &&
       $errors && !isset($errors['']) &&
       $node->webform['auto_save'] &&
-      ($form['#is_draft'] || !$form_state['values']['details']['sid']) &&
+      !$form_state['values']['details']['finished'] &&
       !empty($form_state['values']['op'])) {
     // Validation errors are present, prevalidation succeeded (e.g. submission
-    // limits are ok), auto-save is enabled, and a button was pushed (not ajax).
+    // limits are ok), auto-save is enabled, this form isn't finished (i.e. is
+    // or soon will be a draft) and a button was pushed (not ajax).
 
     // Process submission on a copy of the form and form_state to prevent the
-    // submission handlers from making unintended changes.
+    // submission handlers from making unintended changes. Use a button that
+    // isn't Save Draft, Next Page, Submit, etc to avoid triggering any
+    // unwanted side effects.
     $submit_form = $form;
     $submit_form_state = $form_state;
-    $submit_form_state['values']['op'] = '__AUTOSAVE__'; // A button that isn't Save Draft, Next Page, Submit, etc.
+    $submit_form_state['values']['op'] = '__AUTOSAVE__';
     form_execute_handlers('submit', $submit_form, $submit_form_state);
-    if ($submit_form_state['values']['details']['sid'] != $form_state['values']['details']['sid']) {
-      // A new submission was created. Update the form, form_state and _POST so that the new submission
-      // will be used when the form definition is called again later.
-      $sid = $submit_form_state['values']['details']['sid'];
+    $sid = $submit_form_state['values']['details']['sid'];
+    if ($sid != $form_state['values']['details']['sid']) {
+      // A new submission was created. Update the form and form_state as if it
+      // has been submitted with the new sid. This causes the Form API to
+      // render the form with new sid.
+      $form_state['values']['details']['sid'] = $sid;
+      $form_state['input']['details']['sid'] = $sid;
       $form['details']['sid']['#value'] = $sid;
-      $form['#submission'] = webform_get_submission($nid, $sid);
-      $form_state['values']['details']['sid'] =  $sid;
-      $form_state['input']['details']['sid'] =  $sid;
-      $form['#is_draft'] = TRUE;
-      $_POST['details']['sid'] = $sid;
-      // Save the updated form and form_state to the cache, from which it will
-      // later be retrieved to present the form.
-      form_set_cache($form_state['values']['form_build_id'], $form, $form_state);
-      // Set the form_state to not update the cache with the original null submission.
+
+      // Prevent the form from being cached, forcing it to be rebuilt from the
+      // form definition function, which will honor the new sid.
       $form_state['no_cache'] = TRUE;
+      if (!variable_get('cache', 0) && !empty($form_state['values']['form_build_id'])) {
+        cache_clear_all('form_' . $form_state['values']['form_build_id'], 'cache_form');
+        cache_clear_all('form_state_' . $form_state['values']['form_build_id'], 'cache_form');
+      }
     }
   }
 }
@@ -3126,13 +3173,14 @@ function webform_client_form_submit($form, &$form_state) {
     $message = t('Submission saved. You may return to this form later and it will restore the current values.');
   }
   elseif ($is_draft) {
-    $redirect = NULL;
+    // No redirect needed
   }
   elseif (!empty($form_state['values']['details']['finished'])) {
     $message = t('Submission updated.');
+    $redirect = "node/{$node->nid}/submission/$sid";
   }
   elseif ($redirect_url == '<none>') {
-    $redirect = NULL;
+    // No redirect needed
   }
   elseif ($redirect_url == '<confirmation>') {
     $query = array('sid' => $sid);
@@ -3331,15 +3379,18 @@ function webform_pre_render_remove_id($element) {
 }
 
 /**
- * Replacement for theme_form_element().
+ * Implements template_preprocess_THEME_HOOK().
  */
-function theme_webform_element($variables) {
-  // Ensure defaults.
-  $variables['element'] += array(
-    '#title_display' => 'before',
-  );
+function template_preprocess_webform_element(&$variables) {
+  $element = &$variables['element'];
 
-  $element = $variables['element'];
+  // Ensure defaults.
+  $element += array(
+    '#title_display' => 'before',
+    '#wrapper_attributes' => array(
+      'class' => array(),
+    ),
+  );
 
   // All elements using this for display only are given the "display" type.
   if (isset($element['#format']) && $element['#format'] == 'html') {
@@ -3353,18 +3404,17 @@ function theme_webform_element($variables) {
   $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
   $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
 
-  $wrapper_attributes = isset($element['#wrapper_attributes']) ? $element['#wrapper_attributes'] : array('class' => array());
+  // Build up a list of classes to apply on the element wrapper.
   $wrapper_classes = array(
-   'form-item',
-   'webform-component',
-   'webform-component-' . str_replace('_', '-', $type),
-   'webform-component--' . $parents,
+    'form-item',
+    'webform-component',
+    'webform-component-' . str_replace('_', '-', $type),
+    'webform-component--' . $parents,
   );
   if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
     $wrapper_classes[] = 'webform-container-inline';
   }
-  $wrapper_attributes['class'] = isset($wrapper_attributes['class']) ? array_merge($wrapper_classes, $wrapper_attributes['class']) : $wrapper_classes;
-  $output = '<div ' . drupal_attributes($wrapper_attributes) . '>' . "\n";
+  $element['#wrapper_attributes']['class'] += $wrapper_classes;
 
   // If #title_display is none, set it to invisible instead - none only used if
   // we have no title at all to use.
@@ -3375,10 +3425,20 @@ function theme_webform_element($variables) {
       $element['#attributes']['title'] = $element['#title'];
     }
   }
+
   // If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
     $element['#title_display'] = 'none';
   }
+}
+
+/**
+ * Replacement for theme_form_element().
+ */
+function theme_webform_element($variables) {
+  $element = $variables['element'];
+
+  $output = '<div ' . drupal_attributes($element['#wrapper_attributes']) . '>' . "\n";
   $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . webform_filter_xss($element['#field_prefix']) . '</span> ' : '';
   $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . webform_filter_xss($element['#field_suffix']) . '</span>' : '';
 
@@ -3578,16 +3638,30 @@ function theme_webform_mail_headers($variables) {
  * Check if current user has a draft of this webform, and return the sid.
  */
 function _webform_fetch_draft_sid($nid, $uid) {
-  $sid = db_select('webform_submissions')
-    ->fields('webform_submissions', array('sid'))
-    ->condition('nid', $nid)
-    ->condition('uid', $uid)
-    ->condition('is_draft', 1)
-    ->orderBy('submitted', 'DESC')
-    ->execute()
-    ->fetchField();
-  if ($sid) {
-    drupal_alter('webform_draft', $sid);
+  // Detect whether a webform draft is being edited. If so, that is the one that
+  // should be returned.
+  if (isset($_POST['form_id']) && stripos($_POST['form_id'], 'webform_client_form_') === 0 &&
+      !empty($_POST['details']['sid']) && empty($_POST['details']['finished'])) {
+    // A draft is already being edited
+    $sid = $_POST['details']['sid'];
+  }
+  else {
+    $sid = db_select('webform_submissions')
+      ->fields('webform_submissions', array('sid'))
+      ->condition('nid', $nid)
+      ->condition('uid', $uid)
+      ->condition('is_draft', 1)
+      ->orderBy('submitted', 'DESC')
+      ->execute()
+      ->fetchField();
+
+    if ($sid) {
+      $context = array(
+        'nid' => $nid,
+        'uid' => $uid,
+      );
+      drupal_alter('webform_draft', $sid, $context);
+    }
   }
   return $sid;
 }
@@ -3672,7 +3746,7 @@ function webform_replace_url_tokens($redirect_url, $node = NULL, $submission = N
   $redirect_url = preg_replace('#^' . $rx_base . $rx_language . '#', '', $redirect_url);
   if (!$redirect_url && stripos($parsed_redirect_url['path'], '<front>') !== FALSE) {
     // URL specifies <front>, rather than an empty redirect (which is interpreted as no redirect)
-    $redirect_url = '/';
+    $redirect_url = '<front>';
   }
   return $redirect_url;
 }
@@ -4606,16 +4680,16 @@ function webform_date_views_extra_tables() {
 function _webform_submission_serial_next_value($nid, $do_increment = TRUE) {
   // Use a transaction with SELECT ... FOR UPDATE to lock the row between
   // the SELECT and the UPDATE, ensuring that multiple Webform submissions
-  // at the same time do not have duplicate numbers.
-  // Do not lock unless incrementing.
-  if ($do_increment) {
-    db_transaction();
-  }
+  // at the same time do not have duplicate numbers. FOR UPDATE must be inside
+  // a transaction. The return value of db_transaction() must be assigned or the
+  // transaction will commit immediately. The transaction will commit when $txn
+  // goes out-of-scope.
+  $txn = db_transaction();
 
   // Get the next_serial value.
   $next_serial = db_select('webform', 'w')
-    // FOR UPDATE does not lock outside of a transaction.
-    ->forUpdate()
+    // Only add FOR UPDATE when incrementing.
+    ->forUpdate($do_increment)
     ->fields('w', array('next_serial'))
     ->condition('nid', $nid)
     ->execute()
