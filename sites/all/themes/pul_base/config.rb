@@ -27,6 +27,8 @@ require 'rgbapng'
 require 'toolkit'
 require 'susy'
 require 'sass-globbing'
+require 'breakpoint'
+require 'singularitygs'
 
 ##
 ## You probably don't need to edit anything below this.

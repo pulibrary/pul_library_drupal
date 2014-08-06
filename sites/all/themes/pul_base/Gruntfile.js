@@ -9,6 +9,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['sass/{,**/}*.{scss,sass}'],
+        //tasks: ['sass'],
         tasks: ['compass:dev'],
         options: {
           livereload: false
@@ -108,6 +109,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -116,6 +118,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'uglify:dist',
     'compass:dist',
+    'sass',
     'jshint'
   ]);
 

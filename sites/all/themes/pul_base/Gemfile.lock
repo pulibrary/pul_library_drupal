@@ -2,21 +2,25 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.6)
-    breakpoint (2.0.7)
-      compass (>= 0.12.1)
-      sass (>= 3.2.0)
+    breakpoint (2.4.6)
+      sass (~> 3.3.0)
+      sassy-maps (< 1.0.0)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chunky_png (1.3.1)
     coderay (1.1.0)
-    color-schemer (0.2.8)
-      compass-blend-modes (~> 0.0.2)
-    compass (0.12.7)
+    compass (1.0.0.rc.1)
       chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.2.19)
-    compass-blend-modes (0.0.2)
-      compass
+      compass-core (~> 1.0.0.rc.1)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.0.rc.1)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
     compass-normalize (1.5)
       compass (>= 0.12.0)
     compass-rgbapng (0.2.1)
@@ -31,7 +35,6 @@ GEM
     eventmachine (1.0.3)
     ffi (1.9.3)
     formatador (0.2.5)
-    fssm (0.2.10)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -66,35 +69,29 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    sass (3.2.19)
+    sass (3.3.14)
     sass-globbing (1.1.1)
       sass (>= 3.1)
-    sassy-strings (1.0.0)
-      compass (>= 0.12.2)
-    singularitygs (1.1.2)
-      breakpoint (>= 2.0.1)
-      compass (>= 0.12.2)
-      sass (>= 3.2.1)
+    sassy-maps (0.4.0)
+      sass (~> 3.3)
+    singularitygs (1.2.3)
+      breakpoint (~> 2.4)
+      sass (~> 3.3.0)
     slop (3.6.0)
-    susy (1.0.9)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
+    susy (2.1.3)
+      sass (>= 3.3.0, < 3.5)
     thor (0.19.1)
     timers (1.1.0)
-    toolkit (1.3.8)
-      breakpoint (>= 2.0.6)
-      color-schemer (>= 0.2.7)
-      compass (>= 0.12.2)
-      sassy-strings (>= 1.0.0)
-      singularitygs (>= 1.1.2)
+    toolkit (2.5.2)
+      sass (~> 3.3.0)
     yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  breakpoint
-  compass
+  breakpoint (~> 2.4.0)
+  compass (~> 1.0.0.rc.1)
   compass-normalize
   compass-rgbapng
   compass-validator
@@ -107,9 +104,9 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify (~> 0.9)
-  sass
+  sass (~> 3.3.11)
   sass-globbing
-  singularitygs
+  singularitygs (~> 1.2.3)
   susy
-  toolkit
+  toolkit (~> 2.0)
   yajl-ruby
