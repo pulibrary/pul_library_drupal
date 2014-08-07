@@ -18,6 +18,14 @@ stylesheets[all][] = css/pul-base.no-query.css
 ; ========================================
 scripts[] = js/pul-base.behaviors.js
 
+
+; ========================================
+; Plugins
+plugins[panels][layouts] = panels/layouts
+; plugins[panels][styles] = panels/styles
+; ========================================
+
+
 ; ========================================
 ; Regions
 ; ========================================
