@@ -1,0 +1,40 @@
+// @include establish-baseline;
+
+html {
+  font-size: 100%;
+  line-height: 1.5em;
+}
+
+body {
+	font-family: $font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-serif;
+	font-weight: normal;
+}
+
+h1 {
+  @include adjust-font-size-to($h1-fz);
+}
+
+h2 {
+  @include adjust-font-size-to($h3-fz);
+  @include rhythm(1, 0, 0, 1, $h3-fz);
+}
+
+h3 {
+  @include adjust-font-size-to($h4-fz);
+}
+
+h4 {
+  @include adjust-font-size-to($h4-fz);
+}
+
+h5 {
+  @include adjust-font-size-to($h5-fz);
+}
+
+h6 {
+  @include adjust-font-size-to($h6-fz);
+}
