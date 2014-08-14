@@ -1,0 +1,23 @@
+@import "compass";
+
+$font-serif: "Droid Serif", Georgia, Times, serif !default; 
+$font-sans: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-mono: 'Lucida Console', Monaco, monospace !default;
+$text-color: #000 !default;
+
+$base-font-size: 14px;
+$base-line-height: 24px;
+
+$em-base: 14px;
+
+$round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height 
+$rhythm-unit: "rem"; // Sets rhythm unit to rem. Remove to use default em unit. 
+
+$h1-fz: 30px;
+$h2-fz: 24px;
+$h3-fz: 20px;
+$h4-fz: 16px;
+$h5-fz: 13px;
+$h6-fz: 10px;
+
+$small: 0.78571rem;

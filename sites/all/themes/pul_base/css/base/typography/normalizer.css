@@ -225,14 +225,3 @@ table {
 td,
 th {
   padding: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/\.rvm\/gems\/ruby-1\.9\.3-p547\@omega\.pul_base\/gems\/toolkit-2\.5\.2\/stylesheets\/toolkit\/_kickstart\.scss}line{font-family:\000031}}
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/\.rvm\/gems\/ruby-1\.9\.3-p547\@omega\.pul_base\/gems\/toolkit-2\.5\.2\/stylesheets\/toolkit\/_kickstart\.scss}line{font-family:\0000311}}
-img, video {
-  max-width: 100%;
-  height: auto; }

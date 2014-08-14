@@ -1,0 +1,116 @@
+@import "breakpoint";
+@import "singularitygs";
+
+
+//////////////////////
+// Set up the grid  //
+//////////////////////
+
+@include add-grid(12);
+@include add-gutter(1/3);
+@include add-gutter-style('split');
+@include sgs-change ('debug', true);
+
+body {
+	background: darken($light-gray, 5%);
+}
+
+.l-page {
+	background: white;
+}
+
+.l-header, .l-footer, .wrapper {
+	margin: 0 auto;
+	@include clearfix;
+}
+
+.l-region--navigation, .l-region--highlighted, .l-region--highlighted, .l-main, .l-branding, .l-region--footer {
+	max-width: 1200px;
+	margin: 0 auto;
+	@include clearfix;
+	// @include background-grid;
+}
+
+.site-logo {
+	@include grid-span(6,1);
+}
+
+.l-region--branding {
+	@include grid-span(6,7);
+}
+
+// .l-region--navigation {
+// 	@include grid-span(12);
+// 	clear: both;
+// }
+
+#block-quicktabs-homepage-search-tabs {
+	@include grid-span(12); 
+	clear: both;
+	@include breakpoint($desk) {
+		@include grid-span(9,1);
+	}
+}
+
+#block-menu-menu-get-help-menu {
+	@include grid-span(12, $output-style: 'float'); 
+	@include breakpoint($desk) {
+		@include grid-span(3, 10, $output-style: 'float'); 
+	}
+}
+
+#block-views-library-news-block-1 {
+	@include grid-span(12);
+	clear: both;
+	@include breakpoint($desk) {
+		@include grid-span(4,1);
+	}
+}
+#block-views-library-hours-block-3 {
+	@include grid-span(12);
+	@include breakpoint($desk){
+		@include grid-span(5,5);
+	}
+}
+aside.l-region--sidebar-second {
+	@include grid-span(12, $output-style: 'float');
+	@include breakpoint($desk) {
+		@include grid-span(3, 10, $output-style: 'float');
+	}
+}
+
+.l-region--footer {
+	clear: both;
+
+	nav, #block-block-1 {
+		@include grid-span(12, $output-style: 'float');
+		@include breakpoint($desk) {
+			@include grid-span(3, $output-style: 'float');
+		}
+	}
+}
+
+.panel-col-first {
+	@include grid-span(6,1);
+	clear: both;
+}
+
+.panel-col-last {
+	@include grid-span(6,7);
+}
+
+#libraries-page .panel-col-first {
+	@include grid-span(9,1);
+}
+
+#libraries-page .panel-col-last {
+	@include grid-span(3,10);
+}
+
+footer {
+	background-color: darken($light-gray, 5%);
+
+	address {
+		font-size: $small;
+	}
+}

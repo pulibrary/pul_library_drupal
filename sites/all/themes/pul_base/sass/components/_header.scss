@@ -1,0 +1,27 @@
+.wrapper--highlighted {
+	// background-color: #5c5e66;
+	padding: 1em 0;
+}
+
+.wrapper--branding {
+	background-color: #222222;
+	min-height: 50px;
+	border-top: 3px solid $orange;
+}
+
+.wrapper--navigation{
+	background-color: $light-gray;
+	border-bottom: 1px solid #ddd;
+}
+
+.site-logo {
+	padding: 0.7em;
+	font-size: 19px;
+	line-height: 21px;
+	height: 50px;
+	margin-left: -0.7em;
+}
+
+.l-content {
+	clear: both;
+}
