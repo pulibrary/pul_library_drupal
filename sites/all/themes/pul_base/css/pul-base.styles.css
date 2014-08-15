@@ -3,7 +3,7 @@ button,
 input[type="submit"] {
   -webkit-font-smoothing: antialiased;
   background-color: #477dca;
-  border-radius: 0.1875em;
+  border-radius: 0.21429em;
   color: white;
   display: inline-block;
   font-size: 1em;
@@ -141,7 +141,7 @@ select[multiple=multiple] {
   -moz-transition: border-color;
   transition: border-color;
   background-color: white;
-  border-radius: 0.1875em;
+  border-radius: 0.21429em;
   border: 1px solid #dddddd;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -247,7 +247,7 @@ input[type="submit"] {
 /* No files to import found in abstractions/**\/* */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000314}}
 body {
-  background: #ececec; }
+  background: #ebebeb; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000318}}
 .l-page {
@@ -268,177 +268,177 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000334}}
 .site-logo {
-  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 47.91667%;
+  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 46.66667%;
   float: left;
   margin-right: -100%;
-  margin-left: 1.04167%;
+  margin-left: 1.66667%;
   clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000338}}
 .l-region--branding {
-  -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 47.91667%;
+  -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 46.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000347}}
 #block-quicktabs-homepage-search-tabs {
-  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 97.91667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none;
   clear: both; }
   @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000347}}
     #block-quicktabs-homepage-search-tabs {
-      -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-      width: 72.91667%;
+      -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+      width: 71.66667%;
       float: left;
       margin-right: -100%;
-      margin-left: 1.04167%;
+      margin-left: 1.66667%;
       clear: none; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000355}}
 #block-menu-menu-get-help-menu {
-  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 97.91667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   clear: right;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%; }
+  margin-right: 1.66667%; }
   @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000355}}
     #block-menu-menu-get-help-menu {
-      -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-      width: 22.91667%;
+      -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+      width: 21.66667%;
       clear: right;
       float: right;
       margin-left: 0;
-      margin-right: 1.04167%; } }
+      margin-right: 1.66667%; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000362}}
 #block-views-library-news-block-1 {
-  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 97.91667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none;
   clear: both; }
   @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000362}}
     #block-views-library-news-block-1 {
-      -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-      width: 31.25%;
+      -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+      width: 30%;
       float: left;
       margin-right: -100%;
-      margin-left: 1.04167%;
+      margin-left: 1.66667%;
       clear: none; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000369}}
 #block-views-library-hours-block-3 {
-  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 97.91667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none; }
   @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000369}}
     #block-views-library-hours-block-3 {
-      -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-      width: 39.58333%;
+      -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+      width: 38.33333%;
       float: left;
       margin-right: -100%;
-      margin-left: 34.375%;
+      margin-left: 35%;
       clear: none; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000375}}
 aside.l-region--sidebar-second {
-  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 97.91667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   clear: right;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%; }
+  margin-right: 1.66667%; }
   @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000375}}
     aside.l-region--sidebar-second {
-      -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-      width: 22.91667%;
+      -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+      width: 21.66667%;
       clear: right;
       float: right;
       margin-left: 0;
-      margin-right: 1.04167%; } }
+      margin-right: 1.66667%; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000382}}
 .l-region--footer {
   clear: both; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000385}}
   .l-region--footer nav, .l-region--footer #block-block-1 {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 97.91667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%; }
+    margin-right: 1.66667%; }
     @media (min-width: 70em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000385}}
       .l-region--footer nav, .l-region--footer #block-block-1 {
-        -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-        width: 22.91667%;
+        -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+        width: 21.66667%;
         clear: right;
         float: left;
-        margin-left: 1.04167%;
-        margin-right: 1.04167%; } }
+        margin-left: 1.66667%;
+        margin-right: 1.66667%; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000393}}
 .panel-col-first {
-  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 47.91667%;
+  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 46.66667%;
   float: left;
   margin-right: -100%;
-  margin-left: 1.04167%;
+  margin-left: 1.66667%;
   clear: none;
   clear: both; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\0000398}}
 .panel-col-last {
-  -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 47.91667%;
+  -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 46.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\00003102}}
 #libraries-page .panel-col-first {
-  -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 72.91667%;
+  -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 71.66667%;
   float: left;
   margin-right: -100%;
-  margin-left: 1.04167%;
+  margin-left: 1.66667%;
   clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\00003106}}
 #libraries-page .panel-col-last {
-  -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 22.91667%;
+  -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 21.66667%;
   float: right;
   margin-left: 0;
-  margin-right: 1.04167%;
+  margin-right: 1.66667%;
   clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\00003110}}
 footer {
-  background-color: #ececec; }
+  background-color: #ebebeb; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_grids\.scss}line{font-family:\00003113}}
-  footer address {
+  footer address, footer #university-copyright-footer {
     font-size: 0.78571rem; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/base\/_media\.scss}line{font-family:\000031}}
@@ -544,14 +544,14 @@ h6 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_breadcrumb\.scss}line{font-family:\0000336}}
   .breadcrumb a:first-child {
     padding-left: 18px;
-    border-top-left-radius: 0.1875em;
-    border-bottom-left-radius: 0.1875em; }
+    border-top-left-radius: 0.21429em;
+    border-bottom-left-radius: 0.21429em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_breadcrumb\.scss}line{font-family:\0000342}}
   .breadcrumb a:last-child {
     background-color: white;
     color: #999999;
-    border-bottom-right-radius: 0.1875em;
-    border-top-right-radius: 0.1875em;
+    border-bottom-right-radius: 0.21429em;
+    border-top-right-radius: 0.21429em;
     padding-right: 18px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_breadcrumb\.scss}line{font-family:\0000350}}
   .breadcrumb a:hover {
@@ -612,7 +612,7 @@ h6 {
   background: none;
   border: none;
   text-shadow: none;
-  background-color: #333333;
+  background-color: #71695c;
   color: #fff;
   padding: 3px 7px;
   text-decoration: none;
@@ -675,21 +675,22 @@ h6 {
       padding-bottom: 0rem;
       margin-bottom: 12px;
       margin-bottom: 0.85714rem;
-      color: #333333; }
+      color: #71695c; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_header\.scss}line{font-family:\000031}}
-.wrapper--highlighted {
+.front .wrapper--highlighted {
+  background-color: #ebebeb;
   padding: 1em 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_header\.scss}line{font-family:\000036}}
 .wrapper--branding {
-  background-color: #222222;
+  background-color: black;
   min-height: 50px;
-  border-top: 3px solid #e87511; }
+  border-top: 5px solid #e87511; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_header\.scss}line{font-family:\0000312}}
 .wrapper--navigation {
-  background-color: #f9f9f9;
+  background-color: #f8f8f8;
   border-bottom: 1px solid #ddd; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_header\.scss}line{font-family:\0000317}}
@@ -704,22 +705,141 @@ h6 {
 .l-content {
   clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_help\.scss}line{font-family:\000031}}
+.block--menu-menu-get-help-menu {
+  margin: 1.5em 0;
+  padding-left: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_help\.scss}line{font-family:\000035}}
+  .block--menu-menu-get-help-menu h2 {
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_help\.scss}line{font-family:\000039}}
+  .block--menu-menu-get-help-menu .menu {
+    list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_help\.scss}line{font-family:\0000312}}
+    .block--menu-menu-get-help-menu .menu .leaf {
+      list-style: none; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_hours\.scss}line{font-family:\000032}}
 .library-hours tr.even {
   background: none;
   border-top: 1px solid #ddd; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_hours\.scss}line{font-family:\000036}}
 .library-hours tr.odd > td {
-  background: #f9f9f9; }
+  background: #f8f8f8; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_hours\.scss}line{font-family:\000039}}
 .library-hours td {
   padding: 0.5em; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_hours\.scss}line{font-family:\0000312}}
 .library-hours td.views-field-title {
-  width: 65%; }
+  width: 60%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_hours\.scss}line{font-family:\0000315}}
 .library-hours td.views-field-field-open-hours {
   text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\000031}}
+.wrapper--navigation {
+  height: 60px;
+  overflow: visible;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e9e9e9;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 60px;
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000327}}
+  .wrapper--navigation .mobile-logo {
+    display: inline;
+    float: left;
+    max-height: 60px;
+    padding-left: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000333}}
+    .wrapper--navigation .mobile-logo img {
+      max-height: 60px;
+      opacity: .6;
+      padding: .8em 0; }
+    @media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000327}}
+      .wrapper--navigation .mobile-logo {
+        display: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000344}}
+  .wrapper--navigation .centered-navigation-menu-button {
+    color: rgba(51, 51, 51, 0.7);
+    display: block;
+    float: right;
+    font-weight: 700;
+    line-height: 60px;
+    margin: 0;
+    padding-right: 1em;
+    text-transform: uppercase; }
+    @media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000344}}
+      .wrapper--navigation .centered-navigation-menu-button {
+        display: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000358}}
+    .wrapper--navigation .centered-navigation-menu-button:hover {
+      color: #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000365}}
+  .wrapper--navigation .l-region--navigation {
+    overflow: hidden;
+    *zoom: 1;
+    position: relative;
+    z-index: 999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000371}}
+  .wrapper--navigation .block--system-main-menu ul.menu {
+    -webkit-transform-style: preserve-3d;
+    clear: both;
+    display: none;
+    float: left;
+    list-style: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 99999; }
+    @media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000371}}
+      .wrapper--navigation .block--system-main-menu ul.menu {
+        display: block;
+        text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000391}}
+  .wrapper--navigation .block--system-main-menu > ul.menu > li {
+    background: #f8f8f8;
+    line-height: 60px;
+    padding-right: 1em; }
+    @media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\0000391}}
+      .wrapper--navigation .block--system-main-menu > ul.menu > li {
+        background: transparent;
+        display: inline-block;
+        line-height: 60px;
+        position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003102}}
+        .wrapper--navigation .block--system-main-menu > ul.menu > li > a {
+          padding-right: 1em; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003107}}
+    .wrapper--navigation .block--system-main-menu > ul.menu > li a {
+      color: rgba(51, 51, 51, 0.7);
+      display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003111}}
+      .wrapper--navigation .block--system-main-menu > ul.menu > li a:hover {
+        color: #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003120}}
+  .wrapper--navigation li.expanded:hover > .menu {
+    left: 0;
+    background-color: #f8f8f8;
+    padding: 0 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003126}}
+  .wrapper--navigation li.expanded .menu {
+    list-style: none;
+    line-height: 2em;
+    position: relative;
+    top: 100%;
+    left: -99999px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003134}}
+  .wrapper--navigation li.expanded .menu li {
+    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation--main\.scss}line{font-family:\00003139}}
+  .wrapper--navigation .menu .leaf {
+    list-style: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation\.scss}line{font-family:\000031}}
 .l-branding nav ul {
@@ -740,80 +860,82 @@ h6 {
       padding: 8px;
       margin: 0 0 0 -4px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation\.scss}line{font-family:\0000322}}
-.l-region--navigation nav ul {
-  float: left;
-  border: none;
-  list-style: none;
-  text-align: left;
-  margin: 5px 0;
-  padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation\.scss}line{font-family:\0000330}}
-  .l-region--navigation nav ul li {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_renovation\.scss}line{font-family:\000032}}
+#renovation-news-block #renovation-news-lmg {
+  overflow: hidden;
+  *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_renovation\.scss}line{font-family:\000034}}
+  #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
     display: inline-block;
-    height: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_navigation\.scss}line{font-family:\0000334}}
-    .l-region--navigation nav ul li a {
-      display: block;
-      text-decoration: none;
-      width: auto;
-      text-align: center;
-      padding: 8px;
-      margin: 0 0 0 -4px; }
+    float: left;
+    width: 35%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_renovation\.scss}line{font-family:\000039}}
+  #renovation-news-block #renovation-news-lmg p {
+    float: left;
+    width: 65%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_renovation\.scss}line{font-family:\0000315}}
+#renovation-news-block #read-more-renovation {
+  display: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\000031}}
+.block--quicktabs-homepage-search-tabs > .block__content {
+  border: 1px solid #bcbcbc;
+  background: #d3d3d3;
+  padding: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\000038}}
 .block--quicktabs {
-  margin-top: 2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\000033}}
+  margin: 1.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000310}}
   .block--quicktabs h2 {
     margin: 0;
     display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000315}}
   .block--quicktabs .ui-tabs {
     padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000319}}
   .block--quicktabs .ui-widget-header {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
-    background: #939393;
+    background: #71695c;
     padding: 0;
     border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000326}}
   .block--quicktabs .quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    background: #f4f4f4;
-    border-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000325}}
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background: #f3f3f3;
+    border: 1px solid #d3d3d3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000331}}
   .block--quicktabs .ui-tabs .ui-tabs-nav li {
     margin: 0;
     border: none;
     top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000336}}
   .block--quicktabs .ui-tabs .ui-tabs-nav li a {
     width: 190px;
     text-align: center;
-    background: #939393;
-    border-right: 1px solid #797979;
+    background: #71695c;
+    border-right: 1px solid #787878;
     color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000344}}
   .block--quicktabs .ui-tabs .ui-tabs-nav li.ui-state-active a, .block--quicktabs .ui-widget-header .ui-state-active {
-    background: #f4f4f4;
+    background: #f3f3f3;
     color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000349}}
   .block--quicktabs .form-item-query label {
     display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000352}}
   .block--quicktabs .form-type-textfield {
     margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000355}}
   .block--quicktabs input:focus {
     border-color: #fff7f3;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 3px rgba(232, 117, 17, 0.7);
     outline: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000360}}
   .block--quicktabs input[type="text"] {
     float: left;
     width: 85%;
@@ -821,7 +943,7 @@ h6 {
     padding: 5px 0 5px 10px;
     display: block;
     border: 1px solid #737373; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000368}}
   .block--quicktabs input[type="submit"] {
     height: 45px;
     width: 115px;
@@ -843,7 +965,7 @@ h6 {
     -moz-border-radius-bottomleft: 0;
     -webkit-border-bottom-left-radius: 0;
     border-bottom-left-radius: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/components\/_search\.scss}line{font-family:\0000383}}
   .block--quicktabs .homepage-tab-form-message {
     clear: both; }
 
@@ -868,47 +990,47 @@ h6 {
 @media (min-width: 1250px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000329}}
   .five_four_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 97.91667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%;
+    margin-right: 1.66667%;
     clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000333}}
   .five_four_three_stacked-region--first {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 31.25%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     float: left;
     margin-right: -100%;
-    margin-left: 1.04167%;
+    margin-left: 1.66667%;
     clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000336}}
   .five_four_three_stacked-region--second {
-    -sgs-span-settings: ("span": 3, "location": 5, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 22.91667%;
+    -sgs-span-settings: ("span": 3, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
     float: left;
     margin-right: -100%;
-    margin-left: 34.375%;
+    margin-left: 35%;
     clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000340}}
   .five_four_three_stacked-region--third {
-    -sgs-span-settings: ("span": 5, "location": 8, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 39.58333%;
+    -sgs-span-settings: ("span": 5, "location": 8, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 38.33333%;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%;
+    margin-right: 1.66667%;
     clear: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000344}}
   .five_four_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 97.91667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%;
+    margin-right: 1.66667%;
     clear: none; } }
 /*******************************************************************************
  * landingpage.layout.scss
@@ -931,38 +1053,38 @@ h6 {
 @media (min-width: 1250px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000334}}
   .landingpage-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 72.91667%;
+    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000337}}
   .landingpage-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null))); }
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null))); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000341}}
   .landingpage-region--third {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 31.25%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000345}}
   .landingpage-region--fourth {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 39.58333%;
+    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 38.33333%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000349}}
   .landingpage-region--fifth {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null))); } }
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null))); } }
 /*******************************************************************************
  * pul_base_four_four_four_stacked.layout.scss
  *
@@ -984,39 +1106,39 @@ h6 {
 @media (min-width: 1250px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000328}}
   .pul_base_four_four_four_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 97.91667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%; }
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000332}}
   .pul_base_four_four_four_stacked-region--first {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 31.25%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000335}}
   .pul_base_four_four_four_stacked-region--second {
-    -sgs-span-settings: ("span": 4, "location": 5, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 31.25%;
+    -sgs-span-settings: ("span": 4, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000339}}
   .pul_base_four_four_four_stacked-region--third {
-    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 31.25%;
+    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%; } }
+    margin-right: 1.66667%; } }
 /*******************************************************************************
  * pul_base_nine_three.layout.scss
  *
@@ -1038,21 +1160,21 @@ h6 {
 @media (min-width: 1250px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_nine_three\/pul_base_nine_three\.layout\.scss}line{font-family:\0000328}}
   .pul_base_nine_three-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 72.91667%;
+    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_nine_three\/pul_base_nine_three\.layout\.scss}line{font-family:\0000331}}
   .pul_base_nine_three-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 22.91667%;
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%; } }
+    margin-right: 1.66667%; } }
 /*******************************************************************************
  * three_nine.layout.scss
  *
@@ -1074,18 +1196,18 @@ h6 {
 @media (min-width: 1250px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/three_nine\/three_nine\.layout\.scss}line{font-family:\0000328}}
   .three_nine-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.33333, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 22.91667%;
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
     clear: right;
     float: left;
-    margin-left: 1.04167%;
-    margin-right: 1.04167%; }
+    margin-left: 1.66667%;
+    margin-right: 1.66667%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/three_nine\/three_nine\.layout\.scss}line{font-family:\0000331}}
   .three_nine-region--second {
-    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.33333, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 72.91667%;
+    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.04167%; } }
+    margin-right: 1.66667%; } }
