@@ -1,0 +1,48 @@
+// five_four_three_stacked
+/*******************************************************************************
+ * five_four_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 5-4-3 stacked column layout..
+ ******************************************************************************/
+
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 1em;
+
+// Set breakpoint values.
+$desk : 1250px;
+
+.panel-display--five_four_three_stacked {
+  @include pie-clearfix;
+}
+
+.five_four_three_stacked-region {
+  margin-bottom: $vert-spacing-unit;
+}
+
+@include breakpoint($desk) {
+
+  .five_four_three_stacked-region--top {
+    @include grid-span(12,1);
+  }
+
+  .five_four_three_stacked-region--first {
+    @include grid-span(4,1);
+  }
+  .five_four_three_stacked-region--second {
+    @include grid-span(3,5);
+  }
+
+  .five_four_three_stacked-region--third {
+    @include grid-span(5,8);
+  }
+
+  .five_four_three_stacked-region--bottom {
+    @include grid-span(12,1);
+  }
+
+}
