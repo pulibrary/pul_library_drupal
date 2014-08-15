@@ -38,22 +38,81 @@
    *   Drupal.settings directly you should use this because of potential
    *   modifications made by the Ajax callback that also produced 'context'.
    */
-  Drupal.behaviors.pulBaseExampleBehavior = {
-    attach: function (context, settings) {
+  //Drupal.behaviors.pulBaseExampleBehavior = {
+    //attach: function (context, settings) {
       // By using the 'context' variable we make sure that our code only runs on
       // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
       // we don't run the same piece of code for an HTML snippet that we already
       // processed previously. By using .once('foo') all processed elements will
       // get tagged with a 'foo-processed' class, causing all future invocations
       // of this behavior to ignore them.
-      $('.some-selector', context).once('foo', function () {
-        // Now, we are invoking the previously declared theme function using two
-        // settings as arguments.
-        var $anchor = Drupal.theme('pulBaseExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
+      // $('.social-media', context).once('pul', function () {
+      //   // Now, we are invoking the previously declared theme function using two
+      //   // settings as arguments.
+      //   console.log(settings);
+      //   var $anchor = Drupal.theme('pulBaseExampleButton', settings.pul_base_theme.myExampleLinkPath, settings.pul_base_theme.myExampleLinkTitle);
 
-        // The anchor is then appended to the current element.
-        $anchor.appendTo(this);
+      //   // The anchor is then appended to the current element.
+      //   $anchor.appendTo(this);
+      // });
+    //}
+  //};
+
+
+  Drupal.behaviors.pulMainMenuBehavior = {
+    attach: function (context, settings) {
+      // By using the 'context' variable we make sure that our code only runs on
+      // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
+      // we don't run the same piece of code for an HTML snippet that we already
+      // processed previously. By using .once('foo') all processed elements will
+      // get tagged with a 'foo-processed' class, causing all future invocations
+      // of This behavior to ignore them.
+      console.log(context);
+      console.log(settings);
+      $('#block-system-main-menu').click(function () {
+        var menu = $('.centered-navigation-menu');
+        var menuToggle = $('.centered-navigation-menu-button');
+
+        $(menuToggle).on('click', function (e) {
+          e.preventDefault();
+          menu.slideToggle(function () {
+            if (menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+          });
+        });
+
       });
+      // Example Usage
+      // $('#block-system-main-menu', context).once('pul', function () {
+      //   // Now, we are invoking the previously declared theme function using two
+      //   // settings as arguments.
+      //   console.log(settings);
+      //   var $anchor = Drupal.theme('pulBaseExampleButton', 'cats', 'cats');
+
+      //   // The anchor is then appended to the current element.
+      //   $anchor.appendTo(this);
+      // });
+
+    }
+  };
+
+
+  Drupal.behaviors.pulResourceButtonBehavior = {
+    attach: function (context, settings) {
+      $('.field--name-field-db-access-url', context).once('pul', function () {
+        $('.field--name-field-db-access-url a, .field--name-field-db-access-url a').each(function () {
+          var viewOnlineLink = $(this).attr('href');
+          var undecodeViewOnline = viewOnlineLink.replace(/\&amp%3B|&amp;/g, '&');
+          //console.log(undecodeViewOnline);
+          var resolvePrefix = settings.pul_base_theme.resolvePrefix;
+          $(this).attr('href', resolvePrefix + undecodeViewOnline);
+          $(this).attr('target', '_blank');
+        });
+      });
+
+
+
     }
   };
 
