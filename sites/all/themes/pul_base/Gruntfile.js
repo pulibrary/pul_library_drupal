@@ -44,7 +44,8 @@ module.exports = function (grunt) {
       options: {
         config: 'config.rb',
         bundleExec: true,
-        force: true
+        force: true,
+        debugInfo: false
       },
       dev: {
         options: {
@@ -118,7 +119,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'uglify:dist',
     'compass:dist',
-    'sass',
     'jshint'
   ]);
 
