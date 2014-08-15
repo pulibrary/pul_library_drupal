@@ -1,5 +1,12 @@
+.block--quicktabs-homepage-search-tabs > .block__content {
+	border: 1px solid #bcbcbc;
+	background: #d3d3d3;
+	padding: 5px;
+	// @include border-radius(8px);
+}
+
 .block--quicktabs {
-	margin-top: 2em;
+	margin: 1.5em 0;
 	h2 {
 		margin: 0;
 		// background: $orange;
@@ -9,18 +16,17 @@
 		padding: 0;
 		// border: none;
 	}
-
 	.ui-widget-header {
 		@include border-radius(0);
-		background: darken($light-gray, 40%);
+		background: $dark-gray;
 		padding: 0;
 		border: none;
 	}
 
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-		@include border-radius(4px);
+		@include border-radius(0);
 		background: darken($light-gray, 2%);
-		border-color: darken($light-gray, 7%);
+		border: 1px solid #d3d3d3;
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
@@ -30,7 +36,7 @@
 	.ui-tabs .ui-tabs-nav li a {
 		width: 190px;
 		text-align: center;
-		background: darken($light-gray, 40%);
+		background: $dark-gray;
 		border-right: 1px solid darken($light-gray, 50%);
 		color: white;
 	}

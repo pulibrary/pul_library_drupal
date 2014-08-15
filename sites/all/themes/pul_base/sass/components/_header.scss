@@ -1,12 +1,12 @@
-.wrapper--highlighted {
-	// background-color: #5c5e66;
+.front .wrapper--highlighted {
+	background-color: darken($light-gray, 5%);
 	padding: 1em 0;
 }
 
 .wrapper--branding {
-	background-color: #222222;
+	background-color: $black;
 	min-height: 50px;
-	border-top: 3px solid $orange;
+	border-top: 5px solid $orange;
 }
 
 .wrapper--navigation{
