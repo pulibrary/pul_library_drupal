@@ -4,13 +4,13 @@
 }
 
 .breadcrumb { 
-  $breadcrumb-border-color: $base-border-color;
+  $breadcrumb-border-color: #ffffff;
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
-  $breadcrumb-height: $base-line-height * 1.5;
+  $breadcrumb-height: $base-line-height;
   $breadcrumb-arrow-color: $breadcrumb-border-color;
-  $breadcrumb-background: $base-background-color;
+  $breadcrumb-background: darken($light-gray, 4);
   $breadcrumb-inactive-hover-color: $breadcrumb-background;
-  $breadcrumb-color: $medium-gray;
+  $breadcrumb-color: $black;
   $breadcrumb-color-hover: $base-accent-color;
   $breadcrumb-color-active: $breadcrumb-color;
 
