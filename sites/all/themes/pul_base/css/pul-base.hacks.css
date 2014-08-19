@@ -1,9 +1,10 @@
 @media all and (max-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/pul-base\.hacks\.scss}line{font-family:\000033}}
   #toolbar, #admin-menu {
-    display: none; }
+    display: none;
+  }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/kevinreiss\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/pul-base\.hacks\.scss}line{font-family:\000038}}
   html body.toolbar, html body.admin-menu {
     padding-top: 0 !important;
-    margin-top: 0 !important; } }
+    margin-top: 0 !important;
+  }
+}
