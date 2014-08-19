@@ -12,11 +12,14 @@ stylesheets[all][] = css/pul-base.normalize.css
 stylesheets[all][] = css/pul-base.hacks.css
 stylesheets[all][] = css/pul-base.styles.css
 stylesheets[all][] = css/pul-base.no-query.css
+stylesheets[all][] = pul_base_icons/style.css
+stylesheets[all][] = pul_base_icons/ie7/ie7.css
 
 ; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/pul-base.behaviors.js
+scripts[] = pul_base_icons/ie7/ie7.js
 
 ; ========================================
 ; Plugins
