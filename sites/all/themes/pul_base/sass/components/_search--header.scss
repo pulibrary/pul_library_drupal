@@ -1,0 +1,50 @@
+.l-region--branding .block--allsearch-block-allsearch-search {
+	@include grid-span(8,1);
+
+	form > div {
+	  $search-bar-border-color: $base-border-color;
+	  $search-bar-border: 1px solid $search-bar-border-color;
+	  $search-bar-background: lighten($search-bar-border-color, 10);
+
+	  position: relative; 
+	  display: inline-block;
+	  margin-top:0.9em;
+
+	  input {
+	    @include box-sizing(border-box);
+	    display: inline-block;
+	  }
+
+	  div.form-item-query {
+	    position: relative;
+
+	    label {
+	    	display: none;
+	    }
+
+	    input[type=text] {
+	      @include appearance(none);
+	      width: 100%;
+	      padding: .5em .8em;
+	      font-size: .9em;
+	      font-style: italic;
+	      border-radius: $base-border-radius * 2;
+	      margin: 0;
+	      background: #404040;
+	      border: #262626;
+	      color: #aaa;
+	    }
+      
+	  }
+
+	  input[type=submit] {
+	      @include button(simple, lighten(#363636, 10));
+	      position: absolute;
+	      right: 0;
+	      top:0;
+	      outline: none;
+	      padding: 5px 10px;
+	      height: 32px;
+	  }
+	}
+}
