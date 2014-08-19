@@ -95,7 +95,6 @@
     
     <?php print render($page['header']); ?>
     <div class="wrapper wrapper--navigation">
-      <a href="" class="centered-navigation-menu-button">MENU</a>
       <?php print render($page['navigation']); ?>
     </div>
     <div class="wrapper wrapper--highlighted"><?php print render($page['highlighted']); ?></div>
