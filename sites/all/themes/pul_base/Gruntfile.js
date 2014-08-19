@@ -45,7 +45,8 @@ module.exports = function (grunt) {
         config: 'config.rb',
         bundleExec: true,
         force: true,
-        debugInfo: false
+        debugInfo: false,
+        quiet: true
       },
       dev: {
         options: {
