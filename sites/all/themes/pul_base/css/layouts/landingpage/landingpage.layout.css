@@ -3,40 +3,39 @@
  *
  * Styling of the "Landing Page" 3 column layout..
  ******************************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000325}}
 .panel-display--landingpage {
-  *zoom: 1;
-}
-.panel-display--landingpage:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/\.rvm\/gems\/ruby-1\.9\.3-p547\@omega\.pul_base\/gems\/compass-core-1\.0\.1\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+  .panel-display--landingpage:after {
+    content: "";
+    display: table;
+    clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000329}}
 .landingpage-region {
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
 @media (min-width: 1250px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000334}}
   .landingpage-region--first {
     width: 74.57627%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
-  }
+    margin-right: 1.69492%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000341}}
   .landingpage-region--third {
     width: 32.20339%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%;
-  }
+    margin-right: 1.69492%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000345}}
   .landingpage-region--fourth {
     width: 40.67797%;
     clear: right;
     float: left;
-    margin-right: 1.69492%;
-  }
-}
+    margin-right: 1.69492%; } }

@@ -3,49 +3,48 @@
  *
  * Styling of the "PUL" 9-3 column layout..
  ******************************************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000318}}
 .panel-display--pul_base_four_four_four_stacked {
-  *zoom: 1;
-}
-.panel-display--pul_base_four_four_four_stacked:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/\.rvm\/gems\/ruby-1\.9\.3-p547\@omega\.pul_base\/gems\/compass-core-1\.0\.1\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+  .panel-display--pul_base_four_four_four_stacked:after {
+    content: "";
+    display: table;
+    clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000322}}
 .pul_base_four_four_four_stacked-region {
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
 @media (min-width: 1250px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000328}}
   .pul_base_four_four_four_stacked-region--top {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: none;
-  }
+    clear: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000332}}
   .pul_base_four_four_four_stacked-region--first {
     width: 32.20339%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
-    clear: none;
-  }
+    clear: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000335}}
   .pul_base_four_four_four_stacked-region--second {
     width: 32.20339%;
     float: left;
     margin-right: -100%;
     margin-left: 33.89831%;
-    clear: none;
-  }
+    clear: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000339}}
   .pul_base_four_four_four_stacked-region--third {
     width: 32.20339%;
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: none;
-  }
-}
+    clear: none; } }

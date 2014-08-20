@@ -7,7 +7,7 @@
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: $light-gray;
   $centered-navigation-color: transparentize($base-font-color, 0.3);
-  $centered-navigation-color-hover: $base-font-color;
+  $centered-navigation-color-hover: $orange;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
@@ -248,6 +248,9 @@
           text-align: left;
           width: $centered-navigation-submenu-width;
         }
+      }
+      a:hover {
+        background: darken($centered-navigation-background, 6);
       }
     }
   }
