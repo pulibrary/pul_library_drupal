@@ -18,7 +18,7 @@ function allsearch_block_form($form, &$form_state) {
   if($page != "node/1") {
     //$prefix = "<div class='all-search-form-header'><h1 class='all-search-title'>Search All</h1></div>";
     $prefix = "";
-    $suffix = "<div class='all-search-form-suffix'><a title='What is the all search?' href='/faq/all-search'>What is the all search?</a>";
+    $suffix = "";
   } else {
     $prefix = "";
     $suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'All Tab\']);" title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
