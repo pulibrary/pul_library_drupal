@@ -1,5 +1,8 @@
-.wrapper--navigation {
+.l-header {
+  overflow: visible;
+}
 
+.wrapper--navigation {
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: $light-gray;
@@ -12,16 +15,15 @@
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $desk;
 
-  height: 60px;
-  overflow: visible;
-
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
-  font-family: $font-sans;
+  font-family: $serif;
   height: $centered-navigation-height;
   width: 100%;
-  // z-index: 9999;
-
+  z-index: 99; //4
+  position: relative;
+  overflow: visible;
+  
   // Mobile view
 
   .mobile-logo {
@@ -51,7 +53,7 @@
     padding-right: $centered-navigation-submenu-padding;
     text-transform: uppercase;
 
-    @include breakpoint($horizontal-bar-mode) {
+    @include breakpoint ($horizontal-bar-mode) {
       display: none;
     }
 
@@ -63,50 +65,57 @@
   // Nav menu
 
   .l-region--navigation {
-    @include clearfix;
-    position: relative;
-    z-index: 999;
+    overflow: visible;
   }
 
-  .block--system-main-menu ul.menu {
+  .centered-navigation-menu {    
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
     display: none;
-    float: left;
-    list-style: none;
     margin: 0 auto;
     overflow: visible;
     padding: 0;
     width: 100%;
-    z-index: 99999;
+    z-index: 999; //5
 
-    @include breakpoint($horizontal-bar-mode) {
+    @include breakpoint ($horizontal-bar-mode) {
       display: block;
       text-align: center;
     }
   }
 
-  // Nav items
+  // The nav items
 
-  .block--system-main-menu > ul.menu > li {
+  .centered-navigation-menu > ul > li:first-child {
+    @include breakpoint($horizontal-bar-mode) {
+      margin-left: $centered-navigation-item-nudge;
+    }
+  }
+
+  .centered-navigation-menu > ul > li {
     background: $centered-navigation-background;
+    display: block;
     line-height: $centered-navigation-height;
+    overflow: hidden;
     padding-right: $centered-navigation-submenu-padding;
+    text-align: right;
+    width: 100%;
+    z-index: 99; //4
 
     @include breakpoint($horizontal-bar-mode) {
       background: transparent;
-      display: inline-block;
+      display: inline;
       line-height: $centered-navigation-height;  
-      position: relative;
 
-      > a {
+      a {
         padding-right: $centered-navigation-item-padding;
       }
     }
     
     a {
       color: $centered-navigation-color;
-      display: block;
+      display: inline-block;
+
 
       &:hover {
         color: $centered-navigation-color-hover;
@@ -114,29 +123,132 @@
     }
   }
 
-  // Sub menu
+  // li.logo.nav-link {
+  //   display: none;
+  //   line-height: 0;
 
-  li.expanded {
-    &:hover > .menu {
-        left:0;
-        background-color: $centered-navigation-background;
-        padding: 0 $centered-navigation-submenu-padding;
+  //   @include breakpoint($desk) {
+  //     display: inline;
+  //   }
+  // }
+
+  // .logo img {
+  //   margin-bottom: -$centered-navigation-logo-height / 3;
+  //   max-height: $centered-navigation-logo-height;
+  //   opacity: .6;
+  // }
+
+  // Sub menus
+
+  .centered-navigation-menu > ul > li.expanded {
+    padding-right: 0;
+
+    @include breakpoint($desk) {
+      padding-right: $centered-navigation-submenu-padding;
     }
 
-    .menu {
-        list-style: none;
-        line-height: 2em;
-        position: relative;
-        top: 100%;
-        left: -99999px;
+    > ul > li:first-child a  {
+      padding-top: 1em;
     }
 
-    .menu li {
-        text-align: left;
+    a {
+      margin-right: $centered-navigation-submenu-padding;
+    }
+
+    > a {
+      padding-right: 0.6em;
+    }
+
+    > a:after {
+      @include position(absolute, auto -.4em auto auto);
+      color: $centered-navigation-color;
+      content: '\25BE';
     }
   }
 
-  .menu .leaf {
-    list-style: none;
+  li.expanded {
+    overflow: visible;
+    padding-right: 0;
+
+    a {
+      padding-right: $centered-navigation-submenu-padding;
+    }
+
+    > a {
+      padding-right: 1.6em;
+      position: relative;
+
+      @include breakpoint($desk) {
+        margin-right: $centered-navigation-submenu-padding;
+      }
+
+      &:after {
+        content: '›';
+        font-size: 1.2em;
+        position: absolute;
+        right: $centered-navigation-submenu-padding / 2;
+      }      
+    }
+
+    &:hover > .menu {
+      display: block;
+    }
+
+    @include breakpoint($horizontal-bar-mode) {
+      padding-right: $centered-navigation-submenu-padding;
+      position: relative;
+    }
+  }
+
+  li > ul.menu {
+    display: none;
+    padding-left: 0;
+
+    @include breakpoint($horizontal-bar-mode) {
+      left: -$centered-navigation-submenu-padding;
+      position: absolute;
+      top: 1.5em;
+    }
+
+    .menu {
+      @include breakpoint($horizontal-bar-mode) {
+        left: $centered-navigation-submenu-width - .2em;
+        top: 0;
+      }
+    }
+
+    li {
+      display: block;
+      padding-right: 0;
+
+      @include breakpoint($horizontal-bar-mode) {
+        line-height: $centered-navigation-height / 1.3;
+
+        &:first-child > a {
+          border-top-left-radius: $base-border-radius;
+          border-top-right-radius: $base-border-radius;
+        }
+
+        &:last-child > a {
+          border-bottom-left-radius: $base-border-radius;
+          border-bottom-right-radius: $base-border-radius;
+          padding-bottom: .7em;
+        }
+      }
+
+      a {
+        background-color: darken($centered-navigation-background, 3);
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+
+        @include breakpoint($horizontal-bar-mode) {
+          background-color: $centered-navigation-background;
+          padding-left: $centered-navigation-submenu-padding;
+          text-align: left;
+          width: $centered-navigation-submenu-width;
+        }
+      }
+    }
   }
 }
