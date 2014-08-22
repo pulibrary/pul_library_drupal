@@ -13,7 +13,7 @@
 	  input {
 	    @include box-sizing(border-box);
 	    display: inline-block;
-	    border: 1px darken($dark-gray, 5) solid;
+	    border: 1px #1a1f25 solid;
 	  }
 
 	  div.form-item-query {
@@ -43,13 +43,15 @@
 	      content: '<span class="icon-search"></span>';
 	      // background: darken($dark-gray, 5);
 	      position: absolute;
-	      right: 2px;
-	      top:2px;
+	      right: 0;
+	      top: 0;
 	      outline: none;
 	      padding: 5px 10px;
 	      height: 27px;
 	      font-weight: normal;
 	      color: #aaa;
+	      @include border-top-left-radius(0);
+	      @include border-bottom-left-radius(0);
 	  }
 	}
 }

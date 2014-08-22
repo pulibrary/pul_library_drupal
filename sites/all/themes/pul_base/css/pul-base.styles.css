@@ -531,6 +531,32 @@ h6 {
   *display: inline;
   text-align: left;
   margin-bottom: 24px;
+  position: relative;
+}
+.breadcrumb li:after, .breadcrumb li:before {
+  position: absolute;
+  top: 0px;
+  right: auto;
+  bottom: 0px;
+  left: 100%;
+  border-bottom: 12px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 12px solid transparent;
+  content: '';
+  display: block;
+  margin: auto;
+  z-index: 2;
+}
+.breadcrumb li:last-child:after, .breadcrumb li:last-child:before {
+  border: none;
+}
+.breadcrumb li:before {
+  border-left-color: white;
+  margin-left: 1px;
+  z-index: 1;
+}
+.breadcrumb li:after {
+  border-left-color: #e8e6df;
 }
 .breadcrumb a {
   display: inline-block;
@@ -547,7 +573,6 @@ h6 {
   padding: 0 6px 0 12px;
   position: relative;
   text-decoration: none;
-  margin-bottom: 2px;
 }
 .breadcrumb a:first-child {
   padding-left: 12px;
@@ -566,31 +591,6 @@ h6 {
   background-color: #e8e6df;
 }
 .breadcrumb a:hover:after {
-  border-left-color: #e8e6df;
-}
-.breadcrumb a:after, .breadcrumb a:before {
-  position: absolute;
-  top: 0px;
-  right: auto;
-  bottom: 0px;
-  left: 100%;
-  border-bottom: 12px solid transparent;
-  border-left: 6px solid transparent;
-  border-top: 12px solid transparent;
-  content: '';
-  display: block;
-  margin: auto;
-  z-index: 2;
-}
-.breadcrumb a:last-child:after, .breadcrumb a:last-child:before {
-  border: none;
-}
-.breadcrumb a:before {
-  border-left-color: white;
-  margin-left: 1px;
-  z-index: 1;
-}
-.breadcrumb a:after {
   border-left-color: #e8e6df;
 }
 
@@ -626,6 +626,44 @@ h6 {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+}
+
+.field--name-field-db-access-url.pul-processed {
+  text-align: center;
+}
+
+.field--name-field-db-access-url.pul-processed a {
+  border: 1px solid #c65f05;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #eeab71;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #ef8224;
+  background-image: -webkit-linear-gradient(#ef8224, #d56605);
+  background-image: linear-gradient(#ef8224, #d56605);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #b75500;
+  background-clip: padding-box;
+  color: white;
+  margin-bottom: 0.5em;
+}
+.field--name-field-db-access-url.pul-processed a:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 #e99043;
+  cursor: pointer;
+  background-color: #e37516;
+  background-image: -webkit-linear-gradient(#e37516, #c55f06);
+  background-image: linear-gradient(#e37516, #c55f06);
+}
+.field--name-field-db-access-url.pul-processed a:active:not(:disabled), .field--name-field-db-access-url.pul-processed a:focus:not(:disabled) {
+  border: 1px solid #c65f05;
+  box-shadow: inset 0 0 8px 4px #b65806, inset 0 0 8px 4px #b65806;
+}
+.field--name-field-db-access-url.pul-processed a:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .view-library-hours .view-header {
@@ -781,7 +819,6 @@ footer address, footer #university-copyright-footer {
 
 .site-logo {
   padding: 0.7em;
-  font-size: 19px;
   line-height: 21px;
   height: 50px;
   margin-left: -0.7em;
@@ -1072,11 +1109,17 @@ footer address, footer #university-copyright-footer {
 }
 .dbsearch-block-form > div input[type=submit], .summon-block-form > div input[type=submit] {
   position: absolute;
-  right: 2px;
-  top: 2px;
+  right: 0;
+  top: 0;
   padding: 5px 10px;
   height: 32px;
   font-weight: normal;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .l-region--branding .block--allsearch-block-allsearch-search {
@@ -1097,7 +1140,7 @@ footer address, footer #university-copyright-footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  border: 1px #3d4249 solid;
+  border: 1px #1a1f25 solid;
 }
 .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query {
   position: relative;
@@ -1135,13 +1178,19 @@ footer address, footer #university-copyright-footer {
   background-clip: padding-box;
   content: '<span class="icon-search"></span>';
   position: absolute;
-  right: 2px;
-  top: 2px;
+  right: 0;
+  top: 0;
   outline: none;
   padding: 5px 10px;
   height: 27px;
   font-weight: normal;
   color: #aaa;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:hover:not(:disabled) {
   box-shadow: inset 0 1px 0 0 #4f5051;
@@ -1297,6 +1346,9 @@ footer address, footer #university-copyright-footer {
   color: white;
   margin-right: 0.5em;
 }
+.views-table th img {
+  padding-left: 1em;
+}
 .views-table tr.even {
   background: none;
   border-top: 1px solid #ddd;
@@ -1319,6 +1371,32 @@ footer address, footer #university-copyright-footer {
 }
 .views-table .find-databases-show-desc {
   float: right;
+}
+
+.field--name-field-db-copyright-information table th {
+  background: #494f57;
+  color: white;
+  padding: 0.5em;
+}
+.field--name-field-db-copyright-information table td {
+  vertical-align: top;
+  border-bottom: none;
+  padding-top: 1em;
+}
+.field--name-field-db-copyright-information table td ul {
+  margin-left: 1.5em;
+}
+.field--name-field-db-copyright-information table td li {
+  list-style: disc;
+  margin-bottom: 1em;
+}
+
+.field--name-field-db-copyright-information p {
+  margin: 1em 0 2em;
+}
+
+fieldset {
+  background: none;
 }
 
 /*******************************************************************************
@@ -1547,6 +1625,7 @@ footer address, footer #university-copyright-footer {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }
 /*******************************************************************************
