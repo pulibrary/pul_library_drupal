@@ -40,6 +40,7 @@
 		border-right: 1px solid darken($light-gray, 50%);
 		color: white;
 		@include transition (all 0.2s ease-in-out);
+		font-family: $font-sans;
 
 		&:hover {
 	      background: lighten(#494f57, 10);
@@ -69,8 +70,10 @@
 		padding: 5px 0 5px 10px;
 		display: block;
 		border: 1px solid #737373;
+		font-family: $font-sans;
 	}
 	input[type="submit"] {
+		font-family: $font-sans;
 		height: 45px;
 		width: 115px;
 		padding: 0;
