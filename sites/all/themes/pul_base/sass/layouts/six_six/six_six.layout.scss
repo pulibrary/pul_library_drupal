@@ -1,0 +1,37 @@
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 6-6 column layout..
+ ******************************************************************************/
+
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 1em;
+
+// Set breakpoint values.
+$desk : 1250px;
+
+.panel-display--six_six {
+  @include pie-clearfix;
+}
+
+.six_six-region {
+  margin-bottom: $vert-spacing-unit;
+}
+
+@include breakpoint($desk) {
+
+  .six_six-region--first {
+    @include grid-span(6,1);
+    margin-left: 0;
+  }
+   .six_six-region--second {
+    @include grid-span(6,7);
+    margin-right: 0;
+  }
+
+}
