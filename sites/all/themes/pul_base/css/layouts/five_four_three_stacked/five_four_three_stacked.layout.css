@@ -23,36 +23,39 @@
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: none; }
+    clear: none;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000334}}
   .five_four_three_stacked-region--first {
-    width: 32.20339%;
+    width: 40.67797%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
-    clear: none; }
+    clear: none;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000338}}
   .five_four_three_stacked-region--second {
-    width: 23.72881%;
+    width: 32.20339%;
     float: left;
     margin-right: -100%;
-    margin-left: 33.89831%;
+    margin-left: 42.37288%;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000342}}
   .five_four_three_stacked-region--third {
-    width: 40.67797%;
+    width: 23.72881%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/five_four_three_stacked\/five_four_three_stacked\.layout\.scss}line{font-family:\0000346}}
   .five_four_three_stacked-region--bottom {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: none; } }
+    clear: none;
+    clear: both; } }

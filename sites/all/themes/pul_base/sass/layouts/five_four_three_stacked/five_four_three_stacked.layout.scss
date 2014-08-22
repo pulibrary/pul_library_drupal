@@ -28,21 +28,24 @@ $desk : 1250px;
 
   .five_four_three_stacked-region--top {
     @include grid-span(12,1);
+    clear: both;
   }
 
   .five_four_three_stacked-region--first {
-    @include grid-span(4,1);
+    @include grid-span(5,1);
+    clear: both;
   }
   .five_four_three_stacked-region--second {
-    @include grid-span(3,5);
+    @include grid-span(4,6);
   }
 
   .five_four_three_stacked-region--third {
-    @include grid-span(5,8);
+    @include grid-span(3,10);
   }
 
   .five_four_three_stacked-region--bottom {
     @include grid-span(12,1);
+    clear: both;
   }
 
 }

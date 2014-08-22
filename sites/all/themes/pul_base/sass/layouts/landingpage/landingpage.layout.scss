@@ -32,22 +32,24 @@ $gutters: 1/3;
 
 @include breakpoint($desk, true) {
   .landingpage-region--first {
-    @include grid-span(9,1,$output-style: 'float');
+    @include grid-span(9,1);
+    clear: both;
   }
    .landingpage-region--second {
-    @include grid-span(3,10, $output-style: 'last');
+    @include grid-span(3,10);
   }
 
   .landingpage-region--third {
-    @include grid-span(4, 1, $output-style: 'float');
+    @include grid-span(4, 1);
+    clear: both;
   }
 
   .landingpage-region--fourth {
-    @include grid-span(5, 5, $output-style: 'float');
+    @include grid-span(5, 5);
   }
  
   .landingpage-region--fifth {
-    @include grid-span(3, 10, $output-style: 'last');
+    @include grid-span(3, 10);
   }
 
 }

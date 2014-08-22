@@ -23,19 +23,35 @@
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%; }
+    margin-right: 1.69492%;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000338}}
+  .landingpage-region--second {
+    width: 23.72881%;
+    clear: right;
+    float: right;
+    margin-right: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000342}}
   .landingpage-region--third {
     width: 32.20339%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 1.69492%; }
+    margin-right: 1.69492%;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000347}}
   .landingpage-region--fourth {
     width: 40.67797%;
     clear: right;
     float: left;
-    margin-right: 1.69492%; } }
+    margin-right: 1.69492%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/landingpage\/landingpage\.layout\.scss}line{font-family:\0000351}}
+  .landingpage-region--fifth {
+    width: 23.72881%;
+    clear: right;
+    float: right;
+    margin-right: 0; } }

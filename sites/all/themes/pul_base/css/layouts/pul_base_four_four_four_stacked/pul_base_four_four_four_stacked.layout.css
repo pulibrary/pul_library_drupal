@@ -23,17 +23,19 @@
     float: right;
     margin-left: 0;
     margin-right: 0;
-    clear: none; }
+    clear: none;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000333}}
   .pul_base_four_four_four_stacked-region--first {
     width: 32.20339%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
-    clear: none; }
+    clear: none;
+    clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000337}}
   .pul_base_four_four_four_stacked-region--second {
     width: 32.20339%;
     float: left;
@@ -41,7 +43,7 @@
     margin-left: 33.89831%;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/aliauw\/Projects\/librarycore\/pul_library_drupal\/sites\/all\/themes\/pul_base\/sass\/layouts\/pul_base_four_four_four_stacked\/pul_base_four_four_four_stacked\.layout\.scss}line{font-family:\0000341}}
   .pul_base_four_four_four_stacked-region--third {
     width: 32.20339%;
     float: right;

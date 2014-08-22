@@ -27,10 +27,12 @@ $desk : 1250px;
 
   .pul_base_four_four_four_stacked-region--top {
     @include grid-span(12,1);
+    clear: both;
   }
 
   .pul_base_four_four_four_stacked-region--first {
     @include grid-span(4,1);
+    clear: both;
   }
    .pul_base_four_four_four_stacked-region--second {
     @include grid-span(4,5);
