@@ -1,4 +1,9 @@
-.views-more-link {
+// readmore collections
+.links--inline li {
+	float: right;
+}
+
+.views-more-link, .node-readmore a, .more-link a {
 	font-family: $font-serif;
 	font-style: italic;
 	font-weight: bold;

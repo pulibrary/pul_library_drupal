@@ -9,6 +9,7 @@
 .view-library-news h3 {
 	width: 60%;
 	display: inline-block;
+    @include rhythm(0, 0, 0, 0.5, $h3-fz);
 }
 
 .view-library-news .views-row, .view-library-news .view-footer {

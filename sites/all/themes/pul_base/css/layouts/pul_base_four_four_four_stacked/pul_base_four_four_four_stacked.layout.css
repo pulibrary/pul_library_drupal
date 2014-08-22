@@ -24,6 +24,8 @@
     margin-right: 0;
     clear: none;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .pul_base_four_four_four_stacked-region--first {
@@ -33,6 +35,7 @@
     margin-left: 0;
     clear: none;
     clear: both;
+    margin-left: 0;
   }
 
   .pul_base_four_four_four_stacked-region--second {
@@ -49,5 +52,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-right: 0;
   }
 }

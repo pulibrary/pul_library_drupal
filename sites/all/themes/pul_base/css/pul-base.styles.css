@@ -469,9 +469,32 @@ h1 {
   font-size: 2.14286rem;
   line-height: 36px;
   line-height: 2.57143rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
 }
 
 h2 {
+  font-size: 24px;
+  font-size: 1.71429rem;
+  line-height: 36px;
+  line-height: 2.57143rem;
+  margin-top: 24px;
+  margin-top: 1.71429rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+}
+
+h3 {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 24px;
@@ -482,15 +505,8 @@ h2 {
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.71429rem;
-}
-
-h3 {
-  font-size: 16px;
-  font-size: 1.14286rem;
-  line-height: 24px;
-  line-height: 1.71429rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
 }
 
 h4 {
@@ -594,7 +610,11 @@ h6 {
   border-left-color: #e8e6df;
 }
 
-.views-more-link {
+.links--inline li {
+  float: right;
+}
+
+.views-more-link, .node-readmore a, .more-link a {
   font-family: "Droid Serif", Georgia, Times, serif;
   font-style: italic;
   font-weight: bold;
@@ -749,6 +769,14 @@ h6 {
 .view-library-news h3 {
   width: 60%;
   display: inline-block;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
 }
 
 .view-library-news .views-row, .view-library-news .view-footer {
@@ -1084,30 +1112,30 @@ footer address, footer #university-copyright-footer {
   display: none;
 }
 
-.dbsearch-block-form > div, .summon-block-form > div {
+.dbsearch-block-form > div, .summon-block-form > div, .allsearch-block-form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
 }
-.dbsearch-block-form > div input, .summon-block-form > div input {
+.dbsearch-block-form > div input, .summon-block-form > div input, .allsearch-block-form > div input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
 }
-.dbsearch-block-form > div div.form-item-query, .summon-block-form > div div.form-item-query {
+.dbsearch-block-form > div div.form-item-query, .summon-block-form > div div.form-item-query, .allsearch-block-form > div div.form-item-query {
   position: relative;
 }
-.dbsearch-block-form > div div.form-item-query label, .summon-block-form > div div.form-item-query label {
+.dbsearch-block-form > div div.form-item-query label, .summon-block-form > div div.form-item-query label, .allsearch-block-form > div div.form-item-query label {
   display: none;
 }
-.dbsearch-block-form > div div.form-item-query input[type=text], .summon-block-form > div div.form-item-query input[type=text] {
+.dbsearch-block-form > div div.form-item-query input[type=text], .summon-block-form > div div.form-item-query input[type=text], .allsearch-block-form > div div.form-item-query input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
   margin: 0;
 }
-.dbsearch-block-form > div input[type=submit], .summon-block-form > div input[type=submit] {
+.dbsearch-block-form > div input[type=submit], .summon-block-form > div input[type=submit], .allsearch-block-form > div input[type=submit] {
   position: absolute;
   right: 0;
   top: 0;
@@ -1208,6 +1236,41 @@ footer address, footer #university-copyright-footer {
   cursor: not-allowed;
 }
 
+.all-search-results-list {
+  margin-bottom: 1em;
+}
+.all-search-results-list li.even {
+  background: none;
+  border-top: 1px solid #ddd;
+}
+.all-search-results-list li.odd {
+  background: #f5f4f1;
+}
+.all-search-results-list li {
+  padding: 0.5em;
+  font-size: 12px;
+  font-size: 0.85714rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+}
+.all-search-results-list li.active {
+  background: none;
+}
+.all-search-results-list h3 {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 7px;
+  margin-bottom: 0.51429rem;
+}
+
 .block--quicktabs {
   margin: 1.5em 0;
 }
@@ -1248,6 +1311,7 @@ footer address, footer #university-copyright-footer {
   -o-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
   background: #606873;
@@ -1274,8 +1338,10 @@ footer address, footer #university-copyright-footer {
   padding: 5px 0 5px 10px;
   display: block;
   border: 1px solid #737373;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .block--quicktabs input[type="submit"] {
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 45px;
   width: 115px;
   padding: 0;
@@ -1559,6 +1625,8 @@ fieldset {
     margin-left: 0;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .pul_base_four_four_four_stacked-region--first {
@@ -1569,6 +1637,7 @@ fieldset {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
   }
 
   .pul_base_four_four_four_stacked-region--second {
@@ -1587,6 +1656,7 @@ fieldset {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }
 /*******************************************************************************
@@ -1631,6 +1701,45 @@ fieldset {
 /*******************************************************************************
  * three_nine.layout.scss
  *
+ * Styling of the 6-6 column layout..
+ ******************************************************************************/
+.panel-display--six_six {
+  *zoom: 1;
+}
+.panel-display--six_six:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.six_six-region {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1250px) {
+  .six_six-region--first {
+    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .six_six-region--second {
+    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
  * Styling of the 3-9 column layout..
  ******************************************************************************/
 .panel-display--three_nine {
@@ -1654,6 +1763,7 @@ fieldset {
     float: left;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
+    margin-left: 0;
   }
 
   .three_nine-region--second {
@@ -1663,5 +1773,6 @@ fieldset {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }

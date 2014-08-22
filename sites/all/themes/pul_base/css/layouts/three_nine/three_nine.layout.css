@@ -23,6 +23,7 @@
     margin-right: -100%;
     margin-left: 0;
     clear: none;
+    margin-left: 0;
   }
 
   .three_nine-region--second {
@@ -31,5 +32,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-right: 0;
   }
 }
