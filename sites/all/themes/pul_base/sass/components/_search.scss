@@ -1,7 +1,7 @@
 .block--quicktabs-homepage-search-tabs > .block__content {
-	border: 1px solid #bcbcbc;
-	background: #d3d3d3;
-	padding: 5px;
+	// border: 1px solid #bcbcbc;
+	// background: #d3d3d3;
+	// padding: 5px;
 	// @include border-radius(8px);
 }
 
@@ -25,7 +25,7 @@
 
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
 		@include border-radius(0);
-		background: darken($light-gray, 2%);
+		background: darken($light-gray, 3);
 		border: 1px solid #d3d3d3;
 	}
 	.ui-tabs .ui-tabs-nav li {
@@ -39,6 +39,11 @@
 		background: $dark-gray;
 		border-right: 1px solid darken($light-gray, 50%);
 		color: white;
+		@include transition (all 0.2s ease-in-out);
+
+		&:hover {
+	      background: lighten(#494f57, 10);
+	    }
 	}
 
 	.ui-tabs .ui-tabs-nav li.ui-state-active a, .ui-widget-header .ui-state-active {
