@@ -1,0 +1,52 @@
+.dbsearch-block-form, .summon-block-form {
+
+   > div {
+      $search-bar-border-color: $base-border-color;
+      $search-bar-border: 1px solid $search-bar-border-color;
+      $search-bar-background: lighten($search-bar-border-color, 10);
+
+      position: relative; 
+      display: inline-block;
+      margin-top:0.9em;
+
+      input {
+        @include box-sizing(border-box);
+        display: inline-block;
+        // border: 1px darken($dark-gray, 5) solid;
+      }
+
+      div.form-item-query {
+        position: relative;
+
+        label {
+            display: none;
+        }
+
+        input[type=text] {
+          @include appearance(none);
+          width: 100%;
+          // padding: .5em .8em;
+          // font-size: .9em;
+          // font-style: italic;
+          // border-radius: $base-border-radius * 2;
+          margin: 0;
+          // background: lighten($dark-gray, 10);
+          // border: darken($dark-gray, 5);
+          // color: #aaa;
+        }
+      
+      }
+
+      input[type=submit] {
+          // @include button(simple, $orange);
+          // background: darken($dark-gray, 5);
+          position: absolute;
+          right: 2px;
+          top:2px;
+          // outline: none;
+          padding: 5px 10px;
+          height: 32px;
+          font-weight: normal;
+      }
+    }
+}

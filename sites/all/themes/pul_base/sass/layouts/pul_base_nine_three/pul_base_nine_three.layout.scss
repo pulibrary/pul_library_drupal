@@ -27,6 +27,7 @@ $desk : 1250px;
 @include breakpoint($desk) {
   .pul_base_nine_three-region--first {
     @include grid-span(9,1);
+    margin-left: 0;
   }
    .pul_base_nine_three-region--second {
     @include grid-span(3,10);

@@ -13,7 +13,7 @@
 	  $navigation-submenu-padding: 1em;
 	  $navigation-submenu-width: 12em;
 	  $horizontal-bar-mode: $desk;
-	float: right;
+	float: left;
 	margin: 5px 0;
 	padding: 0;
 
@@ -26,7 +26,7 @@
 		    float: right;
 		    @include transition (all 0.2s ease-in-out);
 		    display: inline;
-		    background: $navigation-nav-button-background;
+		    // background: $navigation-nav-button-background;
 		    border-radius: $base-border-radius; 
 		    color: white;
 		    font-size: .8em;  
@@ -39,8 +39,12 @@
 		    }
 
 		    &:hover {
-		      background: lighten($navigation-nav-button-background, 10);
+		      background: lighten(#494f57, 10);
 		    }
 		}
 	}
+}
+
+.front .l-branding nav ul {
+	float: right;
 }
