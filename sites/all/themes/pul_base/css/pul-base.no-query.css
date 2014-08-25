@@ -1112,30 +1112,30 @@ footer address, footer #university-copyright-footer {
   display: none;
 }
 
-.dbsearch-block-form > div, .summon-block-form > div, .allsearch-block-form > div {
+.section-research .dbsearch-block-form > div, .section-research .summon-block-form > div, .section-research .allsearch-block-form > div, .section-resource .dbsearch-block-form > div, .section-resource .summon-block-form > div, .section-resource .allsearch-block-form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
 }
-.dbsearch-block-form > div input, .summon-block-form > div input, .allsearch-block-form > div input {
+.section-research .dbsearch-block-form > div input, .section-research .summon-block-form > div input, .section-research .allsearch-block-form > div input, .section-resource .dbsearch-block-form > div input, .section-resource .summon-block-form > div input, .section-resource .allsearch-block-form > div input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
 }
-.dbsearch-block-form > div div.form-item-query, .summon-block-form > div div.form-item-query, .allsearch-block-form > div div.form-item-query {
+.section-research .dbsearch-block-form > div div.form-item-query, .section-research .summon-block-form > div div.form-item-query, .section-research .allsearch-block-form > div div.form-item-query, .section-resource .dbsearch-block-form > div div.form-item-query, .section-resource .summon-block-form > div div.form-item-query, .section-resource .allsearch-block-form > div div.form-item-query {
   position: relative;
 }
-.dbsearch-block-form > div div.form-item-query label, .summon-block-form > div div.form-item-query label, .allsearch-block-form > div div.form-item-query label {
+.section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label {
   display: none;
 }
-.dbsearch-block-form > div div.form-item-query input[type=text], .summon-block-form > div div.form-item-query input[type=text], .allsearch-block-form > div div.form-item-query input[type=text] {
+.section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
   margin: 0;
 }
-.dbsearch-block-form > div input[type=submit], .summon-block-form > div input[type=submit], .allsearch-block-form > div input[type=submit] {
+.section-research .dbsearch-block-form > div input[type=submit], .section-research .summon-block-form > div input[type=submit], .section-research .allsearch-block-form > div input[type=submit], .section-resource .dbsearch-block-form > div input[type=submit], .section-resource .summon-block-form > div input[type=submit], .section-resource .allsearch-block-form > div input[type=submit] {
   position: absolute;
   right: 0;
   top: 0;
@@ -1340,7 +1340,7 @@ footer address, footer #university-copyright-footer {
   border: 1px solid #737373;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.block--quicktabs input[type="submit"] {
+.block--quicktabs .ui-tabs-panel input[type="submit"] {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 45px;
   width: 115px;
@@ -1399,7 +1399,7 @@ footer address, footer #university-copyright-footer {
   background: #606873;
 }
 
-.front .l-branding nav ul {
+.front .l-branding nav ul, .page-find-all .l-branding nav ul {
   float: right;
 }
 
@@ -1463,6 +1463,21 @@ footer address, footer #university-copyright-footer {
 
 fieldset {
   background: none;
+}
+
+h2 {
+  font-size: 18px;
+  font-size: 1.3rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 12px;
+  margin-top: 0.85714rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 18px;
+  margin-bottom: 1.28571rem;
 }
 
 /*******************************************************************************

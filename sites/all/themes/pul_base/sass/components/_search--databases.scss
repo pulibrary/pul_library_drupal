@@ -1,3 +1,5 @@
+.section-research, .section-resource {
+
 .dbsearch-block-form, .summon-block-form, .allsearch-block-form {
 
    > div {
@@ -51,4 +53,5 @@
           @include border-bottom-left-radius(0);
       }
     }
+  }
 }
