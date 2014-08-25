@@ -831,7 +831,7 @@ footer address, footer #university-copyright-footer {
 }
 
 .front .wrapper--highlighted {
-  padding: 1em 0;
+  padding: 1em 0 0;
 }
 
 .wrapper--branding {
@@ -885,6 +885,15 @@ footer address, footer #university-copyright-footer {
 }
 .library-hours td.views-field-field-open-hours {
   text-align: right;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  margin-left: 1.5em;
+}
+
+.library-info a {
+  text-decoration: underline;
 }
 
 .l-header {
@@ -1470,14 +1479,30 @@ h2 {
   font-size: 1.3rem;
   line-height: 24px;
   line-height: 1.71429rem;
-  margin-top: 12px;
-  margin-top: 0.85714rem;
+  margin-top: 18px;
+  margin-top: 1.28571rem;
   padding-top: 0px;
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 18px;
   margin-bottom: 1.28571rem;
+}
+
+h3 {
+  font-size: 15px;
+  font-size: 1.1rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 18px;
+  margin-top: 1.28571rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*******************************************************************************
@@ -1574,6 +1599,7 @@ h2 {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
   }
 
   .landingpage-region--second {
@@ -1583,6 +1609,7 @@ h2 {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 
   .landingpage-region--third {
@@ -1593,6 +1620,7 @@ h2 {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
   }
 
   .landingpage-region--fourth {
@@ -1611,6 +1639,7 @@ h2 {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }
 /*******************************************************************************
@@ -1739,6 +1768,7 @@ h2 {
     float: left;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
+    clear: both;
     margin-left: 0;
   }
 

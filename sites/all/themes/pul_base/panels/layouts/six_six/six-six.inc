@@ -23,7 +23,7 @@ $plugin = array(
  */
 function template_preprocess_six_six(&$variables) {
   $variables['attributes_array']['class'][] = 'panel-display';
-  $variables['attributes_array']['class'][] = 'panel-display--six-six';
+  $variables['attributes_array']['class'][] = 'panel-display--six_six';
 
   foreach($variables['content'] as $name => $item) {
     $variables['region_attributes_array'][$name]['class'][] = 'six_six-region';
