@@ -23,26 +23,28 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    clear: both;
   }
 
   .five_four_three_stacked-region--first {
-    width: 32.20339%;
+    width: 40.67797%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
+    clear: both;
   }
 
   .five_four_three_stacked-region--second {
-    width: 23.72881%;
+    width: 32.20339%;
     float: left;
     margin-right: -100%;
-    margin-left: 33.89831%;
+    margin-left: 42.37288%;
     clear: none;
   }
 
   .five_four_three_stacked-region--third {
-    width: 40.67797%;
+    width: 23.72881%;
     float: right;
     margin-left: 0;
     margin-right: 0;
@@ -55,5 +57,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    clear: both;
   }
 }

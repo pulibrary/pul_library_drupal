@@ -7,11 +7,11 @@
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: $light-gray;
   $centered-navigation-color: transparentize($base-font-color, 0.3);
-  $centered-navigation-color-hover: $base-font-color;
+  $centered-navigation-color-hover: $orange;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
-  $centered-navigation-submenu-width: 12em;
+  $centered-navigation-submenu-width: 14em;
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $desk;
 
@@ -86,11 +86,11 @@
 
   // The nav items
 
-  .centered-navigation-menu > ul > li:first-child {
-    @include breakpoint($horizontal-bar-mode) {
-      margin-left: $centered-navigation-item-nudge;
-    }
-  }
+  // .centered-navigation-menu > ul > li:first-child {
+  //   @include breakpoint($horizontal-bar-mode) {
+  //     margin-left: $centered-navigation-item-nudge;
+  //   }
+  // }
 
   .centered-navigation-menu > ul > li {
     background: $centered-navigation-background;
@@ -115,6 +115,7 @@
     a {
       color: $centered-navigation-color;
       display: inline-block;
+      @include transition (all 0.2s ease-in-out);
 
 
       &:hover {
@@ -248,6 +249,9 @@
           text-align: left;
           width: $centered-navigation-submenu-width;
         }
+      }
+      a:hover {
+        background: darken($centered-navigation-background, 6);
       }
     }
   }
