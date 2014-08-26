@@ -1,7 +1,7 @@
 /*******************************************************************************
- * pul_base_nine_three.layout.scss
+ * three_nine.layout.scss
  *
- * Styling of the "PUL" 9-3 column layout..
+ * Styling of the 6-6 column layout..
  ******************************************************************************/
 
 @import "compass";
@@ -16,21 +16,23 @@ $horz-spacing-unit: 1em;
 $desk : 1250px;
 
 
-.panel-display--pul_base_nine_three {
+.panel-display--six_six {
   @include pie-clearfix;
 }
 
-.pul_base_nine_three-region {
+.six_six-region {
   margin-bottom: $vert-spacing-unit;
 }
 
 @include breakpoint($desk) {
-  .pul_base_nine_three-region--first {
-    @include grid-span(9,1);
+
+  .six_six-region--first {
+    @include grid-span(6,1);
+    clear:both;
     margin-left: 0;
   }
-   .pul_base_nine_three-region--second {
-    @include grid-span(3,10);
+   .six_six-region--second {
+    @include grid-span(6,7);
     margin-right: 0;
   }
 

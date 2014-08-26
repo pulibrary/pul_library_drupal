@@ -1,5 +1,3 @@
-// @include establish-baseline;
-
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -7,6 +5,7 @@ html {
 
 body {
 	font-family: $font-sans;
+  font-size: em(14);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,15 +15,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   @include adjust-font-size-to($h1-fz);
+  @include rhythm(0, 0, 0, 0, $h1-fz);
 }
 
 h2 {
-  @include adjust-font-size-to($h3-fz);
-  @include rhythm(1, 0, 0, 1, $h3-fz);
+  @include adjust-font-size-to($h2-fz);
+  @include rhythm(1, 0, 0, 0.5, $h2-fz);
 }
 
 h3 {
-  @include adjust-font-size-to($h4-fz);
+  @include adjust-font-size-to($h3-fz);
+  @include rhythm(1, 0, 0, 0.5, $h3-fz);
 }
 
 h4 {

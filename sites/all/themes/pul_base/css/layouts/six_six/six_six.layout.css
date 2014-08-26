@@ -1,33 +1,34 @@
 /*******************************************************************************
  * three_nine.layout.scss
  *
- * Styling of the 3-9 column layout..
+ * Styling of the 6-6 column layout..
  ******************************************************************************/
-.panel-display--three_nine {
+.panel-display--six_six {
   *zoom: 1;
 }
-.panel-display--three_nine:after {
+.panel-display--six_six:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.three_nine-region {
+.six_six-region {
   margin-bottom: 20px;
 }
 
 @media (min-width: 1250px) {
-  .three_nine-region--first {
-    width: 23.72881%;
+  .six_six-region--first {
+    width: 49.15254%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
+    clear: both;
     margin-left: 0;
   }
 
-  .three_nine-region--second {
-    width: 74.57627%;
+  .six_six-region--second {
+    width: 49.15254%;
     float: right;
     margin-left: 0;
     margin-right: 0;

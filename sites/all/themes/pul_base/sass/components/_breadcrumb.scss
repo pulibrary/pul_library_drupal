@@ -1,3 +1,7 @@
+/*------------------------------------*\
+    #BREADCRUMBS
+\*------------------------------------*/
+
 .breadcrumb {
 	clear: both;
 	@include clearfix;
@@ -8,53 +12,17 @@
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
   $breadcrumb-height: $base-line-height;
   $breadcrumb-arrow-color: $breadcrumb-border-color;
-  $breadcrumb-background: darken($light-gray, 4);
+  $breadcrumb-background: darken($light-gray, 6);
   $breadcrumb-inactive-hover-color: $breadcrumb-background;
   $breadcrumb-color: $black;
   $breadcrumb-color-hover: $base-accent-color;
   $breadcrumb-color-active: $breadcrumb-color;
 
   li {
-    	@include inline-block;
-	    text-align: left;
-	    margin-bottom: $base-line-height;
-  }
-  
-  a {
-    @include inline-block;
-    background-color: $breadcrumb-background;
-    border: $breadcrumb-border;
-    color: $breadcrumb-color;
-    line-height: $breadcrumb-height;
-    margin-right: -5px;
-    font-size: .8em;
-    padding: 0 $breadcrumb-height/4 0 $breadcrumb-height/2;
+  	@include inline-block;
+    text-align: left;
+    margin-bottom: $base-line-height;
     position: relative;
-    text-decoration: none;
-    margin-bottom: 2px;
-
-    &:first-child {
-      padding-left: $breadcrumb-height/2;
-      border-top-left-radius: $base-border-radius;
-      border-bottom-left-radius: $base-border-radius;
-    }
-
-    &:last-child {
-      background-color: $breadcrumb-background;
-      color: $breadcrumb-color-active;
-      border-bottom-right-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      padding-right: $breadcrumb-height/2;
-    }
-
-    &:hover {
-      color: $breadcrumb-color-hover;
-      background-color: $breadcrumb-inactive-hover-color;
-    }
-
-    &:hover:after {
-      border-left-color: $breadcrumb-inactive-hover-color;;
-    }
 
     &:after,
     &:before {
@@ -81,11 +49,42 @@
     &:after {
       border-left-color: $breadcrumb-background;
     }
+  }
 
-    // @include media($medium-screen) {
-    //   font-size: 1em;
-    //   padding: 0 $breadcrumb-height/2 0 $breadcrumb-height/1.5;
-    // }
+  a {
+    @include inline-block;
+    background-color: $breadcrumb-background;
+    border: $breadcrumb-border;
+    color: $breadcrumb-color;
+    line-height: $breadcrumb-height;
+    margin-right: -5px;
+    font-size: .8em;
+    padding: 0 $breadcrumb-height/4 0 $breadcrumb-height/2;
+    position: relative;
+    text-decoration: none;
+
+    &:first-child {
+      padding-left: $breadcrumb-height/2;
+      border-top-left-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
+    }
+
+    &:last-child {
+      background-color: $breadcrumb-background;
+      color: $breadcrumb-color-active;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      padding-right: $breadcrumb-height/2;
+    }
+
+    &:hover {
+      color: $breadcrumb-color-hover;
+      background-color: $breadcrumb-inactive-hover-color;
+    }
+
+    &:hover:after {
+      border-left-color: $breadcrumb-inactive-hover-color;;
+    }
   }
 }
 
