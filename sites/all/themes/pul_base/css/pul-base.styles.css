@@ -857,18 +857,57 @@ footer address, footer #university-copyright-footer {
   clear: both;
 }
 
-.block--menu-menu-get-help-menu {
+.front .block--menu-menu-get-help-menu {
   margin: 1.5em 0;
-  padding-left: 1em;
+  padding-left: 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
-.block--menu-menu-get-help-menu h2 {
-  margin-top: 0;
+.front .block--menu-menu-get-help-menu h2 {
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 5px;
+  padding-top: 0.34286rem;
+  padding-bottom: 7px;
+  padding-bottom: 0.51429rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-left: 0.5em;
 }
-.block--menu-menu-get-help-menu .menu {
+.front .block--menu-menu-get-help-menu .menu {
   list-style: none;
 }
-.block--menu-menu-get-help-menu .menu .leaf {
+.front .block--menu-menu-get-help-menu .menu .leaf {
   list-style: none;
+  margin-bottom: 5px;
+  display: block;
+}
+.front .block--menu-menu-get-help-menu .menu .leaf [class^="icon-"], .front .block--menu-menu-get-help-menu .menu .leaf [class*=" icon-"] {
+  margin-left: 0;
+}
+.front .block--menu-menu-get-help-menu .menu .leaf a {
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  color: #f5f4f1;
+  text-shadow: 1px 1px 9px #969696;
+}
+.front .block--menu-menu-get-help-menu .menu .leaf a:hover {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background: #efede8;
+  color: #477dca;
+  text-shadow: none;
 }
 
 .library-hours tr.even {
@@ -1140,30 +1179,30 @@ footer address, footer #university-copyright-footer {
   display: none;
 }
 
-.section-research .dbsearch-block-form > div, .section-research .summon-block-form > div, .section-research .allsearch-block-form > div, .section-resource .dbsearch-block-form > div, .section-resource .summon-block-form > div, .section-resource .allsearch-block-form > div {
+.page-find-all .dbsearch-block-form > div, .page-find-all .summon-block-form > div, .page-find-all .allsearch-block-form > div, .section-research .dbsearch-block-form > div, .section-research .summon-block-form > div, .section-research .allsearch-block-form > div, .section-resource .dbsearch-block-form > div, .section-resource .summon-block-form > div, .section-resource .allsearch-block-form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
 }
-.section-research .dbsearch-block-form > div input, .section-research .summon-block-form > div input, .section-research .allsearch-block-form > div input, .section-resource .dbsearch-block-form > div input, .section-resource .summon-block-form > div input, .section-resource .allsearch-block-form > div input {
+.page-find-all .dbsearch-block-form > div input, .page-find-all .summon-block-form > div input, .page-find-all .allsearch-block-form > div input, .section-research .dbsearch-block-form > div input, .section-research .summon-block-form > div input, .section-research .allsearch-block-form > div input, .section-resource .dbsearch-block-form > div input, .section-resource .summon-block-form > div input, .section-resource .allsearch-block-form > div input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
 }
-.section-research .dbsearch-block-form > div div.form-item-query, .section-research .summon-block-form > div div.form-item-query, .section-research .allsearch-block-form > div div.form-item-query, .section-resource .dbsearch-block-form > div div.form-item-query, .section-resource .summon-block-form > div div.form-item-query, .section-resource .allsearch-block-form > div div.form-item-query {
+.page-find-all .dbsearch-block-form > div div.form-item-query, .page-find-all .summon-block-form > div div.form-item-query, .page-find-all .allsearch-block-form > div div.form-item-query, .section-research .dbsearch-block-form > div div.form-item-query, .section-research .summon-block-form > div div.form-item-query, .section-research .allsearch-block-form > div div.form-item-query, .section-resource .dbsearch-block-form > div div.form-item-query, .section-resource .summon-block-form > div div.form-item-query, .section-resource .allsearch-block-form > div div.form-item-query {
   position: relative;
 }
-.section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label {
+.page-find-all .dbsearch-block-form > div div.form-item-query label, .page-find-all .summon-block-form > div div.form-item-query label, .page-find-all .allsearch-block-form > div div.form-item-query label, .section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label {
   display: none;
 }
-.section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text] {
+.page-find-all .dbsearch-block-form > div div.form-item-query input[type=text], .page-find-all .summon-block-form > div div.form-item-query input[type=text], .page-find-all .allsearch-block-form > div div.form-item-query input[type=text], .section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
   margin: 0;
 }
-.section-research .dbsearch-block-form > div input[type=submit], .section-research .summon-block-form > div input[type=submit], .section-research .allsearch-block-form > div input[type=submit], .section-resource .dbsearch-block-form > div input[type=submit], .section-resource .summon-block-form > div input[type=submit], .section-resource .allsearch-block-form > div input[type=submit] {
+.page-find-all .dbsearch-block-form > div input[type=submit], .page-find-all .summon-block-form > div input[type=submit], .page-find-all .allsearch-block-form > div input[type=submit], .section-research .dbsearch-block-form > div input[type=submit], .section-research .summon-block-form > div input[type=submit], .section-research .allsearch-block-form > div input[type=submit], .section-resource .dbsearch-block-form > div input[type=submit], .section-resource .summon-block-form > div input[type=submit], .section-resource .allsearch-block-form > div input[type=submit] {
   position: absolute;
   right: 0;
   top: 0;
@@ -1299,6 +1338,30 @@ footer address, footer #university-copyright-footer {
   margin-bottom: 0.51429rem;
 }
 
+.pul_base_four_four_four_stacked-region li {
+  clear: both;
+}
+.pul_base_four_four_four_stacked-region li h2 {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 7px;
+  margin-bottom: 0.51429rem;
+}
+.pul_base_four_four_four_stacked-region li + li {
+  border-top: 1px dotted #BFBFBF;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
 .block--quicktabs {
   margin: 1.5em 0;
 }
@@ -1384,6 +1447,9 @@ footer address, footer #university-copyright-footer {
   display: block;
   border: 1px solid #737373;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 .block--quicktabs .ui-tabs-panel input[type="submit"] {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1707,6 +1773,7 @@ h3 {
     clear: both;
     margin-left: 0;
     margin-right: 0;
+    float: left;
   }
 
   .pul_base_four_four_four_stacked-region--first {
@@ -1730,11 +1797,11 @@ h3 {
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    -sgs-span-settings: ("span": 4, "location": 8, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 30%;
     clear: right;
-    float: right;
-    margin-left: 0;
+    float: left;
+    margin-left: 1.66667%;
     margin-right: 1.66667%;
     margin-right: 0;
   }

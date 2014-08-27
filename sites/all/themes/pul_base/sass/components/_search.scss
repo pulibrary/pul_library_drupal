@@ -76,6 +76,7 @@
 		display: block;
 		border: 1px solid #737373;
 		font-family: $font-sans;
+		@include border-radius(4px);
 	}
 	.ui-tabs-panel input[type="submit"] {
 		font-family: $font-sans;
