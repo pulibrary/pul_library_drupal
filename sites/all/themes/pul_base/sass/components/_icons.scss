@@ -6,3 +6,29 @@
 .library-info a {
     text-decoration: underline;
 }
+
+.views-libraries.contextual-links-region {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        margin-right: .5em;
+    }
+}
+
+.view .date-nav-wrapper .date-next {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        // margin-right: .5em;
+        font-size: 2em;
+    }
+}
+
+.view .date-nav-wrapper .date-prev {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        font-size: 2em;
+        margin-left: 0;
+        // margin-right: .5em;
+    }
+}
