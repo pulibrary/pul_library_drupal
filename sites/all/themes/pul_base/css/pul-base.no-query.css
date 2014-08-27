@@ -831,7 +831,8 @@ footer address, footer #university-copyright-footer {
 }
 
 .front .wrapper--highlighted {
-  padding: 1em 0 0;
+  background-color: #8e96a0;
+  padding: 1em 0;
 }
 
 .wrapper--branding {
@@ -894,6 +895,24 @@ footer address, footer #university-copyright-footer {
 
 .library-info a {
   text-decoration: underline;
+}
+
+.views-libraries.contextual-links-region [class^="icon-"],
+.views-libraries.contextual-links-region [class*=" icon-"] {
+  margin-left: 0;
+  margin-right: .5em;
+}
+
+.view .date-nav-wrapper .date-next [class^="icon-"],
+.view .date-nav-wrapper .date-next [class*=" icon-"] {
+  margin-left: 0;
+  font-size: 2em;
+}
+
+.view .date-nav-wrapper .date-prev [class^="icon-"],
+.view .date-nav-wrapper .date-prev [class*=" icon-"] {
+  font-size: 2em;
+  margin-left: 0;
 }
 
 .l-header {
@@ -1290,25 +1309,42 @@ footer address, footer #university-copyright-footer {
 .block--quicktabs .ui-tabs {
   padding: 0;
 }
+.block--quicktabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 .block--quicktabs .ui-widget-header {
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
   background: #494f57;
   padding: 0;
   border: none;
 }
 .block--quicktabs .quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   background: #efede8;
-  border: 1px solid #d3d3d3;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li {
   margin: 0;
   border: none;
   top: 0;
+}
+.block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a {
   width: 190px;

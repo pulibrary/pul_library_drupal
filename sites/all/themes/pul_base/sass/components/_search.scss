@@ -1,10 +1,3 @@
-.block--quicktabs-homepage-search-tabs > .block__content {
-	// border: 1px solid #bcbcbc;
-	// background: #d3d3d3;
-	// padding: 5px;
-	// @include border-radius(8px);
-}
-
 .block--quicktabs {
 	margin: 1.5em 0;
 	h2 {
@@ -16,22 +9,34 @@
 		padding: 0;
 		// border: none;
 	}
+	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		}
 	.ui-widget-header {
-		@include border-radius(0);
+		@include border-top-left-radius(4px);
+		@include border-top-right-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
 		background: $dark-gray;
 		padding: 0;
 		border: none;
 	}
 
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-		@include border-radius(0);
+		@include border-radius(4px);
 		background: darken($light-gray, 3);
-		border: 1px solid #d3d3d3;
+		// border: 1px solid #d3d3d3;
+		// padding: 5px;
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
 		border: none;
 		top: 0;
+
+		&:first-child a {
+	    	@include border-top-left-radius(4px);
+	    }
 	}
 	.ui-tabs .ui-tabs-nav li a {
 		width: 190px;
