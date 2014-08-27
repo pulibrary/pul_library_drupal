@@ -28,12 +28,12 @@
         clear: both;
 
         h2 {
-            @include adjust-font-size-to(16px);
-            @include rhythm(0, 0, 0, 0.3, 16px);
+            @include adjust-font-size-to(1.3em);
+            @include rhythm(0, 0, 0, 0.3, 1.3em);
         }
     }
 
-    li + li {
+    > ul > li + li {
         border-top: 1px dotted #BFBFBF;
         margin-top: 10px;
         padding-bottom: 5px;
