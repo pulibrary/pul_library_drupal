@@ -1,0 +1,42 @@
+.all-search-results-list {
+
+    margin-bottom: 1em;
+
+    li.even {
+        background: none;
+        border-top: 1px solid #ddd;
+    }
+    li.odd {
+        background: $light-gray;
+    }
+    li {
+        padding: 0.5em;
+        @include adjust-font-size-to(12px);
+    }
+    li.active {
+        background: none;
+    }
+
+    h3 {
+        @include adjust-font-size-to(16px);
+        @include rhythm(0, 0, 0, 0.3, 16px);
+    }
+}
+
+.pul_base_four_four_four_stacked-region {
+    li {
+        clear: both;
+
+        h2 {
+            @include adjust-font-size-to(1.3em);
+            @include rhythm(0, 0, 0, 0.3, 1.3em);
+        }
+    }
+
+    > ul > li + li {
+        border-top: 1px dotted #BFBFBF;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}

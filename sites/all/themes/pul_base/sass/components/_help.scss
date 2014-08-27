@@ -1,0 +1,42 @@
+.front .block--menu-menu-get-help-menu {
+	margin: 1.5em 0;
+	padding-left: 0;
+	// background: darken($light-gray, 3);
+	@include border-radius(4px);
+
+	h2 {
+		@include adjust-font-size-to(1em);
+		@include rhythm(0, 0.2, 0.3, 0, 1em);
+		font-family: $font-sans;
+		padding-left: 0.5em;
+	}
+
+	.menu {
+		list-style: none;
+
+		.leaf {
+			list-style: none;
+			margin-bottom: 5px;
+			display: block;
+
+			[class^="icon-"], [class*=" icon-"] {
+				margin-left: 0;
+			}
+
+			a {
+				padding: 6px 12px;
+				margin-bottom: 5px;
+				color: $light-gray;
+				text-shadow: 1px 1px 9px rgba(150, 150, 150, 1);
+
+				&:hover {
+					@include border-radius(3px);
+					@include transition (all 0.2s ease-in-out);
+					background: darken($light-gray, 3);
+					color: $blue;
+					text-shadow: none;
+				}
+			}
+		}
+	}
+}

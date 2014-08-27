@@ -928,7 +928,7 @@ function webform_conditional_prepare_date_js($rule_value) {
   // slightly stale by the time the comparison executes. Timestamps are in
   // milliseconds, as to match JavaScript's Date.toString() method.
   $date = webform_strtodate('c', $rule_value, 'UTC');
-  return (int) (webform_strtotime($date) . '000');
+  return webform_strtotime($date);
 }
 
 /**
@@ -937,7 +937,7 @@ function webform_conditional_prepare_date_js($rule_value) {
 function webform_conditional_prepare_time_js($rule_value) {
   $date = webform_conditional_prepare_date_js($rule_value);
   $today = webform_strtodate('c', 'today', 'UTC');
-  $today = (int) (webform_strtotime($today) . '000');
+  $today = webform_strtotime($today);
   return $date - $today;
 }
 
@@ -1027,59 +1027,10 @@ function webform_conditional_operator_string_not_empty($input_values, $rule_valu
 }
 
 /**
- * Compare two floats.
- *
- * See @link http://php.net/manual/en/language.types.float.php @endlink
- *
- * Comparison of floating point numbers for equality is surprisingly difficult,
- * as evidenced by the references below. The simple test in this function works
- * for numbers that are relatively close to 1E1. For very small numbers, it will
- * show false equality. For very large numbers, it will show false inequality.
- * Better implementations are hidered by the absense of PHP platform-specific
- * floating point constants to properly set the minimum absolute and relative
- * error in PHP.
- *
- * The use case for webform conditionals excludes very small or very large
- * numeric comparisons.
- * 
- * See @link http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm @endlink
- * See @link http://floating-point-gui.de/errors/comparison/ @endlink
- * See @link http://en.wikipedia.org/wiki/IEEE_754-1985#Denormalized_numbers @endlink
-
- * @param $number_1 float
- *   The first number.
- * @param $number_2 float
- *   The second number.
- *
- * @return int|null
- *   < 0 if number_1 is less than number_2; > 0 if number_1 is greater than
- *   number_2, 0 if they are equal, and NULL if either is not numeric.
- */
-function webform_conditional_compare_floats($number_1, $number_2) {
-  if (!is_numeric($number_1) || !is_numeric($number_2)) {
-    return NULL;
-  }
-
-  $number_1 = (float)$number_1;
-  $number_2 = (float)$number_2;
-
-  $epsilon = 0.000001;
-  if (abs($number_1 - $number_2) < $epsilon) {
-    return 0;
-  }
-  elseif ($number_1 > $number_2) {
-    return 1;
-  }
-  else {
-    return -1;
-  }
-}
-
-/**
  * Conditional callback for numeric comparisons.
  */
 function webform_conditional_operator_numeric_equal($input_values, $rule_value) {
-  return webform_conditional_compare_floats($input_values[0], $rule_value) === 0;
+  return empty($input_values) ? FALSE : webform_compare_floats($input_values[0], $rule_value) === 0;
 }
 
 /**
@@ -1093,14 +1044,14 @@ function webform_conditional_operator_numeric_not_equal($input_values, $rule_val
  * Conditional callback for numeric comparisons.
  */
 function webform_conditional_operator_numeric_greater_than($input_values, $rule_value) {
-  return webform_conditional_compare_floats($input_values[0], $rule_value) > 0;
+  return empty($input_values) ? FALSE : webform_compare_floats($input_values[0], $rule_value) > 0;
 }
 
 /**
  * Conditional callback for numeric comparisons.
  */
 function webform_conditional_operator_numeric_less_than($input_values, $rule_value) {
-  return webform_conditional_compare_floats($input_values[0], $rule_value) < 0;
+  return empty($input_values) ? FALSE : webform_compare_floats($input_values[0], $rule_value) < 0;
 }
 
 /**
@@ -1108,7 +1059,7 @@ function webform_conditional_operator_numeric_less_than($input_values, $rule_val
  */
 function webform_conditional_operator_datetime_equal($input_values, $rule_value) {
   $input_values = webform_conditional_value_datetime($input_values);
-  return webform_strtotime($input_values[0]) === webform_strtotime($rule_value);
+  return empty($input_values) ? FALSE : webform_strtotime($input_values[0]) === webform_strtotime($rule_value);
 }
 
 /**
@@ -1116,7 +1067,7 @@ function webform_conditional_operator_datetime_equal($input_values, $rule_value)
  */
 function webform_conditional_operator_datetime_after($input_values, $rule_value) {
   $input_values = webform_conditional_value_datetime($input_values);
-  return webform_strtotime($input_values[0]) > webform_strtotime($rule_value);
+  return empty($input_values) ? FALSE : webform_strtotime($input_values[0]) > webform_strtotime($rule_value);
 }
 
 /**
@@ -1124,7 +1075,7 @@ function webform_conditional_operator_datetime_after($input_values, $rule_value)
  */
 function webform_conditional_operator_datetime_before($input_values, $rule_value) {
   $input_values = webform_conditional_value_datetime($input_values);
-  return webform_strtotime($input_values[0]) < webform_strtotime($rule_value);
+  return empty($input_values) ? FALSE : webform_strtotime($input_values[0]) < webform_strtotime($rule_value);
 }
 
 /**

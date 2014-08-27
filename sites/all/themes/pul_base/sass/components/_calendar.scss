@@ -1,0 +1,78 @@
+.view-library-hours {
+	.view-header {
+		border-top: none;
+		border-right: 2px solid #fff;
+		border-left: none;
+		border-bottom: 1px solid #999;
+		border: 1px solid black;
+		background-color: #F58026;
+		margin-bottom: 0;
+		height: auto;
+
+		.date-nav-wrapper {
+			position: relative;
+			margin-top: 5px;
+			width: 100%;
+
+			.date-heading {
+				position: relative;
+				width: 100%;
+				top: 0px;
+				text-align: center;
+				z-index: 0;
+
+				h3 {
+					color: white;
+				}
+			}
+			.date-prev, .date-next {
+				margin-top: 3px;
+				border: 1px solid #333333;
+				background: #b8601e;
+				padding: 0px 4px;
+				@include border-radius(4px);
+				color: white;
+				text-decoration: none;
+				vertical-align: middle;
+			}
+
+			.date-prev {
+				float: left;
+				position: relative;
+				right: 0;
+				text-align: right;
+				padding: 0px;
+				width: 30px;
+				height: 20px;
+				margin-left: 20px;
+				top: -20px;
+			}
+
+			.date-next {
+				float: right;
+				position: relative;
+				right: 20px;
+				text-align: left;
+				padding: 0px;
+				width: 30px;
+				height: 20px;
+				top: -20px;
+			}
+		}
+	}
+}
+
+.calendar-calendar {
+	th.days {
+		padding: 10px 20px 10px 20px;
+		color: rgb(51,51,51);
+	}
+	.week-view .full td.multi-day div.weekview {
+		background: none;
+		color: $black;
+		font-size: 0.7em;
+	}
+	.week-view .full td.multi-day .inner .weekview .cutoff {
+		background: none;
+	}
+}

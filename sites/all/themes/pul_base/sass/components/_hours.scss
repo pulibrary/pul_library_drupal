@@ -1,0 +1,18 @@
+.library-hours {
+	tr.even {
+		background: none;
+		border-top: 1px solid #ddd;
+	}
+	tr.odd > td {
+		background: $light-gray;
+	}
+	td {
+		padding: 0.5em;
+	}
+	td.views-field-title {
+		width: 60%;
+	}
+	td.views-field-field-open-hours {
+		text-align: right;
+	}
+}
