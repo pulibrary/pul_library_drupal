@@ -1340,10 +1340,6 @@ footer address, footer #university-copyright-footer {
   padding-top: 1em;
 }
 
-.refine-link a {
-  text-align: right;
-}
-
 .block--quicktabs {
   margin: 1.5em 0;
 }
@@ -1699,11 +1695,11 @@ $desk : 1250px;
   }
 
   .four_five_three_stacked-region--first {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 33.33333%;
     float: left;
     margin-right: -100%;
-    margin-left: 1.66667%;
+    margin-left: 0%;
     clear: none;
     clear: both;
   }
