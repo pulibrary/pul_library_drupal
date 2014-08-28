@@ -1,7 +1,7 @@
 /*******************************************************************************
- * pul_base_nine_three.layout.scss
+ * nine_three_stacked.layout.scss
  *
- * Styling of the "PUL" 9-3 column layout..
+ * Styling of the "PUL" 9-3-stacked column layout..
  ******************************************************************************/
 
 @import "compass";
@@ -16,22 +16,33 @@ $horz-spacing-unit: 1em;
 $desk : 1250px;
 
 
-.panel-display--pul_base_nine_three {
+.panel-display--nine_three_stacked {
   @include pie-clearfix;
 }
 
-.pul_base_nine_three-region {
+.nine_three_stacked-region {
   margin-bottom: $vert-spacing-unit;
 }
 
 @include breakpoint($desk) {
-  .pul_base_nine_three-region--first {
+
+  .three_six_three_stacked-region--top {
+    @include grid-span(12,1);
+    margin-left: 0;
+  }
+
+  .nine_three_stacked-region--first {
     @include grid-span(9,1);
     margin-left: 0;
   }
-   .pul_base_nine_three-region--second {
+   .nine_three_stacked-region--second {
     @include grid-span(3,10);
     margin-right: 0;
+  }
+
+  .three_six_three_stacked-region--bottom {
+    @include grid-span(12,1);
+    margin-left: 0;
   }
 
 }

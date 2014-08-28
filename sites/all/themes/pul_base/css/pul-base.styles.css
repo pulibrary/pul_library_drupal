@@ -1759,6 +1759,65 @@ h3 {
   }
 }
 /*******************************************************************************
+ * nine_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 9-3-stacked column layout..
+ ******************************************************************************/
+.panel-display--nine_three_stacked {
+  *zoom: 1;
+}
+.panel-display--nine_three_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nine_three_stacked-region {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1250px) {
+  .three_six_three_stacked-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .nine_three_stacked-region--first {
+    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .nine_three_stacked-region--second {
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+
+  .three_six_three_stacked-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+}
+/*******************************************************************************
  * pul_base_four_four_four_stacked.layout.scss
  *
  * Styling of the "PUL" 9-3 column layout..
@@ -1936,5 +1995,182 @@ h3 {
     margin-left: 0;
     margin-right: 1.66667%;
     margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_nine_stacked.layout.scss
+ *
+ * Styling of the 3-9 stacked column layout..
+ ******************************************************************************/
+.panel-display--three_nine_stacked {
+  *zoom: 1;
+}
+.panel-display--three_nine_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_nine_stacked-region {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1250px) {
+  .three_six_three_stacked-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_nine_stacked-region--first {
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_nine_stacked-region--second {
+    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+
+  .three_six_three_stacked-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+}
+/*******************************************************************************
+ * three_six_three.layout.scss
+ *
+ * Styling of the 3-6-3 column layout..
+ ******************************************************************************/
+.panel-display--three_six_three {
+  *zoom: 1;
+}
+.panel-display--three_six_three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_six_three-region {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1250px) {
+  .three_six_three_stacked-region--first {
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_six_three_stacked-region--middle {
+    -sgs-span-settings: ("span": 6, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_six_three_stacked-region--second {
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_six_three_stacked.layout.scss
+ *
+ * Styling of the 3-6-3 stacked column layout..
+ ******************************************************************************/
+.panel-display--three_six_three_stacked {
+  *zoom: 1;
+}
+.panel-display--three_six_three_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_six_three_stacked-region {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1250px) {
+  .three_six_three_stacked-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_six_three_stacked-region--first {
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_six_three_stacked-region--middle {
+    -sgs-span-settings: ("span": 6, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin-left: 0;
+  }
+
+  .three_six_three_stacked-region--second {
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+
+  .three_six_three_stacked-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
   }
 }
