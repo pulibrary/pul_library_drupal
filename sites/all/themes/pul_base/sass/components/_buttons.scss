@@ -19,6 +19,10 @@
 	float: right;
 }
 
+.more-link a {
+	float: none;
+}
+
 .ui-widget-content .homepage-tab-form-message a {
 	font-family: $font-sans;
 	font-weight: bold;

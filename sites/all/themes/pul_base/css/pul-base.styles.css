@@ -302,6 +302,7 @@ body {
     margin-right: -100%;
     margin-left: 1.66667%;
     clear: none;
+    margin-left: 0;
   }
 }
 
@@ -321,6 +322,7 @@ body {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }
 
@@ -341,6 +343,7 @@ body {
     margin-right: -100%;
     margin-left: 1.66667%;
     clear: none;
+    margin-left: 0;
   }
 }
 
@@ -379,6 +382,7 @@ aside.l-region--sidebar-second {
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 }
 
@@ -402,6 +406,12 @@ aside.l-region--sidebar-second {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
   }
+}
+.l-region--footer nav:first-child {
+  margin-left: 0;
+}
+.l-region--footer .block--block-1 {
+  margin-right: 0;
 }
 
 .panel-col-first {
@@ -630,6 +640,10 @@ h6 {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   float: right;
+}
+
+.more-link a {
+  float: none;
 }
 
 .ui-widget-content .homepage-tab-form-message a {
@@ -961,7 +975,7 @@ footer address, footer #university-copyright-footer {
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Droid Serif", Georgia, Times, serif;
   height: 60px;
   width: 100%;
   z-index: 99;
@@ -1342,8 +1356,8 @@ footer address, footer #university-copyright-footer {
   clear: both;
 }
 .pul_base_four_four_four_stacked-region li h2 {
-  font-size: 16px;
-  font-size: 1.14286rem;
+  font-size: 18px;
+  font-size: 1.3rem;
   line-height: 24px;
   line-height: 1.71429rem;
   margin-top: 0px;
@@ -1355,7 +1369,7 @@ footer address, footer #university-copyright-footer {
   margin-bottom: 7px;
   margin-bottom: 0.51429rem;
 }
-.pul_base_four_four_four_stacked-region li + li {
+.pul_base_four_four_four_stacked-region > ul > li + li {
   border-top: 1px dotted #BFBFBF;
   margin-top: 10px;
   padding-bottom: 5px;
