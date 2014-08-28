@@ -2075,7 +2075,7 @@ h3 {
 }
 
 @media (min-width: 1250px) {
-  .three_six_three_stacked-region--first {
+  .three_six_three-region--first {
     -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 21.66667%;
     clear: right;
@@ -2085,7 +2085,7 @@ h3 {
     margin-left: 0;
   }
 
-  .three_six_three_stacked-region--middle {
+  .three_six_three-region--middle {
     -sgs-span-settings: ("span": 6, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 46.66667%;
     clear: right;
@@ -2095,7 +2095,7 @@ h3 {
     margin-left: 0;
   }
 
-  .three_six_three_stacked-region--second {
+  .three_six_three-region--second {
     -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 21.66667%;
     clear: right;

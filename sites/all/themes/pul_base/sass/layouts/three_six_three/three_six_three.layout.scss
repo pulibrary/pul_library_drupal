@@ -25,17 +25,17 @@ $desk : 1250px;
 
 @include breakpoint($desk) {
 
-  .three_six_three_stacked-region--first {
+  .three_six_three-region--first {
     @include grid-span(3,1);
     margin-left: 0;
   }
 
-  .three_six_three_stacked-region--middle {
+  .three_six_three-region--middle {
     @include grid-span(6,4);
     margin-left: 0;
   }
 
-   .three_six_three_stacked-region--second {
+   .three_six_three-region--second {
     @include grid-span(3,10);
     margin-right: 0;
   }
