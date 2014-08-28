@@ -1,15 +1,16 @@
 .front .block--menu-menu-get-help-menu {
 	margin: 1.5em 0;
 	padding-left: 0;
-	// background: darken($light-gray, 3);
+	background: darken($light-gray, 3);
 	@include border-radius(4px);
-
+	/*
 	h2 {
 		@include adjust-font-size-to(1em);
 		@include rhythm(0, 0.2, 0.3, 0, 1em);
 		font-family: $font-sans;
 		padding-left: 0.5em;
 	}
+	*/
 
 	.menu {
 		list-style: none;

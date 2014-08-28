@@ -1,70 +1,66 @@
 /*******************************************************************************
- * five_four_three_stacked.layout.scss
+ * three_six_three_stacked.layout.scss
  *
- * Styling of the "PUL" 5-4-3 stacked column layout..
+ * Styling of the 3-6-3 stacked column layout..
  ******************************************************************************/
-/*
-// Set consistent vertical and horizontal spacing units.
-$vert-spacing-unit: 20px;
-$horz-spacing-unit: 1em;
-
-// Set breakpoint values.
-$desk : 1250px;
-*/
-.panel-display--five_four_three_stacked {
+.panel-display--three_six_three_stacked {
   *zoom: 1;
 }
-.panel-display--five_four_three_stacked:after {
+.panel-display--three_six_three_stacked:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.five_four_three_stacked-region {
+.three_six_three_stacked-region {
   margin-bottom: 18px;
 }
 
 @media (min-width: 70em) {
-  .five_four_three_stacked-region--top {
+  .three_six_three_stacked-region--top {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-left: 0;
     clear: both;
   }
 
-  .five_four_three_stacked-region--first {
-    width: 39.65517%;
+  .three_six_three_stacked-region--first {
+    width: 22.41379%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
-    clear: both;
+    margin-left: 0;
   }
 
-  .five_four_three_stacked-region--second {
-    width: 31.03448%;
+  .three_six_three_stacked-region--middle {
+    width: 48.27586%;
     float: left;
     margin-right: -100%;
-    margin-left: 43.10345%;
+    margin-left: 25.86207%;
     clear: none;
+    margin-left: 0;
   }
 
-  .five_four_three_stacked-region--third {
+  .three_six_three_stacked-region--second {
     width: 22.41379%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-right: 0;
   }
 
-  .five_four_three_stacked-region--bottom {
+  .three_six_three_stacked-region--top {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-left: 0;
     clear: both;
   }
 }

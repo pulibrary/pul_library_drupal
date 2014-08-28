@@ -7,13 +7,7 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-
-// Set consistent vertical and horizontal spacing units.
-$vert-spacing-unit: 20px;
-$horz-spacing-unit: 1em;
-
-// Set breakpoint values.
-$desk : 1250px;
+@import "../../variables/grids";
 
 // Set Singularity grid variables.
 @include add-grid(1);
