@@ -3,6 +3,14 @@
  *
  * Styling of the "PUL" 5-4-3 stacked column layout..
  ******************************************************************************/
+/*
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 1em;
+
+// Set breakpoint values.
+$desk : 1250px;
+*/
 .panel-display--five_four_three_stacked {
   *zoom: 1;
 }
@@ -13,10 +21,10 @@
 }
 
 .five_four_three_stacked-region {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 70em) {
   .five_four_three_stacked-region--top {
     width: 100%;
     float: right;
@@ -27,7 +35,7 @@
   }
 
   .five_four_three_stacked-region--first {
-    width: 40.67797%;
+    width: 39.65517%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -36,15 +44,15 @@
   }
 
   .five_four_three_stacked-region--second {
-    width: 32.20339%;
+    width: 31.03448%;
     float: left;
     margin-right: -100%;
-    margin-left: 42.37288%;
+    margin-left: 43.10345%;
     clear: none;
   }
 
   .five_four_three_stacked-region--third {
-    width: 23.72881%;
+    width: 22.41379%;
     float: right;
     margin-left: 0;
     margin-right: 0;

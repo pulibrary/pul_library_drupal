@@ -13,10 +13,10 @@
 }
 
 .three_nine_stacked-region {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 70em) {
   .three_six_three_stacked-region--top {
     width: 100%;
     float: right;
@@ -24,10 +24,11 @@
     margin-right: 0;
     clear: none;
     margin-left: 0;
+    clear: both;
   }
 
   .three_nine_stacked-region--first {
-    width: 23.72881%;
+    width: 22.41379%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -36,7 +37,7 @@
   }
 
   .three_nine_stacked-region--second {
-    width: 74.57627%;
+    width: 74.13793%;
     float: right;
     margin-left: 0;
     margin-right: 0;
@@ -51,5 +52,6 @@
     margin-right: 0;
     clear: none;
     margin-left: 0;
+    clear: both;
   }
 }

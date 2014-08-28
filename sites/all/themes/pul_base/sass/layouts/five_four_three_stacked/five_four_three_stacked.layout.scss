@@ -8,13 +8,16 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
+@import "../../variables/grids";
 
+/*
 // Set consistent vertical and horizontal spacing units.
 $vert-spacing-unit: 20px;
 $horz-spacing-unit: 1em;
 
 // Set breakpoint values.
 $desk : 1250px;
+*/
 
 .panel-display--five_four_three_stacked {
   @include pie-clearfix;

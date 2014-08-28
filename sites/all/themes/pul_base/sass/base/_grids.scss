@@ -53,6 +53,7 @@ body {
 	}
 }
 
+/*
 #block-menu-menu-get-help-menu {
 	@include grid-span(12, $output-style: 'float'); 
 	@include breakpoint($desk) {
@@ -60,6 +61,7 @@ body {
 		margin-right: 0;
 	}
 }
+*/
 
 #block-views-library-news-block-1 {
 	@include grid-span(12);

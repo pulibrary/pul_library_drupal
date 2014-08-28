@@ -7,13 +7,7 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-
-// Set consistent vertical and horizontal spacing units.
-$vert-spacing-unit: 20px;
-$horz-spacing-unit: 1em;
-
-// Set breakpoint values.
-$desk : 1250px;
+@import "../../variables/grids";
 
 .panel-display--three_six_three {
   @include pie-clearfix;
@@ -28,6 +22,7 @@ $desk : 1250px;
   .three_six_three-region--first {
     @include grid-span(3,1);
     margin-left: 0;
+    clear: both;
   }
 
   .three_six_three-region--middle {

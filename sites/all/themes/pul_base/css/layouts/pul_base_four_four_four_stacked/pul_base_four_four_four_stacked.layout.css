@@ -13,10 +13,10 @@
 }
 
 .pul_base_four_four_four_stacked-region {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 70em) {
   .pul_base_four_four_four_stacked-region--top {
     width: 100%;
     float: right;
@@ -30,7 +30,7 @@
   }
 
   .pul_base_four_four_four_stacked-region--first {
-    width: 32.20339%;
+    width: 31.03448%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
@@ -40,18 +40,18 @@
   }
 
   .pul_base_four_four_four_stacked-region--second {
-    width: 32.20339%;
+    width: 31.03448%;
     float: left;
     margin-right: -100%;
-    margin-left: 33.89831%;
+    margin-left: 34.48276%;
     clear: none;
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    width: 32.20339%;
+    width: 31.03448%;
     float: left;
     margin-right: -100%;
-    margin-left: 59.32203%;
+    margin-left: 60.34483%;
     clear: none;
     margin-right: 0;
   }

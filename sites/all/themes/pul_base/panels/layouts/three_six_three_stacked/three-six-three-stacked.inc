@@ -7,7 +7,7 @@
 
 // Plugin definition.
 $plugin = array(
-  'title' => t('Three Nine'),
+  'title' => t('Three Six Three Stacked'),
   'icon' => 'twocol.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'three_six_three_stacked',
