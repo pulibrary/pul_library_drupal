@@ -5,7 +5,7 @@ function summon_block_form($form, &$form_state) {
     
   $form = array();
   $path = $_GET['q'];
-  if($path == "node/1") { // should keyed off <front>
+  if(drupal_is_front_page()) { // should keyed off <front>
     $form_suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'E-Journal A to Z\', \'Articles+ Tab\']);" href="http://sfx.princeton.edu:9003/sfx_pul/az">E-Journals</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Advanced Search\', \'Articles+ Tab\']);" href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
