@@ -32,3 +32,11 @@
         // margin-right: .5em;
     }
 }
+
+.format-type, .summon-format-type, .all-format-type {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        margin-right: 0.5em;
+    }
+}

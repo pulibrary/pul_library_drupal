@@ -950,6 +950,14 @@ footer address, footer #university-copyright-footer {
   margin-left: 0;
 }
 
+.format-type [class^="icon-"],
+.format-type [class*=" icon-"], .summon-format-type [class^="icon-"],
+.summon-format-type [class*=" icon-"], .all-format-type [class^="icon-"],
+.all-format-type [class*=" icon-"] {
+  margin-left: 0;
+  margin-right: 0.5em;
+}
+
 .l-header {
   overflow: visible;
 }
@@ -1310,18 +1318,26 @@ footer address, footer #university-copyright-footer {
   background: #f5f4f1;
 }
 .all-search-results-list li {
-  padding: 0.5em;
+  padding: 0.7em;
   font-size: 12px;
   font-size: 0.85714rem;
   line-height: 24px;
   line-height: 1.71429rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 2px;
+  padding-top: 0.17143rem;
+  padding-bottom: 2px;
+  padding-bottom: 0.17143rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
 }
 .all-search-results-list li.active {
   background: none;
 }
 .all-search-results-list h3 {
-  font-size: 16px;
-  font-size: 1.14286rem;
+  font-size: 14px;
+  font-size: 1rem;
   line-height: 24px;
   line-height: 1.71429rem;
   margin-top: 0px;
@@ -1330,8 +1346,8 @@ footer address, footer #university-copyright-footer {
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 7px;
-  margin-bottom: 0.51429rem;
+  margin-bottom: 2px;
+  margin-bottom: 0.17143rem;
 }
 
 .pul_base_four_four_four_stacked-region li {
@@ -1353,9 +1369,8 @@ footer address, footer #university-copyright-footer {
 }
 .pul_base_four_four_four_stacked-region > ul > li + li {
   border-top: 1px dotted #BFBFBF;
-  margin-top: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  margin-top: 1.5em;
+  padding-top: 1em;
 }
 
 .block--quicktabs {
