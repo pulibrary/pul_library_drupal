@@ -68,11 +68,19 @@
 		box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 3px rgba($orange, 0.7);
 		outline: none;
 	}
+	.block__content {
+		overflow: auto;
+	}
+	.form-item-query {
+		overflow: auto;
+		display: inline;
+	}
 	input[type="text"] {
 		float: left;
 		width: 85%;
 		height: 45px;
 		padding: 5px 0 5px 10px;
+		margin: 0.8em 0;
 		display: block;
 		border: 1px solid #737373;
 		font-family: $font-sans;
@@ -83,7 +91,7 @@
 		height: 45px;
 		width: 115px;
 		padding: 0;
-		margin-left: -7px;
+		margin: 0.8em 0 0 -7px;
 		clear: none;
 		float: left;
 		border: 1px solid #737373;
@@ -94,7 +102,7 @@
 		@include border-bottom-left-radius(0);
 	}
 
-	.homepage-tab-form-message {
-		clear: both;
-	}
+// 	.homepage-tab-form-message {
+// 		clear: both;
+// 	}
 }

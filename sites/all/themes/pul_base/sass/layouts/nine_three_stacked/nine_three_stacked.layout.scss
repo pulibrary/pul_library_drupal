@@ -22,11 +22,13 @@
   .three_six_three_stacked-region--top {
     @include grid-span(12,1);
     margin-left: 0;
+    clear: both;
   }
 
   .nine_three_stacked-region--first {
     @include grid-span(9,1);
     margin-left: 0;
+    clear: both;
   }
    .nine_three_stacked-region--second {
     @include grid-span(3,10);
@@ -36,6 +38,7 @@
   .three_six_three_stacked-region--bottom {
     @include grid-span(12,1);
     margin-left: 0;
+    clear: both;
   }
 
 }
