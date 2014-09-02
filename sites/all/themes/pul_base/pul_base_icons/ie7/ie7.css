@@ -16,8 +16,17 @@
 .icon-location {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe618;');
 }
+.icon-warning-sign {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe610;');
+}
 .icon-tag {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf02b;');
+}
+.icon-plus-sign-alt {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf055;');
+}
+.icon-minus-sign-alt {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf056;');
 }
 .icon-caret-left {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0d9;');
