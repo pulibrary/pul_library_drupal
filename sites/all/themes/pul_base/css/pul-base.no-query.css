@@ -959,16 +959,18 @@ footer address, footer #university-copyright-footer {
 .all-format-type [class*=" icon-"], .section-research [class^="icon-"],
 .section-research [class*=" icon-"], .pul_base_nine_three-region--second [class^="icon-"],
 .pul_base_nine_three-region--second [class*=" icon-"], .views-libraries.contextual-links-region [class^="icon-"],
-.views-libraries.contextual-links-region [class*=" icon-"] {
+.views-libraries.contextual-links-region [class*=" icon-"], .view-search-libraries-and-collections [class^="icon-"],
+.view-search-libraries-and-collections [class*=" icon-"] {
   margin-left: 0;
   margin-right: 0.5em;
 }
-.format-type .icon-warning-sign, .summon-format-type .icon-warning-sign, .all-format-type .icon-warning-sign, .section-research .icon-warning-sign, .pul_base_nine_three-region--second .icon-warning-sign, .views-libraries.contextual-links-region .icon-warning-sign {
+.format-type .icon-warning-sign, .summon-format-type .icon-warning-sign, .all-format-type .icon-warning-sign, .section-research .icon-warning-sign, .pul_base_nine_three-region--second .icon-warning-sign, .views-libraries.contextual-links-region .icon-warning-sign, .view-search-libraries-and-collections .icon-warning-sign {
   color: #e87511;
 }
 
 .page-staff-directory [class^="icon-"],
-.page-staff-directory [class*=" icon-"] {
+.page-staff-directory [class*=" icon-"], .pane-views-panes h2 [class^="icon-"],
+.pane-views-panes h2 [class*=" icon-"] {
   margin-left: 0;
   margin-right: .35em;
 }
@@ -1327,17 +1329,17 @@ footer address, footer #university-copyright-footer {
   cursor: not-allowed;
 }
 
-.all-search-results-list {
+.all-search-results-list, .view-search-libraries-and-collections, .view-databases-keyword-search, .view-general-site-keyword-search, .view-general-site-user-search {
   margin-bottom: 1em;
 }
-.all-search-results-list li.even {
+.all-search-results-list li.even, .view-search-libraries-and-collections li.even, .view-databases-keyword-search li.even, .view-general-site-keyword-search li.even, .view-general-site-user-search li.even {
   background: none;
   border-top: 1px solid #ddd;
 }
-.all-search-results-list li.odd {
+.all-search-results-list li.odd, .view-search-libraries-and-collections li.odd, .view-databases-keyword-search li.odd, .view-general-site-keyword-search li.odd, .view-general-site-user-search li.odd {
   background: #f5f4f1;
 }
-.all-search-results-list li {
+.all-search-results-list li, .view-search-libraries-and-collections li, .view-databases-keyword-search li, .view-general-site-keyword-search li, .view-general-site-user-search li {
   padding: 0.7em;
   font-size: 12px;
   font-size: 0.85714rem;
@@ -1352,10 +1354,10 @@ footer address, footer #university-copyright-footer {
   margin-bottom: 0px;
   margin-bottom: 0rem;
 }
-.all-search-results-list li.active {
+.all-search-results-list li.active, .view-search-libraries-and-collections li.active, .view-databases-keyword-search li.active, .view-general-site-keyword-search li.active, .view-general-site-user-search li.active {
   background: none;
 }
-.all-search-results-list h3 {
+.all-search-results-list h3, .view-search-libraries-and-collections h3, .view-databases-keyword-search h3, .view-general-site-keyword-search h3, .view-general-site-user-search h3 {
   font-size: 14px;
   font-size: 1rem;
   line-height: 24px;
