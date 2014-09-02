@@ -696,7 +696,7 @@ h6 {
   border-left: none;
   border-bottom: 1px solid #999;
   border: 1px solid black;
-  background-color: #F58026;
+  background-color: #e87511;
   margin-bottom: 0;
   height: auto;
 }
@@ -717,8 +717,7 @@ h6 {
 }
 .view-library-hours .view-header .date-nav-wrapper .date-prev, .view-library-hours .view-header .date-nav-wrapper .date-next {
   margin-top: 3px;
-  border: 1px solid #333333;
-  background: #b8601e;
+  background: none;
   padding: 0px 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -731,21 +730,21 @@ h6 {
   float: left;
   position: relative;
   right: 0;
-  text-align: right;
+  text-align: center;
   padding: 0px;
   width: 30px;
-  height: 20px;
-  margin-left: 20px;
+  height: 25px;
+  left: 20px;
   top: -20px;
 }
 .view-library-hours .view-header .date-nav-wrapper .date-next {
   float: right;
   position: relative;
   right: 20px;
-  text-align: left;
+  text-align: center;
   padding: 0px;
   width: 30px;
-  height: 20px;
+  height: 25px;
   top: -20px;
 }
 
@@ -762,12 +761,33 @@ h6 {
   background: none;
 }
 
-.field--name-field-news-featured-graphic {
-  width: 40%;
-  float: left;
+.library-hours .date-nav-wrapper .date-next i {
+  margin-left: 0;
+}
+
+.library-hours .date-nav-wrapper .date-prev a, .library-hours .date-nav-wrapper .date-next a {
+  font-size: 18px;
+  padding: 0 0 0 0;
+  margin: -2px 0 0 0;
+  line-height: 90%;
   display: inline-block;
-  clear: both;
-  padding: 0 1em 1em 0;
+  width: 100%;
+  text-align: center;
+}
+
+.library-hours .date-nav-wrapper .date-next, .library-hours .date-nav-wrapper .date-prev {
+  margin-top: 3px;
+  padding: 0px 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.library-hours .date-nav-wrapper .date-prev i {
+  margin-left: -5px;
 }
 
 .view-library-news h3 {
@@ -785,6 +805,21 @@ h6 {
 
 .view-library-news .views-row, .view-library-news .view-footer {
   clear: both;
+}
+
+.front .field--name-field-news-featured-graphic {
+  width: 160px;
+  max-height: 100px;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 1em 1em 0;
+  float: left;
+  clear: both;
+}
+.front .field--name-field-news-featured-graphic img {
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
 }
 
 footer {
@@ -834,6 +869,10 @@ footer address, footer #university-copyright-footer {
   color: #494f57;
 }
 
+.view-clone-of-glossary .views-row {
+  margin-bottom: 1em;
+}
+
 .front .wrapper--highlighted {
   background-color: #8e96a0;
   padding: 1em 0;
@@ -861,15 +900,15 @@ footer address, footer #university-copyright-footer {
   clear: both;
 }
 
-.front .pane-menu-menu-get-help-menu .menu {
+.pane-menu-menu-get-help-menu .menu {
   list-style: none;
 }
-.front .pane-menu-menu-get-help-menu .menu .leaf {
+.pane-menu-menu-get-help-menu .menu .leaf {
   list-style: none;
   margin-bottom: 5px;
   display: block;
 }
-.front .pane-menu-menu-get-help-menu .menu .leaf [class^="icon-"], .front .pane-menu-menu-get-help-menu .menu .leaf [class*=" icon-"] {
+.pane-menu-menu-get-help-menu .menu .leaf [class^="icon-"], .pane-menu-menu-get-help-menu .menu .leaf [class*=" icon-"] {
   margin-left: 0;
 }
 
@@ -923,6 +962,26 @@ footer address, footer #university-copyright-footer {
 .all-format-type [class*=" icon-"] {
   margin-left: 0;
   margin-right: 0.5em;
+}
+
+.section-research [class^="icon-"],
+.section-research [class*=" icon-"] {
+  margin-left: 0;
+  margin-right: .5em;
+}
+.section-research .icon-warning-sign {
+  color: #e87511;
+}
+
+.page-staff-directory [class^="icon-"],
+.page-staff-directory [class*=" icon-"] {
+  margin-left: 0;
+  margin-right: .35em;
+}
+
+.views-field-created {
+  color: #999;
+  font-style: italic;
 }
 
 .l-header {
@@ -1093,7 +1152,7 @@ footer address, footer #university-copyright-footer {
 }
 @media (min-width: 70em) {
   .wrapper--navigation li > ul.menu .menu {
-    left: 13.8em;
+    left: 14.8em;
     top: 0;
   }
 }
@@ -1126,7 +1185,7 @@ footer address, footer #university-copyright-footer {
     background-color: #f5f4f1;
     padding-left: 1em;
     text-align: left;
-    width: 14em;
+    width: 15em;
   }
 }
 .wrapper--navigation li > ul.menu li a:hover {
@@ -1497,6 +1556,11 @@ footer address, footer #university-copyright-footer {
   float: right;
 }
 
+.user-picture img {
+  float: left;
+  margin: 0 .75em .167em 0;
+}
+
 .views-table th {
   background: #494f57;
   color: white;
@@ -1588,6 +1652,21 @@ h3 {
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pul_base_nine_three-region--second h2 {
+  font-size: 18px;
+  font-size: 1.3rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 18px;
+  margin-top: 1.28571rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
 }
 
 /*******************************************************************************

@@ -40,3 +40,23 @@
         margin-right: 0.5em;
     }
 }
+
+.section-research {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        margin-right: .5em;
+    }
+
+    .icon-warning-sign {
+        color: $orange;
+    }
+}
+
+.page-staff-directory {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        margin-right: .35em;
+    }
+}
