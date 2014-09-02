@@ -939,7 +939,7 @@ footer address, footer #university-copyright-footer {
 
 [class^="icon-"],
 [class*=" icon-"] {
-  margin-left: 1.5em;
+  margin-left: 0;
 }
 
 .library-info a {
@@ -960,11 +960,12 @@ footer address, footer #university-copyright-footer {
 .section-research [class*=" icon-"], .pul_base_nine_three-region--second [class^="icon-"],
 .pul_base_nine_three-region--second [class*=" icon-"], .views-libraries.contextual-links-region [class^="icon-"],
 .views-libraries.contextual-links-region [class*=" icon-"], .view-search-libraries-and-collections [class^="icon-"],
-.view-search-libraries-and-collections [class*=" icon-"] {
+.view-search-libraries-and-collections [class*=" icon-"], .view-general-site-user-search [class^="icon-"],
+.view-general-site-user-search [class*=" icon-"] {
   margin-left: 0;
   margin-right: 0.5em;
 }
-.format-type .icon-warning-sign, .summon-format-type .icon-warning-sign, .all-format-type .icon-warning-sign, .section-research .icon-warning-sign, .pul_base_nine_three-region--second .icon-warning-sign, .views-libraries.contextual-links-region .icon-warning-sign, .view-search-libraries-and-collections .icon-warning-sign {
+.format-type .icon-warning-sign, .summon-format-type .icon-warning-sign, .all-format-type .icon-warning-sign, .section-research .icon-warning-sign, .pul_base_nine_three-region--second .icon-warning-sign, .views-libraries.contextual-links-region .icon-warning-sign, .view-search-libraries-and-collections .icon-warning-sign, .view-general-site-user-search .icon-warning-sign {
   color: #e87511;
 }
 
