@@ -1,42 +1,36 @@
 [class^="icon-"], 
 [class*=" icon-"] {
-    margin-left: 1.5em;
+    margin-left: 0;
 }
 
 .library-info a {
     text-decoration: underline;
 }
 
-.views-libraries.contextual-links-region {
+.view .date-nav-wrapper .date-next, .view .date-nav-wrapper .date-prev {
     [class^="icon-"], 
     [class*=" icon-"] {
         margin-left: 0;
-        margin-right: .5em;
-    }
-}
-
-.view .date-nav-wrapper .date-next {
-    [class^="icon-"], 
-    [class*=" icon-"] {
-        margin-left: 0;
-        // margin-right: .5em;
         font-size: 2em;
     }
 }
 
-.view .date-nav-wrapper .date-prev {
-    [class^="icon-"], 
-    [class*=" icon-"] {
-        font-size: 2em;
-        margin-left: 0;
-        // margin-right: .5em;
-    }
-}
-
-.format-type, .summon-format-type, .all-format-type {
+.format-type, .summon-format-type, .all-format-type, .section-research, .pul_base_nine_three-region--second, .views-libraries.contextual-links-region, .view-search-libraries-and-collections, .view-general-site-user-search {
     [class^="icon-"], 
     [class*=" icon-"] {
         margin-left: 0;
         margin-right: 0.5em;
+    }
+
+    .icon-warning-sign {
+        color: $orange;
+    }
+}
+
+.page-staff-directory, .pane-views-panes h2 {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 0;
+        margin-right: .35em;
     }
 }

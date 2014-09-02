@@ -1,4 +1,8 @@
 .library-hours {
+	// table {
+	// 	margin: 0;
+	// }
+
 	tr.even {
 		background: none;
 		border-top: 1px solid #ddd;
@@ -15,4 +19,13 @@
 	td.views-field-field-open-hours {
 		text-align: right;
 	}
+
+	// tr > td:first-child {
+	// 	width: 70%;
+	// }
+
+	// .library-hours-status {
+	// 	width: 40px;
+	// }
 }
+

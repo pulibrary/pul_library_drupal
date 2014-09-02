@@ -8,3 +8,8 @@ h3 {
     @include rhythm(0.75, 0, 0, 0.5, 1.1em);
     font-family: $font-sans;
 }
+
+.pul_base_nine_three-region--second h2 {
+    @include adjust-font-size-to(1.3em);
+    @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+}
