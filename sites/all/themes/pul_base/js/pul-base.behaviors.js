@@ -67,21 +67,23 @@
       // processed previously. By using .once('foo') all processed elements will
       // get tagged with a 'foo-processed' class, causing all future invocations
       // of This behavior to ignore them.
-      console.log(context);
-      console.log(settings);
-      $('#block-system-main-menu').click(function () {
+      //console.log(context);
+      //console.log(settings);
+      $('.centered-navigation-menu', context).once('pul', function () {
         var menu = $('.centered-navigation-menu');
+          //var inner_menu = $('.centered-navigation-menu');
         var menuToggle = $('.centered-navigation-menu-button');
-
-        $(menuToggle).on('click', function (e) {
+        console.log(menu);
+        console.log(menuToggle.text());
+        $(menuToggle).click(function (e) {
           e.preventDefault();
           menu.slideToggle(function () {
             if (menu.is(':hidden')) {
+              console.log(settings);
               menu.removeAttr('style');
             }
           });
         });
-
       });
       // Example Usage
       // $('#block-system-main-menu', context).once('pul', function () {
