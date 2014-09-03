@@ -19,7 +19,7 @@
 
 @include breakpoint($desk) {
 
-  .three_six_three_stacked-region--top {
+  .three_nine_stacked-region--top {
     @include grid-span(12,1);
     margin-left: 0;
     clear:both;
@@ -35,7 +35,7 @@
     margin-right: 0;
   }
 
-  .three_six_three_stacked-region--bottom {
+  .three_nine_stacked-region--bottom {
     @include grid-span(12,1);
     margin-left: 0;
     clear:both;

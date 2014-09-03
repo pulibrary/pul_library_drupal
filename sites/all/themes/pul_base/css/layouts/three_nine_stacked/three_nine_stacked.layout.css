@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 70em) {
-  .three_six_three_stacked-region--top {
+  .three_nine_stacked-region--top {
     width: 100%;
     float: right;
     margin-left: 0;
@@ -46,7 +46,7 @@
     margin-right: 0;
   }
 
-  .three_six_three_stacked-region--bottom {
+  .three_nine_stacked-region--bottom {
     width: 100%;
     float: right;
     margin-left: 0;

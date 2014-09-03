@@ -942,6 +942,11 @@ footer address, footer #university-copyright-footer {
   margin-left: 0;
 }
 
+.libraries-page [class^="icon-"],
+.libraries-page [class*=" icon-"] {
+  margin-left: 1em;
+}
+
 .library-info a {
   text-decoration: underline;
 }
@@ -974,6 +979,10 @@ footer address, footer #university-copyright-footer {
 .pane-views-panes h2 [class*=" icon-"] {
   margin-left: 0;
   margin-right: .35em;
+}
+
+.pul_base_nine_three-region--second ul {
+  list-style-type: none;
 }
 
 .views-field-created {
@@ -1587,9 +1596,6 @@ footer address, footer #university-copyright-footer {
 .views-table td.active {
   background: none;
 }
-.views-table .databases-find-description p, .views-table .databases-find-description span {
-  display: none;
-}
 .views-table .find-databases-show-desc {
   float: right;
 }
@@ -1631,8 +1637,11 @@ h2 {
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 18px;
-  margin-bottom: 1.28571rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+}
+h2 a {
+  color: #7f3d00;
 }
 
 h3 {
@@ -1897,14 +1906,13 @@ $desk : 1250px;
 }
 
 @media (min-width: 70em) {
-  .three_six_three_stacked-region--top {
+  .nine_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-left: 0;
     clear: both;
   }
 
@@ -1915,7 +1923,6 @@ $desk : 1250px;
     float: left;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
-    margin-left: 0;
     clear: both;
   }
 
@@ -1926,17 +1933,15 @@ $desk : 1250px;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-right: 0;
   }
 
-  .three_six_three_stacked-region--bottom {
+  .nine_three_stacked-region--bottom {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-left: 0;
     clear: both;
   }
 }
@@ -1969,7 +1974,6 @@ $desk : 1250px;
     clear: both;
     margin-left: 0;
     margin-right: 0;
-    float: left;
   }
 
   .pul_base_four_four_four_stacked-region--first {
@@ -1993,11 +1997,11 @@ $desk : 1250px;
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    -sgs-span-settings: ("span": 4, "location": 8, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 30%;
     clear: right;
-    float: left;
-    margin-left: 1.66667%;
+    float: right;
+    margin-left: 0;
     margin-right: 1.66667%;
     margin-right: 0;
   }
@@ -2139,7 +2143,7 @@ $desk : 1250px;
 }
 
 @media (min-width: 70em) {
-  .three_six_three_stacked-region--top {
+  .three_nine_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
     clear: right;
@@ -2171,7 +2175,7 @@ $desk : 1250px;
     margin-right: 0;
   }
 
-  .three_six_three_stacked-region--bottom {
+  .three_nine_stacked-region--bottom {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
     clear: right;
@@ -2257,7 +2261,6 @@ $desk : 1250px;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-left: 0;
     clear: both;
   }
 
@@ -2268,7 +2271,7 @@ $desk : 1250px;
     float: left;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
-    margin-left: 0;
+    clear: both;
   }
 
   .three_six_three_stacked-region--middle {
@@ -2287,17 +2290,15 @@ $desk : 1250px;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-right: 0;
   }
 
-  .three_six_three_stacked-region--top {
+  .three_six_three_stacked-region--bottom {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
-    margin-left: 0;
     clear: both;
   }
 }

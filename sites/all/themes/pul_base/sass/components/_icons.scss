@@ -3,6 +3,12 @@
     margin-left: 0;
 }
 
+.libraries-page {
+    [class^="icon-"], 
+    [class*=" icon-"] {
+        margin-left: 1em;
+    }
+}
 .library-info a {
     text-decoration: underline;
 }
