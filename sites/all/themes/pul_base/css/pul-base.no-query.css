@@ -981,6 +981,19 @@ footer address, footer #university-copyright-footer {
   margin-right: .35em;
 }
 
+.three_six_three-region--first .expanded.active-trail {
+  background: #477dca;
+}
+.three_six_three-region--first .expanded.active-trail a {
+  color: white;
+}
+.three_six_three-region--first .expanded.active-trail .menu {
+  background: #e5edf8;
+}
+.three_six_three-region--first .expanded.active-trail .menu a {
+  color: #477dca;
+}
+
 .pul_base_nine_three-region--second ul {
   list-style-type: none;
 }

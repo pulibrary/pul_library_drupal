@@ -69,20 +69,20 @@
       // of This behavior to ignore them.
       console.log(context);
       console.log(settings);
-      $('#block-system-main-menu').click(function () {
-        var menu = $('.centered-navigation-menu');
-        var menuToggle = $('.centered-navigation-menu-button');
+      // $('.wrapper--navigation').click(function () {
+      var menu = $('.centered-navigation-menu');
+      var menuToggle = $('.centered-navigation-menu-button');
 
-        $(menuToggle).on('click', function (e) {
-          e.preventDefault();
-          menu.slideToggle(function () {
-            if (menu.is(':hidden')) {
-              menu.removeAttr('style');
-            }
-          });
+      $(menuToggle).on('click', function (e) {
+        e.preventDefault();
+        menu.slideToggle(function () {
+          if (menu.is(':hidden')) {
+            menu.removeAttr('style');
+          }
         });
-
       });
+
+      // });
       // Example Usage
       // $('#block-system-main-menu', context).once('pul', function () {
       //   // Now, we are invoking the previously declared theme function using two
