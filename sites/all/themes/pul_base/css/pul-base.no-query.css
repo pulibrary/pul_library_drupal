@@ -976,6 +976,10 @@ footer address, footer #university-copyright-footer {
   margin-right: .35em;
 }
 
+.menu {
+  list-style-type: none;
+}
+
 .views-field-created {
   color: #999;
   font-style: italic;
@@ -1586,9 +1590,6 @@ footer address, footer #university-copyright-footer {
 }
 .views-table td.active {
   background: none;
-}
-.views-table .databases-find-description p, .views-table .databases-find-description span {
-  display: none;
 }
 .views-table .find-databases-show-desc {
   float: right;
