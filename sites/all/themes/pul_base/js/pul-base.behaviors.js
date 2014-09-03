@@ -60,7 +60,7 @@
 
 
   Drupal.behaviors.pulMainMenuBehavior = {
-    attach: function (context, settings) {
+    attach: function (context) {
       // By using the 'context' variable we make sure that our code only runs on
       // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
       // we don't run the same piece of code for an HTML snippet that we already
@@ -71,15 +71,11 @@
       //console.log(settings);
       $('.centered-navigation-menu', context).once('pul', function () {
         var menu = $('.centered-navigation-menu');
-          //var inner_menu = $('.centered-navigation-menu');
         var menuToggle = $('.centered-navigation-menu-button');
-        console.log(menu);
-        console.log(menuToggle.text());
         $(menuToggle).click(function (e) {
           e.preventDefault();
           menu.slideToggle(function () {
             if (menu.is(':hidden')) {
-              console.log(settings);
               menu.removeAttr('style');
             }
           });
