@@ -942,6 +942,11 @@ footer address, footer #university-copyright-footer {
   margin-left: 0;
 }
 
+.libraries-page [class^="icon-"],
+.libraries-page [class*=" icon-"] {
+  margin-left: 1em;
+}
+
 .library-info a {
   text-decoration: underline;
 }
@@ -976,7 +981,7 @@ footer address, footer #university-copyright-footer {
   margin-right: .35em;
 }
 
-.menu {
+.pul_base_nine_three-region--second ul {
   list-style-type: none;
 }
 
@@ -1632,8 +1637,11 @@ h2 {
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 18px;
-  margin-bottom: 1.28571rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+}
+h2 a {
+  color: #7f3d00;
 }
 
 h3 {
