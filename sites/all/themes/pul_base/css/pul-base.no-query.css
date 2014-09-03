@@ -903,6 +903,10 @@ footer address, footer #university-copyright-footer {
   margin-bottom: 1em;
 }
 
+.summary-count {
+  display: none;
+}
+
 .front .wrapper--highlighted {
   background-color: #8e96a0;
   padding: 1em 0;
