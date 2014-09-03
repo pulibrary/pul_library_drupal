@@ -21,13 +21,12 @@
 
   .three_six_three_stacked-region--top {
     @include grid-span(12,1);
-    margin-left: 0;
     clear: both;
   }
 
   .three_six_three_stacked-region--first {
     @include grid-span(3,1);
-    margin-left: 0;
+    clear: both;
   }
 
   .three_six_three_stacked-region--middle {
@@ -36,12 +35,10 @@
 
    .three_six_three_stacked-region--second {
     @include grid-span(3,10);
-    margin-right: 0;
   }
 
-  .three_six_three_stacked-region--top {
+  .three_six_three_stacked-region--bottom {
     @include grid-span(12,1);
-    margin-left: 0;
     clear: both;
   }
 

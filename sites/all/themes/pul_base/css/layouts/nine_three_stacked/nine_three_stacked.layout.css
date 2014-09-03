@@ -17,13 +17,12 @@
 }
 
 @media (min-width: 70em) {
-  .three_six_three_stacked-region--top {
+  .nine_three_stacked-region--top {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-left: 0;
     clear: both;
   }
 
@@ -33,7 +32,6 @@
     margin-right: -100%;
     margin-left: 0;
     clear: none;
-    margin-left: 0;
     clear: both;
   }
 
@@ -43,16 +41,14 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-right: 0;
   }
 
-  .three_six_three_stacked-region--bottom {
+  .nine_three_stacked-region--bottom {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-left: 0;
     clear: both;
   }
 }

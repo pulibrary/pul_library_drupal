@@ -23,7 +23,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-left: 0;
     clear: both;
   }
 
@@ -33,7 +32,7 @@
     margin-right: -100%;
     margin-left: 0;
     clear: none;
-    margin-left: 0;
+    clear: both;
   }
 
   .three_six_three_stacked-region--middle {
@@ -50,16 +49,14 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-right: 0;
   }
 
-  .three_six_three_stacked-region--top {
+  .three_six_three_stacked-region--bottom {
     width: 100%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-left: 0;
     clear: both;
   }
 }

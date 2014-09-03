@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for the Landing Page layout.
+ * Template for the Three Six Three Stacked layout.
  *
  * Variables:
  * - $css_id: An optional CSS id to use for the layout.
