@@ -1,0 +1,129 @@
+name = PUL Base
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/pul-base.normalize.css
+stylesheets[all][] = css/pul-base.hacks.css
+stylesheets[all][] = css/pul-base.styles.css
+stylesheets[all][] = css/pul-base.no-query.css
+stylesheets[all][] = pul_base_icons/style.css
+stylesheets[all][] = pul_base_icons/ie7/ie7.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/pul-base.behaviors.js
+scripts[] = pul_base_icons/ie7/ie7.js
+
+; ========================================
+; Plugins
+; ========================================
+plugins[panels][layouts] = panels/layouts
+
+; ========================================
+; Regions
+; ========================================
+regions[branding] = Branding
+regions[header] = Header
+regions[navigation] = Navigation
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[footer] = Footer
+
+; ========================================
+; Settings
+; ========================================
+settings[toggle_logo] = 1
+settings[toggle_name] = 0
+settings[toggle_slogan] = 0
+settings[toggle_node_user_picture] = 0
+settings[toggle_comment_user_picture] = 0
+settings[toggle_comment_user_verification] = 0
+settings[toggle_favicon] = 0
+settings[toggle_main_menu] = 0
+settings[toggle_secondary_menu] = 0
+settings[omega_toggle_front_page_content] = 1
+settings[default_logo] = 0
+settings[logo_path] = public://pul-logo-oneline-300-black.jpg
+settings[logo_upload] = ""
+settings[default_favicon] = 0
+settings[favicon_path] = public://libicon.ico
+settings[favicon_upload] = ""
+settings[omega_enable_warning] = 1
+settings[omega_toggle_extension_layouts] = 0
+settings[omega_layout] = divine
+settings[omega_toggle_extension_development] = 1
+settings[omega_rebuild_theme_registry] = 1
+settings[omega_rebuild_aggregates] = 0
+settings[omega_browser_width_indicator] = 1
+settings[omega_livereload] = 1
+settings[omega_livereload_script] = http://localhost:35729/livereload.js
+settings[omega_livereload_host] = localhost
+settings[omega_livereload_port] = 35729
+settings[omega_demo_regions] = 1
+settings[omega_demo_regions_list][branding] = branding
+settings[omega_demo_regions_list][navigation] = navigation
+settings[omega_demo_regions_list][highlighted] = highlighted
+settings[omega_demo_regions_list][content] = content
+settings[omega_demo_regions_list][footer] = footer
+settings[omega_demo_regions_list][header] = 0
+settings[omega_demo_regions_list][help] = 0
+settings[omega_demo_regions_list][sidebar_first] = 0
+settings[omega_demo_regions_list][sidebar_second] = 0
+settings[omega_toggle_extension_compatibility] = 1
+settings[omega_conditional_classes_html] = 1
+settings[omega_apple_touch] = 1
+settings[omega_cleartype] = 1
+settings[omega_handheld_friendly] = 1
+settings[omega_mobile_optimized] = 1
+settings[omega_viewport] = 1
+settings[omega_viewport_user_scaleable] = 1
+settings[omega_chrome_edge] = 1
+settings[omega_chrome_popup] = 0
+settings[omega_chrome_notice] = 0
+settings[omega_toggle_extension_assets] = 1
+settings[omega_css_exclude][] = omega/omega/css/modules/system/system.theme.css
+settings[omega_css_exclude][] = panels/plugins/layouts/twocol/twocol.css
+settings[omega_libraries][selectivizr][status] = 1
+settings[omega_libraries][respond][status] = 1
+settings[omega_libraries][pie][status] = 1
+settings[omega_libraries][html5shiv][status] = 1
+settings[nice_menus_custom_css] = ""
+settings[favicon_mimetype] = image/vnd.microsoft.icon
+
+; ========================================
+; Google Fonts
+; ========================================
+fonts[google_fonts_api][] = "Arvo&subset=latin#700"
+fonts[google_fonts_api][] = "Arvo&subset=latin#700italic"
+fonts[google_fonts_api][] = "Arvo&subset=latin#italic"
+fonts[google_fonts_api][] = "Arvo&subset=latin#regular"
+fonts[google_fonts_api][] = "Droid Serif&subset=latin#700"
+fonts[google_fonts_api][] = "Droid Serif&subset=latin#700italic"
+fonts[google_fonts_api][] = "Droid Serif&subset=latin#italic"
+fonts[google_fonts_api][] = "Droid Serif&subset=latin#regular"
+fonts[google_fonts_api][] = "PT Sans&subset=latin#700"
+fonts[google_fonts_api][] = "PT Sans&subset=latin#700italic"
+fonts[google_fonts_api][] = "PT Sans Caption&subset=latin#700"
+fonts[google_fonts_api][] = "PT Sans Caption&subset=latin#regular"
+fonts[google_fonts_api][] = "PT Sans&subset=latin#italic"
+fonts[google_fonts_api][] = "PT Sans Narrow&subset=latin#700"
+fonts[google_fonts_api][] = "PT Sans Narrow&subset=latin#regular"
+fonts[google_fonts_api][] = "PT Sans&subset=latin#regular"
+fonts[google_fonts_api][] = "Roboto Condensed&subset=latin#italic"
+fonts[google_fonts_api][] = "Roboto Condensed&subset=latin-ext#italic"
+fonts[google_fonts_api][] = "Roboto Condensed&subset=latin#regular"
+fonts[google_fonts_api][] = "Roboto Condensed&subset=latin-ext#regular"
+fonts[google_fonts_api][] = "Roboto&subset=latin#italic"
+fonts[google_fonts_api][] = "Roboto&subset=latin-ext#italic"
+fonts[google_fonts_api][] = "Roboto&subset=latin#regular"
+fonts[google_fonts_api][] = "Roboto&subset=latin-ext#regular"
