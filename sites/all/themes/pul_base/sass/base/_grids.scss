@@ -32,7 +32,13 @@ body {
 }
 
 .site-logo {
-	@include grid-span(6,1);
+	@include grid-span(12);
+	clear: both;
+
+	@include breakpoint($tab) {
+		@include grid-span(6,1);
+	}
+
 }
 
 .l-region--branding {
@@ -96,6 +102,8 @@ body {
 // 	}
 // }
 
+
+
 .l-region--footer {
 	clear: both;
 
@@ -132,5 +140,5 @@ body {
 }
 
 .l-main {
-	margin-top: 1em;
+	padding: 1em;
 }

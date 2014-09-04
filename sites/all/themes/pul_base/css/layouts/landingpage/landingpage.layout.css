@@ -16,47 +16,47 @@
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .landingpage-region--first {
-    width: 74.13793%;
+    width: 1433.33333%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 3.44828%;
+    margin-right: 66.66667%;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--second {
-    width: 22.41379%;
+    width: 433.33333%;
     clear: right;
-    float: right;
-    margin-right: 0;
+    float: left;
+    margin-right: 66.66667%;
     margin-right: 0;
   }
 
   .landingpage-region--third {
-    width: 31.03448%;
+    width: 600%;
     clear: right;
     float: left;
     margin-left: 0;
-    margin-right: 3.44828%;
+    margin-right: 66.66667%;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--fourth {
-    width: 39.65517%;
+    width: 766.66667%;
     clear: right;
     float: left;
-    margin-right: 3.44828%;
+    margin-right: 66.66667%;
   }
 
   .landingpage-region--fifth {
-    width: 22.41379%;
+    width: 433.33333%;
     clear: right;
-    float: right;
-    margin-right: 0;
+    float: left;
+    margin-right: 66.66667%;
     margin-right: 0;
   }
 }

@@ -24,7 +24,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .five_four_three_stacked-region--top {
     width: 100%;
     float: right;

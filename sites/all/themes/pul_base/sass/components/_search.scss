@@ -33,22 +33,35 @@
 		margin: 0;
 		border: none;
 		top: 0;
+		clear: both;
+
+		@include breakpoint($desk) {
+			clear: none;
+		}
 
 		&:first-child a {
 	    	@include border-top-left-radius(4px);
 	    }
 	}
 	.ui-tabs .ui-tabs-nav li a {
-		width: 190px;
+		width: 100%;
 		text-align: center;
 		background: $dark-gray;
 		border-right: 1px solid darken($light-gray, 50%);
 		color: white;
-		@include transition (all 0.2s ease-in-out);
+		// @include transition (all 0.2s ease-in-out);
 		font-family: $font-sans;
+
+		@include breakpoint($desk) {
+			width: 190px;
+		}
 
 		&:hover {
 	      background: lighten(#494f57, 10);
+	    }
+
+	    &:active {
+	    	@include transition (all 0,2s ease-in-out);
 	    }
 	}
 

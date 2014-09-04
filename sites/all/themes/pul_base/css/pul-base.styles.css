@@ -268,12 +268,23 @@ body {
 }
 
 .site-logo {
-  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 46.66667%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 1.66667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
+  float: right;
+  margin-left: 0;
+  margin-right: 1.66667%;
   clear: none;
+  clear: both;
+}
+@media (min-width: 44em) {
+  .site-logo {
+    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 1.66667%;
+    clear: none;
+  }
 }
 
 .l-region--branding {
@@ -404,7 +415,7 @@ body {
 }
 
 .l-main {
-  margin-top: 1em;
+  padding: 1em;
 }
 
 img, media {
@@ -946,6 +957,11 @@ footer address, footer #university-copyright-footer {
   text-align: right;
 }
 
+.pul_base_nine_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3 {
+  font-size: 1.3em;
+  padding: 0 1em;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
   margin-left: 0;
@@ -1037,7 +1053,7 @@ footer address, footer #university-copyright-footer {
   opacity: .6;
   padding: .8em 0;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation .mobile-logo {
     display: none;
   }
@@ -1052,7 +1068,7 @@ footer address, footer #university-copyright-footer {
   padding-right: 1em;
   text-transform: uppercase;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation .centered-navigation-menu-button {
     display: none;
   }
@@ -1073,7 +1089,7 @@ footer address, footer #university-copyright-footer {
   width: 100%;
   z-index: 999;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation .centered-navigation-menu {
     display: block;
     text-align: center;
@@ -1089,7 +1105,7 @@ footer address, footer #university-copyright-footer {
   width: 100%;
   z-index: 99;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation .centered-navigation-menu > ul > li {
     background: transparent;
     display: inline;
@@ -1161,7 +1177,7 @@ footer address, footer #university-copyright-footer {
 .wrapper--navigation li.expanded:hover > .menu {
   display: block;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation li.expanded {
     padding-right: 1em;
     position: relative;
@@ -1171,14 +1187,14 @@ footer address, footer #university-copyright-footer {
   display: none;
   padding-left: 0;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation li > ul.menu {
     left: -1em;
     position: absolute;
     top: 1.5em;
   }
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation li > ul.menu .menu {
     left: 14.8em;
     top: 0;
@@ -1188,7 +1204,7 @@ footer address, footer #university-copyright-footer {
   display: block;
   padding-right: 0;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation li > ul.menu li {
     line-height: 46.15385px;
   }
@@ -1208,7 +1224,7 @@ footer address, footer #university-copyright-footer {
   text-align: right;
   width: 100%;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .wrapper--navigation li > ul.menu li a {
     background-color: #f5f4f1;
     padding-left: 1em;
@@ -1276,8 +1292,8 @@ footer address, footer #university-copyright-footer {
 }
 
 .l-region--branding .block--allsearch-block-allsearch-search {
-  -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 71.66667%;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
   float: right;
   margin-left: 0;
   margin-right: 1.66667%;
@@ -1359,6 +1375,16 @@ footer address, footer #university-copyright-footer {
 .l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+@media (min-width: 44em) {
+  .l-region--branding .block--allsearch-block-allsearch-search {
+    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 71.66667%;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: none;
+  }
 }
 
 .all-search-results-list, .view-search-libraries-and-collections, .view-databases-keyword-search, .view-general-site-keyword-search, .view-general-site-user-search {
@@ -1472,6 +1498,12 @@ footer address, footer #university-copyright-footer {
   margin: 0;
   border: none;
   top: 0;
+  clear: both;
+}
+@media (min-width: 70em) {
+  .block--quicktabs .ui-tabs .ui-tabs-nav li {
+    clear: none;
+  }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
   -moz-border-radius-topleft: 4px;
@@ -1479,19 +1511,26 @@ footer address, footer #university-copyright-footer {
   border-top-left-radius: 4px;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a {
-  width: 190px;
+  width: 100%;
   text-align: center;
   background: #494f57;
   border-right: 1px solid #877d60;
   color: white;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 70em) {
+  .block--quicktabs .ui-tabs .ui-tabs-nav li a {
+    width: 190px;
+  }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
   background: #606873;
+}
+.block--quicktabs .ui-tabs .ui-tabs-nav li a:active {
+  -moz-transition: all 0, ease-in-out 2s;
+  -o-transition: all 0, ease-in-out 2s;
+  -webkit-transition: all 0, ease-in-out 2s;
+  transition: all 0, ease-in-out 2s;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li.ui-state-active a, .block--quicktabs .ui-widget-header .ui-state-active {
   background: #f1efeb;
@@ -1590,7 +1629,8 @@ footer address, footer #university-copyright-footer {
 
 #block-views-acquisitions-highlights-block-1 {
   background: rgba(73, 79, 87, 0.65);
-  margin: 1.5em 0;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -1789,7 +1829,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .five_four_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
@@ -1856,7 +1896,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .four_five_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
@@ -1923,55 +1963,55 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .landingpage-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
+    -sgs-span-settings: ("span": 9, "location": 1, "grid": 1, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 860%;
     clear: right;
     float: left;
-    margin-left: 1.66667%;
-    margin-right: 1.66667%;
+    margin-left: 20%;
+    margin-right: 20%;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 1, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 260%;
     clear: right;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
+    float: left;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-right: 0;
   }
 
   .landingpage-region--third {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 1, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 360.0%;
     clear: right;
     float: left;
-    margin-left: 1.66667%;
-    margin-right: 1.66667%;
+    margin-left: 20%;
+    margin-right: 20%;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--fourth {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 38.33333%;
+    -sgs-span-settings: ("span": 5, "location": 5, "grid": 1, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 460.0%;
     clear: right;
     float: left;
-    margin-left: 1.66667%;
-    margin-right: 1.66667%;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 
   .landingpage-region--fifth {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 1, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 260%;
     clear: right;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
+    float: left;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-right: 0;
   }
 }
@@ -1993,7 +2033,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .nine_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
@@ -2051,7 +2091,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .pul_base_four_four_four_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
@@ -2112,7 +2152,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .pul_base_nine_three-region--first {
     -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 71.66667%;
@@ -2151,7 +2191,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .six_six-region--first {
     -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 46.66667%;
@@ -2191,7 +2231,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .three_nine-region--first {
     -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 21.66667%;
@@ -2230,7 +2270,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .three_nine_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;
@@ -2292,7 +2332,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .three_six_three-region--first {
     -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 21.66667%;
@@ -2341,7 +2381,7 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .three_six_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 96.66667%;

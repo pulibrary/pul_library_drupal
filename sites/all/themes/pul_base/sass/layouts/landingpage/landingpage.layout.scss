@@ -24,7 +24,7 @@ $gutters: 1/3;
   margin-bottom: $vert-spacing-unit;
 }
 
-@include breakpoint($desk, true) {
+@include breakpoint($tab, true) {
   .landingpage-region--first {
     @include grid-span(9,1);
     clear: both;
