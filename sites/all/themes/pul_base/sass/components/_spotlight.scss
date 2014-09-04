@@ -1,4 +1,14 @@
 #block-views-acquisitions-highlights-block-1 {
+    @include grid-span(12); 
+    clear: both;
+    @include breakpoint($desk) {
+        @include grid-span(3,10);
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+#block-views-acquisitions-highlights-block-1 {
     background: rgba($dark-gray,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
