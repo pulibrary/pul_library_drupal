@@ -530,6 +530,10 @@ h6 {
   line-height: 1.71429rem;
 }
 
+.l-branding .homepage-tab-form-message {
+  display: none;
+}
+
 /*------------------------------------*\
     #BREADCRUMBS
 \*------------------------------------*/
