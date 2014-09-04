@@ -1,0 +1,11 @@
+#block-views-acquisitions-highlights-block-1 {
+    background: $light-gray;
+    margin: 1.5em 0;
+    @include border-radius(4px);
+    display: none;
+
+    h2 {
+        font-size: 15px;
+        font-family: $font-sans;
+    }
+}

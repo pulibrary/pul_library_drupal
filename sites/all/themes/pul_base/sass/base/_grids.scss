@@ -54,6 +54,16 @@ body {
 	}
 }
 
+#block-views-acquisitions-highlights-block-1 {
+	@include grid-span(12); 
+	clear: both;
+	@include breakpoint($desk) {
+		@include grid-span(3,10);
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 /*
 #block-menu-menu-get-help-menu {
 	@include grid-span(12, $output-style: 'float'); 
