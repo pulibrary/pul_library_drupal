@@ -804,6 +804,7 @@ select {
 
 .l-region--footer {
   clear: both;
+  padding: 1em;
 }
 .l-region--footer nav, .l-region--footer #block-block-1 {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
@@ -813,7 +814,7 @@ select {
   margin-left: 0;
   margin-right: 1.66667%;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .l-region--footer nav, .l-region--footer #block-block-1 {
     -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 21.66667%;
