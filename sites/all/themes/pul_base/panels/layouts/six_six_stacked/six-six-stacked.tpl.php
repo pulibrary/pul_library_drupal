@@ -19,10 +19,7 @@
   <div<?php print drupal_attributes($region_attributes_array['second'])?>>
     <?php print $content['second']; ?>
   </div>
-  <div<?php print drupal_attributes($region_attributes_array['third'])?>>
-    <?php print $content['third']; ?>
-  </div>
-   <div<?php print drupal_attributes($region_attributes_array['bottom'])?>>
+  <div<?php print drupal_attributes($region_attributes_array['bottom'])?>>
     <?php print $content['bottom']; ?>
   </div>
 </div>
