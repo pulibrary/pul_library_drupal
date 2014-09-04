@@ -1,0 +1,25 @@
+#block-views-acquisitions-highlights-block-1 {
+    background: $dark-gray;
+    margin: 1.5em 0;
+    @include border-radius(4px);
+    height: 159px;
+    padding: 1em;
+    // display: none;
+
+    h2 {
+        display: none;
+    }
+    a {
+        font-size: 15px;
+        font-family: $font-sans;
+        margin: 0;
+        // padding: 0.5em 1em;
+        color: white;
+    }
+
+    img {
+        width:100px;
+        height: auto;
+        // padding: 0.5em 1em;
+    }
+}

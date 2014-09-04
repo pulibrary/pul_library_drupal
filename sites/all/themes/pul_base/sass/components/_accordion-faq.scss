@@ -1,0 +1,30 @@
+body.faq .views-accordion-header, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+background-color: #FFF;
+border-bottom: 1px dotted #E5E5E5;
+padding: 0.1em;
+}
+
+body.faq .ui-accordion .ui-accordion-header {
+display: block;
+cursor: pointer;
+position: relative;
+margin-top: 2px;
+padding: .5em .5em .5em .7em;
+zoom: 1;
+}
+
+body.faq .views-accordion-header h3 {
+margin: 0;
+padding-top: 5px 0 5px 0;
+}   
+
+body.faq .ui-accordion .ui-accordion-header a {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+background-color: #FFF;
+border-bottom: 1px dotted #E5E5E5;
+padding: 0.1em;
+}
