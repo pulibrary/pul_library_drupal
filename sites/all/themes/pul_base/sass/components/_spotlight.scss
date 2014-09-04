@@ -1,5 +1,5 @@
 #block-views-acquisitions-highlights-block-1 {
-    background: $dark-gray;
+    background: rgba($dark-gray,.65);
     margin: 1.5em 0;
     @include border-radius(4px);
     height: 159px;
@@ -18,8 +18,8 @@
     }
 
     img {
-        width:100px;
-        height: auto;
+        height:100px;
+        width: auto;
         // padding: 0.5em 1em;
     }
 }
