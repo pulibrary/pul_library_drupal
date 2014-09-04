@@ -1,0 +1,22 @@
+.three_six_three-region--first {
+    h2 {
+        @include adjust-font-size-to(1.3em);
+        @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+    }
+    .menu li a {
+        font-family: $font-serif;
+        @include adjust-font-size-to(0.875em);
+        @include rhythm(0.5, 0, 0, 0.5, 0.875em);
+    }
+    .expanded {
+        background: lighten($blue, 40);
+
+        .menu {
+            background: lighten($blue, 40);
+
+            a {
+                color: $blue;
+            }
+        }
+    }
+}
