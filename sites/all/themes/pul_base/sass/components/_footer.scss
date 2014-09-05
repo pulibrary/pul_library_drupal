@@ -1,4 +1,23 @@
-footer {
+.l-region--footer {
+	clear: both;
+	padding: 1em;
+	
+	nav, #block-block-1 {
+		@include grid-span(12, $output-style: 'float');
+		@include breakpoint($tab) {
+			@include grid-span(3, $output-style: 'float');
+		}
+	}
+
+	nav:first-child {
+		margin-left: 0;
+	}
+	.block--block-1 {
+		margin-right: 0;
+	}
+ }
+
+ footer {
 	background-color: $light-gray;
 
 	address, #university-copyright-footer {

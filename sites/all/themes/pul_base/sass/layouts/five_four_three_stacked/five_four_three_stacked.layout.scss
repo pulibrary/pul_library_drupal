@@ -27,7 +27,7 @@ $desk : 1250px;
   margin-bottom: $vert-spacing-unit;
 }
 
-@include breakpoint($desk) {
+@include breakpoint($tab) {
 
   .five_four_three_stacked-region--top {
     @include grid-span(12,1);

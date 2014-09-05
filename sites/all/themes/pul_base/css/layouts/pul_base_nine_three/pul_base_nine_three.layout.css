@@ -16,7 +16,7 @@
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .pul_base_nine_three-region--first {
     width: 74.13793%;
     float: left;
