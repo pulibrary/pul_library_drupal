@@ -1067,6 +1067,18 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   color: #F58026;
 }
 
+.views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section {
+  display: block;
+  margin: 0 auto;
+}
+.views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section a {
+  color: white;
+}
+
+.views-slideshow-controls-bottom {
+  display: none;
+}
+
 .l-branding nav ul {
   float: left;
   margin: 5px 0;
@@ -1113,7 +1125,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   font-family: "Droid Serif", Georgia, Times, serif;
   height: 60px;
   width: 100%;
-  z-index: 99;
+  z-index: 101;
   position: relative;
   overflow: visible;
 }
@@ -1417,18 +1429,27 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-bottom: 1em;
 }
 
+.field--name-field-news-letter-volume,
+.field--name-field-news-letter-issue {
+  display: inline;
+}
+
+.field--name-field-news-letter-pdf {
+  margin: 1em 0;
+}
+
 #renovation-news-block #renovation-news-lmg {
   overflow: hidden;
   *zoom: 1;
 }
 #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
   display: inline-block;
-  float: left;
-  width: 35%;
 }
-#renovation-news-block #renovation-news-lmg p {
-  float: left;
-  width: 65%;
+@media (min-width: 44em) {
+  #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
+    float: left;
+    width: 30%;
+  }
 }
 #renovation-news-block #read-more-renovation {
   display: none;
@@ -1600,17 +1621,41 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   }
 }
 
-.all-search-results-list, .view-search-libraries-and-collections, .view-databases-keyword-search, .view-general-site-keyword-search, .view-general-site-user-search {
+.all-search-results-list,
+.view-search-libraries-and-collections,
+.view-databases-keyword-search ul,
+.view-general-site-keyword-search ul,
+.view-general-site-user-search ul {
   margin-bottom: 1em;
 }
-.all-search-results-list li.even, .all-search-results-list li.views-row-even, .view-search-libraries-and-collections li.even, .view-search-libraries-and-collections li.views-row-even, .view-databases-keyword-search li.even, .view-databases-keyword-search li.views-row-even, .view-general-site-keyword-search li.even, .view-general-site-keyword-search li.views-row-even, .view-general-site-user-search li.even, .view-general-site-user-search li.views-row-even {
+.all-search-results-list li.even, .all-search-results-list li.views-row-even,
+.view-search-libraries-and-collections li.even,
+.view-search-libraries-and-collections li.views-row-even,
+.view-databases-keyword-search ul li.even,
+.view-databases-keyword-search ul li.views-row-even,
+.view-general-site-keyword-search ul li.even,
+.view-general-site-keyword-search ul li.views-row-even,
+.view-general-site-user-search ul li.even,
+.view-general-site-user-search ul li.views-row-even {
   background: none;
   border-top: 1px solid #ddd;
 }
-.all-search-results-list li.odd, .all-search-results-list li.views-row-odd, .view-search-libraries-and-collections li.odd, .view-search-libraries-and-collections li.views-row-odd, .view-databases-keyword-search li.odd, .view-databases-keyword-search li.views-row-odd, .view-general-site-keyword-search li.odd, .view-general-site-keyword-search li.views-row-odd, .view-general-site-user-search li.odd, .view-general-site-user-search li.views-row-odd {
+.all-search-results-list li.odd, .all-search-results-list li.views-row-odd,
+.view-search-libraries-and-collections li.odd,
+.view-search-libraries-and-collections li.views-row-odd,
+.view-databases-keyword-search ul li.odd,
+.view-databases-keyword-search ul li.views-row-odd,
+.view-general-site-keyword-search ul li.odd,
+.view-general-site-keyword-search ul li.views-row-odd,
+.view-general-site-user-search ul li.odd,
+.view-general-site-user-search ul li.views-row-odd {
   background: #f5f4f1;
 }
-.all-search-results-list li, .view-search-libraries-and-collections li, .view-databases-keyword-search li, .view-general-site-keyword-search li, .view-general-site-user-search li {
+.all-search-results-list li,
+.view-search-libraries-and-collections li,
+.view-databases-keyword-search ul li,
+.view-general-site-keyword-search ul li,
+.view-general-site-user-search ul li {
   padding: 0.7em;
   font-size: 12px;
   font-size: 0.85714rem;
@@ -1625,10 +1670,18 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-bottom: 0px;
   margin-bottom: 0rem;
 }
-.all-search-results-list li.active, .view-search-libraries-and-collections li.active, .view-databases-keyword-search li.active, .view-general-site-keyword-search li.active, .view-general-site-user-search li.active {
+.all-search-results-list li.active,
+.view-search-libraries-and-collections li.active,
+.view-databases-keyword-search ul li.active,
+.view-general-site-keyword-search ul li.active,
+.view-general-site-user-search ul li.active {
   background: none;
 }
-.all-search-results-list h3, .view-search-libraries-and-collections h3, .view-databases-keyword-search h3, .view-general-site-keyword-search h3, .view-general-site-user-search h3 {
+.all-search-results-list h3,
+.view-search-libraries-and-collections h3,
+.view-databases-keyword-search ul h3,
+.view-general-site-keyword-search ul h3,
+.view-general-site-user-search ul h3 {
   font-size: 14px;
   font-size: 1rem;
   line-height: 24px;
@@ -1956,6 +2009,21 @@ fieldset {
   background: none;
 }
 
+h1 {
+  font-size: 28px;
+  font-size: 2rem;
+  line-height: 36px;
+  line-height: 2.57143rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+}
+
 h2 {
   font-size: 18px;
   font-size: 1.3rem;
@@ -2244,6 +2312,8 @@ $desk : 1250px;
     margin-left: 0;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .nine_three_stacked-region--first {
@@ -2254,6 +2324,7 @@ $desk : 1250px;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
   }
 
   .nine_three_stacked-region--second {
@@ -2273,6 +2344,7 @@ $desk : 1250px;
     margin-left: 0;
     margin-right: 1.66667%;
     clear: both;
+    margin-right: 0;
   }
 }
 /*******************************************************************************
@@ -2499,14 +2571,15 @@ $desk : 1250px;
 
 @media (min-width: 70em) {
   .six_six_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
-    margin-left: 0;
+    margin-right: 0%;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .six_six_stacked-region--first {
@@ -2711,13 +2784,15 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .three_six_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .three_six_three_stacked-region--first {
@@ -2728,6 +2803,7 @@ $desk : 1250px;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
   }
 
   .three_six_three_stacked-region--middle {
@@ -2746,6 +2822,7 @@ $desk : 1250px;
     float: right;
     margin-left: 0;
     margin-right: 1.66667%;
+    margin-right: 0;
   }
 
   .three_six_three_stacked-region--bottom {
@@ -2756,5 +2833,7 @@ $desk : 1250px;
     margin-left: 0;
     margin-right: 1.66667%;
     clear: both;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

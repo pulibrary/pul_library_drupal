@@ -3,12 +3,20 @@
 		@include clearfix;
 		#renovation-news-lmg {
 		display: inline-block;
-		float: left;
-		width: 35%;
+		// float: left;
+
+		// width: 35%;
 		}
 		p {
-			float: left;
-			width: 65%;
+			// float: left;
+			// width: 65%;
+		}
+
+		@include breakpoint($tab) {
+			#renovation-news-lmg {
+				float: left;
+				width: 30%;
+			}
 		}
 	}
 

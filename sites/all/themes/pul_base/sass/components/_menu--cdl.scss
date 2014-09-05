@@ -56,3 +56,16 @@
   }
 
 //}
+
+.views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section {
+  display: block;
+  margin: 0 auto;
+
+  a {
+    color: white;
+  }
+}
+
+.views-slideshow-controls-bottom {
+  display: none;
+}
