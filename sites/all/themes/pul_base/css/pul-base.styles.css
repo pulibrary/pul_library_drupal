@@ -1380,6 +1380,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   width: 145px;
   height: 100px;
   overflow: hidden;
+  margin: 0 1em 1em 0;
+  float: left;
 }
 .front .field--name-field-news-featured-graphic img {
   width: auto;
@@ -1712,11 +1714,12 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   clear: both;
   width: 100%;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .block--quicktabs .ui-tabs .ui-tabs-nav li {
     clear: none;
-    width: 190px;
+    width: 25%;
     border: none;
+    text-align: center;
   }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
@@ -1724,18 +1727,23 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
+.block--quicktabs .ui-tabs .ui-tabs-nav li:last-child a {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
 .block--quicktabs .ui-tabs .ui-tabs-nav li a {
   width: 100%;
-  text-align: center;
+  text-align: left;
   background: #494f57;
   border-right: none;
   color: white;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .block--quicktabs .ui-tabs .ui-tabs-nav li a {
-    width: 190px;
     border-right: 1px solid #877d60;
+    text-align: center;
   }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
