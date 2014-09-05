@@ -20,7 +20,7 @@
   font-family: $font-serif;
   height: $centered-navigation-height;
   width: 100%;
-  z-index: 101; //4
+  z-index: 99; //4
   position: relative;
   overflow: visible;
   
@@ -110,6 +110,7 @@
       background: transparent;
       display: inline;
       line-height: $centered-navigation-height;  
+      padding-left: 0;
 
       a {
         padding-left: $centered-navigation-item-padding;

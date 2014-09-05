@@ -9,6 +9,14 @@
     
 }
 
+.front .l-region--branding .block--allsearch-block-allsearch-search {
+    display: none;
+
+    @include breakpoint($tab) {
+        display: block;
+    }
+}
+
 .l-region--branding .block--allsearch-block-allsearch-search {
 	@include grid-span(12);
 	float:none;
