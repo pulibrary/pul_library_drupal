@@ -1,14 +1,14 @@
 .front .view-library-news {
     h3 {
-    	width: 60%;
-        float: right;
-    	display: inline-block;
+    	// width: 60%;
+        // float: right;
+    	// display: inline-block;
         @include rhythm(0, 0, 0, 0.5, $h3-fz);
     }
 
     p {
-        float: right;
-        width: 60%;
+        // float: right;
+        // width: 60%;
     }
 }
 
@@ -21,10 +21,10 @@
     height:100px;
     overflow:hidden;
 
-    display: inline-block;
-    padding: 0 1em 1em 0;
-    float: left;
-    clear: both;
+    // display: inline-block;
+    // margin: 0 1em 1em 0;
+    // float: left;
+    // clear: both;
 
     img {
         width:auto;

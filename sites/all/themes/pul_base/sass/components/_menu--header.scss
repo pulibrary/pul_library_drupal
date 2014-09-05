@@ -48,11 +48,3 @@
 .front .l-branding nav ul, .page-find-all .l-branding nav ul {
 	float: right;
 }
-
-.front .l-region--branding .block--allsearch-block-allsearch-search {
-    display: none;
-
-    @include breakpoint($tab) {
-        display: block;
-    }
-}
