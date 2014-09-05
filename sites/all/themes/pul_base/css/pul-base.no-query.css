@@ -837,6 +837,14 @@ footer {
 footer address, footer #university-copyright-footer {
   font-size: 0.78571rem;
 }
+footer nav ul {
+  display: none;
+}
+@media (min-width: 44em) {
+  footer nav ul {
+    display: block;
+  }
+}
 
 .l-footer {
   margin: 2em 0;
@@ -1334,7 +1342,6 @@ footer address, footer #university-copyright-footer {
 }
 .three_six_three-region--first ul.menu > li > a {
   font-size: 18px;
-  font-weight: bold;
 }
 .three_six_three-region--first ul.menu > li > ul > li > a {
   font-size: 14px;
