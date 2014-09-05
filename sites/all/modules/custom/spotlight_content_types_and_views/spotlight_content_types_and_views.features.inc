@@ -98,5 +98,6 @@ function spotlight_content_types_and_views_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

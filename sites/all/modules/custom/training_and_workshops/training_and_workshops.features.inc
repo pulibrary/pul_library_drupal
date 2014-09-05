@@ -122,5 +122,6 @@ function training_and_workshops_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
