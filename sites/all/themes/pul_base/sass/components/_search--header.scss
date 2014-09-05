@@ -12,6 +12,7 @@
 .l-region--branding .block--allsearch-block-allsearch-search {
 	@include grid-span(12);
 	float:none;
+	display: none;
 
 	form > div {
 	  $search-bar-border-color: $base-border-color;

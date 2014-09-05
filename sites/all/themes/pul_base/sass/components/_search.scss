@@ -31,12 +31,15 @@
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
-		border: none;
+		border-bottom: 1px dotted $light-gray;
 		top: 0;
 		clear: both;
+		width: 100%;
 
 		@include breakpoint($desk) {
 			clear: none;
+			width: 190px;
+			border: none;
 		}
 
 		&:first-child a {
@@ -47,13 +50,14 @@
 		width: 100%;
 		text-align: center;
 		background: $dark-gray;
-		border-right: 1px solid darken($light-gray, 50%);
+		border-right: none;
 		color: white;
 		// @include transition (all 0.2s ease-in-out);
 		font-family: $font-sans;
 
 		@include breakpoint($desk) {
 			width: 190px;
+			border-right: 1px solid darken($light-gray, 50%);
 		}
 
 		&:hover {
@@ -102,7 +106,7 @@
 	.ui-tabs-panel input[type="submit"] {
 		font-family: $font-sans;
 		height: 45px;
-		width: 115px;
+		width: 15%;
 		padding: 0;
 		margin: 0.8em 0 0 -7px;
 		clear: none;

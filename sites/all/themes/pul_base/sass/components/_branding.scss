@@ -1,5 +1,11 @@
 // _branding.scss
 
+.wrapper--branding {
+    background-color: #494f57;
+    min-height: 50px;
+    border-top: 5px solid $orange;
+}
+
 .site-logo {
     @include grid-span(12);
     clear: both;

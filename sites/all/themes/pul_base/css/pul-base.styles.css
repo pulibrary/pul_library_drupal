@@ -455,6 +455,12 @@ body.faq .ui-accordion .ui-accordion-header a {
   padding: 0.1em;
 }
 
+.wrapper--branding {
+  background-color: #494f57;
+  min-height: 50px;
+  border-top: 5px solid #e87511;
+}
+
 .site-logo {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
@@ -897,14 +903,13 @@ footer nav ul {
 .front .wrapper--highlighted {
   background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.png) center no-repeat;
   /* On bottom, like z-index: 1; */
-  padding: 4em 0;
+  padding: 1em 0;
   background-size: 1600px auto;
 }
-
-.wrapper--branding {
-  background-color: #494f57;
-  min-height: 50px;
-  border-top: 5px solid #e87511;
+@media (min-width: 44em) {
+  .front .wrapper--highlighted {
+    padding: 4em 0;
+  }
 }
 
 .wrapper--navigation {
@@ -1144,6 +1149,15 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   float: right;
 }
 
+.front .l-region--branding .block--allsearch-block-allsearch-search {
+  display: none;
+}
+@media (min-width: 44em) {
+  .front .l-region--branding .block--allsearch-block-allsearch-search {
+    display: block;
+  }
+}
+
 .l-header {
   overflow: visible;
 }
@@ -1154,7 +1168,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   font-family: "Droid Serif", Georgia, Times, serif;
   height: 60px;
   width: 100%;
-  z-index: 101;
+  z-index: 99;
   position: relative;
   overflow: visible;
 }
@@ -1231,6 +1245,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
     background: transparent;
     display: inline;
     line-height: 60px;
+    padding-left: 0;
   }
   .wrapper--navigation .centered-navigation-menu > ul > li a {
     padding-left: 1em;
@@ -1490,6 +1505,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-right: 1.66667%;
   clear: none;
   float: none;
+  display: none;
 }
 .l-region--branding .block--allsearch-block-allsearch-search form > div {
   position: relative;
@@ -1689,13 +1705,16 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li {
   margin: 0;
-  border: none;
+  border-bottom: 1px dotted #f5f4f1;
   top: 0;
   clear: both;
+  width: 100%;
 }
 @media (min-width: 70em) {
   .block--quicktabs .ui-tabs .ui-tabs-nav li {
     clear: none;
+    width: 190px;
+    border: none;
   }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
@@ -1707,13 +1726,14 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   width: 100%;
   text-align: center;
   background: #494f57;
-  border-right: 1px solid #877d60;
+  border-right: none;
   color: white;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 70em) {
   .block--quicktabs .ui-tabs .ui-tabs-nav li a {
     width: 190px;
+    border-right: 1px solid #877d60;
   }
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
@@ -1763,7 +1783,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .block--quicktabs .ui-tabs-panel input[type="submit"] {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 45px;
-  width: 115px;
+  width: 15%;
   padding: 0;
   margin: 0.8em 0 0 -7px;
   clear: none;
@@ -1810,6 +1830,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-right: 1.66667%;
   clear: none;
   clear: both;
+  display: none;
 }
 @media (min-width: 70em) {
   #block-views-acquisitions-highlights-block-1 {
@@ -1821,6 +1842,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
     clear: none;
     margin-left: 0;
     margin-right: 0;
+    display: block;
   }
 }
 

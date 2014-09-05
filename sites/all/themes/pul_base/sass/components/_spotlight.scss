@@ -1,10 +1,12 @@
 #block-views-acquisitions-highlights-block-1 {
     @include grid-span(12); 
     clear: both;
+    display: none;
     @include breakpoint($desk) {
         @include grid-span(3,10);
         margin-left: 0;
         margin-right: 0;
+        display: block;
     }
 }
 
