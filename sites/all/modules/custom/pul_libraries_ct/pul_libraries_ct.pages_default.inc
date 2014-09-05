@@ -632,7 +632,7 @@ function pul_libraries_ct_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'twocol';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -648,7 +648,7 @@ function pul_libraries_ct_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-09e8abeb-dd49-41c1-b106-c7d1d95e1cbf';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'libraries-panel_pane_2';
     $pane->shown = TRUE;
@@ -667,10 +667,10 @@ function pul_libraries_ct_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '09e8abeb-dd49-41c1-b106-c7d1d95e1cbf';
     $display->content['new-09e8abeb-dd49-41c1-b106-c7d1d95e1cbf'] = $pane;
-    $display->panels['left'][0] = 'new-09e8abeb-dd49-41c1-b106-c7d1d95e1cbf';
+    $display->panels['first'][0] = 'new-09e8abeb-dd49-41c1-b106-c7d1d95e1cbf';
     $pane = new stdClass();
     $pane->pid = 'new-fc889e58-2d8c-4179-9345-06cabf28008d';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -697,10 +697,10 @@ function pul_libraries_ct_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'fc889e58-2d8c-4179-9345-06cabf28008d';
     $display->content['new-fc889e58-2d8c-4179-9345-06cabf28008d'] = $pane;
-    $display->panels['right'][0] = 'new-fc889e58-2d8c-4179-9345-06cabf28008d';
+    $display->panels['second'][0] = 'new-fc889e58-2d8c-4179-9345-06cabf28008d';
     $pane = new stdClass();
     $pane->pid = 'new-1c062cf0-1ada-4b4f-975a-e8a1e68875d4';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'collections-panel_pane_3';
     $pane->shown = TRUE;
@@ -716,7 +716,7 @@ function pul_libraries_ct_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '1c062cf0-1ada-4b4f-975a-e8a1e68875d4';
     $display->content['new-1c062cf0-1ada-4b4f-975a-e8a1e68875d4'] = $pane;
-    $display->panels['right'][1] = 'new-1c062cf0-1ada-4b4f-975a-e8a1e68875d4';
+    $display->panels['second'][1] = 'new-1c062cf0-1ada-4b4f-975a-e8a1e68875d4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

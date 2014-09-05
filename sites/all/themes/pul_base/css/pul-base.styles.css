@@ -1010,6 +1010,56 @@ footer address, footer #university-copyright-footer {
   list-style-type: none;
 }
 
+/* CDL Menu */
+ul.nice-menu.nice-menu-menu-collection-development-webs {
+  text-align: center;
+  z-index: 0;
+  background: none;
+  margin-top: 0px;
+  border-top: none;
+  z-index: 99;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li {
+  background: none;
+  border: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a {
+  font-size: 1em;
+  color: #fff;
+  background: none;
+  padding-right: 1.7em;
+  padding-left: 1.7em;
+  text-decoration: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+  font-size: 100%;
+  color: #F58026;
+}
+
+/* !Important Dropdowns */
+ul.nice-menu.nice-menu-menu-collection-development-webs ul {
+  top: 2em;
+  background-color: #000;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+  padding-right: 15px;
+  color: #fff;
+  font-size: 1em;
+  text-align: left;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+  padding-right: 15px;
+  color: #F58026;
+}
+
 .l-branding nav ul {
   float: left;
   margin: 5px 0;
@@ -1056,7 +1106,7 @@ footer address, footer #university-copyright-footer {
   font-family: "Droid Serif", Georgia, Times, serif;
   height: 60px;
   width: 100%;
-  z-index: 99;
+  z-index: 101;
   position: relative;
   overflow: visible;
 }
@@ -1682,6 +1732,24 @@ footer address, footer #university-copyright-footer {
   border-bottom-left-radius: 0;
 }
 
+.section-collections-and-collection-development .three_six_three_stacked-region--top,
+.section-collections-and-collection-development .single-region--top,
+.section-collections-and-collection-development .nine_three_stacked-region--top,
+.section-collections .three_six_three_stacked-region--top,
+.section-collections .single-region--top,
+.section-collections .nine_three_stacked-region--top {
+  background-image: url(/sites/all/themes/pul_base/images/trustee_reading_room_50.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #212121;
+}
+.section-collections-and-collection-development .pane-spotlight-graphics-panel-pane-1,
+.section-collections .pane-spotlight-graphics-panel-pane-1 {
+  margin-top: 22.5px;
+  clear: both;
+  z-index: 1;
+}
+
 #block-views-acquisitions-highlights-block-1 {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
@@ -2171,6 +2239,18 @@ $desk : 1250px;
     margin-right: 1.66667%;
     margin-right: 0;
   }
+
+  .pul_base_four_four_four_stacked-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
  /*******************************************************************************
 * pul_base_nine_three.layout.scss
@@ -2214,6 +2294,58 @@ $desk : 1250px;
 /*******************************************************************************
  * three_nine.layout.scss
  *
+ * Styling of the 12 wide single column layout..
+ ******************************************************************************/
+.panel-display--single {
+  *zoom: 1;
+}
+.panel-display--single:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.single-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 70em) {
+  .single-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--middle {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+}
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
  * Styling of the 6-6 column layout..
  ******************************************************************************/
 .panel-display--six_six {
@@ -2249,6 +2381,68 @@ $desk : 1250px;
     margin-left: 0;
     margin-right: 1.66667%;
     margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 6-6 column layout..
+ ******************************************************************************/
+.panel-display--six_six {
+  *zoom: 1;
+}
+.panel-display--six_six:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.six_six-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 70em) {
+  .six_six_stacked-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+    clear: both;
+  }
+
+  .six_six_stacked-region--first {
+    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .six_six_stacked-region--second {
+    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 46.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-right: 0;
+  }
+
+  .six_six_stacked-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 0;
+    clear: both;
   }
 }
 /*******************************************************************************

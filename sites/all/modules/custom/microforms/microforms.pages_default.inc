@@ -60,7 +60,7 @@ collections/microforms',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
+  $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -70,6 +70,8 @@ collections/microforms',
       'right' => NULL,
       'bottom' => NULL,
       'left' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
     'left' => array(
       'style' => '-1',
@@ -82,7 +84,7 @@ collections/microforms',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-2569cf90-7b85-47f9-a182-3e335be2761b';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -104,10 +106,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '2569cf90-7b85-47f9-a182-3e335be2761b';
     $display->content['new-2569cf90-7b85-47f9-a182-3e335be2761b'] = $pane;
-    $display->panels['left'][0] = 'new-2569cf90-7b85-47f9-a182-3e335be2761b';
+    $display->panels['first'][0] = 'new-2569cf90-7b85-47f9-a182-3e335be2761b';
     $pane = new stdClass();
     $pane->pid = 'new-cb90cd62-4435-4c1f-8672-b1d6cad8509d';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -129,10 +131,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = 'cb90cd62-4435-4c1f-8672-b1d6cad8509d';
     $display->content['new-cb90cd62-4435-4c1f-8672-b1d6cad8509d'] = $pane;
-    $display->panels['left'][1] = 'new-cb90cd62-4435-4c1f-8672-b1d6cad8509d';
+    $display->panels['first'][1] = 'new-cb90cd62-4435-4c1f-8672-b1d6cad8509d';
     $pane = new stdClass();
     $pane->pid = 'new-f2d5b202-67fd-43b4-aced-ce40c047df0d';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -151,7 +153,7 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = 'f2d5b202-67fd-43b4-aced-ce40c047df0d';
     $display->content['new-f2d5b202-67fd-43b4-aced-ce40c047df0d'] = $pane;
-    $display->panels['left'][2] = 'new-f2d5b202-67fd-43b4-aced-ce40c047df0d';
+    $display->panels['first'][2] = 'new-f2d5b202-67fd-43b4-aced-ce40c047df0d';
     $pane = new stdClass();
     $pane->pid = 'new-358df03f-7c1f-4349-bce6-89d648be0e57';
     $pane->panel = 'middle';
@@ -177,7 +179,7 @@ collections/microforms',
     $display->panels['middle'][0] = 'new-358df03f-7c1f-4349-bce6-89d648be0e57';
     $pane = new stdClass();
     $pane->pid = 'new-8874debf-b075-4c66-a148-e960d6004133';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
     $pane->shown = FALSE;
@@ -197,10 +199,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '8874debf-b075-4c66-a148-e960d6004133';
     $display->content['new-8874debf-b075-4c66-a148-e960d6004133'] = $pane;
-    $display->panels['right'][0] = 'new-8874debf-b075-4c66-a148-e960d6004133';
+    $display->panels['second'][0] = 'new-8874debf-b075-4c66-a148-e960d6004133';
     $pane = new stdClass();
     $pane->pid = 'new-df859910-1bcb-46cb-a394-39c9c5c31a7c';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_5';
     $pane->shown = FALSE;
@@ -220,10 +222,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = 'df859910-1bcb-46cb-a394-39c9c5c31a7c';
     $display->content['new-df859910-1bcb-46cb-a394-39c9c5c31a7c'] = $pane;
-    $display->panels['right'][1] = 'new-df859910-1bcb-46cb-a394-39c9c5c31a7c';
+    $display->panels['second'][1] = 'new-df859910-1bcb-46cb-a394-39c9c5c31a7c';
     $pane = new stdClass();
     $pane->pid = 'new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'library_hours-panel_pane_5';
     $pane->shown = TRUE;
@@ -246,7 +248,7 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = 'd51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
     $display->content['new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb'] = $pane;
-    $display->panels['right'][2] = 'new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
+    $display->panels['second'][2] = 'new-d51e95a6-f53e-4f14-ac92-9a7d1a2c19bb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2569cf90-7b85-47f9-a182-3e335be2761b';
   $handler->conf['display'] = $display;
@@ -311,7 +313,7 @@ collections/microforms',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
+  $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -321,6 +323,8 @@ collections/microforms',
       'right' => NULL,
       'bottom' => NULL,
       'left' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
     'left' => array(
       'style' => '-1',
@@ -333,7 +337,7 @@ collections/microforms',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-01f524e3-0975-4cec-886a-f58747bffab1';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -355,10 +359,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '01f524e3-0975-4cec-886a-f58747bffab1';
     $display->content['new-01f524e3-0975-4cec-886a-f58747bffab1'] = $pane;
-    $display->panels['left'][0] = 'new-01f524e3-0975-4cec-886a-f58747bffab1';
+    $display->panels['first'][0] = 'new-01f524e3-0975-4cec-886a-f58747bffab1';
     $pane = new stdClass();
     $pane->pid = 'new-39497f82-8062-4a9b-b5a2-75b81988f9ff';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -380,10 +384,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '39497f82-8062-4a9b-b5a2-75b81988f9ff';
     $display->content['new-39497f82-8062-4a9b-b5a2-75b81988f9ff'] = $pane;
-    $display->panels['left'][1] = 'new-39497f82-8062-4a9b-b5a2-75b81988f9ff';
+    $display->panels['first'][1] = 'new-39497f82-8062-4a9b-b5a2-75b81988f9ff';
     $pane = new stdClass();
     $pane->pid = 'new-fd6a9e03-e430-4351-a229-fc334f235a68';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -402,7 +406,7 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = 'fd6a9e03-e430-4351-a229-fc334f235a68';
     $display->content['new-fd6a9e03-e430-4351-a229-fc334f235a68'] = $pane;
-    $display->panels['left'][2] = 'new-fd6a9e03-e430-4351-a229-fc334f235a68';
+    $display->panels['first'][2] = 'new-fd6a9e03-e430-4351-a229-fc334f235a68';
     $pane = new stdClass();
     $pane->pid = 'new-bdfc4a72-3aba-41c4-a76f-29dc8a39dfe7';
     $pane->panel = 'middle';
@@ -458,7 +462,7 @@ collections/microforms',
     $display->panels['middle'][1] = 'new-e987f159-85da-445c-aaea-b2c5fc9f0886';
     $pane = new stdClass();
     $pane->pid = 'new-1892b0e3-dfe0-41e1-a5b3-a8b9d375f7e7';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
     $pane->shown = TRUE;
@@ -478,10 +482,10 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '1892b0e3-dfe0-41e1-a5b3-a8b9d375f7e7';
     $display->content['new-1892b0e3-dfe0-41e1-a5b3-a8b9d375f7e7'] = $pane;
-    $display->panels['right'][0] = 'new-1892b0e3-dfe0-41e1-a5b3-a8b9d375f7e7';
+    $display->panels['second'][0] = 'new-1892b0e3-dfe0-41e1-a5b3-a8b9d375f7e7';
     $pane = new stdClass();
     $pane->pid = 'new-2dc168b0-c4bc-44aa-bfda-33aa8e48bc1f';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_5';
     $pane->shown = TRUE;
@@ -501,7 +505,7 @@ collections/microforms',
     $pane->locks = array();
     $pane->uuid = '2dc168b0-c4bc-44aa-bfda-33aa8e48bc1f';
     $display->content['new-2dc168b0-c4bc-44aa-bfda-33aa8e48bc1f'] = $pane;
-    $display->panels['right'][1] = 'new-2dc168b0-c4bc-44aa-bfda-33aa8e48bc1f';
+    $display->panels['second'][1] = 'new-2dc168b0-c4bc-44aa-bfda-33aa8e48bc1f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-01f524e3-0975-4cec-886a-f58747bffab1';
   $handler->conf['display'] = $display;
@@ -568,7 +572,7 @@ collections/microforms/newspapers',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'pul_development_theme_12_threecol_3_6_3_stacked';
+  $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -590,7 +594,7 @@ collections/microforms/newspapers',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-5a795f23-e4a1-4d99-8807-439dcf78ec2f';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -612,10 +616,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '5a795f23-e4a1-4d99-8807-439dcf78ec2f';
     $display->content['new-5a795f23-e4a1-4d99-8807-439dcf78ec2f'] = $pane;
-    $display->panels['left'][0] = 'new-5a795f23-e4a1-4d99-8807-439dcf78ec2f';
+    $display->panels['first'][0] = 'new-5a795f23-e4a1-4d99-8807-439dcf78ec2f';
     $pane = new stdClass();
     $pane->pid = 'new-cf3dea83-4797-4dd8-86b2-5b01cbdf2a43';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -637,7 +641,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'cf3dea83-4797-4dd8-86b2-5b01cbdf2a43';
     $display->content['new-cf3dea83-4797-4dd8-86b2-5b01cbdf2a43'] = $pane;
-    $display->panels['left'][1] = 'new-cf3dea83-4797-4dd8-86b2-5b01cbdf2a43';
+    $display->panels['first'][1] = 'new-cf3dea83-4797-4dd8-86b2-5b01cbdf2a43';
     $pane = new stdClass();
     $pane->pid = 'new-1d91b41f-657e-4b31-b8c8-8519fdddd796';
     $pane->panel = 'middle';
@@ -664,7 +668,7 @@ collections/microforms/newspapers',
     $display->panels['middle'][0] = 'new-1d91b41f-657e-4b31-b8c8-8519fdddd796';
     $pane = new stdClass();
     $pane->pid = 'new-3253d7d4-35b1-4936-9b40-d1d328fe29f4';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -683,7 +687,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '3253d7d4-35b1-4936-9b40-d1d328fe29f4';
     $display->content['new-3253d7d4-35b1-4936-9b40-d1d328fe29f4'] = $pane;
-    $display->panels['right'][0] = 'new-3253d7d4-35b1-4936-9b40-d1d328fe29f4';
+    $display->panels['second'][0] = 'new-3253d7d4-35b1-4936-9b40-d1d328fe29f4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -748,7 +752,7 @@ Microforms',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -770,7 +774,7 @@ Microforms',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-7d15d228-a784-4853-9c41-e5c152f12831';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -792,10 +796,10 @@ Microforms',
     $pane->locks = array();
     $pane->uuid = '7d15d228-a784-4853-9c41-e5c152f12831';
     $display->content['new-7d15d228-a784-4853-9c41-e5c152f12831'] = $pane;
-    $display->panels['left'][0] = 'new-7d15d228-a784-4853-9c41-e5c152f12831';
+    $display->panels['first'][0] = 'new-7d15d228-a784-4853-9c41-e5c152f12831';
     $pane = new stdClass();
     $pane->pid = 'new-7dbd5562-9787-428b-8a8e-6b1c7a0d6f44';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -817,10 +821,10 @@ Microforms',
     $pane->locks = array();
     $pane->uuid = '7dbd5562-9787-428b-8a8e-6b1c7a0d6f44';
     $display->content['new-7dbd5562-9787-428b-8a8e-6b1c7a0d6f44'] = $pane;
-    $display->panels['left'][1] = 'new-7dbd5562-9787-428b-8a8e-6b1c7a0d6f44';
+    $display->panels['first'][1] = 'new-7dbd5562-9787-428b-8a8e-6b1c7a0d6f44';
     $pane = new stdClass();
     $pane->pid = 'new-0a6525b0-c359-4112-9f9a-78d8d3e8a948';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'node_body';
     $pane->subtype = 'node_body';
     $pane->shown = TRUE;
@@ -840,10 +844,10 @@ Microforms',
     $pane->locks = array();
     $pane->uuid = '0a6525b0-c359-4112-9f9a-78d8d3e8a948';
     $display->content['new-0a6525b0-c359-4112-9f9a-78d8d3e8a948'] = $pane;
-    $display->panels['right'][0] = 'new-0a6525b0-c359-4112-9f9a-78d8d3e8a948';
+    $display->panels['second'][0] = 'new-0a6525b0-c359-4112-9f9a-78d8d3e8a948';
     $pane = new stdClass();
     $pane->pid = 'new-e3b16504-92dc-4ee7-b73b-e94e759a5924';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'node_book_nav';
     $pane->subtype = 'node_book_nav';
     $pane->shown = TRUE;
@@ -863,7 +867,7 @@ Microforms',
     $pane->locks = array();
     $pane->uuid = 'e3b16504-92dc-4ee7-b73b-e94e759a5924';
     $display->content['new-e3b16504-92dc-4ee7-b73b-e94e759a5924'] = $pane;
-    $display->panels['right'][1] = 'new-e3b16504-92dc-4ee7-b73b-e94e759a5924';
+    $display->panels['second'][1] = 'new-e3b16504-92dc-4ee7-b73b-e94e759a5924';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -912,7 +916,7 @@ collections/microforms/newspapers',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'six-six';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -928,7 +932,7 @@ collections/microforms/newspapers',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-019ac7e5-18aa-4511-af5e-f91af19c226c';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -950,10 +954,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '019ac7e5-18aa-4511-af5e-f91af19c226c';
     $display->content['new-019ac7e5-18aa-4511-af5e-f91af19c226c'] = $pane;
-    $display->panels['left'][0] = 'new-019ac7e5-18aa-4511-af5e-f91af19c226c';
+    $display->panels['first'][0] = 'new-019ac7e5-18aa-4511-af5e-f91af19c226c';
     $pane = new stdClass();
     $pane->pid = 'new-285d4dfe-2bd9-4cfa-89d8-07797d41b7ef';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -972,10 +976,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '285d4dfe-2bd9-4cfa-89d8-07797d41b7ef';
     $display->content['new-285d4dfe-2bd9-4cfa-89d8-07797d41b7ef'] = $pane;
-    $display->panels['left'][1] = 'new-285d4dfe-2bd9-4cfa-89d8-07797d41b7ef';
+    $display->panels['first'][1] = 'new-285d4dfe-2bd9-4cfa-89d8-07797d41b7ef';
     $pane = new stdClass();
     $pane->pid = 'new-7a7ebea1-c262-4534-8572-00991afd637e';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -994,10 +998,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '7a7ebea1-c262-4534-8572-00991afd637e';
     $display->content['new-7a7ebea1-c262-4534-8572-00991afd637e'] = $pane;
-    $display->panels['left'][2] = 'new-7a7ebea1-c262-4534-8572-00991afd637e';
+    $display->panels['first'][2] = 'new-7a7ebea1-c262-4534-8572-00991afd637e';
     $pane = new stdClass();
     $pane->pid = 'new-5ebed262-c502-4413-84a4-ed03d98489c8';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms_states_and_countries-panel_pane_1';
     $pane->shown = TRUE;
@@ -1013,10 +1017,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '5ebed262-c502-4413-84a4-ed03d98489c8';
     $display->content['new-5ebed262-c502-4413-84a4-ed03d98489c8'] = $pane;
-    $display->panels['right'][0] = 'new-5ebed262-c502-4413-84a4-ed03d98489c8';
+    $display->panels['second'][0] = 'new-5ebed262-c502-4413-84a4-ed03d98489c8';
     $pane = new stdClass();
     $pane->pid = 'new-feba4ed8-2a5c-4945-a12c-3885104743ce';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms-panel_pane_2';
     $pane->shown = TRUE;
@@ -1038,7 +1042,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'feba4ed8-2a5c-4945-a12c-3885104743ce';
     $display->content['new-feba4ed8-2a5c-4945-a12c-3885104743ce'] = $pane;
-    $display->panels['right'][1] = 'new-feba4ed8-2a5c-4945-a12c-3885104743ce';
+    $display->panels['second'][1] = 'new-feba4ed8-2a5c-4945-a12c-3885104743ce';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1117,7 +1121,7 @@ collections/microforms/newspapers',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1133,7 +1137,7 @@ collections/microforms/newspapers',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-7bb52a23-3e6d-43f8-867c-4356161543ef';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -1155,10 +1159,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '7bb52a23-3e6d-43f8-867c-4356161543ef';
     $display->content['new-7bb52a23-3e6d-43f8-867c-4356161543ef'] = $pane;
-    $display->panels['left'][0] = 'new-7bb52a23-3e6d-43f8-867c-4356161543ef';
+    $display->panels['first'][0] = 'new-7bb52a23-3e6d-43f8-867c-4356161543ef';
     $pane = new stdClass();
     $pane->pid = 'new-412bb5e0-8b06-444a-857e-9aa2a132fb0f';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -1177,10 +1181,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '412bb5e0-8b06-444a-857e-9aa2a132fb0f';
     $display->content['new-412bb5e0-8b06-444a-857e-9aa2a132fb0f'] = $pane;
-    $display->panels['left'][1] = 'new-412bb5e0-8b06-444a-857e-9aa2a132fb0f';
+    $display->panels['first'][1] = 'new-412bb5e0-8b06-444a-857e-9aa2a132fb0f';
     $pane = new stdClass();
     $pane->pid = 'new-bc3f9b1f-e07a-47fe-951e-a565790778db';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -1199,10 +1203,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'bc3f9b1f-e07a-47fe-951e-a565790778db';
     $display->content['new-bc3f9b1f-e07a-47fe-951e-a565790778db'] = $pane;
-    $display->panels['left'][2] = 'new-bc3f9b1f-e07a-47fe-951e-a565790778db';
+    $display->panels['first'][2] = 'new-bc3f9b1f-e07a-47fe-951e-a565790778db';
     $pane = new stdClass();
     $pane->pid = 'new-b9f7571b-9033-4adb-b047-8a67d57a4c8a';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms_states_and_countries-panel_pane_2';
     $pane->shown = TRUE;
@@ -1218,10 +1222,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'b9f7571b-9033-4adb-b047-8a67d57a4c8a';
     $display->content['new-b9f7571b-9033-4adb-b047-8a67d57a4c8a'] = $pane;
-    $display->panels['right'][0] = 'new-b9f7571b-9033-4adb-b047-8a67d57a4c8a';
+    $display->panels['second'][0] = 'new-b9f7571b-9033-4adb-b047-8a67d57a4c8a';
     $pane = new stdClass();
     $pane->pid = 'new-b2f2ad71-ee54-409e-92c4-e057ff7cf859';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms-panel_pane_3';
     $pane->shown = TRUE;
@@ -1243,7 +1247,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'b2f2ad71-ee54-409e-92c4-e057ff7cf859';
     $display->content['new-b2f2ad71-ee54-409e-92c4-e057ff7cf859'] = $pane;
-    $display->panels['right'][1] = 'new-b2f2ad71-ee54-409e-92c4-e057ff7cf859';
+    $display->panels['second'][1] = 'new-b2f2ad71-ee54-409e-92c4-e057ff7cf859';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1292,7 +1296,7 @@ collections/microforms/newspapers',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1308,7 +1312,7 @@ collections/microforms/newspapers',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-860ca796-6e30-438f-b6ed-bfc028fe378e';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -1330,10 +1334,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '860ca796-6e30-438f-b6ed-bfc028fe378e';
     $display->content['new-860ca796-6e30-438f-b6ed-bfc028fe378e'] = $pane;
-    $display->panels['left'][0] = 'new-860ca796-6e30-438f-b6ed-bfc028fe378e';
+    $display->panels['first'][0] = 'new-860ca796-6e30-438f-b6ed-bfc028fe378e';
     $pane = new stdClass();
     $pane->pid = 'new-bde5542d-1861-4757-b4c8-14395018abf4';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -1352,10 +1356,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'bde5542d-1861-4757-b4c8-14395018abf4';
     $display->content['new-bde5542d-1861-4757-b4c8-14395018abf4'] = $pane;
-    $display->panels['left'][1] = 'new-bde5542d-1861-4757-b4c8-14395018abf4';
+    $display->panels['first'][1] = 'new-bde5542d-1861-4757-b4c8-14395018abf4';
     $pane = new stdClass();
     $pane->pid = 'new-7b01b9b1-93a1-484c-8b80-46885979b5a4';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -1374,10 +1378,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '7b01b9b1-93a1-484c-8b80-46885979b5a4';
     $display->content['new-7b01b9b1-93a1-484c-8b80-46885979b5a4'] = $pane;
-    $display->panels['left'][2] = 'new-7b01b9b1-93a1-484c-8b80-46885979b5a4';
+    $display->panels['first'][2] = 'new-7b01b9b1-93a1-484c-8b80-46885979b5a4';
     $pane = new stdClass();
     $pane->pid = 'new-8b1aef4c-9115-4682-b491-a5e1297922a4';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms_states_and_countries-panel_pane_2';
     $pane->shown = TRUE;
@@ -1393,10 +1397,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '8b1aef4c-9115-4682-b491-a5e1297922a4';
     $display->content['new-8b1aef4c-9115-4682-b491-a5e1297922a4'] = $pane;
-    $display->panels['right'][0] = 'new-8b1aef4c-9115-4682-b491-a5e1297922a4';
+    $display->panels['second'][0] = 'new-8b1aef4c-9115-4682-b491-a5e1297922a4';
     $pane = new stdClass();
     $pane->pid = 'new-997524df-e45a-4745-bd4b-e931da54ea28';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms-panel_pane_4';
     $pane->shown = TRUE;
@@ -1418,7 +1422,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '997524df-e45a-4745-bd4b-e931da54ea28';
     $display->content['new-997524df-e45a-4745-bd4b-e931da54ea28'] = $pane;
-    $display->panels['right'][1] = 'new-997524df-e45a-4745-bd4b-e931da54ea28';
+    $display->panels['second'][1] = 'new-997524df-e45a-4745-bd4b-e931da54ea28';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = 'new-bde5542d-1861-4757-b4c8-14395018abf4';
   $handler->conf['display'] = $display;
@@ -1459,7 +1463,7 @@ collections/microforms/newspapers',
     ),
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1475,7 +1479,7 @@ collections/microforms/newspapers',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-94af2c8f-16f3-4231-9d19-f6cebfbfd03c';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -1497,10 +1501,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '94af2c8f-16f3-4231-9d19-f6cebfbfd03c';
     $display->content['new-94af2c8f-16f3-4231-9d19-f6cebfbfd03c'] = $pane;
-    $display->panels['left'][0] = 'new-94af2c8f-16f3-4231-9d19-f6cebfbfd03c';
+    $display->panels['first'][0] = 'new-94af2c8f-16f3-4231-9d19-f6cebfbfd03c';
     $pane = new stdClass();
     $pane->pid = 'new-ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -1519,10 +1523,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb';
     $display->content['new-ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb'] = $pane;
-    $display->panels['left'][1] = 'new-ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb';
+    $display->panels['first'][1] = 'new-ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb';
     $pane = new stdClass();
     $pane->pid = 'new-3d1f2899-53bf-4e94-b193-7c5f86a28960';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -1541,10 +1545,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '3d1f2899-53bf-4e94-b193-7c5f86a28960';
     $display->content['new-3d1f2899-53bf-4e94-b193-7c5f86a28960'] = $pane;
-    $display->panels['left'][2] = 'new-3d1f2899-53bf-4e94-b193-7c5f86a28960';
+    $display->panels['first'][2] = 'new-3d1f2899-53bf-4e94-b193-7c5f86a28960';
     $pane = new stdClass();
     $pane->pid = 'new-af7b9bf6-50be-41ff-b046-5e67b5321c81';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms_states_and_countries-panel_pane_3';
     $pane->shown = TRUE;
@@ -1560,10 +1564,10 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = 'af7b9bf6-50be-41ff-b046-5e67b5321c81';
     $display->content['new-af7b9bf6-50be-41ff-b046-5e67b5321c81'] = $pane;
-    $display->panels['right'][0] = 'new-af7b9bf6-50be-41ff-b046-5e67b5321c81';
+    $display->panels['second'][0] = 'new-af7b9bf6-50be-41ff-b046-5e67b5321c81';
     $pane = new stdClass();
     $pane->pid = 'new-9fb7d37d-a021-4791-a1b6-0177dce315c1';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms-panel_pane_5';
     $pane->shown = TRUE;
@@ -1585,7 +1589,7 @@ collections/microforms/newspapers',
     $pane->locks = array();
     $pane->uuid = '9fb7d37d-a021-4791-a1b6-0177dce315c1';
     $display->content['new-9fb7d37d-a021-4791-a1b6-0177dce315c1'] = $pane;
-    $display->panels['right'][1] = 'new-9fb7d37d-a021-4791-a1b6-0177dce315c1';
+    $display->panels['second'][1] = 'new-9fb7d37d-a021-4791-a1b6-0177dce315c1';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = 'new-ea7f50ab-8fc7-49ff-81c6-d50cf37c9fdb';
   $handler->conf['display'] = $display;
@@ -1639,7 +1643,7 @@ function microforms_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_3_9';
+  $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1658,7 +1662,7 @@ function microforms_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1d6b6642-32dc-4531-8e69-c249dd7c7c39';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -1680,10 +1684,10 @@ function microforms_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '1d6b6642-32dc-4531-8e69-c249dd7c7c39';
     $display->content['new-1d6b6642-32dc-4531-8e69-c249dd7c7c39'] = $pane;
-    $display->panels['left'][0] = 'new-1d6b6642-32dc-4531-8e69-c249dd7c7c39';
+    $display->panels['first'][0] = 'new-1d6b6642-32dc-4531-8e69-c249dd7c7c39';
     $pane = new stdClass();
     $pane->pid = 'new-b7844933-2b0c-430a-a56d-5d742fc4a3f3';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-collections-and-ti';
     $pane->shown = TRUE;
@@ -1702,10 +1706,10 @@ function microforms_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'b7844933-2b0c-430a-a56d-5d742fc4a3f3';
     $display->content['new-b7844933-2b0c-430a-a56d-5d742fc4a3f3'] = $pane;
-    $display->panels['left'][1] = 'new-b7844933-2b0c-430a-a56d-5d742fc4a3f3';
+    $display->panels['first'][1] = 'new-b7844933-2b0c-430a-a56d-5d742fc4a3f3';
     $pane = new stdClass();
     $pane->pid = 'new-3c2e4d0a-ac4a-418e-b5b4-36ac23c25a9e';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-selected-research-guides';
     $pane->shown = TRUE;
@@ -1724,10 +1728,10 @@ function microforms_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '3c2e4d0a-ac4a-418e-b5b4-36ac23c25a9e';
     $display->content['new-3c2e4d0a-ac4a-418e-b5b4-36ac23c25a9e'] = $pane;
-    $display->panels['left'][2] = 'new-3c2e4d0a-ac4a-418e-b5b4-36ac23c25a9e';
+    $display->panels['first'][2] = 'new-3c2e4d0a-ac4a-418e-b5b4-36ac23c25a9e';
     $pane = new stdClass();
     $pane->pid = 'new-9838d4aa-295e-4c32-856e-3bdcabfaa9dc';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms_states_and_countries-panel_pane_1';
     $pane->shown = TRUE;
@@ -1743,10 +1747,10 @@ function microforms_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '9838d4aa-295e-4c32-856e-3bdcabfaa9dc';
     $display->content['new-9838d4aa-295e-4c32-856e-3bdcabfaa9dc'] = $pane;
-    $display->panels['right'][0] = 'new-9838d4aa-295e-4c32-856e-3bdcabfaa9dc';
+    $display->panels['second'][0] = 'new-9838d4aa-295e-4c32-856e-3bdcabfaa9dc';
     $pane = new stdClass();
     $pane->pid = 'new-ab0b1526-4f55-4174-a1cf-a0b45523fcae';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'microforms-panel_pane_1';
     $pane->shown = TRUE;
@@ -1768,7 +1772,7 @@ function microforms_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'ab0b1526-4f55-4174-a1cf-a0b45523fcae';
     $display->content['new-ab0b1526-4f55-4174-a1cf-a0b45523fcae'] = $pane;
-    $display->panels['right'][1] = 'new-ab0b1526-4f55-4174-a1cf-a0b45523fcae';
+    $display->panels['second'][1] = 'new-ab0b1526-4f55-4174-a1cf-a0b45523fcae';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1d6b6642-32dc-4531-8e69-c249dd7c7c39';
   $handler->conf['display'] = $display;

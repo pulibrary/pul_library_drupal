@@ -49,7 +49,7 @@ function library_faq_default_page_manager_handlers() {
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_9_3';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -57,16 +57,18 @@ function library_faq_default_page_manager_handlers() {
       'middle' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '%term:name';
+  $display->title = 'Frequently asked Questions: %term:name';
   $display->uuid = '179e8013-4c52-47ad-81aa-ccdc3b2e0d48';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-42cc94eb-a648-4c92-8bcc-d5f516a6e4bc';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'term_description';
     $pane->subtype = 'term_description';
     $pane->shown = TRUE;
@@ -86,10 +88,10 @@ function library_faq_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '42cc94eb-a648-4c92-8bcc-d5f516a6e4bc';
     $display->content['new-42cc94eb-a648-4c92-8bcc-d5f516a6e4bc'] = $pane;
-    $display->panels['left'][0] = 'new-42cc94eb-a648-4c92-8bcc-d5f516a6e4bc';
+    $display->panels['first'][0] = 'new-42cc94eb-a648-4c92-8bcc-d5f516a6e4bc';
     $pane = new stdClass();
     $pane->pid = 'new-f3fc1bf9-e9a9-49df-8482-a22f78b2e2fd';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'views';
     $pane->subtype = 'faq_nodes';
     $pane->shown = TRUE;
@@ -123,10 +125,10 @@ function library_faq_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'f3fc1bf9-e9a9-49df-8482-a22f78b2e2fd';
     $display->content['new-f3fc1bf9-e9a9-49df-8482-a22f78b2e2fd'] = $pane;
-    $display->panels['left'][1] = 'new-f3fc1bf9-e9a9-49df-8482-a22f78b2e2fd';
+    $display->panels['first'][1] = 'new-f3fc1bf9-e9a9-49df-8482-a22f78b2e2fd';
     $pane = new stdClass();
     $pane->pid = 'new-5cbcd7ef-e789-4ed5-ad1a-97c80078c6d6';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-microforms';
     $pane->shown = TRUE;
@@ -157,14 +159,26 @@ function library_faq_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '5cbcd7ef-e789-4ed5-ad1a-97c80078c6d6';
     $display->content['new-5cbcd7ef-e789-4ed5-ad1a-97c80078c6d6'] = $pane;
-    $display->panels['right'][0] = 'new-5cbcd7ef-e789-4ed5-ad1a-97c80078c6d6';
+    $display->panels['second'][0] = 'new-5cbcd7ef-e789-4ed5-ad1a-97c80078c6d6';
     $pane = new stdClass();
     $pane->pid = 'new-4638a64d-e4de-49f2-bebb-49bf3add1b74';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-get-help-menu';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'faq/microforms-service',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
@@ -179,7 +193,7 @@ function library_faq_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '4638a64d-e4de-49f2-bebb-49bf3add1b74';
     $display->content['new-4638a64d-e4de-49f2-bebb-49bf3add1b74'] = $pane;
-    $display->panels['right'][1] = 'new-4638a64d-e4de-49f2-bebb-49bf3add1b74';
+    $display->panels['second'][1] = 'new-4638a64d-e4de-49f2-bebb-49bf3add1b74';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

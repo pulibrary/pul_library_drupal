@@ -178,9 +178,11 @@ function spotlight_content_types_and_views_views_default_views() {
     'edit_node' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_hover'] = 1;
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '3000';
@@ -294,6 +296,48 @@ function spotlight_content_types_and_views_views_default_views() {
 
   /* Display: Spotlight Graphics by Tag */
   $handler = $view->new_display('panel_pane', 'Spotlight Graphics by Tag', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['id'] = 'field_pul_spotlight_image';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['table'] = 'field_data_field_pul_spotlight_image';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['field'] = 'field_pul_spotlight_image';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['label'] = '';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['settings'] = array(
+    'image_style' => 'pul_spotlight_max_width',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['field_api_classes'] = TRUE;
+  /* Field: Content: URL */
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['id'] = 'field_pul_spotlight_url';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['table'] = 'field_data_field_pul_spotlight_url';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['field'] = 'field_pul_spotlight_url';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['label'] = '';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['click_sort_column'] = 'url';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Spotlight';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

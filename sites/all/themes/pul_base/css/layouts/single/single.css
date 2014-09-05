@@ -1,0 +1,49 @@
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 12 wide single column layout..
+ ******************************************************************************/
+.panel-display--single {
+  *zoom: 1;
+}
+.panel-display--single:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.single-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 70em) {
+  .single-region--top {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--middle {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--bottom {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+  }
+}

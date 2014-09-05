@@ -953,6 +953,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['field'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['label'] = '';
+  $handler->display->display_options['fields']['field_hours_library_status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_hours_library_status']['element_wrapper_class'] = 'library-hours-status';
@@ -1436,12 +1437,16 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status';
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_hours_library_status']['settings'] = array(
+    'target' => 'node',
+    'depth' => 0,
+    'hidden' => 0,
+  );
   /* Field: Content: Hours */
   $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
-  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="hours-[field_hours_library_status]">[field_open_hours]</span><span class="hours-status-[field_hours_library_status]">[field_hours_library_status]</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;

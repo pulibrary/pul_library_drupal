@@ -43,5 +43,6 @@ function library_study_rooms_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
