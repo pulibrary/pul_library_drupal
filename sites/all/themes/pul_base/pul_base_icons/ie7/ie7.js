@@ -25,6 +25,7 @@
 		'icon-minus-sign-alt': '&#xf056;',
 		'icon-caret-left': '&#xf0d9;',
 		'icon-caret-right': '&#xf0da;',
+		'icon-spinner': '&#xf110;',
 		'icon-question': '&#xf128;',
 		'icon-exclamation': '&#xf12a;',
 		'icon-home': '&#xe607;',
