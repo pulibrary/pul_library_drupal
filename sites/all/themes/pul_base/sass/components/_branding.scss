@@ -1,7 +1,36 @@
 // _branding.scss
 
+.site-logo {
+    @include grid-span(12);
+    clear: both;
+
+    @include breakpoint($tab) {
+        @include grid-span(6,1);
+        margin: .5em;
+        // margin-bottom: 0;
+    }
+
+    @include breakpoint($desk) {
+        margin: 0;
+    }
+
+    img {
+        padding: 0 1em;
+        display: block;
+        margin: 0 auto;
+
+        @include breakpoint($desk) {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+}
+
+
 .l-branding {
   .homepage-tab-form-message {
     display: none;
   }
 }
+

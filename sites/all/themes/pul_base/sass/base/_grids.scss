@@ -31,13 +31,29 @@ body {
 	// @include background-grid;
 }
 
-.site-logo {
-	@include grid-span(6,1);
-}
+// .site-logo {
+// 	@include grid-span(12);
+// 	clear: both;
 
-.l-region--branding {
-	@include grid-span(6,7);
-}
+// 	@include breakpoint($tab) {
+// 		@include grid-span(6,1);
+// 		margin: .5em;
+// 		margin-bottom: 0;
+// 	}
+
+// 	img {
+// 		margin-left: 1em;
+
+// 		@include breakpoint($tab) {
+// 			margin-left: 0;
+// 		}
+// 	}
+
+// }
+
+// .l-region--branding {
+// 	@include grid-span(6,7);
+// }
 
 // .l-region--navigation {
 // 	@include grid-span(12);
@@ -48,21 +64,21 @@ body {
 	@include grid-span(12); 
 	clear: both;
 	@include breakpoint($desk) {
-		@include grid-span(9,1);
+		@include grid-span(9,1, $gutter: 0);
 		margin-left: 0;
 		margin-right: 0;
 	}
 }
 
-#block-views-acquisitions-highlights-block-1 {
-	@include grid-span(12); 
-	clear: both;
-	@include breakpoint($desk) {
-		@include grid-span(3,10);
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
+// #block-views-acquisitions-highlights-block-1 {
+// 	@include grid-span(12); 
+// 	clear: both;
+// 	@include breakpoint($desk) {
+// 		@include grid-span(3,10);
+// 		margin-left: 0;
+// 		margin-right: 0;
+// 	}
+// }
 
 /*
 #block-menu-menu-get-help-menu {
@@ -96,23 +112,25 @@ body {
 // 	}
 // }
 
-.l-region--footer {
-	clear: both;
 
-	nav, #block-block-1 {
-		@include grid-span(12, $output-style: 'float');
-		@include breakpoint($desk) {
-			@include grid-span(3, $output-style: 'float');
-		}
-	}
 
-	nav:first-child {
-		margin-left: 0;
-	}
-	.block--block-1 {
-		margin-right: 0;
-	}
- }
+// .l-region--footer {
+// 	clear: both;
+
+// 	nav, #block-block-1 {
+// 		@include grid-span(12, $output-style: 'float');
+// 		@include breakpoint($desk) {
+// 			@include grid-span(3, $output-style: 'float');
+// 		}
+// 	}
+
+// 	nav:first-child {
+// 		margin-left: 0;
+// 	}
+// 	.block--block-1 {
+// 		margin-right: 0;
+// 	}
+//  }
 
 .panel-col-first {
 	@include grid-span(6,1);
@@ -132,5 +150,5 @@ body {
 }
 
 .l-main {
-	margin-top: 1em;
+	padding: 1em;
 }

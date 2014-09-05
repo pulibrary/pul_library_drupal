@@ -17,7 +17,7 @@
   margin-bottom: $vert-spacing-unit;
 }
 
-@include breakpoint($desk) {
+@include breakpoint($tab) {
 
   .three_six_three-region--first {
     @include grid-span(3,1);

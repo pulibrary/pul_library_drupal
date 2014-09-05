@@ -1,5 +1,17 @@
+.l-region--branding {
+    @include grid-span(12);
+    display: block;
+    margin: 0 auto;
+
+    @include breakpoint($tab) {
+    	@include grid-span(6,7);
+    }
+    
+}
+
 .l-region--branding .block--allsearch-block-allsearch-search {
-	@include grid-span(9,4);
+	@include grid-span(12);
+	float:none;
 
 	form > div {
 	  $search-bar-border-color: $base-border-color;
@@ -9,6 +21,7 @@
 	  position: relative; 
 	  display: inline-block;
 	  margin-top:0.9em;
+	  width: 100%;
 
 	  input {
 	    @include box-sizing(border-box);
@@ -53,5 +66,9 @@
 	      @include border-top-left-radius(0);
 	      @include border-bottom-left-radius(0);
 	  }
+	}
+
+	@include breakpoint($tab) {
+		@include grid-span(9,4);
 	}
 }
