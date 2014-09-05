@@ -1588,6 +1588,10 @@ footer address, footer #university-copyright-footer {
   float: right;
 }
 
+.section-collections-and-collection-development .three_six_three_stacked-region--top {
+  background-image: url(/sites/all/themes/pul_base/images/trustee_reading_room_50.png);
+}
+
 #block-views-acquisitions-highlights-block-1 {
   background: rgba(73, 79, 87, 0.65);
   margin: 1.5em 0;
