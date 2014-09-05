@@ -837,6 +837,14 @@ footer {
 footer address, footer #university-copyright-footer {
   font-size: 0.78571rem;
 }
+footer nav ul {
+  display: none;
+}
+@media (min-width: 44em) {
+  footer nav ul {
+    display: block;
+  }
+}
 
 .l-footer {
   margin: 2em 0;
@@ -949,6 +957,33 @@ footer address, footer #university-copyright-footer {
   padding: 0 1em;
 }
 
+.icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 [class^="icon-"],
 [class*=" icon-"] {
   margin-left: 0;
@@ -993,21 +1028,34 @@ footer address, footer #university-copyright-footer {
   margin-right: .35em;
 }
 
-.three_six_three-region--first .expanded.active-trail {
-  background: #477dca;
-}
-.three_six_three-region--first .expanded.active-trail a {
-  color: white;
-}
-.three_six_three-region--first .expanded.active-trail .menu {
-  background: #e5edf8;
-}
-.three_six_three-region--first .expanded.active-trail .menu a {
-  color: #477dca;
+.page-find-all-results .results-spinner-large {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 4em;
 }
 
-.pul_base_nine_three-region--second ul {
-  list-style-type: none;
+.pul_base_nine_three-region--second ul,
+.three_six_three-region--first ul,
+.menu .leaf,
+.menu .collapsed,
+.menu .expanded {
+  list-style: none;
+}
+
+.three_six_three-region--middle ul {
+  list-style-type: disc;
+  margin-left: 1.4em;
+}
+.three_six_three-region--middle ul li {
+  margin-bottom: 1em;
+}
+
+.three_six_three-region--middle ol {
+  list-style-type: decimal;
+  margin-left: 1.4em;
+}
+.three_six_three-region--middle ol li {
+  margin-bottom: 1em;
 }
 
 /* CDL Menu */
@@ -1324,29 +1372,33 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
 }
-.three_six_three-region--first .menu li a {
-  font-family: "Droid Serif", Georgia, Times, serif;
-  font-size: 12px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.71429rem;
-  margin-top: 12px;
-  margin-top: 0.85714rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.85714rem;
+.three_six_three-region--first a {
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.three_six_three-region--first .expanded {
+.three_six_three-region--first ul.menu li a {
+  padding: .3em;
+  margin: 0;
+  display: block;
+}
+.three_six_three-region--first ul.menu li a.active, .three_six_three-region--first ul.menu li.expanded a.active {
+  background: #477dca;
+  color: white;
+}
+.three_six_three-region--first ul.menu li.expanded {
   background: #e5edf8;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
-.three_six_three-region--first .expanded .menu {
-  background: #e5edf8;
+.three_six_three-region--first ul.menu > li > a {
+  font-size: 18px;
 }
-.three_six_three-region--first .expanded .menu a {
-  color: #477dca;
+.three_six_three-region--first ul.menu > li > ul > li > a {
+  font-size: 14px;
+  padding-left: 2em;
+}
+.three_six_three-region--first ul.menu > li > ul > li > ul > li > a {
+  padding-left: 4em;
 }
 
 .views-field-created {

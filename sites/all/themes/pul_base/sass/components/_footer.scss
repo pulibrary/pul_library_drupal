@@ -23,6 +23,16 @@
 	address, #university-copyright-footer {
 		font-size: $small;
 	}
+
+	nav ul {
+		display: none;
+	}
+
+	@include breakpoint($tab) {
+		nav ul {
+			display: block;
+		}
+	}
 }
 
 .l-footer {
