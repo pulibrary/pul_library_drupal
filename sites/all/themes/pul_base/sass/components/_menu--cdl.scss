@@ -1,8 +1,8 @@
 // _menu-cdl.scss
 
-#cdl-menu {
-  clear: both;
-  background-color: none;
+//#cdl-menu,  {
+//  clear: both;
+//  background-color: none;
 
   /* CDL Menu */
   ul.nice-menu.nice-menu-menu-collection-development-webs {
@@ -11,6 +11,7 @@
     background: none;
     margin-top: 0px;
     border-top: none;
+    z-index: 99;
   }
 
   ul.nice-menu.nice-menu-menu-collection-development-webs li {
@@ -34,11 +35,24 @@
 
   /* !Important Dropdowns */
   ul.nice-menu.nice-menu-menu-collection-development-webs ul {
-    top: 2.4em;
-    left: 0.1em;
+    top: 2em;
+    //left: 0.1em;
     background-color: #000;
     padding:0;
     border:0;
     margin:0;
   }
-}
+
+  ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+    padding-right: 15px;
+    color: #fff;
+    font-size: 1em;
+    text-align: left;
+  }
+
+  ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+    padding-right: 15px;
+    color: #F58026;
+  }
+
+//}

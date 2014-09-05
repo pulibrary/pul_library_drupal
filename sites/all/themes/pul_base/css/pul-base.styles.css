@@ -1007,24 +1007,22 @@ footer address, footer #university-copyright-footer {
   list-style-type: none;
 }
 
-#cdl-menu {
-  clear: both;
-  background-color: none;
-  /* CDL Menu */
-  /* !Important Dropdowns */
-}
-#cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs {
+/* CDL Menu */
+ul.nice-menu.nice-menu-menu-collection-development-webs {
   text-align: center;
   z-index: 0;
   background: none;
   margin-top: 0px;
   border-top: none;
+  z-index: 99;
 }
-#cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs li {
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li {
   background: none;
   border: none;
 }
-#cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs li a {
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a {
   font-size: 1em;
   color: #fff;
   background: none;
@@ -1032,17 +1030,31 @@ footer address, footer #university-copyright-footer {
   padding-left: 1.7em;
   text-decoration: none;
 }
-#cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, #cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
   font-size: 100%;
   color: #F58026;
 }
-#cdl-menu ul.nice-menu.nice-menu-menu-collection-development-webs ul {
-  top: 2.4em;
-  left: 0.1em;
+
+/* !Important Dropdowns */
+ul.nice-menu.nice-menu-menu-collection-development-webs ul {
+  top: 2em;
   background-color: #000;
   padding: 0;
   border: 0;
   margin: 0;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+  padding-right: 15px;
+  color: #fff;
+  font-size: 1em;
+  text-align: left;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+  padding-right: 15px;
+  color: #F58026;
 }
 
 .views-field-created {
@@ -1060,7 +1072,7 @@ footer address, footer #university-copyright-footer {
   font-family: "Droid Serif", Georgia, Times, serif;
   height: 60px;
   width: 100%;
-  z-index: 99;
+  z-index: 101;
   position: relative;
   overflow: visible;
 }
@@ -1627,7 +1639,11 @@ footer address, footer #university-copyright-footer {
 }
 
 .section-collections-and-collection-development .three_six_three_stacked-region--top,
-.section-collections .three_six_three_stacked-region--top {
+.section-collections-and-collection-development .single-region--top,
+.section-collections-and-collection-development .nine_three_stacked-region--top,
+.section-collections .three_six_three_stacked-region--top,
+.section-collections .single-region--top,
+.section-collections .nine_three_stacked-region--top {
   background-image: url(/sites/all/themes/pul_base/images/trustee_reading_room_50.png);
   background-position: center top;
   background-repeat: no-repeat;
@@ -1635,8 +1651,9 @@ footer address, footer #university-copyright-footer {
 }
 .section-collections-and-collection-development .pane-spotlight-graphics-panel-pane-1,
 .section-collections .pane-spotlight-graphics-panel-pane-1 {
-  padding-top: 1em;
+  margin-top: 22.5px;
   clear: both;
+  z-index: 1;
 }
 
 #block-views-acquisitions-highlights-block-1 {
@@ -2194,6 +2211,58 @@ $desk : 1250px;
     margin-left: 0;
     margin-right: 1.66667%;
     margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 12 wide single column layout..
+ ******************************************************************************/
+.panel-display--single {
+  *zoom: 1;
+}
+.panel-display--single:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.single-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 70em) {
+  .single-region--top {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--middle {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .single-region--bottom {
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
   }
 }
 /*******************************************************************************

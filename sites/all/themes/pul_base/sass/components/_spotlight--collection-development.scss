@@ -3,7 +3,9 @@
 .section-collections-and-collection-development, 
 .section-collections {
 
-  .three_six_three_stacked-region--top {
+  .three_six_three_stacked-region--top, 
+  .single-region--top,  
+  .nine_three_stacked-region--top{
     background-image: url(/sites/all/themes/pul_base/images/trustee_reading_room_50.png);
     background-position: center top;
     background-repeat: no-repeat;
@@ -11,7 +13,8 @@
   }
 
   .pane-spotlight-graphics-panel-pane-1 {
-    padding-top: 1em;
+    margin-top: $vert-spacing-unit * 1.25;
     clear: both;
+    z-index: 1;
   }
 }
