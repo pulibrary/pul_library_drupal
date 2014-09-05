@@ -22,7 +22,7 @@ function cdl_acqusition_highlights_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Acquisitions Highlights';
+  $handler->display->display_options['title'] = 'Resource Spotlight';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -95,7 +95,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'thumbnail',
     'image_link' => '',
   );
   /* Field: Content: Bibliographic Record */
@@ -122,6 +122,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_cdl_acq_type']['table'] = 'field_data_field_cdl_acq_type';
   $handler->display->display_options['fields']['field_cdl_acq_type']['field'] = 'field_cdl_acq_type';
   $handler->display->display_options['fields']['field_cdl_acq_type']['label'] = 'Type';
+  $handler->display->display_options['fields']['field_cdl_acq_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_cdl_acq_type']['delta_offset'] = '0';
   /* Field: Content: Access */
   $handler->display->display_options['fields']['field_access']['id'] = 'field_access';
@@ -205,6 +206,50 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '15';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+
+  /* Display: Homepage Spotlight */
+  $handler = $view->new_display('block', 'Homepage Spotlight', 'block_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Sample Graphic */
+  $handler->display->display_options['fields']['field_image_new_item']['id'] = 'field_image_new_item';
+  $handler->display->display_options['fields']['field_image_new_item']['table'] = 'field_data_field_image_new_item';
+  $handler->display->display_options['fields']['field_image_new_item']['field'] = 'field_image_new_item';
+  $handler->display->display_options['fields']['field_image_new_item']['label'] = '';
+  $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_description']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['field_api_classes'] = TRUE;
   $export['acquisitions_highlights'] = $view;
 
   return $export;

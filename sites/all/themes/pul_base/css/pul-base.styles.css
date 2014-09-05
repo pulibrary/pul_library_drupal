@@ -1603,11 +1603,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .all-search-results-list, .view-search-libraries-and-collections, .view-databases-keyword-search, .view-general-site-keyword-search, .view-general-site-user-search {
   margin-bottom: 1em;
 }
-.all-search-results-list li.even, .view-search-libraries-and-collections li.even, .view-databases-keyword-search li.even, .view-general-site-keyword-search li.even, .view-general-site-user-search li.even {
+.all-search-results-list li.even, .all-search-results-list li.views-row-even, .view-search-libraries-and-collections li.even, .view-search-libraries-and-collections li.views-row-even, .view-databases-keyword-search li.even, .view-databases-keyword-search li.views-row-even, .view-general-site-keyword-search li.even, .view-general-site-keyword-search li.views-row-even, .view-general-site-user-search li.even, .view-general-site-user-search li.views-row-even {
   background: none;
   border-top: 1px solid #ddd;
 }
-.all-search-results-list li.odd, .view-search-libraries-and-collections li.odd, .view-databases-keyword-search li.odd, .view-general-site-keyword-search li.odd, .view-general-site-user-search li.odd {
+.all-search-results-list li.odd, .all-search-results-list li.views-row-odd, .view-search-libraries-and-collections li.odd, .view-search-libraries-and-collections li.views-row-odd, .view-databases-keyword-search li.odd, .view-databases-keyword-search li.views-row-odd, .view-general-site-keyword-search li.odd, .view-general-site-keyword-search li.views-row-odd, .view-general-site-user-search li.odd, .view-general-site-user-search li.views-row-odd {
   background: #f5f4f1;
 }
 .all-search-results-list li, .view-search-libraries-and-collections li, .view-databases-keyword-search li, .view-general-site-keyword-search li, .view-general-site-user-search li {

@@ -31,11 +31,12 @@ function cdl_acqusition_highlights_node_info() {
     'acquisitions_highlights' => array(
       'name' => t('Acquisitions Highlights'),
       'base' => 'node_content',
-      'description' => t('New and noteworthy acquisitions from the previous fiscal year. Patty G. B. Selects.'),
+      'description' => t('New and noteworthy acquisitions from the previous fiscal year. Collection Development managers select.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

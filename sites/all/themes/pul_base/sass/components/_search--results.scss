@@ -2,11 +2,11 @@
 
     margin-bottom: 1em;
 
-    li.even {
+    li.even, li.views-row-even {
         background: none;
         border-top: 1px solid #ddd;
     }
-    li.odd {
+    li.odd, li.views-row-odd {
         background: $light-gray;
     }
     li {

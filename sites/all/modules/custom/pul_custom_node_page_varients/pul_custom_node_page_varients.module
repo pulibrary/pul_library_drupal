@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Custom Node Page Varients feature.
+ */
+
+include_once 'pul_custom_node_page_varients.features.inc';
