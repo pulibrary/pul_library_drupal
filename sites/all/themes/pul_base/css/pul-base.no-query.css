@@ -1961,6 +1961,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 @media (min-width: 70em) {
   .block--pudl-highlight {
+    display: block;
     -sgs-span-settings: ("span": 2, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 13.33333%;
     float: right;
@@ -1971,6 +1972,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 @media (min-width: 44em) {
   .block--pudl-highlight {
+    display: block;
     -sgs-span-settings: ("span": 2, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 13.33333%;
     float: right;
