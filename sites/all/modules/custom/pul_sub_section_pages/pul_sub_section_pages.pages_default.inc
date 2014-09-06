@@ -1029,6 +1029,28 @@ staff/committees',
     $display->content['new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98'] = $pane;
     $display->panels['second'][0] = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
     $pane = new stdClass();
+    $pane->pid = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
+    $pane->panel = 'third';
+    $pane->type = 'block';
+    $pane->subtype = 'block-32';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Live Chat',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
+    $display->content['new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1'] = $pane;
+    $display->panels['third'][0] = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
+    $pane = new stdClass();
     $pane->pid = 'new-48b25ef7-d14a-484c-921b-789884da7534';
     $pane->panel = 'third';
     $pane->type = 'block';
@@ -1045,11 +1067,11 @@ staff/committees',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '48b25ef7-d14a-484c-921b-789884da7534';
     $display->content['new-48b25ef7-d14a-484c-921b-789884da7534'] = $pane;
-    $display->panels['third'][0] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
+    $display->panels['third'][1] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
