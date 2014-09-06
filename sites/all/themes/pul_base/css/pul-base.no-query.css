@@ -1945,6 +1945,47 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   width: auto;
 }
 
+.block--pudl-highlight {
+  display: none;
+  -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+  width: 96.66667%;
+  float: right;
+  margin-left: 0;
+  margin-right: 1.66667%;
+  clear: none;
+  background: rgba(73, 79, 87, 0.65);
+  padding: 1em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+@media (min-width: 70em) {
+  .block--pudl-highlight {
+    -sgs-span-settings: ("span": 2, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 13.33333%;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: none;
+  }
+}
+@media (min-width: 44em) {
+  .block--pudl-highlight {
+    -sgs-span-settings: ("span": 2, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 13.33333%;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    clear: none;
+  }
+}
+.block--pudl-highlight a {
+  font-size: 14px;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  color: white;
+}
+
 .user-picture img {
   float: left;
   margin: 0 .75em .167em 0;
