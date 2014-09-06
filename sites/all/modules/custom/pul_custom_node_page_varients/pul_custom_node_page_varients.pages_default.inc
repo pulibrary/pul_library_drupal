@@ -1121,6 +1121,106 @@ help/chat/*',
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_44';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 13;
+  $handler->conf = array(
+    'title' => 'Research Data Management',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'research-data-management
+research-data-management/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'three-nine';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '44d0876c-ac82-4ab6-a0d3-45d2166535f8';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-research-data-management';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $display->content['new-ff1c0a58-9059-41a8-be43-757c4a72b9d1'] = $pane;
+    $display->panels['first'][0] = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $pane = new stdClass();
+    $pane->pid = 'new-ec67772b-6242-4870-827e-6d44b3f3ef2c';
+    $pane->panel = 'second';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ec67772b-6242-4870-827e-6d44b3f3ef2c';
+    $display->content['new-ec67772b-6242-4870-827e-6d44b3f3ef2c'] = $pane;
+    $display->panels['second'][0] = 'new-ec67772b-6242-4870-827e-6d44b3f3ef2c';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-ec67772b-6242-4870-827e-6d44b3f3ef2c';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_44'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_7';
   $handler->task = 'node_view';
   $handler->subtask = '';
