@@ -1449,6 +1449,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
     float: left;
     width: 30%;
+    margin-right: 1em;
   }
 }
 #renovation-news-block #read-more-renovation {
@@ -1886,13 +1887,21 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 
 .front .wrapper--highlighted {
-  background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.png) center no-repeat;
-  /* On bottom, like z-index: 1; */
-  padding: 1em 0;
+  background: rgba(142, 150, 160, 0.75);
+  padding: 0;
   background-size: 1600px auto;
 }
 @media (min-width: 44em) {
   .front .wrapper--highlighted {
+    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.png) center no-repeat;
+  }
+}
+.front .wrapper--highlighted .l-region--highlighted {
+  padding: 1em 0;
+  position: relative;
+}
+@media (min-width: 44em) {
+  .front .wrapper--highlighted .l-region--highlighted {
     padding: 4em 0;
   }
 }
@@ -1929,7 +1938,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   height: 159px;
-  padding: 1em;
+  padding: 0;
 }
 #block-views-acquisitions-highlights-block-1 h2 {
   display: none;
@@ -1941,11 +1950,16 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   color: white;
 }
 #block-views-acquisitions-highlights-block-1 img {
-  height: 100px;
-  width: auto;
+  width: 260px;
+  height: 159px;
 }
 
 .block--pudl-highlight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: 1em;
+  text-align: center;
   display: none;
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
@@ -1953,11 +1967,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-left: 0;
   margin-right: 1.66667%;
   clear: none;
-  background: rgba(73, 79, 87, 0.65);
-  padding: 1em;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  background: rgba(73, 79, 87, 0.35);
+  padding: 0.5em;
 }
 @media (min-width: 70em) {
   .block--pudl-highlight {
@@ -1979,13 +1990,66 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
     margin-left: 0;
     margin-right: 1.66667%;
     clear: none;
+    margin-right: 0;
   }
 }
 .block--pudl-highlight a {
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   color: white;
+  text-align: center;
+}
+.block--pudl-highlight a .icon-newtab {
+  margin-right: 0.5em;
+}
+
+#block-views-acquisitions-highlights-block-1 {
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+#block-views-acquisitions-highlights-block-1 .view-content .views-row {
+  height: 159px;
+  overflow: hidden;
+  position: relative;
+}
+#block-views-acquisitions-highlights-block-1 .views-field {
+  -moz-transition: all, ease-in-out 0.2s;
+  -o-transition: all, ease-in-out 0.2s;
+  -webkit-transition: all, ease-in-out 0.2s;
+  transition: all, ease-in-out 0.2s;
+  background: inherit;
+  color: white;
+  height: inherit;
+  padding: 0.5em 0.7em;
+}
+#block-views-acquisitions-highlights-block-1 .views-field-field-image-new-item {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2em;
+  font-weight: 200;
+  padding: 0;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#block-views-acquisitions-highlights-block-1 .views-field-field-image-new-item img {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#block-views-acquisitions-highlights-block-1 .views-field-title {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  background: rgba(73, 79, 87, 0.85);
 }
 
 .user-picture img {
@@ -2144,11 +2208,11 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .five_four_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: none;
     clear: both;
   }
@@ -2182,11 +2246,11 @@ $desk : 1250px;
   }
 
   .five_four_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: none;
     clear: both;
   }
@@ -2211,11 +2275,11 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .four_five_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: none;
     clear: both;
   }
@@ -2249,11 +2313,11 @@ $desk : 1250px;
   }
 
   .four_five_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: none;
     clear: both;
   }
@@ -2348,12 +2412,12 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .nine_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -2380,12 +2444,12 @@ $desk : 1250px;
   }
 
   .nine_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-right: 0;
   }
@@ -2410,12 +2474,12 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .pul_base_four_four_four_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -2452,12 +2516,12 @@ $desk : 1250px;
   }
 
   .pul_base_four_four_four_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -2522,34 +2586,34 @@ $desk : 1250px;
 
 @media (min-width: 70em) {
   .single-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
   }
 
   .single-region--middle {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
   }
 
   .single-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
   }
@@ -2647,12 +2711,12 @@ $desk : 1250px;
   }
 
   .six_six_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     margin-left: 0;
     clear: both;
   }
@@ -2716,12 +2780,12 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .three_nine_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     margin-left: 0;
     clear: both;
   }
@@ -2748,12 +2812,12 @@ $desk : 1250px;
   }
 
   .three_nine_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     margin-left: 0;
     clear: both;
   }
@@ -2869,12 +2933,12 @@ $desk : 1250px;
   }
 
   .three_six_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 100%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 1.66667%;
+    margin-right: 0%;
     clear: both;
     margin-left: 0;
     margin-right: 0;

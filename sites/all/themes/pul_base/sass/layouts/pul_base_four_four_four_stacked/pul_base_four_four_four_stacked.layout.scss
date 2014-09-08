@@ -20,7 +20,7 @@
 @include breakpoint($tab) {
 
   .pul_base_four_four_four_stacked-region--top {
-    @include grid-span(12,1);
+    @include grid-span(12,1, $gutter: 0);
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -41,7 +41,7 @@
   }
 
   .pul_base_four_four_four_stacked-region--bottom {
-    @include grid-span(12,1);
+    @include grid-span(12,1, $gutter: 0);
     clear: both;
     margin-left: 0;
     margin-right: 0;

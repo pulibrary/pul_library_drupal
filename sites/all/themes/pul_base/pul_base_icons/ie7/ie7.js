@@ -29,6 +29,7 @@
 		'icon-question': '&#xf128;',
 		'icon-exclamation': '&#xf12a;',
 		'icon-home': '&#xe607;',
+		'icon-image': '&#xe611;',
 		'icon-library': '&#xe609;',
 		'icon-clock': '&#xe60a;',
 		'icon-calendar': '&#xe60b;',
