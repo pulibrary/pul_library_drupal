@@ -149,11 +149,11 @@
 
   .views-field-title {
     position: absolute;
-    bottom: 0;
+    top: 0;
     height: 60px;
     width: 100%;
-    @include border-bottom-right-radius(4px);
-    @include border-bottom-left-radius(4px);
+    @include border-top-right-radius(4px);
+    @include border-top-left-radius(4px);
     background: rgba($dark-gray, .85);
   }
 }
