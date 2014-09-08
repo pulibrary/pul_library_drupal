@@ -62,3 +62,7 @@
 .button--libraryh3lp__offline {
 	@include button(simple, lighten($light-gray,5));
 }
+
+.service-connect-btn a {
+	@include button(simple, darken($blue,5));
+}
