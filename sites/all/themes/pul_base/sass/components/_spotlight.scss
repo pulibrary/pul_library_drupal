@@ -1,10 +1,10 @@
 .front .wrapper--highlighted {
     background: 
-   linear-gradient(
+    linear-gradient(
       rgba(lighten($dark-gray, 28), 0.75), 
       rgba(lighten($dark-gray, 28), 0.75)
     ),  /* On top,    like z-index: 4; */
-   url(../images/bg-test.png) center no-repeat   /*            like z-index: 3; */
+    url(../images/bg-test.png) center no-repeat   /* like z-index: 3; */
    ;                      /* On bottom, like z-index: 1; */
     // background-color: lighten($dark-gray, 28);
     padding: 1em 0;
@@ -51,5 +51,36 @@
         height:100px;
         width: auto;
         // padding: 0.5em 1em;
+    }
+}
+
+.block--pudl-highlight {
+    display: none;
+    @include grid-span(12); 
+    //@include clearfix;
+    background: rgba($dark-gray,.65);
+    //margin-top: 1.5em;
+    //margin-bottom: 1.5em;
+    padding: 1em;
+    @include border-radius(4px);
+
+    @include breakpoint($desk) {
+      display: block;
+      @include grid-span(2,11);
+      //@include clearfix;
+    }
+
+    @include breakpoint($tab) {
+        display: block;
+        @include grid-span(2,11);
+        //@include clearfix;
+    }
+
+    a {
+        font-size: 14px;
+        font-family: $font-sans;
+        margin: 0;
+        // padding: 0.5em 1em;
+        color: white;
     }
 }
