@@ -290,7 +290,7 @@
 			},
 			"properties": {
 				"id": 243,
-				"order": 28,
+				"order": 27,
 				"prevSize": 16,
 				"code": 61712,
 				"name": "spinner",
@@ -367,6 +367,30 @@
 			},
 			"setIdx": 13,
 			"iconIdx": 1
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 128v832h1024v-832h-1024zM960 896h-896v-704h896v704zM704 352c0-53.019 42.981-96 96-96s96 42.981 96 96c0 53.019-42.981 96-96 96-53.019 0-96-42.981-96-96zM896 832h-768l192-512 256 320 128-96z"
+				],
+				"tags": [
+					"image",
+					"picture",
+					"photo",
+					"graphic"
+				],
+				"grid": 16
+			},
+			"properties": {
+				"id": 13,
+				"order": 29,
+				"prevSize": 16,
+				"code": 58897,
+				"name": "image",
+				"ligatures": ""
+			},
+			"setIdx": 13,
+			"iconIdx": 13
 		},
 		{
 			"icon": {
