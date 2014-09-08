@@ -1,0 +1,17 @@
+.pane-menu-menu-get-help-menu {
+
+	.menu {
+		list-style: none;
+
+		.leaf {
+			list-style: none;
+			margin-bottom: 5px;
+			display: block;
+
+			[class^="icon-"], [class*=" icon-"] {
+				margin-left: 0;
+			}
+
+		}
+	}
+}

@@ -1,0 +1,62 @@
+/*******************************************************************************
+ * four_five_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 4-5-3 stacked column layout..
+ ******************************************************************************/
+.panel-display--four_five_three_stacked {
+  *zoom: 1;
+}
+.panel-display--four_five_three_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.four_five_three_stacked-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 70em) {
+  .four_five_three_stacked-region--top {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+  }
+
+  .four_five_three_stacked-region--first {
+    width: 33.33333%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    clear: both;
+  }
+
+  .four_five_three_stacked-region--second {
+    width: 39.65517%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 34.48276%;
+    clear: none;
+  }
+
+  .four_five_three_stacked-region--third {
+    width: 22.41379%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+
+  .four_five_three_stacked-region--bottom {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+  }
+}

@@ -16,9 +16,11 @@ function dbsearch_block_form($form, &$form_state) {
     $default_value = variable_get('db_search_hint');
   }
 
-  if($path == "node/1") { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message">Browse: <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/research/databases/">A to Z</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/research/databases/subjects">By Subject</a></div>';
+  if(drupal_is_front_page()) { // should keyed off <front>
+    $prefix = "";
+    $form_suffix = '<div class="homepage-tab-form-message">Browse By: <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/research/databases/">A to Z</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/research/databases/subjects">By Subject</a></div>';
   } else {
+    $prefix = "";
     $form_suffix = "";
   }  
 
@@ -41,7 +43,6 @@ function dbsearch_block_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
-    '#suffix' => $form_suffix,
    );
    /*
     * Force form to post through the base url
@@ -52,6 +53,7 @@ function dbsearch_block_form($form, &$form_state) {
    $form['#submit'] = array('dbsearch_block_form_redirect');
    $form['#target'] = "_parent";
    $form['#method'] = "post";
+   $form['#suffix'] = $form_suffix;
    return $form;
 
 }
