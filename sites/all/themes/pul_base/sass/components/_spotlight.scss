@@ -1,17 +1,25 @@
 .front .wrapper--highlighted {
-    background: 
+    background: rgba(lighten($dark-gray, 28), 0.75);
+    padding: 0;
+    background-size: 1600px auto;
+
+    @include breakpoint($tab) {
+        background: 
     linear-gradient(
       rgba(lighten($dark-gray, 28), 0.75), 
       rgba(lighten($dark-gray, 28), 0.75)
     ),  /* On top,    like z-index: 4; */
     url(../images/bg-test.png) center no-repeat   /* like z-index: 3; */
-   ;                      /* On bottom, like z-index: 1; */
-    // background-color: lighten($dark-gray, 28);
-    padding: 1em 0;
-    background-size: 1600px auto;
+   ;             
+    }
 
-    @include breakpoint($tab) {
-        padding: 4em 0;
+    .l-region--highlighted {
+        padding: 1em 0;
+        position: relative;
+
+        @include breakpoint($tab) {
+            padding: 4em 0;
+        }
     }
 }
 
@@ -55,14 +63,17 @@
 }
 
 .block--pudl-highlight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 1em;
+    text-align: center;
+
     display: none;
     @include grid-span(12); 
-    //@include clearfix;
-    background: rgba($dark-gray,.65);
-    //margin-top: 1.5em;
-    //margin-bottom: 1.5em;
-    padding: 1em;
-    @include border-radius(4px);
+    background: rgba($dark-gray, .65);
+    padding: 0.5em;
+    // @include border-radius(4px);
 
     @include breakpoint($desk) {
       display: block;
@@ -73,14 +84,14 @@
     @include breakpoint($tab) {
         display: block;
         @include grid-span(2,11);
-        //@include clearfix;
+        margin-right: 0;
     }
 
     a {
-        font-size: 14px;
+        font-size: 12px;
         font-family: $font-sans;
         margin: 0;
-        // padding: 0.5em 1em;
         color: white;
+        text-align: center;
     }
 }
