@@ -59,7 +59,8 @@
  	error: function(data){
             $('#guide-search-results-spinner').hide();
               $('<div class="all-fail-to-load-results">Guide results are not available at this time.</div>"').appendTo('#summon-guide-results');
-            }
+            },
+  timeout: 5000
 		});
 	}	
   });

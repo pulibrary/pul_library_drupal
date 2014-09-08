@@ -53,7 +53,8 @@
 		error: function(data) {
             $('#pudl-search-results-spinner').hide();
 			 $('<div class="all-fail-to-load-results">Princeton University Digital Library  results are not available at this time.</div>"').appendTo('#pudl-search-results');
-		}
+		},
+    timeout: 5000
 	});
      }	
   });

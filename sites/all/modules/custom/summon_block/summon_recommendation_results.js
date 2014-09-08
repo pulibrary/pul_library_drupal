@@ -26,7 +26,8 @@
 			},
 			error: function(data) {
 				$('<div class="all-fail-to-load-results">Guide results are not available at this time.</div>"').appendTo('#summon-recommendation-results');	
-			}
+			},
+      timeout: 5000
 		});
 	}	
   });
