@@ -329,11 +329,9 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['text'] = '<div>
 <div id="open[nid]" data-desc-id="[nid]" class="find-databases-show-desc"><i class="icon-plus-sign-alt"></i>Show Description</div>
 <div class="database-description" id="desc[nid]">[body]</div>
-<span id="close[nid]" data-desc-id="[nid]" class="find-databases-close-desc"><i class="icon-remove-sign"></i> Close</span>
 </div>';
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_class'] = 'databases-find-description';
@@ -369,7 +367,7 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['filters']['field_db_display_active_value']['value'] = array(
     0 => '0',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';

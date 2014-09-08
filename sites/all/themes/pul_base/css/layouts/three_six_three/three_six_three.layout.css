@@ -16,7 +16,7 @@
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .three_six_three-region--first {
     width: 22.41379%;
     float: left;

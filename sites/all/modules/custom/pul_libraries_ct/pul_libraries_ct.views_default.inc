@@ -217,7 +217,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_library_homepage']['field'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['label'] = '';
   $handler->display->display_options['fields']['field_library_homepage']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_library_homepage']['alter']['text'] = '<span class="icon-large icon-home"></span><a href="[field_library_homepage-url]" title="Visit %1 Website>%1 Homepage</a>';
+  $handler->display->display_options['fields']['field_library_homepage']['alter']['text'] = '<span class="icon-large icon-home"></span> <a href="[field_library_homepage-url]" title="Visit %1 Website>%1 Homepage</a>';
   $handler->display->display_options['fields']['field_library_homepage']['alter']['path'] = '[field_library_homepage-url]';
   $handler->display->display_options['fields']['field_library_homepage']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_library_homepage']['element_wrapper_type'] = 'span';
@@ -258,7 +258,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class=\'icon-large icon-email\'></span>[field_e_mail_address]';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class=\'icon-large icon-email\'></span> [field_e_mail_address]';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';
@@ -269,7 +269,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['label'] = '';
   $handler->display->display_options['fields']['field_phone']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<span class="icon-large icon-phone"></span>[field_phone]';
+  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<span class="icon-large icon-phone"></span> [field_phone]';
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;

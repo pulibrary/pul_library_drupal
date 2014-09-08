@@ -391,6 +391,7 @@ function pul_core_search_indexes_default_search_api_index() {
               "book" : "book",
               "frequently_asked_question" : "frequently_asked_question",
               "job_description" : "job_description",
+              "pul_landing_page" : "pul_landing_page",
               "library_committee" : "library_committee",
               "library_committee_with_terms" : "library_committee_with_terms",
               "library_meeting_space_locations" : "library_meeting_space_locations",
@@ -450,26 +451,27 @@ function pul_core_search_indexes_default_search_api_index() {
             "suffix" : "\\u003C\\/strong\\u003E",
             "excerpt" : 1,
             "excerpt_length" : "256",
+            "exclude_fields" : [],
             "highlight" : "always"
           }
         }
       },
       "fields" : {
-        "type" : { "type" : "string" },
-        "title" : { "type" : "text", "boost" : "5.0" },
-        "status" : { "type" : "integer" },
-        "promote" : { "type" : "boolean" },
-        "sticky" : { "type" : "boolean" },
-        "created" : { "type" : "date" },
-        "changed" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "body:value" : { "type" : "text" },
+        "changed" : { "type" : "date" },
         "comment_count" : { "type" : "integer" },
+        "created" : { "type" : "date" },
+        "field_schemaorg_description:summary" : { "type" : "text" },
+        "field_schemaorg_description:value" : { "type" : "text" },
+        "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
-        "body:value" : { "type" : "text" },
-        "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_schemaorg_description:value" : { "type" : "text" },
-        "field_schemaorg_description:summary" : { "type" : "text" }
+        "status" : { "type" : "integer" },
+        "sticky" : { "type" : "boolean" },
+        "title" : { "type" : "text", "boost" : "5.0" },
+        "type" : { "type" : "string" }
       }
     },
     "enabled" : "1",
@@ -606,6 +608,8 @@ function pul_core_search_indexes_default_search_api_index() {
         "field_building:title" : { "type" : "text" },
         "field_campus_building_loc_id" : { "type" : "integer" },
         "field_collection_url:url" : { "type" : "uri" },
+        "field_digital_project_url:title" : { "type" : "text" },
+        "field_digital_project_url:url" : { "type" : "uri" },
         "field_e_mail_address" : { "type" : "text" },
         "field_fax" : { "type" : "text" },
         "field_full_library_name" : { "type" : "text" },
@@ -620,13 +624,17 @@ function pul_core_search_indexes_default_search_api_index() {
         "title" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
-        "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : [] },
+        "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : { "fields" : [] } },
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
           "settings" : {
             "default" : "0",
-            "bundles" : { "collection" : "collection", "libraries" : "libraries" }
+            "bundles" : {
+              "collection" : "collection",
+              "digital_project" : "digital_project",
+              "libraries" : "libraries"
+            }
           }
         },
         "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
@@ -693,6 +701,18 @@ function pul_core_search_indexes_default_search_api_index() {
             },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always"
           }
         }
       }

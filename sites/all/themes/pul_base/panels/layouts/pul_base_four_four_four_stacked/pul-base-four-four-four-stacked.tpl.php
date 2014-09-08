@@ -22,4 +22,7 @@
   <div<?php print drupal_attributes($region_attributes_array['third'])?>>
     <?php print $content['third']; ?>
   </div>
+   <div<?php print drupal_attributes($region_attributes_array['bottom'])?>>
+    <?php print $content['bottom']; ?>
+  </div>
 </div>

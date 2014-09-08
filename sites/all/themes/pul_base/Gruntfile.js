@@ -30,7 +30,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['js/{,**/}*.js', '!js/{,**/}*.min.js'],
-        tasks: ['jshint', 'uglify:dev']
+        tasks: ['jshint']//, 'uglify:dev']
       }
     },
 
@@ -65,60 +65,60 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       },
       all: ['js/{,**/}*.js', '!js/{,**/}*.min.js']
-    },
+    }//,
 
-    uglify: {
-      dev: {
-        options: {
-          mangle: false,
-          compress: false,
-          beautify: true
-        },
-        files: [{
-          expand: true,
-          flatten: true,
-          cwd: 'js',
-          dest: 'js',
-          src: ['**/*.js', '!**/*.min.js'],
-          rename: function(dest, src) {
-            var folder = src.substring(0, src.lastIndexOf('/'));
-            var filename = src.substring(src.lastIndexOf('/'), src.length);
-            filename = filename.substring(0, filename.lastIndexOf('.'));
-            return dest + '/' + folder + filename + '.min.js';
-          }
-        }]
-      },
-      dist: {
-        options: {
-          mangle: true,
-          compress: true
-        },
-        files: [{
-          expand: true,
-          flatten: true,
-          cwd: 'js',
-          dest: 'js',
-          src: ['**/*.js', '!**/*.min.js'],
-          rename: function(dest, src) {
-            var folder = src.substring(0, src.lastIndexOf('/'));
-            var filename = src.substring(src.lastIndexOf('/'), src.length);
-            filename = filename.substring(0, filename.lastIndexOf('.'));
-            return dest + '/' + folder + filename + '.min.js';
-          }
-        }]
-      }
-    }
+    // uglify: {
+    //   dev: {
+    //     options: {
+    //       mangle: false,
+    //       compress: false,
+    //       beautify: true
+    //     },
+    //     files: [{
+    //       expand: true,
+    //       flatten: true,
+    //       cwd: 'js',
+    //       dest: 'js',
+    //       src: ['**/*.js', '!**/*.min.js'],
+    //       rename: function(dest, src) {
+    //         var folder = src.substring(0, src.lastIndexOf('/'));
+    //         var filename = src.substring(src.lastIndexOf('/'), src.length);
+    //         filename = filename.substring(0, filename.lastIndexOf('.'));
+    //         return dest + '/' + folder + filename + '.min.js';
+    //       }
+    //     }]
+    //   },
+    //   dist: {
+    //     options: {
+    //       mangle: true,
+    //       compress: true
+    //     },
+    //     files: [{
+    //       expand: true,
+    //       flatten: true,
+    //       cwd: 'js',
+    //       dest: 'js',
+    //       src: ['**/*.js', '!**/*.min.js'],
+    //       rename: function(dest, src) {
+    //         var folder = src.substring(0, src.lastIndexOf('/'));
+    //         var filename = src.substring(src.lastIndexOf('/'), src.length);
+    //         filename = filename.substring(0, filename.lastIndexOf('.'));
+    //         return dest + '/' + folder + filename + '.min.js';
+    //       }
+    //     }]
+    //   }
+    // }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('build', [
-    'uglify:dist',
+    // 'uglify:dist',
     'compass:dist',
     'jshint'
   ]);

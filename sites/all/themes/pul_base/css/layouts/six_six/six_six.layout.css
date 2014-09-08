@@ -16,7 +16,7 @@
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .six_six-region--first {
     width: 48.27586%;
     float: left;

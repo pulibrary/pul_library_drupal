@@ -16,7 +16,7 @@
   margin-bottom: 18px;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 44em) {
   .four_five_three_stacked-region--top {
     width: 100%;
     float: right;

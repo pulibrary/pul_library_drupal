@@ -15,6 +15,14 @@
     return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
   };
 
+
+  Drupal.theme.prototype.pulChatStatusBlock = function () {
+    var chat_js_warning = '<span class="needs-js"></span>';
+    var chat_online = '<span class="libraryh3lp" jid="libchatpul-main@chat.libraryh3lp.com" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__online" href="http://library.princeton.edu/help/chat"> Online now</a></span>';
+    var chat_offline = '<span class="libraryh3lp" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__offline" href="http://library.princeton.edu/help/e-mail"> Offline now</a></span>';
+    return chat_js_warning + chat_online + chat_offline;
+  };
+
   /**
    * Behaviors are Drupal's way of applying JavaScript to a page. In short, the
    * advantage of Behaviors over a simple 'document.ready()' lies in how it
@@ -60,20 +68,19 @@
 
 
   Drupal.behaviors.pulMainMenuBehavior = {
-    attach: function (context, settings) {
+    attach: function (context) {
       // By using the 'context' variable we make sure that our code only runs on
       // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
       // we don't run the same piece of code for an HTML snippet that we already
       // processed previously. By using .once('foo') all processed elements will
       // get tagged with a 'foo-processed' class, causing all future invocations
       // of This behavior to ignore them.
-      console.log(context);
-      console.log(settings);
-      $('#block-system-main-menu').click(function () {
+      //console.log(context);
+      //console.log(settings);
+      $('.centered-navigation-menu', context).once('pul', function () {
         var menu = $('.centered-navigation-menu');
         var menuToggle = $('.centered-navigation-menu-button');
-
-        $(menuToggle).on('click', function (e) {
+        $(menuToggle).click(function (e) {
           e.preventDefault();
           menu.slideToggle(function () {
             if (menu.is(':hidden')) {
@@ -81,8 +88,9 @@
             }
           });
         });
-
       });
+
+      // });
       // Example Usage
       // $('#block-system-main-menu', context).once('pul', function () {
       //   // Now, we are invoking the previously declared theme function using two
@@ -115,6 +123,16 @@
 
     }
   };
+
+  Drupal.behaviors.pulChatWidgetBehavior = {
+    attach: function (context) {
+      $('.library-three-help', context).once('pul', function () {
+        var chat_text_block = Drupal.theme('pulChatStatusBlock');
+        $(this).append(chat_text_block);
+      });
+    }
+  };
+
 
 
 })(jQuery);

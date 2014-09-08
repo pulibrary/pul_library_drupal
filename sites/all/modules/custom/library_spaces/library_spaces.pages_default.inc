@@ -45,7 +45,7 @@ function library_spaces_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_9_3';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -61,7 +61,7 @@ function library_spaces_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'meeting_rooms-panel_pane_1';
     $pane->shown = TRUE;
@@ -81,10 +81,10 @@ function library_spaces_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
     $display->content['new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d'] = $pane;
-    $display->panels['left'][0] = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
+    $display->panels['first'][0] = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
     $pane = new stdClass();
     $pane->pid = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'meeting_rooms-panel_pane_2';
     $pane->shown = TRUE;
@@ -106,7 +106,7 @@ function library_spaces_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
     $display->content['new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0'] = $pane;
-    $display->panels['right'][0] = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
+    $display->panels['second'][0] = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

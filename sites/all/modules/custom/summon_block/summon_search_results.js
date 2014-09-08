@@ -6,7 +6,7 @@
 	var refine_tooltip = "Expand your search or See all scholarly materials in Articles+.";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
-        var max_display_results = 5;
+  var max_display_results = 5;
 	if(query_url == "/find/all" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
@@ -87,8 +87,9 @@
 	 error: function(data){
 	       $('#summon-search-results-spinner').hide();
                $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#summon-search-results');
-            }
+            },
+    timeout: 5000
 		});
-	}	
+  }
   });
 }(jQuery));

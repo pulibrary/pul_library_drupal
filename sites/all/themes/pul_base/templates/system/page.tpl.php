@@ -97,7 +97,9 @@
     <div class="wrapper wrapper--navigation">
       <?php print render($page['navigation']); ?>
     </div>
-    <div class="wrapper wrapper--highlighted"><?php print render($page['highlighted']); ?></div>
+    <div class="wrapper wrapper--highlighted">
+      <?php print render($page['highlighted']); ?>
+    </div>
   </header>
 
   <section class="l-main test">

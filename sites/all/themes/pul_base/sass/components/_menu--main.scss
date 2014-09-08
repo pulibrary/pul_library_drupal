@@ -13,14 +13,14 @@
   $centered-navigation-submenu-padding: 1em;
   $centered-navigation-submenu-width: 15em;
   $centered-navigation-item-nudge: 2.2em;
-  $horizontal-bar-mode: $desk;
+  $horizontal-bar-mode: $tab;
 
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
   font-family: $font-serif;
   height: $centered-navigation-height;
   width: 100%;
-  z-index: 99; //4
+  z-index: 101; //4
   position: relative;
   overflow: visible;
   
@@ -46,11 +46,11 @@
   .centered-navigation-menu-button {
     color: $centered-navigation-color;
     display: block;
-    float: right;
+    float: left;
     font-weight: 700;
     line-height: $centered-navigation-height;
     margin: 0;
-    padding-right: $centered-navigation-submenu-padding;
+    padding-left: $centered-navigation-submenu-padding;
     text-transform: uppercase;
 
     @include breakpoint ($horizontal-bar-mode) {
@@ -74,13 +74,17 @@
     display: none;
     margin: 0 auto;
     overflow: visible;
-    padding: 0;
+    padding-left: 0;
     width: 100%;
     z-index: 999; //5
 
     @include breakpoint ($horizontal-bar-mode) {
       display: block;
       text-align: center;
+    }
+
+    @include breakpoint($desk) {
+      padding-left: 0;
     }
   }
 
@@ -97,8 +101,8 @@
     display: block;
     line-height: $centered-navigation-height;
     overflow: hidden;
-    padding-right: $centered-navigation-submenu-padding;
-    text-align: right;
+    padding-left: $centered-navigation-submenu-padding;
+    text-align: left;
     width: 100%;
     z-index: 99; //4
 
@@ -106,9 +110,10 @@
       background: transparent;
       display: inline;
       line-height: $centered-navigation-height;  
+      padding-left: 0;
 
       a {
-        padding-right: $centered-navigation-item-padding;
+        padding-left: $centered-navigation-item-padding;
       }
     }
     
@@ -209,6 +214,7 @@
       left: -$centered-navigation-submenu-padding;
       position: absolute;
       top: 1.5em;
+      padding-left: 2em;
     }
 
     .menu {
@@ -240,7 +246,7 @@
       a {
         background-color: darken($centered-navigation-background, 3);
         display: inline-block;
-        text-align: right;
+        text-align: left;
         width: 100%;
 
         @include breakpoint($horizontal-bar-mode) {
