@@ -41,7 +41,7 @@
     margin-bottom: 1.5em;
     @include border-radius(4px);
     height: 159px;
-    padding: 1em;
+    padding: 0;
     // display: none;
 
     h2 {
@@ -56,9 +56,8 @@
     }
 
     img {
-        height:100px;
-        width: auto;
-        // padding: 0.5em 1em;
+        width: 260px;
+        height: 159px;
     }
 }
 
@@ -71,7 +70,7 @@
 
     display: none;
     @include grid-span(12); 
-    background: rgba($dark-gray, .65);
+    background: rgba($dark-gray, .35);
     padding: 0.5em;
     // @include border-radius(4px);
 
@@ -93,5 +92,68 @@
         margin: 0;
         color: white;
         text-align: center;
+
+        .icon-newtab {
+            margin-right: 0.5em;
+        }
     }
+}
+
+#block-views-acquisitions-highlights-block-1 {
+  $hover-tile-height: 159px;
+
+  // background-position: bottom;
+  // background-size: cover;
+  // background: url("/images/mountains.png");
+  // background-size: cover;
+  // background-color: #BEB56E;
+  // border: 1px solid $base-border-color;
+  // height: $hover-tile-height;
+  margin-bottom: $base-line-height;
+  cursor: pointer;
+  
+  // @include breakpoint($tab) {
+    // width: 40%;
+  // }
+
+  .view-content .views-row {
+    height: $hover-tile-height;
+    overflow: hidden;
+    position: relative;
+  }
+
+  // .view-content .views-row:hover > .views-field {
+  //   @include transform(translate(0, -100%));
+  // }
+
+  .views-field {
+    @include transition(all, .2s ease-in-out);
+    background:inherit;
+    color: white;
+    height:inherit;
+    padding: 0.5em 0.7em;
+  }
+
+  .views-field-field-image-new-item {
+    color: transparentize(white, .3);
+    font-size: 2em;
+    font-weight: 200;  
+    padding: 0;
+    text-align: center;
+    @include border-radius(4px);
+
+    img {
+        @include border-radius(4px);
+    }
+  }
+
+  .views-field-title {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    @include border-bottom-right-radius(4px);
+    @include border-bottom-left-radius(4px);
+    background: rgba($dark-gray, .85);
+  }
 }
