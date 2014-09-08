@@ -80,7 +80,8 @@
 			},
 			 error: function(data){
               			$('<div class="all-fail-to-load-results">Journal results are not available at this time.</div>"').appendTo('#pulfa-search-results');
-            			}
+            			},
+            timeout: 5000
 		});
 	}	
   });

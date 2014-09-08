@@ -15,6 +15,14 @@
     return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
   };
 
+
+  Drupal.theme.prototype.pulChatStatusBlock = function () {
+    var chat_js_warning = '<span class="needs-js"></span>';
+    var chat_online = '<span class="libraryh3lp" jid="libchatpul-main@chat.libraryh3lp.com" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__online" href="http://library.princeton.edu/help/chat"> Online now</a></span>';
+    var chat_offline = '<span class="libraryh3lp" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__offline" href="http://library.princeton.edu/help/e-mail"> Offline now</a></span>';
+    return chat_js_warning + chat_online + chat_offline;
+  };
+
   /**
    * Behaviors are Drupal's way of applying JavaScript to a page. In short, the
    * advantage of Behaviors over a simple 'document.ready()' lies in how it
@@ -115,6 +123,16 @@
 
     }
   };
+
+  Drupal.behaviors.pulChatWidgetBehavior = {
+    attach: function (context) {
+      $('.library-three-help', context).once('pul', function () {
+        var chat_text_block = Drupal.theme('pulChatStatusBlock');
+        $(this).append(chat_text_block);
+      });
+    }
+  };
+
 
 
 })(jQuery);

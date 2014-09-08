@@ -669,6 +669,134 @@ body.faq .ui-accordion .ui-accordion-header a {
   cursor: not-allowed;
 }
 
+.libraryh3lp .button--libraryh3lp {
+  color: white;
+  margin-left: 0.5em;
+  font-size: 11.2px;
+  padding: 2px 6px;
+}
+
+.button--libraryh3lp__online {
+  border: 1px solid #c65f05;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #eeab71;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #ef8224;
+  background-image: -webkit-linear-gradient(#ef8224, #d56605);
+  background-image: linear-gradient(#ef8224, #d56605);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #b75500;
+  background-clip: padding-box;
+}
+.button--libraryh3lp__online:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 #e99043;
+  cursor: pointer;
+  background-color: #e37516;
+  background-image: -webkit-linear-gradient(#e37516, #c55f06);
+  background-image: linear-gradient(#e37516, #c55f06);
+}
+.button--libraryh3lp__online:active:not(:disabled), .button--libraryh3lp__online:focus:not(:disabled) {
+  border: 1px solid #c65f05;
+  box-shadow: inset 0 0 8px 4px #b65806, inset 0 0 8px 4px #b65806;
+}
+.button--libraryh3lp__online:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--libraryh3lp__offline {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #333333;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: white;
+  background-image: -webkit-linear-gradient(white, #e3e3e3);
+  background-image: linear-gradient(white, #e3e3e3);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+  background-clip: padding-box;
+  border: 1px solid #e4e0d2;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #333333;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: white;
+  background-image: -webkit-linear-gradient(white, #eae7dc);
+  background-image: linear-gradient(white, #eae7dc);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+  background-clip: padding-box;
+}
+.button--libraryh3lp__offline:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 white;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  background-image: -webkit-linear-gradient(#f2f2f2, #dbdbdb);
+  background-image: linear-gradient(#f2f2f2, #dbdbdb);
+}
+.button--libraryh3lp__offline:active:not(:disabled), .button--libraryh3lp__offline:focus:not(:disabled) {
+  border: 1px solid #dbdbdb;
+  box-shadow: inset 0 0 8px 4px #d4d4d4, inset 0 0 8px 4px #d4d4d4;
+}
+.button--libraryh3lp__offline:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 white;
+  cursor: pointer;
+  background-color: #f4f3f1;
+  background-image: -webkit-linear-gradient(#f4f3f1, #e4e0d2);
+  background-image: linear-gradient(#f4f3f1, #e4e0d2);
+}
+.button--libraryh3lp__offline:active:not(:disabled), .button--libraryh3lp__offline:focus:not(:disabled) {
+  border: 1px solid #e4e0d2;
+  box-shadow: inset 0 0 8px 4px #ded9c9, inset 0 0 8px 4px #ded9c9;
+}
+.button--libraryh3lp__offline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.service-connect-btn a {
+  border: 1px solid #1f4e91;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #769ace;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #3770c0;
+  background-image: -webkit-linear-gradient(#3770c0, #22559d);
+  background-image: linear-gradient(#3770c0, #22559d);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #174485;
+  background-clip: padding-box;
+}
+.service-connect-btn a:hover:not(:disabled) {
+  box-shadow: inset 0 1px 0 0 #4f7ec2;
+  cursor: pointer;
+  background-color: #3665a8;
+  background-image: -webkit-linear-gradient(#3665a8, #204e90);
+  background-image: linear-gradient(#3665a8, #204e90);
+}
+.service-connect-btn a:active:not(:disabled), .service-connect-btn a:focus:not(:disabled) {
+  border: 1px solid #1f4e91;
+  box-shadow: inset 0 0 8px 4px #1e4882, inset 0 0 8px 4px #1e4882;
+}
+.service-connect-btn a:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .view-library-hours .view-header {
   border-top: none;
   border-right: 2px solid #fff;

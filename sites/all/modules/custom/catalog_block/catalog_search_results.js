@@ -148,7 +148,8 @@
 			error: function(data){
 				$('#catalog-search-results-spinner').hide();
               			$('<div class="all-fail-to-load-results">Books+ results are not available at this time.</div>"').appendTo('#catalog-search-results');
-            }
+            },
+      timeout: 5000
 		});
 	}	
   });

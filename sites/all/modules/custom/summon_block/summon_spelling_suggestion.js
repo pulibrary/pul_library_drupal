@@ -28,7 +28,8 @@
                             //fail silently for now
                             console.log("Summon Failed to Respond to Spellcheck");
               				//$('<span class="summon-spelling-failure">Search suggestions are not available at this time.</span>"').appendTo('#summon-spelling-results');
-            			}
+            			},
+      timeout: 5000
                 	});
 	}
   		});

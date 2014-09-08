@@ -83,7 +83,8 @@
 		error: function(data) {
             $('#pulfa-search-results-spinner').hide();
 			 $('<div class="all-fail-to-load-results">Finding Aids results are not available at this time.</div>"').appendTo('#pulfa-search-results');
-		}
+		},
+    timeout: 5000
 	});
      }	
   });
