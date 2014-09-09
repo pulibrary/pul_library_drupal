@@ -24,7 +24,17 @@ font-weight: normal;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-background-color: #FFF;
+background: #FFF;
+border: none;
 border-bottom: 1px dotted #E5E5E5;
 padding: 0.1em;
+}
+
+.ui-widget-content {
+    border: none;
+    font-size: 0.9em;
+}
+
+.ui-state-active {
+    border: none;
 }

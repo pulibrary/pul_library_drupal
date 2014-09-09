@@ -51,3 +51,33 @@ list-style: none;
 // .section-news .views-row span, .section-news .views-row .field--type-entityreference {
 //     margin-left: 1em;
 // }
+
+//alumni news
+
+.five_four_three_stacked-region--bottom .view-id-library_news {
+    .views-row-1 {
+        @include grid-span(12);
+
+        @include breakpoint($tab){
+            @include grid-span(4,1);
+        }
+    }
+    .views-row-2 {
+        @include grid-span(12);
+
+        @include breakpoint($tab){
+            @include grid-span(4,5);
+        }
+    }
+    .views-row-3 {
+        @include grid-span(12);
+
+        @include breakpoint($tab){
+            @include grid-span(4,9);
+        }
+    }
+
+    .field--name-field-news-article-snippet {
+        clear: both;
+    }
+}
