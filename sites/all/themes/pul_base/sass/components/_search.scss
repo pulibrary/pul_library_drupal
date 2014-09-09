@@ -1,10 +1,12 @@
 .block--quicktabs {
 	margin: 1.5em 0;
+
 	h2 {
 		margin: 0;
 		// background: $orange;
 		display: none;
 	}
+
 	.ui-tabs {
 		padding: 0;
 		// border: none;
@@ -26,6 +28,7 @@
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
 		@include border-radius(4px);
 		background: darken($light-gray, 3);
+		font-size: 15px;
 		// border: 1px solid #d3d3d3;
 		// padding: 5px;
 	}

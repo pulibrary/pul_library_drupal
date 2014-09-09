@@ -74,16 +74,16 @@
     padding: 0.5em;
     // @include border-radius(4px);
 
+    @include breakpoint($tab) {
+        display: block;
+        @include grid-span(3,11);
+        margin-right: 0;
+    }
+
     @include breakpoint($desk) {
       display: block;
       @include grid-span(2,11);
-      //@include clearfix;
-    }
-
-    @include breakpoint($tab) {
-        display: block;
-        @include grid-span(2,11);
-        margin-right: 0;
+      margin-right: 0;
     }
 
     a {
