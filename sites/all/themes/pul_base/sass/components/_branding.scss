@@ -10,16 +10,13 @@
     line-height: 21px;
     height: 50px;
     margin-left: -0.7em;
-}
 
-.site-logo {
     @include grid-span(12);
     clear: both;
 
     @include breakpoint($tab) {
         @include grid-span(6,1);
-        margin: .5em;
-        // margin-bottom: 0;
+        margin: .5em 0;
     }
 
     @include breakpoint($desk) {
@@ -38,7 +35,6 @@
     }
 
 }
-
 
 .l-branding {
   .homepage-tab-form-message {
