@@ -2052,6 +2052,12 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+.block--quicktabs .homepage-tab-form-message {
+  margin: .4em 0;
+}
+.block--quicktabs .homepage-tab-form-message a {
+  font-size: 12px;
+}
 
 .section-collections-and-collection-development .three_six_three_stacked-region--top,
 .section-collections-and-collection-development .single-region--top,
