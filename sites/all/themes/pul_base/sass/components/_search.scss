@@ -127,6 +127,14 @@
 		@include border-bottom-left-radius(0);
 	}
 
+	.homepage-tab-form-message {
+		margin: .4em 0;
+
+		a {
+			font-size: 12px;
+		}
+	}
+
 // 	.homepage-tab-form-message {
 // 		clear: both;
 // 	}
