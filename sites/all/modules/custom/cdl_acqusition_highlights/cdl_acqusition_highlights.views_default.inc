@@ -228,7 +228,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'homepage_spotlight_callout',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -236,6 +236,8 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<span class="spotlight--title"><em>Spotlight</em>:</span> [title]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
