@@ -348,7 +348,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = 'Email';
   $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-envelope"></i> [mail]';
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-email"></i> [mail]';
   $handler->display->display_options['fields']['mail']['alter']['path'] = 'staff/[name]/contact';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['hide_empty'] = TRUE;
