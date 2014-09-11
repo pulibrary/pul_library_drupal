@@ -3,7 +3,8 @@
     	// width: 60%;
         // float: right;
     	// display: inline-block;
-        @include rhythm(0, 0, 0, 0.5, $h3-fz);
+        @include rhythm(0, 0, 0, 0.5, 1em);
+        @include adjust-font-size-to(1em);
     }
 
     p {

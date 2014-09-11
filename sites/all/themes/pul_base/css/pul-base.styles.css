@@ -1020,10 +1020,19 @@ footer nav ul {
   margin-bottom: 5px;
   display: block;
 }
+.pane-menu-menu-get-help-menu .menu .leaf a {
+  font-size: 16px;
+}
+.pane-menu-menu-get-help-menu .menu .leaf a .libraryh3lp .button--libraryh3lp {
+  font-size: 11px;
+}
 .pane-menu-menu-get-help-menu .menu .leaf [class^="icon-"], .pane-menu-menu-get-help-menu .menu .leaf [class*=" icon-"] {
   margin-left: 0;
 }
 
+.library-hours .views-table td {
+  font-size: 16px;
+}
 .library-hours tr.even {
   background: none;
   border-top: 1px solid #ddd;
@@ -1033,6 +1042,7 @@ footer nav ul {
 }
 .library-hours td {
   padding: 0.5em;
+  font-size: 16px;
 }
 .library-hours td.views-field-title {
   width: 60%;
@@ -1513,6 +1523,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-bottom: 0rem;
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
 }
 
 .view-library-news .views-row, .view-library-news .view-footer {
