@@ -168,7 +168,10 @@
     > a:after {
       @include position(absolute, auto -.4em auto auto);
       color: $centered-navigation-color;
-      content: '\25BE';
+      
+      @include breakpoint(800px) {
+        content: '\25BE';
+      }
     }
   }
 
@@ -189,7 +192,7 @@
       }
 
       &:after {
-        content: '›';
+        // content: '›';
         font-size: 1.2em;
         position: absolute;
         right: $centered-navigation-submenu-padding / 2;
@@ -197,12 +200,17 @@
     }
 
     &:hover > .menu {
-      display: block;
+      display: none;
     }
 
-    @include breakpoint($horizontal-bar-mode) {
+    @include breakpoint(800px) {
       padding-right: $centered-navigation-submenu-padding;
       position: relative;
+
+      &:hover > .menu {
+        display: block;
+      }
+
     }
   }
 

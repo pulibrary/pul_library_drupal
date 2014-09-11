@@ -1,4 +1,3 @@
-@charset "UTF-8";
 button,
 input[type="submit"] {
   -webkit-font-smoothing: antialiased;
@@ -1372,7 +1371,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   bottom: auto;
   left: auto;
   color: rgba(51, 51, 51, 0.7);
-  content: '\25BE';
+}
+@media (min-width: 800px) {
+  .wrapper--navigation .centered-navigation-menu > ul > li.expanded > a:after {
+    content: '\25BE';
+  }
 }
 .wrapper--navigation li.expanded {
   overflow: visible;
@@ -1391,18 +1394,20 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   }
 }
 .wrapper--navigation li.expanded > a:after {
-  content: '›';
   font-size: 1.2em;
   position: absolute;
   right: 0.5em;
 }
 .wrapper--navigation li.expanded:hover > .menu {
-  display: block;
+  display: none;
 }
-@media (min-width: 44em) {
+@media (min-width: 800px) {
   .wrapper--navigation li.expanded {
     padding-right: 1em;
     position: relative;
+  }
+  .wrapper--navigation li.expanded:hover > .menu {
+    display: block;
   }
 }
 .wrapper--navigation li > ul.menu {
