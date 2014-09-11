@@ -11,7 +11,7 @@
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'pul_base_theme';
+	font-family: 'pul_base_theme', 'Roboto', sans-serif;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
