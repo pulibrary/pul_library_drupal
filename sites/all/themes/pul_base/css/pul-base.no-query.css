@@ -2327,6 +2327,26 @@ fieldset {
   background: none;
 }
 
+.views-field-picture {
+  width: 85px;
+}
+
+table caption {
+  font-size: 18px;
+  font-size: 1.3rem;
+  line-height: 24px;
+  line-height: 1.71429rem;
+  margin-top: 18px;
+  margin-top: 1.28571rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.85714rem;
+  text-align: left;
+}
+
 h1 {
   font-size: 28px;
   font-size: 2rem;
