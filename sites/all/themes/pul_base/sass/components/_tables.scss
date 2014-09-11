@@ -66,3 +66,13 @@
 fieldset {
     background: none;
 }
+
+.views-field-picture {
+    width: 85px;
+}
+
+table caption {
+    @include adjust-font-size-to(1.3em);
+    @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+    text-align: left;
+}

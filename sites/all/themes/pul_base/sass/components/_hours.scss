@@ -3,6 +3,10 @@
 	// 	margin: 0;
 	// }
 
+	.views-table td {
+		font-size: 16px;
+	}
+
 	tr.even {
 		background: none;
 		border-top: 1px solid #ddd;
@@ -12,6 +16,8 @@
 	}
 	td {
 		padding: 0.5em;
+
+		font-size: 16px;
 	}
 	td.views-field-title {
 		width: 60%;
