@@ -12,6 +12,6 @@ $headers = (isset($item['header_id'])) ? ' headers="'. $item['header_id'] .'" ' 
 ?>
 <td <?php print $id?>class="<?php print $item['class'] ?>" colspan="<?php print $item['colspan'] ?>" rowspan="<?php print $item['rowspan'] ?>"<?php print $date . $headers . $day; ?>>
   <div class="inner">
-    <?php print $item['entry'] ?>
+    <?php print $item['entry']; ?>
   </div>
 </td>
