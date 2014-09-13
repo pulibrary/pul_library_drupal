@@ -88,6 +88,12 @@
             }
           });
         });
+        // track main menu usage 
+        $('.centered-navigation-menu ul.menu a').each( function() {
+          $(this).click( function () {
+            ga('send', 'event', 'Main Menu', 'click', $(this).text() );
+          });
+        });
       });
 
       // });
@@ -133,6 +139,126 @@
     }
   };
 
+  
+  Drupal.behaviors.pulTrackFooterMenuUsage = {
+    attach: function (context) {
+      $('.l-region--footer', context).once('pul', function () {
+        $('.block--menu a').each( function() {
+          $(this).click( function () {
+            ga('send', 'event', 'Footer Menu', 'click', $(this).text() );
+          });
+        });
+      });
+    }
+  }; 
 
+  Drupal.behaviors.pulTrackAllSearchUsage = {
+    attach: function (context) {
+      $('.page-find-all-results .l-main').once('pul', function () {
+         // ADD GA Tracking Code to Internal All Search Block Pages
+        //
+        $('.view-databases-keyword-search .item-list .database-title').each(function(index,value) {
+                result_position = parseInt(index) + 1;
+                $(this).click( function() {
+                    ga('send', 'event', "All Search", "Database Title", 'Position ' + result_position);
+                });
+            }
+        );
 
+        // for subjects block
+        $(' .view-database-subject-search .item-list a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "All Search", 'Database Subject', 'Position ' + result_position);
+                  });
+              }
+          );
+
+        //general keyword search view
+          $(' .view-general-site-keyword-search .item-list .database-titles a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "All Search", "Website Search", 'Position ' + result_position);
+                  });
+              }
+          );
+
+        //people search
+          $(' .view-general-site-user-search .item-list .user-link').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "All Search", "People Search", 'Position ' + result_position);
+                  });
+              }
+          );
+
+          // Add tracking codes to expand links on all search
+          // refine-link = top class more-link - bottom
+          $(' .view-databases-keyword-search .refine-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Database", 'Top');
+                  });
+              }
+          );
+
+          // website search
+          $(' .view-general-site-keyword-search .refine-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Website Search", 'Top');
+                  });
+              }
+          );
+          $(' .view-databases-keyword-search .more-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Database", 'Bottom');
+                  });
+              }
+          );
+
+          $(' .view-databases-subject-search .more-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Subject Browse", 'Bottom');
+                  });
+              }
+          );
+
+          $(' .view-general-site-user-search .more-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "People Search", 'Bottom');
+                  });
+              }
+          );
+
+          $(' .view-general-site-keyword-search .more-link a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Website Search", 'Bottom');
+                  });
+              }
+          );
+          // libraries and collections
+          $(' .view-search-libraries-and-collections h3 a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Libraries and Collections", 'Title');
+                  });
+              }
+          );
+          
+          $(' .view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function(index,value) {
+                  result_position = parseInt(index) + 1;
+                  $(this).click( function() {
+                      ga('send', 'event', "Expand All Search", "Libraries and Collections", 'Homepage URL');
+                  });
+              }
+          );
+      });
+    }
+  };
+  
 })(jQuery);
