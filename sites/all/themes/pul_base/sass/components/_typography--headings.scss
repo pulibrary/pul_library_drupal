@@ -22,3 +22,8 @@ h3 {
     @include adjust-font-size-to(1.3em);
     @include rhythm(0.75, 0, 0, 0.5, 1.3em);
 }
+
+//hack hide aka titles for db
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+    display: none;
+}
