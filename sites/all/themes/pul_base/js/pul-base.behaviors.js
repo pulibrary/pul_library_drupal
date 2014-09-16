@@ -156,7 +156,8 @@
     attach: function (context) {
       $('.page-find-all-results .l-main').once('pul', function () {
          // ADD GA Tracking Code to Internal All Search Block Pages
-        //
+        //FIXME 
+        // This shoudl really be 
         $('.view-databases-keyword-search .item-list .database-title').each(function(index,value) {
                 result_position = parseInt(index) + 1;
                 $(this).click( function() {
