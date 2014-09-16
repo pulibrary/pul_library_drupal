@@ -78,6 +78,14 @@
 	}
 }
 
+.calendar-calendar .month-view .full td.single-day div.monthview, .calendar-calendar .week-view .full td.single-day div.weekview, .calendar-calendar .day-view .full td.single-day div.dayview {
+	background: none;
+}
+
+.calendar-calendar div.calendar {
+	font-size: 14px;
+}
+
 .library-hours .date-nav-wrapper .date-next i {
 margin-left: 0;
 }

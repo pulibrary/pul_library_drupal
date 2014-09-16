@@ -676,7 +676,6 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 
 .libraryh3lp .button--libraryh3lp {
-  color: white;
   margin-left: 0.5em;
   font-size: 11.2px;
   padding: 2px 6px;
@@ -697,6 +696,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   text-decoration: none;
   text-shadow: 0 1px 0 #b75500;
   background-clip: padding-box;
+  color: white;
 }
 .button--libraryh3lp__online:hover:not(:disabled) {
   box-shadow: inset 0 1px 0 0 #e99043;
@@ -743,6 +743,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   text-decoration: none;
   text-shadow: 0 1px 0 white;
   background-clip: padding-box;
+  color: black;
 }
 .button--libraryh3lp__offline:hover:not(:disabled) {
   box-shadow: inset 0 1px 0 0 white;
@@ -872,6 +873,14 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 .calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff {
   background: none;
+}
+
+.calendar-calendar .month-view .full td.single-day div.monthview, .calendar-calendar .week-view .full td.single-day div.weekview, .calendar-calendar .day-view .full td.single-day div.dayview {
+  background: none;
+}
+
+.calendar-calendar div.calendar {
+  font-size: 14px;
 }
 
 .library-hours .date-nav-wrapper .date-next i {
@@ -2409,6 +2418,10 @@ h3 {
   padding-bottom: 0rem;
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
+}
+
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+  display: none;
 }
 
 /*******************************************************************************
