@@ -68,7 +68,6 @@ allow from all
 RedirectPermanent /about/contact.php /about/contact-us
 RedirectPermanent /about/hours /hours
 RedirectPermanent /about/hours.php /hours
-Redirect /guide /sites/default/files/documents/Library_guide_08_2013.pdf
 RedirectPermanent /catalogs/articles.php /research/databases
 RedirectPermanent /catalogs/other.php /research/catalogs
 RedirectPermanent /libraries/collections.php /collections
