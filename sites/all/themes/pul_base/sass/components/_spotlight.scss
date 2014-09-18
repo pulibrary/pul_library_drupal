@@ -18,7 +18,7 @@
         position: relative;
 
         @include breakpoint($tab) {
-            padding: 4em 0;
+            padding: 2em 0;
         }
     }
 }
@@ -35,7 +35,7 @@
     }
 }
 
-#block-views-spotlight-dispalsys-block {
+#block-views-spotlight-dispalsys-block, .pane-acquisitions-highlights .view-acquisitions-highlights {
     background: rgba($dark-gray,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -99,7 +99,7 @@
     }
 }
 
-#block-views-spotlight-dispalsys-block {
+#block-views-spotlight-dispalsys-block, .pane-acquisitions-highlights .view-acquisitions-highlights {
   $hover-tile-height: 159px;
 
   // background-position: bottom;
