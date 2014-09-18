@@ -7,6 +7,7 @@ configure = admin/config/content/webform
 php = 5.3
 dependencies[] = ctools
 dependencies[] = views
+test_dependencies[] = token
 
 ; Files that contain classes:
 files[] = includes/exporters/webform_exporter_delimited.inc
@@ -35,9 +36,9 @@ files[] = tests/permissions.test
 files[] = tests/submission.test
 files[] = tests/webform.test
 
-; Information added by Drupal.org packaging script on 2014-08-19
-version = "7.x-4.0-rc6"
+; Information added by Drupal.org packaging script on 2014-08-30
+version = "7.x-4.0"
 core = "7.x"
 project = "webform"
-datestamp = "1408408131"
+datestamp = "1409365767"
 

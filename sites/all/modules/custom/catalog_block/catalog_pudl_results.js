@@ -27,8 +27,7 @@
                         var row_class="even"
                     }
                     var result_position = parseInt(index) + 1;
-                    var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PUDL Title\', \'Position '+result_position+'\']);"';
-    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank"'+ ga_track_code +'>' + result['title'] + '</a></h3>'+
+    					items.push('<li class="'+row_class+'"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">Collection: '+result['collection']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
@@ -39,12 +38,35 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pudl-search-results');
-                var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pudl\', \'Top\']);"'
-				$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
+				$('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
 				if(data.number > 3) {
-                    more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pudl\', \'Bottom\']);"'
-					$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
+ 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results.</a></div>"').appendTo('#pudl-search-results');
 				}
+          var section_heading = "PUDL"; // Should be in Drupal Settings
+          $('.pudl-search.refine-link a').each(function (index, value) {
+             //console.log('processing header');
+              //$(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+             });
+           });
+
+           $('.pudl-search.more-link a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+             });
+           });
+
+           $('#pudl-search-results .all-search-results-list h3 a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             var result_position = parseInt(index, 10) + 1;
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+             });
+
+         });
+
 			} else {
                 $('#pudl-search-results-spinner').hide();
 				$('.pane-catalog-block-catalog-pudl-results').hide();

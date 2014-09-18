@@ -78,6 +78,7 @@ function _webform_edit_file($component) {
         'js' => array(drupal_get_path('module', 'webform') . '/js/webform-admin.js'),
         'css' => array(drupal_get_path('module', 'webform') . '/css/webform-admin.css'),
       ),
+      '#type' => 'webform_file_extensions',
       '#weight' => 2,
     );
 
@@ -378,6 +379,7 @@ function _webform_display_file($component, $value, $format = 'html') {
   $fid = isset($value[0]) ? $value[0] : NULL;
   return array(
     '#title' => $component['name'],
+    '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
     '#value' => $fid ? webform_get_file($fid) : NULL,
     '#weight' => $component['weight'],
     '#theme' => 'webform_display_file',

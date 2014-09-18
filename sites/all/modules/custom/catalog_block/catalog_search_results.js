@@ -39,10 +39,9 @@
                         	        }
 
 					if(result['fulltextavail'] == "Y") {
-                        var online_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Online Access\', \'Position '+result_position+'\']);"';
-						online_avail = "<div class='all-full-text'>"+
+                  online_avail = "<div class='all-full-text'>"+
 									icon_hint+
-									'<a '+online_track_code+' target="_blank" class="all-search-link" href="'+pul_resolver+result['full_text_link']+
+									'<a target="_blank" class="all-search-link" href="'+pul_resolver+result['full_text_link']+
 									'" title="Go to Resource">'+
 									'Online Access'+
 									"</a></div>";
@@ -57,19 +56,17 @@
 						var holdings_list = "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
 						_.each(result['holdings'], function(holding) {
 							for (var key in holding) {
-                                                                if(key !== "ONLINE") {
-                                                                    var location_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Location Check\', \'Position '+result_position+'\']);"';
-                                                                	var location = holding[key];
-                                                                	holdings_list += "<span class='holdings-item'> "+
-										'<a '+location_track_code+' target="_blank" href="'+location['request_link']+'" title="'+
+                if(key !== "ONLINE") {
+                  var location = holding[key];
+                  holdings_list += "<span class='holdings-item'> "+
+									'<a target="_blank" href="'+location['request_link']+'" title="'+
 										request_hint+location['library_label']+'">'+
-                                                                                location['library_label']+
-                                                                                "</a></span>&nbsp;";
+                    location['library_label']+
+                    "</a></span>&nbsp;";
 									holdings_show = 1;
-                                                                }
-                                                        }
-
-						});
+                }
+              }
+            });
 						holdings_list += "</div>";
 						if(holdings_show == 1) {
 							holdings_show_list = holdings_list;
@@ -110,12 +107,9 @@
 						var creator = "";
 					}
 
-                    var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Books+ Title\', \'Position '+result_position+'\']);"';
-    					items.push('<li class="'+row_class+'"><h3><a href="' + 
+    			items.push('<li class="'+row_class+'"><h3><a href="' + 
 						result['url'] + 
-						'" title="'+desc+'" target="_blank" '+
-                        ga_track_code +
-                        '>' +
+						'" title="'+desc+'" target="_blank" ' + '>' +
 						result['title'] +
 						'</a></h3> ' +
 						creator +
@@ -133,12 +127,34 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#catalog-search-results');
-                var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Books+\', \'Top\']);"';
-                $('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
+                $('<div class="books-search crefine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
 				if(data.number > max_display_results) {
-                    more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Books+\', \'Bottom\']);"';
-					$('<div class="more-link"><a '+more_link_track_code+ ' target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
+					$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				}
+          var section_heading = "Books+"; // Should be in Drupal Settings
+          $('.books-search.refine-link a').each(function (index, value) {
+             //console.log('processing header');
+              //$(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+             });
+           });
+
+           $('.books-search.more-link a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+             });
+           });
+
+           $('#catalog-search-results .all-search-results-list h3 a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             var result_position = parseInt(index, 10) + 1;
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+             });
+
+         });
 
 			} else {
 				$('#catalog-search-results-spinner').hide();
