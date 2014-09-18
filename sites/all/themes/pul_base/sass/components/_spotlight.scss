@@ -23,7 +23,7 @@
     }
 }
 
-#block-views-acquisitions-highlights-block-1 {
+#block-views-spotlight-dispalsys-block {
     @include grid-span(12); 
     clear: both;
     display: none;
@@ -35,7 +35,7 @@
     }
 }
 
-#block-views-acquisitions-highlights-block-1 {
+#block-views-spotlight-dispalsys-block {
     background: rgba($dark-gray,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -99,7 +99,7 @@
     }
 }
 
-#block-views-acquisitions-highlights-block-1 {
+#block-views-spotlight-dispalsys-block {
   $hover-tile-height: 159px;
 
   // background-position: bottom;

@@ -48,7 +48,7 @@
 
 .libraryh3lp {
 	.button--libraryh3lp {
-			color: white;
+			// color: white;
 			margin-left: 0.5em;
 			font-size: $base-font-size * .8;
 			padding: 2px 6px;
@@ -57,10 +57,12 @@
 
 .button--libraryh3lp__online {
 	@include button(simple, lighten($orange,5));
+	color: white;
 }
 
 .button--libraryh3lp__offline {
 	@include button(simple, lighten($light-gray,5));
+	color: black;
 }
 
 .service-connect-btn a {
