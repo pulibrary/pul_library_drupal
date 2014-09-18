@@ -1556,6 +1556,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   min-height: 100px;
 }
 
+.front .view-library-news .views-row {
+  padding-bottom: 0;
+}
+
 .views-field-created {
   color: #999;
   font-style: italic;
@@ -1564,6 +1568,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .view-library-news .field--name-field-news-featured-graphic img {
   float: left;
   margin: 0 .75em .167em 0;
+  margin-bottom: 1em;
 }
 
 .pane-library-news .views-row img {
