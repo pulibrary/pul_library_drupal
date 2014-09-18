@@ -18,7 +18,7 @@
       				var spelling_suggestion = data[0];
       				if(spelling_suggestion != undefined) {
         				var suggested_search = base_url + spelling_suggestion;
-                        var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Did You Mean\', \'Position 1\']);"';
+                var ga_track_code = 'onclick="ga(\'send\', \'event\', \'All Search\', \'Summon\', \'Did You Mean\');"';
         				$('<span class="summon-suggestion">Did you mean? <a '+ga_track_code+'href="'+ suggested_search + '" class="summon-suggestion-string">' + spelling_suggestion + "</a></span>").appendTo('#summon-spelling-results');
       				} else {
         				$('span class="no-summon-suggestions"></span>').appendTo('#summon-spelling-results');

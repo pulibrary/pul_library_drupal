@@ -37,24 +37,44 @@
                                         var author = "";
                                 }
                 var result_position = parseInt(index) + 1;
-                var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Library Guide Title\', \'Position '+result_position+'\']);"';
-    			items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + result['url'] + '" target="_blank"'+ga_track_code+'>' + result['title'] + '</a></h3>'+author+'</li>');
-				});
+                items.push('<li class="'+row_class+'"><h3><a title="'+abstract+'" href="' + 
+                  result['url'] + '" target="_blank">' + 
+                  result['title'] + '</a></h3>'+author+'</li>');
+				        });
             $('#guide-search-results-spinner').hide();
   			$('<ul/>', {
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-            var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Library Guides\', \'Top\']);"'
-			$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
+      $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
 			if(data.number > 3) {
-                more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Library Guides\', \'Bottom\']);"'
-				$('<div class="more-link"><a '+more_link_track_code+' title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
+              $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
 				}
+          var section_heading = "Summon Guide"; // Should be in Drupal Settings
+          $('.summon-guide.refine-link a').each(function (index, value) {
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+             });
+           });
+
+           $('.summon-guide.more-link a').each(function (index, value) {
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+             });
+           });
+
+           $('#summon-guide-results .all-search-results-list h3 a').each(function (index, value) {
+             var result_position = parseInt(index, 10) + 1;
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+             });
+
+         });
 			} else {
                 $('#guide-search-results-spinner').hide();
 				$('<div class="no-results">No guides found. <a href="'+libguides_url+'">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
 			}
+
 		},
  	error: function(data){
             $('#guide-search-results-spinner').hide();
