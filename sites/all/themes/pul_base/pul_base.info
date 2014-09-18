@@ -20,6 +20,7 @@ stylesheets[all][] = pul_base_icons/ie7/ie7.css
 ; ========================================
 scripts[] = js/pul-base.behaviors.js
 scripts[] = pul_base_icons/ie7/ie7.js
+scripts[] = libraries/modernizr/modernizr.js
 
 ; ========================================
 ; Plugins

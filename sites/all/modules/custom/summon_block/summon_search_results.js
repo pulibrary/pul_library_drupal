@@ -11,7 +11,7 @@
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
 	} else {
          $.ajax({
-	    url: query_url,
+	          url: query_url,
             async: true,
             type: 'GET',
             dataType: 'json',
@@ -54,12 +54,11 @@
 					var author = "";
 				}
                 var result_position = parseInt(index) + 1;
-                var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'Summon Title\', \'Position '+result_position+'\']);"';
     		    items.push('<li class="'+row_class+'"><h3><a title="'+
 					abstract + 
 					'" href="' + 
 					result['url'] + 
-					'" target="_blank"'+ga_track_code+'>' +
+					'" target="_blank">' +
 					result['title'] + 
 					'</a></h3>'+
 					author+'<div class="summon-format-type">' + 
@@ -73,12 +72,32 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
-            var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Top\']);"'
-			$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
+ 			$('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
-                more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Summon\', \'Bottom\']);"'
-				$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
+				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
+
+      // GA Tracking
+      var section_heading = "Summon Search"; // Should be in Drupal Settings
+      $('.summon-search.refine-link a').each(function (index, value) {
+         $(this).click(function () {
+           ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+         });
+       });
+
+       $('.summon-search.more-link a').each(function (index, value) {
+         $(this).click(function () {
+           ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+         });
+       });
+
+       $('#summon-search-results .all-search-results-list h3 a').each(function (index, value) {
+         var result_position = parseInt(index, 10) + 1;
+         $(this).click(function () {
+           ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+         });
+
+      });
 	} else {	
 		$('#summon-search-results-spinner').hide();
         	$('<div class="no-results">No matches in Articles+.</div>"').appendTo('#summon-search-results');

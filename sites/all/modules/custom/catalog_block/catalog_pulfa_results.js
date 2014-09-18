@@ -56,8 +56,8 @@
 						icon_type = default_icon;
 					}
                     var result_position = parseInt(index) + 1;
-                    var ga_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'All Search\', \'PULFA Title\', \'Position '+result_position+'\']);"';
-    					items.push('<li class="'+row_class+'"><h3><a href="' + result['url'] + '" target="_blank"'+ga_track_code+'>' + result['title'] + '</a></h3>'+
+      				items.push('<li class="'+row_class+'"><h3><a href="' + result['url'] +
+              '" target="_blank">' + result['title'] + '</a></h3>'+
 						 '<div class="all-search-excerpt">'+result['kwic']+'</div>'+
 						 '<div class="all-format-type"><i class="'+icon_type+'"></i>'+ 
 						result['type']+ 
@@ -68,12 +68,34 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
-                var refine_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pulfa\', \'Top\']);"'
-				$('<div class="refine-link">'+refine_icon+'<a '+refine_link_track_code+' target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
+				$('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
 				if(data.number > 3) {
-                    more_link_track_code = 'onclick="_gaq.push([\'_trackEvent\', \'Expand All Search\', \'Pulfa\', \'Bottom\']);"'
-					$('<div class="more-link"><a '+more_link_track_code+' target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
+        	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}
+          var section_heading = "PULFA"; // Should be in Drupal Settings
+          $('.pulfa-search.refine-link a').each(function (index, value) {
+             //console.log('processing header');
+              //$(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+             });
+           });
+
+           $('.pulfa-search.more-link a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+             });
+           });
+
+           $('#pulfa-search-results .all-search-results-list h3 a').each(function (index, value) {
+             //var section_heading = $(this).closest('h2.pane-title').text();
+             var result_position = parseInt(index, 10) + 1;
+             $(this).click(function () {
+               ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+             });
+
+         });
 			} else {
                 $('#pulfa-search-results-spinner').hide();
 				//$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
