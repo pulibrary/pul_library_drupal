@@ -284,12 +284,12 @@ function theme_webform_validation_manage_add_rule($variables) {
       }
       else {
         $title = $validator_info['name'];
-        $component_list_postfix = '; none present in this form';
+        $component_list_postfix = '; ' . t('none present in this form');
       }
       $item = '<dt>' . $title . '</dt>';
       $item .= '<dd>';
       $item .= $validator_info['description'];
-      $item .= ' Works with: ' . implode(', ', $validator_info['component_types']) . $component_list_postfix . '.</dd>';
+      $item .= ' ' . t('Works with: @component_types.', array('@component_types' => implode(', ', $validator_info['component_types']) . $component_list_postfix)) . '</dd>';
       $output .= $item;
     }
     $output .= '</dl>';
@@ -312,10 +312,8 @@ function webform_validation_webform_validation($type, $op, $data) {
  * Implements hook_node_insert().
  */
 function webform_validation_node_insert($node) {
-  if (module_exists('clone')) {
-    if (in_array($node->type, webform_variable_get('webform_node_types'))) {
-      webform_validation_node_clone($node);
-    }
+  if (module_exists('clone') && in_array($node->type, webform_variable_get('webform_node_types'))) {
+    webform_validation_node_clone($node);
   }
 }
 
@@ -335,6 +333,9 @@ function webform_validation_node_delete($node) {
  * Adds support for node_clone module
  */
 function webform_validation_node_clone($node) {
+  if (!in_array($node->type, webform_variable_get('webform_node_types'))) {
+    return;
+  }
   if (isset($node->clone_from_original_nid)) {
     $original_nid = $node->clone_from_original_nid;
     // Get existing rules for original node
