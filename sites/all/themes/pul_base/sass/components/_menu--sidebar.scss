@@ -1,4 +1,4 @@
-.three_six_three-region--first {
+.three_six_three-region--first, .three_nine-region--first {
     h2 {
         @include adjust-font-size-to(1.3em);
         @include rhythm(0.75, 0, 0, 0.5, 1.3em);

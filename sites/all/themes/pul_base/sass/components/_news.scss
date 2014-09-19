@@ -60,6 +60,7 @@ list-style: none;
 
         @include breakpoint($tab){
             @include grid-span(4,1);
+            margin-left: 0;
         }
     }
     .views-row-2 {
@@ -74,7 +75,12 @@ list-style: none;
 
         @include breakpoint($tab){
             @include grid-span(4,9);
+            margin-right: 0;
         }
+    }
+
+    .field--name-field-news-featured-graphic img {
+        margin-bottom: 1em;
     }
 
     .field--name-field-news-article-snippet {
