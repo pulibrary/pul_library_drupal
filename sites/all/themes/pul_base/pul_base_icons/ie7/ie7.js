@@ -13,6 +13,10 @@
 		el.innerHTML = '<span style="font-family: \'pul_base_theme\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-article-express--caps': '&#xe612;',
+		'icon-article-express--small-skew': '&#xe613;',
+		'icon-article-express--small': '&#xe614;',
+		'icon-article-express--caps-skew': '&#xe615;',
 		'icon-chat': '&#xe603;',
 		'icon-phone': '&#xe60e;',
 		'icon-user': '&#xe60f;',
