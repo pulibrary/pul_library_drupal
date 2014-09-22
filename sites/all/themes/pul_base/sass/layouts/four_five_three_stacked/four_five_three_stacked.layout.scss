@@ -24,12 +24,13 @@
     clear: both;
   }
 
-  .four_five_three_stacked-region--first {
-    @include grid-span(4, 1, $gutter:0);
-    clear: both;
-  }
   .four_five_three_stacked-region--second {
+    @include grid-span(4,1, $gutter:0);
+  }
+
+ .four_five_three_stacked-region--first {
     @include grid-span(5,5);
+    clear: both;
   }
 
   .four_five_three_stacked-region--third {
