@@ -36,6 +36,18 @@
 .icon-article-express--caps-skew:before {
 	content: "\e615";
 }
+.icon-article-express--caps-after:after {
+  content: "(\e612)";
+}
+.icon-article-express--small-skew-after:after {
+  content: "(\e613)";
+}
+.icon-article-express--small-after:after {
+  content: "(\e614)";
+}
+.icon-article-express--caps-skew-after:after {
+  content: "(\e615)";
+}
 .icon-chat:before {
 	content: "\e603";
 }
