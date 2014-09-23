@@ -26,21 +26,21 @@
     clear: both;
   }
 
-  .four_five_three_stacked-region--first {
+  .four_five_three_stacked-region--second {
     width: 33.33333%;
     float: left;
     margin-right: -100%;
     margin-left: 0;
     clear: none;
-    clear: both;
   }
 
-  .four_five_three_stacked-region--second {
+  .four_five_three_stacked-region--first {
     width: 39.65517%;
     float: left;
     margin-right: -100%;
     margin-left: 34.48276%;
     clear: none;
+    clear: both;
   }
 
   .four_five_three_stacked-region--third {

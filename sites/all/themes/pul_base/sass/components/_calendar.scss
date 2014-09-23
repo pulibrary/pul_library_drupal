@@ -14,12 +14,18 @@
 			margin-top: 5px;
 			width: 100%;
 
+			.date-nav {
+				padding-bottom: 0.5em;
+				margin-bottom: 0;
+			}
+
 			.date-heading {
 				position: relative;
 				width: 100%;
 				top: 0px;
 				text-align: center;
 				z-index: 0;
+				// padding-bottom: 0.5em;
 
 				h3 {
 					color: white;
@@ -35,29 +41,31 @@
 				color: white;
 				text-decoration: none;
 				vertical-align: middle;
+				position: absolute;
+				top: -4px;
 			}
 
 			.date-prev {
 				float: left;
-				position: relative;
+				// position: relative;
 				right: 0;
 				text-align: center;
 				padding: 0px;
 				width: 30px;
 				height: 25px;
 				left: 20px;
-				top: -20px;
+				// top: -20px;
 			}
 
 			.date-next {
 				float: right;
-				position: relative;
+				// position: relative;
 				right: 20px;
 				text-align: center;
 				padding: 0px;
 				width: 30px;
 				height: 25px;
-				top: -20px;
+				// top: -20px;
 			}
 		}
 	}

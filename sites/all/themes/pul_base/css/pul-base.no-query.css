@@ -823,6 +823,10 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin-top: 5px;
   width: 100%;
 }
+.view-library-hours .view-header .date-nav-wrapper .date-nav {
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
 .view-library-hours .view-header .date-nav-wrapper .date-heading {
   position: relative;
   width: 100%;
@@ -843,27 +847,25 @@ body.faq .ui-accordion .ui-accordion-header a {
   color: white;
   text-decoration: none;
   vertical-align: middle;
+  position: absolute;
+  top: -4px;
 }
 .view-library-hours .view-header .date-nav-wrapper .date-prev {
   float: left;
-  position: relative;
   right: 0;
   text-align: center;
   padding: 0px;
   width: 30px;
   height: 25px;
   left: 20px;
-  top: -20px;
 }
 .view-library-hours .view-header .date-nav-wrapper .date-next {
   float: right;
-  position: relative;
   right: 20px;
   text-align: center;
   padding: 0px;
   width: 30px;
   height: 25px;
-  top: -20px;
 }
 
 .calendar-calendar th.days {
@@ -2540,23 +2542,23 @@ $desk : 1250px;
     clear: both;
   }
 
-  .four_five_three_stacked-region--first {
+  .four_five_three_stacked-region--second {
     -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 33.33333%;
     float: left;
     margin-right: -100%;
     margin-left: 0%;
     clear: none;
-    clear: both;
   }
 
-  .four_five_three_stacked-region--second {
+  .four_five_three_stacked-region--first {
     -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 38.33333%;
     float: left;
     margin-right: -100%;
     margin-left: 35%;
     clear: none;
+    clear: both;
   }
 
   .four_five_three_stacked-region--third {
