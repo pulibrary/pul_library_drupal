@@ -918,6 +918,10 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin-left: -5px;
 }
 
+.single-region--middle .pane-term-description p {
+  margin-top: 0;
+}
+
 select {
   outline: none;
   background: #f5f4f1;
@@ -2543,20 +2547,20 @@ $desk : 1250px;
   }
 
   .four_five_three_stacked-region--second {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 33.33333%;
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     float: left;
     margin-right: -100%;
-    margin-left: 0%;
+    margin-left: 1.66667%;
     clear: none;
   }
 
   .four_five_three_stacked-region--first {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 38.33333%;
+    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 41.66667%;
     float: left;
     margin-right: -100%;
-    margin-left: 35%;
+    margin-left: 33.33333%;
     clear: none;
     clear: both;
   }
