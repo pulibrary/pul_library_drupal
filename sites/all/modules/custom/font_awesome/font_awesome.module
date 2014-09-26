@@ -64,6 +64,7 @@ function font_awesome_wysiwyg_editor_settings_alter(&$settings, $context) {
   if ($context['profile']->editor == 'tinymce') {
     // Add complete DIV Tag setting if not existing
     $settings['extended_valid_elements'] .= ',i[class|style|align]';
+    $settings['extended_valid_elements'] .= ',span[class|style|align]';
   }
 }
 
@@ -73,8 +74,10 @@ function font_awesome_wysiwyg_editor_settings_alter(&$settings, $context) {
  * Implements hook_page_init().
  */
 function font_awesome_init() {
+  /*
   if ($font_awesome_css = font_awesome_check_library()) {
     // Add the Font Awesome library
     drupal_add_css($font_awesome_css);
   }
+  */
 }

@@ -39,3 +39,7 @@ h5 {
 h6 {
   @include adjust-font-size-to($h6-fz);
 }
+
+p {
+  margin: 1.4em 0;
+}
