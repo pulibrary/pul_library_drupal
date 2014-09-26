@@ -126,11 +126,13 @@
   				$('<ul/>', {
     					'class': 'all-search-results-list',
     					html: items.join('')
-  				}).appendTo('#catalog-search-results');
-                $('<div class="books-search crefine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
-				if(data.number > max_display_results) {
-					$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
-				}
+  				  }).appendTo('#catalog-search-results');
+          
+          $('<div class="books-search crefine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
+				  if(data.number > max_display_results) {
+					 $('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				  }
+
           var section_heading = "Books+"; // Should be in Drupal Settings
           $('.books-search.refine-link a').each(function (index, value) {
              
@@ -151,26 +153,27 @@
              var result_position = parseInt(index, 10) + 1;
              $(this).click(function () {
                ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+              });
              });
-
             //online links
             $('#catalog-search-results .all-search-results-list .all-full-text .full-text-link').each(function (index, value) {
              
-             var result_position = parseInt(index, 10) + 1;
-             $(this).click(function () {
-               ga('send', 'event', 'All Search', section_heading, 'Online Holding Position ' + result_position);
-             });
+              var result_position = parseInt(index, 10) + 1;
+              $(this).click(function () {
+                ga('send', 'event', 'All Search', section_heading, 'Online Holding Position ' + result_position);
+              });
+            });
 
             // print holdings
             $('#catalog-search-results .all-search-results-list .all-locations-list .all-holdings-link').each(function (index, value) {
              
-             var result_position = parseInt(index, 10) + 1;
-             $(this).click(function () {
-               ga('send', 'event', 'All Search', section_heading, 'Print Holding Position ' + result_position);
-             });
+              var result_position = parseInt(index, 10) + 1;
+              $(this).click(function () {
+                ga('send', 'event', 'All Search', section_heading, 'Print Holding Position ' + result_position);
+              });
+            });
 
-
-         });
+         
 
 			} else {
 				$('#catalog-search-results-spinner').hide();
