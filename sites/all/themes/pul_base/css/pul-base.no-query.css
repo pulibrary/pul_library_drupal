@@ -1026,6 +1026,10 @@ footer nav ul {
   float: left;
 }
 
+span.icon-article-express--small-after {
+  font-size: .75em;
+}
+
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #ddd;
