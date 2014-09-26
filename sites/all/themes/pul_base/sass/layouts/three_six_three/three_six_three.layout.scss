@@ -30,7 +30,7 @@
   }
 
    .three_six_three-region--second {
-    @include grid-span(3,10);
+    @include grid-span(3,10, $gutter:0);
     margin-right: 0;
   }
 
