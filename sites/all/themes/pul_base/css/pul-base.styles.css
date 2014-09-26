@@ -823,6 +823,10 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin-top: 5px;
   width: 100%;
 }
+.view-library-hours .view-header .date-nav-wrapper .date-nav {
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
 .view-library-hours .view-header .date-nav-wrapper .date-heading {
   position: relative;
   width: 100%;
@@ -843,27 +847,25 @@ body.faq .ui-accordion .ui-accordion-header a {
   color: white;
   text-decoration: none;
   vertical-align: middle;
+  position: absolute;
+  top: -4px;
 }
 .view-library-hours .view-header .date-nav-wrapper .date-prev {
   float: left;
-  position: relative;
   right: 0;
   text-align: center;
   padding: 0px;
   width: 30px;
   height: 25px;
   left: 20px;
-  top: -20px;
 }
 .view-library-hours .view-header .date-nav-wrapper .date-next {
   float: right;
-  position: relative;
   right: 20px;
   text-align: center;
   padding: 0px;
   width: 30px;
   height: 25px;
-  top: -20px;
 }
 
 .calendar-calendar th.days {
@@ -914,6 +916,10 @@ body.faq .ui-accordion .ui-accordion-header a {
 
 .library-hours .date-nav-wrapper .date-prev i {
   margin-left: -5px;
+}
+
+.single-region--middle .pane-term-description p {
+  margin-top: 0;
 }
 
 select {
@@ -1014,6 +1020,14 @@ footer nav ul {
 
 .summary-count {
   display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+span.icon-article-express--small-after {
+  font-size: .75em;
 }
 
 .wrapper--navigation {
@@ -1155,22 +1169,26 @@ footer nav ul {
 }
 
 .three_six_three-region--middle ul,
-.pul_base_nine_three-region--first ul {
+.pul_base_nine_three-region--first ul,
+.three_nine-region--second ul {
   list-style-type: disc;
   margin-left: 1.4em;
 }
 .three_six_three-region--middle ul li,
-.pul_base_nine_three-region--first ul li {
+.pul_base_nine_three-region--first ul li,
+.three_nine-region--second ul li {
   margin-bottom: 1em;
 }
 
 .three_six_three-region--middle ol,
-.pul_base_nine_three-region--first ol {
+.pul_base_nine_three-region--first ol,
+.three_nine-region--second ol {
   list-style-type: decimal;
   margin-left: 1.4em;
 }
 .three_six_three-region--middle ol li,
-.pul_base_nine_three-region--first ol li {
+.pul_base_nine_three-region--first ol li,
+.three_nine-region--second ol li {
   margin-bottom: 1em;
 }
 
@@ -2286,6 +2304,22 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin: 0 .75em .167em 0;
 }
 
+.view-workgroup .views-row {
+  padding: 1em;
+  clear: both;
+  min-height: 130px;
+}
+.view-workgroup .views-row.views-row-odd {
+  background: #f5f4f1;
+}
+.view-workgroup .views-row .float-left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.view-workgroup .views-row .float-left:empty {
+  display: none;
+}
+
 .views-table th {
   background: #494f57;
   color: white;
@@ -2540,23 +2574,23 @@ $desk : 1250px;
     clear: both;
   }
 
-  .four_five_three_stacked-region--first {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 33.33333%;
+  .four_five_three_stacked-region--second {
+    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     float: left;
     margin-right: -100%;
-    margin-left: 0%;
+    margin-left: 1.66667%;
     clear: none;
-    clear: both;
   }
 
-  .four_five_three_stacked-region--second {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 38.33333%;
+  .four_five_three_stacked-region--first {
+    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 41.66667%;
     float: left;
     margin-right: -100%;
-    margin-left: 35%;
+    margin-left: 33.33333%;
     clear: none;
+    clear: both;
   }
 
   .four_five_three_stacked-region--third {
