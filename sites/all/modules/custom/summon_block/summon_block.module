@@ -73,7 +73,7 @@ function summon_search_results_content() {
   $path = summon_block_query_escape($_GET['q']);
   //print_r(drupal_parse_url($path));
   $sid = summon_block_get_sid();
-  $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
+  $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div id='summon-search-results' data-source='/searchit/articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
   ); 
@@ -83,7 +83,7 @@ function summon_search_results_content() {
 function summon_search_guide_content() {
   $path = summon_block_query_escape($_GET['q']);
   $sid = summon_block_get_sid();
-  $ajax_spinner = "<div id='guide-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
+  $ajax_spinner = "<div id='guide-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div id='summon-guide-results' data-source='/searchit/articles/guide?query={$path}&number=3&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
   ); 

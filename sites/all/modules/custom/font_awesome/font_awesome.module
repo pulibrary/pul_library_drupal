@@ -74,8 +74,10 @@ function font_awesome_wysiwyg_editor_settings_alter(&$settings, $context) {
  * Implements hook_page_init().
  */
 function font_awesome_init() {
+  /*
   if ($font_awesome_css = font_awesome_check_library()) {
     // Add the Font Awesome library
     drupal_add_css($font_awesome_css);
   }
+  */
 }
