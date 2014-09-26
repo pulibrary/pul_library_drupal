@@ -1,0 +1,12 @@
+name = PUL Pliny Fisk Library of Economics and Finance
+description = Pliny Fisk Library of Economics and Finance panels
+core = 7.x
+package = PUL Features
+version = 7.x-1.0-alpha1
+project = pul_pliny_fisk_library_of_economics_and_finance
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view_panel_context_49
+features[page_manager_handlers][] = node_view_panel_context_50

@@ -14,9 +14,9 @@
 	}
 	var icons = {
 		'icon-article-express--caps': '&#xe612;',
-		'icon-article-express--small-skew': '&#xe613;',
-		'icon-article-express--small': '&#xe614;',
-		'icon-article-express--caps-skew': '&#xe615;',
+		'icon-article-express--caps-skew': '&#xe613;',
+		'icon-article-express--small-skew': '&#xe614;',
+		'icon-article-express--small': '&#xe615;',
 		'icon-chat': '&#xe603;',
 		'icon-phone': '&#xe60e;',
 		'icon-user': '&#xe60f;',
