@@ -1165,15 +1165,15 @@ span.icon-article-express--small-after {
   content: "(\e612)";
 }
 
-.icon-article-express--small-skew-after:after {
+.icon-article-express--caps-skew-after:after {
   content: "(\e613)";
 }
 
-.icon-article-express--small-after:after {
+.icon-article-express--small-skew-after:after {
   content: "(\e614)";
 }
 
-.icon-article-express--caps-skew-after:after {
+.icon-article-express--small-after:after {
   content: "(\e615)";
 }
 
