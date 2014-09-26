@@ -1160,6 +1160,23 @@ span.icon-article-express--small-after {
   font-size: 4em;
 }
 
+/* After Article Express Icon Hacks */
+.icon-article-express--caps-after:after {
+  content: "(\e612)";
+}
+
+.icon-article-express--small-skew-after:after {
+  content: "(\e613)";
+}
+
+.icon-article-express--small-after:after {
+  content: "(\e614)";
+}
+
+.icon-article-express--caps-skew-after:after {
+  content: "(\e615)";
+}
+
 .pul_base_nine_three-region--second ul,
 .three_six_three-region--first ul,
 .menu .leaf,
