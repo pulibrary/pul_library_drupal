@@ -17,6 +17,11 @@
 	text-decoration: none;
 	@include border-radius(3px);
 	float: right;
+
+	&:hover {
+		color: white;
+		background: lighten($orange, 8);
+	}
 }
 
 .more-link a {

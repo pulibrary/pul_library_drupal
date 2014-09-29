@@ -3,7 +3,7 @@
     	// width: 60%;
         // float: right;
     	// display: inline-block;
-        @include rhythm(0, 0, 0, 0.5, 1em);
+        @include rhythm(0, 0, 0, 0, 0.8em);
         @include adjust-font-size-to(1em);
     }
 
@@ -23,7 +23,7 @@
     overflow:hidden;
 
     // display: inline-block;
-    margin: 0 1em 1em 0;
+    margin: 0 1em 1.5em 0;
     float: left;
     // clear: both;
 
@@ -33,4 +33,8 @@
         min-width:145px;
         min-height:100px;
     }
+}
+
+.front .view-library-news .views-row {
+    padding-bottom: 0;
 }

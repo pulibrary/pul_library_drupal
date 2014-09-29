@@ -47,6 +47,7 @@
 	    input[type=text] {
 	      @include appearance(none);
 	      width: 100%;
+	      height: 28px;
 	      padding: .5em .8em;
 	      font-size: .9em;
 	      font-style: italic;
@@ -68,7 +69,7 @@
 	      top: 0;
 	      outline: none;
 	      padding: 5px 10px;
-	      height: 27px;
+	      height: 28px;
 	      font-weight: normal;
 	      color: #aaa;
 	      @include border-top-left-radius(0);

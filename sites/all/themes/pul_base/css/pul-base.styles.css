@@ -475,7 +475,6 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 
 .site-logo {
-  padding: 0.7em;
   line-height: 21px;
   height: 50px;
   margin-left: -0.7em;
@@ -495,7 +494,6 @@ body.faq .ui-accordion .ui-accordion-header a {
     margin-right: -100%;
     margin-left: 1.66667%;
     clear: none;
-    margin: .5em 0;
   }
 }
 @media (min-width: 70em) {
@@ -512,6 +510,37 @@ body.faq .ui-accordion .ui-accordion-header a {
   .site-logo img {
     padding: 0;
     margin: 0;
+  }
+}
+
+.svg .site-logo img {
+  display: none;
+}
+.svg .site-logo {
+  background: url("../logo.svg") center center no-repeat;
+  background-size: contain;
+  display: block;
+}
+@media (min-width: 44em) {
+  .svg .site-logo {
+    background-size: 310px 17px;
+    width: 310px;
+    height: 50px;
+    margin-left: 1em;
+  }
+}
+@media (min-width: 900px) {
+  .svg .site-logo {
+    background-size: 400px 22px;
+    width: 400px;
+    height: 50px;
+  }
+}
+@media (min-width: 70em) {
+  .svg .site-logo {
+    background-size: 480px 28px;
+    width: 480px;
+    height: 50px;
   }
 }
 
@@ -619,6 +648,10 @@ body.faq .ui-accordion .ui-accordion-header a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   float: right;
+}
+.views-more-link:hover, .node-readmore a:hover, .more-link a:hover {
+  color: white;
+  background: #f08a32;
 }
 
 .more-link a {
@@ -990,10 +1023,8 @@ footer nav ul {
   padding-bottom: 0rem;
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
-}
-.l-footer h2 a {
-  color: #7f3d00;
   font-weight: bold;
+  color: #7f3d00;
 }
 .l-footer .menu .leaf {
   list-style: none;
@@ -1012,6 +1043,9 @@ footer nav ul {
   margin-bottom: 12px;
   margin-bottom: 0.85714rem;
   color: #494f57;
+}
+.l-footer address {
+  margin: .5em 0;
 }
 
 .view-clone-of-glossary .views-row {
@@ -1298,7 +1332,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
   font-family: "Droid Serif", Georgia, Times, serif;
-  height: 60px;
+  height: 50px;
   width: 100%;
   z-index: 101;
   position: relative;
@@ -1307,11 +1341,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation .mobile-logo {
   display: inline;
   float: left;
-  max-height: 60px;
+  max-height: 50px;
   padding-left: 1em;
 }
 .wrapper--navigation .mobile-logo img {
-  max-height: 60px;
+  max-height: 50px;
   opacity: .6;
   padding: .8em 0;
 }
@@ -1325,7 +1359,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   display: block;
   float: left;
   font-weight: 700;
-  line-height: 60px;
+  line-height: 50px;
   margin: 0;
   padding-left: 1em;
   text-transform: uppercase;
@@ -1365,7 +1399,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation .centered-navigation-menu > ul > li {
   background: #f5f4f1;
   display: block;
-  line-height: 60px;
+  line-height: 50px;
   overflow: hidden;
   padding-left: 1em;
   text-align: left;
@@ -1376,7 +1410,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   .wrapper--navigation .centered-navigation-menu > ul > li {
     background: transparent;
     display: inline;
-    line-height: 60px;
+    line-height: 50px;
     padding-left: 0;
   }
   .wrapper--navigation .centered-navigation-menu > ul > li a {
@@ -1477,7 +1511,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 @media (min-width: 44em) {
   .wrapper--navigation li > ul.menu li {
-    line-height: 46.15385px;
+    line-height: 38.46154px;
   }
   .wrapper--navigation li > ul.menu li:last-child > a {
     border-bottom-left-radius: 0.1875em;
@@ -1552,8 +1586,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.85714rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
   font-size: 14px;
   font-size: 1rem;
   line-height: 24px;
@@ -1568,7 +1602,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   width: 145px;
   height: 100px;
   overflow: hidden;
-  margin: 0 1em 1em 0;
+  margin: 0 1em 1.5em 0;
   float: left;
 }
 .front .field--name-field-news-featured-graphic img {
@@ -1576,6 +1610,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   height: 100%;
   min-width: 145px;
   min-height: 100px;
+}
+
+.front .view-library-news .views-row {
+  padding-bottom: 0;
 }
 
 .views-field-created {
@@ -1668,6 +1706,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   clear: both;
 }
 
+.pul_base_nine_three-region--first ul {
+  margin-left: 0;
+}
+
 .field--name-field-news-letter-volume,
 .field--name-field-news-letter-issue {
   display: inline;
@@ -1683,6 +1725,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
   display: inline-block;
+}
+#renovation-news-block #renovation-news-lmg p {
+  margin-top: 0;
 }
 @media (min-width: 44em) {
   #renovation-news-block #renovation-news-lmg #renovation-news-lmg {
@@ -1795,6 +1840,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
+  height: 28px;
   padding: .5em .8em;
   font-size: .9em;
   font-style: italic;
@@ -1825,7 +1871,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   top: 0;
   outline: none;
   padding: 5px 10px;
-  height: 27px;
+  height: 28px;
   font-weight: normal;
   color: #aaa;
   -moz-border-radius-topleft: 0;
@@ -2049,6 +2095,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   -webkit-transition: all 0, ease-in-out 2s;
   transition: all 0, ease-in-out 2s;
 }
+.block--quicktabs .ui-tabs .ui-tabs-nav li:last-child a {
+  border-right: none;
+}
 .block--quicktabs .ui-tabs .ui-tabs-nav li.ui-state-active a, .block--quicktabs .ui-widget-header .ui-state-active {
   background: #f1efeb;
   color: black;
@@ -2180,11 +2229,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   background: rgba(73, 79, 87, 0.65);
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+  height: 159px;
+  padding: 0;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  height: 159px;
-  padding: 0;
 }
 #block-views-spotlight-dispalsys-block h2 {
   display: none;
@@ -2198,6 +2247,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 #block-views-spotlight-dispalsys-block img {
   width: 260px;
   height: 159px;
+}
+#block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
 .block--pudl-highlight {

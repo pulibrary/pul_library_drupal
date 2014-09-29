@@ -10,6 +10,7 @@
 		p {
 			// float: left;
 			// width: 65%;
+			margin-top: 0;
 		}
 
 		@include breakpoint($tab) {

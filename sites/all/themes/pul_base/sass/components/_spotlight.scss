@@ -39,9 +39,9 @@
     background: rgba($dark-gray,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    @include border-radius(4px);
     height: 159px;
     padding: 0;
+    @include border-radius(4px);
     // display: none;
 
     h2 {
@@ -58,6 +58,10 @@
     img {
         width: 260px;
         height: 159px;
+    }
+
+    .view-spotlight-dispalsys .views-row-1 {
+      @include border-radius(4px);
     }
 }
 
