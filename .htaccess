@@ -84,9 +84,9 @@ RedirectPermanent /search /find/all
 RedirectPermanent /libraries/map.php /about/locations
 RedirectPermanent /services/purchase.php http://library.princeton.edu/help/recommend-purchase
 RedirectPermanent /catalogs/special.php http://library.princeton.edu/databases/subject/special-collections
-Redirect /catalogs/restricted http://library2.princeton.edu/catalogs/restricted
+Redirect /catalogs/restricted http://libserv39.princeton.edu/catalogs/restricted
 RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
-Redirect /digital_collections/princeton_only/ejournals.html http://library2.princeton.edu/digital_collections/princeton_only/ejournals.html
+#Redirect /digital_collections/princeton_only/ejournals.html http://library2.princeton.edu/digital_collections/princeton_only/ejournals.html
 Redirect /collections/video http://libserv39.princeton.edu/departments/collectiondevelopment/forums/video/
 
 # Various rewrite rules.
