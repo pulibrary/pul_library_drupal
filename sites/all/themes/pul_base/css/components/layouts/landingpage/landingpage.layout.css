@@ -1,0 +1,62 @@
+/*******************************************************************************
+ * landingpage.layout.scss
+ *
+ * Styling of the "Landing Page" 3 column layout..
+ ******************************************************************************/
+.panel-display--landingpage {
+  *zoom: 1;
+}
+.panel-display--landingpage:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.landingpage-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .landingpage-region--first {
+    width: 1433.33333%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 66.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .landingpage-region--second {
+    width: 433.33333%;
+    clear: right;
+    float: left;
+    margin-right: 66.66667%;
+    margin-right: 0;
+  }
+
+  .landingpage-region--third {
+    width: 600%;
+    clear: right;
+    float: left;
+    margin-left: 0;
+    margin-right: 66.66667%;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .landingpage-region--fourth {
+    width: 766.66667%;
+    clear: right;
+    float: left;
+    margin-right: 66.66667%;
+  }
+
+  .landingpage-region--fifth {
+    width: 433.33333%;
+    clear: right;
+    float: left;
+    margin-right: 66.66667%;
+    margin-right: 0;
+  }
+}

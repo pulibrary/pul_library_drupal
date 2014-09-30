@@ -5,8 +5,16 @@
     min-height: 50px;
     border-top: 5px solid $orange;
 }
+
+.l-branding {
+  .homepage-tab-form-message {
+    display: none;
+  }
+}
+
+
+
 .site-logo {
-    // padding: 0.7em;
     line-height: 21px;
     height: 50px;
     margin-left: -0.7em;
@@ -16,11 +24,6 @@
 
     @include breakpoint($tab) {
         @include grid-span(6,1);
-        // margin: .5em 0;
-    }
-
-    @include breakpoint($desk) {
-        margin: 0;
     }
 
     img {
@@ -36,7 +39,7 @@
 
 }
 
-// svg logo
+// SVG logo 
 .svg {
  .site-logo img {
    display: none;
@@ -47,29 +50,7 @@
    display: block;
 
    @include breakpoint($tab) {
-    background-size: 310px 17px;
-    width: 310px;
-    height: 50px;
-    margin-left: 1em;
-   }
-
-   @include breakpoint(900px) {
-    background-size: 400px 22px;
-    width: 400px;
-    height: 50px;
-   }
-
-   @include breakpoint($desk) {
-     background-size: 480px 28px;
-     width: 480px;
-     height: 50px;
+    margin-left: 0.5em;
    }
  }
 }
-
-.l-branding {
-  .homepage-tab-form-message {
-    display: none;
-  }
-}
-

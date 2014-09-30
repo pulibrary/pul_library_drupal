@@ -63,6 +63,11 @@
 .button--libraryh3lp__online {
 	@include button(simple, lighten($orange,5));
 	color: white;
+
+	&:hover {
+		color: white;
+		background: lighten($orange, 8);
+	}
 }
 
 .button--libraryh3lp__offline {

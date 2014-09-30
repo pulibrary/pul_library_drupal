@@ -474,6 +474,10 @@ body.faq .ui-accordion .ui-accordion-header a {
   border-top: 5px solid #e87511;
 }
 
+.l-branding .homepage-tab-form-message {
+  display: none;
+}
+
 .site-logo {
   line-height: 21px;
   height: 50px;
@@ -494,11 +498,6 @@ body.faq .ui-accordion .ui-accordion-header a {
     margin-right: -100%;
     margin-left: 1.66667%;
     clear: none;
-  }
-}
-@media (min-width: 70em) {
-  .site-logo {
-    margin: 0;
   }
 }
 .site-logo img {
@@ -523,29 +522,8 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 @media (min-width: 44em) {
   .svg .site-logo {
-    background-size: 310px 17px;
-    width: 310px;
-    height: 50px;
-    margin-left: 1em;
+    margin-left: 0.5em;
   }
-}
-@media (min-width: 900px) {
-  .svg .site-logo {
-    background-size: 400px 22px;
-    width: 400px;
-    height: 50px;
-  }
-}
-@media (min-width: 70em) {
-  .svg .site-logo {
-    background-size: 480px 28px;
-    width: 480px;
-    height: 50px;
-  }
-}
-
-.l-branding .homepage-tab-form-message {
-  display: none;
 }
 
 /*------------------------------------*\
@@ -749,6 +727,10 @@ body.faq .ui-accordion .ui-accordion-header a {
 .button--libraryh3lp__online:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.button--libraryh3lp__online:hover {
+  color: white;
+  background: #f08a32;
 }
 
 .button--libraryh3lp__offline {
@@ -3288,3 +3270,4 @@ $desk : 1250px;
     margin-right: 0;
   }
 }
+/* No files to import found in layouts/**\/* */
