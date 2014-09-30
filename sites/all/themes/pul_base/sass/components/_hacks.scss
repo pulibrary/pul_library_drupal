@@ -9,3 +9,11 @@
 span.icon-article-express--small-after {
   font-size: .75em;
 }
+
+span.icon-article-express--small-after:before {
+  content: " ";
+}
+
+h1.icon-article-express--small-after:after {
+  font-size: .75em;
+}
