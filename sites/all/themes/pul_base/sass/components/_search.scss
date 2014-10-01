@@ -3,13 +3,11 @@
 
 	h2 {
 		margin: 0;
-		// background: $orange;
 		display: none;
 	}
 
 	.ui-tabs {
 		padding: 0;
-		// border: none;
 	}
 	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
 		margin-bottom: 0;
@@ -29,8 +27,6 @@
 		@include border-radius(4px);
 		background: darken($light-gray, 3);
 		font-size: 15px;
-		// border: 1px solid #d3d3d3;
-		// padding: 5px;
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
@@ -59,11 +55,9 @@
 		background: $dark-gray;
 		border-right: none;
 		color: white;
-		// @include transition (all 0.2s ease-in-out);
 		font-family: $font-sans;
 
 		@include breakpoint($tab) {
-			// width: 190px;
 			border-right: 1px solid darken($light-gray, 50%);
 			text-align: center;
 		}
@@ -138,8 +132,4 @@
 			font-size: 12px;
 		}
 	}
-
-// 	.homepage-tab-form-message {
-// 		clear: both;
-// 	}
 }

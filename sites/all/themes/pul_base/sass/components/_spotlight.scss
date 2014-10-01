@@ -42,7 +42,6 @@
     height: 159px;
     padding: 0;
     @include border-radius(4px);
-    // display: none;
 
     h2 {
         display: none;
@@ -51,7 +50,6 @@
         font-size: 15px;
         font-family: $font-sans;
         margin: 0;
-        // padding: 0.5em 1em;
         color: white;
     }
 
@@ -76,7 +74,6 @@
     @include grid-span(12); 
     background: rgba($dark-gray, .35);
     padding: 0.5em;
-    // @include border-radius(4px);
 
     @include breakpoint($tab) {
         display: block;
@@ -105,30 +102,14 @@
 
 #block-views-spotlight-dispalsys-block {
   $hover-tile-height: 159px;
-
-  // background-position: bottom;
-  // background-size: cover;
-  // background: url("/images/mountains.png");
-  // background-size: cover;
-  // background-color: #BEB56E;
-  // border: 1px solid $base-border-color;
-  // height: $hover-tile-height;
   margin-bottom: $base-line-height;
   cursor: pointer;
-  
-  // @include breakpoint($tab) {
-    // width: 40%;
-  // }
 
   .view-content .views-row {
     height: $hover-tile-height;
     overflow: hidden;
     position: relative;
   }
-
-  // .view-content .views-row:hover > .views-field {
-  //   @include transform(translate(0, -100%));
-  // }
 
   .views-field {
     @include transition(all, .2s ease-in-out);

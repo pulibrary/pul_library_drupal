@@ -14,7 +14,6 @@
       input {
         @include box-sizing(border-box);
         display: inline-block;
-        // border: 1px darken($dark-gray, 5) solid;
       }
 
       div.form-item-query {
@@ -27,25 +26,15 @@
         input[type=text] {
           @include appearance(none);
           width: 100%;
-          // padding: .5em .8em;
-          // font-size: .9em;
-          // font-style: italic;
-          // border-radius: $base-border-radius * 2;
           margin: 0;
-          // background: lighten($dark-gray, 10);
-          // border: darken($dark-gray, 5);
-          // color: #aaa;
         }
       
       }
 
       input[type=submit] {
-          // @include button(simple, $orange);
-          // background: darken($dark-gray, 5);
           position: absolute;
           right: 0;
           top: 0;
-          // outline: none;
           padding: 5px 10px;
           height: 32px;
           font-weight: normal;

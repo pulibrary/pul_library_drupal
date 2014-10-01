@@ -63,7 +63,6 @@
 	  input[type=submit] {
 	      @include button(simple, darken($dark-gray, 5));
 	      content: '<span class="icon-search"></span>';
-	      // background: darken($dark-gray, 5);
 	      position: absolute;
 	      right: 0;
 	      top: 0;

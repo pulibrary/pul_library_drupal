@@ -245,6 +245,14 @@ input[type="submit"] {
 }
 
 /* No files to import found in abstractions/**\/* */
+select {
+  outline: none;
+  background: #f5f4f1;
+  border: 1px solid #f5f4f1;
+  padding: 5px;
+  height: 1.8em;
+}
+
 body {
   background: #f5f4f1;
 }
@@ -288,15 +296,6 @@ body {
   }
 }
 
-/*
-#block-menu-menu-get-help-menu {
-	@include grid-span(12, $output-style: 'float'); 
-	@include breakpoint($desk) {
-		@include grid-span(3, 10, $output-style: 'float'); 
-		margin-right: 0;
-	}
-}
-*/
 .panel-col-first {
   -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 46.66667%;
@@ -937,14 +936,6 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin-top: 0;
 }
 
-select {
-  outline: none;
-  background: #f5f4f1;
-  border: 1px solid #f5f4f1;
-  padding: 5px;
-  height: 1.8em;
-}
-
 .l-region--footer {
   clear: both;
   padding: 1em;
@@ -1044,6 +1035,10 @@ footer nav ul {
 
 span.icon-article-express--small-after {
   font-size: .75em;
+}
+
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+  display: none;
 }
 
 .wrapper--navigation {
@@ -1174,6 +1169,11 @@ span.icon-article-express--small-after {
   margin-top: 1em;
   text-align: center;
   font-size: 4em;
+}
+
+.libraries-page .views-row .library-info:nth-of-type(1) [class^="icon-"],
+.libraries-page .views-row .library-info:nth-of-type(1) [class*=" icon-"] {
+  margin-left: 0;
 }
 
 .pul_base_nine_three-region--second ul,
@@ -1576,10 +1576,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   line-height: 1.71429rem;
 }
 
-.view-library-news .views-row, .view-library-news .view-footer {
-  clear: both;
-}
-
 .front .field--name-field-news-featured-graphic {
   width: 145px;
   height: 100px;
@@ -1596,6 +1592,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 
 .front .view-library-news .views-row {
   padding-bottom: 0;
+}
+
+.view-library-news .views-row, .view-library-news .view-footer {
+  clear: both;
 }
 
 .views-field-created {
@@ -2499,10 +2499,6 @@ h3 {
   margin-bottom: 0.85714rem;
 }
 
-.subject-landing-page .views-row .field--name-field-dboverride-database article header {
-  display: none;
-}
-
 /*******************************************************************************
  * five_four_three_stacked.layout.scss
  *
@@ -3270,4 +3266,3 @@ $desk : 1250px;
     margin-right: 0;
   }
 }
-/* No files to import found in layouts/**\/* */

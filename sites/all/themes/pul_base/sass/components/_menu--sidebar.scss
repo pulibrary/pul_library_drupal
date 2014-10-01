@@ -27,12 +27,9 @@
 
     ul.menu > li > a {
         font-size: 18px;
-        // font-weight: bold;
     }
 
     ul.menu > li > ul > li > a {
-        // @include adjust-font-size-to(0.875em);
-        // @include rhythm(0.5, 0, 0, 0.5, 0.875em);
         font-size: 14px;
         padding-left: 2em;
     }
