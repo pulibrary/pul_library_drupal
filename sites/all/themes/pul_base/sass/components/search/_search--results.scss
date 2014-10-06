@@ -14,28 +14,20 @@
         background: $gray-light;
     }
     li {
-        padding: 0.7em;
-        @include adjust-font-size-to(12px);
-        @include rhythm(0, 0.1, 0.1 , 0, 12px);
+        padding: 1em;
     }
     li.active {
         background: none;
     }
 
     h3 {
-        @include adjust-font-size-to(14px);
-        @include rhythm(0, 0, 0, 0.1, 14px);
+        @include rhythm(0, 0, 0, 0.1, $font-size-base);
     }
 }
 
 .pul_base_four_four_four_stacked-region {
     li {
         clear: both;
-
-        h2 {
-            @include adjust-font-size-to(1.3em);
-            @include rhythm(0, 0, 0, 0.3, 1.3em);
-        }
     }
 
     > ul > li + li {

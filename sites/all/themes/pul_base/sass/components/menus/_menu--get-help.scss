@@ -9,7 +9,7 @@
 			display: block;
 
 			a {
-				font-size: $font-size-larger;
+				font-size: $font-size-base;
 
 				//chat button
 				.libraryh3lp .button--libraryh3lp {
@@ -25,3 +25,8 @@
 	}
 }
  
+.front .pane-menu-menu-get-help-menu .menu .leaf {
+	a {
+		@include adjust-font-size-to(16px);
+	}
+}

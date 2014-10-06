@@ -26,7 +26,7 @@
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
 		@include border-radius(4px);
 		background: darken($gray-light, 3);
-		font-size: $font-size-larger;
+		font-size: $font-size-base;
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
@@ -75,7 +75,8 @@
 		border-right: none;
 	}
 
-	.ui-tabs .ui-tabs-nav li.ui-state-active a, .ui-widget-header .ui-state-active {
+	.ui-tabs .ui-tabs-nav li.ui-state-active a, 
+	.ui-widget-header .ui-state-active {
 		background: darken($gray-light, 2%);
 		color: black;
 	}
@@ -126,7 +127,7 @@
 	}
 
 	.homepage-tab-form-message {
-		margin: .4em 0;
+		margin: 0.4em 0;
 
 		a {
 			font-size: $font-size-smaller;

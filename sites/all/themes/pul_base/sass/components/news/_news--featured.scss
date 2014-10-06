@@ -1,7 +1,7 @@
 .front .view-library-news {
     h3 {
-        @include rhythm(0, 0, 0, 0.5, 0.8em);
-        @include adjust-font-size-to(1em);
+        @include rhythm(0, 0, 0, 0.5, $font-size-larger);
+        @include adjust-font-size-to(16px);
     }
 
     @include breakpoint($desk) {

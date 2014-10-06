@@ -1,0 +1,10 @@
+//db resource button
+
+.field--name-field-db-access-url.pul-processed {
+    text-align: center;
+}
+.field--name-field-db-access-url.pul-processed a {
+    @include button(simple, lighten($orange,5));
+    color: white;
+    margin-bottom: 0.5em;
+}

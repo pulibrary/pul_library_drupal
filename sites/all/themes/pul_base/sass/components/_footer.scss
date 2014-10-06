@@ -39,8 +39,7 @@
 	margin: 2em 0;
 
 	h2 {
-		@include adjust-font-size-to(15px);
-		@include rhythm(1, 0, 0, 0.5, 15px);
+		@include adjust-font-size-to(16px);
 		font-weight: bold;
 		color: $orange-dark;
 	}
@@ -50,8 +49,7 @@
 			list-style: none;
 
 			a {
-				@include adjust-font-size-to(11px);
-				@include rhythm(0, 0, 0, 0.5, 11px);
+				font-size: $font-size-smaller;
 				color: $gray-dark;
 			}
 		}
