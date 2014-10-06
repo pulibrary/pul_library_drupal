@@ -26,11 +26,11 @@
     }
 
     ul.menu > li > a {
-        font-size: 18px;
+        font-size: $font-size-larger;
     }
 
     ul.menu > li > ul > li > a {
-        font-size: 14px;
+        font-size: $font-size-base;
         padding-left: 2em;
     }
 

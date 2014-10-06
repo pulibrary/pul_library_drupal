@@ -9,11 +9,11 @@
 			display: block;
 
 			a {
-				font-size: 16px;
+				font-size: $font-size-larger;
 
 				//chat button
 				.libraryh3lp .button--libraryh3lp {
-					font-size: 11px;
+					font-size: $font-size-smaller;
 				}
 			}
 

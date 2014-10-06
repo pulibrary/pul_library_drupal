@@ -18,19 +18,19 @@
 		@include border-top-right-radius(4px);
 		@include border-bottom-right-radius(0);
 		@include border-bottom-left-radius(0);
-		background: $dark-gray;
+		background: $gray-dark;
 		padding: 0;
 		border: none;
 	}
 
 	.quicktabs-ui-wrapper.qt-ui-tabs-processed-processed.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
 		@include border-radius(4px);
-		background: darken($light-gray, 3);
-		font-size: 15px;
+		background: darken($gray-light, 3);
+		font-size: $font-size-larger;
 	}
 	.ui-tabs .ui-tabs-nav li {
 		margin: 0;
-		border-bottom: 1px dotted $light-gray;
+		border-bottom: 1px dotted $gray-light;
 		top: 0;
 		clear: both;
 		width: 100%;
@@ -52,13 +52,13 @@
 	.ui-tabs .ui-tabs-nav li a {
 		width: 100%;
 		text-align: left;
-		background: $dark-gray;
+		background: $gray-dark;
 		border-right: none;
 		color: white;
 		font-family: $font-sans;
 
 		@include breakpoint($tab) {
-			border-right: 1px solid darken($light-gray, 50%);
+			border-right: 1px solid darken($gray-light, 50%);
 			text-align: center;
 		}
 
@@ -76,7 +76,7 @@
 	}
 
 	.ui-tabs .ui-tabs-nav li.ui-state-active a, .ui-widget-header .ui-state-active {
-		background: darken($light-gray, 2%);
+		background: darken($gray-light, 2%);
 		color: black;
 	}
 
@@ -87,7 +87,7 @@
 		margin-bottom: 0;
 	}
 	input:focus {
-		border-color: $light-orange;
+		border-color: $orange-light;
 		box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 3px rgba($orange, 0.7);
 		outline: none;
 	}
@@ -129,7 +129,7 @@
 		margin: .4em 0;
 
 		a {
-			font-size: 12px;
+			font-size: $font-size-smaller;
 		}
 	}
 }

@@ -18,10 +18,10 @@
  }
 
  footer {
-	background-color: $light-gray;
+	background-color: $gray-light;
 
 	address, #university-copyright-footer {
-		font-size: $small;
+		font-size: $font-size-smaller;
 	}
 
 	nav ul {
@@ -42,7 +42,7 @@
 		@include adjust-font-size-to(15px);
 		@include rhythm(1, 0, 0, 0.5, 15px);
 		font-weight: bold;
-		color: $dark-orange;
+		color: $orange-dark;
 	}
 
 	.menu {
@@ -52,7 +52,7 @@
 			a {
 				@include adjust-font-size-to(11px);
 				@include rhythm(0, 0, 0, 0.5, 11px);
-				color: $dark-gray;
+				color: $gray-dark;
 			}
 		}
 	}

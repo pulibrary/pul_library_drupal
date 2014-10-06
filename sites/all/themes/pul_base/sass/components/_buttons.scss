@@ -3,11 +3,13 @@
 	float: right;
 }
 
-.views-more-link, .node-readmore a, .more-link a {
+.views-more-link, 
+.node-readmore a, 
+.more-link a {
 	font-family: $font-serif;
 	font-style: italic;
 	font-weight: bold;
-	font-size: .833em;
+	font-size: $font-size-smaller;
 	background: none;
 	border: none;
 	text-shadow: none;
@@ -31,11 +33,11 @@
 .ui-widget-content .homepage-tab-form-message a {
 	font-family: $font-sans;
 	font-weight: bold;
-	font-size: .75em;
+	font-size: $font-size-smaller;
 	background: none;
 	border: none;
 	text-shadow: none;
-	background-color: $dark-gray;
+	background-color: $gray-dark;
 	color: #fff;
 	padding: 3px 7px;
 	text-decoration: none;
@@ -70,7 +72,7 @@
 }
 
 .button--libraryh3lp__offline {
-	@include button(simple, lighten($light-gray,5));
+	@include button(simple, lighten($gray-light,5));
 	color: black;
 }
 

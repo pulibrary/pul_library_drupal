@@ -16,7 +16,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li {
 }
 
 ul.nice-menu.nice-menu-menu-collection-development-webs li a {
-    font-size: 1em;
+    font-size: $font-size-base;
     color: #fff;
     background: none;
     padding-right: 1.7em;
@@ -24,8 +24,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a {
     text-decoration: none;
   } 
 
-ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
-    font-size: 100%;
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, 
+ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+    font-size: $font-size-base;
     color: #F58026;
   }
 

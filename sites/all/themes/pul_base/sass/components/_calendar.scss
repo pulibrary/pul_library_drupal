@@ -1,4 +1,5 @@
 .view-library-hours {
+
 	.view-header {
 		border-top: none;
 		border-right: 2px solid #fff;
@@ -8,58 +9,55 @@
 		background-color: $orange;
 		margin-bottom: 0;
 		height: auto;
+	}
 
-		.date-nav-wrapper {
-			position: relative;
-			margin-top: 5px;
-			width: 100%;
+}
 
-			.date-nav {
-				padding-bottom: 0.5em;
-				margin-bottom: 0;
-			}
+.date-nav-wrapper {
+	position: relative;
+	margin-top: 5px;
+	width: 100%;
 
-			.date-heading {
-				position: relative;
-				width: 100%;
-				top: 0px;
-				text-align: center;
-				z-index: 0;
+	.date-nav {
+		padding-bottom: 0.5em;
+		margin-bottom: 0;
 
-				h3 {
-					color: white;
-				}
-			}
-			.date-prev, .date-next {
-				margin-top: 3px;
-				background: none;
-				padding: 0px 4px;
-				@include border-radius(4px);
-				color: white;
-				text-decoration: none;
-				vertical-align: middle;
-				position: absolute;
-				top: -4px;
-			}
+		.date-prev, .date-next {
+			margin-top: 3px;
+			background: none;
+			padding: 0px 4px;
+			@include border-radius(4px);
+			color: white;
+			text-decoration: none;
+			vertical-align: middle;
+			position: absolute;
+			top: -4px;
+			width: 30px;
+			height: 25px;
+			text-align: center;
+		}
 
-			.date-prev {
-				float: left;
-				right: 0;
-				text-align: center;
-				padding: 0px;
-				width: 30px;
-				height: 25px;
-				left: 20px;
-			}
+		.date-prev {
+			float: left;
+			right: 0;
+			left: 20px;
+		}
 
-			.date-next {
-				float: right;
-				right: 20px;
-				text-align: center;
-				padding: 0px;
-				width: 30px;
-				height: 25px;
-			}
+		.date-next {
+			float: right;
+			right: 20px;
+		}
+	}
+
+	.date-heading {
+		position: relative;
+		width: 100%;
+		top: 0px;
+		text-align: center;
+		z-index: 0;
+
+		h3 {
+			color: white;
 		}
 	}
 }
@@ -72,26 +70,29 @@
 	.week-view .full td.multi-day div.weekview {
 		background: none;
 		color: $black;
-		font-size: 0.7em;
+		font-size: $font-size-smaller;
 	}
 	.week-view .full td.multi-day .inner .weekview .cutoff {
 		background: none;
 	}
 }
 
-.calendar-calendar .month-view .full td.single-day div.monthview, .calendar-calendar .week-view .full td.single-day div.weekview, .calendar-calendar .day-view .full td.single-day div.dayview {
+.calendar-calendar .month-view .full td.single-day div.monthview, 
+.calendar-calendar .week-view .full td.single-day div.weekview, 
+.calendar-calendar .day-view .full td.single-day div.dayview {
 	background: none;
 }
 
 .calendar-calendar div.calendar {
-	font-size: 14px;
+	font-size: $font-size-base;
 }
 
 .library-hours .date-nav-wrapper .date-next i {
 	margin-left: 0;
 }
 
-.library-hours .date-nav-wrapper .date-prev a, .library-hours .date-nav-wrapper .date-next a {
+.library-hours .date-nav-wrapper .date-prev a, 
+.library-hours .date-nav-wrapper .date-next a {
 	font-size: 18px;
 	padding: 0 0 0 0;
 	margin: -2px 0 0 0;
@@ -101,7 +102,8 @@
 	text-align: center;
 }
 
-.library-hours .date-nav-wrapper .date-next, .library-hours .date-nav-wrapper .date-prev {
+.library-hours .date-nav-wrapper .date-next, 
+.library-hours .date-nav-wrapper .date-prev {
 	margin-top: 3px;
 	padding: 0px 4px;
 	-webkit-border-radius: 4px;

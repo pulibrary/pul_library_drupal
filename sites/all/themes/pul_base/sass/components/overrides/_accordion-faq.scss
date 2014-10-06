@@ -1,6 +1,8 @@
+// overrides jquery faq accordion http://local-lib.princeton.edu/faq/borrow-direct
+
 body.faq .views-accordion-header, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     background-color: #FFF;
-    border-bottom: 1px dotted #E5E5E5;
+    border-bottom: 1px dotted $gray-light;
     padding: 0.1em;
 }
 
@@ -19,20 +21,20 @@ body.faq .views-accordion-header h3 {
 }   
 
 body.faq .ui-accordion .ui-accordion-header a {
-    font-size: 0.9em;
+    font-size: $font-size-base;
     font-weight: normal;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     background: #FFF;
     border: none;
-    border-bottom: 1px dotted #E5E5E5;
+    border-bottom: 1px dotted $gray-light;
     padding: 0.1em;
 }
 
 .ui-widget-content {
     border: none;
-    font-size: 0.9em;
+    font-size: $font-size-base;
 }
 
 .ui-state-active {

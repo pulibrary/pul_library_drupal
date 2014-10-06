@@ -12,19 +12,26 @@
 @include sgs-change ('debug', true);
 
 body {
-	background: $light-gray;
+	background: $gray-light;
 }
 
 .l-page {
 	background: white;
 }
 
-.l-header, .l-footer, .wrapper {
+.l-header, 
+.l-footer, 
+.wrapper {
 	margin: 0 auto;
 	@include clearfix;
 }
 
-.l-region--navigation, .l-region--highlighted, .l-region--highlighted, .l-main, .l-branding, .l-region--footer {
+.l-region--navigation, 
+.l-region--highlighted, 
+.l-region--highlighted, 
+.l-main, 
+.l-branding, 
+.l-region--footer {
 	max-width: 1200px;
 	margin: 0 auto;
 	@include clearfix;

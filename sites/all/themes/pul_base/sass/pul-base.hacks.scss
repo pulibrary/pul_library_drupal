@@ -11,3 +11,21 @@
     }
   }
 }
+
+
+.summary-count {
+    display: none;
+}
+
+.float-left {
+    float: left;
+}
+
+span.icon-article-express--small-after {
+  font-size: 11px;
+}
+
+//hack hide aka titles for db
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+    display: none;
+}

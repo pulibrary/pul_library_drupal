@@ -1,7 +1,7 @@
 .library-hours {
 
 	.views-table td {
-		font-size: 16px;
+		font-size: $font-size-base;
 	}
 
 	tr.even {
@@ -9,12 +9,12 @@
 		border-top: 1px solid #ddd;
 	}
 	tr.odd > td {
-		background: $light-gray;
+		background: $gray-light;
 	}
 	td {
 		padding: 0.5em;
 
-		font-size: 16px;
+		font-size: $font-size-base;
 	}
 	td.views-field-title {
 		width: 60%;
