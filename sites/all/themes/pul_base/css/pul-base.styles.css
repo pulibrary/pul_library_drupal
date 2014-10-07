@@ -850,6 +850,26 @@ footer nav ul {
   margin-bottom: 1em;
 }
 
+.summary-count {
+  display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+span.icon-article-express--small-after {
+  font-size: .75em;
+}
+
+span.icon-article-express--small-after:before {
+  content: " ";
+}
+
+h1.icon-article-express--small-after:after {
+  font-size: .75em;
+}
+
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #ddd;
@@ -1455,6 +1475,23 @@ table caption {
 .libraries-page .views-row .library-info:nth-of-type(1) [class^="icon-"],
 .libraries-page .views-row .library-info:nth-of-type(1) [class*=" icon-"] {
   margin-left: 0;
+}
+
+/* After Article Express Icon Hacks */
+.icon-article-express--caps-after:after {
+  content: "(\e612)";
+}
+
+.icon-article-express--caps-skew-after:after {
+  content: "(\e613)";
+}
+
+.icon-article-express--small-skew-after:after {
+  content: "(\e614)";
+}
+
+.icon-article-express--small-after:after {
+  content: "(\e615)";
 }
 
 /*******************************************************************************

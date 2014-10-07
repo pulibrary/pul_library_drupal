@@ -54,3 +54,21 @@ font-size:4em;
         margin-left: 0;
     }
 }
+
+/* After Article Express Icon Hacks */
+
+.icon-article-express--caps-after:after {
+    content: "(\e612)";
+}
+
+.icon-article-express--caps-skew-after:after {
+    content: "(\e613)";
+}
+
+.icon-article-express--small-skew-after:after {
+    content: "(\e614)";
+}
+
+.icon-article-express--small-after:after {
+    content: "(\e615)";
+}
