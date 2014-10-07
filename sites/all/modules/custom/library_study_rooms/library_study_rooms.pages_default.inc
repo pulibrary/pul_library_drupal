@@ -16,7 +16,10 @@ function library_study_rooms_default_page_manager_pages() {
   $page->admin_title = 'Study Space Listings for Firestone Library';
   $page->admin_description = 'Study Spaces for Firestone.';
   $page->path = 'libraries/firestone/study-rooms';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

@@ -16,6 +16,12 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Files (PDF, MS Office Documents, .txt) that you wish to attach or link to within the text of your document. Use "Page Images" for any graphics or photos you want to include. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -86,6 +92,12 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Images you wish to attach to  or embed on this page. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),

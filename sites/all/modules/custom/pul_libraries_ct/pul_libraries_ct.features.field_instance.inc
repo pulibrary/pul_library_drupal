@@ -23,6 +23,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -93,6 +99,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -153,6 +165,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -223,6 +241,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -282,6 +306,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -352,6 +382,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -411,6 +447,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -481,6 +523,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -541,6 +589,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -615,6 +669,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -680,6 +740,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -740,6 +806,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -818,6 +890,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -929,6 +1007,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -988,6 +1072,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1058,6 +1148,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1118,6 +1214,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1210,6 +1312,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1270,6 +1378,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1362,6 +1476,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1426,6 +1546,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

@@ -215,7 +215,7 @@ services/scholarly-communications/resources
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '13186',
+        'nid' => '13200',
       ),
       'override_title' => 1,
       'override_title_text' => 'Scholarly Communications Office Staff',

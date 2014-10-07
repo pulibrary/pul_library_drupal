@@ -17,7 +17,7 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -19;
+  $handler->weight = -15;
   $handler->conf = array(
     'title' => 'Committee Landing Page - LETC',
     'no_blocks' => 1,
@@ -289,7 +289,7 @@ staff/committees/letc',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -14;
   $handler->conf = array(
     'title' => 'Committee Landing Page',
     'no_blocks' => 1,
@@ -535,7 +535,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -10;
   $handler->conf = array(
     'title' => 'Human Resources',
     'no_blocks' => 0,
@@ -804,7 +804,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -11;
+  $handler->weight = -8;
   $handler->conf = array(
     'title' => 'Firestone Floor Plans',
     'no_blocks' => 0,
@@ -933,7 +933,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 7;
+  $handler->weight = 9;
   $handler->conf = array(
     'title' => 'Contact Us',
     'no_blocks' => 1,
@@ -1084,7 +1084,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 8;
+  $handler->weight = 10;
   $handler->conf = array(
     'title' => 'Resource Sharing Pages',
     'no_blocks' => 0,
@@ -1106,6 +1106,7 @@ services/borrowdirect
 services/borrowdirect/*
 services/interlibrary-services
 services/article-express
+services/article-express/*
 services/interlibrary-services/*
 services/interlibrary-services/lender-fees',
           ),
@@ -1116,8 +1117,8 @@ services/interlibrary-services/lender-fees',
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Resource Sharing',
-    'panels_breadcrumbs_paths' => 'services/resource-sharing',
+    'panels_breadcrumbs_titles' => 'Services',
+    'panels_breadcrumbs_paths' => 'services',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -1141,7 +1142,7 @@ services/interlibrary-services/lender-fees',
     $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-resource-sharing-services';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
@@ -1158,6 +1159,31 @@ services/interlibrary-services/lender-fees',
     $pane->uuid = 'ff67fb4b-c64b-4e0d-bf86-7ffbaa0c9a0c';
     $display->content['new-ff67fb4b-c64b-4e0d-bf86-7ffbaa0c9a0c'] = $pane;
     $display->panels['first'][0] = 'new-ff67fb4b-c64b-4e0d-bf86-7ffbaa0c9a0c';
+    $pane = new stdClass();
+    $pane->pid = 'new-5fa52051-7d21-4008-93ed-c14e35b65fca';
+    $pane->panel = 'first';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Contact Document Delivery',
+      'title' => 'Contact',
+      'body' => '<p>docdel@princeton.edu</p><p>609.258.3272</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5fa52051-7d21-4008-93ed-c14e35b65fca';
+    $display->content['new-5fa52051-7d21-4008-93ed-c14e35b65fca'] = $pane;
+    $display->panels['first'][1] = 'new-5fa52051-7d21-4008-93ed-c14e35b65fca';
     $pane = new stdClass();
     $pane->pid = 'new-1948ea29-663a-4677-94b1-f12e397811e4';
     $pane->panel = 'middle';
@@ -1251,6 +1277,40 @@ services/borrowdirect/*
     $display->content['new-c453ea2e-61ed-43ea-a078-1c9b0c6361eb'] = $pane;
     $display->panels['second'][0] = 'new-c453ea2e-61ed-43ea-a078-1c9b0c6361eb';
     $pane = new stdClass();
+    $pane->pid = 'new-6fb8db51-0435-4b87-a6b2-1ebd4cddb956';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'block-33';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'services/article*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'ArticleExpress<span class="icon-article-express--small-after"></',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6fb8db51-0435-4b87-a6b2-1ebd4cddb956';
+    $display->content['new-6fb8db51-0435-4b87-a6b2-1ebd4cddb956'] = $pane;
+    $display->panels['second'][1] = 'new-6fb8db51-0435-4b87-a6b2-1ebd4cddb956';
+    $pane = new stdClass();
     $pane->pid = 'new-5b8a8ac6-e26d-48d1-ae74-5a59dce9797f';
     $pane->panel = 'second';
     $pane->type = 'block';
@@ -1262,9 +1322,7 @@ services/borrowdirect/*
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'services/interlibrary-services
-services/article-express
-services/interlibrary-services/*',
+            'paths' => 'services/interlibrary*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -1272,7 +1330,7 @@ services/interlibrary-services/*',
       ),
     );
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => 'Login to ILS/Article Express',
     );
     $pane->cache = array();
@@ -1281,11 +1339,11 @@ services/interlibrary-services/*',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '5b8a8ac6-e26d-48d1-ae74-5a59dce9797f';
     $display->content['new-5b8a8ac6-e26d-48d1-ae74-5a59dce9797f'] = $pane;
-    $display->panels['second'][1] = 'new-5b8a8ac6-e26d-48d1-ae74-5a59dce9797f';
+    $display->panels['second'][2] = 'new-5b8a8ac6-e26d-48d1-ae74-5a59dce9797f';
     $pane = new stdClass();
     $pane->pid = 'new-d61876e9-d6de-46dc-a97d-3361ae1af816';
     $pane->panel = 'second';
@@ -1315,11 +1373,11 @@ services/interlibrary-services/*',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'd61876e9-d6de-46dc-a97d-3361ae1af816';
     $display->content['new-d61876e9-d6de-46dc-a97d-3361ae1af816'] = $pane;
-    $display->panels['second'][2] = 'new-d61876e9-d6de-46dc-a97d-3361ae1af816';
+    $display->panels['second'][3] = 'new-d61876e9-d6de-46dc-a97d-3361ae1af816';
     $pane = new stdClass();
     $pane->pid = 'new-f361fe55-c4b4-4107-baeb-229e63ccb2bd';
     $pane->panel = 'second';
@@ -1349,11 +1407,11 @@ services/interlibrary-services/*',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'f361fe55-c4b4-4107-baeb-229e63ccb2bd';
     $display->content['new-f361fe55-c4b4-4107-baeb-229e63ccb2bd'] = $pane;
-    $display->panels['second'][3] = 'new-f361fe55-c4b4-4107-baeb-229e63ccb2bd';
+    $display->panels['second'][4] = 'new-f361fe55-c4b4-4107-baeb-229e63ccb2bd';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = 'new-1b92c087-f776-458a-aa4d-0e1a2038fdcc';
   $handler->conf['display'] = $display;
@@ -1366,7 +1424,7 @@ services/interlibrary-services/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -22;
   $handler->conf = array(
     'title' => 'Map and Geospatial Pages',
     'no_blocks' => 0,
@@ -1421,7 +1479,7 @@ services/interlibrary-services/*',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -1476,7 +1534,7 @@ services/interlibrary-services/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 9;
+  $handler->weight = 11;
   $handler->conf = array(
     'title' => 'Library Privileges Pages',
     'no_blocks' => 0,
@@ -1659,7 +1717,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 10;
+  $handler->weight = 12;
   $handler->conf = array(
     'title' => 'Technology Handbook Book Pages',
     'no_blocks' => 0,
@@ -1787,7 +1845,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 11;
+  $handler->weight = 13;
   $handler->conf = array(
     'title' => 'Systems Office Templates',
     'no_blocks' => 0,
@@ -1914,7 +1972,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Map and Geospatial Staff',
     'no_blocks' => 0,
@@ -2038,7 +2096,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -20;
+  $handler->weight = -16;
   $handler->conf = array(
     'title' => 'Working Group',
     'no_blocks' => 0,

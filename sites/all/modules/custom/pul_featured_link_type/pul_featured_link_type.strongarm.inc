@@ -104,6 +104,9 @@ function pul_featured_link_type_strongarm() {
       'featured_pul_link_brief_display' => array(
         'custom_settings' => TRUE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

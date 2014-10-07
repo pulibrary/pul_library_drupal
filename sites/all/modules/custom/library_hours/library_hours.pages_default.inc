@@ -17,7 +17,7 @@ function library_hours_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -7;
+  $handler->weight = -5;
   $handler->conf = array(
     'title' => 'Individual Date Page',
     'no_blocks' => 0,
@@ -350,6 +350,8 @@ function library_hours_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -423,7 +425,7 @@ function library_hours_default_page_manager_pages() {
     $pane->configuration = array(
       'path' => 'calendar/day',
       'override_title' => 1,
-      'override_title_text' => 'Today\'s Hours',
+      'override_title_text' => 'Today&#x2019;s Hours',
     );
     $pane->cache = array();
     $pane->style = array(
