@@ -1,0 +1,14 @@
+// main search box external link buttons
+
+.ui-widget-content .homepage-tab-form-message a {
+    font-family: $font-sans;
+    font-weight: bold;
+    font-size: $font-size-smaller;
+    border: none;
+    text-shadow: none;
+    background-color: $gray-dark;
+    color: #fff;
+    padding: 3px 7px;
+    text-decoration: none;
+    @include border-radius(3px);
+}

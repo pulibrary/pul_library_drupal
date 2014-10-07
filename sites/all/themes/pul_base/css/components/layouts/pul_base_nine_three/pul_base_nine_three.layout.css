@@ -1,0 +1,37 @@
+ /*******************************************************************************
+* pul_base_nine_three.layout.scss
+*
+* Styling of the "PUL" 9-3 column layout..
+******************************************************************************/
+.panel-display--pul_base_nine_three {
+  *zoom: 1;
+}
+.panel-display--pul_base_nine_three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pul_base_nine_three-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .pul_base_nine_three-region--first {
+    width: 74.13793%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    margin-left: 0;
+  }
+
+  .pul_base_nine_three-region--second {
+    width: 22.41379%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    margin-right: 0;
+  }
+}

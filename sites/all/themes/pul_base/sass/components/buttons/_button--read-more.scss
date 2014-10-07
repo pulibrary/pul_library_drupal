@@ -1,0 +1,30 @@
+// readmore collections
+.links--inline li {
+    float: right;
+}
+
+.views-more-link, 
+.node-readmore a, 
+.more-link a {
+    font-family: $font-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: $font-size-smaller;
+    border: none;
+    text-shadow: none;
+    background-color: $orange;
+    color: #fff;
+    padding: 3px 7px;
+    text-decoration: none;
+    @include border-radius(3px);
+    float: right;
+
+    &:hover {
+        color: white;
+        background: lighten($orange, 8);
+    }
+}
+
+.more-link a {
+    float: none;
+}

@@ -1,12 +1,19 @@
-// _branding.scss
-
+// branding
 .wrapper--branding {
     background-color: #494f57;
     min-height: 50px;
     border-top: 5px solid $orange;
 }
+
+.l-branding {
+  .homepage-tab-form-message {
+    display: none;
+  }
+}
+
+
+// non-SVG logo
 .site-logo {
-    padding: 0.7em;
     line-height: 21px;
     height: 50px;
     margin-left: -0.7em;
@@ -16,11 +23,6 @@
 
     @include breakpoint($tab) {
         @include grid-span(6,1);
-        margin: .5em 0;
-    }
-
-    @include breakpoint($desk) {
-        margin: 0;
     }
 
     img {
@@ -33,12 +35,20 @@
             margin: 0;
         }
     }
-
 }
 
-.l-branding {
-  .homepage-tab-form-message {
-    display: none;
-  }
-}
+// SVG logo 
+.svg {
+ .site-logo img {
+   display: none;
+ }
+ .site-logo {
+   background: url("../logo.svg") center center no-repeat;
+   background-size: contain;
+   display: block;
 
+   @include breakpoint($tab) {
+    margin-left: 0.5em;
+   }
+ }
+}

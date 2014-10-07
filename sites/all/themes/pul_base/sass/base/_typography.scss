@@ -43,3 +43,23 @@ h6 {
 p {
   margin: 1.4em 0;
 }
+
+h1 {
+    @include adjust-font-size-to(2em);
+    @include rhythm(0, 0, 0, 0.5, 2em);
+}
+
+h2 {
+    @include adjust-font-size-to(1.3em);
+    @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+
+    a {
+        color: $orange-dark;
+    }
+}
+
+h3 {
+    @include adjust-font-size-to(1.1em);
+    @include rhythm(0.75, 0, 0, 0.5, 1.1em);
+    font-family: $font-sans;
+}

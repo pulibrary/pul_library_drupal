@@ -18,10 +18,10 @@
  }
 
  footer {
-	background-color: $light-gray;
+	background-color: $gray-light;
 
 	address, #university-copyright-footer {
-		font-size: $small;
+		font-size: $font-size-smaller;
 	}
 
 	nav ul {
@@ -39,13 +39,9 @@
 	margin: 2em 0;
 
 	h2 {
-		@include adjust-font-size-to(15px);
-		@include rhythm(1, 0, 0, 0.5, 15px);
-
-		a {
-			color: $dark-orange;
-			font-weight: bold;
-		}
+		@include adjust-font-size-to(16px);
+		font-weight: bold;
+		color: $orange-dark;
 	}
 
 	.menu {
@@ -53,11 +49,13 @@
 			list-style: none;
 
 			a {
-				@include adjust-font-size-to(11px);
-				@include rhythm(0, 0, 0, 0.5, 11px);
-				color: $dark-gray;
+				font-size: $font-size-smaller;
+				color: $gray-dark;
 			}
 		}
 	}
 
+	address {
+		margin: .5em 0;
+	}
 }

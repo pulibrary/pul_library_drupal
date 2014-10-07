@@ -1,0 +1,68 @@
+/*******************************************************************************
+ * pul_base_four_four_four_stacked.layout.scss
+ *
+ * Styling of the "PUL" 9-3 column layout..
+ ******************************************************************************/
+.panel-display--pul_base_four_four_four_stacked {
+  *zoom: 1;
+}
+.panel-display--pul_base_four_four_four_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pul_base_four_four_four_stacked-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .pul_base_four_four_four_stacked-region--top {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .pul_base_four_four_four_stacked-region--first {
+    width: 31.03448%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+  }
+
+  .pul_base_four_four_four_stacked-region--second {
+    width: 31.03448%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 34.48276%;
+    clear: none;
+  }
+
+  .pul_base_four_four_four_stacked-region--third {
+    width: 33.33333%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    margin-right: 0;
+  }
+
+  .pul_base_four_four_four_stacked-region--bottom {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
