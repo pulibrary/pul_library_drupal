@@ -101,6 +101,9 @@ function cdl_acqusition_highlights_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

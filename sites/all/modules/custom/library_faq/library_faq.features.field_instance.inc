@@ -24,6 +24,12 @@ function library_faq_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -76,6 +82,12 @@ function library_faq_field_default_field_instances() {
     'description' => 'Files that need to associated with the FAQ. ',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -152,6 +164,12 @@ function library_faq_field_default_field_instances() {
     'description' => 'Any images that need to be associated with FAQ answer. ',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -239,6 +257,12 @@ function library_faq_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -291,6 +315,12 @@ function library_faq_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -362,6 +392,12 @@ function library_faq_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -411,6 +447,12 @@ function library_faq_field_default_field_instances() {
     'description' => 'Use when a longer then paragraph or so response is necessary.',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

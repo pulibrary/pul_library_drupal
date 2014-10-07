@@ -23,6 +23,13 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -77,6 +84,13 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -149,6 +163,13 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -203,6 +224,15 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -266,6 +296,15 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -328,6 +367,13 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -378,12 +424,22 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   $field_instances['node-acquisitions_highlights-field_image_new_item'] = array(
     'bundle' => 'acquisitions_highlights',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Minimum image size is 160x160. Images that go on the homepage spotlight will be best displayed at 260 x 160. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'database_description_only' => array(
@@ -397,7 +453,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'homepage_callout',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -443,7 +499,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'insert_styles' => array(
           'auto' => 'auto',
           'colorbox__flexslider_full' => 0,
-          'colorbox__homepage_spotlight_callout' => 0,
+          'colorbox__homepage_callout' => 0,
           'colorbox__large' => 0,
           'colorbox__library-news' => 0,
           'colorbox__medium' => 0,
@@ -455,7 +511,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
           'icon_link' => 0,
           'image' => 0,
           'image_flexslider_full' => 0,
-          'image_homepage_spotlight_callout' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
           'image_medium' => 0,
@@ -487,6 +543,12 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -555,6 +617,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   t('Contact for Further Information');
   t('Database Page');
   t('Description');
+  t('Minimum image size is 160x160. Images that go on the homepage spotlight will be best displayed at 260 x 160. ');
   t('Sample Graphic');
   t('Specialist');
   t('The selector attached to the resource.');

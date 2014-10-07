@@ -2,31 +2,12 @@
 
 /**
  * @file
- * This module installs everything required to get image_style_quality
- * up and running.
+ * Image style quality install file.
  */
-
 
 /**
- * Implements hook_install().
+ * Delete obsolete variable.
  */
-function image_style_quality_install() {
-
-  // Get the sites global image quality.
-  $site_image_quality = variable_get('image_jpeg_quality', 75);
-
-  // Set our new global image jpeg quality variable.
-  variable_set('image_style_quality_global_quality', $site_image_quality);
-
-}
-
-
-/**
- * Implements hook_uninstall().
- */
-function image_style_quality_uninstall() {
-
-  // We no longer need our global image quality. Delete it.
+function image_style_quality_update_7100() {
   variable_del('image_style_quality_global_quality');
-
 }

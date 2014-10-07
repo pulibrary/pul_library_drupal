@@ -108,6 +108,11 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['field_description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['settings'] = array(
+    'trim_length' => '600',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -228,7 +233,7 @@ function cdl_acqusition_highlights_views_default_views() {
   $handler->display->display_options['fields']['field_image_new_item']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_new_item']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_new_item']['settings'] = array(
-    'image_style' => 'homepage_spotlight_callout',
+    'image_style' => 'homepage_callout',
     'image_link' => '',
   );
   /* Field: Content: Title */

@@ -85,6 +85,7 @@ function pul_collections_views_default_views() {
 
   /* Display: Descriptive List */
   $handler = $view->new_display('panel_pane', 'Descriptive List', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';

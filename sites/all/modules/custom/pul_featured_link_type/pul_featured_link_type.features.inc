@@ -27,5 +27,6 @@ function pul_featured_link_type_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
