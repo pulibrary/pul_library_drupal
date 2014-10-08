@@ -123,7 +123,21 @@
 }
 
 div.view-content > table.views-table > tbody > tr > td {
+	@include adjust-font-size-to(14px);
+
+	p {
+		margin: 0.5em 0;
+	}
+}
+
+.front {
+	div.view-content > table.views-table > tbody > tr > td {
 	@include adjust-font-size-to(16px);
+
+	p {
+		margin: 0.5em 0;
+	}
+}
 }
 
 .pul_base_nine_three-region--second .view-library-hours {
