@@ -20,7 +20,7 @@
 @include breakpoint($tab) {
 
   .three_six_three-region--first {
-    @include grid-span(3,1);
+    @include grid-span(3,1, $gutter: 0);
     margin-left: 0;
     clear: both;
   }
