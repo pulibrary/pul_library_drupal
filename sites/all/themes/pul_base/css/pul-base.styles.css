@@ -245,6 +245,15 @@ input[type="submit"] {
 }
 
 /* No files to import found in abstractions/**\/* */
+.field__label {
+  font-weight: bold;
+}
+
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  float: left;
+}
+
 select {
   outline: none;
   background: #f5f4f1;
@@ -979,7 +988,7 @@ h1.icon-article-express--small-after:after {
 }
 @media (min-width: 44em) {
   .front .wrapper--highlighted {
-    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.png) center no-repeat;
+    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.jpg) center no-repeat;
   }
 }
 .front .wrapper--highlighted .l-region--highlighted {
