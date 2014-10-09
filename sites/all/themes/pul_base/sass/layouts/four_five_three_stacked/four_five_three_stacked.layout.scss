@@ -8,7 +8,7 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-@import "../../../variables/grids";
+@import "../../variables/grids";
 
 .panel-display--four_five_three_stacked {
   @include pie-clearfix;

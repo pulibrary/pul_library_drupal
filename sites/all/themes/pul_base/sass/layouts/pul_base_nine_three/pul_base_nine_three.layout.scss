@@ -7,7 +7,7 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-@import "../../../variables/grids";
+@import "../../variables/grids";
 
 .panel-display--pul_base_nine_three {
   @include pie-clearfix;

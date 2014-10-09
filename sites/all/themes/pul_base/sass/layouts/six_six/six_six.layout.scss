@@ -7,7 +7,7 @@
 @import "compass";
 @import "breakpoint";
 @import "singularitygs";
-@import "../../../variables/grids";
+@import "../../variables/grids";
 
 .panel-display--six_six {
   @include pie-clearfix;
@@ -17,28 +17,16 @@
   margin-bottom: $vert-spacing-unit;
 }
 
-@include breakpoint($desk) {
+@include breakpoint($tab) {
 
-  .six_six_stacked-region--top {
-    @include grid-span(12, $gutter: 0);
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .six_six_stacked-region--first {
+  .six_six-region--first {
     @include grid-span(6,1);
     clear:both;
     margin-left: 0;
   }
-   .six_six_stacked-region--second {
+   .six_six-region--second {
     @include grid-span(6,7);
     margin-right: 0;
   }
 
-  .six_six_stacked-region--bottom {
-    @include grid-span(12,1, $gutter: 0);
-    margin-left: 0;
-    clear:both;
-  }
 }
