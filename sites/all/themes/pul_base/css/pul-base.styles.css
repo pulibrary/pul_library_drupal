@@ -906,10 +906,6 @@ h1.icon-article-express--small-after:after {
   clear: both;
 }
 
-.page-research-databases-search .pul_base_nine_three-region--first ul {
-  margin-left: 0;
-}
-
 .pul_base_nine_three-region--second ul,
 .three_six_three-region--first ul,
 .menu .leaf,
@@ -940,6 +936,13 @@ h1.icon-article-express--small-after:after {
 .pul_base_nine_three-region--first ol li,
 .three_nine-region--second ol li {
   margin-bottom: 1em;
+}
+
+.page-research-databases-search .pul_base_nine_three-region--first ul {
+  margin-left: 0;
+}
+.page-research-databases-search .pul_base_nine_three-region--first ul li {
+  margin-bottom: 0;
 }
 
 .field--name-field-news-letter-volume,
