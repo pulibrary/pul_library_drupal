@@ -245,6 +245,15 @@ input[type="submit"] {
 }
 
 /* No files to import found in abstractions/**\/* */
+.field__label {
+  font-weight: bold;
+}
+
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  float: left;
+}
+
 select {
   outline: none;
   background: #f5f4f1;
@@ -733,10 +742,23 @@ h3 {
 }
 
 div.view-content > table.views-table > tbody > tr > td {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+div.view-content > table.views-table > tbody > tr > td p {
+  margin: 0.5em 0;
+}
+
+.front div.view-content > table.views-table > tbody > tr > td {
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
+}
+.front div.view-content > table.views-table > tbody > tr > td p {
+  margin: 0.5em 0;
 }
 
 .pul_base_nine_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3 {
@@ -966,7 +988,7 @@ h1.icon-article-express--small-after:after {
 }
 @media (min-width: 44em) {
   .front .wrapper--highlighted {
-    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.png) center no-repeat;
+    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.jpg) center no-repeat;
   }
 }
 .front .wrapper--highlighted .l-region--highlighted {
@@ -1185,20 +1207,24 @@ h1.icon-article-express--small-after:after {
   float: right;
 }
 
-.field--name-field-db-copyright-information table th {
+.field--name-field-db-copyright-information table th,
+.field--name-field-cas-db-copyright-statement table th {
   background: #494f57;
   color: white;
   padding: 0.5em;
 }
-.field--name-field-db-copyright-information table td {
+.field--name-field-db-copyright-information table td,
+.field--name-field-cas-db-copyright-statement table td {
   vertical-align: top;
   border-bottom: none;
   padding-top: 1em;
 }
-.field--name-field-db-copyright-information table td ul {
+.field--name-field-db-copyright-information table td ul,
+.field--name-field-cas-db-copyright-statement table td ul {
   margin-left: 1.5em;
 }
-.field--name-field-db-copyright-information table td li {
+.field--name-field-db-copyright-information table td li,
+.field--name-field-cas-db-copyright-statement table td li {
   list-style: disc;
   margin-bottom: 1em;
 }
@@ -1229,6 +1255,10 @@ table caption {
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
   text-align: left;
+}
+
+.section-services .three_six_three-region--middle table td {
+  padding: 1em;
 }
 
 .pul_base_nine_three-region--second h2 {
@@ -1399,6 +1429,10 @@ table caption {
 .service-connect-btn a:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.views-field.views-field-mail {
+  display: block;
 }
 
 .icon-spin {
