@@ -901,6 +901,10 @@ h1.icon-article-express--small-after:after {
   clear: both;
 }
 
+.page-research-databases-search .pul_base_nine_three-region--first ul {
+  margin-left: 0;
+}
+
 .pul_base_nine_three-region--second ul,
 .three_six_three-region--first ul,
 .menu .leaf,
@@ -1906,12 +1910,12 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .pul_base_nine_three-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
+    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 75%;
     clear: right;
     float: left;
-    margin-left: 1.66667%;
-    margin-right: 1.66667%;
+    margin-left: 0%;
+    margin-right: 0%;
     margin-left: 0;
   }
 
@@ -2820,7 +2824,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-bottom: 1em;
 }
 
-.pul_base_nine_three-region--first ul {
+.page-news .pul_base_nine_three-region--first ul {
   margin-left: 0;
 }
 
