@@ -17,7 +17,7 @@
   margin-bottom: $vert-spacing-unit;
 }
 
-@include breakpoint($desk) {
+@include breakpoint($tab) {
 
   .six_six_stacked-region--top {
     @include grid-span(12, $gutter: 0);

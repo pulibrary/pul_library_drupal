@@ -1,7 +1,3 @@
-.page-research-databases-search .pul_base_nine_three-region--first ul {
-    margin-left: 0;
-}
-
 .pul_base_nine_three-region--second ul, 
 .three_six_three-region--first ul, 
 .menu .leaf, 
@@ -29,5 +25,13 @@
 
     li {
         margin-bottom: 1em;
+    }
+}
+
+.page-research-databases-search .pul_base_nine_three-region--first ul {
+    margin-left: 0;
+
+    li {
+        margin-bottom: 0;
     }
 }
