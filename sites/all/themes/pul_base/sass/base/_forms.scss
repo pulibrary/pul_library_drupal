@@ -5,3 +5,8 @@ select {
     padding: 5px;
     height: 1.8em;
 }
+
+select[multiple], 
+select[size] {
+    height: auto;
+}

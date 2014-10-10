@@ -33,7 +33,8 @@
     }
 }
 
-.field--name-field-db-copyright-information table {
+.field--name-field-db-copyright-information table,
+.field--name-field-cas-db-copyright-statement table {
     th {
         background: $gray-dark;
         color: white;
@@ -70,4 +71,8 @@ table caption {
     @include adjust-font-size-to(1.3em);
     @include rhythm(0.75, 0, 0, 0.5, 1.3em);
     text-align: left;
+}
+
+.section-services .three_six_three-region--middle table td {
+    padding: 1em;
 }
