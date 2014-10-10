@@ -2670,13 +2670,13 @@ function _webform_client_form_add_component($node, $component, $component_value,
     $data = empty($input_values[$cid]) ? NULL : $input_values[$cid];
     if ($display_element = webform_component_invoke($component['type'], 'display', $component, $data, $format)) {
       // Set access based on the private property.
-      $element['#access'] = $component_access;
+      $display_element['#access'] = $component_access;
 
       // Ensure the component is added as a property.
       $display_element['#webform_component'] = $component;
 
       // Add custom CSS classes to the field and wrapper.
-      _webform_component_classes($element, $component);
+      _webform_component_classes($display_element, $component);
 
       // Allow modules to modify a "display only" webform component.
       drupal_alter('webform_component_display', $display_element, $component);
@@ -2984,7 +2984,7 @@ function webform_client_form_postvalidate(&$form, &$form_state) {
       // Prevent the form from being cached, forcing it to be rebuilt from the
       // form definition function, which will honor the new sid.
       $form_state['no_cache'] = TRUE;
-      if (!variable_get('cache', 0) && !empty($form_state['values']['form_build_id'])) {
+      if (!empty($form_state['values']['form_build_id'])) {
         cache_clear_all('form_' . $form_state['values']['form_build_id'], 'cache_form');
         cache_clear_all('form_state_' . $form_state['values']['form_build_id'], 'cache_form');
       }
@@ -3474,7 +3474,7 @@ function template_preprocess_webform_element(&$variables) {
   if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
     $wrapper_classes[] = 'webform-container-inline';
   }
-  $element['#wrapper_attributes']['class'] += $wrapper_classes;
+  $element['#wrapper_attributes']['class'] = array_merge($element['#wrapper_attributes']['class'], $wrapper_classes);
 
   // If #title_display is none, set it to invisible instead - none only used if
   // we have no title at all to use.
