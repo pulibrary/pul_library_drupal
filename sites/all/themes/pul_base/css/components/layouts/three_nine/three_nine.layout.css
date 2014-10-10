@@ -1,0 +1,37 @@
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 3-9 column layout..
+ ******************************************************************************/
+.panel-display--three_nine {
+  *zoom: 1;
+}
+.panel-display--three_nine:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_nine-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .three_nine-region--first {
+    width: 22.41379%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    margin-left: 0;
+  }
+
+  .three_nine-region--second {
+    width: 74.13793%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    margin-right: 0;
+  }
+}

@@ -23,6 +23,13 @@ function pul_collections_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -51,10 +58,8 @@ function pul_collections_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 0,
       ),
     ),
@@ -92,6 +97,12 @@ function pul_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -161,6 +172,12 @@ function pul_collections_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -226,6 +243,12 @@ function pul_collections_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -284,6 +307,12 @@ function pul_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -349,6 +378,12 @@ function pul_collections_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -413,6 +448,12 @@ function pul_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -497,6 +538,12 @@ function pul_collections_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -560,6 +607,12 @@ function pul_collections_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'database_description_only' => array(
         'label' => 'above',

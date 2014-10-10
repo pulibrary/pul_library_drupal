@@ -1,6 +1,6 @@
 .views-table {
     th {
-        background: $dark-gray;
+        background: $gray-dark;
         color: white;
         padding: 0.5em;
 
@@ -18,7 +18,7 @@
         border-top: 1px solid #ddd;
     }
     tr.odd > td {
-        background: $light-gray;
+        background: $gray-light;
     }
     td {
         padding: 0.5em;
@@ -28,19 +28,15 @@
         background: none;
     }
 
-    //hide database desciptions
-    // .databases-find-description p, .databases-find-description span {
-    //     display: none;
-    // }
-
     .find-databases-show-desc {
         float: right;
     }
 }
 
-.field--name-field-db-copyright-information table {
+.field--name-field-db-copyright-information table,
+.field--name-field-cas-db-copyright-statement table {
     th {
-        background: $dark-gray;
+        background: $gray-dark;
         color: white;
         padding: 0.5em;
     }
@@ -75,4 +71,8 @@ table caption {
     @include adjust-font-size-to(1.3em);
     @include rhythm(0.75, 0, 0, 0.5, 1.3em);
     text-align: left;
+}
+
+.section-services .three_six_three-region--middle table td {
+    padding: 1em;
 }

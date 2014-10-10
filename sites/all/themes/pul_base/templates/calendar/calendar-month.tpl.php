@@ -19,25 +19,27 @@
  */
 //dsm('Display: '. $display_type .': '. $min_date_formatted .' to '. $max_date_formatted);
 ?>
-<div class="calendar-calendar"><div class="month-view">
-<table class="full">
-  <thead>
-    <tr>
-      <?php foreach ($day_names as $id => $cell): ?>
-        <th class="<?php print $cell['class']; ?>" id="<?php print $cell['header_id'] ?>">
-          <?php print $cell['data']; ?>
-        </th>
-      <?php endforeach; ?>
-    </tr>
-  </thead>
-  <tbody>
-    <?php 
-      foreach ((array) $rows as $row) {
-        print $row['data'];
-      } ?>
-  </tbody>
-</table>
-</div></div>
+<div class="calendar-calendar">
+  <div class="month-view">
+    <table class="full">
+      <thead>
+        <tr>
+          <?php foreach ($day_names as $id => $cell): ?>
+            <th class="<?php print $cell['class']; ?>" id="<?php print $cell['header_id'] ?>">
+              <?php print $cell['data']; ?>
+            </th>
+          <?php endforeach; ?>
+        </tr>
+      </thead>
+      <tbody>
+        <?php 
+          foreach ((array) $rows as $row) {
+            print $row['data'];
+          } ?>
+      </tbody>
+    </table>
+  </div>
+</div>
 <script>
 try {
   // ie hack to make the single day row expand to available space

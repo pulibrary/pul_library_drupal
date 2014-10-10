@@ -153,6 +153,9 @@ function protected_database_content_types_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -218,6 +221,9 @@ function protected_database_content_types_strongarm() {
       ),
       'token' => array(
         'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(

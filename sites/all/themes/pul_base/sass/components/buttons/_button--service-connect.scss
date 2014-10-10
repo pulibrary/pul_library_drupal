@@ -1,0 +1,3 @@
+.service-connect-btn a {
+    @include button(simple, darken($blue,5));
+}

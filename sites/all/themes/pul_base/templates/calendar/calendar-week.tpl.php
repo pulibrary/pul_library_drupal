@@ -33,38 +33,39 @@ foreach ($day_names as $key => $value) {
 }
 //dpm($rows['singleday_buckets']);
 ?>
-<div class="calendar-calendar"><div class="week-view">
-<table class="full">
-  <thead>
-    <tr>
-      <?php foreach ($day_names as $cell): ?>
-        <th class="<?php print $cell['class']; ?>" id="<?php print $cell['header_id']; ?>">
-          <?php print $cell['data']; ?>
-        </th>
-      <?php endforeach; ?>
-    </tr>
-  </thead>
-  <tbody> 
-
-    <tr>
-        <?php foreach ($rows['singleday_buckets'] as $day): ?>
-        <td class="calendar-agenda-items single-day">
-          <div class="calendar">
-            <div class="inner">
-               <?php if (count($day)==0): ?>
-               		<div class="tba">TBA</div>
-               <?php else: ?>
-               	<?php foreach($day as $theDay): ?>
-               		<?php foreach($theDay as $item): ?>
-               		<?php print $item['entry'];?>
-               		<?php endforeach;?>
-               	<?php endforeach;?>
-               <?php endif;?>
-            </div>
-          </div>
-        </td>
-   <?php endforeach; ?>
-   </tr>   
-  </tbody>
-</table>
-</div></div>
+<div class="calendar-calendar">
+  <div class="week-view">
+    <table class="full">
+      <thead>
+        <tr>
+          <?php foreach ($day_names as $cell): ?>
+            <th class="<?php print $cell['class']; ?>" id="<?php print $cell['header_id']; ?>">
+              <?php print $cell['data']; ?>
+            </th>
+          <?php endforeach; ?>
+        </tr>
+      </thead>
+      <tbody> 
+        <tr>
+          <?php foreach ($rows['singleday_buckets'] as $day): ?>
+            <td class="calendar-agenda-items single-day">
+              <!-- <div class="calendar"> -->
+                <!-- <div class="inner"> -->
+                   <?php if (count($day)==0): ?>
+                   		<div class="tba">TBA</div>
+                   <?php else: ?>
+                   	<?php foreach($day as $theDay): ?>
+                   		<?php foreach($theDay as $item): ?>
+                     		<?php print $item['entry'];?>
+                   		<?php endforeach;?>
+                   	<?php endforeach;?>
+                   <?php endif;?>
+                <!-- </div> -->
+              <!-- </div> -->
+            </td>
+          <?php endforeach; ?>
+        </tr>   
+      </tbody>
+    </table>
+  </div>
+</div>

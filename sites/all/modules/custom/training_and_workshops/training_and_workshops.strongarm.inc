@@ -181,6 +181,9 @@ function training_and_workshops_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -207,7 +210,11 @@ function training_and_workshops_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__training_session';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

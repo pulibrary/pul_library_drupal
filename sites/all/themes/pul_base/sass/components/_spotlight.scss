@@ -1,15 +1,15 @@
 .front .wrapper--highlighted {
-    background: rgba(lighten($dark-gray, 28), 0.75);
+    background: rgba(lighten($gray-dark, 28), 0.75);
     padding: 0;
     background-size: 1600px auto;
 
     @include breakpoint($tab) {
         background: 
     linear-gradient(
-      rgba(lighten($dark-gray, 28), 0.75), 
-      rgba(lighten($dark-gray, 28), 0.75)
+      rgba(lighten($gray-dark, 28), 0.75), 
+      rgba(lighten($gray-dark, 28), 0.75)
     ),  /* On top,    like z-index: 4; */
-    url(../images/bg-test.png) center no-repeat   /* like z-index: 3; */
+    url(../images/bg-test.jpg) center no-repeat   /* like z-index: 3; */
    ;             
     }
 
@@ -36,28 +36,30 @@
 }
 
 #block-views-spotlight-dispalsys-block {
-    background: rgba($dark-gray,.65);
+    background: rgba($gray-dark,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    @include border-radius(4px);
     height: 159px;
     padding: 0;
-    // display: none;
+    @include border-radius(4px);
 
     h2 {
         display: none;
     }
     a {
-        font-size: 15px;
+        font-size: $font-size-base;
         font-family: $font-sans;
         margin: 0;
-        // padding: 0.5em 1em;
         color: white;
     }
 
     img {
         width: 260px;
         height: 159px;
+    }
+
+    .view-spotlight-dispalsys .views-row-1 {
+      @include border-radius(4px);
     }
 }
 
@@ -70,9 +72,8 @@
 
     display: none;
     @include grid-span(12); 
-    background: rgba($dark-gray, .35);
+    background: rgba($gray-dark, .35);
     padding: 0.5em;
-    // @include border-radius(4px);
 
     @include breakpoint($tab) {
         display: block;
@@ -87,7 +88,7 @@
     }
 
     a {
-        font-size: 12px;
+        font-size: $font-size-smaller;
         font-family: $font-sans;
         margin: 0;
         color: white;
@@ -101,30 +102,14 @@
 
 #block-views-spotlight-dispalsys-block {
   $hover-tile-height: 159px;
-
-  // background-position: bottom;
-  // background-size: cover;
-  // background: url("/images/mountains.png");
-  // background-size: cover;
-  // background-color: #BEB56E;
-  // border: 1px solid $base-border-color;
-  // height: $hover-tile-height;
   margin-bottom: $base-line-height;
   cursor: pointer;
-  
-  // @include breakpoint($tab) {
-    // width: 40%;
-  // }
 
   .view-content .views-row {
     height: $hover-tile-height;
     overflow: hidden;
     position: relative;
   }
-
-  // .view-content .views-row:hover > .views-field {
-  //   @include transform(translate(0, -100%));
-  // }
 
   .views-field {
     @include transition(all, .2s ease-in-out);
@@ -136,7 +121,7 @@
 
   .views-field-field-image-new-item {
     color: transparentize(white, .3);
-    font-size: 2em;
+    font-size: $font-size-larger;
     font-weight: 200;  
     padding: 0;
     text-align: center;
@@ -154,6 +139,6 @@
     width: 100%;
     @include border-top-right-radius(4px);
     @include border-top-left-radius(4px);
-    background: rgba($dark-gray, .85);
+    background: rgba($gray-dark, .85);
   }
 }

@@ -31,6 +31,12 @@
 .icon-warning-sign {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe610;');
 }
+.icon-film {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe616;');
+}
+.icon-headphones {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe617;');
+}
 .icon-tag {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf02b;');
 }

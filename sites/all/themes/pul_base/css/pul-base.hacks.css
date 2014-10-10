@@ -8,3 +8,18 @@
     margin-top: 0 !important;
   }
 }
+.summary-count {
+  display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+span.icon-article-express--small-after {
+  font-size: 11px;
+}
+
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+  display: none;
+}

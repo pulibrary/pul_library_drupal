@@ -17,6 +17,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Provide the description you would like to use instead of the original title of the resource. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -77,6 +83,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -130,6 +142,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Use to Suppress title from browse, search, and subject listings.',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -181,6 +199,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter the name of the database that this title and description override.',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -246,6 +270,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Use when you want to provide a date coverage statement different than the default database. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -300,6 +330,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -352,6 +388,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -410,6 +452,12 @@ function articles_and_databases_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'hidden',
@@ -504,6 +552,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -594,6 +648,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -674,6 +734,12 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'database_description_only' => array(
@@ -776,6 +842,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 11,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -873,6 +945,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'If resource allows use by princeton alumni.',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -939,6 +1017,12 @@ function articles_and_databases_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 9,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'hidden',
@@ -1020,6 +1104,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Date of materials stored in database. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1096,6 +1186,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1168,6 +1264,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1245,6 +1347,12 @@ function articles_and_databases_field_default_field_instances() {
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 4,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'inline',
@@ -1337,6 +1445,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1423,6 +1537,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1496,6 +1616,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Tag the database with keywords. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1554,6 +1680,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Physical Location Notes. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1636,6 +1768,12 @@ function articles_and_databases_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 8,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'hidden',
@@ -1726,6 +1864,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1807,6 +1951,12 @@ function articles_and_databases_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'inline',
@@ -1897,6 +2047,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1974,6 +2130,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Resource has been supports and has been set up to utilize shibboleth authentication. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -2045,6 +2207,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Select to Suppress Record',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2102,6 +2270,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -2176,6 +2350,12 @@ function articles_and_databases_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'database_description_only' => array(
         'label' => 'above',
@@ -2273,6 +2453,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -2352,6 +2538,12 @@ function articles_and_databases_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -2427,6 +2619,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2479,6 +2677,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Database that you wish to override. ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -2532,6 +2736,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2578,6 +2788,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -2621,6 +2837,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'date',
@@ -2683,6 +2905,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -2721,6 +2949,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Solution/resolution ',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -2762,6 +2996,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2806,6 +3046,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -2859,6 +3105,12 @@ function articles_and_databases_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',

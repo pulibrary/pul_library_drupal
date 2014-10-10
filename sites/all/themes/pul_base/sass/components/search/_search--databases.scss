@@ -1,0 +1,46 @@
+.page-find-all, .section-research, .section-resource {
+
+.dbsearch-block-form, .summon-block-form, .allsearch-block-form {
+
+   > div {
+      $search-bar-border-color: $base-border-color;
+      $search-bar-border: 1px solid $search-bar-border-color;
+      $search-bar-background: lighten($search-bar-border-color, 10);
+
+      position: relative; 
+      display: inline-block;
+      margin-top:0.9em;
+
+      input {
+        @include box-sizing(border-box);
+        display: inline-block;
+      }
+
+      div.form-item-query {
+        position: relative;
+
+        label {
+            display: none;
+        }
+
+        input[type=text] {
+          @include appearance(none);
+          width: 100%;
+          margin: 0;
+        }
+      
+      }
+
+      input[type=submit] {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 5px 10px;
+          height: 32px;
+          font-weight: normal;
+          @include border-top-left-radius(0);
+          @include border-bottom-left-radius(0);
+      }
+    }
+  }
+}

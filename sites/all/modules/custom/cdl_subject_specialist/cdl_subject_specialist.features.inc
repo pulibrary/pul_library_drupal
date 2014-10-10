@@ -37,5 +37,6 @@ function cdl_subject_specialist_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

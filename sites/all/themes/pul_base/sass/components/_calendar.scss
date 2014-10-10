@@ -1,4 +1,5 @@
 .view-library-hours {
+
 	.view-header {
 		border-top: none;
 		border-right: 2px solid #fff;
@@ -8,65 +9,55 @@
 		background-color: $orange;
 		margin-bottom: 0;
 		height: auto;
+	}
 
-		.date-nav-wrapper {
-			position: relative;
-			margin-top: 5px;
-			width: 100%;
+}
 
-			.date-nav {
-				padding-bottom: 0.5em;
-				margin-bottom: 0;
-			}
+.view .date-nav-wrapper {
+	position: relative;
+	margin-top: 5px;
+	width: 100%;
 
-			.date-heading {
-				position: relative;
-				width: 100%;
-				top: 0px;
-				text-align: center;
-				z-index: 0;
-				// padding-bottom: 0.5em;
+	.date-nav {
+		padding-bottom: 0.5em;
+		margin-bottom: 0;
 
-				h3 {
-					color: white;
-				}
-			}
-			.date-prev, .date-next {
-				margin-top: 3px;
-				// border: 1px solid #333333;
-				// background: #b8601e;
-				background: none;
-				padding: 0px 4px;
-				@include border-radius(4px);
-				color: white;
-				text-decoration: none;
-				vertical-align: middle;
-				position: absolute;
-				top: -4px;
-			}
+		.date-prev, .date-next {
+			margin-top: 3px;
+			background: none;
+			padding: 0px 4px;
+			@include border-radius(4px);
+			color: white;
+			text-decoration: none;
+			vertical-align: middle;
+			position: absolute;
+			top: -4px;
+			width: 30px;
+			height: 25px;
+			text-align: center;
+		}
 
-			.date-prev {
-				float: left;
-				// position: relative;
-				right: 0;
-				text-align: center;
-				padding: 0px;
-				width: 30px;
-				height: 25px;
-				left: 20px;
-				// top: -20px;
-			}
+		.date-prev {
+			float: left;
+			right: 0;
+			left: 20px;
+		}
 
-			.date-next {
-				float: right;
-				// position: relative;
-				right: 20px;
-				text-align: center;
-				padding: 0px;
-				width: 30px;
-				height: 25px;
-				// top: -20px;
-			}
+		.date-next {
+			float: right;
+			right: 20px;
+		}
+	}
+
+	.date-heading {
+		position: relative;
+		width: 100%;
+		top: 0px;
+		text-align: center;
+		z-index: 0;
+
+		h3 {
+			color: white;
 		}
 	}
 }
@@ -79,52 +70,118 @@
 	.week-view .full td.multi-day div.weekview {
 		background: none;
 		color: $black;
-		font-size: 0.7em;
+		font-size: $font-size-smaller;
 	}
 	.week-view .full td.multi-day .inner .weekview .cutoff {
 		background: none;
 	}
 }
 
-.calendar-calendar .month-view .full td.single-day div.monthview, .calendar-calendar .week-view .full td.single-day div.weekview, .calendar-calendar .day-view .full td.single-day div.dayview {
+.calendar-calendar .month-view .full td.single-day div.monthview, 
+.calendar-calendar .week-view .full td.single-day div.weekview, 
+.calendar-calendar .day-view .full td.single-day div.dayview {
 	background: none;
 }
 
 .calendar-calendar div.calendar {
-	font-size: 14px;
+	font-size: $font-size-base;
 }
 
 .library-hours .date-nav-wrapper .date-next i {
-margin-left: 0;
+	margin-left: 0;
 }
 
-.library-hours .date-nav-wrapper .date-prev a, .library-hours .date-nav-wrapper .date-next a {
-font-size: 18px;
-padding: 0 0 0 0;
-margin: -2px 0 0 0;
-line-height: 90%;
-display: inline-block;
-width: 100%;
-text-align: center;
+.library-hours .date-nav-wrapper .date-prev a, 
+.library-hours .date-nav-wrapper .date-next a {
+	font-size: 18px;
+	padding: 0 0 0 0;
+	margin: -2px 0 0 0;
+	line-height: 90%;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
 }
 
-.library-hours .date-nav-wrapper .date-next, .library-hours .date-nav-wrapper .date-prev {
-margin-top: 3px;
-// border: 1px solid #333333;
-// background: #b8601e;
-padding: 0px 4px;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
-color: white;
-text-decoration: none;
-vertical-align: middle;
+.library-hours .date-nav-wrapper .date-next, 
+.library-hours .date-nav-wrapper .date-prev {
+	margin-top: 3px;
+	padding: 0px 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: white;
+	text-decoration: none;
+	vertical-align: middle;
 }
 
 .library-hours .date-nav-wrapper .date-prev i {
-margin-left: -5px;
+	margin-left: -5px;
 }
 
 .single-region--middle .pane-term-description p {
 	margin-top: 0;
+}
+
+div.view-content > table.views-table > tbody > tr > td {
+	@include adjust-font-size-to(14px);
+
+	p {
+		margin: 0.5em 0;
+	}
+}
+
+.front {
+	div.view-content > table.views-table > tbody > tr > td {
+	@include adjust-font-size-to(16px);
+
+	p {
+		margin: 0.5em 0;
+	}
+}
+}
+
+.pul_base_nine_three-region--second .view-library-hours {
+
+	.view-header .date-nav-wrapper .date-heading h3 {
+		@include adjust-font-size-to(16px);
+	}
+	
+	.view-content table {
+		margin-top: 0;
+	}
+
+	.date-heading {
+		width: 70%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.views-field.views-field-field-open-hours-1 {
+		width: 40%;
+	}
+
+	.view-content td {
+		@include adjust-font-size-to(14px);
+	}
+
+}
+
+.library-hours {
+
+	tr.even {
+		background: none;
+		border-top: 1px solid #ddd;
+	}
+	tr.odd > td {
+		background: $gray-light;
+	}
+	td {
+		padding: 0.5em;
+	}
+	td.views-field-title {
+		width: 60%;
+	}
+	td.views-field-field-open-hours {
+		text-align: right;
+	}
 }

@@ -17,7 +17,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -5;
+  $handler->weight = -3;
   $handler->conf = array(
     'title' => 'Branch Pages',
     'no_blocks' => 1,
@@ -239,7 +239,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -6;
+  $handler->weight = -4;
   $handler->conf = array(
     'title' => 'Stokes Library',
     'no_blocks' => 0,
@@ -407,7 +407,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -10;
+  $handler->weight = -6;
   $handler->conf = array(
     'title' => 'Firestone Library',
     'no_blocks' => 0,
@@ -434,7 +434,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'twocol';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -450,7 +450,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_long_description';
     $pane->shown = TRUE;
@@ -476,10 +476,10 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'f29f2df1-f860-42a0-945f-f23e02827d43';
     $display->content['new-f29f2df1-f860-42a0-945f-f23e02827d43'] = $pane;
-    $display->panels['left'][0] = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
+    $display->panels['first'][0] = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
     $pane = new stdClass();
     $pane->pid = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
-    $pane->panel = 'left';
+    $pane->panel = 'first';
     $pane->type = 'node';
     $pane->subtype = 'node';
     $pane->shown = TRUE;
@@ -504,10 +504,10 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '6537b419-0ad7-436b-9252-1d7d651fd84a';
     $display->content['new-6537b419-0ad7-436b-9252-1d7d651fd84a'] = $pane;
-    $display->panels['left'][1] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
+    $display->panels['first'][1] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
     $pane = new stdClass();
     $pane->pid = 'new-59441d97-43a0-4782-8f32-ec4d7dd89dbb';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'libraries-panel_pane_1';
     $pane->shown = TRUE;
@@ -529,10 +529,10 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '59441d97-43a0-4782-8f32-ec4d7dd89dbb';
     $display->content['new-59441d97-43a0-4782-8f32-ec4d7dd89dbb'] = $pane;
-    $display->panels['right'][0] = 'new-59441d97-43a0-4782-8f32-ec4d7dd89dbb';
+    $display->panels['second'][0] = 'new-59441d97-43a0-4782-8f32-ec4d7dd89dbb';
     $pane = new stdClass();
     $pane->pid = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'current_floor_plan_files-panel_pane_1';
     $pane->shown = TRUE;
@@ -548,10 +548,10 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
     $display->content['new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee'] = $pane;
-    $display->panels['right'][1] = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
+    $display->panels['second'][1] = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
     $pane = new stdClass();
     $pane->pid = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
-    $pane->panel = 'right';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'block-2';
     $pane->shown = TRUE;
@@ -570,7 +570,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'e036616e-7301-4c11-a8e0-fdd6017120bc';
     $display->content['new-e036616e-7301-4c11-a8e0-fdd6017120bc'] = $pane;
-    $display->panels['right'][2] = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
+    $display->panels['second'][2] = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
   $handler->conf['display'] = $display;
@@ -639,6 +639,8 @@ function pul_libraries_ct_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -676,10 +678,10 @@ function pul_libraries_ct_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
+      'admin_title' => 'Libraries Page Block',
       'title' => 'Collections',
       'body' => '<ul>
-<li><a href="about/collections">Collection Development at Princeton</a></li>
+<li><a href="/collections-and-collection-development">Collection Development at Princeton</a></li>
 </ul>',
       'format' => 'filtered_html',
       'substitute' => TRUE,

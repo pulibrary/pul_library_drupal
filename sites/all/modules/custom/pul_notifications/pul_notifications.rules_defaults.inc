@@ -32,7 +32,7 @@ function pul_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3" } },
+            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
             "subject" : "A DMG resource has been updated. ",
             "message" : "A DMG [entity:content-type], [entity:title],  at [entity:url] has been updated by [site:current-user] created by [entity:author]"
           }
@@ -62,7 +62,7 @@ function pul_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3" } },
+            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
             "subject" : "A new DMG Resource has been created. ",
             "message" : "A new primary DMG has been created at [entity:url]. It\\u0027s proxy value is \\ufeff\\ufeff\\ufeff[entity:field-db-use-proxy]. "
           }
@@ -84,7 +84,7 @@ function pul_notifications_default_rules_configuration() {
       "IF" : [ { "entity_is_new" : { "entity" : [ "entity" ] } } ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3" } },
+            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
             "subject" : "New [entity:content-type] has been added",
             "message" : "A new [entity:content-type], \\u0022[entity:title]\\u0022 has been created at [entity:url] at [entity:created]. "
           }
@@ -110,7 +110,7 @@ function pul_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3" } },
+            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
             "subject" : "[term:name] updated ",
             "message" : "A term was updated, [term:name] in [term:vocabulary]."
           }

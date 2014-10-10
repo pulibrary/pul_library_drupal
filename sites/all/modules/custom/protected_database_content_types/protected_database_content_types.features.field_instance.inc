@@ -448,6 +448,12 @@ function protected_database_content_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -506,6 +512,85 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_additional_desc'
+  $field_instances['node-ip_protected_db_resource-field_ip_db_additional_desc'] = array(
+    'bundle' => 'ip_protected_db_resource',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => TRUE,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_ip_db_additional_desc',
+    'label' => 'Additional_description',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_copyright_info'
   $field_instances['node-ip_protected_db_resource-field_ip_db_copyright_info'] = array(
     'bundle' => 'ip_protected_db_resource',
@@ -541,6 +626,12 @@ function protected_database_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -612,6 +703,12 @@ function protected_database_content_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -673,6 +770,12 @@ function protected_database_content_types_field_default_field_instances() {
     'description' => 'Use if no form can be constructed to auto login user into resource. ',
     'display' => array(
       'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -758,6 +861,12 @@ function protected_database_content_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'database_description_only' => array(
         'label' => 'above',
         'settings' => array(),
@@ -814,6 +923,7 @@ function protected_database_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Access Note');
+  t('Additional_description');
   t('Copyright Information');
   t('Copyright Statement');
   t('DB Password');
