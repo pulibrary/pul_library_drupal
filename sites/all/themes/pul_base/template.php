@@ -24,9 +24,8 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function pul_base_title_hacks($nid) {
-  if ($nid == 6627 || $nid == 13157) {
-    //return "class='icon-article-express--small-after'";
-    return "";
+  if ($nid == 6627 || $nid == 13204) {
+    return "class='icon-article-express--small-after'";
   } else {
     return "";
   }
