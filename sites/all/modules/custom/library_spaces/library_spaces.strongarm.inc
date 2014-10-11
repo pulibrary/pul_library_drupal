@@ -71,6 +71,9 @@ function library_spaces_strongarm() {
       'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

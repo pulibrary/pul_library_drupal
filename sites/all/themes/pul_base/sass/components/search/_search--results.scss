@@ -1,0 +1,38 @@
+.all-search-results-list, 
+.view-search-libraries-and-collections, 
+.view-databases-keyword-search ul,
+.view-general-site-keyword-search ul,
+.view-general-site-user-search ul {
+
+    margin-bottom: 1em;
+
+    li.even, li.views-row-even {
+        background: none;
+        border-top: 1px solid #ddd;
+    }
+    li.odd, li.views-row-odd {
+        background: $gray-light;
+    }
+    li {
+        padding: 1em;
+    }
+    li.active {
+        background: none;
+    }
+
+    h3 {
+        @include rhythm(0, 0, 0, 0.1, $font-size-base);
+    }
+}
+
+.pul_base_four_four_four_stacked-region {
+    li {
+        clear: both;
+    }
+
+    > ul > li + li {
+        border-top: 1px dotted #BFBFBF;
+        margin-top: 1.5em;
+        padding-top: 1em;
+    }
+}

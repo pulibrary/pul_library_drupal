@@ -1,0 +1,32 @@
+.pane-menu-menu-get-help-menu {
+
+	.menu {
+		list-style: none;
+
+		.leaf {
+			list-style: none;
+			margin-bottom: 5px;
+			display: block;
+
+			a {
+				font-size: $font-size-base;
+
+				//chat button
+				.libraryh3lp .button--libraryh3lp {
+					font-size: $font-size-smaller;
+				}
+			}
+
+			[class^="icon-"], [class*=" icon-"] {
+				margin-left: 0;
+			}
+
+		}
+	}
+}
+ 
+.front .pane-menu-menu-get-help-menu .menu .leaf {
+	a {
+		@include adjust-font-size-to(16px);
+	}
+}

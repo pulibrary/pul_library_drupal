@@ -340,7 +340,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -22;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'OFA Staff',
     'no_blocks' => 0,
@@ -450,7 +450,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -20;
   $handler->conf = array(
     'title' => 'OFA Security',
     'no_blocks' => 0,
@@ -560,7 +560,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -17;
+  $handler->weight = -13;
   $handler->conf = array(
     'title' => 'Chat Landing Page',
     'no_blocks' => 1,
@@ -744,7 +744,7 @@ help/chat/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -10;
+  $handler->weight = -7;
   $handler->conf = array(
     'title' => 'Alternative Database Landing Page',
     'no_blocks' => 1,
@@ -919,7 +919,7 @@ help/chat/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -3;
+  $handler->weight = -1;
   $handler->conf = array(
     'title' => 'Database Platform Page',
     'no_blocks' => 1,
@@ -1125,7 +1125,7 @@ help/chat/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 13;
+  $handler->weight = 14;
   $handler->conf = array(
     'title' => 'Research Data Management',
     'no_blocks' => 0,
@@ -1225,7 +1225,7 @@ research-data-management/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -21;
+  $handler->weight = -17;
   $handler->conf = array(
     'title' => 'Office of Finance Administration',
     'no_blocks' => 0,

@@ -34,6 +34,13 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_database_description';
+  $strongarm->value = '0';
+  $export['comment_anonymous_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_database_package';
   $strongarm->value = '0';
   $export['comment_anonymous_database_package'] = $strongarm;
@@ -44,6 +51,13 @@ function articles_and_databases_strongarm() {
   $strongarm->name = 'comment_database';
   $strongarm->value = '1';
   $export['comment_database'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_database_description';
+  $strongarm->value = '1';
+  $export['comment_database_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,6 +83,13 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_database_description';
+  $strongarm->value = 1;
+  $export['comment_default_mode_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_database_package';
   $strongarm->value = 0;
   $export['comment_default_mode_database_package'] = $strongarm;
@@ -86,6 +107,13 @@ function articles_and_databases_strongarm() {
   $strongarm->name = 'comment_default_per_page_database';
   $strongarm->value = '50';
   $export['comment_default_per_page_database'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_database_description';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_database_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -111,6 +139,13 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_database_description';
+  $strongarm->value = 1;
+  $export['comment_form_location_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_database_package';
   $strongarm->value = 1;
   $export['comment_form_location_database_package'] = $strongarm;
@@ -132,6 +167,13 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_database_description';
+  $strongarm->value = '1';
+  $export['comment_preview_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_database_package';
   $strongarm->value = '1';
   $export['comment_preview_database_package'] = $strongarm;
@@ -149,6 +191,13 @@ function articles_and_databases_strongarm() {
   $strongarm->name = 'comment_subject_field_database';
   $strongarm->value = 1;
   $export['comment_subject_field_database'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_database_description';
+  $strongarm->value = 1;
+  $export['comment_subject_field_database_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -201,6 +250,9 @@ function articles_and_databases_strongarm() {
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -265,6 +317,9 @@ function articles_and_databases_strongarm() {
       'colorbox' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -298,6 +353,9 @@ function articles_and_databases_strongarm() {
       'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -320,6 +378,9 @@ function articles_and_databases_strongarm() {
       ),
       'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -371,6 +432,9 @@ function articles_and_databases_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -400,6 +464,15 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_database_description';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_database_package';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -419,6 +492,13 @@ function articles_and_databases_strongarm() {
   $strongarm->name = 'menu_parent_database';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_database'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_database_description';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_database_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -451,6 +531,16 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_database_description';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'promote',
+  );
+  $export['node_options_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_database_package';
   $strongarm->value = array(
     0 => 'status',
@@ -475,6 +565,13 @@ function articles_and_databases_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_database_description';
+  $strongarm->value = '1';
+  $export['node_preview_database_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_database_package';
   $strongarm->value = '1';
   $export['node_preview_database_package'] = $strongarm;
@@ -492,6 +589,13 @@ function articles_and_databases_strongarm() {
   $strongarm->name = 'node_submitted_database';
   $strongarm->value = 0;
   $export['node_submitted_database'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_database_description';
+  $strongarm->value = 0;
+  $export['node_submitted_database_description'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

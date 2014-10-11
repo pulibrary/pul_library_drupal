@@ -104,6 +104,9 @@ function library_study_rooms_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

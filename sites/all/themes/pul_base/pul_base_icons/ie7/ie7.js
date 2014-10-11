@@ -24,6 +24,8 @@
 		'icon-file': '&#xe606;',
 		'icon-location': '&#xe618;',
 		'icon-warning-sign': '&#xe610;',
+		'icon-film': '&#xe616;',
+		'icon-headphones': '&#xe617;',
 		'icon-tag': '&#xf02b;',
 		'icon-plus-sign-alt': '&#xf055;',
 		'icon-minus-sign-alt': '&#xf056;',

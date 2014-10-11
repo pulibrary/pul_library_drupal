@@ -5,7 +5,7 @@ $font-sans: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !de
 $font-mono: 'Lucida Console', Monaco, monospace !default;
 $text-color: #000 !default;
 
-$base-font-size: 14px;
+$base-font-size: 16px;
 $base-line-height: 24px;
 
 $round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height 
@@ -18,4 +18,6 @@ $h4-fz: 16px;
 $h5-fz: 13px;
 $h6-fz: 10px;
 
-$small: 0.78571rem;
+$font-size-base: 0.875rem;
+$font-size-smaller: 0.75rem;
+$font-size-larger: 1.125rem;

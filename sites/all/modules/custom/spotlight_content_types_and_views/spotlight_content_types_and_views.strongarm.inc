@@ -113,7 +113,11 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pul_landing_page';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -139,7 +143,11 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pul_spotlight_graphic';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

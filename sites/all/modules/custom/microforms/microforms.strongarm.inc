@@ -64,7 +64,11 @@ function microforms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__microforms_newspapers';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

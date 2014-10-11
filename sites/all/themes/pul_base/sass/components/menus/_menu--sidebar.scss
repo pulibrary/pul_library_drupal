@@ -1,0 +1,41 @@
+.three_six_three-region--first, .three_nine-region--first {
+    h2 {
+        @include adjust-font-size-to(1.3em);
+        @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+    }
+    a {
+        font-family: $font-sans;
+    }
+    ul.menu li {
+
+        a {
+            padding: .3em;
+            margin: 0;
+            display: block;
+        }
+
+        a.active, &.expanded a.active {
+                background: $blue;
+                color: white;
+        }
+
+        &.expanded {
+            background: lighten($blue, 40);
+            @include border-radius(4px);
+        }
+    }
+
+    ul.menu > li > a {
+        font-size: $font-size-larger;
+    }
+
+    ul.menu > li > ul > li > a {
+        font-size: $font-size-base;
+        padding-left: 2em;
+    }
+
+    ul.menu > li > ul > li > ul > li > a {
+        padding-left: 4em;
+    }
+}
+

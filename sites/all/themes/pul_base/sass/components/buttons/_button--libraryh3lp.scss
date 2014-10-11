@@ -1,0 +1,31 @@
+.libraryh3lp {
+    .button--libraryh3lp {
+        margin-left: 1em;
+        font-size: $font-size-smaller * .8;
+        font-family: $font-serif;
+        font-style: italic;
+        font-weight: bold;
+        border: none;
+        text-shadow: none;
+        padding: 3px 7px;
+        text-decoration: none;
+        @include border-radius(3px);
+        position: relative;
+        top: -2px;
+    }
+} 
+
+.button--libraryh3lp__online {
+    background-color: $orange;
+    color: #fff;
+
+    &:hover {
+        color: white;
+        background: lighten($orange, 8);
+    }
+}
+
+.button--libraryh3lp__offline {
+    background: $gray-light;
+    color: $gray-dark;
+}

@@ -1038,8 +1038,8 @@ function library_hours_views_default_views() {
     ),
   );
 
-  /* Display: Today's Hours */
-  $handler = $view->new_display('panel_pane', 'Today\'s Hours', 'panel_pane_2');
+  /* Display: Today&#x2019;s Hours */
+  $handler = $view->new_display('panel_pane', 'Today&#x2019;s Hours', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Library Hours';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
@@ -1342,7 +1342,7 @@ function library_hours_views_default_views() {
   /* Display: Today's Hours - Block */
   $handler = $view->new_display('block', 'Today\'s Hours - Block', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Today&apos;s Hours';
+  $handler->display->display_options['title'] = 'Today&#x2019;s Hours';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
@@ -1501,7 +1501,7 @@ function library_hours_views_default_views() {
   /* Display: Today's Hours - Block - Individual */
   $handler = $view->new_display('block', 'Today\'s Hours - Block - Individual', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Today&apos;s Hours';
+  $handler->display->display_options['title'] = 'Today&#x2019;s Hours';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';

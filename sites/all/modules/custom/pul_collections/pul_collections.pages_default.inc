@@ -17,7 +17,7 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -4;
+  $handler->weight = -2;
   $handler->conf = array(
     'title' => 'Collections Landing Page',
     'no_blocks' => 0,
@@ -311,6 +311,8 @@ function pul_collections_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -323,7 +325,7 @@ function pul_collections_default_page_manager_pages() {
     $pane->panel = 'first';
     $pane->type = 'node';
     $pane->subtype = 'node';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'nid' => '5493',

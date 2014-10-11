@@ -36,7 +36,7 @@
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    @include grid-span(4,9);
+    @include grid-span(4,9, $gutter:0);
     margin-right: 0;
   }
 
