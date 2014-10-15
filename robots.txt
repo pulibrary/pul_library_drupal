@@ -11,10 +11,10 @@
 # Ignored: http://example.com/site/robots.txt
 #
 # For more information about the robots.txt standard, see:
-# http://www.robotstxt.org/wc/robots.html
+# http://www.robotstxt.org/robotstxt.html
 #
 # For syntax checking, see:
-# http://www.sxw.org.uk/computing/robots/check.html
+# http://www.frobee.com/robots-txt-check
 
 User-agent: *
 Crawl-delay: 10
@@ -58,11 +58,11 @@ Disallow: /?q=user/password/
 Disallow: /?q=user/register/
 Disallow: /?q=user/login/
 Disallow: /?q=user/logout/
-# PUL Specific Rules
+
+-# PUL Specific Rules
 Disallow: /sites/default/files/newsletters/
 Disallow: /find/all/
 Disallow: /services/hours
 Disallow: /services/libraries
 Disallow: /research/databases/search/
 Disallow: /requests/
-
