@@ -35,9 +35,7 @@ function pul_scholarly_communications_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'services/scholarly-communications
-services/scholarly-communications/services
-services/scholarly-communications/resources
-',
+services/scholarly-communications/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -62,15 +60,18 @@ services/scholarly-communications/resources
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-f2731302-1f20-4fdb-8383-6badbe971aec';
+    $pane->pid = 'new-a3446f24-62be-40d8-8f48-33f409a2ddec';
     $pane->panel = 'first';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-scholarly-communications-of';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<p><img src="/sites/default/files/sco-logo.png" alt="Scholarly Communications Office" /></p>',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -80,9 +81,31 @@ services/scholarly-communications/resources
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $pane->uuid = 'a3446f24-62be-40d8-8f48-33f409a2ddec';
+    $display->content['new-a3446f24-62be-40d8-8f48-33f409a2ddec'] = $pane;
+    $display->panels['first'][0] = 'new-a3446f24-62be-40d8-8f48-33f409a2ddec';
+    $pane = new stdClass();
+    $pane->pid = 'new-f2731302-1f20-4fdb-8383-6badbe971aec';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-scholarly-communications-of';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = 'f2731302-1f20-4fdb-8383-6badbe971aec';
     $display->content['new-f2731302-1f20-4fdb-8383-6badbe971aec'] = $pane;
-    $display->panels['first'][0] = 'new-f2731302-1f20-4fdb-8383-6badbe971aec';
+    $display->panels['first'][1] = 'new-f2731302-1f20-4fdb-8383-6badbe971aec';
     $pane = new stdClass();
     $pane->pid = 'new-2c452d45-9133-4ec3-b65a-b66d29369ebb';
     $pane->panel = 'second';
