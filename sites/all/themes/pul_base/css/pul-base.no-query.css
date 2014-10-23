@@ -1249,10 +1249,6 @@ fieldset {
   background: none;
 }
 
-.views-field-picture {
-  width: 85px;
-}
-
 table caption {
   font-size: 21px;
   font-size: 1.3rem;
@@ -1895,6 +1891,18 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   background: #e8e6df;
 }
 
+.three_nine-region--first .pane-menu-menu-scholarly-communications-of li a {
+  color: #006838;
+}
+.three_nine-region--first .pane-menu-menu-scholarly-communications-of ul.menu li a.active {
+  background: #006838;
+  color: #fff;
+}
+
+.page-node-13202 a {
+  color: #006838;
+}
+
 .three_six_three-region--first h2, .three_nine-region--first h2 {
   font-size: 21px;
   font-size: 1.3rem;
@@ -2189,7 +2197,8 @@ body.faq .ui-accordion .ui-accordion-header a {
   }
 }
 
-.l-region--branding .block--allsearch-block-allsearch-search {
+.l-region--branding .block--allsearch-block-allsearch-search,
+.l-region--branding .block--search-form {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
   float: right;
@@ -2198,26 +2207,31 @@ body.faq .ui-accordion .ui-accordion-header a {
   clear: none;
   float: none;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div {
+.l-region--branding .block--allsearch-block-allsearch-search form > div,
+.l-region--branding .block--search-form form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
   width: 100%;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input {
+.l-region--branding .block--allsearch-block-allsearch-search form > div input,
+.l-region--branding .block--search-form form > div input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   border: 1px #1a1f25 solid;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query,
+.l-region--branding .block--search-form form > div div.form-item-query {
   position: relative;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query label {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query label,
+.l-region--branding .block--search-form form > div div.form-item-query label {
   display: none;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text] {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text],
+.l-region--branding .block--search-form form > div div.form-item-query input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -2231,7 +2245,8 @@ body.faq .ui-accordion .ui-accordion-header a {
   border: #3d4249;
   color: #aaa;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit] {
+.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit],
+.l-region--branding .block--search-form form > div input[type=submit] {
   border: 1px solid #1a1f25;
   border-radius: 3px;
   box-shadow: inset 0 1px 0 0 #69696a;
@@ -2262,23 +2277,28 @@ body.faq .ui-accordion .ui-accordion-header a {
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:hover:not(:disabled) {
+.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:hover:not(:disabled),
+.l-region--branding .block--search-form form > div input[type=submit]:hover:not(:disabled) {
   box-shadow: inset 0 1px 0 0 #4f5051;
   cursor: pointer;
   background-color: #343639;
   background-image: -webkit-linear-gradient(#343639, #1a1f25);
   background-image: linear-gradient(#343639, #1a1f25);
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:active:not(:disabled), .l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:focus:not(:disabled) {
+.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:active:not(:disabled), .l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:focus:not(:disabled),
+.l-region--branding .block--search-form form > div input[type=submit]:active:not(:disabled),
+.l-region--branding .block--search-form form > div input[type=submit]:focus:not(:disabled) {
   border: 1px solid #1a1f25;
   box-shadow: inset 0 0 8px 4px #14171c, inset 0 0 8px 4px #14171c;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:disabled {
+.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:disabled,
+.l-region--branding .block--search-form form > div input[type=submit]:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 @media (min-width: 44em) {
-  .l-region--branding .block--allsearch-block-allsearch-search {
+  .l-region--branding .block--allsearch-block-allsearch-search,
+  .l-region--branding .block--search-form {
     -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 71.66667%;
     float: right;
