@@ -1551,8 +1551,21 @@ table caption {
   content: "(\e614)";
 }
 
+.page-node-6627 h1:after,
 .icon-article-express--small-after:after {
   content: "(\e615)";
+}
+
+.page-node-6627 h1:after {
+  font-family: 'pul_base_theme';
+  speak: none;
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* CDL Menu */
