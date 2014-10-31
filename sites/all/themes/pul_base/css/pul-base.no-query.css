@@ -2235,16 +2235,19 @@ body.faq .ui-accordion .ui-accordion-header a {
   display: inline-block;
   border: 1px #1a1f25 solid;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query,
-.l-region--branding .block--search-form form > div div.form-item-query {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query, .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item,
+.l-region--branding .block--search-form form > div div.form-item-query,
+.l-region--branding .block--search-form form > div div.form-item {
   position: relative;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query label,
-.l-region--branding .block--search-form form > div div.form-item-query label {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query label, .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item label,
+.l-region--branding .block--search-form form > div div.form-item-query label,
+.l-region--branding .block--search-form form > div div.form-item label {
   display: none;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text],
-.l-region--branding .block--search-form form > div div.form-item-query input[type=text] {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text], .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item input[type=text],
+.l-region--branding .block--search-form form > div div.form-item-query input[type=text],
+.l-region--branding .block--search-form form > div div.form-item input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -2847,12 +2850,7 @@ $desk : 1250px;
 
 @media (min-width: 44em) {
   .pul_base_four_four_four_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
     width: 100%;
-    clear: right;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -2867,6 +2865,7 @@ $desk : 1250px;
     margin-right: 1.66667%;
     clear: both;
     margin-left: 0;
+    margin-right: 2.5%;
   }
 
   .pul_base_four_four_four_stacked-region--second {
@@ -2876,25 +2875,27 @@ $desk : 1250px;
     float: left;
     margin-left: 1.66667%;
     margin-right: 1.66667%;
+    margin: 0 2.5%;
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 33.33333%;
+    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 30%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 0%;
+    margin-right: 1.66667%;
+    margin-left: 2.5%;
     margin-right: 0;
   }
 
   .pul_base_four_four_four_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
+    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 96.66667%;
     clear: right;
     float: right;
     margin-left: 0;
-    margin-right: 0%;
+    margin-right: 1.66667%;
     clear: both;
     margin-left: 0;
     margin-right: 0;
