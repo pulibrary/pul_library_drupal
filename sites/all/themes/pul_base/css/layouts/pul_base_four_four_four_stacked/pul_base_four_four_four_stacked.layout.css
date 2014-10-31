@@ -19,10 +19,6 @@
 @media (min-width: 44em) {
   .pul_base_four_four_four_stacked-region--top {
     width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    clear: none;
     clear: both;
     margin-left: 0;
     margin-right: 0;
@@ -36,6 +32,7 @@
     clear: none;
     clear: both;
     margin-left: 0;
+    margin-right: 2.5%;
   }
 
   .pul_base_four_four_four_stacked-region--second {
@@ -44,14 +41,16 @@
     margin-right: -100%;
     margin-left: 34.48276%;
     clear: none;
+    margin: 0 2.5%;
   }
 
   .pul_base_four_four_four_stacked-region--third {
-    width: 33.33333%;
+    width: 31.03448%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    margin-left: 2.5%;
     margin-right: 0;
   }
 
