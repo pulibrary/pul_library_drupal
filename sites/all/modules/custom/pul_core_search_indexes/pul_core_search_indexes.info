@@ -15,4 +15,5 @@ features[search_api_index][] = default_node_index
 features[search_api_index][] = dmg_administrative_index
 features[search_api_index][] = libraries_and_collections
 features[search_api_index][] = staff_users
+mtime = 1410017940
 project path = sites/all/modules/custom

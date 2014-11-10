@@ -20,8 +20,12 @@ function pul_library_users_feeds_importer_default() {
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => 1,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
       ),
     ),
     'parser' => array(
@@ -41,8 +45,25 @@ function pul_library_users_feeds_importer_default() {
           7 => 0,
           4 => 0,
           6 => 0,
+          9 => 0,
+          10 => 0,
+          11 => 0,
+          12 => 0,
+          13 => 0,
+          14 => 0,
+          15 => 0,
+          16 => 0,
+          17 => 0,
+          18 => 0,
+          19 => 0,
+          20 => 0,
+          21 => 0,
+          22 => 0,
+          23 => 0,
+          24 => 0,
+          25 => 0,
         ),
-        'update_existing' => 1,
+        'update_existing' => '2',
         'status' => '1',
         'mappings' => array(
           0 => array(
@@ -61,114 +82,139 @@ function pul_library_users_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'fname',
-            'target' => 'field_puluser_fname',
-            'unique' => FALSE,
-          ),
-          4 => array(
-            'source' => 'lname',
-            'target' => 'field_puluser_lname',
-            'unique' => FALSE,
-          ),
-          5 => array(
             'source' => 'office',
             'target' => 'field_puluser_office',
             'unique' => FALSE,
           ),
-          6 => array(
+          4 => array(
             'source' => 'specID',
             'target' => 'field_puluser_dmgimport_id',
             'unique' => FALSE,
           ),
-          7 => array(
+          5 => array(
             'source' => 'Phone',
             'target' => 'field_puluser_phone_number',
             'unique' => FALSE,
           ),
-          8 => array(
+          6 => array(
             'source' => 'Department',
             'target' => 'field_puluser_department',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
-          9 => array(
+          7 => array(
             'source' => 'Division',
             'target' => 'field_puluser_division',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
-          10 => array(
+          8 => array(
             'source' => 'Section',
             'target' => 'field_puluser_section',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
-          11 => array(
+          9 => array(
             'source' => 'NetID',
             'target' => 'name',
             'unique' => 1,
           ),
-          12 => array(
+          10 => array(
             'source' => 'Email',
             'target' => 'mail',
             'unique' => 1,
           ),
-          13 => array(
+          11 => array(
             'source' => 'LongTitle',
             'target' => 'field_puluser_officialtitle',
             'unique' => FALSE,
           ),
-          14 => array(
+          12 => array(
             'source' => 'NetID',
             'target' => 'field_puluser_netid',
             'unique' => FALSE,
           ),
-          15 => array(
+          13 => array(
             'source' => 'StartDate',
             'target' => 'created',
             'unique' => FALSE,
           ),
-          16 => array(
+          14 => array(
             'source' => 'Title',
             'target' => 'field_puluser_short_title',
             'unique' => FALSE,
           ),
-          17 => array(
+          15 => array(
             'source' => 'Name',
             'target' => 'field_puluser_formalname',
             'unique' => FALSE,
           ),
-          18 => array(
+          16 => array(
             'source' => 'subjectSpec',
             'target' => 'field_puluser_sublibrarian',
             'unique' => FALSE,
           ),
-          19 => array(
+          17 => array(
             'source' => 'StaffSort',
             'target' => 'field_pul_user_staff_sort',
             'unique' => FALSE,
           ),
-          20 => array(
+          18 => array(
             'source' => 'UnitSort',
             'target' => 'field_puluser_unit_sort',
             'unique' => FALSE,
           ),
-          21 => array(
+          19 => array(
             'source' => 'DeptSort',
             'target' => 'field_puluser_department_sort',
             'unique' => FALSE,
           ),
-          22 => array(
+          20 => array(
             'source' => 'Unit',
             'target' => 'field_puluser_unit',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+          21 => array(
+            'source' => 'DivSect',
+            'target' => 'field_puluser_divsect',
+            'unique' => FALSE,
+          ),
+          22 => array(
+            'source' => 'Office',
+            'target' => 'field_puluser_office',
             'unique' => FALSE,
           ),
           23 => array(
-            'source' => 'DivSect',
-            'target' => 'field_puluser_divsect',
+            'source' => 'Building',
+            'target' => 'field_puluser_building_location',
+            'unique' => FALSE,
+          ),
+          24 => array(
+            'source' => 'lastName',
+            'target' => 'field_puluser_lname',
+            'unique' => FALSE,
+          ),
+          25 => array(
+            'source' => 'firstName',
+            'target' => 'field_puluser_fname',
+            'unique' => FALSE,
+          ),
+          26 => array(
+            'source' => 'middleName',
+            'target' => 'field_puluser_middle_name',
+            'unique' => FALSE,
+          ),
+          27 => array(
+            'source' => 'nickName',
+            'target' => 'field_puluser_nick_name',
             'unique' => FALSE,
           ),
         ),
         'defuse_mail' => 0,
         'input_format' => 'plain_text',
-        'skip_hash_check' => FALSE,
+        'skip_hash_check' => 0,
+        'bundle' => 'user',
       ),
     ),
     'content_type' => '',
@@ -176,7 +222,7 @@ function pul_library_users_feeds_importer_default() {
     'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
-    'process_in_background' => FALSE,
+    'process_in_background' => 0,
   );
   $export['pul_library_staff_importer'] = $feeds_importer;
 

@@ -166,4 +166,5 @@ features_exclude[field_instance][taxonomy_term-libraries-field_hours_calendar] =
 features_exclude[field_instance][taxonomy_term-libraries-field_long_description] = taxonomy_term-libraries-field_long_description
 features_exclude[field_instance][taxonomy_term-libraries-field_tags] = taxonomy_term-libraries-field_tags
 features_exclude[taxonomy][libraries] = libraries
+mtime = 1412638385
 no autodetect = 1

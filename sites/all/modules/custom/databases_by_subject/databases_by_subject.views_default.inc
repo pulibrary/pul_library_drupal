@@ -323,6 +323,67 @@ function databases_by_subject_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['path'] = 'topics';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 1;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Subject';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['path'] = '/taxonomy_term/[tid]';
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Primary Library Guide */
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['id'] = 'field_subs_primary_library_guide';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['table'] = 'field_data_field_subs_primary_library_guide';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['field'] = 'field_subs_primary_library_guide';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['label'] = 'Primary Libguide';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['type'] = 'link_url';
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['field_api_classes'] = TRUE;
+  /* Field: Taxonomy term: Other Guides */
+  $handler->display->display_options['fields']['field_subs_other_guides']['id'] = 'field_subs_other_guides';
+  $handler->display->display_options['fields']['field_subs_other_guides']['table'] = 'field_data_field_subs_other_guides';
+  $handler->display->display_options['fields']['field_subs_other_guides']['field'] = 'field_subs_other_guides';
+  $handler->display->display_options['fields']['field_subs_other_guides']['label'] = 'Other URLs';
+  $handler->display->display_options['fields']['field_subs_other_guides']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_subs_other_guides']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subs_other_guides']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_subs_other_guides']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_subs_other_guides']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_subs_other_guides']['type'] = 'link_url';
+  $handler->display->display_options['fields']['field_subs_other_guides']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_subs_other_guides']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['path'] = 'research/databases/subjects.csv';
   $export['databases_by_subject'] = $view;
 
   return $export;

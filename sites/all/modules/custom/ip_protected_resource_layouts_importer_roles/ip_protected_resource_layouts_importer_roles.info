@@ -20,3 +20,4 @@ features[user_permission][] = delete own ip_protected_db_resource content
 features[user_permission][] = edit any ip_protected_db_resource content
 features[user_permission][] = edit own ip_protected_db_resource content
 features[user_role][] = IP Resource Manager
+mtime = 1412631519
