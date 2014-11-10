@@ -195,10 +195,12 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '%user:field_puluser_fname %user:field_puluser_lname';
+  $display->title = '%user:field-puluser-nick-name %user:field_puluser_lname';
   $display->uuid = '5417b150-b4f8-4688-a71e-09254f596b22';
   $display->content = array();
   $display->panels = array();
@@ -245,6 +247,28 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
     $display->content['new-77fcb19a-3943-48ba-a006-509b28cf7011'] = $pane;
     $display->panels['first'][1] = 'new-77fcb19a-3943-48ba-a006-509b28cf7011';
     $pane = new stdClass();
+    $pane->pid = 'new-f6c516c3-dec4-44bb-8b71-6f0265cf7532';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'specialist_finder-subject_librarian_database_subjects';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '%user:field_puluser_fname\'s Subjects',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f6c516c3-dec4-44bb-8b71-6f0265cf7532';
+    $display->content['new-f6c516c3-dec4-44bb-8b71-6f0265cf7532'] = $pane;
+    $display->panels['second'][0] = 'new-f6c516c3-dec4-44bb-8b71-6f0265cf7532';
+    $pane = new stdClass();
     $pane->pid = 'new-b359e695-40bd-4b24-bb12-d1c0e1465e69';
     $pane->panel = 'second';
     $pane->type = 'block';
@@ -261,11 +285,11 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'b359e695-40bd-4b24-bb12-d1c0e1465e69';
     $display->content['new-b359e695-40bd-4b24-bb12-d1c0e1465e69'] = $pane;
-    $display->panels['second'][0] = 'new-b359e695-40bd-4b24-bb12-d1c0e1465e69';
+    $display->panels['second'][1] = 'new-b359e695-40bd-4b24-bb12-d1c0e1465e69';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

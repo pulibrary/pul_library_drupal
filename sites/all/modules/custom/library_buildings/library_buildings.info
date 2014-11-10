@@ -59,5 +59,6 @@ features_exclude[variable][menu_parent_library_buildings] = menu_parent_library_
 features_exclude[variable][node_options_library_buildings] = node_options_library_buildings
 features_exclude[variable][node_preview_library_buildings] = node_preview_library_buildings
 features_exclude[variable][node_submitted_library_buildings] = node_submitted_library_buildings
+mtime = 1412638473
 no autodetect = 1
 project path = sites/all/modules/custom
