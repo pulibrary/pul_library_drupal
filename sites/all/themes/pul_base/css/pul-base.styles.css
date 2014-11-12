@@ -688,6 +688,9 @@ h3 {
   color: white;
 }
 
+.calendar-calendar .library-hours-status {
+  display: none;
+}
 .calendar-calendar th.days {
   padding: 10px 20px 10px 20px;
   color: #333333;
@@ -805,6 +808,31 @@ div.view-content > table.views-table > tbody > tr > td p {
 }
 .library-hours td.views-field-field-open-hours {
   text-align: right;
+}
+
+.calendar-calendar td span.date-display-single,
+.calendar-calendar td span.date-display-start,
+.calendar-calendar td span.date-display-end {
+  font-weight: normal;
+}
+
+.calendar-calendar .month-view .full td.date-box.today,
+.calendar-calendar .month-view .full td.single-day.today {
+  background: #fff7f3;
+}
+
+.calendar-calendar .month-view .full td.date-box.today {
+  border: 2px solid #e87511;
+  border-bottom: none;
+}
+
+.calendar-calendar .month-view .full td.single-day.today {
+  border: 2px solid #e87511;
+  border-top: none;
+}
+
+.calendar-calendar .month-view .full tr td.single-day.today {
+  border-bottom: 2px solid #e87511;
 }
 
 .l-region--footer {
@@ -1186,6 +1214,36 @@ h1.icon-article-express--small-after:after {
   display: none;
 }
 
+.field--name-field-ip-db-copyright-info table th,
+.field--name-field-db-copyright-information table th,
+.field--name-field-cas-db-copyright-statement table th {
+  background: #494f57;
+  color: white;
+  padding: 0.5em;
+}
+.field--name-field-ip-db-copyright-info table td,
+.field--name-field-db-copyright-information table td,
+.field--name-field-cas-db-copyright-statement table td {
+  vertical-align: top;
+  border-bottom: none;
+  padding-top: 1em;
+}
+.field--name-field-ip-db-copyright-info table td ul,
+.field--name-field-db-copyright-information table td ul,
+.field--name-field-cas-db-copyright-statement table td ul {
+  margin-left: 1.5em;
+}
+.field--name-field-ip-db-copyright-info table td li,
+.field--name-field-db-copyright-information table td li,
+.field--name-field-cas-db-copyright-statement table td li {
+  list-style: disc;
+  margin-bottom: 1em;
+}
+
+.field--name-field-db-copyright-information p {
+  margin: 1em 0 2em;
+}
+
 .views-table th {
   background: #494f57;
   color: white;
@@ -1217,32 +1275,6 @@ h1.icon-article-express--small-after:after {
 }
 .views-table .find-databases-show-desc {
   float: right;
-}
-
-.field--name-field-db-copyright-information table th,
-.field--name-field-cas-db-copyright-statement table th {
-  background: #494f57;
-  color: white;
-  padding: 0.5em;
-}
-.field--name-field-db-copyright-information table td,
-.field--name-field-cas-db-copyright-statement table td {
-  vertical-align: top;
-  border-bottom: none;
-  padding-top: 1em;
-}
-.field--name-field-db-copyright-information table td ul,
-.field--name-field-cas-db-copyright-statement table td ul {
-  margin-left: 1.5em;
-}
-.field--name-field-db-copyright-information table td li,
-.field--name-field-cas-db-copyright-statement table td li {
-  list-style: disc;
-  margin-bottom: 1em;
-}
-
-.field--name-field-db-copyright-information p {
-  margin: 1em 0 2em;
 }
 
 fieldset {

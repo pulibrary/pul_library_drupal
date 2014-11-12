@@ -63,6 +63,9 @@
 }
 
 .calendar-calendar {
+	.library-hours-status {
+		display: none;
+	}
 	th.days {
 		padding: 10px 20px 10px 20px;
 		color: rgb(51,51,51);
@@ -184,4 +187,29 @@ div.view-content > table.views-table > tbody > tr > td {
 	td.views-field-field-open-hours {
 		text-align: right;
 	}
+}
+
+.calendar-calendar td span.date-display-single, 
+.calendar-calendar td span.date-display-start,
+.calendar-calendar td span.date-display-end {
+	font-weight: normal;
+}
+
+.calendar-calendar .month-view .full td.date-box.today,
+.calendar-calendar .month-view .full td.single-day.today {
+	background: $orange-light;
+}
+
+.calendar-calendar .month-view .full td.date-box.today {
+	border: 2px solid $orange;
+	border-bottom: none;
+}
+
+.calendar-calendar .month-view .full td.single-day.today {
+	border: 2px solid $orange;
+	border-top: none;
+}
+
+.calendar-calendar .month-view .full tr td.single-day.today {
+	border-bottom: 2px solid $orange;
 }
