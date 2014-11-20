@@ -429,12 +429,12 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: PUL Subject Librarian (field_puluser_sublibrarian) */
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['id'] = 'field_puluser_sublibrarian_value';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['table'] = 'field_data_field_puluser_sublibrarian';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['field'] = 'field_puluser_sublibrarian_value';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['value'] = array(
-    1 => '1',
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
   );
   $handler->display->display_options['path'] = 'about/staff/specialists';
 
@@ -453,6 +453,12 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['id'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['field'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_subs_specialist_taxonomy_term']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
@@ -553,6 +559,32 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_sublibrarian']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_sublibrarian']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_sublibrarian']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Formal Name (field_puluser_formalname) */
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['id'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['table'] = 'field_data_field_puluser_formalname';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['field'] = 'field_puluser_formalname_value';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator_id'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['label'] = 'Formal Name (field_puluser_formalname)';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['operator'] = 'field_puluser_formalname_value_op';
+  $handler->display->display_options['filters']['field_puluser_formalname_value']['expose']['identifier'] = 'field_puluser_formalname_value';
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
+  );
 
   /* Display: PUL Library User Directory */
   $handler = $view->new_display('page', 'PUL Library User Directory', 'page_1');
@@ -980,13 +1012,6 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: PUL Subject Librarian (field_puluser_sublibrarian) */
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['id'] = 'field_puluser_sublibrarian_value';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['table'] = 'field_data_field_puluser_sublibrarian';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['field'] = 'field_puluser_sublibrarian_value';
-  $handler->display->display_options['filters']['field_puluser_sublibrarian_value']['value'] = array(
-    1 => '1',
-  );
   /* Filter criterion: Taxonomy term: Hide on Specialist Page (field_subs_hide_on_specialist) */
   $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['id'] = 'field_subs_hide_on_specialist_value';
   $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['table'] = 'field_data_field_subs_hide_on_specialist';
@@ -995,6 +1020,13 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['value'] = array(
     1 => '1',
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
   );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;

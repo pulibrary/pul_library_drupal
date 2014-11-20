@@ -61,6 +61,8 @@ staff/committees/letc',
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -255,6 +257,41 @@ staff/committees/letc',
     $pane->uuid = '53305f6e-e583-43da-aabc-91e54af4fb45';
     $display->content['new-53305f6e-e583-43da-aabc-91e54af4fb45'] = $pane;
     $display->panels['first'][7] = 'new-53305f6e-e583-43da-aabc-91e54af4fb45';
+    $pane = new stdClass();
+    $pane->pid = 'new-7bbc463c-ba87-43d4-a95d-48ed56016543';
+    $pane->panel = 'first';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_staff_with_terms';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'field_collection_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+        'add' => 'Add',
+        'description' => 1,
+        'view_mode' => 'full',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '7bbc463c-ba87-43d4-a95d-48ed56016543';
+    $display->content['new-7bbc463c-ba87-43d4-a95d-48ed56016543'] = $pane;
+    $display->panels['first'][8] = 'new-7bbc463c-ba87-43d4-a95d-48ed56016543';
     $pane = new stdClass();
     $pane->pid = 'new-e2135caa-6fab-4e62-8f97-212f5be38338';
     $pane->panel = 'second';
@@ -1615,7 +1652,7 @@ services/privileges/*',
     $pane->configuration = array(
       'links' => 1,
       'no_extras' => 1,
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'identifier' => '',
       'link' => 1,

@@ -48,20 +48,16 @@ foreach ($day_names as $key => $value) {
       <tbody> 
         <tr>
           <?php foreach ($rows['singleday_buckets'] as $day): ?>
-            <td class="calendar-agenda-items single-day">
-              <!-- <div class="calendar"> -->
-                <!-- <div class="inner"> -->
-                   <?php if (count($day)==0): ?>
-                   		<div class="tba">TBA</div>
-                   <?php else: ?>
-                   	<?php foreach($day as $theDay): ?>
-                   		<?php foreach($theDay as $item): ?>
-                     		<?php print $item['entry'];?>
-                   		<?php endforeach;?>
-                   	<?php endforeach;?>
-                   <?php endif;?>
-                <!-- </div> -->
-              <!-- </div> -->
+            <td class="calendar-agenda-items single-day <?php print $class; ?>">
+               <?php if (count($day)==0): ?>
+               		<div class="tba">TBA</div>
+               <?php else: ?>
+               	<?php foreach($day as $theDay): ?>
+               		<?php foreach($theDay as $item): ?>
+                 		<?php print $item['entry'];?>
+               		<?php endforeach;?>
+               	<?php endforeach;?>
+               <?php endif;?>
             </td>
           <?php endforeach; ?>
         </tr>   

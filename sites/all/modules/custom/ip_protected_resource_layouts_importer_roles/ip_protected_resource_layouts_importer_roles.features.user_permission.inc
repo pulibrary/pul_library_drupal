@@ -14,6 +14,7 @@ function ip_protected_resource_layouts_importer_roles_user_default_permissions()
   $permissions['create ip_protected_db_resource content'] = array(
     'name' => 'create ip_protected_db_resource content',
     'roles' => array(
+      'DMG Manager' => 'DMG Manager',
       'IP Resource Manager' => 'IP Resource Manager',
     ),
     'module' => 'node',
@@ -32,6 +33,7 @@ function ip_protected_resource_layouts_importer_roles_user_default_permissions()
   $permissions['delete own ip_protected_db_resource content'] = array(
     'name' => 'delete own ip_protected_db_resource content',
     'roles' => array(
+      'DMG Manager' => 'DMG Manager',
       'IP Resource Manager' => 'IP Resource Manager',
     ),
     'module' => 'node',
@@ -41,6 +43,7 @@ function ip_protected_resource_layouts_importer_roles_user_default_permissions()
   $permissions['edit any ip_protected_db_resource content'] = array(
     'name' => 'edit any ip_protected_db_resource content',
     'roles' => array(
+      'DMG Manager' => 'DMG Manager',
       'IP Resource Manager' => 'IP Resource Manager',
     ),
     'module' => 'node',
@@ -50,6 +53,7 @@ function ip_protected_resource_layouts_importer_roles_user_default_permissions()
   $permissions['edit own ip_protected_db_resource content'] = array(
     'name' => 'edit own ip_protected_db_resource content',
     'roles' => array(
+      'DMG Manager' => 'DMG Manager',
       'IP Resource Manager' => 'IP Resource Manager',
     ),
     'module' => 'node',

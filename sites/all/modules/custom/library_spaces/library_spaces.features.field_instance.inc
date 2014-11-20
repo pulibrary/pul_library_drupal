@@ -342,6 +342,7 @@ function library_spaces_field_default_field_instances() {
     'label' => 'Reservation Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -354,6 +355,7 @@ function library_spaces_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'value',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => 'Reserve',
       'url' => 0,
@@ -407,6 +409,7 @@ function library_spaces_field_default_field_instances() {
     'label' => 'Reservation Schedule',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -419,6 +422,7 @@ function library_spaces_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'value',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => 'Reservation Schedule',
       'url' => 0,
