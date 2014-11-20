@@ -4,9 +4,12 @@
  * Implementation of hook_enable().
  */
 function fast_404_enable() {
-  $bootstrap = 1;
-  $weight = -1000;
-  $type = 'module';
-  $name = 'fast_404';
-  db_query("UPDATE {system} SET bootstrap = %d, weight = %d WHERE name = '%s' AND type = '%s'", $bootstrap, $weight, $name, $type); 
+  db_update('system')
+    ->fields(array(
+      'bootstrap' => 1,
+      'weight' => -1000,
+    ))
+    ->condition('name', 'fast_404')
+    ->condition('type', 'module')
+    ->execute();
 }
