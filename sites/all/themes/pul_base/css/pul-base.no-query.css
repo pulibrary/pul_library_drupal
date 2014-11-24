@@ -688,9 +688,6 @@ h3 {
   color: white;
 }
 
-.calendar-calendar .library-hours-status {
-  display: none;
-}
 .calendar-calendar th.days {
   padding: 10px 20px 10px 20px;
   color: #333333;
