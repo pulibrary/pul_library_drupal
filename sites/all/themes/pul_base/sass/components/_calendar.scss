@@ -63,7 +63,7 @@
 }
 
 .calendar-calendar {
-	.library-hours-status {
+	.hours-status-Open {
 		display: none;
 	}
 	th.days {
@@ -167,6 +167,12 @@ div.view-content > table.views-table > tbody > tr > td {
 		@include adjust-font-size-to(14px);
 	}
 
+}
+
+.four_five_three_stacked-region--first {
+		.hours-status-Open {
+			display: none;
+		}
 }
 
 .library-hours {

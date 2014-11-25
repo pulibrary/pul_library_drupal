@@ -245,6 +245,10 @@ input[type="submit"] {
 }
 
 /* No files to import found in abstractions/**\/* */
+a:hover, a:active {
+  outline: none;
+}
+
 .field__label {
   font-weight: bold;
 }
@@ -688,7 +692,7 @@ h3 {
   color: white;
 }
 
-.calendar-calendar .library-hours-status {
+.calendar-calendar .hours-status-Open {
   display: none;
 }
 .calendar-calendar th.days {
@@ -791,6 +795,10 @@ div.view-content > table.views-table > tbody > tr > td p {
   font-size: 0.875rem;
   line-height: 24px;
   line-height: 1.5rem;
+}
+
+.four_five_three_stacked-region--first .hours-status-Open {
+  display: none;
 }
 
 .library-hours tr.even {
