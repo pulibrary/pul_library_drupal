@@ -506,6 +506,9 @@ h3 {
   min-height: 50px;
   border-top: 5px solid #e87511;
 }
+.wrapper--branding h1.site-name {
+  display: none;
+}
 
 .l-branding .homepage-tab-form-message {
   display: none;
