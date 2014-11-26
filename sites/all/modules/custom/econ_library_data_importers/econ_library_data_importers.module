@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Econ Library Data Importers feature.
+ */
+
+include_once 'econ_library_data_importers.features.inc';
