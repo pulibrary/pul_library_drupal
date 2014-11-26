@@ -62,32 +62,48 @@
 	}
 }
 
-.calendar-calendar {
-	.hours-status-Open {
-		display: none;
+.view-library-hours {
+
+	table {
+		margin: 0;
 	}
+
 	th.days {
 		padding: 10px 20px 10px 20px;
-		color: rgb(51,51,51);
+		background: $gray-light;
+		color: $gray-dark;
+		border: 1px solid #ccc;
+		text-align: center;
 	}
-	.week-view .full td.multi-day div.weekview {
-		background: none;
-		color: $black;
-		font-size: $font-size-smaller;
+
+	td.single-day,
+	td.date-box {
+		border: 1px solid #ccc;
+		padding: 0.7em 1em;
+		box-sizing: border-box;
+		vertical-align: top;
 	}
-	.week-view .full td.multi-day .inner .weekview .cutoff {
-		background: none;
+
+	.month-view td.date-box {
+		border-bottom: none;
+		padding-bottom: 0;
+		text-align: right;
+		font-weight: bold;
 	}
+	.month-view td.single-day {
+		border-top: none;
+	}
+
+	.empty {
+		background: lighten($gray-light,1);
+	}
+
 }
 
-.calendar-calendar .month-view .full td.single-day div.monthview, 
-.calendar-calendar .week-view .full td.single-day div.weekview, 
-.calendar-calendar .day-view .full td.single-day div.dayview {
-	background: none;
-}
 
-.calendar-calendar div.calendar {
-	font-size: $font-size-base;
+.views-field-field-open-hours .is-Open,
+.library-hours-status .is-Open {
+	display: none;
 }
 
 .library-hours .date-nav-wrapper .date-next i {
@@ -133,89 +149,43 @@ div.view-content > table.views-table > tbody > tr > td {
 	}
 }
 
-.front {
-	div.view-content > table.views-table > tbody > tr > td {
-	@include adjust-font-size-to(16px);
-
-	p {
-		margin: 0.5em 0;
-	}
-}
-}
-
-.pul_base_nine_three-region--second .view-library-hours {
-
-	.view-header .date-nav-wrapper .date-heading h3 {
-		@include adjust-font-size-to(16px);
-	}
-	
-	.view-content table {
-		margin-top: 0;
-	}
-
-	.date-heading {
-		width: 70%;
-		display: block;
-		margin: 0 auto;
-	}
-
-	.views-field.views-field-field-open-hours-1 {
-		width: 40%;
-	}
-
-	.view-content td {
-		@include adjust-font-size-to(14px);
-	}
-
-}
-
-.four_five_three_stacked-region--first {
-		.hours-status-Open {
-			display: none;
-		}
-}
-
-.library-hours {
-
-	tr.even {
-		background: none;
-		border-top: 1px solid #ddd;
-	}
-	tr.odd > td {
-		background: $gray-light;
-	}
-	td {
-		padding: 0.5em;
-	}
-	td.views-field-title {
-		width: 60%;
-	}
-	td.views-field-field-open-hours {
-		text-align: right;
-	}
-}
-
 .calendar-calendar td span.date-display-single, 
 .calendar-calendar td span.date-display-start,
 .calendar-calendar td span.date-display-end {
+	
 	font-weight: normal;
+
+}
+
+.calendar-calendar td.empty {
+
+	color: darken($gray-light, 10);
+
 }
 
 .calendar-calendar .month-view .full td.date-box.today,
 .calendar-calendar .month-view .full td.single-day.today {
+
 	background: $orange-light;
+
 }
 
 .calendar-calendar .month-view .full td.date-box.today {
+
 	border: 2px solid $orange;
 	border-bottom: none;
+
 }
 
 .calendar-calendar .month-view .full td.single-day.today {
+
 	border: 2px solid $orange;
 	border-top: none;
+
 }
 
 .calendar-calendar .month-view .full tr td.single-day.today {
+
 	border-bottom: 2px solid $orange;
+
 }
