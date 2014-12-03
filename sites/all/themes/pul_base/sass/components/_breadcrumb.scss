@@ -6,7 +6,7 @@
 }
 
 .breadcrumb { 
-  $breadcrumb-border-color: #ffffff;
+  $breadcrumb-border-color: $white;
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
   $breadcrumb-height: $base-line-height;
   $breadcrumb-arrow-color: $breadcrumb-border-color;

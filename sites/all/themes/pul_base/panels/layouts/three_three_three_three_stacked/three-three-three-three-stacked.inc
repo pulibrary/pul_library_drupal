@@ -24,7 +24,7 @@ $plugin = array(
 /**
  * Implements hook_preprocess_pul_base_nine_three().
  */
-function template_preprocess_pul_base_four_four_four_stacked(&$variables) {
+function template_preprocess_three_three_three_three_stacked(&$variables) {
   $variables['attributes_array']['class'][] = 'panel-display';
   $variables['attributes_array']['class'][] = 'panel-display--three_three_three_three_stacked';
 

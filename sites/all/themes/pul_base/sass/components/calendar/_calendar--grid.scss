@@ -2,7 +2,7 @@
 
 	.view-header {
 		border-top: none;
-		border-right: 2px solid #fff;
+		border-right: 2px solid $white;
 		border-left: none;
 		border-bottom: 1px solid #999;
 		border: 1px solid black;
@@ -27,7 +27,7 @@
 			background: none;
 			padding: 0px 4px;
 			@include border-radius(4px);
-			color: white;
+			color: $white;
 			text-decoration: none;
 			vertical-align: middle;
 			position: absolute;
@@ -57,7 +57,7 @@
 		z-index: 0;
 
 		h3 {
-			color: white;
+			color: $white;
 		}
 	}
 }
@@ -128,7 +128,7 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	color: white;
+	color: $white;
 	text-decoration: none;
 	vertical-align: middle;
 }

@@ -17,10 +17,10 @@
 
 .button--libraryh3lp__online {
     background-color: $orange;
-    color: #fff;
+    color: $white;
 
     &:hover {
-        color: white;
+        color: $white;
         background: lighten($orange, 8);
     }
 }

@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 44em) {
-  .three_three_three_three-region--first {
+  .three_three_three_three_stacked-region--first {
     width: 22.41379%;
     float: left;
     margin-right: -100%;
@@ -25,34 +25,34 @@
     clear: none;
     clear: both;
     margin-left: 0;
-    margin-right: 2.5%;
+    margin-right: 1.72%;
   }
 
-  .three_three_three_three-region--second {
+  .three_three_three_three_stacked-region--second {
     width: 22.41379%;
     float: left;
     margin-right: -100%;
     margin-left: 25.86207%;
     clear: none;
-    margin: 0 2.5%;
+    margin: 0 1.72%;
   }
 
-  .three_three_three_three-region--third {
+  .three_three_three_three_stacked-region--third {
     width: 22.41379%;
     float: left;
     margin-right: -100%;
     margin-left: 51.72414%;
     clear: none;
-    margin-left: 2.5%;
+    margin: 0 1.72%;
   }
 
-  .three_three_three_three-region--fourth {
+  .three_three_three_three_stacked-region--fourth {
     width: 22.41379%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    margin-left: 2.5%;
+    margin-left: 1.72%;
     margin-right: 0;
   }
 }
