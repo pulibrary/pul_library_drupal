@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Econ Library Content Types feature.
+ */
+
+include_once 'pul_econ_library_content_types.features.inc';

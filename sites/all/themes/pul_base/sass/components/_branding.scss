@@ -3,6 +3,10 @@
     background-color: #494f57;
     min-height: 50px;
     border-top: 5px solid $orange;
+
+    h1.site-name {
+      display: none;
+    }
 }
 
 .l-branding {

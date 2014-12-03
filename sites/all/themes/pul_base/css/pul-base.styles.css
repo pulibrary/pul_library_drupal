@@ -21,13 +21,13 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25em;
   margin: 0;
   text-rendering: optimizeLegibility;
@@ -115,7 +115,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
 }
 
@@ -143,7 +143,7 @@ select[multiple=multiple] {
   border-radius: 0.1875em;
   border: 1px solid #dddddd;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em 0.5em;
@@ -378,7 +378,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Droid Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: normal;
 }
 
@@ -505,6 +505,9 @@ h3 {
   background-color: #494f57;
   min-height: 50px;
   border-top: 5px solid #e87511;
+}
+.wrapper--branding h1.site-name {
+  display: none;
 }
 
 .l-branding .homepage-tab-form-message {
@@ -634,213 +637,6 @@ h3 {
 }
 .breadcrumb a:hover:after {
   border-left-color: #e8e6df;
-}
-
-.view-library-hours .view-header {
-  border-top: none;
-  border-right: 2px solid #fff;
-  border-left: none;
-  border-bottom: 1px solid #999;
-  border: 1px solid black;
-  background-color: #e87511;
-  margin-bottom: 0;
-  height: auto;
-}
-
-.view .date-nav-wrapper {
-  position: relative;
-  margin-top: 5px;
-  width: 100%;
-}
-.view .date-nav-wrapper .date-nav {
-  padding-bottom: 0.5em;
-  margin-bottom: 0;
-}
-.view .date-nav-wrapper .date-nav .date-prev, .view .date-nav-wrapper .date-nav .date-next {
-  margin-top: 3px;
-  background: none;
-  padding: 0px 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  color: white;
-  text-decoration: none;
-  vertical-align: middle;
-  position: absolute;
-  top: -4px;
-  width: 30px;
-  height: 25px;
-  text-align: center;
-}
-.view .date-nav-wrapper .date-nav .date-prev {
-  float: left;
-  right: 0;
-  left: 20px;
-}
-.view .date-nav-wrapper .date-nav .date-next {
-  float: right;
-  right: 20px;
-}
-.view .date-nav-wrapper .date-heading {
-  position: relative;
-  width: 100%;
-  top: 0px;
-  text-align: center;
-  z-index: 0;
-}
-.view .date-nav-wrapper .date-heading h3 {
-  color: white;
-}
-
-.calendar-calendar .hours-status-Open {
-  display: none;
-}
-.calendar-calendar th.days {
-  padding: 10px 20px 10px 20px;
-  color: #333333;
-}
-.calendar-calendar .week-view .full td.multi-day div.weekview {
-  background: none;
-  color: black;
-  font-size: 0.75rem;
-}
-.calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff {
-  background: none;
-}
-
-.calendar-calendar .month-view .full td.single-day div.monthview,
-.calendar-calendar .week-view .full td.single-day div.weekview,
-.calendar-calendar .day-view .full td.single-day div.dayview {
-  background: none;
-}
-
-.calendar-calendar div.calendar {
-  font-size: 0.875rem;
-}
-
-.library-hours .date-nav-wrapper .date-next i {
-  margin-left: 0;
-}
-
-.library-hours .date-nav-wrapper .date-prev a,
-.library-hours .date-nav-wrapper .date-next a {
-  font-size: 18px;
-  padding: 0 0 0 0;
-  margin: -2px 0 0 0;
-  line-height: 90%;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
-.library-hours .date-nav-wrapper .date-next,
-.library-hours .date-nav-wrapper .date-prev {
-  margin-top: 3px;
-  padding: 0px 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  color: white;
-  text-decoration: none;
-  vertical-align: middle;
-}
-
-.library-hours .date-nav-wrapper .date-prev i {
-  margin-left: -5px;
-}
-
-.single-region--middle .pane-term-description p {
-  margin-top: 0;
-}
-
-div.view-content > table.views-table > tbody > tr > td {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-div.view-content > table.views-table > tbody > tr > td p {
-  margin: 0.5em 0;
-}
-
-.front div.view-content > table.views-table > tbody > tr > td {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-.front div.view-content > table.views-table > tbody > tr > td p {
-  margin: 0.5em 0;
-}
-
-.pul_base_nine_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-.pul_base_nine_three-region--second .view-library-hours .view-content table {
-  margin-top: 0;
-}
-.pul_base_nine_three-region--second .view-library-hours .date-heading {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-}
-.pul_base_nine_three-region--second .view-library-hours .views-field.views-field-field-open-hours-1 {
-  width: 40%;
-}
-.pul_base_nine_three-region--second .view-library-hours .view-content td {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-
-.four_five_three_stacked-region--first .hours-status-Open {
-  display: none;
-}
-
-.library-hours tr.even {
-  background: none;
-  border-top: 1px solid #ddd;
-}
-.library-hours tr.odd > td {
-  background: #f5f4f1;
-}
-.library-hours td {
-  padding: 0.5em;
-}
-.library-hours td.views-field-title {
-  width: 60%;
-}
-.library-hours td.views-field-field-open-hours {
-  text-align: right;
-}
-
-.calendar-calendar td span.date-display-single,
-.calendar-calendar td span.date-display-start,
-.calendar-calendar td span.date-display-end {
-  font-weight: normal;
-}
-
-.calendar-calendar .month-view .full td.date-box.today,
-.calendar-calendar .month-view .full td.single-day.today {
-  background: #fff7f3;
-}
-
-.calendar-calendar .month-view .full td.date-box.today {
-  border: 2px solid #e87511;
-  border-bottom: none;
-}
-
-.calendar-calendar .month-view .full td.single-day.today {
-  border: 2px solid #e87511;
-  border-top: none;
-}
-
-.calendar-calendar .month-view .full tr td.single-day.today {
-  border-bottom: 2px solid #e87511;
 }
 
 .field--name-field-ip-db-username,
@@ -1390,7 +1186,7 @@ table caption {
 .libraryh3lp .button--libraryh3lp {
   margin-left: 1em;
   font-size: 0.6rem;
-  font-family: "Droid Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
   font-weight: bold;
   border: none;
@@ -1406,7 +1202,7 @@ table caption {
 
 .button--libraryh3lp__online {
   background-color: #e87511;
-  color: #fff;
+  color: white;
 }
 .button--libraryh3lp__online:hover {
   color: white;
@@ -1425,14 +1221,14 @@ table caption {
 .views-more-link,
 .node-readmore a,
 .more-link a {
-  font-family: "Droid Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
   font-weight: bold;
   font-size: 0.75rem;
   border: none;
   text-shadow: none;
   background-color: #e87511;
-  color: #fff;
+  color: white;
   padding: 3px 7px;
   text-decoration: none;
   -moz-border-radius: 3px;
@@ -1458,7 +1254,7 @@ table caption {
   border: none;
   text-shadow: none;
   background-color: #494f57;
-  color: #fff;
+  color: white;
   padding: 3px 7px;
   text-decoration: none;
   -moz-border-radius: 3px;
@@ -1496,6 +1292,248 @@ table caption {
 .service-connect-btn a:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.view-library-hours .view-header {
+  border-top: none;
+  border-right: 2px solid white;
+  border-left: none;
+  border-bottom: 1px solid #999;
+  border: 1px solid black;
+  background-color: #e87511;
+  margin-bottom: 0;
+  height: auto;
+}
+
+.view .date-nav-wrapper {
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+}
+.view .date-nav-wrapper .date-nav {
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
+.view .date-nav-wrapper .date-nav .date-prev, .view .date-nav-wrapper .date-nav .date-next {
+  margin-top: 3px;
+  background: none;
+  padding: 0px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  vertical-align: middle;
+  position: absolute;
+  top: -4px;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+}
+.view .date-nav-wrapper .date-nav .date-prev {
+  float: left;
+  right: 0;
+  left: 20px;
+}
+.view .date-nav-wrapper .date-nav .date-next {
+  float: right;
+  right: 20px;
+}
+.view .date-nav-wrapper .date-heading {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  z-index: 0;
+}
+.view .date-nav-wrapper .date-heading h3 {
+  color: white;
+}
+
+.view-library-hours table {
+  margin: 0;
+}
+.view-library-hours th.days {
+  padding: 10px 20px 10px 20px;
+  background: #f5f4f1;
+  color: #494f57;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.view-library-hours td.single-day,
+.view-library-hours td.date-box {
+  border: 1px solid #ccc;
+  padding: 0.7em 1em;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.view-library-hours .month-view td.date-box {
+  border-bottom: none;
+  padding-bottom: 0;
+  text-align: right;
+  font-weight: bold;
+}
+.view-library-hours .month-view td.single-day {
+  border-top: none;
+}
+.view-library-hours .empty {
+  background: #f7f6f4;
+}
+
+.views-field-field-open-hours .is-Open,
+.library-hours-status .is-Open {
+  display: none;
+}
+
+.library-hours .date-nav-wrapper .date-next i {
+  margin-left: 0;
+}
+
+.library-hours .date-nav-wrapper .date-prev a,
+.library-hours .date-nav-wrapper .date-next a {
+  font-size: 18px;
+  padding: 0 0 0 0;
+  margin: -2px 0 0 0;
+  line-height: 90%;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.library-hours .date-nav-wrapper .date-next,
+.library-hours .date-nav-wrapper .date-prev {
+  margin-top: 3px;
+  padding: 0px 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.library-hours .date-nav-wrapper .date-prev i {
+  margin-left: -5px;
+}
+
+.single-region--middle .pane-term-description p {
+  margin-top: 0;
+}
+
+div.view-content > table.views-table > tbody > tr > td {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+div.view-content > table.views-table > tbody > tr > td p {
+  margin: 0.5em 0;
+}
+
+.calendar-calendar td span.date-display-single,
+.calendar-calendar td span.date-display-start,
+.calendar-calendar td span.date-display-end {
+  font-weight: normal;
+}
+
+.calendar-calendar td.empty {
+  color: #e0ddd3;
+}
+
+.calendar-calendar .month-view .full td.date-box.today,
+.calendar-calendar .month-view .full td.single-day.today {
+  background: #fff7f3;
+}
+
+.calendar-calendar .month-view .full td.date-box.today {
+  border: 2px solid #e87511;
+  border-bottom: none;
+}
+
+.calendar-calendar .month-view .full td.single-day.today {
+  border: 2px solid #e87511;
+  border-top: none;
+}
+
+.calendar-calendar .month-view .full tr td.single-day.today {
+  border-bottom: 2px solid #e87511;
+}
+
+.four_five_three_stacked-region--first .is-Open {
+  display: none;
+}
+
+.front div.view-content > table.views-table > tbody > tr > td {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+.front .library-hours table {
+  margin-bottom: 1em;
+}
+.front .library-hours tr.even {
+  background: none;
+  border-top: 1px solid #ddd;
+}
+.front .library-hours tr.odd > td {
+  background: #f5f4f1;
+}
+.front .library-hours td {
+  padding: 0.5em;
+}
+.front .library-hours td.views-field-title {
+  width: 60%;
+}
+.front .library-hours td.views-field-field-open-hours {
+  text-align: right;
+}
+
+.pane-library-hours-panel-pane-2 .view-library-hours .views-field-field-open-hours {
+  text-align: right;
+}
+
+.three_six_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3,
+.pul_base_nine_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+.three_six_three-region--second .view-library-hours .date-nav-wrapper .date-prev [class^="icon-"],
+.three_six_three-region--second .view-library-hours .date-nav-wrapper .date-next [class^="icon-"],
+.pul_base_nine_three-region--second .view-library-hours .date-nav-wrapper .date-prev [class^="icon-"],
+.pul_base_nine_three-region--second .view-library-hours .date-nav-wrapper .date-next [class^="icon-"] {
+  font-size: 1.7em;
+}
+.three_six_three-region--second .view-library-hours .view-content table,
+.pul_base_nine_three-region--second .view-library-hours .view-content table {
+  margin-top: 0;
+}
+.three_six_three-region--second .view-library-hours .date-heading,
+.pul_base_nine_three-region--second .view-library-hours .date-heading {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+.three_six_three-region--second .view-library-hours .views-field.views-field-field-open-hours-1,
+.pul_base_nine_three-region--second .view-library-hours .views-field.views-field-field-open-hours-1 {
+  width: 40%;
+}
+.three_six_three-region--second .view-library-hours .view-content td,
+.pul_base_nine_three-region--second .view-library-hours .view-content td {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+.three_six_three-region--second .view-library-hours .view-content td.views-field-field-hours-library-status,
+.pul_base_nine_three-region--second .view-library-hours .view-content td.views-field-field-hours-library-status {
+  text-align: right;
+}
+.three_six_three-region--second .view-library-hours .views-field-field-hours-library-status .is-Open,
+.pul_base_nine_three-region--second .view-library-hours .views-field-field-hours-library-status .is-Open {
+  display: none;
 }
 
 .node-type-subject-specialists .views-field.views-field-mail {
@@ -1646,7 +1684,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li {
 
 ul.nice-menu.nice-menu-menu-collection-development-webs li a {
   font-size: 0.875rem;
-  color: #fff;
+  color: white;
   background: none;
   padding-right: 1.7em;
   padding-left: 1.7em;
@@ -1670,7 +1708,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs ul {
 
 ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
   padding-right: 15px;
-  color: #fff;
+  color: white;
   font-size: 1em;
   text-align: left;
 }
@@ -1690,6 +1728,10 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 
 .views-slideshow-controls-bottom {
   display: none;
+}
+
+.pane-menu-menu-pliny-fisk-library-of-econo {
+  margin-top: 1.75em;
 }
 
 .pane-menu-menu-get-help-menu .menu {
@@ -1760,7 +1802,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
-  font-family: "Droid Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
   height: 50px;
   width: 100%;
   z-index: 101;
@@ -1970,14 +2012,14 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 .three_nine-region--first .pane-menu-menu-scholarly-communications-of ul.menu li a.active {
   background: #006838;
-  color: #fff;
+  color: white;
 }
 
 .page-node-13202 .node__content a, .page-node-13199 .node__content a, .page-node-13201 .node__content a {
   color: #006838;
 }
 
-.three_six_three-region--first h2, .three_nine-region--first h2 {
+.three_six_three-region--first h2, .three_nine-region--first h2, .three_three_three_three_stacked-region--first h2 {
   font-size: 21px;
   font-size: 1.3rem;
   line-height: 36px;
@@ -1991,32 +2033,32 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
 }
-.three_six_three-region--first a, .three_nine-region--first a {
+.three_six_three-region--first a, .three_nine-region--first a, .three_three_three_three_stacked-region--first a {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.three_six_three-region--first ul.menu li a, .three_nine-region--first ul.menu li a {
+.three_six_three-region--first ul.menu li a, .three_nine-region--first ul.menu li a, .three_three_three_three_stacked-region--first ul.menu li a {
   padding: .3em;
   margin: 0;
   display: block;
 }
-.three_six_three-region--first ul.menu li a.active, .three_six_three-region--first ul.menu li.expanded a.active, .three_nine-region--first ul.menu li a.active, .three_nine-region--first ul.menu li.expanded a.active {
+.three_six_three-region--first ul.menu li a.active, .three_six_three-region--first ul.menu li.expanded a.active, .three_nine-region--first ul.menu li a.active, .three_nine-region--first ul.menu li.expanded a.active, .three_three_three_three_stacked-region--first ul.menu li a.active, .three_three_three_three_stacked-region--first ul.menu li.expanded a.active {
   background: #477dca;
   color: white;
 }
-.three_six_three-region--first ul.menu li.expanded, .three_nine-region--first ul.menu li.expanded {
+.three_six_three-region--first ul.menu li.expanded, .three_nine-region--first ul.menu li.expanded, .three_three_three_three_stacked-region--first ul.menu li.expanded {
   background: #e5edf8;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-.three_six_three-region--first ul.menu > li > a, .three_nine-region--first ul.menu > li > a {
+.three_six_three-region--first ul.menu > li > a, .three_nine-region--first ul.menu > li > a, .three_three_three_three_stacked-region--first ul.menu > li > a {
   font-size: 1.125rem;
 }
-.three_six_three-region--first ul.menu > li > ul > li > a, .three_nine-region--first ul.menu > li > ul > li > a {
+.three_six_three-region--first ul.menu > li > ul > li > a, .three_nine-region--first ul.menu > li > ul > li > a, .three_three_three_three_stacked-region--first ul.menu > li > ul > li > a {
   font-size: 0.875rem;
   padding-left: 2em;
 }
-.three_six_three-region--first ul.menu > li > ul > li > ul > li > a, .three_nine-region--first ul.menu > li > ul > li > ul > li > a {
+.three_six_three-region--first ul.menu > li > ul > li > ul > li > a, .three_nine-region--first ul.menu > li > ul > li > ul > li > a, .three_three_three_three_stacked-region--first ul.menu > li > ul > li > ul > li > a {
   padding-left: 4em;
 }
 
@@ -2163,7 +2205,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 
 body.faq .views-accordion-header, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  background-color: #FFF;
+  background-color: white;
   border-bottom: 1px dotted #f5f4f1;
   padding: 0.1em;
 }
@@ -2188,7 +2230,7 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  background: #FFF;
+  background: white;
   border: none;
   border-bottom: 1px dotted #f5f4f1;
   padding: 0.1em;
@@ -3376,6 +3418,137 @@ $desk : 1250px;
     margin-right: 0%;
     clear: both;
     margin-left: 0;
+    margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_three_three_three.layout.scss
+ *
+ * Styling of the "PUL" 3-3-3-3 column layout..
+ ******************************************************************************/
+.panel-display--three_three_three_three {
+  *zoom: 1;
+}
+.panel-display--three_three_three_three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_three_three_three-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .three_three_three_three_stacked-region--first {
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+    margin-right: 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--second {
+    -sgs-span-settings: ("span": 3, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--third {
+    -sgs-span-settings: ("span": 3, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--fourth {
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 1.72%;
+    margin-right: 0;
+  }
+}
+/*******************************************************************************
+ * three_three_three_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 3-3-3-3 column layout..
+ ******************************************************************************/
+.panel-display--three_three_three_three_stacked {
+  *zoom: 1;
+}
+.panel-display--three_three_three_three_stacked:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_three_three_three_stacked-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .three_three_three_three_stacked-region--top {
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .three_three_three_three_stacked-region--first {
+    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    clear: both;
+    margin-left: 0;
+    margin-right: 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--second {
+    -sgs-span-settings: ("span": 3, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--third {
+    -sgs-span-settings: ("span": 3, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: left;
+    margin-left: 1.66667%;
+    margin-right: 1.66667%;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--fourth {
+    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
+    width: 21.66667%;
+    clear: right;
+    float: right;
+    margin-left: 0;
+    margin-right: 1.66667%;
+    margin-left: 1.72%;
     margin-right: 0;
   }
 }
