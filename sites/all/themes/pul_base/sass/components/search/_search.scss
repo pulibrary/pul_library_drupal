@@ -54,7 +54,7 @@
 		text-align: left;
 		background: $gray-dark;
 		border-right: none;
-		color: white;
+		color: $white;
 		font-family: $font-sans;
 
 		@include breakpoint($tab) {

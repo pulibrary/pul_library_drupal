@@ -1,0 +1,51 @@
+/*******************************************************************************
+ * three_three_three_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 3-3-3-3 column layout..
+ ******************************************************************************/
+
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/grids";
+
+.panel-display--three_three_three_three_stacked {
+  @include pie-clearfix;
+}
+
+.three_three_three_three_stacked-region {
+  margin-bottom: $vert-spacing-unit;
+}
+
+@include breakpoint($tab) {
+
+  .three_three_three_three_stacked-region--top {
+    width: 100%;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .three_three_three_three_stacked-region--first {
+    @include grid-span(3,1);
+    clear: both;
+    margin-left: 0;
+    margin-right: 1.72%;
+  }
+   .three_three_three_three_stacked-region--second {
+    @include grid-span(3,4);
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--third {
+    @include grid-span(3,7);
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--fourth {
+    @include grid-span(3,10);
+    margin-left: 1.72%;
+    margin-right: 0;
+  }
+
+}

@@ -117,19 +117,33 @@ include_once('./sites/all/modules/fast_404/fast_404.inc');
 # will get a fast 404.
 # Default extension list, this is considered safe and is even in queue for
 # Drupal 8 (see: http://drupal.org/node/76824).
-$conf['fast_404_exts'] = '/[^robots]\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+$conf['fast_404_exts'] = '/^(?!robots).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+
+# If you use a private file system use the conf variable below and change the 
+# 'sites/default/private' to your actual private files path
+# $conf['fast_404_exts'] = '/^(?!robots)^(?!sites/default/private).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+
+# If you would prefer a stronger version of NO then return a 410 instead of a
+# 404. This informs clients that not only is the resource currently not present
+# but that it is not coming back and kindly do not ask again for it.
+# Reference: http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+# $conf['fast_404_return_gone'] = TRUE;
 
 # Allow anonymous users to hit URLs containing 'imagecache' even if the file
 # does not exist. TRUE is default behavior. If you know all imagecache
 # variations are already made set this to FALSE.
 $conf['fast_404_allow_anon_imagecache'] = TRUE;
 
+# If you use FastCGI, uncomment this line to send the type of header it needs.
+# Reference: http://php.net/manual/en/function.header.php
+# $conf['fast_404_HTTP_status_method'] = 'FastCGI';
+
 # Extension list requiring whitelisting to be activated **If you use this
 # without whitelisting enabled your site will not load!
 //$conf['fast_404_exts'] = '/\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp|php|html?|xml)$/i';
 
 # Default fast 404 error message.
-$conf['fast_404_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
+$conf['fast_404_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
 
 # Check paths during bootstrap and see if they are legitimate.
 $conf['fast_404_path_check'] = FALSE;

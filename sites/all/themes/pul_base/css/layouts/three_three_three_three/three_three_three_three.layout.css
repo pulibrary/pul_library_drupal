@@ -1,0 +1,58 @@
+/*******************************************************************************
+ * three_three_three_three.layout.scss
+ *
+ * Styling of the "PUL" 3-3-3-3 column layout..
+ ******************************************************************************/
+.panel-display--three_three_three_three {
+  *zoom: 1;
+}
+.panel-display--three_three_three_three:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three_three_three_three-region {
+  margin-bottom: 18px;
+}
+
+@media (min-width: 44em) {
+  .three_three_three_three_stacked-region--first {
+    width: 22.41379%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    clear: both;
+    margin-left: 0;
+    margin-right: 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--second {
+    width: 22.41379%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 25.86207%;
+    clear: none;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--third {
+    width: 22.41379%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 51.72414%;
+    clear: none;
+    margin: 0 1.72%;
+  }
+
+  .three_three_three_three_stacked-region--fourth {
+    width: 22.41379%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    margin-left: 1.72%;
+    margin-right: 0;
+  }
+}

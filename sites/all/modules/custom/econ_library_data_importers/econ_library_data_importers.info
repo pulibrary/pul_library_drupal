@@ -1,0 +1,14 @@
+name = Econ Library Data Importers
+description = Econ Library Data Importers
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = econ_library_data_importers
+dependencies[] = ctools
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = econ_library_company_directories
+features[feeds_importer][] = econ_library_stock_exchange_holdings
+features[feeds_importer][] = econ_working_papers
+mtime = 1416938232

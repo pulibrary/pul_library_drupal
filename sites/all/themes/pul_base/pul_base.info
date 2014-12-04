@@ -43,26 +43,10 @@ regions[footer] = Footer
 ; ========================================
 ; Fonts
 ; ========================================
-fonts[google_fonts_api][] = Arvo&subset=latin#700
-fonts[google_fonts_api][] = Arvo&subset=latin#700italic
-fonts[google_fonts_api][] = Arvo&subset=latin#italic
-fonts[google_fonts_api][] = Arvo&subset=latin#regular
 fonts[google_fonts_api][] = Droid Serif&subset=latin#700
 fonts[google_fonts_api][] = Droid Serif&subset=latin#700italic
 fonts[google_fonts_api][] = Droid Serif&subset=latin#italic
 fonts[google_fonts_api][] = Droid Serif&subset=latin#regular
-fonts[google_fonts_api][] = PT Sans&subset=latin#700
-fonts[google_fonts_api][] = PT Sans&subset=latin#700italic
-fonts[google_fonts_api][] = PT Sans Caption&subset=latin#700
-fonts[google_fonts_api][] = PT Sans Caption&subset=latin#regular
-fonts[google_fonts_api][] = PT Sans&subset=latin#italic
-fonts[google_fonts_api][] = PT Sans Narrow&subset=latin#700
-fonts[google_fonts_api][] = PT Sans Narrow&subset=latin#regular
-fonts[google_fonts_api][] = PT Sans&subset=latin#regular
-fonts[google_fonts_api][] = Roboto Condensed&subset=latin#italic
-fonts[google_fonts_api][] = Roboto Condensed&subset=latin-ext#italic
-fonts[google_fonts_api][] = Roboto Condensed&subset=latin#regular
-fonts[google_fonts_api][] = Roboto Condensed&subset=latin-ext#regular
 fonts[google_fonts_api][] = Roboto&subset=latin#italic
 fonts[google_fonts_api][] = Roboto&subset=latin-ext#italic
 fonts[google_fonts_api][] = Roboto&subset=latin#regular
@@ -83,18 +67,15 @@ settings[toggle_secondary_menu] = 0
 settings[omega_toggle_front_page_content] = 1
 settings[default_logo] = 0
 settings[logo_path] = public://pul_logo_0.png
+settings[logo_upload] = ""
 settings[default_favicon] = 0
 settings[favicon_path] = public://libicon.ico
 settings[favicon_upload] = ""
 settings[omega_enable_warning] = 1
-settings[omega_toggle_extension_assets] = 1
-settings[omega_css_exclude][] = omega/omega/css/modules/system/system.theme.css
-settings[omega_css_exclude][] = panels/plugins/layouts/twocol/twocol.css
-settings[omega_libraries][selectivizr][status] = 1
-settings[omega_libraries][respond][status] = 1
-settings[omega_libraries][pie][status] = 1
-settings[omega_libraries][html5shiv][status] = 1
+settings[omega_toggle_extension_layouts] = 0
+settings[omega_layout] = divine
 settings[omega_toggle_extension_development] = 1
+settings[omega_enable_export_reminder] = 1
 settings[omega_rebuild_theme_registry] = 0
 settings[omega_rebuild_aggregates] = 0
 settings[omega_browser_width_indicator] = 0
@@ -103,8 +84,6 @@ settings[omega_livereload_script] = http://localhost:35729/livereload.js
 settings[omega_livereload_host] = localhost
 settings[omega_livereload_port] = 35729
 settings[omega_demo_regions] = 0
-settings[omega_toggle_extension_layouts] = 0
-settings[omega_layout] = divine
 settings[omega_toggle_extension_compatibility] = 1
 settings[omega_conditional_classes_html] = 1
 settings[omega_apple_touch] = 1
@@ -114,7 +93,16 @@ settings[omega_mobile_optimized] = 1
 settings[omega_viewport] = 1
 settings[omega_viewport_user_scaleable] = 1
 settings[omega_chrome_edge] = 1
-settings[omega_chrome_popup] = 0
-settings[omega_chrome_notice] = 0
+settings[omega_toggle_extension_assets] = 1
+settings[omega_css_exclude][] = omega/omega/css/modules/system/system.theme.css
+settings[omega_css_exclude][] = panels/plugins/layouts/twocol/twocol.css
+settings[omega_css_exclude][] = calendar/css/calendar-overlap-no-scroll.css
+settings[omega_css_exclude][] = calendar/css/calendar-overlap.css
+settings[omega_css_exclude][] = calendar/css/calendar.css
+settings[omega_css_exclude][] = calendar/css/calendar_multiday.css
+settings[omega_libraries][selectivizr][status] = 1
+settings[omega_libraries][respond][status] = 1
+settings[omega_libraries][pie][status] = 1
+settings[omega_libraries][html5shiv][status] = 1
 settings[nice_menus_custom_css] = ""
 settings[favicon_mimetype] = image/vnd.microsoft.icon

@@ -2,7 +2,7 @@
 
 	.view-header {
 		border-top: none;
-		border-right: 2px solid #fff;
+		border-right: 2px solid $white;
 		border-left: none;
 		border-bottom: 1px solid #999;
 		border: 1px solid black;
@@ -27,7 +27,7 @@
 			background: none;
 			padding: 0px 4px;
 			@include border-radius(4px);
-			color: white;
+			color: $white;
 			text-decoration: none;
 			vertical-align: middle;
 			position: absolute;
@@ -57,31 +57,53 @@
 		z-index: 0;
 
 		h3 {
-			color: white;
+			color: $white;
 		}
 	}
 }
 
-.calendar-calendar {
+.view-library-hours {
+
+	table {
+		margin: 0;
+	}
 
 	th.days {
 		padding: 10px 20px 10px 20px;
+		background: $gray-light;
 		color: $gray-dark;
+		border: 1px solid #ccc;
+		text-align: center;
+	}
+
+	td.single-day,
+	td.date-box {
+		border: 1px solid #ccc;
+		padding: 0.7em 1em;
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+
+	.month-view td.date-box {
+		border-bottom: none;
+		padding-bottom: 0;
+		text-align: right;
+		font-weight: bold;
+	}
+	.month-view td.single-day {
+		border-top: none;
+	}
+
+	.empty {
+		background: lighten($gray-light,1);
 	}
 
 }
 
-.calendar-calendar div.calendar {
-	font-size: $font-size-base;
-	float: none;
 
-	.contents {
-		padding: 0.5em;
-	}
-
-	.library-hours-status .Open {
-		display: none;
-	}
+.views-field-field-open-hours .is-Open,
+.library-hours-status .is-Open {
+	display: none;
 }
 
 .library-hours .date-nav-wrapper .date-next i {
@@ -106,7 +128,7 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	color: white;
+	color: $white;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -130,7 +152,7 @@ div.view-content > table.views-table > tbody > tr > td {
 .calendar-calendar td span.date-display-single, 
 .calendar-calendar td span.date-display-start,
 .calendar-calendar td span.date-display-end {
-	
+
 	font-weight: normal;
 
 }
@@ -138,15 +160,6 @@ div.view-content > table.views-table > tbody > tr > td {
 .calendar-calendar td.empty {
 
 	color: darken($gray-light, 10);
-
-}
-
-.calendar-calendar .month-view .full td.single-day div.monthview, 
-.calendar-calendar .week-view .full td.single-day div.weekview, 
-.calendar-calendar .day-view .full td.single-day div.dayview {
-	
-	background: none;
-	padding: 0 0.5em 0.5em 0.5em;
 
 }
 
