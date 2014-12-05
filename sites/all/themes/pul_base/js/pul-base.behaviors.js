@@ -142,14 +142,14 @@
   // Add a Hack for TBA
   Drupal.behaviors.pulTbaHoursBehavior = {
     attach: function (context) {
-      $('.library-hours', context).once('pul', function () {
-        $('.no-entry div').each(function () {
+      $('.view-library-hours', context).once('pul', function () {
+        $('.no-entry').each(function () {
           $(this).text('TBA');
         });
       });
     }
   }
-  
+    
   Drupal.behaviors.pulTrackFooterMenuUsage = {
     attach: function (context) {
       $('.l-region--footer', context).once('pul', function () {
