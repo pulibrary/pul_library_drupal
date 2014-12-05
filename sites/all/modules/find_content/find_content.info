@@ -1,0 +1,16 @@
+name = Find Content
+description = Adds a search box to the Find Content screen
+core = 7.x
+package = Fields
+
+dependencies[] = node
+dependencies[] = field
+
+stylesheets[screen][] = find_content.css
+
+; Information added by Drupal.org packaging script on 2014-10-15
+version = "7.x-1.4"
+core = "7.x"
+project = "find_content"
+datestamp = "1413365965"
+
