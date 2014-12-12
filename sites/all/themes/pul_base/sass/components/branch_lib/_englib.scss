@@ -1,0 +1,110 @@
+.page-node-7791, .page-node-13354, .page-node-13360, .page-node-13355, .page-node-13356, .page-node-7784, .page-node-7786, .page-node-13349, .page-node-13351 {
+    .l-main {
+        padding: 0;
+    }
+    h1 {
+    display: none;
+    }
+
+    .three_six_three_stacked-region--top {
+        .pane-custom.pane-1 {
+            position: relative;
+        } 
+        h2 {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            font-size: 2rem;
+            background: rgba(255,255,255,0.7);
+            padding: 0.3em;
+            text-shadow: $white 2px 2px;
+            bottom: 0;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        p {
+            margin: 0;
+            opacity: 0.4;
+        }
+    }
+
+    .view-full-schedule {
+        margin: 1em 0;
+
+        .icon-clock {
+            margin-right: 0.25em;
+            font-size: 0.9em;
+        }
+    }
+
+    .three_six_three_stacked-region--second {
+        .view-workgroup .views-row.views-row-odd {
+            background: none;
+        }
+        .views-field-picture {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .is-Open {
+        display: none;
+    }
+    .date-heading h3 {
+        font-size: 1em;
+    }
+    .date-display-single {
+        margin-right: 1em;
+    }
+
+    
+    .pane-node-field-featured-resources {
+        display: block;
+        // float: right;
+        // box-sizing: border-box;
+        // width: 48%;
+        // margin: 0 0 0 2%;
+    }
+    .pane-node-field-long-description {
+        clear: both;
+    }
+}
+
+.pane-node-field-branch-spotlight {
+        display: block;
+        // float: left;
+        // box-sizing: border-box;
+        // width: 48%;
+        // margin: 1.25em 2% 1em 0;
+        margin-top: 1.25em;
+        position: relative;
+
+        h3.field-label {
+            display: none;
+        }
+        .node__title {
+            position: absolute;
+            top: 0;
+            height: 60px;
+            max-width: 220px;
+            font-size: 16px;
+            font-family: $font-sans;
+            margin: 0;
+            text-shadow: black 2px 2px;
+            z-index: 1;
+            line-height: 1.4em;
+
+            a {
+                color: white;
+                font-weight: bold;
+                display: block;
+                padding: 0.75em;
+                background: rgba(0,0,0,0.5);
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+        }
+        .field--name-field-spotlight-graphic img {
+            @include border-radius(4px);
+            opacity: 0.7;
+        }
+    }
