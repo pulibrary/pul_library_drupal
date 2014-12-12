@@ -135,10 +135,12 @@
   .views-field-title {
     position: absolute;
     top: 0;
-    height: 60px;
     width: 100%;
     @include border-top-right-radius(4px);
     @include border-top-left-radius(4px);
-    background: rgba($gray-dark, .85);
+    background-image: linear-gradient(top, rgba($gray-dark, .95), rgba($gray-dark, 0.5));
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px $black;
   }
 }
