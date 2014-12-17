@@ -1037,7 +1037,7 @@ h1.icon-article-express--small-after:after {
   height: inherit;
   padding: 0.5em 0.7em;
 }
-#block-views-spotlight-dispalsys-block .views-field-field-image-new-item {
+#block-views-spotlight-dispalsys-block .spotlight-image {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
   font-weight: 200;
@@ -1047,25 +1047,26 @@ h1.icon-article-express--small-after:after {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-#block-views-spotlight-dispalsys-block .views-field-field-image-new-item img {
+#block-views-spotlight-dispalsys-block .spotlight-image img {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-#block-views-spotlight-dispalsys-block .views-field-title {
+#block-views-spotlight-dispalsys-block .spotlight-text a {
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
+  padding: 0.5em 0.75em;
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
-  background-image: linear-gradient(to bottom, rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5));
-  font-size: 1.2em;
   font-weight: bold;
   text-shadow: 2px 2px black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(73, 79, 87, 0.95)), to(rgba(73, 79, 87, 0.5)));
 }
 
 .user-picture img {
