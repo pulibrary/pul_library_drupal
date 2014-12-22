@@ -104,7 +104,11 @@
 
   <section class="l-main test">
     <div class="l-content" role="main">
-      <?php print $breadcrumb; ?>
+      <?php
+       if (arg(0) == 'database' || $node->type == 'database' || $node->type == 'alternative_database_title') print $breadcrumb; 
+      ?>
+
+
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
