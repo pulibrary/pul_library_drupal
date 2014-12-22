@@ -2156,15 +2156,18 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   background: #e8e6df;
 }
 
-.three_nine-region--first .pane-menu-menu-scholarly-communications-of li a {
+.three_nine-region--first .pane-menu-menu-scholarly-communications-of li a,
+.three_nine-region--first .pane-menu-menu-research-data-management li a {
   color: #006838;
 }
-.three_nine-region--first .pane-menu-menu-scholarly-communications-of ul.menu li a.active {
+.three_nine-region--first .pane-menu-menu-scholarly-communications-of ul.menu li a.active,
+.three_nine-region--first .pane-menu-menu-research-data-management ul.menu li a.active {
   background: #006838;
   color: white;
 }
 
-.page-node-13202 .node__content a, .page-node-13199 .node__content a, .page-node-13201 .node__content a {
+.page-node-13202 .node__content a, .page-node-13199 .node__content a, .page-node-13201 .node__content a,
+.page-node-12481 .node__content a, .page-node-12482 .node__content a, .page-node-12483 .node__content a, .page-node-12484 .node__content a, .page-node-12485 .node__content a {
   color: #006838;
 }
 
