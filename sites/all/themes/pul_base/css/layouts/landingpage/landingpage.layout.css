@@ -18,45 +18,48 @@
 
 @media (min-width: 44em) {
   .landingpage-region--first {
-    width: 1433.33333%;
-    clear: right;
+    width: 74.13793%;
     float: left;
+    margin-right: -100%;
     margin-left: 0;
-    margin-right: 66.66667%;
+    clear: none;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--second {
-    width: 433.33333%;
-    clear: right;
-    float: left;
-    margin-right: 66.66667%;
+    width: 22.41379%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
     margin-right: 0;
   }
 
   .landingpage-region--third {
-    width: 600%;
-    clear: right;
+    width: 31.03448%;
     float: left;
+    margin-right: -100%;
     margin-left: 0;
-    margin-right: 66.66667%;
+    clear: none;
     clear: both;
     margin-left: 0;
   }
 
   .landingpage-region--fourth {
-    width: 766.66667%;
-    clear: right;
+    width: 39.65517%;
     float: left;
-    margin-right: 66.66667%;
+    margin-right: -100%;
+    margin-left: 34.48276%;
+    clear: none;
   }
 
   .landingpage-region--fifth {
-    width: 433.33333%;
-    clear: right;
-    float: left;
-    margin-right: 66.66667%;
+    width: 22.41379%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
     margin-right: 0;
   }
 }
