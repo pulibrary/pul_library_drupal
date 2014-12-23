@@ -1,5 +1,5 @@
 /* To avoid CSS expressions while still supporting IE 7 and IE 6, use this script */
-/* The script tag referring to this file must be placed before the ending body tag. */
+/* The script tag referencing this file must be placed before the ending body tag. */
 
 /* Use conditional comments in order to target IE 7 and older:
 	<!--[if lt IE 8]><!-->
@@ -36,9 +36,13 @@
 		'icon-exclamation': '&#xf12a;',
 		'icon-home': '&#xe607;',
 		'icon-image': '&#xe611;',
+		'icon-Wi-Fi': '&#xe61c;',
 		'icon-library': '&#xe609;',
+		'icon-Copiers': '&#xe619;',
 		'icon-clock': '&#xe60a;',
 		'icon-calendar': '&#xe60b;',
+		'icon-Printers': '&#xe61a;',
+		'icon-Computers': '&#xe61b;',
 		'icon-newtab': '&#xe608;',
 		'icon-search': '&#xe60c;',
 		'icon-email': '&#xe60d;',

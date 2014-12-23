@@ -9,7 +9,7 @@
 // Plugin definition.
 $plugin = array(
   'title' => t('Four Five Three Stacked'),
-  'icon' => 'preview.png',
+  'icon' => 'four-five-three-stacked.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'four_five_three_stacked',
   'css' => '../../../css/layouts/four_five_three_stacked/four_five_three_stacked.layout.css',

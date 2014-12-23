@@ -8,7 +8,7 @@
 // Plugin definition.
 $plugin = array(
   'title' => t('Landing Page'),
-  'icon' => 'preview.png',
+  'icon' => 'landingpage.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'landingpage',
   'css' => '../../../css/layouts/landingpage/landingpage.layout.css',
