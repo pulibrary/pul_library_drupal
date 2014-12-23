@@ -1,4 +1,10 @@
-.three_six_three-region--first, .three_nine-region--first, .three_three_three_three_stacked-region--first {
+.three_six_three-region--first, 
+.three_six_three_stacked-region--first,
+.three_nine-region--first, 
+.three_three_three_three_stacked-region--first {
+    .panel-pane > ul.menu {
+        margin-top: 1.75em;
+    }
     h2 {
         @include adjust-font-size-to(1.3em);
         @include rhythm(0.75, 0, 0, 0.5, 1.3em);
