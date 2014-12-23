@@ -1,0 +1,12 @@
+name = PUL Engineering Library Branch Site
+description = Layouts for Engineering Library 
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pul_branch_engineering_library
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view_panel_context_52
+features[page_manager_handlers][] = node_view_panel_context_53
