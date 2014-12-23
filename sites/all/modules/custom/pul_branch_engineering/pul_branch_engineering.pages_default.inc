@@ -312,7 +312,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_amenities';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
@@ -341,6 +341,29 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
     $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane = new stdClass();
+    $pane->pid = 'new-85b88829-cc6e-4f70-b8f4-96c44edf6985';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_amenities-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7786',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '85b88829-cc6e-4f70-b8f4-96c44edf6985';
+    $display->content['new-85b88829-cc6e-4f70-b8f4-96c44edf6985'] = $pane;
+    $display->panels['second'][3] = 'new-85b88829-cc6e-4f70-b8f4-96c44edf6985';
+    $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
@@ -354,7 +377,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => '',
+        'image_style' => 'branch_image_branding',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
