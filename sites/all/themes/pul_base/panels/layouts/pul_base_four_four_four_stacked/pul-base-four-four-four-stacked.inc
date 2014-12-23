@@ -8,7 +8,7 @@
 // Plugin definition.
 $plugin = array(
   'title' => t('Four Four Four Stacked'),
-  'icon' => 'preview.png',
+  'icon' => 'pul-base-four-four-four-stacked.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'pul_base_four_four_four_stacked',
   'css' => '../../../css/layouts/pul_base_four_four_four_stacked/pul_base_four_four_four_stacked.layout.css',

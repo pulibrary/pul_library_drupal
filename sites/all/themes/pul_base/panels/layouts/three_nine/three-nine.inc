@@ -8,7 +8,7 @@
 // Plugin definition.
 $plugin = array(
   'title' => t('Three Nine'),
-  'icon' => 'twocol.png',
+  'icon' => 'three-nine.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'three_nine',
   'css' => '../../../css/layouts/three_nine/three_nine.layout.css',
