@@ -32,7 +32,7 @@
 				"name": "article-express--caps",
 				"ligatures": ""
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"iconIdx": 0
 		},
 		{
@@ -66,7 +66,7 @@
 				"name": "article-express--caps-skew",
 				"ligatures": ""
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"iconIdx": 1
 		},
 		{
@@ -100,7 +100,7 @@
 				"name": "article-express--small-skew",
 				"ligatures": ""
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"iconIdx": 2
 		},
 		{
@@ -134,7 +134,7 @@
 				"name": "article-express--small",
 				"ligatures": ""
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"iconIdx": 3
 		},
 		{
@@ -158,7 +158,7 @@
 				"name": "chat",
 				"ligatures": ""
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"iconIdx": 7
 		},
 		{
@@ -180,7 +180,7 @@
 				"name": "phone",
 				"ligatures": ""
 			},
-			"setIdx": 4,
+			"setIdx": 5,
 			"iconIdx": 8
 		},
 		{
@@ -203,7 +203,7 @@
 				"name": "user",
 				"ligatures": ""
 			},
-			"setIdx": 4,
+			"setIdx": 5,
 			"iconIdx": 86
 		},
 		{
@@ -227,7 +227,7 @@
 				"name": "articles",
 				"ligatures": ""
 			},
-			"setIdx": 9,
+			"setIdx": 10,
 			"iconIdx": 5
 		},
 		{
@@ -250,7 +250,7 @@
 				"name": "file",
 				"ligatures": ""
 			},
-			"setIdx": 9,
+			"setIdx": 10,
 			"iconIdx": 9
 		},
 		{
@@ -275,7 +275,7 @@
 				"name": "location",
 				"ligatures": ""
 			},
-			"setIdx": 9,
+			"setIdx": 10,
 			"iconIdx": 114
 		},
 		{
@@ -297,7 +297,7 @@
 				"name": "warning-sign",
 				"ligatures": ""
 			},
-			"setIdx": 11,
+			"setIdx": 12,
 			"iconIdx": 0
 		},
 		{
@@ -314,13 +314,13 @@
 			},
 			"properties": {
 				"id": 38,
-				"order": 35,
+				"order": 33,
 				"prevSize": 16,
 				"code": 58902,
 				"name": "film",
 				"ligatures": ""
 			},
-			"setIdx": 11,
+			"setIdx": 12,
 			"iconIdx": 38
 		},
 		{
@@ -339,13 +339,13 @@
 			},
 			"properties": {
 				"id": 62,
-				"order": 36,
+				"order": 34,
 				"prevSize": 16,
 				"code": 58903,
 				"name": "headphones",
 				"ligatures": ""
 			},
-			"setIdx": 11,
+			"setIdx": 12,
 			"iconIdx": 62
 		},
 		{
@@ -367,7 +367,7 @@
 				"name": "tag",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 40
 		},
 		{
@@ -389,7 +389,7 @@
 				"name": "plus-sign-alt",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 80
 		},
 		{
@@ -411,7 +411,7 @@
 				"name": "minus-sign-alt",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 81
 		},
 		{
@@ -434,7 +434,7 @@
 				"name": "caret-left",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 192
 		},
 		{
@@ -457,7 +457,7 @@
 				"name": "caret-right",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 193
 		},
 		{
@@ -480,7 +480,7 @@
 				"name": "spinner",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 243
 		},
 		{
@@ -503,7 +503,7 @@
 				"name": "question",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 264
 		},
 		{
@@ -526,7 +526,7 @@
 				"name": "exclamation",
 				"ligatures": ""
 			},
-			"setIdx": 13,
+			"setIdx": 14,
 			"iconIdx": 266
 		},
 		{
@@ -549,7 +549,7 @@
 				"name": "home",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 1
 		},
 		{
@@ -573,8 +573,33 @@
 				"name": "image",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 13
+		},
+		{
+			"icon": {
+				"paths": [
+					"M640 576c105.87 0 201.87 43.066 271.402 112.598l-90.468 90.468c-46.354-46.356-110.356-75.066-180.934-75.066s-134.578 28.71-180.934 75.066l-90.468-90.468c69.532-69.532 165.532-112.598 271.402-112.598zM187.452 507.452c120.88-120.88 281.598-187.452 452.548-187.452s331.668 66.572 452.55 187.452l-90.51 90.508c-96.706-96.704-225.28-149.96-362.040-149.96-136.762 0-265.334 53.256-362.038 149.962l-90.51-90.51zM988.784 134.438c106.702 45.132 202.516 109.728 284.782 191.996v0l-90.508 90.508c-145.056-145.056-337.92-224.942-543.058-224.942-205.14 0-398 79.886-543.058 224.942l-90.51-90.51c82.268-82.266 178.082-146.862 284.784-191.994 110.504-46.738 227.852-70.438 348.784-70.438 120.932 0 238.278 23.7 348.784 70.438zM576 896c0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64-35.346 0-64-28.654-64-64z"
+				],
+				"width": 1280,
+				"tags": [
+					"connection",
+					"broadcast",
+					"wifi",
+					"wave",
+					"feed"
+				],
+				"grid": 16
+			},
+			"properties": {
+				"id": 28,
+				"order": 39,
+				"prevSize": 16,
+				"code": 58908,
+				"name": "Wi-Fi"
+			},
+			"setIdx": 15,
+			"iconIdx": 28
 		},
 		{
 			"icon": {
@@ -596,8 +621,33 @@
 				"name": "library",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 33
+		},
+		{
+			"icon": {
+				"paths": [
+					"M832 256h-192v-64l-192-192h-448v768h384v256h640v-576l-192-192zM832 346.51l101.49 101.49h-101.49v-101.49zM448 90.51l101.49 101.49h-101.49v-101.49zM64 64h320v192h192v448h-512v-640zM960 960h-512v-192h192v-448h128v192h192v448z"
+				],
+				"tags": [
+					"copy",
+					"duplicate",
+					"files",
+					"pages",
+					"papers",
+					"documents"
+				],
+				"grid": 16
+			},
+			"properties": {
+				"id": 39,
+				"order": 37,
+				"prevSize": 16,
+				"name": "Copiers",
+				"code": 58905
+			},
+			"setIdx": 15,
+			"iconIdx": 39
 		},
 		{
 			"icon": {
@@ -619,7 +669,7 @@
 				"name": "clock",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 72
 		},
 		{
@@ -644,8 +694,53 @@
 				"name": "calendar",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 78
+		},
+		{
+			"icon": {
+				"paths": [
+					"M256 64h512v128h-512zM960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.796 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM704 896h-384v-320h384v320zM974.4 352c0 25.626-20.774 46.4-46.398 46.4-25.626 0-46.402-20.774-46.402-46.4s20.776-46.4 46.402-46.4c25.626 0 46.398 20.774 46.398 46.4z"
+				],
+				"tags": [
+					"print",
+					"printer"
+				],
+				"grid": 16
+			},
+			"properties": {
+				"id": 80,
+				"order": 35,
+				"prevSize": 16,
+				"name": "Printers",
+				"code": 58906
+			},
+			"setIdx": 15,
+			"iconIdx": 80
+		},
+		{
+			"icon": {
+				"paths": [
+					"M1024 832v-768h-1024v768h448v64h-192v64h512v-64h-192v-64h448zM128 192h768v512h-768v-512z"
+				],
+				"tags": [
+					"screen",
+					"monitor",
+					"computer",
+					"pc",
+					"desktop"
+				],
+				"grid": 16
+			},
+			"properties": {
+				"id": 82,
+				"order": 36,
+				"prevSize": 16,
+				"name": "Computers",
+				"code": 58907
+			},
+			"setIdx": 15,
+			"iconIdx": 82
 		},
 		{
 			"icon": {
@@ -670,7 +765,7 @@
 				"name": "newtab",
 				"ligatures": ""
 			},
-			"setIdx": 14,
+			"setIdx": 15,
 			"iconIdx": 346
 		},
 		{
@@ -694,7 +789,7 @@
 				"name": "search",
 				"ligatures": ""
 			},
-			"setIdx": 16,
+			"setIdx": 17,
 			"iconIdx": 10
 		},
 		{
@@ -718,7 +813,7 @@
 				"name": "email",
 				"ligatures": ""
 			},
-			"setIdx": 16,
+			"setIdx": 17,
 			"iconIdx": 33
 		},
 		{
@@ -742,7 +837,7 @@
 				"name": "book",
 				"ligatures": ""
 			},
-			"setIdx": 17,
+			"setIdx": 18,
 			"iconIdx": 170
 		},
 		{
@@ -765,7 +860,7 @@
 				"name": "arrow-left",
 				"ligatures": ""
 			},
-			"setIdx": 17,
+			"setIdx": 18,
 			"iconIdx": 205
 		},
 		{
@@ -788,7 +883,7 @@
 				"name": "arrow-down",
 				"ligatures": ""
 			},
-			"setIdx": 17,
+			"setIdx": 18,
 			"iconIdx": 206
 		},
 		{
@@ -811,7 +906,7 @@
 				"name": "arrow-up",
 				"ligatures": ""
 			},
-			"setIdx": 17,
+			"setIdx": 18,
 			"iconIdx": 207
 		},
 		{
@@ -834,7 +929,7 @@
 				"name": "arrow-right",
 				"ligatures": ""
 			},
-			"setIdx": 17,
+			"setIdx": 18,
 			"iconIdx": 208
 		}
 	],
@@ -871,7 +966,8 @@
 			"columns": 16,
 			"margin": 16,
 			"png": false,
-			"sprites": true
+			"sprites": true,
+			"prefix": "icon-"
 		},
 		"historySize": 100,
 		"showCodes": true,
@@ -880,6 +976,8 @@
 		"showGrid": true,
 		"showGlyphs": true,
 		"showQuickUse": true,
-		"search": ""
+		"search": "",
+		"showQuickUse2": true,
+		"showSVGs": true
 	}
 }
