@@ -1,29 +1,29 @@
 <?php
 /**
  * @file
- * pul_branch_engineering_library.pages_default.inc
+ * pul_branch_architecture.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function pul_branch_engineering_library_default_page_manager_handlers() {
+function pul_branch_architecture_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_52';
+  $handler->name = 'node_view_panel_context_54';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 23;
   $handler->conf = array(
-    'title' => 'Engineering Library Landing Page',
+    'title' => 'Architecture Library Landing Page',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-architecture',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -61,7 +61,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/englib',
+            'paths' => 'libraries/architecture',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -97,10 +97,10 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-7c934369-243f-4b83-953d-002a8f2b7c1e';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-architecture-library';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -115,9 +115,9 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = '7c934369-243f-4b83-953d-002a8f2b7c1e';
+    $display->content['new-7c934369-243f-4b83-953d-002a8f2b7c1e'] = $pane;
+    $display->panels['first'][0] = 'new-7c934369-243f-4b83-953d-002a8f2b7c1e';
     $pane = new stdClass();
     $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
     $pane->panel = 'first';
@@ -359,7 +359,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Architecture Library',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -375,22 +375,22 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_52'] = $handler;
+  $export['node_view_panel_context_54'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_53';
+  $handler->name = 'node_view_panel_context_55';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 24;
   $handler->conf = array(
-    'title' => 'Engineering Library Branch Pages',
+    'title' => 'Architecture Library Branch Pages',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-architecture',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -418,7 +418,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/englib/*',
+            'paths' => 'libraries/architecture/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -454,10 +454,10 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-22ab9278-18f1-4972-8846-eaf366461b36';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-architecture-library';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -472,9 +472,9 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = '22ab9278-18f1-4972-8846-eaf366461b36';
+    $display->content['new-22ab9278-18f1-4972-8846-eaf366461b36'] = $pane;
+    $display->panels['first'][0] = 'new-22ab9278-18f1-4972-8846-eaf366461b36';
     $pane = new stdClass();
     $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
     $pane->panel = 'first';
@@ -485,7 +485,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->configuration = array(
       'path' => '',
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '3690',
+        'field_hrs_lib_calendar_target_id' => '3688',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
@@ -510,7 +510,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'tid' => '3690',
+        'tid' => '3688',
       ),
     );
     $pane->cache = array();
@@ -533,7 +533,7 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '7786',
+        'nid' => '7784',
       ),
       'override_title' => 1,
       'override_title_text' => 'Contact Us',
@@ -595,25 +595,18 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
     $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane = new stdClass();
-    $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
+    $pane->pid = 'new-c08a4af2-4ab6-462d-af44-41dc923ddf0a';
     $pane->panel = 'top';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_library_image';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_library_image-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'image',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'image_style' => '',
-        'image_link' => '',
+      'arguments' => array(
+        'nid' => '7784',
       ),
-      'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Architecture Library',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -623,13 +616,13 @@ function pul_branch_engineering_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'd4e21373-0c6d-47b1-92bb-5ca5896df51d';
-    $display->content['new-d4e21373-0c6d-47b1-92bb-5ca5896df51d'] = $pane;
-    $display->panels['top'][0] = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
+    $pane->uuid = 'c08a4af2-4ab6-462d-af44-41dc923ddf0a';
+    $display->content['new-c08a4af2-4ab6-462d-af44-41dc923ddf0a'] = $pane;
+    $display->panels['top'][0] = 'new-c08a4af2-4ab6-462d-af44-41dc923ddf0a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_53'] = $handler;
+  $export['node_view_panel_context_55'] = $handler;
 
   return $export;
 }
