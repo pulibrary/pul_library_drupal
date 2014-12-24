@@ -16,6 +16,12 @@
   margin-bottom: 18px;
 }
 
+.three_six_three_stacked-region--first,
+.three_six_three_stacked-region--middle,
+.three_six_three_stacked-region--second {
+  margin: 0.5em;
+}
+
 @media (min-width: 44em) {
   .three_six_three_stacked-region--top {
     width: 100%;
@@ -36,6 +42,7 @@
     clear: none;
     clear: both;
     margin-left: 0;
+    padding-left: 0.5em;
   }
 
   .three_six_three_stacked-region--middle {
@@ -53,6 +60,7 @@
     margin-right: 0;
     clear: none;
     margin-right: 0;
+    padding-right: 0.5em;
   }
 
   .three_six_three_stacked-region--bottom {

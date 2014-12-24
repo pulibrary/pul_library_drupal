@@ -1198,43 +1198,31 @@ table caption {
 .branch-libraries h1 {
   display: none;
 }
-.branch-libraries .three_six_three_stacked-region--top .pane-node-field-library-image,
-.branch-libraries .three_six_three_stacked-region--top .pane-branch-library-image-panel-pane-1 {
-  position: relative;
-}
-.branch-libraries .three_six_three_stacked-region--top h2 {
-  position: absolute;
-  z-index: 1;
-  display: block;
-  font-size: 2rem;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 0.3em;
-  text-shadow: white 2px 2px;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 25px;
-}
 .branch-libraries .three_six_three_stacked-region--top img {
   opacity: 0.4;
-}
-.branch-libraries .view-full-schedule {
-  margin: 1em 0;
-}
-.branch-libraries .view-full-schedule .icon-clock {
-  margin-right: 0.25em;
-  font-size: 0.9em;
-}
-.branch-libraries .three_six_three_stacked-region--second .view-workgroup .views-row.views-row-odd {
-  background: none;
-}
-.branch-libraries .three_six_three_stacked-region--second .views-field-picture {
-  margin-bottom: 0.5em;
-}
-.branch-libraries .is-Open {
   display: none;
 }
-.branch-libraries .pane-node-field-featured-resources {
-  display: block;
+@media (min-width: 44em) {
+  .branch-libraries .three_six_three_stacked-region--top .pane-node-field-library-image,
+  .branch-libraries .three_six_three_stacked-region--top .pane-branch-library-image-panel-pane-1 {
+    position: relative;
+  }
+  .branch-libraries .three_six_three_stacked-region--top h2 {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.3em;
+    text-shadow: white 2px 2px;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .branch-libraries .three_six_three_stacked-region--top img {
+    opacity: 0.4;
+    display: block;
+  }
 }
 
 .pane-node-field-branch-spotlight-item {
@@ -1248,7 +1236,7 @@ table caption {
 .pane-node-field-branch-spotlight-item .node__title {
   position: absolute;
   top: 0;
-  height: 60px;
+  height: 100%;
   max-width: 220px;
   font-size: 16px;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1263,14 +1251,21 @@ table caption {
   display: block;
   padding: 0.75em;
   border-radius: 4px;
-  height: 165px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(73, 79, 87, 0.95)), to(rgba(73, 79, 87, 0.2)));
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(73, 79, 87, 0.95)), to(rgba(73, 79, 87, 0)));
 }
 .pane-node-field-branch-spotlight-item .field--name-field-spotlight-graphic img {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   opacity: 0.7;
+}
+
+.branch-libraries .view-full-schedule {
+  margin: 1em 0;
+}
+.branch-libraries .library-info a {
+  text-decoration: none;
 }
 
 .field--name-field-ip-db-resource-url,
@@ -3539,6 +3534,12 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
+.three_six_three_stacked-region--first,
+.three_six_three_stacked-region--middle,
+.three_six_three_stacked-region--second {
+  margin: 0.5em;
+}
+
 @media (min-width: 44em) {
   .three_six_three_stacked-region--top {
     -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
@@ -3561,6 +3562,7 @@ $desk : 1250px;
     clear: none;
     clear: both;
     margin-left: 0;
+    padding-left: 0.5em;
   }
 
   .three_six_three_stacked-region--middle {
@@ -3580,6 +3582,7 @@ $desk : 1250px;
     margin-right: 1.66667%;
     clear: none;
     margin-right: 0;
+    padding-right: 0.5em;
   }
 
   .three_six_three_stacked-region--bottom {
