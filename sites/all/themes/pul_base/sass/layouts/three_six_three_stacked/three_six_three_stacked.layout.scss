@@ -17,6 +17,12 @@
   margin-bottom: $vert-spacing-unit;
 }
 
+.three_six_three_stacked-region--first, 
+.three_six_three_stacked-region--middle,
+.three_six_three_stacked-region--second {
+  margin: 0.5em;
+}
+
 @include breakpoint($tab) {
 
   .three_six_three_stacked-region--top {
@@ -30,6 +36,7 @@
     @include grid-span(3,1);
     clear: both;
     margin-left: 0;
+    padding-left:0.5em;
   }
 
   .three_six_three_stacked-region--middle {
@@ -39,6 +46,7 @@
    .three_six_three_stacked-region--second {
     @include grid-span(3,10);
     margin-right: 0;
+    padding-right:0.5em;
   }
 
   .three_six_three_stacked-region--bottom {
