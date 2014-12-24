@@ -1261,6 +1261,27 @@ table caption {
   opacity: 0.7;
 }
 
+.branch-libraries .three_six_three_stacked-region--first h2,
+.branch-libraries .three_six_three_stacked-region--second h2 {
+  line-height: 1.4em;
+}
+.branch-libraries .oh-display {
+  margin-bottom: 0.5em;
+  display: block;
+}
+@media (min-width: 54em) {
+  .branch-libraries .oh-display {
+    display: inline;
+  }
+}
+.branch-libraries .oh-display .oh-display-hours {
+  display: block;
+}
+@media (min-width: 54em) {
+  .branch-libraries .oh-display .oh-display-hours {
+    display: inline;
+  }
+}
 .branch-libraries .view-full-schedule {
   margin: 1em 0;
 }
