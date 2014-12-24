@@ -1198,6 +1198,9 @@ table caption {
 .branch-libraries h1 {
   display: none;
 }
+.branch-libraries .library-info a {
+  text-decoration: none;
+}
 .branch-libraries .three_six_three_stacked-region--top img {
   opacity: 0.4;
   display: none;
