@@ -27,7 +27,7 @@ function allsearch_block_form($form, &$form_state) {
     $suffix = "";
   }
 
-
+  $form_state['input']['form_token'] = drupal_get_token($form['#token']);
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('All Search'),
@@ -132,7 +132,7 @@ function allsearch_block_block_info() {
       // info: The name of the block.
       'info' => t('All Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_PAGE, //DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_USER, //DRUPAL_CACHE_PER_ROLE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
