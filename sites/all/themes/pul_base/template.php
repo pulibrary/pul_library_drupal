@@ -12,6 +12,7 @@
  *
  */
 
+/*
 function pul_base_form_alter(&$form, &$form_state, $form_id) {
   // Remove elements from the page.
   if($form_id == 'allsearch_block_form') {
@@ -22,6 +23,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 }
+*/
 
 function pul_base_date_nav_title($params) {
     $granularity = $params['granularity'];
