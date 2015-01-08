@@ -1,0 +1,5 @@
+name = All Search Form
+description = Inserts a All Search With a Suffix Region
+package = PUL Custom Features
+core = 7.x
+dependencies[] = block
