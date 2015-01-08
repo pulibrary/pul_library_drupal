@@ -18,8 +18,10 @@ function allsearch_block_form($form, &$form_state) {
   $form = array();
  
   if(drupal_is_front_page()) {
-    
-    $suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'All Tab\']);" title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+
+    //$suffix = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'All Tab\']);" title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+    $prefix = "";
+    $suffix = "";
   } else {
     $prefix = "";
     $suffix = "";
@@ -130,7 +132,7 @@ function allsearch_block_block_info() {
       // info: The name of the block.
       'info' => t('All Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_USER, //DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_ROLE, //DRUPAL_CACHE_PER_ROLE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
