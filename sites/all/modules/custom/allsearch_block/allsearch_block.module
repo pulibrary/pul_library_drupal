@@ -17,7 +17,7 @@ function allsearch_block_form($form, &$form_state) {
   }
   $form = array();
 
-  $form_state['input']['form_token'] = drupal_get_token($form['#token']);
+  //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('All Search'),
