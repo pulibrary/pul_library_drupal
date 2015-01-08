@@ -26,7 +26,7 @@ function dbsearch_block_form($form, &$form_state) {
 
   $form = array();
 
-  $form_state['input']['form_token'] = drupal_get_token($form['#token']);
+  //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
   
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -131,7 +131,7 @@ function dbsearch_block_block_info() {
       // info: The name of the block.
       'info' => t('Database Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    

@@ -120,7 +120,7 @@ function allsearch_block_block_info() {
       // info: The name of the block.
       'info' => t('All Search'),
       // Block caching options (per role, per user, etc.)
-      'cache' => DRUPAL_CACHE_PER_ROLE, // default
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    
