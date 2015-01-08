@@ -1,6 +1,5 @@
 (function ($) {
   $(document).ready(function() {
-    console.log(Drupal.settings.allsearch_form);
     $('#allsearch-form-form input').focus(function() {
     	if ($(this).val() == Drupal.settings.allsearch_form.all_search_form_hint) { 
 				$(this).val('');
