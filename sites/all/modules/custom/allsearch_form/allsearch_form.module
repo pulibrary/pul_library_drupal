@@ -1,0 +1,193 @@
+<?php
+function allsearch_form_get_current_filter($path) {
+  $path_parts = explode("find/all/", $path);
+  if(isset($path_parts[1])) {
+    return filter_xss($path_parts[1]);
+  }
+}
+
+function allsearch_form_form($form, &$form_state) {
+  #print_r($form_state);
+  $page = $_GET['q'];
+  $path = allsearch_form_get_current_filter($page);
+  if(isset($path)) {
+    $default_value = htmlspecialchars_decode($path); //FIXME
+  } else {
+    $default_value = variable_get('all_search_form_hint');
+  }
+  $form = array();
+
+  //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('All Search'),
+    '#size'  => 80,
+    '#required' => TRUE,
+    '#default_value' => $default_value
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+    $form['#attached']['js'][] = drupal_get_path('module', 'allsearch_form') .'/allsearch_form.js'; 
+    $hint_settings = array('all_search_form_hint' => variable_get('all_search_form_hint'),
+                           'all_search_form_error' => variable_get('all_search_form_error')
+                           );   
+    $form['#attached']['js'][] = array(
+      'data' => array('allsearch_form' => $hint_settings),
+      'type' => 'setting',
+     );
+   //$form['#validate'] = array('allsearch_form_form_validate');
+   //$form['#redirect'] = url('find/all/');
+   #$form['#target'] = "_parent";
+   /* 
+    * sending this to the empty path url('')
+    * will ensure this form always posts through the bare current path
+    * 
+    */
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'All Tab\']);" title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+   $form['#action'] = url('');
+   $form['#method'] = "post";
+   $form['#submit'] = array('allsearch_form_form_redirect');
+   return $form;
+
+}
+
+function allsearch_form_form_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'find/all/' . $form_state['values']['query'];
+}
+
+function allsearch_form_form_validate($form, &$form_state) {
+  
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('all_search_hint')) {
+
+    form_set_error('term', t('What do you want to search for?'));
+  } 
+}
+
+
+
+function allsearch_form_form_submit($form, &$form_state) {
+  //drupal_set_message(t('Submitting values: @values', array('@values' => var_export($form_state['values'], TRUE))));
+  //print_r(&$form_state);
+}
+
+function allsearch_form_contents() {
+  return drupal_get_form('allsearch_form_form'); // must define a function 
+}
+
+
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+
+function allsearch_form_menu() {
+  $items['allsearch_form'] = array(
+    'page callback' => 'allsearch_form_page',
+    'access callback' => TRUE,
+    'title' => 'Catalog Search',
+  );
+  return $items;
+}
+*/
+/**
+ * Implements hook_page()
+ * 
+ */
+ 
+function allsearch_form_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The All Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function allsearch_form_block_info() {
+  
+  $blocks['allsearch_form_search'] = array(
+      // info: The name of the block.
+      'info' => t('All Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function allsearch_form_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'allsearch_form_search') { //in this case the delta is the name of block
+
+    $form['all_search_form_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Search Box Box Hint Text'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
+      '#default_value' => variable_get('all_search_form_hint',  t('Hint you want to display.')),
+    );
+    $form['all_search_form_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Empty Search Error Message'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the error menssage when a user supplies and empty search.'),
+      '#default_value' => variable_get('all_search_form_error',  t('Message you want to display when user submits an empty search.')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function allsearch_form_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'allsearch_form_search') {
+    // Have Drupal save the string to the database.
+    variable_set('all_search_form_hint', $edit['all_search_form_hint']);
+    variable_set('all_search_form_error', $edit['all_search_form_error']);
+  }
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function allsearch_form_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  if ($delta == 'allsearch_form_search') {
+  
+    $block['subject'] = t('All Search');
+    $block['content'] = allsearch_form_contents($delta);
+  }
+ 
+  return $block;
+}
+
+
+
+
