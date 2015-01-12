@@ -8,9 +8,10 @@
     display: none;
     }
 
-    .three_six_three_stacked-region--top {
+    .three_six_three_stacked-region--top,
+    .three_three_three_three_stacked-region--top {
 
-        img {
+        img, a {
             opacity: 0.4;
             display: none;
         }
@@ -19,10 +20,12 @@
 
     @include breakpoint($tab) {
 
-        .three_six_three_stacked-region--top {
+        .three_six_three_stacked-region--top,
+        .three_three_three_three_stacked-region--top {
 
             .pane-node-field-library-image,
-            .pane-branch-library-image-panel-pane-1 {
+            .pane-branch-library-image-panel-pane-1,
+            .pane-custom {
                 position: relative;
             } 
 
@@ -39,9 +42,13 @@
                 margin-bottom: 25px;
             }
 
-            img {
+            img, a {
                 opacity: 0.4;
                 display: block;
+            }
+
+            p {
+                margin: 0;
             }
 
         }

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Econ Library Data Table Views feature.
+ */
+
+include_once 'econ_library_data_table_views.features.inc';
