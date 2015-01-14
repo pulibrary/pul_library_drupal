@@ -18,6 +18,14 @@ function pul_econ_library_content_types_ctools_plugin_api($module = NULL, $api =
  */
 function pul_econ_library_content_types_node_info() {
   $items = array(
+    'econ_lib_central_bank_holdings' => array(
+      'name' => t('Econ Library Central Bank Holdings'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'econ_library_company_directories' => array(
       'name' => t('Econ Library Company Directories'),
       'base' => 'node_content',

@@ -13,6 +13,113 @@ function econ_library_data_importers_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'econ_lib_central_bank_holdings';
+  $feeds_importer->config = array(
+    'name' => 'Econ Library Central Bank Holdings',
+    'description' => 'Econ Library Central Bank Holdings',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => '413',
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Region',
+            'target' => 'field_econlib_cbh_region',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          1 => array(
+            'source' => 'Bank Name',
+            'target' => 'field_econlib_cbh_bank_name',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          2 => array(
+            'source' => 'Title',
+            'target' => 'title',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Call Number',
+            'target' => 'field_econlib_cbh_call_number',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'Last Bound',
+            'target' => 'field_econlib_cbh_last_bound',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'Current Issues in PF',
+            'target' => 'field_econlib_cbh_current_issues',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'Bank Website',
+            'target' => 'field_econlib_cbh_bank_website:url',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'PO Number',
+            'target' => 'field_econlib_cbh_po_number',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'Color',
+            'target' => 'field_econlib_cbh_color',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          9 => array(
+            'source' => 'Binding Frequency',
+            'target' => 'field_econlib_cbh_binding_freq',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          10 => array(
+            'source' => 'Notes',
+            'target' => 'field_econlib_cbh_notes',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'econ_lib_central_bank_holdings',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['econ_lib_central_bank_holdings'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'econ_library_company_directories';
   $feeds_importer->config = array(
     'name' => 'Econ Library Company Directories',
@@ -75,7 +182,7 @@ function econ_library_data_importers_feeds_importer_default() {
         'bundle' => 'econ_library_company_directories',
       ),
     ),
-    'content_type' => 'econ_library_company_directories',
+    'content_type' => '',
     'update' => 0,
     'import_period' => '-1',
     'expire_period' => 3600,
@@ -161,12 +268,14 @@ function econ_library_data_importers_feeds_importer_default() {
           8 => array(
             'source' => 'Binding Color',
             'target' => 'field_econ_lib_se_binding_color',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           9 => array(
             'source' => 'Binding Frequency',
             'target' => 'field_econ_lib_se_binding_freq',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '0',
@@ -175,7 +284,7 @@ function econ_library_data_importers_feeds_importer_default() {
         'bundle' => 'econ_library_stock_exchange_hold',
       ),
     ),
-    'content_type' => 'econ_library_stock_exchange_hold',
+    'content_type' => '',
     'update' => 0,
     'import_period' => '-1',
     'expire_period' => 3600,
@@ -254,7 +363,7 @@ function econ_library_data_importers_feeds_importer_default() {
         'bundle' => 'econ_working_papers',
       ),
     ),
-    'content_type' => 'econ_working_papers',
+    'content_type' => '',
     'update' => 0,
     'import_period' => '-1',
     'expire_period' => 3600,
