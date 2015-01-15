@@ -1383,6 +1383,10 @@ table caption {
   color: #494f57;
 }
 
+.user-login .form-submit {
+  margin-top: 1em;
+}
+
 .links--inline li {
   float: right;
 }
