@@ -35,11 +35,12 @@
     }
 }
 
-#block-views-spotlight-dispalsys-block {
+#block-views-spotlight-dispalsys-block,
+.pane-spotlight-dispalsys {
     background: rgba($gray-dark,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    height: 159px;
+    height: 215px; //159px;
     padding: 0;
     @include border-radius(4px);
 
@@ -54,8 +55,8 @@
     }
 
     img {
-        width: 260px;
-        height: 159px;
+        width: 350px; //260px;
+        height: 215px; //159px;
     }
 
     .view-spotlight-dispalsys .views-row-1 {
@@ -101,8 +102,9 @@
 }
 
 //spotlight gray mask
-#block-views-spotlight-dispalsys-block {
-  $hover-tile-height: 159px;
+#block-views-spotlight-dispalsys-block,
+.pane-spotlight-dispalsys {
+  $hover-tile-height: 215px; //159px;
   margin-bottom: $base-line-height;
   cursor: pointer;
 

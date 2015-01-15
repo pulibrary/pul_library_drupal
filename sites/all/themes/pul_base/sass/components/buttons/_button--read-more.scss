@@ -14,10 +14,19 @@
     text-shadow: none;
     background-color: $orange;
     color: $white;
-    padding: 3px 7px;
+    padding: 1em;
     text-decoration: none;
     @include border-radius(3px);
-    float: right;
+
+    float: none;
+    display: block;
+    text-align: center;
+
+    @include breakpoint($tab) {
+        float: right;
+        display: inline;
+        padding: 3px 7px;
+    }
 
     &:hover {
         color: $white;
