@@ -4,189 +4,85 @@
  * Implements Views integration: hours filter
  */
 
+/**
+ * Adds an hours handler to the filter.
+ */
 class office_hours_handler_filter_hours extends views_handler_filter_numeric {
 
-  // Add a date handler to the filter.
-  function construct() {
-    parent::construct();
-  }
-  var $no_single = TRUE;/*
-  function option_definition() {
-    $options = parent::option_definition();
+//  $no_single = TRUE;
 
-    $options['value'] = array(
-      'contains' => array(
-        'min' => array('default' => ''),
-        'max' => array('default' => ''),
-        'value' => array('default' => ''),
-      ),
+//  var $always_multiple = TRUE;
+
+  /**
+   * Provide a select list for times.
+   */
+  function value_form(&$form, &$form_state) {
+    parent::value_form($form, $form_state);
+
+    $field = field_info_field($this->real_field);
+    // Get the valid hours. Date API doesn't provide a straight method for this.
+    // TODO: add better selection and representation of hours,
+    // using $field['settings'] and using/improving existing routines.
+    //$hours = _office_hours_field_widget_hours($field['settings']);
+    //$hours = drupal_map_assoc($hours); // $key == $value.
+
+    $hours = _office_hours_show_ampm(date_hours('H', FALSE));
+    $hours = drupal_map_assoc($hours); // $key == $value.
+
+    // Make al text fields a select field.
+    $hour_select = array(
+      '#type' => 'select',
+      '#size' => NULL,
+      '#options' => $hours,
     );
-
-    return $options;
-  }
-
-  /* function operators() {
-    $operators = array(
-      '<' => array(
-        'title' => t('Is less than'),
-        'method' => 'op_simple',
-        'short' => t('<'),
-        'values' => 1,
-      ),
-      '<=' => array(
-        'title' => t('Is less than or equal to'),
-        'method' => 'op_simple',
-        'short' => t('<='),
-        'values' => 1,
-      ),
-      '=' => array(
-        'title' => t('Is equal to'),
-        'method' => 'op_simple',
-        'short' => t('='),
-        'values' => 1,
-      ),
-      '!=' => array(
-        'title' => t('Is not equal to'),
-        'method' => 'op_simple',
-        'short' => t('!='),
-        'values' => 1,
-      ),
-      '>=' => array(
-        'title' => t('Is greater than or equal to'),
-        'method' => 'op_simple',
-        'short' => t('>='),
-        'values' => 1,
-      ),
-      '>' => array(
-        'title' => t('Is greater than'),
-        'method' => 'op_simple',
-        'short' => t('>'),
-        'values' => 1,
-      ),
-      'between' => array(
-        'title' => t('Is between'),
-        'method' => 'op_between',
-        'short' => t('between'),
-        'values' => 2,
-      ),
-      'not between' => array(
-        'title' => t('Is not between'),
-        'method' => 'op_between',
-        'short' => t('not between'),
-        'values' => 2,
-      ),
-    );
-    return $operators;
-  }
- */
-
-/**
- * Provide a list of all the numeric operators
- */
-/* function operator_options($which = 'title') {
-    $options = array();
-    foreach ($this->operators() as $id => $info) {
-      $options[$id] = $info[$which];
+    // if ($which == 'all').
+    if (is_array($form['value']['value'])) {
+      $form['value']['value'] = $hour_select + $form['value']['value'];
+    } // elseif ($which == 'value').
+    elseif ($form['value']['#type'] == 'textfield') {
+      $form['value'] = $hour_select + $form['value'];
     }
-
-    return $options;
-  }
-
-  function operator_values($values = 1) {
-    $options = array();
-    foreach ($this->operators() as $id => $info) {
-      if ($info['values'] == $values) {
-        $options[] = $id;
-      }
+    // if ($which == 'all' || $which == 'minmax').
+    if (is_array($form['value']['min'])) {
+      $form['value']['min'] = $hour_select + $form['value']['min'];
     }
-
-    return $options;
-  }
- */
-
-/**
-  * Provide the form
-  */
-function value_form(&$form, &$form_state) {
-    $form['value']['#tree'] = TRUE;
-    $opt = _create_hours_arr($field, FALSE);
-    // We have to make some choices when creating this as an exposed
-    // filter form. For example, if the operator is locked and thus
-    // not rendered, we can't render dependencies; instead we only
-    // render the form items we need.
-    $which = 'all';
-    if (!empty($form['operator'])) {
-      $source = ($form['operator']['#type'] == 'radios') ? 'radio:options[operator]' : 'edit-options-operator';
-    }
-
-    if (!empty($form_state['exposed'])) {
-      $identifier = $this->options['expose']['identifier'];
-
-      if (empty($this->options['expose']['use_operator']) || empty($this->options['expose']['operator'])) {
-        // exposed and locked.
-        $which = in_array($this->operator, $this->operator_values(2)) ? 'minmax' : 'value';
-      }
-      else {
-        $source = 'edit-' . drupal_clean_css_identifier($this->options['expose']['operator']);
-      }
-    }
-
-    if ($which == 'all') {
-      $form['value']['value'] = array(
-        '#type' => 'select',
-        '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
-        //'#prefix' => t('<div class="form-item"><label>Filter by hours</label><p>Choose the hour to filter by working hours (\'between\') or closed hours(\'not between\')</p></div>'),
-        '#default_value' => $this->value['value'],
-        '#options' => $opt,
-        '#process' => array('views_process_dependency'),
-        '#dependency' => array($source => $this->operator_values(1)),
-      );
-      if (!empty($form_state['exposed']) && !isset($form_state['input'][$identifier]['value'])) {
-        $form_state['input'][$identifier]['value'] = $this->value['value'];
-      }
-    }
-    elseif ($which == 'value') {
-      // When exposed we drop the value-value and just do value if
-      // the operator is locked.
-      $form['value'] = array(
-        '#type' => 'select',
-        '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
-        '#default_value' => $this->value['value'],
-        '#options' => $opt,
-      );
-      if (!empty($form_state['exposed']) && !isset($form_state['input'][$identifier])) {
-        $form_state['input'][$identifier] = $this->value['value'];
-      }
-    }
-
-    if ($which == 'all' || $which == 'minmax') {
-      $form['value']['min'] = array(
-        '#type' => 'select',
-        '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
-        '#default_value' => $this->value['min'],
-        '#options' => $opt,
-      );
-      $form['value']['max'] = array(
-         '#type' => 'select',
-        '#title' => empty($form_state['exposed']) ? t('Choose hour') : '',
-        '#default_value' => $this->value['max'],
-        '#options' => $opt,
-      );
-      if ($which == 'all') {
-        $dependency = array(
-          '#process' => array('views_process_dependency'),
-          '#dependency' => array($source => $this->operator_values(2)),
-        );
-        $form['value']['min'] += $dependency;
-        $form['value']['max'] += $dependency;
-      }
-      if (!empty($form_state['exposed']) && !isset($form_state['input'][$identifier]['min'])) {
-        $form_state['input'][$identifier]['min'] = $this->value['min'];
-      }
-      if (!empty($form_state['exposed']) && !isset($form_state['input'][$identifier]['max'])) {
-        $form_state['input'][$identifier]['max'] = $this->value['max'];
-      }
+    if (is_array($form['value']['max'])) {
+      $form['value']['max'] = $hour_select + $form['value']['max'];
     }
   }
 
+  /**
+   * Add this filter to the query.
+   *
+   * todo: make this work. Take date_views_filter_handler ,
+   * date_views_filter_handler_simple as examples.
+   */
+  function query() {
+    return;
+//    $this->ensure_my_table();
+//    $this->query->add_where($this->options['group'], "$this->table_alias.$this->real_field", $this->value, $this->operator);
+
+/*
+    switch ($this->operator) {
+      case '<':
+      case '<=':
+      case '=':
+      case '!=':
+      case '>=':
+      case '>':
+        $this->value['starthours'] = $this->value['value'];
+        $this->query->add_where($this->options['group'], "$this->table_alias.$this->real_field", $this->value, $this->operator);
+        break;
+      case 'between':
+        break;
+      case 'not between':
+        break;
+      case 'empty':
+      case 'not empty':
+        $this->query->add_where($this->options['group'], "$this->table_alias.$this->real_field", $this->value, $this->operator);
+        break;
+        break;
+    }
+*/
+  }
 }

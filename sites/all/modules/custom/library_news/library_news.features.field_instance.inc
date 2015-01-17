@@ -603,6 +603,7 @@ function library_news_field_default_field_instances() {
       'type' => 'options_buttons',
       'weight' => 37,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_news_library_contact'

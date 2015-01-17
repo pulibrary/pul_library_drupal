@@ -603,6 +603,8 @@ help/chat/*',
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -732,6 +734,56 @@ help/chat/*',
     $pane->uuid = '1d3cbd16-8d42-44f3-9583-58b0e2447bca';
     $display->content['new-1d3cbd16-8d42-44f3-9583-58b0e2447bca'] = $pane;
     $display->panels['second'][2] = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
+    $pane = new stdClass();
+    $pane->pid = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_hours-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_hrs_lib_calendar_target_id' => '3702',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Chat Hours Today',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '78ce78a2-9fac-47d0-9fd0-c25365d597ae';
+    $display->content['new-78ce78a2-9fac-47d0-9fd0-c25365d597ae'] = $pane;
+    $display->panels['second'][3] = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
+    $pane = new stdClass();
+    $pane->pid = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
+    $pane->panel = 'second';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Chat Hours Block',
+      'title' => '',
+      'body' => '<p>For more information consult the full chat <a href="/hours/chat">schedule</a>&nbsp;</p>',
+      'format' => 'filtered_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '48e32453-1b16-4581-9ca3-3e68b549d646';
+    $display->content['new-48e32453-1b16-4581-9ca3-3e68b549d646'] = $pane;
+    $display->panels['second'][4] = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-8b302848-39ad-43b5-84b5-8840ccb6b6bf';
   $handler->conf['display'] = $display;
@@ -772,7 +824,7 @@ help/chat/*',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'find/databases',
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -1168,15 +1220,18 @@ research-data-management/*',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $pane->pid = 'new-3377600a-ac39-4113-be81-998cb1c4f785';
     $pane->panel = 'first';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-research-data-management';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<p><img src="/sites/all/themes/pul_base/images/sco-logo.png" alt="Scholarly Communications Office" /></p>',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1186,9 +1241,31 @@ research-data-management/*',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $pane->uuid = '3377600a-ac39-4113-be81-998cb1c4f785';
+    $display->content['new-3377600a-ac39-4113-be81-998cb1c4f785'] = $pane;
+    $display->panels['first'][0] = 'new-3377600a-ac39-4113-be81-998cb1c4f785';
+    $pane = new stdClass();
+    $pane->pid = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-research-data-management';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = 'ff1c0a58-9059-41a8-be43-757c4a72b9d1';
     $display->content['new-ff1c0a58-9059-41a8-be43-757c4a72b9d1'] = $pane;
-    $display->panels['first'][0] = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
+    $display->panels['first'][1] = 'new-ff1c0a58-9059-41a8-be43-757c4a72b9d1';
     $pane = new stdClass();
     $pane->pid = 'new-ec67772b-6242-4870-827e-6d44b3f3ef2c';
     $pane->panel = 'second';

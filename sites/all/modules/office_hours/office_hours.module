@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Creates a field and widget for inserting working or office hours per day
@@ -6,9 +7,11 @@
 
 // @TODO 2012-05-13: it would be nice to include this file in the .info-file, but the OH-block is lost after F5-page refresh.
 // @TODO see http://nodesforbreakfast.com/article/2012/02/20/organize-your-module-code-hookhookinfo-drupal-7
-
 // @todo for 'multiple blocks per day', see code with string 'multiple blocks per day'.
-module_load_include('elements.inc', 'office_hours');
+module_load_include('inc', 'office_hours', 'includes/office_hours.elements');
+module_load_include('inc', 'office_hours', 'includes/office_hours.field');
+module_load_include('inc', 'office_hours', 'includes/office_hours.formatter');
+module_load_include('inc', 'office_hours', 'includes/office_hours.widget');
 
 /**
  * Implements hook_theme().
@@ -31,705 +34,6 @@ function office_hours_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_field_info().
- *
- * @return
- *   An array keyed by field type name. Each element of the array is an associative
- *   array with these keys and values:
- *   - "label": The human-readable label for the field type.
- */
-function office_hours_field_info() {
-  return array(
-    'office_hours' => array(
-      'label' => t('Office hours'),
-      'description' => t("This field stores weekly 'office hours' or 'opening hours' in the database."),
-      'settings' => array(
-        'hoursformat' => 0,
-        'granularity' => 60,
-        'limitstart' => '',
-        'limitend' => '',
-        'valhrs' => 0,
-// mar-2013: Conversion from (old) checkbox "Add more hours" to (new) selectlist 'cardinality'.
-// @todo for 'multiple blocks per day': create hook_update_N().
-//        'addhrs' => 1,
-        'cardinality' => 2,
-      ),
-      'default_widget' => 'office_hours',
-      'default_formatter' => 'office_hours',
-
-      // Integrate with the Entity Metadata module.
-      'property_type' => 'office_hours',
-      'property_callbacks' => array('office_hours_property_info_callback'),
-    ),
-  );
-}
-
-function office_hours_property_info_callback(&$info, $entity_type, $field, $instance, $field_type) {
-  $property = &$info[$entity_type]['bundles'][$instance['bundle']]['properties'][$field['field_name']];
-
-  $property['getter callback'] = 'entity_metadata_field_verbatim_get';
-  $property['setter callback'] = 'entity_metadata_field_verbatim_set';
-  unset($property['query callback']);
-
-  $property['property info']['day'] = array(
-    'type' => 'integer',
-    'label' => t('Day'),
-    'description' => "Stores the day of the week's numeric representation (0-6)",
-    'setter callback' => 'entity_property_verbatim_set',
-    'default' => 0,
-  );
-  $property['property info']['starthours'] = array(
-    'type' => 'integer',
-    'label' => t('Start Hours'),
-    'description' => 'Stores the start hours value',
-    'setter callback' => 'entity_property_verbatim_set',
-    'default' => 0,
-  );
-  $property['property info']['endhours'] = array(
-    'type' => 'integer',
-    'label' => t('End Hours'),
-    'description' => 'Stores the end hours value',
-    'setter callback' => 'entity_property_verbatim_set',
-    'default' => 0,
-  );
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Changes the hook_field_settings_form.
- * 
- */
-function office_hours_form_field_ui_field_edit_form_alter(&$form, &$form_state, $form_id) {
-  if ($form['#field']['type'] == 'office_hours') {
-    $description = t("This is unlimited by this field's nature. See below for limiting the number of blocks per day.");
-    $form['field']['cardinality'] = array(
-      '#type' => 'select',
-      '#title' => t('Number of values'),
-//      '#options' => drupal_map_assoc(array(14)) + array(FIELD_CARDINALITY_UNLIMITED => t('Unlimited')) + drupal_map_assoc(range(1, 10)),
-//      '#options' => drupal_map_assoc(array(14)),
-//      '#default_value' => 14,
-      '#options' => array(FIELD_CARDINALITY_UNLIMITED => t('Unlimited')),
-      '#default_value' => FIELD_CARDINALITY_UNLIMITED,
-      '#description' => $description,
-   );
-  }
-}
-
-/**
- * Implements hook_field_settings_form().
- *
- * Handle the global parameters for a field.
- */
-function office_hours_field_settings_form($field, $instance, $has_data) {
-  $settings = $field['settings'];
-  $hours = _office_hours_show_ampm(date_hours('H', FALSE));
-
-  $form = array();
-  $form['#element_validate'] = array('_office_hours_field_settings_form_validate');
-  $description = t('The maximum number of blocks, that are allowed per day.');
-  $description .= '<br/><strong>' . t('Warning! Lowering this setting after data has been created could result in the loss of data!') . '</strong><br/>';
-  $description .= t('Be careful when using more then 2 blocks per day, since not all external services (like Google Places) support this.');
-  $form['cardinality'] = array(
-    '#type' => 'select',
-    '#title' => t('Number of blocks'),
-// @todo for 'multiple blocks per day': add support for FIELD_CARDINALITY_UNLIMITED.
-//    '#options' => array(FIELD_CARDINALITY_UNLIMITED => t('Unlimited')) + drupal_map_assoc(range(1, 10)),
-//    '#options' => drupal_map_assoc(range(1, 2)),
-    '#options' => drupal_map_assoc(range(1, 12)),
-    '#default_value' => $settings['cardinality'],
-    '#description' => $description,
-//    '#disabled' => $has_data,
-  );
-
-// mar-2013: Conversion from (old) checkbox "Add more hours" to (new) selectlist.
-// @todo for 'multiple blocks per day': remove, after create hook_update_N().
-if (isset($settings['addhrs'])) {
-  $form['addhrs'] = array(
-//    '#type' => 'checkbox',
-    '#type' => 'hidden',
-    '#title' => t('Display the "Add more hours" link'),
-    '#required' => FALSE,
-    '#default_value' => $settings['addhrs'],
-    '#description' => t('Make it possible to use 2 hour block for each day instead of one.'),
-  );
-  if (!is_null($settings['addhrs']) && $settings['addhrs'] == 0 && $settings['cardinality'] == 2) {
-    $form['addhrs']['#default_value'] = NULL;
-    $form['cardinality']['#default_value'] = 1;
-  }
-}
-
-  $form['hoursformat'] = array(
-    '#type' => 'select',
-    '#title' => t('Hours format'),
-    '#options' => array( 2 => t('24 hrs') . ' (09:00)',
-                         0 => t('24 hrs') . ' (9:00)',
-                         1 => t('12 hrs') . ' (9:00 am)',
-                       ),
-    '#default_value' => $settings['hoursformat'],
-    '#required' => FALSE,
-    '#description' => t('Format of the clock in the widget.'),
-  );
-  $form['granularity'] = array(
-    '#type' => 'select',
-    '#title' => t('Granularity of time'),
-    '#options' => array( '60' => t('hours'), '30' => t('half hours'), '15' => t('quarter hours'), '5' => t('5 minute intervals'), '1' => t('minutes') ),
-    '#default_value' => $settings['granularity'],
-    '#required' => FALSE,
-    '#description' => t('Restrict the input to fixed fractions of an hour.'),
-  );
-  $form['valhrs'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Validate hours'),
-    '#required' => FALSE,
-    '#default_value' => $settings['valhrs'],
-    '#description' => t('Assure that endhours are later then starthours. Please note that this will work as long as the opening hours are not through midnight.'),
-  );
-  $form['limitstart'] = array(
-    '#type' => 'select',
-    '#title' => t('Limit widget hours - from'),
-    '#description' => t('Restrict the hours available - select options will start from this hour.'),
-    '#default_value' => $settings['limitstart'],
-    '#options' => $hours,
-  );
-  $form['limitend'] = array(
-    '#type' => 'select',
-    '#title' => t('Limit widget hours - until'),
-    '#description' => t('Restrict the hours available - select options will end at this hour.'),
-    '#default_value' => $settings['limitend'],
-    '#options' => $hours,
-  );
-
-if (1 == 0) {
-  // @Todo: activate this, to Show $form['limitstart'] and $form['limitend'] using the normal widget.
-  $form_state = NULL;
-  $default_value_field = $field;
-  $default_value_field['settings']['granularity'] = '60';
-  $langcode = 'und';
-  $items = array();
-  $delta = 0;
-  $element = NULL;
-  
-  $elements = office_hours_field_widget_form($form, $form_state, $default_value_field, $instance, $langcode, $items, $delta, $element);
-
-  $form['limits'] = $elements[0];
-  $form['limits']['#dayname'] = 'Limit widget hours';
-  $form['limits']['#description'] = t('Restrict the hours available - select options will be between these hours.');
-  $form['limits']['#default_value'] = array('day' => 0, 'daydelta' => 0, 'starthours' => $settings['limitstart'] . '00', 'endhours' => $settings['limitend'] . '00');
-}
-
-  return $form;
-}
-
-/**
- * Implements the #element_validate callback for myfield_field_settings_form().
- * Verifies the office hours limits.
- * "Please note that this will work as long as the opening hours are not through midnight."
- */
-function _office_hours_field_settings_form_validate($element, &$form_state) {
-  if ($element['limitstart']['#value'] > $element['limitend']['#value']) {
-    form_error($element['limitstart'], t('%start is later then %end.', array('%start' => $element['limitstart']['#title'], '%end' => $element['limitend']['#title'] )));
-  }
-}
-
-/**
- * Implements hook_field_is_empty().
- */
-function office_hours_field_is_empty($item, $field) {
-  if ( $item['starthours'] == '' || $item['endhours'] == '' || !isset($item['day']) ) {
-    return TRUE;
-  }
-  return FALSE;
-}
-
-/**
- * Implements hook_field_load(), hook_field_presave().
- * NB. Do NOT use these hooks. On the field_settings_form, we have a multi-value default value.
- * hook_field_load() and hook_field_presave() are NOT called on this page, destroying the data.
- * This hook is not called in the widget settings page. See http://drupal.org/node/1944678 .
- */
-//function office_hours_field_load($entity_type, $entities, $field, $instances, $langcode, &$items, $age) {
-//}
-//function office_hours_field_presave($entity_type, $entity, $field, $instance, $langcode, &$items) {
-//}
-
-/**
- * Implements hook_field_validate().
- * Is called a.o. when saving the content type field (default value) and content.
- *
- * Is not implemented: the validation is done in the element callback: office_hours_validate().
- */
-//function office_hours_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
-//}
-
-/**
- * Implements hook_field_formatter_info().
- */
-function office_hours_field_formatter_info() {
-  return array(
-    'office_hours' => array(
-      'label' => t('Office hours'),
-      'field types' => array('office_hours',),
-      'settings' => _office_hours_field_formatter_defaults(),
-    ),
-  );
-}
-
-/**
- * Implements hook_field_formatter_settings_form().
- */
-function office_hours_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
-  $display = $instance['display'][$view_mode];
-  $settings = _office_hours_field_formatter_defaults($instance['display'][$view_mode]['settings']);
-  $form = array();
-/*
-  // Find timezone fields, to be used in 'Current status'-option.
-  $fields = field_info_instances( (isset($form['#entity_type']) ? $form['#entity_type'] : NULL), (isset($form['#bundle']) ? $form['#bundle'] : NULL));
-  $timezone_fields = array();
-  foreach ($fields as $field_name => $timezone_instance) {
-    if ($field_name == $field['field_name']) {
-      continue;
-    }
-    $timezone_field = field_read_field($field_name);
-
-    if (in_array($timezone_field['type'], array('tzfield'))) {
-      $timezone_fields[$timezone_instance['field_name']] = $timezone_instance['label'] . ' (' . $timezone_instance['field_name'] . ')';
-    }
-  }
-  if ($timezone_fields) {
-    $timezone_fields = array('' => '<None>') + $timezone_fields;
-  }
- */
-
-// @TODO: The settings could go under the several 'core' settings,
-// as above in the implemented hook_FORMID_form_alter functions.
-  $form = array(
-    '#type' => 'fieldset',
-    '#title' => t('Office hours formatter settings'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-    '#weight' => 5,
-  );
-
-/*  // dec-2012: converted from checkbox to selectlist.
-  $form['showclosed'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Show empty days'),
-    '#required' => FALSE,
-    '#default_value' => $settings['showclosed'],
-    '#description' => t('Show empty days on the field.'),
-  );
- */
-  $form['showclosed'] = array(
-    '#type' => 'select',
-    '#title' => t('Number of days to show'),
-    '#options' => array('all' => t('Show all days'), 'open' => t('Show only open days'), 'next' => t('Show next open day'), 'none' => t('Hide all days')),
-    '#default_value' => $settings['showclosed'],
-    '#description' => t('The days to show in the formatter. Useful in combination with the Current Status block.'),
-  );
-  // first day of week, copied from system.variable.inc.
-  $form['date_first_day'] = array(
-    '#type' => 'select',
-    '#options' => date_week_days(TRUE),
-    '#title' => t('First day of week'),
-    '#default_value' => $settings['date_first_day'],
-  );
-  $form['daysformat'] = array(
-    '#type' => 'select',
-    '#title' => t('Day notation'),
-    '#options' => array('long' => t('long'), 'short' => t('short'), 'number' => t('number'), 'none' => t('none')),
-    '#default_value' => $settings['daysformat'],
-  );
-  $form['hoursformat'] = array(
-    '#type' => 'select',
-    '#title' => t('Hours format'),
-    '#options' => array( 2 => t('24 hrs') . ' (09:00)',
-                         0 => t('24 hrs') . ' (9:00)',
-                         1 => t('12 hrs') . ' (9:00 am)',
-                       ),
-    '#default_value' => $settings['hoursformat'],
-    '#required' => FALSE,
-    '#description' => t('Format of the clock in the formatter.'),
-  );
-  $form['compress'] = array(
-    '#title' => t('Compress all hours of a day into one set'),
-    '#type' => 'checkbox',
-    '#default_value' => $settings['compress'],
-    '#description' => t('Even if more hours is allowed, you might want to show a compressed form. E.g.,  7:00-12:00, 13:30-19:00 becomes 7:00-19:00.'),
-    '#required' => FALSE,
-  );
-  $form['grouped'] = array(
-    '#title' => t('Group consecutive days with same hours into one set'),
-    '#type' => 'checkbox',
-    '#default_value' => $settings['grouped'],
-    '#description' => t('E.g., Mon: 7:00-19:00; Tue: 7:00-19:00 becomes Mon-Tue: 7:00-19:00.'),
-    '#required' => FALSE,
-  );
-  $form['closedformat'] = array(
-    '#type' => 'textfield',
-    '#size' => 30,
-    '#title' => t('Empty days notation'),
-    '#default_value' => $settings['closedformat'],
-    '#required' => FALSE,
-    '#description' => t('Format of empty (closed) days. You can use translatable text and HTML in this field.'),
-  );
-
-// taken from views_plugin_row_fields.inc
-  $form['separator_days'] = array(
-    '#title' => t('Separators'),
-    '#type' => 'textfield',
-    '#size' => 10,
-    '#default_value' => $settings['separator_days'],
-    '#description' => t('This separator will be placed between the days. Use &#39&ltbr&gt&#39 to show each day on a new line.'),
-  );
-  $form['separator_grouped_days'] = array(
-    '#type' => 'textfield',
-    '#size' => 10,
-    '#default_value' => $settings['separator_grouped_days'],
-    '#description' => t('This separator will be placed between the labels of grouped days.'),
-  );
-  $form['separator_day_hours'] = array(
-    '#type' => 'textfield',
-    '#size' => 10,
-    '#default_value' => $settings['separator_day_hours'],
-    '#description' => t('This separator will be placed between the day and the hours.'),
-  );
-  $form['separator_hours_hours'] = array(
-    '#type' => 'textfield',
-    '#size' => 10,
-    '#default_value' => $settings['separator_hours_hours'],
-    '#description' => t('This separator will be placed between the hours of a day.'),
-  );
-  $form['separator_more_hours'] = array(
-    '#type' => 'textfield',
-    '#size' => 10,
-    '#default_value' => $settings['separator_more_hours'],
-    '#description' => t('This separator will be placed between the hours and more_hours of a day.'),
-  );
-
-  // Show a 'Current status' option
-  $form['current_status'] = array(
-    '#title' => t('Current status'),
-    '#type' => 'fieldset',
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-  $form['current_status']['position'] = array(
-    '#type' => 'select',
-    '#title' => t('Current status position'),
-    '#options' => array('hide' => t('Hidden'), 'before' => t('Before hours'), 'after' => t('After hours'), ),
-    '#default_value' => $settings['current_status']['position'],
-    '#description' => t('Where should the current status be located?'),
-  );
-  $form['current_status']['open_text'] = array(
-    '#title' => t('Formatting'),
-    '#type' => 'textfield',
-    '#size' => 40,
-    '#default_value' => $settings['current_status']['open_text'],
-    '#description' => t('Format of the message displayed when currently open. You can use translatable text and HTML in this field.'),
-  );
-  $form['current_status']['closed_text'] = array(
-    '#type' => 'textfield',
-    '#size' => 40,
-    '#default_value' => $settings['current_status']['closed_text'],
-    '#description' => t('Format of message displayed when currently closed. You can use translatable text and HTML in this field.'),
-  );
-
-/*
-  if ($timezone_fields) {
-    $form['timezone_field'] = array(
-      '#type' => 'select',
-      '#title' => t('Timezone Field'),
-      '#options' => $timezone_fields,
-      '#default_value' => $settings['timezone_field'],
-      '#description' => t('Should we use another field to set the timezone for these hours?'),
-    );
-  }
-  else {
-    $form['timezone_field'] = array(
-      '#type' => 'hidden',
-      '#value' => $settings['timezone_field'],
-    );
-  }
- */
-
-  return $form;
-}
-
-/**
- * Implements hook_field_formatter_settings_summary().
- *
- * Returns a short summary for the current formatter settings of an instance.
- * @TODO: return more info, like the Date module does.
- */
-function office_hours_field_formatter_settings_summary($field, $instance, $view_mode) {
-  $display = $instance['display'][$view_mode];
-  $settings = $display['settings'];
-  $formatter = $display['type'];
-  $summary = array();
-
-  $summary[] = t('Display Office hours in different formats.');
-
-  return implode('<br />', $summary);
-}
-
-/**
- * Implements hook_field_formatter_view().
- *
- * Be careful: date_api uses PHP: 0=Sunday, and DateObject uses ISO: 1=Sunday.
- */
-function office_hours_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-  $element = array();
-  if (!$items) {
-    return $element;
-  }
-
-  // Initialize formatter settings.
-  $settings = _office_hours_field_formatter_defaults($display['settings']);
-
-  // Initialize daynames, using date_api as key: 0=Sun - 6=Sat.
-  switch ($settings['daysformat']) {
-    case 'number':
-      $daynames = range(1, 7); // ISO-8601 numerical representation
-      break;
-    case 'none':
-      $daynames = array_fill(0, 7, '');
-      break;
-    case 'long':
-      $daynames = date_week_days(TRUE);
-      break;
-    case 'short':
-    default:
-      $daynames = date_week_days_abbr(TRUE, TRUE, 3);
-      break;
-  }
-
-  // Initialize days and times, using date_api as key (0=Sun, 6-Sat)
-  // Empty days are not yet present in $items, and are now added in $days.
-  $days = array();
-  for ($day = 0; $day < 7; $day++) {
-    $days[$day] = array(
-      'startday'    => $day,
-      'endday'      => NULL,
-      'times'       => NULL,
-      'current'     => FALSE,
-      'next'        => FALSE,
-    );
-  }
-
-  $timezone = NULL; // @TODO
-
-  // Avoid repetitive calculations, use static. See http://drupal.org/node/1969956
-  // And even better, avoid the expensive DateObject.
-  $today = (int)idate('w', $_SERVER['REQUEST_TIME']);  // Get daynumber sun=0 - sat=6.
-  $now = date('Gi', $_SERVER['REQUEST_TIME']); // 'Gi' format.
-
-  $open = FALSE;
-  $next = NULL;
-
-  // Loop through all lines. Detect the current line and the open/closed status.
-  // Convert the daynumber to (int) to get '0' for Sundays, not 'false'.
-  foreach (element_children($items) as $key => $arraykey) {
-    $el  = $items[$arraykey];
-
-    // Calculate start and end times
-    $day = $el['day'];
-    $start = _office_hours_time_to_mil($el['starthours']); // 'Gi' format.
-    $end   = _office_hours_time_to_mil($el['endhours']); // 'Gi' format.
-
-    $times = array (
-        'start' => $start,
-        'end' => $end,
-      );
-    $days[$day]['times'][] = $times;
-
-    // Are we currently open? If not, when is the next time?
-    // Remember: empty days are not in $items; they are present in $days.
-    if ($day < $today ) {
-      // Initialize to first day of (next) week, in case we're closed the rest of the week
-      if ($next == NULL) {
-        $next = (int)$day;
-      }
-    }
-    elseif ($day == $today) {
-      if ($start <= $now) {
-        // we were open today, check if we are still open.
-        if ( ($start > $end)    // we are open until after midnight.
-            || ($start == $end) // we are open 24hrs per day.
-            || (($start < $end) && ($end > $now))) { // we have closed already.
-          $open = TRUE;
-          $days[$day]['current'] = TRUE;
-          $next = (int)$day;
-        }
-        else {
-          // We have already closed.
-        }
-      }
-      else {
-        // we will open later today.
-          $next = (int)$day;
-      }
-    }
-    elseif ($day > $today) {
-      if ($next == NULL || $next < $today) {
-        $next = (int)$day;
-      }
-    }
-  }
-  if ($next !== NULL) {
-    $days[(int)$next]['next'] = TRUE;
-  }
-
-  // Reorder weekdays to match the first day of the week, using formatter settings;
-  // $days = date_week_days_ordered($days);  //using variable_get('date_first_day');
-  if ($settings['date_first_day'] > 0) {
-    for ($i = 1; $i <= $settings['date_first_day']; $i++) {
-      $last = array_shift($days);
-      array_push($days, $last);
-    }
-  }
-
-  // Check if we're compressing times. If so, combine lines of the same day into one.
-  if ($settings['compress']) {
-    foreach ($days as $day => &$info) {
-      if (is_array($info['times'])) {
-        // Initialize first block of the day.
-        $day_times = $info['times'][0]; 
-        // Compress other block in first block.
-        foreach($info['times'] as $index => $block_times) {
-          $day_times['start'] = min($day_times['start'], $block_times['start']);
-          $day_times['end']   = max($day_times['end'], $block_times['end']);
-        }
-        $info['times'] = array(0 => $day_times);
-      }
-    }
-  }
-
-  // Check if we're grouping days
-  if ($settings['grouped']) {
-    for ($i = 0; $i < 7; $i++) {
-      if ($i == 0) {
-        $times = $days[$i]['times'];
-      }
-      elseif ($times != $days[$i]['times']) {
-        $times = $days[$i]['times'];
-      }
-      else {
-        //N.B. for 0=Sundays, we need to (int) the indices.
-        $days[$i]['endday']   = $days[(int)$i]['startday'];
-        $days[$i]['startday'] = $days[(int)$i-1]['startday'];
-        $days[$i]['current']  = $days[(int)$i]['current'] || $days[(int)$i-1]['current'];
-        $days[$i]['next']     = $days[(int)$i]['next'] || $days[(int)$i-1]['next'];
-        unset($days[(int)$i-1]);
-      }
-    }
-  }
-
-  // Theme the result
-  $element[] = array(
-    '#markup' => theme(
-      'office_hours_field_formatter_default',
-      array(
-        'element'  => $items,
-        'display'  => $display,
-        'days'     => $days,
-        'settings' => $settings,
-        'daynames' => $daynames,
-        'open'     => $open,
-        'timezone' => $timezone,
-      )
-    ),
-  );
-
-  return $element;
-}
-
-/**
- * Implements hook_field_widget_info().
- */
-function office_hours_field_widget_info() {
-  return array(
-    'office_hours' => array(
-      'label' => t('Office hours'),
-      'field types' => array('office_hours'),
-      'behaviors' => array(
-        'multiple values' => FIELD_BEHAVIOR_CUSTOM,
-        'default value' => FIELD_BEHAVIOR_DEFAULT,
-      ),
-    ),
-  );
-}
-
-/**
- * Implements hook_field_widget_form().
- * Generates a set of time_block form-items.
- * N.B. when changing this function, be aware that it is also used in office_hours_field_settings_form().
- */
-function office_hours_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
-  // Get field settings, to make it accessible for each element in other functions.
-  $cardinality = $field['settings']['cardinality'];
-
-  // Get the valid minutes, using Date API.
-  $minutes = date_minutes('i', FALSE, $field['settings']['granularity']);
-  $minutes = drupal_map_assoc($minutes);
-
-  // Get the valid hours. Date API doesn't provide a straight method for this.
-  $hours = _office_hours_field_widget_hours($field['settings']);
-  $hours = drupal_map_assoc($hours); // key == value
-
-  //Get the day names, ordered to match the first day of the week, according to system settings.
-  $daynames = date_week_days(TRUE);
-  $first_day = variable_get('date_first_day', 0);
-
-  // Create an indexed two level array of time blocks. 
-  // First level are day numbers. Second level contains field values arranged by daydelta.
-  $indexed_days = array_fill_keys(array(0, 1, 2, 3, 4, 5, 6), array());
-  foreach ($items as $index => $item) {
-    $indexed_days[(int) $item['day']][] = $item;
-  }
-  $items = $indexed_days;
-
-  // Build elements, sorted by first_day_of_week.
-  $elements = array();
-  $days = date_week_days_ordered(range(0, 6));
-  foreach ($days as $index => $day) {
-    // todo: theme_function clears values above cardinality. move it here.
-    for ($daydelta = 0; $daydelta < max(2, $cardinality); $daydelta ++) {
-      $element['#type'] = 'office_hours_block';
-      $element['#default_value'] = isset($items[$day][$daydelta]['starthours']) ? $items[$day][$daydelta] : NULL;
-      $element['#day'] = $day;
-      $element['#daydelta'] = $daydelta;
-      $element['#dayname'] = $daynames[$day];
-      $element['#field_settings'] = $field['settings'];
-      $element['#field_settings']['#hours'] = $hours;
-      $element['#field_settings']['#minutes'] = $minutes;
-
-      $elements[] = $element;
-    }
-  }
-
-  // Build multi element widget.
-  $field_elements = array(
-    '#theme' => 'office_hours_week',
-    '#field_name' => $field['field_name'],
-    '#title' => check_plain($instance['label']),
-    '#required' => $instance['required'],
-    '#description' => field_filter_xss($instance['description']),
-  ) + $elements;
-
-  return $field_elements;
-}
-
-/**
- * Implements hook_field_widget_error().
- *
- * This is necessary to show the errors thrown in hook_field_validate().
- */
-function office_hours_field_widget_error($element, $error, $form, &$form_state) {
-  form_error($element, $error['message']);
-}
-
-/**
  * Implements FAPI hook_element_info().
  */
 function office_hours_element_info() {
@@ -742,14 +46,14 @@ function office_hours_element_info() {
       '#columns' => array('day', 'starthours', 'endhours'),
       '#theme' => 'office_hours_block',
       '#attached' => array(
-//        'css' => array(
-//          drupal_get_path('module', 'office_hours') . '/office_hours.css',
-//        ),
+        // 'css' => array(
+        //   drupal_get_path('module', 'office_hours') . '/office_hours.css',
+        // ),
         'js' => array(
           drupal_get_path('module', 'office_hours') . '/office_hours.js',
-          ),
+        ),
       ),
-//      '#pre_render' => array('_office_hours_pre_render_element'),
+      // '#pre_render' => array('_office_hours_pre_render_element'),
     ),
     'office_hours_select' => array(
       '#input' => TRUE,
@@ -773,6 +77,7 @@ function office_hours_views_api() {
 
 /**
  * Helper function to convert a range of hours from '13' to '13:00 (01:00 pm)'.
+ *
  * This is used in the Widget settings form.
  */
 function _office_hours_show_ampm($hours) {
@@ -781,35 +86,36 @@ function _office_hours_show_ampm($hours) {
       $hours[$key] = _office_hours_time_to_24hr($hour . '00')
                    . ' (' . _office_hours_convert_to_ampm($hour . '00') . ')';
     }
-    else {
-//      $hours[$key] = '';
-    }
   }
   return $hours;
 }
 
 /**
  * Gets the (limited) hours of a day.
- * Mimics date_hours() function, but that function does not support limiting the hours.
- * The limits are set in the Widget settings form, and used in the Widget form.
+ *
+ * Mimics date_hours() function, but that function does not support limiting
+ * the hours. The limits are set in the Widget settings form, and used in the
+ * Widget form.
  */
 function _office_hours_field_widget_hours($settings) {
-
   // Get the valid hours. Date API doesn't provide a straight method for this.
-  $hoursformat = ($settings['hoursformat'] == 1) ? 'g' : 'H'; // 12 or 24 format
+  $hoursformat = ($settings['hoursformat'] == 1) ? 'g' : 'H'; // 12 or 24 format.
   $required = FALSE;
   $start = ($settings['limitstart'] == '') ? 0 : max(0, $settings['limitstart']);
-  $end = ($settings['limitend'] == '') ? 23 : min(23, $settings['limitend']);
+  $start = (int) $start / 100;
+  $end = ($settings['limitend'] == '') ? 2300 : min(2300, $settings['limitend']);
+  $end = (int) $end / 100;
 
-  // begin modified copy from date_hours()
+  // Begin modified copy from date_hours().
   $hours = array();
-  if ($hoursformat == 'h' || $hoursformat == 'g') { // 12-hour format
+  if ($hoursformat == 'h' || $hoursformat == 'g') {
+    // 12-hour format.
     $min = 1;
     $max = 24;
     for ($i = $min; $i <= $max; $i++) {
       if ((($i >= $start) && ($i <= $end)) || ($end - $start >= 11)) {
-        $hour = ($i <= 12) ? $i : $i - 12 ;
-        $hours[$hour] = $hour < 10 && ($hoursformat == 'H' || $hoursformat == 'h') ? "0$hour" : $hour;
+        $hour = ($i <= 12) ? $i : $i - 12;
+        $hours[$hour * 100] = $hour < 10 && ($hoursformat == 'H' || $hoursformat == 'h') ? "0$hour" : $hour;
       }
 
     }
@@ -820,19 +126,19 @@ function _office_hours_field_widget_hours($settings) {
     $max = $end;
     for ($i = $min; $i <= $max; $i++) {
       $hour = $i;
-      $hours[$hour] = $hour < 10 && ($hoursformat == 'H' || $hoursformat == 'h') ? "0$hour" : $hour;
+      $hours[$hour * 100] = $hour < 10 && ($hoursformat == 'H' || $hoursformat == 'h') ? "0$hour" : $hour;
     }
   }
-
   $none = array('' => '');
-  $hours =  !$required ? $none + $hours : $hours;
-  // end modified copy from date_hours()
+  $hours = !$required ? $none + $hours : $hours;
+  // End modified copy from date_hours().
 
   return $hours;
 }
 
 /**
  * Helper function to convert a time to a given format.
+ *
  * For formatting options, see http://www.php.net/manual/en/function.date.php
  */
 function _office_hours_time_format($time, $timeformat) {
@@ -842,6 +148,7 @@ function _office_hours_time_format($time, $timeformat) {
 
 /**
  * Helper function to convert '1630' or '16:30' to '4:30 pm'.
+ *
  * For formatting options, see http://www.php.net/manual/en/function.date.php
  */
 function _office_hours_convert_to_ampm($time, $timeformat = 'g:i a') {
@@ -894,39 +201,9 @@ function _office_hours_field_widget_time_parse($time, $hoursformat) {
     $timeformat = ($hoursformat == 1) ? 'g:i:a' : 'H:i:a'; // 12hrs or 24hrs
     $time = _office_hours_time_format($time, $timeformat);
     list($hour, $min, $ampm) = explode(':', $time);
+    $hour = $hour * 100;
   }
 
   $result = array('hour' => $hour, 'minute' => $min, 'ampm' => $ampm);
   return $result;
-}
-
-function _office_hours_field_formatter_defaults($settings = array()) {
-  // Assure all values are set. Append with missing values.
-  $settings +=
-    array(
-      'daysformat' => 'long',
-      'hoursformat' => 0, // '12'/'24'/'HH:mm',
-      'compress' => FALSE,
-      'grouped' => FALSE,
-      'showclosed' => 'all',
-      'closedformat' => 'Closed',   // The html-string for closed/empty days.
-      'separator_days' => '<br />',
-      'separator_grouped_days' => ' - ',
-      'separator_day_hours' => ': ',
-      'separator_hours_hours' => '-',
-      'separator_more_hours' => ', ',
-      'current_status' => array(
-        'position' => 'hide',
-        'open_text' => 'Currently open!',
-        'closed_text' => 'Currently closed',
-      ),
-      'timezone_field' => '',
-      'date_first_day' => variable_get('date_first_day', 0),
-    );
-
-  // Conversion from (old) checkbox to (new) selectlist.
-  $settings['showclosed'] = ($settings['showclosed'] == '1') ? 'all'  : $settings['showclosed'];
-  $settings['showclosed'] = ($settings['showclosed'] == '0') ? 'open' : $settings['showclosed'];
-
-  return $settings;
 }

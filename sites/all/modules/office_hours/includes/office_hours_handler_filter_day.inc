@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Implements Views integration: day filter
+ * Implements Views integration: day filter.
  */
 
 class office_hours_handler_filter_day extends content_handler_filter_many_to_one {
@@ -12,7 +12,15 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
   }
 
   function get_value_options() {
-    $this->value_options = array( t('Sunday'), t('Monday'), t('Tuesday'),  t('Wednesday'), t('Thursday'), t('Friday'), t('Saturday') );
+    $this->value_options = array(
+      t('Sunday', array(), array('context' => 'day_name')),
+      t('Monday', array(), array('context' => 'day_name')),
+      t('Tuesday', array(), array('context' => 'day_name')),
+      t('Wednesday', array(), array('context' => 'day_name')),
+      t('Thursday', array(), array('context' => 'day_name')),
+      t('Friday', array(), array('context' => 'day_name')),
+      t('Saturday', array(), array('context' => 'day_name')),
+    );
   }
 
   function option_definition() {
@@ -23,7 +31,7 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
   }
 
   /**
-   * Provide inclusive/exclusive matching
+   * Provides inclusive/exclusive matching.
    */
   function operator_options() {
     return array(
@@ -32,8 +40,8 @@ class office_hours_handler_filter_day extends content_handler_filter_many_to_one
     );
   }
 
-   /**
-   * Provide the form
+  /**
+   * Provides the form.
    */
   function value_form(&$form, &$form_state) {
     $this->get_value_options();
