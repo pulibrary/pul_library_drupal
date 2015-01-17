@@ -1989,8 +1989,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'emergency_alert_block',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Library Alert',
     );
     $pane->cache = array();
     $pane->style = array(

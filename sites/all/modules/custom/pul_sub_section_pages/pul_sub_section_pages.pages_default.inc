@@ -1202,7 +1202,19 @@ services/interlibrary-services/lender-fees',
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'services/borrowdirect',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'admin_title' => 'Contact Document Delivery',
       'title' => 'Contact',
@@ -1221,6 +1233,43 @@ services/interlibrary-services/lender-fees',
     $pane->uuid = '5fa52051-7d21-4008-93ed-c14e35b65fca';
     $display->content['new-5fa52051-7d21-4008-93ed-c14e35b65fca'] = $pane;
     $display->panels['first'][1] = 'new-5fa52051-7d21-4008-93ed-c14e35b65fca';
+    $pane = new stdClass();
+    $pane->pid = 'new-94479efa-d58a-4f4b-a6f4-d6e4062ddb13';
+    $pane->panel = 'first';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'services/borrowdirect',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Borrow Direct Contact Info',
+      'title' => 'Contact Borrow Direct',
+      'body' => '<dl><dd>bdirect@princeton.edu<br />609.258.7469</dd></dl>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '94479efa-d58a-4f4b-a6f4-d6e4062ddb13';
+    $display->content['new-94479efa-d58a-4f4b-a6f4-d6e4062ddb13'] = $pane;
+    $display->panels['first'][2] = 'new-94479efa-d58a-4f4b-a6f4-d6e4062ddb13';
     $pane = new stdClass();
     $pane->pid = 'new-1948ea29-663a-4677-94b1-f12e397811e4';
     $pane->panel = 'middle';
