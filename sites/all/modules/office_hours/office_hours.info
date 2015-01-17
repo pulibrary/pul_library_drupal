@@ -1,14 +1,17 @@
 name = Office hours
-description = Defines an 'weekly office hours' field type, allowing you to specify when an Entity is open or closed.
+description = Defines a 'weekly office hours' field type, allowing you to specify when an Entity is open or closed.
 package = Fields 
 dependencies[] = date_api
 core = 7.x
 
+files[] = includes/office_hours_handler_filter_open.inc
+files[] = includes/office_hours_handler_filter_hours.inc
+
 stylesheets[all][] = office_hours.css
 
-; Information added by drupal.org packaging script on 2013-06-27
-version = "7.x-1.3"
+; Information added by Drupal.org packaging script on 2014-12-31
+version = "7.x-1.4"
 core = "7.x"
 project = "office_hours"
-datestamp = "1372357551"
+datestamp = "1420021687"
 

@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_schema($field).
+ * Implements hook_field_schema().
  */
 function office_hours_field_schema($field) {
   switch ($field['type']) {
@@ -24,37 +24,14 @@ function office_hours_field_schema($field) {
           'not null' => FALSE,
         ),
       );
-    break;
+      break;
   }
   return array('columns' => $db_columns);
 }
 
 /**
- * Implements hook_install().
- */
-//function office_hours_install() {
-//}
-
-/**
- * Implements hook_uninstall().
- */
-//function office_hours_uninstall() {
-//}
-
-/**
- * Implements hook_enable().
- */
-//function office_hours_enable() {
-//}
-
-/**
- * Implements hook_disable().
- */
-//function office_hours_disable() {
-//}
-
-/**
  * Change value of 'day' column from 0-13 range to normal 0-6 day range.
+ *
  * This allows for more then 2 hours blocks per day.
  */
 function office_hours_update_7100() {
@@ -62,13 +39,14 @@ function office_hours_update_7100() {
 }
 
 
-/*
+/**
  * Helper function for hook_update_N.
+ *
  * Change value of 'day' column from 0-13 range to normal 0-6 day range.
  * This allows for more then 2 hours blocks per day.
  */
 function _office_hours_update_7100_daynum() {
-// Step 1: Collect field_ids for office hours fields.
+  // Step 1: Collect field_ids for office hours fields.
   $ids = array();
   $fields = field_read_fields();
   foreach ($fields as $field) {
@@ -81,7 +59,7 @@ function _office_hours_update_7100_daynum() {
     return;
   }
 
-// Step 2: Collect fields of type 'office_hours' via id.
+  // Step 2: Collect fields of type 'office_hours' via id.
   $oh_fields = array();
   $instances = field_info_instances();
   foreach ($instances as $entity => $bundles) {
@@ -97,7 +75,7 @@ function _office_hours_update_7100_daynum() {
     }
   }
 
-// Step 3: Update entities.
+  // Step 3: Update entities.
   foreach ($oh_fields as $id => $field) {
     $entity_type = $field['entity_type'];
     $bundle = $field['bundle'];
@@ -109,7 +87,7 @@ function _office_hours_update_7100_daynum() {
     $entities = $query
       ->entityCondition('entity_type', $entity_type)
       ->entityCondition('bundle', $bundle)
-      ->execute();        
+      ->execute();
 
     // Remove extra layer from data structure.
     $entities = $entities[$entity_type];
@@ -117,16 +95,16 @@ function _office_hours_update_7100_daynum() {
 
     // We may run in time problems. Allow restart using a variable.
     $id = -1;
-    $latest_id = variable_get('office_hours-' . $entity_type . '-' . $bundle . '-' . $field_id , $id);
+    $latest_id = variable_get('office_hours-' . $entity_type . '-' . $bundle . '-' . $field_id, $id);
 
     // Convert the 'day' column to from 0-13 to 0-6 day range.
     foreach ($entities as $id => $entity) {
       if ($id > $latest_id) {
 
-        // Entity types other then 'node' (like 'taxonomy_term') need to be enhanced.
-        // The following is copied from entity_create_stub_entity(), which is removed in D8.
+        // Non-node Entity types (like 'taxonomy_term') need enhancing.
+        // Copied from entity_create_stub_entity() (removed in D8).
         $info = entity_get_info($entity_type);
-//        $entity->{$info['entity keys']['id']} = $entity->id;
+        // $entity->{$info['entity keys']['id']} = $entity->id;
         if (!empty($info['entity keys']['revision']) && isset($entity->vid)) {
           $entity->{$info['entity keys']['revision']} = $entity->vid;
         }
@@ -152,9 +130,9 @@ function _office_hours_update_7100_daynum() {
           // Prevent core-error #985642, which should be fixed per D7.22
           $full_entity->original = $full_entity;
 
-//          field_attach_presave($entity_type, $full_entity);  // this unneccesarily shifts the days.
+          // field_attach_presave($entity_type, $full_entity);  // This unnecessarily shifts the days.
           field_attach_update($entity_type, $full_entity);
-          variable_set('office_hours-' . $entity_type . '-' . $bundle . '-' . $field_id , $id);
+          variable_set('office_hours-' . $entity_type . '-' . $bundle . '-' . $field_id, $id);
         }
       }
     }
@@ -168,6 +146,4 @@ function _office_hours_update_7100_daynum() {
     $field_name = $field['field_name'];
     variable_del('office_hours-' . $entity_type . '-' . $bundle . '-' . $field_id);
   }
-
-  return;
 }
