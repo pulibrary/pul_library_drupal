@@ -61,7 +61,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/englib',
+            'paths' => 'libraries/engineering',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -119,14 +119,13 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
     $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
     $pane = new stdClass();
-    $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_8';
+    $pane->subtype = 'library_hours-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'path' => '',
       'arguments' => array(
         'field_hrs_lib_calendar_target_id' => '%cal:nid',
       ),
@@ -141,9 +140,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'e19bc4ac-4999-41b3-a23e-a407ffc288a2';
-    $display->content['new-e19bc4ac-4999-41b3-a23e-a407ffc288a2'] = $pane;
-    $display->panels['first'][1] = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->uuid = '1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
+    $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
+    $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
@@ -312,7 +311,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_amenities';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
@@ -340,29 +339,6 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
     $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
-    $pane = new stdClass();
-    $pane->pid = 'new-85b88829-cc6e-4f70-b8f4-96c44edf6985';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'branch_amenities-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7786',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '85b88829-cc6e-4f70-b8f4-96c44edf6985';
-    $display->content['new-85b88829-cc6e-4f70-b8f4-96c44edf6985'] = $pane;
-    $display->panels['second'][3] = 'new-85b88829-cc6e-4f70-b8f4-96c44edf6985';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
@@ -441,7 +417,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/englib/*',
+            'paths' => 'libraries/engineering/*
+
+help/engineering-course-reserves-request-form',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -499,14 +477,13 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
     $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
     $pane = new stdClass();
-    $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_8';
+    $pane->subtype = 'library_hours-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'path' => '',
       'arguments' => array(
         'field_hrs_lib_calendar_target_id' => '3690',
       ),
@@ -521,9 +498,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'e19bc4ac-4999-41b3-a23e-a407ffc288a2';
-    $display->content['new-e19bc4ac-4999-41b3-a23e-a407ffc288a2'] = $pane;
-    $display->panels['first'][1] = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
+    $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
@@ -596,6 +573,30 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
     $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane = new stdClass();
+    $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:webform';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
+    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';
     $pane->type = 'block';
@@ -618,7 +619,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
     $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane = new stdClass();
-    $pane->pid = 'new-db81f13a-ca5c-4979-bada-337a94658956';
+    $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
     $pane->type = 'views_panes';
     $pane->subtype = 'branch_library_image-panel_pane_1';
@@ -639,9 +640,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'db81f13a-ca5c-4979-bada-337a94658956';
-    $display->content['new-db81f13a-ca5c-4979-bada-337a94658956'] = $pane;
-    $display->panels['top'][0] = 'new-db81f13a-ca5c-4979-bada-337a94658956';
+    $pane->uuid = 'b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+    $display->content['new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b'] = $pane;
+    $display->panels['top'][0] = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

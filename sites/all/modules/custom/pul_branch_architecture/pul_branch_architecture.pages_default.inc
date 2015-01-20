@@ -97,10 +97,10 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7c934369-243f-4b83-953d-002a8f2b7c1e';
+    $pane->pid = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-architecture-library';
+    $pane->subtype = 'menu-menu-branch-architecture';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -115,18 +115,17 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7c934369-243f-4b83-953d-002a8f2b7c1e';
-    $display->content['new-7c934369-243f-4b83-953d-002a8f2b7c1e'] = $pane;
-    $display->panels['first'][0] = 'new-7c934369-243f-4b83-953d-002a8f2b7c1e';
+    $pane->uuid = 'e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
+    $display->content['new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7'] = $pane;
+    $display->panels['first'][0] = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
     $pane = new stdClass();
-    $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->pid = 'new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_8';
+    $pane->subtype = 'library_hours-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'path' => '',
       'arguments' => array(
         'field_hrs_lib_calendar_target_id' => '%cal:nid',
       ),
@@ -141,9 +140,9 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'e19bc4ac-4999-41b3-a23e-a407ffc288a2';
-    $display->content['new-e19bc4ac-4999-41b3-a23e-a407ffc288a2'] = $pane;
-    $display->panels['first'][1] = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->uuid = '0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
+    $display->content['new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564'] = $pane;
+    $display->panels['first'][1] = 'new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
     $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
@@ -308,16 +307,22 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
-    $pane->pid = 'new-eabe3e78-32e3-423a-a5d3-f91d95187a95';
+    $pane->pid = 'new-e8e36fb4-0278-4d6d-bd45-346494b58be5';
     $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'branch_amenities-panel_pane_1';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_amenities';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7784',
-      ),
+      'label' => 'title',
+      'formatter' => 'taxonomy_term_reference_plain',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Amenities',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -327,9 +332,9 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'eabe3e78-32e3-423a-a5d3-f91d95187a95';
-    $display->content['new-eabe3e78-32e3-423a-a5d3-f91d95187a95'] = $pane;
-    $display->panels['second'][2] = 'new-eabe3e78-32e3-423a-a5d3-f91d95187a95';
+    $pane->uuid = 'e8e36fb4-0278-4d6d-bd45-346494b58be5';
+    $display->content['new-e8e36fb4-0278-4d6d-bd45-346494b58be5'] = $pane;
+    $display->panels['second'][2] = 'new-e8e36fb4-0278-4d6d-bd45-346494b58be5';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
@@ -408,7 +413,9 @@ function pul_branch_architecture_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/architecture/*',
+            'paths' => 'libraries/architecture/*
+
+help/architecture-library-student-carrels-registration',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -444,10 +451,10 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-22ab9278-18f1-4972-8846-eaf366461b36';
+    $pane->pid = 'new-09b7c299-4841-4808-b22e-b969f6a5785d';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-architecture-library';
+    $pane->subtype = 'menu-menu-branch-architecture';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -462,18 +469,17 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '22ab9278-18f1-4972-8846-eaf366461b36';
-    $display->content['new-22ab9278-18f1-4972-8846-eaf366461b36'] = $pane;
-    $display->panels['first'][0] = 'new-22ab9278-18f1-4972-8846-eaf366461b36';
+    $pane->uuid = '09b7c299-4841-4808-b22e-b969f6a5785d';
+    $display->content['new-09b7c299-4841-4808-b22e-b969f6a5785d'] = $pane;
+    $display->panels['first'][0] = 'new-09b7c299-4841-4808-b22e-b969f6a5785d';
     $pane = new stdClass();
-    $pane->pid = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->pid = 'new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_8';
+    $pane->subtype = 'library_hours-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'path' => '',
       'arguments' => array(
         'field_hrs_lib_calendar_target_id' => '3688',
       ),
@@ -488,9 +494,9 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'e19bc4ac-4999-41b3-a23e-a407ffc288a2';
-    $display->content['new-e19bc4ac-4999-41b3-a23e-a407ffc288a2'] = $pane;
-    $display->panels['first'][1] = 'new-e19bc4ac-4999-41b3-a23e-a407ffc288a2';
+    $pane->uuid = 'b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
+    $display->content['new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae'] = $pane;
+    $display->panels['first'][1] = 'new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
     $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
@@ -562,6 +568,30 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
     $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $pane = new stdClass();
+    $pane->pid = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:webform';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'da6d2020-f96a-4dce-8edf-2d707988d576';
+    $display->content['new-da6d2020-f96a-4dce-8edf-2d707988d576'] = $pane;
+    $display->panels['middle'][1] = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';
