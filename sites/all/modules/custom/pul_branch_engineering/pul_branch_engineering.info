@@ -1,5 +1,5 @@
 name = PUL Engineering Library Branch Site
-description = Engineering Library branch site
+description = Engineering Library Branch Layouts
 core = 7.x
 package = Features
 version = 7.x-1.0-alpha1

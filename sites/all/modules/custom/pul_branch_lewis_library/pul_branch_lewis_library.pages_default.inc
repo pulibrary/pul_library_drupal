@@ -61,7 +61,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/scilib',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -417,9 +417,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering/*
-
-help/engineering-course-reserves-request-form',
+            'paths' => 'libraries/scilib/*',
           ),
           'context' => 'empty',
           'not' => FALSE,

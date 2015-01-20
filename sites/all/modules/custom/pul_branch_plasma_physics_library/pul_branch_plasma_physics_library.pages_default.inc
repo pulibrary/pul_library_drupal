@@ -51,9 +51,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering/*
-
-help/engineering-course-reserves-request-form',
+            'paths' => 'libraries/ppl/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -333,7 +331,7 @@ help/engineering-course-reserves-request-form',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/ppl',
           ),
           'context' => 'empty',
           'not' => FALSE,

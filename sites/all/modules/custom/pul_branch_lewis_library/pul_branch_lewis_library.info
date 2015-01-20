@@ -1,4 +1,5 @@
-name = Lewis Library
+name = PUL Lewis Library Branch Site
+description = Lewis Library Branch Layouts
 core = 7.x
 package = Features
 version = 7.x-1.0-alpha1
