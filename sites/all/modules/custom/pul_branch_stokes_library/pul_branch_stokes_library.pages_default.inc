@@ -192,6 +192,28 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'summon_block-summon_search';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Search Articles+',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8b39e4b1-e072-4053-ba32-86b4b0b65f18';
+    $display->content['new-8b39e4b1-e072-4053-ba32-86b4b0b65f18'] = $pane;
+    $display->panels['middle'][0] = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
+    $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
@@ -215,11 +237,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -334,7 +356,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'External Resources',
+      'override_title_text' => 'Key Links',
     );
     $pane->cache = array();
     $pane->style = array(
