@@ -1,29 +1,29 @@
 <?php
 /**
  * @file
- * pul_branch_engineering.pages_default.inc
+ * pul_branch_stokes_library.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function pul_branch_engineering_default_page_manager_handlers() {
+function pul_branch_stokes_library_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_52';
+  $handler->name = 'node_view_panel_context_56';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 25;
   $handler->conf = array(
-    'title' => 'Engineering Library Landing Page',
+    'title' => 'Stokes Library Landing Page',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-stokes',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -61,7 +61,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/stokeslib',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -97,10 +97,10 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-branch-stokes';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -115,9 +115,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = '88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
+    $display->content['new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a'] = $pane;
+    $display->panels['first'][0] = 'new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
     $pane = new stdClass();
     $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
@@ -288,7 +288,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
-    $pane->pid = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->pid = 'new-89418c64-c041-437f-b316-176cc00761cc';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_quick_link';
@@ -315,11 +315,11 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '2b5df149-ddbe-4ca5-8161-ac779b7872c0';
-    $display->content['new-2b5df149-ddbe-4ca5-8161-ac779b7872c0'] = $pane;
-    $display->panels['second'][2] = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->uuid = '89418c64-c041-437f-b316-176cc00761cc';
+    $display->content['new-89418c64-c041-437f-b316-176cc00761cc'] = $pane;
+    $display->panels['second'][2] = 'new-89418c64-c041-437f-b316-176cc00761cc';
     $pane = new stdClass();
-    $pane->pid = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->pid = 'new-93404a59-2a59-4011-992b-e3ab9b91e43a';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_external_links';
@@ -344,9 +344,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '0650eab7-ae3a-44dc-8553-3fe05abce6cb';
-    $display->content['new-0650eab7-ae3a-44dc-8553-3fe05abce6cb'] = $pane;
-    $display->panels['second'][3] = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->uuid = '93404a59-2a59-4011-992b-e3ab9b91e43a';
+    $display->content['new-93404a59-2a59-4011-992b-e3ab9b91e43a'] = $pane;
+    $display->panels['second'][3] = 'new-93404a59-2a59-4011-992b-e3ab9b91e43a';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -415,22 +415,22 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_52'] = $handler;
+  $export['node_view_panel_context_56'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_53';
+  $handler->name = 'node_view_panel_context_57';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 26;
   $handler->conf = array(
-    'title' => 'Engineering Library Branch Pages',
+    'title' => 'Stokes Library Branch Pages',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-stokes',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -458,9 +458,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering/*
-
-help/engineering-course-reserves-request-form',
+            'paths' => 'libraries/stokeslib/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -496,10 +494,10 @@ help/engineering-course-reserves-request-form',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-f1d8a36f-5189-40bd-8d00-d1f2d41fb98c';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-branch-stokes';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -514,9 +512,9 @@ help/engineering-course-reserves-request-form',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = 'f1d8a36f-5189-40bd-8d00-d1f2d41fb98c';
+    $display->content['new-f1d8a36f-5189-40bd-8d00-d1f2d41fb98c'] = $pane;
+    $display->panels['first'][0] = 'new-f1d8a36f-5189-40bd-8d00-d1f2d41fb98c';
     $pane = new stdClass();
     $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
@@ -687,7 +685,7 @@ help/engineering-course-reserves-request-form',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_53'] = $handler;
+  $export['node_view_panel_context_57'] = $handler;
 
   return $export;
 }

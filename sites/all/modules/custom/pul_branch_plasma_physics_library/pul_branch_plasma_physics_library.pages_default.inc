@@ -1,29 +1,299 @@
 <?php
 /**
  * @file
- * pul_branch_engineering.pages_default.inc
+ * pul_branch_plasma_physics_library.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function pul_branch_engineering_default_page_manager_handlers() {
+function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_52';
+  $handler->name = 'node_view_panel_context_58';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 27;
   $handler->conf = array(
-    'title' => 'Engineering Library Landing Page',
+    'title' => 'Plasma Physics Library Branch Pages',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-plasma',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Calendar',
+        'keyword' => 'cal',
+        'name' => 'entity_from_field:field_hours_calendar-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      1 => array(
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'libraries/ppl/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'three-six-three-stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'bottom_left' => NULL,
+      'bottom_right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'top' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-46dcd0e8-0272-47b9-9f39-669fc1add6bd';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-branch-plasma-physics-lib';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '46dcd0e8-0272-47b9-9f39-669fc1add6bd';
+    $display->content['new-46dcd0e8-0272-47b9-9f39-669fc1add6bd'] = $pane;
+    $display->panels['first'][0] = 'new-46dcd0e8-0272-47b9-9f39-669fc1add6bd';
+    $pane = new stdClass();
+    $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_hours-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_hrs_lib_calendar_target_id' => '3710',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Today\'s Hours',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
+    $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '3710',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
+    $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'libraries-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7793',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Contact Us',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $pane->panel = 'middle';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
+    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $pane = new stdClass();
+    $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:webform';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
+    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane = new stdClass();
+    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
+    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
+    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane = new stdClass();
+    $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+    $pane->panel = 'top';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_library_image-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7793',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Plasma Physics Library',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+    $display->content['new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b'] = $pane;
+    $display->panels['top'][0] = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_58'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_59';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 28;
+  $handler->conf = array(
+    'title' => 'Plasma Physics Library Landing Page',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'branch-libraries libraries-plasma',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -61,7 +331,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/ppl',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -97,10 +367,10 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-branch-plasma-physics-lib';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -115,9 +385,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = '2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
+    $display->content['new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f'] = $pane;
+    $display->panels['first'][0] = 'new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
     $pane = new stdClass();
     $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
@@ -288,7 +558,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
-    $pane->pid = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->pid = 'new-fa8a9d0c-0af2-4fe0-a24b-2d1ad2853080';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_quick_link';
@@ -315,11 +585,11 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '2b5df149-ddbe-4ca5-8161-ac779b7872c0';
-    $display->content['new-2b5df149-ddbe-4ca5-8161-ac779b7872c0'] = $pane;
-    $display->panels['second'][2] = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->uuid = 'fa8a9d0c-0af2-4fe0-a24b-2d1ad2853080';
+    $display->content['new-fa8a9d0c-0af2-4fe0-a24b-2d1ad2853080'] = $pane;
+    $display->panels['second'][2] = 'new-fa8a9d0c-0af2-4fe0-a24b-2d1ad2853080';
     $pane = new stdClass();
-    $pane->pid = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->pid = 'new-16afc4ca-dffc-44a5-a3f4-7078d940bd72';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_external_links';
@@ -344,9 +614,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '0650eab7-ae3a-44dc-8553-3fe05abce6cb';
-    $display->content['new-0650eab7-ae3a-44dc-8553-3fe05abce6cb'] = $pane;
-    $display->panels['second'][3] = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->uuid = '16afc4ca-dffc-44a5-a3f4-7078d940bd72';
+    $display->content['new-16afc4ca-dffc-44a5-a3f4-7078d940bd72'] = $pane;
+    $display->panels['second'][3] = 'new-16afc4ca-dffc-44a5-a3f4-7078d940bd72';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -415,279 +685,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_52'] = $handler;
-
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_53';
-  $handler->task = 'node_view';
-  $handler->subtask = '';
-  $handler->handler = 'panel_context';
-  $handler->weight = 22;
-  $handler->conf = array(
-    'title' => 'Engineering Library Branch Pages',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/engineering/*
-
-help/engineering-course-reserves-request-form',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-  );
-  $display = new panels_display();
-  $display->layout = 'three-six-three-stacked';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
-      'bottom_left' => NULL,
-      'bottom_right' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $pane->panel = 'first';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $pane = new stdClass();
-    $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '3690',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Today\'s Hours',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-    $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-    $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-    $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '3690',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
-    $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7786',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Contact Us',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane = new stdClass();
-    $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
-    $pane->panel = 'middle';
-    $pane->type = 'node_body';
-    $pane->subtype = 'node_body';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
-    $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
-    $pane = new stdClass();
-    $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
-    $pane->panel = 'middle';
-    $pane->type = 'entity_field_extra';
-    $pane->subtype = 'node:webform';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
-    $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
-    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
-    $pane = new stdClass();
-    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-get-help-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
-    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
-    $pane = new stdClass();
-    $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
-    $pane->panel = 'top';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'branch_library_image-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7786',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
-    $display->content['new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b'] = $pane;
-    $display->panels['top'][0] = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $export['node_view_panel_context_53'] = $handler;
+  $export['node_view_panel_context_59'] = $handler;
 
   return $export;
 }
