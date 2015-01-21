@@ -817,7 +817,7 @@ h1.icon-article-express--small-after:after {
 }
 
 .node__content img {
-  margin: 0.2em;
+  margin: 1em;
 }
 
 .pul_base_nine_three-region--second ul,
@@ -2482,31 +2482,31 @@ body.faq .ui-accordion .ui-accordion-header a {
   border: none;
 }
 
-.page-find-all .dbsearch-block-form > div, .page-find-all .summon-block-form > div, .page-find-all .allsearch-block-form > div, .section-research .dbsearch-block-form > div, .section-research .summon-block-form > div, .section-research .allsearch-block-form > div, .section-resource .dbsearch-block-form > div, .section-resource .summon-block-form > div, .section-resource .allsearch-block-form > div {
+.page-find-all .dbsearch-block-form > div, .page-find-all .summon-block-form > div, .page-find-all .allsearch-block-form > div, .section-research .dbsearch-block-form > div, .section-research .summon-block-form > div, .section-research .allsearch-block-form > div, .section-resource .dbsearch-block-form > div, .section-resource .summon-block-form > div, .section-resource .allsearch-block-form > div, .branch-libraries .dbsearch-block-form > div, .branch-libraries .summon-block-form > div, .branch-libraries .allsearch-block-form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
 }
-.page-find-all .dbsearch-block-form > div input, .page-find-all .summon-block-form > div input, .page-find-all .allsearch-block-form > div input, .section-research .dbsearch-block-form > div input, .section-research .summon-block-form > div input, .section-research .allsearch-block-form > div input, .section-resource .dbsearch-block-form > div input, .section-resource .summon-block-form > div input, .section-resource .allsearch-block-form > div input {
+.page-find-all .dbsearch-block-form > div input, .page-find-all .summon-block-form > div input, .page-find-all .allsearch-block-form > div input, .section-research .dbsearch-block-form > div input, .section-research .summon-block-form > div input, .section-research .allsearch-block-form > div input, .section-resource .dbsearch-block-form > div input, .section-resource .summon-block-form > div input, .section-resource .allsearch-block-form > div input, .branch-libraries .dbsearch-block-form > div input, .branch-libraries .summon-block-form > div input, .branch-libraries .allsearch-block-form > div input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
 }
-.page-find-all .dbsearch-block-form > div div.form-item-query, .page-find-all .summon-block-form > div div.form-item-query, .page-find-all .allsearch-block-form > div div.form-item-query, .section-research .dbsearch-block-form > div div.form-item-query, .section-research .summon-block-form > div div.form-item-query, .section-research .allsearch-block-form > div div.form-item-query, .section-resource .dbsearch-block-form > div div.form-item-query, .section-resource .summon-block-form > div div.form-item-query, .section-resource .allsearch-block-form > div div.form-item-query {
+.page-find-all .dbsearch-block-form > div div.form-item-query, .page-find-all .summon-block-form > div div.form-item-query, .page-find-all .allsearch-block-form > div div.form-item-query, .section-research .dbsearch-block-form > div div.form-item-query, .section-research .summon-block-form > div div.form-item-query, .section-research .allsearch-block-form > div div.form-item-query, .section-resource .dbsearch-block-form > div div.form-item-query, .section-resource .summon-block-form > div div.form-item-query, .section-resource .allsearch-block-form > div div.form-item-query, .branch-libraries .dbsearch-block-form > div div.form-item-query, .branch-libraries .summon-block-form > div div.form-item-query, .branch-libraries .allsearch-block-form > div div.form-item-query {
   position: relative;
 }
-.page-find-all .dbsearch-block-form > div div.form-item-query label, .page-find-all .summon-block-form > div div.form-item-query label, .page-find-all .allsearch-block-form > div div.form-item-query label, .section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label {
+.page-find-all .dbsearch-block-form > div div.form-item-query label, .page-find-all .summon-block-form > div div.form-item-query label, .page-find-all .allsearch-block-form > div div.form-item-query label, .section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label, .branch-libraries .dbsearch-block-form > div div.form-item-query label, .branch-libraries .summon-block-form > div div.form-item-query label, .branch-libraries .allsearch-block-form > div div.form-item-query label {
   display: none;
 }
-.page-find-all .dbsearch-block-form > div div.form-item-query input[type=text], .page-find-all .summon-block-form > div div.form-item-query input[type=text], .page-find-all .allsearch-block-form > div div.form-item-query input[type=text], .section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text] {
+.page-find-all .dbsearch-block-form > div div.form-item-query input[type=text], .page-find-all .summon-block-form > div div.form-item-query input[type=text], .page-find-all .allsearch-block-form > div div.form-item-query input[type=text], .section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text], .branch-libraries .dbsearch-block-form > div div.form-item-query input[type=text], .branch-libraries .summon-block-form > div div.form-item-query input[type=text], .branch-libraries .allsearch-block-form > div div.form-item-query input[type=text] {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100%;
   height: 35px;
   margin: 0;
 }
-.page-find-all .dbsearch-block-form > div input[type=submit], .page-find-all .summon-block-form > div input[type=submit], .page-find-all .allsearch-block-form > div input[type=submit], .section-research .dbsearch-block-form > div input[type=submit], .section-research .summon-block-form > div input[type=submit], .section-research .allsearch-block-form > div input[type=submit], .section-resource .dbsearch-block-form > div input[type=submit], .section-resource .summon-block-form > div input[type=submit], .section-resource .allsearch-block-form > div input[type=submit] {
+.page-find-all .dbsearch-block-form > div input[type=submit], .page-find-all .summon-block-form > div input[type=submit], .page-find-all .allsearch-block-form > div input[type=submit], .section-research .dbsearch-block-form > div input[type=submit], .section-research .summon-block-form > div input[type=submit], .section-research .allsearch-block-form > div input[type=submit], .section-resource .dbsearch-block-form > div input[type=submit], .section-resource .summon-block-form > div input[type=submit], .section-resource .allsearch-block-form > div input[type=submit], .branch-libraries .dbsearch-block-form > div input[type=submit], .branch-libraries .summon-block-form > div input[type=submit], .branch-libraries .allsearch-block-form > div input[type=submit] {
   position: absolute;
   right: 0;
   top: 0;
