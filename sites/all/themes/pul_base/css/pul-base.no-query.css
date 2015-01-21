@@ -816,6 +816,10 @@ h1.icon-article-express--small-after:after {
   clear: both;
 }
 
+.node__content img {
+  margin: 0.2em;
+}
+
 .pul_base_nine_three-region--second ul,
 .three_six_three-region--first ul,
 .menu .leaf,
