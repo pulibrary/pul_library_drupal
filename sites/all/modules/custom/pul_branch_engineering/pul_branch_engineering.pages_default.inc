@@ -192,25 +192,6 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'library_news-panel_pane_6';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
-    $display->content['new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f'] = $pane;
-    $display->panels['middle'][0] = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
-    $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
@@ -234,11 +215,11 @@ function pul_branch_engineering_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -307,6 +288,37 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
+    $pane->pid = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '5',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Service Quick Links',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $display->content['new-2b5df149-ddbe-4ca5-8161-ac779b7872c0'] = $pane;
+    $display->panels['second'][2] = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
@@ -334,11 +346,11 @@ function pul_branch_engineering_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $display->panels['second'][3] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
