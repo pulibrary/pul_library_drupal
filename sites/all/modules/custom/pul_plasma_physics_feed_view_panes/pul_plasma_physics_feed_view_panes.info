@@ -1,0 +1,12 @@
+name = PUL Plasma Physics Feed View Panes
+description = Views panes for RSS feeds for Plasma Physics Branch Site
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pul_plasma_physics_feed_view_panes
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = plasma_physics_feeds
+features_exclude[dependencies][ctools] = ctools
