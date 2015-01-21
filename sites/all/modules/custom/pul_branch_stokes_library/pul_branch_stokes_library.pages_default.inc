@@ -61,7 +61,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/stokeslib',
+            'paths' => 'libraries/stokes',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -480,7 +480,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/stokeslib/*',
+            'paths' => 'libraries/stokes/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
