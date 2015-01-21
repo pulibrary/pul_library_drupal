@@ -319,6 +319,35 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $display->content['new-1a62a1cb-bfce-421e-9d3c-f536ef6ab726'] = $pane;
     $display->panels['second'][2] = 'new-1a62a1cb-bfce-421e-9d3c-f536ef6ab726';
     $pane = new stdClass();
+    $pane->pid = 'new-9d99ec60-86bb-4434-b9cc-5d1d8971a29e';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_external_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'link_default',
+      'delta_limit' => '5',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'External Resources',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '9d99ec60-86bb-4434-b9cc-5d1d8971a29e';
+    $display->content['new-9d99ec60-86bb-4434-b9cc-5d1d8971a29e'] = $pane;
+    $display->panels['second'][3] = 'new-9d99ec60-86bb-4434-b9cc-5d1d8971a29e';
+    $pane = new stdClass();
     $pane->pid = 'new-e8e36fb4-0278-4d6d-bd45-346494b58be5';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
@@ -342,11 +371,11 @@ function pul_branch_architecture_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'e8e36fb4-0278-4d6d-bd45-346494b58be5';
     $display->content['new-e8e36fb4-0278-4d6d-bd45-346494b58be5'] = $pane;
-    $display->panels['second'][3] = 'new-e8e36fb4-0278-4d6d-bd45-346494b58be5';
+    $display->panels['second'][4] = 'new-e8e36fb4-0278-4d6d-bd45-346494b58be5';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
