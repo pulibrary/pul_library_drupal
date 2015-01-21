@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Plasma Physics Feed View Panes feature.
+ */
+
+include_once 'pul_plasma_physics_feed_view_panes.features.inc';
