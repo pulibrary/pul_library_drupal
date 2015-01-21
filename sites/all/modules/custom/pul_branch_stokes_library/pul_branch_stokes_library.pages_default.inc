@@ -546,7 +546,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '3690',
+        'field_hrs_lib_calendar_target_id' => '3711',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
@@ -571,7 +571,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'tid' => '3690',
+        'tid' => '3711',
       ),
     );
     $pane->cache = array();
@@ -594,7 +594,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '7786',
+        'nid' => '7796',
       ),
       'override_title' => 1,
       'override_title_text' => 'Contact Us',
@@ -688,10 +688,10 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '7786',
+        'nid' => '7796',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Stokes Library',
     );
     $pane->cache = array();
     $pane->style = array(
