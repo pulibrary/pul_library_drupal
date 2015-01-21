@@ -1,29 +1,29 @@
 <?php
 /**
  * @file
- * pul_branch_engineering.pages_default.inc
+ * pul_branch_lewis_library.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function pul_branch_engineering_default_page_manager_handlers() {
+function pul_branch_lewis_library_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_52';
+  $handler->name = 'node_view_panel_context_60';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 29;
   $handler->conf = array(
-    'title' => 'Engineering Library Landing Page',
+    'title' => 'Lewis Library Landing Page',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-lewis',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -61,7 +61,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/scilib',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -97,10 +97,10 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-branch-lewis';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -115,9 +115,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = 'fdf608da-86a5-4ca9-b436-b67272d04d2b';
+    $display->content['new-fdf608da-86a5-4ca9-b436-b67272d04d2b'] = $pane;
+    $display->panels['first'][0] = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
     $pane = new stdClass();
     $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
@@ -288,7 +288,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
-    $pane->pid = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->pid = 'new-4174914c-f642-455a-a0c5-d103320cc004';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_quick_link';
@@ -315,11 +315,11 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '2b5df149-ddbe-4ca5-8161-ac779b7872c0';
-    $display->content['new-2b5df149-ddbe-4ca5-8161-ac779b7872c0'] = $pane;
-    $display->panels['second'][2] = 'new-2b5df149-ddbe-4ca5-8161-ac779b7872c0';
+    $pane->uuid = '4174914c-f642-455a-a0c5-d103320cc004';
+    $display->content['new-4174914c-f642-455a-a0c5-d103320cc004'] = $pane;
+    $display->panels['second'][2] = 'new-4174914c-f642-455a-a0c5-d103320cc004';
     $pane = new stdClass();
-    $pane->pid = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->pid = 'new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_external_links';
@@ -344,9 +344,9 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '0650eab7-ae3a-44dc-8553-3fe05abce6cb';
-    $display->content['new-0650eab7-ae3a-44dc-8553-3fe05abce6cb'] = $pane;
-    $display->panels['second'][3] = 'new-0650eab7-ae3a-44dc-8553-3fe05abce6cb';
+    $pane->uuid = '28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
+    $display->content['new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22'] = $pane;
+    $display->panels['second'][3] = 'new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -415,22 +415,22 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_52'] = $handler;
+  $export['node_view_panel_context_60'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_53';
+  $handler->name = 'node_view_panel_context_61';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 30;
   $handler->conf = array(
-    'title' => 'Engineering Library Branch Pages',
+    'title' => 'Lewis Library Branch Pages',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-engineering',
+    'body_classes_to_add' => 'branch-libraries libraries-lewis',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -458,9 +458,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering/*
-
-help/engineering-course-reserves-request-form',
+            'paths' => 'libraries/scilib/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -496,10 +494,10 @@ help/engineering-course-reserves-request-form',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->pid = 'new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-engineering';
+    $pane->subtype = 'menu-menu-branch-lewis';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -514,9 +512,9 @@ help/engineering-course-reserves-request-form',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-    $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-    $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+    $pane->uuid = '9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
+    $display->content['new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1'] = $pane;
+    $display->panels['first'][0] = 'new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
     $pane = new stdClass();
     $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
@@ -526,7 +524,7 @@ help/engineering-course-reserves-request-form',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '3690',
+        'field_hrs_lib_calendar_target_id' => '3704',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
@@ -551,7 +549,7 @@ help/engineering-course-reserves-request-form',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'tid' => '3690',
+        'tid' => '3704',
       ),
     );
     $pane->cache = array();
@@ -574,7 +572,7 @@ help/engineering-course-reserves-request-form',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '7786',
+        'nid' => '7789',
       ),
       'override_title' => 1,
       'override_title_text' => 'Contact Us',
@@ -668,10 +666,10 @@ help/engineering-course-reserves-request-form',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '7786',
+        'nid' => '7789',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Lewis Library',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -687,7 +685,7 @@ help/engineering-course-reserves-request-form',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_53'] = $handler;
+  $export['node_view_panel_context_61'] = $handler;
 
   return $export;
 }

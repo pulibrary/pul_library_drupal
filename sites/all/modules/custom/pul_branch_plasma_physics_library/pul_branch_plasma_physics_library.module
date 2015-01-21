@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Plasma Physics Library feature.
+ */
+
+include_once 'pul_branch_plasma_physics_library.features.inc';
