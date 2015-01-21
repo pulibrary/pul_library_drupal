@@ -36,5 +36,4 @@ features[variable][] = node_preview_featured_pul_link
 features[variable][] = node_submitted_featured_pul_link
 features_exclude[dependencies][articles_and_databases] = articles_and_databases
 features_exclude[dependencies][library_news] = library_news
-mtime = 1412631333
 project path = sites/all/modules/custom

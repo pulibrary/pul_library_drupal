@@ -1,12 +1,12 @@
 @CHARSET "UTF-8";
 
-/* Formatter in Views and Pages */
+/* Formatter in Views and Pages. */
 .oh-display {
   white-space: nowrap;
 }
 
 .oh-display-label {
-  display: inline-block; /* give each label the same width, to align the hours. */
+  display: inline-block; /* Give each label the same width, to align the hours. */
   /* width: 9em; */
   min-width: 3em;
 }
@@ -18,36 +18,18 @@
   font-style: italic;
 }
 
-/* Time blocks in hook_field_widget_form(), 
- * and in hook_field_settings_form() 
- */
-div.office-hours-block {
-  display: inline;
-}
-div.office-hours-block-hours {
+/* Time blocks in the Widget on field and field settings. */
+div.office-hours-block div {
   display: inline;
   display: -moz-inline-box;
   display: inline-block;
 }
-div.office-hours-block-hours div {
-  display: inline;
-}
 
-div.office-hours-block span.day {
-  width: 100px;
-  display: inline-block;
-}
-
-/* In the table control of hook_field_widget_form() */
-td div.office-hours-block {
-}
+/* 'Day' label in the Widget on field and field settings. */
 td div.office-hours-block label {
   width: 6em;
   display: -moz-inline-box;
   display: inline-block;
   font-weight: bold;
-}
-
-.office-hours-block .form-item label { 
-  font-weight: normal; 
+  padding: 0 1em 0 0;
 }

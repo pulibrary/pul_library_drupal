@@ -227,6 +227,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
   $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
   $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
   $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bio']['element_wrapper_type'] = '0';
@@ -314,6 +315,16 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
+  /* Field: Content: Bio */
+  $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
+  $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['field_api_classes'] = TRUE;
   /* Field: Content: Selector Library */
   $handler->display->display_options['fields']['field_sel_pul_library']['id'] = 'field_sel_pul_library';
   $handler->display->display_options['fields']['field_sel_pul_library']['table'] = 'field_data_field_sel_pul_library';

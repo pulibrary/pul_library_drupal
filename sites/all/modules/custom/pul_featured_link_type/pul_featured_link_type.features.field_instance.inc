@@ -67,7 +67,7 @@ function pul_featured_link_type_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'body',
     'label' => 'Description',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'display_summary' => 1,
       'text_processing' => 1,
@@ -83,6 +83,7 @@ function pul_featured_link_type_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 31,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-featured_pul_link-field_featured_pul_link'

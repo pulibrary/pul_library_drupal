@@ -690,6 +690,21 @@ function library_news_views_default_views() {
   );
   $handler->display->display_options['fields']['field_news_libraries']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['field_api_classes'] = TRUE;
+  /* Field: Content: Library Contact */
+  $handler->display->display_options['fields']['field_news_library_contact']['id'] = 'field_news_library_contact';
+  $handler->display->display_options['fields']['field_news_library_contact']['table'] = 'field_data_field_news_library_contact';
+  $handler->display->display_options['fields']['field_news_library_contact']['field'] = 'field_news_library_contact';
+  $handler->display->display_options['fields']['field_news_library_contact']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_news_library_contact']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_library_contact']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_news_library_contact']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_news_library_contact']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_news_library_contact']['settings'] = array(
+    'view_mode' => 'staff_brief_listing',
+    'links' => 1,
+  );
+  $handler->display->display_options['fields']['field_news_library_contact']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_news_library_contact']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1417,19 +1432,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'library-news-homepage';
-  /* Field: Content: Article Snippet */
-  $handler->display->display_options['fields']['field_news_article_snippet']['id'] = 'field_news_article_snippet';
-  $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
-  $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
-  $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
-  $handler->display->display_options['fields']['field_news_article_snippet']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['max_length'] = '100';
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_text'] = 'More News';
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_path'] = '/news';
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['html'] = TRUE;
-  $handler->display->display_options['fields']['field_news_article_snippet']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_article_snippet']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

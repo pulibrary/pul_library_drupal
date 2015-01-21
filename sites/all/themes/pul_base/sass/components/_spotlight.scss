@@ -35,6 +35,16 @@
     }
 }
 
+.pane-spotlight-dispalsys {
+    height: 215px;
+    $hover-tile-height: 215px;
+
+    img {
+        height: 215px;
+        width: 350px;
+    }
+}
+
 #block-views-spotlight-dispalsys-block {
     background: rgba($gray-dark,.65);
     margin-top: 1.5em;

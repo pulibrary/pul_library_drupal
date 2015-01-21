@@ -249,6 +249,15 @@ a:hover, a:active {
   outline: none;
 }
 
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field__label {
   font-weight: bold;
 }
@@ -938,6 +947,14 @@ h1.icon-article-express--small-after:after {
   }
 }
 
+.pane-spotlight-dispalsys {
+  height: 215px;
+}
+.pane-spotlight-dispalsys img {
+  height: 215px;
+  width: 350px;
+}
+
 #block-views-spotlight-dispalsys-block {
   background: rgba(73, 79, 87, 0.65);
   margin-top: 1.5em;
@@ -1383,6 +1400,10 @@ table caption {
   color: #494f57;
 }
 
+.user-login .form-submit {
+  margin-top: 1em;
+}
+
 .links--inline li {
   float: right;
 }
@@ -1398,12 +1419,23 @@ table caption {
   text-shadow: none;
   background-color: #e87511;
   color: white;
-  padding: 3px 7px;
+  padding: 1em;
   text-decoration: none;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  float: right;
+  float: none;
+  display: block;
+  text-align: center;
+}
+@media (min-width: 44em) {
+  .views-more-link,
+  .node-readmore a,
+  .more-link a {
+    float: right;
+    display: inline;
+    padding: 3px 7px;
+  }
 }
 .views-more-link:hover,
 .node-readmore a:hover,

@@ -2,145 +2,53 @@
 /**
  * @file
  * Provide views data and handlers for office_hours.module.
- * @TODO: finish upgrade to D7, see advanced help: http://www.example.com/help/views/api-upgrading
  *
  * @ingroup views_module_handlers
  */
 
-/*
-function office_hours_field_views_data($field) {
-        $data = _office_hours_views_field_views_data($field);
-        $db_info = $field['storage'];
-        $table_alias = content_views_tablename($field);
-        // Swap the filter handler.
-        $data[$table_alias][$field['field_name'] . '_day']['filter']['handler'] = 'office_hours_handler_filter_day';
-        $data[$table_alias][$field['field_name'] . '_starthours']['filter']['handler'] = 'office_hours_handler_filter_hours';
-        $data[$table_alias][$field['field_name'] . '_endhours']['filter']['handler'] = 'content_handler_handler_filter_hours';
-        return $data;
-}
- */
-
 /**
- * Adding all table field into $data in hook_views_data.
+ * Implements hook_field_views_data_alter().
  */
-/*
-function _office_hours_views_field_views_data($field) {
-    $field_types = _content_field_types();
-    $db_info = content_database_info($field);
+function office_hours_field_views_data_alter(&$result, $field, $module) {
+  if ($module == 'office_hours') {
+    $field_name = $field['field_name'];
 
-    // Field modules that do not store data in the database
-    // should not create views data tables.
-    if (empty($db_info['columns'])) {
-      return;
-    }
-
-    $table_alias = content_views_tablename($field);
-
-    $types = array();
-    foreach (field_info_instances() as $type) {
-      if (isset($type['fields'][$field['field_name']])) {
-        $types[] = $type['name'];
+    foreach ($result as $key => &$field_data) {
+      if (isset($field_data[$field_name])) {
+        $field_data[$field_name . '_open']['group'] = $field_data[$field_name]['group'];
+        $field_data[$field_name . '_open']['title'] = str_replace('field_', '', $field_name) . ' (' . $field_name . ':open)';
+        $field_data[$field_name . '_open']['title short'] = str_replace('field_', '', $field_name) . ':open';
+        $field_data[$field_name . '_open']['help'] = 'This is a filter for open/closed entities.';
+        $field_data[$field_name . '_open']['aliases'] = isset($field_data[$field_name]['aliases']) ? $field_data[$field_name]['aliases'] : array();
+        $field_data[$field_name . '_open']['filter'] = array(
+          'field' => $field_name,
+          'table' => $field_data[$field_name]['field']['table'],
+          'handler' => 'office_hours_handler_filter_open',
+          'field_name' => $field_data[$field_name]['field']['field_name'],
+          'real field' => $field_data[$field_name]['field']['real field'],
+          'entity_tables' => $field_data[$field_name]['field']['entity_tables'],
+          'label' => t('Open now'),
+          // 'type' => 'yes-no',
+          // Use boolean_field = 1 instead of boolean_field <> 0 in WHERE statement.
+          'use equal' => TRUE,
+        );
+        $field_data[$field_name . '_hours']['group'] = $field_data[$field_name]['group'];
+        $field_data[$field_name . '_hours']['title'] = str_replace('field_', '', $field_name) . ' (' . $field_name . ':hours)';
+        $field_data[$field_name . '_hours']['title short'] = str_replace('field_', '', $field_name) . ':hours';
+        $field_data[$field_name . '_hours']['help'] = 'This is a filter for opening times.';
+        $field_data[$field_name . '_hours']['aliases'] = isset($field_data[$field_name]['aliases']) ? $field_data[$field_name]['aliases'] : array();
+        $field_data[$field_name . '_hours']['filter'] = array(
+          'field' => $field_name,
+          'table' => $field_data[$field_name]['field']['table'],
+          'handler' => 'office_hours_handler_filter_hours',
+          'field_name' => $field_data[$field_name]['field']['field_name'],
+          'real field' => $field_data[$field_name]['field']['real field'],
+          'entity_tables' => $field_data[$field_name]['field']['entity_tables'],
+          'label' => t('Hours'),
+          // Use boolean_field = 1 instead of boolean_field <> 0 in WHERE statement.
+          'use equal' => TRUE,
+        );
       }
     }
-
-    $data = array();
-    $data['table']['group']  = t('Content');
-    $data['table']['join']['node'] = array(
-      'table' => $db_info['table'],
-      'left_field' => 'vid',
-      'field' => 'vid',
-    );
-
-    $columns = array();
-    $arguments = array();
-    $filters = array();
-    foreach ($db_info['columns'] as $column => $attributes) {
-      $columns[] = $attributes['column'];
-      $sorts[] = !empty($attributes['sortable']) ? TRUE : FALSE;
-
-      // Identify likely filters and arguments for each column based on field type.
-      switch ($attributes['type']) {
-        case 'int':
-        case 'mediumint':
-        case 'tinyint':
-        case 'bigint':
-        case 'serial':
-          $filters[] = 'content_handler_filter_numeric';
-          $arguments[] = 'content_handler_argument_numeric';
-          break;
-        case 'numeric':
-        case 'float':
-          $filters[] = class_exists('views_handler_filter_float') ? 'content_handler_filter_float' : 'content_handler_filter_numeric';
-          $arguments[] = 'content_handler_argument_numeric';
-          break;
-
-        case 'text':
-        case 'blob':
-          // TODO add markup handlers for these types
-        default:
-          $filters[] = 'content_handler_filter_string';
-          $arguments[] = 'content_handler_argument_string';
-          break;
-      }
-    }
-    $i=0;
-
-    // Ensure all columns are retrieved,
-    $additional_fields = drupal_map_assoc($columns);
-    foreach($columns as $key => $column) {
-    list(, , $field_type) =explode('_', $column);
-    $data[$column] = array(
-      'group' => t('Content'),
-      'title' => t($field_types[$field['type']]['label']) . ': ' . t($field['widget']['label']) . ' (' . $field['field_name'] . ' ' . $field_type . ')',
-      'help' =>  t($field_types[$field['type']]['label']) . ' - ' . t('Appears in: @types', array('@types' => implode(', ', $types))),
-      'field' => array(
-        'field' => $column,
-        'table' => $db_info['table'],
-        'handler' => 'content_handler_field_multiple',
-        'click sortable' => $sorts[$i],
-       // 'additional fields' => $additional_fields,
-        'content_field_name' => $field['field_name'],
-        'allow empty' => TRUE,
-        // Access control modules should implement content_views_access_callback().
-        'access callback' => 'content_views_access_callback',
-        'access arguments' => array($field),
-      ),
-      'argument' => array(
-        'field' => $column,
-        'table' => $db_info['table'],
-        'handler' => $arguments[$i],
-        'click sortable' => $sorts[$i], // TODO used in once place in node.views.inc, should we use it here?
-        'name field' => '', // TODO
-        //'additional fields' => $additional_fields,
-        'content_field_name' => $field['field_name'],
-        'empty field name' => t('<No value>'),
-        'allow empty' => TRUE,
-      ),
-      'filter' => array(
-        'field' => $column,
-        'title' => t($field['widget']['label']) . ': ' . $field_type,
-        'table' => $db_info['table'],
-        'handler' => $filters[$i],
-        //'additional fields' => $additional_fields,
-        'content_field_name' => $field['field_name'],
-        'allow empty' => TRUE,
-      ),
-    );
-    $i++;
-    }
-    // TODO do we need different handling for sorts with Views 2,
-    // especially when relationships are involved?
-    if (!empty($sorts[$i])) {
-      $data[$column]['sort'] = array(
-        'field' => $column,
-        'table' => $db_info['table'],
-        'handler' => 'content_handler_sort',
-       // 'additional fields' => $additional_fields,
-        'content_field_name' => $field['field_name'],
-        'allow empty' => TRUE,
-      );
-    }
-    // TODO: provide automatic filters, sorts, and arguments for each column, not just the first?
-    return array($table_alias => $data);
+  }
 }
- */
