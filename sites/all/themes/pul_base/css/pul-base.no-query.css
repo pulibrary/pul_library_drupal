@@ -1373,6 +1373,10 @@ table caption {
   cursor: not-allowed;
 }
 
+.node-type-webform .l-main .form-submit {
+  margin-right: 1em;
+}
+
 .libraryh3lp .button--libraryh3lp {
   margin-left: 1em;
   font-size: 0.6rem;
