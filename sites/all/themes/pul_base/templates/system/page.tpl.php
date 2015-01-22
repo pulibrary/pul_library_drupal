@@ -104,7 +104,7 @@
 
   <section class="l-main test">
     <div class="l-content" role="main">
-      <?php if($node): ?>
+      <?php if(isset($node)): ?>
         <?php if (arg(0) == 'database' || $node->type == 'database' || $node->type == 'alternative_database_title') print $breadcrumb; ?>
       <?php endif; ?>
 
