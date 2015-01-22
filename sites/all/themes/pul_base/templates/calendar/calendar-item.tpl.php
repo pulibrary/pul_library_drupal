@@ -43,7 +43,9 @@ $index = 0;
 if (substr($item->date_id, -1)==0) {
 
 ?>
-<?php print $cur_week ?>
+<?php if (isset($cur_week)): ?>
+  <?php print $cur_week ?>
+<?php endif; ?>
 <?php print theme('calendar_stripe_stripe', array('item' => $item)); ?>
 <div class="<?php print $item->date_id ?> contents <?php print $item->granularity; ?>view">
   <?php foreach ($rendered_fields as $field): ?>
