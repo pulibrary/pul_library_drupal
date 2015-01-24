@@ -1754,7 +1754,11 @@ div.view-content > table.views-table > tbody > tr > td p {
 }
 
 .form-item-submitted-time-of-incident-hour select,
-.form-item-submitted-time-of-incident-minute select {
+.form-item-submitted-time-of-incident-minute select,
+.form-item-submitted-start-time-hour select,
+.form-item-submitted-start-time-minute select,
+.form-item-submitted-end-time-hour select,
+.form-item-submitted-end-time-minute select {
   display: inline-block;
 }
 
