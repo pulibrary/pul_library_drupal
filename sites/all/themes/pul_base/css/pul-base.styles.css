@@ -1261,6 +1261,9 @@ table caption {
   .branch-libraries .three_three_three_three_stacked-region--top p {
     margin: 0;
   }
+  .branch-libraries .three_six_three_stacked-region--top img, .branch-libraries a {
+    opacity: 1;
+  }
 }
 
 .pane-node-field-branch-spotlight-item {
