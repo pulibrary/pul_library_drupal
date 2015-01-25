@@ -830,25 +830,29 @@ h1.icon-article-express--small-after:after {
 
 .three_six_three-region--middle ul,
 .pul_base_nine_three-region--first ul,
-.three_nine-region--second ul {
+.three_nine-region--second ul,
+.three_six_three_stacked-region--middle ul {
   list-style-type: disc;
   margin-left: 1.4em;
 }
 .three_six_three-region--middle ul li,
 .pul_base_nine_three-region--first ul li,
-.three_nine-region--second ul li {
+.three_nine-region--second ul li,
+.three_six_three_stacked-region--middle ul li {
   margin-bottom: 1em;
 }
 
 .three_six_three-region--middle ol,
 .pul_base_nine_three-region--first ol,
-.three_nine-region--second ol {
+.three_nine-region--second ol,
+.three_six_three_stacked-region--middle ol {
   list-style-type: decimal;
   margin-left: 1.4em;
 }
 .three_six_three-region--middle ol li,
 .pul_base_nine_three-region--first ol li,
-.three_nine-region--second ol li {
+.three_nine-region--second ol li,
+.three_six_three_stacked-region--middle ol li {
   margin-bottom: 1em;
 }
 
@@ -1758,7 +1762,9 @@ div.view-content > table.views-table > tbody > tr > td p {
 .form-item-submitted-start-time-hour select,
 .form-item-submitted-start-time-minute select,
 .form-item-submitted-end-time-hour select,
-.form-item-submitted-end-time-minute select {
+.form-item-submitted-end-time-minute select,
+.form-item-submitted-time-of-tour-hour select,
+.form-item-submitted-time-of-tour-minute select {
   display: inline-block;
 }
 
