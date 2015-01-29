@@ -1,23 +1,21 @@
-#renovation-news-block {
-	#renovation-news-lmg {
+.renovation-news-block {
+	.renovation-news-lmg {
 		@include clearfix;
-		#renovation-news-lmg {
-		display: inline-block;
+
+		a {
+			display: inline;
 		}
+
 		p {
 			margin-top: 0;
 		}
 
 		@include breakpoint($tab) {
-			#renovation-news-lmg {
+			> a {
 				float: left;
 				width: 30%;
 				margin-right: 1em;
 			}
 		}
-	}
-
-	#read-more-renovation {
-		display: none;
 	}
 }
