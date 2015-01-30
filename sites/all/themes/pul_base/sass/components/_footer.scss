@@ -2,7 +2,7 @@
 	clear: both;
 	padding: 1em;
 	
-	nav, #block-block-1 {
+	nav, .block--block-1 {
 		@include grid-span(12, $output-style: 'float');
 		@include breakpoint($tab) {
 			@include grid-span(3, $output-style: 'float');
@@ -20,7 +20,7 @@
  footer {
 	background-color: $gray-light;
 
-	address, #university-copyright-footer {
+	address, .university-copyright-footer {
 		font-size: $font-size-smaller;
 	}
 

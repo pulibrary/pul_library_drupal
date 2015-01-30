@@ -80,7 +80,7 @@
 
     @include breakpoint ($horizontal-bar-mode) {
       display: block;
-      text-align: center;
+      text-align: left;
     }
 
     @include breakpoint($desk) {
