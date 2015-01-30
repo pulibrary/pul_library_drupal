@@ -32,7 +32,7 @@ function summon_block_form($form, &$form_state) {
      '#type' => 'hidden',
      '#value' => t("library-core"),
    );
-   $form['#action'] = url('http://library.princeton.edu/searchit/search/summon', array('external' => true));
+   $form['#action'] = url('/searchit/search/summon', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;
