@@ -37,33 +37,35 @@ body {
 	@include clearfix;
 }
 
-#block-quicktabs-homepage-search-tabs {
+.block--quicktabs-homepage-search-tabs {
 	@include grid-span(12); 
 	clear: both;
 	@include breakpoint($desk) {
-		@include grid-span(9,1, $gutter: 0);
+		@include grid-span(9,1);
 		margin-left: 0;
 		margin-right: 0;
 	}
 }
 
-.panel-col-first {
-	@include grid-span(6,1);
-	clear: both;
-}
-
-.panel-col-last {
-	@include grid-span(6,7);
-}
-
-#libraries-page .panel-col-first {
-	@include grid-span(9,1);
-}
-
-#libraries-page .panel-col-last {
-	@include grid-span(3,10);
-}
-
 .l-main {
 	padding: 1em;
 }
+
+//possibly not being used
+
+// .panel-col-first {
+// 	@include grid-span(6,1);
+// 	clear: both;
+// }
+
+// .panel-col-last {
+// 	@include grid-span(6,7);
+// }
+//
+//#libraries-page .panel-col-first {
+//	@include grid-span(9,1);
+//}
+//
+//#libraries-page .panel-col-last {
+//	@include grid-span(3,10);
+//}

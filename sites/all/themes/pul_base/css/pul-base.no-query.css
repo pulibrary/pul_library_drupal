@@ -249,15 +249,6 @@ a:hover, a:active {
   outline: none;
 }
 
-.hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 .field__label {
   font-weight: bold;
 }
@@ -308,7 +299,7 @@ body {
   *zoom: 1;
 }
 
-#block-quicktabs-homepage-search-tabs {
+.block--quicktabs-homepage-search-tabs {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
   float: right;
@@ -316,55 +307,6 @@ body {
   margin-right: 1.66667%;
   clear: none;
   clear: both;
-}
-@media (min-width: 70em) {
-  #block-quicktabs-homepage-search-tabs {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 75%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 0%;
-    clear: none;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-.panel-col-first {
-  -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 46.66667%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 1.66667%;
-  clear: none;
-  clear: both;
-}
-
-.panel-col-last {
-  -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 46.66667%;
-  float: right;
-  margin-left: 0;
-  margin-right: 1.66667%;
-  clear: none;
-}
-
-#libraries-page .panel-col-first {
-  -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 71.66667%;
-  float: left;
-  margin-right: -100%;
-  margin-left: 1.66667%;
-  clear: none;
-}
-
-#libraries-page .panel-col-last {
-  -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-  width: 21.66667%;
-  float: right;
-  margin-left: 0;
-  margin-right: 1.66667%;
-  clear: none;
 }
 
 .l-main {
@@ -376,6 +318,20 @@ media {
   max-width: 100%;
 }
 
+@font-face {
+  font-family: 'Droid Serif';
+  src: url("fonts/Droid_Serif/droidserif-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/Roboto/roboto-regular-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -591,26 +547,19 @@ h3 {
   clear: none;
   clear: both;
 }
-@media (min-width: 44em) {
-  .site-logo {
-    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-  }
+.site-logo:before {
+  /* create a full-height inline block pseudo=element */
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  /* vertical alignment of the inline element */
+  height: 100%;
 }
 .site-logo img {
   padding: 0 1em;
-  display: block;
   margin: 0 auto;
-}
-@media (min-width: 70em) {
-  .site-logo img {
-    padding: 0;
-    margin: 0;
-  }
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .svg .site-logo img {
@@ -620,11 +569,6 @@ h3 {
   background: url("../logo.svg") center center no-repeat;
   background-size: contain;
   display: block;
-}
-@media (min-width: 44em) {
-  .svg .site-logo {
-    margin-left: 0.5em;
-  }
 }
 
 .breadcrumb {
@@ -721,23 +665,13 @@ h3 {
   clear: both;
   padding: 1em;
 }
-.l-region--footer nav, .l-region--footer #block-block-1 {
+.l-region--footer nav, .l-region--footer .block--block-1 {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
   clear: right;
   float: right;
   margin-left: 0;
   margin-right: 1.66667%;
-}
-@media (min-width: 44em) {
-  .l-region--footer nav, .l-region--footer #block-block-1 {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    clear: right;
-    float: left;
-    margin-left: 1.66667%;
-    margin-right: 1.66667%;
-  }
 }
 .l-region--footer nav:first-child {
   margin-left: 0;
@@ -749,16 +683,11 @@ h3 {
 footer {
   background-color: #f5f4f1;
 }
-footer address, footer #university-copyright-footer {
+footer address, footer .university-copyright-footer {
   font-size: 0.75rem;
 }
 footer nav ul {
   display: none;
-}
-@media (min-width: 44em) {
-  footer nav ul {
-    display: block;
-  }
 }
 
 .l-footer {
@@ -807,9 +736,13 @@ h1.icon-article-express--small-after:after {
   font-size: .75em;
 }
 
+.single-day .no-entry.future:after {
+  content: 'TBA';
+}
+
 .wrapper--navigation {
   background-color: #f5f4f1;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d1d1d1;
 }
 
 .l-content {
@@ -829,30 +762,31 @@ h1.icon-article-express--small-after:after {
 }
 
 .three_six_three-region--middle ul,
+.three_six_three_stacked-region--middle ul,
 .pul_base_nine_three-region--first ul,
-.three_nine-region--second ul,
-.three_six_three_stacked-region--middle ul {
+.three_nine-region--second ul {
   list-style-type: disc;
   margin-left: 1.4em;
 }
 .three_six_three-region--middle ul li,
+.three_six_three_stacked-region--middle ul li,
 .pul_base_nine_three-region--first ul li,
-.three_nine-region--second ul li,
-.three_six_three_stacked-region--middle ul li {
+.three_nine-region--second ul li {
   margin-bottom: 1em;
 }
 
 .three_six_three-region--middle ol,
+.three_six_three_stacked-region--middle ol,
 .pul_base_nine_three-region--first ol,
-.three_nine-region--second ol,
-.three_six_three_stacked-region--middle ol {
+.three_nine-region--second ol {
   list-style-type: decimal;
   margin-left: 1.4em;
+  margin-bottom: 1.4em;
 }
 .three_six_three-region--middle ol li,
+.three_six_three_stacked-region--middle ol li,
 .pul_base_nine_three-region--first ol li,
-.three_nine-region--second ol li,
-.three_six_three_stacked-region--middle ol li {
+.three_nine-region--second ol li {
   margin-bottom: 1em;
 }
 
@@ -882,13 +816,6 @@ h1.icon-article-express--small-after:after {
 .renovation-news-block .renovation-news-lmg p {
   margin-top: 0;
 }
-@media (min-width: 44em) {
-  .renovation-news-block .renovation-news-lmg > a {
-    float: left;
-    width: 30%;
-    margin-right: 1em;
-  }
-}
 
 .section-collections-and-collection-development .three_six_three_stacked-region--top,
 .section-collections-and-collection-development .single-region--top,
@@ -899,7 +826,7 @@ h1.icon-article-express--small-after:after {
   background-image: url(/sites/all/themes/pul_base/images/trustee_reading_room_50.png);
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: #212121;
+  background-color: #1f2225;
 }
 .section-collections-and-collection-development .pane-spotlight-graphics-panel-pane-1,
 .section-collections .pane-spotlight-graphics-panel-pane-1 {
@@ -913,22 +840,12 @@ h1.icon-article-express--small-after:after {
   padding: 0;
   background-size: 1600px auto;
 }
-@media (min-width: 44em) {
-  .front .wrapper--highlighted {
-    background: linear-gradient(rgba(142, 150, 160, 0.75), rgba(142, 150, 160, 0.75)), url(../images/bg-test.jpg) center no-repeat;
-  }
-}
 .front .wrapper--highlighted .l-region--highlighted {
   padding: 1em 0;
   position: relative;
 }
-@media (min-width: 44em) {
-  .front .wrapper--highlighted .l-region--highlighted {
-    padding: 4em 0;
-  }
-}
 
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
   float: right;
@@ -937,19 +854,6 @@ h1.icon-article-express--small-after:after {
   clear: none;
   clear: both;
   display: none;
-}
-@media (min-width: 70em) {
-  #block-views-spotlight-dispalsys-block {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-left: 0;
-    margin-right: 0;
-    display: block;
-  }
 }
 
 .pane-spotlight-dispalsys {
@@ -960,7 +864,7 @@ h1.icon-article-express--small-after:after {
   width: 350px;
 }
 
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
   background: rgba(73, 79, 87, 0.65);
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -970,20 +874,20 @@ h1.icon-article-express--small-after:after {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-#block-views-spotlight-dispalsys-block h2 {
+.block--views-spotlight-dispalsys-block h2 {
   display: none;
 }
-#block-views-spotlight-dispalsys-block a {
+.block--views-spotlight-dispalsys-block a {
   font-size: 0.875rem;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   color: white;
 }
-#block-views-spotlight-dispalsys-block img {
+.block--views-spotlight-dispalsys-block img {
   width: 260px;
   height: 159px;
 }
-#block-views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
+.block--views-spotlight-dispalsys-block .view-spotlight-dispalsys .views-row-1 {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -1005,30 +909,6 @@ h1.icon-article-express--small-after:after {
   background: rgba(73, 79, 87, 0.35);
   padding: 0.5em;
 }
-@media (min-width: 44em) {
-  .block--pudl-highlight {
-    display: block;
-    -sgs-span-settings: ("span": 3, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 85%;
-    clear: none;
-    margin-right: 0;
-  }
-}
-@media (min-width: 70em) {
-  .block--pudl-highlight {
-    display: block;
-    -sgs-span-settings: ("span": 2, "location": 11, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 13.33333%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 .block--pudl-highlight a {
   font-size: 0.75rem;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1040,16 +920,16 @@ h1.icon-article-express--small-after:after {
   margin-right: 0.5em;
 }
 
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
   margin-bottom: 24px;
   cursor: pointer;
 }
-#block-views-spotlight-dispalsys-block .view-content .views-row {
+.block--views-spotlight-dispalsys-block .view-content .views-row {
   height: 159px;
   overflow: hidden;
   position: relative;
 }
-#block-views-spotlight-dispalsys-block .views-field {
+.block--views-spotlight-dispalsys-block .views-field {
   -moz-transition: all, ease-in-out 0.2s;
   -o-transition: all, ease-in-out 0.2s;
   -webkit-transition: all, ease-in-out 0.2s;
@@ -1059,7 +939,7 @@ h1.icon-article-express--small-after:after {
   height: inherit;
   padding: 0.5em 0.7em;
 }
-#block-views-spotlight-dispalsys-block .spotlight-image {
+.block--views-spotlight-dispalsys-block .spotlight-image {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
   font-weight: 200;
@@ -1069,12 +949,12 @@ h1.icon-article-express--small-after:after {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-#block-views-spotlight-dispalsys-block .spotlight-image img {
+.block--views-spotlight-dispalsys-block .spotlight-image img {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-#block-views-spotlight-dispalsys-block .spotlight-text a {
+.block--views-spotlight-dispalsys-block .spotlight-text a {
   position: absolute;
   top: 0;
   width: 100%;
@@ -1226,42 +1106,6 @@ table caption {
   opacity: 0.4;
   display: none;
 }
-@media (min-width: 44em) {
-  .branch-libraries .three_six_three_stacked-region--top .pane-node-field-library-image,
-  .branch-libraries .three_six_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
-  .branch-libraries .three_six_three_stacked-region--top .pane-custom,
-  .branch-libraries .three_three_three_three_stacked-region--top .pane-node-field-library-image,
-  .branch-libraries .three_three_three_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
-  .branch-libraries .three_three_three_three_stacked-region--top .pane-custom {
-    position: relative;
-  }
-  .branch-libraries .three_six_three_stacked-region--top h2,
-  .branch-libraries .three_three_three_three_stacked-region--top h2 {
-    position: absolute;
-    z-index: 1;
-    display: block;
-    font-size: 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 0.3em;
-    text-shadow: white 2px 2px;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 25px;
-  }
-  .branch-libraries .three_six_three_stacked-region--top img, .branch-libraries .three_six_three_stacked-region--top a,
-  .branch-libraries .three_three_three_three_stacked-region--top img,
-  .branch-libraries .three_three_three_three_stacked-region--top a {
-    opacity: 0.4;
-    display: block;
-  }
-  .branch-libraries .three_six_three_stacked-region--top p,
-  .branch-libraries .three_three_three_three_stacked-region--top p {
-    margin: 0;
-  }
-  .branch-libraries .three_six_three_stacked-region--top img, .branch-libraries a {
-    opacity: 1;
-  }
-}
 
 .pane-node-field-branch-spotlight-item {
   display: block;
@@ -1307,18 +1151,8 @@ table caption {
   margin-bottom: 0.5em;
   display: block;
 }
-@media (min-width: 54em) {
-  .branch-libraries .oh-display {
-    display: inline;
-  }
-}
 .branch-libraries .oh-display .oh-display-hours {
   display: block;
-}
-@media (min-width: 54em) {
-  .branch-libraries .oh-display .oh-display-hours {
-    display: inline;
-  }
 }
 .branch-libraries .view-full-schedule {
   margin: 1em 0;
@@ -1439,15 +1273,6 @@ table caption {
   float: none;
   display: block;
   text-align: center;
-}
-@media (min-width: 44em) {
-  .views-more-link,
-  .node-readmore a,
-  .more-link a {
-    float: right;
-    display: inline;
-    padding: 3px 7px;
-  }
 }
 .views-more-link:hover,
 .node-readmore a:hover,
@@ -1997,11 +1822,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   font-weight: 800;
   padding: .4em .5em;
 }
-@media (min-width: 70em) {
-  .l-branding nav ul li a {
-    padding: .5em 1em;
-  }
-}
 .l-branding nav ul li a:hover {
   background: #606873;
 }
@@ -2035,11 +1855,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   opacity: .6;
   padding: .8em 0;
 }
-@media (min-width: 44em) {
-  .wrapper--navigation .mobile-logo {
-    display: none;
-  }
-}
 .wrapper--navigation .centered-navigation-menu-button {
   color: rgba(51, 51, 51, 0.7);
   display: block;
@@ -2049,11 +1864,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin: 0;
   padding-left: 1em;
   text-transform: uppercase;
-}
-@media (min-width: 44em) {
-  .wrapper--navigation .centered-navigation-menu-button {
-    display: none;
-  }
 }
 .wrapper--navigation .centered-navigation-menu-button:hover {
   color: #e87511;
@@ -2071,17 +1881,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   width: 100%;
   z-index: 999;
 }
-@media (min-width: 44em) {
-  .wrapper--navigation .centered-navigation-menu {
-    display: block;
-    text-align: center;
-  }
-}
-@media (min-width: 70em) {
-  .wrapper--navigation .centered-navigation-menu {
-    padding-left: 0;
-  }
-}
 .wrapper--navigation .centered-navigation-menu > ul > li {
   background: #f5f4f1;
   display: block;
@@ -2091,17 +1890,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   text-align: left;
   width: 100%;
   z-index: 99;
-}
-@media (min-width: 44em) {
-  .wrapper--navigation .centered-navigation-menu > ul > li {
-    background: transparent;
-    display: inline;
-    line-height: 50px;
-    padding-left: 0;
-  }
-  .wrapper--navigation .centered-navigation-menu > ul > li a {
-    padding-left: 1em;
-  }
 }
 .wrapper--navigation .centered-navigation-menu > ul > li a {
   color: rgba(51, 51, 51, 0.7);
@@ -2117,11 +1905,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation .centered-navigation-menu > ul > li.expanded {
   padding-right: 0;
 }
-@media (min-width: 70em) {
-  .wrapper--navigation .centered-navigation-menu > ul > li.expanded {
-    padding-right: 1em;
-  }
-}
 .wrapper--navigation .centered-navigation-menu > ul > li.expanded > a {
   padding-right: 0.6em;
 }
@@ -2132,11 +1915,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   bottom: auto;
   left: auto;
   color: rgba(51, 51, 51, 0.7);
-}
-@media (min-width: 800px) {
-  .wrapper--navigation .centered-navigation-menu > ul > li.expanded > a:after {
-    content: '\25BE';
-  }
 }
 .wrapper--navigation li.expanded {
   overflow: visible;
@@ -2149,11 +1927,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-right: 1.6em;
   position: relative;
 }
-@media (min-width: 70em) {
-  .wrapper--navigation li.expanded > a {
-    margin-right: 1em;
-  }
-}
 .wrapper--navigation li.expanded > a:after {
   font-size: 1.125rem;
   position: absolute;
@@ -2162,61 +1935,19 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation li.expanded:hover > .menu {
   display: none;
 }
-@media (min-width: 800px) {
-  .wrapper--navigation li.expanded {
-    padding-right: 1em;
-    position: relative;
-  }
-  .wrapper--navigation li.expanded:hover > .menu {
-    display: block;
-  }
-}
 .wrapper--navigation li > ul.menu {
   display: none;
   padding-left: 0;
 }
-@media (min-width: 44em) {
-  .wrapper--navigation li > ul.menu {
-    left: -2em;
-    position: absolute;
-    margin-left: 2em;
-    -moz-box-shadow: 0px 3px 8px #646464;
-    -webkit-box-shadow: 0px 3px 8px #646464;
-    box-shadow: 0px 3px 8px #646464;
-  }
-}
-@media (min-width: 44em) {
-  .wrapper--navigation li > ul.menu .menu {
-    left: 14.8em;
-    top: 0;
-  }
-}
 .wrapper--navigation li > ul.menu li {
   display: block;
   padding-right: 0;
-}
-@media (min-width: 44em) {
-  .wrapper--navigation li > ul.menu li {
-    line-height: 38.46154px;
-  }
-  .wrapper--navigation li > ul.menu li:last-child > a {
-    border-bottom-left-radius: 0.1875em;
-    border-bottom-right-radius: 0.1875em;
-  }
 }
 .wrapper--navigation li > ul.menu li a {
   background-color: #efede8;
   display: inline-block;
   text-align: left;
   width: 100%;
-}
-@media (min-width: 44em) {
-  .wrapper--navigation li > ul.menu li a {
-    background-color: #f5f4f1;
-    padding-left: 1em;
-    text-align: left;
-    width: 15em;
-  }
 }
 .wrapper--navigation li > ul.menu li a:hover {
   background: #e8e6df;
@@ -2321,17 +2052,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-right: 1.66667%;
   clear: none;
 }
-@media (min-width: 44em) {
-  .five_four_three_stacked-region--bottom .view-id-library_news .views-row-1 {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    margin-left: 0;
-  }
-}
 .five_four_three_stacked-region--bottom .view-id-library_news .views-row-2 {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
@@ -2340,16 +2060,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-right: 1.66667%;
   clear: none;
 }
-@media (min-width: 44em) {
-  .five_four_three_stacked-region--bottom .view-id-library_news .views-row-2 {
-    -sgs-span-settings: ("span": 4, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 35%;
-    clear: none;
-  }
-}
 .five_four_three_stacked-region--bottom .view-id-library_news .views-row-3 {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
   width: 96.66667%;
@@ -2357,17 +2067,6 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   margin-left: 0;
   margin-right: 1.66667%;
   clear: none;
-}
-@media (min-width: 44em) {
-  .five_four_three_stacked-region--bottom .view-id-library_news .views-row-3 {
-    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
 }
 .five_four_three_stacked-region--bottom .view-id-library_news .field--name-field-news-featured-graphic img {
   margin-bottom: 1em;
@@ -2390,24 +2089,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   line-height: 24px;
   line-height: 1.5rem;
 }
-@media (min-width: 70em) {
-  .front .view-library-news h3 {
-    margin-bottom: 0;
-  }
-}
 
 .front .field--name-field-news-featured-graphic {
   width: 100%;
   height: auto;
   overflow: hidden;
-}
-@media (min-width: 70em) {
-  .front .field--name-field-news-featured-graphic {
-    width: 145px;
-    height: 100px;
-    margin: 0 1em 1.5em 0;
-    float: left;
-  }
 }
 .front .field--name-field-news-featured-graphic img {
   width: auto;
@@ -2545,24 +2231,9 @@ body.faq .ui-accordion .ui-accordion-header a {
   display: block;
   margin: 0 auto;
 }
-@media (min-width: 44em) {
-  .l-region--branding {
-    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-  }
-}
 
 .front .l-region--branding .block--allsearch-block-allsearch-search {
   display: none;
-}
-@media (min-width: 44em) {
-  .front .l-region--branding .block--allsearch-block-allsearch-search {
-    display: block;
-  }
 }
 
 .l-region--branding .block--allsearch-block-allsearch-search,
@@ -2667,17 +2338,6 @@ body.faq .ui-accordion .ui-accordion-header a {
   opacity: 0.5;
   cursor: not-allowed;
 }
-@media (min-width: 44em) {
-  .l-region--branding .block--allsearch-block-allsearch-search,
-  .l-region--branding .block--search-form {
-    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-  }
-}
 
 .all-search-results-list,
 .view-search-libraries-and-collections,
@@ -2752,7 +2412,8 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 
 .block--quicktabs {
-  margin: 1.5em 0;
+  margin: 0 auto;
+  float: none;
 }
 .block--quicktabs h2 {
   margin: 0;
@@ -2791,18 +2452,11 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li {
   margin: 0;
-  border-bottom: 1px dotted #f5f4f1;
   top: 0;
-  clear: both;
-  width: 100%;
-}
-@media (min-width: 44em) {
-  .block--quicktabs .ui-tabs .ui-tabs-nav li {
-    clear: none;
-    width: 25%;
-    border: none;
-    text-align: center;
-  }
+  clear: none;
+  width: 25%;
+  border: none;
+  text-align: center;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
   -moz-border-radius-topleft: 4px;
@@ -2816,17 +2470,11 @@ body.faq .ui-accordion .ui-accordion-header a {
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a {
   width: 100%;
-  text-align: left;
   background: #494f57;
-  border-right: none;
   color: white;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-@media (min-width: 44em) {
-  .block--quicktabs .ui-tabs .ui-tabs-nav li a {
-    border-right: 1px solid #877d60;
-    text-align: center;
-  }
+  border-right: 1px solid #877d60;
+  text-align: center;
 }
 .block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
   background: #606873;
@@ -2867,7 +2515,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   float: left;
   width: 85%;
   height: 45px;
-  padding: 5px 0 5px 10px;
+  padding: 5px 10px 5px 10px;
   margin: 0.8em 0;
   display: block;
   border: 1px solid #737373;
@@ -2932,58 +2580,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .five_four_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-top: 0;
-  }
-
-  .five_four_three_stacked-region--first {
-    -sgs-span-settings: ("span": 5, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 38.33333%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .five_four_three_stacked-region--second {
-    -sgs-span-settings: ("span": 4, "location": 6, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 43.33333%;
-    clear: none;
-  }
-
-  .five_four_three_stacked-region--third {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-
-  .five_four_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-  }
-}
 /*******************************************************************************
  * four_five_three_stacked.layout.scss
  *
@@ -3002,57 +2598,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .four_five_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-  }
-
-  .four_five_three_stacked-region--second {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    margin-left: 0;
-  }
-
-  .four_five_three_stacked-region--first {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 41.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 33.33333%;
-    clear: none;
-    clear: both;
-  }
-
-  .four_five_three_stacked-region--third {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-
-  .four_five_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-  }
-}
 /*******************************************************************************
  * landingpage.layout.scss
  *
@@ -3071,58 +2616,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .landingpage-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .landingpage-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-
-  .landingpage-region--third {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .landingpage-region--fourth {
-    -sgs-span-settings: ("span": 5, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 38.33333%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 35%;
-    clear: none;
-  }
-
-  .landingpage-region--fifth {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * nine_three_stacked.layout.scss
  *
@@ -3141,50 +2634,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .nine_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .nine_three_stacked-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .nine_three_stacked-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-  }
-
-  .nine_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * pul_base_four_four_four_stacked.layout.scss
  *
@@ -3203,59 +2652,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .pul_base_four_four_four_stacked-region--top {
-    width: 100%;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .pul_base_four_four_four_stacked-region--first {
-    -sgs-span-settings: ("span": 4, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 2.5%;
-  }
-
-  .pul_base_four_four_four_stacked-region--second {
-    -sgs-span-settings: ("span": 4, "location": 5, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 35%;
-    clear: none;
-    margin: 0 2.5%;
-  }
-
-  .pul_base_four_four_four_stacked-region--third {
-    -sgs-span-settings: ("span": 4, "location": 9, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 30%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-left: 2.5%;
-    margin-right: 0;
-  }
-
-  .pul_base_four_four_four_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 96.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
  /*******************************************************************************
 * pul_base_nine_three.layout.scss
 *
@@ -3274,27 +2670,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .pul_base_nine_three-region--first {
-    -sgs-span-settings: ("span": 9, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 75%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 0%;
-    clear: none;
-    margin-left: 0;
-  }
-
-  .pul_base_nine_three-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_nine.layout.scss
  *
@@ -3313,40 +2688,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .single-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .single-region--middle {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .single-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-}
 /*******************************************************************************
  * three_nine.layout.scss
  *
@@ -3365,28 +2706,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .six_six-region--first {
-    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .six_six-region--second {
-    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_nine.layout.scss
  *
@@ -3405,51 +2724,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .six_six_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .six_six_stacked-region--first {
-    -sgs-span-settings: ("span": 6, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-  }
-
-  .six_six_stacked-region--second {
-    -sgs-span-settings: ("span": 6, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-
-  .six_six_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    margin-left: 0;
-    clear: both;
-  }
-}
 /*******************************************************************************
  * three_nine.layout.scss
  *
@@ -3468,27 +2742,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .three_nine-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    margin-left: 0;
-  }
-
-  .three_nine-region--second {
-    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_nine_stacked.layout.scss
  *
@@ -3507,50 +2760,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .three_nine_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    margin-left: 0;
-    clear: both;
-  }
-
-  .three_nine_stacked-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    margin-left: 0;
-    clear: both;
-  }
-
-  .three_nine_stacked-region--second {
-    -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 71.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-  }
-
-  .three_nine_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    margin-left: 0;
-    clear: both;
-  }
-}
 /*******************************************************************************
  * three_six_three.layout.scss
  *
@@ -3569,37 +2778,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .three_six_three-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    margin-left: 0;
-    clear: both;
-  }
-
-  .three_six_three-region--middle {
-    -sgs-span-settings: ("span": 6, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 26.66667%;
-    clear: none;
-  }
-
-  .three_six_three-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 25%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_six_three_stacked.layout.scss
  *
@@ -3624,63 +2802,6 @@ $desk : 1250px;
   margin: 0.5em;
 }
 
-@media (min-width: 44em) {
-  .three_six_three_stacked-region--top {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .three_six_three_stacked-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    padding-left: 0.5em;
-  }
-
-  .three_six_three_stacked-region--middle {
-    -sgs-span-settings: ("span": 6, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 46.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 26.66667%;
-    clear: none;
-  }
-
-  .three_six_three_stacked-region--second {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-right: 0;
-    padding-right: 0.5em;
-  }
-
-  .three_six_three_stacked-region--bottom {
-    -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 100%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_three_three_three.layout.scss
  *
@@ -3699,50 +2820,6 @@ $desk : 1250px;
   margin-bottom: 18px;
 }
 
-@media (min-width: 44em) {
-  .three_three_three_three_stacked-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--second {
-    -sgs-span-settings: ("span": 3, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 26.66667%;
-    clear: none;
-    margin: 0 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--third {
-    -sgs-span-settings: ("span": 3, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 51.66667%;
-    clear: none;
-    margin: 0 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--fourth {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-left: 2.22%;
-    margin-right: 0;
-  }
-}
 /*******************************************************************************
  * three_three_three_three_stacked.layout.scss
  *
@@ -3759,56 +2836,4 @@ $desk : 1250px;
 
 .three_three_three_three_stacked-region {
   margin-bottom: 18px;
-}
-
-@media (min-width: 44em) {
-  .three_three_three_three_stacked-region--top {
-    width: 100%;
-    clear: both;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .three_three_three_three_stacked-region--first {
-    -sgs-span-settings: ("span": 3, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 1.66667%;
-    clear: none;
-    clear: both;
-    margin-left: 0;
-    margin-right: 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--second {
-    -sgs-span-settings: ("span": 3, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 26.66667%;
-    clear: none;
-    margin: 0 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--third {
-    -sgs-span-settings: ("span": 3, "location": 7, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": false, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: left;
-    margin-right: -100%;
-    margin-left: 51.66667%;
-    clear: none;
-    margin: 0 2.22%;
-  }
-
-  .three_three_three_three_stacked-region--fourth {
-    -sgs-span-settings: ("span": 3, "location": 10, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": ((null: null)));
-    width: 21.66667%;
-    float: right;
-    margin-left: 0;
-    margin-right: 1.66667%;
-    clear: none;
-    margin-left: 2.22%;
-    margin-right: 0;
-  }
 }

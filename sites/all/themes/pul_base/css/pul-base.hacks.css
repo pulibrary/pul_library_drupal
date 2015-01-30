@@ -1,5 +1,5 @@
 @media all and (max-width: 800px) {
-  #toolbar, #admin-menu {
+  .toolbar {
     display: none;
   }
 
