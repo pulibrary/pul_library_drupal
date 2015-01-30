@@ -33,7 +33,7 @@ function catalog_block_form($form, &$form_state) {
       'data' => array('catalog_block' => $hint_settings),
       'type' => 'setting',
      );
-   $form['#action'] = url('http://library.princeton.edu/searchit/search/location', array('external' => true));
+   $form['#action'] = url('/searchit/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;
