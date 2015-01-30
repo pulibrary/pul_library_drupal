@@ -23,7 +23,7 @@
     }
 }
 
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
     @include grid-span(12); 
     clear: both;
     display: none;
@@ -45,7 +45,7 @@
     }
 }
 
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
     background: rgba($gray-dark,.65);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -111,7 +111,7 @@
 }
 
 //spotlight gray mask
-#block-views-spotlight-dispalsys-block {
+.block--views-spotlight-dispalsys-block {
   $hover-tile-height: 159px;
   margin-bottom: $base-line-height;
   cursor: pointer;

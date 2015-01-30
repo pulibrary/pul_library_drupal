@@ -1,3 +1,4 @@
+// hide summary count for database nav
 .summary-count {
     display: none;
 }
@@ -16,4 +17,11 @@ span.icon-article-express--small-after:before {
 
 h1.icon-article-express--small-after:after {
   font-size: .75em;
+}
+
+//empty library hours show tba 
+.single-day {
+    .no-entry.future:after {
+        content: 'TBA';    
+    }
 }
