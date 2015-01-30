@@ -332,16 +332,16 @@ media {
 
 @font-face {
   font-family: 'Droid Serif';
-  src: url("fonts/Droid_Serif/droidserif-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot");
   /* IE9 Compat Modes */
-  src: url("fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");
+  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: 'Roboto';
-  src: url("fonts/Roboto/roboto-regular-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot");
   /* IE9 Compat Modes */
-  src: url("fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");
+  src: url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 html {
