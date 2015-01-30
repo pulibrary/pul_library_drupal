@@ -192,6 +192,24 @@
     }
   };
 
+
+  Drupal.behaviors.pulRewriteTempStaff = {
+    attach: function (context) {
+      $('.view-staff-department-list', context).once('pul', function () {
+        $('tbody a').each(function (index, value) {
+          var link = $(this).attr('href');
+          var update = link.replace(/temp_/, '');
+          $(this).attr('href', update);
+        });
+        $('tbody td.views-field-mail').each(function (index, value) {
+          var email = $(this).text();
+          var update = email.replace(/(temp_|_test)/, '');
+          $(this).text(update);
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.pulTrackHoursUsage = {
     attach: function (context) {
       $('.pane-library-hours', context).once('pul', function () {
