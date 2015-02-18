@@ -146,7 +146,7 @@ function webform_validation_webform_validation_validators() {
       ),
       'min_components' => 2,
       'max_components' => 2,
-      'description' => t('Compare two values for greater than or less than, or equal to.'),
+      'description' => t('Compare two values for greater than (>), less than (<), greater than or equal to (>=), or less than or equal to (<=).'),
     ),
     'unique' => array(
       'name' => t('Unique values'),
@@ -446,6 +446,8 @@ function webform_validation_webform_validation_validate($validator_name, $items,
     }
     $items[$key] = $new_values;
   }
+  // Ensure later calls to key() get the first item.
+  reset($items);
 
   $errors = array();
   switch ($validator_name) {

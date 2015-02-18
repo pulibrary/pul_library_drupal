@@ -11,9 +11,9 @@ files[] = webform_validation.module
 files[] = webform_validation.rules.inc
 files[] = webform_validation.validators.inc
 
-; Information added by Drupal.org packaging script on 2014-09-09
-version = "7.x-1.7"
+; Information added by Drupal.org packaging script on 2015-02-06
+version = "7.x-1.9"
 core = "7.x"
 project = "webform_validation"
-datestamp = "1410296269"
+datestamp = "1423261384"
 
