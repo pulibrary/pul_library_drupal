@@ -5,8 +5,8 @@
  * Add validation rules to webforms
  */
 
-include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'webform_validation') . '/' . 'webform_validation.validators.inc';
-include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'webform_validation') . '/' . 'webform_validation.rules.inc';
+include_once('webform_validation.validators.inc');
+include_once('webform_validation.rules.inc');
 
 /**
  * Implements hook_menu().
@@ -153,6 +153,13 @@ function webform_validation_validate($form, &$form_state) {
   }
 
   if ($rules) {
+    $component_definitions = webform_validation_prefix_keys($node->webform['components']);
+    // Remove hidden components.
+    foreach ($component_definitions as $key => $component) {
+      if (isset($flat_values[$key]) && _webform_client_form_rule_check($node, $component, 0, $form_state['values']['submitted']) !== WEBFORM_CONDITIONAL_INCLUDE) {
+        unset($flat_values[$key]);
+      }
+    }
     foreach ($rules as $rule) {
       // create a list of components that need validation against this rule (component id => user submitted value)
       $items = array();
@@ -163,7 +170,6 @@ function webform_validation_validate($form, &$form_state) {
       }
       // prefix array keys to avoid reindexing by the module_invoke_all function call
       $items = webform_validation_prefix_keys($items);
-      $component_definitions = webform_validation_prefix_keys($node->webform['components']);
       $rule['sid'] = $sid;
       // have the submitted values validated
       $errors = module_invoke_all("webform_validation_validate", $rule['validator'], $items, $component_definitions, $rule);
@@ -302,7 +308,7 @@ function theme_webform_validation_manage_add_rule($variables) {
  */
 function webform_validation_webform_validation($type, $op, $data) {
   if ($type == 'rule' && in_array($op, array('add', 'edit'))) {
-    if (module_exists('i18n') && isset($data['error_message'])) {
+    if (module_exists('i18n_string') && isset($data['error_message'])) {
       i18n_string_update('webform_validation:error_message:' . $data['ruleid'] . ':message', $data['error_message']);
     }
   }

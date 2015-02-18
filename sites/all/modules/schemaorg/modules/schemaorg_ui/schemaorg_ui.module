@@ -115,17 +115,6 @@ function schemaorg_ui_field_ui_field_edit_form_submit($form, &$form_state) {
     $mapping[$field_name]['type'] = 'rel';
   }
 
-  // Some terms from schema.org are not yet supported, and legacy properties
-  // are being used instead. The legacy property is added to the RDF mappings
-  // along with the official property.
-  $property = $form_state['values']['schemaorg_ui_field_property'];
-  $legacy_properties = array(
-    'description' => 'summary',
-  );
-  if (array_key_exists($property, $legacy_properties)) {
-    array_unshift($mapping[$field_name]['predicates'], 'schema:' . $legacy_properties[$property]);
-  }
-
   // Performs some maintenance tasks based on whether the mapping contains
   // schema.org terms or not.
   // Scans the mapping array to see if some fields are mapped to schema.org.
@@ -212,7 +201,7 @@ function schemaorg_ui_field_ui_field_edit_form_submit($form, &$form_state) {
 function schemaorg_ui_term_load($type, $bundle, $field) {
   $terms = array();
   $mapping = rdf_mapping_load($type, $bundle);
-  if ($field == 'rdftype') {
+  if ($field == 'rdftype' && !empty($mapping['rdftype'])) {
     $terms = $mapping['rdftype'];
   }
   elseif (!empty($mapping[$field]['predicates'])) {
