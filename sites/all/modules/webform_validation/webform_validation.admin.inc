@@ -256,6 +256,12 @@ function webform_validation_manage_rule($form, $form_state, $node, $action = 'ad
     '#weight' => 25,
   );
 
+  $destination = drupal_get_destination();
+  $form['rule']['cancel'] = array(
+    '#markup' => l(t('Cancel'), $destination['destination']),
+    '#weight' => 26,
+  );
+
   return $form;
 }
 
