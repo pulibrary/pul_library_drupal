@@ -6,6 +6,7 @@
     "selectivizr": "fubhy/selectivizr",
     "html5shiv": "fubhy/html5shiv",
     "matchmedia": "fubhy/matchmedia",
-    "pie": "fubhy/pie"
+    "pie": "fubhy/pie",
+    "normalize.scss": "~3.0.2+normalize.3.0.2"
   }
 }
