@@ -3167,7 +3167,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-get-help-menu';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,

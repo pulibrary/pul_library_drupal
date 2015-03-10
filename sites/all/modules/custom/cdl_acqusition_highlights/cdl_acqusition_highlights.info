@@ -52,4 +52,3 @@ features[variable][] = node_submitted_acquisitions_highlights
 features[views_view][] = acquisitions_highlights
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][options] = options
-mtime = 1412638654

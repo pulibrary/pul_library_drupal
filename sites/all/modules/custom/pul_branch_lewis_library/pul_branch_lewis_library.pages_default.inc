@@ -101,7 +101,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-branch-lewis';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
@@ -220,6 +220,25 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
     $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane = new stdClass();
+    $pane->pid = 'new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'lewis_library_feed-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
+    $display->content['new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8'] = $pane;
+    $display->panels['middle'][1] = 'new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -399,7 +418,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -636,13 +655,16 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
     $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
-    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->pid = 'new-b4effccd-18da-4109-9d84-a5adf4726a52';
     $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7789',
+      ),
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -654,9 +676,86 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
-    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->uuid = 'b4effccd-18da-4109-9d84-a5adf4726a52';
+    $display->content['new-b4effccd-18da-4109-9d84-a5adf4726a52'] = $pane;
+    $display->panels['second'][0] = 'new-b4effccd-18da-4109-9d84-a5adf4726a52';
+    $pane = new stdClass();
+    $pane->pid = 'new-6e282a21-156c-4b82-9db3-c23d3465b4b4';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7789',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6e282a21-156c-4b82-9db3-c23d3465b4b4';
+    $display->content['new-6e282a21-156c-4b82-9db3-c23d3465b4b4'] = $pane;
+    $display->panels['second'][1] = 'new-6e282a21-156c-4b82-9db3-c23d3465b4b4';
+    $pane = new stdClass();
+    $pane->pid = 'new-f3979087-d6f5-4160-852b-60f2845d122f';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(),
+    );
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7789',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'f3979087-d6f5-4160-852b-60f2845d122f';
+    $display->content['new-f3979087-d6f5-4160-852b-60f2845d122f'] = $pane;
+    $display->panels['second'][2] = 'new-f3979087-d6f5-4160-852b-60f2845d122f';
+    $pane = new stdClass();
+    $pane->pid = 'new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7789',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
+    $display->content['new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0'] = $pane;
+    $display->panels['second'][3] = 'new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -669,7 +768,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
         'nid' => '7789',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Lewis Library',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(

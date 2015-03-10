@@ -56,6 +56,8 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -140,6 +142,28 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
     $pane->uuid = 'f3321d76-8d04-4648-a59e-ff7c6bb0199d';
     $display->content['new-f3321d76-8d04-4648-a59e-ff7c6bb0199d'] = $pane;
     $display->panels['first'][1] = 'new-f3321d76-8d04-4648-a59e-ff7c6bb0199d';
+    $pane = new stdClass();
+    $pane->pid = 'new-649ec903-5337-4a71-9a1f-34a6c18dfeb5';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '649ec903-5337-4a71-9a1f-34a6c18dfeb5';
+    $display->content['new-649ec903-5337-4a71-9a1f-34a6c18dfeb5'] = $pane;
+    $display->panels['second'][0] = 'new-649ec903-5337-4a71-9a1f-34a6c18dfeb5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-f3321d76-8d04-4648-a59e-ff7c6bb0199d';
   $handler->conf['display'] = $display;

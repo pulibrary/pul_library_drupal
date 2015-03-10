@@ -211,7 +211,11 @@ function pul_econ_library_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__econ_library_company_directories';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -243,7 +247,11 @@ function pul_econ_library_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__econ_library_stock_exchange_hold';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -275,7 +283,11 @@ function pul_econ_library_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__econ_lib_central_bank_holdings';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -304,7 +316,11 @@ function pul_econ_library_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__econ_working_papers';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

@@ -71,7 +71,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 39,
+      'weight' => 37,
     ),
   );
 
@@ -269,7 +269,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 41,
+      'weight' => 39,
     ),
   );
 
@@ -445,7 +445,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 40,
     ),
   );
 
@@ -503,7 +503,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 36,
     ),
   );
 
@@ -741,7 +741,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 35,
     ),
   );
 
@@ -859,7 +859,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 33,
     ),
   );
 
@@ -1102,7 +1102,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 34,
     ),
   );
 
@@ -1403,7 +1403,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 40,
+      'weight' => 38,
     ),
   );
 

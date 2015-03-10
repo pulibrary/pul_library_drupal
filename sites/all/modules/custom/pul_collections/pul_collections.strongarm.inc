@@ -68,6 +68,9 @@ function pul_collections_strongarm() {
       'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
