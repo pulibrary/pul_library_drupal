@@ -11,4 +11,3 @@ features[ctools][] = feeds_tamper:feeds_tamper_default:2
 features[features_api][] = api:2
 features[feeds_importer][] = cdl_specialist_import
 features[feeds_tamper][] = cdl_specialist_import-profile_image-rewrite
-mtime = 1409167517

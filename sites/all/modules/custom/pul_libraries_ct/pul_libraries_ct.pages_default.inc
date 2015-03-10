@@ -57,6 +57,19 @@ function pul_libraries_ct_default_page_manager_handlers() {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'libraries/engineering
+libraries/architecture
+libraries/stokes
+libraries/plasma-physics
+libraries/scilib',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
       ),
       'logic' => 'and',
     ),
@@ -112,7 +125,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'library_hours-panel_pane_3';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'path' => 'calendar/week',
@@ -179,6 +192,31 @@ function pul_libraries_ct_default_page_manager_handlers() {
     $pane->uuid = 'd7d341b9-f98e-47ec-a709-c1ebf67612ab';
     $display->content['new-d7d341b9-f98e-47ec-a709-c1ebf67612ab'] = $pane;
     $display->panels['first'][3] = 'new-d7d341b9-f98e-47ec-a709-c1ebf67612ab';
+    $pane = new stdClass();
+    $pane->pid = 'new-b410bbf5-6832-4725-b1aa-13471b06be74';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_hours-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_hrs_lib_calendar_target_id' => '%cal:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Today&#x2019;s Hours',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'b410bbf5-6832-4725-b1aa-13471b06be74';
+    $display->content['new-b410bbf5-6832-4725-b1aa-13471b06be74'] = $pane;
+    $display->panels['first'][4] = 'new-b410bbf5-6832-4725-b1aa-13471b06be74';
     $pane = new stdClass();
     $pane->pid = 'new-09a05689-416a-46db-beea-bf08dd380368';
     $pane->panel = 'second';

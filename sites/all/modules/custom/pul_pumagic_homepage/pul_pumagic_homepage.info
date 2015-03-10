@@ -8,5 +8,4 @@ dependencies[] = page_manager
 features[ctools][] = page_manager:pages_default:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = node_view_panel_context_45
-mtime = 1415069488
 project status url = http://github.com/pulibrary/pulbase

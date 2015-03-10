@@ -171,7 +171,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -191,6 +191,32 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'libraries-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Contact Us',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'b78982e6-3a41-48bd-8d28-258b5d00d32d';
+    $display->content['new-b78982e6-3a41-48bd-8d28-258b5d00d32d'] = $pane;
+    $display->panels['first'][4] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
     $pane = new stdClass();
     $pane->pid = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $pane->panel = 'middle';
@@ -318,16 +344,19 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'entityreference_label',
+      'formatter' => 'entityreference_entity_view',
       'delta_limit' => '5',
       'delta_offset' => '0',
       'delta_reversed' => 0,
       'formatter_settings' => array(
         'link' => 1,
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Service Quick Links',
+      'override_title_text' => 'Services',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -421,7 +450,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Stokes Library',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -590,7 +619,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -610,6 +639,32 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'libraries-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7796',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Contact Us',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'afdd33ac-fb36-431d-8c4e-05f8b085567d';
+    $display->content['new-afdd33ac-fb36-431d-8c4e-05f8b085567d'] = $pane;
+    $display->panels['first'][4] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -662,7 +717,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-get-help-menu';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
@@ -679,6 +734,81 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
     $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane = new stdClass();
+    $pane->pid = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-stokes--get-help';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Get Help',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'fd3d7db3-973e-47e5-98da-68fcf50c84c5';
+    $display->content['new-fd3d7db3-973e-47e5-98da-68fcf50c84c5'] = $pane;
+    $display->panels['second'][1] = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
+    $pane = new stdClass();
+    $pane->pid = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7796',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Services',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '1df13d2d-afe9-4296-9f47-03b9e9137cf2';
+    $display->content['new-1df13d2d-afe9-4296-9f47-03b9e9137cf2'] = $pane;
+    $display->panels['second'][2] = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
+    $pane = new stdClass();
+    $pane->pid = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7796',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Key Links',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '6f8dd1ee-b040-466c-87b1-739fa95e8175';
+    $display->content['new-6f8dd1ee-b040-466c-87b1-739fa95e8175'] = $pane;
+    $display->panels['second'][3] = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';

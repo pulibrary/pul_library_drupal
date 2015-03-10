@@ -255,7 +255,7 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '%user:field_puluser_fname\'s Subjects',
+      'override_title_text' => '%user:field-puluser-nick-name\'s Subjects',
     );
     $pane->cache = array();
     $pane->style = array(

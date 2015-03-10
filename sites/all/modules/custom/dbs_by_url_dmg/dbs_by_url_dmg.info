@@ -12,5 +12,4 @@ features[views_view][] = databases_by_url
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][views] = views
 features_exclude[dependencies][views_content] = views_content
-mtime = 1412638543
 project path = sites/all/modules/custom

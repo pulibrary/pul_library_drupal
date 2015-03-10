@@ -184,6 +184,9 @@ function training_and_workshops_strongarm() {
       'content_body_mode' => array(
         'custom_settings' => FALSE,
       ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -212,6 +215,9 @@ function training_and_workshops_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
     ),
