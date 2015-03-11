@@ -503,7 +503,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-1',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -522,7 +525,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-2',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
@@ -541,7 +547,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-3',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
@@ -560,7 +569,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-4',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -579,7 +591,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-5',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
@@ -598,7 +613,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-6',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
@@ -617,7 +635,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'tab-7',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
