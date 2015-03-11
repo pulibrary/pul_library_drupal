@@ -792,6 +792,26 @@ h1.icon-article-express--small-after:after {
   margin-bottom: 0;
 }
 
+.media {
+  margin: 10px;
+}
+
+.media, .copy {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+.media .copy p {
+  margin: 0;
+}
+
+.media img {
+  float: left;
+  margin-right: 10px;
+  display: block;
+}
+
 .field--name-field-news-letter-volume,
 .field--name-field-news-letter-issue {
   display: inline;
@@ -1578,6 +1598,7 @@ div.view-content > table.views-table > tbody > tr > td p {
 }
 .front .library-hours td.views-field-title {
   width: 60%;
+  white-space: nowrap;
 }
 .front .library-hours td.views-field-field-open-hours {
   text-align: right;
@@ -2474,6 +2495,47 @@ body.faq .ui-accordion .ui-accordion-header a {
 
 .section-staff .view-filters, .section-staff .view-staff-list-browse {
   margin: 1em 0;
+}
+
+.page-node-7796 .pane-summon-block-summon-search {
+  background: #f5f4f1;
+  padding: 0 1em;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.page-node-7796 .pane-summon-block-summon-search h2 {
+  margin-bottom: 0;
+}
+
+.stokes-btn {
+  background: #f5f4f1;
+  padding: 0 1em 0.75em;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.stokes-btn a {
+  font-weight: bold;
+  font-size: 0.75rem;
+  border: none;
+  text-shadow: none;
+  background: #3366cc;
+  color: white;
+  padding: 3px 7px;
+  text-decoration: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.stokes-btn a:hover {
+  background: #547ed4;
 }
 
 .block--quicktabs {
