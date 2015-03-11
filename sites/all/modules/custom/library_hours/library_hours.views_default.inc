@@ -1433,7 +1433,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
-  $handler->display->display_options['fields']['title']['label'] = 'Library';
+  $handler->display->display_options['fields']['title']['label'] = 'Libraries';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Library Status */
   $handler->display->display_options['fields']['field_hours_library_status']['id'] = 'field_hours_library_status';
