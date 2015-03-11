@@ -32,6 +32,10 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
   /* Field: Aggregator: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'aggregator_item';
@@ -53,7 +57,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Nuclear Fusion Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Nuclear Fusion Feed', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Nuclear Fusion';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-3" class="tab">Nuclear Fusion</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -65,7 +75,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Applied Physics Letters Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Applied Physics Letters Feed', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Applied Physics Letters';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-2" class="tab">Applied Physics Letter</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -77,7 +93,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - New Books Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - New Books Feed', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'PUL New Books';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-1" class="tab">PUL New Books</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -89,7 +111,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Physical Review Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Physical Review Feed', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Physical Review';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-4" class="tab">Physical Revies</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -101,7 +129,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Physics of Plasma Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Physics of Plasma Feed', 'panel_pane_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Physics of Plasma';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-5" class="tab">Physics of Plasma</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -113,7 +147,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Physics of Today */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Physics of Today', 'panel_pane_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Physics Today';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-6" class="tab">Physics Today</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */
@@ -125,7 +165,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Plasma Physics and Controlled Fusion Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Plasma Physics and Controlled Fusion Feed', 'panel_pane_7');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Plasma Physics and Controlled Fusion';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-7" class="tab">Plasma Physics and Controlled Fusion</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Aggregator feed: Title */

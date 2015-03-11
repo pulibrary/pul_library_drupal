@@ -12,8 +12,8 @@
     font-size: $font-size-smaller;
     border: none;
     text-shadow: none;
-    background-color: $orange;
-    color: $white;
+    background-color: $gray-light;
+    color: $orange-dark;
     padding: 1em;
     text-decoration: none;
     @include border-radius(3px);
@@ -26,11 +26,6 @@
         float: right;
         display: inline;
         padding: 3px 7px;
-    }
-
-    &:hover {
-        color: $white;
-        background: lighten($orange, 8);
     }
 }
 

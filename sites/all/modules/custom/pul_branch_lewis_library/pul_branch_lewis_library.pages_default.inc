@@ -101,7 +101,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-branch-lewis';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
