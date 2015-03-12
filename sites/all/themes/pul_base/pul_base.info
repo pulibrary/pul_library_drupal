@@ -41,18 +41,6 @@ regions[sidebar_second] = Second Sidebar
 regions[footer] = Footer
 
 ; ========================================
-; Fonts
-; ========================================
-fonts[google_fonts_api][] = Droid Serif&subset=latin#700
-fonts[google_fonts_api][] = Droid Serif&subset=latin#700italic
-fonts[google_fonts_api][] = Droid Serif&subset=latin#italic
-fonts[google_fonts_api][] = Droid Serif&subset=latin#regular
-fonts[google_fonts_api][] = Roboto&subset=latin#italic
-fonts[google_fonts_api][] = Roboto&subset=latin-ext#italic
-fonts[google_fonts_api][] = Roboto&subset=latin#regular
-fonts[google_fonts_api][] = Roboto&subset=latin-ext#regular
-
-; ========================================
 ; Settings
 ; ========================================
 settings[toggle_logo] = 1
