@@ -1282,13 +1282,13 @@ table caption {
   text-decoration: none;
 }
 
-.page-node-7793 div .view-content,
+.page-node-7793 .three_six_three_stacked-region--middle div .view-content,
 .accordion div .content {
   display: none;
   margin: 5px 0;
 }
 
-.page-node-7793 div:target .view-content,
+.page-node-7793 .three_six_three_stacked-region--middle div:target .view-content,
 .accordion div:target .content {
   display: block;
 }
