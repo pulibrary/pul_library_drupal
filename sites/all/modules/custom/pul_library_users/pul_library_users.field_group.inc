@@ -70,7 +70,8 @@ function pul_library_users_field_group_info() {
       5 => 'field_puluser_unit_sort',
       6 => 'field_puluser_department_sort',
       7 => 'field_puluser_divsect',
-      8 => 'timezone',
+      8 => 'field_puluser_temp_staff_record',
+      9 => 'timezone',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

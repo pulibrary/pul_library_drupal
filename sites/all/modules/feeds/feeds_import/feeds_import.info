@@ -11,4 +11,3 @@ features[features_api][] = api:2
 features[feeds_importer][] = node
 features[feeds_importer][] = user
 files[] = feeds_import.test
-mtime = 1409167517

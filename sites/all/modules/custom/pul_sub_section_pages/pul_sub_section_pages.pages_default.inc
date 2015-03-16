@@ -1074,7 +1074,7 @@ staff/committees',
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Live Chat',
+      'override_title_text' => 'Ask a Librarian!',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1305,7 +1305,7 @@ services/interlibrary-services/lender-fees',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'links' => 1,
+      'links' => 0,
       'no_extras' => 1,
       'override_title' => 1,
       'override_title_text' => '',
@@ -1413,6 +1413,15 @@ services/borrowdirect/*
           'context' => 'empty',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'services/interlibrary-services/lender-fees',
+          ),
+          'context' => 'empty',
+          'not' => TRUE,
+        ),
       ),
     );
     $pane->configuration = array(
@@ -1498,7 +1507,7 @@ services/borrowdirect/*
     $pane->uuid = 'f361fe55-c4b4-4107-baeb-229e63ccb2bd';
     $display->content['new-f361fe55-c4b4-4107-baeb-229e63ccb2bd'] = $pane;
     $display->panels['second'][4] = 'new-f361fe55-c4b4-4107-baeb-229e63ccb2bd';
-  $display->hide_title = PANELS_TITLE_PANE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1b92c087-f776-458a-aa4d-0e1a2038fdcc';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_39'] = $handler;

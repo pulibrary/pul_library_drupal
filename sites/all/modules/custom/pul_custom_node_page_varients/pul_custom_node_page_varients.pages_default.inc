@@ -586,7 +586,8 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'help/chat
-help/chat/*',
+help/chat/*
+help/ask-a-librarian',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -642,19 +643,18 @@ help/chat/*',
     $display->content['new-8b302848-39ad-43b5-84b5-8840ccb6b6bf'] = $pane;
     $display->panels['first'][0] = 'new-8b302848-39ad-43b5-84b5-8840ccb6b6bf';
     $pane = new stdClass();
-    $pane->pid = 'new-77da0d00-d88b-4570-b47f-787e9dad4f1a';
+    $pane->pid = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours_calendar-panel_pane_3';
-    $pane->shown = FALSE;
+    $pane->subtype = 'library_hours-panel_pane_7';
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'path' => '',
       'arguments' => array(
         'field_hrs_lib_calendar_target_id' => '3702',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Today\'s Chat Hours',
+      'override_title_text' => 'Hours Today',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -664,9 +664,34 @@ help/chat/*',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '77da0d00-d88b-4570-b47f-787e9dad4f1a';
-    $display->content['new-77da0d00-d88b-4570-b47f-787e9dad4f1a'] = $pane;
-    $display->panels['second'][0] = 'new-77da0d00-d88b-4570-b47f-787e9dad4f1a';
+    $pane->uuid = '78ce78a2-9fac-47d0-9fd0-c25365d597ae';
+    $display->content['new-78ce78a2-9fac-47d0-9fd0-c25365d597ae'] = $pane;
+    $display->panels['second'][0] = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
+    $pane = new stdClass();
+    $pane->pid = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
+    $pane->panel = 'second';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Chat Hours Block',
+      'title' => '',
+      'body' => '<p>For more information consult the full chat <a href="/hours/ask-a-librarian">schedule</a>&nbsp;</p>',
+      'format' => 'filtered_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '48e32453-1b16-4581-9ca3-3e68b549d646';
+    $display->content['new-48e32453-1b16-4581-9ca3-3e68b549d646'] = $pane;
+    $display->panels['second'][1] = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
     $pane = new stdClass();
     $pane->pid = 'new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
     $pane->panel = 'second';
@@ -703,11 +728,11 @@ help/chat/*',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
     $display->content['new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1'] = $pane;
-    $display->panels['second'][1] = 'new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
+    $display->panels['second'][2] = 'new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
     $pane = new stdClass();
     $pane->pid = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
     $pane->panel = 'second';
@@ -729,61 +754,11 @@ help/chat/*',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '1d3cbd16-8d42-44f3-9583-58b0e2447bca';
     $display->content['new-1d3cbd16-8d42-44f3-9583-58b0e2447bca'] = $pane;
-    $display->panels['second'][2] = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
-    $pane = new stdClass();
-    $pane->pid = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'library_hours-panel_pane_7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '3702',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Chat Hours Today',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-    $display->content['new-78ce78a2-9fac-47d0-9fd0-c25365d597ae'] = $pane;
-    $display->panels['second'][3] = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-    $pane = new stdClass();
-    $pane->pid = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
-    $pane->panel = 'second';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Chat Hours Block',
-      'title' => '',
-      'body' => '<p>For more information consult the full chat <a href="/hours/chat">schedule</a>&nbsp;</p>',
-      'format' => 'filtered_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '48e32453-1b16-4581-9ca3-3e68b549d646';
-    $display->content['new-48e32453-1b16-4581-9ca3-3e68b549d646'] = $pane;
-    $display->panels['second'][4] = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
+    $display->panels['second'][3] = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-8b302848-39ad-43b5-84b5-8840ccb6b6bf';
   $handler->conf['display'] = $display;

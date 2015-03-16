@@ -1433,7 +1433,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Libraries';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Library Status */
   $handler->display->display_options['fields']['field_hours_library_status']['id'] = 'field_hours_library_status';
@@ -1454,7 +1454,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['label'] = 'Today\'s Hours';
   $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
@@ -2689,10 +2689,9 @@ function library_hours_views_default_views() {
     'title' => 'title',
     'name' => 'name',
     'edit_node' => 'edit_node',
-    'changed' => 'changed',
-    'views_bulk_operations' => 'views_bulk_operations',
+    'timestamp' => 'timestamp',
   );
-  $handler->display->display_options['style_options']['default'] = 'changed';
+  $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
       'sortable' => 1,
@@ -2713,14 +2712,9 @@ function library_hours_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'changed' => array(
+    'timestamp' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'views_bulk_operations' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -2752,6 +2746,12 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit Hours';
+  /* Field: Content revision: Updated date */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'node_revision';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'short';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';

@@ -66,5 +66,4 @@ features_exclude[field][node-collection-field_col_sidebar_content] = node-collec
 features_exclude[field][node-collection-field_coll_full_title] = node-collection-field_coll_full_title
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_tags] = field_tags
-mtime = 1412631559
 no autodetect = 1

@@ -1,0 +1,7 @@
+// floating image on left with content wrapping on right
+.media {margin:10px;}
+.media, .copy {overflow:hidden; _overflow:visible; zoom:1;}
+.media .copy p {
+	margin: 0;
+}
+.media img {float:left; margin-right: 10px; display: block;}

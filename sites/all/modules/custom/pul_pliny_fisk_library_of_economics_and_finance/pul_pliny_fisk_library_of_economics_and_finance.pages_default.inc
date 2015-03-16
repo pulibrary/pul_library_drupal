@@ -34,9 +34,10 @@ function pul_pliny_fisk_library_of_economics_and_finance_default_page_manager_ha
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'econlib
-econlib/services
-econlib/instruction',
+            'paths' => 'econlib/services
+econlib/services/*
+econlib/resources
+econlib/resources/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -57,7 +58,7 @@ econlib/instruction',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Pliny Fisk Library of Economics and Finance';
   $display->uuid = 'c8d9f3b2-9ba7-490d-b465-33ef6a5248eb';
   $display->content = array();
   $display->panels = array();
@@ -70,7 +71,7 @@ econlib/instruction',
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Pliny Fisk Library of Economics and Finance',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -108,15 +109,15 @@ econlib/instruction',
     $display->content['new-2c452d45-9133-4ec3-b65a-b66d29369ebb'] = $pane;
     $display->panels['middle'][0] = 'new-2c452d45-9133-4ec3-b65a-b66d29369ebb';
     $pane = new stdClass();
-    $pane->pid = 'new-54bfc6c6-ca41-45b6-9898-f3fceb50d3b0';
+    $pane->pid = 'new-be9268de-25b8-4017-b25d-cff8a3caea5a';
     $pane->panel = 'second';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-econlib-guides';
+    $pane->subtype = 'menu-menu-pliny-fisk-affiliates';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Research Guides',
+      'override_title_text' => 'Affiliates',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -126,31 +127,9 @@ econlib/instruction',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '54bfc6c6-ca41-45b6-9898-f3fceb50d3b0';
-    $display->content['new-54bfc6c6-ca41-45b6-9898-f3fceb50d3b0'] = $pane;
-    $display->panels['second'][0] = 'new-54bfc6c6-ca41-45b6-9898-f3fceb50d3b0';
-    $pane = new stdClass();
-    $pane->pid = 'new-691851f0-a8b4-4bb5-ae5b-802df17bfbf0';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-econlib-data';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Data',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '691851f0-a8b4-4bb5-ae5b-802df17bfbf0';
-    $display->content['new-691851f0-a8b4-4bb5-ae5b-802df17bfbf0'] = $pane;
-    $display->panels['second'][1] = 'new-691851f0-a8b4-4bb5-ae5b-802df17bfbf0';
+    $pane->uuid = 'be9268de-25b8-4017-b25d-cff8a3caea5a';
+    $display->content['new-be9268de-25b8-4017-b25d-cff8a3caea5a'] = $pane;
+    $display->panels['second'][0] = 'new-be9268de-25b8-4017-b25d-cff8a3caea5a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -194,10 +173,20 @@ econlib/instruction',
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'middle' => NULL,
+      'default' => array(),
+      'first' => array(),
+      'second' => array(),
+      'middle' => array(),
+    ),
+    'style' => 'stylizer',
+    'first' => array(
+      'style' => 'stylizer',
+    ),
+    'middle' => array(
+      'style' => 'stylizer',
+    ),
+    'second' => array(
+      'style' => 'stylizer',
     ),
   );
   $display->cache = array();
@@ -214,11 +203,12 @@ econlib/instruction',
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Pliny Fisk Library of Economics and Finance',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(),
+      'style' => 'stylizer',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -242,7 +232,8 @@ econlib/instruction',
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(),
+      'style' => 'stylizer',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -260,14 +251,15 @@ econlib/instruction',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'nid' => '13189',
+        'nid' => '13326',
       ),
       'override_title' => 1,
       'override_title_text' => 'Pliny Fisk Library of Economics and Finance Staff',
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(),
+      'style' => 'stylizer',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -277,10 +269,10 @@ econlib/instruction',
     $display->content['new-83eee2d6-8f61-4012-8268-1bcb9cbc660c'] = $pane;
     $display->panels['middle'][1] = 'new-83eee2d6-8f61-4012-8268-1bcb9cbc660c';
     $pane = new stdClass();
-    $pane->pid = 'new-e30c2e99-9230-4c0b-ad53-29f31bb82a1e';
+    $pane->pid = 'new-2db32aa8-be9c-46d0-bb85-d5e2790742f1';
     $pane->panel = 'second';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-econlib-affiliates';
+    $pane->subtype = 'menu-menu-pliny-fisk-affiliates';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -289,59 +281,16 @@ econlib/instruction',
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(),
+      'style' => 'stylizer',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e30c2e99-9230-4c0b-ad53-29f31bb82a1e';
-    $display->content['new-e30c2e99-9230-4c0b-ad53-29f31bb82a1e'] = $pane;
-    $display->panels['second'][0] = 'new-e30c2e99-9230-4c0b-ad53-29f31bb82a1e';
-    $pane = new stdClass();
-    $pane->pid = 'new-fffcb74f-34b2-4e46-90ae-90638a771922';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-econlib-guides';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Research Guides',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'fffcb74f-34b2-4e46-90ae-90638a771922';
-    $display->content['new-fffcb74f-34b2-4e46-90ae-90638a771922'] = $pane;
-    $display->panels['second'][1] = 'new-fffcb74f-34b2-4e46-90ae-90638a771922';
-    $pane = new stdClass();
-    $pane->pid = 'new-ecd80afc-9509-4bb9-87c8-033d8a7f0815';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-econlib-data';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Data',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ecd80afc-9509-4bb9-87c8-033d8a7f0815';
-    $display->content['new-ecd80afc-9509-4bb9-87c8-033d8a7f0815'] = $pane;
-    $display->panels['second'][2] = 'new-ecd80afc-9509-4bb9-87c8-033d8a7f0815';
+    $pane->uuid = '2db32aa8-be9c-46d0-bb85-d5e2790742f1';
+    $display->content['new-2db32aa8-be9c-46d0-bb85-d5e2790742f1'] = $pane;
+    $display->panels['second'][0] = 'new-2db32aa8-be9c-46d0-bb85-d5e2790742f1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

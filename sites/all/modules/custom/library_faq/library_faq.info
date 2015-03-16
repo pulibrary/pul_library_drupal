@@ -57,6 +57,5 @@ features_exclude[variable][menu_parent_frequently_asked_question] = menu_parent_
 features_exclude[variable][node_options_frequently_asked_question] = node_options_frequently_asked_question
 features_exclude[variable][node_preview_frequently_asked_question] = node_preview_frequently_asked_question
 features_exclude[variable][node_submitted_frequently_asked_question] = node_submitted_frequently_asked_question
-mtime = 1412638454
 no autodetect = 1
 project path = sites/all/modules/custom

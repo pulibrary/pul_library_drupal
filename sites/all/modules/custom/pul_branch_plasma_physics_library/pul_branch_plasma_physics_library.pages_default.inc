@@ -87,10 +87,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-46dcd0e8-0272-47b9-9f39-669fc1add6bd';
+    $pane->pid = 'new-9b00f811-6a8e-46cc-9a63-deed652cd817';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-plasma-physics-lib';
+    $pane->subtype = 'menu-menu-branch-plasma-physics';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -105,9 +105,9 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '46dcd0e8-0272-47b9-9f39-669fc1add6bd';
-    $display->content['new-46dcd0e8-0272-47b9-9f39-669fc1add6bd'] = $pane;
-    $display->panels['first'][0] = 'new-46dcd0e8-0272-47b9-9f39-669fc1add6bd';
+    $pane->uuid = '9b00f811-6a8e-46cc-9a63-deed652cd817';
+    $display->content['new-9b00f811-6a8e-46cc-9a63-deed652cd817'] = $pane;
+    $display->panels['first'][0] = 'new-9b00f811-6a8e-46cc-9a63-deed652cd817';
     $pane = new stdClass();
     $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
@@ -229,15 +229,16 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
     $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
-    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->pid = 'new-b719a358-f409-47a0-bc66-5a7c4ae18c06';
     $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_profile-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'arguments' => array(
+        'uid' => '471',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -247,9 +248,9 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
-    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->uuid = 'b719a358-f409-47a0-bc66-5a7c4ae18c06';
+    $display->content['new-b719a358-f409-47a0-bc66-5a7c4ae18c06'] = $pane;
+    $display->panels['second'][0] = 'new-b719a358-f409-47a0-bc66-5a7c4ae18c06';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -331,7 +332,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/ppl',
+            'paths' => 'libraries/plasma-physics',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -367,10 +368,10 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
+    $pane->pid = 'new-82ad6790-34f7-44f4-abe8-f23f9c0918ad';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-plasma-physics-lib';
+    $pane->subtype = 'menu-menu-branch-plasma-physics';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -385,9 +386,9 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
-    $display->content['new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f'] = $pane;
-    $display->panels['first'][0] = 'new-2e7b6ccc-d5cc-4160-afde-ce042f99c52f';
+    $pane->uuid = '82ad6790-34f7-44f4-abe8-f23f9c0918ad';
+    $display->content['new-82ad6790-34f7-44f4-abe8-f23f9c0918ad'] = $pane;
+    $display->panels['first'][0] = 'new-82ad6790-34f7-44f4-abe8-f23f9c0918ad';
     $pane = new stdClass();
     $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
@@ -491,6 +492,160 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
     $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
+    $pane->pid = 'new-a085f711-458d-4d47-975e-cab98f189a35';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-1',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a085f711-458d-4d47-975e-cab98f189a35';
+    $display->content['new-a085f711-458d-4d47-975e-cab98f189a35'] = $pane;
+    $display->panels['middle'][1] = 'new-a085f711-458d-4d47-975e-cab98f189a35';
+    $pane = new stdClass();
+    $pane->pid = 'new-49907fb2-153b-48c4-b7b9-2d8017e03295';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-2',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '49907fb2-153b-48c4-b7b9-2d8017e03295';
+    $display->content['new-49907fb2-153b-48c4-b7b9-2d8017e03295'] = $pane;
+    $display->panels['middle'][2] = 'new-49907fb2-153b-48c4-b7b9-2d8017e03295';
+    $pane = new stdClass();
+    $pane->pid = 'new-9d9818ab-1561-4734-b073-ed5060bcbd60';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-3',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '9d9818ab-1561-4734-b073-ed5060bcbd60';
+    $display->content['new-9d9818ab-1561-4734-b073-ed5060bcbd60'] = $pane;
+    $display->panels['middle'][3] = 'new-9d9818ab-1561-4734-b073-ed5060bcbd60';
+    $pane = new stdClass();
+    $pane->pid = 'new-98dfca6d-7ffc-4fd6-92a7-c2bcc974b741';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-4',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '98dfca6d-7ffc-4fd6-92a7-c2bcc974b741';
+    $display->content['new-98dfca6d-7ffc-4fd6-92a7-c2bcc974b741'] = $pane;
+    $display->panels['middle'][4] = 'new-98dfca6d-7ffc-4fd6-92a7-c2bcc974b741';
+    $pane = new stdClass();
+    $pane->pid = 'new-48f2c0da-16b3-4568-836a-df123ce2479c';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-5',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '48f2c0da-16b3-4568-836a-df123ce2479c';
+    $display->content['new-48f2c0da-16b3-4568-836a-df123ce2479c'] = $pane;
+    $display->panels['middle'][5] = 'new-48f2c0da-16b3-4568-836a-df123ce2479c';
+    $pane = new stdClass();
+    $pane->pid = 'new-79206bc4-6f68-4161-be4c-0c20fd9a7b8e';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-6',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '79206bc4-6f68-4161-be4c-0c20fd9a7b8e';
+    $display->content['new-79206bc4-6f68-4161-be4c-0c20fd9a7b8e'] = $pane;
+    $display->panels['middle'][6] = 'new-79206bc4-6f68-4161-be4c-0c20fd9a7b8e';
+    $pane = new stdClass();
+    $pane->pid = 'new-eef86046-3753-4b33-94de-3ed10f0c7edd';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'plasma_physics_feeds-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'tab-7',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = 'eef86046-3753-4b33-94de-3ed10f0c7edd';
+    $display->content['new-eef86046-3753-4b33-94de-3ed10f0c7edd'] = $pane;
+    $display->panels['middle'][7] = 'new-eef86046-3753-4b33-94de-3ed10f0c7edd';
+    $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
@@ -566,16 +721,19 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'entityreference_label',
+      'formatter' => 'entityreference_entity_view',
       'delta_limit' => '5',
       'delta_offset' => '0',
       'delta_reversed' => 0,
       'formatter_settings' => array(
         'link' => 1,
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => 'Service Quick Links',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -669,7 +827,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Engineering Library',
+      'override_title_text' => 'Plasma Physics Library',
     );
     $pane->cache = array();
     $pane->style = array(
