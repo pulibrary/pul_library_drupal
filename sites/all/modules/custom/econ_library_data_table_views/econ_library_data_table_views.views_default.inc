@@ -256,7 +256,7 @@ function econ_library_data_table_views_views_default_views() {
       'empty_column' => 0,
     ),
     'field_econ_lib_cd_covers' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -326,6 +326,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['table'] = 'field_data_field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['field'] = 'field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -354,6 +355,97 @@ function econ_library_data_table_views_views_default_views() {
     1 => '1',
     2 => '2',
   );
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_econ_lib_se_country' => 'field_econ_lib_se_country',
+    'field_econ_lib_se_exchange' => 'field_econ_lib_se_exchange',
+    'title' => 'title',
+    'field_econ_lib_se_call_number' => 'field_econ_lib_se_call_number',
+    'field_econ_lib_se_last_bound' => 'field_econ_lib_se_last_bound',
+    'field_econ_lecon_lib_se_current' => 'field_econ_lecon_lib_se_current',
+    'field_econ_lib_se_web_site' => 'field_econ_lib_se_web_site',
+    'field_econ_lib_se_notes' => 'field_econ_lib_se_notes',
+    'field_econ_lib_se_binding_color' => 'field_econ_lib_se_binding_color',
+    'field_econ_lib_se_binding_freq' => 'field_econ_lib_se_binding_freq',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_econ_lib_se_country';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_econ_lib_se_country' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_exchange' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_call_number' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_last_bound' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lecon_lib_se_current' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_web_site' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_notes' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_binding_color' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_econ_lib_se_binding_freq' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -415,12 +507,15 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_se_binding_color']['id'] = 'field_econ_lib_se_binding_color';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_color']['table'] = 'field_data_field_econ_lib_se_binding_color';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_color']['field'] = 'field_econ_lib_se_binding_color';
+  $handler->display->display_options['fields']['field_econ_lib_se_binding_color']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_econ_lib_se_binding_color']['element_default_classes'] = FALSE;
   /* Field: Content: Binding Frequency */
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['id'] = 'field_econ_lib_se_binding_freq';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['table'] = 'field_data_field_econ_lib_se_binding_freq';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['field'] = 'field_econ_lib_se_binding_freq';
+  $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['path'] = 'econlib/stock-exchange-holdings';
 
   /* Display: Admin - Company Directories Page */
@@ -755,6 +850,9 @@ function econ_library_data_table_views_views_default_views() {
     1 => '1',
     2 => '2',
   );
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -914,22 +1012,26 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econlib_cbh_po_number']['id'] = 'field_econlib_cbh_po_number';
   $handler->display->display_options['fields']['field_econlib_cbh_po_number']['table'] = 'field_data_field_econlib_cbh_po_number';
   $handler->display->display_options['fields']['field_econlib_cbh_po_number']['field'] = 'field_econlib_cbh_po_number';
+  $handler->display->display_options['fields']['field_econlib_cbh_po_number']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_econlib_cbh_po_number']['element_default_classes'] = FALSE;
   /* Field: Content: Color */
   $handler->display->display_options['fields']['field_econlib_cbh_color']['id'] = 'field_econlib_cbh_color';
   $handler->display->display_options['fields']['field_econlib_cbh_color']['table'] = 'field_data_field_econlib_cbh_color';
   $handler->display->display_options['fields']['field_econlib_cbh_color']['field'] = 'field_econlib_cbh_color';
+  $handler->display->display_options['fields']['field_econlib_cbh_color']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_econlib_cbh_color']['element_default_classes'] = FALSE;
   /* Field: Content: Binding Frequency */
   $handler->display->display_options['fields']['field_econlib_cbh_binding_freq']['id'] = 'field_econlib_cbh_binding_freq';
   $handler->display->display_options['fields']['field_econlib_cbh_binding_freq']['table'] = 'field_data_field_econlib_cbh_binding_freq';
   $handler->display->display_options['fields']['field_econlib_cbh_binding_freq']['field'] = 'field_econlib_cbh_binding_freq';
+  $handler->display->display_options['fields']['field_econlib_cbh_binding_freq']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_econlib_cbh_binding_freq']['element_default_classes'] = FALSE;
   /* Field: Content: Notes */
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['id'] = 'field_econlib_cbh_notes';
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['table'] = 'field_data_field_econlib_cbh_notes';
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['field'] = 'field_econlib_cbh_notes';
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -945,6 +1047,131 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'econ_lib_central_bank_holdings' => 'econ_lib_central_bank_holdings',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Region (field_econlib_cbh_region) */
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['id'] = 'field_econlib_cbh_region_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['table'] = 'field_data_field_econlib_cbh_region';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['field'] = 'field_econlib_cbh_region_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['expose']['operator_id'] = 'field_econlib_cbh_region_tid_op';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['expose']['operator'] = 'field_econlib_cbh_region_tid_op';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['expose']['identifier'] = 'field_econlib_cbh_region_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+  );
+  $handler->display->display_options['filters']['field_econlib_cbh_region_tid']['vocabulary'] = 'econlib_cbh_region';
+  /* Filter criterion: Content: Bank Name (field_econlib_cbh_bank_name) */
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['id'] = 'field_econlib_cbh_bank_name_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['table'] = 'field_data_field_econlib_cbh_bank_name';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['field'] = 'field_econlib_cbh_bank_name_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['expose']['operator_id'] = 'field_econlib_cbh_bank_name_tid_op';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['expose']['label'] = 'Bank Name';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['expose']['operator'] = 'field_econlib_cbh_bank_name_tid_op';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['expose']['identifier'] = 'field_econlib_cbh_bank_name_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+  );
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['group_info']['label'] = 'Bank Name (field_econlib_cbh_bank_name)';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['group_info']['identifier'] = 'field_econlib_cbh_bank_name_tid';
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_econlib_cbh_bank_name_tid']['vocabulary'] = 'econlib_cbh_bank_name';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
   );
   $handler->display->display_options['path'] = 'econlib/central-bank-holdings';
 
@@ -1137,32 +1364,22 @@ function econ_library_data_table_views_views_default_views() {
     1 => '1',
     2 => '2',
   );
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_econlib_cbh_region' => 'field_econlib_cbh_region',
-    'field_econlib_cbh_bank_name' => 'field_econlib_cbh_bank_name',
+    'field_econ_lib_wp_publisher' => 'field_econ_lib_wp_publisher',
     'title' => 'title',
-    'field_econlib_cbh_call_number' => 'field_econlib_cbh_call_number',
-    'field_econlib_cbh_last_bound' => 'field_econlib_cbh_last_bound',
-    'field_econlib_cbh_current_issues' => 'field_econlib_cbh_current_issues',
-    'field_econlib_cbh_bank_website' => 'field_econlib_cbh_bank_website',
-    'field_econlib_cbh_po_number' => 'field_econlib_cbh_po_number',
-    'field_econlib_cbh_color' => 'field_econlib_cbh_color',
-    'field_econlib_cbh_binding_freq' => 'field_econlib_cbh_binding_freq',
-    'field_econlib_cbh_notes' => 'field_econlib_cbh_notes',
-    'edit_node' => 'edit_node',
+    'field_econ_lib_wp_continues' => 'field_econ_lib_wp_continues',
+    'field_econ_lib_wp_call_number' => 'field_econ_lib_wp_call_number',
+    'field_econ_lib_wp_bound_holdings' => 'field_econ_lib_wp_bound_holdings',
+    'field_econ_lib_wp_unbound' => 'field_econ_lib_wp_unbound',
   );
-  $handler->display->display_options['style_options']['default'] = 'field_econlib_cbh_region';
+  $handler->display->display_options['style_options']['default'] = 'field_econ_lib_wp_publisher';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_econlib_cbh_region' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_econlib_cbh_bank_name' => array(
+    'field_econ_lib_wp_publisher' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1176,63 +1393,30 @@ function econ_library_data_table_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_econlib_cbh_call_number' => array(
+    'field_econ_lib_wp_continues' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_econlib_cbh_last_bound' => array(
+    'field_econ_lib_wp_call_number' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_econlib_cbh_current_issues' => array(
+    'field_econ_lib_wp_bound_holdings' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_econlib_cbh_bank_website' => array(
+    'field_econ_lib_wp_unbound' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_econlib_cbh_po_number' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_econlib_cbh_color' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_econlib_cbh_binding_freq' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_econlib_cbh_notes' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'edit_node' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1286,7 +1470,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['field'] = 'field_econ_lib_wp_unbound';
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['type'] = 'link_short';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1302,6 +1486,81 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'econ_working_papers' => 'econ_working_papers',
+  );
+  /* Filter criterion: Content: Publisher (field_econ_lib_wp_publisher) */
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['id'] = 'field_econ_lib_wp_publisher_tid';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['table'] = 'field_data_field_econ_lib_wp_publisher';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['field'] = 'field_econ_lib_wp_publisher_tid';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['expose']['operator_id'] = 'field_econ_lib_wp_publisher_tid_op';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['expose']['label'] = 'Publisher';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['expose']['operator'] = 'field_econ_lib_wp_publisher_tid_op';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['expose']['identifier'] = 'field_econ_lib_wp_publisher_tid';
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
+  );
+  $handler->display->display_options['filters']['field_econ_lib_wp_publisher_tid']['vocabulary'] = 'econlib_wp_publishers';
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    18 => 0,
+    19 => 0,
+    20 => 0,
+    21 => 0,
+    22 => 0,
+    23 => 0,
+    24 => 0,
+    25 => 0,
   );
   $handler->display->display_options['path'] = 'econlib/working-papers';
   $export['econ_lib_data_tables'] = $view;
