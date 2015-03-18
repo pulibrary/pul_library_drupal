@@ -1095,8 +1095,9 @@ staff/committees',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => 'Chat Live',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
