@@ -243,7 +243,6 @@ input[type="submit"] {
   white-space: nowrap;
 }
 
-/* No files to import found in abstractions/**\/* */
 .field__label {
   font-weight: bold;
 }
@@ -1163,6 +1162,13 @@ h1.icon-article-express--small-after:after {
   font-size: 0.75rem;
   line-height: 24px;
   line-height: 1.5rem;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+.views-table td.col-10 {
+  width: 10%;
 }
 .views-table td.active {
   background: none;
