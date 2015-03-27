@@ -23,10 +23,6 @@
     td {
         padding: 0.5em;
         @include adjust-font-size-to(12px);
-        @include word-wrap();
-        &.col-10 {
-            width: 10%;
-        }
     }
     td.active {
         background: none;
