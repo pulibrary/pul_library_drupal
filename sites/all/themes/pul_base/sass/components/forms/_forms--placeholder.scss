@@ -1,0 +1,13 @@
+@include placeholder { 
+  color: darken($gray-light, 10);
+}
+ 
+input {
+  @include placeholder-theme($ph-styles);
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.5s 1s ease; 
+  text-indent: -100%;
+  opacity: 1;
+}
