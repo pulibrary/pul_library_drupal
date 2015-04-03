@@ -8,6 +8,28 @@ module.exports = function (grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+      autoprefixer: {
+        options: {
+            browsers: ['last 3 versions', 'ie 9', '> 5%', 'iOS > 7']
+        },
+        main: {
+            expand: true,
+            flatten: true,
+            src: 'css/*.css',
+            dest: 'css/'
+        }
+      },
+
+      watch: {
+        options: {
+          livereload: true
+        },
+        sass: {
+          files: 'sass/**/*.scss',
+          tasks: ['compass'] //change to sass for libsass
+        }
+      },
+
       cssc: {
         build: {
           options: {
@@ -38,10 +60,7 @@ module.exports = function (grunt) {
 
       compass: {
         options: {
-          config: 'config.rb',
           bundleExec: true,
-          force: true,
-          debugInfo: false,
           quiet: true
         },
         build: {
@@ -53,21 +72,23 @@ module.exports = function (grunt) {
         }
       },
 
+      //libsass compiler
+      // sass: {
+      //   options: {
+      //     sourceMap: true
+      //   },
+      //   dist: {
+      //     files: {
+      //       'pul-base.styles.css': 'pul-base.styles.scss'
+      //     }
+      //   }
+      // },
+
       jshint: {
         options: {
           jshintrc: '.jshintrc'
         },
         all: ['js/{,**/}*.js', '!js/{,**/}*.min.js']
-      },
-
-      watch: {
-        css: {
-          files: '**/*.scss',
-          tasks: ['compass'],
-          options: {
-            livereload: true
-          }
-        }
       },
 
       shell: {
@@ -78,8 +99,8 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('default',   []);
-  grunt.registerTask('build', ['compass', 'shell']);
+  grunt.registerTask('default',   ['watch']);
+  grunt.registerTask('build', ['compass', 'autoprefixer', 'shell']); //change to sass for libsass
   grunt.registerTask('tigerstyle',  ['build', 'cssc', 'cssmin']);
 
 };

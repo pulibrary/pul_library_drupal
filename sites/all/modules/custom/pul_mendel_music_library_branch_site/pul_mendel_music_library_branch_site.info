@@ -1,0 +1,12 @@
+name = PUL Mendel Music Library Branch Site
+description = Mendel Library Branch Layouts
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pul_mendel_music_library_branch_site
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_228095c7-6111-4346-bea6-55a3d6b896d1
+features[page_manager_handlers][] = node_view__panel_context_ac92d8e0-98f5-4119-9764-f7d3ef4f8652

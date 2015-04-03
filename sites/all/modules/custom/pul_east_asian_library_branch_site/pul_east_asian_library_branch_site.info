@@ -1,0 +1,12 @@
+name = PUL East Asian Library Branch Site
+description = East Asian Library Branch Layouts
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pul_east_asian_library_branch_site
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_371e012c-d817-4143-a618-9be59b656015
+features[page_manager_handlers][] = node_view__panel_context_f3966023-9c0c-425b-960f-8d3749bfeb2d

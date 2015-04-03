@@ -15,7 +15,7 @@ function pul_base_preprocess_html(&$variables, $hook) {
   $example_link_settings = array(
                           'myExampleLinkPath' => "/dogs",
                           'myExampleLinkTitle' => "dogs",
-                          'resolvePrefix' => 'http://libwebprod.princeton.edu/resolve/lookup?url='
+                          'resolvePrefix' => 'http://library.princeton.edu/resolve/lookup?url='
                            );
 
   drupal_add_js(array("pul_base_theme" => $example_link_settings), 'setting');
