@@ -7,13 +7,13 @@
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var request_hint = 'See Available Items at ';
 	var availability_hint = "Check for Available Copies";
-	var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url=';
+	var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
 	var book_icon = 'icon-book';
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
 	var audio_icon = 'icon-headphones';
 	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
-    var max_display_results = 5;
+  var max_display_results = 5;
 	
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#catalog-search-results');
