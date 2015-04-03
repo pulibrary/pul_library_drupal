@@ -26,12 +26,10 @@
 		    float: right;
 		    @include transition (all 0.2s ease-in-out);
 		    display: inline;
-		    // background: $navigation-nav-button-background;
 		    border-radius: $base-border-radius; 
 		    color: $white;
 		    font-size: $font-size-smaller;  
 		    font-weight: 800;
-		    // text-transform: uppercase;
 		    padding: .4em .5em;
 
 		    @include breakpoint($desk) {

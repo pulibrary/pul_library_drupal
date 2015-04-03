@@ -62,8 +62,6 @@ p {
 }
 
 a {
-  -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
   color: #3366cc;
   text-decoration: none;
@@ -132,11 +130,7 @@ label abbr {
 textarea,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 select[multiple=multiple] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: border-color;
-  -moz-transition: border-color;
   transition: border-color;
   background-color: white;
   border-radius: 0.1875em;
@@ -163,14 +157,6 @@ select[multiple=multiple]:focus {
 
 textarea {
   resize: vertical;
-}
-
-input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -231,14 +217,12 @@ dl dd {
 
 button,
 input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
   border: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -712,9 +696,6 @@ footer nav ul {
 .wrapper--navigation .centered-navigation-menu > ul > li a {
   color: rgba(51, 51, 51, 0.7);
   display: inline-block;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .wrapper--navigation .centered-navigation-menu > ul > li a:hover {
@@ -786,8 +767,6 @@ footer nav ul {
     left: -2em;
     position: absolute;
     margin-left: 2em;
-    -moz-box-shadow: 0px 3px 8px #646464;
-    -webkit-box-shadow: 0px 3px 8px #646464;
     box-shadow: 0px 3px 8px #646464;
   }
 }
@@ -828,6 +807,15 @@ footer nav ul {
   background: #e8e6df;
 }
 
+.front .l-region--branding .block--allsearch-block-allsearch-search {
+  display: none;
+}
+@media (min-width: 44em) {
+  .front .l-region--branding .block--allsearch-block-allsearch-search {
+    display: block;
+  }
+}
+
 .l-region--branding {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 96.66667%;
@@ -848,18 +836,8 @@ footer nav ul {
     clear: none;
   }
 }
-
-.front .l-region--branding .block--allsearch-block-allsearch-search {
-  display: none;
-}
-@media (min-width: 44em) {
-  .front .l-region--branding .block--allsearch-block-allsearch-search {
-    display: block;
-  }
-}
-
-.l-region--branding .block--allsearch-block-allsearch-search,
-.l-region--branding .block--search-form {
+.l-region--branding .block--search-form,
+.l-region--branding .block--allsearch-block {
   -sgs-span-settings: ("span": 12, "location": 1, "grid": 12, "gutter": 0.66667, "style": "split", "start row": true, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
   width: 96.66667%;
   float: right;
@@ -868,36 +846,32 @@ footer nav ul {
   clear: none;
   float: none;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div,
-.l-region--branding .block--search-form form > div {
+.l-region--branding .block--search-form form > div,
+.l-region--branding .block--allsearch-block form > div {
   position: relative;
   display: inline-block;
   margin-top: 0.9em;
   width: 100%;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input,
-.l-region--branding .block--search-form form > div input {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+.l-region--branding .block--search-form form > div input,
+.l-region--branding .block--allsearch-block form > div input {
   box-sizing: border-box;
   display: inline-block;
   border: 1px #1a1f25 solid;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query, .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item,
-.l-region--branding .block--search-form form > div div.form-item-query,
-.l-region--branding .block--search-form form > div div.form-item {
+.l-region--branding .block--search-form form > div div.form-item-query, .l-region--branding .block--search-form form > div div.form-item,
+.l-region--branding .block--allsearch-block form > div div.form-item-query,
+.l-region--branding .block--allsearch-block form > div div.form-item {
   position: relative;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query label, .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item label,
-.l-region--branding .block--search-form form > div div.form-item-query label,
-.l-region--branding .block--search-form form > div div.form-item label {
+.l-region--branding .block--search-form form > div div.form-item-query label, .l-region--branding .block--search-form form > div div.form-item label,
+.l-region--branding .block--allsearch-block form > div div.form-item-query label,
+.l-region--branding .block--allsearch-block form > div div.form-item label {
   display: none;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text], .l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item input[type=text],
-.l-region--branding .block--search-form form > div div.form-item-query input[type=text],
-.l-region--branding .block--search-form form > div div.form-item input[type=text] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+.l-region--branding .block--search-form form > div div.form-item-query input[type=text], .l-region--branding .block--search-form form > div div.form-item input[type=text],
+.l-region--branding .block--allsearch-block form > div div.form-item-query input[type=text],
+.l-region--branding .block--allsearch-block form > div div.form-item input[type=text] {
   width: 100%;
   height: 28px;
   padding: .5em .8em;
@@ -909,8 +883,8 @@ footer nav ul {
   border: #3d4249;
   color: #aaa;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit],
-.l-region--branding .block--search-form form > div input[type=submit] {
+.l-region--branding .block--search-form form > div input[type=submit],
+.l-region--branding .block--allsearch-block form > div input[type=submit] {
   border: 1px solid #1a1f25;
   border-radius: 3px;
   box-shadow: inset 0 1px 0 0 #69696a;
@@ -919,7 +893,6 @@ footer nav ul {
   font-size: inherit;
   font-weight: bold;
   background-color: #3d4249;
-  background-image: -webkit-linear-gradient(#3d4249, #20262e);
   background-image: linear-gradient(#3d4249, #20262e);
   padding: 7px 18px;
   text-decoration: none;
@@ -934,35 +907,30 @@ footer nav ul {
   height: 28px;
   font-weight: normal;
   color: #aaa;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:hover:not(:disabled),
-.l-region--branding .block--search-form form > div input[type=submit]:hover:not(:disabled) {
+.l-region--branding .block--search-form form > div input[type=submit]:hover:not(:disabled),
+.l-region--branding .block--allsearch-block form > div input[type=submit]:hover:not(:disabled) {
   box-shadow: inset 0 1px 0 0 #4f5051;
   cursor: pointer;
   background-color: #343639;
-  background-image: -webkit-linear-gradient(#343639, #1a1f25);
   background-image: linear-gradient(#343639, #1a1f25);
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:active:not(:disabled), .l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:focus:not(:disabled),
-.l-region--branding .block--search-form form > div input[type=submit]:active:not(:disabled),
-.l-region--branding .block--search-form form > div input[type=submit]:focus:not(:disabled) {
+.l-region--branding .block--search-form form > div input[type=submit]:active:not(:disabled), .l-region--branding .block--search-form form > div input[type=submit]:focus:not(:disabled),
+.l-region--branding .block--allsearch-block form > div input[type=submit]:active:not(:disabled),
+.l-region--branding .block--allsearch-block form > div input[type=submit]:focus:not(:disabled) {
   border: 1px solid #1a1f25;
   box-shadow: inset 0 0 8px 4px #14171c, inset 0 0 8px 4px #14171c;
 }
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit]:disabled,
-.l-region--branding .block--search-form form > div input[type=submit]:disabled {
+.l-region--branding .block--search-form form > div input[type=submit]:disabled,
+.l-region--branding .block--allsearch-block form > div input[type=submit]:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 @media (min-width: 44em) {
-  .l-region--branding .block--allsearch-block-allsearch-search,
-  .l-region--branding .block--search-form {
+  .l-region--branding .block--search-form,
+  .l-region--branding .block--allsearch-block {
     -sgs-span-settings: ("span": 9, "location": 4, "grid": 12, "gutter": 0.66667, "style": "split", "start row": false, "end row": true, "fixed gutter": false, "split gutter": 1, "gutter property": "margin", "options": (null: null));
     width: 71.66667%;
     float: right;
@@ -1143,14 +1111,7 @@ footer nav ul {
   position: relative;
 }
 .search-bar .f-criteria {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition: border-color;
-  -o-transition: border-color;
-  -webkit-transition: border-color;
   transition: border-color;
   background-color: white;
   border-radius: 0.1875em;

@@ -1,7 +1,22 @@
 // floating image on left with content wrapping on right
-.media {margin:10px;}
-.media, .copy {overflow:hidden; _overflow:visible; zoom:1;}
-.media .copy p {
-	margin: 0;
+.media {
+    margin: 10px;
 }
-.media img, .media .library-news-link {float:left; margin-right: 10px; display: inline-block;}
+
+.media,
+.copy {
+    overflow: hidden;
+    _overflow: visible; // ie hack
+    zoom: 1;
+}
+
+.media .copy p {
+    margin: 0;
+}
+
+.media img,
+.media .library-news-link {
+    float: left;
+    margin-right: 10px;
+    display: inline-block;
+}
