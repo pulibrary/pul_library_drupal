@@ -1,5 +1,5 @@
 @media all and (max-width: 800px) {
-  .toolbar {
+  .logged-in .toolbar {
     display: none;
   }
 
@@ -8,18 +8,30 @@
     margin-top: 0 !important;
   }
 }
-.summary-count {
-  display: none;
-}
-
 .float-left {
   float: left;
 }
 
-span.icon-article-express--small-after {
-  font-size: 11px;
+.summary-count {
+  display: none;
 }
 
 .subject-landing-page .views-row .field--name-field-dboverride-database article header {
   display: none;
+}
+
+span.icon-article-express--small-after {
+  font-size: .75em;
+}
+
+span.icon-article-express--small-after:before {
+  content: " ";
+}
+
+h1.icon-article-express--small-after:after {
+  font-size: .75em;
+}
+
+.single-day .no-entry.future:after {
+  content: 'TBA';
 }

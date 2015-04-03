@@ -1,0 +1,12 @@
+name = PUL Marquand Art Library Branch Site
+description = Marquand Art Library Branch Layouts
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pul_marquand_art_library_branch_site
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_aa13b93b-2ca9-4c15-8536-69b49a2eaa07
+features[page_manager_handlers][] = node_view__panel_context_ed5c5fa7-55c5-4de7-af71-b5f420344c08

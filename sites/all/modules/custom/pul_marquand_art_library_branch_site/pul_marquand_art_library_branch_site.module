@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Marquand Art Library Branch Site feature.
+ */
+
+include_once 'pul_marquand_art_library_branch_site.features.inc';
