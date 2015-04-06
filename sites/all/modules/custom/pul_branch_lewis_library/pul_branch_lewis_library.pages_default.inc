@@ -419,7 +419,8 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Lewis Science Library',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -770,7 +771,8 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
         'nid' => '7789',
       ),
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Lewis Science Library',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(

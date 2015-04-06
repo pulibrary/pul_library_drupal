@@ -12,14 +12,14 @@
 		display: none;
 	}
 
-	.ui-tabs {
+	.quicktabs-tabs {
 		padding: 0;
 	}
-	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	.quicktabs-tabs li.active {
 		margin-bottom: 0;
 		padding-bottom: 0;
 		}
-	.ui-widget-header {
+	.quicktabs-tabs {
 		@include border-top-left-radius(4px);
 		@include border-top-right-radius(4px);
 		@include border-bottom-right-radius(0);
@@ -29,18 +29,22 @@
 		border: none;
 	}
 
-	.quicktabs-ui-wrapper {
-		@include border-radius(4px);
+	.quicktabs_main {
+		@include border-bottom-radius(4px);
 		background: darken($gray-light, 3);
 		font-size: $font-size-base;
+		padding: 1em 1.4em;
+		clear: both;
 	}
-	.ui-tabs .ui-tabs-nav li {
+	.quicktabs-tabs > li {
 		margin: 0;
 		top: 0;
 		clear: none;
 		width: 25%;
 		border: none;
 		text-align: center;
+		display: inline-block;
+		float: left;
 
 		&:first-child a {
 	    	@include border-top-left-radius(4px);
@@ -49,13 +53,20 @@
 	    	@include border-top-right-radius(4px);
 	    }
 	}
-	.ui-tabs .ui-tabs-nav li a {
+	ul.quicktabs-tabs li {
+		padding: 0;
+		margin: 0;
+	}
+	.quicktabs-tabs li a {
 		width: 100%;
 		background: $gray-dark;
 		color: $white;
 		font-family: $font-sans;
 		border-right: 1px solid darken($gray-light, 50%);
 		text-align: center;
+		padding: 0.4em;
+		margin: 0;
+		display: inline-block;
 
 		&:hover {
 	      background: lighten(#494f57, 10);
@@ -64,13 +75,20 @@
 	    &:active {
 	    	@include transition (all 0,2s ease-in-out);
 	    }
+	    &:focus {
+	    	background: lighten(#494f57, 10);
+	    }
+	}
+	.quicktabs-tabs li.active a {
+		background: darken($gray-light, 3);
+		color: black;
 	}
 
-	.ui-tabs .ui-tabs-nav li:last-child a {
+	.quicktabs-tabs li:last-child a {
 		border-right: none;
 	}
 
-	.ui-tabs .ui-tabs-nav li.ui-state-active a, 
+	.quicktabs-tabs li.ui-state-active a, 
 	.ui-widget-header .ui-state-active {
 		background: darken($gray-light, 2%);
 		color: black;
@@ -105,7 +123,7 @@
 		font-family: $font-sans;
 		@include border-radius(4px);
 	}
-	.ui-tabs-panel input[type="submit"] {
+	.quicktabs_main input[type="submit"] {
 		font-family: $font-sans;
 		height: 45px;
 		width: 15%;
