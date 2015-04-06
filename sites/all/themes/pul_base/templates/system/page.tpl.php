@@ -72,7 +72,7 @@
 ?>
 <div class="l-page">
   <header class="l-header" role="banner">
-    <a href="#main-content" class="element-invisible element-focusable skip2main"><?php print t('Skip to main content'); ?></a>
+    <a href="#main-content" class="skip2main"><?php print t('Skip to main content'); ?></a>
     <div class="wrapper wrapper--branding">
       <section class="l-branding">
         <?php if ($logo): ?>
