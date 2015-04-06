@@ -1052,7 +1052,7 @@ h1.icon-article-express--small-after:after {
   border-top-left-radius: 4px;
   font-weight: bold;
   text-shadow: 2px 2px #000000;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(73, 79, 87, 0.95)), to(rgba(73, 79, 87, 0.5)));
+  background-image: linear-gradient(rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5));
 }
 
 .user-picture img {
@@ -1464,7 +1464,7 @@ table caption {
   float: none;
 }
 
-.ui-widget-content .homepage-tab-form-message a {
+.block--quicktabs .homepage-tab-form-message a {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 0.75rem;
@@ -1519,9 +1519,10 @@ a.skip2main:focus {
   font-weight: 700;
   top: 6px;
   padding: 15px 23px 14px;
-  background-color: #f1f1f1;
-  color: #4b2e83;
+  background: #e87511;
+  color: white;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  transition: all .2s ease-in-out;
 }
 
 .view-library-hours .view-header {
@@ -2843,14 +2844,14 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin: 0;
   display: none;
 }
-.block--quicktabs .ui-tabs {
+.block--quicktabs .quicktabs-tabs {
   padding: 0;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+.block--quicktabs .quicktabs-tabs li.active {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.block--quicktabs .ui-widget-header {
+.block--quicktabs .quicktabs-tabs {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
@@ -2859,43 +2860,62 @@ body.faq .ui-accordion .ui-accordion-header a {
   padding: 0;
   border: none;
 }
-.block--quicktabs .quicktabs-ui-wrapper {
-  border-radius: 4px;
+.block--quicktabs .quicktabs_main {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   background: #efede8;
   font-size: 0.875rem;
+  padding: 1em 1.4em;
+  clear: both;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li {
+.block--quicktabs .quicktabs-tabs > li {
   margin: 0;
   top: 0;
   clear: none;
   width: 25%;
   border: none;
   text-align: center;
+  display: inline-block;
+  float: left;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li:first-child a {
+.block--quicktabs .quicktabs-tabs > li:first-child a {
   border-top-left-radius: 4px;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li:last-child a {
+.block--quicktabs .quicktabs-tabs > li:last-child a {
   border-top-right-radius: 4px;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li a {
+.block--quicktabs ul.quicktabs-tabs li {
+  padding: 0;
+  margin: 0;
+}
+.block--quicktabs .quicktabs-tabs li a {
   width: 100%;
   background: #494f57;
   color: #ffffff;
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-right: 1px solid #877d60;
   text-align: center;
+  padding: 0.4em;
+  margin: 0;
+  display: inline-block;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li a:hover {
+.block--quicktabs .quicktabs-tabs li a:hover {
   background: #606873;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li a:active {
+.block--quicktabs .quicktabs-tabs li a:active {
   transition: all 0, ease-in-out 2s;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li:last-child a {
+.block--quicktabs .quicktabs-tabs li a:focus {
+  background: #606873;
+}
+.block--quicktabs .quicktabs-tabs li.active a {
+  background: #efede8;
+  color: black;
+}
+.block--quicktabs .quicktabs-tabs li:last-child a {
   border-right: none;
 }
-.block--quicktabs .ui-tabs .ui-tabs-nav li.ui-state-active a,
+.block--quicktabs .quicktabs-tabs li.ui-state-active a,
 .block--quicktabs .ui-widget-header .ui-state-active {
   background: #f1efeb;
   color: black;
@@ -2929,7 +2949,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-radius: 4px;
 }
-.block--quicktabs .ui-tabs-panel input[type="submit"] {
+.block--quicktabs .quicktabs_main input[type="submit"] {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 45px;
   width: 15%;
