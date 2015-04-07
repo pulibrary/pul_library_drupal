@@ -227,6 +227,10 @@ input[type="submit"] {
   white-space: nowrap;
 }
 
+p:empty {
+  display: none;
+}
+
 .field__label {
   font-weight: bold;
 }
