@@ -25,3 +25,7 @@ h1.icon-article-express--small-after:after {
         content: 'TBA';    
     }
 }
+// hide empty p tags
+p:empty {
+    display: none;
+}
