@@ -705,6 +705,13 @@ function library_news_views_default_views() {
   );
   $handler->display->display_options['fields']['field_news_library_contact']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_news_library_contact']['field_api_classes'] = TRUE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_news_library_contact_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

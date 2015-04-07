@@ -892,9 +892,8 @@ function pul_library_users_field_default_field_instances() {
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'token' => array(
@@ -1015,9 +1014,8 @@ function pul_library_users_field_default_field_instances() {
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'token' => array(
