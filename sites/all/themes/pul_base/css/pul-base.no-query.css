@@ -443,30 +443,39 @@ h3 {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.pane-emergency-alert-content-block {
+.pane-emergency-alert-content-block h2 {
+  display: none;
+}
+
+.alert--message {
   background: #f1903b;
   border-radius: 4px;
   padding: 1em;
   margin-top: 1em;
 }
-.pane-emergency-alert-content-block h3 a, .pane-emergency-alert-content-block p {
+.alert--message h3 a, .alert--message p {
   color: #ffffff;
 }
-.pane-emergency-alert-content-block h2 {
-  display: none;
-}
-.pane-emergency-alert-content-block h3 {
-  margin-top: 0;
-  font-size: 1.5em;
+.alert--message h3 {
+  color: #ffffff;
+  display: inline-block;
+  margin: 0;
+  font-size: 1.3em;
   font-weight: bold;
 }
-.pane-emergency-alert-content-block p {
+.alert--message p {
   margin-bottom: 0;
   font-weight: bold;
 }
-.pane-emergency-alert-content-block p a {
+.alert--message p a {
   color: #ffffff;
   text-decoration: underline;
+}
+.alert--message p:empty {
+  display: none;
+}
+.alert--message i {
+  color: #ffffff;
 }
 
 .four_five_three_stacked-region--top {
@@ -713,6 +722,10 @@ h1.icon-article-express--small-after:after {
 
 .single-day .no-entry.future:after {
   content: 'TBA';
+}
+
+p:empty {
+  display: none;
 }
 
 .wrapper--navigation {

@@ -1,4 +1,8 @@
-.pane-emergency-alert-content-block {
+.pane-emergency-alert-content-block h2 {
+    display: none;
+}
+
+.alert--message {
     background: lighten($orange, 10);
     border-radius: 4px;
     padding: 1em;
@@ -8,13 +12,11 @@
         color: $white;
     }
 
-    h2 {
-        display: none;
-    }
-
     h3 {
-        margin-top: 0;
-        font-size: 1.5em;
+        color: $white;
+        display: inline-block;
+        margin: 0;
+        font-size: 1.3em;
         font-weight: bold;
     }
 
@@ -26,6 +28,12 @@
             color: $white;
             text-decoration: underline;
         }
+        &:empty {
+            display: none;
+        }
+    }
+    i {
+        color: $white;
     }
 }
 
