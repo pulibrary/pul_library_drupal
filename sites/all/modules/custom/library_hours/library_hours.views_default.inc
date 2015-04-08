@@ -1433,7 +1433,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Libraries';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Library Status */
   $handler->display->display_options['fields']['field_hours_library_status']['id'] = 'field_hours_library_status';
@@ -1454,7 +1454,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['label'] = 'Hours Open';
   $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
