@@ -2,11 +2,11 @@
     display: none;
 }
 
-.alert--message {
+.alert--message, .messages-error {
     background: lighten($orange, 10);
     border-radius: 4px;
     padding: 1em;
-    margin-top: 1em; 
+    margin: 1em 0; 
 
     h3 a, p {
         color: $white;
