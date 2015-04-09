@@ -459,34 +459,34 @@ h3 {
   display: none;
 }
 
-.alert--message {
+.alert--message, .messages-error {
   background: #f1903b;
   border-radius: 4px;
   padding: 1em;
-  margin-top: 1em;
+  margin: 1em 0;
 }
-.alert--message h3 a, .alert--message p {
+.alert--message h3 a, .alert--message p, .messages-error h3 a, .messages-error p {
   color: #ffffff;
 }
-.alert--message h3 {
+.alert--message h3, .messages-error h3 {
   color: #ffffff;
   display: inline-block;
   margin: 0;
   font-size: 1.3em;
   font-weight: bold;
 }
-.alert--message p {
+.alert--message p, .messages-error p {
   margin-bottom: 0;
   font-weight: bold;
 }
-.alert--message p a {
+.alert--message p a, .messages-error p a {
   color: #ffffff;
   text-decoration: underline;
 }
-.alert--message p:empty {
+.alert--message p:empty, .messages-error p:empty {
   display: none;
 }
-.alert--message i {
+.alert--message i, .messages-error i {
   color: #ffffff;
 }
 
