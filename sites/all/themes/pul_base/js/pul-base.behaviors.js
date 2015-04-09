@@ -66,14 +66,6 @@
     //}
   //};
 
-  Drupal.behaviors.pulMenuLabelBehavior = {
-    attach: function (context) {
-      $('#block-system-main-menu').attr("aria-label", "Main menu");
-      $('#block-menu-menu-find').attr("aria-label", "Research Tools");
-      $('#block-menu-menu-information-for').attr("aria-label", "Library Services");
-      $('#block-menu-menu-about').attr("aria-label", "About the Library");
-    }
-  }
   Drupal.behaviors.pulMainMenuBehavior = {
     attach: function (context) {
       // By using the 'context' variable we make sure that our code only runs on
