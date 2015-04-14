@@ -232,32 +232,6 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
     $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
-    $pane->pid = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'branch_features-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7791',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Performances',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
-    $display->content['new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4'] = $pane;
-    $display->panels['second'][0] = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
-    $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';
     $pane->type = 'block';
@@ -274,11 +248,63 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-    $display->panels['second'][1] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane = new stdClass();
+    $pane->pid = 'new-32b1026f-8608-4103-8905-29c28d0581fd';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7791',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Featured Resources',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '32b1026f-8608-4103-8905-29c28d0581fd';
+    $display->content['new-32b1026f-8608-4103-8905-29c28d0581fd'] = $pane;
+    $display->panels['second'][1] = 'new-32b1026f-8608-4103-8905-29c28d0581fd';
+    $pane = new stdClass();
+    $pane->pid = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7791',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Music Research Guides',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
+    $display->content['new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4'] = $pane;
+    $display->panels['second'][2] = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -541,6 +567,29 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
     $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
+    $pane->pid = 'new-0cdc3ba2-0546-4ede-b9aa-2ddd1af860eb';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0cdc3ba2-0546-4ede-b9aa-2ddd1af860eb';
+    $display->content['new-0cdc3ba2-0546-4ede-b9aa-2ddd1af860eb'] = $pane;
+    $display->panels['second'][0] = 'new-0cdc3ba2-0546-4ede-b9aa-2ddd1af860eb';
+    $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
@@ -567,11 +616,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $display->content['new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6'] = $pane;
-    $display->panels['second'][0] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
+    $display->panels['second'][1] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane = new stdClass();
     $pane->pid = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane->panel = 'second';
@@ -602,11 +651,43 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4a7e8630-60ac-4b66-b428-9053907bb89a';
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
-    $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
+    $display->panels['second'][2] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
+    $pane = new stdClass();
+    $pane->pid = 'new-e79db668-d0a2-4208-8666-461039bc5e0d';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '5',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'e79db668-d0a2-4208-8666-461039bc5e0d';
+    $display->content['new-e79db668-d0a2-4208-8666-461039bc5e0d'] = $pane;
+    $display->panels['second'][3] = 'new-e79db668-d0a2-4208-8666-461039bc5e0d';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -635,11 +716,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $display->panels['second'][4] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane = new stdClass();
     $pane->pid = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $pane->panel = 'second';
@@ -656,7 +737,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Performances',
+      'override_title_text' => 'Music Research Guides',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -665,11 +746,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $display->content['new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2'] = $pane;
-    $display->panels['second'][3] = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
+    $display->panels['second'][5] = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $pane = new stdClass();
     $pane->pid = 'new-d5b48f86-8697-40a3-84a3-a3c107733070';
     $pane->panel = 'second';
@@ -690,11 +771,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = 'd5b48f86-8697-40a3-84a3-a3c107733070';
     $display->content['new-d5b48f86-8697-40a3-84a3-a3c107733070'] = $pane;
-    $display->panels['second'][4] = 'new-d5b48f86-8697-40a3-84a3-a3c107733070';
+    $display->panels['second'][6] = 'new-d5b48f86-8697-40a3-84a3-a3c107733070';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
