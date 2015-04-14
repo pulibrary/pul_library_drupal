@@ -20,7 +20,7 @@ function allsearch_block_form($form, &$form_state) {
   //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
   $form['query'] = array (
     '#type'  => 'textfield',
-    '#title' =>  t('All Search'),
+    '#title' =>  t('All Search Box'),
     '#size'  => 80,
     '#required' => TRUE,
     '#default_value' => $default_value

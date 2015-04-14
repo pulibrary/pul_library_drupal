@@ -40,7 +40,12 @@
 		    position: relative;
 
 		    label {
-		    	display: none;
+		    	@include visually-hidden();
+		    	color: $white;
+		    	
+		    	.form-required {
+		    		color: $white;
+		    	}
 		    }
 
 		    input[type=text] {

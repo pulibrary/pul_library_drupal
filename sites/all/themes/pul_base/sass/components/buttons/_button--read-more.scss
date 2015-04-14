@@ -12,8 +12,8 @@
     font-size: $font-size-smaller;
     border: none;
     text-shadow: none;
-    background-color: $gray-light;
-    color: $orange-dark;
+    background-color: $gray-lightest;
+    color: $orange-darkest;
     padding: 1em;
     text-decoration: none;
     @include border-radius(3px);
@@ -26,6 +26,14 @@
         float: right;
         display: inline;
         padding: 3px 7px;
+    }
+    &:visited {
+        color: $orange-darkest;
+        background-color: $gray-lightest;
+    }
+    &:hover, &:active {
+        color: $white;
+        background-color: $orange-darker;
     }
 }
 

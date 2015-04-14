@@ -4,12 +4,16 @@
     min-height: 50px;
     border-top: 5px solid $orange;
 
-    h1.site-name {
+    .site-name {
       display: none;
     }
 }
 
 .l-branding {
+  h2 {
+    margin: 0;
+  }
+
   .homepage-tab-form-message {
     display: none;
   }
@@ -63,4 +67,8 @@
     margin-left: 0.5em;
    }
  }
+}
+
+.front h1 {
+  @include visually-hidden();
 }
