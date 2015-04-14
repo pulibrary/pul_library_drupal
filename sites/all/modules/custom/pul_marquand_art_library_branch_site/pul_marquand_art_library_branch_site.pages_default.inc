@@ -149,7 +149,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -193,6 +193,25 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-7f319cda-4916-457c-b5e4-4fc219e09676';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7f319cda-4916-457c-b5e4-4fc219e09676';
+    $display->content['new-7f319cda-4916-457c-b5e4-4fc219e09676'] = $pane;
+    $display->panels['middle'][0] = 'new-7f319cda-4916-457c-b5e4-4fc219e09676';
+    $pane = new stdClass();
     $pane->pid = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -206,11 +225,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
     $display->content['new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f'] = $pane;
-    $display->panels['middle'][0] = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
+    $display->panels['middle'][1] = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -235,11 +254,49 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][2] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane = new stdClass();
+    $pane->pid = 'new-5e0cc6e5-690a-41e3-a3d6-686b7f6a0736';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '5e0cc6e5-690a-41e3-a3d6-686b7f6a0736';
+    $display->content['new-5e0cc6e5-690a-41e3-a3d6-686b7f6a0736'] = $pane;
+    $display->panels['middle'][3] = 'new-5e0cc6e5-690a-41e3-a3d6-686b7f6a0736';
+    $pane = new stdClass();
+    $pane->pid = 'new-dde6572a-83f3-464c-a1b7-9398e594d52a';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dde6572a-83f3-464c-a1b7-9398e594d52a';
+    $display->content['new-dde6572a-83f3-464c-a1b7-9398e594d52a'] = $pane;
+    $display->panels['second'][0] = 'new-dde6572a-83f3-464c-a1b7-9398e594d52a';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -267,11 +324,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $display->content['new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6'] = $pane;
-    $display->panels['second'][0] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
+    $display->panels['second'][1] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane = new stdClass();
     $pane->pid = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane->panel = 'second';
@@ -302,11 +359,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4a7e8630-60ac-4b66-b428-9053907bb89a';
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
-    $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
+    $display->panels['second'][2] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -335,11 +392,41 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $display->panels['second'][3] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $pane = new stdClass();
+    $pane->pid = 'new-7ea772e3-7ec4-4885-828a-73652bd9c14d';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_external_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'link_default',
+      'delta_limit' => '5',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Featured Resources',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '7ea772e3-7ec4-4885-828a-73652bd9c14d';
+    $display->content['new-7ea772e3-7ec4-4885-828a-73652bd9c14d'] = $pane;
+    $display->panels['second'][4] = 'new-7ea772e3-7ec4-4885-828a-73652bd9c14d';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
@@ -359,7 +446,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Marquand Art Library',
+      'override_title_text' => 'Marquand Library of Art and Archaeology',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -508,7 +595,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
