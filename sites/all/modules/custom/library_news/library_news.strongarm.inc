@@ -87,13 +87,16 @@ function library_news_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '12',
+        ),
+        'workbench_access' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),

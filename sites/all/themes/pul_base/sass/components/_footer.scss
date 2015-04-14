@@ -1,7 +1,13 @@
+.l-footer {
+	background-color: $gray-light;
+	margin: 2em 0;
+	font-size: $font-size-smaller;
+}
+
 .l-region--footer {
 	clear: both;
 	padding: 1em;
-	
+
 	nav, .block--block-1 {
 		@include grid-span(12, $output-style: 'float');
 		@include breakpoint($tab) {
@@ -12,16 +18,9 @@
 	nav:first-child {
 		margin-left: 0;
 	}
+
 	.block--block-1 {
 		margin-right: 0;
-	}
- }
-
- footer {
-	background-color: $gray-light;
-
-	address, .university-copyright-footer {
-		font-size: $font-size-smaller;
 	}
 
 	nav ul {
@@ -33,29 +32,86 @@
 			display: block;
 		}
 	}
-}
 
-.l-footer {
-	margin: 2em 0;
+	address, .footer--copyright, a {
+		color: $gray-darkest;
+		font-style: normal;
+	}
+	.footer--copyright {
+		margin-top: 0.5em;
+	}
 
-	h2 {
+	h2, h2 a {
 		@include adjust-font-size-to(16px);
 		font-weight: bold;
-		color: $orange-dark;
+		color: $orange-darkest;
 	}
 
-	.menu {
-		.leaf {
-			list-style: none;
+	.leaf {
+		list-style: none;
 
-			a {
-				font-size: $font-size-smaller;
-				color: $gray-dark;
-			}
+		a {
+			line-height: 1.75em;
 		}
 	}
+}
 
-	address {
-		margin: .5em 0;
-	}
+// SVG logo 
+.svg {
+ .facebook-logo img,
+ .twitter-logo img,
+ .govdocs-logo img,
+ .friends-logo img,
+ .pu-logo img {
+   display: none;
+ }
+ .facebook-logo,
+ .twitter-logo,
+ .govdocs-logo,
+ .friends-logo,
+ .pu-logo {
+   background-size: contain;
+   display: inline-block;
+
+   line-height: 11px;
+   height: 24px;
+
+   &:before { /* create a full-height inline block pseudo=element */
+	    content: ' ';
+	    display: inline-block;
+	    vertical-align: middle;  /* vertical alignment of the inline element */
+	    height: 100%;
+    }
+
+
+   @include breakpoint($tab) {
+    margin-left: 0.5em;
+   }
+ }
+ .facebook-logo {
+ 	background-image: url("../images/facebook.svg");
+ 	width: 24px;
+ 	margin: 0 0.2em 0.75em;
+ }
+ .twitter-logo {
+ 	background-image: url("../images/twitter.svg");
+ 	width: 24px;
+ 	margin: 0 0.2em 0.75em;
+ }
+ .govdocs-logo {
+ 	background-image: url("../images/govdocs.svg");
+ 	width: 27px;
+ 	margin: 0 0.2em 0.75em;
+ }
+ .friends-logo {
+ 	background-image: url("../images/friends.svg");
+ 	width: 91px;
+ 	margin: 0 0.2em 0.75em;
+ }
+ .pu-logo {
+ 	background-image: url("../images/pu.svg");
+ 	width: 142px;
+ 	height: 40px;
+ 	margin: 0.5em 0 0;
+ }
 }

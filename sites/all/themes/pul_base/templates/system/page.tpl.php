@@ -76,19 +76,7 @@
     <div class="wrapper wrapper--branding">
       <section class="l-branding">
         <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Princeton University Library - Home'); ?>"  class="site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-        <?php endif; ?>
-
-        <?php if ($site_name || $site_slogan): ?>
-          <?php if ($site_name): ?>
-            <h1 class="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-
-          <?php if ($site_slogan): ?>
-            <h2 class="site-slogan"><?php print $site_slogan; ?></h2>
-          <?php endif; ?>
+          <h2><a href="<?php print $front_page; ?>" title="<?php print t('Princeton University Library - Home'); ?>"  class="site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /><span class="site-name"><?php print $site_name; ?></span></a></h2>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
       </section>
@@ -103,14 +91,13 @@
     </div>
   </header>
 
-  <section class="l-main test">
+  <section class="l-main test" id="main-content">
     <div class="l-content" role="main">
       <?php if(isset($node)): ?>
         <?php if (arg(0) == 'database' || $node->type == 'database' || $node->type == 'alternative_database_title') print $breadcrumb; ?>
       <?php endif; ?>
 
 
-      <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1>

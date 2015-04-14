@@ -1819,7 +1819,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Princeton University Library';
   $display->uuid = '877e1448-6925-4c72-bf1d-638484ef393c';
   $display->content = array();
   $display->panels = array();
@@ -2003,7 +2003,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->uuid = '7ff21ea7-c718-4484-b2f2-82b9dd63504f';
     $display->content['new-7ff21ea7-c718-4484-b2f2-82b9dd63504f'] = $pane;
     $display->panels['top'][0] = 'new-7ff21ea7-c718-4484-b2f2-82b9dd63504f';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

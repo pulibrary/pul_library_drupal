@@ -11,7 +11,20 @@
     }
 }
 
-.front .field--name-field-news-featured-graphic {
+.front .library-news-link {
+    display: block;
+    @include clearfix;
+    margin-bottom: 1.5em;
+
+    &:hover {
+        color: $blue-darker;
+    }
+    &.views-more-link:hover {
+        color: $white;
+    }
+}
+
+.front .featured-new-item-image {
     width: 100%;
     height: auto;
     overflow:hidden;
@@ -20,7 +33,7 @@
         width:145px;
         height:100px;
 
-        margin: 0 1em 1.5em 0;
+        margin: 0 1em 0 0;
         float: left;
     }
 

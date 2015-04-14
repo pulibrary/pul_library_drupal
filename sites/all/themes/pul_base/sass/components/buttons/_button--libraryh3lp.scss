@@ -7,25 +7,26 @@
         font-weight: bold;
         border: none;
         text-shadow: none;
-        padding: 3px 7px;
+        padding: 0 7px;
         text-decoration: none;
         @include border-radius(3px);
         position: relative;
         top: -2px;
+        display: inline-block;
     }
 } 
 
 .button--libraryh3lp__online {
-    background-color: $orange;
-    color: $white;
+    background-color: $yellow-lighter;
+    color: $black;
 
     &:hover {
-        color: $white;
-        background: lighten($orange, 8);
+        background: $yellow; // darker background on hover
+        color: $black;
     }
 }
 
 .button--libraryh3lp__offline {
-    background: $gray-light;
-    color: $gray-dark;
+    background: $gray-lightest;
+    color: $gray-darker;
 }
