@@ -227,10 +227,6 @@ input[type="submit"] {
   white-space: nowrap;
 }
 
-p:empty {
-  display: none;
-}
-
 .field__label {
   font-weight: bold;
 }
@@ -324,6 +320,41 @@ media {
   /* IE9 Compat Modes */
   src: url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Princeton';
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.svg#princetonmontidsosregular") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PrincetonMontiSCap-Regular';
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.svg#princetonmontiscapregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Princeton Bold Italic';
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.svg#princetonmontibdositalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Princeton Bold';
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.svg#princetonmontibdosregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Princeton Italic';
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.svg#princetonmontidsositalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 html {
   font-size: 100%;
@@ -439,9 +470,6 @@ h2 {
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
 }
-h2 a {
-  color: #7F3D00;
-}
 
 h3 {
   font-size: 18px;
@@ -462,12 +490,15 @@ h3 {
 .wrapper--branding {
   background-color: #494f57;
   min-height: 50px;
-  border-top: 5px solid #e87511;
+  border-top: 5px solid #E87411;
 }
-.wrapper--branding h1.site-name {
+.wrapper--branding .site-name {
   display: none;
 }
 
+.l-branding h2 {
+  margin: 0;
+}
 .l-branding .homepage-tab-form-message {
   display: none;
 }
@@ -529,13 +560,31 @@ h3 {
   }
 }
 
+.front h1 {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 .wrapper--navigation {
   background-color: #f5f4f1;
-  border-bottom: 1px solid #d1d1d1;
+  border-bottom: 1px solid white;
 }
 
 .l-content {
   clear: both;
+}
+
+.l-footer {
+  background-color: #f5f4f1;
+  margin: 2em 0;
+  font-size: 0.75rem;
 }
 
 .l-region--footer {
@@ -566,42 +615,99 @@ h3 {
 .l-region--footer .block--block-1 {
   margin-right: 0;
 }
-
-footer {
-  background-color: #f5f4f1;
-}
-footer address, footer .university-copyright-footer {
-  font-size: 0.75rem;
-}
-footer nav ul {
+.l-region--footer nav ul {
   display: none;
 }
 @media (min-width: 44em) {
-  footer nav ul {
+  .l-region--footer nav ul {
     display: block;
   }
 }
-
-.l-footer {
-  margin: 2em 0;
+.l-region--footer address, .l-region--footer .footer--copyright, .l-region--footer a {
+  color: #494f57;
+  font-style: normal;
 }
-.l-footer h2 {
+.l-region--footer .footer--copyright {
+  margin-top: 0.5em;
+}
+.l-region--footer h2, .l-region--footer h2 a {
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-weight: bold;
-  color: #7F3D00;
+  color: #89440a;
 }
-.l-footer .menu .leaf {
+.l-region--footer .leaf {
   list-style: none;
 }
-.l-footer .menu .leaf a {
-  font-size: 0.75rem;
-  color: #494f57;
+.l-region--footer .leaf a {
+  line-height: 1.75em;
 }
-.l-footer address {
-  margin: .5em 0;
+
+.svg .facebook-logo img,
+.svg .twitter-logo img,
+.svg .govdocs-logo img,
+.svg .friends-logo img,
+.svg .pu-logo img {
+  display: none;
+}
+.svg .facebook-logo,
+.svg .twitter-logo,
+.svg .govdocs-logo,
+.svg .friends-logo,
+.svg .pu-logo {
+  background-size: contain;
+  display: inline-block;
+  line-height: 11px;
+  height: 24px;
+}
+.svg .facebook-logo:before,
+.svg .twitter-logo:before,
+.svg .govdocs-logo:before,
+.svg .friends-logo:before,
+.svg .pu-logo:before {
+  /* create a full-height inline block pseudo=element */
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  /* vertical alignment of the inline element */
+  height: 100%;
+}
+@media (min-width: 44em) {
+  .svg .facebook-logo,
+  .svg .twitter-logo,
+  .svg .govdocs-logo,
+  .svg .friends-logo,
+  .svg .pu-logo {
+    margin-left: 0.5em;
+  }
+}
+.svg .facebook-logo {
+  background-image: url("../images/facebook.svg");
+  width: 24px;
+  margin: 0 0.2em 0.75em;
+}
+.svg .twitter-logo {
+  background-image: url("../images/twitter.svg");
+  width: 24px;
+  margin: 0 0.2em 0.75em;
+}
+.svg .govdocs-logo {
+  background-image: url("../images/govdocs.svg");
+  width: 27px;
+  margin: 0 0.2em 0.75em;
+}
+.svg .friends-logo {
+  background-image: url("../images/friends.svg");
+  width: 91px;
+  margin: 0 0.2em 0.75em;
+}
+.svg .pu-logo {
+  background-image: url("../images/pu.svg");
+  width: 142px;
+  height: 40px;
+  margin: 0.5em 0 0;
 }
 
 .l-header {
@@ -650,7 +756,7 @@ footer nav ul {
   }
 }
 .wrapper--navigation .centered-navigation-menu-button:hover {
-  color: #e87511;
+  color: #E87411;
 }
 .wrapper--navigation .l-region--navigation {
   overflow: visible;
@@ -703,7 +809,7 @@ footer nav ul {
   transition: all 0.2s ease-in-out;
 }
 .wrapper--navigation .centered-navigation-menu > ul > li a:hover {
-  color: #e87511;
+  color: #E87411;
 }
 .wrapper--navigation .centered-navigation-menu > ul > li.expanded {
   padding-right: 0;
@@ -871,7 +977,21 @@ footer nav ul {
 .l-region--branding .block--search-form form > div div.form-item-query label, .l-region--branding .block--search-form form > div div.form-item label,
 .l-region--branding .block--allsearch-block form > div div.form-item-query label,
 .l-region--branding .block--allsearch-block form > div div.form-item label {
-  display: none;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+  color: #ffffff;
+}
+.l-region--branding .block--search-form form > div div.form-item-query label .form-required, .l-region--branding .block--search-form form > div div.form-item label .form-required,
+.l-region--branding .block--allsearch-block form > div div.form-item-query label .form-required,
+.l-region--branding .block--allsearch-block form > div div.form-item label .form-required {
+  color: #ffffff;
 }
 .l-region--branding .block--search-form form > div div.form-item-query input[type=text], .l-region--branding .block--search-form form > div div.form-item input[type=text],
 .l-region--branding .block--allsearch-block form > div div.form-item-query input[type=text],

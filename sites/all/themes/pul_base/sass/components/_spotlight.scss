@@ -122,12 +122,11 @@
     position: relative;
   }
 
-  .views-field {
+  .spotlight-container {
     @include transition(all, .2s ease-in-out);
     background:inherit;
     color: $white;
     height:inherit;
-    padding: 0.5em 0.7em;
   }
 
   .spotlight-image {
