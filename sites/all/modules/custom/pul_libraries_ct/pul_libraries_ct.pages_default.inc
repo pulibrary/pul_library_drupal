@@ -61,11 +61,14 @@ function pul_libraries_ct_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '0',
-            'paths' => 'libraries/engineering
+            'paths' => 'libraries/eastasianlib
+libraries/engineering
 libraries/architecture
 libraries/stokes
 libraries/plasma-physics
-libraries/scilib',
+libraries/scilib
+libraries/music
+libraries/marquand',
           ),
           'context' => 'empty',
           'not' => FALSE,

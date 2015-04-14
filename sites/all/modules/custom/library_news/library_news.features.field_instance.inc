@@ -50,7 +50,7 @@ function library_news_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -93,6 +93,146 @@ function library_news_field_default_field_instances() {
       'type' => 'taxonomy_autocomplete',
       'weight' => 40,
     ),
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_authors'
+  $field_instances['node-library_news_item-field_authors'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_authors',
+    'label' => 'Authors',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 43,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_call_number'
+  $field_instances['node-library_news_item-field_call_number'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_call_number',
+    'label' => 'Call Number',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 47,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_catalog_url'
+  $field_instances['node-library_news_item-field_catalog_url'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_catalog_url',
+    'label' => 'Link to Catalog',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'View in Main Catalog',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 48,
+    ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_display_on_news_page'
@@ -181,6 +321,47 @@ function library_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_news_item-field_full_title'
+  $field_instances['node-library_news_item-field_full_title'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_full_title',
+    'label' => 'Full Title',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 44,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-library_news_item-field_material_access'
   $field_instances['node-library_news_item-field_material_access'] = array(
     'bundle' => 'library_news_item',
@@ -244,7 +425,7 @@ function library_news_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_news_article_snippet',
     'label' => 'Article Snippet',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -256,8 +437,9 @@ function library_news_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 2,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_news_category'
@@ -415,7 +597,7 @@ function library_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -744,6 +926,88 @@ function library_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_news_item-field_physical_description'
+  $field_instances['node-library_news_item-field_physical_description'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_physical_description',
+    'label' => 'Physical Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 46,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_publisher'
+  $field_instances['node-library_news_item-field_publisher'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publisher',
+    'label' => 'Publisher',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 45,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-library_news_item-field_pul_event_date'
   $field_instances['node-library_news_item-field_pul_event_date'] = array(
     'bundle' => 'library_news_item',
@@ -848,7 +1112,9 @@ function library_news_field_default_field_instances() {
   t('Article "teaser" to be displayed on homepage and in search results. Use HTML carefully since this snippet will be displayed on the homepage slider view. Mal-formed HTML can cause display errors. ');
   t('Article Snippet');
   t('Audiences');
+  t('Authors');
   t('Body');
+  t('Call Number');
   t('Category');
   t('Display on News Page');
   t('Enter the netid of the library staff contact for the news item. ');
@@ -860,15 +1126,19 @@ function library_news_field_default_field_instances() {
   t('Files to be inserted into news items when needed. ');
   t('Flagging an item will make it appear on the collections page.');
   t('Free tags that can be associated with items. ');
+  t('Full Title');
   t('Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.');
   t('Images');
   t('Images to be inserted inline into post content. ');
   t('Libraries');
   t('Library Contact');
+  t('Link to Catalog');
   t('Link to More Information');
   t('Location of event. ');
   t('Material Access');
   t('Optional field. Assign dates to an event or exhibition. Use for items that have a concrete meeting time or an exhibition that covers a distinct range of dates. ');
+  t('Physical Description');
+  t('Publisher');
   t('Tag an item with it\'s primary category. ');
   t('Tags');
 
