@@ -95,7 +95,7 @@
 	}
 
 	.form-item-query label {
-		display: none;
+		@include visually-hidden();
 	}
 	.form-type-textfield {
 		margin-bottom: 0;
