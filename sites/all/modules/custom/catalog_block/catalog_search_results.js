@@ -39,7 +39,10 @@
                         	        }
 
 					if(result['fulltextavail'] == "Y") {
-                  online_avail = "<div class='all-full-text'>"+
+							if(~result['full_text_link'].indexOf(pul_resolver)) {
+								 pul_resolver = "";
+                  					}
+                  					online_avail = "<div class='all-full-text'>"+
 									icon_hint+
 									'<a target="_blank" class="all-search-link full-text-link" href="'+pul_resolver+result['full_text_link']+
 									'" title="Go to Resource">'+
