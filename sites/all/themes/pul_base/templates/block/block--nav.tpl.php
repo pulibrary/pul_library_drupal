@@ -48,7 +48,7 @@
   <?php print render($title_prefix); ?>
   <?php if ($block->subject): ?>
   	<h2<?php print $title_attributes; ?>>
-	  	<a href="<?php print $block->title_link; ?>"><?php print $block->subject; ?></a>
+	  	<a href="/<?php print $block->title_link; ?>"><?php print $block->subject; ?></a>
   	</h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
