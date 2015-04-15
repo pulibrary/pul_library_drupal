@@ -70,7 +70,7 @@
   				}).appendTo('#pulfa-search-results');
 				$('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
 				if(data.number > 3) {
-        	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
+        	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#pulfa-search-results');
 				}
           var section_heading = "PULFA"; // Should be in Drupal Settings
           $('.pulfa-search.refine-link a').each(function (index, value) {

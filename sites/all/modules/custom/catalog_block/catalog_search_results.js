@@ -9,6 +9,7 @@
 	var availability_hint = "Check for Available Copies";
 	var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
 	var book_icon = 'icon-book';
+	var journal_icon = 'icon-file';
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
 	var audio_icon = 'icon-headphones';
@@ -89,6 +90,8 @@
 						var icon_type = film_icon;
 					} else if(result['format'] == 'audio') {
 						var icon_type = audio_icon;
+					} else if(result['format'] == 'journal') {
+						var icon_type = journal_icon;
 					} else {
 						var icon_type = null;
 					}
@@ -133,7 +136,7 @@
           
           $('<div class="books-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
 				  if(data.number > max_display_results) {
-					 $('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
+				  	$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#catalog-search-results');
 				  }
 
           var section_heading = "Books+"; // Should be in Drupal Settings

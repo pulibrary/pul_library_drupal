@@ -48,7 +48,7 @@
   			}).appendTo('#summon-guide-results');
       $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
 			if(data.number > 3) {
-              $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Research Guides</a></div>"').appendTo('#summon-guide-results');
+        $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Library Guides</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#summon-guide-results');
 				}
           var section_heading = "Summon Guide"; // Should be in Drupal Settings
           $('.summon-guide.refine-link a').each(function (index, value) {

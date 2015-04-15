@@ -10,6 +10,7 @@
       position: relative; 
       display: inline-block;
       margin-top:0.9em;
+      width: 100%;
 
       input {
         @include box-sizing(border-box);

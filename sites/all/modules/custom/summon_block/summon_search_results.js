@@ -74,7 +74,7 @@
   			}).appendTo('#summon-search-results');
  			$('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
-				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
+				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#summon-search-results');
 			}
 
       // GA Tracking

@@ -72,7 +72,7 @@
     					html: items.join('')
   				}).appendTo('#journal-search-results');
 				if(data.number > 3) {
-					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Journal Results</a></div>"').appendTo('#journal-search-results');
+					$('<div class="more-link"><a title="'+refine_tooltip+'" href="'+data.more+'">'+icon_hint+'See all '+data.number+ ' Journal Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#journal-search-results');
 				}
 			} else {
 				$('<div class="no-results">No matching journal titles.</div>"').appendTo('#journal-search-results');

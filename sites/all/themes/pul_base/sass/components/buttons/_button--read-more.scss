@@ -40,3 +40,13 @@
 .more-link a {
     float: none;
 }
+
+.page-find-all .more-link a {
+    background-color: $blue-lighter;
+    color: $white;
+
+    &:hover {
+        background-color: $blue;
+        color: $white;
+    }
+}

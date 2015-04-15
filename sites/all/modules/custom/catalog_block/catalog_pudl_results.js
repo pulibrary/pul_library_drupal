@@ -40,7 +40,7 @@
   				}).appendTo('#pudl-search-results');
 				$('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
 				if(data.number > 3) {
- 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div>"').appendTo('#pudl-search-results');
+ 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#pudl-search-results');
 				}
           var section_heading = "PUDL"; // Should be in Drupal Settings
           $('.pudl-search.refine-link a').each(function (index, value) {
