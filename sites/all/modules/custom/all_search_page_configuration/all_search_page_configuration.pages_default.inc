@@ -137,7 +137,8 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
-      'override_title_text' => '',
+      'override_title_text' => 'Books+',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -358,6 +359,31 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->uuid = '3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7';
     $display->content['new-3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7'] = $pane;
     $display->panels['top'][1] = 'new-3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7';
+    $pane = new stdClass();
+    $pane->pid = 'new-c7097a96-9208-44cf-b467-909694a141ba';
+    $pane->panel = 'top';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Results section anchor links',
+      'title' => '',
+      'body' => '<ul class="results-sections"><li><a href="#catalog_block-catalog_search_results">Books</a></li><li><a href="#summon_block-summon_search_results">Articles</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#search_libraries_and_collections-panel_pane_1">Libraries and Collections</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital Library&nbsp;(PUDL)</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#summon_block-summon_guide_results">Library Guides</a></li></ul>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'c7097a96-9208-44cf-b467-909694a141ba';
+    $display->content['new-c7097a96-9208-44cf-b467-909694a141ba'] = $pane;
+    $display->panels['top'][2] = 'new-c7097a96-9208-44cf-b467-909694a141ba';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

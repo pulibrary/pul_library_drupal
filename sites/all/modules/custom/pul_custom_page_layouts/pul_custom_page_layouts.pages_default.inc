@@ -1819,7 +1819,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Princeton University Library';
+  $display->title = 'Home Page';
   $display->uuid = '877e1448-6925-4c72-bf1d-638484ef393c';
   $display->content = array();
   $display->panels = array();
