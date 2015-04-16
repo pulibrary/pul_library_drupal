@@ -136,8 +136,8 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => 'Books+',
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-books"></i> Books+ Search Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -159,8 +159,9 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-archive3"></i> Library Archives Results',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -181,8 +182,9 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-files"></i> Articles+ Search Results',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -203,8 +205,9 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-file-binary"></i> Princeton University Digital Library',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -301,8 +304,9 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-link"></i> Library Guides',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -369,7 +373,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Results section anchor links',
       'title' => '',
-      'body' => '<ul class="results-sections"><li><a href="#catalog_block-catalog_search_results">Books</a></li><li><a href="#summon_block-summon_search_results">Articles</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#search_libraries_and_collections-panel_pane_1">Libraries and Collections</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital Library&nbsp;(PUDL)</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#summon_block-summon_guide_results">Library Guides</a></li></ul>',
+      'body' => '<ul class="results-sections"><li>Skip to:&nbsp;</li><li><a href="#catalog_block-catalog_search_results">Books+</a></li><li><a href="#summon_block-summon_search_results">Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results" style="font-size: 13.0080003738403px; line-height: 1.538em;">Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital Library&nbsp;(PUDL)</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#summon_block-summon_guide_results">Library Guides</a></li></ul>',
       'format' => 'full_html',
       'substitute' => 1,
     );
