@@ -121,5 +121,6 @@
 
   <footer class="l-footer" role="contentinfo">
     <?php print render($page['footer']); ?>
+    <a href="#main-content" class="cd-top">Top</a>
   </footer>
 </div>

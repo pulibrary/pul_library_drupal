@@ -4,7 +4,7 @@
 	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
 	var file_icon = 'icon-file';
 	var refine_hint = 'Explore Princeton University Digital Library content.';
-        var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+        var refine_icon = '';
         var refine_message = "See All Digital Library Content";
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#pudl-search-results');
@@ -40,7 +40,7 @@
   				}).appendTo('#pudl-search-results');
 				$('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
 				if(data.number > 3) {
- 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#pudl-search-results');
+ 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div>"').appendTo('#pudl-search-results');
 				}
           var section_heading = "PUDL"; // Should be in Drupal Settings
           $('.pudl-search.refine-link a').each(function (index, value) {
@@ -69,12 +69,12 @@
 
 			} else {
                 $('#pudl-search-results-spinner').hide();
-				$('.pane-catalog-block-catalog-pudl-results').hide();
+				        $('<div class="no-results">No digital library results found. Try searching for another topic.</div>"').appendTo('#pudl-search-results');
 			}
 		},
 		error: function(data) {
             $('#pudl-search-results-spinner').hide();
-			 $('<div class="all-fail-to-load-results">Princeton University Digital Library  results are not available at this time.</div>"').appendTo('#pudl-search-results');
+			       $('<div class="all-fail-to-load-results">Princeton University Digital Library  results are not available at this time.</div>"').appendTo('#pudl-search-results');
 		},
     timeout: 5000
 	});

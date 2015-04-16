@@ -5,7 +5,7 @@
 	var refine_message = "See All Scholarly Materials in Articles+";
 	var refine_tooltip = "Expand your search or See all scholarly materials in Articles+.";
 	var summon_url = "http://princeton.summon.serialssolutions.com";
-	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+	var refine_icon = '';
   var max_display_results = 5;
 	if(query_url == "/find/all" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');
@@ -74,7 +74,7 @@
   			}).appendTo('#summon-search-results');
  			$('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
 			if(data.number > max_display_results) {
-				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'"><i class="icon-external-link"></i>&nbsp;See all Articles+ Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#summon-search-results');
+				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'">See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}
 
       // GA Tracking

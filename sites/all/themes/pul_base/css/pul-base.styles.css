@@ -490,6 +490,22 @@ h3 {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+a {
+  -moz-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  -webkit-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+  color: #1B409C;
+  text-decoration: none;
+}
+a:hover {
+  color: #132e71;
+  text-decoration: underline;
+}
+a:active, a:focus {
+  color: #132e71;
+}
+
 .pane-emergency-alert-content-block h2 {
   display: none;
 }
@@ -1585,7 +1601,8 @@ table caption {
 
 .views-more-link,
 .node-readmore a,
-.more-link a {
+.more-link a,
+.refine-link a {
   font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
   font-weight: bold;
@@ -1606,7 +1623,8 @@ table caption {
 @media (min-width: 44em) {
   .views-more-link,
   .node-readmore a,
-  .more-link a {
+  .more-link a,
+  .refine-link a {
     float: right;
     display: inline;
     padding: 3px 7px;
@@ -1614,7 +1632,8 @@ table caption {
 }
 .views-more-link:visited,
 .node-readmore a:visited,
-.more-link a:visited {
+.more-link a:visited,
+.refine-link a:visited {
   color: #89440a;
   background-color: #f5f4f1;
 }
@@ -1622,22 +1641,44 @@ table caption {
 .node-readmore a:hover,
 .node-readmore a:active,
 .more-link a:hover,
-.more-link a:active {
+.more-link a:active,
+.refine-link a:hover,
+.refine-link a:active {
   color: #ffffff;
   background-color: #b85c0e;
+  text-decoration: none;
 }
 
 .more-link a {
   float: none;
 }
 
-.page-find-all .more-link a {
-  background-color: #2352c7;
-  color: #ffffff;
+.page-find-all .more-link a,
+.page-find-all .refine-link a {
+  background-color: #ffffff;
+  color: #1B409C;
+  float: none;
 }
-.page-find-all .more-link a:hover {
-  background-color: #1B409C;
-  color: #ffffff;
+.page-find-all .more-link a:hover,
+.page-find-all .refine-link a:hover {
+  color: #132e71;
+}
+
+@media (min-width: 44em) {
+  .page-find-all .more-link a {
+    float: right;
+    display: inline;
+  }
+}
+
+.page-find-all .refine-link a {
+  display: none;
+}
+@media (min-width: 44em) {
+  .page-find-all .refine-link a {
+    float: left;
+    display: inline;
+  }
 }
 
 .block--quicktabs .homepage-tab-form-message a {
@@ -1705,6 +1746,73 @@ a.skip2main:focus {
   transition: all .2s ease-in-out;
 }
 
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.8) url(/sites/all/themes/pul_base/images/move-up.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+
+.no-touch .cd-top:hover {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
 .view-library-hours .view-header {
   border-top: none;
   border-right: 2px solid #ffffff;
@@ -2098,10 +2206,10 @@ input::placeholder {
 }
 
 .page-staff-directory [class^="icon-"],
-.page-staff-directory [class*=" icon-"], .pane-views-panes h2 [class^="icon-"],
-.pane-views-panes h2 [class*=" icon-"] {
+.page-staff-directory [class*=" icon-"], h2 [class^="icon-"],
+h2 [class*=" icon-"] {
   margin-left: 0;
-  margin-right: .35em;
+  margin-right: .35rem;
 }
 
 .page-find-all-results .results-spinner-large {
@@ -2224,6 +2332,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .pane-menu-menu-get-help-menu .menu .leaf a .libraryh3lp .button--libraryh3lp {
   font-size: 0.75rem;
 }
+.pane-menu-menu-get-help-menu .menu .leaf a:hover:before {
+  text-decoration: none;
+}
 .pane-menu-menu-get-help-menu .menu .leaf [class^="ico-"]:before, .pane-menu-menu-get-help-menu .menu .leaf [class*=" ico-"]:before {
   margin-left: 0;
   margin-right: 0.5em;
@@ -2235,6 +2346,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   text-transform: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  display: inline-block;
 }
 .pane-menu-menu-get-help-menu .menu .leaf .ico-chat:before {
   content: "\e603";
@@ -2398,6 +2510,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 }
 .wrapper--navigation .centered-navigation-menu > ul > li a:hover {
   color: #E87411;
+  text-decoration: none;
 }
 .wrapper--navigation .centered-navigation-menu > ul > li.expanded {
   padding-right: 0;
@@ -3069,6 +3182,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin: 0.5em 0;
+  clear: both;
 }
 
 .page-find-all .results-sections {
@@ -3084,6 +3198,9 @@ body.faq .ui-accordion .ui-accordion-header a {
 .page-find-all .results-sections li a {
   padding: 7px 10px;
   margin-right: 0.5em;
+}
+.page-find-all .results-sections li a:hover {
+  text-decoration: underline;
 }
 
 .more-link .back2top {

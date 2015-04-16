@@ -44,6 +44,7 @@
         font-family: $sans-serif;
         font-size: 1rem;
         margin: 0.5em 0;
+        clear: both;
     }
 }
 
@@ -60,6 +61,10 @@
         a {
             padding: 7px 10px;
             margin-right: 0.5em;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

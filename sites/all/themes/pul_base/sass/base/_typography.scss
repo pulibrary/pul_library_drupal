@@ -59,3 +59,18 @@ h3 {
     @include rhythm(0.75, 0, 0, 0.5, 1.1em);
     font-family: $font-sans;
 }
+
+a {
+  @include transition(color 0.1s linear);
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue-darker;
+    text-decoration: underline;
+  }
+
+  &:active, &:focus {
+    color: $blue-darker;
+  }
+}

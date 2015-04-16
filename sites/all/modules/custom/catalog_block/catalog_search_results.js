@@ -4,7 +4,7 @@
 	var query_url = $('#catalog-search-results').attr('data-source');
 	var refine_tooltip = "See all results or expand your search in Books+.";
 	var refine_message = "See All Results in Books+";
-	var icon_hint = '<i class="icon-external-link"></i>&nbsp;';
+	var icon_hint = '';
 	var request_hint = 'See Available Items at ';
 	var availability_hint = "Check for Available Copies";
 	var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
@@ -13,7 +13,7 @@
 	var video_icon = 'icon-video';
 	var film_icon = 'icon-film';
 	var audio_icon = 'icon-headphones';
-	var refine_icon = '<i class="icon-circle-arrow-right"></i>&nbsp;';
+	var refine_icon = '';
   var max_display_results = 5;
 	
 	if(query_url === "" || query_url == undefined) {
@@ -136,7 +136,7 @@
           
           $('<div class="books-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
 				  if(data.number > max_display_results) {
-				  	$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div><div class="back-to-top"><a href="#">Back to Top</a></div>"').appendTo('#catalog-search-results');
+				  	$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Books+ Results</a></div>"').appendTo('#catalog-search-results');
 				  }
 
           var section_heading = "Books+"; // Should be in Drupal Settings

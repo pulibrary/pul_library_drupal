@@ -5,7 +5,8 @@
 
 .views-more-link, 
 .node-readmore a, 
-.more-link a {
+.more-link a,
+.refine-link a {
     font-family: $font-serif;
     font-style: italic;
     font-weight: bold;
@@ -34,6 +35,7 @@
     &:hover, &:active {
         color: $white;
         background-color: $orange-darker;
+        text-decoration: none;
     }
 }
 
@@ -41,12 +43,30 @@
     float: none;
 }
 
-.page-find-all .more-link a {
-    background-color: $blue-lighter;
-    color: $white;
+.page-find-all .more-link a,
+.page-find-all .refine-link a {
+    background-color: $white;
+    color: $blue;
+    float: none;
 
     &:hover {
-        background-color: $blue;
-        color: $white;
+        color: $blue-darker;
+    }
+}
+
+.page-find-all .more-link a {
+    @include breakpoint($tab) {
+        float: right;
+        display: inline;
+        // padding: 3px 7px;
+    }
+}
+
+.page-find-all .refine-link a {
+    display: none;
+    @include breakpoint($tab) {
+        float: left;
+        display: inline;
+        // padding: 3px 7px;
     }
 }

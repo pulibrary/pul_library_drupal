@@ -15,6 +15,9 @@
 				.libraryh3lp .button--libraryh3lp {
 					font-size: $font-size-smaller;
 				}
+			    &:hover:before {
+			    	text-decoration: none;
+			    }
 			}
 
 			[class^="ico-"]:before, [class*=" ico-"]:before {
@@ -28,6 +31,7 @@
 			    text-transform: none;
 			    line-height: 1;
 			    -webkit-font-smoothing: antialiased;
+			    display: inline-block;
 			}
 			.ico-chat:before {
 				content: "\e603";
