@@ -47,7 +47,7 @@
  					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library results</a></div>"').appendTo('#pudl-search-results');
 				}
           var section_heading = "PUDL"; // Should be in Drupal Settings
-          $('.pudl-search.refine-link a').each(function (index, value) {
+          $('#catalog_block-catalog_pudl_results h2 a').each(function (index, value) {
              //console.log('processing header');
               //$(this).closest('h2.pane-title').text();
              $(this).click(function () {

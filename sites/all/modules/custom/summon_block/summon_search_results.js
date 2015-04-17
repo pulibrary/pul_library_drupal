@@ -83,7 +83,7 @@
 
       // GA Tracking
       var section_heading = "Summon Search"; // Should be in Drupal Settings
-      $('.summon-search.refine-link a').each(function (index, value) {
+      $('#summon_block-summon_search_results h2 a').each(function (index, value) {
          $(this).click(function () {
            ga('send', 'event', 'All Search', section_heading, 'Refine Top');
          });

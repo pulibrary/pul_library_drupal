@@ -59,7 +59,6 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-<link rel="stylesheet" href="http://i.icomoon.io/public/temp/515393d28d/pul-icons/style.css"></head>
 <body<?php print $attributes;?>>
   <?php print $page_top; ?>
   <?php print $page; ?>

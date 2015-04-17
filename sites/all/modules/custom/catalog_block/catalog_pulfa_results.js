@@ -74,10 +74,10 @@
 		            return '<h2><a href="' + data.more + '"><i class="icon-archive3"></i>Library Archives Results</a></h2>';
 		        });
 				if(data.number > 3) {
-        	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Finding Aids results</a></div>"').appendTo('#pulfa-search-results');
+        	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">See all Finding Aids results</a></div>"').appendTo('#pulfa-search-results');
 				}
           var section_heading = "PULFA"; // Should be in Drupal Settings
-          $('.pulfa-search.refine-link a').each(function (index, value) {
+          $('#catalog_block-catalog_pulfa_results h2 a').each(function (index, value) {
              //console.log('processing header');
               //$(this).closest('h2.pane-title').text();
              $(this).click(function () {

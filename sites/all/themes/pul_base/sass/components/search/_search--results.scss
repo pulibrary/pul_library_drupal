@@ -48,33 +48,78 @@
     }
 }
 
-.page-find-all .results-sections {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.page-find-all {
+    .results-section br {
+        display: none;
+    }
+    .result-section-menu {
+        list-style-type:none;
+        margin: 0;
+        padding:0;
+        display: none;
 
-    li {
-        display: inline-block;
-        float: left;
-        clear: none;
+        @include breakpoint($tab-desk){
+            display: block;
+        }
 
-        a {
-            padding: 7px 10px;
-            margin-right: 0.5em;
-            &:before {
-                margin-right: 0.35rem;
+        li {
+            width: 100%;
+            margin-bottom: 2px;
+
+            @include breakpoint($tab-desk){
+                display:inline-block;
+                float: left;
+                margin-right: 0.5em;
+                width: auto;
             }
 
-            &:hover {
-                text-decoration: underline;
+            a {
+                display:block;
+                color: $gray-darkest;
+                background: $gray-lightest;
+                text-decoration: none;
+                padding: 7px 16px;
+                width: 100%;
+
+
+                &:before {
+                    margin-right: 0.35rem;
+                }
+
+                &:hover {
+                    background: $orange;
+                    color: $white;
+                }
             }
         }
     }
+
+    .show-result-section-menu {
+        display: block;
+        text-align: center;
+        color: $white;
+        background: $gray-darker;
+        padding: 10px 0;
+        width: 100%;
+
+        &:after {
+            margin-left: .5em;
+            content: "\e625";
+            @include pul-icon;
+        }
+
+        @include breakpoint($tab-desk){
+            display: none;
+        }
+    }
+    input[type=checkbox]{
+        display: none;
+    }
+    input[type=checkbox]:checked ~ #result-section-menu {
+        display: block;
+    }
 }
 
-.more-link .back2top {
-    display: none;
-}
 .page-find-all .back2top {
     display: inline-block;
 }

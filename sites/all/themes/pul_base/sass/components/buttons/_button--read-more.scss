@@ -5,8 +5,7 @@
 
 .views-more-link, 
 .node-readmore a, 
-.more-link a,
-.refine-link a {
+.more-link a {
     font-family: $font-serif;
     font-style: italic;
     font-weight: bold;
@@ -34,39 +33,43 @@
     }
     &:hover, &:active {
         color: $white;
-        background-color: $orange-darker;
+        background-color: $orange;
         text-decoration: none;
     }
 }
 
-.more-link a {
-    float: none;
-}
-
-.page-find-all .more-link a,
-.page-find-all .refine-link a {
-    background-color: $white;
-    color: $blue;
-    float: none;
-
-    &:hover {
-        color: $blue-darker;
-    }
-}
-
 .page-find-all .more-link a {
+    background-color: $orange-darker;
+    color: $white;
+    float: none;
+    display: inline-block;
+    width: 100%;
+
+    &:after {
+        margin-left: .5em;
+        content: "\e625";
+        font-family: 'pul_base_theme';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+    }
+
     @include breakpoint($tab) {
         float: right;
-        display: inline;
-        // padding: 3px 7px;
-    }
-}
+        font-size: 1em;
+        margin-bottom: 1em;  
+        background-color: $white;
+        color: $orange-darkest;
+        width: auto;
 
-.page-find-all .refine-link a {
-    display: none;
-    @include breakpoint($tab) {
-        float: left;
-        display: inline;
-        // padding: 3px 7px;
+            &:hover {
+                background-color: $orange;
+                color: $white;
+            }
     }
 }

@@ -140,11 +140,11 @@
 	          return '<h2><a href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
 	      });
 				  if(data.number > max_display_results) {
-				  	$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all '+data.number+' Books+ results</a></div>"').appendTo('#catalog-search-results');
+				  	$('<div class="books-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+data.more+'">See all '+data.number+' Books+ results</a></div>"').appendTo('#catalog-search-results');
 				  }
 
           var section_heading = "Books+"; // Should be in Drupal Settings
-          $('.books-search.refine-link a').each(function (index, value) {
+          $('#catalog_block-catalog_search_results h2 a').each(function (index, value) {
              
              $(this).click(function () {
                ga('send', 'event', 'All Search', section_heading, 'Refine Top');

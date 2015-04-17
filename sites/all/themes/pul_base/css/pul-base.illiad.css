@@ -657,6 +657,9 @@ a:active, a:focus {
   font-weight: bold;
   color: #89440a;
 }
+.l-region--footer h2:hover, .l-region--footer h2 a:hover {
+  text-decoration: none;
+}
 .l-region--footer .leaf {
   list-style: none;
 }

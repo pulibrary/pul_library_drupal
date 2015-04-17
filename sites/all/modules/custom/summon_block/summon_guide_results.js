@@ -55,10 +55,10 @@
           return '<h2><a href="' + data.more + '"><i class="icon-link"></i>Library Guides</a></h2>';
       });
 			if(data.number > 3) {
-        $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See all '+data.number+' Library Guides results</a></div>"').appendTo('#summon-guide-results');
+        $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">See all '+data.number+' Library Guides result</a></div>"').appendTo('#summon-guide-results');
 				}
           var section_heading = "Summon Guide"; // Should be in Drupal Settings
-          $('.summon-guide.refine-link a').each(function (index, value) {
+          $('#summon_block-summon_guide_results h2 a').each(function (index, value) {
              $(this).click(function () {
                ga('send', 'event', 'All Search', section_heading, 'Refine Top');
              });

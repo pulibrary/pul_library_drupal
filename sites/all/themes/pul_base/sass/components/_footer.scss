@@ -45,6 +45,10 @@
 		@include adjust-font-size-to(16px);
 		font-weight: bold;
 		color: $orange-darkest;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	.leaf {
