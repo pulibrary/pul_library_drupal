@@ -15,7 +15,10 @@ function catalog_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Catalog'),
     '#size'  => 80,
-    '#default_value' => variable_get('catalog_search_hint')
+    '#default_value' => variable_get('catalog_search_hint'),
+    '#attributes' => array(
+        'placeholder' => variable_get('catalog_search_hint'),
+    )
   );
   $form['submit'] = array(
     '#type' => 'submit',

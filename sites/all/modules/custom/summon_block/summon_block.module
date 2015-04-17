@@ -14,7 +14,10 @@ function summon_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Articles'),
     '#size'  => 80,
-    '#default_value' => variable_get('summon_search_hint')
+    '#default_value' => variable_get('summon_search_hint'),
+    '#attributes' => array(
+        'placeholder' => variable_get('summon_search_hint'),
+    )
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'summon_block') .'/summon_block.js'; 
   $hint_settings = array('summon_search_hint' => variable_get('summon_search_hint'),

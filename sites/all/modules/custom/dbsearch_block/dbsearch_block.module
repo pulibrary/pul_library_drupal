@@ -32,7 +32,10 @@ function dbsearch_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
     '#size'  => 80,
-    '#default_value' => $default_value
+    '#default_value' => $default_value,
+    '#attributes' => array(
+        'placeholder' => $default_value,
+    )
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
   $hint_settings = array('db_search_hint' => variable_get('db_search_hint'),
