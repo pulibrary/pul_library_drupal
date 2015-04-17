@@ -21,7 +21,7 @@
         position: relative;
 
         label {
-            display: none;
+            @include visually-hidden();
         }
 
         input[type=text] {

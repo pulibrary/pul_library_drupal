@@ -2607,7 +2607,15 @@ body.faq .ui-accordion .ui-accordion-header a {
   position: relative;
 }
 .page-find-all .dbsearch-block-form > div div.form-item-query label, .page-find-all .summon-block-form > div div.form-item-query label, .page-find-all .allsearch-block-form > div div.form-item-query label, .section-research .dbsearch-block-form > div div.form-item-query label, .section-research .summon-block-form > div div.form-item-query label, .section-research .allsearch-block-form > div div.form-item-query label, .section-resource .dbsearch-block-form > div div.form-item-query label, .section-resource .summon-block-form > div div.form-item-query label, .section-resource .allsearch-block-form > div div.form-item-query label, .branch-libraries .dbsearch-block-form > div div.form-item-query label, .branch-libraries .summon-block-form > div div.form-item-query label, .branch-libraries .allsearch-block-form > div div.form-item-query label {
-  display: none;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 .page-find-all .dbsearch-block-form > div div.form-item-query input[type=text], .page-find-all .summon-block-form > div div.form-item-query input[type=text], .page-find-all .allsearch-block-form > div div.form-item-query input[type=text], .section-research .dbsearch-block-form > div div.form-item-query input[type=text], .section-research .summon-block-form > div div.form-item-query input[type=text], .section-research .allsearch-block-form > div div.form-item-query input[type=text], .section-resource .dbsearch-block-form > div div.form-item-query input[type=text], .section-resource .summon-block-form > div div.form-item-query input[type=text], .section-resource .allsearch-block-form > div div.form-item-query input[type=text], .branch-libraries .dbsearch-block-form > div div.form-item-query input[type=text], .branch-libraries .summon-block-form > div div.form-item-query input[type=text], .branch-libraries .allsearch-block-form > div div.form-item-query input[type=text] {
   width: 100%;
