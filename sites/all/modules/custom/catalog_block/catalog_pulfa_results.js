@@ -68,7 +68,11 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pulfa-search-results');
-				$('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
+				// $('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
+				$('#catalog_block-catalog_pulfa_results h2').replaceWith(function() {
+		            var url = $.trim($(this).text());
+		            return '<h2><a href="' + data.more + '"><i class="icon-archive3"></i>Library Archives Results</a></h2>';
+		        });
 				if(data.number > 3) {
         	$('<div class="pulfa-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Results in Finding Aids</a></div>"').appendTo('#pulfa-search-results');
 				}

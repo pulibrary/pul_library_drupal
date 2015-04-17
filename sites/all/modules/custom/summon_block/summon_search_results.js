@@ -72,7 +72,11 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-search-results');
- 			$('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
+ 			// $('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
+ 			$('#summon_block-summon_search_results h2').replaceWith(function() {
+		          var url = $.trim($(this).text());
+		          return '<h2><a href="' + data.more + '"><i class="icon-files"></i>Articles+ Search Results</a></h2>';
+		      });
 			if(data.number > max_display_results) {
 				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'">See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
 			}

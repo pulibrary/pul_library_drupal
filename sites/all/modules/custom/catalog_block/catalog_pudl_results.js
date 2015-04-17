@@ -38,7 +38,11 @@
     					'class': 'all-search-results-list',
     					html: items.join('')
   				}).appendTo('#pudl-search-results');
-				$('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
+				// $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
+        $('#catalog_block-catalog_pudl_results h2').replaceWith(function() {
+            var url = $.trim($(this).text());
+            return '<h2><a href="' + data.more + '"><i class="icon-file-binary"></i>Digital Library Results</a></h2>';
+        });
 				if(data.number > 3) {
  					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div>"').appendTo('#pudl-search-results');
 				}

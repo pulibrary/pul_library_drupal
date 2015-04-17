@@ -1592,7 +1592,7 @@ a.skip2main:focus {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: url(/sites/all/themes/pul_base/images/move-up.svg) no-repeat center 50%;
+  background: rgba(255, 255, 255, 0.8) url(/sites/all/themes/pul_base/images/move-up.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
@@ -2857,6 +2857,9 @@ body.faq .ui-accordion .ui-accordion-header a {
   padding: 7px 10px;
   margin-right: 0.5em;
 }
+.page-find-all .results-sections li a:before {
+  margin-right: 0.35rem;
+}
 .page-find-all .results-sections li a:hover {
   text-decoration: underline;
 }
@@ -2867,6 +2870,20 @@ body.faq .ui-accordion .ui-accordion-header a {
 
 .page-find-all .back2top {
   display: inline-block;
+}
+
+.page-find-all .l-main h2 a {
+  color: #000000;
+  text-decoration: none;
+}
+.page-find-all .l-main h2 a:hover {
+  text-decoration: none;
+  color: #b85c0e;
+}
+
+.page-find-all h2 [class^="icon-"],
+.page-find-all h2 [class*=" icon-"] {
+  margin-right: 0.5em;
 }
 
 .section-staff .view-filters, .section-staff .view-staff-list-browse {

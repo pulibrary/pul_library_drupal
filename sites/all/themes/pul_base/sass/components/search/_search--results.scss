@@ -61,6 +61,9 @@
         a {
             padding: 7px 10px;
             margin-right: 0.5em;
+            &:before {
+                margin-right: 0.35rem;
+            }
 
             &:hover {
                 text-decoration: underline;
@@ -74,4 +77,18 @@
 }
 .page-find-all .back2top {
     display: inline-block;
+}
+
+.page-find-all .l-main h2 a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        color: $orange-darker;
+    }
+}
+
+.page-find-all h2 [class^="icon-"], 
+.page-find-all h2 [class*=" icon-"] {
+    margin-right: 0.5em;
 }

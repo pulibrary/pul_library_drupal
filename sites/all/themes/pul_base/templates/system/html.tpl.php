@@ -105,6 +105,24 @@ jQuery(document).ready(function($){
       }
     }
   });
+
+  var href_staff = $('#general_site_user_search-panel_pane_1 .more-link a').attr('href');
+  var href_website = $('#general_site_keyword_search-panel_pane_1 .more-link a').attr('href');
+  var href_databases = $('#databases_keyword_search-panel_pane_2 .more-link a').attr('href');
+
+  $('#general_site_user_search-panel_pane_1 h2').replaceWith(function() {
+      var url = $.trim($(this).text());
+      return '<h2><a href="' + href_staff + '"><i class="icon-user"></i>Library Staff</a></h2>';
+  });
+  $('#general_site_keyword_search-panel_pane_1 h2').replaceWith(function() {
+      var url = $.trim($(this).text());
+      return '<h2><a href="' + href_website + '"><i class="icon-windows"></i>Library Website</a></h2>';
+  });
+  $('#databases_keyword_search-panel_pane_2 h2').replaceWith(function() {
+      var url = $.trim($(this).text());
+      return '<h2><a href="' + href_databases + '"><i class="icon-find-in-page"></i>Databases</a></h2>';
+  });
+
 });
 </script>
 

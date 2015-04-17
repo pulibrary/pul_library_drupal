@@ -5,8 +5,11 @@
         var libguides_url = "http://libguides.princeton.edu/";
         var icon_hint = "";
         var refine_icon = '';
-	var refine_tooltip = "See All Library Guides";
-	var refine_message = "See All Library Guides";
+	var refine_tooltip = "See All Library Guides Results";
+	var refine_message = "See all library guides results &rarr;";
+
+  
+
 	if(query_url === "" || query_url == undefined) {
 		$('<div class="message">Please supply search terms</div>').appendTo('#summon-guide-results');
 	} else {
@@ -46,9 +49,13 @@
     				'class': 'all-search-results-list',
     				html: items.join('')
   			}).appendTo('#summon-guide-results');
-      $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
+      // $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
+      $('#summon_block-summon_guide_results h2').replaceWith(function() {
+          var url = $.trim($(this).text());
+          return '<h2><a href="' + data.more + '"><i class="icon-link"></i>Library Guides</a></h2>';
+      });
 			if(data.number > 3) {
-        $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See All '+data.number+' Library Guides</a></div>"').appendTo('#summon-guide-results');
+        $('<div class="summon-guide more-link"><a title="'+tooltip+'" target="_blank" href="'+data.more+'">'+icon_hint+'See all '+data.number+' library guides results</a></div>"').appendTo('#summon-guide-results');
 				}
           var section_heading = "Summon Guide"; // Should be in Drupal Settings
           $('.summon-guide.refine-link a').each(function (index, value) {
