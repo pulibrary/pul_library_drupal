@@ -78,7 +78,7 @@
 		          return '<h2><a href="' + data.more + '"><i class="icon-files"></i>Articles+ Search Results</a></h2>';
 		      });
 			if(data.number > max_display_results) {
-				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'">See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
+				$('<div class="summon-search more-link"><a target="_blank" title="'+refine_tooltip+' '+data.number+' total results." href="'+more_link+'">See all '+data.number+' Articles+ results</a></div>"').appendTo('#summon-search-results');
 			}
 
       // GA Tracking

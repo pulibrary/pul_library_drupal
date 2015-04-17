@@ -44,7 +44,7 @@
             return '<h2><a href="' + data.more + '"><i class="icon-file-binary"></i>Digital Library Results</a></h2>';
         });
 				if(data.number > 3) {
- 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library Results</a></div>"').appendTo('#pudl-search-results');
+ 					$('<div class="puld-search more-link"><a target="_blank" title="'+refine_hint+' '+data.number+' total results." href="'+data.more+'">'+icon_hint+'See all Digital Library results</a></div>"').appendTo('#pudl-search-results');
 				}
           var section_heading = "PUDL"; // Should be in Drupal Settings
           $('.pudl-search.refine-link a').each(function (index, value) {
