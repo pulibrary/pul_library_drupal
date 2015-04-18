@@ -126,6 +126,8 @@ function libraries_and_collections_search_results_views_default_views() {
 
   /* Display: Libraries and Collections Search Pane */
   $handler = $view->new_display('panel_pane', 'Libraries and Collections Search Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<i class="icon-library"></i> Libraries and Collections';
   $handler->display->display_options['display_description'] = 'Search library and collections titles, descriptions, tags';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -165,7 +167,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_collection_url_url']['field'] = 'field_collection_url_url';
   $handler->display->display_options['fields']['field_collection_url_url']['label'] = '';
   $handler->display->display_options['fields']['field_collection_url_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_collection_url_url']['alter']['text'] = '<i class="icon-home">&nbsp;</i><a href="[field_collection_url_url]" title="Collection Homepage">Collection Homepage</a>';
+  $handler->display->display_options['fields']['field_collection_url_url']['alter']['text'] = '<i class="icon-web"></i><a href="[field_collection_url_url]" title="Collection Homepage">Collection Homepage</a>';
   $handler->display->display_options['fields']['field_collection_url_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url_url']['link_to_entity'] = 0;
@@ -175,7 +177,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_library_homepage_url']['field'] = 'field_library_homepage_url';
   $handler->display->display_options['fields']['field_library_homepage_url']['label'] = '';
   $handler->display->display_options['fields']['field_library_homepage_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_library_homepage_url']['alter']['text'] = '<i class="icon-home"></i> <a href="[field_library_homepage_url]" title="Library Homepage">Library Homepage</a>';
+  $handler->display->display_options['fields']['field_library_homepage_url']['alter']['text'] = '<i class="icon-web"></i> <a href="[field_library_homepage_url]" title="Library Homepage">Library Homepage</a>';
   $handler->display->display_options['fields']['field_library_homepage_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_library_homepage_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_library_homepage_url']['link_to_entity'] = 0;
@@ -216,7 +218,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class="icon-email"></i> [field_e_mail_address] ';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class="icon-mail"></i> [field_e_mail_address] ';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['type'] = 'email_plain';
   /* Field: Indexed Content: Project URL */
