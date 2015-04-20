@@ -39,8 +39,8 @@
 }
 
 .page-find-all .more-link a {
-    background-color: $orange-darker;
-    color: $white;
+    background-color: $gray-lightest;
+    color: $orange-darkest;
     float: none;
     display: inline-block;
     width: 100%;
@@ -48,15 +48,7 @@
     &:after {
         margin-left: .5em;
         content: "\e625";
-        font-family: 'pul_base_theme';
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        display: inline-block;
+        @include pul-icon;
     }
 
     @include breakpoint($tab) {

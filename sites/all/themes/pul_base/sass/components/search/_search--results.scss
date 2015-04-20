@@ -104,7 +104,7 @@
 
         &:after {
             margin-left: .5em;
-            content: "\e625";
+            content: "\e609";
             @include pul-icon;
         }
 
@@ -124,7 +124,8 @@
     display: inline-block;
 }
 
-.page-find-all .l-main h2 a {
+.page-find-all .l-main h2 a,
+.pane-summon-block-summon-guide-results h2 a {
     color: $black;
     text-decoration: none;
     &:hover {
