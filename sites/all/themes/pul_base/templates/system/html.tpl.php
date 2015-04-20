@@ -64,66 +64,12 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <!-- JS for Chat Widget. -->
-  <script 
-   type="text/javascript"> 
+  <script type="text/javascript"> 
     (function() {
       var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
       x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
       var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
     })();
   </script>
-<script>
-jQuery(document).ready(function($){
-  // browser window scroll (in pixels) after which the "back to top" link is shown
-  var offset = 300,
-    //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-    offset_opacity = 1200,
-    //duration of the top scrolling animation (in ms)
-    scroll_top_duration = 700,
-    //grab the "back to top" link
-    $back_to_top = $('.cd-top');
-
-  //hide or show the "back to top" link
-  $(window).scroll(function(){
-    ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-    if( $(this).scrollTop() > offset_opacity ) { 
-      $back_to_top.addClass('cd-fade-out');
-    }
-  });
-
-  //smooth scroll
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-
-  var href_staff = $('#general_site_user_search-panel_pane_1 .more-link a').attr('href');
-  var href_website = $('#general_site_keyword_search-panel_pane_1 .more-link a').attr('href');
-  var href_databases = $('#databases_keyword_search-panel_pane_2 .more-link a').attr('href');
-
-  $('#general_site_user_search-panel_pane_1 h2').replaceWith(function() {
-      var url = $.trim($(this).text());
-      return '<h2><a href="' + href_staff + '"><i class="icon-user"></i>Library Staff</a></h2>';
-  });
-  $('#general_site_keyword_search-panel_pane_1 h2').replaceWith(function() {
-      var url = $.trim($(this).text());
-      return '<h2><a href="' + href_website + '"><i class="icon-windows"></i>Library Website</a></h2>';
-  });
-  $('#databases_keyword_search-panel_pane_2 h2').replaceWith(function() {
-      var url = $.trim($(this).text());
-      return '<h2><a href="' + href_databases + '"><i class="icon-find-in-page"></i>Databases</a></h2>';
-  });
-
-});
-</script>
-
 </body>
 </html>
