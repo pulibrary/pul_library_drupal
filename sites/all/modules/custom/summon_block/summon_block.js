@@ -1,7 +1,9 @@
 (function($) {
     $(document).ready(function() {
         $('#summon-block-form input').focus(function() {
-            $(this).val('');
+            if ($(this).val() == Drupal.settings.summon_block.summon_search_hint) {
+                $(this).val('');
+            }
         });
 
         $('#summon-block-form').submit(function() {

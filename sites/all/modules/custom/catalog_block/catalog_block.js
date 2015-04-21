@@ -1,9 +1,9 @@
 (function($) {
     $(document).ready(function() {
         $('#catalog-block-form input').focus(function() {
-            //console.log($(this).val());
-            $(this).val('');
-            ///console.log(Drupal.settings.catalog_block.catalog_search_hint);
+            if ($(this).val() == Drupal.settings.catalog_block.catalog_search_hint) {
+                $(this).val('');
+            }
         });
 
         $('#catalog-block-form').submit(function() {
