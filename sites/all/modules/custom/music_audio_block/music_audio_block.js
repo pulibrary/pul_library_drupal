@@ -1,12 +1,12 @@
 (function($) {
     $(document).ready(function() {
-        $('#catalog-block-form input').focus(function() {
-            //console.log($(this).val());
-            $(this).val('');
-            ///console.log(Drupal.settings.music_audio_block.music_audio_search_hint);
+        $('.music-audio-block-form input').focus(function() {
+            if ($(this).val() == 'Search music in audio format.') {
+                $(this).val('');
+            }
         });
 
-        $('#catalog-block-form').submit(function() {
+        $('.music-audio-block-form').submit(function() {
             //alert($(this).find("input:first").val());
             //console.log(Drupal.settings.music_audio_block.music_audio_search_hint);
             if ($(this).find("input:first").val() == "" || $(this).find("input:first").val() == Drupal.settings.music_audio_block.music_audio_search_hint) {

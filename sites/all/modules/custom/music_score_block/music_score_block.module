@@ -10,9 +10,9 @@ function music_score_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Music Scores'),
     '#size'  => 80,
-    '#default_value' => variable_get('music_score_search_hint'),
+    '#default_value' => t('Search music in score format.'),
     '#attributes' => array(
-        'placeholder' => variable_get('music_score_search_hint'),
+        'placeholder' => t('Search music in score format.'),
     )
   );
   $form['submit'] = array(

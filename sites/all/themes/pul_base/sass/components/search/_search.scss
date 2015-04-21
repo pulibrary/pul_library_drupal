@@ -1,4 +1,4 @@
-.block--quicktabs {
+.block--quicktabs, .pane-quicktabs-mendel-search-tabs {
 	margin: 0 auto;
 	float: none;
 
@@ -146,4 +146,17 @@
 			font-size: $font-size-smaller;
 		}
 	}
+}
+
+.pane-quicktabs-mendel-search-tabs .quicktabs-tabs {
+	margin-left: 0;
+
+	> li {
+		width: 33.33%;
+	}
+}
+
+.pane-quicktabs-mendel-search-tabs h2 {
+	display: block;
+	margin-bottom: 1em;
 }

@@ -1,6 +1,15 @@
-.page-find, .section-research, .section-resource, .branch-libraries {
+.page-find, 
+.section-research, 
+.section-resource, 
+.branch-libraries {
 
-  .dbsearch-block-form, .summon-block-form, .allsearch-block-form, .website-block-form {
+  .dbsearch-block-form,
+  .summon-block-form,
+  // .music-audio-block-form,
+  // .music-score-block-form,
+  // .music-video-block-form,
+  .allsearch-block-form, 
+  .website-block-form {
 
    > div {
       $search-bar-border-color: $base-border-color;

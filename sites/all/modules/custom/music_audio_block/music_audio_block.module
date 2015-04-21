@@ -10,9 +10,9 @@ function music_audio_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Music Audio'),
     '#size'  => 80,
-    '#default_value' => variable_get('music_audio_search_hint'),
+    '#default_value' => t('Search music in audio format.'),
     '#attributes' => array(
-        'placeholder' => variable_get('music_audio_search_hint'),
+        'placeholder' => t('Search music in audio format.'),
     )
   );
   $form['submit'] = array(
@@ -146,7 +146,7 @@ function music_audio_block_block_configure($delta = '') {
       '#title' => t('Search Box Hint Text'),
       '#size' => 60,
       '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
-      '#default_value' => variable_get('music_audio_search_hint',  t('Hint you want to display.')),
+      '#default_value' => variable_get('music_audio_search_hint',  t('Search items in audio format')),
     );
     $form['music_audio_search_error'] = array(
       '#type' => 'textfield',
@@ -189,22 +189,10 @@ function music_audio_block_block_view($delta = '') {
     $block['content'] = music_audio_block_contents($delta);
  
   } elseif ($delta == 'music_audio_search_results') {
-    $block['subject'] = t('Books+ Search Results');
+    $block['subject'] = t('Music Audio Search Results');
     $block['content'] = music_audio_search_results_content($delta);
     drupal_add_js(array('music_audio_block' => array('request' => 'query')), 'setting');
     drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/music_audio_search_results.js');  
-  } elseif ($delta == 'catalog_journal_results') {
-    $block['subject'] = t('Journal Search Results');
-    $block['content'] = catalog_journal_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/catalog_journal_results.js');   
-  } elseif ($delta == 'catalog_pulfa_results') {
-    $block['subject'] = t('Library Archives Results');
-    $block['content'] = catalog_pulfa_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/catalog_pulfa_results.js');   
-  } elseif ($delta == 'catalog_pudl_results') {
-    $block['subject'] = t('Princeton University Digital Library');
-    $block['content'] = catalog_pudl_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/catalog_pudl_results.js');
-  }
+  } 
   return $block;
 }
