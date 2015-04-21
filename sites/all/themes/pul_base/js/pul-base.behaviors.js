@@ -66,6 +66,74 @@
     //}
   //};
 
+  Drupal.behaviors.pulSmoothScroll = {
+    attach: function (context) {
+    // browser window scroll (in pixels) after which the "back to top" link is shown
+    var offset = 300,
+      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+      offset_opacity = 1200,
+      //duration of the top scrolling animation (in ms)
+      scroll_top_duration = 700,
+      //grab the "back to top" link
+      $back_to_top = $('.cd-top');
+
+      //hide or show the "back to top" link
+      $(window).scroll(function(){
+        ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+        if( $(this).scrollTop() > offset_opacity ) { 
+          $back_to_top.addClass('cd-fade-out');
+        }
+      });
+
+      //smooth scroll
+      $('a[href*=#main-content]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    }
+  };
+
+  Drupal.behaviors.pulSearchHeadersLinkBehavior = {
+    attach: function (context) {
+      var href_staff = $('.page-find-all-results #general_site_user_search-panel_pane_1 .more-link a').attr('href');
+      var href_website = $('.page-find-all-results #general_site_keyword_search-panel_pane_1 .more-link a').attr('href');
+      var href_databases = $('.page-find-all-results #databases_keyword_search-panel_pane_2 .more-link a').attr('href');
+      //staff search
+      var l_staff = $('#general_site_user_search-panel_pane_1 .item-list li').length;
+      if (l_staff > 2) {
+        $('.page-find-all-results #general_site_user_search-panel_pane_1 h2').replaceWith(function() {
+            return '<h2><a href="' + href_staff + '"><i class="icon-staff"></i>Library Staff</a></h2>';
+        });
+      } else {
+      }
+      //site search
+      var l_site = $('#general_site_keyword_search-panel_pane_1 .item-list li').length;
+      if(l_site > 2) {
+        $('.page-find-all-results #general_site_keyword_search-panel_pane_1 h2').replaceWith(function() {
+            return '<h2><a href="' + href_website + '"><i class="icon-windows"></i>Library Website</a></h2>';
+        });
+      } else {
+      }
+      // databases search
+      var l_db = $('#databases_keyword_search-panel_pane_2 .item-list li').length;
+      if(l_db > 2) {
+        $('.page-find-all-results #databases_keyword_search-panel_pane_2 h2').replaceWith(function() {
+          return '<h2><a href="' + href_databases + '"><i class="icon-databases"></i>Databases</a></h2>';
+      });
+      } else {
+      }
+      
+    }
+  };
+
   Drupal.behaviors.pulMainMenuBehavior = {
     attach: function (context) {
       // By using the 'context' variable we make sure that our code only runs on
@@ -207,6 +275,43 @@
           $(this).click(function () {
             ga('send', 'event', 'Library Daily Hours', 'click', $(this).text() + ' Position ' + result_position);
             console.log('logging ' + $(this).text() + result_position);
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackTabLinkUsage = {
+    attach: function (context) {
+      // all search tab
+      $('#quicktabs-tabpage-homepage_search_tabs-0 .homepage-tab-form-message', context).once('pul', function () {
+        $('#quicktabs-tabpage-homepage_search_tabs-0 .homepage-tab-form-message a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', $(this).text(), 'All Tab');
+          });
+        });
+      });
+      // books+ tab
+      $('#quicktabs-tabpage-homepage_search_tabs-1 .homepage-tab-form-message', context).once('pul', function () {
+        $('#quicktabs-tabpage-homepage_search_tabs-1 .homepage-tab-form-message a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', $(this).text(), 'Books+ Tab');
+          });
+        });
+      });
+      // articles+ tab
+      $('#quicktabs-tabpage-homepage_search_tabs-2 .homepage-tab-form-message', context).once('pul', function () {
+        $('#quicktabs-tabpage-homepage_search_tabs-2 .homepage-tab-form-message a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', $(this).text(), 'Articles+ Tab');
+          });
+        });
+      });
+      // databases tab
+      $('#quicktabs-tabpage-homepage_search_tabs-3 .homepage-tab-form-message', context).once('pul', function () {
+        $('#quicktabs-tabpage-homepage_search_tabs-3 .homepage-tab-form-message a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', $(this).text(), 'Databases Tab');
           });
         });
       });

@@ -1,0 +1,198 @@
+<?php
+
+
+function music_video_block_form($form, &$form_state) {
+    
+  $form = array();
+  $path = $_GET['q'];  
+
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('Search Music Videos'),
+    '#size'  => 80,
+    '#default_value' => t('Search music in video format.'),
+    '#attributes' => array(
+        'placeholder' => t('Search music in video format.'),
+    )
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+   $form['sid'] = array(
+     '#type' => 'hidden',
+     '#value' => t("library-core"),
+   );
+    $form['#attached']['js'][] = drupal_get_path('module', 'music_video_block') .'/music_video_block.js'; 
+    $hint_settings = array('music_video_search_hint' => variable_get('music_video_search_hint'),
+                           'music_video_search_error' => variable_get('music_video_search_error')
+                           );   
+    $form['#attached']['js'][] = array(
+      'data' => array('music_video_block' => $hint_settings),
+      'type' => 'setting',
+     );
+   $form['#action'] = url('/searchit/search/mvideo', array('external' => true));
+   $form['#target'] = "_parent";
+   $form['#method'] = "get";
+   $form['#suffix'] = $form_suffix;
+   return $form;
+
+}
+
+function music_video_block_form_validate($form, &$form_state) {
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('music_video_search_hint')) {
+    form_set_error('term', t('Enter Search Terms'));
+  }
+}
+
+
+function music_video_block_contents() {
+  return drupal_get_form('music_video_block_form'); // must define a function 
+}
+
+function music_video_block_get_current_filter($path) {
+    $path_parts = explode("find/all/", $path);
+    if(isset($path_parts[1])) {
+        return filter_xss($path_parts[1]);
+        return $path_parts[1];
+    }
+}
+
+function music_video_block_query_escape($drupal_path) {
+  $query = music_video_block_get_current_filter($drupal_path);
+  return drupal_encode_path($query);
+}
+
+function  music_video_block_get_sid() {
+    return "library-main";
+}
+
+function music_video_search_results_content() {
+  $path = music_video_block_query_escape($_GET['q']);
+  $sid = music_video_block_get_sid();
+  $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
+  $block_content = array(
+    '#markup' => "<div data-source='/searchit/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
+  ); 
+  return $block_content;
+}
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ *
+function music_video_block_menu() {
+  $items['music_video_block'] = array(
+    'page callback' => 'music_video_block_page',
+    'access callback' => TRUE,
+    'title' => 'Catalog Search',
+  );
+  return $items;
+}
+*/
+/**
+ * Implements hook_page()
+ * 
+ */
+ 
+function music_video_block_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The Books+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function music_video_block_block_info() {
+  
+  $blocks['music_video_search'] = array(
+      // info: The name of the block.
+      'info' => t('Music Video Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   $blocks['music_video_search_results'] = array(
+      // block for search results from "books+" aka primo
+      'info' => t('Music Video Search Results'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function music_video_block_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'music_video_search') { //in this case the delta is the name of block
+
+    $form['music_video_search_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Search Box Hint Text'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when catalog search box is displayed.'),
+      '#default_value' => variable_get('music_video_search_hint',  t('Hint you want to display.')),
+    );
+    $form['music_video_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Invalid Search Error'),
+      '#size' => 60,
+      '#description' => t('This message will display when the user submits and empty search for the Books+ Block.'),
+      '#default_value' => variable_get('music_video_search_error',  t('Supply a Books+ Search Term.')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function music_video_block_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'music_video_search') {
+    // Have Drupal save the string to the database.
+    variable_set('music_video_search_hint', $edit['music_video_search_hint']);
+    variable_set('music_video_search_error', $edit['music_video_search_error']);
+  }
+  
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function music_video_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  
+  if ($delta == 'music_video_search') {
+    $block['subject'] = t('Music Video Search');
+    $block['content'] = music_video_block_contents($delta);
+ 
+  } elseif ($delta == 'music_video_search_results') {
+    $block['subject'] = t('Music Video Search Results');
+    $block['content'] = music_video_search_results_content($delta);
+    drupal_add_js(array('music_video_block' => array('request' => 'query')), 'setting');
+    drupal_add_js(drupal_get_path('module', 'music_video_block') .'/music_video_search_results.js');  
+  } 
+  return $block;
+}

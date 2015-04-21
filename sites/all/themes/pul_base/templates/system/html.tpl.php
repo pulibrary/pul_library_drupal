@@ -59,20 +59,17 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
-</head>
 <body<?php print $attributes;?>>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <!-- JS for Chat Widget. -->
-  <script 
-   type="text/javascript"> 
+  <script type="text/javascript"> 
     (function() {
       var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
       x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
       var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
     })();
   </script>
-
 </body>
 </html>

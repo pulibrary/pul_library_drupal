@@ -487,6 +487,19 @@ h3 {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+a {
+  transition: color 0.1s linear;
+  color: #1B409C;
+  text-decoration: none;
+}
+a:hover {
+  color: #132e71;
+  text-decoration: underline;
+}
+a:active, a:focus {
+  color: #132e71;
+}
+
 .wrapper--branding {
   background-color: #494f57;
   min-height: 50px;
@@ -637,6 +650,9 @@ h3 {
   line-height: 1.5rem;
   font-weight: bold;
   color: #89440a;
+}
+.l-region--footer h2:hover, .l-region--footer h2 a:hover {
+  text-decoration: none;
 }
 .l-region--footer .leaf {
   list-style: none;
@@ -810,6 +826,7 @@ h3 {
 }
 .wrapper--navigation .centered-navigation-menu > ul > li a:hover {
   color: #E87411;
+  text-decoration: none;
 }
 .wrapper--navigation .centered-navigation-menu > ul > li.expanded {
   padding-right: 0;

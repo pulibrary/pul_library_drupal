@@ -18,7 +18,7 @@ function dbsearch_block_form($form, &$form_state) {
 
   if(drupal_is_front_page()) { // should keyed off <front>
     $prefix = "";
-    $form_suffix = '<div class="homepage-tab-form-message">Browse By: <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB A to Z\', \'DB Tab\']);" href="/research/databases/">A to Z</a> | <a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'DB Subjects\', \'DB Tab\']);" href="/research/databases/subjects">By Subject</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message">Browse By: <a href="/research/databases/">A to Z</a> | <a href="/research/databases/subjects">By Subject</a></div>';
   } else {
     $prefix = "";
     $form_suffix = "";
@@ -32,7 +32,10 @@ function dbsearch_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
     '#size'  => 80,
-    '#default_value' => $default_value
+    '#default_value' => $default_value,
+    '#attributes' => array(
+        'placeholder' => $default_value,
+    )
   );
   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
   $hint_settings = array('db_search_hint' => variable_get('db_search_hint'),
