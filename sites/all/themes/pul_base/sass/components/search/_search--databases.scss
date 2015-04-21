@@ -58,7 +58,7 @@
           @include border-top-left-radius(0);
           @include border-bottom-left-radius(0);
 
-          &:hover {
+          &:hover, &:focus {
             background-color: $orange;
           }
       }
