@@ -7,8 +7,9 @@
         var request_hint = 'See Available Items at ';
         var availability_hint = "Check for Available Copies";
         var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
-        var icon_hint = 'icon-newtab';
+        var icon_hint = '<i class="icon-newtab"></i>';
         var book_icon = 'icon-book';
+        var item_icon = 'icon-databases';
         var journal_icon = 'icon-text';
         var video_icon = 'icon-video';
         var film_icon = 'icon-film';
@@ -90,6 +91,8 @@
                                 var icon_type = audio_icon;
                             } else if (result['format'] == 'journal') {
                                 var icon_type = journal_icon;
+                            } else if (result['format'] == 'other') {
+                                var icon_type = item_icon;
                             } else {
                                 var icon_type = null;
                             }
