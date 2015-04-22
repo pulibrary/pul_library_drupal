@@ -50,7 +50,7 @@
                         // $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
                         $('#summon_block-summon_guide_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + tooltip + '" href="' + data.more + '"><i class="icon-links"></i>Library Guides</a></h2>';
+                            return '<h2><a title="' + tooltip + '" href="' + data.more + '"><i class="icon-links"></i>Library Guides Results</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="summon-guide more-link"><a title="' + tooltip + '" target="_blank" href="' + data.more + '">See all ' + data.number + ' Library Guides result</a></div>"').appendTo('#summon-guide-results');
@@ -77,7 +77,7 @@
                         });
                     } else {
                         $('#guide-search-results-spinner').hide();
-                        $('<div class="no-results">No guides found. <a href="' + libguides_url + '">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
+                        $('<div class="no-results">No library guides results found. <a href="' + libguides_url + '">Browse guides</a> for available topics</div>."').appendTo('#summon-guide-results');
                     }
 
                 },

@@ -1,0 +1,14 @@
+name = Search Results Views
+description = Search results views for databases, staff and website
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = search_results_views
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = databases_keyword_search
+features[views_view][] = general_site_keyword_search
+features[views_view][] = general_site_user_search
+features_exclude[dependencies][ctools] = ctools
