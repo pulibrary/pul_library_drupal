@@ -66,9 +66,7 @@ libraries/engineering
 libraries/architecture
 libraries/stokes
 libraries/plasma-physics
-libraries/scilib
-libraries/music
-libraries/marquand',
+libraries/scilib',
           ),
           'context' => 'empty',
           'not' => FALSE,

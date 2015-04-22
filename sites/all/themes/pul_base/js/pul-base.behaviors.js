@@ -110,7 +110,7 @@
       var l_staff = $('#general_site_user_search-panel_pane_1 .item-list li').length;
       if (l_staff > 2) {
         $('.page-find-all-results #general_site_user_search-panel_pane_1 h2').replaceWith(function() {
-            return '<h2><a href="' + href_staff + '"><i class="icon-staff"></i>Library Staff</a></h2>';
+            return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-staff"></i>Library Staff Results</a></h2>';
         });
       } else {
       }
@@ -118,7 +118,7 @@
       var l_site = $('#general_site_keyword_search-panel_pane_1 .item-list li').length;
       if(l_site > 2) {
         $('.page-find-all-results #general_site_keyword_search-panel_pane_1 h2').replaceWith(function() {
-            return '<h2><a href="' + href_website + '"><i class="icon-windows"></i>Library Website</a></h2>';
+            return '<h2><a href="' + href_website + '" title="See all library website results."><i class="icon-windows"></i>Library Website Results</a></h2>';
         });
       } else {
       }
@@ -126,7 +126,7 @@
       var l_db = $('#databases_keyword_search-panel_pane_2 .item-list li').length;
       if(l_db > 2) {
         $('.page-find-all-results #databases_keyword_search-panel_pane_2 h2').replaceWith(function() {
-          return '<h2><a href="' + href_databases + '"><i class="icon-databases"></i>Databases</a></h2>';
+          return '<h2><a href="' + href_databases + '" title="See all database results."><i class="icon-databases"></i>Databases Results</a></h2>';
       });
       } else {
       }

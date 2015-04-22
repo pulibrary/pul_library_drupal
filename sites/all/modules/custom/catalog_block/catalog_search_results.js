@@ -7,8 +7,9 @@
         var request_hint = 'See Available Items at ';
         var availability_hint = "Check for Available Copies";
         var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
-        var icon_hint = 'icon-newtab';
+        var icon_hint = '<i class="icon-newtab"></i>';
         var book_icon = 'icon-book';
+        var item_icon = 'icon-databases';
         var journal_icon = 'icon-text';
         var video_icon = 'icon-video';
         var film_icon = 'icon-film';
@@ -90,6 +91,8 @@
                                 var icon_type = audio_icon;
                             } else if (result['format'] == 'journal') {
                                 var icon_type = journal_icon;
+                            } else if (result['format'] == 'other') {
+                                var icon_type = item_icon;
                             } else {
                                 var icon_type = null;
                             }
@@ -135,7 +138,7 @@
                         // $('<div class="books-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
                         $('#catalog_block-catalog_search_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
                         });
                         if (data.number > max_display_results) {
                             $('<div class="books-search more-link"><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '">See all ' + data.number + ' Books+ results</a></div>"').appendTo('#catalog-search-results');

@@ -70,7 +70,7 @@
                         // $('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
                         $('#catalog_block-catalog_pulfa_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a href="' + data.more + '"><i class="icon-archives"></i>Library Archives Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-archives"></i>Library Archives Results</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="pulfa-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Finding Aids results</a></div>"').appendTo('#pulfa-search-results');

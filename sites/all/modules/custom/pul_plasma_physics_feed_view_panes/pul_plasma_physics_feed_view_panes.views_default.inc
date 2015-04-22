@@ -116,7 +116,7 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-4" class="tab">Physical Revies</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a href="#tab-4" class="tab">Physical Reviews</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

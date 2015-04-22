@@ -160,7 +160,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-archives"></i> Library Archives',
+      'override_title_text' => '<i class="icon-archives"></i> Library Archives Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -206,7 +206,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-digital"></i> Digital Library',
+      'override_title_text' => '<i class="icon-digital"></i> Digital Library Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -305,7 +305,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-links"></i> Library Guides',
+      'override_title_text' => '<i class="icon-links"></i> Library Guides Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
