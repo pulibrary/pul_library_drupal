@@ -59,7 +59,7 @@
                         // $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
                         $('#catalog_block-catalog_pudl_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a href="' + data.more + '"><i class="icon-digital"></i>Digital Library Results</a></h2>';
+                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-digital"></i>Digital Library Results</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Digital Library results</a></div>"').appendTo('#pudl-search-results');

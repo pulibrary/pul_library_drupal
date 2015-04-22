@@ -138,7 +138,7 @@
                         // $('<div class="books-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
                         $('#catalog_block-catalog_search_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
                         });
                         if (data.number > max_display_results) {
                             $('<div class="books-search more-link"><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '">See all ' + data.number + ' Books+ results</a></div>"').appendTo('#catalog-search-results');
