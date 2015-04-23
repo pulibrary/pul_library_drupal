@@ -124,6 +124,7 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -131,6 +132,7 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -139,16 +141,24 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
       'settings' => array(
         'caption_from_title' => 1,
         'insert' => 1,
-        'insert_absolute' => FALSE,
+        'insert_absolute' => 0,
         'insert_class' => '',
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
+          'icon_link' => 0,
           'image' => 'image',
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 'image_large',
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 'image_medium',
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 'image_thumbnail',
           'link' => 0,
         ),
@@ -159,6 +169,7 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Translatables

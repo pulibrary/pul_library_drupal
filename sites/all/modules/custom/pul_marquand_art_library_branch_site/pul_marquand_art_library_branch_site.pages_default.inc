@@ -542,7 +542,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-afea26bc-d209-48f9-8c5e-829921500bed';
+    $pane->pid = 'new-613b7db4-b688-47ae-9341-34faeaad247c';
     $pane->panel = 'first';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-branch-marquand';
@@ -561,9 +561,9 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'afea26bc-d209-48f9-8c5e-829921500bed';
-    $display->content['new-afea26bc-d209-48f9-8c5e-829921500bed'] = $pane;
-    $display->panels['first'][0] = 'new-afea26bc-d209-48f9-8c5e-829921500bed';
+    $pane->uuid = '613b7db4-b688-47ae-9341-34faeaad247c';
+    $display->content['new-613b7db4-b688-47ae-9341-34faeaad247c'] = $pane;
+    $display->panels['first'][0] = 'new-613b7db4-b688-47ae-9341-34faeaad247c';
     $pane = new stdClass();
     $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
@@ -691,7 +691,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-get-help-menu';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
@@ -709,6 +709,32 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
     $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane = new stdClass();
+    $pane->pid = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Featured Resources',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '445f9490-0cfe-420e-8d45-950c00e66303';
+    $display->content['new-445f9490-0cfe-420e-8d45-950c00e66303'] = $pane;
+    $display->panels['second'][1] = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
+    $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
     $pane->type = 'views_panes';
@@ -720,7 +746,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
         'nid' => '7790',
       ),
       'override_title' => 1,
-      'override_title_text' => 'Marquand Art Library',
+      'override_title_text' => 'Marquand Library of Art and Archaeology',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
