@@ -235,7 +235,8 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_display_on_news_page'
+  // Exported field_instance:
+  // 'node-library_news_item-field_display_on_news_page'
   $field_instances['node-library_news_item-field_display_on_news_page'] = array(
     'bundle' => 'library_news_item',
     'default_value' => array(
@@ -400,7 +401,8 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_article_snippet'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_article_snippet'
   $field_instances['node-library_news_item-field_news_article_snippet'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -520,7 +522,8 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_featured_graphic'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_featured_graphic'
   $field_instances['node-library_news_item-field_news_featured_graphic'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -554,6 +557,7 @@ function library_news_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => 'news-images',
       'file_extensions' => 'png gif jpg jpeg',
@@ -561,6 +565,7 @@ function library_news_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -574,21 +579,19 @@ function library_news_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -599,9 +602,11 @@ function library_news_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_file_attachemtns'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_file_attachemtns'
   $field_instances['node-library_news_item-field_news_file_attachemtns'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -700,6 +705,7 @@ function library_news_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => 'news/images',
       'file_extensions' => 'png gif jpg jpeg',
@@ -707,6 +713,7 @@ function library_news_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -720,21 +727,19 @@ function library_news_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 'image',
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 'image_large',
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 'image_medium',
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 'image_thumbnail',
           'link' => 0,
         ),
@@ -745,6 +750,7 @@ function library_news_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 38,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_news_libraries'
@@ -788,7 +794,8 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_library_contact'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_library_contact'
   $field_instances['node-library_news_item-field_news_library_contact'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -832,7 +839,8 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_more_information'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_more_information'
   $field_instances['node-library_news_item-field_news_more_information'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -926,7 +934,8 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_physical_description'
+  // Exported field_instance:
+  // 'node-library_news_item-field_physical_description'
   $field_instances['node-library_news_item-field_physical_description'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
