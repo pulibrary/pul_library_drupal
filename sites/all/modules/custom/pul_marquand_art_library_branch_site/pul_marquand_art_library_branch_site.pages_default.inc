@@ -504,7 +504,10 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

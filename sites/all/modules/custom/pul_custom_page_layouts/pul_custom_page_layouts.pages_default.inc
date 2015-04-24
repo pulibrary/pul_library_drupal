@@ -942,6 +942,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'staff/departments';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'none',
@@ -1996,7 +1998,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -2471,7 +2476,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_title = 'Research Categories Landing Page';
   $page->admin_description = 'Page of PUL Featured Links related to Research';
   $page->path = 'research';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -2620,7 +2628,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_title = 'Service Categories Landing Page';
   $page->admin_description = 'Holds lists of Top PUL Service Categories';
   $page->path = 'services';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -3066,6 +3077,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'staff/specialists';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'none',
@@ -3937,6 +3950,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'find/website/%query';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'none',
