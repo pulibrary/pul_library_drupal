@@ -521,9 +521,10 @@ a:active, a:focus {
 }
 .alert--message i, .messages-error i {
   color: #ffffff;
+  margin-right: 0.5em;
 }
 
-.four_five_three_stacked-region--top {
+.alert--message {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
@@ -546,7 +547,7 @@ a:active, a:focus {
     opacity: 0;
   }
 }
-.four_five_three_stacked-region--top {
+.alert--message {
   -webkit-animation-name: flash;
   animation-name: flash;
 }
