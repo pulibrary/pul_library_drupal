@@ -23,7 +23,10 @@ function allsearch_form_form($form, &$form_state) {
     '#title' =>  t('All Search'),
     '#size'  => 80,
     '#required' => TRUE,
-    '#default_value' => $default_value
+    '#default_value' => $default_value,
+    '#attributes' => array(
+        'placeholder' => $default_value,
+    )
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -45,7 +48,7 @@ function allsearch_form_form($form, &$form_state) {
     * will ensure this form always posts through the bare current path
     * 
     */
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a onclick="_gaq.push([\'_trackEvent\', \'Tab Link\', \'Main Catalog\', \'All Tab\']);" title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
    $form['#action'] = url('');
    $form['#method'] = "post";
    $form['#submit'] = array('allsearch_form_form_redirect');

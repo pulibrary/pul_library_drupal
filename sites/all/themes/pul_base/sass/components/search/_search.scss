@@ -1,4 +1,4 @@
-.block--quicktabs {
+.block--quicktabs, .pane-quicktabs-mendel-search-tabs {
 	margin: 0 auto;
 	float: none;
 
@@ -100,11 +100,6 @@
 	.form-type-textfield {
 		margin-bottom: 0;
 	}
-	input:focus {
-		border-color: $orange-light;
-		box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 3px rgba($orange, 0.7);
-		outline: none;
-	}
 	.block__content {
 		overflow: auto;
 	}
@@ -122,6 +117,11 @@
 		border: 1px solid #737373;
 		font-family: $font-sans;
 		@include border-radius(4px);
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
 	}
 	.quicktabs_main input[type="submit"] {
 		font-family: $font-sans;
@@ -146,4 +146,17 @@
 			font-size: $font-size-smaller;
 		}
 	}
+}
+
+.pane-quicktabs-mendel-search-tabs .quicktabs-tabs {
+	margin-left: 0;
+
+	> li {
+		width: 33.33%;
+	}
+}
+
+.pane-quicktabs-mendel-search-tabs h2 {
+	display: block;
+	margin-bottom: 1em;
 }

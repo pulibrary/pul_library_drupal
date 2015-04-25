@@ -70,7 +70,7 @@
  * @see omega_preprocess_page()
  */
 ?>
-<div class="l-page">
+<div class="l-page" id="l-page">
   <header class="l-header" role="banner">
     <a href="#main-content" class="skip2main"><?php print t('Skip to main content'); ?></a>
     <div class="wrapper wrapper--branding">
@@ -121,5 +121,6 @@
 
   <footer class="l-footer" role="contentinfo">
     <?php print render($page['footer']); ?>
+    <a href="#l-page" class="cd-top">Top</a>
   </footer>
 </div>

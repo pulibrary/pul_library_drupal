@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the music_video_search module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function music_video_block_uninstall() {
+  variable_del('music_video_search_hint');
+}

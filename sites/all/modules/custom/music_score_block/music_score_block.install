@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the music_score_search module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function music_score_block_uninstall() {
+  variable_del('music_score_search_hint');
+}

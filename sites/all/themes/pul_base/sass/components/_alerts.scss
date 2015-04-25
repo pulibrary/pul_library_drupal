@@ -34,10 +34,11 @@
     }
     i {
         color: $white;
+        margin-right: 0.5em;
     }
 }
 
-.four_five_three_stacked-region--top { 
+.alert--message { 
     -webkit-animation-duration: 2s; 
     animation-duration: 2s; 
     -webkit-animation-fill-mode: both; 
@@ -52,7 +53,7 @@
     0%, 100% {opacity: 1;} 
     50% {opacity: 0;} 
 } 
-.four_five_three_stacked-region--top { 
+.alert--message { 
     -webkit-animation-name: flash; 
     animation-name: flash; 
 }

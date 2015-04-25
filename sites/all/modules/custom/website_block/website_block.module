@@ -26,6 +26,9 @@ function website_block_form($form, &$form_state) {
     '#size'  => 40,
     '#required' => TRUE,
     '#default_value' => $default_value,
+    '#attributes' => array(
+        'placeholder' => $default_value,
+    )
   );
   $form['submit'] = array(
     '#type' => 'submit',

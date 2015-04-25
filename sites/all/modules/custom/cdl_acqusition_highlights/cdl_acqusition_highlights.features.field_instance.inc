@@ -72,7 +72,8 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_bibliographic_record'
+  // Exported field_instance:
+  // 'node-acquisitions_highlights-field_bibliographic_record'
   $field_instances['node-acquisitions_highlights-field_bibliographic_record'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -214,7 +215,8 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_cdl_rel_database_page'
+  // Exported field_instance:
+  // 'node-acquisitions_highlights-field_cdl_rel_database_page'
   $field_instances['node-acquisitions_highlights-field_cdl_rel_database_page'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -285,7 +287,8 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_cdl_specialist_profile'
+  // Exported field_instance:
+  // 'node-acquisitions_highlights-field_cdl_specialist_profile'
   $field_instances['node-acquisitions_highlights-field_cdl_specialist_profile'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -422,7 +425,8 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_image_new_item'
+  // Exported field_instance:
+  // 'node-acquisitions_highlights-field_image_new_item'
   $field_instances['node-acquisitions_highlights-field_image_new_item'] = array(
     'bundle' => 'acquisitions_highlights',
     'deleted' => 0,
@@ -479,7 +483,8 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     'label' => 'Sample Graphic',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -487,6 +492,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '160x160',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -500,22 +506,14 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__homepage_callout' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__pul_large_spotlight_graphic' => 0,
-          'colorbox__pul_logo_file' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
           'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
@@ -531,6 +529,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 1,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-acquisitions_highlights-field_specialist'

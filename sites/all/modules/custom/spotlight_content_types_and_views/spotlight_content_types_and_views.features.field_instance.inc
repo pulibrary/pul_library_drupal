@@ -78,7 +78,8 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_background'
+  // Exported field_instance:
+  // 'node-pul_landing_page-field_pul_landing_background'
   $field_instances['node-pul_landing_page-field_pul_landing_background'] = array(
     'bundle' => 'pul_landing_page',
     'deleted' => 0,
@@ -131,7 +132,8 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     'label' => 'Background Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -139,6 +141,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -152,21 +155,19 @@ function spotlight_content_types_and_views_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -177,6 +178,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 34,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-pul_landing_page-field_pul_landing_logo'
@@ -233,6 +235,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => 'logos',
       'file_extensions' => 'png gif jpg jpeg',
@@ -240,6 +243,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -253,21 +257,19 @@ function spotlight_content_types_and_views_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -278,9 +280,11 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 33,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_page_title'
+  // Exported field_instance:
+  // 'node-pul_landing_page-field_pul_landing_page_title'
   $field_instances['node-pul_landing_page-field_pul_landing_page_title'] = array(
     'bundle' => 'pul_landing_page',
     'default_value' => NULL,
@@ -405,7 +409,8 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-pul_spotlight_graphic-field_pul_spotlight_image'
+  // Exported field_instance:
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_image'
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_image'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'deleted' => 0,
@@ -453,6 +458,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => 'spotlight',
       'file_extensions' => 'png gif jpg jpeg',
@@ -460,6 +466,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -473,21 +480,19 @@ function spotlight_content_types_and_views_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__flexslider_full' => 0,
-          'colorbox__large' => 0,
-          'colorbox__library-news' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__news-image' => 0,
-          'colorbox__profile-photo' => 0,
-          'colorbox__thumbnail' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -498,9 +503,11 @@ function spotlight_content_types_and_views_field_default_field_instances() {
       'type' => 'image_image',
       'weight' => 32,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-pul_spotlight_graphic-field_pul_spotlight_tags'
+  // Exported field_instance:
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_tags'
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_tags'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'default_value' => NULL,
@@ -556,7 +563,8 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-pul_spotlight_graphic-field_pul_spotlight_url'
+  // Exported field_instance:
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_url'
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_url'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'default_value' => NULL,

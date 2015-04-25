@@ -25,7 +25,9 @@
     }
 }
 
-.pul_base_four_four_four_stacked-region {
+.pul_base_four_four_four_stacked-region--first,
+.pul_base_four_four_four_stacked-region--second,
+.pul_base_four_four_four_stacked-region--third {
     li {
         clear: both;
     }
@@ -35,4 +37,104 @@
         margin-top: 1.5em;
         padding-top: 1em;
     }
+    .refine-link {
+        margin-bottom: 0.5em;
+    }
+    .see-also-link {
+        font-family: $sans-serif;
+        font-size: 1rem;
+        margin: 0.5em 0;
+        clear: both;
+    }
+}
+
+.page-find-all {
+    .results-section br {
+        display: none;
+    }
+    .result-section-menu {
+        list-style-type:none;
+        margin: 0;
+        padding:0;
+        display: none;
+
+        @include breakpoint($tab-desk){
+            display: block;
+        }
+
+        li {
+            width: 100%;
+            margin-bottom: 2px;
+
+            @include breakpoint($tab-desk){
+                display:inline-block;
+                float: left;
+                margin-right: 0.5em;
+                width: auto;
+            }
+
+            a {
+                display:block;
+                color: $gray-darkest;
+                background: $gray-lightest;
+                text-decoration: none;
+                padding: 7px 16px;
+                width: 100%;
+
+
+                &:before {
+                    margin-right: 0.35rem;
+                }
+
+                &:hover {
+                    background: $orange;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .show-result-section-menu {
+        display: block;
+        text-align: center;
+        color: $white;
+        background: $gray-darker;
+        padding: 10px 0;
+        width: 100%;
+
+        &:after {
+            margin-left: .5em;
+            content: "\e609";
+            @include pul-icon;
+        }
+
+        @include breakpoint($tab-desk){
+            display: none;
+        }
+    }
+    input[type=checkbox]{
+        display: none;
+    }
+    input[type=checkbox]:checked ~ #result-section-menu {
+        display: block;
+    }
+}
+
+.page-find-all .back2top {
+    display: inline-block;
+}
+
+.page-find-all .l-main h2 a,
+.pane-summon-block-summon-guide-results h2 a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        color: $orange-darker;
+    }
+}
+
+.page-find-all h2 [class^="icon-"], 
+.page-find-all h2 [class*=" icon-"] {
+    margin-right: 0.5em;
 }

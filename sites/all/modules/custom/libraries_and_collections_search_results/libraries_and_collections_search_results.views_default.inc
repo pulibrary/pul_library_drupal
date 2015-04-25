@@ -22,7 +22,7 @@ function libraries_and_collections_search_results_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Libraries and Collections';
+  $handler->display->display_options['title'] = '<i class="icon-account-balance"></i> Libraries and Collections';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'More Libraries and Collections';
   $handler->display->display_options['access']['type'] = 'none';
@@ -126,7 +126,16 @@ function libraries_and_collections_search_results_views_default_views() {
 
   /* Display: Libraries and Collections Search Pane */
   $handler = $view->new_display('panel_pane', 'Libraries and Collections Search Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<i class="icon-library"></i> Libraries and Collections';
   $handler->display->display_options['display_description'] = 'Search library and collections titles, descriptions, tags';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'See All Libraries and Collections Results';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -158,7 +167,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_collection_url_url']['field'] = 'field_collection_url_url';
   $handler->display->display_options['fields']['field_collection_url_url']['label'] = '';
   $handler->display->display_options['fields']['field_collection_url_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_collection_url_url']['alter']['text'] = '<i class="icon-home">&nbsp;</i><a href="[field_collection_url_url]" title="Collection Homepage">Collection Homepage</a>';
+  $handler->display->display_options['fields']['field_collection_url_url']['alter']['text'] = '<i class="icon-web"></i><a href="[field_collection_url_url]" title="Collection Homepage">Collection Homepage</a>';
   $handler->display->display_options['fields']['field_collection_url_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url_url']['link_to_entity'] = 0;
@@ -168,7 +177,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_library_homepage_url']['field'] = 'field_library_homepage_url';
   $handler->display->display_options['fields']['field_library_homepage_url']['label'] = '';
   $handler->display->display_options['fields']['field_library_homepage_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_library_homepage_url']['alter']['text'] = '<i class="icon-home">&nbsp;</i><a href="[field_library_homepage_url]" title="Library Homepage">Library Homepage</a>';
+  $handler->display->display_options['fields']['field_library_homepage_url']['alter']['text'] = '<i class="icon-web"></i><a href="[field_library_homepage_url]" title="Library Homepage">Library Homepage</a>';
   $handler->display->display_options['fields']['field_library_homepage_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_library_homepage_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_library_homepage_url']['link_to_entity'] = 0;
@@ -190,17 +199,18 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_building']['relationship'] = 'field_building';
   $handler->display->display_options['fields']['field_building']['label'] = '';
   $handler->display->display_options['fields']['field_building']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_building']['alter']['text'] = '<i class=\'icon-map-marker icon-large\' > </i> <a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[field_building]</a>';
+  $handler->display->display_options['fields']['field_building']['alter']['text'] = '<i class=\'icon-map-marker icon-large\' ></i> <a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[field_building]</a>';
   $handler->display->display_options['fields']['field_building']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_building']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_building']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_building']['bypass_access'] = 0;
   /* Field: Indexed Content: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'search_api_index_libraries_and_collections';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['label'] = '';
   $handler->display->display_options['fields']['field_phone']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<i class="icon-phone">&nbsp;</i>[field_phone]';
+  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<i class="icon-phone"></i>[field_phone]';
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   /* Field: Indexed Content: E-Mail Address */
   $handler->display->display_options['fields']['field_e_mail_address']['id'] = 'field_e_mail_address';
@@ -208,7 +218,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class="icon-large icon-email"></span>[field_e_mail_address] ';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class="icon-mail"></i>[field_e_mail_address] ';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['type'] = 'email_plain';
   /* Field: Indexed Content: Project URL */
@@ -217,7 +227,7 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['field_digital_project_url']['field'] = 'field_digital_project_url';
   $handler->display->display_options['fields']['field_digital_project_url']['label'] = '';
   $handler->display->display_options['fields']['field_digital_project_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_digital_project_url']['alter']['text'] = '<i class="icon-home">&nbsp;</i><a href="[field_digital_project_url-url]">Project Website</a>';
+  $handler->display->display_options['fields']['field_digital_project_url']['alter']['text'] = '<i class="icon-web"></i><a href="[field_digital_project_url-url]">Project Website</a>';
   $handler->display->display_options['fields']['field_digital_project_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_digital_project_url']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_digital_project_url']['click_sort_column'] = 'url';
