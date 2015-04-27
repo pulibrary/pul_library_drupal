@@ -16,7 +16,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 2,
-				"order": 155,
+				"order": 25,
 				"prevSize": 24,
 				"code": 58910,
 				"name": "library"
@@ -40,7 +40,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 44,
-				"order": 156,
+				"order": 26,
 				"prevSize": 24,
 				"code": 58911,
 				"name": "databases"
@@ -65,7 +65,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 1,
-				"order": 63,
+				"order": 19,
 				"prevSize": 24,
 				"code": 58919,
 				"name": "archives"
@@ -90,7 +90,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 2,
-				"order": 180,
+				"order": 36,
 				"prevSize": 24,
 				"code": 58920,
 				"name": "collections"
@@ -117,7 +117,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 5,
-				"order": 109,
+				"order": 21,
 				"prevSize": 24,
 				"code": 58921,
 				"name": "articles"
@@ -145,7 +145,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 10,
-				"order": 177,
+				"order": 34,
 				"prevSize": 24,
 				"code": 58922,
 				"name": "text"
@@ -169,7 +169,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 16,
-				"order": 78,
+				"order": 20,
 				"prevSize": 24,
 				"code": 58925,
 				"name": "windows"
@@ -197,7 +197,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 66,
-				"order": 185,
+				"order": 39,
 				"prevSize": 24,
 				"code": 58881,
 				"name": "chat"
@@ -223,7 +223,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 68,
-				"order": 164,
+				"order": 29,
 				"prevSize": 24,
 				"code": 58912,
 				"name": "calendar"
@@ -248,7 +248,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 76,
-				"order": 165,
+				"order": 30,
 				"prevSize": 24,
 				"code": 58914,
 				"name": "clock"
@@ -275,7 +275,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 87,
-				"order": 166,
+				"order": 31,
 				"prevSize": 24,
 				"code": 58915,
 				"name": "staff"
@@ -301,7 +301,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 134,
-				"order": 113,
+				"order": 22,
 				"prevSize": 24,
 				"code": 58928,
 				"name": "item"
@@ -329,7 +329,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 167,
-				"order": 120,
+				"order": 23,
 				"prevSize": 24,
 				"code": 59678,
 				"ligatures": "mic, microphone",
@@ -361,7 +361,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 172,
-				"order": 40,
+				"order": 17,
 				"prevSize": 24,
 				"code": 59680,
 				"ligatures": "books, library",
@@ -389,7 +389,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 802,
-				"order": 181,
+				"order": 37,
 				"prevSize": 24,
 				"code": 59849,
 				"ligatures": "sphere, globe",
@@ -416,7 +416,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 28,
-				"order": 179,
+				"order": 35,
 				"prevSize": 24,
 				"code": 58880,
 				"name": "file"
@@ -442,7 +442,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 76,
-				"order": 158,
+				"order": 27,
 				"prevSize": 24,
 				"code": 58917,
 				"name": "right"
@@ -467,7 +467,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 82,
-				"order": 173,
+				"order": 32,
 				"prevSize": 24,
 				"code": 58889,
 				"name": "down"
@@ -492,7 +492,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 0,
-				"order": 159,
+				"order": 28,
 				"prevSize": 24,
 				"code": 61485,
 				"name": "alert"
@@ -518,7 +518,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 52,
-				"order": 42,
+				"order": 18,
 				"prevSize": 24,
 				"code": 61588,
 				"name": "digital"
@@ -543,7 +543,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 95,
-				"order": 153,
+				"order": 24,
 				"prevSize": 24,
 				"code": 61532,
 				"name": "links"
@@ -569,7 +569,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 102,
-				"order": 182,
+				"order": 38,
 				"prevSize": 24,
 				"code": 61499,
 				"name": "mail"
@@ -602,7 +602,7 @@
 				}
 			],
 			"properties": {
-				"order": 29,
+				"order": 12,
 				"id": 3,
 				"prevSize": 24,
 				"code": 58898,
@@ -637,7 +637,7 @@
 				}
 			],
 			"properties": {
-				"order": 32,
+				"order": 15,
 				"id": 2,
 				"prevSize": 24,
 				"code": 58899,
@@ -672,7 +672,7 @@
 				}
 			],
 			"properties": {
-				"order": 30,
+				"order": 13,
 				"id": 1,
 				"prevSize": 24,
 				"code": 58900,
@@ -707,7 +707,7 @@
 				}
 			],
 			"properties": {
-				"order": 31,
+				"order": 14,
 				"id": 0,
 				"prevSize": 24,
 				"code": 58901,
@@ -733,7 +733,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 8,
-				"order": 6,
+				"order": 2,
 				"prevSize": 24,
 				"code": 58894,
 				"name": "phone",
@@ -761,7 +761,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 114,
-				"order": 10,
+				"order": 4,
 				"prevSize": 24,
 				"code": 58904,
 				"name": "location",
@@ -787,7 +787,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 38,
-				"order": 33,
+				"order": 16,
 				"prevSize": 24,
 				"code": 58902,
 				"name": "film",
@@ -812,7 +812,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 80,
-				"order": 25,
+				"order": 8,
 				"prevSize": 24,
 				"code": 61525,
 				"name": "plus-sign-alt",
@@ -837,7 +837,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 81,
-				"order": 26,
+				"order": 9,
 				"prevSize": 24,
 				"code": 61526,
 				"name": "minus-sign-alt",
@@ -846,6 +846,58 @@
 			"setIdx": 19,
 			"setId": 1,
 			"iconIdx": 15
+		},
+		{
+			"icon": {
+				"paths": [
+					"M36.571 512q0-14.857 10.857-25.714l256-256q10.857-10.857 25.714-10.857t25.714 10.857 10.857 25.714v512q0 14.857-10.857 25.714t-25.714 10.857-25.714-10.857l-256-256q-10.857-10.857-10.857-25.714z"
+				],
+				"width": 366,
+				"tags": [
+					"caret-left"
+				],
+				"defaultCode": 61657,
+				"grid": 16,
+				"attrs": []
+			},
+			"attrs": [],
+			"properties": {
+				"id": 192,
+				"order": 41,
+				"prevSize": 24,
+				"code": 61657,
+				"name": "caret-left",
+				"ligatures": ""
+			},
+			"setIdx": 19,
+			"setId": 1,
+			"iconIdx": 16
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 768v-512q0-14.857 10.857-25.714t25.714-10.857 25.714 10.857l256 256q10.857 10.857 10.857 25.714t-10.857 25.714l-256 256q-10.857 10.857-25.714 10.857t-25.714-10.857-10.857-25.714z"
+				],
+				"width": 366,
+				"tags": [
+					"caret-right"
+				],
+				"defaultCode": 61658,
+				"grid": 16,
+				"attrs": []
+			},
+			"attrs": [],
+			"properties": {
+				"id": 193,
+				"order": 40,
+				"prevSize": 24,
+				"code": 61658,
+				"name": "caret-right",
+				"ligatures": ""
+			},
+			"setIdx": 19,
+			"setId": 1,
+			"iconIdx": 17
 		},
 		{
 			"icon": {
@@ -863,7 +915,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 243,
-				"order": 27,
+				"order": 10,
 				"prevSize": 24,
 				"code": 61712,
 				"name": "spinner",
@@ -889,7 +941,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 264,
-				"order": 13,
+				"order": 6,
 				"prevSize": 24,
 				"code": 61736,
 				"name": "question",
@@ -915,7 +967,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 266,
-				"order": 4,
+				"order": 1,
 				"prevSize": 24,
 				"code": 61738,
 				"name": "exclamation",
@@ -941,7 +993,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 1,
-				"order": 9,
+				"order": 3,
 				"prevSize": 24,
 				"code": 58887,
 				"name": "home",
@@ -968,7 +1020,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 13,
-				"order": 28,
+				"order": 11,
 				"prevSize": 24,
 				"code": 58897,
 				"name": "image",
@@ -997,7 +1049,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 346,
-				"order": 23,
+				"order": 7,
 				"prevSize": 24,
 				"code": 58888,
 				"name": "newtab",
@@ -1024,7 +1076,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 10,
-				"order": 11,
+				"order": 5,
 				"prevSize": 24,
 				"code": 58892,
 				"name": "search",
@@ -1056,7 +1108,7 @@
 			],
 			"properties": {
 				"id": 29,
-				"order": 175,
+				"order": 33,
 				"prevSize": 24,
 				"code": 58909,
 				"name": "book"
