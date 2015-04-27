@@ -3000,6 +3000,7 @@ body.faq .ui-accordion .ui-accordion-header a {
 .pane-summon-block-summon-guide-results h2 a:hover {
   text-decoration: none;
   color: #b85c0e;
+  cursor: pointer;
 }
 
 .page-find-all h2 [class^="icon-"],
