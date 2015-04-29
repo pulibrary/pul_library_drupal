@@ -98,7 +98,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Library Account',
       'title' => 'Library Account',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li><span>Renew titles on loan from Princeton</span></li><li><span>View information about hold requests &amp; library fines</span></li></ul><div class="service-connect-btn"><a href="http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?DB=local&amp;PAGE=pbLogon" target="_blank">Access Your Library Account</a></div>',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Read about <a href="http://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?DB=local&amp;PAGE=pbLogon" target="_blank">Access Your Library Account</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -114,8 +114,33 @@ function your_accounts_default_page_manager_handlers() {
     $display->content['new-86ef2308-a19a-43c8-b787-0c8441ed8171'] = $pane;
     $display->panels['first'][0] = 'new-86ef2308-a19a-43c8-b787-0c8441ed8171';
     $pane = new stdClass();
-    $pane->pid = 'new-68eceaba-7889-4bca-8996-261512af5e70';
+    $pane->pid = 'new-9b24626d-83e3-4b5c-86a6-829f1bc88789';
     $pane->panel = 'fourth';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Aeon',
+      'title' => 'Special Collections',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Register for access to special collections reading rooms</li><li>Request and check the status of manuscripts, archives &amp; rare books</li><li>Read more about <a href="https://blogs.princeton.edu/research-account/" target="_blank">research accounts</a></li></ul><div class="service-connect-btn"><a href="https://libweb10.princeton.edu/aeon/" target="_blank">Access Your Research Account</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9b24626d-83e3-4b5c-86a6-829f1bc88789';
+    $display->content['new-9b24626d-83e3-4b5c-86a6-829f1bc88789'] = $pane;
+    $display->panels['fourth'][0] = 'new-9b24626d-83e3-4b5c-86a6-829f1bc88789';
+    $pane = new stdClass();
+    $pane->pid = 'new-68eceaba-7889-4bca-8996-261512af5e70';
+    $pane->panel = 'second';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -137,10 +162,10 @@ function your_accounts_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '68eceaba-7889-4bca-8996-261512af5e70';
     $display->content['new-68eceaba-7889-4bca-8996-261512af5e70'] = $pane;
-    $display->panels['fourth'][0] = 'new-68eceaba-7889-4bca-8996-261512af5e70';
+    $display->panels['second'][0] = 'new-68eceaba-7889-4bca-8996-261512af5e70';
     $pane = new stdClass();
     $pane->pid = 'new-c817df9b-58e2-419b-81d0-6cb5459b8b7e';
-    $pane->panel = 'second';
+    $pane->panel = 'third';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -162,32 +187,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'c817df9b-58e2-419b-81d0-6cb5459b8b7e';
     $display->content['new-c817df9b-58e2-419b-81d0-6cb5459b8b7e'] = $pane;
-    $display->panels['second'][0] = 'new-c817df9b-58e2-419b-81d0-6cb5459b8b7e';
-    $pane = new stdClass();
-    $pane->pid = 'new-9b24626d-83e3-4b5c-86a6-829f1bc88789';
-    $pane->panel = 'third';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Aeon',
-      'title' => 'Research Account',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of manuscripts, archives &amp; rare books</li><li>Read more about <a href="https://blogs.princeton.edu/research-account/" target="_blank">research accounts</a></li></ul><div class="service-connect-btn"><a href="https://libweb10.princeton.edu/aeon/" target="_blank">Access Your Research Account</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '9b24626d-83e3-4b5c-86a6-829f1bc88789';
-    $display->content['new-9b24626d-83e3-4b5c-86a6-829f1bc88789'] = $pane;
-    $display->panels['third'][0] = 'new-9b24626d-83e3-4b5c-86a6-829f1bc88789';
+    $display->panels['third'][0] = 'new-c817df9b-58e2-419b-81d0-6cb5459b8b7e';
     $pane = new stdClass();
     $pane->pid = 'new-e93b178e-f40e-463c-9efa-757e7a5ac9ca';
     $pane->panel = 'top';
