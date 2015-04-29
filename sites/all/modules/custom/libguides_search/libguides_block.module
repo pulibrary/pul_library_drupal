@@ -52,10 +52,14 @@ function libguides_block_contents() {
 }
 
 function libguides_block_get_current_filter($path) {
-    $path_parts = explode("find/all/", $path);
+    if (preg_match('/^research\/databases\/search\//', $path)) {
+      $path_parts = explode("research/databases/search/", $path);
+    } else {
+      $path_parts = explode("find/all/", $path);
+    }
     if(isset($path_parts[1])) {
         return filter_xss($path_parts[1]);
-        return $path_parts[1];
+        // return $path_parts[1];
     }
 }
 

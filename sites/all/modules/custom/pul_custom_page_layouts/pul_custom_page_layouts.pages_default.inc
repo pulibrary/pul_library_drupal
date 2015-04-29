@@ -756,6 +756,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'top' => NULL,
       'bottom' => NULL,
       'middle' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -909,7 +911,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'summon_block-summon_guide_results';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
@@ -926,6 +928,29 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->uuid = '170b62aa-90fb-499f-9415-f64af81d6bc6';
     $display->content['new-170b62aa-90fb-499f-9415-f64af81d6bc6'] = $pane;
     $display->panels['second'][3] = 'new-170b62aa-90fb-499f-9415-f64af81d6bc6';
+    $pane = new stdClass();
+    $pane->pid = 'new-cc7306d8-d215-48f7-9b34-261325e1bac3';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'libguides_block-libguides_search_results';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<i class="icon-links"></i> Library Guides Results',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'cc7306d8-d215-48f7-9b34-261325e1bac3';
+    $display->content['new-cc7306d8-d215-48f7-9b34-261325e1bac3'] = $pane;
+    $display->panels['second'][4] = 'new-cc7306d8-d215-48f7-9b34-261325e1bac3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1777,7 +1802,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_title = 'Home Page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
