@@ -98,7 +98,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Library Account',
       'title' => 'Library Account',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Read about <a href="http://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?DB=local&amp;PAGE=pbLogon" target="_blank">Access Your Library Account</a></div>',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Find out more about <a href="http://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?DB=local&amp;PAGE=pbLogon" target="_blank">Access Your Library Account</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -123,7 +123,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Aeon',
       'title' => 'Special Collections',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Register for access to special collections reading rooms</li><li>Request and check the status of manuscripts, archives &amp; rare books</li><li>Read more about <a href="https://blogs.princeton.edu/research-account/" target="_blank">research accounts</a></li></ul><div class="service-connect-btn"><a href="https://libweb10.princeton.edu/aeon/" target="_blank">Access Your Research Account</a></div>',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Register for access to special collections reading rooms</li><li>Request and check the status of manuscripts, archives &amp; rare books</li><li>Find out more about <a href="https://blogs.princeton.edu/research-account/" target="_blank">research accounts</a></li></ul><div class="service-connect-btn"><a href="https://libweb10.princeton.edu/aeon/" target="_blank">Access Your Research Account</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -148,7 +148,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'BorrowDirect',
       'title' => 'Borrow Direct',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Manage items requested through the Borrow Direct service</li><li>Read more about <a href="http://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="http://libserv51.princeton.edu/bd/link.php" target="_blank">Access Borrow Direct</a></div>',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of material requested from other Borrow Direct partner libraries</li><li>Find out more about <a href="http://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="http://libserv51.princeton.edu/bd/link.php" target="_blank">Access Borrow Direct</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -173,7 +173,7 @@ function your_accounts_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'ILLiad',
       'title' => 'Interlibrary Loan',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of items from other libraries&nbsp;</li><li>Read more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">ArticleExpress</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan</a></div>',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request, renew and check the status of material requested from other libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">ArticleExpress</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
