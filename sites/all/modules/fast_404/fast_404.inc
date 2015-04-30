@@ -2,6 +2,16 @@
 
 function fast_404_ext_check() {
 
+  // Check to see if Fast 404 checks are disabled
+  if (!variable_get('fast_404_extension_check', TRUE)) {
+    return TRUE;
+  }
+
+  // Ignores if the current script is running in a command-line environment.
+  if (drupal_is_cli()) {
+    return TRUE;
+  }
+
   // Determine the request uri. We are only interested in the path component,
   // so strip out any other information. Since parse_url() is does not work well
   // with relative URLs, we temporarily prepend a dummy scheme and domain name.
@@ -80,7 +90,9 @@ function fast_404_ext_check() {
 function fast_404_path_check() {
   $valid = TRUE;
 
-  if (variable_get('fast_404_path_check', FALSE) && !empty($_GET['q'])) {
+  $query = $_GET['q'];
+
+  if (variable_get('fast_404_path_check', FALSE) && !empty($query)) {
 
     // Determine if we have the db_query function. If so, we are in boot and
     // have functions. If not we are in settings.php and do not have functions.
@@ -88,7 +100,7 @@ function fast_404_path_check() {
       $valid = fast_404_validate_path_drupal();
     }
     else {
-      $valid = fast_404_validate_path_mysql();
+      $valid = fast_404_validate_path_sql();
     }
   }
 
@@ -101,43 +113,44 @@ function fast_404_path_check() {
 
 /**
  * Check to see if a path works using Drupal MySQL functions
- * 
+ *
  * @return boolean
  */
 function fast_404_validate_path_drupal() {
 
+  $query = $_GET['q'];
+
   // Check if redirect module is installed.
   if (db_query("SELECT name FROM {system} WHERE type = 'module' AND status = 1 AND name = 'redirect'")->fetchField()) {
     // Check if path exits in redirect table.
-    if (db_query("SELECT rid FROM {redirect} WHERE ? = source", array($_GET['q']))->fetchField()) {
+    if (db_query("SELECT rid FROM {redirect} WHERE ? = source", array($query))->fetchField()) {
       return TRUE;
     }
   }
-  
-  $q = $_GET['q'];
- 
-  // Act only when locale is enabled  
-  // TODO: Need to actually check if url negotiator is enabled 
+
+
+  // Act only when locale is enabled
+  // TODO: Need to actually check if url negotiator is enabled
   if (db_query("SELECT status FROM {system} WHERE type = 'module' AND name = 'locale' AND status = 1")->fetchField()) {
     $prefixes = db_query("SELECT prefix FROM {languages} WHERE enabled = 1 AND prefix != ''");
     $lang_prefixes = $prefixes->fetchCol();
-  
-    $path_parts = explode('/', $q);
+
+    $path_parts = explode('/', $query);
     if (in_array($path_parts[0], $lang_prefixes)) {
       if (count($path_parts) == 1) {
         return TRUE;
       }
-      $q = substr($q, strlen($path_parts[0]) + 1);
+      $query = substr($query, strlen($path_parts[0]) + 1);
     }
-  }  
+  }
 
   $sql = "SELECT path FROM {menu_router} WHERE ? LIKE CONCAT(path, '%')";
-  $res = db_query($sql, array($q))->fetchField();
+  $res = db_query($sql, array($query))->fetchField();
   if ($res) {
     return TRUE;
   }
   else {
-    $res = db_query("SELECT pid FROM {url_alias} WHERE alias = :alias", array(':alias' => $_GET['q']))->fetchField();
+    $res = db_query("SELECT pid FROM {url_alias} WHERE alias = :alias", array(':alias' => $query))->fetchField();
     return $res == 0 ? FALSE : TRUE;
   }
 
@@ -145,83 +158,81 @@ function fast_404_validate_path_drupal() {
 }
 
 /**
- * Check to see if a path exists using plain MySQL functions
- * 
+ * Check to see if a path exists using plain SQL functions
+ *
  * @global array $databases
- * @return boolean 
+ * @return boolean
  */
-function fast_404_validate_path_mysql() {
+function fast_404_validate_path_sql() {
   global $databases;
 
   // Databases aren't set. They need to be set to work.
-  if (!isset($databases) || !is_array($databases['default']['default']) || $databases['default']['default']['driver'] != 'mysql') {
+  if (!isset($databases) || !is_array($databases['default']['default'])) {
     // We can't check this URL here. Return TRUE to let Drupal continue
     // bootstrapping.
     return TRUE;
   }
 
-  $sql = "SELECT path FROM menu_router WHERE path = '%s' OR '%s' LIKE CONCAT(path, '/%')";
-  $sql2 = "SELECT pid FROM url_alias WHERE alias = '%s'";
-  $sql3 = "SELECT rid FROM redirect WHERE '%s' LIKE source";
-
   $db = $databases['default']['default'];
+  // PDO supports any database driver Drupal does and more
+  switch ($db['driver']) {
+    case 'mysql':
+    case 'pgsql':
+      $pdo = new PDO($db['driver'] . ':host=' . $db['host'] . ';dbname=' . $db['database'], $db['username'], $db['password']);
+    break;
+    case 'sqlite':
+      $pdo = new PDO($db['driver'] . ':' . $db['database']);
+    break;
+    default:
+      // The db driver is not one supported by core therefore we allow it through.
+      return TRUE;
+    break;
+  }
 
-  // Query the database via either mysql or mysqli.
-  if ($databases['default']['default']['driver'] == 'mysql') {
-    
-    // mysqli_connect() fails if port is an empty string. Force the default
-    // mysql port if $db['port'] is empty.
-    if (empty($db['port'])) {
-      $db['port'] = 3306;
+  $query = $_GET['q'];
+  // Act only when locale is enabled
+  $stmt = $pdo->prepare("SELECT status FROM system WHERE name='locale'");
+  $stmt->execute();
+  $locale = $stmt->fetchObject();
+  // TODO: Need to actually check if url negotiator is enabled
+  if ($locale && $locale->status == 1) {
+    $lang_prefixes = array();
+    $locale_stmt = $pdo->prepare("SELECT prefix FROM languages WHERE enabled = 1 AND prefix != ''");
+    $locale_stmt->execute();
+    while ($locale_item = $locale_stmt->fetchObject()) {
+      $lang_prefixes[] = $locale_item->prefix;
     }
-
-   $conn = mysqli_connect($db['host'], $db['username'], $db['password'], $db['database'], $db['port']);
-
-    $q = $_GET['q'];
-    // Act only when locale is enabled
-    $res = mysqli_query($conn, "SELECT status FROM system WHERE name='locale'");
-    $locale = mysqli_fetch_object($res);
-    // TODO: Need to actually check if url negotiator is enabled
-    if ($locale && $locale->status == 1) {
-      $res = mysqli_query($conn, "SELECT prefix FROM languages WHERE enabled = 1 AND prefix != ''");
-      $lang_prefixes = array();
-      while($item = mysqli_fetch_object($res)) {
-        $lang_prefixes[] = $item->prefix;
-      }
-      $path_parts = explode('/', $q);
-      if (in_array($path_parts[0], $lang_prefixes)) {
-        if (count($path_parts) == 1) {
-          return TRUE;
-        }
-        $q = substr($q, strlen($path_parts[0]) + 1);
-      }
-    }
-    
-    // Check if redirect module is installed.
-    if (mysqli_fetch_row(mysqli_query($conn, "SELECT name FROM system WHERE type = 'module' AND status = 1 AND name = 'redirect'"))) {
-      // Check if path exits in redirect table.
-      $sql3 = str_replace('%s', mysqli_real_escape_string($conn, $q), $sql3);
-      if (mysqli_fetch_row(mysqli_query($conn, $sql3))) {
+    $path_parts = explode('/', $query);
+    if (in_array($path_parts[0], $lang_prefixes)) {
+      if (count($path_parts) == 1) {
         return TRUE;
       }
+      $query = substr($query, strlen($path_parts[0]) + 1);
     }
-
-    $sql = str_replace('%s', mysqli_real_escape_string($conn, $q), $sql);
-    $res = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_row($res);
-    if (!is_array($row)) {
-      $sql2 = str_replace('%s', mysqli_real_escape_string($conn, $q), $sql2);
-      $res = mysqli_query($conn, $sql2);
-      $row = mysqli_fetch_row($res);
-      return is_array($row) > 0 ? TRUE : FALSE;
-    }
-    else {
+  }
+  // Check if redirect module is installed.
+  $stmt = $pdo->prepare("SELECT status FROM system WHERE name = 'redirect'");
+  $stmt->execute();
+  $redirect = $stmt->fetchObject();
+  if ($redirect && $redirect->status == 1) {
+    $redirect_stmt = $pdo->prepare("SELECT rid FROM redirect WHERE :source LIKE source");
+    $redirect_stmt->execute(array(':source' => $query));
+    if ($redirect_stmt->fetch()) {
       return TRUE;
     }
   }
+
+  $stmt = $pdo->prepare("SELECT path FROM menu_router WHERE path = :path OR :concat_path LIKE path");
+  $stmt->execute(array(':path' => $query, ':concat_path' => $query . '/%'));
+  $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  // fetchAll() will return an array regardless so we simply check if it is empty
+  if (empty($row)) {
+    $stmt = $pdo->prepare("SELECT pid FROM url_alias WHERE alias = :alias");
+    $stmt->execute(array(':alias' => $query));
+    $alias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return !empty($alias) > 0 ? TRUE : FALSE;
+  }
   else {
-    // We can't check this URL here. Return TRUE to let Drupal continue
-    // bootstrapping.
     return TRUE;
   }
 
@@ -240,13 +251,13 @@ function fast_404_error_return($load_html = FALSE, $return_gone = FALSE) {
   } else {
     header((variable_get('fast_404_HTTP_status_method', 'mod_php') == 'FastCGI' ? 'Status:' : 'HTTP/1.0') . ' 404 Not Found');
   }
-  
+
   // If a file is set to provide us with fast_404 joy, load it
-  if (($load_html || variable_get('fast_404_HTML_error_all_paths', FALSE)) 
+  if (($load_html || variable_get('fast_404_HTML_error_all_paths', FALSE))
           && file_exists(variable_get('fast_404_HTML_error_page', FALSE))) {
     $fast_404_html = @file_get_contents(variable_get('fast_404_HTML_error_page', FALSE));
   }
-  
+
   // If we don't have fast 404 html yet, use the default
   if (!isset($fast_404_html) || empty($fast_404_html)) {
     $fast_404_html = variable_get('fast_404_html', '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>');
