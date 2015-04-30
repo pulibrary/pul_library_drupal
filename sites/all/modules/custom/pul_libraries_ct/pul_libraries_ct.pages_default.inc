@@ -66,7 +66,8 @@ libraries/engineering
 libraries/architecture
 libraries/stokes
 libraries/plasma-physics
-libraries/scilib',
+libraries/scilib
+libraries/music',
           ),
           'context' => 'empty',
           'not' => FALSE,
