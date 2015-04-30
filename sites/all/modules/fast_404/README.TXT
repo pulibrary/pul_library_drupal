@@ -121,7 +121,11 @@ $conf['fast_404_exts'] = '/^(?!robots).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|
 
 # If you use a private file system use the conf variable below and change the 
 # 'sites/default/private' to your actual private files path
-# $conf['fast_404_exts'] = '/^(?!robots)^(?!sites/default/private).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+# $conf['fast_404_exts'] = '/^(?!robots)^(?!sites\/default\/private).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+
+# If you are using the Advanced Help module, the following config may be used
+# to allow paths starting with 'help'.
+$conf['fast_404_exts'] = '/^(?!help\/)(?!robots).*\.(txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/';
 
 # If you would prefer a stronger version of NO then return a 410 instead of a
 # 404. This informs clients that not only is the resource currently not present
