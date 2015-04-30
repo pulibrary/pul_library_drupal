@@ -115,7 +115,7 @@
     input[type=checkbox]{
         display: none;
     }
-    input[type=checkbox]:checked ~ #result-section-menu {
+    input[type=checkbox]:checked ~ .result-section-menu {
         display: block;
     }
 }
