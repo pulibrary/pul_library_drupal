@@ -1,6 +1,5 @@
 (function($) {
     $(document).ready(function() {
-      console.log("foobar!");
         var query_url = $('#faq-search-results').attr('data-source');
         var file_icon = 'icon-file';
         var refine_hint = 'Explore frequently asked questions.';
