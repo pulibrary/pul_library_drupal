@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Your Accounts feature.
+ */
+
+include_once 'your_accounts.features.inc';

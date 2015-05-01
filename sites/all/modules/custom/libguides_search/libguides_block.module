@@ -1,0 +1,202 @@
+<?php
+
+
+function libguides_block_form($form, &$form_state) {
+    
+  $form = array();
+  $path = $_GET['q'];  
+
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('Search Library Guides'),
+    '#size'  => 80,
+    '#default_value' => t('Search library guides'),
+    '#attributes' => array(
+        'placeholder' => t('Search library guides'),
+    )
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+   // $form['sid'] = array(
+   //   '#type' => 'hidden',
+   //   '#value' => t("library-core"),
+   // );
+    $form['#attached']['js'][] = drupal_get_path('module', 'libguides_block') .'/libguides_block.js'; 
+    $hint_settings = array('libguides_search_hint' => variable_get('libguides_search_hint'),
+                           'libguides_search_error' => variable_get('libguides_search_error')
+                           );   
+    $form['#attached']['js'][] = array(
+      'data' => array('libguides_block' => $hint_settings),
+      'type' => 'setting',
+     );
+   $form['#action'] = url('http://libguides.princeton.edu/srch.php?q=', array('external' => true));
+   $form['#target'] = "_parent";
+   $form['#method'] = "get";
+   $form['#suffix'] = $form_suffix;
+   return $form;
+
+}
+
+function libguides_block_form_validate($form, &$form_state) {
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('libguides_search_hint')) {
+    form_set_error('term', t('Enter Search Terms'));
+  }
+}
+
+
+function libguides_block_contents() {
+  return drupal_get_form('libguides_block_form'); // must define a function 
+}
+
+function libguides_block_get_current_filter($path) {
+    if (preg_match('/^research\/databases\/search\//', $path)) {
+      $path_parts = explode("research/databases/search/", $path);
+    } else {
+      $path_parts = explode("find/all/", $path);
+    }
+    if(isset($path_parts[1])) {
+        return filter_xss($path_parts[1]);
+        // return $path_parts[1];
+    }
+}
+
+function libguides_block_query_escape($drupal_path) {
+  $query = libguides_block_get_current_filter($drupal_path);
+  return drupal_encode_path($query);
+}
+
+// function  libguides_block_get_sid() {
+//     return "library-main";
+// }
+
+function libguides_search_results_content() {
+  $path = libguides_block_query_escape($_GET['q']);
+  // $sid = libguides_block_get_sid();
+  $ajax_spinner = "<div id='libguides-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
+  $block_content = array(
+    '#markup' => "<div data-source='http://lgapi.libapps.com/1.1/guides/?search_terms={$path}&site_id=77&key=79eb11fd3c26374e9785bb06bc3f3961&status=1&expand=owner&sort_by=count_hit' class='libguides-search-results' id='{$path}'>" . $ajax_spinner . t('') . "</div>",
+  ); 
+  return $block_content;
+}
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ *
+function libguides_block_menu() {
+  $items['libguides_block'] = array(
+    'page callback' => 'libguides_block_page',
+    'access callback' => TRUE,
+    'title' => 'Music Audio Search',
+  );
+  return $items;
+}
+*/
+/**
+ * Implements hook_page()
+ * 
+ */
+ 
+function libguides_block_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The LibGuides Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function libguides_block_block_info() {
+  
+  $blocks['libguides_search'] = array(
+      // info: The name of the block.
+      'info' => t('Library Guides Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   $blocks['libguides_search_results'] = array(
+      // block for search results from "books+" aka primo
+      'info' => t('Library Guides Results'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function libguides_block_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'libguides_search') { //in this case the delta is the name of block
+
+    $form['libguides_search_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Search Box Hint Text'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when library guides search box is displayed.'),
+      '#default_value' => variable_get('libguides_search_hint',  t('Search items in library guides')),
+    );
+    $form['libguides_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Invalid Search Error'),
+      '#size' => 60,
+      '#description' => t('This message will display when the user submits and empty search for the Library Guides Block.'),
+      '#default_value' => variable_get('libguides_search_error',  t('Supply a search term to find library guides')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function libguides_block_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'libguides_search') {
+    // Have Drupal save the string to the database.
+    variable_set('libguides_search_hint', $edit['libguides_search_hint']);
+    variable_set('libguides_search_error', $edit['libguides_search_error']);
+  }
+  
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function libguides_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  
+  if ($delta == 'libguides_search') {
+    $block['subject'] = t('Library Guides Search');
+    $block['content'] = libguides_block_contents($delta);
+ 
+  } elseif ($delta == 'libguides_search_results') {
+    $block['subject'] = t('Library Guides Results');
+    $block['content'] = libguides_search_results_content($delta);
+    drupal_add_js(array('libguides_block' => array('request' => 'query')), 'setting');
+    drupal_add_js(drupal_get_path('module', 'libguides_block') .'/libguides_search_results.js');  
+  } 
+  return $block;
+}
