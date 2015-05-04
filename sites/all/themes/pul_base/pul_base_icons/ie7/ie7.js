@@ -25,6 +25,7 @@
 		'icon-clock': '&#xe622;',
 		'icon-staff': '&#xe623;',
 		'icon-item': '&#xe630;',
+		'icon-compass': '&#xe602;',
 		'icon-audio': '&#xe91e;',
 		'icon-books': '&#xe920;',
 		'icon-web': '&#xe9c9;',
@@ -53,6 +54,7 @@
 		'icon-image': '&#xe611;',
 		'icon-newtab': '&#xe608;',
 		'icon-search': '&#xe60c;',
+		'icon-guide': '&#xe654;',
 		'icon-book': '&#xe61d;',
 		'0': 0
 		},
