@@ -47,7 +47,7 @@
                             $('.libguides-search-results').append('<div class="libguide more-link"><a title="" target="_blank" href="http://libguides.princeton.edu/srch.php?q=' + search_term + '">See all Library Guides results</a></div>');
                             $('#libguides_block-libguides_search_results h2').replaceWith(function() {
                                 var url = $.trim($(this).text());
-                                return '<h2><a title="' + tooltip + '"  href="http://libguides.princeton.edu/srch.php?q=' + search_term + '" target="_blank"><i class="icon-links"></i>Library Guides Results</a></h2>';
+                                return '<h2><a title="' + tooltip + '"  href="http://libguides.princeton.edu/srch.php?q=' + search_term + '" target="_blank"><i class="icon-compass"></i>Library Guides Results</a></h2>';
                             });
                         }
 

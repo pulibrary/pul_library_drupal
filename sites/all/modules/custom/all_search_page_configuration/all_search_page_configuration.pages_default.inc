@@ -297,15 +297,15 @@ function all_search_page_configuration_default_page_manager_pages() {
     $display->content['new-54c20f10-ec16-457b-b80b-b6618625e6a9'] = $pane;
     $display->panels['third'][3] = 'new-54c20f10-ec16-457b-b80b-b6618625e6a9';
     $pane = new stdClass();
-    $pane->pid = 'new-f4ec2265-ae75-445e-bd70-82ee33826b07';
+    $pane->pid = 'new-9961b211-79fc-49b8-8ec4-babec104af54';
     $pane->panel = 'third';
     $pane->type = 'block';
-    $pane->subtype = 'summon_block-summon_guide_results';
+    $pane->subtype = 'libguides_block-libguides_search_results';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-links"></i> Library Guides Results',
+      'override_title_text' => '<i class="icon-compass"></i> Library Guides Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -316,19 +316,19 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = 'f4ec2265-ae75-445e-bd70-82ee33826b07';
-    $display->content['new-f4ec2265-ae75-445e-bd70-82ee33826b07'] = $pane;
-    $display->panels['third'][4] = 'new-f4ec2265-ae75-445e-bd70-82ee33826b07';
+    $pane->uuid = '9961b211-79fc-49b8-8ec4-babec104af54';
+    $display->content['new-9961b211-79fc-49b8-8ec4-babec104af54'] = $pane;
+    $display->panels['third'][4] = 'new-9961b211-79fc-49b8-8ec4-babec104af54';
     $pane = new stdClass();
-    $pane->pid = 'new-9961b211-79fc-49b8-8ec4-babec104af54';
+    $pane->pid = 'new-d0ce669c-1ab0-4cd1-b26a-44f7ae90e805';
     $pane->panel = 'third';
     $pane->type = 'block';
-    $pane->subtype = 'libguides_block-libguides_search_results';
+    $pane->subtype = 'catalog_block-catalog_faq_results';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-links"></i> Library Guides Results',
+      'override_title_text' => '<i class="icon-question"></i> Library FAQ Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -339,32 +339,9 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $pane->uuid = '9961b211-79fc-49b8-8ec4-babec104af54';
-    $display->content['new-9961b211-79fc-49b8-8ec4-babec104af54'] = $pane;
-    $display->panels['third'][5] = 'new-9961b211-79fc-49b8-8ec4-babec104af54';
-    $pane = new stdClass();
-    $pane->pid = 'new-d0ce669c-1ab0-4cd1-b26a-44f7ae90e805';
-    $pane->panel = 'third';
-    $pane->type = 'block';
-    $pane->subtype = 'catalog_block-catalog_faq_results';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'FAQs',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
     $pane->uuid = 'd0ce669c-1ab0-4cd1-b26a-44f7ae90e805';
     $display->content['new-d0ce669c-1ab0-4cd1-b26a-44f7ae90e805'] = $pane;
-    $display->panels['third'][6] = 'new-d0ce669c-1ab0-4cd1-b26a-44f7ae90e805';
+    $display->panels['third'][5] = 'new-d0ce669c-1ab0-4cd1-b26a-44f7ae90e805';
     $pane = new stdClass();
     $pane->pid = 'new-b68f4a4c-cdae-4a86-a34d-c7661ec231fd';
     $pane->panel = 'top';
@@ -419,7 +396,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Results section anchor links',
       'title' => '',
-      'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox"><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_search_results">Books+</a></li><li><a href="#summon_block-summon_search_results"> Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2"> Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results"> Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results"> Digital Library</a></li><li><a href="#general_site_keyword_search-panel_pane_1"> Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1"> Library Staff</a></li><li><a href="#summon_block-summon_guide_results"> Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">FAQs</a></li></ul></div>',
+      'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox"><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_search_results">Books+</a></li><li><a href="#summon_block-summon_search_results"> Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2"> Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results"> Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results"> Digital Library</a></li><li><a href="#general_site_keyword_search-panel_pane_1"> Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1"> Library Staff</a></li><li><a href="#libguides_block-libguides_search_results"> Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">FAQs</a></li></ul></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
