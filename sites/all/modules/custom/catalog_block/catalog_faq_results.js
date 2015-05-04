@@ -42,7 +42,7 @@
                         }).appendTo('#faq-search-results');
                         $('#catalog_block-catalog_faq_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-archives"></i>Library FAQ Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-question"></i>Library FAQ Results</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="faq-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all FAQ results</a></div>"').appendTo('#faq-search-results');
@@ -70,7 +70,7 @@
                         });
                     } else {
                         $('#faq-search-results-spinner').hide();
-                        $('<div class="no-results">No library archives results found. Try searching for another topic.</div>"').appendTo('#faq-search-results');
+                        $('<div class="no-results">No library FAQ results found. Try searching for another topic.</div>"').appendTo('#faq-search-results');
                     }
                 },
                 error: function(data) {
