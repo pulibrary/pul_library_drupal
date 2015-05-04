@@ -928,12 +928,13 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'node_body';
     $pane->subtype = 'node_body';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(

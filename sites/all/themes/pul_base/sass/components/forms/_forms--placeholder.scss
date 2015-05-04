@@ -6,8 +6,15 @@ input {
   @include placeholder-theme($ph-styles);
 }
 
-[placeholder]:focus::-webkit-input-placeholder {
+// Slide out on focus
+input:focus::-webkit-input-placeholder
+ {
   transition: text-indent 0.5s 1s ease; 
   text-indent: -100%;
   opacity: 1;
+}
+
+// Fix firefox placeholder positioning
+input::-moz-placeholder {
+	line-height: 2.4em;
 }

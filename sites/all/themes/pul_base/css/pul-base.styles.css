@@ -903,6 +903,10 @@ p:empty {
   display: none;
 }
 
+.three_six_three_stacked-region--middle .pane-node-body p {
+  margin-bottom: 0;
+}
+
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid white;
@@ -1650,7 +1654,8 @@ table caption {
   }
 }
 
-.block--quicktabs .homepage-tab-form-message a {
+.block--quicktabs .homepage-tab-form-message a,
+.pane-quicktabs-mendel-search-tabs .homepage-tab-form-message a {
   font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 0.75rem;
@@ -2026,6 +2031,17 @@ div.view-content > table.views-table > tbody > tr > td p {
   display: block;
 }
 
+/* Animated throbber */
+html.js .form-autocomplete {
+  background-position: 100% 11px;
+  /* LTR */
+}
+
+html.js .throbbing {
+  background-position: 100% -12px;
+  /* LTR */
+}
+
 .webform-container-inline.webform-datepicker select {
   display: inline-block;
 }
@@ -2033,10 +2049,10 @@ div.view-content > table.views-table > tbody > tr > td p {
 ::-webkit-input-placeholder {
   color: #e0ddd3;
 }
-::-moz-placeholder {
+:-ms-input-placeholder {
   color: #e0ddd3;
 }
-:-ms-input-placeholder {
+::-moz-placeholder {
   color: #e0ddd3;
 }
 ::placeholder {
@@ -2051,7 +2067,7 @@ input::-webkit-input-placeholder {
   text-decoration: inherit;
   padding: 0;
 }
-input::-moz-placeholder {
+input:-ms-input-placeholder {
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -2060,7 +2076,7 @@ input::-moz-placeholder {
   text-decoration: inherit;
   padding: 0;
 }
-input:-ms-input-placeholder {
+input::-moz-placeholder {
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -2079,10 +2095,14 @@ input::placeholder {
   padding: 0;
 }
 
-[placeholder]:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder {
   transition: text-indent 0.5s 1s ease;
   text-indent: -100%;
   opacity: 1;
+}
+
+input::-moz-placeholder {
+  line-height: 2.4em;
 }
 
 .form-item-submitted-time-of-incident-hour select,
@@ -3341,7 +3361,7 @@ body.faq .ui-accordion .ui-accordion-header a {
 .page-find-all input[type=checkbox] {
   display: none;
 }
-.page-find-all input[type=checkbox]:checked ~ #result-section-menu {
+.page-find-all input[type=checkbox]:checked ~ .result-section-menu {
   display: block;
 }
 
@@ -3358,6 +3378,7 @@ body.faq .ui-accordion .ui-accordion-header a {
 .pane-summon-block-summon-guide-results h2 a:hover {
   text-decoration: none;
   color: #b85c0e;
+  cursor: pointer;
 }
 
 .page-find-all h2 [class^="icon-"],

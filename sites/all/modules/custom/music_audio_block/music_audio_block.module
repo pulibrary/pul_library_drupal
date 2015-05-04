@@ -31,10 +31,11 @@ function music_audio_block_form($form, &$form_state) {
       'data' => array('music_audio_block' => $hint_settings),
       'type' => 'setting',
      );
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
    $form['#action'] = url('/searchit/search/mendel', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
-   $form['#suffix'] = $form_suffix;
+   // $form['#suffix'] = $form_suffix;
    return $form;
 
 }

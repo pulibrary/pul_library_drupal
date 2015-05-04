@@ -2,14 +2,14 @@
 
 
 function catalog_block_form($form, &$form_state) {
-    
+
   $form = array();
-  $path = $_GET['q']; 
+  $path = $_GET['q'];
   if(drupal_is_front_page()) { // should keyed off <front>
     $form_suffix = '<div class="homepage-tab-form-message"><a href="http://catalog.princeton.edu/">Main Catalog</a> | <a href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
-  }  
+  }
 
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -28,10 +28,10 @@ function catalog_block_form($form, &$form_state) {
      '#type' => 'hidden',
      '#value' => t("library-core"),
    );
-    $form['#attached']['js'][] = drupal_get_path('module', 'catalog_block') .'/catalog_block.js'; 
+    $form['#attached']['js'][] = drupal_get_path('module', 'catalog_block') .'/catalog_block.js';
     $hint_settings = array('catalog_search_hint' => variable_get('catalog_search_hint'),
                            'catalog_search_error' => variable_get('catalog_search_error')
-                           );   
+                           );
     $form['#attached']['js'][] = array(
       'data' => array('catalog_block' => $hint_settings),
       'type' => 'setting',
@@ -53,7 +53,7 @@ function catalog_block_form_validate($form, &$form_state) {
 
 
 function catalog_block_contents() {
-  return drupal_get_form('catalog_block_form'); // must define a function 
+  return drupal_get_form('catalog_block_form'); // must define a function
 }
 
 function catalog_block_get_current_filter($path) {
@@ -79,7 +79,7 @@ function catalog_search_results_content() {
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/searchit/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -89,7 +89,7 @@ function catalog_journal_results_content() {
   $ajax_spinner = "<div id='journal-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/searchit/find/any?query={$path}&limit=exact&format=journals&sid={$sid}' id='journal-search-results'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -99,7 +99,7 @@ function catalog_pulfa_results_content() {
   $ajax_spinner = "<div id='pulfa-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/searchit/pulfa/any?query={$path}&sid={$sid}' id='pulfa-search-results'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -109,6 +109,16 @@ function catalog_pudl_results_content() {
   $ajax_spinner = "<div id='pudl-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/searchit/pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
+  );
+  return $block_content;
+}
+
+function catalog_faq_results_content() {
+  $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='faq-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
+  $block_content = array(
+    '#markup' => "<div data-source='/searchit/faq/$path?sid={$sid}' id='faq-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -130,27 +140,27 @@ function catalog_block_menu() {
 */
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function catalog_block_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The Books+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function catalog_block_block_info() {
-  
+
   $blocks['catalog_search'] = array(
       // info: The name of the block.
       'info' => t('Catalog Search'),
@@ -174,7 +184,11 @@ function catalog_block_block_info() {
    $blocks['catalog_pudl_results'] = array(
       'info' => t('Princeton University Digital Library'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
-   );	
+   );
+   $blocks['catalog_faq_results'] = array(
+      'info' => t('FAQ Results'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
    return $blocks;
 }
 
@@ -184,7 +198,7 @@ function catalog_block_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function catalog_block_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'catalog_search') { //in this case the delta is the name of block
 
@@ -209,7 +223,7 @@ function catalog_block_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function catalog_block_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -219,7 +233,7 @@ function catalog_block_block_save($delta = '', $edit = array()) {
     variable_set('catalog_search_hint', $edit['catalog_search_hint']);
     variable_set('catalog_search_error', $edit['catalog_search_error']);
   }
-  
+
   return;
 }
 
@@ -230,28 +244,32 @@ function catalog_block_block_save($delta = '', $edit = array()) {
  */
 function catalog_block_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
-  
+
   if ($delta == 'catalog_search') {
     $block['subject'] = t('Catalog Search');
     $block['content'] = catalog_block_contents($delta);
- 
+
   } elseif ($delta == 'catalog_search_results') {
     $block['subject'] = t('Books+ Search Results');
     $block['content'] = catalog_search_results_content($delta);
     drupal_add_js(array('catalog_block' => array('request' => 'query')), 'setting');
-    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_search_results.js');  
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_search_results.js');
   } elseif ($delta == 'catalog_journal_results') {
     $block['subject'] = t('Journal Search Results');
     $block['content'] = catalog_journal_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_journal_results.js');   
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_journal_results.js');
   } elseif ($delta == 'catalog_pulfa_results') {
     $block['subject'] = t('Library Archives Results');
     $block['content'] = catalog_pulfa_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfa_results.js');   
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfa_results.js');
   } elseif ($delta == 'catalog_pudl_results') {
     $block['subject'] = t('Princeton University Digital Library');
     $block['content'] = catalog_pudl_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pudl_results.js');
+  } elseif ($delta == 'catalog_faq_results') {
+    $block['subject'] = t('FAQ Results');
+    $block['content'] = catalog_faq_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_faq_results.js');
   }
   return $block;
 }
