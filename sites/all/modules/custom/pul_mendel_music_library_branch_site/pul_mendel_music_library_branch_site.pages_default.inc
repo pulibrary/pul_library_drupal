@@ -519,6 +519,30 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-ab52aadd-90ec-47ed-b604-3d38b6da4a48';
+    $pane->panel = 'middle';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Welcome to the Mendel Music Library',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ab52aadd-90ec-47ed-b604-3d38b6da4a48';
+    $display->content['new-ab52aadd-90ec-47ed-b604-3d38b6da4a48'] = $pane;
+    $display->panels['middle'][0] = 'new-ab52aadd-90ec-47ed-b604-3d38b6da4a48';
+    $pane = new stdClass();
     $pane->pid = 'new-342013f6-7353-4c42-b885-868f36a2f0a9';
     $pane->panel = 'middle';
     $pane->type = 'block';
@@ -536,11 +560,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '342013f6-7353-4c42-b885-868f36a2f0a9';
     $display->content['new-342013f6-7353-4c42-b885-868f36a2f0a9'] = $pane;
-    $display->panels['middle'][0] = 'new-342013f6-7353-4c42-b885-868f36a2f0a9';
+    $display->panels['middle'][1] = 'new-342013f6-7353-4c42-b885-868f36a2f0a9';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -565,11 +589,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][2] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
     $pane->pid = 'new-0cdc3ba2-0546-4ede-b9aa-2ddd1af860eb';
     $pane->panel = 'second';
@@ -760,7 +784,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'second';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Mendel Social Media',
