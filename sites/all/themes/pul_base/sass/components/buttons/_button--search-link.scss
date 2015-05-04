@@ -1,6 +1,7 @@
 // main search box external link buttons
 
-.block--quicktabs .homepage-tab-form-message a {
+.block--quicktabs .homepage-tab-form-message a,
+.pane-quicktabs-mendel-search-tabs .homepage-tab-form-message a {
     font-family: $font-sans;
     font-weight: bold;
     font-size: $font-size-smaller;
