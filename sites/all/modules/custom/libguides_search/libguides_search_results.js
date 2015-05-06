@@ -1,6 +1,6 @@
 (function($) {
     $(document).ready(function() {
-        var query_url = $('.libguides-search-results').attr('data-source')
+        var query_url = $('#libguides-search-results').attr('data-source')
         var tooltip = "Browse Related Library Guides";
         var libguides_url = "http://libguides.princeton.edu/";
         var refine_tooltip = "See All Library Guides Results";
@@ -18,9 +18,9 @@
                 success: function(data) {
 
                     var items = [];
-                    if (data.length > 0) {
+                    if (data.number > 0) {
 
-                        $.each(data, function(index, result) {
+                        $.each(data.records, function(index, result) {
 
                             if (index > 2) {
                                 return false;
@@ -32,7 +32,7 @@
                                 var row_class = "even"
                             }
 
-                            items.push('<li class="'+ row_class +'"><h3><a title="' + result.name + '" href="' + result.friendly_url +'" target="_blank">' + result.name + '</a></h3><div class="libguide-description">' + result.description + '</div></li>');
+                            items.push('<li class="'+ row_class +'"><h3><a title="' + result['name'] + '" href="' + result['url'] +'" target="_blank">' + result['name'] + '</a></h3><div class="libguide-description">' + result['description'] + '</div></li>');
                         
                         });
                         $('<ul/>', {
@@ -41,13 +41,13 @@
                             }).appendTo('.libguides-search-results');
                         $('#libguides-search-results-spinner').hide();
 
-                        if (data.length > 3) {
+                        if (data.number > 3) {
                             var search_term = $('.libguides-search-results').attr('id');
 
-                            $('.libguides-search-results').append('<div class="libguide more-link"><a title="" target="_blank" href="http://libguides.princeton.edu/srch.php?q=' + search_term + '">See all Library Guides results</a></div>');
+                            $('.libguides-search-results').append('<div class="libguide more-link"><a title="" target="_blank" href="'+ data.more +'">See all Library Guides results</a></div>');
                             $('#libguides_block-libguides_search_results h2').replaceWith(function() {
                                 var url = $.trim($(this).text());
-                                return '<h2><a title="' + tooltip + '"  href="http://libguides.princeton.edu/srch.php?q=' + search_term + '" target="_blank"><i class="icon-compass"></i>Library Guides Results</a></h2>';
+                                return '<h2><a title="' + tooltip + '"  href="'+ data.more +'" target="_blank"><i class="icon-compass"></i>Library Guides Results</a></h2>';
                             });
                         }
 
