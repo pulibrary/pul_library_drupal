@@ -77,7 +77,7 @@ function libguides_search_results_content() {
   // $sid = libguides_block_get_sid();
   $ajax_spinner = "<div id='libguides-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='https://lgapi.libapps.com/1.1/guides/?search_terms={$path}&site_id=77&key=79eb11fd3c26374e9785bb06bc3f3961&status=1&expand=owner&sort_by=count_hit' class='libguides-search-results' id='{$path}'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/searchit/guides/any?query={$path}' class='libguides-search-results' id='libguides-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }
