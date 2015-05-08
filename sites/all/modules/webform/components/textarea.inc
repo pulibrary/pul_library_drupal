@@ -106,7 +106,7 @@ function _webform_edit_textarea($component) {
 /**
  * Implements _webform_render_component().
  */
-function _webform_render_textarea($component, $value = NULL, $filter = TRUE, $submission = NULL) {
+function _webform_render_textarea($component, $value = NULL, $filter = TRUE) {
   $node = isset($component['nid']) ? node_load($component['nid']) : NULL;
 
   $element = array(
@@ -124,10 +124,6 @@ function _webform_render_textarea($component, $value = NULL, $filter = TRUE, $su
     '#theme_wrappers' => array('webform_element'),
     '#translatable' => array('title', 'description'),
   );
-
-  if ($component['required']) {
-    $element['#attributes']['required'] = 'required';
-  }
 
   if ($component['extra']['placeholder']) {
     $element['#attributes']['placeholder'] = $component['extra']['placeholder'];
@@ -180,18 +176,14 @@ function theme_webform_display_textarea($variables) {
 /**
  * Implements _webform_analysis_component().
  */
-function _webform_analysis_textarea($component, $sids = array(), $single = FALSE, $join = NULL) {
+function _webform_analysis_textarea($component, $sids = array()) {
   $query = db_select('webform_submitted_data', 'wsd', array('fetch' => PDO::FETCH_ASSOC))
     ->fields('wsd', array('no', 'data'))
-    ->condition('wsd.nid', $component['nid'])
-    ->condition('wsd.cid', $component['cid']);
+    ->condition('nid', $component['nid'])
+    ->condition('cid', $component['cid']);
 
   if (count($sids)) {
-    $query->condition('wsd.sid', $sids, 'IN');
-  }
-
-  if ($join) {
-    $query->innerJoin($join, 'ws2_', 'wsd.sid = ws2_.sid');
+    $query->condition('sid', $sids, 'IN');
   }
 
   $nonblanks = 0;

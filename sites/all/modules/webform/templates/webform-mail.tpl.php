@@ -12,10 +12,8 @@
  * - $node: The node object for this webform.
  * - $submission: The webform submission.
  * - $email: The entire e-mail configuration settings.
- * - $user: The current user submitting the form. Always the Anonymous user
- *   (uid 0) for confidential submissions.
- * - $ip_address: The IP address of the user submitting the form or '(unknown)'
- *   for confidential submissions.
+ * - $user: The current user submitting the form.
+ * - $ip_address: The IP address of the user submitting the form.
  *
  * The $email['email'] variable can be used to send different e-mails to different users
  * when using the "default" e-mail template.
