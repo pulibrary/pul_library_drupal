@@ -202,7 +202,7 @@ class webform_handler_field_submission_data extends views_handler_field {
       }
 
       if ($this->options['format'] == 'html') {
-        $render = array('#submission' => $submission);
+        $render = array();
         _webform_client_form_add_component($webform, $component, NULL, $render, $render, $submission->data, 'html');
         $render = $render[$component['form_key']];
         // Remove display label.

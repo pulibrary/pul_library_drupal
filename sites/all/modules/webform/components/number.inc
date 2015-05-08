@@ -272,7 +272,7 @@ function theme_webform_number($variables) {
 /**
  * Implements _webform_render_component().
  */
-function _webform_render_number($component, $value = NULL, $filter = TRUE, $submission = NULL) {
+function _webform_render_number($component, $value = NULL, $filter = TRUE) {
   $node = isset($component['nid']) ? node_load($component['nid']) : NULL;
 
   $element = array(
@@ -296,10 +296,6 @@ function _webform_render_number($component, $value = NULL, $filter = TRUE, $subm
     '#decimals' => $component['extra']['decimals'],
     '#translatable' => array('title', 'description', 'field_prefix', 'field_suffix'),
   );
-
-  if ($component['required']) {
-    $element['#attributes']['required'] = 'required';
-  }
 
   // Set the decimal count to zero for integers.
   if ($element['#integer'] && $element['#decimals'] === '') {
@@ -407,20 +403,16 @@ function theme_webform_display_number($variables) {
 /**
  * Implements _webform_analysis_component().
  */
-function _webform_analysis_number($component, $sids = array(), $single = FALSE, $join = NULL) {
+function _webform_analysis_number($component, $sids = array(), $single = FALSE) {
   $advanced_stats = $single;
 
   $query = db_select('webform_submitted_data', 'wsd', array('fetch' => PDO::FETCH_ASSOC))
     ->fields('wsd', array('data'))
-    ->condition('wsd.nid', $component['nid'])
-    ->condition('wsd.cid', $component['cid']);
+    ->condition('nid', $component['nid'])
+    ->condition('cid', $component['cid']);
 
   if (count($sids)) {
-    $query->condition('wsd.sid', $sids, 'IN');
-  }
-
-  if ($join) {
-    $query->innerJoin($join, 'ws2_', 'wsd.sid = ws2_.sid');
+    $query->condition('sid', $sids, 'IN');
   }
 
   $population = array();
@@ -873,10 +865,10 @@ function webform_modulo($a, $b) {
  * See @link http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm @endlink
  * See @link http://floating-point-gui.de/errors/comparison/ @endlink
  * See @link http://en.wikipedia.org/wiki/IEEE_754-1985#Denormalized_numbers @endlink
- *
- * @param float $number_1
+
+ * @param $number_1 float
  *   The first number.
- * @param float $number_2
+ * @param $number_2 float
  *   The second number.
  *
  * @return int|null
