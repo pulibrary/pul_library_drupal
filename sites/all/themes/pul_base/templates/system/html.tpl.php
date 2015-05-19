@@ -59,6 +59,7 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+</head>
 <body<?php print $attributes;?>>
   <?php print $page_top; ?>
   <?php print $page; ?>

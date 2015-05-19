@@ -8,6 +8,20 @@ module.exports = function (grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+      imagemin: {
+         dist: {
+            options: {
+              optimizationLevel: 5
+            },
+            files: [{
+               expand: true,
+               cwd: 'images',
+               src: ['**/*.{png,jpg,gif}'],
+               dest: 'images/'
+            }]
+         }
+      },
+
       autoprefixer: {
         options: {
             browsers: ['last 3 versions', 'ie 9', '> 5%', 'iOS > 7']
@@ -100,7 +114,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default',   ['watch']);
-  grunt.registerTask('build', ['compass', 'autoprefixer', 'shell']); //change to sass for libsass
+  grunt.registerTask('build', ['compass', 'autoprefixer', 'imagemin','shell']); //change to sass for libsass
   grunt.registerTask('tigerstyle',  ['build', 'cssc', 'cssmin']);
 
 };
