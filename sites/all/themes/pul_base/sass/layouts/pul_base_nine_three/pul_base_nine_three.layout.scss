@@ -4,13 +4,13 @@
  * Styling of the "PUL" 9-3 column layout..
  ******************************************************************************/
 
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "../../variables/grids";
+// @import "compass";
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "../../variables/grids";
 
 .panel-display--pul_base_nine_three {
-  @include pie-clearfix;
+  @include clearfix;
 }
 
 .pul_base_nine_three-region {

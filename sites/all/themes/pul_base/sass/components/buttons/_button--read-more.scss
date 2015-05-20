@@ -16,7 +16,7 @@
     color: $orange-darkest;
     padding: 1em;
     text-decoration: none;
-    @include border-radius(3px);
+    border-radius: 3px;
 
     float: none;
     display: block;

@@ -1,11 +1,11 @@
 html {
-  font-size: 100%;
-  line-height: 1.5em;
+  font-size: 1em;
 }
 
 body {
 	font-family: $font-sans;
-  font-size: em(14);
+  font-size: 14px;
+  line-height: 1.645em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,52 +13,52 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-h1 {
-  @include adjust-font-size-to($h1-fz);
-  @include rhythm(0, 0, 0, 0, $h1-fz);
-}
+// h1 {
+//   @include adjust-font-size-to($h1-fz);
+//   @include rhythm(0, 0, 0, 0, $h1-fz);
+// }
 
-h2 {
-  @include adjust-font-size-to($h2-fz);
-  @include rhythm(1, 0, 0, 0.5, $h2-fz);
-}
+// h2 {
+//   @include adjust-font-size-to($h2-fz);
+//   @include rhythm(1, 0, 0, 0.5, $h2-fz);
+// }
 
-h3 {
-  @include adjust-font-size-to($h3-fz);
-  @include rhythm(1, 0, 0, 0.5, $h3-fz);
-}
+// h3 {
+//   @include adjust-font-size-to($h3-fz);
+//   @include rhythm(1, 0, 0, 0.5, $h3-fz);
+// }
 
-h4 {
-  @include adjust-font-size-to($h4-fz);
-}
+// h4 {
+//   @include adjust-font-size-to($h4-fz);
+// }
 
-h5 {
-  @include adjust-font-size-to($h5-fz);
-}
+// h5 {
+//   @include adjust-font-size-to($h5-fz);
+// }
 
-h6 {
-  @include adjust-font-size-to($h6-fz);
-}
+// h6 {
+//   @include adjust-font-size-to($h6-fz);
+// }
 
 p {
-  margin: 1.4em 0;
+  margin-bottom: 1.3em;
 }
 
-h1 {
-    @include adjust-font-size-to(2em);
-    @include rhythm(0, 0, 0, 0.5, 2em);
-}
+// h1 {
+//     @include adjust-font-size-to(2em);
+//     @include rhythm(0, 0, 0, 0.5, 2em);
+// }
 
-h2 {
-    @include adjust-font-size-to(1.3em);
-    @include rhythm(0.75, 0, 0, 0.5, 1.3em);
-}
+// h2 {
+//     @include adjust-font-size-to(1.3em);
+//     @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+// }
 
-h3 {
-    @include adjust-font-size-to(1.1em);
-    @include rhythm(0.75, 0, 0, 0.5, 1.1em);
-    font-family: $font-sans;
-}
+// h3 {
+//     @include adjust-font-size-to(1.1em);
+//     @include rhythm(0.75, 0, 0, 0.5, 1.1em);
+//     font-family: $font-sans;
+// }
 
 a {
   @include transition(color 0.1s linear);

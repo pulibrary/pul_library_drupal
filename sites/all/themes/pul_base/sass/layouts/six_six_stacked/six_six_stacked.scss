@@ -4,13 +4,13 @@
  * Styling of the 6-6 column layout..
  ******************************************************************************/
 
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "../../variables/grids";
+// @import "compass";
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "../../variables/grids";
 
 .panel-display--six_six {
-  @include pie-clearfix;
+  @include clearfix;
 }
 
 .six_six-region {

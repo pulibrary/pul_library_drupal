@@ -5,13 +5,13 @@
  * Styling of the "PUL" 4-5-3 stacked column layout..
  ******************************************************************************/
 
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "../../variables/grids";
+// @import "compass";
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "../../variables/grids";
 
 .panel-display--four_five_three_stacked {
-  @include pie-clearfix;
+  @include clearfix;
 }
 
 .four_five_three_stacked-region {

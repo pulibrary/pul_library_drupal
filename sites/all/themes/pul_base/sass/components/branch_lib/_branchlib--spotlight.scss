@@ -32,7 +32,7 @@
     }
 
     .field--name-field-spotlight-graphic img {
-        @include border-radius(4px);
+        border-radius: 4px;
         opacity: 0.7;
     }
 

@@ -11,5 +11,5 @@
     color: $white;
     padding: 3px 7px;
     text-decoration: none;
-    @include border-radius(3px);
+    border-radius: 3px;
 }

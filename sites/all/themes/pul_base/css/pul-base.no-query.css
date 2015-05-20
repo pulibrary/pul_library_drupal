@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Merriweather");
 button,
 input[type="submit"] {
   -webkit-font-smoothing: antialiased;
@@ -345,134 +346,22 @@ media {
   font-style: normal;
 }
 html {
-  font-size: 100%;
-  line-height: 1.5em;
+  font-size: 1em;
 }
 
 body {
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.875em;
+  line-height: 1.4375em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
   font-weight: normal;
 }
 
-h1 {
-  font-size: 30px;
-  font-size: 1.875rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 0px;
-  margin-top: 0rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 0px;
-  margin-bottom: 0rem;
-}
-
-h2 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin-top: 24px;
-  margin-top: 1.5rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-}
-
-h4 {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-
-h5 {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-
-h6 {
-  font-size: 10px;
-  font-size: 0.625rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-}
-
 p {
-  margin: 1.4em 0;
-}
-
-h1 {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 0px;
-  margin-top: 0rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-}
-
-h2 {
-  font-size: 21px;
-  font-size: 1.3rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 18px;
-  margin-top: 1.125rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 18px;
-  font-size: 1.1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin-top: 18px;
-  margin-top: 1.125rem;
-  padding-top: 0px;
-  padding-top: 0rem;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-  margin-bottom: 12px;
-  margin-bottom: 0.75rem;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 1.3em;
 }
 
 a {
@@ -629,7 +518,7 @@ a:active, a:focus {
   *zoom: 1;
   *display: inline;
   text-align: left;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   position: relative;
 }
 .breadcrumb li:after, .breadcrumb li:before {
@@ -638,9 +527,9 @@ a:active, a:focus {
   right: auto;
   bottom: 0px;
   left: 100%;
-  border-bottom: 12px solid transparent;
-  border-left: 6px solid transparent;
-  border-top: 12px solid transparent;
+  border-bottom: 11.5px solid transparent;
+  border-left: 5.75px solid transparent;
+  border-top: 11.5px solid transparent;
   content: '';
   display: block;
   margin: auto;
@@ -666,15 +555,15 @@ a:active, a:focus {
   background-color: #e8e6df;
   border: 1px solid #ffffff;
   color: #000000;
-  line-height: 24px;
+  line-height: 23px;
   margin-right: -5px;
   font-size: 0.75rem;
-  padding: 0 6px 0 12px;
+  padding: 0 5.75px 0 11.5px;
   position: relative;
   text-decoration: none;
 }
 .breadcrumb a:first-child {
-  padding-left: 12px;
+  padding-left: 11.5px;
   border-top-left-radius: 0.1875em;
   border-bottom-left-radius: 0.1875em;
 }
@@ -683,7 +572,7 @@ a:active, a:focus {
   color: #000000;
   border-bottom-right-radius: 0.1875em;
   border-top-right-radius: 0.1875em;
-  padding-right: 12px;
+  padding-right: 11.5px;
 }
 .breadcrumb a:hover {
   color: #3366cc;
@@ -742,9 +631,9 @@ a:active, a:focus {
 }
 .l-region--footer h2, .l-region--footer h2 a {
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1.14286rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
   font-weight: bold;
   color: #89440a;
 }
@@ -1009,7 +898,7 @@ p:empty {
 }
 .block--views-spotlight-dispalsys-block a {
   font-size: 0.875rem;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   color: #ffffff;
 }
@@ -1039,7 +928,7 @@ p:empty {
 }
 .block--pudl-highlight a {
   font-size: 0.75rem;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   color: #ffffff;
   text-align: center;
@@ -1049,7 +938,7 @@ p:empty {
 }
 
 .block--views-spotlight-dispalsys-block {
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   cursor: pointer;
 }
 .block--views-spotlight-dispalsys-block .view-content .views-row {
@@ -1065,7 +954,7 @@ p:empty {
 }
 .block--views-spotlight-dispalsys-block .spotlight-image {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 200;
   padding: 0;
   text-align: center;
@@ -1160,9 +1049,9 @@ p:empty {
 .views-table td {
   padding: 0.5em;
   font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 0.85714rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 .views-table td.active {
   background: none;
@@ -1176,18 +1065,18 @@ fieldset {
 }
 
 table caption {
-  font-size: 21px;
+  font-size: 18px;
   font-size: 1.3rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 18px;
-  margin-top: 1.125rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 17px;
+  margin-top: 1.23214rem;
   padding-top: 0px;
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 12px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.82143rem;
   text-align: left;
 }
 
@@ -1196,18 +1085,18 @@ table caption {
 }
 
 .pul_base_nine_three-region--second h2 {
-  font-size: 21px;
+  font-size: 18px;
   font-size: 1.3rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 18px;
-  margin-top: 1.125rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 17px;
+  margin-top: 1.23214rem;
   padding-top: 0px;
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 12px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.82143rem;
 }
 
 .branch-libraries .l-main {
@@ -1294,7 +1183,7 @@ table caption {
   height: 100%;
   max-width: 220px;
   font-size: 16px;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   text-shadow: black 2px 2px;
   z-index: 1;
@@ -1387,7 +1276,7 @@ table caption {
 .libraryh3lp .button--libraryh3lp {
   margin-left: 1em;
   font-size: 0.6rem;
-  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
   font-style: italic;
   font-weight: bold;
   border: none;
@@ -1425,7 +1314,7 @@ table caption {
 .views-more-link,
 .node-readmore a,
 .more-link a {
-  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
   font-style: italic;
   font-weight: bold;
   font-size: 0.75rem;
@@ -1479,7 +1368,7 @@ table caption {
 
 .block--quicktabs .homepage-tab-form-message a,
 .pane-quicktabs-mendel-search-tabs .homepage-tab-form-message a {
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 0.75rem;
   border: none;
@@ -1726,9 +1615,9 @@ a.skip2main:focus {
 
 div.view-content > table.views-table > tbody > tr > td {
   font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 div.view-content > table.views-table > tbody > tr > td p {
   margin: 0.5em 0;
@@ -1769,9 +1658,9 @@ div.view-content > table.views-table > tbody > tr > td p {
 
 .front div.view-content > table.views-table > tbody > tr > td {
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1.14286rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 .front .library-hours table {
   margin-bottom: 1em;
@@ -1801,9 +1690,9 @@ div.view-content > table.views-table > tbody > tr > td p {
 .three_six_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3,
 .pul_base_nine_three-region--second .view-library-hours .view-header .date-nav-wrapper .date-heading h3 {
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1.14286rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 .three_six_three-region--second .view-library-hours .date-nav-wrapper .date-prev [class^="icon-"],
 .three_six_three-region--second .view-library-hours .date-nav-wrapper .date-next [class^="icon-"],
@@ -1828,9 +1717,9 @@ div.view-content > table.views-table > tbody > tr > td p {
 .three_six_three-region--second .view-library-hours .view-content td,
 .pul_base_nine_three-region--second .view-library-hours .view-content td {
   font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 .three_six_three-region--second .view-library-hours .view-content td.views-field-field-hours-library-status,
 .pul_base_nine_three-region--second .view-library-hours .view-content td.views-field-field-hours-library-status {
@@ -2167,9 +2056,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 
 .front .pane-menu-menu-get-help-menu .menu .leaf a {
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1.14286rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 
 .l-branding nav ul {
@@ -2207,7 +2096,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
-  font-family: "Droid Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
   height: 50px;
   width: 100%;
   z-index: 101;
@@ -2296,7 +2185,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   position: relative;
 }
 .wrapper--navigation li.expanded > a:after {
-  font-size: 1.125rem;
+  font-size: 1rem;
   position: absolute;
   right: 0.5em;
 }
@@ -2346,24 +2235,24 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .three_six_three_stacked-region--first h2,
 .three_nine-region--first h2,
 .three_three_three_three_stacked-region--first h2 {
-  font-size: 21px;
+  font-size: 18px;
   font-size: 1.3rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin-top: 18px;
-  margin-top: 1.125rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
+  margin-top: 17px;
+  margin-top: 1.23214rem;
   padding-top: 0px;
   padding-top: 0rem;
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 12px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.82143rem;
 }
 .three_six_three-region--first a,
 .three_six_three_stacked-region--first a,
 .three_nine-region--first a,
 .three_three_three_three_stacked-region--first a {
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .three_six_three-region--first ul.menu li a,
 .three_six_three_stacked-region--first ul.menu li a,
@@ -2449,11 +2338,11 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 12px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.82143rem;
   font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 1.14286rem;
+  line-height: 23px;
+  line-height: 1.64286rem;
 }
 
 .front .library-news-link {
@@ -2922,7 +2811,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   padding-bottom: 0px;
   padding-bottom: 0rem;
   margin-bottom: 2px;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.16429rem;
 }
 
 .pul_base_four_four_four_stacked-region--first li,
@@ -3119,7 +3008,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   width: 100%;
   background: #494f57;
   color: #ffffff;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-right: 1px solid #877d60;
   text-align: center;
   padding: 0.4em;
@@ -3177,7 +3066,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   margin: 0.8em 0;
   display: block;
   border: 1px solid #737373;
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-radius: 4px;
 }
 .block--quicktabs input[type="text"]:focus, .pane-quicktabs-mendel-search-tabs input[type="text"]:focus {
@@ -3185,7 +3074,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   outline: none;
 }
 .block--quicktabs .quicktabs_main input[type="submit"], .pane-quicktabs-mendel-search-tabs .quicktabs_main input[type="submit"] {
-  font-family: "Roboto", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 45px;
   width: 15%;
   padding: 0;

@@ -1,12 +1,21 @@
 {
   "name": "pul_base",
   "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
     "respond": "fubhy/respond",
     "selectivizr": "fubhy/selectivizr",
     "html5shiv": "fubhy/html5shiv",
     "matchmedia": "fubhy/matchmedia",
     "pie": "fubhy/pie",
-    "normalize.scss": "~3.0.2+normalize.3.0.2"
+    "normalize.scss": "~3.0.2+normalize.3.0.2",
+    "breakpoint-sass": "~2.5.0",
+    "singularity": "~1.6.2"
   }
 }

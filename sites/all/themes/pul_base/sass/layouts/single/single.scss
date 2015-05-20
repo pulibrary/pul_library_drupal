@@ -4,13 +4,13 @@
  * Styling of the 12 wide single column layout..
  ******************************************************************************/
 
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "../../variables/grids";
+// @import "compass";
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "../../variables/grids";
 
 .panel-display--single {
-  @include pie-clearfix;
+  @include clearfix;
 }
 
 .single-region {

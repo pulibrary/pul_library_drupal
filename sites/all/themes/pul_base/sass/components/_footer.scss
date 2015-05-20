@@ -42,7 +42,7 @@
 	}
 
 	h2, h2 a {
-		@include adjust-font-size-to(16px);
+		// @include adjust-font-size-to(16px); //compass mixin vertical rhythm
 		font-weight: bold;
 		color: $orange-darkest;
 

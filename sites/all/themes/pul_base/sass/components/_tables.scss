@@ -22,7 +22,7 @@
     }
     td {
         padding: 0.5em;
-        @include adjust-font-size-to(12px);
+        // @include adjust-font-size-to(12px);
     }
     td.active {
         background: none;
@@ -38,8 +38,8 @@ fieldset {
 }
 
 table caption {
-    @include adjust-font-size-to(1.3em);
-    @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+    // @include adjust-font-size-to(1.3em);
+    // @include rhythm(0.75, 0, 0, 0.5, 1.3em);
     text-align: left;
 }
 

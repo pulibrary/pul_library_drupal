@@ -1,8 +1,16 @@
 module.exports = function (grunt) {
 
   "use strict";
-
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+  // Load tasks automatically with 'load-grunt-tasks' plugin.
+  require('load-grunt-tasks')(grunt);
+  // Define our theme directory
+  var themeDir = '../pul_base';
+  // Dependencies from Bower
+  var libraries = ['libraries'];
+  // Define the CSS files we want compiled from SCSS files
+  var sassFiles = {};
+  sassFiles[themeDir + '/css/pul-base.styles.css'] = themeDir + '/sass/pul-base.styles.scss';
+  // require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
 
@@ -22,6 +30,21 @@ module.exports = function (grunt) {
          }
       },
 
+      sass_globbing: {
+        your_target: {
+          files: {
+            'sass/variables/_variables.scss': 'sass/variables/**/*.scss',
+            'sass/abstractions/_abstractions.scss': 'sass/abstractions/**/*.scss',
+            'sass/base/_base.scss': 'sass/base/**/*.scss',
+            'sass/components/_components.scss': 'sass/components/**/*.scss',
+            'sass/layouts/_layouts.scss': 'sass/layouts/**/*.scss'
+          },
+          options: {
+            useSingleQuotes: false
+          }
+        }
+      },
+
       autoprefixer: {
         options: {
             browsers: ['last 3 versions', 'ie 9', '> 5%', 'iOS > 7']
@@ -35,12 +58,12 @@ module.exports = function (grunt) {
       },
 
       watch: {
-        options: {
-          livereload: true
-        },
+        // options: {
+        //   livereload: true
+        // },
         sass: {
           files: 'sass/**/*.scss',
-          tasks: ['compass'] //change to sass for libsass
+          tasks: ['sass:dist'] //change to sass for libsass; compass for compass
         }
       },
 
@@ -86,17 +109,17 @@ module.exports = function (grunt) {
         }
       },
 
-      //libsass compiler
-      // sass: {
-      //   options: {
-      //     sourceMap: true
-      //   },
-      //   dist: {
-      //     files: {
-      //       'pul-base.styles.css': 'pul-base.styles.scss'
-      //     }
-      //   }
-      // },
+      // libsass compiler
+      sass: {
+        options: {
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            'css/pul-base.styles.css': 'sass/pul-base.styles.scss'
+          }
+        }
+      },
 
       jshint: {
         options: {
@@ -113,8 +136,8 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('default',   ['watch']);
-  grunt.registerTask('build', ['compass', 'autoprefixer', 'imagemin','shell']); //change to sass for libsass
+  grunt.registerTask('default', ['sass_globbing','sass:dist']);
+  grunt.registerTask('build', ['sass_globbing','sass', 'autoprefixer', 'imagemin','shell']); //change to sass for libsass; compass for compass
   grunt.registerTask('tigerstyle',  ['build', 'cssc', 'cssmin']);
 
 };

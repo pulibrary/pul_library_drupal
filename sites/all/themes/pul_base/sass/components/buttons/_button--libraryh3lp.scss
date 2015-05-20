@@ -9,7 +9,7 @@
         text-shadow: none;
         padding: 0 7px;
         text-decoration: none;
-        @include border-radius(3px);
+        border-radius: 3px;
         position: relative;
         top: -2px;
         display: inline-block;

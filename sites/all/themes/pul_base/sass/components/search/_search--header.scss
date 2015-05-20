@@ -74,8 +74,8 @@
 		      height: 28px;
 		      font-weight: normal;
 		      color: #aaa;
-		      @include border-top-left-radius(0);
-		      @include border-bottom-left-radius(0);
+		      border-top-left-radius: 0;
+		      border-bottom-left-radius: 0;
 		  }
 		}
 

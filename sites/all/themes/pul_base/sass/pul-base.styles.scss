@@ -1,8 +1,6 @@
 // Import external libraries.
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "toolkit";
+@import "libraries/breakpoint-sass/stylesheets/breakpoint";
+@import "libraries/singularity/stylesheets/singularitygs";
 @import "vendor/bourbon/bourbon";
 @import "vendor/base/base";
 
@@ -18,8 +16,9 @@
 // directly. Variables-, function- or mixin providing partials should never
 // output any styles themselves: Importing them multiple times to resolve
 // dependencies shouldn't be a problem.
-@import "variables/**/*";
-@import "abstractions/**/*";
-@import "base/**/*";
-@import "components/**/*";
-@import "layouts/**/*";
+
+@import "variables/_variables";
+@import "abstractions/_abstractions";
+@import "base/_base";
+@import "components/_components";
+@import "layouts/_layouts";

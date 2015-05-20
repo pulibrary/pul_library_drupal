@@ -7,7 +7,7 @@
 .front {
 
     div.view-content > table.views-table > tbody > tr > td {
-        @include adjust-font-size-to(16px);
+        // @include adjust-font-size-to(16px);
     }
 
     .library-hours {
