@@ -1,4 +1,12 @@
-# normalize.css v3
+[![Build Status](https://travis-ci.org/krisbulman/normalize-libsass.svg?branch=master)](https://travis-ci.org/krisbulman/normalize-libsass)
+
+# normalize-libsass 1.0.2
+
+A libsass compatible Sass port of normalize.css; a collection of HTML element and attribute style-normalizations.
+
+This project was created because libsass does not currently import .css files. This can be an annoying problem when using a package manager such as bower. This port also leverages Sass variables for optional customization and inspired by [JohnAlbin's Compass port](https://github.com/JohnAlbin/normalize-scss). While this port is compatible with libsass, Ruby Sass 3.3, and Ruby Sass 3.3 + Compass, it does not use vertical rhythm mixins, if you wish to have vertical rhythm integrated in with your reset, then use John's Compass port.
+
+# normalize.css v3.0.2
 
 Normalize.css is a customisable CSS file that makes browsers render all
 elements more consistently and in line with modern standards.
@@ -11,16 +19,23 @@ normalizing.
 
 ## Install
 
-* [npm](http://npmjs.org/): `npm install --save normalize.css`
-* [Component(1)](https://github.com/component/component/): `component install necolas/normalize.css`
-* [Bower](http://bower.io/): `bower install --save normalize.css`
-* [cdnjs](https://cdnjs.com/libraries/normalize)
-* [Download](http://necolas.github.io/normalize.css/latest/normalize.css).
+* Download directly from the [project page](https://github.com/krisbulman/normalize-libsass/releases).
+* Install with [Bower](http://bower.io/): bower install --save normalize-libsass
+* Install with [Component](http://component.io/): component install krisbulman/normalize-libsass
 
-No other styles should come before Normalize.css.
+No other styles should come before _normalize.scss.
 
-It is recommended that you include the `normalize.css` file as untouched
-library code.
+## How to use it
+
+Prerequisite reading: [About normalize.css article](http://nicolasgallagher.com/about-normalize-css/).
+
+To use the libsass port of Normalize, simply:
+
+1. Copy the _normalize.scss file to your Sass directory
+2. Import the partial into your main Sass file with @import "normalize";
+and follow the "About normalize.css" article's suggestions:
+  * Approach 1: Use _normalize.scss as a starting point for your own project's base Sass, customising the values to match the design's requirements. See the included ```!default``` variables that can be customized in your project.
+  * Approach 2: Include _normalize.scss untouched and build upon it, overriding the defaults later in your Sass when necessary. Set ```$strict-normalize: true;``` in your project.
 
 ## What does it do?
 
@@ -34,7 +49,7 @@ library code.
 
 * Google Chrome (latest)
 * Mozilla Firefox (latest)
-* Mozilla Firefox ESR
+* Mozilla Firefox 4
 * Opera (latest)
 * Apple Safari 6+
 * Internet Explorer 8+
@@ -82,9 +97,11 @@ inherited by `legend`.
 
 ## Contributing
 
-Please read the CONTRIBUTING.md
+Please read Necolas' [contributing guidelines](https://github.com/krisbulman/normalize-libsass/blob/master/CONTRIBUTING.md).
 
 ## Acknowledgements
 
 Normalize.css is a project by [Nicolas Gallagher](https://github.com/necolas),
 co-created with [Jonathan Neal](https://github.com/jonathantneal).
+
+This libsass compatible port is a project by [Kris Bulman](https://github.com/krisbulman).
