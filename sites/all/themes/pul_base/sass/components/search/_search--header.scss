@@ -13,6 +13,7 @@
 
     @include breakpoint($tab) {
     	@include grid-span(6,7);
+    	margin-right: 0;
     }
 
     .block--search-form,
@@ -31,7 +32,7 @@
 		  width: 100%;
 
 		  input {
-		    @include box-sizing(border-box);
+		    box-sizing: border-box;
 		    display: inline-block;
 		    border: 1px #1a1f25 solid;
 		  }
@@ -54,18 +55,25 @@
 		      padding: .5em .8em;
 		      font-size: $font-size-smaller;
 		      font-style: italic;
-		      border-radius: $base-border-radius * 2;
+		      border-radius: em(4);
 		      margin: 0;
 		      background: lighten($gray-dark, 10);
-		      border: darken($gray-dark, 5);
+		      border: darken($gray-dark, 15);
 		      color: #aaa;
+		      
+		      &:focus {
+				background: $white;
+				color: $black;
+		      }
 		    }
 	      
 		  }
 
 		  input[type=submit] {
-		      @include button(simple, darken($gray-dark, 5));
-		      content: '<span class="icon-search"></span>';
+		  	display:none;
+		  } 
+		  button {
+		      background: darken($gray-darkest, 15);
 		      position: absolute;
 		      right: 0;
 		      top: 0;
@@ -73,7 +81,7 @@
 		      padding: 5px 10px;
 		      height: 28px;
 		      font-weight: normal;
-		      color: #aaa;
+		      color: $gray-lighter;
 		      border-top-left-radius: 0;
 		      border-bottom-left-radius: 0;
 		  }

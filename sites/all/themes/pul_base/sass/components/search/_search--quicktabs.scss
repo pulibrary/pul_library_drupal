@@ -35,9 +35,12 @@
 		font-size: $font-size-base;
 		padding: 1em 1.4em;
 		clear: both;
+		border-bottom-left-radius: em(4);
+		border-bottom-right-radius: em(4);
 	}
 	.quicktabs-tabs > li {
 		margin: 0;
+		padding: 0;
 		top: 0;
 		clear: none;
 		width: 25%;
@@ -46,46 +49,42 @@
 		display: inline-block;
 		float: left;
 
+		a {
+			width: calc(100% - 1px);
+			background: $gray-dark;
+			color: $white;
+			font-family: $font-sans;
+			border-right: 1px solid darken($gray-light, 50%);
+			text-align: center;
+			padding: 0.4em 0;
+			margin: 0;
+			display: inline-block;
+
+			&:hover {
+		      background: lighten(#494f57, 10);
+		    }
+
+		    &:active {
+		    	@include transition (all 0,2s ease-in-out);
+		    }
+		    &:focus {
+		    	background: lighten(#494f57, 10);
+		    }
+		}
+
 		&:first-child a {
 	    	border-top-left-radius: 4px;
 	    }
 	    &:last-child a {
 	    	border-top-right-radius: 4px;
-	    }
-	}
-	ul.quicktabs-tabs li {
-		padding: 0;
-		margin: 0;
-	}
-	.quicktabs-tabs li a {
-		width: 100%;
-		background: $gray-dark;
-		color: $white;
-		font-family: $font-sans;
-		border-right: 1px solid darken($gray-light, 50%);
-		text-align: center;
-		padding: 0.4em;
-		margin: 0;
-		display: inline-block;
+	    	border-right: none;
+	    	width: 100%;
 
-		&:hover {
-	      background: lighten(#494f57, 10);
-	    }
-
-	    &:active {
-	    	@include transition (all 0,2s ease-in-out);
-	    }
-	    &:focus {
-	    	background: lighten(#494f57, 10);
 	    }
 	}
 	.quicktabs-tabs li.active a {
 		background: darken($gray-light, 3);
 		color: black;
-	}
-
-	.quicktabs-tabs li:last-child a {
-		border-right: none;
 	}
 
 	.quicktabs-tabs li.ui-state-active a, 
@@ -124,6 +123,9 @@
 		}
 	}
 	.quicktabs_main input[type="submit"] {
+		@include hidden();
+	} 
+	.quicktabs_main button {
 		font-family: $font-sans;
 		height: 45px;
 		width: 15%;

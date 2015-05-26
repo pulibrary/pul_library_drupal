@@ -58,9 +58,9 @@ module.exports = function (grunt) {
       },
 
       watch: {
-        // options: {
-        //   livereload: true
-        // },
+        options: {
+          livereload: true
+        },
         sass: {
           files: 'sass/**/*.scss',
           tasks: ['sass:dist'] //change to sass for libsass; compass for compass
@@ -116,7 +116,12 @@ module.exports = function (grunt) {
         },
         dist: {
           files: {
-            'css/pul-base.styles.css': 'sass/pul-base.styles.scss'
+            'css/pul-base.normalize.css': 'sass/pul-base.normalize.scss',
+            'css/pul-base.styles.css': 'sass/pul-base.styles.scss',
+            'css/pul-base.layouts.css': 'sass/pul-base.layouts.scss',
+            'css/pul-base.hacks.css': 'sass/pul-base.hacks.scss',
+            'css/pul-base.libguides.css': 'sass/pul-base.libguides.scss',
+            'css/pul-base.illiad.css': 'sass/pul-base.illiad.scss'
           }
         }
       },
@@ -136,7 +141,7 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('default', ['sass_globbing','sass:dist']);
+  grunt.registerTask('default', ['sass_globbing','sass:dist', 'watch']);
   grunt.registerTask('build', ['sass_globbing','sass', 'autoprefixer', 'imagemin','shell']); //change to sass for libsass; compass for compass
   grunt.registerTask('tigerstyle',  ['build', 'cssc', 'cssmin']);
 

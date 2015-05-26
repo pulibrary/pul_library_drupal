@@ -2,11 +2,9 @@
 
 @import "./alerts";
 @import "./branding";
-@import "./breadcrumb";
 @import "./db-credentials";
 @import "./footer";
 @import "./glossary";
-@import "./hacks";
 @import "./header";
 @import "./images";
 @import "./lists";
@@ -54,7 +52,7 @@
 @import "overrides/accordion-faq";
 @import "search/search--databases";
 @import "search/search--header";
+@import "search/search--quicktabs";
 @import "search/search--results";
 @import "search/search--staff";
 @import "search/search--stokes";
-@import "search/search";

@@ -14,9 +14,9 @@
     "html5shiv": "fubhy/html5shiv",
     "matchmedia": "fubhy/matchmedia",
     "pie": "fubhy/pie",
-    "normalize.scss": "~3.0.2+normalize.3.0.2",
     "breakpoint-sass": "~2.5.0",
-    "singularity": "~1.6.2"
+    "singularity": "~1.6.2",
+    "normalize-libsass": "~1.0.2"
   },
   "devDependencies": {
     "sass-toolkit": "~2.9.0"

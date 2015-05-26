@@ -1,5 +1,20 @@
+// Import external libraries.
+@import "libraries/breakpoint-sass/stylesheets/breakpoint";
+@import "libraries/singularity/stylesheets/singularitygs";
+@import "libraries/sass-toolkit/stylesheets/toolkit";
+@import "vendor/bourbon/bourbon";
+@import "vendor/base/base";
+
+// Import variables, abstractions, base styles, components and layouts using globbing via grunt.
+@import "variables/_variables";
+@import "abstractions/_abstractions";
+
 // Hide the toolbar or admin menu on small screens.
 @media all and (max-width: 800px) {
+  .hide-sm {
+    @include visually-hidden();
+  }
+
   .logged-in .toolbar {
     display: none;
   }
@@ -10,6 +25,10 @@
       margin-top: 0 !important;
     }
   }
+}
+
+.hide {
+  @include visually-hidden();
 }
 
 .float-left {
@@ -41,4 +60,14 @@ h1.icon-article-express--small-after:after {
     .no-entry.future:after {
         content: 'TBA';    
     }
+}
+
+// hide empty p tags
+p:empty {
+    display: none;
+}
+
+// adjust margins for short desc branch libraries
+.three_six_three_stacked-region--middle .pane-node-body p {
+  margin-bottom: 0;
 }
