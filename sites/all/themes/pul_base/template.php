@@ -54,7 +54,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'allsearch_block_form':
            $form['allsearch_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="allsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
             );
@@ -63,7 +63,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'allsearch_form_form':
             $form['allsearch_form_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="search-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
             );
@@ -71,7 +71,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'catalog_block_form':
             $form['catalog_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="catalog-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
             );
@@ -79,7 +79,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'summon_block_form':
             $form['summon_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="summon-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
             );
@@ -87,7 +87,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'dbsearch_block_form':
             $form['dbsearch_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="dbsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
             );
@@ -95,7 +95,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'music_audio_block_form':
             $form['music_audio_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="audio-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
             );
@@ -103,7 +103,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'music_score_block_form':
             $form['music_score_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="score-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
             );
@@ -111,7 +111,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
         case 'music_video_block_form':
             $form['music_video_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
-                '#prefix' => '<button type="submit" id="edit-submit-btn" name="op" class="form-submit">',
+                '#prefix' => '<button type="submit" id="video-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
                 '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
             );
