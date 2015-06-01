@@ -1,3 +1,5 @@
+@import "../../variables/variables";
+
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
@@ -16,9 +18,9 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
-$dark-gray: #333;
-$medium-gray: #999;
+$blue: darken(saturate($tertiary-color, 20), 20);
+$dark-gray: $gray-darker;
+$medium-gray: $gray;
 $light-gray: #ddd;
 
 // Font Colors

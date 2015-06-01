@@ -56,7 +56,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="allsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
+                '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
             );
             break;
 
@@ -65,7 +65,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="search-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
+                '#markup' => '<span class="icon-search"> <span class="hide-sm strong">Search</span></span>',
             );
             break;
         case 'catalog_block_form':

@@ -46,3 +46,9 @@ body {
 .l-main {
 	padding: 1em;
 }
+
+.front .l-main {
+	@include breakpoint($desk){
+		padding: 0;
+	}
+}

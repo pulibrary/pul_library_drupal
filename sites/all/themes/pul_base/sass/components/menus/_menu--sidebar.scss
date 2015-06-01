@@ -5,39 +5,39 @@
     .panel-pane > ul.menu {
         margin-top: 1.75em;
     }
-    h2 {
-        // @include adjust-font-size-to(1.3em);
-        // @include rhythm(0.75, 0, 0, 0.5, 1.3em);
-    }
     a {
         // font-family: $font-sans;
     }
     ul.menu li {
 
         a {
-            padding: .3em;
+            padding: .5em;
             margin: 0;
             display: block;
+            font-size: 1.4em;
         }
 
         a.active, &.expanded a.active {
-                background: $blue-lighter;
+                background: darken(saturate($tertiary-color, 20), 20);
                 color: $white;
         }
 
         &.expanded {
-            background: lighten($blue-lightest, 35);
+            background: $gray-lightest;
             border-radius: 4px;
+            a {
+                color: darken(saturate($tertiary-color, 20), 20);
+            }
         }
     }
 
     ul.menu > li > a {
-        font-size: 1.015rem;
+        font-size: 1.15rem;
     }
 
     ul.menu > li > ul > li > a {
-        // font-size: $font-size-base;
-        padding-left: 2em;
+        font-size: $font-size-base;
+        padding-left: 1em;
     }
 
     ul.menu > li > ul > li > ul > li > a {
