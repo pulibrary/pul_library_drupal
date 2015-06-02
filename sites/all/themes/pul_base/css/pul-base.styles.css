@@ -304,37 +304,9 @@ media {
   /* Legacy iOS */ }
 
 @font-face {
-  font-family: 'Princeton';
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSRegular-webfont.svg#princetonmontidsosregular") format("svg");
-  font-weight: 900;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PrincetonMontiSCap-Regular';
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/montismacap-webfont.svg#princetonmontiscapregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Princeton Bold Italic';
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBOSIta-webfont.svg#princetonmontibdositalic") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Princeton Bold';
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrincMonBolOS-webfont.svg#princetonmontibdosregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Princeton Italic';
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Princeton/PrinceMontiDSOSIta-webfont.svg#princetonmontidsositalic") format("svg");
+  font-family: 'Merriweather';
+  src: url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.svg#princetonmontidsosregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -343,7 +315,7 @@ html {
 
 body {
   background-color: #f5f4f1;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.45;
   color: #333; }
@@ -684,7 +656,7 @@ a:hover {
   margin-bottom: 1em; }
 
 .front .library-news-link h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
   font-size: 1.15em;
   color: #3c6499; }
   .front .library-news-link h3:hover {
@@ -913,7 +885,7 @@ a:hover {
     display: none; }
   .block--views-spotlight-dispalsys-block a {
     font-size: 1rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #ffffff; }
   .block--views-spotlight-dispalsys-block img {
@@ -959,7 +931,7 @@ a:hover {
       margin-right: 0; } }
   .block--pudl-highlight a {
     font-size: 0.875rem;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #ffffff;
     text-align: center; }
@@ -2650,7 +2622,7 @@ body.faq .ui-accordion .ui-accordion-header a {
       width: calc(100% - 1px);
       background: #494f57;
       color: #ffffff;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
       border-right: 1px solid #877d60;
       text-align: center;
       padding: 0.4em 0;
@@ -2702,7 +2674,7 @@ body.faq .ui-accordion .ui-accordion-header a {
     margin: 0.8em 0;
     display: block;
     border: 1px solid #737373;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
     border-radius: 4px; }
     .block--quicktabs input[type="text"]:focus, .pane-quicktabs-mendel-search-tabs input[type="text"]:focus {
       box-shadow: none;
@@ -2711,7 +2683,7 @@ body.faq .ui-accordion .ui-accordion-header a {
     display: none;
     visibility: hidden; }
   .block--quicktabs .quicktabs_main button, .pane-quicktabs-mendel-search-tabs .quicktabs_main button {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
     height: 45px;
     width: 15%;
     padding: 0;
@@ -2782,7 +2754,7 @@ body.faq .ui-accordion .ui-accordion-header a {
   .view-databases-keyword-search ul h3,
   .view-general-site-keyword-search ul h3,
   .view-general-site-user-search ul h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
     margin-top: 0; }
 
 .pul_base_four_four_four_stacked-region--first li,
