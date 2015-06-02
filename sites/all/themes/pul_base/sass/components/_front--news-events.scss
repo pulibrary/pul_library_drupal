@@ -1,0 +1,16 @@
+.front {
+	.pane-library-news h2.pane-title {
+		font-size: 1.4em;
+		// margin-top: 0;
+		margin-bottom: 1em;
+	}
+	.library-news-link h3 {
+		font-family: $font-sans;
+		font-size: 1.15em;
+		color: $blue-darkest;
+
+		&:hover {
+			color: $blue-darker;
+		}
+	}
+}

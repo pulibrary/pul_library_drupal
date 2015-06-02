@@ -2,7 +2,7 @@
 .pul_base_nine_three-region--second .view-library-hours {
 
     .view-header .date-nav-wrapper .date-heading h3 {
-        @include adjust-font-size-to(16px);
+        // @include adjust-font-size-to(16px);
     }
 
     .date-nav-wrapper .date-prev [class^="icon-"],
@@ -25,7 +25,7 @@
     }
 
     .view-content td {
-        @include adjust-font-size-to(14px);
+        // @include adjust-font-size-to(14px);
 
         &.views-field-field-hours-library-status {
             text-align: right;

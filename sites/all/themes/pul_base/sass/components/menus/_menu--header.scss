@@ -24,11 +24,11 @@
 		a {
 			margin-top: 0.6em;
 		    float: right;
-		    @include transition (all 0.2s ease-in-out);
+		    // @include transition (all 0.2s ease-in-out);
 		    display: inline;
 		    border-radius: $base-border-radius; 
 		    color: $white;
-		    font-size: $font-size-smaller;  
+		    // font-size: $font-size-smaller;  
 		    font-weight: 800;
 		    padding: .4em .5em;
 

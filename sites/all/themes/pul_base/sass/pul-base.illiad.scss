@@ -1,35 +1,24 @@
 // Import external libraries.
-@import "compass";
-@import "breakpoint";
-@import "singularitygs";
-@import "toolkit";
+@import "libraries/breakpoint-sass/stylesheets/breakpoint";
+@import "libraries/singularity/stylesheets/singularitygs";
+@import "libraries/sass-toolkit/stylesheets/toolkit";
 @import "vendor/bourbon/bourbon";
 @import "vendor/base/base";
 
 // Import variables, abstractions, base styles and components using globbing.
-//
-// Globbing will always import files alphabetically. Optimally, all your
-// components should be self-contained and explicit enough to not have any
-// contained styles leak into unrelated components: The import order should not
-// affect the result.
-//
-// If there are variables, functions or mixins that depend on each other and
-// therefore need to be imported in a specific order you can import them
-// directly. Variables-, function- or mixin providing partials should never
-// output any styles themselves: Importing them multiple times to resolve
-// dependencies shouldn't be a problem.
-@import "variables/**/*";
-@import "abstractions/**/*";
-@import "base/**/*";
+@import "variables/_variables";
+@import "abstractions/_abstractions";
+@import "base/_base";
+
 @import "components/branding";
 @import "components/header";
 @import "components/footer";
 @import "components/menus/menu--main";
 @import "components/search/search--header";
-@import "layouts/three_nine/*";
-@import "layouts/three_six_three/*";
-@import "layouts/six_six/*";
-@import "layouts/pul_base_nine_three/*";
+@import "layouts/three_nine/three_nine";
+@import "layouts/three_six_three/three_six_three";
+@import "layouts/six_six/six_six";
+@import "layouts/pul_base_nine_three/pul_base_nine_three";
 
 // Illiad search bar
 
@@ -47,7 +36,7 @@
   position: relative;
 
   .f-criteria {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     @include transition(border-color);
     background-color: white;
     border-radius: $base-border-radius;
@@ -63,7 +52,7 @@
   }
 
   .f-submit {
-    @include button(flat, $base-accent-color);
+    // @include button(flat, $base-accent-color);
     @include position(absolute, 0em 0em 0em null);
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;

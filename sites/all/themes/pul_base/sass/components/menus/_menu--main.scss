@@ -114,7 +114,7 @@
     a {
       color: $centered-navigation-color;
       display: inline-block;
-      @include transition (all 0.2s ease-in-out);
+      // @include transition (all 0.2s ease-in-out);
 
 
       &:hover {
@@ -134,11 +134,11 @@
     }
 
     > a {
-      padding-right: 0.6em;
+      padding-right: 1.75em;
     }
 
     > a:after {
-      @include position(absolute, auto -.4em auto auto);
+      @include position(absolute, auto .45em auto auto);
       color: $centered-navigation-color;
       
       @include breakpoint(800px) {
@@ -160,7 +160,7 @@
       position: relative;
 
       @include breakpoint($desk) {
-        margin-right: $centered-navigation-submenu-padding;
+        // margin-right: $centered-navigation-submenu-padding;
       }
 
       &:after {

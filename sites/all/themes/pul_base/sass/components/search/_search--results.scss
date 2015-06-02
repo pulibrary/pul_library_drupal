@@ -21,7 +21,7 @@
     }
 
     h3 {
-        @include rhythm(0, 0, 0, 0.1, $font-size-base);
+        // @include rhythm(0, 0, 0, 0.1, $font-size-base);
     }
 }
 
@@ -79,7 +79,7 @@
                 background: $gray-lightest;
                 text-decoration: none;
                 padding: 7px 16px;
-                width: 100%;
+                // width: 100%;
 
 
                 &:before {
