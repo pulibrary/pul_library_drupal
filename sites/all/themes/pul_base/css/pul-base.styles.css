@@ -2777,6 +2777,13 @@ body.faq .ui-accordion .ui-accordion-header a {
   .view-general-site-keyword-search ul li.active,
   .view-general-site-user-search ul li.active {
     background: none; }
+  .all-search-results-list h3,
+  .view-search-libraries-and-collections h3,
+  .view-databases-keyword-search ul h3,
+  .view-general-site-keyword-search ul h3,
+  .view-general-site-user-search ul h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0; }
 
 .pul_base_four_four_four_stacked-region--first li,
 .pul_base_four_four_four_stacked-region--second li,
