@@ -1,7 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Merriweather");
-
 $font-serif: "Merriweather","Droid Serif", Georgia, Times, serif !default; 
-$font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-sans: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif !default;
 $font-mono: "Lucida Console", Monaco, monospace !default;
 $text-color: #000 !default;
 
@@ -16,13 +14,6 @@ $base-border-radius: 4px;
 
 $round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height 
 $rhythm-unit: "rem"; // Sets rhythm unit to rem. Remove to use default em unit. 
-
-// $h1-fz: 30px;
-// $h2-fz: 24px;
-// $h3-fz: 20px;
-// $h4-fz: 14px;
-// $h5-fz: 12px;
-// $h6-fz: 10px;
 
 $font-size-base: 1rem;
 $font-size-smaller: 0.875rem;
