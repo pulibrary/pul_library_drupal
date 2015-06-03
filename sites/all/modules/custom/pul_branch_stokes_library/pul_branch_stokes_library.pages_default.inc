@@ -148,7 +148,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -222,7 +222,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'block';
     $pane->subtype = 'summon_block-summon_search';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
@@ -484,7 +484,15 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     'body_classes_to_add' => 'branch-libraries libraries-stokes',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Stokes Library',
+        'keyword' => 'stokes_config',
+        'name' => 'entity:node',
+        'entity_id' => '7796',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(
       0 => array(
         'identifier' => 'Calendar',
@@ -596,7 +604,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -758,11 +766,44 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-fd3d7db3-973e-47e5-98da-68fcf50c84c5'] = $pane;
     $display->panels['second'][1] = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
     $pane = new stdClass();
+    $pane->pid = 'new-75555f92-99e1-4fe2-9644-998fcbf52221';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Services',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '75555f92-99e1-4fe2-9644-998fcbf52221';
+    $display->content['new-75555f92-99e1-4fe2-9644-998fcbf52221'] = $pane;
+    $display->panels['second'][2] = 'new-75555f92-99e1-4fe2-9644-998fcbf52221';
+    $pane = new stdClass();
     $pane->pid = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'branch_features-panel_pane_2';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -778,11 +819,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '1df13d2d-afe9-4296-9f47-03b9e9137cf2';
     $display->content['new-1df13d2d-afe9-4296-9f47-03b9e9137cf2'] = $pane;
-    $display->panels['second'][2] = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
+    $display->panels['second'][3] = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
     $pane = new stdClass();
     $pane->pid = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
     $pane->panel = 'second';
@@ -804,11 +845,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = '6f8dd1ee-b040-466c-87b1-739fa95e8175';
     $display->content['new-6f8dd1ee-b040-466c-87b1-739fa95e8175'] = $pane;
-    $display->panels['second'][3] = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
+    $display->panels['second'][4] = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
