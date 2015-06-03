@@ -30,3 +30,16 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.eot');
+    src: url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff') format('woff'),
+         url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.svg#princetonmontidsosregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
