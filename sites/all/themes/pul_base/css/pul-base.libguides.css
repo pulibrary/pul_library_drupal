@@ -288,23 +288,16 @@ media {
   max-width: 100%; }
 
 @font-face {
-  font-family: 'Droid Serif';
-  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot");
-  /* IE9 Compat Modes */
-  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");
-  /* Legacy iOS */ }
+  font-family: 'DejaVu Sans';
+  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.svg#svgFontName") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot");
-  /* IE9 Compat Modes */
-  src: url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");
-  /* Legacy iOS */ }
-
-@font-face {
-  font-family: 'Merriweather';
-  src: url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.svg#princetonmontidsosregular") format("svg");
+  font-family: 'Dejavu Serif';
+  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot");
+  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.svg#svgFontName") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -313,7 +306,7 @@ html {
 
 body {
   background-color: #f5f4f1;
-  font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Dejavu Sans", "Arial Unicode MS", Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.45;
   color: #333; }
@@ -327,7 +320,7 @@ h2,
 h3,
 h4 {
   margin: 1.414em 0 0.5em;
-  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
+  font-family: "Dejavu Serif", Georgia, Times, serif;
   font-weight: inherit;
   line-height: 1.2; }
 
@@ -549,7 +542,7 @@ a:hover {
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
-  font-family: "Merriweather", "Droid Serif", Georgia, Times, serif;
+  font-family: "Dejavu Serif", Georgia, Times, serif;
   height: 50px;
   width: 100%;
   z-index: 101;
