@@ -48,14 +48,12 @@ body{background:#f5f4f1;}
 @media (min-width: 70em){.front .l-main{padding:0;}
 }
 img,media{max-width:100%;}
-@font-face{font-family:'Droid Serif';src:url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");}
-@font-face{font-family:'Roboto';src:url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Roboto/roboto-regular-webfont.svg#svgFontName") format("svg");}
-@font-face{font-family:'Merriweather';src:url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Merriweather/merriweather-regular-webfont.svg#princetonmontidsosregular") format("svg");font-weight:normal;font-style:normal;}
-@font-face{font-family:'Source Sans Pro';src:url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.svg#princetonmontidsosregular") format("svg");font-weight:normal;font-style:normal;}
-html{font-size:14px;}
-body{background-color:#f5f4f1;color:#333;font-family:Source Sans Pro,Arial Unicode MS,Helvetica,sans-serif;font-weight:400;line-height:1.45;}
+@font-face{font-family:'DejaVu Sans';src:url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSansCondensed-webfont.svg#svgFontName") format("svg");font-weight:normal;font-style:normal;}
+@font-face{font-family:'Dejavu Serif';src:url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot");src:url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.svg#svgFontName") format("svg");font-weight:normal;font-style:normal;}
+html{font-size:15px;}
+body{background-color:#f5f4f1;color:#333;font-family:Dejavu Sans,Arial Unicode MS,Helvetica,sans-serif;font-weight:400;line-height:1.45;}
 p{line-height:1.643em;margin-bottom:1.3em;}
-h1,h2,h3,h4{font-family:Merriweather,Droid Serif,Georgia,Times,serif;font-weight:inherit;line-height:1.2;margin:1.414em 0 .5em;}
+h1,h2,h3,h4{font-family:Dejavu Serif,Georgia,Times,serif;font-weight:inherit;line-height:1.2;margin:1.414em 0 .5em;}
 h1{font-size:2.074em;margin-top:0;}
 h2{font-size:1.728em;}
 h3{font-size:1.44em;}
@@ -108,7 +106,7 @@ a:hover{text-decoration:underline;}
 .svg .friends-logo{background-image:url(../images/friends.svg);margin:0 .2em .75em;width:91px;}
 .svg .pu-logo{background-image:url(../images/pu.svg);height:40px;margin:.5em 0 0;width:142px;}
 .l-header{overflow:visible;}
-.wrapper--navigation{background-color:#f5f4f1;border-bottom:1px solid #e8e6df;font-family:Merriweather,Droid Serif,Georgia,Times,serif;height:50px;overflow:visible;position:relative;width:100%;z-index:101;}
+.wrapper--navigation{background-color:#f5f4f1;border-bottom:1px solid #e8e6df;font-family:Dejavu Serif,Georgia,Times,serif;height:50px;overflow:visible;position:relative;width:100%;z-index:101;}
 .wrapper--navigation .mobile-logo{display:inline;float:left;max-height:50px;padding-left:1em;}
 .wrapper--navigation .mobile-logo img{max-height:50px;opacity:.6;padding:.8em 0;}
 @media (min-width: 44em){.wrapper--navigation .mobile-logo{display:none;}
