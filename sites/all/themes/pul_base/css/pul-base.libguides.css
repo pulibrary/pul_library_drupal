@@ -295,11 +295,11 @@ media {
   font-style: normal; }
 
 @font-face {
-  font-family: 'Dejavu Serif';
-  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot");
-  src: url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Dejavu/DejaVuSerif-webfont.svg#svgFontName") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: 'Droid Serif';
+  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.eot?#iefix") format("embedded-opentype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff2") format("woff2"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.woff") format("woff"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.ttf") format("truetype"), url("/sites/all/themes/pul_base/fonts/Droid_Serif/droidserif-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
 
 html {
   font-size: 14px; }
@@ -320,7 +320,7 @@ h2,
 h3,
 h4 {
   margin: 1.414em 0 0.5em;
-  font-family: "Dejavu Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Times, serif;
   font-weight: inherit;
   line-height: 1.2; }
 
@@ -542,7 +542,7 @@ a:hover {
 .wrapper--navigation {
   background-color: #f5f4f1;
   border-bottom: 1px solid #e8e6df;
-  font-family: "Dejavu Serif", Georgia, Times, serif;
+  font-family: "Droid Serif", Georgia, Times, serif;
   height: 50px;
   width: 100%;
   z-index: 101;
