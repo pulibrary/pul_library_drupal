@@ -637,9 +637,9 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['field'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['label'] = '';
+  $handler->display->display_options['fields']['field_hours_library_status']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hours_library_status']['alter']['text'] = '<span class="library-hours-status [field_hours_library_status]"> [field_hours_library_status]</span>';
   $handler->display->display_options['fields']['field_hours_library_status']['alter']['path'] = '[title]';
-  $handler->display->display_options['fields']['field_hours_library_status']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status';
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_default_classes'] = FALSE;
   /* Field: Content: Hours */
@@ -647,7 +647,11 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<div class=\'is-[field_hours_library_status]\'><span class="library-hours-status">[field_hours_library_status]</span><br />[field_open_hours]</div>
+';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_open_hours']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
     'format_type' => 'time_only',
@@ -668,6 +672,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Edit link */
@@ -2595,6 +2600,16 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Entry';
+  /* Field: Taxonomy term: Hours Code */
+  $handler->display->display_options['fields']['field_hours_code']['id'] = 'field_hours_code';
+  $handler->display->display_options['fields']['field_hours_code']['table'] = 'field_data_field_hours_code';
+  $handler->display->display_options['fields']['field_hours_code']['field'] = 'field_hours_code';
+  $handler->display->display_options['fields']['field_hours_code']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['fields']['field_hours_code']['label'] = '';
+  $handler->display->display_options['fields']['field_hours_code']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_hours_code']['alter']['text'] = '<div class="view-full-schedule">For summer, holidays or recess hours, please consult the <a href="/hours/[field_hours_code]">full schedule</a></div>';
+  $handler->display->display_options['fields']['field_hours_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hours_code']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Calendar (field_hrs_lib_calendar) */
   $handler->display->display_options['sorts']['field_hrs_lib_calendar_target_id']['id'] = 'field_hrs_lib_calendar_target_id';
@@ -2613,6 +2628,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_open_hours.field_open_hours_value' => 'field_data_field_open_hours.field_open_hours_value',

@@ -138,7 +138,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -419,7 +419,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(

@@ -192,7 +192,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_cal_academic_hours'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_cal_academic_hours'
   $field_instances['taxonomy_term-library_hours_calendars-field_cal_academic_hours'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -249,7 +250,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_cal_summer_hours'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_cal_summer_hours'
   $field_instances['taxonomy_term-library_hours_calendars-field_cal_summer_hours'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -306,7 +308,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_hours_code'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_hours_code'
   $field_instances['taxonomy_term-library_hours_calendars-field_hours_code'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -341,7 +344,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_library_hrs'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_library_hrs'
   $field_instances['taxonomy_term-library_hours_calendars-field_library_hrs'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -375,7 +379,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_list_on_homepage'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_list_on_homepage'
   $field_instances['taxonomy_term-library_hours_calendars-field_list_on_homepage'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => array(
@@ -413,7 +418,8 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_hours_calendars-field_service_url'
+  // Exported field_instance:
+  // 'taxonomy_term-library_hours_calendars-field_service_url'
   $field_instances['taxonomy_term-library_hours_calendars-field_service_url'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,

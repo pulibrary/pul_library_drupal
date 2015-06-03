@@ -1488,6 +1488,9 @@ a.skip2main:focus {
 .library-hours-status .is-Open {
   display: none; }
 
+.section-hours .is-Closed .date-display-single {
+  display: none; }
+
 .library-hours .date-nav-wrapper .date-next i {
   margin-left: 0; }
 
