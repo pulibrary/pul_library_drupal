@@ -1,0 +1,11 @@
+name = PUL Video Library Site
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = pul_video_library
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__panel_context_194f0b9e-62d0-442a-8439-c7bceceaf789
+features[page_manager_handlers][] = node_view__panel_context_98c15859-eea2-4068-bf4b-c24b814ac306

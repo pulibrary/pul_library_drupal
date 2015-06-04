@@ -1,0 +1,12 @@
+.front {
+	.pane-block-2 h2 {
+		font-size: 1.4em;
+		margin-bottom: 1em;
+	}
+	.pane-block-2 a {
+		color: $blue-darkest;
+		&:hover {
+			color: $blue-darker;
+		}
+	}
+}

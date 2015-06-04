@@ -87,10 +87,10 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-98453b20-d0dd-4ac8-8487-17db3b365079';
+    $pane->pid = 'new-9961d05a-6ae0-49a6-88e5-e9f0eee26387';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-eastasian';
+    $pane->subtype = 'menu-menu-branch-east-asian';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -106,9 +106,9 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '98453b20-d0dd-4ac8-8487-17db3b365079';
-    $display->content['new-98453b20-d0dd-4ac8-8487-17db3b365079'] = $pane;
-    $display->panels['first'][0] = 'new-98453b20-d0dd-4ac8-8487-17db3b365079';
+    $pane->uuid = '9961d05a-6ae0-49a6-88e5-e9f0eee26387';
+    $display->content['new-9961d05a-6ae0-49a6-88e5-e9f0eee26387'] = $pane;
+    $display->panels['first'][0] = 'new-9961d05a-6ae0-49a6-88e5-e9f0eee26387';
     $pane = new stdClass();
     $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane->panel = 'first';
@@ -140,7 +140,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -265,7 +265,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
         'nid' => '7785',
       ),
       'override_title' => 1,
-      'override_title_text' => 'East Asian Library',
+      'override_title_text' => 'East Asian Library and the Gest Collection',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();

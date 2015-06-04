@@ -9,11 +9,11 @@
 			display: block;
 
 			a {
-				font-size: $font-size-base;
+				// font-size: $font-size-base;
 
 				//chat button
 				.libraryh3lp .button--libraryh3lp {
-					font-size: $font-size-smaller;
+					font-size: 0.875rem;
 				}
 			    &:hover:before {
 			    	text-decoration: none;
@@ -55,7 +55,7 @@
  
 .front .pane-menu-menu-get-help-menu .menu .leaf {
 	a {
-		@include adjust-font-size-to(16px);
+		// @include adjust-font-size-to(16px);
 	}
 }
 

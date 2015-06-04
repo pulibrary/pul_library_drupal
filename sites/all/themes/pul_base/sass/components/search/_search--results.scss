@@ -21,7 +21,8 @@
     }
 
     h3 {
-        @include rhythm(0, 0, 0, 0.1, $font-size-base);
+        font-family: $font-sans;
+        margin-top: 0;
     }
 }
 
@@ -79,7 +80,7 @@
                 background: $gray-lightest;
                 text-decoration: none;
                 padding: 7px 16px;
-                width: 100%;
+                // width: 100%;
 
 
                 &:before {

@@ -9,14 +9,14 @@
     font-family: $font-serif;
     font-style: italic;
     font-weight: bold;
-    font-size: $font-size-smaller;
+    font-size: 0.875rem;
     border: none;
     text-shadow: none;
     background-color: $gray-lightest;
     color: $orange-darkest;
     padding: 1em;
     text-decoration: none;
-    @include border-radius(3px);
+    border-radius: 3px;
 
     float: none;
     display: block;

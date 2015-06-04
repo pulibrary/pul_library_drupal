@@ -172,8 +172,8 @@ function your_accounts_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'ILLiad',
-      'title' => 'Interlibrary Loan',
-      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request, renew and check the status of material requested from other libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">ArticleExpress</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan</a></div>',
+      'title' => 'Interlibrary Loan & Article Express',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request, renew and check the status of material requested from other libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">Article Express</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan and Article Express</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );

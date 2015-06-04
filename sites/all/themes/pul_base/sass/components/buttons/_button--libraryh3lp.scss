@@ -1,18 +1,18 @@
 .libraryh3lp {
     .button--libraryh3lp {
         margin-left: 1em;
-        font-size: $font-size-smaller * .8;
         font-family: $font-serif;
         font-style: italic;
         font-weight: bold;
         border: none;
         text-shadow: none;
-        padding: 0 7px;
+        padding: 3px 7px;
         text-decoration: none;
-        @include border-radius(3px);
+        border-radius: 3px;
         position: relative;
         top: -2px;
         display: inline-block;
+        font-size: 0.75rem;
     }
 } 
 
@@ -21,12 +21,15 @@
     color: $black;
 
     &:hover {
-        background: $yellow; // darker background on hover
-        color: $black;
-    }
+         background: darken($yellow-lighter, 7%);
+     }
 }
 
 .button--libraryh3lp__offline {
     background: $gray-lightest;
     color: $gray-darker;
+    
+    &:hover {
+        background: darken($gray-lightest, 7%);
+    }
 }

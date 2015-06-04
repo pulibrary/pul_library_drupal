@@ -64,7 +64,7 @@
    display: block;
 
    @include breakpoint($tab) {
-    margin-left: 0.5em;
+    margin-left: 0;
    }
  }
 }

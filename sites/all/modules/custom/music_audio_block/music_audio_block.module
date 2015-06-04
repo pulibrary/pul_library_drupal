@@ -32,7 +32,7 @@ function music_audio_block_form($form, &$form_state) {
       'type' => 'setting',
      );
    $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
-   $form['#action'] = url('/searchit/search/mendel', array('external' => true));
+   $form['#action'] = url('/utils/search/mendel', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    // $form['#suffix'] = $form_suffix;
@@ -74,7 +74,7 @@ function music_audio_search_results_content() {
   $sid = music_audio_block_get_sid();
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }

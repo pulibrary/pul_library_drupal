@@ -36,7 +36,7 @@ function catalog_block_form($form, &$form_state) {
       'data' => array('catalog_block' => $hint_settings),
       'type' => 'setting',
      );
-   $form['#action'] = url('/searchit/search/location', array('external' => true));
+   $form['#action'] = url('/utils/search/location', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;
@@ -78,7 +78,7 @@ function catalog_search_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -88,7 +88,7 @@ function catalog_journal_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='journal-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/find/any?query={$path}&limit=exact&format=journals&sid={$sid}' id='journal-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/find/any?query={$path}&limit=exact&format=journals&sid={$sid}' id='journal-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -98,7 +98,7 @@ function catalog_pulfa_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='pulfa-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/pulfa/any?query={$path}&sid={$sid}' id='pulfa-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/pulfa/any?query={$path}&sid={$sid}' id='pulfa-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -108,7 +108,7 @@ function catalog_pudl_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='pudl-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -118,7 +118,7 @@ function catalog_faq_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='faq-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/searchit/faq/$path?sid={$sid}' id='faq-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/faq/$path?sid={$sid}' id='faq-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
