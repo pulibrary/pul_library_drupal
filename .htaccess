@@ -65,6 +65,7 @@ allow from all
 
 
 # Redirect Rules
+RedirectMatch ^/searchit/(.*)$ /utils/$1
 RedirectPermanent /about/hours /hours
 RedirectPermanent /hr /staff/hr
 Redirect /favicon.ico /sites/default/files/libicon_0.ico
