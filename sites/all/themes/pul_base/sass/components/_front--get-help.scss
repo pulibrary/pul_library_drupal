@@ -1,7 +1,6 @@
 .front {
 	.pane-menu-menu-get-help-menu h2.pane-title {
 		font-size: 1.4em;
-		// margin-top: 0;
 		margin-bottom: 1em;
 	}
 	.pane-menu-menu-get-help-menu a {
@@ -12,14 +11,12 @@
 			color: $blue-darker;
 		}
 
-		.button--libraryh3lp {
-			font-size: 0.75rem;
-			background: $yellow-lighter;
+		.button--libraryh3lp__online {
 			color: $black;
+		}
 
-			&:hover {
-				background: darken($yellow-lighter, 7%);
-			}
+		.button--libraryh3lp__offline {
+			color: $gray-darker;
 		}
 	}
 }

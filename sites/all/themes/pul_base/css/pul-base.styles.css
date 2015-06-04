@@ -624,12 +624,10 @@ a:hover {
   color: #3c6499; }
   .front .pane-menu-menu-get-help-menu a:hover {
     color: #4e7dba; }
-  .front .pane-menu-menu-get-help-menu a .button--libraryh3lp {
-    font-size: 0.75rem;
-    background: #fee7ba;
+  .front .pane-menu-menu-get-help-menu a .button--libraryh3lp__online {
     color: #000000; }
-    .front .pane-menu-menu-get-help-menu a .button--libraryh3lp:hover {
-      background: #feda96; }
+  .front .pane-menu-menu-get-help-menu a .button--libraryh3lp__offline {
+    color: #666D78; }
 
 .front .pane-library-hours h2.pane-title {
   font-size: 1.4em;
@@ -1207,18 +1205,20 @@ table caption {
   border-radius: 3px;
   position: relative;
   top: -2px;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 0.75rem; }
 
 .button--libraryh3lp__online {
   background-color: #fee7ba;
   color: #000000; }
   .button--libraryh3lp__online:hover {
-    background: #FED587;
-    color: #000000; }
+    background: #feda96; }
 
 .button--libraryh3lp__offline {
   background: #f5f4f1;
   color: #666D78; }
+  .button--libraryh3lp__offline:hover {
+    background: #e6e4dc; }
 
 .user-login .form-submit {
   margin-top: 1em; }
