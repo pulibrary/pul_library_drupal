@@ -66,7 +66,8 @@ libraries/architecture
 libraries/stokes
 libraries/plasma-physics
 libraries/scilib
-libraries/music',
+libraries/music
+vdl',
           ),
           'context' => 'empty',
           'not' => FALSE,
