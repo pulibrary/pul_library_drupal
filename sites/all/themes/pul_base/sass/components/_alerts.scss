@@ -1,5 +1,5 @@
-.pane-emergency-alert-content-block h2 {
-    display: none;
+.alert--message h2 {
+    @include visually-hidden();
 }
 
 .alert--message, .messages-error {

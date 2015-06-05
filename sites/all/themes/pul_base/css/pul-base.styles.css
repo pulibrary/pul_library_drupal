@@ -349,8 +349,16 @@ a:hover {
   text-decoration: underline; }
 
 /* generated with grunt-sass-globbing */
-.pane-emergency-alert-content-block h2 {
-  display: none; }
+.alert--message h2 {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }
 
 .alert--message, .messages-error {
   background: #f18f3b;
@@ -1094,7 +1102,7 @@ table caption {
   color: white;
   text-decoration: none; }
 
-.page-node-7793 .three_six_three_stacked-region--middle div .view-content,
+.view-id-plasma_physics_feeds .view-content,
 .accordion div .content {
   display: none;
   margin: 5px 0; }

@@ -17,7 +17,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 35;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Marquand Art Library News Page',
     'no_blocks' => 1,
@@ -317,7 +317,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 33;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Marquand Art Library Landing Page',
     'no_blocks' => 1,
@@ -493,10 +493,10 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-7f319cda-4916-457c-b5e4-4fc219e09676';
+    $pane->pid = 'new-593e49db-8f73-4e1d-adbb-223fef28f8c7';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_1';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -511,9 +511,9 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7f319cda-4916-457c-b5e4-4fc219e09676';
-    $display->content['new-7f319cda-4916-457c-b5e4-4fc219e09676'] = $pane;
-    $display->panels['middle'][0] = 'new-7f319cda-4916-457c-b5e4-4fc219e09676';
+    $pane->uuid = '593e49db-8f73-4e1d-adbb-223fef28f8c7';
+    $display->content['new-593e49db-8f73-4e1d-adbb-223fef28f8c7'] = $pane;
+    $display->panels['middle'][0] = 'new-593e49db-8f73-4e1d-adbb-223fef28f8c7';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -756,7 +756,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 34;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Marquand Art Library Branch Pages',
     'no_blocks' => 1,
@@ -924,6 +924,28 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-3e8e0a4e-91ed-4888-9193-555fa2ad2635';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3e8e0a4e-91ed-4888-9193-555fa2ad2635';
+    $display->content['new-3e8e0a4e-91ed-4888-9193-555fa2ad2635'] = $pane;
+    $display->panels['middle'][0] = 'new-3e8e0a4e-91ed-4888-9193-555fa2ad2635';
+    $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
     $pane->type = 'node_body';
@@ -942,11 +964,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane = new stdClass();
     $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane->panel = 'middle';
@@ -966,11 +988,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
-    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
     $pane->pid = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
     $pane->panel = 'middle';
@@ -985,11 +1007,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
     $display->content['new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56'] = $pane;
-    $display->panels['middle'][2] = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
+    $display->panels['middle'][3] = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';
