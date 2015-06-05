@@ -2319,6 +2319,18 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .view-library-news .views-row, .view-library-news .view-footer {
   clear: both; }
 
+.view-library-news .item-list > ul {
+  margin: 0; }
+
+.view-library-news img {
+  float: left;
+  margin-right: 1em; }
+
+.view-library-news .item-list > ul > li::after {
+  clear: both;
+  content: "";
+  display: table; }
+
 .views-field-created {
   color: #666D78;
   font-style: italic; }
