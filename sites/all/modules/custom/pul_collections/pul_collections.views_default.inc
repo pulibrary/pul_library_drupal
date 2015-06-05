@@ -185,8 +185,17 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_office']['table'] = 'field_data_field_puluser_office';
   $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
   $handler->display->display_options['fields']['field_puluser_office']['relationship'] = 'field_col_contact_target_id';
+  $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_office']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_puluser_office']['element_default_classes'] = FALSE;
+  /* Field: User: Building Location */
+  $handler->display->display_options['fields']['field_puluser_building_location']['id'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['table'] = 'field_data_field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['relationship'] = 'field_col_contact_target_id';
+  $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
   /* Field: User: Link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';

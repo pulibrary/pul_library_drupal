@@ -525,6 +525,30 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_sel_office_hours'
+  $field_bases['field_sel_office_hours'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sel_office_hours',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_sel_pul_library'
   $field_bases['field_sel_pul_library'] = array(
     'active' => 1,

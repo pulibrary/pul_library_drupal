@@ -34,7 +34,7 @@ function pul_pliny_fisk_library_of_economics_and_finance_default_page_manager_ha
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'econlib/services
+            'paths' => 'econlib/contact-us
 econlib/services/*
 econlib/resources
 econlib/resources/*',

@@ -59,6 +59,7 @@ function cdl_subject_specialist_field_group_info() {
       1 => 'field_sel_office_directions',
       2 => 'field_sel_pul_library',
       3 => 'field_telephone',
+      4 => 'field_sel_office_hours',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -326,6 +326,11 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['table'] = 'field_data_field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['field'] = 'field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['element_default_classes'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
