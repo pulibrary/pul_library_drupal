@@ -948,6 +948,16 @@ a:hover {
     position: relative;
     width: 100%; }
   .search-bar .f-submit {
+    background-color: #477DCA;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 7px 18px;
+    text-decoration: none;
+    background-clip: padding-box;
     position: absolute;
     top: 0em;
     right: 0em;
@@ -956,3 +966,13 @@ a:hover {
     border-top-left-radius: 0;
     outline: none;
     padding: 5px 10px; }
+    .search-bar .f-submit:hover:not(:disabled) {
+      background-color: #578ad4;
+      cursor: pointer; }
+    .search-bar .f-submit:active:not(:disabled),
+    .search-bar .f-submit:focus:not(:disabled) {
+      background-color: #3c71bb;
+      cursor: pointer; }
+    .search-bar .f-submit:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
