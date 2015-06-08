@@ -17,7 +17,7 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 21;
   $handler->conf = array(
     'title' => 'Architecture Library Landing Page',
     'no_blocks' => 1,
@@ -192,24 +192,27 @@ function pul_branch_architecture_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
+    $pane->pid = 'new-4437a88b-8522-4409-9cbf-fccfae5559df';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'library_news-panel_pane_6';
-    $pane->shown = FALSE;
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_9';
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
-    $display->content['new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f'] = $pane;
-    $display->panels['middle'][0] = 'new-eb3a0d26-e506-4b0e-a1f4-952a4fe2533f';
+    $pane->uuid = '4437a88b-8522-4409-9cbf-fccfae5559df';
+    $display->content['new-4437a88b-8522-4409-9cbf-fccfae5559df'] = $pane;
+    $display->panels['middle'][0] = 'new-4437a88b-8522-4409-9cbf-fccfae5559df';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -379,7 +382,7 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 22;
   $handler->conf = array(
     'title' => 'Architecture Library Branch Pages',
     'no_blocks' => 1,
@@ -546,6 +549,28 @@ help/architecture-library-student-carrels-registration',
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-63ff90ac-2dc1-4491-a108-468d294998f5';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '63ff90ac-2dc1-4491-a108-468d294998f5';
+    $display->content['new-63ff90ac-2dc1-4491-a108-468d294998f5'] = $pane;
+    $display->panels['middle'][0] = 'new-63ff90ac-2dc1-4491-a108-468d294998f5';
+    $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
     $pane->type = 'node_body';
@@ -561,13 +586,16 @@ help/architecture-library-student-carrels-registration',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane = new stdClass();
     $pane->pid = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
     $pane->panel = 'middle';
@@ -587,11 +615,11 @@ help/architecture-library-student-carrels-registration',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'da6d2020-f96a-4dce-8edf-2d707988d576';
     $display->content['new-da6d2020-f96a-4dce-8edf-2d707988d576'] = $pane;
-    $display->panels['middle'][1] = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
+    $display->panels['middle'][2] = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';

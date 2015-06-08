@@ -347,7 +347,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
-        'target' => '_blank',
+        'target' => 'default',
         'title' => '',
       ),
       'display' => array(

@@ -1578,14 +1578,14 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['field_news_category_tid']['table'] = 'field_data_field_news_category';
   $handler->display->display_options['filters']['field_news_category_tid']['field'] = 'field_news_category_tid';
   $handler->display->display_options['filters']['field_news_category_tid']['value'] = array(
-    6319 => '6319',
+    6326 => '6326',
   );
   $handler->display->display_options['filters']['field_news_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_news_category_tid']['vocabulary'] = 'news_events_categories';
   $handler->display->display_options['filters']['field_news_category_tid']['hierarchy'] = 1;
 
-  /* Display: Marquand Branch News */
-  $handler = $view->new_display('panel_pane', 'Marquand Branch News', 'panel_pane_7');
+  /* Display: Marquand Branch News List */
+  $handler = $view->new_display('panel_pane', 'Marquand Branch News List', 'panel_pane_7');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Marquand News';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -1594,7 +1594,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More Marquand News';
+  $handler->display->display_options['use_more_text'] = 'More News';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['link_url'] = 'libraries/marquand/news';
@@ -1640,16 +1640,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_news_item' => 'library_news_item',
   );
-  /* Filter criterion: Content: Category (field_news_category) */
-  $handler->display->display_options['filters']['field_news_category_tid']['id'] = 'field_news_category_tid';
-  $handler->display->display_options['filters']['field_news_category_tid']['table'] = 'field_data_field_news_category';
-  $handler->display->display_options['filters']['field_news_category_tid']['field'] = 'field_news_category_tid';
-  $handler->display->display_options['filters']['field_news_category_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_news_category_tid']['value'] = array(
-    6319 => '6319',
-  );
-  $handler->display->display_options['filters']['field_news_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_news_category_tid']['vocabulary'] = 'news_events_categories';
   /* Filter criterion: Workbench Access: Access filter */
   $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
   $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
@@ -1659,23 +1649,27 @@ function library_news_views_default_views() {
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
 
-  /* Display: Marquand News List */
-  $handler = $view->new_display('panel_pane', 'Marquand News List', 'panel_pane_8');
+  /* Display: Marquand Branch News Index */
+  $handler = $view->new_display('panel_pane', 'Marquand Branch News Index', 'panel_pane_9');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Marquand News';
+  $handler->display->display_options['title'] = 'News from Marquand Library';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Read More';
+  $handler->display->display_options['use_more_text'] = 'More Marquand News';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'libraries/marquand/news';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1694,12 +1688,21 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Posted on';
+  $handler->display->display_options['fields']['created']['element_type'] = '0';
+  $handler->display->display_options['fields']['created']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'views-field-created';
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Featured Graphic */
   $handler->display->display_options['fields']['field_news_featured_graphic']['id'] = 'field_news_featured_graphic';
   $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
@@ -1711,22 +1714,21 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_news_featured_graphic']['settings'] = array(
-    'image_style' => 'news-image',
-    'image_link' => 'content',
+    'image_style' => 'medium',
+    'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_news_featured_graphic']['field_api_classes'] = TRUE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read More';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1751,16 +1753,6 @@ function library_news_views_default_views() {
     6286 => '6286',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
-  $handler->display->display_options['argument_input'] = array(
-    'tid' => array(
-      'type' => 'panel',
-      'context' => 'entity:search_api_autocomplete_search.enabled',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Has taxonomy term ID',
-    ),
-  );
   $export['library_news'] = $view;
 
   $view = new view();

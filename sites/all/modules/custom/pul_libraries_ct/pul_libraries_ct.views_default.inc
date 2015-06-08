@@ -616,7 +616,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class=\'icon-large icon-email\'>&nbsp;</span>[field_e_mail_address]';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class=\'icon-large icon-mail\'>&nbsp;</span>[field_e_mail_address]';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';

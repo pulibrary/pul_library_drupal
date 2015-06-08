@@ -144,6 +144,7 @@ function pul_alerts_strongarm() {
   $strongarm->name = 'node_options_homepage_alert';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'promote',
   );
   $export['node_options_homepage_alert'] = $strongarm;
 

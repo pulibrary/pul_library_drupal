@@ -1,3 +1,16 @@
+.view-library-news {
+    .item-list > ul {
+        margin: 0;
+    }
+    img {
+        float: left;
+        margin-right: 1em;
+    }
+    .item-list > ul > li {
+        @include clearfix;
+    }
+}
+
 .views-field-created {
     color: $gray-darker;
     font-style: italic;

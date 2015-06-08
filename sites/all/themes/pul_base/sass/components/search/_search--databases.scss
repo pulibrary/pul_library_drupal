@@ -68,3 +68,13 @@
     }
   }
 }
+//buttons
+.section-resource .dbsearch-block-form > div button,
+.section-resource .summon-block-form > div button {
+  .icon-search {
+    margin-right: 0;
+  }
+  .hide-sm {
+    @include visually-hidden();
+  }
+}

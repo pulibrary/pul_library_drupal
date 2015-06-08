@@ -222,6 +222,29 @@ function pul_video_library_default_page_manager_handlers() {
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
     $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
+    $pane->pid = 'new-3f144c73-23ea-4092-bb29-12712b959cd9';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3f144c73-23ea-4092-bb29-12712b959cd9';
+    $display->content['new-3f144c73-23ea-4092-bb29-12712b959cd9'] = $pane;
+    $display->panels['second'][0] = 'new-3f144c73-23ea-4092-bb29-12712b959cd9';
+    $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
