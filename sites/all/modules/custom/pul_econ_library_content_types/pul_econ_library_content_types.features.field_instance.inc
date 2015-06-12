@@ -10,7 +10,8 @@
 function pul_econ_library_content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_name'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_name'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_name'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -76,7 +77,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_website'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_website'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_bank_website'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -159,7 +161,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_binding_freq'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_binding_freq'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_binding_freq'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -225,7 +228,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_call_number'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_call_number'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_call_number'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -291,7 +295,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_color'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_color'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_color'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -357,7 +362,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_current_issues'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_current_issues'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_current_issues'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -423,7 +429,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_last_bound'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_last_bound'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_last_bound'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -489,7 +496,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_notes'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_notes'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_notes'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -555,7 +563,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_po_number'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_po_number'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_po_number'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -621,7 +630,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_lib_central_bank_holdings-field_econlib_cbh_region'
+  // Exported field_instance:
+  // 'node-econ_lib_central_bank_holdings-field_econlib_cbh_region'
   $field_instances['node-econ_lib_central_bank_holdings-field_econlib_cbh_region'] = array(
     'bundle' => 'econ_lib_central_bank_holdings',
     'default_value' => NULL,
@@ -755,7 +765,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_library_company_directories-field_econ_lib_cd_call_number'
+  // Exported field_instance:
+  // 'node-econ_library_company_directories-field_econ_lib_cd_call_number'
   $field_instances['node-econ_library_company_directories-field_econ_lib_cd_call_number'] = array(
     'bundle' => 'econ_library_company_directories',
     'default_value' => NULL,
@@ -820,7 +831,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_company_directories-field_econ_lib_cd_covers'
+  // Exported field_instance:
+  // 'node-econ_library_company_directories-field_econ_lib_cd_covers'
   $field_instances['node-econ_library_company_directories-field_econ_lib_cd_covers'] = array(
     'bundle' => 'econ_library_company_directories',
     'default_value' => NULL,
@@ -885,7 +897,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_company_directories-field_econ_lib_cd_electronic'
+  // Exported field_instance:
+  // 'node-econ_library_company_directories-field_econ_lib_cd_electronic'
   $field_instances['node-econ_library_company_directories-field_econ_lib_cd_electronic'] = array(
     'bundle' => 'econ_library_company_directories',
     'default_value' => NULL,
@@ -935,7 +948,7 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'label' => 'Electronic',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -950,7 +963,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_company_directories-field_econ_lib_cd_print'
+  // Exported field_instance:
+  // 'node-econ_library_company_directories-field_econ_lib_cd_print'
   $field_instances['node-econ_library_company_directories-field_econ_lib_cd_print'] = array(
     'bundle' => 'econ_library_company_directories',
     'default_value' => NULL,
@@ -1083,7 +1097,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lecon_lib_se_current'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lecon_lib_se_current'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lecon_lib_se_current'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1148,7 +1163,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_color'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_color'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_color'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1213,7 +1229,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_freq'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_freq'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_binding_freq'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1278,7 +1295,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_call_number'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_call_number'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_call_number'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1343,7 +1361,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_country'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_country'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_country'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1408,7 +1427,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_exchange'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_exchange'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_exchange'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1473,7 +1493,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_last_bound'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_last_bound'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_last_bound'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1538,7 +1559,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_notes'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_notes'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_notes'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1603,7 +1625,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-econ_library_stock_exchange_hold-field_econ_lib_se_web_site'
+  // Exported field_instance:
+  // 'node-econ_library_stock_exchange_hold-field_econ_lib_se_web_site'
   $field_instances['node-econ_library_stock_exchange_hold-field_econ_lib_se_web_site'] = array(
     'bundle' => 'econ_library_stock_exchange_hold',
     'default_value' => NULL,
@@ -1753,7 +1776,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_working_papers-field_econ_lib_wp_bound_holdings'
+  // Exported field_instance:
+  // 'node-econ_working_papers-field_econ_lib_wp_bound_holdings'
   $field_instances['node-econ_working_papers-field_econ_lib_wp_bound_holdings'] = array(
     'bundle' => 'econ_working_papers',
     'default_value' => NULL,
@@ -1818,7 +1842,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_working_papers-field_econ_lib_wp_call_number'
+  // Exported field_instance:
+  // 'node-econ_working_papers-field_econ_lib_wp_call_number'
   $field_instances['node-econ_working_papers-field_econ_lib_wp_call_number'] = array(
     'bundle' => 'econ_working_papers',
     'default_value' => NULL,
@@ -1883,7 +1908,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_working_papers-field_econ_lib_wp_continues'
+  // Exported field_instance:
+  // 'node-econ_working_papers-field_econ_lib_wp_continues'
   $field_instances['node-econ_working_papers-field_econ_lib_wp_continues'] = array(
     'bundle' => 'econ_working_papers',
     'default_value' => NULL,
@@ -1950,7 +1976,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_working_papers-field_econ_lib_wp_publisher'
+  // Exported field_instance:
+  // 'node-econ_working_papers-field_econ_lib_wp_publisher'
   $field_instances['node-econ_working_papers-field_econ_lib_wp_publisher'] = array(
     'bundle' => 'econ_working_papers',
     'default_value' => NULL,
@@ -2015,7 +2042,8 @@ function pul_econ_library_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-econ_working_papers-field_econ_lib_wp_unbound'
+  // Exported field_instance:
+  // 'node-econ_working_papers-field_econ_lib_wp_unbound'
   $field_instances['node-econ_working_papers-field_econ_lib_wp_unbound'] = array(
     'bundle' => 'econ_working_papers',
     'default_value' => NULL,

@@ -96,6 +96,7 @@ function pul_notifications_default_rules_configuration() {
   $items['rules_warn_of_term_edit'] = entity_import('rules_config', '{ "rules_warn_of_term_edit" : {
       "LABEL" : "Warn of Term Edit",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "taxonomy" ],
       "ON" : { "taxonomy_term_update" : [] },
@@ -106,7 +107,8 @@ function pul_notifications_default_rules_configuration() {
             "type" : "taxonomy_vocabulary",
             "bundle" : { "value" : { "taxonomy_vocabulary" : "taxonomy_vocabulary" } }
           }
-        }
+        },
+        { "entity_is_of_type" : { "entity" : [ "term:vocabulary" ], "type" : "taxonomy_vocabulary" } }
       ],
       "DO" : [
         { "mail_to_users_of_role" : {

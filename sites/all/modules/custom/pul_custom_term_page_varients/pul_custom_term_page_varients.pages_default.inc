@@ -490,6 +490,31 @@ research/databases/subjects',
     $display->content['new-9294b2b0-7d5a-4254-ae75-1f35eb08d762'] = $pane;
     $display->panels['first'][3] = 'new-9294b2b0-7d5a-4254-ae75-1f35eb08d762';
     $pane = new stdClass();
+    $pane->pid = 'new-57775f75-13d1-4e8b-a495-dbfe1bf35e04';
+    $pane->panel = 'second';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Research Account',
+      'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Register for access to special collections reading rooms</li><li>Request and check the status of manuscripts, archives &amp; rare books</li><li>Find out more about <a href="https://blogs.princeton.edu/research-account/" target="_blank">research accounts</a></li></ul><div class="service-connect-btn"><a href="https://libweb10.princeton.edu/aeon/" target="_blank">Access Your Research Account</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '57775f75-13d1-4e8b-a495-dbfe1bf35e04';
+    $display->content['new-57775f75-13d1-4e8b-a495-dbfe1bf35e04'] = $pane;
+    $display->panels['second'][0] = 'new-57775f75-13d1-4e8b-a495-dbfe1bf35e04';
+    $pane = new stdClass();
     $pane->pid = 'new-9d3c2f9f-cfaf-4dde-bb43-3fce334030ba';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
@@ -503,11 +528,11 @@ research/databases/subjects',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '9d3c2f9f-cfaf-4dde-bb43-3fce334030ba';
     $display->content['new-9d3c2f9f-cfaf-4dde-bb43-3fce334030ba'] = $pane;
-    $display->panels['second'][0] = 'new-9d3c2f9f-cfaf-4dde-bb43-3fce334030ba';
+    $display->panels['second'][1] = 'new-9d3c2f9f-cfaf-4dde-bb43-3fce334030ba';
     $pane = new stdClass();
     $pane->pid = 'new-1a063e4d-94c7-4fc4-8f84-2332c660b3af';
     $pane->panel = 'second';
@@ -559,11 +584,11 @@ research/databases/subjects',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '1a063e4d-94c7-4fc4-8f84-2332c660b3af';
     $display->content['new-1a063e4d-94c7-4fc4-8f84-2332c660b3af'] = $pane;
-    $display->panels['second'][1] = 'new-1a063e4d-94c7-4fc4-8f84-2332c660b3af';
+    $display->panels['second'][2] = 'new-1a063e4d-94c7-4fc4-8f84-2332c660b3af';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

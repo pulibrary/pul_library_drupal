@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Marquand Rare Books Vault feature.
+ */
+
+include_once 'marquand_rare_books_vault.features.inc';
