@@ -18,7 +18,7 @@ function dbsearch_block_form($form, &$form_state) {
 
   if(drupal_is_front_page()) { // should keyed off <front>
     $prefix = "";
-    $form_suffix = '<div class="homepage-tab-form-message">Browse By: <a href="/research/databases/">A to Z</a> | <a href="/research/databases/subjects">By Subject</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message">Browse By: <a href="/research/databases/">A to Z</a> <a href="/research/databases/subjects">By Subject</a></div>';
   } else {
     $prefix = "";
     $form_suffix = "";

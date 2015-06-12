@@ -182,6 +182,23 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['view']['view'] = 'cdl_subject_selector_bio';
   $handler->display->display_options['fields']['view']['display'] = 'selector_directory_info';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Content: Office Hours */
+  $handler->display->display_options['fields']['field_sel_office_hours']['id'] = 'field_sel_office_hours';
+  $handler->display->display_options['fields']['field_sel_office_hours']['table'] = 'field_data_field_sel_office_hours';
+  $handler->display->display_options['fields']['field_sel_office_hours']['field'] = 'field_sel_office_hours';
+  $handler->display->display_options['fields']['field_sel_office_hours']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sel_office_hours']['hide_empty'] = TRUE;
+  /* Field: Content: Bio */
+  $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
+  $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['field_api_classes'] = TRUE;
   /* Field: Content: Selector Subject Areas */
   $handler->display->display_options['fields']['field_selector_subject_areas']['id'] = 'field_selector_subject_areas';
   $handler->display->display_options['fields']['field_selector_subject_areas']['table'] = 'field_data_field_selector_subject_areas';
@@ -222,17 +239,6 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['fields']['field_research_guides_websites']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_research_guides_websites']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_research_guides_websites']['multi_type'] = 'ul';
-  /* Field: Content: Bio */
-  $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
-  $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
-  $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
-  $handler->display->display_options['fields']['field_bio']['label'] = '';
-  $handler->display->display_options['fields']['field_bio']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_bio']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_bio']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_bio']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_bio']['field_api_classes'] = TRUE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'user',

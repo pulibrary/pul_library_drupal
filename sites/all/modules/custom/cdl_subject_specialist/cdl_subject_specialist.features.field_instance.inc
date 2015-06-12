@@ -68,7 +68,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_collecting_policies_spec'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_collecting_policies_spec'
   $field_instances['node-subject_specialists-field_collecting_policies_spec'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -141,7 +142,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_collections_assistants'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_collections_assistants'
   $field_instances['node-subject_specialists-field_collections_assistants'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -248,7 +250,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -368,7 +370,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_last_name_first_name'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_last_name_first_name'
   $field_instances['node-subject_specialists-field_last_name_first_name'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -473,11 +476,12 @@ function cdl_subject_specialist_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_library_directory_profile'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_library_directory_profile'
   $field_instances['node-subject_specialists-field_library_directory_profile'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -644,6 +648,7 @@ function cdl_subject_specialist_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'alt_field_required' => 0,
       'default_image' => 96,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -651,6 +656,7 @@ function cdl_subject_specialist_field_default_field_instances() {
       'max_resolution' => '100x100',
       'min_resolution' => '',
       'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -676,7 +682,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_research_guides_websites'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_research_guides_websites'
   $field_instances['node-subject_specialists-field_research_guides_websites'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -865,7 +872,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_sel_library_department'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_sel_library_department'
   $field_instances['node-subject_specialists-field_sel_library_department'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -921,7 +929,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_sel_office_directions'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_sel_office_directions'
   $field_instances['node-subject_specialists-field_sel_office_directions'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -977,6 +986,65 @@ function cdl_subject_specialist_field_default_field_instances() {
       'type' => 'text_textarea',
       'weight' => 11,
     ),
+  );
+
+  // Exported field_instance: 'node-subject_specialists-field_sel_office_hours'
+  $field_instances['node-subject_specialists-field_sel_office_hours'] = array(
+    'bundle' => 'subject_specialists',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sel_office_hours',
+    'label' => 'Office Hours',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-subject_specialists-field_sel_pul_library'
@@ -1037,7 +1105,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_selector_subject_areas'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_selector_subject_areas'
   $field_instances['node-subject_specialists-field_selector_subject_areas'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -1220,7 +1289,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subject_specialists-field_subject_specialities'
+  // Exported field_instance:
+  // 'node-subject_specialists-field_subject_specialities'
   $field_instances['node-subject_specialists-field_subject_specialities'] = array(
     'bundle' => 'subject_specialists',
     'default_value' => NULL,
@@ -1393,7 +1463,8 @@ function cdl_subject_specialist_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-selector_departments-field_cdl_department_url'
+  // Exported field_instance:
+  // 'taxonomy_term-selector_departments-field_cdl_department_url'
   $field_instances['taxonomy_term-selector_departments-field_cdl_department_url'] = array(
     'bundle' => 'selector_departments',
     'default_value' => NULL,
@@ -1466,6 +1537,7 @@ function cdl_subject_specialist_field_default_field_instances() {
   t('Library selector is attached to. CDL Determines.');
   t('Links the selector with their staff directory entry. ');
   t('Office Directions');
+  t('Office Hours');
   t('Office Location');
   t('Profile Image');
   t('Related Websites');

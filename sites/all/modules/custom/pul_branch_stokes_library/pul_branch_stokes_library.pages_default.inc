@@ -17,7 +17,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 25;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Stokes Library Landing Page',
     'no_blocks' => 1,
@@ -218,6 +218,28 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-b78982e6-3a41-48bd-8d28-258b5d00d32d'] = $pane;
     $display->panels['first'][4] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
     $pane = new stdClass();
+    $pane->pid = 'new-c25344dc-6080-4ca1-9383-2fa6c36e32a0';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c25344dc-6080-4ca1-9383-2fa6c36e32a0';
+    $display->content['new-c25344dc-6080-4ca1-9383-2fa6c36e32a0'] = $pane;
+    $display->panels['middle'][0] = 'new-c25344dc-6080-4ca1-9383-2fa6c36e32a0';
+    $pane = new stdClass();
     $pane->pid = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $pane->panel = 'middle';
     $pane->type = 'block';
@@ -234,11 +256,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $display->content['new-8b39e4b1-e072-4053-ba32-86b4b0b65f18'] = $pane;
-    $display->panels['middle'][0] = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
+    $display->panels['middle'][1] = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -263,11 +285,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][2] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -475,7 +497,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Stokes Library Branch Pages',
     'no_blocks' => 1,
@@ -674,6 +696,28 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-afdd33ac-fb36-431d-8c4e-05f8b085567d'] = $pane;
     $display->panels['first'][4] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
     $pane = new stdClass();
+    $pane->pid = 'new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
+    $display->content['new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede'] = $pane;
+    $display->panels['middle'][0] = 'new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
+    $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
     $pane->type = 'node_body';
@@ -691,11 +735,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane = new stdClass();
     $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane->panel = 'middle';
@@ -715,11 +759,11 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
-    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';

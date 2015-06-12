@@ -196,4 +196,7 @@ a:hover{text-decoration:underline;}
 }
 .search-bar{position:relative;}
 .search-bar .f-criteria{background-color:white;border:1px solid #000;border-radius:4px;border-radius:4px;box-sizing:border-box;display:block;font-size:1em;font-style:italic;margin:0;padding:.3333333333em;position:relative;-webkit-transition:border-color;transition:border-color;width:100%;}
-.search-bar .f-submit{border-bottom-left-radius:0;border-top-left-radius:0;bottom:0;outline:0;padding:5px 10px;position:absolute;right:0;top:0;}
+.search-bar .f-submit{background-clip:padding-box;background-color:#477dca;border:0;border-bottom-left-radius:0;border-radius:3px;border-top-left-radius:0;bottom:0;color:white;display:inline-block;font-size:inherit;font-weight:bold;outline:0;padding:7px 18px;padding:5px 10px;position:absolute;right:0;text-decoration:none;top:0;}
+.search-bar .f-submit:hover:not(:disabled){background-color:#578ad4;cursor:pointer;}
+.search-bar .f-submit:active:not(:disabled),.search-bar .f-submit:focus:not(:disabled){background-color:#3c71bb;cursor:pointer;}
+.search-bar .f-submit:disabled{cursor:not-allowed;opacity:0.5;}

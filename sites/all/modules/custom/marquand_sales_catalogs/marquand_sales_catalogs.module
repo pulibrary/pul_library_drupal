@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Marquand Sales Catalogs feature.
+ */
+
+include_once 'marquand_sales_catalogs.features.inc';
