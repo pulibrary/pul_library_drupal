@@ -211,14 +211,14 @@ function search_api_autocomplete_search_load($id, $reset = FALSE) {
  * Loads autocomplete search entities.
  *
  * @param array|false $ids
- *   An array of IDs or machine names, or FALSE to load all searches.
+ *   (optional) An array of IDs or machine names, or FALSE to load all searches.
  * @param array $conditions
- *   An associative array of conditions on the {search_api_autocomplete_search}
- *   table.
+ *   (optional) An associative array of conditions on the
+ *   {search_api_autocomplete_search} table.
  * @param bool $reset
- *   Whether to reset the internal cache.
+ *   (optional) Whether to reset the internal cache.
  *
- * @return array
+ * @return SearchApiAutocompleteSearch[]
  *   An array of all autocomplete search entities that meet the criteria.
  *
  * @see entity_load()
