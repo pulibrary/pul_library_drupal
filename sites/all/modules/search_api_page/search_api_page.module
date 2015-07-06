@@ -141,7 +141,7 @@ function search_api_page_block_info() {
   foreach (search_api_page_load_multiple(FALSE, array('enabled' => TRUE)) as $page) {
     $blocks[$page->machine_name] = array(
       'info' => t('Search block: !name', array('!name' => $page->name)),
-      'cache' => DRUPAL_CACHE_PER_USER,
+      'cache' => DRUPAL_CACHE_PER_ROLE | DRUPAL_CACHE_PER_PAGE,
     );
   }
   return $blocks;
@@ -152,7 +152,7 @@ function search_api_page_block_info() {
  */
 function search_api_page_block_view($delta) {
   $page = search_api_page_load($delta);
-  if ($page && $page->enabled) {
+  if ($page && $page->enabled && search_api_page_access($delta)) {
     $block = array();
     $block['subject'] = t($page->name);
     $block['content'] = drupal_get_form('search_api_page_search_form_' . $page->machine_name, $page, NULL, TRUE);
@@ -255,6 +255,16 @@ function search_api_page_entity_property_info() {
   );
 
   return $info;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function search_api_page_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'page_manager' || $owner == 'ctools') {
+    return 'plugins/' . $plugin_type;
+  }
+  return NULL;
 }
 
 /**
@@ -514,7 +524,9 @@ function search_api_page_search_form(array $form, array &$form_state, Entity $pa
  * @see search_api_page_search_form_submit()
  */
 function search_api_page_search_form_validate(array $form, array &$form_state) {
-  if (!trim($form_state['values']['keys_' . $form_state['values']['id']])) {
+  $page = search_api_page_load($form_state['values']['id']);
+
+  if (!trim($form_state['values']['keys_' . $form_state['values']['id']]) && empty($page->options['empty_behavior']))  {
     form_set_error('keys_' . $form_state['values']['id'], t('Please enter at least one keyword.'));
   }
 }
