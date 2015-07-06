@@ -112,6 +112,17 @@ function search_api_page_admin_add(array $form, array &$form_state) {
       '#maxlength' => 50,
       '#required' => TRUE,
     );
+  $form['empty_behavior'] = array(
+    '#type' => 'radios',
+    '#title' => t('Behavior on empty search'),
+    '#options' => array(
+      '' => t('Just show the search box'),
+      'results' => t('Show the first page of all available results'),
+      'blocks'  => t("Perform an empty search but don't display any results."),
+    ),
+    '#description' => t('This determines what is shown when the user first comes to the search page or submits an empty keyword string. For example if you want <a href="@url">Facet API</a> facets to show without having entered any search terms, select the "Perform an empty search …" option. If you would like a page of results displayed regardless of the presence of any search terms then select the "Show the first page …" option.', array('@url' => 'https://drupal.org/project/facetapi')),
+    '#default_value' => '',
+  );
 
     $form['submit'] = array(
       '#type' => 'submit',
@@ -445,6 +456,17 @@ function search_api_page_admin_edit(array $form, array &$form_state, Entity $pag
       '#default_value' => !empty($page->options['search_api_spellcheck']),
     );
   }
+  $form['options']['empty_behavior'] = array(
+    '#type' => 'radios',
+    '#title' => t('Behavior on empty search'),
+    '#options' => array(
+      '' => t('Just show the search box'),
+      'results' => t('Show the first page of all available results'),
+      'blocks' => t("Perform an empty search but don't display any results."),
+    ),
+    '#description' => t('This determines what is shown when the user first comes to the search page or submits an empty keyword string. For example if you want <a href="@url">Facet API</a> facets to show without having entered any search terms, select the "Perform an empty search …" option. If you would like a page of results displayed regardless of the presence of any search terms then select the "Show the first page …" option.', array('@url' => 'https://drupal.org/project/facetapi')),
+    '#default_value' => empty($page->options['empty_behavior']) ? '' : $page->options['empty_behavior'],
+  );
 
   $form['actions']['#type'] = 'actions';
   $form['actions']['submit'] = array(

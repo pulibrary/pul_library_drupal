@@ -75,9 +75,9 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
     }
   }
   foreach ($searches as $id => $search) {
-    $search->unavailable = TRUE;
     $type = isset($types[$search->type]) ? $search->type : '';
     $types[$type]['searches'][$id] = $search;
+    $types[$type]['unavailable'][$id] = TRUE;
     $show_status |= $search->hasStatus(ENTITY_IN_CODE);
   }
   $base_path = 'admin/config/search/search_api/index/' . $index_id . '/autocomplete/';
@@ -88,9 +88,11 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
     if (!$type) {
       $info += array(
         'name' => t('Unavailable search types'),
-        'description' => t('The modules providing these searches were disabled or uninstalled. ' .
-            "If you won't use them anymore, you can delete their settings."),
+        'description' => t("The modules providing these searches were disabled or uninstalled. If you won't use them anymore, you can delete their settings."),
       );
+    }
+    elseif (!empty($info['unavailable'])) {
+      $info['description'] .= '</p><p>' . t("The searches marked with an asterisk (*) are currently not available, possibly because they were deleted. If you won't use them anymore, you can delete their settings.");
     }
     $form[$type] = array(
       '#type' => 'fieldset',
@@ -116,7 +118,8 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
         '#default_value' => $search->enabled,
         '#parents' => array('searches', $id),
       );
-      if (!empty($search->unavailabe)) {
+      $unavailable = !empty($info['unavailable'][$id]);
+      if ($unavailable) {
         $form[$type]['searches'][$id]['#default_value'] = FALSE;
         $form[$type]['searches'][$id]['#disabled'] = TRUE;
       }
@@ -126,8 +129,11 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
         $options['status'] = isset($search->status) ? theme('entity_status', array('status' => $search->status)) : '';;
       }
       $options['name'] = $search->name;
+      if ($unavailable) {
+        $options['name'] = '* ' . $options['name'];
+      }
       $items = array();
-      if (empty($search->unavailabe) && !empty($search->id)) {
+      if (!$unavailable && !empty($search->id)) {
         $items[] = l(t('edit'), $base_path . $id . '/edit');
       }
       if (!empty($search->status) && ($search->hasStatus(ENTITY_CUSTOM))) {
@@ -148,7 +154,7 @@ function search_api_autocomplete_admin_overview(array $form, array &$form_state,
     }
   }
 
-  if (empty($form)) {
+  if (!element_children($form)) {
     $form['message']['#markup'] = '<p>' . t('There are currently no searches known for this index.') . '</p>';
   }
   else {
@@ -265,6 +271,21 @@ function search_api_autocomplete_admin_search_edit(array $form, array &$form_sta
   if (!empty($type['config form']) && function_exists($type['config form']) && is_array($custom_form = $type['config form']($custom_form, $form_state, $search))) {
     $form['options']['custom'] = $custom_form;
   }
+
+  $form['advanced'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Advanced settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['advanced']['submit_button_selector'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Search button selector'),
+    '#description' => t('<a href="@jquery_url">jQuery selector</a> to identify the search button in the search form. Use the ID attribute of the "Search" submit button to prevent issues when another button is present (e.g., "Reset"). The selector is evaluated relative to the form. The default value is ":submit".', array('@jquery_url' => 'https://api.jquery.com/category/selectors/')),
+    '#default_value' => isset($search->options['submit_button_selector']) ? $search->options['submit_button_selector'] : ':submit',
+    '#required' => TRUE,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
@@ -311,6 +332,7 @@ function search_api_autocomplete_admin_search_edit_submit(array $form, array &$f
   $search->options['results'] = $values['options']['results'];
   $search->options['min_length'] = $values['options']['min_length'];
   $search->options['fields'] = array_keys(array_filter($values['options']['fields']));
+  $search->options['submit_button_selector'] = $form_state['values']['advanced']['submit_button_selector'];
   if (isset($values['options']['custom'])) {
     // Take care of custom options that aren't changed in the config form.
     $old = empty($search->options['custom']) ? array() : $search->options['custom'];
