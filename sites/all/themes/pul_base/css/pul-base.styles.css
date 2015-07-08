@@ -1298,6 +1298,14 @@ table caption {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.button--external-link {
+  padding: 3px 7px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #2762ae; }
+
 .node-type-webform .l-main .form-submit {
   margin-right: 1em; }
 
