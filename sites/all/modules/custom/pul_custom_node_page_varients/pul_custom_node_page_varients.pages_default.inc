@@ -69,9 +69,9 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Databases',
+    'panels_breadcrumbs_titles' => 'Back to Databases',
     'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';

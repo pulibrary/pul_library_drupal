@@ -401,7 +401,7 @@ a:hover {
   display: none; }
 
 .svg .site-logo {
-  background: url("../images/logo.svg") center center no-repeat;
+  background: url("../svg_icons/compressed/logo.svg") center center no-repeat;
   background-size: contain;
   display: block; }
   @media (min-width: 44em) {
@@ -511,27 +511,27 @@ a:hover {
       margin-left: 0.5em; } }
 
 .svg .facebook-logo {
-  background-image: url("../images/facebook.svg");
+  background-image: url("../svg_icons/compressed/facebook.svg");
   width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .twitter-logo {
-  background-image: url("../images/twitter.svg");
+  background-image: url("../svg_icons/compressed/twitter.svg");
   width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .govdocs-logo {
-  background-image: url("../images/govdocs.svg");
-  width: 27px;
+  background-image: url("../svg_icons/compressed/govdocs.svg");
+  width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .friends-logo {
-  background-image: url("../images/friends.svg");
-  width: 91px;
+  background-image: url("../svg_icons/compressed/friends.svg");
+  width: 85px;
   margin: 0 0.2em 0.75em; }
 
 .svg .pu-logo {
-  background-image: url("../images/pu.svg");
+  background-image: url("../svg_icons/compressed/pu.svg");
   width: 142px;
   height: 40px;
   margin: 0.5em 0 0; }
