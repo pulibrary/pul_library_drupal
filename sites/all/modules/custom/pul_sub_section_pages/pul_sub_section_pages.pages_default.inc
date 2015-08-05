@@ -1219,7 +1219,7 @@ services/interlibrary-services/lender-fees',
     $pane->configuration = array(
       'admin_title' => 'Contact Document Delivery',
       'title' => 'Contact',
-      'body' => '<p>docdel@princeton.edu</p><p>609.258.3272</p>',
+      'body' => '<p>ILSBorr@princeton.edu</p><p>609.258.3272</p>',
       'format' => 'full_html',
       'substitute' => 1,
     );

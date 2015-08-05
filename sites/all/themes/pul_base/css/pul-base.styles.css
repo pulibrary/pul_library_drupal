@@ -484,7 +484,7 @@ a:hover {
   display: none; }
 
 .svg .site-logo {
-  background: url("../images/logo.svg") center center no-repeat;
+  background: url("../svg_icons/compressed/logo.svg") center center no-repeat;
   background-size: contain;
   display: block; }
   @media (min-width: 44em) {
@@ -661,27 +661,27 @@ a:hover {
       margin-left: 0.5em; } }
 
 .svg .facebook-logo {
-  background-image: url("../images/facebook.svg");
+  background-image: url("../svg_icons/compressed/facebook.svg");
   width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .twitter-logo {
-  background-image: url("../images/twitter.svg");
+  background-image: url("../svg_icons/compressed/twitter.svg");
   width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .govdocs-logo {
-  background-image: url("../images/govdocs.svg");
-  width: 27px;
+  background-image: url("../svg_icons/compressed/govdocs.svg");
+  width: 24px;
   margin: 0 0.2em 0.75em; }
 
 .svg .friends-logo {
-  background-image: url("../images/friends.svg");
-  width: 91px;
+  background-image: url("../svg_icons/compressed/friends.svg");
+  width: 85px;
   margin: 0 0.2em 0.75em; }
 
 .svg .pu-logo {
-  background-image: url("../images/pu.svg");
+  background-image: url("../svg_icons/compressed/pu.svg");
   width: 142px;
   height: 40px;
   margin: 0.5em 0 0; }
@@ -822,6 +822,9 @@ a:hover {
     float: left;
     width: 30%;
     margin-right: 1em; } }
+
+.pane-node-field-secondary-content {
+  margin-top: 1.414em; }
 
 .results-spinner-large {
   margin: 4em auto;
@@ -1109,15 +1112,28 @@ table caption {
 .section-services .three_six_three-region--middle table td {
   padding: 1em; }
 
-.branch-libraries .l-main {
+.three_six_three-region--middle p:first-of-type {
+  margin-top: 1.414em; }
+
+.branch-libraries .l-main, .section-econlib .l-main, .section-copyright .l-main {
   padding: 0; }
 
-.branch-libraries h1 {
+.branch-libraries h1, .section-econlib h1, .section-copyright h1 {
   display: none; }
 
 .branch-libraries .three_six_three_stacked-region--top img,
 .branch-libraries .three_six_three_stacked-region--top a,
-.branch-libraries .three_three_three_three_stacked-region--top img, .branch-libraries .three_three_three_three_stacked-region--top a {
+.branch-libraries .three_three_three_three_stacked-region--top img,
+.branch-libraries .three_three_three_three_stacked-region--top a,
+.branch-libraries .three_nine_stacked-region--top img, .branch-libraries .three_nine_stacked-region--top a, .section-econlib .three_six_three_stacked-region--top img,
+.section-econlib .three_six_three_stacked-region--top a,
+.section-econlib .three_three_three_three_stacked-region--top img,
+.section-econlib .three_three_three_three_stacked-region--top a,
+.section-econlib .three_nine_stacked-region--top img, .section-econlib .three_nine_stacked-region--top a, .section-copyright .three_six_three_stacked-region--top img,
+.section-copyright .three_six_three_stacked-region--top a,
+.section-copyright .three_three_three_three_stacked-region--top img,
+.section-copyright .three_three_three_three_stacked-region--top a,
+.section-copyright .three_nine_stacked-region--top img, .section-copyright .three_nine_stacked-region--top a {
   opacity: 0.4;
   display: none; }
 
@@ -1127,10 +1143,34 @@ table caption {
   .branch-libraries .three_six_three_stacked-region--top .pane-custom,
   .branch-libraries .three_three_three_three_stacked-region--top .pane-node-field-library-image,
   .branch-libraries .three_three_three_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
-  .branch-libraries .three_three_three_three_stacked-region--top .pane-custom {
+  .branch-libraries .three_three_three_three_stacked-region--top .pane-custom,
+  .branch-libraries .three_nine_stacked-region--top .pane-node-field-library-image,
+  .branch-libraries .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .branch-libraries .three_nine_stacked-region--top .pane-custom, .section-econlib .three_six_three_stacked-region--top .pane-node-field-library-image,
+  .section-econlib .three_six_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-econlib .three_six_three_stacked-region--top .pane-custom,
+  .section-econlib .three_three_three_three_stacked-region--top .pane-node-field-library-image,
+  .section-econlib .three_three_three_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-econlib .three_three_three_three_stacked-region--top .pane-custom,
+  .section-econlib .three_nine_stacked-region--top .pane-node-field-library-image,
+  .section-econlib .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-econlib .three_nine_stacked-region--top .pane-custom, .section-copyright .three_six_three_stacked-region--top .pane-node-field-library-image,
+  .section-copyright .three_six_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-copyright .three_six_three_stacked-region--top .pane-custom,
+  .section-copyright .three_three_three_three_stacked-region--top .pane-node-field-library-image,
+  .section-copyright .three_three_three_three_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-copyright .three_three_three_three_stacked-region--top .pane-custom,
+  .section-copyright .three_nine_stacked-region--top .pane-node-field-library-image,
+  .section-copyright .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+  .section-copyright .three_nine_stacked-region--top .pane-custom {
     position: relative; }
   .branch-libraries .three_six_three_stacked-region--top h2,
-  .branch-libraries .three_three_three_three_stacked-region--top h2 {
+  .branch-libraries .three_three_three_three_stacked-region--top h2,
+  .branch-libraries .three_nine_stacked-region--top h2, .section-econlib .three_six_three_stacked-region--top h2,
+  .section-econlib .three_three_three_three_stacked-region--top h2,
+  .section-econlib .three_nine_stacked-region--top h2, .section-copyright .three_six_three_stacked-region--top h2,
+  .section-copyright .three_three_three_three_stacked-region--top h2,
+  .section-copyright .three_nine_stacked-region--top h2 {
     position: absolute;
     z-index: 1;
     display: block;
@@ -1143,11 +1183,26 @@ table caption {
     margin-bottom: 25px; }
   .branch-libraries .three_six_three_stacked-region--top img,
   .branch-libraries .three_six_three_stacked-region--top a,
-  .branch-libraries .three_three_three_three_stacked-region--top img, .branch-libraries .three_three_three_three_stacked-region--top a {
+  .branch-libraries .three_three_three_three_stacked-region--top img,
+  .branch-libraries .three_three_three_three_stacked-region--top a,
+  .branch-libraries .three_nine_stacked-region--top img, .branch-libraries .three_nine_stacked-region--top a, .section-econlib .three_six_three_stacked-region--top img,
+  .section-econlib .three_six_three_stacked-region--top a,
+  .section-econlib .three_three_three_three_stacked-region--top img,
+  .section-econlib .three_three_three_three_stacked-region--top a,
+  .section-econlib .three_nine_stacked-region--top img, .section-econlib .three_nine_stacked-region--top a, .section-copyright .three_six_three_stacked-region--top img,
+  .section-copyright .three_six_three_stacked-region--top a,
+  .section-copyright .three_three_three_three_stacked-region--top img,
+  .section-copyright .three_three_three_three_stacked-region--top a,
+  .section-copyright .three_nine_stacked-region--top img, .section-copyright .three_nine_stacked-region--top a {
     opacity: 0.4;
     display: block; }
   .branch-libraries .three_six_three_stacked-region--top p,
-  .branch-libraries .three_three_three_three_stacked-region--top p {
+  .branch-libraries .three_three_three_three_stacked-region--top p,
+  .branch-libraries .three_nine_stacked-region--top p, .section-econlib .three_six_three_stacked-region--top p,
+  .section-econlib .three_three_three_three_stacked-region--top p,
+  .section-econlib .three_nine_stacked-region--top p, .section-copyright .three_six_three_stacked-region--top p,
+  .section-copyright .three_three_three_three_stacked-region--top p,
+  .section-copyright .three_nine_stacked-region--top p {
     margin: 0; } }
 
 .page-node-7793 .view-header p,
@@ -1297,6 +1352,14 @@ table caption {
   .field--name-field-cas-db-resource-url a:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
+
+.button--external-link {
+  padding: 3px 7px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #2762ae; }
 
 .node-type-webform .l-main .form-submit {
   margin-right: 1em; }
@@ -1482,7 +1545,7 @@ a.skip2main:focus {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(255, 255, 255, 0.8) url(/sites/all/themes/pul_base/images/move-up.svg) no-repeat center 50%;
+  background: rgba(255, 255, 255, 0.8) url(/sites/all/themes/pul_base/svg_icons/compressed/move-up.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
@@ -2172,12 +2235,14 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .three_six_three-region--first .panel-pane > ul.menu,
 .three_six_three_stacked-region--first .panel-pane > ul.menu,
 .three_nine-region--first .panel-pane > ul.menu,
+.three_nine_stacked-region--first .panel-pane > ul.menu,
 .three_three_three_three_stacked-region--first .panel-pane > ul.menu {
   margin-top: 1.75em; }
 
 .three_six_three-region--first ul.menu li a,
 .three_six_three_stacked-region--first ul.menu li a,
 .three_nine-region--first ul.menu li a,
+.three_nine_stacked-region--first ul.menu li a,
 .three_three_three_three_stacked-region--first ul.menu li a {
   padding: .5em;
   margin: 0;
@@ -2190,6 +2255,8 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .three_six_three_stacked-region--first ul.menu li.expanded a.active,
 .three_nine-region--first ul.menu li a.active,
 .three_nine-region--first ul.menu li.expanded a.active,
+.three_nine_stacked-region--first ul.menu li a.active,
+.three_nine_stacked-region--first ul.menu li.expanded a.active,
 .three_three_three_three_stacked-region--first ul.menu li a.active, .three_three_three_three_stacked-region--first ul.menu li.expanded a.active {
   background: #2762ae;
   color: #ffffff; }
@@ -2197,24 +2264,28 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .three_six_three-region--first ul.menu li.expanded,
 .three_six_three_stacked-region--first ul.menu li.expanded,
 .three_nine-region--first ul.menu li.expanded,
+.three_nine_stacked-region--first ul.menu li.expanded,
 .three_three_three_three_stacked-region--first ul.menu li.expanded {
   background: #f5f4f1;
   border-radius: 4px; }
   .three_six_three-region--first ul.menu li.expanded a,
   .three_six_three_stacked-region--first ul.menu li.expanded a,
   .three_nine-region--first ul.menu li.expanded a,
+  .three_nine_stacked-region--first ul.menu li.expanded a,
   .three_three_three_three_stacked-region--first ul.menu li.expanded a {
     color: #2762ae; }
 
 .three_six_three-region--first ul.menu > li > a,
 .three_six_three_stacked-region--first ul.menu > li > a,
 .three_nine-region--first ul.menu > li > a,
+.three_nine_stacked-region--first ul.menu > li > a,
 .three_three_three_three_stacked-region--first ul.menu > li > a {
   font-size: 1.15rem; }
 
 .three_six_three-region--first ul.menu > li > ul > li > a,
 .three_six_three_stacked-region--first ul.menu > li > ul > li > a,
 .three_nine-region--first ul.menu > li > ul > li > a,
+.three_nine_stacked-region--first ul.menu > li > ul > li > a,
 .three_three_three_three_stacked-region--first ul.menu > li > ul > li > a {
   font-size: 1rem;
   padding-left: 1em; }
@@ -2222,6 +2293,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .three_six_three-region--first ul.menu > li > ul > li > ul > li > a,
 .three_six_three_stacked-region--first ul.menu > li > ul > li > ul > li > a,
 .three_nine-region--first ul.menu > li > ul > li > ul > li > a,
+.three_nine_stacked-region--first ul.menu > li > ul > li > ul > li > a,
 .three_three_three_three_stacked-region--first ul.menu > li > ul > li > ul > li > a {
   padding-left: 4em; }
 
