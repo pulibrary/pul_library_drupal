@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUL Library Events feature.
+ */
+
+include_once 'pul_library_events.features.inc';
