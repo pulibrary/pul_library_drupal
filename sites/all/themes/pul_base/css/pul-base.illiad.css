@@ -19,10 +19,7 @@ button {
   line-height: 1;
   padding: 0.75em 1em;
   text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
   button:hover,
@@ -72,8 +69,7 @@ textarea {
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
-  -webkit-transition: border-color;
-          transition: border-color;
+  transition: border-color;
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
   select[multiple=multiple]:hover,
@@ -126,6 +122,7 @@ dl {
 
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
   -ms-font-feature-settings: "kern", "liga", "tnum";
   font-feature-settings: "kern", "liga", "tnum";
   border-collapse: collapse;
@@ -150,6 +147,7 @@ th {
 
 body {
   -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
   -ms-font-feature-settings: "kern", "liga", "pnum";
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
@@ -175,8 +173,7 @@ p {
 a {
   color: #2762ae;
   text-decoration: none;
-  -webkit-transition: color 0.1s linear;
-          transition: color 0.1s linear; }
+  transition: color 0.1s linear; }
   a:active,
   a:focus,
   a:hover {
@@ -660,6 +657,8 @@ a:hover {
         left: -2em;
         position: absolute;
         margin-left: 2em;
+        -moz-box-shadow: 0px 3px 8px #646464;
+        -webkit-box-shadow: 0px 3px 8px #646464;
         box-shadow: 0px 3px 8px #646464; } }
     @media (min-width: 44em) {
       .wrapper--navigation li > ul.menu .menu {
@@ -935,6 +934,7 @@ a:hover {
   .search-bar .f-criteria {
     box-sizing: border-box;
     -webkit-transition: border-color;
+    -moz-transition: border-color;
     transition: border-color;
     background-color: white;
     border-radius: 4px;
@@ -976,3 +976,5 @@ a:hover {
     .search-bar .f-submit:disabled {
       cursor: not-allowed;
       opacity: 0.5; }
+
+/*# sourceMappingURL=pul-base.illiad.css.map */
