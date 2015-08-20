@@ -1488,6 +1488,9 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Featured Graphic */
   $handler->display->display_options['fields']['field_news_featured_graphic']['id'] = 'field_news_featured_graphic';
   $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
@@ -1495,7 +1498,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_featured_graphic']['label'] = '';
   $handler->display->display_options['fields']['field_news_featured_graphic']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['text'] = '<div class="media">[field_news_featured_graphic]</div>';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['text'] = '[field_news_featured_graphic]';
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['click_sort_column'] = 'fid';
@@ -1545,7 +1548,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_catalog_url']['field'] = 'field_catalog_url';
   $handler->display->display_options['fields']['field_catalog_url']['label'] = '';
   $handler->display->display_options['fields']['field_catalog_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_catalog_url']['alter']['text'] = '<div class="media">[field_news_featured_graphic]
+  $handler->display->display_options['fields']['field_catalog_url']['alter']['text'] = '<div class="media--stacked">[field_news_featured_graphic]
 <div class="copy"><p>[field_authors]<br><em>[field_full_title]</em><br>[field_publisher]<br>[field_physical_description]<br>[field_call_number]<br>[field_catalog_url]</p></div></div>';
   $handler->display->display_options['fields']['field_catalog_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_catalog_url']['click_sort_column'] = 'url';
@@ -1578,7 +1581,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['field_news_category_tid']['table'] = 'field_data_field_news_category';
   $handler->display->display_options['filters']['field_news_category_tid']['field'] = 'field_news_category_tid';
   $handler->display->display_options['filters']['field_news_category_tid']['value'] = array(
-    6326 => '6326',
+    4977 => '4977',
   );
   $handler->display->display_options['filters']['field_news_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_news_category_tid']['vocabulary'] = 'news_events_categories';

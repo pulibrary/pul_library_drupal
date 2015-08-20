@@ -351,14 +351,14 @@ function workbench_access_load_include($module = NULL) {
  * Enforces our access rules when users try to edit/delete a node.
  */
 function workbench_access_node_access($node, $op, $account) {
-  // If not configured, do nothing.
-  $tree = workbench_access_get_active_tree();
-  if (empty($tree['active'])) {
+  // View step. We ignore for published nodes.
+  if ($op == 'view' && $node->status) {
     return NODE_ACCESS_IGNORE;
   }
 
-  // View step. We ignore for published nodes.
-  if ($op == 'view' && $node->status) {
+  // If not configured, do nothing.
+  $tree = workbench_access_get_active_tree();
+  if (empty($tree['active'])) {
     return NODE_ACCESS_IGNORE;
   }
 
@@ -396,6 +396,11 @@ function workbench_access_node_access($node, $op, $account) {
   // Get the access rules for this node.
   $result = FALSE; // Always default to FALSE.
   if (!empty($node->workbench_access) && !empty($account->workbench_access)) {
+    // In the case of "preview" the property may be a string. Not sure why.
+    // See https://drupal.org/node/1935190.
+    if (!is_array($node->workbench_access)) {
+      $node->workbench_access = array($node->workbench_access);
+    }
     $result = workbench_access_check($op, $type, array_filter($node->workbench_access), $account->workbench_access);
   }
 
@@ -550,34 +555,37 @@ function workbench_access_get_active_tree() {
 
   workbench_access_load_include($scheme);
 
-  // Now check the cache.
-  $cache = cache_get('workbench_access_tree', 'cache_bootstrap');
-  if (isset($cache->data)) {
-    $access_tree = $cache->data;
-  }
-  if (isset($access_tree['access_scheme'])) {
-    return $access_tree;
-  }
-  // Retrieve and cache data.
-  $func = $scheme . '_workbench_access_info';
-  $info = $func();
-  $data = $info[$scheme];
-  $stored = workbench_access_get_ids_by_scheme($data);
-  $tree = workbench_access_tree($data);
-  workbench_access_build_tree($tree);
-  // Ensure that we have no orphaned ids.
-  $active = array();
-  foreach ($stored as $access_id => $access_scheme) {
-    if (isset($tree[$access_id])) {
-      $active[$access_id] = $access_scheme;
+  $access_tree = &drupal_static(__FUNCTION__);
+  if (!isset($access_tree)) {
+    // Now check the cache.
+    $cache = cache_get('workbench_access_tree', 'cache_bootstrap');
+    if (isset($cache->data)) {
+      $access_tree = $cache->data;
     }
+    if (isset($access_tree['access_scheme'])) {
+      return $access_tree;
+    }
+    // Retrieve and cache data.
+    $func = $scheme . '_workbench_access_info';
+    $info = $func();
+    $data = $info[$scheme];
+    $stored = workbench_access_get_ids_by_scheme($data);
+    $tree = workbench_access_tree($data);
+    workbench_access_build_tree($tree);
+    // Ensure that we have no orphaned ids.
+    $active = array();
+    foreach ($stored as $access_id => $access_scheme) {
+      if (isset($tree[$access_id])) {
+        $active[$access_id] = $access_scheme;
+      }
+    }
+    $access_tree = array(
+      'access_scheme' => $data,
+      'tree' => $tree,
+      'active' => $active,
+    );
+    cache_set('workbench_access_tree', $access_tree, 'cache_bootstrap');
   }
-  $access_tree = array(
-    'access_scheme' => $data,
-    'tree' => $tree,
-    'active' => $active,
-  );
-  cache_set('workbench_access_tree', $access_tree, 'cache_bootstrap');
   return $access_tree;
 }
 
@@ -659,6 +667,10 @@ function workbench_access_node_presave($node) {
   if (empty($node->nid)) {
     return;
   }
+  // Only run this on enabled node types.
+  if (!variable_get('workbench_access_node_type_' . $node->type, 1)) {
+    return;
+  }
   // Did we use the default field form?
   workbench_access_prepare_field_save($node);
   if (isset($node->workbench_access_fields)) {
@@ -726,6 +738,24 @@ function workbench_access_prepare_field_save($node) {
       $node->workbench_access_fields[] = $field;
     }
   }
+
+  // Make sure that the required fields are present, even if they're empty.
+  foreach ($node->workbench_access_fields as $field) {
+    if (!isset($node->{$field})) {
+      if ($field == 'menu') {
+        menu_node_prepare($node);
+        if (!empty($node->menu)) {
+          // menu_node_prepare() expects FAPI to mark the link enabled.
+          // If it's not marked enabled, when we execute node_save(),
+          // menu_node_save() would delete it. Avoid this:
+          $node->menu['enabled'] = empty($node->menu['mlid']) ? 0 : 1;
+        }
+      }
+      else {
+        $node->{$field} = array();
+      }
+    }
+  }
 }
 
 /**
@@ -783,23 +813,14 @@ function workbench_access_user_load_data($account) {
     }
     // Add roles.
     $query = db_select('workbench_access_role', 'war')
-     ->addTag('workbench_access_role')
-      ->fields('war', array('access_id'))
-      ->condition('war.rid', array_keys($account->roles), 'IN')
-     ->condition('war.access_scheme', $access_scheme);
-    $result = $query->execute()->fetchAll();
-    foreach ($result as $data) {
-      $items[$data->access_id] = $data;
-    }
-    // Add roles.
-    $query = db_select('workbench_access_role', 'war')
       ->addTag('workbench_access_role')
       ->fields('war', array('access_id'))
       ->condition('war.rid', array_keys($account->roles), 'IN')
       ->condition('war.access_scheme', $access_scheme);
     $result = $query->execute()->fetchAll();
     foreach ($result as $data) {
-      if (!isset($items[$data->access_id])) {
+      // If the role is set it matches a role the user has
+      if (isset($items[$data->access_id])) {
         $items[$data->access_id] = $data;
         // Identify the access-by-role features.
         $account->workbench_access_by_role[] = $data->access_id;
@@ -958,6 +979,7 @@ function workbench_access_section_delete($section) {
 function workbench_access_reset_tree() {
   cache_clear_all('workbench_access_tree', 'cache_bootstrap');
   drupal_static_reset('workbench_access_get_access_tree');
+  drupal_static_reset('workbench_access_get_active_tree');
   drupal_static_reset('workbench_access_get_ids_by_scheme');
   drupal_static_reset('workbench_access_get_user_tree');
   drupal_static_reset('workbench_access_user_load_data');
@@ -1440,7 +1462,7 @@ function workbench_access_alter_form($hook, &$form, &$form_state) {
  */
 function workbench_access_allow_form_alter() {
   $active = workbench_access_get_active_tree();
-  $ids = array_filter($active['access_scheme']['access_type_id']);
+  $ids = !empty($active) ? array_filter($active['access_scheme']['access_type_id']) : NULL;
   if (!empty($ids)) {
     return TRUE;
   }
@@ -1462,7 +1484,14 @@ function workbench_access_node_form_element(&$form, $form_state) {
   // Set default form options.
   $default = array();
   if (!empty($form['#node']->workbench_access)) {
-    $current = array_keys($form['#node']->workbench_access);
+    // In preview mode, this value can be a string.
+    // See http://drupal.org/node/1935190.
+    if (is_array($form['#node']->workbench_access)) {
+      $current = array_keys($form['#node']->workbench_access);
+    }
+    else {
+      $current = array($form['#node']->workbench_access);
+    }
     foreach ($current as $access_id) {
       if (isset($active['active'][$access_id])) {
         $default[] = $access_id;
@@ -1869,7 +1898,7 @@ function workbench_access_workbench_block() {
           $section = workbench_access_load($access_type, $access_id);
           $names[] = $section['name'];
         }
-        return array(t('Workbench Access: %section', array('%section' => implode(', ', $names))));
+        return array(t('@message_label: %section', array('@message_label' => variable_get('workbench_access_label', 'Section'), '%section' => implode(', ', $names))));
        }
     }
   }
@@ -1883,6 +1912,9 @@ function workbench_access_node_operations($form = array(), $form_state = array()
     return;
   }
   $active = workbench_access_get_active_tree();
+  if (!$active) {
+    return;
+  }
   $tree = $active['tree'];
   workbench_access_build_tree($tree);
   $options = workbench_access_options($tree, $active['active']);

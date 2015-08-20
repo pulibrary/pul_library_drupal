@@ -515,7 +515,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-593e49db-8f73-4e1d-adbb-223fef28f8c7';
+    $pane->pid = 'new-83095bf9-42f2-4fec-bf6e-0e9d88a1e4b2';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
@@ -533,9 +533,9 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '593e49db-8f73-4e1d-adbb-223fef28f8c7';
-    $display->content['new-593e49db-8f73-4e1d-adbb-223fef28f8c7'] = $pane;
-    $display->panels['middle'][0] = 'new-593e49db-8f73-4e1d-adbb-223fef28f8c7';
+    $pane->uuid = '83095bf9-42f2-4fec-bf6e-0e9d88a1e4b2';
+    $display->content['new-83095bf9-42f2-4fec-bf6e-0e9d88a1e4b2'] = $pane;
+    $display->panels['middle'][0] = 'new-83095bf9-42f2-4fec-bf6e-0e9d88a1e4b2';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';

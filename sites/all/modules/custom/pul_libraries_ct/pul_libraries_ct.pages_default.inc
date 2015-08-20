@@ -67,6 +67,7 @@ libraries/stokes
 libraries/plasma-physics
 libraries/scilib
 libraries/music
+libraries/marquand
 vdl',
           ),
           'context' => 'empty',
