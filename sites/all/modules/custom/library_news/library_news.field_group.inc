@@ -24,11 +24,12 @@ function library_news_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_authors',
-      1 => 'field_full_title',
-      2 => 'field_publisher',
-      3 => 'field_physical_description',
-      4 => 'field_call_number',
-      5 => 'field_catalog_url',
+      1 => 'field_call_number',
+      2 => 'field_catalog_url',
+      3 => 'field_full_title',
+      4 => 'field_physical_description',
+      5 => 'field_publisher',
+      6 => 'field_credit',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

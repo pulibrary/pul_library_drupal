@@ -69,7 +69,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'five-four-three-stacked';
+  $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -150,7 +150,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
     $display->panels['first'][0] = 'new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
     $pane = new stdClass();
     $pane->pid = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
-    $pane->panel = 'second';
+    $pane->panel = 'middle';
     $pane->type = 'node';
     $pane->subtype = 'node';
     $pane->shown = TRUE;
@@ -175,10 +175,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'ea729d9a-02d3-40d0-a57d-0f62731c4340';
     $display->content['new-ea729d9a-02d3-40d0-a57d-0f62731c4340'] = $pane;
-    $display->panels['second'][0] = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
+    $display->panels['middle'][0] = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
     $pane = new stdClass();
     $pane->pid = 'new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
-    $pane->panel = 'third';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-directions-parking-and-gene';
     $pane->shown = TRUE;
@@ -197,7 +197,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
     $display->content['new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae'] = $pane;
-    $display->panels['third'][0] = 'new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
+    $display->panels['second'][0] = 'new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
