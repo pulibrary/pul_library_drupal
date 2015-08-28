@@ -172,7 +172,7 @@ function library_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 47,
+      'weight' => 48,
     ),
     'workbench_access_field' => 0,
   );
@@ -230,7 +230,48 @@ function library_news_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 48,
+      'weight' => 49,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_credit'
+  $field_instances['node-library_news_item-field_credit'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_credit',
+    'label' => 'Credit',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 47,
     ),
     'workbench_access_field' => 0,
   );
@@ -1125,6 +1166,7 @@ function library_news_field_default_field_instances() {
   t('Body');
   t('Call Number');
   t('Category');
+  t('Credit');
   t('Display on News Page');
   t('Enter the netid of the library staff contact for the news item. ');
   t('Event Dates');

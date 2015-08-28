@@ -20,3 +20,29 @@
         }
     }
 }
+
+//rare books highlights in news
+.section-news .pane-library-news-panel-pane-6 {
+    margin-top: 1em;
+
+    h3 {
+        // text-align: center;
+        display: none;
+    }
+    .media--stacked {
+        margin: 0 auto;
+        .library-news-link {
+            display: inline-block;
+            margin-right: 1em;
+        }
+        .library-news-link img {
+            float: left;
+            display: inline-block;
+        }
+        .copy {
+            width: 63%;
+            float: right;
+            text-align: left;
+        }
+    }
+}
