@@ -259,7 +259,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'uid' => '471',
+        'uid' => '532',
       ),
     );
     $pane->cache = array();
