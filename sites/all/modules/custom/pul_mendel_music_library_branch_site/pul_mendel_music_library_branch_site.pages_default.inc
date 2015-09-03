@@ -136,31 +136,6 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
-    $pane->pid = 'new-6d9d00db-8b60-413b-b2f5-bbdc201d4eb7';
-    $pane->panel = 'first';
-    $pane->type = 'custom';
-    $pane->subtype = 'mendel_current_hours_block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '6d9d00db-8b60-413b-b2f5-bbdc201d4eb7';
-    $display->content['new-6d9d00db-8b60-413b-b2f5-bbdc201d4eb7'] = $pane;
-    $display->panels['first'][2] = 'new-6d9d00db-8b60-413b-b2f5-bbdc201d4eb7';
-    $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -178,11 +153,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
@@ -204,11 +179,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
     $pane->pid = 'new-f2802558-815c-4e2d-80ea-1694b1c4093e';
     $pane->panel = 'middle';
@@ -518,89 +493,6 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-cc8381ea-5c7d-4d19-8db9-404990dce809';
-    $pane->panel = 'first';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Mendel Current Hours',
-      'title' => 'Summer Hours',
-      'body' => '<table style="border: 2px solid #000000; margin-left: auto; margin-right: auto;" border="2" cellspacing="10" cellpadding="10" align="center">
-<tbody>
-<tr style="background-color: #e2e2e2;" align="center" valign="middle">
-<td style="border: 1px solid #000000;">MONDAY</td>
-<td style="border: 1px solid #000000;">8:30 am - 8:00 pm</td>
-</tr>
-<tr align="center" valign="middle">
-<td style="border: 1px solid #000000;">TUESDAY</td>
-<td style="border: 1px solid #000000;">8:30 am - 8:00 pm</td>
-</tr>
-<tr style="background-color: #e2e2e2;" align="center" valign="middle">
-<td style="border: 1px solid #000000;">WEDNESDAY</td>
-<td style="border: 1px solid #000000;">8:30 am - 8:00 pm</td>
-</tr>
-<tr align="center" valign="middle">
-<td style="border: 1px solid #000000;">THURSDAY</td>
-<td style="border: 1px solid #000000;">8:30 am - 8:00 pm</td>
-</tr>
-<tr style="background-color: #e2e2e2;" align="center" valign="middle">
-<td style="border: 1px solid #000000;">FRIDAY</td>
-<td style="border: 1px solid #000000;">8:30 am - 5:00 pm</td>
-</tr>
-<tr align="center" valign="middle">
-<td style="border: 1px solid #000000;">SATURDAY</td>
-<table>
-<tbody>
-<tr>
-<td >MONDAY</td>
-<td >8:30 am - 8:00 pm</td>
-</tr>
-<tr>
-<td >TUESDAY</td>
-<td >8:30 am - 8:00 pm</td>
-</tr>
-<tr>
-<td >WEDNESDAY</td>
-<td >8:30 am - 8:00 pm</td>
-</tr>
-<tr>
-<td >THURSDAY</td>
-<td >8:30 am - 8:00 pm</td>
-</tr>
-<tr>
-<td >FRIDAY</td>
-<td >8:30 am - 5:00 pm</td>
-</tr>
-<tr>
-<td >SATURDAY</td>
-<td >12:00 pm - 6:00 pm</td>
-</tr>
-<tr>
-<td >SUNDAY</td>
-<td >12:00 pm - 8:00 pm</td>
-</tr>
-</tbody>
-</table>
-<p>Please note that the library doors are locked 15 minutes prior to the closing times listed above.</em></p>
-',
-      'format' => 'full_html',
-      'substitute' => 1,
-      'name' => 'mendel_current_hours_block',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'cc8381ea-5c7d-4d19-8db9-404990dce809';
-    $display->content['new-cc8381ea-5c7d-4d19-8db9-404990dce809'] = $pane;
-    $display->panels['first'][2] = 'new-cc8381ea-5c7d-4d19-8db9-404990dce809';
-    $pane = new stdClass();
     $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -618,11 +510,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
     $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
@@ -643,11 +535,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
     $pane->pid = 'new-1326c69d-36db-4f62-8518-02f92ca472ff';
     $pane->panel = 'middle';

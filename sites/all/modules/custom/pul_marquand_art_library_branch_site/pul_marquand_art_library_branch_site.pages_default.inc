@@ -996,7 +996,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'entity_field_extra';
     $pane->subtype = 'node:webform';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'full',
