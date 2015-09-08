@@ -4,27 +4,28 @@
     background-size: 1600px auto;
 
     @include breakpoint($tab) {
-        background: 
+        background:
     linear-gradient(
-      rgba(lighten($gray-dark, 28), 0.75), 
+      rgba(lighten($gray-dark, 28), 0.75),
       rgba(lighten($gray-dark, 28), 0.75)
     ),  /* On top,    like z-index: 4; */
-    url(../images/bg-test.jpg) center no-repeat   /* like z-index: 3; */
-   ;             
+    url(../images/bg-studyroom.jpg) center no-repeat   /* like z-index: 3; */
+   ;
+   background-size: cover;
     }
 
     .l-region--highlighted {
-        padding: 1em 0;
+        padding: 1em;
         position: relative;
 
         @include breakpoint($tab) {
-            padding: 4em 0;
+            padding: 3em 1em;
         }
     }
 }
 
 .block--views-spotlight-dispalsys-block {
-    @include grid-span(12); 
+    @include grid-span(12);
     clear: both;
     display: none;
     @include breakpoint($desk) {
@@ -81,7 +82,7 @@
     text-align: center;
 
     display: none;
-    @include grid-span(12); 
+    @include grid-span(12);
     background: rgba($gray-dark, .35);
     padding: 0.5em;
 
@@ -132,7 +133,7 @@
   .spotlight-image {
     color: transparentize($white, .3);
     font-size: $font-size-larger;
-    font-weight: 200;  
+    font-weight: 200;
     padding: 0;
     text-align: center;
     border-radius: 4px;

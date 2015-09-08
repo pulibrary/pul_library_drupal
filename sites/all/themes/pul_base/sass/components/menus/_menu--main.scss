@@ -13,7 +13,7 @@
   $centered-navigation-submenu-padding: 1em;
   $centered-navigation-submenu-width: 15em;
   $centered-navigation-item-nudge: 2.2em;
-  $horizontal-bar-mode: $tab;
+  $horizontal-bar-mode: 768px;
 
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
@@ -23,11 +23,11 @@
   z-index: 101; //4
   position: relative;
   overflow: visible;
-  
+
   // Mobile view
 
   .mobile-logo {
-    display: inline;    
+    display: inline;
     float: left;
     max-height: $centered-navigation-height;
     padding-left: $centered-navigation-padding;
@@ -68,7 +68,7 @@
     overflow: visible;
   }
 
-  .centered-navigation-menu {    
+  .centered-navigation-menu {
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
     display: none;
@@ -103,14 +103,14 @@
     @include breakpoint($horizontal-bar-mode) {
       background: transparent;
       display: inline;
-      line-height: $centered-navigation-height;  
+      line-height: $centered-navigation-height;
       padding-left: 0;
 
       a {
         padding-left: $centered-navigation-item-padding;
       }
     }
-    
+
     a {
       color: $centered-navigation-color;
       display: inline-block;
@@ -140,7 +140,7 @@
     > a:after {
       @include position(absolute, auto .45em auto auto);
       color: $centered-navigation-color;
-      
+
       @include breakpoint(800px) {
         content: '\25BE';
       }
@@ -167,7 +167,7 @@
         font-size: $font-size-larger;
         position: absolute;
         right: $centered-navigation-submenu-padding / 2;
-      }      
+      }
     }
 
     &:hover > .menu {
