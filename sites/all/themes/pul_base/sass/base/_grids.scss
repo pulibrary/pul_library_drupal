@@ -15,18 +15,18 @@ body {
 	background: $white;
 }
 
-.l-header, 
-.l-footer, 
+.l-header,
+.l-footer,
 .wrapper {
 	margin: 0 auto;
 	@include clearfix;
 }
 
-.l-region--navigation, 
-.l-region--highlighted, 
-.l-region--highlighted, 
-.l-main, 
-.l-branding, 
+.l-region--navigation,
+.l-region--highlighted,
+.l-region--highlighted,
+.l-main,
+.l-branding,
 .l-region--footer {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -34,13 +34,10 @@ body {
 }
 
 .block--quicktabs-homepage-search-tabs {
-	@include grid-span(12); 
+	// @include grid-span(12);
+	width: 100%;
+	margin: 0 auto;
 	clear: both;
-	@include breakpoint($desk) {
-		@include grid-span(9,1);
-		margin-left: 0;
-		margin-right: 0;
-	}
 }
 
 .l-main {
