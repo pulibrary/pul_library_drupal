@@ -13,6 +13,326 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view__marquand-art-library-rare-books-highlights-page';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 31;
+  $handler->conf = array(
+    'title' => 'Marquand Art Library Rare Books Highlights Page',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'branch-libraries libraries-marquand',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Calendar',
+        'keyword' => 'cal',
+        'name' => 'entity_from_field:field_hours_calendar-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      1 => array(
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'libraries/marquand/rare-book-highlights',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'marquand-art-library-rare-books-highlights-page',
+  );
+  $display = new panels_display();
+  $display->layout = 'three-six-three-stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'bottom_left' => NULL,
+      'bottom_right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'top' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-613b7db4-b688-47ae-9341-34faeaad247c';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-branch-marquand';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '613b7db4-b688-47ae-9341-34faeaad247c';
+    $display->content['new-613b7db4-b688-47ae-9341-34faeaad247c'] = $pane;
+    $display->panels['first'][0] = 'new-613b7db4-b688-47ae-9341-34faeaad247c';
+    $pane = new stdClass();
+    $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_hours-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_hrs_lib_calendar_target_id' => '3706',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Today\'s Hours',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
+    $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+    $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '3706',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
+    $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'libraries-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Contact Us',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-86137842-d80a-410f-8c2a-c6a4c6e29771';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_8';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '86137842-d80a-410f-8c2a-c6a4c6e29771';
+    $display->content['new-86137842-d80a-410f-8c2a-c6a4c6e29771'] = $pane;
+    $display->panels['middle'][0] = 'new-86137842-d80a-410f-8c2a-c6a4c6e29771';
+    $pane = new stdClass();
+    $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $pane->panel = 'middle';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
+    $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $pane = new stdClass();
+    $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:webform';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
+    $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane = new stdClass();
+    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
+    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
+    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane = new stdClass();
+    $pane->pid = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Featured Resources',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '445f9490-0cfe-420e-8d45-950c00e66303';
+    $display->content['new-445f9490-0cfe-420e-8d45-950c00e66303'] = $pane;
+    $display->panels['second'][1] = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
+    $pane = new stdClass();
+    $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+    $pane->panel = 'top';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_library_image-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Marquand Library of Art and Archaeology',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+    $display->content['new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b'] = $pane;
+    $display->panels['top'][0] = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__marquand-art-library-rare-books-highlights-page'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view__panel_context_36fad5a9-3f57-45e1-bb19-8f49b0da0eca';
   $handler->task = 'node_view';
   $handler->subtask = '';
@@ -339,7 +659,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = -3;
   $handler->conf = array(
     'title' => 'Marquand Art Library Landing Page',
     'no_blocks' => 1,

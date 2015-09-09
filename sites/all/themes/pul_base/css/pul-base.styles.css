@@ -1113,6 +1113,11 @@ table caption {
 .three_six_three-region--middle p:first-of-type {
   margin-top: 1.414em; }
 
+.heading--centered {
+  margin-bottom: 0;
+  text-align: center;
+  font-style: italic; }
+
 .branch-libraries .l-main, .section-econlib .l-main, .section-copyright .l-main {
   padding: 0; }
 
