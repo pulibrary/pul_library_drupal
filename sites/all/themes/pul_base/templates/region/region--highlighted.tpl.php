@@ -34,7 +34,7 @@
     <?php print $content; ?>
     <div class="block--pudl-highlight">
       <a target="_blank" title="Background image selected from Princeton University Libraries Historical Photograph Collection, Grounds and Buildings Series, circa 1850-1980" 
-        href="http://arks.princeton.edu/ark:/88435/79407x759"><span class="icon-newtab"></span> About the Image</a>
+        href="http://arks.princeton.edu/ark:/88435/9w0323612"><span class="icon-newtab"></span> About the Image</a>
     </div>
   </div>
 <?php endif; ?>
