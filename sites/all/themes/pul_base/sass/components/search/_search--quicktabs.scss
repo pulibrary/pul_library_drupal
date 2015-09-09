@@ -1,11 +1,5 @@
 .block--quicktabs, .pane-quicktabs-mendel-search-tabs {
 	margin: 0 auto;
-	float: none;
-
-	@include breakpoint($tab-desk) {
-		margin: 1.5em 0;
-		float: left;
-	}
 
 	h2 {
 		margin: 0;
@@ -87,7 +81,7 @@
 		color: black;
 	}
 
-	.quicktabs-tabs li.ui-state-active a, 
+	.quicktabs-tabs li.ui-state-active a,
 	.ui-widget-header .ui-state-active {
 		background: darken($gray-light, 2%);
 		color: black;
@@ -124,7 +118,7 @@
 	}
 	.quicktabs_main input[type="submit"] {
 		@include hidden();
-	} 
+	}
 	.quicktabs_main button {
 		font-family: $font-sans;
 		height: 45px;
