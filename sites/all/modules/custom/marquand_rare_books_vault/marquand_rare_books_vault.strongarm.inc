@@ -191,5 +191,10 @@ function marquand_rare_books_vault_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_marq_rare_book'] = $strongarm;
 
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_marq_rare_book_pattern';
+  $strongarm->value = 'marquand/rare/[node:nid]';
+  $export['pathauto_node_marq_rare_book__pattern'] = $strongarm;
+
   return $export;
 }
