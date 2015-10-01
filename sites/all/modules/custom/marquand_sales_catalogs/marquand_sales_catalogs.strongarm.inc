@@ -145,5 +145,12 @@ function marquand_sales_catalogs_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_marquand_sales_catalog'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_marquand_sales_catalog_pattern';
+  $strongarm->value = 'marquand/catalogs/[node:nid]';
+  $export['pathauto_node_marquand_sales_catalog_pattern'] = $strongarm;
+
   return $export;
 }
