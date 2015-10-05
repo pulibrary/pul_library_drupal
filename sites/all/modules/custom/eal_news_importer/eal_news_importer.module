@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EAL News Importer feature.
+ */
+
+include_once 'eal_news_importer.features.inc';
