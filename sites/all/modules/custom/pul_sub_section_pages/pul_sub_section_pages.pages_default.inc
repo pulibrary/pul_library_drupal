@@ -970,7 +970,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 9;
+  $handler->weight = 10;
   $handler->conf = array(
     'title' => 'Contact Us',
     'no_blocks' => 1,
@@ -1122,7 +1122,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 10;
+  $handler->weight = 11;
   $handler->conf = array(
     'title' => 'Resource Sharing Pages',
     'no_blocks' => 0,
@@ -1630,7 +1630,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 11;
+  $handler->weight = 12;
   $handler->conf = array(
     'title' => 'Library Privileges Pages',
     'no_blocks' => 0,
@@ -1813,7 +1813,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 12;
+  $handler->weight = 13;
   $handler->conf = array(
     'title' => 'Technology Handbook Book Pages',
     'no_blocks' => 0,
@@ -1941,7 +1941,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 13;
+  $handler->weight = 14;
   $handler->conf = array(
     'title' => 'Systems Office Templates',
     'no_blocks' => 0,

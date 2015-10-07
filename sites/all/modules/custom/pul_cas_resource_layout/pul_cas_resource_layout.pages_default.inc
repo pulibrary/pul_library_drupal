@@ -17,7 +17,7 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 8;
+  $handler->weight = 9;
   $handler->conf = array(
     'title' => 'CAS Protected Resources',
     'no_blocks' => 0,
