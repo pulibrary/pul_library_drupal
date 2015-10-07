@@ -309,6 +309,12 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Nick Name */
+  $handler->display->display_options['fields']['field_puluser_nick_name']['id'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'field_data_field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
   $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'field_data_field_puluser_fname';
@@ -335,7 +341,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['field'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname']['label'] = 'Librarian';
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_formalname']['alter']['text'] = '[field_puluser_fname] [field_puluser_lname] ';
+  $handler->display->display_options['fields']['field_puluser_formalname']['alter']['text'] = '[field_puluser_nick_name] [field_puluser_lname] ';
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_formalname']['alter']['path'] = 'staff/[name]';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_label_colon'] = FALSE;
