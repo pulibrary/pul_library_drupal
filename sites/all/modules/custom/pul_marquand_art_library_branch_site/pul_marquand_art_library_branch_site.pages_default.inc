@@ -274,6 +274,25 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
     $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane = new stdClass();
+    $pane->pid = 'new-880396d6-30a1-424a-91fe-8f721efb7df0';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '880396d6-30a1-424a-91fe-8f721efb7df0';
+    $display->content['new-880396d6-30a1-424a-91fe-8f721efb7df0'] = $pane;
+    $display->panels['second'][1] = 'new-880396d6-30a1-424a-91fe-8f721efb7df0';
+    $pane = new stdClass();
     $pane->pid = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
@@ -294,11 +313,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '445f9490-0cfe-420e-8d45-950c00e66303';
     $display->content['new-445f9490-0cfe-420e-8d45-950c00e66303'] = $pane;
-    $display->panels['second'][1] = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
+    $display->panels['second'][2] = 'new-445f9490-0cfe-420e-8d45-950c00e66303';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -1137,6 +1156,15 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'context' => 'empty',
           'not' => FALSE,
         ),
+        2 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'libraries/marquand/rare-book-highlights',
+          ),
+          'context' => 'empty',
+          'not' => TRUE,
+        ),
       ),
       'logic' => 'and',
     ),
@@ -1340,7 +1368,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'library_news-panel_pane_8';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
@@ -1354,6 +1382,37 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->uuid = 'ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
     $display->content['new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56'] = $pane;
     $display->panels['middle'][3] = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
+    $pane = new stdClass();
+    $pane->pid = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'marquand_sales_catalogs-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'libraries/marquand/resources/sale',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'ef1d512f-52f8-4841-9c33-a5a961bc60ed';
+    $display->content['new-ef1d512f-52f8-4841-9c33-a5a961bc60ed'] = $pane;
+    $display->panels['middle'][4] = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';

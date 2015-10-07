@@ -17,7 +17,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 25;
   $handler->conf = array(
     'title' => 'East Asian Library Branch Pages',
     'no_blocks' => 1,
@@ -338,7 +338,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 24;
   $handler->conf = array(
     'title' => 'East Asian Library Landing Page',
     'no_blocks' => 1,
@@ -698,7 +698,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $display->content['new-d4e21373-0c6d-47b1-92bb-5ca5896df51d'] = $pane;
     $display->panels['top'][0] = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane = new stdClass();
-    $pane->pid = 'new-20aa9970-cf38-421a-87ee-b164fb6a12fd';
+    $pane->pid = 'new-e2913c81-2f96-4407-8214-057f8d857ca6';
     $pane->panel = 'top';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -707,7 +707,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p class="p1"><span class="s1">普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></p>',
+      'body' => '<p><span>普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></p>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -719,9 +719,9 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '20aa9970-cf38-421a-87ee-b164fb6a12fd';
-    $display->content['new-20aa9970-cf38-421a-87ee-b164fb6a12fd'] = $pane;
-    $display->panels['top'][1] = 'new-20aa9970-cf38-421a-87ee-b164fb6a12fd';
+    $pane->uuid = 'e2913c81-2f96-4407-8214-057f8d857ca6';
+    $display->content['new-e2913c81-2f96-4407-8214-057f8d857ca6'] = $pane;
+    $display->panels['top'][1] = 'new-e2913c81-2f96-4407-8214-057f8d857ca6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

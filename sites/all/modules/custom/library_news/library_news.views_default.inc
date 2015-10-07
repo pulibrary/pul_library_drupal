@@ -1455,7 +1455,7 @@ function library_news_views_default_views() {
   /* Display: Marquand Rare Books Highlight */
   $handler = $view->new_display('panel_pane', 'Marquand Rare Books Highlight', 'panel_pane_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Rare Book Highlight';
+  $handler->display->display_options['title'] = 'Rare Book Highlights';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
