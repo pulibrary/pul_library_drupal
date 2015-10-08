@@ -946,7 +946,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -1;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Database Platform Page',
     'no_blocks' => 1,
@@ -1152,7 +1152,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 14;
+  $handler->weight = 15;
   $handler->conf = array(
     'title' => 'Research Data Management',
     'no_blocks' => 0,

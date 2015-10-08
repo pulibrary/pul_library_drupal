@@ -2,14 +2,14 @@
 
 
 function summon_block_form($form, &$form_state) {
-    
+
   $form = array();
   $path = $_GET['q'];
   if(drupal_is_front_page()) { // should keyed off <front>
     $form_suffix = '<div class="homepage-tab-form-message"><a href="http://getit.princeton.edu/">E-Journals</a> <a href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
-  }  
+  }
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Articles'),
@@ -19,10 +19,10 @@ function summon_block_form($form, &$form_state) {
         'placeholder' => variable_get('summon_search_hint'),
     )
   );
-  $form['#attached']['js'][] = drupal_get_path('module', 'summon_block') .'/summon_block.js'; 
+  $form['#attached']['js'][] = drupal_get_path('module', 'summon_block') .'/summon_block.js';
   $hint_settings = array('summon_search_hint' => variable_get('summon_search_hint'),
                           'summon_search_error' => variable_get('summon_search_error')
-                          );   
+                          );
   $form['#attached']['js'][] = array(
       'data' => array('summon_block' => $hint_settings),
       'type' => 'setting',
@@ -45,7 +45,7 @@ function summon_block_form($form, &$form_state) {
 
 
 function summon_block_contents() {
-  return drupal_get_form('summon_block_form'); // must define a function 
+  return drupal_get_form('summon_block_form'); // must define a function
 }
 
 function summon_block_query_escape($drupal_path) {
@@ -79,7 +79,7 @@ function summon_search_results_content() {
   $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div id='summon-search-results' data-source='/utils/articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -89,7 +89,7 @@ function summon_search_guide_content() {
   $ajax_spinner = "<div id='guide-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div id='summon-guide-results' data-source='/utils/articles/guide?query={$path}&number=3&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -98,7 +98,7 @@ function summon_search_recommendations_content() {
   $sid = summon_block_get_sid();
   $block_content = array(
     '#markup' => "<div id='summon-recommendation-results' data-source='/utils/articles/recommendations?query={$path}&sid={$sid}'>" . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -107,7 +107,7 @@ function summon_search_spelling_suggestions_content() {
   $sid = summon_block_get_sid();
   $block_content = array(
     '#markup' => "<div id='summon-spelling-results' data-source='/utils/articles/spelling?query={$path}&number=3&sid={$sid}'>" . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -128,27 +128,27 @@ function summon_block_menu() {
 */
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function summon_block_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The Summon+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function summon_block_block_info() {
-  
+
   $blocks['summon_search'] = array(
       // info: The name of the block.
       'info' => t('Articles+ Search'),
@@ -156,7 +156,7 @@ function summon_block_block_info() {
       'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
-   
+
   $blocks['summon_search_results'] = array(
     'info' => t('Articles+ Search Results'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
@@ -182,7 +182,7 @@ function summon_block_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function summon_block_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'summon_search') { //in this case the delta is the name of block
 
@@ -207,7 +207,7 @@ function summon_block_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function summon_block_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -235,20 +235,20 @@ function summon_block_block_view($delta = '') {
   } elseif ($delta == 'summon_search_results') {
     $block['subject'] = t('Articles+ Search Results');
     $block['content'] = summon_search_results_content($delta);
-    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_search_results.js');  
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_search_results.js');
   } elseif ($delta == 'summon_guide_results') {
     $block['subject'] = t('Library Guides');
     $block['content'] = summon_search_guide_content($delta);
-    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_guide_results.js');  
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_guide_results.js');
   } elseif ($delta == 'summon_recommendation_results') {
     $block['subject'] = t('Database Recommendations');
     $block['content'] = summon_search_recommendations_content($delta);
-    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_recommendation_results.js');  
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_recommendation_results.js');
   } elseif ($delta == 'summon_spelling_suggestion') {
     $block['subject'] = t('Spelling Suggestions');
     $block['content'] = summon_search_spelling_suggestions_content($delta);
-    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_spelling_suggestion.js');  
-  } 
+    drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_spelling_suggestion.js');
+  }
   return $block;
 }
 
