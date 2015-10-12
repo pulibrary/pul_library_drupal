@@ -29,7 +29,7 @@ function linkit_profiles_default_linkit_profiles() {
         'weight' => '-10',
       ),
       'entity:user' => array(
-        'enabled' => 0,
+        'enabled' => 1,
         'weight' => '-10',
       ),
       'entity:fieldable_panels_pane' => array(
