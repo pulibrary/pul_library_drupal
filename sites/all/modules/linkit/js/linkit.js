@@ -24,7 +24,7 @@ Drupal.linkit.createModal = function() {
 
   // Make the modal seem "fixed".
   $(window).bind("scroll resize", function() {
-    $('#linkit-modal').dialog('option', 'position', ['center', 50]);
+    $('#linkit-modal').dialog('option', 'position', ['center', 100]);
   });
 
   // Get modal content.
@@ -55,7 +55,7 @@ Drupal.linkit.modalOptions = function() {
     draggable: false,
     resizable: false,
     width: 520,
-    position: ['center', 50],
+    position: ['center', 100],
     minHeight: 0,
     zIndex: 210000,
     close: Drupal.linkit.modalClose,
