@@ -1,4 +1,5 @@
 // Import external libraries.
+@import "libraries/normalize-libsass/normalize";
 @import "libraries/breakpoint-sass/stylesheets/breakpoint";
 @import "libraries/singularity/stylesheets/singularitygs";
 @import "libraries/sass-toolkit/stylesheets/toolkit";
@@ -6,8 +7,9 @@
 @import "vendor/base/base";
 
 // Import variables, abstractions, base styles, components and layouts using globbing via grunt.
-@import "variables/_variables";
-@import "abstractions/_abstractions";
+@import "utils/_utils";
+@import "layouts/_layouts";
 @import "base/_base";
 @import "components/_components";
-@import "layouts/_layouts";
+
+@import "shame";
