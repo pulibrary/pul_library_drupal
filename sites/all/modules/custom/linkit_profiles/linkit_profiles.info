@@ -1,0 +1,10 @@
+name = Linkit Profiles
+description = Configuration for LinkIt module
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+dependencies[] = ctools
+dependencies[] = linkit
+features[ctools][] = linkit:linkit_profiles:1
+features[features_api][] = api:2
+features[linkit_profiles][] = content_links
