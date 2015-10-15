@@ -19,7 +19,7 @@
         }
 
         a.active, &.expanded a.active {
-                background: darken(saturate($tertiary-color, 20), 20);
+                background: $blue-darkest;
                 color: $white;
         }
 
@@ -27,7 +27,7 @@
             background: $gray-lightest;
             border-radius: 4px;
             a {
-                color: darken(saturate($tertiary-color, 20), 20);
+                color: $blue-darkest;
             }
         }
     }

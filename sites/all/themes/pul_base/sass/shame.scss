@@ -1,0 +1,38 @@
+// Hide the toolbar or admin menu on small screens.
+@media all and (max-width: 800px) {
+  .hide-sm {
+    @include visually-hidden();
+  }
+
+  .logged-in .toolbar {
+    display: none;
+  }
+
+  html {
+    body.toolbar, body.admin-menu {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+}
+
+// hide summary count for database nav
+.summary-count {
+    display: none;
+}
+// hide aka titles for db
+.subject-landing-page .views-row .field--name-field-dboverride-database article header {
+    display: none;
+}
+
+span.icon-article-express--small-after {
+  font-size: .75em;
+}
+
+span.icon-article-express--small-after:before {
+  content: " ";
+}
+
+h1.icon-article-express--small-after:after {
+  font-size: .75em;
+}

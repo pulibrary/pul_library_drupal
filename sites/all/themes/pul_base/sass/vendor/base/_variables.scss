@@ -1,5 +1,3 @@
-@import "../../variables/variables";
-
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
@@ -18,20 +16,30 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: darken(saturate($tertiary-color, 20), 20);
-$dark-gray: $gray-darker;
-$medium-gray: $gray;
-$light-gray: #ddd;
+$white: #fff;
+$blue: #7398c8;
+$dark-gray: #494f57;
+$medium-gray: #83888F;
+$light-gray: #f5f4f1;
+
+$blue-darkest: darken(saturate($blue, 20), 20);
 
 // Font Colors
-$base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $blue-darkest;
 
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color: tint($base-border-color, 75%);
+
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

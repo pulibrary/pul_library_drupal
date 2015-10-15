@@ -64,11 +64,12 @@ module.exports = function(grunt) {
         sass_globbing: {
             your_target: {
                 files: {
-                    'sass/variables/_variables.scss': 'sass/variables/**/*.scss',
-                    'sass/abstractions/_abstractions.scss': 'sass/abstractions/**/*.scss',
                     'sass/base/_base.scss': 'sass/base/**/*.scss',
                     'sass/components/_components.scss': 'sass/components/**/*.scss',
-                    'sass/layouts/_layouts.scss': 'sass/layouts/**/*.scss'
+                    'sass/layouts/_layouts.scss': 'sass/layouts/**/*.scss',
+                    'sass/sites/_sites.scss': 'sass/sites/**/*.scss',
+                    'sass/themes/_themes.scss': 'sass/themes/**/*.scss',
+                    'sass/utils/_utils.scss': 'sass/utils/**/*.scss'
                 },
                 options: {
                     useSingleQuotes: false
@@ -147,10 +148,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'css/pul-base.normalize.css': 'sass/pul-base.normalize.scss',
                     'css/pul-base.styles.css': 'sass/pul-base.styles.scss',
-                    'css/pul-base.layouts.css': 'sass/pul-base.layouts.scss',
-                    'css/pul-base.hacks.css': 'sass/pul-base.hacks.scss',
                     'css/pul-base.libguides.css': 'sass/pul-base.libguides.scss',
                     'css/pul-base.illiad.css': 'sass/pul-base.illiad.scss'
                 }

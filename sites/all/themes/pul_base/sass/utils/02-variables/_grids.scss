@@ -8,5 +8,7 @@ $tab: 44em;
 $tab-desk: 54em;
 $desk: 70em;
 
+$rwd-tables: max-width 1000px;
+
 @include add-grid(12);
 @include add-gutter(2/3);
