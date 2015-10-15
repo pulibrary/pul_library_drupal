@@ -1076,12 +1076,19 @@ a:hover {
     margin-right: 1.6666666667%;
     clear: none;
     float: none; }
+    .l-region--branding .block--search-form form,
+    .l-region--branding .block--allsearch-block form {
+      position: relative;
+      height: 50px; }
     .l-region--branding .block--search-form form > div,
     .l-region--branding .block--allsearch-block form > div {
-      position: relative;
       display: inline-block;
-      margin-top: 0.9em;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
       .l-region--branding .block--search-form form > div input,
       .l-region--branding .block--allsearch-block form > div input {
         box-sizing: border-box;

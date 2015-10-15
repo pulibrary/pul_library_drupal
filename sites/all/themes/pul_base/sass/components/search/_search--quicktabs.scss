@@ -133,6 +133,10 @@
 		border-bottom-right-radius: 4px;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
+
+		.icon-search .strong {
+			font-family: $font-sans;
+		}
 	}
 
 	.homepage-tab-form-message {

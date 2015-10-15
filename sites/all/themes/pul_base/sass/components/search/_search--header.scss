@@ -21,15 +21,19 @@
     	@include grid-span(12);
 		float:none;
 
+		form {
+			position: relative;
+			height: 50px;
+		}
+
 		form > div {
 		  $search-bar-border-color: $base-border-color;
 		  $search-bar-border: 1px solid $search-bar-border-color;
 		  $search-bar-background: lighten($search-bar-border-color, 10);
 
-		  position: relative;
 		  display: inline-block;
-		  margin-top:0.9em;
 		  width: 100%;
+		  @include vertical-align();
 
 		  input {
 		    box-sizing: border-box;

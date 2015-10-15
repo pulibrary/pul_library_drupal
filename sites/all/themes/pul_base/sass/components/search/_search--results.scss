@@ -1,5 +1,5 @@
-.all-search-results-list, 
-.view-search-libraries-and-collections, 
+.all-search-results-list,
+.view-search-libraries-and-collections,
 .view-databases-keyword-search ul,
 .view-general-site-keyword-search ul,
 .view-general-site-user-search ul {
@@ -50,6 +50,9 @@
 }
 
 .page-find-all {
+    .results-section {
+        margin-top: 1em;
+    }
     .results-section br {
         display: none;
     }
@@ -136,7 +139,7 @@
     }
 }
 
-.page-find-all h2 [class^="icon-"], 
+.page-find-all h2 [class^="icon-"],
 .page-find-all h2 [class*=" icon-"] {
     margin-right: 0.5em;
 }

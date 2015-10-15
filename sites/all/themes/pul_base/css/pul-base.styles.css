@@ -3848,12 +3848,19 @@ body.faq .ui-accordion .ui-accordion-header a {
     margin-right: 1.6666666667%;
     clear: none;
     float: none; }
+    .l-region--branding .block--search-form form,
+    .l-region--branding .block--allsearch-block form {
+      position: relative;
+      height: 50px; }
     .l-region--branding .block--search-form form > div,
     .l-region--branding .block--allsearch-block form > div {
-      position: relative;
       display: inline-block;
-      margin-top: 0.9em;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
       .l-region--branding .block--search-form form > div input,
       .l-region--branding .block--allsearch-block form > div input {
         box-sizing: border-box;
@@ -4038,6 +4045,8 @@ body.faq .ui-accordion .ui-accordion-header a {
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
+    .block--quicktabs .quicktabs_main button .icon-search .strong, .pane-quicktabs-mendel-search-tabs .quicktabs_main button .icon-search .strong {
+      font-family: "Dejavu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
   .block--quicktabs .homepage-tab-form-message, .pane-quicktabs-mendel-search-tabs .homepage-tab-form-message {
     margin: 0.4em 0; }
     .block--quicktabs .homepage-tab-form-message a, .pane-quicktabs-mendel-search-tabs .homepage-tab-form-message a {
@@ -4123,6 +4132,9 @@ body.faq .ui-accordion .ui-accordion-header a {
   font-size: 1rem;
   margin: 0.5em 0;
   clear: both; }
+
+.page-find-all .results-section {
+  margin-top: 1em; }
 
 .page-find-all .results-section br {
   display: none; }
