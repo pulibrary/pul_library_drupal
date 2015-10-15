@@ -26,7 +26,7 @@
 		  $search-bar-border: 1px solid $search-bar-border-color;
 		  $search-bar-background: lighten($search-bar-border-color, 10);
 
-		  position: relative; 
+		  position: relative;
 		  display: inline-block;
 		  margin-top:0.9em;
 		  width: 100%;
@@ -43,7 +43,7 @@
 		    label {
 		    	@include visually-hidden();
 		    	color: $white;
-		    	
+
 		    	.form-required {
 		    		color: $white;
 		    	}
@@ -59,19 +59,19 @@
 		      margin: 0;
 		      background: lighten($gray-dark, 10);
 		      border: darken($gray-dark, 15);
-		      color: #aaa;
-		      
+		      color: $gray-lighter;
+
 		      &:focus {
 				background: $white;
 				color: $black;
 		      }
 		    }
-	      
+
 		  }
 
 		  input[type=submit] {
 		  	display:none;
-		  } 
+		  }
 		  button {
 		      background: darken($gray-darkest, 15);
 		      position: absolute;
@@ -91,5 +91,5 @@
 			@include grid-span(9,4);
 		}
     }
-    
+
 }

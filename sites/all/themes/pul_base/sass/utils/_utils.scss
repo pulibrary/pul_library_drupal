@@ -1,12 +1,13 @@
 /* generated with grunt-sass-globbing */
 
-@import "mixins/buttons-mixins";
-@import "mixins/hiding-mixins";
-@import "mixins/icon-mixins";
-@import "mixins/placeholder-mixins";
-@import "mixins/wrap-mixins";
-@import "variables/colors";
-@import "variables/grids";
-@import "variables/legacy";
-@import "variables/typography";
-@import "variables/variables";
+@import "01-mixins/buttons-mixins";
+@import "01-mixins/hiding-mixins";
+@import "01-mixins/icon-mixins";
+@import "01-mixins/placeholder-mixins";
+@import "01-mixins/wrap-mixins";
+@import "02-variables/colors";
+@import "02-variables/grids";
+@import "02-variables/legacy";
+@import "02-variables/typography";
+@import "02-variables/variables";
+@import "./helpers";

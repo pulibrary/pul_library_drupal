@@ -6,6 +6,26 @@
  * pul_base theme.
  */
 
+function pul_base_css_alter(&$css) {
+
+  // list of css files to be excluded from display
+  $exclude = array(
+    'sites/all/themes/omega/omega/css/modules/comment/comment.theme.css' => FALSE,
+    'sites/all/themes/omega/omega/css/modules/system/system.theme.css' => FALSE,
+    'sites/all/modules/calendar/css/calendar_multiday.css' => FALSE,
+    'sites/all/modules/calendar/css/calendar-overlap-no-scroll.css' => FALSE,
+    'sites/all/modules/calendar/css/calendar-overlap.css' => FALSE,
+    'sites/all/modules/calendar/css/calendar.css' => FALSE,
+    'sites/all/modules/date/date_api/date.css' => FALSE,
+    'sites/all/modules/date/date_popup/themes/datepicker.1.7.css' => FALSE,
+    'sites/all/modules/date/date_repeat_field/date_repeat_field.css' => FALSE,
+    'sites/all/modules/date/date_views/css/date_views.css' => FALSE,
+    'sites/all/modules/office_hours/office_hours.css' => FALSE,
+    'sites/all/modules/panels/plugins/layouts/twocol/twocol.css' => FALSE,
+
+  );
+  $css = array_diff_key($css, $exclude);
+}
 
 function pul_base_date_nav_title($params) {
     $granularity = $params['granularity'];
@@ -13,7 +33,7 @@ function pul_base_date_nav_title($params) {
     $date_info = $view->date_info;
     $link = !empty($params['link']) ? $params['link'] : FALSE;
     $format = !empty($params['format']) ? $params['format'] : NULL;
-    
+
     switch ($granularity) {
         case 'year':
         $title = $date_info->year;
@@ -31,7 +51,7 @@ function pul_base_date_nav_title($params) {
         $title = date_format_date($date_info->min_date, 'custom', $format);
         $date_arg = $date_info->year .'-'. date_pad($date_info->month) .'-'. date_pad($date_info->day);
         break;
-        
+
         case 'week':
         $format = !empty($format) ? $format : (empty($date_info->mini) ? 'F j Y' : 'F j');
         $title = t('Week of @date', array('@date' => date_format_date($date_info->min_date, 'custom', $format)));

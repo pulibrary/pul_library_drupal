@@ -28,7 +28,7 @@
   $base-border-radius: 3px !default;
   $base-line-height: 1.5em !default;
   $base-accent-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $dark-gray: $gray-darkest !default;
   $search-bar-border-color: $base-border-color;
   $search-bar-border: 1px solid $search-bar-border-color;
   $search-bar-background: lighten($search-bar-border-color, 10%);
@@ -38,7 +38,7 @@
   .f-criteria {
     box-sizing: border-box;
     @include transition(border-color);
-    background-color: white;
+    background-color: $white;
     border-radius: $base-border-radius;
     border-radius: $base-border-radius;
     border: 1px solid $base-border-color;

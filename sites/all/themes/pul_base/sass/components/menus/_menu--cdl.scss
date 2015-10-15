@@ -22,9 +22,9 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a {
     padding-right: 1.7em;
     padding-left: 1.7em;
     text-decoration: none;
-  } 
+  }
 
-ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover, 
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover,
 ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
     // font-size: $font-size-base;
     color: #F58026;
@@ -33,7 +33,7 @@ ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
 /* !Important Dropdowns */
 ul.nice-menu.nice-menu-menu-collection-development-webs ul {
   top: 2em;
-  background-color: #000;
+  background-color: $black;
   padding:0;
   border:0;
   margin:0;

@@ -16,13 +16,6 @@
   }
 }
 
-.hide {
-  @include visually-hidden();
-}
-
-.float-left {
-    float: left;
-}
 // hide summary count for database nav
 .summary-count {
     display: none;
@@ -42,19 +35,4 @@ span.icon-article-express--small-after:before {
 
 h1.icon-article-express--small-after:after {
   font-size: .75em;
-}
-
-// hide empty p tags
-p:empty {
-    display: none;
-}
-
-// adjust margins for short desc branch libraries
-// .three_six_three_stacked-region--middle .pane-node-body p {
-//   margin-bottom: 0;
-// }
-
-// bold
-.strong {
-  font-weight: bold;
 }

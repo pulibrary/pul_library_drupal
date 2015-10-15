@@ -15,7 +15,7 @@ $yellow: $secondary-color;
 $yellow-lighter: lighten($secondary-color, 10);
 $yellow-lightest: lighten($secondary-color, 20);
 
-$blue-darkest: darken($tertiary-color, 20);
+$blue-darkest: darken(saturate($tertiary-color, 20), 20);
 $blue-darker: darken($tertiary-color, 10);
 $blue: $tertiary-color;
 $blue-lighter: lighten($tertiary-color, 10);
@@ -42,5 +42,5 @@ $red-dark: #a93225;
 $red-light: #d89088;
 $gray-light: #f5f4f1;
 $gray-dark: #494f57;
-$black: #000000;
-$white: #ffffff;
+$black: #000;
+$white: #fff;

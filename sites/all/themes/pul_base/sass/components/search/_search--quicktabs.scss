@@ -78,13 +78,13 @@
 	}
 	.quicktabs-tabs li.active a {
 		background: darken($gray-light, 3);
-		color: black;
+		color: $black;
 	}
 
 	.quicktabs-tabs li.ui-state-active a,
 	.ui-widget-header .ui-state-active {
 		background: darken($gray-light, 2%);
-		color: black;
+		color: $black;
 	}
 
 	.form-item-query label {
