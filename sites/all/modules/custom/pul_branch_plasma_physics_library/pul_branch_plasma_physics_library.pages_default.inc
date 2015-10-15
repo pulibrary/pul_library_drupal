@@ -437,29 +437,6 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '%cal:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -479,16 +456,16 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-45f3383f-c6eb-4652-b328-07b2bf698e9c';
+    $pane->pid = 'new-f9af377d-c322-4bbc-a30f-26bb8f188b1e';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_6';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -496,16 +473,13 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '45f3383f-c6eb-4652-b328-07b2bf698e9c';
-    $display->content['new-45f3383f-c6eb-4652-b328-07b2bf698e9c'] = $pane;
-    $display->panels['middle'][0] = 'new-45f3383f-c6eb-4652-b328-07b2bf698e9c';
+    $pane->uuid = 'f9af377d-c322-4bbc-a30f-26bb8f188b1e';
+    $display->content['new-f9af377d-c322-4bbc-a30f-26bb8f188b1e'] = $pane;
+    $display->panels['middle'][0] = 'new-f9af377d-c322-4bbc-a30f-26bb8f188b1e';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';

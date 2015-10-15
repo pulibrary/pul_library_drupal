@@ -2028,7 +2028,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'alert--message',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
