@@ -2458,6 +2458,42 @@ and also iPads specifically.
 .branch-libraries .library-info a {
   text-decoration: none; }
 
+.section-alumni .button--connect a {
+  border: 1px solid #c65e05;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #eeab71;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #ef8124;
+  background-image: -webkit-linear-gradient(#ef8124, #d56505);
+  background-image: -webkit-linear-gradient(#ef8124, #d56505, , , , , , , , );
+  background-image: linear-gradient(#ef8124, #d56505, , , , , , , , );
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #b75400;
+  background-clip: padding-box;
+  color: #fff;
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 0.6em;
+  font-family: "Dejavu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+  .section-alumni .button--connect a:hover:not(:disabled) {
+    background-color: #e37416;
+    background-image: -webkit-linear-gradient(#e37416, #c55e06);
+    background-image: -webkit-linear-gradient(#e37416, #c55e06, , , , , , , , );
+    background-image: linear-gradient(#e37416, #c55e06, , , , , , , , );
+    box-shadow: inset 0 1px 0 0 #e98f43;
+    cursor: pointer; }
+  .section-alumni .button--connect a:active:not(:disabled),
+  .section-alumni .button--connect a:focus:not(:disabled) {
+    border: 1px solid #c65e05;
+    box-shadow: inset 0 0 8px 4px #b65706, inset 0 0 8px 4px #b65706; }
+  .section-alumni .button--connect a:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
 .field--name-field-ip-db-resource-url,
 .field--name-field-db-access-url.pul-processed,
 .field--name-field-cas-db-resource-url {
