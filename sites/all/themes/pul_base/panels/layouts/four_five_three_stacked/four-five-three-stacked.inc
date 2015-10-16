@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Defines a 4-5-3 three column grid layout with top and bottom full 
+ * Defines a 4-5-3 three column grid layout with top and bottom full
  * width regions.
  */
 

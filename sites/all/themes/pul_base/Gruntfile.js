@@ -149,6 +149,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'css/pul-base.styles.css': 'sass/pul-base.styles.scss',
+                    'css/pul-base.layouts.css': 'sass/pul-base.layouts.scss',
                     'css/pul-base.libguides.css': 'sass/pul-base.libguides.scss',
                     'css/pul-base.illiad.css': 'sass/pul-base.illiad.scss'
                 }
