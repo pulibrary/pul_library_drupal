@@ -14,7 +14,6 @@ dependencies[] = flexslider_fields
 dependencies[] = image
 dependencies[] = link
 dependencies[] = list
-dependencies[] = office_hours
 dependencies[] = options
 dependencies[] = pul_libraries_ct
 dependencies[] = strongarm

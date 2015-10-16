@@ -1,0 +1,46 @@
+// Color palette
+$primary-color: #E87411; // Princeton orange
+$secondary-color: #FED587; // yellowish
+$tertiary-color: #7398c8; // blueish
+
+$orange-darkest: darken($primary-color, 20);
+$orange-darker: darken($primary-color, 10);
+$orange: $primary-color;
+$orange-lighter: lighten($primary-color, 10);
+$orange-lightest: lighten($primary-color, 20);
+
+$yellow-darkest: darken($secondary-color, 20);
+$yellow-darker: darken($secondary-color, 10);
+$yellow: $secondary-color;
+$yellow-lighter: lighten($secondary-color, 10);
+$yellow-lightest: lighten($secondary-color, 20);
+
+$blue-darkest: darken(saturate($tertiary-color, 20), 20);
+$blue-darker: darken($tertiary-color, 10);
+$blue: $tertiary-color;
+$blue-lighter: lighten($tertiary-color, 10);
+$blue-lightest: lighten($tertiary-color, 20);
+
+$gray-darkest: #494f57;
+$gray-darker: #666D78;
+$gray: #83888F;
+$gray-lighter: #A6A8AC;
+$gray-lightest: #f5f4f1;
+
+// Firestone colors
+$blue-dark: #7398c8;
+$blue-light: #b7cef0;
+$aqua-dark: #87c9e2;
+$aqua-light: #c4e5f1;
+$green-dark: #89afa2;
+$green-light: #c3d7d1;
+$yellow-dark: #c98c00;
+$yellow-light: #e4c583;
+$orange-dark: #e76f02;
+$orange-light: #f3b98b;
+$red-dark: #a93225;
+$red-light: #d89088;
+$gray-light: #f5f4f1;
+$gray-dark: #494f57;
+$black: #000;
+$white: #fff;

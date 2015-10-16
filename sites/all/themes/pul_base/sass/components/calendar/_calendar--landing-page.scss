@@ -6,10 +6,6 @@
 
 .front {
 
-    div.view-content > table.views-table > tbody > tr > td {
-        // @include adjust-font-size-to(16px);
-    }
-
     .library-hours {
         table {
             margin-bottom: 1em;
@@ -32,6 +28,14 @@
             text-align: right;
         }
 
+    }
+
+    @include breakpoint($rwd-tables) {
+        .library-hours {
+            td.views-field-field-open-hours {
+                text-align: left;
+            }
+        }
     }
 
 }

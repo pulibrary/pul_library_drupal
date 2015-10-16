@@ -10,52 +10,6 @@
 function library_hours_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_cal_academic_hours'
-  $field_bases['field_cal_academic_hours'] = array(
-    'active' => 1,
-    'cardinality' => 14,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_cal_academic_hours',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'office_hours',
-    'settings' => array(
-      'addhrs' => 1,
-      'cardinality' => 2,
-      'granularity' => 15,
-      'hoursformat' => 1,
-      'limitend' => '',
-      'limitstart' => '',
-      'valhrs' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'office_hours',
-  );
-
-  // Exported field_base: 'field_cal_summer_hours'
-  $field_bases['field_cal_summer_hours'] = array(
-    'active' => 1,
-    'cardinality' => 14,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_cal_summer_hours',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'office_hours',
-    'settings' => array(
-      'addhrs' => 1,
-      'cardinality' => 2,
-      'granularity' => 15,
-      'hoursformat' => 1,
-      'limitend' => '',
-      'limitstart' => '',
-      'valhrs' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'office_hours',
-  );
-
   // Exported field_base: 'field_hours_code'
   $field_bases['field_hours_code'] = array(
     'active' => 1,

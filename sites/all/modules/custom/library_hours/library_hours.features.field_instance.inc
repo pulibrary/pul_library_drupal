@@ -193,122 +193,6 @@ function library_hours_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_cal_academic_hours'
-  $field_instances['taxonomy_term-library_hours_calendars-field_cal_academic_hours'] = array(
-    'bundle' => 'library_hours_calendars',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'office_hours',
-        'settings' => array(
-          'closedformat' => 'Closed',
-          'compress' => FALSE,
-          'current_status' => array(
-            'closed_text' => 'Currently closed',
-            'open_text' => 'Currently open!',
-            'position' => 'hide',
-          ),
-          'date_first_day' => 1,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
-          'hoursformat' => 0,
-          'separator_day_hours' => ': ',
-          'separator_days' => '<br>',
-          'separator_grouped_days' => ' - ',
-          'separator_hours_hours' => '-',
-          'separator_more_hours' => ', ',
-          'showclosed' => FALSE,
-          'timezone_field' => '',
-        ),
-        'type' => 'office_hours',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_cal_academic_hours',
-    'label' => 'Academic Year Hours',
-    'required' => 0,
-    'settings' => array(
-      0 => 'hoursformat',
-      1 => 'granularity',
-      2 => 'limitstart',
-      3 => 'limitend',
-      4 => 'valhrs',
-      5 => 'addhrs',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'office_hours',
-      'settings' => array(),
-      'type' => 'office_hours',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_cal_summer_hours'
-  $field_instances['taxonomy_term-library_hours_calendars-field_cal_summer_hours'] = array(
-    'bundle' => 'library_hours_calendars',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'office_hours',
-        'settings' => array(
-          'closedformat' => 'Closed',
-          'compress' => FALSE,
-          'current_status' => array(
-            'closed_text' => 'Currently closed',
-            'open_text' => 'Currently open!',
-            'position' => 'hide',
-          ),
-          'date_first_day' => 1,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
-          'hoursformat' => 0,
-          'separator_day_hours' => ': ',
-          'separator_days' => '<br>',
-          'separator_grouped_days' => ' - ',
-          'separator_hours_hours' => '-',
-          'separator_more_hours' => ', ',
-          'showclosed' => FALSE,
-          'timezone_field' => '',
-        ),
-        'type' => 'office_hours',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_cal_summer_hours',
-    'label' => 'Summer Hours',
-    'required' => 0,
-    'settings' => array(
-      0 => 'hoursformat',
-      1 => 'granularity',
-      2 => 'limitstart',
-      3 => 'limitend',
-      4 => 'valhrs',
-      5 => 'addhrs',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'office_hours',
-      'settings' => array(),
-      'type' => 'office_hours',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
   // 'taxonomy_term-library_hours_calendars-field_hours_code'
   $field_instances['taxonomy_term-library_hours_calendars-field_hours_code'] = array(
     'bundle' => 'library_hours_calendars',
@@ -471,7 +355,6 @@ function library_hours_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Academic Year Hours');
   t('Body');
   t('Calendar');
   t('Hours');
@@ -480,7 +363,6 @@ function library_hours_field_default_field_instances() {
   t('Library Status');
   t('List On Homepage');
   t('Service URL');
-  t('Summer Hours');
 
   return $field_instances;
 }

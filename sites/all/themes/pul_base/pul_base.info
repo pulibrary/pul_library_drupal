@@ -8,12 +8,9 @@ core = 7.x
 ; ========================================
 ; Stylesheets
 ; ========================================
-stylesheets[all][] = css/pul-base.normalize.css
-stylesheets[all][] = css/pul-base.hacks.css
-stylesheets[all][] = css/pul-base.styles.css
-stylesheets[all][] = css/pul-base.no-query.css
 stylesheets[all][] = pul_base_icons/style.css
 stylesheets[all][] = pul_base_icons/ie7/ie7.css
+stylesheets[all][] = css/pul-base.styles.css
 
 ; ========================================
 ; Scripts
@@ -82,12 +79,6 @@ settings[omega_viewport] = 1
 settings[omega_viewport_user_scaleable] = 1
 settings[omega_chrome_edge] = 1
 settings[omega_toggle_extension_assets] = 1
-settings[omega_css_exclude][] = omega/omega/css/modules/system/system.theme.css
-settings[omega_css_exclude][] = panels/plugins/layouts/twocol/twocol.css
-settings[omega_css_exclude][] = calendar/css/calendar-overlap-no-scroll.css
-settings[omega_css_exclude][] = calendar/css/calendar-overlap.css
-settings[omega_css_exclude][] = calendar/css/calendar.css
-settings[omega_css_exclude][] = calendar/css/calendar_multiday.css
 settings[omega_libraries][selectivizr][status] = 1
 settings[omega_libraries][respond][status] = 1
 settings[omega_libraries][pie][status] = 1
