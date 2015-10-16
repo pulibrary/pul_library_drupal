@@ -144,29 +144,6 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '%cal:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -186,16 +163,16 @@ function pul_branch_engineering_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-52dbdaaa-f44d-4220-a043-296f978be740';
+    $pane->pid = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_1';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -203,16 +180,13 @@ function pul_branch_engineering_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '52dbdaaa-f44d-4220-a043-296f978be740';
-    $display->content['new-52dbdaaa-f44d-4220-a043-296f978be740'] = $pane;
-    $display->panels['middle'][0] = 'new-52dbdaaa-f44d-4220-a043-296f978be740';
+    $pane->uuid = '6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
+    $display->content['new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1'] = $pane;
+    $display->panels['middle'][0] = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -505,29 +479,6 @@ help/engineering-course-reserves-request-form',
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '3690',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -547,33 +498,11 @@ help/engineering-course-reserves-request-form',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane = new stdClass();
-    $pane->pid = 'new-2e4700fe-b9f0-4d34-944b-eb5ea82eb56a';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '2e4700fe-b9f0-4d34-944b-eb5ea82eb56a';
-    $display->content['new-2e4700fe-b9f0-4d34-944b-eb5ea82eb56a'] = $pane;
-    $display->panels['middle'][0] = 'new-2e4700fe-b9f0-4d34-944b-eb5ea82eb56a';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -592,11 +521,11 @@ help/engineering-course-reserves-request-form',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
     $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-    $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
+    $display->panels['middle'][0] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane = new stdClass();
     $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane->panel = 'middle';
@@ -616,11 +545,30 @@ help/engineering-course-reserves-request-form',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
-    $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $display->panels['middle'][1] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
+    $pane = new stdClass();
+    $pane->pid = 'new-35bde2ea-ff80-471a-b8b9-91bbc894adde';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '35bde2ea-ff80-471a-b8b9-91bbc894adde';
+    $display->content['new-35bde2ea-ff80-471a-b8b9-91bbc894adde'] = $pane;
+    $display->panels['middle'][2] = 'new-35bde2ea-ff80-471a-b8b9-91bbc894adde';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';

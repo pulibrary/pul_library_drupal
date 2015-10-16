@@ -4,11 +4,6 @@
  * Styling of the "Landing Page" 3 column layout..
  ******************************************************************************/
 
-// @import "compass";
-// @import "breakpoint";
-// @import "singularitygs";
-// @import "../../variables/grids";
-
 .panel-display--landingpage {
   @include clearfix;
 }
@@ -37,10 +32,10 @@
   .landingpage-region--fourth {
     @include grid-span(5, 5);
   }
- 
+
   .landingpage-region--fifth {
     @include grid-span(3, 10);
-    margin-right: 0; 
+    margin-right: 0;
   }
 
 }

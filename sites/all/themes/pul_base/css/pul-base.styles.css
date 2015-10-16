@@ -709,14 +709,6 @@ a:hover {
  *
  * Styling of the "PUL" 5-4-3 stacked column layout..
  ******************************************************************************/
-/*
-// Set consistent vertical and horizontal spacing units.
-$vert-spacing-unit: 20px;
-$horz-spacing-unit: 1em;
-
-// Set breakpoint values.
-$desk : 1250px;
-*/
 .panel-display--five_four_three_stacked::after {
   clear: both;
   content: "";
@@ -1018,7 +1010,7 @@ $desk : 1250px;
     margin-right: 0; } }
 
 /*******************************************************************************
- * three_nine.layout.scss
+ * single.layout.scss
  *
  * Styling of the 12 wide single column layout..
  ******************************************************************************/
@@ -1060,7 +1052,7 @@ $desk : 1250px;
     margin-left: 0; } }
 
 /*******************************************************************************
- * three_nine.layout.scss
+ * six_six.layout.scss
  *
  * Styling of the 6-6 column layout..
  ******************************************************************************/
@@ -1092,7 +1084,7 @@ $desk : 1250px;
     margin-right: 0; } }
 
 /*******************************************************************************
- * three_nine.layout.scss
+ * six_six_stacked.layout.scss
  *
  * Styling of the 6-6 column layout..
  ******************************************************************************/
@@ -1434,7 +1426,10 @@ $desk : 1250px;
     margin-right: 0; } }
 
 /* generated with grunt-sass-globbing */
-.alert--message h2 {
+.front .four_five_three_stacked-region--top {
+  margin: 0; }
+
+.front .four_five_three_stacked-region--top h2 {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
@@ -1445,11 +1440,14 @@ $desk : 1250px;
   width: 1px !important;
   overflow: hidden; }
 
+.three_six_three_stacked-region--middle .alert--message {
+  margin-top: 1.414em; }
+
 .alert--message, .messages-error {
   background: #f18f3b;
   border-radius: 4px;
   padding: 1em;
-  margin: 1em 0; }
+  margin: 1em 0 0 0; }
   .alert--message h3 a, .alert--message p, .messages-error h3 a, .messages-error p {
     color: #fff; }
   .alert--message h3, .messages-error h3 {
@@ -1469,6 +1467,16 @@ $desk : 1250px;
   .alert--message i, .messages-error i {
     color: #fff;
     margin-right: 0.5em; }
+
+.alert--level__info {
+  background: #4e7dba; }
+  .alert--level__info p, .alert--level__info h3 a {
+    color: #fff; }
+
+.alert--level__warning {
+  background: #fec354; }
+  .alert--level__warning p, .alert--level__warning h3 a {
+    color: #000; }
 
 .alert--message {
   -webkit-animation-duration: 2s;
