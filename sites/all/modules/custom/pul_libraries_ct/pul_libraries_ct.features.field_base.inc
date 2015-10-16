@@ -582,32 +582,6 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_standard_hours'
-  $field_bases['field_standard_hours'] = array(
-    'active' => 1,
-    'cardinality' => 14,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_standard_hours',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'office_hours',
-    'settings' => array(
-      'addhrs' => 1,
-      'cardinality' => 2,
-      'granularity' => 15,
-      'hoursformat' => 1,
-      'limitend' => '',
-      'limitstart' => '',
-      'valhrs' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'office_hours',
-  );
-
   // Exported field_base: 'field_state'
   $field_bases['field_state'] = array(
     'active' => 1,
@@ -630,32 +604,6 @@ function pul_libraries_ct_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_summer_hours'
-  $field_bases['field_summer_hours'] = array(
-    'active' => 1,
-    'cardinality' => 14,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_summer_hours',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'office_hours',
-    'settings' => array(
-      'addhrs' => 1,
-      'cardinality' => 2,
-      'granularity' => 15,
-      'hoursformat' => 1,
-      'limitend' => '',
-      'limitstart' => '',
-      'valhrs' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'office_hours',
   );
 
   // Exported field_base: 'field_zip'
