@@ -165,3 +165,8 @@ RedirectMatch 301 /projects/bluemountain(.*) http://bluemountain.princeton.edu/
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+<IfModule mod_headers.c>
+  # Disable content sniffing, since it's an attack vector.
+  Header always set X-Content-Type-Options nosniff
+</IfModule>
