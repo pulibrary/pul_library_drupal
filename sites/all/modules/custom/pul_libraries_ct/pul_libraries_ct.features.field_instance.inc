@@ -1576,99 +1576,6 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_standard_hours'
-  $field_instances['node-libraries-field_standard_hours'] = array(
-    'bundle' => 'libraries',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'office_hours',
-        'settings' => array(
-          'closedformat' => 'Closed',
-          'compress' => FALSE,
-          'current_status' => array(
-            'closed_text' => 'Currently closed',
-            'open_text' => 'Currently open!',
-            'position' => 'hide',
-          ),
-          'date_first_day' => 1,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
-          'hoursformat' => 0,
-          'separator_day_hours' => ': ',
-          'separator_days' => '<br />',
-          'separator_grouped_days' => ' - ',
-          'separator_hours_hours' => '-',
-          'separator_more_hours' => ', ',
-          'showclosed' => 'open',
-          'timezone_field' => '',
-        ),
-        'type' => 'office_hours',
-        'weight' => 17,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'overridden_title_in_lists' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_standard_hours',
-    'label' => 'Standard Hours',
-    'required' => 0,
-    'settings' => array(
-      0 => 'hoursformat',
-      1 => 'granularity',
-      2 => 'limitstart',
-      3 => 'limitend',
-      4 => 'valhrs',
-      5 => 'addhrs',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'office_hours',
-      'settings' => array(),
-      'type' => 'office_hours',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-libraries-field_state'
   $field_instances['node-libraries-field_state'] = array(
     'bundle' => 'libraries',
@@ -1737,99 +1644,6 @@ function pul_libraries_ct_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-libraries-field_summer_hours'
-  $field_instances['node-libraries-field_summer_hours'] = array(
-    'bundle' => 'libraries',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'office_hours',
-        'settings' => array(
-          'closedformat' => 'Closed',
-          'compress' => FALSE,
-          'current_status' => array(
-            'closed_text' => 'Currently closed',
-            'open_text' => 'Currently open!',
-            'position' => 'hide',
-          ),
-          'date_first_day' => 1,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
-          'hoursformat' => 0,
-          'separator_day_hours' => ': ',
-          'separator_days' => '<br />',
-          'separator_grouped_days' => ' - ',
-          'separator_hours_hours' => '-',
-          'separator_more_hours' => ', ',
-          'showclosed' => 'open',
-          'timezone_field' => '',
-        ),
-        'type' => 'office_hours',
-        'weight' => 18,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'overridden_title_in_lists' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_summer_hours',
-    'label' => 'Summer Hours',
-    'required' => 0,
-    'settings' => array(
-      0 => 'hoursformat',
-      1 => 'granularity',
-      2 => 'limitstart',
-      3 => 'limitend',
-      4 => 'valhrs',
-      5 => 'addhrs',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'office_hours',
-      'settings' => array(),
-      'type' => 'office_hours',
-      'weight' => 12,
     ),
   );
 
@@ -2002,9 +1816,7 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Long Description');
   t('Main Menu Library Link');
   t('Phone');
-  t('Standard Hours');
   t('State');
-  t('Summer Hours');
   t('Tags');
   t('Zip');
 

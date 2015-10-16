@@ -158,5 +158,19 @@ function library_hours_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_library_hours'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_library_hours_pattern';
+  $strongarm->value = 'hours/day/[node:nid]';
+  $export['pathauto_node_library_hours_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_library_hours_calendars_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_library_hours_calendars_pattern'] = $strongarm;
+
   return $export;
 }

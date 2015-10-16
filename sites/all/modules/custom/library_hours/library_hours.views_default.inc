@@ -354,7 +354,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Academic Year Hours';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Academic Year Hours */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_cal_academic_hours']['id'] = 'field_cal_academic_hours';
   $handler->display->display_options['fields']['field_cal_academic_hours']['table'] = 'field_data_field_cal_academic_hours';
   $handler->display->display_options['fields']['field_cal_academic_hours']['field'] = 'field_cal_academic_hours';
@@ -363,27 +363,6 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_cal_academic_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cal_academic_hours']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_cal_academic_hours']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_cal_academic_hours']['click_sort_column'] = 'day';
-  $handler->display->display_options['fields']['field_cal_academic_hours']['settings'] = array(
-    'showclosed' => 'all',
-    'daysformat' => 'short',
-    'hoursformat' => '1',
-    'compress' => 0,
-    'grouped' => 1,
-    'closedformat' => 'Closed',
-    'separator_days' => '<br />',
-    'separator_grouped_days' => ' - ',
-    'separator_day_hours' => ': ',
-    'separator_hours_hours' => '-',
-    'separator_more_hours' => ', ',
-    'current_status' => array(
-      'position' => 'hide',
-      'open_text' => 'Currently open!',
-      'closed_text' => 'Currently closed',
-    ),
-  );
-  $handler->display->display_options['fields']['field_cal_academic_hours']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_cal_academic_hours']['field_api_classes'] = TRUE;
   /* Field: Taxonomy term: Hours Code */
   $handler->display->display_options['fields']['field_hours_code']['id'] = 'field_hours_code';
   $handler->display->display_options['fields']['field_hours_code']['table'] = 'field_data_field_hours_code';
@@ -420,7 +399,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Summer Hours';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Summer Hours */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_cal_summer_hours']['id'] = 'field_cal_summer_hours';
   $handler->display->display_options['fields']['field_cal_summer_hours']['table'] = 'field_data_field_cal_summer_hours';
   $handler->display->display_options['fields']['field_cal_summer_hours']['field'] = 'field_cal_summer_hours';
@@ -429,27 +408,6 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_cal_summer_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cal_summer_hours']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_cal_summer_hours']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_cal_summer_hours']['click_sort_column'] = 'day';
-  $handler->display->display_options['fields']['field_cal_summer_hours']['settings'] = array(
-    'showclosed' => 'all',
-    'daysformat' => 'short',
-    'hoursformat' => '1',
-    'compress' => 0,
-    'grouped' => 1,
-    'closedformat' => 'Closed',
-    'separator_days' => '<br />',
-    'separator_grouped_days' => ' - ',
-    'separator_day_hours' => ': ',
-    'separator_hours_hours' => '-',
-    'separator_more_hours' => ', ',
-    'current_status' => array(
-      'position' => 'hide',
-      'open_text' => 'Currently open!',
-      'closed_text' => 'Currently closed',
-    ),
-  );
-  $handler->display->display_options['fields']['field_cal_summer_hours']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_cal_summer_hours']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
