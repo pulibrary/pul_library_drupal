@@ -1,0 +1,11 @@
+name = PUL Editor HTML Profile
+core = 7.x
+package = PUL Features
+version = 7.x-1.0-alpha1
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = media_wysiwyg
+dependencies[] = wysiwyg
+features[features_api][] = api:2
+features[filter][] = pul_editor_html
+features[wysiwyg][] = pul_editor_html
