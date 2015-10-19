@@ -136,29 +136,6 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '3689',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -179,16 +156,16 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
+    $pane->pid = 'new-97706a66-4baf-4f3a-88c6-d0094a178d28';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_2';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -196,16 +173,13 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8ea45906-c02f-46a9-8ae1-01d63f3f266b';
-    $display->content['new-8ea45906-c02f-46a9-8ae1-01d63f3f266b'] = $pane;
-    $display->panels['middle'][0] = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
+    $pane->uuid = '97706a66-4baf-4f3a-88c6-d0094a178d28';
+    $display->content['new-97706a66-4baf-4f3a-88c6-d0094a178d28'] = $pane;
+    $display->panels['middle'][0] = 'new-97706a66-4baf-4f3a-88c6-d0094a178d28';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -466,29 +440,6 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '%cal:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -508,16 +459,16 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
+    $pane->pid = 'new-7748695f-6bd4-42fd-abec-1301b66630e9';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_2';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -525,16 +476,13 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e7415fb5-8394-4d2d-aa59-f2867dada3cd';
-    $display->content['new-e7415fb5-8394-4d2d-aa59-f2867dada3cd'] = $pane;
-    $display->panels['middle'][0] = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
+    $pane->uuid = '7748695f-6bd4-42fd-abec-1301b66630e9';
+    $display->content['new-7748695f-6bd4-42fd-abec-1301b66630e9'] = $pane;
+    $display->panels['middle'][0] = 'new-7748695f-6bd4-42fd-abec-1301b66630e9';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';

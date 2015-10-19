@@ -144,29 +144,6 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '%cal:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -186,16 +163,16 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-bbdb7c1e-b1b7-41bb-960d-8e746ffeb2b2';
+    $pane->pid = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -203,16 +180,13 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'bbdb7c1e-b1b7-41bb-960d-8e746ffeb2b2';
-    $display->content['new-bbdb7c1e-b1b7-41bb-960d-8e746ffeb2b2'] = $pane;
-    $display->panels['middle'][0] = 'new-bbdb7c1e-b1b7-41bb-960d-8e746ffeb2b2';
+    $pane->uuid = '70fdc148-9c23-414d-9d76-78a6def80f21';
+    $display->content['new-70fdc148-9c23-414d-9d76-78a6def80f21'] = $pane;
+    $display->panels['middle'][0] = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
@@ -584,29 +558,6 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '3704',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -626,16 +577,16 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-03644aa8-aeda-43c6-a8b9-fe75409d1ce5';
+    $pane->pid = 'new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -643,16 +594,13 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '03644aa8-aeda-43c6-a8b9-fe75409d1ce5';
-    $display->content['new-03644aa8-aeda-43c6-a8b9-fe75409d1ce5'] = $pane;
-    $display->panels['middle'][0] = 'new-03644aa8-aeda-43c6-a8b9-fe75409d1ce5';
+    $pane->uuid = '4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
+    $display->content['new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d'] = $pane;
+    $display->panels['middle'][0] = 'new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';

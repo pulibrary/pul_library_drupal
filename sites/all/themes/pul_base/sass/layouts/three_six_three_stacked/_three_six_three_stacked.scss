@@ -4,11 +4,6 @@
  * Styling of the 3-6-3 stacked column layout..
  ******************************************************************************/
 
-// @import "compass";
-// @import "breakpoint";
-// @import "singularitygs";
-// @import "../../variables/grids";
-
 .panel-display--three_six_three_stacked {
   @include clearfix;
 }
@@ -17,7 +12,7 @@
   margin-bottom: $vert-spacing-unit;
 }
 
-.three_six_three_stacked-region--first, 
+.three_six_three_stacked-region--first,
 .three_six_three_stacked-region--middle,
 .three_six_three_stacked-region--second {
   margin: 0.5em;

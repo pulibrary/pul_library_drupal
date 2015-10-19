@@ -144,54 +144,6 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '%cal:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
-    $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '%node:nid',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane = new stdClass();
     $pane->pid = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -212,16 +164,16 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'b78982e6-3a41-48bd-8d28-258b5d00d32d';
     $display->content['new-b78982e6-3a41-48bd-8d28-258b5d00d32d'] = $pane;
-    $display->panels['first'][4] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
+    $display->panels['first'][2] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
     $pane = new stdClass();
-    $pane->pid = 'new-c25344dc-6080-4ca1-9383-2fa6c36e32a0';
+    $pane->pid = 'new-7ec6490d-1981-436a-9f84-9f05b0e914e2';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_7';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_8';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -229,16 +181,13 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c25344dc-6080-4ca1-9383-2fa6c36e32a0';
-    $display->content['new-c25344dc-6080-4ca1-9383-2fa6c36e32a0'] = $pane;
-    $display->panels['middle'][0] = 'new-c25344dc-6080-4ca1-9383-2fa6c36e32a0';
+    $pane->uuid = '7ec6490d-1981-436a-9f84-9f05b0e914e2';
+    $display->content['new-7ec6490d-1981-436a-9f84-9f05b0e914e2'] = $pane;
+    $display->panels['middle'][0] = 'new-7ec6490d-1981-436a-9f84-9f05b0e914e2';
     $pane = new stdClass();
     $pane->pid = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $pane->panel = 'middle';
@@ -622,54 +571,6 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
-    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'calendar_details-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'tid' => '3711',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-    $pane = new stdClass();
-    $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '7796',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Contact Us',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-    $pane = new stdClass();
     $pane->pid = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -690,16 +591,16 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'afdd33ac-fb36-431d-8c4e-05f8b085567d';
     $display->content['new-afdd33ac-fb36-431d-8c4e-05f8b085567d'] = $pane;
-    $display->panels['first'][4] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
+    $display->panels['first'][2] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
     $pane = new stdClass();
-    $pane->pid = 'new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
+    $pane->pid = 'new-27a42e25-6319-4fbf-a39b-ec606a614a53';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_7';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_8';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -707,16 +608,13 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
-    $display->content['new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede'] = $pane;
-    $display->panels['middle'][0] = 'new-8d2697f1-df9f-4ccc-8b7d-24e8f8578ede';
+    $pane->uuid = '27a42e25-6319-4fbf-a39b-ec606a614a53';
+    $display->content['new-27a42e25-6319-4fbf-a39b-ec606a614a53'] = $pane;
+    $display->panels['middle'][0] = 'new-27a42e25-6319-4fbf-a39b-ec606a614a53';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
