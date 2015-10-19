@@ -62,9 +62,7 @@ and also iPads specifically.
 
     /* Hide table headers (but not display: none;, for accessibility) */
     thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+        @include visually-hidden();
     }
 
     tr { border-bottom: 1px solid #ccc; }

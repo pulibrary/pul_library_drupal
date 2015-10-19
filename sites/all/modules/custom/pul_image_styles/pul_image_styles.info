@@ -1,0 +1,10 @@
+name = PUL Image Styles
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = branch_image_branding
+features[image][] = homepage_callout
+features[image][] = news-image
+features[image][] = profile-photo

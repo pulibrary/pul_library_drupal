@@ -912,7 +912,7 @@ a:hover {
       max-height: 50px;
       opacity: .6;
       padding: .8em 0; }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation .mobile-logo {
         display: none; } }
   .wrapper--navigation .centered-navigation-menu-button {
@@ -924,7 +924,7 @@ a:hover {
     margin: 0;
     padding-left: 1em;
     text-transform: uppercase; }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation .centered-navigation-menu-button {
         display: none; } }
     .wrapper--navigation .centered-navigation-menu-button:hover {
@@ -940,7 +940,7 @@ a:hover {
     padding-left: 0;
     width: 100%;
     z-index: 999; }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation .centered-navigation-menu {
         display: block;
         text-align: left; } }
@@ -956,7 +956,7 @@ a:hover {
     text-align: left;
     width: 100%;
     z-index: 99; }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation .centered-navigation-menu > ul > li {
         background: transparent;
         display: inline;
@@ -1010,20 +1010,20 @@ a:hover {
   .wrapper--navigation li > ul.menu {
     display: none;
     padding-left: 0; }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation li > ul.menu {
         left: -2em;
         position: absolute;
         margin-left: 2em;
         box-shadow: 0px 3px 8px #646464; } }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       .wrapper--navigation li > ul.menu .menu {
         left: 14.8em;
         top: 0; } }
     .wrapper--navigation li > ul.menu li {
       display: block;
       padding-right: 0; }
-      @media (min-width: 768px) {
+      @media (min-width: 820px) {
         .wrapper--navigation li > ul.menu li {
           line-height: 38.4615384615px; }
           .wrapper--navigation li > ul.menu li:last-child > a {
@@ -1034,7 +1034,7 @@ a:hover {
         display: inline-block;
         text-align: left;
         width: 100%; }
-        @media (min-width: 768px) {
+        @media (min-width: 820px) {
           .wrapper--navigation li > ul.menu li a {
             background-color: #f5f4f1;
             padding-left: 1em;

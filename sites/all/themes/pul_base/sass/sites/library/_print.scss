@@ -1,0 +1,135 @@
+@media print {
+    // hide header and footer (only print main content)
+    header,
+    footer {
+        display: none;
+    }
+    //hide icons in get help menu
+    .pane-menu-menu-get-help-menu .menu .leaf {
+        .ico-chat:before,
+        .ico-mail:before,
+        .ico-calendar:before,
+        .ico-phone:before,
+        .ico-book:before {
+            content: "";
+        }
+    }
+    //image max width
+    img {
+        max-width: 500px;
+    }
+    //smashingmag defaults
+    body {
+        font: 12pt Georgia, "Times New Roman", Times, serif;
+        line-height: 1.3;
+    }
+    h1 {
+        font-size: 24pt;
+    }
+    h2 {
+        font-size: 14pt;
+        margin-top: 25px;
+    }
+    aside h2 {
+        font-size: 18pt;
+    }
+    blockquote,
+    ul {
+        margin: 0;
+    }
+    ul {
+        list-style: none
+    }
+    li {
+        content: "» ";
+    }
+    //links
+    p a:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+    }
+    p a:after {
+        content: " (http://library.princeton.edu/" attr(href) ")";
+    }
+    p a[href^="#"]:after {
+        display: none;
+    }
+    p a[href^="http://"]:after,
+    a[href^="https://"]:after {
+        content: " (" attr(href) ")";
+    }
+    p a {
+        word-wrap: break-word;
+    }
+    //databases
+    .page-research-databases {
+        .pul_base_nine_three-region--second {
+            display: none;
+        }
+        .pane-dbsearch-block-dbsearch-search,
+        .pane-databases-by-subject,
+        .attachment.attachment-before {
+            display: none;
+        }
+    }
+    .section-resource {
+        .pul_base_nine_three-region--second {
+            display: none;
+        }
+        fieldset {
+            border: 0;
+            padding: 0;
+        }
+        legend {
+            font-size: 14pt;
+            margin: 25px 0;
+        }
+        .field--name-field-ip-db-copyright-info table th,
+        .field--name-field-db-copyright-information table th,
+        .field--name-field-cas-db-copyright-statement table th {
+            background: transparent;
+            color: #000;
+        }
+    }
+
+    //libraries
+    .section-libraries {
+        .three_six_three_stacked-region--top,
+        .three_six_three_stacked-region--first,
+        .three_six_three_stacked-region--second {
+            display: none;
+        }
+        .three_six_three_stacked-region--middle {
+            width: 100%;
+            margin: 15px;
+        }
+    }
+
+    // alert
+    .alert--message {
+        display: none;
+    }
+
+    //calendar
+    .pane-calendar-details-panel-pane-2 {
+        display: none;
+    }
+    .view-library-hours .pager {
+        display: none;
+    }
+    .calendar-calendar {
+        tbody {
+            display: block;
+            width: 100%;
+        }
+        tr {
+            border: 0;
+        }
+        td {
+            width: 13.5%;
+            display: inline-block;
+            border: 0;
+            font-size: 10pt;
+        }
+    }
+}
