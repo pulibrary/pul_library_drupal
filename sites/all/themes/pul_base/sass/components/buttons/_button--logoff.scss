@@ -1,0 +1,26 @@
+// princeton community member logoff button
+.block--block-34 {
+    position: absolute;
+    right: 0;
+    display: block;
+    top: 0;
+    padding-right: 1em;
+    p {
+        margin: 0;
+        height: 50px;
+        position: relative;
+        line-height: 0;
+    }
+    a {
+        @include vertical-align();
+        color: rgba(0, 0, 0, 0.7);
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
+.l-region--navigation {
+    position: relative;
+}
