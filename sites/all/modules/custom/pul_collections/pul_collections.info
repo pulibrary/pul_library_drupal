@@ -53,6 +53,7 @@ features[variable][] = menu_parent_collection
 features[variable][] = node_options_collection
 features[variable][] = node_preview_collection
 features[variable][] = node_submitted_collection
+features[variable][] = pathauto_node_collection_pattern
 features[views_view][] = collections
 features_exclude[dependencies][articles_and_databases] = articles_and_databases
 features_exclude[field][node-collection-body] = node-collection-body
