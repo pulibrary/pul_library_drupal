@@ -49,3 +49,10 @@ body {
 		padding: 0;
 	}
 }
+
+.l-content {
+	padding: 0 1em;
+	@include breakpoint($tab) {
+		padding: 0;
+	}
+}

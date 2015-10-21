@@ -638,6 +638,12 @@ body {
   .front .l-main {
     padding: 0; } }
 
+.l-content {
+  padding: 0 1em; }
+  @media (min-width: 44em) {
+    .l-content {
+      padding: 0; } }
+
 img,
 media {
   max-width: 100%; }
