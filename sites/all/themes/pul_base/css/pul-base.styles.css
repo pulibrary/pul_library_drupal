@@ -2141,10 +2141,6 @@ a:hover {
     background-image: -webkit-linear-gradient(rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5));
     background-image: linear-gradient(rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5)); }
 
-.user-picture img {
-  float: left;
-  margin: 0 0.75em 0.167em 0; }
-
 .view-workgroup .views-row {
   padding: 1em;
   clear: both;
@@ -2264,6 +2260,44 @@ and also iPads specifically.
   margin-bottom: 0;
   text-align: center;
   font-style: italic; }
+
+.page-user .view-user-profile {
+  margin-top: 1.414em; }
+
+.user--picture img {
+  float: left;
+  margin: 0 1em 1em 0; }
+
+.section-databases .user--picture img {
+  float: none;
+  margin: 1.5em 0 0; }
+
+.user--name {
+  font-family: "Dejavu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  margin-bottom: 0.5em; }
+
+.section-databases .user--name {
+  margin-top: 0.5em; }
+
+.user--title {
+  margin-bottom: 0.5em; }
+
+.page-user .user--title {
+  font-size: 1.2em; }
+
+.user--email a {
+  text-decoration: none;
+  color: #494f57; }
+  .user--email a:hover {
+    color: #2762ae; }
+
+.user--dept {
+  margin-bottom: 0.75em; }
+
+.user--building::after {
+  clear: both;
+  content: "";
+  display: table; }
 
 .branch-libraries .l-main, .section-econlib .l-main, .section-copyright .l-main {
   padding: 0; }
@@ -2464,6 +2498,40 @@ and also iPads specifically.
 
 .branch-libraries .library-info a {
   text-decoration: none; }
+
+.button--appointment {
+  clear: both; }
+  .button--appointment a {
+    border: 1px solid #c65e05;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #eeab71;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #ef8124;
+    background-image: -webkit-linear-gradient(#ef8124, #d56505);
+    background-image: -webkit-linear-gradient(#ef8124, #d56505, , , , , , , , );
+    background-image: linear-gradient(#ef8124, #d56505, , , , , , , , );
+    padding: 7px 18px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #b75400;
+    background-clip: padding-box;
+    color: #fff; }
+    .button--appointment a:hover:not(:disabled) {
+      background-color: #e37416;
+      background-image: -webkit-linear-gradient(#e37416, #c55e06);
+      background-image: -webkit-linear-gradient(#e37416, #c55e06, , , , , , , , );
+      background-image: linear-gradient(#e37416, #c55e06, , , , , , , , );
+      box-shadow: inset 0 1px 0 0 #e98f43;
+      cursor: pointer; }
+    .button--appointment a:active:not(:disabled),
+    .button--appointment a:focus:not(:disabled) {
+      border: 1px solid #c65e05;
+      box-shadow: inset 0 0 8px 4px #b65706, inset 0 0 8px 4px #b65706; }
+    .button--appointment a:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
 
 .section-alumni .button--connect a {
   border: 1px solid #c65e05;

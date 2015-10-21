@@ -134,9 +134,8 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Collection Contact';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '1';
-  $handler->display->display_options['style_options']['alignment'] = 'vertical';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -170,6 +169,7 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_lname']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_lname']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['field_puluser_lname']['element_wrapper_class'] = 'user--name';
   $handler->display->display_options['fields']['field_puluser_lname']['element_default_classes'] = FALSE;
   /* Field: User: Official Title */
   $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
@@ -177,37 +177,22 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_officialtitle']['field'] = 'field_puluser_officialtitle';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['relationship'] = 'field_col_contact_target_id';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_class'] = 'user--title';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['element_default_classes'] = FALSE;
-  /* Field: User: Office */
-  $handler->display->display_options['fields']['field_puluser_office']['id'] = 'field_puluser_office';
-  $handler->display->display_options['fields']['field_puluser_office']['table'] = 'field_data_field_puluser_office';
-  $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
-  $handler->display->display_options['fields']['field_puluser_office']['relationship'] = 'field_col_contact_target_id';
-  $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_office']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_puluser_office']['element_default_classes'] = FALSE;
-  /* Field: User: Building Location */
-  $handler->display->display_options['fields']['field_puluser_building_location']['id'] = 'field_puluser_building_location';
-  $handler->display->display_options['fields']['field_puluser_building_location']['table'] = 'field_data_field_puluser_building_location';
-  $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
-  $handler->display->display_options['fields']['field_puluser_building_location']['relationship'] = 'field_col_contact_target_id';
-  $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
-  /* Field: User: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['relationship'] = 'field_col_contact_target_id';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_user']['alter']['text'] = '<i class=\'icon-large icon-envelope-alt\'> </i> [view_user]';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'E-Mail';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_col_contact_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-large icon-mail"> </i> [mail]';
+  $handler->display->display_options['fields']['mail']['element_type'] = 'div';
+  $handler->display->display_options['fields']['mail']['element_class'] = 'user--email';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['element_default_classes'] = FALSE;
   /* Field: User: Phone Number */
   $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
@@ -216,9 +201,31 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<i class="icon-large icon-phone"> </i>[field_puluser_phone_number] ';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_phone_number']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_default_classes'] = FALSE;
+  /* Field: User: Office */
+  $handler->display->display_options['fields']['field_puluser_office']['id'] = 'field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['table'] = 'field_data_field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['relationship'] = 'field_col_contact_target_id';
+  $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_office']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_office']['alter']['text'] = '<i class="icon-location"></i> [field_puluser_office]';
+  $handler->display->display_options['fields']['field_puluser_office']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_office']['element_default_classes'] = FALSE;
+  /* Field: User: Building Location */
+  $handler->display->display_options['fields']['field_puluser_building_location']['id'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['table'] = 'field_data_field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['relationship'] = 'field_col_contact_target_id';
+  $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_building_location']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_building_location']['alter']['text'] = '<i class="icon-library"></i> [field_puluser_building_location]';
+  $handler->display->display_options['fields']['field_puluser_building_location']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_building_location']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

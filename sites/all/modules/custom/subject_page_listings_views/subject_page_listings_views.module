@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Subject Page Listings Views feature.
+ */
+
+include_once 'subject_page_listings_views.features.inc';
