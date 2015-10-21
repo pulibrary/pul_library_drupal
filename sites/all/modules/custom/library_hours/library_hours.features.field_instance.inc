@@ -10,7 +10,7 @@
 function library_hours_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-library_hours-body'
+  // Exported field_instance: 'node-library_hours-body'.
   $field_instances['node-library_hours-body'] = array(
     'bundle' => 'library_hours',
     'default_value' => NULL,
@@ -56,7 +56,7 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_hours-field_hours_library_status'
+  // Exported field_instance: 'node-library_hours-field_hours_library_status'.
   $field_instances['node-library_hours-field_hours_library_status'] = array(
     'bundle' => 'library_hours',
     'default_value' => array(
@@ -94,11 +94,11 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
-  // Exported field_instance: 'node-library_hours-field_hrs_lib_calendar'
+  // Exported field_instance: 'node-library_hours-field_hrs_lib_calendar'.
   $field_instances['node-library_hours-field_hrs_lib_calendar'] = array(
     'bundle' => 'library_hours',
     'default_value' => NULL,
@@ -143,7 +143,7 @@ function library_hours_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_hours-field_open_hours'
+  // Exported field_instance: 'node-library_hours-field_open_hours'.
   $field_instances['node-library_hours-field_open_hours'] = array(
     'bundle' => 'library_hours',
     'deleted' => 0,
@@ -188,12 +188,96 @@ function library_hours_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
+  // Exported field_instance: 'node-library_hours-field_pul_hours_label'.
+  $field_instances['node-library_hours-field_pul_hours_label'] = array(
+    'bundle' => 'library_hours',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Something to describe the hours entry pattern beyond the basic date and term. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pul_hours_label',
+    'label' => 'Date Label',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 15,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_hours-field_pul_hours_term'.
+  $field_instances['node-library_hours-field_pul_hours_term'] = array(
+    'bundle' => 'library_hours',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pul_hours_term',
+    'label' => 'Term',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_hours_code'
+  // 'taxonomy_term-library_hours_calendars-field_hours_code'.
   $field_instances['taxonomy_term-library_hours_calendars-field_hours_code'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -229,7 +313,7 @@ function library_hours_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_library_hrs'
+  // 'taxonomy_term-library_hours_calendars-field_library_hrs'.
   $field_instances['taxonomy_term-library_hours_calendars-field_library_hrs'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -264,7 +348,7 @@ function library_hours_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_list_on_homepage'
+  // 'taxonomy_term-library_hours_calendars-field_list_on_homepage'.
   $field_instances['taxonomy_term-library_hours_calendars-field_list_on_homepage'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => array(
@@ -303,7 +387,7 @@ function library_hours_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_hours_calendars-field_service_url'
+  // 'taxonomy_term-library_hours_calendars-field_service_url'.
   $field_instances['taxonomy_term-library_hours_calendars-field_service_url'] = array(
     'bundle' => 'library_hours_calendars',
     'default_value' => NULL,
@@ -357,12 +441,15 @@ function library_hours_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Calendar');
+  t('Date Label');
   t('Hours');
   t('Hours Code');
   t('Library');
   t('Library Status');
   t('List On Homepage');
   t('Service URL');
+  t('Something to describe the hours entry pattern beyond the basic date and term. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.');
+  t('Term');
 
   return $field_instances;
 }
