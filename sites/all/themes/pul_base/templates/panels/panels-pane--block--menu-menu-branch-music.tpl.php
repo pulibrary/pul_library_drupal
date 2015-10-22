@@ -1,4 +1,4 @@
-<div class="menu--secondary">
+<div<?php print $attributes; ?> id="menu--secondary">
     <a href="#section-main" class="skip2main">Skip to Main Content</a>
     <label class="show-section-menu" for="show-section-menu">Section Menu</label>
     <input id="show-section-menu" type="checkbox">
