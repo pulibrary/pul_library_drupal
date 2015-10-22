@@ -13,6 +13,27 @@ function library_hours_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_node_library_hours';
+  $strongarm->value = '1';
+  $export['auto_entitylabel_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_pattern_node_library_hours';
+  $strongarm->value = '[node:field-hrs-lib-calendar:name] - [node:field-hours-library-status] - [node:field-pul-hours-term] - [node:field-pul-hours-label] - Starts: [node:field-open-hours:0:value:custom:M-d-Y]';
+  $export['auto_entitylabel_pattern_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_php_node_library_hours';
+  $strongarm->value = '';
+  $export['auto_entitylabel_php_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_library_hours';
   $strongarm->value = '0';
   $export['comment_anonymous_library_hours'] = $strongarm;
@@ -113,6 +134,12 @@ function library_hours_strongarm() {
         'xmlsitemap' => array(
           'weight' => '9',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'workbench_access' => array(
+          'weight' => '11',
+        ),
       ),
       'display' => array(),
     ),
@@ -162,7 +189,7 @@ function library_hours_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_library_hours_pattern';
-  $strongarm->value = 'hours/day/[node:nid]';
+  $strongarm->value = 'hours/[node:field-hrs-lib-calendar:name]/[node:nid]';
   $export['pathauto_node_library_hours_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

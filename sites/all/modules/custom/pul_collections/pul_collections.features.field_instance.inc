@@ -10,7 +10,7 @@
 function pul_collections_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-collection-body'
+  // Exported field_instance: 'node-collection-body'.
   $field_instances['node-collection-body'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -85,7 +85,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_col_contact'
+  // Exported field_instance: 'node-collection-field_col_contact'.
   $field_instances['node-collection-field_col_contact'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -159,7 +159,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_col_sidebar_content'
+  // Exported field_instance: 'node-collection-field_col_sidebar_content'.
   $field_instances['node-collection-field_col_sidebar_content'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -230,7 +230,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_coll_full_title'
+  // Exported field_instance: 'node-collection-field_coll_full_title'.
   $field_instances['node-collection-field_coll_full_title'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -295,7 +295,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_coll_libraries_held_in'
+  // Exported field_instance: 'node-collection-field_coll_libraries_held_in'.
   $field_instances['node-collection-field_coll_libraries_held_in'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -365,7 +365,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_coll_long_description'
+  // Exported field_instance: 'node-collection-field_coll_long_description'.
   $field_instances['node-collection-field_coll_long_description'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -436,7 +436,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_collection_url'
+  // Exported field_instance: 'node-collection-field_collection_url'.
   $field_instances['node-collection-field_collection_url'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,
@@ -523,7 +523,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_libs_cols_main_menu'
+  // Exported field_instance: 'node-collection-field_libs_cols_main_menu'.
   $field_instances['node-collection-field_libs_cols_main_menu'] = array(
     'bundle' => 'collection',
     'default_value' => array(
@@ -597,7 +597,7 @@ function pul_collections_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-collection-field_tags'
+  // Exported field_instance: 'node-collection-field_tags'.
   $field_instances['node-collection-field_tags'] = array(
     'bundle' => 'collection',
     'default_value' => NULL,

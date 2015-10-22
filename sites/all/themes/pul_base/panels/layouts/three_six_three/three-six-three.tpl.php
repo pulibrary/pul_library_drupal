@@ -13,7 +13,7 @@
   <div<?php print drupal_attributes($region_attributes_array['first'])?>>
     <?php print $content['first']; ?>
   </div>
-  <div<?php print drupal_attributes($region_attributes_array['middle'])?>>
+  <div<?php print drupal_attributes($region_attributes_array['middle'])?> id="section-main">
     <?php print $content['middle']; ?>
   </div>
   <div<?php print drupal_attributes($region_attributes_array['second'])?>>

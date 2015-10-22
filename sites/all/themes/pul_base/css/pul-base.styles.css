@@ -639,6 +639,12 @@ body {
   .front .l-main {
     padding: 0; } }
 
+.l-content {
+  padding: 0 1em; }
+  @media (min-width: 44em) {
+    .l-content {
+      padding: 0; } }
+
 img,
 media {
   max-width: 100%; }
@@ -2141,10 +2147,6 @@ a:hover {
     background-image: -webkit-linear-gradient(rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5));
     background-image: linear-gradient(rgba(73, 79, 87, 0.95), rgba(73, 79, 87, 0.5)); }
 
-.user-picture img {
-  float: left;
-  margin: 0 0.75em 0.167em 0; }
-
 .view-workgroup .views-row {
   padding: 1em;
   clear: both;
@@ -2264,6 +2266,44 @@ and also iPads specifically.
   margin-bottom: 0;
   text-align: center;
   font-style: italic; }
+
+.page-user .view-user-profile {
+  margin-top: 1.414em; }
+
+.user--picture img {
+  float: left;
+  margin: 0 1em 1em 0; }
+
+.section-databases .user--picture img {
+  float: none;
+  margin: 1.5em 0 0; }
+
+.user--name {
+  font-family: "Dejavu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  margin-bottom: 0.5em; }
+
+.section-databases .user--name {
+  margin-top: 0.5em; }
+
+.user--title {
+  margin-bottom: 0.5em; }
+
+.page-user .user--title {
+  font-size: 1.2em; }
+
+.user--email a {
+  text-decoration: none;
+  color: #494f57; }
+  .user--email a:hover {
+    color: #2762ae; }
+
+.user--dept {
+  margin-bottom: 0.75em; }
+
+.user--building::after {
+  clear: both;
+  content: "";
+  display: table; }
 
 .branch-libraries .l-main, .section-econlib .l-main, .section-copyright .l-main {
   padding: 0; }
@@ -2464,6 +2504,40 @@ and also iPads specifically.
 
 .branch-libraries .library-info a {
   text-decoration: none; }
+
+.button--appointment {
+  clear: both; }
+  .button--appointment a {
+    border: 1px solid #c65e05;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #eeab71;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: #ef8124;
+    background-image: -webkit-linear-gradient(#ef8124, #d56505);
+    background-image: -webkit-linear-gradient(#ef8124, #d56505, , , , , , , , );
+    background-image: linear-gradient(#ef8124, #d56505, , , , , , , , );
+    padding: 7px 18px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #b75400;
+    background-clip: padding-box;
+    color: #fff; }
+    .button--appointment a:hover:not(:disabled) {
+      background-color: #e37416;
+      background-image: -webkit-linear-gradient(#e37416, #c55e06);
+      background-image: -webkit-linear-gradient(#e37416, #c55e06, , , , , , , , );
+      background-image: linear-gradient(#e37416, #c55e06, , , , , , , , );
+      box-shadow: inset 0 1px 0 0 #e98f43;
+      cursor: pointer; }
+    .button--appointment a:active:not(:disabled),
+    .button--appointment a:focus:not(:disabled) {
+      border: 1px solid #c65e05;
+      box-shadow: inset 0 0 8px 4px #b65706, inset 0 0 8px 4px #b65706; }
+    .button--appointment a:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
 
 .section-alumni .button--connect a {
   border: 1px solid #c65e05;
@@ -2727,12 +2801,12 @@ and also iPads specifically.
     cursor: not-allowed;
     opacity: 0.5; }
 
-a.skip2main {
+.skip2main {
   position: absolute;
   left: 6px;
   top: -99px; }
 
-a.skip2main:focus {
+.skip2main:focus {
   z-index: 5;
   font-size: 14px;
   font-weight: 700;
@@ -3461,6 +3535,47 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .page-node-13202 .node__content a, .page-node-13199 .node__content a, .page-node-13201 .node__content a, .page-node-12481 .node__content a, .page-node-12482 .node__content a, .page-node-12483 .node__content a, .page-node-12484 .node__content a, .page-node-12485 .node__content a {
   color: #006838; }
 
+.menu--secondary {
+  margin-top: 1em; }
+  .menu--secondary br {
+    display: none; }
+  .menu--secondary .skip2main {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    background: #f5f4f1;
+    color: #494f57;
+    text-decoration: none;
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 2px; }
+    @media (min-width: 44em) {
+      .menu--secondary .skip2main {
+        display: none; } }
+  .menu--secondary .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none; }
+    @media (min-width: 54em) {
+      .menu--secondary .menu {
+        display: block; } }
+  .menu--secondary .show-section-menu {
+    display: block;
+    text-align: left;
+    color: #fff;
+    background: #666D78;
+    padding: 10px;
+    width: 95%; }
+    @media (min-width: 54em) {
+      .menu--secondary .show-section-menu {
+        display: none; } }
+  .menu--secondary input[type=checkbox] {
+    display: none; }
+  .menu--secondary input[type=checkbox]:checked ~ .menu {
+    display: block; }
+
 .three_six_three-region--first .panel-pane > ul.menu,
 .three_six_three_stacked-region--first .panel-pane > ul.menu,
 .three_nine-region--first .panel-pane > ul.menu,
@@ -3968,6 +4083,7 @@ body.faq .ui-accordion .ui-accordion-header a {
     .l-region--branding .block--allsearch-block form > div {
       display: inline-block;
       width: 100%;
+      margin-top: 0;
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-50%);

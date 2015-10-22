@@ -10,7 +10,7 @@
 function library_hours_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_hours_code'
+  // Exported field_base: 'field_hours_code'.
   $field_bases['field_hours_code'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function library_hours_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_hours_library_status'
+  // Exported field_base: 'field_hours_library_status'.
   $field_bases['field_hours_library_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -60,7 +60,7 @@ function library_hours_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_hrs_lib_calendar'
+  // Exported field_base: 'field_hrs_lib_calendar'.
   $field_bases['field_hrs_lib_calendar'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -97,7 +97,7 @@ function library_hours_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_library_hrs'
+  // Exported field_base: 'field_library_hrs'.
   $field_bases['field_library_hrs'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -137,7 +137,7 @@ function library_hours_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_list_on_homepage'
+  // Exported field_base: 'field_list_on_homepage'.
   $field_bases['field_list_on_homepage'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -165,7 +165,7 @@ function library_hours_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_open_hours'
+  // Exported field_base: 'field_open_hours'.
   $field_bases['field_open_hours'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -195,7 +195,61 @@ function library_hours_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_service_url'
+  // Exported field_base: 'field_pul_hours_label'.
+  $field_bases['field_pul_hours_label'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pul_hours_label',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_pul_hours_term'.
+  $field_bases['field_pul_hours_term'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pul_hours_term',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'spring' => 'Spring',
+        'fall' => 'Fall',
+        'summer' => 'Summer',
+        'inter' => 'Intersession',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_service_url'.
   $field_bases['field_service_url'] = array(
     'active' => 1,
     'cardinality' => 1,

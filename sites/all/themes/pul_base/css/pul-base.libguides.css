@@ -638,6 +638,12 @@ body {
   .front .l-main {
     padding: 0; } }
 
+.l-content {
+  padding: 0 1em; }
+  @media (min-width: 44em) {
+    .l-content {
+      padding: 0; } }
+
 img,
 media {
   max-width: 100%; }
@@ -1084,6 +1090,7 @@ a:hover {
     .l-region--branding .block--allsearch-block form > div {
       display: inline-block;
       width: 100%;
+      margin-top: 0;
       position: relative;
       top: 50%;
       -webkit-transform: translateY(-50%);

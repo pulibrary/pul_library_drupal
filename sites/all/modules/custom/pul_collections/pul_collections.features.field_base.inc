@@ -10,7 +10,7 @@
 function pul_collections_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_col_contact'
+  // Exported field_base: 'field_col_contact'.
   $field_bases['field_col_contact'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -47,7 +47,7 @@ function pul_collections_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_col_sidebar_content'
+  // Exported field_base: 'field_col_sidebar_content'.
   $field_bases['field_col_sidebar_content'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -69,7 +69,7 @@ function pul_collections_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_coll_full_title'
+  // Exported field_base: 'field_coll_full_title'.
   $field_bases['field_coll_full_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -93,7 +93,7 @@ function pul_collections_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_coll_libraries_held_in'
+  // Exported field_base: 'field_coll_libraries_held_in'.
   $field_bases['field_coll_libraries_held_in'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -133,7 +133,7 @@ function pul_collections_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_coll_long_description'
+  // Exported field_base: 'field_coll_long_description'.
   $field_bases['field_coll_long_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -155,7 +155,7 @@ function pul_collections_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_collection_url'
+  // Exported field_base: 'field_collection_url'.
   $field_bases['field_collection_url'] = array(
     'active' => 1,
     'cardinality' => 1,
