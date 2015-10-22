@@ -10,7 +10,7 @@
 function pul_library_users_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_pul_user_staff_sort'
+  // Exported field_base: 'field_pul_user_staff_sort'.
   $field_bases['field_pul_user_staff_sort'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -28,7 +28,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_puluser_appt_calendar'
+  // Exported field_base: 'field_puluser_appt_calendar'.
   $field_bases['field_puluser_appt_calendar'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -60,7 +60,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_puluser_department'
+  // Exported field_base: 'field_puluser_department'.
   $field_bases['field_puluser_department'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -89,7 +89,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_puluser_department_sort'
+  // Exported field_base: 'field_puluser_department_sort'.
   $field_bases['field_puluser_department_sort'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -107,7 +107,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_puluser_displaytitle'
+  // Exported field_base: 'field_puluser_displaytitle'.
   $field_bases['field_puluser_displaytitle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -131,7 +131,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_division'
+  // Exported field_base: 'field_puluser_division'.
   $field_bases['field_puluser_division'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -160,7 +160,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_puluser_divsect'
+  // Exported field_base: 'field_puluser_divsect'.
   $field_bases['field_puluser_divsect'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -184,7 +184,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_dmgimport_id'
+  // Exported field_base: 'field_puluser_dmgimport_id'.
   $field_bases['field_puluser_dmgimport_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -208,7 +208,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_fname'
+  // Exported field_base: 'field_puluser_fname'.
   $field_bases['field_puluser_fname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -232,7 +232,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_formalname'
+  // Exported field_base: 'field_puluser_formalname'.
   $field_bases['field_puluser_formalname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -256,7 +256,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_libguide_author_id'
+  // Exported field_base: 'field_puluser_libguide_author_id'.
   $field_bases['field_puluser_libguide_author_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -280,7 +280,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_librarystaffid'
+  // Exported field_base: 'field_puluser_librarystaffid'.
   $field_bases['field_puluser_librarystaffid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -304,7 +304,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_lname'
+  // Exported field_base: 'field_puluser_lname'.
   $field_bases['field_puluser_lname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -328,7 +328,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_netid'
+  // Exported field_base: 'field_puluser_netid'.
   $field_bases['field_puluser_netid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -352,7 +352,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_office'
+  // Exported field_base: 'field_puluser_office'.
   $field_bases['field_puluser_office'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -376,7 +376,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_officialtitle'
+  // Exported field_base: 'field_puluser_officialtitle'.
   $field_bases['field_puluser_officialtitle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -400,7 +400,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_phone_number'
+  // Exported field_base: 'field_puluser_phone_number'.
   $field_bases['field_puluser_phone_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -424,7 +424,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_princetonid'
+  // Exported field_base: 'field_puluser_princetonid'.
   $field_bases['field_puluser_princetonid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -448,7 +448,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_section'
+  // Exported field_base: 'field_puluser_section'.
   $field_bases['field_puluser_section'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -477,7 +477,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_puluser_short_title'
+  // Exported field_base: 'field_puluser_short_title'.
   $field_bases['field_puluser_short_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -501,7 +501,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_puluser_sublibrarian'
+  // Exported field_base: 'field_puluser_sublibrarian'.
   $field_bases['field_puluser_sublibrarian'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -529,7 +529,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_puluser_unit'
+  // Exported field_base: 'field_puluser_unit'.
   $field_bases['field_puluser_unit'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -558,7 +558,7 @@ function pul_library_users_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_puluser_unit_sort'
+  // Exported field_base: 'field_puluser_unit_sort'.
   $field_bases['field_puluser_unit_sort'] = array(
     'active' => 1,
     'cardinality' => 1,
