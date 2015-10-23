@@ -10,7 +10,7 @@
 function pul_library_users_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_pul_user_staff_sort'
+  // Exported field_instance: 'user-user-field_pul_user_staff_sort'.
   $field_instances['user-user-field_pul_user_staff_sort'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -75,7 +75,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_appt_calendar'
+  // Exported field_instance: 'user-user-field_puluser_appt_calendar'.
   $field_instances['user-user-field_puluser_appt_calendar'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -149,7 +149,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_department'
+  // Exported field_instance: 'user-user-field_puluser_department'.
   $field_instances['user-user-field_puluser_department'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -208,7 +208,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_department_sort'
+  // Exported field_instance: 'user-user-field_puluser_department_sort'.
   $field_instances['user-user-field_puluser_department_sort'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -273,7 +273,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_displaytitle'
+  // Exported field_instance: 'user-user-field_puluser_displaytitle'.
   $field_instances['user-user-field_puluser_displaytitle'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -334,7 +334,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_division'
+  // Exported field_instance: 'user-user-field_puluser_division'.
   $field_instances['user-user-field_puluser_division'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -390,7 +390,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_divsect'
+  // Exported field_instance: 'user-user-field_puluser_divsect'.
   $field_instances['user-user-field_puluser_divsect'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -449,7 +449,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_dmgimport_id'
+  // Exported field_instance: 'user-user-field_puluser_dmgimport_id'.
   $field_instances['user-user-field_puluser_dmgimport_id'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -507,7 +507,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_fname'
+  // Exported field_instance: 'user-user-field_puluser_fname'.
   $field_instances['user-user-field_puluser_fname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -567,7 +567,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_formalname'
+  // Exported field_instance: 'user-user-field_puluser_formalname'.
   $field_instances['user-user-field_puluser_formalname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -629,7 +629,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_libguide_author_id'
+  // Exported field_instance: 'user-user-field_puluser_libguide_author_id'.
   $field_instances['user-user-field_puluser_libguide_author_id'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -687,7 +687,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_librarystaffid'
+  // Exported field_instance: 'user-user-field_puluser_librarystaffid'.
   $field_instances['user-user-field_puluser_librarystaffid'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -745,7 +745,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_lname'
+  // Exported field_instance: 'user-user-field_puluser_lname'.
   $field_instances['user-user-field_puluser_lname'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -805,7 +805,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_netid'
+  // Exported field_instance: 'user-user-field_puluser_netid'.
   $field_instances['user-user-field_puluser_netid'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -863,7 +863,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_office'
+  // Exported field_instance: 'user-user-field_puluser_office'.
   $field_instances['user-user-field_puluser_office'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -924,7 +924,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_officialtitle'
+  // Exported field_instance: 'user-user-field_puluser_officialtitle'.
   $field_instances['user-user-field_puluser_officialtitle'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -984,7 +984,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_phone_number'
+  // Exported field_instance: 'user-user-field_puluser_phone_number'.
   $field_instances['user-user-field_puluser_phone_number'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1046,7 +1046,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_princetonid'
+  // Exported field_instance: 'user-user-field_puluser_princetonid'.
   $field_instances['user-user-field_puluser_princetonid'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1104,7 +1104,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_section'
+  // Exported field_instance: 'user-user-field_puluser_section'.
   $field_instances['user-user-field_puluser_section'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1160,7 +1160,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_short_title'
+  // Exported field_instance: 'user-user-field_puluser_short_title'.
   $field_instances['user-user-field_puluser_short_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1219,7 +1219,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_sublibrarian'
+  // Exported field_instance: 'user-user-field_puluser_sublibrarian'.
   $field_instances['user-user-field_puluser_sublibrarian'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -1281,7 +1281,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_unit'
+  // Exported field_instance: 'user-user-field_puluser_unit'.
   $field_instances['user-user-field_puluser_unit'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1340,7 +1340,7 @@ function pul_library_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_puluser_unit_sort'
+  // Exported field_instance: 'user-user-field_puluser_unit_sort'.
   $field_instances['user-user-field_puluser_unit_sort'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
