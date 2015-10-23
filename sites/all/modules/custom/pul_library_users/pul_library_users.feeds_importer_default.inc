@@ -106,13 +106,13 @@ function pul_library_users_feeds_importer_default() {
             'source' => 'Division',
             'target' => 'field_puluser_division',
             'term_search' => '0',
-            'autocreate' => 0,
+            'autocreate' => 1,
           ),
           8 => array(
             'source' => 'Section',
             'target' => 'field_puluser_section',
             'term_search' => '0',
-            'autocreate' => 0,
+            'autocreate' => 1,
           ),
           9 => array(
             'source' => 'NetID',
@@ -173,7 +173,7 @@ function pul_library_users_feeds_importer_default() {
             'source' => 'Unit',
             'target' => 'field_puluser_unit',
             'term_search' => '0',
-            'autocreate' => 0,
+            'autocreate' => 1,
           ),
           21 => array(
             'source' => 'DivSect',
@@ -215,6 +215,7 @@ function pul_library_users_feeds_importer_default() {
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'user',
+        'update_non_existent' => 'skip',
       ),
     ),
     'content_type' => '',

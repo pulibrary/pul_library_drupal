@@ -136,6 +136,29 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '3689',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -156,16 +179,16 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-97706a66-4baf-4f3a-88c6-d0094a178d28';
+    $pane->pid = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -173,13 +196,16 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '97706a66-4baf-4f3a-88c6-d0094a178d28';
-    $display->content['new-97706a66-4baf-4f3a-88c6-d0094a178d28'] = $pane;
-    $display->panels['middle'][0] = 'new-97706a66-4baf-4f3a-88c6-d0094a178d28';
+    $pane->uuid = '8ea45906-c02f-46a9-8ae1-01d63f3f266b';
+    $display->content['new-8ea45906-c02f-46a9-8ae1-01d63f3f266b'] = $pane;
+    $display->panels['middle'][0] = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -392,10 +418,10 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-17f533d9-9f3d-4794-a451-88f16be87571';
+    $pane->pid = 'new-75b504e8-3e48-4d20-8e8a-7b5dd701ac81';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-branch-eastasian';
+    $pane->subtype = 'menu-menu-branch-east-asian';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -411,9 +437,9 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '17f533d9-9f3d-4794-a451-88f16be87571';
-    $display->content['new-17f533d9-9f3d-4794-a451-88f16be87571'] = $pane;
-    $display->panels['first'][0] = 'new-17f533d9-9f3d-4794-a451-88f16be87571';
+    $pane->uuid = '75b504e8-3e48-4d20-8e8a-7b5dd701ac81';
+    $display->content['new-75b504e8-3e48-4d20-8e8a-7b5dd701ac81'] = $pane;
+    $display->panels['first'][0] = 'new-75b504e8-3e48-4d20-8e8a-7b5dd701ac81';
     $pane = new stdClass();
     $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane->panel = 'first';
@@ -423,10 +449,11 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '%cal:nid',
+        'field_hrs_lib_calendar_target_id' => '3689',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -465,25 +492,6 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-7748695f-6bd4-42fd-abec-1301b66630e9';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7748695f-6bd4-42fd-abec-1301b66630e9';
-    $display->content['new-7748695f-6bd4-42fd-abec-1301b66630e9'] = $pane;
-    $display->panels['middle'][0] = 'new-7748695f-6bd4-42fd-abec-1301b66630e9';
-    $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
@@ -507,11 +515,45 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane = new stdClass();
+    $pane->pid = 'new-44b2ce94-bb7e-46e5-ae85-71de38d40a4a';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 0,
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Research & Scholarship',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '44b2ce94-bb7e-46e5-ae85-71de38d40a4a';
+    $display->content['new-44b2ce94-bb7e-46e5-ae85-71de38d40a4a'] = $pane;
+    $display->panels['second'][0] = 'new-44b2ce94-bb7e-46e5-ae85-71de38d40a4a';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
@@ -539,11 +581,41 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $display->content['new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6'] = $pane;
-    $display->panels['second'][0] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
+    $display->panels['second'][1] = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
+    $pane = new stdClass();
+    $pane->pid = 'new-e17af431-7b15-4aed-ae9c-eba86dfa8ffd';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_external_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'link_default',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Databases & Tools',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'e17af431-7b15-4aed-ae9c-eba86dfa8ffd';
+    $display->content['new-e17af431-7b15-4aed-ae9c-eba86dfa8ffd'] = $pane;
+    $display->panels['second'][2] = 'new-e17af431-7b15-4aed-ae9c-eba86dfa8ffd';
     $pane = new stdClass();
     $pane->pid = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane->panel = 'second';
@@ -574,11 +646,11 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '4a7e8630-60ac-4b66-b428-9053907bb89a';
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
-    $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
+    $display->panels['second'][3] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -607,11 +679,11 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $display->panels['second'][4] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
