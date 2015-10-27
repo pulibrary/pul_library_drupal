@@ -1,4 +1,4 @@
-.page-research-databases-search .pul_base_nine_three-region--first ul.pager {
+ul.pager {
     display: inline;
     margin: 0;
     padding: 0;
@@ -16,6 +16,10 @@
         &.pager__item--next,
         &.pager__item--last {
             display: inline-block;
+        }
+
+        &.pager__item {
+            padding: 0;
         }
 
         @include breakpoint($tab) {
