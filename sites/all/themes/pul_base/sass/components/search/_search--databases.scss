@@ -1,6 +1,6 @@
-.page-find, 
-.section-research, 
-.section-resource, 
+.page-find,
+.section-research,
+.section-resource,
 .branch-libraries {
 
   .dbsearch-block-form,
@@ -8,7 +8,7 @@
   // .music-audio-block-form,
   // .music-score-block-form,
   // .music-video-block-form,
-  .allsearch-block-form, 
+  .allsearch-block-form,
   .website-block-form {
 
    > div {
@@ -16,7 +16,7 @@
       $search-bar-border: 1px solid $search-bar-border-color;
       $search-bar-background: lighten($search-bar-border-color, 10);
 
-      position: relative; 
+      position: relative;
       display: inline-block;
       margin-top:0.9em;
       width: 100%;
@@ -43,12 +43,12 @@
             box-shadow: none;
           }
         }
-      
+
       }
 
       input[type=submit] {
         @include hidden();
-      } 
+      }
       button {
           position: absolute;
           right: 0;
@@ -77,4 +77,8 @@
   .hide-sm {
     @include visually-hidden();
   }
+}
+
+.pane-dbsearch-block-dbsearch-search {
+  margin-bottom: 1em;
 }
