@@ -1963,6 +1963,9 @@ ul.pager {
     border-radius: 4px;
     outline: none;
     font-weight: bold; }
+  ul.pager li.date-prev a, ul.pager li.date-next a {
+    background: none;
+    border: none; }
 
 .renovation-news-block .renovation-news-lmg::after {
   clear: both;
