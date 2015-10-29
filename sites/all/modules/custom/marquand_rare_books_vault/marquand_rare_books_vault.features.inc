@@ -67,6 +67,7 @@ function marquand_rare_books_vault_default_search_api_index() {
         "field_rb_call_number_display" : { "type" : "text" },
         "field_rb_call_number_s" : { "type" : "text", "boost" : "0.3" },
         "field_rb_description_display" : { "type" : "text", "boost" : "0.3" },
+        "field_rb_format" : { "type" : "string" },
         "field_rb_location_code_s" : { "type" : "text", "boost" : "0.3" },
         "field_rb_pub_created_display" : { "type" : "text", "boost" : "0.3" },
         "field_rb_pub_date_start_sort" : { "type" : "integer" },

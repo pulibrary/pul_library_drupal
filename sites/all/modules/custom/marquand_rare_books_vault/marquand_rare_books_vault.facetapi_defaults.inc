@@ -35,6 +35,7 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
     'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'date_granularity' => 'MINUTE',
   );
   $export['search_api@marquand_rare_books::field_rb_pub_date_start_sort'] = $facet;
 
@@ -54,23 +55,36 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'name' => '',
+    'prefix' => '',
+    'suffix' => '',
+    'auto-submit-delay' => '1500',
+    'range_simple' => 10,
+    'range_advanced' => '',
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'full_html',
+    ),
   );
   $export['search_api@marquand_rare_books:block:field_rb_author_s'] = $facet;
 
@@ -81,7 +95,7 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@marquand_rare_books';
   $facet->realm = 'block';
   $facet->facet = 'field_rb_location_code_s';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -159,7 +173,7 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
     'widget' => 'search_api_ranges_ui_slider',
     'filters' => array(
       'active_items' => array(
-        'status' => 0,
+        'status' => 1,
         'weight' => '-50',
       ),
     ),
@@ -167,7 +181,7 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
+      'indexed' => 'indexed',
     ),
     'sort_weight' => array(
       'active' => '-50',
@@ -190,8 +204,8 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
     'name' => '',
     'prefix' => '',
     'suffix' => '',
-    'auto-submit-delay' => '3000',
-    'range_simple' => 10,
+    'auto-submit-delay' => '5000',
+    'range_simple' => '10',
     'range_advanced' => '',
     'empty_text' => array(
       'value' => '',
@@ -216,23 +230,36 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
+      'indexed' => 0,
     ),
     'sort_weight' => array(
-      'active' => -50,
-      'count' => -49,
-      'display' => -48,
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
     ),
     'sort_order' => array(
-      'active' => 3,
-      'count' => 3,
-      'display' => 4,
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
     ),
     'empty_behavior' => 'none',
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => 20,
+    'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
+    'name' => '',
+    'prefix' => '',
+    'suffix' => '',
+    'auto-submit-delay' => '1500',
+    'range_simple' => 10,
+    'range_advanced' => '',
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'full_html',
+    ),
   );
   $export['search_api@marquand_rare_books:block:field_rb_subject_facet'] = $facet;
 

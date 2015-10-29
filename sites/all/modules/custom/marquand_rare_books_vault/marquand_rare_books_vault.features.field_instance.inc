@@ -10,7 +10,7 @@
 function marquand_rare_books_vault_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-marq_rare_book-body'
+  // Exported field_instance: 'node-marq_rare_book-body'.
   $field_instances['node-marq_rare_book-body'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -83,7 +83,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_author_s'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_author_s'.
   $field_instances['node-marq_rare_book-field_rb_author_s'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -154,7 +154,8 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_call_number_display'
+  // Exported field_instance:
+  // 'node-marq_rare_book-field_rb_call_number_display'.
   $field_instances['node-marq_rare_book-field_rb_call_number_display'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -225,7 +226,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_call_number_s'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_call_number_s'.
   $field_instances['node-marq_rare_book-field_rb_call_number_s'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -295,7 +296,8 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_description_display'
+  // Exported field_instance:
+  // 'node-marq_rare_book-field_rb_description_display'.
   $field_instances['node-marq_rare_book-field_rb_description_display'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -366,7 +368,83 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_location_code_s'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_format'.
+  $field_instances['node-marq_rare_book-field_rb_format'] = array(
+    'bundle' => 'marq_rare_book',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'featured_link_url' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_rb_format',
+    'label' => 'Format',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 44,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-marq_rare_book-field_rb_location_code_s'.
   $field_instances['node-marq_rare_book-field_rb_location_code_s'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -437,7 +515,8 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_pub_created_display'
+  // Exported field_instance:
+  // 'node-marq_rare_book-field_rb_pub_created_display'.
   $field_instances['node-marq_rare_book-field_rb_pub_created_display'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -508,7 +587,8 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_pub_date_start_sort'
+  // Exported field_instance:
+  // 'node-marq_rare_book-field_rb_pub_date_start_sort'.
   $field_instances['node-marq_rare_book-field_rb_pub_date_start_sort'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -579,7 +659,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_subject_facet'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_subject_facet'.
   $field_instances['node-marq_rare_book-field_rb_subject_facet'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -650,7 +730,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_title_display'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_title_display'.
   $field_instances['node-marq_rare_book-field_rb_title_display'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -721,7 +801,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_title_sort'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_title_sort'.
   $field_instances['node-marq_rare_book-field_rb_title_sort'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -792,7 +872,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-marq_rare_book-field_rb_uniform_title_display'
+  // 'node-marq_rare_book-field_rb_uniform_title_display'.
   $field_instances['node-marq_rare_book-field_rb_uniform_title_display'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -863,7 +943,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marq_rare_book-field_rb_voyager_id'
+  // Exported field_instance: 'node-marq_rare_book-field_rb_voyager_id'.
   $field_instances['node-marq_rare_book-field_rb_voyager_id'] = array(
     'bundle' => 'marq_rare_book',
     'default_value' => NULL,
@@ -941,6 +1021,7 @@ function marquand_rare_books_vault_field_default_field_instances() {
   t('Call Number Display');
   t('Call Number Sort');
   t('Description Display');
+  t('Format');
   t('Location Code');
   t('Pub Created');
   t('Pub Date Start Sort');
