@@ -17,7 +17,7 @@ function your_accounts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 16;
   $handler->conf = array(
     'title' => 'Your Accounts',
     'no_blocks' => 1,

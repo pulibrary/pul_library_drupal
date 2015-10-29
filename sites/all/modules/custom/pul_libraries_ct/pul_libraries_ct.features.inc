@@ -37,7 +37,7 @@ function pul_libraries_ct_node_info() {
     'libraries' => array(
       'name' => t('Libraries'),
       'base' => 'node_content',
-      'description' => t('University Libraries'),
+      'description' => t('Configure settings and links for individual libraries.'),
       'has_title' => '1',
       'title_label' => t('Library Name'),
       'help' => '',

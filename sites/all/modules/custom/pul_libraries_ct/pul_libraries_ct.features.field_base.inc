@@ -10,7 +10,7 @@
 function pul_libraries_ct_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_address_1'
+  // Exported field_base: 'field_address_1'.
   $field_bases['field_address_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -34,7 +34,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_address_2'
+  // Exported field_base: 'field_address_2'.
   $field_bases['field_address_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -58,7 +58,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_amenities'
+  // Exported field_base: 'field_amenities'.
   $field_bases['field_amenities'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -87,7 +87,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_branch_external_links'
+  // Exported field_base: 'field_branch_external_links'.
   $field_bases['field_branch_external_links'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -119,7 +119,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_branch_featured_resources'
+  // Exported field_base: 'field_branch_featured_resources'.
   $field_bases['field_branch_featured_resources'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -157,7 +157,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_branch_quick_link'
+  // Exported field_base: 'field_branch_quick_link'.
   $field_bases['field_branch_quick_link'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -195,7 +195,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_branch_spotlight_item'
+  // Exported field_base: 'field_branch_spotlight_item'.
   $field_bases['field_branch_spotlight_item'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -233,7 +233,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_building'
+  // Exported field_base: 'field_building'.
   $field_bases['field_building'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -273,7 +273,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_city'
+  // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -297,7 +297,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_e_mail_address'
+  // Exported field_base: 'field_e_mail_address'.
   $field_bases['field_e_mail_address'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -315,7 +315,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_fax'
+  // Exported field_base: 'field_fax'.
   $field_bases['field_fax'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -339,7 +339,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_full_library_name'
+  // Exported field_base: 'field_full_library_name'.
   $field_bases['field_full_library_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -363,7 +363,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_hours_calendar'
+  // Exported field_base: 'field_hours_calendar'.
   $field_bases['field_hours_calendar'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -403,7 +403,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_lib_hours_code'
+  // Exported field_base: 'field_lib_hours_code'.
   $field_bases['field_lib_hours_code'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -427,7 +427,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_lib_main_menu_link'
+  // Exported field_base: 'field_lib_main_menu_link'.
   $field_bases['field_lib_main_menu_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -451,7 +451,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_library_homepage'
+  // Exported field_base: 'field_library_homepage'.
   $field_bases['field_library_homepage'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -483,7 +483,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_library_image'
+  // Exported field_base: 'field_library_image'.
   $field_bases['field_library_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -508,7 +508,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_libs_cols_main_menu'
+  // Exported field_base: 'field_libs_cols_main_menu'.
   $field_bases['field_libs_cols_main_menu'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -536,7 +536,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_long_description'
+  // Exported field_base: 'field_long_description'.
   $field_bases['field_long_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -558,7 +558,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_phone'
+  // Exported field_base: 'field_phone'.
   $field_bases['field_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -582,7 +582,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_state'
+  // Exported field_base: 'field_state'.
   $field_bases['field_state'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -606,7 +606,7 @@ function pul_libraries_ct_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_zip'
+  // Exported field_base: 'field_zip'.
   $field_bases['field_zip'] = array(
     'active' => 1,
     'cardinality' => 1,

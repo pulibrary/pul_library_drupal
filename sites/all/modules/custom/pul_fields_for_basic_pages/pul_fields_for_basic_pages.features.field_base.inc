@@ -10,7 +10,7 @@
 function pul_fields_for_basic_pages_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_basic_page_files'
+  // Exported field_base: 'field_basic_page_files'.
   $field_bases['field_basic_page_files'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -33,16 +33,13 @@ function pul_fields_for_basic_pages_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_basic_page_images'
+  // Exported field_base: 'field_basic_page_images'.
   $field_bases['field_basic_page_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_basic_page_images',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

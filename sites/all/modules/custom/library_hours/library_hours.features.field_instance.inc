@@ -65,7 +65,7 @@ function library_hours_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Mark closed for full-day closures.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -94,8 +94,9 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_hours-field_hrs_lib_calendar'.
@@ -197,7 +198,7 @@ function library_hours_field_default_field_instances() {
     'bundle' => 'library_hours',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Something to describe the hours entry pattern beyond the basic date and term. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.',
+    'description' => 'A descriptive statement about the days covered by the pattern being entered. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -233,7 +234,7 @@ function library_hours_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -243,7 +244,7 @@ function library_hours_field_default_field_instances() {
     'bundle' => 'library_hours',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Term hours entry covers. Will be displayed as part of the title.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -271,7 +272,7 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -439,6 +440,7 @@ function library_hours_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A descriptive statement about the days covered by the pattern being entered. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.');
   t('Body');
   t('Calendar');
   t('Date Label');
@@ -447,9 +449,10 @@ function library_hours_field_default_field_instances() {
   t('Library');
   t('Library Status');
   t('List On Homepage');
+  t('Mark closed for full-day closures.');
   t('Service URL');
-  t('Something to describe the hours entry pattern beyond the basic date and term. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.');
   t('Term');
+  t('Term hours entry covers. Will be displayed as part of the title.');
 
   return $field_instances;
 }

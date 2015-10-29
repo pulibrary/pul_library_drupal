@@ -61,7 +61,8 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/engineering',
+            'paths' => 'libraries/engineering
+engineering',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -395,7 +396,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'libraries/engineering/*
-
+engineering/*
 help/engineering-course-reserves-request-form',
           ),
           'context' => 'empty',

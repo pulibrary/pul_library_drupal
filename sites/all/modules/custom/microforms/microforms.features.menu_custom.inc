@@ -29,6 +29,5 @@ function microforms_menu_default_menu_custom() {
   t('Selected Microforms Collections');
   t('Selected Research Guides');
 
-
   return $menus;
 }

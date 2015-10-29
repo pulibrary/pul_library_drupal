@@ -10,7 +10,7 @@
 function library_faq_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-frequently_asked_question-body'
+  // Exported field_instance: 'node-frequently_asked_question-body'.
   $field_instances['node-frequently_asked_question-body'] = array(
     'bundle' => 'frequently_asked_question',
     'default_value' => NULL,
@@ -75,7 +75,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_basic_page_files'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_basic_page_files'.
   $field_instances['node-frequently_asked_question-field_basic_page_files'] = array(
     'bundle' => 'frequently_asked_question',
     'deleted' => 0,
@@ -157,7 +158,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_basic_page_images'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_basic_page_images'.
   $field_instances['node-frequently_asked_question-field_basic_page_images'] = array(
     'bundle' => 'frequently_asked_question',
     'deleted' => 0,
@@ -201,6 +203,7 @@ function library_faq_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'alt_field_required' => 0,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -208,6 +211,7 @@ function library_faq_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -244,7 +248,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_faq_listing'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_faq_listing'.
   $field_instances['node-frequently_asked_question-field_faq_listing'] = array(
     'bundle' => 'frequently_asked_question',
     'default_value' => NULL,
@@ -307,7 +312,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_faq_more_information'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_faq_more_information'.
   $field_instances['node-frequently_asked_question-field_faq_more_information'] = array(
     'bundle' => 'frequently_asked_question',
     'default_value' => NULL,
@@ -381,7 +387,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_faq_user_groups'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_faq_user_groups'.
   $field_instances['node-frequently_asked_question-field_faq_user_groups'] = array(
     'bundle' => 'frequently_asked_question',
     'default_value' => NULL,
@@ -441,7 +448,8 @@ function library_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-frequently_asked_question-field_long_answer'
+  // Exported field_instance:
+  // 'node-frequently_asked_question-field_long_answer'.
   $field_instances['node-frequently_asked_question-field_long_answer'] = array(
     'bundle' => 'frequently_asked_question',
     'default_value' => NULL,

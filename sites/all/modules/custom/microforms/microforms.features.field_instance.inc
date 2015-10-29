@@ -10,7 +10,8 @@
 function microforms_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_call_number'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_call_number'.
   $field_instances['node-microforms_newspapers-field_microforms_call_number'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,
@@ -69,7 +70,8 @@ function microforms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_city'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_city'.
   $field_instances['node-microforms_newspapers-field_microforms_city'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,
@@ -128,7 +130,8 @@ function microforms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_country'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_country'.
   $field_instances['node-microforms_newspapers-field_microforms_country'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,
@@ -187,7 +190,8 @@ function microforms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_digital_edition'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_digital_edition'.
   $field_instances['node-microforms_newspapers-field_microforms_digital_edition'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,
@@ -262,7 +266,8 @@ function microforms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_holdings_date'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_holdings_date'.
   $field_instances['node-microforms_newspapers-field_microforms_holdings_date'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,
@@ -321,7 +326,8 @@ function microforms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-microforms_newspapers-field_microforms_us_states'
+  // Exported field_instance:
+  // 'node-microforms_newspapers-field_microforms_us_states'.
   $field_instances['node-microforms_newspapers-field_microforms_us_states'] = array(
     'bundle' => 'microforms_newspapers',
     'default_value' => NULL,

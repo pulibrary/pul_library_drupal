@@ -51,7 +51,8 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/plasma-physics/*',
+            'paths' => 'libraries/plasma-physics/*
+plasma-physics/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -354,7 +355,8 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/plasma-physics',
+            'paths' => 'libraries/plasma-physics
+plasma-physics',
           ),
           'context' => 'empty',
           'not' => FALSE,

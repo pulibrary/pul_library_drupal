@@ -26,9 +26,8 @@ function library_hours_field_group_info() {
       0 => 'field_open_hours',
       1 => 'field_hours_library_status',
       2 => 'field_hrs_lib_calendar',
-      3 => 'field_pul_hours_term',
-      4 => 'field_pul_hours_label',
-      5 => 'workbench_access',
+      3 => 'field_pul_hours_label',
+      4 => 'field_pul_hours_term',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -85,12 +85,13 @@ function pul_libraries_ct_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Library Address',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-lib-address field-group-tab',
         'required_fields' => 1,
+        'classes' => ' group-lib-address field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_lib_address|node|libraries|form'] = $field_group;
@@ -138,7 +139,6 @@ function pul_libraries_ct_field_group_info() {
       0 => 'field_phone',
       1 => 'field_fax',
       2 => 'field_e_mail_address',
-      3 => 'field_staff_list',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -163,12 +163,10 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Hours',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_lib_hours_code',
       1 => 'field_hours_calendar',
-      2 => 'field_standard_hours',
-      3 => 'field_summer_hours',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -222,19 +220,19 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'URLs and Paths',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
       0 => 'field_library_homepage',
       1 => 'field_libs_cols_main_menu',
       2 => 'field_lib_main_menu_link',
       3 => 'path',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => ' group-lib-links field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),

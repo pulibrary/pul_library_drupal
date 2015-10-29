@@ -17,7 +17,7 @@ function cdl_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Collection Development Landing Page',
     'no_blocks' => 1,

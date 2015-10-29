@@ -10,7 +10,7 @@
 function library_news_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_acquisition_type'
+  // Exported field_base: 'field_acquisition_type'.
   $field_bases['field_acquisition_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -39,7 +39,7 @@ function library_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_authors'
+  // Exported field_base: 'field_authors'.
   $field_bases['field_authors'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -63,7 +63,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_call_number'
+  // Exported field_base: 'field_call_number'.
   $field_bases['field_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -87,7 +87,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_catalog_url'
+  // Exported field_base: 'field_catalog_url'.
   $field_bases['field_catalog_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,7 +119,7 @@ function library_news_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_credit'
+  // Exported field_base: 'field_credit'.
   $field_bases['field_credit'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -143,7 +143,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_display_on_news_page'
+  // Exported field_base: 'field_display_on_news_page'.
   $field_bases['field_display_on_news_page'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -171,7 +171,7 @@ function library_news_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_feat_collection'
+  // Exported field_base: 'field_feat_collection'.
   $field_bases['field_feat_collection'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -199,7 +199,7 @@ function library_news_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_full_title'
+  // Exported field_base: 'field_full_title'.
   $field_bases['field_full_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -221,7 +221,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_material_access'
+  // Exported field_base: 'field_material_access'.
   $field_bases['field_material_access'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -249,7 +249,7 @@ function library_news_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_news_article_snippet'
+  // Exported field_base: 'field_news_article_snippet'.
   $field_bases['field_news_article_snippet'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -273,7 +273,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_news_category'
+  // Exported field_base: 'field_news_category'.
   $field_bases['field_news_category'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -302,7 +302,7 @@ function library_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_news_event_location'
+  // Exported field_base: 'field_news_event_location'.
   $field_bases['field_news_event_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -341,7 +341,7 @@ function library_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_news_featured_graphic'
+  // Exported field_base: 'field_news_featured_graphic'.
   $field_bases['field_news_featured_graphic'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -367,7 +367,7 @@ function library_news_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_news_file_attachemtns'
+  // Exported field_base: 'field_news_file_attachemtns'.
   $field_bases['field_news_file_attachemtns'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -393,7 +393,7 @@ function library_news_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_news_images'
+  // Exported field_base: 'field_news_images'.
   $field_bases['field_news_images'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -418,7 +418,7 @@ function library_news_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_news_libraries'
+  // Exported field_base: 'field_news_libraries'.
   $field_bases['field_news_libraries'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -458,7 +458,7 @@ function library_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_news_library_contact'
+  // Exported field_base: 'field_news_library_contact'.
   $field_bases['field_news_library_contact'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -498,7 +498,7 @@ function library_news_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_news_more_information'
+  // Exported field_base: 'field_news_more_information'.
   $field_bases['field_news_more_information'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -528,7 +528,7 @@ function library_news_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_news_rel_audiences'
+  // Exported field_base: 'field_news_rel_audiences'.
   $field_bases['field_news_rel_audiences'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -554,7 +554,7 @@ function library_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_physical_description'
+  // Exported field_base: 'field_physical_description'.
   $field_bases['field_physical_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -578,7 +578,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_publisher'
+  // Exported field_base: 'field_publisher'.
   $field_bases['field_publisher'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -602,7 +602,7 @@ function library_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pul_event_date'
+  // Exported field_base: 'field_pul_event_date'.
   $field_bases['field_pul_event_date'] = array(
     'active' => 1,
     'cardinality' => -1,

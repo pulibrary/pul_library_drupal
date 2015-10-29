@@ -916,13 +916,17 @@ collections/microforms/newspapers',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'six-six';
+  $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'top' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();

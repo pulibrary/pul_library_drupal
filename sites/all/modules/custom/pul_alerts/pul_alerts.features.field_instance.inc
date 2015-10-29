@@ -10,7 +10,7 @@
 function pul_alerts_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-homepage_alert-body'
+  // Exported field_instance: 'node-homepage_alert-body'.
   $field_instances['node-homepage_alert-body'] = array(
     'bundle' => 'homepage_alert',
     'default_value' => NULL,
@@ -65,7 +65,7 @@ function pul_alerts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_blurb'
+  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_blurb'.
   $field_instances['node-homepage_alert-field_emergency_alert_blurb'] = array(
     'bundle' => 'homepage_alert',
     'default_value' => NULL,
@@ -118,7 +118,7 @@ function pul_alerts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_dates'
+  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_dates'.
   $field_instances['node-homepage_alert-field_emergency_alert_dates'] = array(
     'bundle' => 'homepage_alert',
     'deleted' => 0,
@@ -179,7 +179,7 @@ function pul_alerts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_level'
+  // Exported field_instance: 'node-homepage_alert-field_emergency_alert_level'.
   $field_instances['node-homepage_alert-field_emergency_alert_level'] = array(
     'bundle' => 'homepage_alert',
     'default_value' => array(

@@ -10,7 +10,7 @@
 function pul_fields_for_basic_pages_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-field_basic_page_files'
+  // Exported field_instance: 'node-page-field_basic_page_files'.
   $field_instances['node-page-field_basic_page_files'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -86,7 +86,7 @@ function pul_fields_for_basic_pages_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_basic_page_images'
+  // Exported field_instance: 'node-page-field_basic_page_images'.
   $field_instances['node-page-field_basic_page_images'] = array(
     'bundle' => 'page',
     'deleted' => 0,

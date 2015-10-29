@@ -17,7 +17,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -2;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Branch Pages',
     'no_blocks' => 1,
@@ -67,7 +67,9 @@ libraries/stokes
 libraries/plasma-physics
 libraries/scilib
 libraries/music
-vdl',
+vdl
+stokes
+plasma-physics',
           ),
           'context' => 'empty',
           'not' => FALSE,

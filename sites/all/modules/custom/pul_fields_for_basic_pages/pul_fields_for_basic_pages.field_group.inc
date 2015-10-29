@@ -20,7 +20,7 @@ function pul_fields_for_basic_pages_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Atttachments',
+    'label' => 'Attachments',
     'weight' => '3',
     'children' => array(
       0 => 'field_basic_page_files',
@@ -28,7 +28,7 @@ function pul_fields_for_basic_pages_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Atttachments',
+      'label' => 'Attachments',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => ' group-basic-page-attachments field-group-tab',

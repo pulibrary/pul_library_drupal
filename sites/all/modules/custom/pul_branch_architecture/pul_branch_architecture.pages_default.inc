@@ -61,7 +61,8 @@ function pul_branch_architecture_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/architecture',
+            'paths' => 'libraries/architecture
+architecture',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -391,8 +392,9 @@ function pul_branch_architecture_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'libraries/architecture/*
-
-help/architecture-library-student-carrels-registration',
+architecture/*
+help/architecture-library-student-carrels-registration
+news/architecture',
           ),
           'context' => 'empty',
           'not' => FALSE,
