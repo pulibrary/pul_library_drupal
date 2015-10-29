@@ -61,6 +61,29 @@ function marquand_rare_books_vault_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-cfc1f30f-6e89-4a8f-a493-2839b3f73f90';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-fBXxgsUqmrHaUESDauTmw2CX7J1qsqUh';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Format',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cfc1f30f-6e89-4a8f-a493-2839b3f73f90';
+    $display->content['new-cfc1f30f-6e89-4a8f-a493-2839b3f73f90'] = $pane;
+    $display->panels['first'][0] = 'new-cfc1f30f-6e89-4a8f-a493-2839b3f73f90';
+    $pane = new stdClass();
     $pane->pid = 'new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
     $pane->panel = 'first';
     $pane->type = 'block';
@@ -78,34 +101,11 @@ function marquand_rare_books_vault_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
     $display->content['new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc'] = $pane;
-    $display->panels['first'][0] = 'new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
-    $pane = new stdClass();
-    $pane->pid = 'new-748ec096-741e-4543-a606-2676420a627f';
-    $pane->panel = 'first';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-NkaMwtKRkCXBNCzP0Cv148XPpGel1Ylc';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Date Created',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '748ec096-741e-4543-a606-2676420a627f';
-    $display->content['new-748ec096-741e-4543-a606-2676420a627f'] = $pane;
-    $display->panels['first'][1] = 'new-748ec096-741e-4543-a606-2676420a627f';
+    $display->panels['first'][1] = 'new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
     $pane = new stdClass();
     $pane->pid = 'new-903a9f28-5dfe-4fbf-9033-75fe62f7f9c4';
     $pane->panel = 'first';

@@ -200,6 +200,11 @@ function marquand_rare_books_vault_feeds_importer_default() {
             'term_search' => '0',
             'autocreate' => 1,
           ),
+          14 => array(
+            'source' => 'format',
+            'target' => 'field_rb_format',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'plain_text',

@@ -80,7 +80,7 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['field_rb_pub_created_display']['id'] = 'field_rb_pub_created_display';
   $handler->display->display_options['fields']['field_rb_pub_created_display']['table'] = 'search_api_index_marquand_rare_books';
   $handler->display->display_options['fields']['field_rb_pub_created_display']['field'] = 'field_rb_pub_created_display';
-  $handler->display->display_options['fields']['field_rb_pub_created_display']['label'] = 'Publication Date';
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['label'] = 'Publication Information';
   $handler->display->display_options['fields']['field_rb_pub_created_display']['hide_empty'] = TRUE;
   /* Field: Indexed Content: Call Number Display */
   $handler->display->display_options['fields']['field_rb_call_number_display']['id'] = 'field_rb_call_number_display';
@@ -92,17 +92,22 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['field_rb_description_display']['id'] = 'field_rb_description_display';
   $handler->display->display_options['fields']['field_rb_description_display']['table'] = 'search_api_index_marquand_rare_books';
   $handler->display->display_options['fields']['field_rb_description_display']['field'] = 'field_rb_description_display';
+  $handler->display->display_options['fields']['field_rb_description_display']['label'] = 'Description';
   $handler->display->display_options['fields']['field_rb_description_display']['hide_empty'] = TRUE;
   /* Field: Indexed Content: Pub Date Start Sort */
   $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['id'] = 'field_rb_pub_date_start_sort';
   $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['table'] = 'search_api_index_marquand_rare_books';
   $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['field'] = 'field_rb_pub_date_start_sort';
-  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['label'] = 'Pub Date';
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['label'] = 'Date Created';
   $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
+  /* Field: Indexed Content: Format */
+  $handler->display->display_options['fields']['field_rb_format']['id'] = 'field_rb_format';
+  $handler->display->display_options['fields']['field_rb_format']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_format']['field'] = 'field_rb_format';
   /* Field: Indexed Content: Voyager ID */
   $handler->display->display_options['fields']['field_rb_voyager_id']['id'] = 'field_rb_voyager_id';
   $handler->display->display_options['fields']['field_rb_voyager_id']['table'] = 'search_api_index_marquand_rare_books';
