@@ -10,7 +10,7 @@
 function marquand_rare_books_vault_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_rb_author_s'
+  // Exported field_base: 'field_rb_author_s'.
   $field_bases['field_rb_author_s'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -39,7 +39,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_rb_call_number_display'
+  // Exported field_base: 'field_rb_call_number_display'.
   $field_bases['field_rb_call_number_display'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -63,7 +63,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_call_number_s'
+  // Exported field_base: 'field_rb_call_number_s'.
   $field_bases['field_rb_call_number_s'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -87,7 +87,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_description_display'
+  // Exported field_base: 'field_rb_description_display'.
   $field_bases['field_rb_description_display'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -111,7 +111,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_location_code_s'
+  // Exported field_base: 'field_rb_location_code_s'.
   $field_bases['field_rb_location_code_s'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -135,7 +135,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_pub_created_display'
+  // Exported field_base: 'field_rb_pub_created_display'.
   $field_bases['field_rb_pub_created_display'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -159,7 +159,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_pub_date_start_sort'
+  // Exported field_base: 'field_rb_pub_date_start_sort'.
   $field_bases['field_rb_pub_date_start_sort'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -177,7 +177,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_rb_subject_facet'
+  // Exported field_base: 'field_rb_subject_facet'.
   $field_bases['field_rb_subject_facet'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -206,7 +206,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_rb_title_display'
+  // Exported field_base: 'field_rb_title_display'.
   $field_bases['field_rb_title_display'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -230,7 +230,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_title_sort'
+  // Exported field_base: 'field_rb_title_sort'.
   $field_bases['field_rb_title_sort'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -254,7 +254,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_uniform_title_display'
+  // Exported field_base: 'field_rb_uniform_title_display'.
   $field_bases['field_rb_uniform_title_display'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -278,7 +278,7 @@ function marquand_rare_books_vault_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rb_voyager_id'
+  // Exported field_base: 'field_rb_voyager_id'.
   $field_bases['field_rb_voyager_id'] = array(
     'active' => 1,
     'cardinality' => 1,

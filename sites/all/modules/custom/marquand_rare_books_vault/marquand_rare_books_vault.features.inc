@@ -69,7 +69,7 @@ function marquand_rare_books_vault_default_search_api_index() {
         "field_rb_description_display" : { "type" : "text", "boost" : "0.3" },
         "field_rb_location_code_s" : { "type" : "text", "boost" : "0.3" },
         "field_rb_pub_created_display" : { "type" : "text", "boost" : "0.3" },
-        "field_rb_pub_date_start_sort" : { "type" : "integer" },
+        "field_rb_pub_date_start_sort" : { "type" : "date" },
         "field_rb_subject_facet" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_rb_subject_facet:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_rb_title_display" : { "type" : "text" },

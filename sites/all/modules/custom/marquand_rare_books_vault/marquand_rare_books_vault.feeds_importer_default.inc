@@ -18,12 +18,14 @@ function marquand_rare_books_vault_feeds_importer_default() {
     'name' => 'Marquand Rare Books',
     'description' => 'Import Rare Books from Marquand',
     'fetcher' => array(
-      'plugin_key' => 'FeedsHTTPFetcher',
+      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'auto_detect_feeds' => FALSE,
-        'use_pubsubhubbub' => FALSE,
-        'designated_hub' => '',
-        'request_timeout' => NULL,
+        'allowed_extensions' => 'txt csv tsv xml opml json',
+        'direct' => 1,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
       ),
     ),
     'parser' => array(
@@ -197,6 +199,7 @@ function marquand_rare_books_vault_feeds_importer_default() {
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'marq_rare_book',
+        'update_non_existent' => 'skip',
       ),
     ),
     'content_type' => '',

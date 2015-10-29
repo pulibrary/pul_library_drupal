@@ -5,6 +5,7 @@ version = 7.x-1.0-dev
 project = marquand_rare_books_vault
 dependencies[] = entity
 dependencies[] = facetapi
+dependencies[] = feeds_ex
 dependencies[] = number
 dependencies[] = page_manager
 dependencies[] = search_api

@@ -61,15 +61,15 @@ function marquand_rare_books_vault_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-789ef413-845e-4267-b43e-ec844bf91170';
+    $pane->pid = 'new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
     $pane->panel = 'first';
     $pane->type = 'block';
-    $pane->subtype = 'facetapi-NkaMwtKRkCXBNCzP0Cv148XPpGel1Ylc';
+    $pane->subtype = 'facetapi-iZg1hwFZD5XmpgcfOT05G8D5SgynjmTJ';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Date',
+      'override_title_text' => 'Location Code',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -80,9 +80,32 @@ function marquand_rare_books_vault_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '789ef413-845e-4267-b43e-ec844bf91170';
-    $display->content['new-789ef413-845e-4267-b43e-ec844bf91170'] = $pane;
-    $display->panels['first'][0] = 'new-789ef413-845e-4267-b43e-ec844bf91170';
+    $pane->uuid = '1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
+    $display->content['new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc'] = $pane;
+    $display->panels['first'][0] = 'new-1d8281e2-c534-4cc4-9f06-06bceabcf1dc';
+    $pane = new stdClass();
+    $pane->pid = 'new-748ec096-741e-4543-a606-2676420a627f';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-NkaMwtKRkCXBNCzP0Cv148XPpGel1Ylc';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Date Created',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '748ec096-741e-4543-a606-2676420a627f';
+    $display->content['new-748ec096-741e-4543-a606-2676420a627f'] = $pane;
+    $display->panels['first'][1] = 'new-748ec096-741e-4543-a606-2676420a627f';
     $pane = new stdClass();
     $pane->pid = 'new-903a9f28-5dfe-4fbf-9033-75fe62f7f9c4';
     $pane->panel = 'first';
@@ -101,11 +124,34 @@ function marquand_rare_books_vault_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '903a9f28-5dfe-4fbf-9033-75fe62f7f9c4';
     $display->content['new-903a9f28-5dfe-4fbf-9033-75fe62f7f9c4'] = $pane;
-    $display->panels['first'][1] = 'new-903a9f28-5dfe-4fbf-9033-75fe62f7f9c4';
+    $display->panels['first'][2] = 'new-903a9f28-5dfe-4fbf-9033-75fe62f7f9c4';
+    $pane = new stdClass();
+    $pane->pid = 'new-ce61ca62-509a-4752-8e00-798e2451f709';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-uQGsRCI9jEekDc0YcvsOxujblfT9ftyf';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'ce61ca62-509a-4752-8e00-798e2451f709';
+    $display->content['new-ce61ca62-509a-4752-8e00-798e2451f709'] = $pane;
+    $display->panels['first'][3] = 'new-ce61ca62-509a-4752-8e00-798e2451f709';
     $pane = new stdClass();
     $pane->pid = 'new-b547e3c2-906f-429d-a78c-b8445f393c20';
     $pane->panel = 'second';

@@ -31,22 +31,96 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Result summary with an additional token to change the items/page */
   $handler->display->display_options['header']['webform_result']['id'] = 'webform_result';
   $handler->display->display_options['header']['webform_result']['table'] = 'views';
   $handler->display->display_options['header']['webform_result']['field'] = 'webform_result';
-  /* Field: Content: Rendered Content */
-  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 1;
+  /* No results behavior: Global: Messages */
+  $handler->display->display_options['empty']['messages']['id'] = 'messages';
+  $handler->display->display_options['empty']['messages']['table'] = 'views';
+  $handler->display->display_options['empty']['messages']['field'] = 'messages';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>No Results Found</p>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  /* Field: Indexed Content: Call Number Sort */
+  $handler->display->display_options['fields']['field_rb_call_number_s']['id'] = 'field_rb_call_number_s';
+  $handler->display->display_options['fields']['field_rb_call_number_s']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_call_number_s']['field'] = 'field_rb_call_number_s';
+  $handler->display->display_options['fields']['field_rb_call_number_s']['exclude'] = TRUE;
+  /* Field: Indexed Content: Title Display */
+  $handler->display->display_options['fields']['field_rb_title_display']['id'] = 'field_rb_title_display';
+  $handler->display->display_options['fields']['field_rb_title_display']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_title_display']['field'] = 'field_rb_title_display';
+  $handler->display->display_options['fields']['field_rb_title_display']['label'] = '';
+  $handler->display->display_options['fields']['field_rb_title_display']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_rb_title_display']['element_label_colon'] = FALSE;
+  /* Field: Indexed Content: Uniform Title */
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['id'] = 'field_rb_uniform_title_display';
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['field'] = 'field_rb_uniform_title_display';
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['label'] = '';
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rb_uniform_title_display']['hide_empty'] = TRUE;
+  /* Field: Indexed Content: Author Display */
+  $handler->display->display_options['fields']['field_rb_author_s']['id'] = 'field_rb_author_s';
+  $handler->display->display_options['fields']['field_rb_author_s']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_author_s']['field'] = 'field_rb_author_s';
+  $handler->display->display_options['fields']['field_rb_author_s']['label'] = '';
+  $handler->display->display_options['fields']['field_rb_author_s']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rb_author_s']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_rb_author_s']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_rb_author_s']['bypass_access'] = 0;
+  /* Field: Indexed Content: Pub Created */
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['id'] = 'field_rb_pub_created_display';
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['field'] = 'field_rb_pub_created_display';
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['label'] = 'Publication Date';
+  $handler->display->display_options['fields']['field_rb_pub_created_display']['hide_empty'] = TRUE;
+  /* Field: Indexed Content: Call Number Display */
+  $handler->display->display_options['fields']['field_rb_call_number_display']['id'] = 'field_rb_call_number_display';
+  $handler->display->display_options['fields']['field_rb_call_number_display']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_call_number_display']['field'] = 'field_rb_call_number_display';
+  $handler->display->display_options['fields']['field_rb_call_number_display']['label'] = '';
+  $handler->display->display_options['fields']['field_rb_call_number_display']['element_label_colon'] = FALSE;
+  /* Field: Indexed Content: Description Display */
+  $handler->display->display_options['fields']['field_rb_description_display']['id'] = 'field_rb_description_display';
+  $handler->display->display_options['fields']['field_rb_description_display']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_description_display']['field'] = 'field_rb_description_display';
+  $handler->display->display_options['fields']['field_rb_description_display']['hide_empty'] = TRUE;
+  /* Field: Indexed Content: Pub Date Start Sort */
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['id'] = 'field_rb_pub_date_start_sort';
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['field'] = 'field_rb_pub_date_start_sort';
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['label'] = 'Pub Date';
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_rb_pub_date_start_sort']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Content: Voyager ID */
+  $handler->display->display_options['fields']['field_rb_voyager_id']['id'] = 'field_rb_voyager_id';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['table'] = 'search_api_index_marquand_rare_books';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['field'] = 'field_rb_voyager_id';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['label'] = '';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['text'] = 'View in Catalog';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['path'] = 'http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rb_voyager_id']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   /* Sort criterion: Indexed Content: Pub Date Start Sort */
   $handler->display->display_options['sorts']['field_rb_pub_date_start_sort']['id'] = 'field_rb_pub_date_start_sort';
   $handler->display->display_options['sorts']['field_rb_pub_date_start_sort']['table'] = 'search_api_index_marquand_rare_books';
@@ -67,7 +141,7 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Keyword';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
@@ -100,6 +174,8 @@ function marquand_rare_books_vault_views_default_views() {
   );
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'field_rb_author_s:name' => 'field_rb_author_s:name',
+    'field_rb_call_number_display' => 'field_rb_call_number_display',
+    'field_rb_location_code_s' => 'field_rb_location_code_s',
     'field_rb_subject_facet:name' => 'field_rb_subject_facet:name',
     'field_rb_title_display' => 'field_rb_title_display',
     'field_rb_uniform_title_display' => 'field_rb_uniform_title_display',
