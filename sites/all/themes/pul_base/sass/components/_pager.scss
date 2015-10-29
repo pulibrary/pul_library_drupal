@@ -59,4 +59,9 @@ ul.pager {
         outline: none;
         font-weight: bold;
     }
+
+    li.date-prev a, li.date-next a {
+        background: none;
+        border: none;
+    }
 }

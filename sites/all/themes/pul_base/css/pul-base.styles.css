@@ -1963,6 +1963,9 @@ ul.pager {
     border-radius: 4px;
     outline: none;
     font-weight: bold; }
+  ul.pager li.date-prev a, ul.pager li.date-next a {
+    background: none;
+    border: none; }
 
 .renovation-news-block .renovation-news-lmg::after {
   clear: both;
@@ -3582,10 +3585,13 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
 .page-node-13202 .node__content a, .page-node-13199 .node__content a, .page-node-13201 .node__content a, .page-node-12481 .node__content a, .page-node-12482 .node__content a, .page-node-12483 .node__content a, .page-node-12484 .node__content a, .page-node-12485 .node__content a {
   color: #006838; }
 
+.menu--secondary,
 #menu--secondary {
   margin-top: 1em; }
+  .menu--secondary br,
   #menu--secondary br {
     display: none; }
+  .menu--secondary .skip2main,
   #menu--secondary .skip2main {
     display: block;
     position: relative;
@@ -3598,16 +3604,20 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
     width: 95%;
     margin-bottom: 2px; }
     @media (min-width: 44em) {
+      .menu--secondary .skip2main,
       #menu--secondary .skip2main {
         display: none; } }
+  .menu--secondary .menu,
   #menu--secondary .menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: none; }
     @media (min-width: 54em) {
+      .menu--secondary .menu,
       #menu--secondary .menu {
         display: block; } }
+  .menu--secondary .show-section-menu,
   #menu--secondary .show-section-menu {
     display: block;
     text-align: left;
@@ -3616,10 +3626,13 @@ ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
     padding: 10px;
     width: 95%; }
     @media (min-width: 54em) {
+      .menu--secondary .show-section-menu,
       #menu--secondary .show-section-menu {
         display: none; } }
+  .menu--secondary input[type=checkbox],
   #menu--secondary input[type=checkbox] {
     display: none; }
+  .menu--secondary input[type=checkbox]:checked ~ .menu,
   #menu--secondary input[type=checkbox]:checked ~ .menu {
     display: block; }
 
