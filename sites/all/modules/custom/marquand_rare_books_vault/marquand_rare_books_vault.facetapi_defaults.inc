@@ -168,7 +168,7 @@ function marquand_rare_books_vault_facetapi_default_facet_settings() {
       'active' => 'active',
       'count' => 'count',
       'display' => 'display',
-      'indexed' => 0,
+      'indexed' => 'indexed',
     ),
     'sort_weight' => array(
       'active' => '-50',

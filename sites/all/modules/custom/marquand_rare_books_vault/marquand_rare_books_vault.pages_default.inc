@@ -15,7 +15,7 @@ function marquand_rare_books_vault_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Marquand Rare Books Vault List';
   $page->admin_description = 'Marquand Rare Books List';
-  $page->path = 'libraries/marquand/vault';
+  $page->path = 'marquand/vault';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();

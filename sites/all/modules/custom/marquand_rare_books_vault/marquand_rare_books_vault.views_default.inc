@@ -121,6 +121,9 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Record';
   /* Sort criterion: Indexed Content: Pub Date Start Sort */
   $handler->display->display_options['sorts']['field_rb_pub_date_start_sort']['id'] = 'field_rb_pub_date_start_sort';
   $handler->display->display_options['sorts']['field_rb_pub_date_start_sort']['table'] = 'search_api_index_marquand_rare_books';
@@ -175,6 +178,7 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'field_rb_author_s:name' => 'field_rb_author_s:name',
     'field_rb_call_number_display' => 'field_rb_call_number_display',
+    'field_rb_description_display' => 'field_rb_description_display',
     'field_rb_location_code_s' => 'field_rb_location_code_s',
     'field_rb_subject_facet:name' => 'field_rb_subject_facet:name',
     'field_rb_title_display' => 'field_rb_title_display',

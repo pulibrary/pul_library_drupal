@@ -104,6 +104,12 @@ function marquand_rare_books_vault_feeds_importer_default() {
             'debug' => 0,
             'weight' => '14',
           ),
+          'format' => array(
+            'name' => 'Format',
+            'value' => 'format',
+            'debug' => 0,
+            'weight' => '15',
+          ),
         ),
         'context' => array(
           'value' => '',
