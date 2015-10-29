@@ -10,7 +10,7 @@
 function library_faq_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_faq_listing'
+  // Exported field_base: 'field_faq_listing'.
   $field_bases['field_faq_listing'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -47,7 +47,7 @@ function library_faq_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_faq_more_information'
+  // Exported field_base: 'field_faq_more_information'.
   $field_bases['field_faq_more_information'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -76,7 +76,7 @@ function library_faq_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_faq_user_groups'
+  // Exported field_base: 'field_faq_user_groups'.
   $field_bases['field_faq_user_groups'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -114,7 +114,7 @@ function library_faq_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_long_answer'
+  // Exported field_base: 'field_long_answer'.
   $field_bases['field_long_answer'] = array(
     'active' => 1,
     'cardinality' => 1,

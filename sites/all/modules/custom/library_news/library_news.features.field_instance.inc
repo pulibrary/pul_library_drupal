@@ -10,7 +10,7 @@
 function library_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-library_news_item-body'
+  // Exported field_instance: 'node-library_news_item-body'.
   $field_instances['node-library_news_item-body'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -54,7 +54,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_acquisition_type'
+  // Exported field_instance: 'node-library_news_item-field_acquisition_type'.
   $field_instances['node-library_news_item-field_acquisition_type'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_authors'
+  // Exported field_instance: 'node-library_news_item-field_authors'.
   $field_instances['node-library_news_item-field_authors'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -136,7 +136,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_call_number'
+  // Exported field_instance: 'node-library_news_item-field_call_number'.
   $field_instances['node-library_news_item-field_call_number'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -177,7 +177,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_catalog_url'
+  // Exported field_instance: 'node-library_news_item-field_catalog_url'.
   $field_instances['node-library_news_item-field_catalog_url'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -235,7 +235,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_credit'
+  // Exported field_instance: 'node-library_news_item-field_credit'.
   $field_instances['node-library_news_item-field_credit'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -277,7 +277,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_display_on_news_page'
+  // 'node-library_news_item-field_display_on_news_page'.
   $field_instances['node-library_news_item-field_display_on_news_page'] = array(
     'bundle' => 'library_news_item',
     'default_value' => array(
@@ -319,7 +319,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_feat_collection'
+  // Exported field_instance: 'node-library_news_item-field_feat_collection'.
   $field_instances['node-library_news_item-field_feat_collection'] = array(
     'bundle' => 'library_news_item',
     'default_value' => array(
@@ -363,7 +363,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_full_title'
+  // Exported field_instance: 'node-library_news_item-field_full_title'.
   $field_instances['node-library_news_item-field_full_title'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -404,7 +404,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_material_access'
+  // Exported field_instance: 'node-library_news_item-field_material_access'.
   $field_instances['node-library_news_item-field_material_access'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -443,7 +443,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_news_article_snippet'
+  // 'node-library_news_item-field_news_article_snippet'.
   $field_instances['node-library_news_item-field_news_article_snippet'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -485,7 +485,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_category'
+  // Exported field_instance: 'node-library_news_item-field_news_category'.
   $field_instances['node-library_news_item-field_news_category'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -523,7 +523,8 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_event_location'
+  // Exported field_instance:
+  // 'node-library_news_item-field_news_event_location'.
   $field_instances['node-library_news_item-field_news_event_location'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -564,7 +565,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_news_featured_graphic'
+  // 'node-library_news_item-field_news_featured_graphic'.
   $field_instances['node-library_news_item-field_news_featured_graphic'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -647,7 +648,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_news_file_attachemtns'
+  // 'node-library_news_item-field_news_file_attachemtns'.
   $field_instances['node-library_news_item-field_news_file_attachemtns'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -716,7 +717,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_images'
+  // Exported field_instance: 'node-library_news_item-field_news_images'.
   $field_instances['node-library_news_item-field_news_images'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -794,7 +795,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_libraries'
+  // Exported field_instance: 'node-library_news_item-field_news_libraries'.
   $field_instances['node-library_news_item-field_news_libraries'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -836,7 +837,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_news_library_contact'
+  // 'node-library_news_item-field_news_library_contact'.
   $field_instances['node-library_news_item-field_news_library_contact'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -881,7 +882,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_news_more_information'
+  // 'node-library_news_item-field_news_more_information'.
   $field_instances['node-library_news_item-field_news_more_information'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -937,7 +938,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_news_rel_audiences'
+  // Exported field_instance: 'node-library_news_item-field_news_rel_audiences'.
   $field_instances['node-library_news_item-field_news_rel_audiences'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -976,7 +977,7 @@ function library_news_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-library_news_item-field_physical_description'
+  // 'node-library_news_item-field_physical_description'.
   $field_instances['node-library_news_item-field_physical_description'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -1017,7 +1018,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_publisher'
+  // Exported field_instance: 'node-library_news_item-field_publisher'.
   $field_instances['node-library_news_item-field_publisher'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,
@@ -1058,7 +1059,7 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_pul_event_date'
+  // Exported field_instance: 'node-library_news_item-field_pul_event_date'.
   $field_instances['node-library_news_item-field_pul_event_date'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
@@ -1116,7 +1117,7 @@ function library_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_news_item-field_tags'
+  // Exported field_instance: 'node-library_news_item-field_tags'.
   $field_instances['node-library_news_item-field_tags'] = array(
     'bundle' => 'library_news_item',
     'default_value' => NULL,

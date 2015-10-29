@@ -26,7 +26,15 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     'body_classes_to_add' => 'branch-libraries libraries-music',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Mendel Library',
+        'keyword' => 'mendel_config',
+        'name' => 'entity:node',
+        'entity_id' => '7791',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(
       0 => array(
         'identifier' => 'Calendar',
@@ -51,7 +59,8 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/music/*',
+            'paths' => 'libraries/music/*
+music/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -136,6 +145,29 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '3707',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -156,16 +188,16 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-ca6701fa-dae4-41d3-a50c-557be698a893';
+    $pane->pid = 'new-f2802558-815c-4e2d-80ea-1694b1c4093e';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_6';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -173,13 +205,16 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ca6701fa-dae4-41d3-a50c-557be698a893';
-    $display->content['new-ca6701fa-dae4-41d3-a50c-557be698a893'] = $pane;
-    $display->panels['middle'][0] = 'new-ca6701fa-dae4-41d3-a50c-557be698a893';
+    $pane->uuid = 'f2802558-815c-4e2d-80ea-1694b1c4093e';
+    $display->content['new-f2802558-815c-4e2d-80ea-1694b1c4093e'] = $pane;
+    $display->panels['middle'][0] = 'new-f2802558-815c-4e2d-80ea-1694b1c4093e';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -276,6 +311,39 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-32b1026f-8608-4103-8905-29c28d0581fd'] = $pane;
     $display->panels['second'][1] = 'new-32b1026f-8608-4103-8905-29c28d0581fd';
     $pane = new stdClass();
+    $pane->pid = 'new-0cc967d4-f92e-40dc-a82f-6c3a39e8d3c9';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Quick Links',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '0cc967d4-f92e-40dc-a82f-6c3a39e8d3c9';
+    $display->content['new-0cc967d4-f92e-40dc-a82f-6c3a39e8d3c9'] = $pane;
+    $display->panels['second'][2] = 'new-0cc967d4-f92e-40dc-a82f-6c3a39e8d3c9';
+    $pane = new stdClass();
     $pane->pid = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
@@ -296,11 +364,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
     $display->content['new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4'] = $pane;
-    $display->panels['second'][2] = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
+    $display->panels['second'][3] = 'new-b8609c7f-bf2d-4fe9-b944-bd91d89038f4';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -383,7 +451,8 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/music',
+            'paths' => 'libraries/music
+music',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -467,6 +536,29 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
     $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
     $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '%cal:nid',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -486,11 +578,11 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
     $pane->pid = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
     $pane->panel = 'first';
@@ -511,16 +603,16 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
     $display->content['new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c'] = $pane;
-    $display->panels['first'][3] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
+    $display->panels['first'][4] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
     $pane = new stdClass();
-    $pane->pid = 'new-b57e4e01-4b4c-49a0-a390-1c32f50c1a8b';
+    $pane->pid = 'new-1326c69d-36db-4f62-8518-02f92ca472ff';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_6';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -528,13 +620,16 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b57e4e01-4b4c-49a0-a390-1c32f50c1a8b';
-    $display->content['new-b57e4e01-4b4c-49a0-a390-1c32f50c1a8b'] = $pane;
-    $display->panels['middle'][0] = 'new-b57e4e01-4b4c-49a0-a390-1c32f50c1a8b';
+    $pane->uuid = '1326c69d-36db-4f62-8518-02f92ca472ff';
+    $display->content['new-1326c69d-36db-4f62-8518-02f92ca472ff'] = $pane;
+    $display->panels['middle'][0] = 'new-1326c69d-36db-4f62-8518-02f92ca472ff';
     $pane = new stdClass();
     $pane->pid = 'new-ab52aadd-90ec-47ed-b604-3d38b6da4a48';
     $pane->panel = 'middle';
@@ -710,16 +805,18 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'entityreference_label',
+      'formatter' => 'entityreference_entity_view',
       'delta_limit' => '5',
       'delta_offset' => '0',
       'delta_reversed' => 0,
       'formatter_settings' => array(
         'link' => 1,
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Quick Links',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();

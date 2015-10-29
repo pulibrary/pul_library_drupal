@@ -10,7 +10,7 @@
 function microforms_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_microforms_call_number'
+  // Exported field_base: 'field_microforms_call_number'.
   $field_bases['field_microforms_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -34,7 +34,7 @@ function microforms_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_microforms_city'
+  // Exported field_base: 'field_microforms_city'.
   $field_bases['field_microforms_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -63,7 +63,7 @@ function microforms_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_microforms_country'
+  // Exported field_base: 'field_microforms_country'.
   $field_bases['field_microforms_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -92,7 +92,7 @@ function microforms_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_microforms_digital_edition'
+  // Exported field_base: 'field_microforms_digital_edition'.
   $field_bases['field_microforms_digital_edition'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -124,7 +124,7 @@ function microforms_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_microforms_holdings_date'
+  // Exported field_base: 'field_microforms_holdings_date'.
   $field_bases['field_microforms_holdings_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -148,7 +148,7 @@ function microforms_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_microforms_us_states'
+  // Exported field_base: 'field_microforms_us_states'.
   $field_bases['field_microforms_us_states'] = array(
     'active' => 1,
     'cardinality' => 1,

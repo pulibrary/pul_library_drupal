@@ -125,8 +125,7 @@ function library_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_library_news_item';
   $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
+    0 => 'revision',
   );
   $export['node_options_library_news_item'] = $strongarm;
 
@@ -143,6 +142,34 @@ function library_news_strongarm() {
   $strongarm->name = 'node_submitted_library_news_item';
   $strongarm->value = 1;
   $export['node_submitted_library_news_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_library_news_item_pattern';
+  $strongarm->value = 'news/[node:workbench-access-sections]/[node:created:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_library_news_item_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_acquisition_material_type_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_acquisition_material_type_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_audiences_pattern';
+  $strongarm->value = 'audiences/[term:name]';
+  $export['pathauto_taxonomy_term_audiences_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_news_events_categories_pattern';
+  $strongarm->value = 'news/categories/[term:name]';
+  $export['pathauto_taxonomy_term_news_events_categories_pattern'] = $strongarm;
 
   return $export;
 }

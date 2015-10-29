@@ -129,5 +129,33 @@ function microforms_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_microforms_newspapers'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_microforms_newspapers_pattern';
+  $strongarm->value = 'collections/microforms/newspapers/[node:title]';
+  $export['pathauto_node_microforms_newspapers_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_newspaper_cities_pattern';
+  $strongarm->value = 'collections/microforms/newspapers/cities/[term:name]';
+  $export['pathauto_taxonomy_term_newspaper_cities_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_newspaper_countries_pattern';
+  $strongarm->value = 'collections/microforms/newspapers/countries/[term:name]';
+  $export['pathauto_taxonomy_term_newspaper_countries_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_newspaper_us_states_pattern';
+  $strongarm->value = 'collections/microforms/newspapers/states/[term:name]';
+  $export['pathauto_taxonomy_term_newspaper_us_states_pattern'] = $strongarm;
+
   return $export;
 }

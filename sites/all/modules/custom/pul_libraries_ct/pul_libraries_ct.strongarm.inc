@@ -14,8 +14,15 @@ function pul_libraries_ct_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_libraries_pattern';
-  $strongarm->value = 'libraries/[node:title]';
+  $strongarm->value = '[node:workbench-access-sections]';
   $export['pathauto_node_libraries_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_amenities_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_amenities_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

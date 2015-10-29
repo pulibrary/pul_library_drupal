@@ -10,7 +10,7 @@
 function pul_alerts_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_emergency_alert_blurb'
+  // Exported field_base: 'field_emergency_alert_blurb'.
   $field_bases['field_emergency_alert_blurb'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -29,7 +29,7 @@ function pul_alerts_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_emergency_alert_dates'
+  // Exported field_base: 'field_emergency_alert_dates'.
   $field_bases['field_emergency_alert_dates'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -59,7 +59,7 @@ function pul_alerts_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_emergency_alert_level'
+  // Exported field_base: 'field_emergency_alert_level'.
   $field_bases['field_emergency_alert_level'] = array(
     'active' => 1,
     'cardinality' => 1,

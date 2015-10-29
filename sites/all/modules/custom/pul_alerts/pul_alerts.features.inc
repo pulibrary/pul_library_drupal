@@ -28,7 +28,7 @@ function pul_alerts_node_info() {
     'homepage_alert' => array(
       'name' => t('Alert'),
       'base' => 'node_content',
-      'description' => t('Emergency Alert messages to be posted on library homepage. '),
+      'description' => t('Emergency alert messages to be posted on the main or branch library landing pages. '),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

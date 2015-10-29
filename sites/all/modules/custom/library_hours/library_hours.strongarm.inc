@@ -21,7 +21,7 @@ function library_hours_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_library_hours';
-  $strongarm->value = '[node:field-hrs-lib-calendar:name] - [node:field-hours-library-status] - [node:field-pul-hours-term] - [node:field-pul-hours-label] - Starts: [node:field-open-hours:0:value:custom:M-d-Y]';
+  $strongarm->value = '[node:field-hrs-lib-calendar:name] - [node:field-pul-hours-term] - [node:field-hours-library-status] - [node:field-pul-hours-label]';
   $export['auto_entitylabel_pattern_node_library_hours'] = $strongarm;
 
   $strongarm = new stdClass();

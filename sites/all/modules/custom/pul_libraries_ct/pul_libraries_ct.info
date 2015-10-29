@@ -85,6 +85,7 @@ features[services_endpoint][] = voyager_locations
 features[taxonomy][] = amenities
 features[taxonomy][] = tags
 features[variable][] = pathauto_node_libraries_pattern
+features[variable][] = pathauto_taxonomy_term_amenities_pattern
 features[variable][] = pathauto_taxonomy_term_tags_pattern
 features[views_view][] = libraries
 features[views_view][] = libraries_and_collections_combined

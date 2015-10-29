@@ -17,7 +17,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 31;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Marquand Art Library Rare Books Highlights Page',
     'no_blocks' => 1,
@@ -51,7 +51,8 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/rare-book-highlights',
+            'paths' => 'libraries/marquand/rare-book-highlights
+marquand/rare-book-highlights',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -390,7 +391,8 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/news',
+            'paths' => 'libraries/marquand/news
+news/marquand',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -722,7 +724,8 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/marquand',
+            'paths' => 'libraries/marquand
+marquand',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -1125,7 +1128,8 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/*',
+            'paths' => 'libraries/marquand/*
+marquand/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -1134,7 +1138,8 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/rare-book-highlights',
+            'paths' => 'libraries/marquand/rare-book-highlights
+marquand/rare-book-highlights',
           ),
           'context' => 'empty',
           'not' => TRUE,
@@ -1219,6 +1224,29 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
     $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
     $pane = new stdClass();
+    $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'calendar_details-panel_pane_4';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'tid' => '3706',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
+    $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+    $pane = new stdClass();
     $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane->panel = 'first';
     $pane->type = 'views_panes';
@@ -1239,16 +1267,16 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-    $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-93cbb09e-0161-4268-9bd0-1505bd76e385';
+    $pane->pid = 'new-3e8e0a4e-91ed-4888-9193-555fa2ad2635';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_1';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -1256,13 +1284,16 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert--message',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '93cbb09e-0161-4268-9bd0-1505bd76e385';
-    $display->content['new-93cbb09e-0161-4268-9bd0-1505bd76e385'] = $pane;
-    $display->panels['middle'][0] = 'new-93cbb09e-0161-4268-9bd0-1505bd76e385';
+    $pane->uuid = '3e8e0a4e-91ed-4888-9193-555fa2ad2635';
+    $display->content['new-3e8e0a4e-91ed-4888-9193-555fa2ad2635'] = $pane;
+    $display->panels['middle'][0] = 'new-3e8e0a4e-91ed-4888-9193-555fa2ad2635';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -1312,6 +1343,25 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
     $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
+    $pane->pid = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_8';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
+    $display->content['new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56'] = $pane;
+    $display->panels['middle'][3] = 'new-ef002f65-9dd4-4cb0-9655-d9c7e4f3bb56';
+    $pane = new stdClass();
     $pane->pid = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -1337,11 +1387,11 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'ef1d512f-52f8-4841-9c33-a5a961bc60ed';
     $display->content['new-ef1d512f-52f8-4841-9c33-a5a961bc60ed'] = $pane;
-    $display->panels['middle'][3] = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
+    $display->panels['middle'][4] = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';

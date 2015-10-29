@@ -10,12 +10,12 @@
 function pul_libraries_ct_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-libraries-body'
+  // Exported field_instance: 'node-libraries-body'.
   $field_instances['node-libraries-body'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Displayed as the main "blurb" on the library landing page.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -71,6 +71,11 @@ function pul_libraries_ct_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -82,11 +87,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_address_1'
+  // Exported field_instance: 'node-libraries-field_address_1'.
   $field_instances['node-libraries-field_address_1'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -157,7 +163,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_address_2'
+  // Exported field_instance: 'node-libraries-field_address_2'.
   $field_instances['node-libraries-field_address_2'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -228,7 +234,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_amenities'
+  // Exported field_instance: 'node-libraries-field_amenities'.
   $field_instances['node-libraries-field_amenities'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -291,12 +297,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_branch_external_links'
+  // Exported field_instance: 'node-libraries-field_branch_external_links'.
   $field_instances['node-libraries-field_branch_external_links'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use to link to library websites and other resources that are not Library databases or internal PUL content. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -354,6 +360,11 @@ function pul_libraries_ct_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'rel_remove' => 'default',
       'title' => 'required',
       'title_label_use_field_label' => 0,
@@ -373,11 +384,11 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_branch_featured_resources'
+  // Exported field_instance: 'node-libraries-field_branch_featured_resources'.
   $field_instances['node-libraries-field_branch_featured_resources'] = array(
     'bundle' => 'libraries',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Add links to specific library databases. If the database you want isn\'t listed contact e-support to have it added. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -434,6 +445,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 1,
+          'allow_new' => 1,
           'delete_references' => 0,
           'label_plural' => 'nodes',
           'label_singular' => 'node',
@@ -447,11 +459,11 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_branch_quick_link'
+  // Exported field_instance: 'node-libraries-field_branch_quick_link'.
   $field_instances['node-libraries-field_branch_quick_link'] = array(
     'bundle' => 'libraries',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Main Catalog) before creating a new one.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -508,6 +520,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 1,
+          'allow_new' => 1,
           'delete_references' => 0,
           'label_plural' => 'nodes',
           'label_singular' => 'node',
@@ -521,7 +534,7 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_branch_spotlight_item'
+  // Exported field_instance: 'node-libraries-field_branch_spotlight_item'.
   $field_instances['node-libraries-field_branch_spotlight_item'] = array(
     'bundle' => 'libraries',
     'deleted' => 0,
@@ -595,12 +608,12 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_building'
+  // Exported field_instance: 'node-libraries-field_building'.
   $field_instances['node-libraries-field_building'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Experimental Feature. Not yet in use. Contact systems office with question. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -663,9 +676,10 @@ function pul_libraries_ct_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 27,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_city'
+  // Exported field_instance: 'node-libraries-field_city'.
   $field_instances['node-libraries-field_city'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -736,7 +750,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_e_mail_address'
+  // Exported field_instance: 'node-libraries-field_e_mail_address'.
   $field_instances['node-libraries-field_e_mail_address'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -802,11 +816,11 @@ function pul_libraries_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_fax'
+  // Exported field_instance: 'node-libraries-field_fax'.
   $field_instances['node-libraries-field_fax'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -877,7 +891,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_full_library_name'
+  // Exported field_instance: 'node-libraries-field_full_library_name'.
   $field_instances['node-libraries-field_full_library_name'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -944,11 +958,11 @@ function pul_libraries_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_hours_calendar'
+  // Exported field_instance: 'node-libraries-field_hours_calendar'.
   $field_instances['node-libraries-field_hours_calendar'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -1019,11 +1033,11 @@ function pul_libraries_ct_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_lib_hours_code'
+  // Exported field_instance: 'node-libraries-field_lib_hours_code'.
   $field_instances['node-libraries-field_lib_hours_code'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -1090,16 +1104,16 @@ function pul_libraries_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_lib_main_menu_link'
+  // Exported field_instance: 'node-libraries-field_lib_main_menu_link'.
   $field_instances['node-libraries-field_lib_main_menu_link'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Deprecated. Do not use any longer. Will be removed.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1151,6 +1165,11 @@ function pul_libraries_ct_field_default_field_instances() {
     'label' => 'Main Menu Library Link',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1163,14 +1182,15 @@ function pul_libraries_ct_field_default_field_instances() {
       'type' => 'text_textfield',
       'weight' => 9,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_library_homepage'
+  // Exported field_instance: 'node-libraries-field_library_homepage'.
   $field_instances['node-libraries-field_library_homepage'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Deprecated. Do not use any longer.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1225,6 +1245,7 @@ function pul_libraries_ct_field_default_field_instances() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
@@ -1234,9 +1255,14 @@ function pul_libraries_ct_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'rel_remove' => 'default',
       'title' => 'optional',
-      'title_label_use_field_label' => FALSE,
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1250,9 +1276,10 @@ function pul_libraries_ct_field_default_field_instances() {
       'type' => 'link_field',
       'weight' => 6,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_library_image'
+  // Exported field_instance: 'node-libraries-field_library_image'.
   $field_instances['node-libraries-field_library_image'] = array(
     'bundle' => 'libraries',
     'deleted' => 0,
@@ -1360,7 +1387,7 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_libs_cols_main_menu'
+  // Exported field_instance: 'node-libraries-field_libs_cols_main_menu'.
   $field_instances['node-libraries-field_libs_cols_main_menu'] = array(
     'bundle' => 'libraries',
     'default_value' => array(
@@ -1369,7 +1396,7 @@ function pul_libraries_ct_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Deprecated. Do not use any longer. Will be removed. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1432,14 +1459,15 @@ function pul_libraries_ct_field_default_field_instances() {
       'type' => 'options_onoff',
       'weight' => 8,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_long_description'
+  // Exported field_instance: 'node-libraries-field_long_description'.
   $field_instances['node-libraries-field_long_description'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Displayed on the https://library.princeton.edu/libraries index page. ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1491,6 +1519,11 @@ function pul_libraries_ct_field_default_field_instances() {
     'label' => 'Long Description',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -1501,11 +1534,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-libraries-field_phone'
+  // Exported field_instance: 'node-libraries-field_phone'.
   $field_instances['node-libraries-field_phone'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -1576,7 +1610,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_state'
+  // Exported field_instance: 'node-libraries-field_state'.
   $field_instances['node-libraries-field_state'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -1647,7 +1681,7 @@ function pul_libraries_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_tags'
+  // Exported field_instance: 'node-libraries-field_tags'.
   $field_instances['node-libraries-field_tags'] = array(
     'bundle' => 'libraries',
     'default_value' => NULL,
@@ -1714,11 +1748,11 @@ function pul_libraries_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-libraries-field_zip'
+  // Exported field_instance: 'node-libraries-field_zip'.
   $field_instances['node-libraries-field_zip'] = array(
     'bundle' => 'libraries',
     'default_value' => array(
@@ -1795,6 +1829,7 @@ function pul_libraries_ct_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add links to specific library databases. If the database you want isn\'t listed contact e-support to have it added. ');
   t('Add to Libraries & Collections Dropdown Menu');
   t('Address 1');
   t('Address 2');
@@ -1803,8 +1838,14 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Branch Spotlight');
   t('Building');
   t('City');
+  t('Deprecated. Do not use any longer.');
+  t('Deprecated. Do not use any longer. Will be removed.');
+  t('Deprecated. Do not use any longer. Will be removed. ');
+  t('Displayed as the main "blurb" on the library landing page.');
+  t('Displayed on the https://library.princeton.edu/libraries index page. ');
   t('E-Mail Address');
   t('Equipment / Amenities');
+  t('Experimental Feature. Not yet in use. Contact systems office with question. ');
   t('External Links');
   t('Fax');
   t('Featured Resources');
@@ -1816,8 +1857,10 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Long Description');
   t('Main Menu Library Link');
   t('Phone');
+  t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Main Catalog) before creating a new one.');
   t('State');
   t('Tags');
+  t('Use to link to library websites and other resources that are not Library databases or internal PUL content. ');
   t('Zip');
 
   return $field_instances;
