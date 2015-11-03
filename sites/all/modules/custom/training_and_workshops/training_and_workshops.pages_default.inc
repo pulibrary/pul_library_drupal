@@ -67,6 +67,8 @@ function training_and_workshops_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -148,6 +150,7 @@ function training_and_workshops_default_page_manager_pages() {
       'body' => '<p>The workshops require registration. &nbsp;Please login below.</p>',
       'format' => 'full_html',
       'substitute' => 1,
+      'name' => 'pul_login_block',
     );
     $pane->cache = array();
     $pane->style = array(

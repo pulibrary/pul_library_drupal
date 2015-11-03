@@ -10,7 +10,8 @@
 function training_and_workshops_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-zotero_workshop_registration-field_zotero_reg_comments'
+  // Exported field_instance:
+  // 'entityform-zotero_workshop_registration-field_zotero_reg_comments'.
   $field_instances['entityform-zotero_workshop_registration-field_zotero_reg_comments'] = array(
     'bundle' => 'zotero_workshop_registration',
     'default_value' => NULL,
@@ -52,7 +53,8 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-zotero_workshop_registration-field_zotero_reg_e_mail'
+  // Exported field_instance:
+  // 'entityform-zotero_workshop_registration-field_zotero_reg_e_mail'.
   $field_instances['entityform-zotero_workshop_registration-field_zotero_reg_e_mail'] = array(
     'bundle' => 'zotero_workshop_registration',
     'default_value' => NULL,
@@ -93,7 +95,8 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-zotero_workshop_registration-field_zotero_reg_name'
+  // Exported field_instance:
+  // 'entityform-zotero_workshop_registration-field_zotero_reg_name'.
   $field_instances['entityform-zotero_workshop_registration-field_zotero_reg_name'] = array(
     'bundle' => 'zotero_workshop_registration',
     'default_value' => NULL,
@@ -135,7 +138,8 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-zotero_workshop_registration-field_zotero_reg_session'
+  // Exported field_instance:
+  // 'entityform-zotero_workshop_registration-field_zotero_reg_session'.
   $field_instances['entityform-zotero_workshop_registration-field_zotero_reg_session'] = array(
     'bundle' => 'zotero_workshop_registration',
     'default_value' => NULL,
@@ -179,7 +183,7 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_series-body'
+  // Exported field_instance: 'node-training_series-body'.
   $field_instances['node-training_series-body'] = array(
     'bundle' => 'training_series',
     'default_value' => NULL,
@@ -243,7 +247,7 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_series-field_trainingseries_form'
+  // Exported field_instance: 'node-training_series-field_trainingseries_form'.
   $field_instances['node-training_series-field_trainingseries_form'] = array(
     'bundle' => 'training_series',
     'default_value' => NULL,
@@ -264,12 +268,9 @@ function training_and_workshops_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -301,7 +302,7 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_series-field_trainseries_subtitle'
+  // Exported field_instance: 'node-training_series-field_trainseries_subtitle'.
   $field_instances['node-training_series-field_trainseries_subtitle'] = array(
     'bundle' => 'training_series',
     'default_value' => NULL,
@@ -360,7 +361,72 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training_session-field_training_dtime'
+  // Exported field_instance:
+  // 'node-training_session-field_training_description'.
+  $field_instances['node-training_session-field_training_description'] = array(
+    'bundle' => 'training_session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_training_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 4,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-training_session-field_training_dtime'.
   $field_instances['node-training_session-field_training_dtime'] = array(
     'bundle' => 'training_session',
     'deleted' => 0,
@@ -387,6 +453,7 @@ function training_and_workshops_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -407,6 +474,7 @@ function training_and_workshops_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -439,11 +507,11 @@ function training_and_workshops_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-training_session-field_training_instructor'
+  // Exported field_instance: 'node-training_session-field_training_instructor'.
   $field_instances['node-training_session-field_training_instructor'] = array(
     'bundle' => 'training_session',
     'default_value' => NULL,
@@ -466,9 +534,10 @@ function training_and_workshops_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 1,
+          'view_mode' => 'staff_brief_listing',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 3,
       ),
       'overridden_title_in_lists' => array(
@@ -501,11 +570,12 @@ function training_and_workshops_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-training_session-field_training_registration'
+  // Exported field_instance:
+  // 'node-training_session-field_training_registration'.
   $field_instances['node-training_session-field_training_registration'] = array(
     'bundle' => 'training_session',
     'default_value' => array(
@@ -563,11 +633,11 @@ function training_and_workshops_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-training_session-field_training_room'
+  // Exported field_instance: 'node-training_session-field_training_room'.
   $field_instances['node-training_session-field_training_room'] = array(
     'bundle' => 'training_session',
     'default_value' => NULL,
@@ -621,11 +691,11 @@ function training_and_workshops_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-training_session-field_training_series'
+  // Exported field_instance: 'node-training_session-field_training_series'.
   $field_instances['node-training_session-field_training_series'] = array(
     'bundle' => 'training_session',
     'default_value' => NULL,
@@ -683,6 +753,71 @@ function training_and_workshops_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-training_session-field_training_session_title'.
+  $field_instances['node-training_session-field_training_session_title'] = array(
+    'bundle' => 'training_session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_training_session_title',
+    'label' => 'Session Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Comments');
@@ -696,6 +831,7 @@ function training_and_workshops_field_default_field_instances() {
   t('Room');
   t('Select the training series created of which this is a session.');
   t('Session');
+  t('Session Title');
   t('Subtitle');
   t('Training Series');
   t('Use a Princeton Netid');

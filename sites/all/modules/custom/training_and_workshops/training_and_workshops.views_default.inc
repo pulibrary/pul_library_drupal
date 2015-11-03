@@ -171,6 +171,12 @@ function training_and_workshops_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Upcoming Sessions Dates', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Upcoming  Sessions with Dates only';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date and Time */
   $handler->display->display_options['fields']['field_training_dtime']['id'] = 'field_training_dtime';
@@ -195,6 +201,16 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Session Title */
+  $handler->display->display_options['fields']['field_training_session_title']['id'] = 'field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['table'] = 'field_data_field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['field'] = 'field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['hide_empty'] = TRUE;
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_training_description']['id'] = 'field_training_description';
+  $handler->display->display_options['fields']['field_training_description']['table'] = 'field_data_field_training_description';
+  $handler->display->display_options['fields']['field_training_description']['field'] = 'field_training_description';
+  $handler->display->display_options['fields']['field_training_description']['hide_empty'] = TRUE;
   /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
@@ -204,6 +220,36 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['view']['view'] = 'training_sessions';
   $handler->display->display_options['fields']['view']['display'] = 'block_1';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Session Info';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training_session' => 'training_session',
+  );
+  /* Filter criterion: Content: Date and Time - end date (field_training_dtime:value2) */
+  $handler->display->display_options['filters']['field_training_dtime_value2']['id'] = 'field_training_dtime_value2';
+  $handler->display->display_options['filters']['field_training_dtime_value2']['table'] = 'field_data_field_training_dtime';
+  $handler->display->display_options['filters']['field_training_dtime_value2']['field'] = 'field_training_dtime_value2';
+  $handler->display->display_options['filters']['field_training_dtime_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_training_dtime_value2']['granularity'] = 'hour';
+  $handler->display->display_options['filters']['field_training_dtime_value2']['default_date'] = 'now';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'user',
@@ -287,6 +333,13 @@ function training_and_workshops_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
+  /* Field: Content: Session Title */
+  $handler->display->display_options['fields']['field_training_session_title']['id'] = 'field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['table'] = 'field_data_field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['field'] = 'field_training_session_title';
+  $handler->display->display_options['fields']['field_training_session_title']['label'] = '';
+  $handler->display->display_options['fields']['field_training_session_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_training_session_title']['hide_empty'] = TRUE;
 
   /* Display: Upcoming Sessions Description */
   $handler = $view->new_display('panel_pane', 'Upcoming Sessions Description', 'panel_pane_2');
