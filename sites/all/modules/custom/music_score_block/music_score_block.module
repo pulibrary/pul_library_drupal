@@ -2,9 +2,9 @@
 
 
 function music_score_block_form($form, &$form_state) {
-    
+
   $form = array();
-  $path = $_GET['q']; 
+  $path = $_GET['q'];
 
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -23,10 +23,10 @@ function music_score_block_form($form, &$form_state) {
      '#type' => 'hidden',
      '#value' => t("library-core"),
    );
-    $form['#attached']['js'][] = drupal_get_path('module', 'music_score_block') .'/music_score_block.js'; 
+    $form['#attached']['js'][] = drupal_get_path('module', 'music_score_block') .'/music_score_block.js';
     $hint_settings = array('music_score_search_hint' => variable_get('music_score_search_hint'),
                            'music_score_search_error' => variable_get('music_score_search_error')
-                           );   
+                           );
     $form['#attached']['js'][] = array(
       'data' => array('music_score_block' => $hint_settings),
       'type' => 'setting',
@@ -34,7 +34,7 @@ function music_score_block_form($form, &$form_state) {
    $form['#action'] = url('/utils/search/mscores', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a> <a title="Go to the Articles+ Advanced Search Page" href="http://princeton.summon.serialssolutions.com/advanced#!/advanced">Articles+</a></div>';
    return $form;
 
 }
@@ -48,7 +48,7 @@ function music_score_block_form_validate($form, &$form_state) {
 
 
 function music_score_block_contents() {
-  return drupal_get_form('music_score_block_form'); // must define a function 
+  return drupal_get_form('music_score_block_form'); // must define a function
 }
 
 function music_score_block_get_current_filter($path) {
@@ -74,7 +74,7 @@ function music_score_search_results_content() {
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/utils/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -95,27 +95,27 @@ function music_score_block_menu() {
 */
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function music_score_block_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The Books+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function music_score_block_block_info() {
-  
+
   $blocks['music_score_search'] = array(
       // info: The name of the block.
       'info' => t('Music Score Search'),
@@ -137,7 +137,7 @@ function music_score_block_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function music_score_block_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'music_score_search') { //in this case the delta is the name of block
 
@@ -162,7 +162,7 @@ function music_score_block_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function music_score_block_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -172,7 +172,7 @@ function music_score_block_block_save($delta = '', $edit = array()) {
     variable_set('music_score_search_hint', $edit['music_score_search_hint']);
     variable_set('music_score_search_error', $edit['music_score_search_error']);
   }
-  
+
   return;
 }
 
@@ -183,16 +183,16 @@ function music_score_block_block_save($delta = '', $edit = array()) {
  */
 function music_score_block_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
-  
+
   if ($delta == 'music_score_search') {
     $block['subject'] = t('Music Score Search');
     $block['content'] = music_score_block_contents($delta);
- 
+
   } elseif ($delta == 'music_score_search_results') {
     $block['subject'] = t('Music Score Search Results');
     $block['content'] = music_score_search_results_content($delta);
     drupal_add_js(array('music_score_block' => array('request' => 'query')), 'setting');
-    drupal_add_js(drupal_get_path('module', 'music_score_block') .'/music_score_search_results.js');  
-  } 
+    drupal_add_js(drupal_get_path('module', 'music_score_block') .'/music_score_search_results.js');
+  }
   return $block;
 }
