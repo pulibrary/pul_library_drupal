@@ -90,7 +90,7 @@ function pul_libraries_ct_field_default_field_bases() {
   // Exported field_base: 'field_branch_external_links'.
   $field_bases['field_branch_external_links'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_branch_external_links',
@@ -122,7 +122,7 @@ function pul_libraries_ct_field_default_field_bases() {
   // Exported field_base: 'field_branch_featured_resources'.
   $field_bases['field_branch_featured_resources'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_branch_featured_resources',
@@ -160,7 +160,7 @@ function pul_libraries_ct_field_default_field_bases() {
   // Exported field_base: 'field_branch_quick_link'.
   $field_bases['field_branch_quick_link'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_branch_quick_link',

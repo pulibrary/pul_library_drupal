@@ -10,7 +10,29 @@
 function training_and_workshops_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_training_dtime'
+  // Exported field_base: 'field_training_description'.
+  $field_bases['field_training_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_training_description',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_training_dtime'.
   $field_bases['field_training_dtime'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -43,7 +65,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_training_instructor'
+  // Exported field_base: 'field_training_instructor'.
   $field_bases['field_training_instructor'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -81,7 +103,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_training_registration'
+  // Exported field_base: 'field_training_registration'.
   $field_bases['field_training_registration'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -109,7 +131,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_training_room'
+  // Exported field_base: 'field_training_room'.
   $field_bases['field_training_room'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -149,7 +171,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_training_series'
+  // Exported field_base: 'field_training_series'.
   $field_bases['field_training_series'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -189,7 +211,31 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_trainingseries_form'
+  // Exported field_base: 'field_training_session_title'.
+  $field_bases['field_training_session_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_training_session_title',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_trainingseries_form'.
   $field_bases['field_trainingseries_form'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -225,7 +271,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_trainseries_subtitle'
+  // Exported field_base: 'field_trainseries_subtitle'.
   $field_bases['field_trainseries_subtitle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -249,7 +295,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_zotero_reg_comments'
+  // Exported field_base: 'field_zotero_reg_comments'.
   $field_bases['field_zotero_reg_comments'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -271,7 +317,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_zotero_reg_e_mail'
+  // Exported field_base: 'field_zotero_reg_e_mail'.
   $field_bases['field_zotero_reg_e_mail'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -289,7 +335,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_zotero_reg_name'
+  // Exported field_base: 'field_zotero_reg_name'.
   $field_bases['field_zotero_reg_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -313,7 +359,7 @@ function training_and_workshops_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_zotero_reg_session'
+  // Exported field_base: 'field_zotero_reg_session'.
   $field_bases['field_zotero_reg_session'] = array(
     'active' => 1,
     'cardinality' => 1,
