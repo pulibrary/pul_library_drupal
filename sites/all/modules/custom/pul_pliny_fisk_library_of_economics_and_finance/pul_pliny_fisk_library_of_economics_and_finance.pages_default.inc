@@ -412,6 +412,7 @@ econlib/resources/*',
     $pane->configuration = array(
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -435,6 +436,9 @@ econlib/resources/*',
       'arguments' => array(
         'tid' => '5374',
       ),
+      'override_title' => 1,
+      'override_title_text' => 'Guides',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -504,6 +508,9 @@ econlib/resources/*',
       'arguments' => array(
         'tid' => '5372',
       ),
+      'override_title' => 1,
+      'override_title_text' => 'Articles and Books',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -527,6 +534,9 @@ econlib/resources/*',
       'arguments' => array(
         'tid' => '5373',
       ),
+      'override_title' => 1,
+      'override_title_text' => 'Data',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
