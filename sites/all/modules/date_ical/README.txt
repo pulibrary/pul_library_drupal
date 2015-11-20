@@ -16,10 +16,10 @@ Date iCal has several required dependencies, and an optional one:
 - The Feeds module is optional. It's needed only if you you wish to import iCal
   feeds from other sites.
 
-To install the iCalcreator library, download the project's v2.20.2 zip file:
-https://github.com/iCalcreator/iCalcreator/archive/e3dbec2cb3bb91a8bde989e467567ae8831a4026.zip
-Extract it, and copy iCalcreator.class.php to a folder in your Drupal site
-named sites/all/libraries/iCalcreator (you'll need to create that folder).
+To install the iCalcreator library, download the latest release from ths url:
+https://github.com/iCalcreator/iCalcreator/archive/master.zip
+Extract it, and copy the contents to a folder in your Drupal site named
+sites/all/libraries/iCalcreator (you'll need to create that folder).
 
 Or, if you have drush, you can install iCalcreator by running this command from
 your site's root directory:
@@ -67,7 +67,7 @@ HOW TO EXPORT AN ICAL FEED USING THE iCal Entities PLUGIN
     as the event date for the iCal feed. Make sure that you choose a field that
     is a part of every entity that your View displays. Otherwise, the entities
     which don't have that field will be left out of the iCal feed.
-9.  You may optionally choose a field that will be used to populate the 
+9.  You may optionally choose a field that will be used to populate the
     Location property of events in your iCal feed. This field can be a text
     field, a Node Reference field, an Addressfield, or a Location field.
 10. Give the Feed a path like 'calendar/%/export.ics', including a '/%/' for
@@ -243,6 +243,5 @@ The libraries/windowsZones.json file, which Date iCal uses to map Windows-style
 timezone names to real timezone IDs, is from Version24 of the Unicode CLDR:
 http://cldr.unicode.org/.
 
-The author of iCalcreator made backwards incompatible changes to the library
-in the v2.22 release. Thus Date iCal does not currently support any version of
-iCalcreator after v2.20.2.
+For some time, Date iCal did not support the 2.22+ of the iCalcreator library.
+This has been corrected, and any version should now function normally.

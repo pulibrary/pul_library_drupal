@@ -9,7 +9,7 @@
  * The version number of the current release. This is inserted into the PRODID
  * value of the iCal feeds created by Date iCal, for debugging purposes.
  */
-define('DATE_ICAL_VERSION', '3.5');
+define('DATE_ICAL_VERSION', '3.6');
 
 /**
  * Exception class for generic exceptions thrown by this module.
@@ -121,10 +121,10 @@ function date_ical_preprocess_node(&$variables) {
     $variables['page'] = TRUE;
     $variables['title_prefix'] = '';
     $variables['title_suffix'] = '';
-    
+
     // We don't want to see the author information in our feed.
     $variables['display_submitted'] = FALSE;
-    
+
     // Comments and links don't belong in an iCal feed.
     if (isset($variables['content']['comments'])) {
       unset($variables['content']['comments']);
@@ -165,16 +165,21 @@ function date_ical_libraries_info() {
     'name' => 'iCalcreator',
     'vendor url' => 'http://github.com/iCalcreator/iCalcreator',
     'download url' => 'http://github.com/iCalcreator/iCalcreator',
-    'version arguments' => array(
-      'file' => 'iCalcreator.class.php',
-      'pattern' => "/define.*?ICALCREATOR_VERSION.*?([\d\.]+)/",
-      'lines' => 100,
-    ),
-    'files' => array(
-      'php' => array('iCalcreator.class.php'),
+    'version callback' => '_date_ical_detect_icalcreator_version',
+    'versions' => array(
+      '2.20' => array(
+        'files' => array(
+          'php' => array('iCalcreator.class.php'),
+        ),
+      ),
+      '2.22+' => array(
+        'files' => array(
+          'php' => array('iCalcreator.php'),
+        ),
+      ),
     ),
   );
-  
+
   return $libraries;
 }
 
@@ -231,14 +236,14 @@ function date_ical_sanitize_text($text = '') {
   // HTML tags may get converted to &lt; and such by the View code, so we need
   // to convert them back to HTML so we can remove them with strip_tags().
   $text = decode_entities($text);
-  
+
   // Convert <p> tags to double newlines.
   $text = trim(preg_replace("/<p.*?>/i", "\n\n", $text));
   // Separate heading tags from the text around them in both directions.
   $text = trim(preg_replace("/<\\?h\d.*?>/i", "\n\n", $text));
   // Add a newline for each <div>.
   $text = trim(preg_replace("/<div.*?>/i", "\n", $text));
-  
+
   // Strip the remaining HTML.
   $text = strip_tags($text);
   // Remove newlines added at the beginning.
@@ -278,7 +283,7 @@ function date_ical_feeds_set_rrule($source, $entity, $target, $repeat_rule) {
     array('RRULE', 'RDATE', 'EXRULE', 'EXDATE'),
     explode('|', $repeat_rule)
   );
-  
+
   module_load_include('inc', 'date_ical', 'date_ical.utils');
   // This "loop" is really just to make sure we get the right array keys. It
   // souldn't ever execute more than once.
@@ -296,7 +301,7 @@ function date_ical_feeds_set_rrule($source, $entity, $target, $repeat_rule) {
 function date_ical_get_location_fields($base = 'node', $reset = FALSE) {
   static $fields = array();
   $empty = array('name' => array(), 'alias' => array());
-  
+
   if (empty($fields[$base]) || $reset) {
     $cid = 'date_ical_location_fields_' . $base;
     if (!$reset && $cached = cache_get($cid, 'cache_views')) {
@@ -326,10 +331,10 @@ function _date_ical_get_location_fields($base = 'node') {
   if (empty($base)) {
     $base = 'node';
   }
-  
+
   $cid = 'date_ical_location_fields_' . $base;
   cache_clear_all($cid, 'cache_views');
-  
+
   // Iterate over all the fields that Views knows about.
   $all_fields = date_views_views_fetch_fields($base, 'field');
   $fields = array();
@@ -338,7 +343,7 @@ function _date_ical_get_location_fields($base = 'node') {
     $tmp = explode('.', $name);
     $field_name = $tmp[1];
     $table_name = $tmp[0];
-    
+
     // Skip unsupported field types and fields that weren't defined through
     // the Field module.
     $info = field_info_field($field_name);
@@ -353,7 +358,7 @@ function _date_ical_get_location_fields($base = 'node') {
     if (!$info || !in_array($info['type'], $supported_location_fields)) {
       continue;
     }
-    
+
     // Build an array of the field info that we'll need.
     $alias = str_replace('.', '_', $alias);
     $fields['name'][$name] = array(
@@ -362,14 +367,14 @@ function _date_ical_get_location_fields($base = 'node') {
       'field_name' => $field_name,
       'type' => $info['type'],
     );
-    
+
     // These are here only to make this $field array conform to the same format
     // as the one returned by _date_views_fields(). They're probably not needed,
     // but I thought that consistency would be a good idea.
     $fields['name'][$name]['real_field_name'] = $field_name;
     $fields['alias'][$alias] = $fields['name'][$name];
   }
-  
+
   cache_set($cid, $fields, 'cache_views');
   return $fields;
 }
@@ -491,4 +496,17 @@ function _date_ical_convert_rrule_for_icalcreator($rrule) {
     $new_rrule[$key] = $value;
   }
   return $new_rrule;
+}
+
+function _date_ical_detect_icalcreator_version() {
+  $path = libraries_get_path('iCalcreator');
+  if (file_exists(DRUPAL_ROOT . "/$path/iCalcreator.class.php")) {
+    return '2.20';
+  }
+  else if (file_exists(DRUPAL_ROOT . "/$path//iCalcreator.php")) {
+    return '2.22+';
+  }
+  else {
+    return FALSE;
+  }
 }
