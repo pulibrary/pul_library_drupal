@@ -55,27 +55,26 @@ function marquand_rare_books_vault_default_search_api_index() {
   $items['marquand_rare_books'] = entity_import('search_api_index', '{
     "name" : "Marquand Rare Books",
     "machine_name" : "marquand_rare_books",
-    "description" : "Index of Marquand Rare Books",
+    "description" : null,
     "server" : "search_api_library_staging",
     "item_type" : "node",
     "options" : {
+      "datasource" : { "bundles" : [ "marq_rare_book" ] },
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
         "field_rb_author_s" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_rb_author_s:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_rb_call_number_display" : { "type" : "text" },
-        "field_rb_call_number_s" : { "type" : "text", "boost" : "0.3" },
-        "field_rb_description_display" : { "type" : "text", "boost" : "0.3" },
+        "field_rb_call_number_s" : { "type" : "text" },
+        "field_rb_description_display" : { "type" : "text" },
         "field_rb_format" : { "type" : "string" },
-        "field_rb_location_code_s" : { "type" : "text", "boost" : "0.3" },
-        "field_rb_pub_created_display" : { "type" : "text", "boost" : "0.3" },
+        "field_rb_location_code_s" : { "type" : "text" },
+        "field_rb_pub_created_display" : { "type" : "text" },
         "field_rb_pub_date_start_sort" : { "type" : "integer" },
         "field_rb_subject_facet" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_rb_subject_facet:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_rb_title_display" : { "type" : "text" },
+        "field_rb_title_display" : { "type" : "text", "boost" : "5.0" },
         "field_rb_title_sort" : { "type" : "text" },
-        "field_rb_uniform_title_display" : { "type" : "text" },
+        "field_rb_uniform_title_display" : { "type" : "text", "boost" : "3.0" },
         "field_rb_voyager_id" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
@@ -98,35 +97,35 @@ function marquand_rare_books_vault_default_search_api_index() {
       },
       "processors" : {
         "search_api_case_ignore" : {
-          "status" : 1,
+          "status" : 0,
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
               "field_rb_call_number_display" : true,
               "field_rb_call_number_s" : true,
+              "field_rb_description_display" : true,
               "field_rb_location_code_s" : true,
               "field_rb_pub_created_display" : true,
-              "field_rb_uniform_title_display" : true,
               "field_rb_title_display" : true,
               "field_rb_title_sort" : true,
-              "field_rb_description_display" : true
+              "field_rb_uniform_title_display" : true
             }
           }
         },
         "search_api_html_filter" : {
-          "status" : 1,
+          "status" : 0,
           "weight" : "10",
           "settings" : {
             "fields" : {
               "title" : true,
               "field_rb_call_number_display" : true,
               "field_rb_call_number_s" : true,
+              "field_rb_description_display" : true,
               "field_rb_location_code_s" : true,
               "field_rb_pub_created_display" : true,
-              "field_rb_uniform_title_display" : true,
               "field_rb_title_display" : true,
               "field_rb_title_sort" : true,
-              "field_rb_description_display" : true
+              "field_rb_uniform_title_display" : true
             },
             "title" : 0,
             "alt" : 1,
@@ -134,19 +133,19 @@ function marquand_rare_books_vault_default_search_api_index() {
           }
         },
         "search_api_tokenizer" : {
-          "status" : 1,
+          "status" : 0,
           "weight" : "20",
           "settings" : {
             "fields" : {
               "title" : true,
               "field_rb_call_number_display" : true,
               "field_rb_call_number_s" : true,
+              "field_rb_description_display" : true,
               "field_rb_location_code_s" : true,
               "field_rb_pub_created_display" : true,
-              "field_rb_uniform_title_display" : true,
               "field_rb_title_display" : true,
               "field_rb_title_sort" : true,
-              "field_rb_description_display" : true
+              "field_rb_uniform_title_display" : true
             },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
@@ -160,12 +159,12 @@ function marquand_rare_books_vault_default_search_api_index() {
               "title" : true,
               "field_rb_call_number_display" : true,
               "field_rb_call_number_s" : true,
+              "field_rb_description_display" : true,
               "field_rb_location_code_s" : true,
               "field_rb_pub_created_display" : true,
-              "field_rb_uniform_title_display" : true,
               "field_rb_title_display" : true,
               "field_rb_title_sort" : true,
-              "field_rb_description_display" : true
+              "field_rb_uniform_title_display" : true
             },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
