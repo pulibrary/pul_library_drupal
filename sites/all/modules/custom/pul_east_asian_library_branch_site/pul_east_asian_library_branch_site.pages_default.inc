@@ -494,6 +494,36 @@ libraries/eastasianlib',
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-44f46d4c-944d-4947-b48f-308187acf0d8';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '44f46d4c-944d-4947-b48f-308187acf0d8';
+    $display->content['new-44f46d4c-944d-4947-b48f-308187acf0d8'] = $pane;
+    $display->panels['middle'][0] = 'new-44f46d4c-944d-4947-b48f-308187acf0d8';
+    $pane = new stdClass();
     $pane->pid = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -510,17 +540,17 @@ libraries/eastasianlib',
       'css_class' => 'alert--message',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e7415fb5-8394-4d2d-aa59-f2867dada3cd';
     $display->content['new-e7415fb5-8394-4d2d-aa59-f2867dada3cd'] = $pane;
-    $display->panels['middle'][0] = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
+    $display->panels['middle'][1] = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_long_description';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
@@ -539,11 +569,11 @@ libraries/eastasianlib',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
     $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][1] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $display->panels['middle'][2] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane = new stdClass();
     $pane->pid = 'new-b87d0c74-25b6-4684-a3e1-3db9c57942ef';
     $pane->panel = 'middle';
@@ -558,11 +588,11 @@ libraries/eastasianlib',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'b87d0c74-25b6-4684-a3e1-3db9c57942ef';
     $display->content['new-b87d0c74-25b6-4684-a3e1-3db9c57942ef'] = $pane;
-    $display->panels['middle'][2] = 'new-b87d0c74-25b6-4684-a3e1-3db9c57942ef';
+    $display->panels['middle'][3] = 'new-b87d0c74-25b6-4684-a3e1-3db9c57942ef';
     $pane = new stdClass();
     $pane->pid = 'new-0749a1b9-91a3-4e76-ab3b-3eccd33b28d7';
     $pane->panel = 'second';
@@ -695,39 +725,6 @@ libraries/eastasianlib',
     $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
     $display->panels['second'][3] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
     $pane = new stdClass();
-    $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
-    $pane->panel = 'second';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_amenities';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'taxonomy_term_reference_plain',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'target' => 'node',
-        'depth' => '0',
-        'hidden' => 1,
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Amenities',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
-    $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][4] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
-    $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
@@ -746,7 +743,7 @@ libraries/eastasianlib',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'East Asian Library',
+      'override_title_text' => 'The East Asian Library and the Gest Collection',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -770,7 +767,7 @@ libraries/eastasianlib',
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p><span>普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></p>',
+      'body' => '<h3 style="text-align: center;"><span>普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></h3>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -785,7 +782,7 @@ libraries/eastasianlib',
     $pane->uuid = 'e2913c81-2f96-4407-8214-057f8d857ca6';
     $display->content['new-e2913c81-2f96-4407-8214-057f8d857ca6'] = $pane;
     $display->panels['top'][1] = 'new-e2913c81-2f96-4407-8214-057f8d857ca6';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_f3966023-9c0c-425b-960f-8d3749bfeb2d'] = $handler;
