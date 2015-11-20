@@ -21,7 +21,7 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Branding',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_library_image',
     ),
@@ -48,7 +48,7 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Spotlight',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_branch_spotlight_item',
     ),
@@ -266,6 +266,34 @@ function pul_libraries_ct_field_group_info() {
     ),
   );
   $export['group_loc_det|node|libraries|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pul_dash_attachments|node|libraries|form';
+  $field_group->group_name = 'group_pul_dash_attachments';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'libraries';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Attachments',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_basic_page_images',
+      1 => 'field_basic_page_files',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-pul-dash-attachments field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_pul_dash_attachments|node|libraries|form'] = $field_group;
 
   return $export;
 }

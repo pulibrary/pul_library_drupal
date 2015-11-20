@@ -69,7 +69,8 @@ libraries/scilib
 libraries/music
 vdl
 stokes
-plasma-physics',
+plasma-physics
+eastasianlib',
           ),
           'context' => 'empty',
           'not' => FALSE,
