@@ -9,7 +9,7 @@
  * The version number of the current release. This is inserted into the PRODID
  * value of the iCal feeds created by Date iCal, for debugging purposes.
  */
-define('DATE_ICAL_VERSION', '3.6');
+define('DATE_ICAL_VERSION', '3.8');
 
 /**
  * Exception class for generic exceptions thrown by this module.
@@ -165,18 +165,13 @@ function date_ical_libraries_info() {
     'name' => 'iCalcreator',
     'vendor url' => 'http://github.com/iCalcreator/iCalcreator',
     'download url' => 'http://github.com/iCalcreator/iCalcreator',
-    'version callback' => '_date_ical_detect_icalcreator_version',
-    'versions' => array(
-      '2.20' => array(
-        'files' => array(
-          'php' => array('iCalcreator.class.php'),
-        ),
-      ),
-      '2.22+' => array(
-        'files' => array(
-          'php' => array('iCalcreator.php'),
-        ),
-      ),
+    'version arguments' => array(
+      'file' => 'iCalcreator.class.php',
+      'pattern' => "/define.*?ICALCREATOR_VERSION.*?([\d\.]+)/",
+      'lines' => 100,
+    ),
+    'files' => array(
+      'php' => array('iCalcreator.class.php'),
     ),
   );
 
@@ -496,17 +491,4 @@ function _date_ical_convert_rrule_for_icalcreator($rrule) {
     $new_rrule[$key] = $value;
   }
   return $new_rrule;
-}
-
-function _date_ical_detect_icalcreator_version() {
-  $path = libraries_get_path('iCalcreator');
-  if (file_exists(DRUPAL_ROOT . "/$path/iCalcreator.class.php")) {
-    return '2.20';
-  }
-  else if (file_exists(DRUPAL_ROOT . "/$path//iCalcreator.php")) {
-    return '2.22+';
-  }
-  else {
-    return FALSE;
-  }
 }

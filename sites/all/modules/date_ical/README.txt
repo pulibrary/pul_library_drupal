@@ -11,15 +11,15 @@ INSTALLATION
 Date iCal has several required dependencies, and an optional one:
 - The Views (version 3.5+), Entity API, Libraries API (version 2.0+), and Date
   modules are required.
-- The iCalcreator library is required.
+- The iCalcreator library v2.20.2 is required.
 - PHP 5.3 is required for the iCalcreator library to properly handle timezones.
 - The Feeds module is optional. It's needed only if you you wish to import iCal
   feeds from other sites.
 
-To install the iCalcreator library, download the latest release from ths url:
-https://github.com/iCalcreator/iCalcreator/archive/master.zip
-Extract it, and copy the contents to a folder in your Drupal site named
-sites/all/libraries/iCalcreator (you'll need to create that folder).
+To install the iCalcreator library, download the project's v2.20.2 zip file:
+https://github.com/iCalcreator/iCalcreator/archive/e3dbec2cb3bb91a8bde989e467567ae8831a4026.zip
+Extract it, and copy iCalcreator.class.php to a folder in your Drupal site
+named sites/all/libraries/iCalcreator (you'll need to create that folder).
 
 Or, if you have drush, you can install iCalcreator by running this command from
 your site's root directory:
@@ -100,7 +100,7 @@ HOW TO EXPORT AN ICAL FEED USING THE iCal Fields PLUGIN
 1-6.These steps are the same as above.
 7.  Add views fields for each piece of information that you want to populate
     your iCal feed with. A Date field is required, and fields that will act as
-    the Title and Description of the events are reccomended. You can also
+    the Title and Description of the events are recommended. You can also
     include a Location field.
 8.  Back in the FORMAT section, change the "Show" setting to 'iCal Fields'.
 9.  In the settings for iCal Fields, choose which views fields you want to use
@@ -126,14 +126,14 @@ IMPORTING AN ICAL FEED FROM ANOTHER SITE USING Feeds
 - Now, under Processor, click the "Settings" link. Most of the time, you'll
   want to use the "Update existing nodes (slower than replacing them)" setting.
   Then select the Content type of the nodes you'd like to create from iCal
-  events. You can leave the other settings as their defeaults, or change them
+  events. You can leave the other settings as their defaults, or change them
   as you need. Click Save.
 - Now click the "Mapping" link at the bottom of the left sidebar. This page is
   where you'll define how iCal event properties get mapped into your nodes'
   fields. Expand the "Legend" for a detailed description of each source and
   target field. Sources are the attributes available in iCal event objects,
   and Targets are the fields in your nodes.
-- Most of this setup is going to be dependant upon how your content type's
+- Most of this setup is going to be dependent upon how your content type's
   fields are configured, but there are some universal requirements:
   1) You MUST map the "UID" source to the "GUID" target. Then, after clicking
      "Add", click the gear-shaped button that appears in the new table row,
@@ -193,7 +193,7 @@ in their local timezone, so they don't miss the broadcast.
 
 If your Date field is already set to "Date's time zone", you won't be able to
 change it, because that setting uses a different table schema than the others.
-Since "Date's time zone" is very buggy, I'd strongly recomend deleting the
+Since "Date's time zone" is very buggy, I'd strongly recommend deleting the
 field and recreating it with a different setting. This will delete all the
 dates in existing event nodes which use this field.
 
@@ -243,5 +243,6 @@ The libraries/windowsZones.json file, which Date iCal uses to map Windows-style
 timezone names to real timezone IDs, is from Version24 of the Unicode CLDR:
 http://cldr.unicode.org/.
 
-For some time, Date iCal did not support the 2.22+ of the iCalcreator library.
-This has been corrected, and any version should now function normally.
+The author of iCalcreator made extenside backwards incompatible changes to the
+library in the v2.22 release. Thus Date iCal does not support any version of
+iCalcreator after v2.20.2.
