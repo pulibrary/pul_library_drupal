@@ -484,6 +484,8 @@ eastasianlib',
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -492,22 +494,23 @@ eastasianlib',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
+    $pane->pid = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
     $pane->panel = 'first';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_long_description';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
+      'label' => 'title',
       'formatter' => 'text_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -517,9 +520,9 @@ eastasianlib',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f29f2df1-f860-42a0-945f-f23e02827d43';
-    $display->content['new-f29f2df1-f860-42a0-945f-f23e02827d43'] = $pane;
-    $display->panels['first'][0] = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
+    $pane->uuid = '65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
+    $display->content['new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182'] = $pane;
+    $display->panels['first'][0] = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
     $pane = new stdClass();
     $pane->pid = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
     $pane->panel = 'first';
@@ -615,7 +618,7 @@ eastasianlib',
     $display->content['new-e036616e-7301-4c11-a8e0-fdd6017120bc'] = $pane;
     $display->panels['second'][2] = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-f29f2df1-f860-42a0-945f-f23e02827d43';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_24'] = $handler;
 

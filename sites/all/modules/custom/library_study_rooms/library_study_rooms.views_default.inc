@@ -126,6 +126,14 @@ function library_study_rooms_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_study_room_library']['field_api_classes'] = TRUE;
+  /* Field: User: Nick Name */
+  $handler->display->display_options['fields']['field_puluser_nick_name']['id'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'field_data_field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['relationship'] = 'field_study_room_staff_contact_target_id';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
   $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'field_data_field_puluser_fname';
@@ -189,7 +197,7 @@ function library_study_rooms_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Contact';
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '<div>[field_puluser_fname] [field_puluser_lname]</div>
+  $handler->display->display_options['fields']['body']['alter']['text'] = '<div>[field_puluser_nick_name] [field_puluser_lname]</div>
 [mail]
 [field_puluser_phone_number]
 [field_puluser_office]
