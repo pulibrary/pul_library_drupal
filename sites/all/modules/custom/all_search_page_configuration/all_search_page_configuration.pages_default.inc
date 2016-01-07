@@ -365,28 +365,6 @@ function all_search_page_configuration_default_page_manager_pages() {
     $display->content['new-b68f4a4c-cdae-4a86-a34d-c7661ec231fd'] = $pane;
     $display->panels['top'][0] = 'new-b68f4a4c-cdae-4a86-a34d-c7661ec231fd';
     $pane = new stdClass();
-    $pane->pid = 'new-3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7';
-    $pane->panel = 'top';
-    $pane->type = 'block';
-    $pane->subtype = 'summon_block-summon_spelling_suggestion';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7';
-    $display->content['new-3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7'] = $pane;
-    $display->panels['top'][1] = 'new-3ab13dd4-3f55-4bf9-a7d4-173d6d7608a7';
-    $pane = new stdClass();
     $pane->pid = 'new-c7097a96-9208-44cf-b467-909694a141ba';
     $pane->panel = 'top';
     $pane->type = 'custom';
@@ -406,11 +384,11 @@ function all_search_page_configuration_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'c7097a96-9208-44cf-b467-909694a141ba';
     $display->content['new-c7097a96-9208-44cf-b467-909694a141ba'] = $pane;
-    $display->panels['top'][2] = 'new-c7097a96-9208-44cf-b467-909694a141ba';
+    $display->panels['top'][1] = 'new-c7097a96-9208-44cf-b467-909694a141ba';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

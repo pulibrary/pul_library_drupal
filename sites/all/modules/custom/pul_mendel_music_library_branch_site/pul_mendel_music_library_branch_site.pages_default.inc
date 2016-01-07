@@ -553,10 +553,10 @@ music/*',
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-f2802558-815c-4e2d-80ea-1694b1c4093e';
+    $pane->pid = 'new-df925888-61e2-4fa8-adf5-299d9eb6a805';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -564,16 +564,13 @@ music/*',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f2802558-815c-4e2d-80ea-1694b1c4093e';
-    $display->content['new-f2802558-815c-4e2d-80ea-1694b1c4093e'] = $pane;
-    $display->panels['middle'][0] = 'new-f2802558-815c-4e2d-80ea-1694b1c4093e';
+    $pane->uuid = 'df925888-61e2-4fa8-adf5-299d9eb6a805';
+    $display->content['new-df925888-61e2-4fa8-adf5-299d9eb6a805'] = $pane;
+    $display->panels['middle'][0] = 'new-df925888-61e2-4fa8-adf5-299d9eb6a805';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -774,18 +771,18 @@ music/*',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Calendar',
+        'keyword' => 'cal',
+        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -875,10 +872,11 @@ music',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '%cal:nid',
+        'field_hrs_lib_calendar_target_id' => '%cal:tid',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -965,10 +963,10 @@ music',
     $display->content['new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c'] = $pane;
     $display->panels['first'][4] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
     $pane = new stdClass();
-    $pane->pid = 'new-1326c69d-36db-4f62-8518-02f92ca472ff';
+    $pane->pid = 'new-0d7ed5d2-a1ab-4b41-8fc7-338d30286bee';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -976,16 +974,13 @@ music',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '1326c69d-36db-4f62-8518-02f92ca472ff';
-    $display->content['new-1326c69d-36db-4f62-8518-02f92ca472ff'] = $pane;
-    $display->panels['middle'][0] = 'new-1326c69d-36db-4f62-8518-02f92ca472ff';
+    $pane->uuid = '0d7ed5d2-a1ab-4b41-8fc7-338d30286bee';
+    $display->content['new-0d7ed5d2-a1ab-4b41-8fc7-338d30286bee'] = $pane;
+    $display->panels['middle'][0] = 'new-0d7ed5d2-a1ab-4b41-8fc7-338d30286bee';
     $pane = new stdClass();
     $pane->pid = 'new-ab52aadd-90ec-47ed-b604-3d38b6da4a48';
     $pane->panel = 'middle';
@@ -1034,10 +1029,10 @@ music',
     $display->content['new-342013f6-7353-4c42-b885-868f36a2f0a9'] = $pane;
     $display->panels['middle'][2] = 'new-342013f6-7353-4c42-b885-868f36a2f0a9';
     $pane = new stdClass();
-    $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->pid = 'new-bd79c592-93de-4e08-bad6-882ba2146a86';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_long_description';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1050,6 +1045,7 @@ music',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1059,9 +1055,9 @@ music',
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
-    $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][3] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->uuid = 'bd79c592-93de-4e08-bad6-882ba2146a86';
+    $display->content['new-bd79c592-93de-4e08-bad6-882ba2146a86'] = $pane;
+    $display->panels['middle'][3] = 'new-bd79c592-93de-4e08-bad6-882ba2146a86';
     $pane = new stdClass();
     $pane->pid = 'new-1c12900f-8925-4e65-add2-0f71cc140db5';
     $pane->panel = 'middle';

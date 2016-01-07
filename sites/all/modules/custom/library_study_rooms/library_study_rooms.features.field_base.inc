@@ -10,7 +10,7 @@
 function library_study_rooms_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_study_room_audience'
+  // Exported field_base: 'field_study_room_audience'.
   $field_bases['field_study_room_audience'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -40,7 +40,7 @@ function library_study_rooms_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_study_room_department_url'
+  // Exported field_base: 'field_study_room_department_url'.
   $field_bases['field_study_room_department_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -69,7 +69,7 @@ function library_study_rooms_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_study_room_library'
+  // Exported field_base: 'field_study_room_library'.
   $field_bases['field_study_room_library'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -109,7 +109,7 @@ function library_study_rooms_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_study_room_numbers'
+  // Exported field_base: 'field_study_room_numbers'.
   $field_bases['field_study_room_numbers'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -133,7 +133,7 @@ function library_study_rooms_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_study_room_related_subject'
+  // Exported field_base: 'field_study_room_related_subject'.
   $field_bases['field_study_room_related_subject'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -162,7 +162,7 @@ function library_study_rooms_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_study_room_staff_contact'
+  // Exported field_base: 'field_study_room_staff_contact'.
   $field_bases['field_study_room_staff_contact'] = array(
     'active' => 1,
     'cardinality' => 1,

@@ -28,18 +28,18 @@ function pul_video_library_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Calendar',
+        'keyword' => 'cal',
+        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -128,10 +128,11 @@ function pul_video_library_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '%cal:nid',
+        'field_hrs_lib_calendar_target_id' => '%cal:tid',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -193,10 +194,10 @@ function pul_video_library_default_page_manager_handlers() {
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->pid = 'new-9d7129b1-e194-466b-93d2-6a0269c3f4d0';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_long_description';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -209,6 +210,7 @@ function pul_video_library_default_page_manager_handlers() {
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -218,9 +220,9 @@ function pul_video_library_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
-    $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][0] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->uuid = '9d7129b1-e194-466b-93d2-6a0269c3f4d0';
+    $display->content['new-9d7129b1-e194-466b-93d2-6a0269c3f4d0'] = $pane;
+    $display->panels['middle'][0] = 'new-9d7129b1-e194-466b-93d2-6a0269c3f4d0';
     $pane = new stdClass();
     $pane->pid = 'new-3f144c73-23ea-4092-bb29-12712b959cd9';
     $pane->panel = 'second';

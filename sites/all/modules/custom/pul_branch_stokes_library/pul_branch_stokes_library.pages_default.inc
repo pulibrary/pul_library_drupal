@@ -28,18 +28,18 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Calendar',
+        'keyword' => 'cal',
+        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -128,10 +128,11 @@ stokes',
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_hrs_lib_calendar_target_id' => '%cal:nid',
+        'field_hrs_lib_calendar_target_id' => '%cal:tid',
       ),
       'override_title' => 1,
       'override_title_text' => 'Today\'s Hours',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -212,10 +213,10 @@ stokes',
     $display->content['new-8b39e4b1-e072-4053-ba32-86b4b0b65f18'] = $pane;
     $display->panels['middle'][1] = 'new-8b39e4b1-e072-4053-ba32-86b4b0b65f18';
     $pane = new stdClass();
-    $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->pid = 'new-12334b83-5ab9-42b1-b921-fab6e158bbec';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_long_description';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -228,6 +229,7 @@ stokes',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -237,9 +239,9 @@ stokes',
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '4895123a-689b-465c-bf0b-3fe871089781';
-    $display->content['new-4895123a-689b-465c-bf0b-3fe871089781'] = $pane;
-    $display->panels['middle'][2] = 'new-4895123a-689b-465c-bf0b-3fe871089781';
+    $pane->uuid = '12334b83-5ab9-42b1-b921-fab6e158bbec';
+    $display->content['new-12334b83-5ab9-42b1-b921-fab6e158bbec'] = $pane;
+    $display->panels['middle'][2] = 'new-12334b83-5ab9-42b1-b921-fab6e158bbec';
     $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';

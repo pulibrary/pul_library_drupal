@@ -555,18 +555,12 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Library';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  /* Field: Content: Long Description */
+  $handler->display->display_options['fields']['field_long_description']['id'] = 'field_long_description';
+  $handler->display->display_options['fields']['field_long_description']['table'] = 'field_data_field_long_description';
+  $handler->display->display_options['fields']['field_long_description']['field'] = 'field_long_description';
+  $handler->display->display_options['fields']['field_long_description']['label'] = '';
+  $handler->display->display_options['fields']['field_long_description']['element_label_colon'] = FALSE;
   /* Field: Content: Library Homepage */
   $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';

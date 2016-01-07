@@ -52,7 +52,7 @@ function pul_library_staff_data_export_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['label'] = 'Email';
   $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
@@ -93,6 +93,18 @@ function pul_library_staff_data_export_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
+  /* Field: User: Display Title */
+  $handler->display->display_options['fields']['field_puluser_displaytitle']['id'] = 'field_puluser_displaytitle';
+  $handler->display->display_options['fields']['field_puluser_displaytitle']['table'] = 'field_data_field_puluser_displaytitle';
+  $handler->display->display_options['fields']['field_puluser_displaytitle']['field'] = 'field_puluser_displaytitle';
+  /* Field: User: Official Title */
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['table'] = 'field_data_field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['field'] = 'field_puluser_officialtitle';
+  /* Field: User: Short Title */
+  $handler->display->display_options['fields']['field_puluser_short_title']['id'] = 'field_puluser_short_title';
+  $handler->display->display_options['fields']['field_puluser_short_title']['table'] = 'field_data_field_puluser_short_title';
+  $handler->display->display_options['fields']['field_puluser_short_title']['field'] = 'field_puluser_short_title';
   /* Sort criterion: User: Last Name (field_puluser_lname) */
   $handler->display->display_options['sorts']['field_puluser_lname_value']['id'] = 'field_puluser_lname_value';
   $handler->display->display_options['sorts']['field_puluser_lname_value']['table'] = 'field_data_field_puluser_lname';

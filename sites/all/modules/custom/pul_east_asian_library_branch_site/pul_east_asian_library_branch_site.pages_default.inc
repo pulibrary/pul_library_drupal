@@ -26,7 +26,15 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
     'body_classes_to_add' => 'branch-libraries libraries-eal',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Branch Home',
+        'keyword' => 'library',
+        'name' => 'entity:node',
+        'entity_id' => '7785',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(
       0 => array(
         'identifier' => 'Calendar',
@@ -52,7 +60,8 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'libraries/eastasianlib/*
-eastasianlib/*',
+eastasianlib/*
+eastasian/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -186,10 +195,10 @@ eastasianlib/*',
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
-    $pane->pid = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
+    $pane->pid = 'new-f6b296df-91f7-462a-ba34-cd6de5705220';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_2';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -197,16 +206,13 @@ eastasianlib/*',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8ea45906-c02f-46a9-8ae1-01d63f3f266b';
-    $display->content['new-8ea45906-c02f-46a9-8ae1-01d63f3f266b'] = $pane;
-    $display->panels['middle'][0] = 'new-8ea45906-c02f-46a9-8ae1-01d63f3f266b';
+    $pane->uuid = 'f6b296df-91f7-462a-ba34-cd6de5705220';
+    $display->content['new-f6b296df-91f7-462a-ba34-cd6de5705220'] = $pane;
+    $display->panels['middle'][0] = 'new-f6b296df-91f7-462a-ba34-cd6de5705220';
     $pane = new stdClass();
     $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
     $pane->panel = 'middle';
@@ -255,15 +261,58 @@ eastasianlib/*',
     $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
     $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
     $pane = new stdClass();
-    $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->pid = 'new-015efc53-508a-4f7c-8985-894329929bdf';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_11';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'eastasian/news',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '015efc53-508a-4f7c-8985-894329929bdf';
+    $display->content['new-015efc53-508a-4f7c-8985-894329929bdf'] = $pane;
+    $display->panels['middle'][3] = 'new-015efc53-508a-4f7c-8985-894329929bdf';
+    $pane = new stdClass();
+    $pane->pid = 'new-b1a3a190-3927-43b5-8a9f-fc72adeff1d1';
     $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_quick_link';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'label' => 'title',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 0,
+        'view_mode' => 'featured_link_url',
+        'links' => 1,
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Research & Scholarship',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -273,9 +322,71 @@ eastasianlib/*',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
-    $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-    $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
+    $pane->uuid = 'b1a3a190-3927-43b5-8a9f-fc72adeff1d1';
+    $display->content['new-b1a3a190-3927-43b5-8a9f-fc72adeff1d1'] = $pane;
+    $display->panels['second'][0] = 'new-b1a3a190-3927-43b5-8a9f-fc72adeff1d1';
+    $pane = new stdClass();
+    $pane->pid = 'new-56932dbc-e61c-4145-9f6a-3bbd30cf3939';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_external_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'link_default',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Databases & Tools',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '56932dbc-e61c-4145-9f6a-3bbd30cf3939';
+    $display->content['new-56932dbc-e61c-4145-9f6a-3bbd30cf3939'] = $pane;
+    $display->panels['second'][1] = 'new-56932dbc-e61c-4145-9f6a-3bbd30cf3939';
+    $pane = new stdClass();
+    $pane->pid = 'new-89b4b59f-e9c3-4c3b-85a4-1dd31778473c';
+    $pane->panel = 'second';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_branch_featured_resources';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 1,
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Featured Resources',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '89b4b59f-e9c3-4c3b-85a4-1dd31778473c';
+    $display->content['new-89b4b59f-e9c3-4c3b-85a4-1dd31778473c'] = $pane;
+    $display->panels['second'][2] = 'new-89b4b59f-e9c3-4c3b-85a4-1dd31778473c';
     $pane = new stdClass();
     $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
     $pane->panel = 'top';
@@ -288,7 +399,7 @@ eastasianlib/*',
         'nid' => '7785',
       ),
       'override_title' => 1,
-      'override_title_text' => 'East Asian Library and the Gest Collection',
+      'override_title_text' => 'The East Asian Library and the Gest Collection',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -312,7 +423,7 @@ eastasianlib/*',
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p class="p1"><span class="s1">普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></p>',
+      'body' => '<h3 style="text-align: center;"><span>普林斯頓大學葛思德東亞圖書館 ・ プリンストン大学東アジア図書館 ・ 프린스턴 대학교 동아시아 도서관</span></h3>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -384,6 +495,7 @@ eastasianlib/*',
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'eastasianlib
+eastasian
 libraries/eastasianlib',
           ),
           'context' => 'empty',
@@ -494,6 +606,25 @@ libraries/eastasianlib',
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $pane = new stdClass();
+    $pane->pid = 'new-8404cf75-c431-49c9-9701-1499c368da2c';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'emergency_alert_content_block-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8404cf75-c431-49c9-9701-1499c368da2c';
+    $display->content['new-8404cf75-c431-49c9-9701-1499c368da2c'] = $pane;
+    $display->panels['middle'][0] = 'new-8404cf75-c431-49c9-9701-1499c368da2c';
+    $pane = new stdClass();
     $pane->pid = 'new-44f46d4c-944d-4947-b48f-308187acf0d8';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
@@ -518,33 +649,11 @@ libraries/eastasianlib',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '44f46d4c-944d-4947-b48f-308187acf0d8';
     $display->content['new-44f46d4c-944d-4947-b48f-308187acf0d8'] = $pane;
-    $display->panels['middle'][0] = 'new-44f46d4c-944d-4947-b48f-308187acf0d8';
-    $pane = new stdClass();
-    $pane->pid = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'emergency_alert_content_block-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'alert--message',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'e7415fb5-8394-4d2d-aa59-f2867dada3cd';
-    $display->content['new-e7415fb5-8394-4d2d-aa59-f2867dada3cd'] = $pane;
-    $display->panels['middle'][1] = 'new-e7415fb5-8394-4d2d-aa59-f2867dada3cd';
+    $display->panels['middle'][1] = 'new-44f46d4c-944d-4947-b48f-308187acf0d8';
     $pane = new stdClass();
     $pane->pid = 'new-4895123a-689b-465c-bf0b-3fe871089781';
     $pane->panel = 'middle';

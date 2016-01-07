@@ -1064,12 +1064,21 @@ function library_hours_views_default_views() {
   $handler->display->display_options['relationships']['field_hours_calendar_target_id']['field'] = 'field_hours_calendar_target_id';
   $handler->display->display_options['relationships']['field_hours_calendar_target_id']['label'] = 'Library';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name_1']['element_class'] = 'data-name-[tid]';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name_1']['link_to_taxonomy'] = TRUE;
   /* Field: Content: Library Status */
@@ -1078,7 +1087,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['field'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['label'] = '';
   $handler->display->display_options['fields']['field_hours_library_status']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status';
+  $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status data-status-[tid]';
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_default_classes'] = FALSE;
   /* Field: Content: Hours */
@@ -1086,6 +1095,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['element_class'] = 'data-hours-[tid]';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
@@ -1094,6 +1104,7 @@ function library_hours_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;

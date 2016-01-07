@@ -10,7 +10,7 @@
 function library_study_rooms_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-study_room-body'
+  // Exported field_instance: 'node-study_room-body'.
   $field_instances['node-study_room-body'] = array(
     'bundle' => 'study_room',
     'default_value' => NULL,
@@ -74,7 +74,7 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_audience'
+  // Exported field_instance: 'node-study_room-field_study_room_audience'.
   $field_instances['node-study_room-field_study_room_audience'] = array(
     'bundle' => 'study_room',
     'default_value' => array(
@@ -134,7 +134,7 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_department_url'
+  // Exported field_instance: 'node-study_room-field_study_room_department_url'.
   $field_instances['node-study_room-field_study_room_department_url'] = array(
     'bundle' => 'study_room',
     'default_value' => NULL,
@@ -204,7 +204,7 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_library'
+  // Exported field_instance: 'node-study_room-field_study_room_library'.
   $field_instances['node-study_room-field_study_room_library'] = array(
     'bundle' => 'study_room',
     'default_value' => array(
@@ -266,7 +266,7 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_numbers'
+  // Exported field_instance: 'node-study_room-field_study_room_numbers'.
   $field_instances['node-study_room-field_study_room_numbers'] = array(
     'bundle' => 'study_room',
     'default_value' => NULL,
@@ -325,7 +325,8 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_related_subject'
+  // Exported field_instance:
+  // 'node-study_room-field_study_room_related_subject'.
   $field_instances['node-study_room-field_study_room_related_subject'] = array(
     'bundle' => 'study_room',
     'default_value' => NULL,
@@ -381,7 +382,7 @@ function library_study_rooms_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-study_room-field_study_room_staff_contact'
+  // Exported field_instance: 'node-study_room-field_study_room_staff_contact'.
   $field_instances['node-study_room-field_study_room_staff_contact'] = array(
     'bundle' => 'study_room',
     'default_value' => NULL,
