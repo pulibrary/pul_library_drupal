@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Branch Link Views feature.
+ */
+
+include_once 'branch_link_views.features.inc';

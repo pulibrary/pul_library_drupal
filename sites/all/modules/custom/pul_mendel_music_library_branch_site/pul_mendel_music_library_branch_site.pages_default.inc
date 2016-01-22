@@ -1225,11 +1225,37 @@ music',
     $display->content['new-e79db668-d0a2-4208-8666-461039bc5e0d'] = $pane;
     $display->panels['second'][3] = 'new-e79db668-d0a2-4208-8666-461039bc5e0d';
     $pane = new stdClass();
+    $pane->pid = 'new-6bb2c97e-5317-4fe9-baf2-063501761cb8';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_features-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Music Research Guides',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '6bb2c97e-5317-4fe9-baf2-063501761cb8';
+    $display->content['new-6bb2c97e-5317-4fe9-baf2-063501761cb8'] = $pane;
+    $display->panels['second'][4] = 'new-6bb2c97e-5317-4fe9-baf2-063501761cb8';
+    $pane = new stdClass();
     $pane->pid = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_branch_external_links';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
@@ -1249,11 +1275,11 @@ music',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $display->content['new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2'] = $pane;
-    $display->panels['second'][4] = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
+    $display->panels['second'][5] = 'new-4ab4a127-bc3f-454a-ab6b-95bf078f7cf2';
     $pane = new stdClass();
     $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane->panel = 'second';
@@ -1282,11 +1308,11 @@ music',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
     $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-    $display->panels['second'][5] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+    $display->panels['second'][6] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
     $pane = new stdClass();
     $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
     $pane->panel = 'top';

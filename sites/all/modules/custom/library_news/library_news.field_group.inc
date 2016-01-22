@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function library_news_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $export['group_catalog|node|library_news_item|form'] = $field_group;
+  $field_groups['group_catalog|node|library_news_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -71,7 +71,7 @@ function library_news_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_cd_acquistions|node|library_news_item|form'] = $field_group;
+  $field_groups['group_cd_acquistions|node|library_news_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,7 +99,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $export['group_news_attachments|node|library_news_item|form'] = $field_group;
+  $field_groups['group_news_attachments|node|library_news_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -127,7 +127,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $export['group_news_dates_locs|node|library_news_item|form'] = $field_group;
+  $field_groups['group_news_dates_locs|node|library_news_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -160,7 +160,15 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $export['group_news_details|node|library_news_item|form'] = $field_group;
+  $field_groups['group_news_details|node|library_news_item|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Attachments');
+  t('Catalog Details');
+  t('Collections Development');
+  t('Dates & Locations');
+  t('News Details');
+
+  return $field_groups;
 }
