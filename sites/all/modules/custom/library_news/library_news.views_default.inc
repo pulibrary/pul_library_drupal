@@ -606,6 +606,13 @@ function library_news_views_default_views() {
   $handler->display->display_options['relationships']['field_news_library_contact_target_id']['field'] = 'field_news_library_contact_target_id';
   $handler->display->display_options['relationships']['field_news_library_contact_target_id']['label'] = 'Contact';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -629,6 +636,15 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Posted';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
   $handler->display->display_options['fields']['created']['timezone'] = 'America/New_York';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'library_news';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_13';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -2540,6 +2556,131 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['field_news_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_news_category_tid']['vocabulary'] = 'news_events_categories';
   $handler->display->display_options['filters']['field_news_category_tid']['hierarchy'] = 1;
+
+  /* Display: Single News Item Bibliographic Information */
+  $handler = $view->new_display('panel_pane', 'Single News Item Bibliographic Information', 'panel_pane_13');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'View used in full page view of a news item to display bibliographic Data';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Read More';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_news_featured_graphic' => 'field_news_featured_graphic',
+    'body' => 'body',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_news_library_contact_target_id']['id'] = 'field_news_library_contact_target_id';
+  $handler->display->display_options['relationships']['field_news_library_contact_target_id']['table'] = 'field_data_field_news_library_contact';
+  $handler->display->display_options['relationships']['field_news_library_contact_target_id']['field'] = 'field_news_library_contact_target_id';
+  $handler->display->display_options['relationships']['field_news_library_contact_target_id']['label'] = 'Contact';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Full Title */
+  $handler->display->display_options['fields']['field_full_title']['id'] = 'field_full_title';
+  $handler->display->display_options['fields']['field_full_title']['table'] = 'field_data_field_full_title';
+  $handler->display->display_options['fields']['field_full_title']['field'] = 'field_full_title';
+  $handler->display->display_options['fields']['field_full_title']['label'] = '';
+  $handler->display->display_options['fields']['field_full_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_full_title']['hide_empty'] = TRUE;
+  /* Field: Content: Authors */
+  $handler->display->display_options['fields']['field_authors']['id'] = 'field_authors';
+  $handler->display->display_options['fields']['field_authors']['table'] = 'field_data_field_authors';
+  $handler->display->display_options['fields']['field_authors']['field'] = 'field_authors';
+  $handler->display->display_options['fields']['field_authors']['label'] = '';
+  $handler->display->display_options['fields']['field_authors']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_authors']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_authors']['delta_offset'] = '0';
+  /* Field: Content: Call Number */
+  $handler->display->display_options['fields']['field_call_number']['id'] = 'field_call_number';
+  $handler->display->display_options['fields']['field_call_number']['table'] = 'field_data_field_call_number';
+  $handler->display->display_options['fields']['field_call_number']['field'] = 'field_call_number';
+  $handler->display->display_options['fields']['field_call_number']['label'] = '';
+  $handler->display->display_options['fields']['field_call_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_call_number']['hide_empty'] = TRUE;
+  /* Field: Content: Credit */
+  $handler->display->display_options['fields']['field_credit']['id'] = 'field_credit';
+  $handler->display->display_options['fields']['field_credit']['table'] = 'field_data_field_credit';
+  $handler->display->display_options['fields']['field_credit']['field'] = 'field_credit';
+  $handler->display->display_options['fields']['field_credit']['label'] = '';
+  $handler->display->display_options['fields']['field_credit']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_credit']['hide_empty'] = TRUE;
+  /* Field: Content: Publisher */
+  $handler->display->display_options['fields']['field_publisher']['id'] = 'field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['table'] = 'field_data_field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['field'] = 'field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['label'] = '';
+  $handler->display->display_options['fields']['field_publisher']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publisher']['hide_empty'] = TRUE;
+  /* Field: Content: Physical Description */
+  $handler->display->display_options['fields']['field_physical_description']['id'] = 'field_physical_description';
+  $handler->display->display_options['fields']['field_physical_description']['table'] = 'field_data_field_physical_description';
+  $handler->display->display_options['fields']['field_physical_description']['field'] = 'field_physical_description';
+  $handler->display->display_options['fields']['field_physical_description']['label'] = '';
+  $handler->display->display_options['fields']['field_physical_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_physical_description']['hide_empty'] = TRUE;
+  /* Field: Content: Link to Catalog */
+  $handler->display->display_options['fields']['field_catalog_url']['id'] = 'field_catalog_url';
+  $handler->display->display_options['fields']['field_catalog_url']['table'] = 'field_data_field_catalog_url';
+  $handler->display->display_options['fields']['field_catalog_url']['field'] = 'field_catalog_url';
+  $handler->display->display_options['fields']['field_catalog_url']['label'] = '';
+  $handler->display->display_options['fields']['field_catalog_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_catalog_url']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_catalog_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'library_news_item' => 'library_news_item',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['library_news'] = $view;
 
   $view = new view();

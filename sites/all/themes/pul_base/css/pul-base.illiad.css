@@ -172,6 +172,7 @@ figure {
 * Address differences between Firefox and other browsers.
 */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -299,6 +300,8 @@ input[type='number']::-webkit-outer-spin-button {
 input[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -370,12 +373,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   line-height: 1;
   padding: 0.75em 1.5em;
   text-decoration: none;
-  -webkit-transition: background-color 150ms ease;
-          transition: background-color 150ms ease;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  transition: background-color 150ms ease;
+  user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
   button:hover,
@@ -423,8 +422,7 @@ select[multiple=multiple] {
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
-  -webkit-transition: border-color 150ms ease;
-          transition: border-color 150ms ease;
+  transition: border-color 150ms ease;
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
   select[multiple=multiple]:hover {
@@ -481,8 +479,7 @@ dl {
 
 table {
   border-collapse: collapse;
-  -webkit-font-feature-settings: "kern", "liga", "tnum";
-          font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
   margin: 0.75em 0;
   table-layout: fixed;
   width: 100%; }
@@ -505,8 +502,7 @@ th {
 body {
   color: #494f57;
   font-family: "Dejavu Sans", "Arial Unicode MS", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  -webkit-font-feature-settings: "kern", "liga", "pnum";
-          font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
   font-size: 1em;
   line-height: 1.5; }
 
@@ -527,8 +523,7 @@ p {
 a {
   color: #2762ae;
   text-decoration: none;
-  -webkit-transition: color 150ms ease;
-          transition: color 150ms ease; }
+  transition: color 150ms ease; }
   a:active,
   a:focus,
   a:hover {
@@ -1021,6 +1016,8 @@ a:hover {
         left: -2em;
         position: absolute;
         margin-left: 2em;
+        -moz-box-shadow: 0px 3px 8px #646464;
+        -webkit-box-shadow: 0px 3px 8px #646464;
         box-shadow: 0px 3px 8px #646464; } }
     @media (min-width: 820px) {
       .wrapper--navigation li > ul.menu .menu {
@@ -1304,6 +1301,7 @@ a:hover {
   .search-bar .f-criteria {
     box-sizing: border-box;
     -webkit-transition: border-color;
+    -moz-transition: border-color;
     transition: border-color;
     background-color: #fff;
     border-radius: 4px;
@@ -1345,3 +1343,5 @@ a:hover {
     .search-bar .f-submit:disabled {
       cursor: not-allowed;
       opacity: 0.5; }
+
+/*# sourceMappingURL=pul-base.illiad.css.map */

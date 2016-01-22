@@ -1,11 +1,11 @@
-name = Library Newsletters
-description = Manage the display of library newsletters
+name = Branch Link Views
+description = Render Lists of Branch Library Sidebar Links
 core = 7.x
 package = PUL Features
 version = 7.x-1.0-dev
-dependencies[] = entity
 dependencies[] = views
+dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-features[views_view][] = library_newsletter_listings
+features[views_view][] = branch_features
 features_exclude[dependencies][ctools] = ctools
