@@ -64,6 +64,7 @@ deny from 5.47.49.252
 allow from all
 
 
+RedirectMatch /papyrus /papyrus/
 # Redirect Rules
 RedirectMatch ^/searchit/(.*)$ /utils/$1
 RedirectPermanent /about/hours /hours
