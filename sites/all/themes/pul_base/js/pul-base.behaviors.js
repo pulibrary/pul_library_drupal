@@ -80,7 +80,7 @@
       //hide or show the "back to top" link
       $(window).scroll(function(){
         ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-        if( $(this).scrollTop() > offset_opacity ) { 
+        if( $(this).scrollTop() > offset_opacity ) {
           $back_to_top.addClass('cd-fade-out');
         }
       });
@@ -130,7 +130,7 @@
       });
       } else {
       }
-      
+
     }
   };
 
@@ -157,7 +157,7 @@
         });
 
         // track main menu usage with Google Analytics
-        
+
         $('.centered-navigation-menu ul.menu a').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'Main Menu', 'click', $(this).text(),
@@ -205,14 +205,14 @@
       });
     }
   };
-    
+
   Drupal.behaviors.pulTrackFooterMenuUsage = {
     attach: function (context) {
       $('.l-region--footer', context).once('pul', function () {
         $('.l-region--footer .block--menu a').each(function () {
           $(this).addClass('footer-link');
           $(this).click(function () {
-            ga('send', 'event', 'Footer Menu', 'click', $(this).text(), 
+            ga('send', 'event', 'Footer Menu', 'click', $(this).text(),
               {'page': window.location.pathname});
           });
         });
@@ -241,7 +241,6 @@
           $(this).addClass('library-news-link');
           $(this).click(function () {
             ga('send', 'event', 'Library News', 'click', $(this).text() + ' Position ' + result_position);
-            console.log('logging ' + $(this).text() + result_position);
           });
         });
       });
@@ -274,7 +273,6 @@
           $(this).addClass('library-hours-link');
           $(this).click(function () {
             ga('send', 'event', 'Library Daily Hours', 'click', $(this).text() + ' Position ' + result_position);
-            console.log('logging ' + $(this).text() + result_position);
           });
         });
       });
@@ -317,7 +315,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.pulTrackAllSearchUsage = {
     attach: function (context) {
 
@@ -327,7 +325,6 @@
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
             ga('send', 'event', 'All Search', 'Database Title', 'Position ' + result_position);
-            console.log('db title: ' + result_position);
           });
         });
 
@@ -406,7 +403,7 @@
               ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Title');
             });
         });
-        
+
         $(' .view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
@@ -417,5 +414,61 @@
       });
     }
   };
-  
+
+  Drupal.behaviors.pulTrackBranchUsage = {
+    attach: function (context) {
+      $('.branch-libraries', context).once('pul', function () {
+
+        // branch main menus
+        $('.branch-libraries #menu--secondary ul.menu a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch Menu', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+        // branch quick links
+        $('.branch-libraries .pane-node-field-branch-quick-link a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+        // stokes links to main catalog, databases, newspapers, on landing page
+        $('.branch-libraries.libraries-stokes a.button--external-link').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+        // branch external links
+        $('.branch-libraries .pane-node-field-branch-external-links a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch External Links', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+        // mendel external links
+        $('.branch-libraries .pane-branch-features-panel-pane-1 a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch External Links', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+        // branch featured resources
+        $('.branch-libraries .pane-node-field-branch-featured-resources a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Branch Featured Resources', 'click', $(this).text(),
+              {'page': window.location.pathname });
+          });
+        });
+
+      });
+    }
+  };
+
 })(jQuery);
