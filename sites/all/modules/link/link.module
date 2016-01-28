@@ -10,7 +10,7 @@ define('LINK_INTERNAL', 'internal');
 define('LINK_FRONT', 'front');
 define('LINK_EMAIL', 'email');
 define('LINK_NEWS', 'news');
-define('LINK_DOMAINS', 'aero|arpa|asia|biz|build|com|cat|ceo|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|post|pro|tel|travel|mobi|local|xxx');
+define('LINK_DOMAINS', 'aero|arpa|asia|biz|build|com|cat|ceo|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|post|pro|tel|travel|mobi|local|xxx|recipes');
 
 define('LINK_TARGET_DEFAULT', 'default');
 define('LINK_TARGET_NEW_WINDOW', '_blank');
