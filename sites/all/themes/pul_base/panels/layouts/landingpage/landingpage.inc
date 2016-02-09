@@ -11,13 +11,12 @@ $plugin = array(
   'icon' => 'landingpage.png',
   'category' => t('Pul Content content layouts'),
   'theme' => 'landingpage',
-  'css' => '../../../pul-base.layouts.css',
+  'css' => '../../../assets/public/styles/pul-base.styles.css',
   'regions' => array(
     'first' => t('First'),
     'second' => t('Second'),
     'third' => t('Third'),
     'fourth' => t('Fourth'),
-    'fifth' => t('Fifth'),
   ),
 );
 

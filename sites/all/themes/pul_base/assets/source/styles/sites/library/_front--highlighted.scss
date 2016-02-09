@@ -1,0 +1,20 @@
+.front .wrapper--highlighted {
+  background: rgba(lighten($gray-darkest, 28), 0.75);
+  background-size: 1600px auto;
+  padding: 0;
+
+  @include breakpoint($tab) {
+    background: linear-gradient(rgba(lighten($gray-darkest, 28), 0.75), rgba(lighten($gray-darkest, 28), 0.75)), url(../images/bg-studyroom.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+
+  .l-region--highlighted {
+    padding: 1em;
+    position: relative;
+
+    @include breakpoint($tab) {
+      padding: 3em 0;
+    }
+  }
+}

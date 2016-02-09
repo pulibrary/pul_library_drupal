@@ -1,0 +1,92 @@
+.front .l-region--branding .block--allsearch-block-allsearch-search {
+  display: none;
+
+  @include breakpoint($tab) {
+    display: block;
+  }
+}
+
+.l-region--branding {
+  .block--search-form,
+  .block--allsearch-block {
+    // float: none; // why?
+
+    form {
+      height: 50px;
+      position: relative;
+    }
+
+    form > div {
+      $search-bar-border-color: $base-border-color;
+      $search-bar-border: 1px solid $search-bar-border-color;
+      $search-bar-background: lighten($search-bar-border-color, 10);
+
+      @include vertical-align;
+
+      display: inline-block;
+      margin-top: 0;
+      width: 100%;
+
+// scss-lint:disable SelectorDepth
+      input {
+        box-sizing: border-box;
+        display: inline-block;
+      }
+
+      label {
+        @include visually-hidden;
+
+        color: $white;
+// scss-lint:disable NestingDepth
+        .form-required {
+          color: $white;
+        }
+      }
+
+      div.form-item-query,
+      div.form-item {
+        position: relative;
+
+// scss-lint:disable NestingDepth
+        input[type=text] {
+          background: lighten($gray-darkest, 10);
+          border: darken($gray-darkest, 15);
+          border-radius: em(4);
+          color: $gray-light;
+          font-size: $font-size-smaller;
+          font-style: italic;
+          height: 28px;
+          margin: 0;
+          padding: 0.5em 0.8em;
+          width: 100%;
+
+          &:focus {
+            background: $white;
+            color: $black;
+          }
+        }
+      }
+
+      input[type=submit] {
+        display: none;
+      }
+
+      button {
+        background: darken($gray-darkest, 15);
+        border: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 4px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 4px;
+        color: $gray-light;
+        font-weight: normal;
+        height: 28px;
+        outline: none;
+        padding: 5px 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}

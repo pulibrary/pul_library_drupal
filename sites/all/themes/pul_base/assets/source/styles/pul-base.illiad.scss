@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+
+// Vendor libraries
+@import "normalize";
+@import "susy";
+@import "breakpoint";
+@import "bourbon";
+
+// Utilities: Variables, Mixins, etc.
+@import "utils/mixins";
+@import "utils/functions";
+@import "utils/variables";
+// @import "utils/variables--bootstrap";
+@import "utils/font-stack";
+@import "utils/helpers";
+
+// Global styles
+@import "base/typography";
+@import "base/forms";
+@import "base/grids";
+@import "base/links";
+@import "base/lists";
+@import "base/media";
+@import "base/tables";
+@import "base/print";
+
+// Layouts
+@import "layouts/three_nine/three_nine";
+@import "layouts/three_six_three/three_six_three";
+@import "layouts/six_six/six_six";
+@import "layouts/pul_base_nine_three/pul_base_nine_three";
+
+// Components
+@import "components/branding";
+@import "components/header";
+@import "components/footer";
+@import "components/menus/menu--main";
+@import "components/search/search--header";
+
+// Illiad search bar
+
+.search-bar {
+  $base-spacing: 1em;
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $dark-gray: $gray-darkest !default;
+  $search-bar-border-color: $base-border-color;
+  $search-bar-border: 1px solid $search-bar-border-color;
+  $search-bar-background: lighten($search-bar-border-color, 10%);
+
+  position: relative;
+
+  .f-criteria {
+    box-sizing: border-box;
+    @include transition(border-color);
+    background-color: $white;
+    border-radius: $base-border-radius;
+    border-radius: $base-border-radius;
+    border: 1px solid $base-border-color;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+    padding: ($base-spacing / 3) ($base-spacing / 3);
+    position: relative;
+    width: 100%;
+  }
+
+  .f-submit {
+    @include button(flat, $base-accent-color);
+    @include position(absolute, 0em 0em 0em null);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    outline: none;
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,81 @@
+//rare books for marquand
+.pane-library-news-panel-pane-6 {
+  margin: 0 auto;
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .media--stacked {
+    margin: 0 auto;
+
+    .library-news-link img {
+      clear: both;
+      display: block;
+      float: none;
+      margin: 0 auto;
+    }
+
+    .copy {
+      clear: both;
+      float: none;
+      text-align: center;
+    }
+  }
+}
+
+//rare books highlights in news
+.section-news .pane-library-news-panel-pane-6 {
+  margin-top: 1em;
+
+  h3 {
+    // text-align: center;
+    display: none;
+  }
+
+  .media--stacked {
+    margin: 0 auto;
+
+    .library-news-link {
+      display: inline-block;
+      margin-right: 1em;
+    }
+// scss-lint:disable SelectorDepth
+    .library-news-link img {
+      display: inline-block;
+      float: left;
+    }
+
+    .copy {
+      float: right;
+      text-align: left;
+      width: 63%;
+    }
+  }
+}
+
+// branch news index page
+.three_six_three_stacked-region--middle .view-branch-news img {
+  float: left;
+  margin-right: 1em;
+}
+
+.view-branch-news {
+  li {
+    clear: both;
+    margin-bottom: 1em;
+  }
+
+  img {
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+
+  .copy {
+    clear: both;
+    float: none;
+    text-align: center;
+  }
+}

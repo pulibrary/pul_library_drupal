@@ -1,0 +1,24 @@
+/*******************************************************************************
+ * three_six_three.layout.scss
+ *
+ * Styling of the 3-6-3 column layout..
+ ******************************************************************************/
+
+.panel-display--three_six_three {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .three_six_three-region--first {
+    @include span(first 3);
+  }
+
+  .three_six_three-region--middle {
+    @include span(6 at 4);
+
+  }
+
+  .three_six_three-region--second {
+    @include span(last 3);
+  }
+}

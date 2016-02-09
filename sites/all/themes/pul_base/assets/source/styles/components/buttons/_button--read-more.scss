@@ -1,0 +1,71 @@
+// readmore collections
+.links--inline li {
+  float: right;
+}
+
+.views-more-link,
+.node-readmore a,
+.more-link a {
+  background-color: $gray-lightest;
+  border: 0;
+  border-radius: 3px;
+  color: $orange-dark;
+  display: block;
+  float: none;
+  font-family: $font-serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: bold;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+
+  @include breakpoint($tab) {
+    display: inline;
+    float: right;
+    padding: 3px 7px;
+  }
+
+  &:visited {
+    background-color: $gray-lightest;
+    color: $orange-dark;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $orange;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.page-find-all .more-link a {
+  background-color: $gray-lightest;
+  color: $orange-dark;
+  display: inline-block;
+  float: none;
+  width: 100%;
+
+  @include breakpoint($tab) {
+    background-color: $white;
+    color: $orange-dark;
+    float: right;
+    font-size: 1em;
+    margin-bottom: 1em;
+    width: auto;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+
+  &:after {
+    @include pul-icon;
+
+    content: "\e625";
+    margin-left: 0.5em;
+  }
+}

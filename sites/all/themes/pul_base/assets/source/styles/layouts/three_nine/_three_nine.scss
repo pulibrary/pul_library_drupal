@@ -1,0 +1,19 @@
+/*******************************************************************************
+ * three_nine.layout.scss
+ *
+ * Styling of the 3-9 column layout..
+ ******************************************************************************/
+
+.panel-display--three_nine {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .three_nine-region--first {
+    @include span(first 3);
+  }
+
+  .three_nine-region--second {
+    @include span(last 9);
+  }
+}

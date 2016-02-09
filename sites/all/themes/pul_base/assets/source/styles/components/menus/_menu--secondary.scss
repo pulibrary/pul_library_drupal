@@ -1,0 +1,62 @@
+// scss-lint:disable IdSelector
+.menu--secondary,
+#menu--secondary {
+  margin-top: 1em;
+
+  @include breakpoint($tab-desk) {
+    margin-top: 2.5em;
+  }
+
+  br {
+    display: none;
+  }
+
+  .skip2main {
+    background: $gray-lightest;
+    color: $gray-darkest;
+    display: block;
+    left: 0;
+    margin-bottom: 2px;
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    top: 0;
+    // width: 95%;
+
+    @include breakpoint($tab) {
+      display: none;
+    }
+  }
+
+  .menu {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint($tab-desk) {
+      display: block;
+    }
+  }
+
+  .show-section-menu {
+    background: $gray-dark;
+    color: $white;
+    display: block;
+    padding: 10px;
+    text-align: left;
+    // width: 95%;
+
+    @include breakpoint($tab-desk) {
+      display: none;
+    }
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ .menu {
+    display: block;
+  }
+}

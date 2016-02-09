@@ -10,15 +10,14 @@ core = 7.x
 ; ========================================
 stylesheets[all][] = pul_base_icons/style.css
 stylesheets[all][] = pul_base_icons/ie7/ie7.css
-stylesheets[all][] = css/pul-base.styles.css
 stylesheets[print][] = css/pul-base.print.css
+stylesheets[all][] = assets/public/styles/pul-base.styles.min.css
 
 ; ========================================
 ; Scripts
 ; ========================================
-scripts[] = js/pul-base.behaviors.js
+scripts[] = assets/public/scripts/pul-base.scripts.min.js
 scripts[] = pul_base_icons/ie7/ie7.js
-scripts[] = libraries/modernizr/modernizr.js
 
 ; ========================================
 ; Plugins
@@ -65,10 +64,6 @@ settings[omega_enable_export_reminder] = 1
 settings[omega_rebuild_theme_registry] = 0
 settings[omega_rebuild_aggregates] = 0
 settings[omega_browser_width_indicator] = 0
-settings[omega_livereload] = 0
-settings[omega_livereload_script] = http://localhost:35729/livereload.js
-settings[omega_livereload_host] = localhost
-settings[omega_livereload_port] = 35729
 settings[omega_demo_regions] = 0
 settings[omega_toggle_extension_compatibility] = 1
 settings[omega_conditional_classes_html] = 1

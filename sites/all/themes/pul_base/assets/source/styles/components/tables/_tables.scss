@@ -1,0 +1,101 @@
+.views-table {
+  border-spacing: 0;
+
+  th {
+    background: $gray-darkest;
+    color: $white;
+    padding: 0.5em;
+
+    a {
+      color: $white;
+      margin-right: 0.5em;
+    }
+
+    img {
+      padding-left: 1em;
+    }
+  }
+
+  tr.even {
+    background: none;
+  }
+
+  tr.odd > td {
+    background: $gray-lightest;
+  }
+
+  td {
+    padding: 0.65em 0.5em;
+
+  }
+
+  td.active {
+    background: none;
+  }
+
+  .find-databases-show-desc {
+    float: right;
+  }
+}
+
+fieldset {
+  background: none;
+}
+
+table caption {
+  // @include adjust-font-size-to(1.3em);
+  // @include rhythm(0.75, 0, 0, 0.5, 1.3em);
+  text-align: left;
+}
+
+.section-services .three_six_three-region--middle table td {
+  padding: 1em;
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+
+@include breakpoint($rwd-tables) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+
+  thead tr {
+    @include visually-hidden;
+  }
+
+  tr {
+    border-bottom: 1px solid $gray-light;
+  }
+
+  tr.odd {
+    background: $gray-lightest;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: 0;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td:before {
+    left: 6px;
+    padding-right: 10px;
+    position: absolute;
+    top: 6px;
+    white-space: nowrap;
+    width: 45%;
+  }
+}

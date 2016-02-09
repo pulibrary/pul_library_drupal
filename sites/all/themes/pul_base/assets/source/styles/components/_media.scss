@@ -1,0 +1,28 @@
+// floating image on left with content wrapping on right
+.media {
+  // margin: 0;
+}
+
+.media,
+.copy {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.media .copy p,
+.media .copy h4,
+.media-heading {
+  margin: 0;
+}
+
+.media-image,
+.media img,
+.media .library-news-link {
+  float: left;
+  margin: 0 0.5em 0.5em 0;
+}
+
+.media-body {
+  display: block;
+  overflow: hidden;
+}
