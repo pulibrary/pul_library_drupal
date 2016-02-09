@@ -1,0 +1,40 @@
+.three_six_three_stacked-region--middle .view-library-news {
+  .item-list > ul {
+    margin: 0;
+  }
+
+  img {
+    float: left;
+    margin-right: 1em;
+  }
+// scss-lint:disable SelectorDepth
+  .item-list > ul > li {
+    @include clearfix;
+  }
+}
+
+.views-field-created {
+  color: $gray-dark;
+  font-style: italic;
+}
+
+.view-library-news .field--name-field-news-featured-graphic img {
+  float: left;
+  margin: 0 0.75em 0.167em 0;
+}
+
+.view-library-news .views-row {
+  padding-bottom: 2em;
+}
+
+.item-list li {
+  list-style: none;
+}
+
+.views-field-created {
+  margin-bottom: 1em;
+}
+
+.page-news .pul_base_nine_three-region--first ul {
+  margin-left: 0;
+}

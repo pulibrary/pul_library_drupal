@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * six_six_stacked.layout.scss
+ *
+ * Styling of the 6-6 column layout..
+ ******************************************************************************/
+
+.panel-display--six_six_stacked {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .six_six_stacked-region--top {
+    @include full;
+  }
+
+  .six_six_stacked-region--first {
+    @include span(first 6);
+  }
+
+  .six_six_stacked-region--second {
+    @include span(last 6);
+  }
+
+  .six_six_stacked-region--bottom {
+    @include full;
+  }
+}

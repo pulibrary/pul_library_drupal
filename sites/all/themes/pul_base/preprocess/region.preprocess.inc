@@ -20,7 +20,7 @@ function pul_base_preprocess_region(&$variables) {
     array_unshift($variables['theme_hook_suggestions'], 'region__branding');
   }
 
-   if (strpos($variables['region'], 'highlighted') === 0) {
+  if (strpos($variables['region'], 'highlighted') === 0) {
     // Allow a region-specific template to override region--navigation.
     array_unshift($variables['theme_hook_suggestions'], 'region__highlighted');
   }

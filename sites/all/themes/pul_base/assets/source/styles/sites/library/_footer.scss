@@ -1,0 +1,125 @@
+.l-region--footer {
+  clear: both;
+  // padding: 1em;
+
+  @include breakpoint($max-tab) {
+    nav ul {
+      display: none;
+    }
+  }
+
+  nav,
+  .block--block-1 {
+
+    @include breakpoint($tab) {
+      @include span(3);
+    }
+  }
+
+  nav:first-child {
+    margin-left: 0;
+  }
+
+  .block--block-1 {
+    margin-right: 0;
+  }
+
+  address,
+  .footer--copyright,
+  a {
+    color: $gray-darkest;
+    font-style: normal;
+  }
+
+  .footer--copyright {
+    margin-top: 0.5em;
+  }
+
+  h2,
+  h2 a {
+    color: $orange-dark;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .leaf {
+    list-style: none;
+
+    a {
+      line-height: 1.75em;
+    }
+  }
+}
+
+// SVG logo
+.svg {
+  .facebook-logo img,
+  .twitter-logo img,
+  .govdocs-logo img,
+  .friends-logo img,
+  .pu-logo img {
+    display: none;
+  }
+
+  .facebook-logo,
+  .twitter-logo,
+  .govdocs-logo,
+  .friends-logo,
+  .pu-logo {
+    background-size: contain;
+    display: inline-block;
+    height: 24px;
+    line-height: 11px;
+
+    @include breakpoint($tab) {
+      margin-left: 0.5em;
+    }
+
+
+    &:before {
+      /* create a full-height inline block pseudo=element */
+      content: " ";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+
+      /* vertical alignment of the inline element */
+    }
+  }
+
+  .facebook-logo {
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/facebook.svg");
+    margin: 0 0.2em 0.75em;
+    width: 24px;
+  }
+
+  .twitter-logo {
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/twitter.svg");
+    margin: 0 0.2em 0.75em;
+    width: 24px;
+  }
+
+  .govdocs-logo {
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/govdocs.svg");
+    margin: 0 0.2em 0.75em;
+    width: 24px;
+  }
+
+  .friends-logo {
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/friends.svg");
+    margin: 0 0.2em 0.75em;
+    width: 85px;
+  }
+
+  .pu-logo {
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/pu.svg");
+    height: 40px;
+    margin: 0.5em 0 0;
+    width: 142px;
+  }
+}

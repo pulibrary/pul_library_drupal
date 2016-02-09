@@ -1,0 +1,20 @@
+//workgroup view
+
+.view-workgroup .views-row {
+  clear: both;
+  min-height: 130px;
+  padding: 1em;
+
+  &.views-row-odd {
+    background: $gray-lightest;
+  }
+
+  .float-left {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+
+  .float-left:empty {
+    display: none;
+  }
+}

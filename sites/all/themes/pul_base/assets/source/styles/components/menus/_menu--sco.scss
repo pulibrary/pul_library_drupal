@@ -1,0 +1,26 @@
+.three_nine-region--first {
+  .pane-menu-menu-scholarly-communications-of,
+  .pane-menu-menu-research-data-management {
+    li a {
+      color: $green-dark;
+    }
+// scss-lint:disable SelectorDepth
+    ul.menu li a.active {
+      background: $green-dark;
+      color: $white;
+    }
+  }
+}
+
+.page-node-13202,
+.page-node-13199,
+.page-node-13201,
+.page-node-12481,
+.page-node-12482,
+.page-node-12483,
+.page-node-12484,
+.page-node-12485 {
+  .node__content a {
+    color: $green-dark;
+  }
+}

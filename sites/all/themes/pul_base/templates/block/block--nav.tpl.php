@@ -48,7 +48,11 @@
   <?php print render($title_prefix); ?>
   <?php if ($block->subject): ?>
   	<h2<?php print $title_attributes; ?>>
-	  	<a href="/<?php print $block->title_link; ?>"><?php print $block->subject; ?></a>
+      <?php if(isset($block->title_link)): ?>
+  	  	<a href="/<?php print $block->title_link; ?>"><?php print $block->subject; ?></a>
+      <?php else: ?>
+        <?php print $block->subject; ?>
+      <?php endif; ?>
   	</h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>

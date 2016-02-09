@@ -1,0 +1,58 @@
+.page-node-7793 .view-header p,
+.page-node-7793 .pane-plasma-physics-feeds-panel-pane-3,
+.accordion,
+.accordion div,
+.accordion h1 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.page-node-7793 .tab,
+.accordion .tab {
+  background: $blue-dark;
+  color: $white;
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.view-id-plasma_physics_feeds .view-content,
+.accordion div .content {
+  display: none;
+  margin: 5px 0;
+}
+
+.page-node-7793 .three_six_three_stacked-region--middle div:target .view-content,
+.accordion div:target .content {
+  display: block;
+}
+
+.page-node-7793 .view-display-id-panel_pane_3 > div,
+.page-node-7793 .view-display-id-panel_pane_2 > div,
+.page-node-7793 .view-display-id-panel_pane_1 > div,
+.page-node-7793 .view-display-id-panel_pane_4 > div,
+.page-node-7793 .view-display-id-panel_pane_5 > div,
+.page-node-7793 .view-display-id-panel_pane_6 > div,
+.accordion > div {
+  margin-bottom: 3px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion > div:target {
+  height: auto;
+}
+
+.accordion .content em.bullet {
+  display: inline-block;
+  height: 5px;
+  margin: 0 5px;
+  width: 5px;
+}
+
+.accordion .content ul li {
+  float: left;
+  list-style: none;
+  margin: 5px 10px 5px 0;
+}

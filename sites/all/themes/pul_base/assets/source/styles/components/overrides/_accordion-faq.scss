@@ -1,0 +1,47 @@
+// overrides jquery faq accordion http://local-lib.princeton.edu/faq/borrow-direct
+body.faq .views-accordion-header,
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background-color: $white;
+  border-bottom: 1px dotted $gray-lightest;
+  padding: 0.1em;
+}
+
+body.faq .ui-accordion .ui-accordion-header {
+  cursor: pointer;
+  display: block;
+  margin-top: 2px;
+  padding: 0.5em 0.5em 0.5em 0.7em;
+  position: relative;
+  zoom: 1;
+}
+
+body.faq .views-accordion-header h3 {
+  margin: 0;
+  padding-top: 5px 0 5px 0;
+}
+
+body.faq .ui-accordion .ui-accordion-header a {
+  // font-size: $font-size-base;
+  font-weight: normal;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background: $white;
+  border: 0;
+  border-bottom: 1px dotted $gray-lightest;
+  padding: 0.1em;
+}
+
+.ui-widget-content {
+  border: 0;
+
+  // font-size: $font-size-base;
+}
+
+.ui-state-active {
+  border: 0;
+}

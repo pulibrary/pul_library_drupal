@@ -1,0 +1,16 @@
+.strong {
+  font-weight: bold;
+}
+
+.hide {
+  @include visually-hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+// hide empty p tags (drupal messy markup hack)
+p:empty {
+  display: none;
+}

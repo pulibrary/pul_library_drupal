@@ -1,0 +1,28 @@
+/*******************************************************************************
+ * nine_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 9-3-stacked column layout..
+ ******************************************************************************/
+
+.panel-display--nine_three_stacked {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .nine_three_stacked-region--top {
+    @include full;
+  }
+
+  .nine_three_stacked-region--first {
+    @include span(first 9);
+  }
+
+  .nine_three_stacked-region--second {
+    @include span(last 3);
+
+  }
+
+  .nine_three_stacked-region--bottom {
+    @include full;
+  }
+}

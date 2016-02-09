@@ -1,0 +1,48 @@
+.page-user .view-user-profile {
+  margin-top: 1.414em;
+}
+
+.user--picture img {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.section-databases .user--picture img {
+  float: none;
+  margin: 1.5em 0 0;
+}
+
+.user--name {
+  font-family: $font-sans;
+  margin-bottom: 0.5em;
+}
+
+.section-databases .user--name {
+  margin-top: 0.5em;
+}
+
+.user--title {
+  margin-bottom: 0.5em;
+}
+
+.page-user .user--title {
+  font-size: 1.2em;
+}
+
+.user--email a {
+  color: $gray-darkest;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue-dark;
+    text-decoration: underline;
+  }
+}
+
+.user--dept {
+  margin-bottom: 0.75em;
+}
+
+.user--building {
+  @include clearfix;
+}

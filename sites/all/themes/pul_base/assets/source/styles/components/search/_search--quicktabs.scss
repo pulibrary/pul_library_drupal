@@ -1,0 +1,175 @@
+.block--quicktabs,
+.pane-quicktabs-mendel-search-tabs {
+  margin: 0 auto;
+
+  h2 {
+    display: none;
+    margin: 0;
+  }
+
+  .quicktabs-tabs {
+    padding: 0;
+  }
+
+  .quicktabs-tabs li.active {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .quicktabs-tabs {
+    background: $gray-darkest;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0;
+  }
+
+  .quicktabs_main {
+    background: darken($gray-lightest, 3);
+    border-bottom-left-radius: em(4);
+    border-bottom-right-radius: em(4);
+    clear: both;
+    font-size: $font-size-base;
+    padding: 1em 1.4em;
+  }
+
+  .quicktabs-tabs > li {
+    // background: $gray-lightest;
+    border: 0;
+    clear: none;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    top: 0;
+    width: 25%;
+
+    a {
+      background: $gray-darkest;
+      border-right: 1px solid darken($gray-lightest, 50%);
+      color: $white;
+      display: inline-block;
+      font-family: $font-sans;
+      margin: 0;
+      padding: 0.4em 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    a:hover {
+      background: lighten($gray-darkest, 10);
+    }
+
+    a:active {
+      @include transition(all 0, 2s ease-in-out);
+    }
+
+    a:focus {
+      background: lighten($gray-darkest, 10);
+    }
+
+    &:first-child a {
+      border-top-left-radius: 4px;
+    }
+
+    &:last-child a {
+      border-right: 0;
+      border-top-right-radius: 4px;
+      width: 100%;
+    }
+  }
+
+  .quicktabs-tabs li.active a {
+    background: darken($gray-lightest, 3);
+    color: $black;
+  }
+
+  .quicktabs-tabs li.ui-state-active a,
+  .ui-widget-header .ui-state-active {
+    background: darken($gray-lightest, 2%);
+    color: $black;
+  }
+
+  .form-item-query label {
+    @include visually-hidden;
+  }
+
+  .form-type-textfield {
+    margin-bottom: 0;
+  }
+
+  .block__content {
+    overflow: auto;
+  }
+
+  .form-item-query {
+    display: inline;
+    overflow: auto;
+  }
+
+  input[type="text"] {
+    border: 1px solid $gray-dark;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    font-family: $font-sans;
+    height: 45px;
+    margin: 0.8em 0;
+    padding: 5px 10px;
+    width: 85%;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .quicktabs_main input[type="submit"] {
+    @include hidden;
+  }
+
+  .quicktabs_main button {
+    background: $orange;
+    border: 1px solid $gray-dark;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 4px;
+    clear: none;
+    color: $white;
+    float: left;
+    font-family: $font-sans;
+    height: 45px;
+    margin: 0.8em 0 0 -7px;
+    padding: 0;
+    width: 15%;
+  }
+
+  .quicktabs_main .icon-search .strong {
+    font-family: $font-sans;
+  }
+
+  .homepage-tab-form-message {
+    margin: 0.4em 0;
+
+    a {
+      font-size: $font-size-smaller;
+    }
+  }
+}
+
+.pane-quicktabs-mendel-search-tabs .quicktabs-tabs {
+  margin-left: 0;
+
+  > li {
+    width: 33.33%;
+  }
+}
+
+.pane-quicktabs-mendel-search-tabs h2 {
+  display: block;
+  margin-bottom: 1em;
+}

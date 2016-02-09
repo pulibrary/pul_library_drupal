@@ -1,0 +1,32 @@
+/*******************************************************************************
+ * three_six_three_stacked.layout.scss
+ *
+ * Styling of the 3-6-3 stacked column layout..
+ ******************************************************************************/
+
+.panel-display--three_six_three_stacked {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .three_six_three_stacked-region--top {
+    @include full;
+  }
+
+  .three_six_three_stacked-region--first {
+    @include span(first 3 of 12);
+  }
+
+  .three_six_three_stacked-region--middle {
+    @include span(6 at 4);
+
+  }
+
+  .three_six_three_stacked-region--second {
+    @include span(last 3 of 12);
+  }
+
+  .three_six_three_stacked-region--bottom {
+    @include full;
+  }
+}

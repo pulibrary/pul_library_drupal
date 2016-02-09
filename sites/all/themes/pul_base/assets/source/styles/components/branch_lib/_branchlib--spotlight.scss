@@ -1,0 +1,37 @@
+.pane-node-field-branch-spotlight-item {
+  display: block;
+  margin-top: 1.25em;
+  position: relative;
+
+  h3.field-label {
+    display: none;
+  }
+
+  .node__title {
+    // font-family: $font-sans;
+    font-size: 16px;
+    height: 100%;
+    line-height: 1.4em;
+    margin: 0;
+    max-width: 220px;
+    position: absolute;
+    text-shadow: $black 2px 2px;
+    top: 0;
+    z-index: 1;
+
+    a {
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(73, 79, 87, 0.95)), to(rgba(73, 79, 87, 0)));
+      border-radius: 4px;
+      color: $white;
+      display: block;
+      font-weight: bold;
+      height: 100%;
+      padding: 0.75em;
+    }
+  }
+
+  .field--name-field-spotlight-graphic img {
+    border-radius: 4px;
+    opacity: 0.7;
+  }
+}

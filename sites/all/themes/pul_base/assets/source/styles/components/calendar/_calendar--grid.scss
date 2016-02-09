@@ -1,0 +1,186 @@
+.view-library-hours {
+  .view-header {
+    background-color: $orange;
+    border: 1px solid $black;
+    border-left: 0;
+    border-right: 2px solid $white;
+    border-top: 0;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+
+.view .date-nav-wrapper {
+  margin-top: 5px;
+  position: relative;
+  width: 100%;
+
+  .date-nav {
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+
+    .date-prev,
+    .date-next {
+      background: none;
+      border-radius: 4px;
+      color: $white;
+      height: 25px;
+      margin-top: 3px;
+      padding: 0 4px;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: -4px;
+      vertical-align: middle;
+      width: 30px;
+    }
+
+    .date-prev {
+      float: left;
+      left: 20px;
+      right: 0;
+    }
+
+    .date-next {
+      float: right;
+      right: 20px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .date-heading {
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+
+    h3 {
+      color: $white;
+      font-size: 1.7em;
+      margin: 0;
+    }
+  }
+}
+
+.view-library-hours {
+  table {
+    margin: 0;
+  }
+
+  th.days {
+    background: $gray-lightest;
+    border: 1px solid $gray-light;
+    color: $gray-darkest;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  td.single-day,
+  td.date-box {
+    border: 1px solid $gray-light;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+    vertical-align: top;
+  }
+
+  .month-view td.date-box {
+    border-bottom: 0;
+    font-weight: bold;
+    padding-bottom: 0;
+    text-align: right;
+  }
+
+  .month-view td.single-day {
+    border-top: 0;
+  }
+
+  .empty {
+    background: lighten($gray-lightest, 1);
+  }
+}
+
+.views-field-field-open-hours .is-Open,
+.library-hours-status .is-Open {
+  display: none;
+}
+
+.section-hours .is-Closed .date-display-single {
+  display: none;
+}
+
+.library-hours .date-nav-wrapper .date-next i {
+  margin-left: 0;
+}
+
+.library-hours .date-nav-wrapper .date-prev a,
+.library-hours .date-nav-wrapper .date-next a {
+  background: none;
+  border: 0;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 90%;
+  margin: -2px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.library-hours .date-nav-wrapper .date-next,
+.library-hours .date-nav-wrapper .date-prev {
+  border-radius: 4px;
+  color: $white;
+  margin-top: 3px;
+  padding: 0 4px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.library-hours .date-nav-wrapper .date-prev i {
+  margin-left: -5px;
+}
+
+.single-region--middle .pane-term-description p {
+  margin-top: 0;
+}
+// scss-lint:disable SelectorDepth
+div.view-content > table.views-table > tbody > tr > td {
+  // @include adjust-font-size-to(14px);
+
+  p {
+    margin: 0.5em 0;
+  }
+}
+
+.calendar-calendar td span.date-display-single,
+.calendar-calendar td span.date-display-start,
+.calendar-calendar td span.date-display-end {
+  font-weight: normal;
+}
+
+.calendar-calendar td.empty {
+  color: darken($gray-lightest, 10);
+}
+
+.calendar-calendar .month-view .full td.date-box.today,
+.calendar-calendar .month-view .full td.single-day.today {
+  background: $orange-light;
+}
+
+.calendar-calendar .month-view .full td.date-box.today {
+  border: 2px solid $orange;
+  border-bottom: 0;
+}
+
+.calendar-calendar .month-view .full td.single-day.today {
+  border: 2px solid $orange;
+  border-top: 0;
+}
+
+.calendar-calendar .month-view .full tr td.single-day.today {
+  border-bottom: 2px solid $orange;
+}

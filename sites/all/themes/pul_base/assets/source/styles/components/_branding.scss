@@ -1,0 +1,80 @@
+// branding
+.wrapper--branding {
+  background-color: $gray-darkest;
+  border-top: 5px solid $orange;
+  min-height: 50px;
+
+  .site-name {
+    display: none;
+  }
+}
+
+.l-region--branding {
+  padding: 0 1em;
+
+  @include breakpoint($desk) {
+    padding: 0;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .homepage-tab-form-message {
+    display: none;
+  }
+}
+
+// non-SVG logo
+.site-logo {
+  clear: both;
+  height: 50px;
+  line-height: 21px;
+
+
+  @include breakpoint($bp-small-3) {
+    // @include span(6 of 12);
+    margin-left: -0.7em;
+  }
+
+
+  &:before { /* create a full-height inline block pseudo=element */
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; /* vertical alignment of the inline element */
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 1em;
+    vertical-align: middle;
+
+    @include breakpoint($desk) {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+// SVG logo
+.svg {
+  .site-logo img {
+    display: none;
+  }
+
+  .site-logo {
+    background: url("/sites/all/themes/pul_base/assets/public/images/logo.svg") center center no-repeat;
+    background-size: contain;
+    display: block;
+
+    @include breakpoint($tab) {
+      margin-left: 0;
+    }
+  }
+}
+
+.front h1 {
+  @include visually-hidden;
+}

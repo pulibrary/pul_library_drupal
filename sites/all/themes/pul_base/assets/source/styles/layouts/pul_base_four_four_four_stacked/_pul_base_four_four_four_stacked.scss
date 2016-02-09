@@ -1,0 +1,31 @@
+/*******************************************************************************
+ * pul_base_four_four_four_stacked.layout.scss
+ *
+ * Styling of the "PUL" 9-3 column layout..
+ ******************************************************************************/
+
+.panel-display--pul_base_four_four_four_stacked {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .pul_base_four_four_four_stacked-region--top {
+    @include full;
+  }
+
+  .pul_base_four_four_four_stacked-region--first {
+    @include span(first 4);
+  }
+
+  .pul_base_four_four_four_stacked-region--second {
+    @include span(4 at 5);
+  }
+
+  .pul_base_four_four_four_stacked-region--third {
+    @include span(last 4);
+  }
+
+  .pul_base_four_four_four_stacked-region--bottom {
+    @include full;
+  }
+}

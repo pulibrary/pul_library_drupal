@@ -1,0 +1,32 @@
+/*******************************************************************************
+ * five_four_three_stacked.layout.scss
+ *
+ * Styling of the "PUL" 5-4-3 stacked column layout..
+ ******************************************************************************/
+
+.panel-display--five_four_three_stacked {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .five_four_three_stacked-region--top {
+    @include full;
+  }
+
+  .five_four_three_stacked-region--first {
+    @include span(first 5);
+  }
+
+  .five_four_three_stacked-region--second {
+    @include span(4 at 6);
+
+  }
+
+  .five_four_three_stacked-region--third {
+    @include span(last 3);
+  }
+
+  .five_four_three_stacked-region--bottom {
+    @include full;
+  }
+}

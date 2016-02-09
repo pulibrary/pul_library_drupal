@@ -74,14 +74,14 @@
   <header class="l-header" role="banner">
     <a href="#main-content" class="skip2main"><?php print t('Skip to main content'); ?></a>
     <div class="wrapper wrapper--branding">
-      <section class="l-branding">
+      <section class="l-region l-region--branding">
         <?php if ($logo): ?>
-          <h2><a href="<?php print $front_page; ?>" title="<?php print t('Princeton University Library - Home'); ?>"  class="site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /><span class="site-name"><?php print $site_name; ?></span></a></h2>
+          <h2><a href="<?php print $front_page; ?>" title="<?php print t('Princeton University Library - Home'); ?>"  class="site-logo"><img src="/sites/all/themes/pul_base/assets/public/images/logo.png" alt="<?php print t('Home'); ?>" /><span class="site-name"><?php print $site_name; ?></span></a></h2>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
       </section>
     </div>
-    
+
     <?php print render($page['header']); ?>
     <div class="wrapper wrapper--navigation">
       <?php print render($page['navigation']); ?>
@@ -91,7 +91,7 @@
     </div>
   </header>
 
-  <section class="l-main test" id="main-content">
+  <section class="l-region l-region--main" id="main-content">
     <div class="l-content" role="main">
       <?php if(isset($node)): ?>
         <?php if (arg(0) == 'database' || $node->type == 'database' || $node->type == 'alternative_database_title') print $breadcrumb; ?>
