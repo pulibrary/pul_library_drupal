@@ -1,0 +1,37 @@
+{
+  "root": "./assets/public",
+  "assets": {
+    "base": "assets/source",
+    "dest": "assets/public"
+  },
+  "scripts": {
+    "base"  : "assets/source/scripts/",
+    "vendor": "assets/source/scripts/vendor/**/*.js",
+    "files" : [
+      "assets/source/scripts/**/*.js",
+      "!assets/source/scripts/vendor/*"
+    ],
+    "dest"  : "assets/public/scripts"
+  },
+  "styles": {
+    "base" : "assets/source/styles/",
+    "files": [
+      "assets/source/styles/**/*.scss"
+    ],
+    "dest" : "assets/public/styles/"
+  },
+  "fonts": {
+    "base" : "assets/source/fonts/",
+    "files": [
+      "assets/source/fonts/**/*"
+    ],
+    "dest" : "assets/public/fonts/"
+  },
+  "images": {
+    "base" : "assets/source/images/",
+    "files": [
+      "assets/source/images/**/*"
+    ],
+    "dest" : "assets/public/images/"
+  }
+}

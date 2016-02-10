@@ -1,0 +1,63 @@
+ul.pager {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: none;
+    list-style: none;
+    margin-bottom: 1em;
+    padding: 0;
+
+    @include breakpoint($tab) {
+      display: inline-block;
+    }
+
+
+    &.pager__item--first,
+    &.pager__item--previous,
+    &.pager__item--current,
+    &.pager__item--next,
+    &.pager__item--last {
+      display: inline-block;
+    }
+
+    &.pager__item {
+      padding: 0;
+    }
+  }
+
+  li a {
+
+    @include transition(all 0.2s ease-in-out);
+    background: $gray-lightest;
+    border: 1px solid $gray-light;
+    border-radius: $base-border-radius;
+    color: $gray-darkest;
+    outline: none;
+    padding: 0.375em 0.75em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: $white;
+      color: $blue;
+    }
+
+    &:active {
+      background: $white;
+      color: $blue;
+    }
+  }
+
+  li.pager__item--current {
+    background: $white;
+    border: 1px solid $gray-light;
+    border-radius: $base-border-radius;
+    color: $black;
+    font-weight: bold;
+    outline: none;
+    padding: 0.375em 0.75em;
+  }
+}

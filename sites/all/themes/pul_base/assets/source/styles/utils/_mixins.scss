@@ -1,0 +1,94 @@
+// Vertical centering
+// Usage: @include vertical-align();
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Clearfix
+// Usage: @include clearfix;
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+// Hide content visually. still visible to screen readers
+// @include visually-hidden;
+
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+// Hide visually and hide from screen reader
+// @include hidden;
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// PUL Icons
+@mixin pul-icon {
+  font-family: "pul_base_theme";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+// Word wrap
+@mixin word-wrap {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+// Placeholder
+$pseudo-phprefix: "::-webkit-input-placeholder" ":-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+
+$ph-styles: (
+  font-style: normal,
+  font-weight: normal,
+  letter-spacing : normal,
+  line-height: normal,
+  text-align: inherit,
+  text-decoration: inherit,
+  padding: 0
+);
+
+// @mixin placeholder-theme($styles) {
+//   @each $pseudo in $pseudo-phprefix {
+
+//     @at-root #{&}#{$pseudo} {
+//       @each $key, $value in $styles {
+//         #{$key}: #{$value};
+//       }
+//     }
+
+//   }
+// }
+
+// @mixin placeholder {
+//   @each $pseudo in $pseudo-phprefix {
+
+//     @at-root #{&}#{$pseudo} {
+//       @content
+//     }
+
+//   }
+// }

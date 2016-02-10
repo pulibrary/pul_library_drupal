@@ -1,0 +1,156 @@
+// .front .wrapper--highlighted {
+//   background: rgba(lighten($gray-darkest, 28), 0.75);
+//   background-size: 1600px auto;
+//   padding: 0;
+
+//   @include breakpoint($tab) {
+//     background: linear-gradient(rgba(lighten($gray-darkest, 28), 0.75), rgba(lighten($gray-darkest, 28), 0.75)), url(../public/assets/images/bg-studyroom.jpg) center no-repeat;
+//     background-size: cover;
+//   }
+
+
+//   .l-region--highlighted {
+//     padding: 1em;
+//     position: relative;
+
+//     @include breakpoint($tab) {
+//       padding: 3em 0;
+//     }
+//   }
+// }
+
+.block--views-spotlight-dispalsys-block {
+  clear: both;
+  display: none;
+
+  @include breakpoint($desk) {
+    @include span(3 of 12);
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.pane-spotlight-dispalsys {
+  height: 215px;
+
+  $hover-tile-height: 215px;
+
+  img {
+    height: 215px;
+    width: 350px;
+  }
+}
+
+.block--views-spotlight-dispalsys-block {
+  background: rgba($gray-darkest, 0.65);
+  border-radius: 4px;
+  height: 159px;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  padding: 0;
+
+  h2 {
+    display: none;
+  }
+
+  a {
+    color: $white;
+    font-family: $font-sans;
+    font-size: $font-size-base;
+    margin: 0;
+  }
+
+  img {
+    height: 159px;
+    width: 260px;
+  }
+
+  .view-spotlight-dispalsys .views-row-1 {
+    border-radius: 4px;
+  }
+}
+
+.block--pudl-highlight {
+  background: rgba($gray-darkest, 0.35);
+  bottom: 0;
+  display: none;
+  margin-top: 1em;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  @include breakpoint($tab) {
+    @include span(3 of 12);
+    display: block;
+    margin-right: 0;
+  }
+
+
+  @include breakpoint($desk) {
+    @include span(2 of 12);
+    display: block;
+    margin-right: 0;
+  }
+
+
+  a {
+    color: $white;
+    font-family: $font-sans;
+    font-size: $font-size-smaller;
+    margin: 0;
+    text-align: center;
+
+    .icon-newtab {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+//spotlight gray mask
+.block--views-spotlight-dispalsys-block {
+  $hover-tile-height: 159px;
+
+  cursor: pointer;
+  margin-bottom: $base-line-height;
+
+  .view-content .views-row {
+    height: $hover-tile-height;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .spotlight-container {
+    @include transition(all, 0.2s ease-in-out);
+
+    background: inherit;
+    color: $white;
+    height: inherit;
+  }
+
+  .spotlight-image {
+    border-radius: 4px;
+    color: transparentize($white, 0.3);
+    font-size: $font-size-larger;
+    font-weight: 200;
+    padding: 0;
+    text-align: center;
+
+    img {
+      border-radius: 4px;
+    }
+  }
+
+  .spotlight-text a {
+    background-image: linear-gradient(rgba($gray-darkest, 0.95), rgba($gray-darkest, 0.5));
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-weight: bold;
+    height: 100%;
+    padding: 0.5em 0.75em;
+    position: absolute;
+    text-shadow: 2px 2px $black;
+    top: 0;
+  }
+}

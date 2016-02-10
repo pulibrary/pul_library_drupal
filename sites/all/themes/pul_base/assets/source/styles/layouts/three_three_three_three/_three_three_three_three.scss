@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * three_three_three_three.layout.scss
+ *
+ * Styling of the "PUL" 3-3-3-3 column layout..
+ ******************************************************************************/
+
+.panel-display--three_three_three_three {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .three_three_three_three_stacked-region--first {
+    @include span(first 3);
+  }
+
+  .three_three_three_three_stacked-region--second {
+    @include span(3 at 4);
+  }
+
+  .three_three_three_three_stacked-region--third {
+    @include span(3 at 8);
+  }
+
+  .three_three_three_three_stacked-region--fourth {
+    @include span(last 3);
+  }
+}

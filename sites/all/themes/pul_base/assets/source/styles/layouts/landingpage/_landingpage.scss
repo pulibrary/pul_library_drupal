@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * landingpage.layout.scss
+ *
+ * Styling of the "Landing Page" 3 column layout..
+ ******************************************************************************/
+
+.panel-display--landingpage {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .landingpage-region--first {
+    @include span(first 3);
+  }
+
+  .landingpage-region--second {
+    @include span(last 9);
+  }
+
+  .landingpage-region--third {
+    @include span(first 6);
+  }
+
+  .landingpage-region--fourth {
+    @include span(last 6);
+  }
+}

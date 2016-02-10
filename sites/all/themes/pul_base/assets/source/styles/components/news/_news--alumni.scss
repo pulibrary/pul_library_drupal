@@ -1,0 +1,36 @@
+//alumni news
+
+.five_four_three_stacked-region--bottom .view-id-library_news {
+  .views-row-1 {
+    @include full;
+    @include breakpoint($tab) {
+      @include span(4 of 12);
+      margin-left: 0;
+    }
+  }
+
+  .views-row-2 {
+    @include full;
+
+    @include breakpoint($tab) {
+      @include span(4 of 12);
+    }
+  }
+
+  .views-row-3 {
+    @include full;
+
+    @include breakpoint($tab) {
+      @include span(4 of 12);
+      margin-right: 0;
+    }
+  }
+
+  .field--name-field-news-featured-graphic img {
+    margin-bottom: 1em;
+  }
+
+  .field--name-field-news-article-snippet {
+    clear: both;
+  }
+}
