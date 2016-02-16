@@ -814,7 +814,7 @@ marquand',
     $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'libraries-panel_pane_4';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
@@ -834,6 +834,32 @@ marquand',
     $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
     $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
     $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'libraries-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Contact Us',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'c25831d8-8914-48ba-94f4-b3e2233e2ec0';
+    $display->content['new-c25831d8-8914-48ba-94f4-b3e2233e2ec0'] = $pane;
+    $display->panels['first'][3] = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
     $pane = new stdClass();
     $pane->pid = 'new-780ed68a-1bf7-44d7-b8e2-8fc24a9524e7';
     $pane->panel = 'middle';

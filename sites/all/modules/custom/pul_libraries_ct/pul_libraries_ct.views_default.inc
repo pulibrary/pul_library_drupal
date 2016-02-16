@@ -861,7 +861,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_address_1']['field'] = 'field_address_1';
   $handler->display->display_options['fields']['field_address_1']['label'] = '';
   $handler->display->display_options['fields']['field_address_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address_1']['alter']['text'] = '<a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[field_address_1]</a>';
+  $handler->display->display_options['fields']['field_address_1']['alter']['text'] = '<i class=\'icon-location icon-large\' > </i> <a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[field_address_1]</a>';
   $handler->display->display_options['fields']['field_address_1']['element_label_colon'] = FALSE;
   /* Field: Content: Address 2 */
   $handler->display->display_options['fields']['field_address_2']['id'] = 'field_address_2';
@@ -888,6 +888,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_zip']['table'] = 'field_data_field_zip';
   $handler->display->display_options['fields']['field_zip']['field'] = 'field_zip';
   $handler->display->display_options['fields']['field_zip']['label'] = '';
+  $handler->display->display_options['fields']['field_zip']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_zip']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_zip']['alter']['text'] = '[field_city], [field_state] [field_zip]';
   $handler->display->display_options['fields']['field_zip']['element_label_colon'] = FALSE;
@@ -897,7 +898,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '[field_e_mail_address]';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class=\'icon-mail icon-large\' > </i> [field_e_mail_address]';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';
