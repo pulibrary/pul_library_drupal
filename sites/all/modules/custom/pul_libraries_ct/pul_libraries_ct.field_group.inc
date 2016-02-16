@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pul_libraries_ct_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,7 +35,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_branch_image|node|libraries|form'] = $field_group;
+  $field_groups['group_branch_image|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -62,7 +62,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_branch_spotlight|node|libraries|form'] = $field_group;
+  $field_groups['group_branch_spotlight|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -94,7 +94,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_lib_address|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_address|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -121,7 +121,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_lib_amenities|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_amenities|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -150,7 +150,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_lib_contact|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_contact|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -178,7 +178,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_lib_hours|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_hours|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -207,7 +207,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_lib_internal_links|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_internal_links|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -237,7 +237,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_lib_links|node|libraries|form'] = $field_group;
+  $field_groups['group_lib_links|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -265,7 +265,7 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_loc_det|node|libraries|form'] = $field_group;
+  $field_groups['group_loc_det|node|libraries|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -293,7 +293,20 @@ function pul_libraries_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_pul_dash_attachments|node|libraries|form'] = $field_group;
+  $field_groups['group_pul_dash_attachments|node|libraries|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Amenities');
+  t('Attachments');
+  t('Branding');
+  t('Contact Information');
+  t('Hours');
+  t('Internal Links');
+  t('Library Address');
+  t('Location Detail');
+  t('Spotlight');
+  t('URLs and Paths');
+
+  return $field_groups;
 }
