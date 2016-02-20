@@ -11,6 +11,7 @@ core = 7.x
 stylesheets[all][] = pul_base_icons/style.css
 stylesheets[all][] = pul_base_icons/ie7/ie7.css
 stylesheets[all][] = css/pul-base.styles.css
+stylesheets[print][] = css/pul-base.print.css
 
 ; ========================================
 ; Scripts
