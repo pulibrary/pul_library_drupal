@@ -1,0 +1,17 @@
+.view-subject-specialists {
+  caption {
+    font-family: $font-secondary;
+    font-size: 1.44em;
+    font-weight: inherit;
+    line-height: 1.2em;
+    margin: 1.414em 0 0.5em;
+  }
+
+  table th:first-child {
+    width: 100px;
+  }
+
+  table th:nth-child(2) {
+    width: 200px;
+  }
+}

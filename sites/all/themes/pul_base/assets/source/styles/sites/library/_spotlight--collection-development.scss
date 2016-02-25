@@ -1,0 +1,19 @@
+// _spotlight--collection-development.scss
+
+.section-collections-and-collection-development,
+.section-collections {
+  .three_six_three_stacked-region--top,
+  .single-region--top,
+  .nine_three_stacked-region--top {
+    background-color: darken($gray-darkest, 18);
+    background-image: url("/sites/all/themes/pul_base/images/trustee_reading_room_50.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .pane-spotlight-graphics-panel-pane-1 {
+    clear: both;
+    margin-top: $vert-spacing-unit * 1.25;
+    z-index: 1;
+  }
+}

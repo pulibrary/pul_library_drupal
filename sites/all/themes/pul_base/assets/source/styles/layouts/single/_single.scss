@@ -1,0 +1,23 @@
+/*******************************************************************************
+ * single.layout.scss
+ *
+ * Styling of the 12 wide single column layout..
+ ******************************************************************************/
+
+.panel-display--single {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .single-region--top {
+    @include full;
+  }
+
+  .single-region--middle {
+    @include full;
+  }
+
+  .single-region--bottom {
+    @include full;
+  }
+}

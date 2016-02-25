@@ -1,0 +1,91 @@
+files:
+  include: '**/*.scss'
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  border-zero: 1
+  brace-style:
+    - 1
+    - allow-single-line: true
+  clean-import-paths:
+    - 1
+    - filename-extension: false
+      leading-underscore: false
+  empty-line-between-blocks:
+    - 1
+    - ignore-single-line-rulesets: false
+  extends-before-declarations: 1
+  extends-before-mixins: 1
+  final-newline: 1
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  function-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  hex-length:
+    - 1
+    - style: short
+  hex-notation:
+    - 1
+    - style: lowercase
+  indentation:
+    - 1
+    - size: 2
+  leading-zero:
+    - 1
+    - include: true
+  mixin-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  mixins-before-declarations: 1
+  nesting-depth:
+    - 1
+    - max-depth: 4
+  no-color-keyword: 1
+  no-css-comments: 0
+  no-debug: 1
+  no-duplicate-properties: 1
+  no-empty-rulesets: 1
+  no-ids: 1
+  no-invalid-hex: 1
+  no-mergeable-selectors: 0
+  no-qualifying-elements: 0
+  no-trailing-zero: 1
+  no-vendor-prefixes:
+    - 1
+    - additional-identifiers: []
+      excluded-identifiers: []
+  placeholder-in-extend: 0
+  placeholder-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  property-sort-order: 1
+  quotes:
+    - 1
+    - style: double
+  single-line-per-selector: 1
+  space-after-bang:
+    - 1
+    - include: false
+  space-after-colon:
+    - 1
+    - include: true
+  space-after-comma:
+    - 1
+    - include: true
+  space-before-bang:
+    - 1
+    - include: true
+  space-before-brace:
+    - 1
+    - include: true
+  trailing-semicolon: 1
+  variable-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase

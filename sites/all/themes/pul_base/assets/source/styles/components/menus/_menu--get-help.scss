@@ -1,0 +1,57 @@
+.pane-menu-menu-get-help-menu {
+  .menu {
+    list-style: none;
+
+    .leaf {
+      display: block;
+      list-style: none;
+      margin-bottom: 5px;
+
+      a {
+        //chat button
+        // scss-lint:disable SelectorDepth, NestingDepth
+        .libraryh3lp .button--libraryh3lp {
+          font-size: 0.875rem;
+        }
+
+        &:hover:before {
+          text-decoration: none;
+        }
+      }
+
+      [class^="ico-"]:before,
+      [class*=" ico-"]:before {
+        display: inline-block;
+        font-family: "pul_base_theme";
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        margin-left: 0;
+        margin-right: 0.5em;
+        speak: none;
+        text-transform: none;
+      }
+
+      .ico-chat:before {
+        content: "\e601";
+      }
+
+      .ico-mail:before {
+        content: "\f03b";
+      }
+
+      .ico-calendar:before {
+        content: "\e620";
+      }
+
+      .ico-phone:before {
+        content: "\e60e";
+      }
+
+      .ico-book:before {
+        content: "\e61d";
+      }
+    }
+  }
+}

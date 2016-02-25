@@ -1,7 +1,0 @@
-.button--appointment {
-    clear: both;
-    a {
-        @include button(simple, lighten($orange, 5));
-        color: $white;
-    }
-}

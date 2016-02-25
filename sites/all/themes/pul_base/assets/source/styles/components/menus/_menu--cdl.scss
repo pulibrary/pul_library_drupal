@@ -1,0 +1,63 @@
+// _menu-cdl.scss
+
+/* CDL Menu */
+ul.nice-menu.nice-menu-menu-collection-development-webs {
+  background: none;
+  border-top: 0;
+  margin-top: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li {
+  background: none;
+  border: 0;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a {
+  background: none;
+  color: $white;
+  padding-left: 1.7em;
+  padding-right: 1.7em;
+  text-decoration: none;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs li a:hover,
+ul.nice-menu.nice-menu-menu-collection-development-webs li a.active {
+  // font-size: $font-size-base;
+  color: $orange;
+}
+
+/* !Important Dropdowns */
+ul.nice-menu.nice-menu-menu-collection-development-webs ul {
+  background-color: $black;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  top: 2em;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a {
+  color: $white;
+  font-size: 1em;
+  padding-right: 15px;
+  text-align: left;
+}
+
+ul.nice-menu.nice-menu-menu-collection-development-webs .menuparent a:hover {
+  color: $orange;
+  padding-right: 15px;
+}
+
+.views-slideshow-cycle-main-frame.views_slideshow_cycle_teaser_section {
+  display: block;
+  margin: 0 auto;
+
+  a {
+    color: $white;
+  }
+}
+
+.views-slideshow-controls-bottom {
+  display: none;
+}

@@ -1,0 +1,39 @@
+.three_six_three-region--second .view-library-hours,
+.pul_base_nine_three-region--second .view-library-hours {
+  // scss-lint:disable SelectorDepth
+  .view-header .date-nav-wrapper .date-heading h3 {
+    // @include adjust-font-size-to(16px);
+
+  }
+
+  .date-nav-wrapper .date-prev [class^="icon-"],
+  .date-nav-wrapper .date-next [class^="icon-"] {
+    font-size: 1.7em;
+  }
+
+  .view-content table {
+    margin-top: 0;
+  }
+
+  .date-heading {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .views-field.views-field-field-open-hours-1 {
+    width: 40%;
+  }
+
+  .view-content td {
+    // @include adjust-font-size-to(14px);
+
+    &.views-field-field-hours-library-status {
+      text-align: right;
+    }
+  }
+
+  .views-field-field-hours-library-status .is-Open {
+    display: none;
+  }
+}

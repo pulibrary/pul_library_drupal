@@ -1,0 +1,35 @@
+//Check if you have a cool color on your hands. Cool colors will overpower warm colors when mixing.
+
+@function is-cool-color($color) {
+  @return hue($color) < 300 and hue($color) > 120;
+}
+
+//Establish a relationship (similar lighting conditions) between colors.
+
+@function harmonious-mix($mix, $base) {
+  @if (is-cool-color($mix)){
+    @return mix($mix, $base, 9%);
+  } @else {
+    @return mix($mix, $base, 35%);
+  }
+}
+
+// Figure out the right amount to desaturate the color
+
+@function create-neutral($color) {
+  @if (saturation($color) < 50){
+    @return desaturate($color, 15);
+  } @else {
+    @return desaturate($color, 33%);
+  }
+}
+
+// Increase lightness and darkness based on what you have
+
+@function increase-contrast($color, $percent) {
+  @if (lightness($color) > 50) {
+    @return lighten($color, $percent);
+  } @else {
+    @return darken($color, $percent);
+  }
+}

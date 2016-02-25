@@ -1,0 +1,19 @@
+/*******************************************************************************
+ * pul_base_nine_three.layout.scss
+ *
+ * Styling of the "PUL" 9-3 column layout..
+ ******************************************************************************/
+
+.panel-display--pul_base_nine_three {
+  @include clearfix;
+}
+
+@include breakpoint($tab) {
+  .pul_base_nine_three-region--first {
+    @include span(first 9);
+  }
+
+  .pul_base_nine_three-region--second {
+    @include span(last 3);
+  }
+}

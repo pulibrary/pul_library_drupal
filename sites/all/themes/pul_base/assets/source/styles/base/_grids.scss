@@ -1,0 +1,98 @@
+$susy: (
+  output: float,
+  container: 1200px,
+  columns: 12,
+  gutters: 2/3,
+  global-box-sizing: border-box,
+  debug: (
+    image: hide,
+    color: rgba($orange, 0.25),
+    output: overlay,
+    toggle: top right,
+  ),
+);
+
+$gallery-layout: layout(12 0.125 fluid float after);
+
+$nav-layout: layout(12 0 fluid float inside);
+
+$golden-layout: layout((1 1.618 2.618) 0.1 fluid float split);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.l-region {
+  @include container;
+}
+
+.l-region--branding h2 {
+  @include span(12);
+
+  @include breakpoint($tab) {
+    @include span(6);
+  }
+}
+
+.l-region--branding .block--allsearch-block {
+  @include span(12);
+
+  @include breakpoint($tab) {
+    @include span(last 4);
+  }
+}
+
+
+body {
+  background: $gray-lightest;
+}
+
+.l-page {
+  background: $white;
+}
+
+.l-header,
+.l-footer,
+.wrapper {
+  @include clearfix;
+
+  margin: 0 auto;
+}
+
+.l-region--navigation,
+.l-region--highlighted,
+.l-region--highlighted,
+.l-main,
+.l-branding,
+.l-region--footer {
+  @include clearfix;
+
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.block--quicktabs-homepage-search-tabs {
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.l-main {
+  padding: 1em;
+}
+
+.front .l-main {
+  @include breakpoint($desk) {
+    padding: 0;
+  }
+}
+
+.l-content {
+  padding: 0 1em;
+
+  @include breakpoint($desk) {
+    padding: 0;
+  }
+}

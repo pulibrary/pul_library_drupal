@@ -1,0 +1,78 @@
+.page-find,
+.section-research,
+.section-resource,
+.branch-libraries,
+.l-region--highlighted {
+  .dbsearch-block-form,
+  .summon-block-form,
+  .allsearch-block-form,
+  .allsearch-block-form--2,
+  .website-block-form {
+    > div {
+
+      display: inline-block;
+      margin-top: 0.9em;
+      position: relative;
+      width: 100%;
+
+      input {
+        box-sizing: border-box;
+        display: inline-block;
+      }
+
+      div.form-item-query {
+        position: relative;
+// scss-lint:disable SelectorDepth, NestingDepth
+        label {
+          @include visually-hidden;
+        }
+
+        input[type=text] {
+          height: 35px;
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+      input[type=submit] {
+        @include hidden;
+      }
+
+      button {
+        background-color: $gray-dark;
+        border: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        color: $white;
+        font-weight: normal;
+        height: 35px;
+        padding: 5px 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+// scss-lint:disable NestingDepth
+        &:hover,
+        &:focus {
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
+
+//buttons
+.section-resource .dbsearch-block-form > div button,
+.section-resource .summon-block-form > div button {
+  // scss-lint:disable SelectorDepth
+  .icon-search {
+    margin-right: 0;
+  }
+
+  .hide-sm {
+    @include visually-hidden;
+  }
+}
+
+.pane-dbsearch-block-dbsearch-search {
+  margin-bottom: 1em;
+}

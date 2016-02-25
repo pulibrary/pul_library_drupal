@@ -1,0 +1,59 @@
+.branch-libraries,
+.section-econlib,
+.section-copyright {
+  @include breakpoint($tab) {
+    .three_six_three_stacked-region--top,
+    .three_three_three_three_stacked-region--top,
+    .three_nine_stacked-region--top {
+      .pane-node-field-library-image,
+      .pane-branch-library-image-panel-pane-1,
+      .pane-custom {
+        position: relative;
+      }
+
+      h2 {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+        bottom: 0;
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        padding: 0.3em;
+        position: absolute;
+        text-shadow: $white 2px 2px;
+        width: 100%;
+        z-index: 1;
+      }
+
+      img,
+      a {
+        display: block;
+        opacity: 0.4;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include breakpoint($max-tab) {
+    .three_six_three_stacked-region--top,
+    .three_three_three_three_stacked-region--top,
+    .three_nine_stacked-region--top {
+      img,
+      a {
+        display: none;
+        opacity: 0.4;
+      }
+    }
+  }
+
+
+  .l-main {
+    padding: 0;
+  }
+
+  h1 {
+    display: none;
+  }
+}

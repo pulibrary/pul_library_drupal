@@ -1,0 +1,41 @@
+.field--name-field-ip-db-copyright-info table,
+.field--name-field-db-copyright-information table,
+.field--name-field-cas-db-copyright-statement table {
+  border-spacing: 0;
+
+  th {
+    background: $gray-darkest;
+    color: $white;
+    padding: 0.5em;
+    width: 50%;
+  }
+
+  td {
+    border-bottom: 0;
+    padding-top: 1em;
+    vertical-align: top;
+
+
+
+    ul {
+      margin-left: 1.5em;
+    }
+
+    li {
+      list-style: disc;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.field--name-field-db-copyright-information p {
+  margin: 1em 0 2em;
+}
+
+.attachment {
+  margin: 0.5em 0;
+}
+
+.page-research-databases table th:first-child {
+  width: 35%;
+}
