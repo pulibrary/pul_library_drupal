@@ -126,7 +126,7 @@ function catalog_faq_results_content() {
 function catalog_blacklight_results_content() {
   $path = catalog_block_query_escape($_GET['q']);
   $sid = catalog_block_get_sid();
-  $ajax_spinner = "<div id='faq-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
+  $ajax_spinner = "<div id='blacklight-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/utils/pulsearch/any?query={$path}&sid={$sid}' id='blacklight-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
