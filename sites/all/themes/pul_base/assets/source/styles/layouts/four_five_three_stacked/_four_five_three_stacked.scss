@@ -11,6 +11,7 @@
 @include breakpoint($tab) {
   .four_five_three_stacked-region--top {
     @include full;
+    float: none;
   }
 
   .four_five_three_stacked-region--second {
