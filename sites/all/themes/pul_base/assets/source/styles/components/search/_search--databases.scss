@@ -1,15 +1,13 @@
 .page-find,
 .section-research,
 .section-resource,
-.branch-libraries,
-.l-region--highlighted {
+.branch-libraries {
   .dbsearch-block-form,
   .summon-block-form,
   .allsearch-block-form,
   .allsearch-block-form--2,
   .website-block-form {
     > div {
-
       display: inline-block;
       margin-top: 0.9em;
       position: relative;
@@ -22,7 +20,8 @@
 
       div.form-item-query {
         position: relative;
-// scss-lint:disable SelectorDepth, NestingDepth
+
+        // scss-lint:disable SelectorDepth, NestingDepth
         label {
           @include visually-hidden;
         }
@@ -50,7 +49,8 @@
         position: absolute;
         right: 0;
         top: 0;
-// scss-lint:disable NestingDepth
+
+        // scss-lint:disable NestingDepth
         &:hover,
         &:focus {
           background-color: $orange;

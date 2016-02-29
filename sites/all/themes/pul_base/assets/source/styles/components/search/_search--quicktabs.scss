@@ -146,9 +146,13 @@
     margin: 0.8em 0 0 -7px;
     padding: 0;
     width: 15%;
+
+    span {
+      font-weight: bold;
+    }
   }
 
-  .quicktabs_main .icon-search .strong {
+  .quicktabs_main .icon-search .hide-sm {
     font-family: $font-sans;
   }
 
