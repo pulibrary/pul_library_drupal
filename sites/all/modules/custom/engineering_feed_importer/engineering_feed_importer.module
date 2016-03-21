@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Engineering Feed Importer feature.
+ */
+
+include_once 'engineering_feed_importer.features.inc';

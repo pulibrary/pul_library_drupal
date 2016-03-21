@@ -1,0 +1,11 @@
+name = Engineering Feed Importer
+description = Imports engineering libblog feed
+core = 7.x
+package = PUL Importers
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_ex
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = engineering_blog_importer

@@ -220,6 +220,25 @@ engineering',
     $display->content['new-ee9cd44e-3811-4342-a636-06a588d5b4bd'] = $pane;
     $display->panels['middle'][1] = 'new-ee9cd44e-3811-4342-a636-06a588d5b4bd';
     $pane = new stdClass();
+    $pane->pid = 'new-47bb5bef-a675-44fa-9b3a-aa238cf15689';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_17';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '47bb5bef-a675-44fa-9b3a-aa238cf15689';
+    $display->content['new-47bb5bef-a675-44fa-9b3a-aa238cf15689'] = $pane;
+    $display->panels['middle'][2] = 'new-47bb5bef-a675-44fa-9b3a-aa238cf15689';
+    $pane = new stdClass();
     $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
     $pane->panel = 'second';
     $pane->type = 'entity_field';
@@ -602,6 +621,37 @@ help/engineering-course-reserves-request-form',
     $pane->uuid = '35bde2ea-ff80-471a-b8b9-91bbc894adde';
     $display->content['new-35bde2ea-ff80-471a-b8b9-91bbc894adde'] = $pane;
     $display->panels['middle'][2] = 'new-35bde2ea-ff80-471a-b8b9-91bbc894adde';
+    $pane = new stdClass();
+    $pane->pid = 'new-6fc75bff-13ab-46b3-b9e3-b897ae74a987';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'library_news-panel_pane_18';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'engineering/news',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '6fc75bff-13ab-46b3-b9e3-b897ae74a987';
+    $display->content['new-6fc75bff-13ab-46b3-b9e3-b897ae74a987'] = $pane;
+    $display->panels['middle'][3] = 'new-6fc75bff-13ab-46b3-b9e3-b897ae74a987';
     $pane = new stdClass();
     $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
     $pane->panel = 'second';
