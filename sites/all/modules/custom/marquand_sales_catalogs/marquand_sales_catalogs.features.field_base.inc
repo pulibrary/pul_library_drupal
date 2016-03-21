@@ -10,7 +10,7 @@
 function marquand_sales_catalogs_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_sc_auction_house'
+  // Exported field_base: 'field_sc_auction_house'.
   $field_bases['field_sc_auction_house'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -39,7 +39,7 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sc_city'
+  // Exported field_base: 'field_sc_city'.
   $field_bases['field_sc_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -68,7 +68,7 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sc_date'
+  // Exported field_base: 'field_sc_date'.
   $field_bases['field_sc_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -92,7 +92,7 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sc_name'
+  // Exported field_base: 'field_sc_name'.
   $field_bases['field_sc_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -116,7 +116,7 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sc_notes'
+  // Exported field_base: 'field_sc_notes'.
   $field_bases['field_sc_notes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -138,7 +138,7 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sc_sale'
+  // Exported field_base: 'field_sc_sale'.
   $field_bases['field_sc_sale'] = array(
     'active' => 1,
     'cardinality' => 1,

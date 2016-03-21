@@ -175,6 +175,29 @@ function all_search_page_configuration_default_page_manager_pages() {
     $display->content['new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e'] = $pane;
     $display->panels['first'][1] = 'new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e';
     $pane = new stdClass();
+    $pane->pid = 'new-7868c2dd-aa60-4589-a3c5-bf34b4647b30';
+    $pane->panel = 'first';
+    $pane->type = 'block';
+    $pane->subtype = 'catalog_block-catalog_blacklight_results';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '7868c2dd-aa60-4589-a3c5-bf34b4647b30';
+    $display->content['new-7868c2dd-aa60-4589-a3c5-bf34b4647b30'] = $pane;
+    $display->panels['first'][2] = 'new-7868c2dd-aa60-4589-a3c5-bf34b4647b30';
+    $pane = new stdClass();
     $pane->pid = 'new-89943dfe-29c1-422d-aec8-55484fe1a116';
     $pane->panel = 'second';
     $pane->type = 'block';

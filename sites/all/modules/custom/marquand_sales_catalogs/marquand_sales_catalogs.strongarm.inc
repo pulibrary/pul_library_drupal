@@ -152,5 +152,19 @@ function marquand_sales_catalogs_strongarm() {
   $strongarm->value = 'marquand/catalogs/[node:nid]';
   $export['pathauto_node_marquand_sales_catalog_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_sales_catalog_auction_house_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_sales_catalog_auction_house_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_sales_catalog_city_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_sales_catalog_city_pattern'] = $strongarm;
+
   return $export;
 }

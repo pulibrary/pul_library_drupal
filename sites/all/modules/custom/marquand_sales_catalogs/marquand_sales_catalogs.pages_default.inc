@@ -15,7 +15,7 @@ function marquand_sales_catalogs_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Marquand Sales Catalogs';
   $page->admin_description = 'Sales Catalogs for Marquand';
-  $page->path = 'marquand/sales-catalogs';
+  $page->path = 'marquand/resources/sales-catalogs';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -80,7 +80,33 @@ function marquand_sales_catalogs_default_page_manager_pages() {
     $pane->uuid = 'dbbd4dbb-a0db-40ab-9496-139f131a7e5d';
     $display->content['new-dbbd4dbb-a0db-40ab-9496-139f131a7e5d'] = $pane;
     $display->panels['middle'][0] = 'new-dbbd4dbb-a0db-40ab-9496-139f131a7e5d';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $pane = new stdClass();
+    $pane->pid = 'new-0ee21d11-00af-4702-b454-8569c47cf3c7';
+    $pane->panel = 'top';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'branch_library_image-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '7790',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Marquand Library of Art and Archaeology',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0ee21d11-00af-4702-b454-8569c47cf3c7';
+    $display->content['new-0ee21d11-00af-4702-b454-8569c47cf3c7'] = $pane;
+    $display->panels['top'][0] = 'new-0ee21d11-00af-4702-b454-8569c47cf3c7';
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-dbbd4dbb-a0db-40ab-9496-139f131a7e5d';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

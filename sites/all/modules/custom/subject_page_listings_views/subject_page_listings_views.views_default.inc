@@ -239,7 +239,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -392,7 +392,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -471,6 +471,14 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_fname']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_fname']['element_label_colon'] = FALSE;
+  /* Field: User: Nick Name */
+  $handler->display->display_options['fields']['field_puluser_nick_name']['id'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'field_data_field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['relationship'] = 'field_subs_specialist_target_id';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: User: Last Name */
   $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
   $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'field_data_field_puluser_lname';
@@ -478,7 +486,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_lname']['relationship'] = 'field_subs_specialist_target_id';
   $handler->display->display_options['fields']['field_puluser_lname']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_lname']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_lname']['alter']['text'] = '[field_puluser_fname] [field_puluser_lname]';
+  $handler->display->display_options['fields']['field_puluser_lname']['alter']['text'] = '[field_puluser_nick_name] [field_puluser_lname]';
   $handler->display->display_options['fields']['field_puluser_lname']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_puluser_lname']['element_class'] = 'user--name';
   $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
@@ -772,7 +780,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -872,7 +880,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -1088,7 +1096,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';

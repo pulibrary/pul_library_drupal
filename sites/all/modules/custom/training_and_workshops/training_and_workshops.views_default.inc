@@ -172,10 +172,58 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['display_description'] = 'Upcoming  Sessions with Dates only';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_training_dtime' => 'field_training_dtime',
+    'nid' => 'nid',
+    'field_training_session_title' => 'field_training_session_title',
+    'field_training_description' => 'field_training_description',
+    'view' => 'view',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_training_dtime' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_training_session_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_training_description' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'view' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date and Time */
@@ -210,6 +258,8 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['field_training_description']['id'] = 'field_training_description';
   $handler->display->display_options['fields']['field_training_description']['table'] = 'field_data_field_training_description';
   $handler->display->display_options['fields']['field_training_description']['field'] = 'field_training_description';
+  $handler->display->display_options['fields']['field_training_description']['label'] = '';
+  $handler->display->display_options['fields']['field_training_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_training_description']['hide_empty'] = TRUE;
   /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
@@ -220,6 +270,14 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['view']['view'] = 'training_sessions';
   $handler->display->display_options['fields']['view']['display'] = 'block_1';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
+  /* Field: Content: Room */
+  $handler->display->display_options['fields']['field_training_room']['id'] = 'field_training_room';
+  $handler->display->display_options['fields']['field_training_room']['table'] = 'field_data_field_training_room';
+  $handler->display->display_options['fields']['field_training_room']['field'] = 'field_training_room';
+  $handler->display->display_options['fields']['field_training_room']['label'] = 'Location';
+  $handler->display->display_options['fields']['field_training_room']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
