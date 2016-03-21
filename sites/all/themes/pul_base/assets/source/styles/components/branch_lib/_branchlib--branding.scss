@@ -1,10 +1,12 @@
 .branch-libraries,
+.page-marquand-resources-sales-catalogs,
 .section-econlib,
 .section-copyright {
   @include breakpoint($tab) {
     .three_six_three_stacked-region--top,
     .three_three_three_three_stacked-region--top,
-    .three_nine_stacked-region--top {
+    .three_nine_stacked-region--top,
+    .single-region--top {
       .pane-node-field-library-image,
       .pane-branch-library-image-panel-pane-1,
       .pane-custom {
