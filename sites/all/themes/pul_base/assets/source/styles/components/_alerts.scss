@@ -10,12 +10,20 @@
   margin-top: 1.414em;
 }
 
+.messages--warning,
 .alert--message,
 .messages-error {
   background: $orange;
+  border: 0;
   border-radius: 4px;
+  color: $white;
   margin: 1em 0 0;
   padding: 1em;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
 
   h3 a,
   p {
@@ -50,6 +58,15 @@
   }
 }
 
+.page-node-27043 .messages--warning {
+  border-radius: 0;
+  display: block;
+  margin-top: 0;
+  position: absolute;
+  width: 1200px;
+  z-index: 10;
+}
+
 .alert--level__info {
   background: $blue-dark;
 
@@ -68,6 +85,7 @@
   }
 }
 
+.messages--warning,
 .alert--message {
   animation-duration: 2s;
   animation-fill-mode: both;
@@ -84,6 +102,7 @@
   }
 }
 
+.messages--warning,
 .alert--message {
   animation-name: flash;
 }
