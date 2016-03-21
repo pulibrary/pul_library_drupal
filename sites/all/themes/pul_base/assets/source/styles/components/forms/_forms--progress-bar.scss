@@ -1,0 +1,10 @@
+.webform-progressbar-inner {
+  background-color: $blue;
+}
+
+.webform-progressbar-page {
+  &.current,
+  &.completed {
+    @extend .webform-progressbar-inner;
+  }
+}
