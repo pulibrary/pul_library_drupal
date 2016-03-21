@@ -52,5 +52,7 @@ features[variable][] = node_options_marquand_sales_catalog
 features[variable][] = node_preview_marquand_sales_catalog
 features[variable][] = node_submitted_marquand_sales_catalog
 features[variable][] = pathauto_node_marquand_sales_catalog_pattern
+features[variable][] = pathauto_taxonomy_term_sales_catalog_auction_house_pattern
+features[variable][] = pathauto_taxonomy_term_sales_catalog_city_pattern
 features[views_view][] = marquand_sales_catalogs
 features_exclude[dependencies][articles_and_databases] = articles_and_databases

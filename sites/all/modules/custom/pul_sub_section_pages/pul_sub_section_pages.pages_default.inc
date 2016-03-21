@@ -997,7 +997,7 @@ staff/committees',
     ),
   );
   $display = new panels_display();
-  $display->layout = 'five-four-three-stacked';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1044,30 +1044,8 @@ staff/committees',
     $display->content['new-14544546-0c76-4300-9aec-2d4fe66879fc'] = $pane;
     $display->panels['first'][0] = 'new-14544546-0c76-4300-9aec-2d4fe66879fc';
     $pane = new stdClass();
-    $pane->pid = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'block-31';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Quick Answers',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
-    $display->content['new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98'] = $pane;
-    $display->panels['second'][0] = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
-    $pane = new stdClass();
     $pane->pid = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
-    $pane->panel = 'third';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'block-32';
     $pane->shown = TRUE;
@@ -1086,10 +1064,10 @@ staff/committees',
     $pane->locks = array();
     $pane->uuid = 'c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
     $display->content['new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1'] = $pane;
-    $display->panels['third'][0] = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
+    $display->panels['second'][0] = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
     $pane = new stdClass();
     $pane->pid = 'new-48b25ef7-d14a-484c-921b-789884da7534';
-    $pane->panel = 'third';
+    $pane->panel = 'second';
     $pane->type = 'block';
     $pane->subtype = 'block-30';
     $pane->shown = TRUE;
@@ -1109,7 +1087,29 @@ staff/committees',
     $pane->locks = array();
     $pane->uuid = '48b25ef7-d14a-484c-921b-789884da7534';
     $display->content['new-48b25ef7-d14a-484c-921b-789884da7534'] = $pane;
-    $display->panels['third'][1] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
+    $display->panels['second'][1] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
+    $pane = new stdClass();
+    $pane->pid = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'block-31';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Quick Answers',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
+    $display->content['new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98'] = $pane;
+    $display->panels['second'][2] = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

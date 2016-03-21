@@ -10,7 +10,7 @@
 function marquand_sales_catalogs_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-marquand_sales_catalog-body'
+  // Exported field_instance: 'node-marquand_sales_catalog-body'.
   $field_instances['node-marquand_sales_catalog-body'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -85,7 +85,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-marquand_sales_catalog-field_sc_auction_house'
+  // 'node-marquand_sales_catalog-field_sc_auction_house'.
   $field_instances['node-marquand_sales_catalog-field_sc_auction_house'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -156,7 +156,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_city'
+  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_city'.
   $field_instances['node-marquand_sales_catalog-field_sc_city'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -227,7 +227,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_date'
+  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_date'.
   $field_instances['node-marquand_sales_catalog-field_sc_date'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -298,7 +298,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_name'
+  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_name'.
   $field_instances['node-marquand_sales_catalog-field_sc_name'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -369,7 +369,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_notes'
+  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_notes'.
   $field_instances['node-marquand_sales_catalog-field_sc_notes'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,
@@ -440,7 +440,7 @@ function marquand_sales_catalogs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_sale'
+  // Exported field_instance: 'node-marquand_sales_catalog-field_sc_sale'.
   $field_instances['node-marquand_sales_catalog-field_sc_sale'] = array(
     'bundle' => 'marquand_sales_catalog',
     'default_value' => NULL,

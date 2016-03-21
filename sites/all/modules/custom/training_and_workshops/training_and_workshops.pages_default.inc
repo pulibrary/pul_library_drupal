@@ -101,29 +101,6 @@ function training_and_workshops_default_page_manager_pages() {
     $display->content['new-10ac2c96-47d4-45db-bfe1-3418482073c4'] = $pane;
     $display->panels['middle'][0] = 'new-10ac2c96-47d4-45db-bfe1-3418482073c4';
     $pane = new stdClass();
-    $pane->pid = 'new-b3be3c01-1f68-4694-9f48-48d64059ecc2';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'training_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '11867',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b3be3c01-1f68-4694-9f48-48d64059ecc2';
-    $display->content['new-b3be3c01-1f68-4694-9f48-48d64059ecc2'] = $pane;
-    $display->panels['middle'][1] = 'new-b3be3c01-1f68-4694-9f48-48d64059ecc2';
-    $pane = new stdClass();
     $pane->pid = 'new-a78ee89c-5ac3-4c22-a81c-03d57061a2ee';
     $pane->panel = 'middle';
     $pane->type = 'custom';
@@ -158,11 +135,11 @@ function training_and_workshops_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'a78ee89c-5ac3-4c22-a81c-03d57061a2ee';
     $display->content['new-a78ee89c-5ac3-4c22-a81c-03d57061a2ee'] = $pane;
-    $display->panels['middle'][2] = 'new-a78ee89c-5ac3-4c22-a81c-03d57061a2ee';
+    $display->panels['middle'][1] = 'new-a78ee89c-5ac3-4c22-a81c-03d57061a2ee';
     $pane = new stdClass();
     $pane->pid = 'new-885ea18b-6f14-465f-8b9c-d7f0d42f9e5b';
     $pane->panel = 'middle';
@@ -193,11 +170,34 @@ function training_and_workshops_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '885ea18b-6f14-465f-8b9c-d7f0d42f9e5b';
     $display->content['new-885ea18b-6f14-465f-8b9c-d7f0d42f9e5b'] = $pane;
-    $display->panels['middle'][3] = 'new-885ea18b-6f14-465f-8b9c-d7f0d42f9e5b';
+    $display->panels['middle'][2] = 'new-885ea18b-6f14-465f-8b9c-d7f0d42f9e5b';
+    $pane = new stdClass();
+    $pane->pid = 'new-b3be3c01-1f68-4694-9f48-48d64059ecc2';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'training_sessions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '11867',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'b3be3c01-1f68-4694-9f48-48d64059ecc2';
+    $display->content['new-b3be3c01-1f68-4694-9f48-48d64059ecc2'] = $pane;
+    $display->panels['middle'][3] = 'new-b3be3c01-1f68-4694-9f48-48d64059ecc2';
     $pane = new stdClass();
     $pane->pid = 'new-3bfc171b-e6e2-434b-8890-dda941a2a0f1';
     $pane->panel = 'middle';
