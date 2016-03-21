@@ -10,6 +10,10 @@
   float: left;
 }
 
+.pull-right {
+  float: right;
+}
+
 // hide empty p tags (drupal messy markup hack)
 p:empty {
   display: none;
