@@ -8,6 +8,41 @@
     height: auto;
     margin-bottom: 0;
   }
+
+  table {
+    margin: 0;
+  }
+
+  th.days {
+    background: $gray-lightest;
+    border: 1px solid $gray-light;
+    color: $gray-darkest;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  td.single-day,
+  td.date-box {
+    border: 1px solid $gray-light;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+    vertical-align: top;
+  }
+
+  .month-view td.date-box {
+    border-bottom: 0;
+    font-weight: bold;
+    padding-bottom: 0;
+    text-align: right;
+  }
+
+  .month-view td.single-day {
+    border-top: 0;
+  }
+
+  .empty {
+    background: lighten($gray-lightest, 1);
+  }
 }
 
 .view .date-nav-wrapper {
@@ -67,43 +102,6 @@
   }
 }
 
-.view-library-hours {
-  table {
-    margin: 0;
-  }
-
-  th.days {
-    background: $gray-lightest;
-    border: 1px solid $gray-light;
-    color: $gray-darkest;
-    padding: 10px 20px;
-    text-align: center;
-  }
-
-  td.single-day,
-  td.date-box {
-    border: 1px solid $gray-light;
-    box-sizing: border-box;
-    padding: 0.7em 1em;
-    vertical-align: top;
-  }
-
-  .month-view td.date-box {
-    border-bottom: 0;
-    font-weight: bold;
-    padding-bottom: 0;
-    text-align: right;
-  }
-
-  .month-view td.single-day {
-    border-top: 0;
-  }
-
-  .empty {
-    background: lighten($gray-lightest, 1);
-  }
-}
-
 .views-field-field-open-hours .is-Open,
 .library-hours-status .is-Open {
   display: none;
@@ -147,7 +145,7 @@
 .single-region--middle .pane-term-description p {
   margin-top: 0;
 }
-// scss-lint:disable SelectorDepth
+
 div.view-content > table.views-table > tbody > tr > td {
   // @include adjust-font-size-to(14px);
 

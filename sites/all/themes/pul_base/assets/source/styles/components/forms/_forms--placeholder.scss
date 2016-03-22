@@ -2,13 +2,11 @@
 //   color: darken($gray-lightest, 10);
 // }
 
-
 // input {
 //   @include placeholder-theme($ph-styles);
 // }
 
 // Slide out on focus
-// scss-lint:disable VendorPrefix
 input:focus::-webkit-input-placeholder {
   opacity: 1;
   text-indent: -100%;
@@ -16,7 +14,6 @@ input:focus::-webkit-input-placeholder {
 }
 
 // Fix firefox placeholder positioning
-// scss-lint:disable VendorPrefix
 input::-moz-placeholder {
   line-height: 2.4em;
 }

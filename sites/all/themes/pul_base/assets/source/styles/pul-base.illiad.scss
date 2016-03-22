@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif");
 
 // Vendor libraries
 @import "normalize";
@@ -41,10 +41,10 @@
 
 .search-bar {
   $base-spacing: 1em;
-  $base-border-color: gainsboro !default;
+  $base-border-color: #dcdcdc !default;
   $base-border-radius: 3px !default;
   $base-line-height: 1.5em !default;
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #477dca !default;
   $dark-gray: $gray-darkest !default;
   $search-bar-border-color: $base-border-color;
   $search-bar-border: 1px solid $search-bar-border-color;
@@ -53,12 +53,11 @@
   position: relative;
 
   .f-criteria {
-    box-sizing: border-box;
     @include transition(border-color);
     background-color: $white;
-    border-radius: $base-border-radius;
-    border-radius: $base-border-radius;
     border: 1px solid $base-border-color;
+    border-radius: $base-border-radius;
+    box-sizing: border-box;
     display: block;
     font-size: 1em;
     font-style: italic;
@@ -69,8 +68,8 @@
   }
 
   .f-submit {
-    @include button(flat, $base-accent-color);
-    @include position(absolute, 0em 0em 0em null);
+    @include button(simple, $base-accent-color);
+    @include position(absolute, 0 0 0 null);
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     outline: none;

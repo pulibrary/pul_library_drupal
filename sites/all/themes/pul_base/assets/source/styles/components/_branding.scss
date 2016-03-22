@@ -16,6 +16,7 @@
     padding: 0;
   }
 
+
   h2 {
     margin: 0;
   }
@@ -31,18 +32,17 @@
   height: 50px;
   line-height: 21px;
 
-
   @include breakpoint($bp-small-3) {
     // @include span(6 of 12);
     margin-left: -0.7em;
   }
 
 
-  &:before { /* create a full-height inline block pseudo=element */
+  &:before {
     content: " ";
     display: inline-block;
     height: 100%;
-    vertical-align: middle; /* vertical alignment of the inline element */
+    vertical-align: middle;
   }
 
   img {

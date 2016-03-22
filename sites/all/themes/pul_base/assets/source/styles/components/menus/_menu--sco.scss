@@ -4,7 +4,7 @@
     li a {
       color: $green-dark;
     }
-// scss-lint:disable SelectorDepth
+
     ul.menu li a.active {
       background: $green-dark;
       color: $white;

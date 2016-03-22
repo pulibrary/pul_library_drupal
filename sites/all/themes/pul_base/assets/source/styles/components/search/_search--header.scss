@@ -27,7 +27,6 @@
       margin-top: 0;
       width: 100%;
 
-// scss-lint:disable SelectorDepth
       input {
         box-sizing: border-box;
         display: inline-block;
@@ -37,7 +36,7 @@
         @include visually-hidden;
 
         color: $white;
-// scss-lint:disable NestingDepth
+
         .form-required {
           color: $white;
         }
@@ -47,7 +46,6 @@
       div.form-item {
         position: relative;
 
-// scss-lint:disable NestingDepth
         input[type=text] {
           background: lighten($gray-darkest, 10);
           border: darken($gray-darkest, 15);
@@ -59,11 +57,11 @@
           margin: 0;
           padding: 0.5em 0.8em;
           width: 100%;
+        }
 
-          &:focus {
-            background: $white;
-            color: $black;
-          }
+        input[type=text]:focus {
+          background: $white;
+          color: $black;
         }
       }
 

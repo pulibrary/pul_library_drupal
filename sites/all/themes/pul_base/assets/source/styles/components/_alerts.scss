@@ -89,6 +89,7 @@
 .alert--message {
   animation-duration: 2s;
   animation-fill-mode: both;
+  animation-name: flash;
 }
 
 @keyframes flash {
@@ -100,9 +101,4 @@
   50% {
     opacity: 0;
   }
-}
-
-.messages--warning,
-.alert--message {
-  animation-name: flash;
 }

@@ -30,6 +30,15 @@ $orange-light: #f4aa6b;
 $red-dark: #a93225;
 $red-light: #d89088;
 
+$black-opacity-2: rgba($black, 0.2);
+$black-opacity-5: rgba($black, 0.5);
+$black-opacity-7: rgba($black, 0.7);
+
+$white-opacity-0: rgba($white, 0);
+$white-opacity-7: rgba($white, 0.7);
+
+$highlighted-wrapper: rgba(lighten($gray-darkest, 28), 0.75);
+
 //Typography
 $font-primary: "DejaVu Sans", "HelveticaNeue", Arial, sans-serif;
 $font-secondary: "Droid Serif", Georgia, Times, "Times New Roman", serif;

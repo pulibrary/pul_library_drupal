@@ -1,19 +1,14 @@
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+@import "utils/variables";
 
 *,
 *:before,
 *:after,
 *:first-letter,
 *:first-line {
-  background: transparent !important;
-  color: #000 !important; /* Black prints faster:
-     http://www.sanbeiji.com/archives/953 */
-  box-shadow: none !important;
-  text-shadow: none !important;
+  background: transparent;
+  box-shadow: none;
+  color: $black;
+  text-shadow: none;
 }
 
 a,
@@ -29,11 +24,6 @@ abbr[title]:after {
   content: " (" attr(title) ")";
 }
 
-/*
- * Don't show links that are fragment identifiers,
- * or use the `javascript:` pseudo protocol
- */
-
 a[href^="#"]:after,
 a[href^="javascript:"]:after {
   content: "";
@@ -41,14 +31,9 @@ a[href^="javascript:"]:after {
 
 pre,
 blockquote {
-  border: 1px solid #999;
+  border: 1px solid $gray;
   page-break-inside: avoid;
 }
-
-/*
- * Printing Tables:
- * http://css-discuss.incutio.com/wiki/Printing_Tables
- */
 
 thead {
   display: table-header-group;
@@ -68,7 +53,7 @@ td {
 }
 
 img {
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 p,

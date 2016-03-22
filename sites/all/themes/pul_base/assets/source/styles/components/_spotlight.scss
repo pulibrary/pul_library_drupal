@@ -8,7 +8,6 @@
 //     background-size: cover;
 //   }
 
-
 //   .l-region--highlighted {
 //     padding: 1em;
 //     position: relative;
@@ -20,35 +19,26 @@
 // }
 
 .block--views-spotlight-dispalsys-block {
+  $hover-tile-height: 159px;
+  background: $black-opacity-5;
+  border-radius: 4px;
   clear: both;
+  cursor: pointer;
   display: none;
+  height: 159px;
+  margin-bottom: $base-line-height;
+  // margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  padding: 0;
 
   @include breakpoint($desk) {
     @include span(3 of 12);
+
     display: block;
     margin-left: 0;
     margin-right: 0;
   }
-}
 
-.pane-spotlight-dispalsys {
-  height: 215px;
-
-  $hover-tile-height: 215px;
-
-  img {
-    height: 215px;
-    width: 350px;
-  }
-}
-
-.block--views-spotlight-dispalsys-block {
-  background: rgba($gray-darkest, 0.65);
-  border-radius: 4px;
-  height: 159px;
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
-  padding: 0;
 
   h2 {
     display: none;
@@ -69,51 +59,8 @@
   .view-spotlight-dispalsys .views-row-1 {
     border-radius: 4px;
   }
-}
-
-.block--pudl-highlight {
-  background: rgba($gray-darkest, 0.35);
-  bottom: 0;
-  display: none;
-  margin-top: 1em;
-  padding: 0.5em;
-  position: absolute;
-  right: 0;
-  text-align: center;
-
-  @include breakpoint($tab) {
-    @include span(3 of 12);
-    display: block;
-    margin-right: 0;
-  }
 
 
-  @include breakpoint($desk) {
-    @include span(2 of 12);
-    display: block;
-    margin-right: 0;
-  }
-
-
-  a {
-    color: $white;
-    font-family: $font-sans;
-    font-size: $font-size-smaller;
-    margin: 0;
-    text-align: center;
-
-    .icon-newtab {
-      margin-right: 0.5em;
-    }
-  }
-}
-
-//spotlight gray mask
-.block--views-spotlight-dispalsys-block {
-  $hover-tile-height: 159px;
-
-  cursor: pointer;
-  margin-bottom: $base-line-height;
 
   .view-content .views-row {
     height: $hover-tile-height;
@@ -143,7 +90,7 @@
   }
 
   .spotlight-text a {
-    background-image: linear-gradient(rgba($gray-darkest, 0.95), rgba($gray-darkest, 0.5));
+    background-image: linear-gradient($black-opacity-7, $black-opacity-5);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     font-weight: bold;
@@ -152,5 +99,55 @@
     position: absolute;
     text-shadow: 2px 2px $black;
     top: 0;
+  }
+}
+
+.pane-spotlight-dispalsys {
+  height: 215px;
+
+  $hover-tile-height: 215px;
+
+  img {
+    height: 215px;
+    width: 350px;
+  }
+}
+
+.block--pudl-highlight {
+  background: $black-opacity-2;
+  bottom: 0;
+  display: none;
+  margin-top: 1em;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  @include breakpoint($tab) {
+    @include span(3 of 12);
+
+    display: block;
+    margin-right: 0;
+  }
+
+
+  @include breakpoint($desk) {
+    @include span(2 of 12);
+
+    display: block;
+    margin-right: 0;
+  }
+
+
+  a {
+    color: $white;
+    font-family: $font-sans;
+    font-size: $font-size-smaller;
+    margin: 0;
+    text-align: center;
+
+    .icon-newtab {
+      margin-right: 0.5em;
+    }
   }
 }

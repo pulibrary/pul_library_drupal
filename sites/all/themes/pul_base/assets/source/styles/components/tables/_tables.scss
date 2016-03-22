@@ -27,7 +27,6 @@
 
   td {
     padding: 0.65em 0.5em;
-
   }
 
   td.active {
@@ -53,14 +52,8 @@ table caption {
   padding: 1em;
 }
 
-/*
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-
 @include breakpoint($rwd-tables) {
-  /* Force table to not be like tables anymore */
+  // Force table to not be like tables anymore
   table,
   thead,
   tbody,
@@ -70,7 +63,7 @@ and also iPads specifically.
     display: block;
   }
 
-  /* Hide table headers (but not display: none;, for accessibility) */
+  // Hide table headers (but not display: none;, for accessibility)
 
   thead tr {
     @include visually-hidden;
@@ -85,7 +78,7 @@ and also iPads specifically.
   }
 
   td {
-    /* Behave  like a "row" */
+    // Behave  like a "row"
     border: 0;
     padding-left: 50%;
     position: relative;

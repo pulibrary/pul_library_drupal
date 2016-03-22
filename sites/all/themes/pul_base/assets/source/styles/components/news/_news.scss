@@ -7,7 +7,7 @@
     float: left;
     margin-right: 1em;
   }
-// scss-lint:disable SelectorDepth
+
   .item-list > ul > li {
     @include clearfix;
   }
@@ -16,6 +16,7 @@
 .views-field-created {
   color: $gray-dark;
   font-style: italic;
+  margin-bottom: 1em;
 }
 
 .view-library-news .field--name-field-news-featured-graphic img {
@@ -29,10 +30,6 @@
 
 .item-list li {
   list-style: none;
-}
-
-.views-field-created {
-  margin-bottom: 1em;
 }
 
 .page-news .pul_base_nine_three-region--first ul {

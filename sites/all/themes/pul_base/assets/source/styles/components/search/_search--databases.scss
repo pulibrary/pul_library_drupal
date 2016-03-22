@@ -21,7 +21,6 @@
       div.form-item-query {
         position: relative;
 
-        // scss-lint:disable SelectorDepth, NestingDepth
         label {
           @include visually-hidden;
         }
@@ -50,7 +49,6 @@
         right: 0;
         top: 0;
 
-        // scss-lint:disable NestingDepth
         &:hover,
         &:focus {
           background-color: $orange;
@@ -63,7 +61,6 @@
 //buttons
 .section-resource .dbsearch-block-form > div button,
 .section-resource .summon-block-form > div button {
-  // scss-lint:disable SelectorDepth
   .icon-search {
     margin-right: 0;
   }

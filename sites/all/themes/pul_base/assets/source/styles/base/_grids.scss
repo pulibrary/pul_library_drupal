@@ -2,11 +2,11 @@ $susy: (
   output: float,
   container: 1200px,
   columns: 12,
-  gutters: 2/3,
+  gutters: 0.6,
   global-box-sizing: border-box,
   debug: (
     image: hide,
-    color: rgba($orange, 0.25),
+    color: $aqua-dark,
     output: overlay,
     toggle: top right,
   ),
