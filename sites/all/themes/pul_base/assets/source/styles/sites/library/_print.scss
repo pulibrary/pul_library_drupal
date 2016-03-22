@@ -56,12 +56,8 @@ li {
 
 //links
 p a:after {
-  content: " (" attr(href) ")";
+  content: " (http://library.princeton.edu/"attr(href)")";
   font-size: 80%;
-}
-
-p a:after {
-  content: " (http://library.princeton.edu/" attr(href) ")";
 }
 
 p a[href^="#"]:after {

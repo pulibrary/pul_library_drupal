@@ -36,6 +36,7 @@
       display: none;
     }
 
+
     img {
       max-height: $centered-navigation-height;
       opacity: 0.6;
@@ -106,13 +107,13 @@
       display: inline;
       line-height: $centered-navigation-height;
       padding-left: 0;
-// scss-lint:disable SelectorDepth
+
       a {
         padding-left: $centered-navigation-item-padding;
       }
     }
 
-// scss-lint:disable SelectorDepth
+
     a {
       color: $centered-navigation-color;
       display: inline-block;
@@ -135,7 +136,7 @@
       padding-right: $centered-navigation-submenu-padding;
     }
 
-// scss-lint:disable SelectorDepth
+
     > a {
       padding-right: 1.75em;
     }
@@ -161,12 +162,10 @@
 
       &:hover > .menu {
         display: block;
-      }
-    }
 
-    @include breakpoint(max-width 800px) {
-      &:hover > .menu {
-        display: none;
+        @include breakpoint(max-width 800px) {
+          display: none;
+        }
       }
     }
 
@@ -189,8 +188,6 @@
         right: $centered-navigation-submenu-padding / 2;
       }
     }
-
-
   }
 
   li > ul.menu {
@@ -198,7 +195,7 @@
     padding-left: 0;
 
     @include breakpoint($horizontal-bar-mode) {
-      box-shadow: 0 3px 8px rgb(100, 100, 100);
+      box-shadow: 0 3px 8px $gray;
       left: -2em;
       margin-left: 2em;
       position: absolute;
@@ -227,7 +224,7 @@
         line-height: $centered-navigation-height / 1.3;
       }
 
-// scss-lint:disable SelectorDepth
+
       a {
         background-color: darken($centered-navigation-background, 3);
         display: inline-block;

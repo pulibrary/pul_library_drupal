@@ -3,7 +3,7 @@
 // Hide the toolbar or admin menu on small screens.
 @media all and (max-width: 800px) {
   .hide-sm {
-    @include visually-hidden();
+    @include visually-hidden;
   }
 
   .logged-in .toolbar {
@@ -25,7 +25,6 @@
 }
 
 // hide aka titles for db
-// scss-lint:disable SelectorDepth
 .subject-landing-page .views-row .field--name-field-dboverride-database article header {
   display: none;
 }

@@ -16,7 +16,7 @@
   a {
     @include vertical-align;
 
-    color: rgba(0, 0, 0, 0.7);
+    color: $black-opacity-7;
 
     &:hover {
       color: $orange;

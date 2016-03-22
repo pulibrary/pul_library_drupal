@@ -2,9 +2,7 @@
 .breadcrumb {
   @include clearfix;
   margin-top: 1em;
-}
 
-.breadcrumb {
   $breadcrumb-border-color: $white;
   $breadcrumb-border: 1px solid $breadcrumb-border-color;
   $breadcrumb-height: $base-line-height;

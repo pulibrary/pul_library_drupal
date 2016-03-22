@@ -76,13 +76,10 @@
 
 
     &:before {
-      /* create a full-height inline block pseudo=element */
       content: " ";
       display: inline-block;
       height: 100%;
       vertical-align: middle;
-
-      /* vertical alignment of the inline element */
     }
   }
 
