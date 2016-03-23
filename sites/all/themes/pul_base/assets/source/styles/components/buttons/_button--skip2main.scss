@@ -26,7 +26,7 @@
 }
 
 .cd-top {
-  background: $white-opacity-7 url("/sites/all/themes/pul_base/assets/public/images/move-up.svg") no-repeat center 50%;
+  background: $white-opacity-7 url("#{$base-path}/images/move-up.svg") no-repeat center 50%;
   bottom: 40px;
   box-shadow: 0 0 10px $black-opacity-5;
   display: inline-block;

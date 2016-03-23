@@ -84,31 +84,31 @@
   }
 
   .facebook-logo {
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/facebook.svg");
+    background-image: url("#{$base-path}/images/facebook.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
 
   .twitter-logo {
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/twitter.svg");
+    background-image: url("#{$base-path}/images/twitter.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
 
   .govdocs-logo {
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/govdocs.svg");
+    background-image: url("#{$base-path}/images/govdocs.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
 
   .friends-logo {
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/friends.svg");
+    background-image: url("#{$base-path}/images/friends.svg");
     margin: 0 0.2em 0.75em;
     width: 85px;
   }
 
   .pu-logo {
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/pu.svg");
+    background-image: url("#{$base-path}/images/pu.svg");
     height: 40px;
     margin: 0.5em 0 0;
     width: 142px;

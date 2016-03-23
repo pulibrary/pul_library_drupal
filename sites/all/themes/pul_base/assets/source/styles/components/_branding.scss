@@ -65,7 +65,7 @@
   }
 
   .site-logo {
-    background: url("/sites/all/themes/pul_base/assets/public/images/logo.svg") center center no-repeat;
+    background: url("#{$base-path}/images/logo.svg") center center no-repeat;
     background-size: contain;
     display: block;
 
