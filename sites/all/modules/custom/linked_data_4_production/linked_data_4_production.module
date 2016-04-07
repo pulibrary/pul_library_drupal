@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Linked Data 4 Production feature.
+ */
+
+include_once 'linked_data_4_production.features.inc';
