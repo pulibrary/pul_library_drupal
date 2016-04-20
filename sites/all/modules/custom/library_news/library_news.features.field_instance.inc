@@ -510,7 +510,7 @@ function library_news_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_news_category',
     'label' => 'Category',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -521,6 +521,7 @@ function library_news_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 34,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance:
