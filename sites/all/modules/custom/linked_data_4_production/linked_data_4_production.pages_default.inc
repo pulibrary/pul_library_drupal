@@ -51,7 +51,7 @@ function linked_data_4_production_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'ld4p/news',
+            'paths' => 'tsd/cams/ld4p/news',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -177,7 +177,7 @@ function linked_data_4_production_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'ld4p',
+            'paths' => 'tsd/cams/ld4p',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -192,7 +192,7 @@ function linked_data_4_production_default_page_manager_handlers() {
     'name' => 'linked-data-project',
   );
   $display = new panels_display();
-  $display->layout = 'six-six-stacked';
+  $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
