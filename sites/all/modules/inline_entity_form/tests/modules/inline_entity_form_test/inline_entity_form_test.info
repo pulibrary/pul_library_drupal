@@ -10,9 +10,9 @@ dependencies[] = inline_entity_form
 dependencies[] = number
 dependencies[] = text
 
-; Information added by Drupal.org packaging script on 2016-04-14
-version = "7.x-1.7"
+; Information added by Drupal.org packaging script on 2016-04-16
+version = "7.x-1.8"
 core = "7.x"
 project = "inline_entity_form"
-datestamp = "1460671454"
+datestamp = "1460849408"
 
