@@ -827,45 +827,32 @@ function inline_entity_form_field_widget_form(&$form, &$form_state, $field, $ins
  */
 function inline_entity_form_form_alter(&$form, &$form_state, $form_id) {
   if (!empty($form_state['inline_entity_form'])) {
-    // Add this in an after build so it runs as late as possible, and after
-    // #process callbacks.
-    $form['#after_build'][] = 'inline_entity_form_trigger_submit_after_build';
-  }
-}
-
-/**
- * After build callback for copying submit callbacks to submit elements.
- *
- * @see inline_entity_form_form_alter()
- */
-function inline_entity_form_trigger_submit_after_build($form, &$form_state) {
-  // Try to find the main submit button in the most common places.
-  $submit_element = NULL;
-  if (!empty($form['submit'])) {
-    $submit_element = &$form['submit'];
-  }
-  elseif (!empty($form['actions']['submit'])) {
-    $submit_element = &$form['actions']['submit'];
-  }
-
-  if ($submit_element) {
-    // Merge the IEF submit handler with the button level submit handlers if
-    // available. Otherwise use the form level submit handlers.
-    if (!empty($submit_element['#submit'])){
-      $submit = array_merge(array('inline_entity_form_trigger_submit'), (array) $submit_element['#submit']);
+    // Try to find the main submit button in the most common places.
+    $submit_element = NULL;
+    if (!empty($form['submit'])) {
+      $submit_element = &$form['submit'];
     }
-    else {
-      $submit = array_merge(array('inline_entity_form_trigger_submit'), (array) $form['#submit']);
+    elseif (!empty($form['actions']['submit'])) {
+      $submit_element = &$form['actions']['submit'];
     }
 
-    // Reduce any duplicates on the off chance the IEF submit handler was
-    // already a part of the array used.
-    $submit_element['#submit'] = array_unique($submit);
+    if ($submit_element) {
+      // Merge the IEF submit handler with the button level submit handlers if
+      // available. Otherwise use the form level submit handlers.
+      if (!empty($submit_element['#submit'])){
+        $submit = array_merge(array('inline_entity_form_trigger_submit'), (array) $submit_element['#submit']);
+      }
+      else {
+        $submit = array_merge(array('inline_entity_form_trigger_submit'), (array) $form['#submit']);
+      }
 
-    $submit_element['#ief_submit_all'] = TRUE;
+      // Reduce any duplicates on the off chance the IEF submit handler was
+      // already a part of the array used.
+      $submit_element['#submit'] = array_unique($submit);
+
+      $submit_element['#ief_submit_all'] = TRUE;
+    }
   }
-
-  return $form;
 }
 
 /**
