@@ -112,7 +112,7 @@
 
                             items.push('<li class="' + row_class + '"><h3><a href="' +
                                 result['url'] +
-                                '" title="' + desc + '" target="_blank" ' + '>' +
+                                '" title="' + '" target="_blank" ' + '>' +
                                 result['title'] +
                                 '</a></h3> ' +
                                 creator +
