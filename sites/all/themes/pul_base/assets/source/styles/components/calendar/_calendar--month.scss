@@ -1,0 +1,104 @@
+@include breakpoint(max-width 1000px) {
+  .calendar-calendar table,
+  .calendar-calendar tbody,
+  .calendar-calendar th,
+  .calendar-calendar td,
+  .calendar-calendar tr {
+    display: block;
+  }
+
+
+  .calendar-calendar thead,
+  .calendar-calendar thead tr,
+  .calendar-calendar tr.date-box {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+  }
+
+  .calendar-calendar td:before {
+    background-color: $gray-lightest;
+    box-sizing: border-box;
+    clear: both;
+    content: attr(data-label);
+    display: block;
+    height: 44px;
+    left: 0;
+    padding: 10px;
+    position: initial;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .calendar-calendar td.today,
+  .calendar-calendar .month-view .full tr td.single-day.today {
+    background: $white;
+    border-top: 2px solid $orange;
+    font-weight: bold;
+  }
+
+  .calendar-calendar .month-view .full td {
+    padding: 0;
+  }
+
+  .calendar-calendar td,
+  .calendar-calendar td.calendar-agenda-items {
+    border: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .calendar-calendar td.past {
+    display: none;
+  }
+
+  .calendar-calendar td.calendar-agenda-items div.calendar {
+    padding: 0;
+  }
+
+  .calendar-calendar div.calendar,
+  .calendar-calendar .date-display-single,
+  .calendar-calendar td span.date-display-single {
+    font-size: medium;
+    font-weight: normal;
+  }
+
+  .calendar-calendar .inner {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .calendar-calendar .inner .item {
+    padding: 10px;
+  }
+
+  .calendar-calendar .month-view .full tr.single-day .no-entry {
+    height: 44px;
+    line-height: 24px;
+  }
+
+  .calendar-calendar .month-view .full tr.single-day .no-entry .inner,
+  .calendar-calendar .no-entry .inner {
+    height: auto;
+    line-height: 1px;
+  }
+
+  .single-day .no-entry.future:after {
+    display: none;
+  }
+
+  .calendar-calendar .inner .views-field-title-field {
+    display: inline-block;
+  }
+
+  .calendar-calendar .empty {
+    display: none;
+  }
+
+  ul.pager .date-prev,
+  ul.pager .date-next {
+    display: inline;
+  }
+}
