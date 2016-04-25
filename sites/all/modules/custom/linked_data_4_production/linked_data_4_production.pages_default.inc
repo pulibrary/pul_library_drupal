@@ -31,7 +31,7 @@ function linked_data_4_production_default_page_manager_handlers() {
         'identifier' => 'Content',
         'keyword' => 'node_2',
         'name' => 'entity:node',
-        'entity_id' => '27288',
+        'entity_id' => '27317',
         'id' => 1,
       ),
     ),
@@ -41,7 +41,7 @@ function linked_data_4_production_default_page_manager_handlers() {
         'keyword' => 'file',
         'name' => 'entity_from_field:field_pul_landing_logo-node-file',
         'delta' => 0,
-        'context' => 'context_entity:node_1',
+        'context' => 'argument_entity_id:node_1',
         'id' => 1,
       ),
     ),
@@ -134,7 +134,7 @@ function linked_data_4_production_default_page_manager_handlers() {
       ),
       'context' => 'context_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Linked Data 4 Production',
+      'override_title_text' => 'LD4P at Princeton',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -295,7 +295,7 @@ function linked_data_4_production_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Linked Data 4 Production',
+      'override_title_text' => 'LD4P at Princeton',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
