@@ -1,8 +1,7 @@
 .branch-libraries,
 .page-marquand-resources-sales-catalogs,
 .section-econlib,
-.section-copyright,
-.section-tsd {
+.section-copyright {
   @include breakpoint($tab) {
     .three_six_three_stacked-region--top,
     .three_three_three_three_stacked-region--top,
@@ -60,6 +59,25 @@
   }
 
   h1 {
+    display: none;
+  }
+}
+
+.section-tsd .nine_three_stacked-region--top,
+.section-tsd .single-region--top {
+  h2 {
+    bottom: 0;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 25px;
+
+    &:after {
+      content: url("/sites/all/themes/pul_base/assets/public/images/ld4p_lightgray_shadow.png");
+      padding-left: 0.5em;
+    }
+  }
+
+  img {
     display: none;
   }
 }
