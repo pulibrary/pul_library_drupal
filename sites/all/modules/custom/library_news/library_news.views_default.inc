@@ -2990,7 +2990,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
   $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
   $handler->display->display_options['filters']['access_id']['access_id'] = array(
-    25631 => '25631',
+    25634 => '25634',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
 
@@ -3097,7 +3097,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
   $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
   $handler->display->display_options['filters']['access_id']['access_id'] = array(
-    25631 => '25631',
+    25634 => '25634',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
   $export['library_news'] = $view;
