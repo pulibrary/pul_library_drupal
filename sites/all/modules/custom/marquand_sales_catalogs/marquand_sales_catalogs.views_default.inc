@@ -306,6 +306,14 @@ function marquand_sales_catalogs_views_default_views() {
   /* Display: Public Display Pane */
   $handler = $view->new_display('panel_pane', 'Public Display Pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Sales catalog text';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p>Questions about sale catalog holdings may be directed to the Marquand reference desk or e-mail (with our address: marquand@) with the specifics of what is needed. Many current sales catalogs from Christie’s, Sotheby’s, Bonham’s, Hotel Drouot, Phillips, Swann and William Doyle have been boxed by city and date and are mostly out at ReCAP (browse below). Marquand has many more catalogs from c. 1820s-present for more than 250 auction houses, both cataloged and un-cataloged. Book and coin sales, unless mixed content, are handled by Rare Books & Special Collections in Firestone Library.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Global: Result summary with an additional token to change the items/page */
   $handler->display->display_options['header']['webform_result']['id'] = 'webform_result';
   $handler->display->display_options['header']['webform_result']['table'] = 'views';
