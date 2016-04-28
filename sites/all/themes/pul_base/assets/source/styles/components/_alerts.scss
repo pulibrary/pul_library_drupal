@@ -77,10 +77,12 @@
 }
 
 .alert--level__warning {
-  background: $yellow-dark;
+  // background: desaturate(lighten($yellow-dark, 25%), 25%);
+  background: $yellow-light;
 
   p,
-  h3 a {
+  h3 a,
+  p a {
     color: $black;
   }
 }
