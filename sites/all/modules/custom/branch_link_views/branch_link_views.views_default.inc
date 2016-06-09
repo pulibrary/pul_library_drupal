@@ -41,9 +41,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_branch_external_links']['label'] = '';
   $handler->display->display_options['fields']['field_branch_external_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_branch_external_links']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_branch_external_links']['delta_limit'] = '';
   $handler->display->display_options['fields']['field_branch_external_links']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_branch_external_links']['multi_type'] = 'ul';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -67,9 +65,17 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'libraries' => 'libraries',
   );
-
   /* Display: External Links */
   $handler = $view->new_display('panel_pane', 'External Links', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: External Links */
+  $handler->display->display_options['fields']['field_branch_external_links']['id'] = 'field_branch_external_links';
+  $handler->display->display_options['fields']['field_branch_external_links']['table'] = 'field_data_field_branch_external_links';
+  $handler->display->display_options['fields']['field_branch_external_links']['field'] = 'field_branch_external_links';
+  $handler->display->display_options['fields']['field_branch_external_links']['label'] = '';
+  $handler->display->display_options['fields']['field_branch_external_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_branch_external_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_branch_external_links']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -256,6 +262,67 @@ function branch_link_views_views_default_views() {
     'nid' => array(
       'type' => 'user',
       'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
+
+  /* Display: Landing Page - Related Links */
+  $handler = $view->new_display('panel_pane', 'Landing Page - Related Links', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Realted Links';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Related Links */
+  $handler->display->display_options['fields']['field_related_links']['id'] = 'field_related_links';
+  $handler->display->display_options['fields']['field_related_links']['table'] = 'field_data_field_related_links';
+  $handler->display->display_options['fields']['field_related_links']['field'] = 'field_related_links';
+  $handler->display->display_options['fields']['field_related_links']['label'] = '';
+  $handler->display->display_options['fields']['field_related_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_related_links']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_related_links']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_related_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_related_links']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_related_links']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pul_landing_page' => 'pul_landing_page',
+  );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:comment.node',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
