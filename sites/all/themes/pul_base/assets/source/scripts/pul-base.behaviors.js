@@ -80,7 +80,7 @@
       //hide or show the "back to top" link
       $(window).scroll(function(){
         ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-        if( $(this).scrollTop() > offset_opacity ) { 
+        if( $(this).scrollTop() > offset_opacity ) {
           $back_to_top.addClass('cd-fade-out');
         }
       });
@@ -157,7 +157,7 @@
         });
 
         // track main menu usage with Google Analytics
-        
+
         $('.centered-navigation-menu ul.menu a').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'Main Menu', 'click', $(this).text(),
@@ -205,14 +205,14 @@
       });
     }
   };
-    
+
   Drupal.behaviors.pulTrackFooterMenuUsage = {
     attach: function (context) {
       $('.l-region--footer', context).once('pul', function () {
         $('.l-region--footer .block--menu a').each(function () {
           $(this).addClass('footer-link');
           $(this).click(function () {
-            ga('send', 'event', 'Footer Menu', 'click', $(this).text(), 
+            ga('send', 'event', 'Footer Menu', 'click', $(this).text(),
               {'page': window.location.pathname});
           });
         });
@@ -315,7 +315,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.pulTrackAllSearchUsage = {
     attach: function (context) {
 
@@ -403,7 +403,7 @@
               ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Title');
             });
         });
-        
+
         $(' .view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
@@ -420,7 +420,7 @@
       $('.branch-libraries', context).once('pul', function () {
 
         // branch main menus
-        $('.branch-libraries #menu--secondary ul.menu a').each(function () {
+        $('.branch-libraries .menu--secondary ul.menu a').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'Branch Menu', 'click', $(this).text(),
               {'page': window.location.pathname });
