@@ -122,6 +122,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'alert-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Homepage Alert Blurb */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
@@ -197,6 +198,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -239,6 +241,13 @@ function pul_alerts_views_default_views() {
     6286 => '6286',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Architecture Library Alerts */
   $handler = $view->new_display('panel_pane', 'Architecture Library Alerts', 'panel_pane_2');
@@ -268,6 +277,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -310,6 +320,13 @@ function pul_alerts_views_default_views() {
     5379 => '5379',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: East Asian Library Alerts */
   $handler = $view->new_display('panel_pane', 'East Asian Library Alerts', 'panel_pane_3');
@@ -339,6 +356,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -381,6 +399,13 @@ function pul_alerts_views_default_views() {
     6285 => '6285',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Engineering Library Alerts */
   $handler = $view->new_display('panel_pane', 'Engineering Library Alerts', 'panel_pane_4');
@@ -410,6 +435,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -452,6 +478,13 @@ function pul_alerts_views_default_views() {
     5380 => '5380',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Lewis Library Alerts */
   $handler = $view->new_display('panel_pane', 'Lewis Library Alerts', 'panel_pane_5');
@@ -481,6 +514,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -523,6 +557,13 @@ function pul_alerts_views_default_views() {
     5383 => '5383',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Mendel Library Alerts */
   $handler = $view->new_display('panel_pane', 'Mendel Library Alerts', 'panel_pane_6');
@@ -552,6 +593,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -594,6 +636,13 @@ function pul_alerts_views_default_views() {
     6287 => '6287',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Plasma Physics Library Alerts */
   $handler = $view->new_display('panel_pane', 'Plasma Physics Library Alerts', 'panel_pane_7');
@@ -623,6 +672,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -665,6 +715,13 @@ function pul_alerts_views_default_views() {
     5381 => '5381',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
 
   /* Display: Stokes Library Alerts */
   $handler = $view->new_display('panel_pane', 'Stokes Library Alerts', 'panel_pane_8');
@@ -694,6 +751,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Emergency Alert Level */
   $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
   $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
@@ -736,6 +794,13 @@ function pul_alerts_views_default_views() {
     5414 => '5414',
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
   $export['emergency_alert_content_block'] = $view;
 
   return $export;

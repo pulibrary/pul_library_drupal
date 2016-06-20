@@ -34,6 +34,7 @@ features[variable][] = node_options_homepage_alert
 features[variable][] = node_preview_homepage_alert
 features[variable][] = node_submitted_homepage_alert
 features[variable][] = pathauto_node_homepage_alert_pattern
+features[variable][] = xmlsitemap_settings_node_homepage_alert
 features[views_view][] = emergency_alert_content_block
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][date] = date

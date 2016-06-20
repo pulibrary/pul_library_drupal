@@ -116,6 +116,12 @@ function pul_alerts_strongarm() {
         'xmlsitemap' => array(
           'weight' => '5',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
@@ -167,6 +173,16 @@ function pul_alerts_strongarm() {
   $strongarm->name = 'pathauto_node_homepage_alert_pattern';
   $strongarm->value = 'alerts/[node:workbench-access-sections]/[node:field-emergency-alert-dates:value]/[node:title]';
   $export['pathauto_node_homepage_alert_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_homepage_alert';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_homepage_alert'] = $strongarm;
 
   return $export;
 }

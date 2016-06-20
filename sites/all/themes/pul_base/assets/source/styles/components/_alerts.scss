@@ -7,7 +7,7 @@
 }
 
 .three_six_three_stacked-region--middle .alert--message {
-  margin-top: 1.414em;
+  margin-top: 2.5em;
 }
 
 .messages--warning,
@@ -77,7 +77,6 @@
 }
 
 .alert--level__warning {
-  // background: desaturate(lighten($yellow-dark, 25%), 25%);
   background: $yellow-light;
 
   p,
