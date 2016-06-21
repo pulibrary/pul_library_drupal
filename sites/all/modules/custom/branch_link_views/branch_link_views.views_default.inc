@@ -65,6 +65,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'libraries' => 'libraries',
   );
+
   /* Display: External Links */
   $handler = $view->new_display('panel_pane', 'External Links', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -272,7 +273,7 @@ function branch_link_views_views_default_views() {
   /* Display: Landing Page - Related Links */
   $handler = $view->new_display('panel_pane', 'Landing Page - Related Links', 'panel_pane_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Realted Links';
+  $handler->display->display_options['title'] = 'Related Links';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
