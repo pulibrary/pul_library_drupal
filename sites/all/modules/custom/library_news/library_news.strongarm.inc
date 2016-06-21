@@ -171,5 +171,35 @@ function library_news_strongarm() {
   $strongarm->value = 'news/categories/[term:name]';
   $export['pathauto_taxonomy_term_news_events_categories_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_library_news_item';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.8',
+  );
+  $export['xmlsitemap_settings_node_library_news_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_audiences';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_audiences'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_news_events_categories';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_news_events_categories'] = $strongarm;
+
   return $export;
 }
