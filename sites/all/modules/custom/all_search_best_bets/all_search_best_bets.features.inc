@@ -20,6 +20,13 @@ function all_search_best_bets_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function all_search_best_bets_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function all_search_best_bets_node_info() {
@@ -43,7 +50,7 @@ function all_search_best_bets_node_info() {
 function all_search_best_bets_default_search_api_index() {
   $items = array();
   $items['all_search_best_bets'] = entity_import('search_api_index', '{
-    "name" : "All Search Best Bets",
+    "name" : "All Search Best Bets Index",
     "machine_name" : "all_search_best_bets",
     "description" : null,
     "server" : "search_api_library_staging",
@@ -53,13 +60,17 @@ function all_search_best_bets_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
+        "field_best_bet_url:title" : { "type" : "text" },
+        "field_best_bet_url:url" : { "type" : "uri" },
         "field_search_terms" : { "type" : "list\\u003Ctext\\u003E" },
-        "search_api_language" : { "type" : "string" }
+        "search_api_language" : { "type" : "string" },
+        "status" : { "type" : "integer" },
+        "title" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : [] },
         "search_api_alter_bundle_filter" : {
-          "status" : 1,
+          "status" : 0,
           "weight" : "-10",
           "settings" : {
             "default" : "0",

@@ -17,24 +17,6 @@ function all_search_best_bets_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -42,16 +24,18 @@ function all_search_best_bets_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
-      'featured_link_url' => array(
-        'label' => 'above',
+      'search_index' => array(
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
-      'overridden_title_in_lists' => array(
-        'label' => 'above',
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -91,24 +75,6 @@ function all_search_best_bets_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
       'default' => array(
         'label' => 'above',
         'module' => 'link',
@@ -116,23 +82,19 @@ function all_search_best_bets_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 2,
       ),
-      'featured_link_url' => array(
+      'search_index' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'link_default',
+        'weight' => 2,
       ),
-      'overridden_title_in_lists' => array(
+      'search_result' => array(
         'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'link_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -184,24 +146,6 @@ function all_search_best_bets_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -209,23 +153,19 @@ function all_search_best_bets_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
-      'featured_link_url' => array(
+      'search_index' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 3,
       ),
-      'overridden_title_in_lists' => array(
+      'search_result' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
