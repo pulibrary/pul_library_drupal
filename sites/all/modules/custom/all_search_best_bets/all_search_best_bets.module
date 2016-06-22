@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the All Search Best Bets feature.
+ */
+
+include_once 'all_search_best_bets.features.inc';
