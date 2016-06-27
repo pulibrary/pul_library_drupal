@@ -286,7 +286,7 @@ function library_news_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select this option <b>only</b> if you wish this news item to display in the list of features on https://library.princeton.edu/news. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -317,6 +317,7 @@ function library_news_field_default_field_instances() {
       'type' => 'options_buttons',
       'weight' => 35,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_feat_collection'.
@@ -570,7 +571,7 @@ function library_news_field_default_field_instances() {
   $field_instances['node-library_news_item-field_news_featured_graphic'] = array(
     'bundle' => 'library_news_item',
     'deleted' => 0,
-    'description' => 'Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.',
+    'description' => 'Image will be scaled and cropped to 145 x 100 in order to fit into allocated space on homepage slideshow. Crop the image to a 14.5 x 10 aspect ratio to get optimal display.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -629,6 +630,7 @@ function library_news_field_default_field_instances() {
           'image_homepage_callout' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_linkit_thumb' => 0,
           'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
@@ -1181,7 +1183,7 @@ function library_news_field_default_field_instances() {
   t('Flagging an item will make it appear on the collections page.');
   t('Free tags that can be associated with items. ');
   t('Full Title');
-  t('Image will be scaled and cropped to 296x166 in order to fit into allocated space on homepage slideshow. Crop the image to a 16 x 9 aspect ratio to get optimal display.');
+  t('Image will be scaled and cropped to 145 x 100 in order to fit into allocated space on homepage slideshow. Crop the image to a 14.5 x 10 aspect ratio to get optimal display.');
   t('Images');
   t('Images to be inserted inline into post content. ');
   t('Libraries');
@@ -1193,6 +1195,7 @@ function library_news_field_default_field_instances() {
   t('Optional field. Assign dates to an event or exhibition. Use for items that have a concrete meeting time or an exhibition that covers a distinct range of dates. ');
   t('Physical Description');
   t('Publisher');
+  t('Select this option <b>only</b> if you wish this news item to display in the list of features on https://library.princeton.edu/news. ');
   t('Tag an item with it\'s primary category. ');
   t('Tags');
 

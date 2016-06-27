@@ -66,6 +66,60 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-df81a123-2580-4510-84e6-77701d95af8d';
+    $pane->panel = 'first';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = FALSE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'resource/14505
+resource/13225
+resource/13227
+resource/14545
+resource/13222
+resource/13238
+resource/13255
+resource/13549',
+          ),
+          'context' => 'empty',
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'On Campus Users',
+      'title' => 'Non Princeton Patrons',
+      'body' => '<p>If you do not have Princeton University Faculty, Student, Staff, or affliate account and are working at public terminal in one of our libraries please see the circulation or reference desk for information on how to access this resource.&nbsp;</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'df81a123-2580-4510-84e6-77701d95af8d';
+    $display->content['new-df81a123-2580-4510-84e6-77701d95af8d'] = $pane;
+    $display->panels['first'][0] = 'new-df81a123-2580-4510-84e6-77701d95af8d';
+    $pane = new stdClass();
     $pane->pid = 'new-24175cef-88d4-4ab4-80a2-ce26cdbca761';
     $pane->panel = 'first';
     $pane->type = 'block';
@@ -95,11 +149,11 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '24175cef-88d4-4ab4-80a2-ce26cdbca761';
     $display->content['new-24175cef-88d4-4ab4-80a2-ce26cdbca761'] = $pane;
-    $display->panels['first'][0] = 'new-24175cef-88d4-4ab4-80a2-ce26cdbca761';
+    $display->panels['first'][1] = 'new-24175cef-88d4-4ab4-80a2-ce26cdbca761';
     $pane = new stdClass();
     $pane->pid = 'new-f3321d76-8d04-4648-a59e-ff7c6bb0199d';
     $pane->panel = 'first';
@@ -137,11 +191,11 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'f3321d76-8d04-4648-a59e-ff7c6bb0199d';
     $display->content['new-f3321d76-8d04-4648-a59e-ff7c6bb0199d'] = $pane;
-    $display->panels['first'][1] = 'new-f3321d76-8d04-4648-a59e-ff7c6bb0199d';
+    $display->panels['first'][2] = 'new-f3321d76-8d04-4648-a59e-ff7c6bb0199d';
     $pane = new stdClass();
     $pane->pid = 'new-649ec903-5337-4a71-9a1f-34a6c18dfeb5';
     $pane->panel = 'second';
