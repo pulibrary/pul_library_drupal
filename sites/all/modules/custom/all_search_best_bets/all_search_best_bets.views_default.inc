@@ -36,6 +36,10 @@ function all_search_best_bets_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Indexed Content: Database */
+  $handler->display->display_options['relationships']['field_database']['id'] = 'field_database';
+  $handler->display->display_options['relationships']['field_database']['table'] = 'search_api_index_all_search_best_bets';
+  $handler->display->display_options['relationships']['field_database']['field'] = 'field_database';
   /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_all_search_best_bets';
@@ -52,6 +56,24 @@ function all_search_best_bets_views_default_views() {
   $handler->display->display_options['fields']['field_best_bet_url']['element_wrapper_class'] = 'best-bet';
   $handler->display->display_options['fields']['field_best_bet_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_best_bet_url']['click_sort_column'] = 'url';
+  /* Field: Indexed Content: Database */
+  $handler->display->display_options['fields']['field_database']['id'] = 'field_database';
+  $handler->display->display_options['fields']['field_database']['table'] = 'search_api_index_all_search_best_bets';
+  $handler->display->display_options['fields']['field_database']['field'] = 'field_database';
+  $handler->display->display_options['fields']['field_database']['label'] = '';
+  $handler->display->display_options['fields']['field_database']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_database']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_database']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_database']['display'] = 'view';
+  $handler->display->display_options['fields']['field_database']['view_mode'] = 'database_description_only';
+  $handler->display->display_options['fields']['field_database']['bypass_access'] = 0;
+  /* Field: Indexed Content: Best Bet Description */
+  $handler->display->display_options['fields']['field_best_bet_description']['id'] = 'field_best_bet_description';
+  $handler->display->display_options['fields']['field_best_bet_description']['table'] = 'search_api_index_all_search_best_bets';
+  $handler->display->display_options['fields']['field_best_bet_description']['field'] = 'field_best_bet_description';
+  $handler->display->display_options['fields']['field_best_bet_description']['label'] = '';
+  $handler->display->display_options['fields']['field_best_bet_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_best_bet_description']['type'] = 'text_plain';
   /* Contextual filter: Search: Fulltext search */
   $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_all_search_best_bets';

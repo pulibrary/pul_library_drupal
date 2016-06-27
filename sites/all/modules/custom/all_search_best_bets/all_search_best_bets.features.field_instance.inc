@@ -10,62 +10,57 @@
 function all_search_best_bets_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-all_search_best_bets-body'.
-  $field_instances['node-all_search_best_bets-body'] = array(
+  // Exported field_instance:
+  // 'node-all_search_best_bets-field_best_bet_description'.
+  $field_instances['node-all_search_best_bets-field_best_bet_description'] = array(
     'bundle' => 'all_search_best_bets',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'field_name' => 'field_best_bet_description',
+    'label' => 'Best Bet Description',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+        'size' => 60,
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'type' => 'text_textfield',
+      'weight' => 36,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-all_search_best_bets-field_best_bet_url'.
@@ -139,6 +134,58 @@ function all_search_best_bets_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-all_search_best_bets-field_database'.
+  $field_instances['node-all_search_best_bets-field_database'] = array(
+    'bundle' => 'all_search_best_bets',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_database',
+    'label' => 'Database',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+        'type_settings' => array(),
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 35,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-all_search_best_bets-field_search_terms'.
   $field_instances['node-all_search_best_bets-field_search_terms'] = array(
     'bundle' => 'all_search_best_bets',
@@ -195,8 +242,9 @@ function all_search_best_bets_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Best Bet Description');
   t('Best Bet URL');
-  t('Body');
+  t('Database');
   t('Search Terms');
 
   return $field_instances;
