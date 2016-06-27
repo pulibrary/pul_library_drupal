@@ -131,6 +131,11 @@
 
   .menu-more-link {
     border-top: 1px solid $gray-light;
+    font-style: italic;
+
+    a:after {
+      content: "...";
+    }
   }
 
   .centered-navigation-menu > ul > li.expanded {
