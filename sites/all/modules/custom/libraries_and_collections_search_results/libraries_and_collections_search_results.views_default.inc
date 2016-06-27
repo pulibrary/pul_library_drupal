@@ -159,6 +159,10 @@ function libraries_and_collections_search_results_views_default_views() {
   $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_libraries_and_collections';
   $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
   $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['max_length'] = '120';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   /* Field: Collection URL: The URL of the link. (indexed) */

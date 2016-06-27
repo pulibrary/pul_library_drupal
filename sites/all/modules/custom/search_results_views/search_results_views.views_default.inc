@@ -349,7 +349,9 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_database_keyword_index';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '120';
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
@@ -510,7 +512,9 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
   $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['search_api_excerpt']['alter']['max_length'] = '120';
+  $handler->display->display_options['fields']['search_api_excerpt']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['search_api_excerpt']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
