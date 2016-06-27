@@ -412,6 +412,25 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->uuid = 'c7097a96-9208-44cf-b467-909694a141ba';
     $display->content['new-c7097a96-9208-44cf-b467-909694a141ba'] = $pane;
     $display->panels['top'][1] = 'new-c7097a96-9208-44cf-b467-909694a141ba';
+    $pane = new stdClass();
+    $pane->pid = 'new-7219d442-586b-40e3-8ef2-e37b52f8e48f';
+    $pane->panel = 'top';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'all_search_best_bet-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '7219d442-586b-40e3-8ef2-e37b52f8e48f';
+    $display->content['new-7219d442-586b-40e3-8ef2-e37b52f8e48f'] = $pane;
+    $display->panels['top'][2] = 'new-7219d442-586b-40e3-8ef2-e37b52f8e48f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

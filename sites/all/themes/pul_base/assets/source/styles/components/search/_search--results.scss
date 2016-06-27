@@ -30,6 +30,11 @@
   }
 }
 
+.view-all-search-best-bet h3 {
+  font-family: $font-sans;
+  margin-top: 0;
+}
+
 .pul_base_four_four_four_stacked-region--first,
 .pul_base_four_four_four_stacked-region--second,
 .pul_base_four_four_four_stacked-region--third {
@@ -81,7 +86,7 @@
 
       @include breakpoint($tab-desk) {
         display: inline-block;
-        float: left;
+        // float: left;
         margin-right: 0.5em;
         width: auto;
       }
@@ -158,4 +163,14 @@
 
 .pane-catalog-block-catalog-blacklight-results {
   display: none;
+}
+
+.pane-all-search-best-bet-panel-pane-1 {
+  border-bottom: 1px dotted $gray;
+  clear: both;
+  padding: 1em 0;
+
+  h2 {
+    margin-top: 0.5em;
+  }
 }
