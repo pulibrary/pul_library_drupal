@@ -807,6 +807,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
   $handler->display->display_options['fields']['field_news_featured_graphic']['field'] = 'field_news_featured_graphic';
   $handler->display->display_options['fields']['field_news_featured_graphic']['label'] = '';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_wrapper_type'] = '0';
@@ -840,6 +841,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
+  $handler->display->display_options['fields']['field_news_article_snippet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['max_length'] = '250';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_text'] = 'Read More';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_path'] = '[path]';
@@ -855,6 +857,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['field'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['label'] = 'Related to';
+  $handler->display->display_options['fields']['field_news_libraries']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_libraries']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_default_classes'] = FALSE;
