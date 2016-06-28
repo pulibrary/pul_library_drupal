@@ -68,7 +68,7 @@
   }
 
 
-  &:after {
+  &::after {
     @include pul-icon;
 
     content: "\e625";

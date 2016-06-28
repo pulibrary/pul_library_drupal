@@ -70,26 +70,26 @@ h2 {
   }
 }
 
-.icon-article-express--caps-after:after {
+.icon-article-express--caps-after::after {
   content: "(\e612)";
 }
 
-.icon-article-express--caps-skew-after:after {
+.icon-article-express--caps-skew-after::after {
   content: "(\e613)";
 }
 
-.icon-article-express--small-skew-after:after {
+.icon-article-express--small-skew-after::after {
   content: "(\e614)";
 }
 
-.page-node-6627 h1:after,
-.page-node-13204 h1:after,
-.icon-article-express--small-after:after {
+.page-node-6627 h1::after,
+.page-node-13204 h1::after,
+.icon-article-express--small-after::after {
   content: "(\e615)";
 }
 
-.page-node-6627 h1:after,
-.page-node-13204 h1:after {
+.page-node-6627 h1::after,
+.page-node-13204 h1::after {
   font-family: "pul_base_theme";
   font-size: 0.75em;
   font-style: normal;

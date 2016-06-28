@@ -8,11 +8,11 @@ footer {
 
 //hide icons in get help menu
 .pane-menu-menu-get-help-menu .menu .leaf {
-  .ico-chat:before,
-  .ico-mail:before,
-  .ico-calendar:before,
-  .ico-phone:before,
-  .ico-book:before {
+  .ico-chat::before,
+  .ico-mail::before,
+  .ico-calendar::before,
+  .ico-phone::before,
+  .ico-book::before {
     content: "";
   }
 }
@@ -55,17 +55,17 @@ li {
 }
 
 //links
-p a:after {
+p a::after {
   content: " (http://library.princeton.edu/"attr(href)")";
   font-size: 80%;
 }
 
-p a[href^="#"]:after {
+p a[href^="#"]::after {
   display: none;
 }
 
-p a[href^="http://"]:after,
-a[href^="https://"]:after {
+p a[href^="http://"]::after,
+a[href^="https://"]::after {
   content: " (" attr(href) ")";
 }
 

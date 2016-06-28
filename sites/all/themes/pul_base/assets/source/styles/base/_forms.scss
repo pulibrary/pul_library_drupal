@@ -17,7 +17,7 @@ label {
 }
 
 #{$all-text-inputs},
-select[multiple=multiple] {
+select[multiple="multiple"] {
   border: 1px solid $gray-light;
   border-radius: 4px;
   box-sizing: border-box;

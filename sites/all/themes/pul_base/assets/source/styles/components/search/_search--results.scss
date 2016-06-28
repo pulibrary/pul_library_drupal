@@ -101,7 +101,7 @@
       text-decoration: none;
     }
 
-    a:before {
+    a::before {
       margin-right: 0.35rem;
     }
 
@@ -124,7 +124,7 @@
     }
 
 
-    &:after {
+    &::after {
       @include pul-icon;
 
       content: "\e609";
@@ -132,11 +132,11 @@
     }
   }
 
-  input[type=checkbox] {
+  input[type="checkbox"] {
     display: none;
   }
 
-  input[type=checkbox]:checked ~ .result-section-menu {
+  input[type="checkbox"]:checked ~ .result-section-menu {
     display: block;
   }
 }

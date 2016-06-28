@@ -133,7 +133,7 @@
     border-top: 1px solid $gray-light;
     font-style: italic;
 
-    a:after {
+    a::after {
       content: "...";
     }
   }
@@ -150,7 +150,7 @@
       padding-right: 1.75em;
     }
 
-    > a:after {
+    > a::after {
       @include position(absolute, auto 0.45em auto auto);
 
       color: $centered-navigation-color;
@@ -191,7 +191,7 @@
       }
 
 
-      &:after {
+      &::after {
         font-size: $font-size-larger;
         position: absolute;
         right: $centered-navigation-submenu-padding / 2;
