@@ -25,14 +25,14 @@
           @include visually-hidden;
         }
 
-        input[type=text] {
+        input[type="text"] {
           height: 35px;
           margin: 0;
           width: 100%;
         }
       }
 
-      input[type=submit] {
+      input[type="submit"] {
         @include hidden;
       }
 

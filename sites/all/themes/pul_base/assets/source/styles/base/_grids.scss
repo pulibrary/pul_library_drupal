@@ -19,8 +19,8 @@ $nav-layout: layout(12 0 fluid float inside);
 $golden-layout: layout((1 1.618 2.618) 0.1 fluid float split);
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

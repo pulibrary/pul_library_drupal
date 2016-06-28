@@ -33,10 +33,10 @@ span.icon-article-express--small-after {
   font-size: 0.75em;
 }
 
-span.icon-article-express--small-after:before {
+span.icon-article-express--small-after::before {
   content: " ";
 }
 
-h1.icon-article-express--small-after:after {
+h1.icon-article-express--small-after::after {
   font-size: 0.75em;
 }

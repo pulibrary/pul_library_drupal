@@ -792,16 +792,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_class'] = 'news-item-title';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Featured Graphic */
   $handler->display->display_options['fields']['field_news_featured_graphic']['id'] = 'field_news_featured_graphic';
   $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
@@ -817,6 +807,16 @@ function library_news_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_news_featured_graphic']['field_api_classes'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'news-item-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -840,6 +840,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
+  $handler->display->display_options['fields']['field_news_article_snippet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['max_length'] = '250';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_text'] = 'Read More';
   $handler->display->display_options['fields']['field_news_article_snippet']['alter']['more_link_path'] = '[path]';
@@ -855,6 +856,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['field'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['label'] = 'Related to';
+  $handler->display->display_options['fields']['field_news_libraries']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_libraries']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_default_classes'] = FALSE;

@@ -82,7 +82,7 @@
     }
 
 
-    &:before {
+    &::before {
       // create a full-height inline block pseudo=element
       content: " ";
       display: inline-block;
@@ -112,7 +112,7 @@
   .friends-logo {
     background-image: url("#{$base-path}/images/friends.svg");
     margin: 0 0.2em 0.75em;
-    width: 85px;
+    width: 87px;
   }
 
   .pu-logo {

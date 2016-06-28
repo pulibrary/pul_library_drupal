@@ -84,7 +84,7 @@ table caption {
     position: relative;
   }
 
-  td:before {
+  td::before {
     left: 6px;
     padding-right: 10px;
     position: absolute;

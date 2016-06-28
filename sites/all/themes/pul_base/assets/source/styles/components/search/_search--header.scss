@@ -46,7 +46,7 @@
       div.form-item {
         position: relative;
 
-        input[type=text] {
+        input[type="text"] {
           background: lighten($gray-darkest, 10);
           border: darken($gray-darkest, 15);
           border-radius: em(4);
@@ -59,13 +59,13 @@
           width: 100%;
         }
 
-        input[type=text]:focus {
+        input[type="text"]:focus {
           background: $white;
           color: $black;
         }
       }
 
-      input[type=submit] {
+      input[type="submit"] {
         display: none;
       }
 

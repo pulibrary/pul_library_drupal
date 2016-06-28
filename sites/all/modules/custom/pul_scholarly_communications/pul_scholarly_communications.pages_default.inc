@@ -69,7 +69,7 @@ services/scholarly-communications/*',
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p><img src="/sites/all/themes/pul_base/images/sco-logo.png" alt="Scholarly Communications Office" /></p>',
+      'body' => '<img src="/sites/all/themes/pul_base/assets/public/images/sco-logo.png" alt="Scholarly Communications Office" />',
       'format' => 'full_html',
       'substitute' => 1,
     );
