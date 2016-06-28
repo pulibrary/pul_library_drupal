@@ -308,7 +308,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-mail"></i> [mail]';
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-email"></i> [mail]';
   $handler->display->display_options['fields']['mail']['element_type'] = 'div';
   $handler->display->display_options['fields']['mail']['element_class'] = 'user--email';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;

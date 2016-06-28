@@ -62,6 +62,20 @@
 }
 
 .page-find-all {
+  h2 a {
+    color: $black;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue-dark;
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        color: $orange;
+      }
+    }
+  }
+
   .results-section {
     margin-top: 1em;
   }
@@ -143,18 +157,6 @@
 
 .page-find-all .back2top {
   display: inline-block;
-}
-
-.page-find-all .l-main h2 a,
-.pane-summon-block-summon-guide-results h2 a {
-  color: $black;
-  text-decoration: none;
-
-  &:hover {
-    color: $orange-dark;
-    cursor: pointer;
-    text-decoration: none;
-  }
 }
 
 .page-find-all h2 [class^="icon-"],

@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'pul-icons';
+    src:    url('fonts/pul-icons.eot?qd361y');
+    src:    url('fonts/pul-icons.eot?qd361y#iefix') format('embedded-opentype'),
+        url('fonts/pul-icons.ttf?qd361y') format('truetype'),
+        url('fonts/pul-icons.woff?qd361y') format('woff'),
+        url('fonts/pul-icons.svg?qd361y#pul-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'pul-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-article-express--small:before {
+    content: "\e61d";
+}
+.icon-plus-sign-alt:before {
+    content: "\e910";
+}
+.icon-down:before {
+    content: "\e908";
+}
+.icon-right:before {
+    content: "\e909";
+}
+.icon-caret-left:before {
+    content: "\e911";
+}
+.icon-caret-right:before {
+    content: "\e912";
+}
+.icon-bookmark:before {
+    content: "\e901";
+}
+.icon-bookslibrary:before {
+    content: "\e907";
+}
+.icon-moveback:before {
+    content: "\e904";
+}
+.icon-cite:before {
+    content: "\e902";
+}
+.icon-search:before {
+    content: "\e90b";
+}
+.icon-share:before {
+    content: "\e903";
+}
+.icon-minus-sign-alt:before {
+    content: "\e91a";
+}
+.icon-refresh:before {
+    content: "\e906";
+}
+.icon-senior-thesis:before {
+    content: "\e600";
+}
+.icon-data-file:before {
+    content: "\e601";
+}
+.icon-map:before {
+    content: "\e602";
+}
+.icon-manuscript:before {
+    content: "\e603";
+}
+.icon-audio:before {
+    content: "\e604";
+}
+.icon-musical-score:before {
+    content: "\e605";
+}
+.icon-video-projected-medium:before {
+    content: "\e606";
+}
+.icon-visual-material:before {
+    content: "\e607";
+}
+.icon-toggle.collapsed:before {
+    content: "\e608";
+}
+.icon-remove:before {
+    content: "\e609";
+}
+.icon-toggle:before {
+    content: "\e60a";
+}
+.icon-book:before {
+    content: "\e60b";
+}
+.icon-journal:before {
+    content: "\e60c";
+}
+.icon-mixed-material:before {
+    content: "\e60d";
+}
+.icon-dissertation:before {
+    content: "\e60e";
+}
+.icon-unknown:before {
+    content: "\e60f";
+}
+.icon-databases:before {
+    content: "\ec2b";
+}
+.icon-text:before {
+    content: "\ec40";
+}
+.icon-library:before {
+    content: "\efa3";
+}
+.icon-web:before {
+    content: "\efbe";
+}
+.icon-home:before {
+    content: "\efc1";
+}
+.icon-compass:before {
+    content: "\efd5";
+}
+.icon-location:before {
+    content: "\eff3";
+}
+.icon-guide:before {
+    content: "\f04a";
+}
+.icon-windows:before {
+    content: "\f0fd";
+}
+.icon-cd:before {
+    content: "\f2f3";
+}
+.icon-lp:before {
+    content: "\f2f4";
+}
+.icon-question:before {
+    content: "\f558";
+}
+.icon-best-bet:before {
+    content: "\f580";
+}
+.icon-archives:before {
+    content: "\f5f5";
+}
+.icon-collections:before {
+    content: "\f5fa";
+}
+.icon-newspaper:before {
+    content: "\f608";
+}
+.icon-newtab:before {
+    content: "\f639";
+}
+.icon-mobile:before {
+    content: "\f690";
+}
+.icon-phone:before {
+    content: "\f6a4";
+}
+.icon-phone-book:before {
+    content: "\f6a8";
+}
+.icon-chat:before {
+    content: "\f728";
+}
+.icon-staff:before {
+    content: "\f785";
+}
+.icon-email:before {
+    content: "\f813";
+}
+.icon-calendar:before {
+    content: "\f82c";
+}
+.icon-clock:before {
+    content: "\f82e";
+}
+.icon-links:before {
+    content: "\f87f";
+}
+.icon-print:before {
+    content: "\f893";
+}
+.icon-digital:before {
+    content: "\e91e";
+}
+.icon-film:before {
+    content: "\e920";
+}
+.icon-add-box:before {
+    content: "\e921";
+}
+.icon-warning:before {
+    content: "\e90e";
+}
+.icon-spinner:before {
+    content: "\e905";
+}
+.icon-rssfeed:before {
+    content: "\e900";
+}
+

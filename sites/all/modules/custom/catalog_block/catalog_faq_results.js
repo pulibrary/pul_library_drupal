@@ -3,10 +3,7 @@
         var query_url = $('#faq-search-results').attr('data-source');
         var file_icon = 'icon-file';
         var refine_hint = 'Explore frequently asked questions.';
-        var series_icon = 'icon-folder-closed';
-        var subseries_icon = 'icon-folder-open';
-        var collection_icon = 'icon-collections';
-        var default_icon = 'icon-item';
+        var default_icon = 'icon-mixed-material';
         var breadcrumb_label = "<span class='breadcrumb-label'>Contained In:&nbsp;</span>";
         var refine_icon = '';
         var refine_message = "See All FAQs";

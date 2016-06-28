@@ -9,8 +9,8 @@
         var icon_hint = '<i class="icon-newtab"></i>';
         var book_icon = 'icon-book';
         var item_icon = 'icon-databases';
-        var journal_icon = 'icon-text';
-        var video_icon = 'icon-video';
+        var journal_icon = 'icon-journal';
+        var video_icon = 'icon-video-projected-medium';
         var film_icon = 'icon-film';
         var audio_icon = 'icon-audio';
         var refine_icon = '';
@@ -48,10 +48,10 @@
                                     "</a></div>";
                             }
                             if ((result['holdings'].length == 1) && (result['fulltextavail'] == "Y")) {
-                                //return false;	
+                                //return false;
 
                             } else if (result['holdings'].length > 0) {
-                                // use underscore 
+                                // use underscore
                                 var holdings_show = 0;
                                 var holdings_list = "<div class='all-locations-list'><span class='locations-list-label'>Locations:&nbsp;</span>";
                                 _.each(result['holdings'], function(holding) {
@@ -134,7 +134,7 @@
                         // $('<div class="books-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#catalog-search-results');
                         $('#catalog_block-catalog_search_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-books"></i> Books+ Search Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-book"></i> Books+ Search Results</a></h2>';
                         });
                         if (data.number > max_display_results) {
                             $('<div class="books-search more-link"><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '">See all ' + data.number + ' Books+ results</a></div>"').appendTo('#catalog-search-results');

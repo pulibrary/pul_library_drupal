@@ -4,9 +4,9 @@
         var file_icon = 'icon-file';
         var text_icon = 'icon-text';
         var book_icon = 'icon-book';
-        var music_icon = 'icon-text';
-        var image_icon = 'icon-image';
-        var map_icon = 'icon-book';
+        var music_icon = 'icon-musical-score';
+        var image_icon = 'icon-visual-material';
+        var map_icon = 'icon-map';
         var refine_hint = 'PUL Search';
         var refine_icon = '';
         var refine_message = "Blacklight Results";
@@ -81,7 +81,7 @@
                         // $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#blacklight-search-results');
                         $('#catalog_block-catalog_blacklight_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-books"></i>PUL Search Results</a></h2>';
+                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-book"></i>PUL Search Results</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Catalog results</a></div>"').appendTo('#blacklight-search-results');

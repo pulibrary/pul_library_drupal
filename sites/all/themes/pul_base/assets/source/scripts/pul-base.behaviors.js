@@ -110,7 +110,7 @@
       var l_staff = $('#general_site_user_search-panel_pane_1 .item-list li').length;
       if (l_staff > 2) {
         $('.page-find-all-results #general_site_user_search-panel_pane_1 h2').replaceWith(function() {
-            return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-staff"></i>Library Staff Results</a></h2>';
+            return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-phone-book"></i>Library Staff Results</a></h2>';
         });
       } else {
       }

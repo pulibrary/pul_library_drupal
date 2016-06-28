@@ -13,7 +13,7 @@
                 //$("span").text("Not valid!").show();
                 //this really only works with omega theme
                 if ($('#books-plus-error').length == 0) {
-                    $('.four_five_three_stacked-region--top').prepend("<div id='books-plus-error' class='alert--message'><h3 class='alert-title'><i class='icon-alert'></i> " + Drupal.settings.catalog_block.catalog_search_error + "</h3></div>");
+                    $('.four_five_three_stacked-region--top').prepend("<div id='books-plus-error' class='alert--message'><h3 class='alert-title'><i class='icon-warning'></i> " + Drupal.settings.catalog_block.catalog_search_error + "</h3></div>");
                 }
                 return false;
             }

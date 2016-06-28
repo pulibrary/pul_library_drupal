@@ -117,7 +117,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="icon-warning-sign"> </i>[title]';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<i class="icon-warning"> </i>[title]';
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_class'] = 'alert-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;

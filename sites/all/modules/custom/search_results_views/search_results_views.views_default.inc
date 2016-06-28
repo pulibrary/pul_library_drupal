@@ -572,7 +572,7 @@ function search_results_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '<i class="icon-staff"></i>Library Staff Results';
+  $handler->display->display_options['title'] = '<i class="icon-phone-book"></i>Library Staff Results';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -899,7 +899,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-mail"></i>[mail] ';
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<span class="icon-email"></span>[mail] ';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['link_to_entity'] = 0;
   /* Field: Indexed User: Phone Number */
@@ -908,7 +908,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<i class="icon-phone"></i>[field_puluser_phone_number]';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<span class="icon-phone"></span>[field_puluser_phone_number]';
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
   /* Field: Indexed User: Office */
   $handler->display->display_options['fields']['field_puluser_office']['id'] = 'field_puluser_office';
@@ -916,7 +916,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
   $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_office']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_office']['alter']['text'] = '<i class="icon-location"></i>[field_puluser_office]';
+  $handler->display->display_options['fields']['field_puluser_office']['alter']['text'] = '<span class="icon-location"></span>[field_puluser_office]';
   $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_office']['hide_empty'] = TRUE;
   /* Field: Indexed User: Building Location */
@@ -925,7 +925,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
   $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_building_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_building_location']['alter']['text'] = '<i class="icon-library"></i>[field_puluser_building_location]';
+  $handler->display->display_options['fields']['field_puluser_building_location']['alter']['text'] = '<span class="icon-library"></span>[field_puluser_building_location]';
   $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_building_location']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
