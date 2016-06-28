@@ -10,7 +10,7 @@
 function pul_featured_link_type_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_featured_pul_link'
+  // Exported field_base: 'field_featured_pul_link'.
   $field_bases['field_featured_pul_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -42,7 +42,7 @@ function pul_featured_link_type_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_featured_pul_terms'
+  // Exported field_base: 'field_featured_pul_terms'.
   $field_bases['field_featured_pul_terms'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -71,7 +71,7 @@ function pul_featured_link_type_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_pul_featured_link_group'
+  // Exported field_base: 'field_pul_featured_link_group'.
   $field_bases['field_pul_featured_link_group'] = array(
     'active' => 1,
     'cardinality' => -1,

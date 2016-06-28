@@ -73,6 +73,18 @@ function all_search_best_bets_feeds_importer_default() {
             'unique' => FALSE,
             'language' => 'und',
           ),
+          5 => array(
+            'source' => 'db_ref_id',
+            'target' => 'field_database:etid',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          6 => array(
+            'source' => 'best_bet_desc',
+            'target' => 'field_best_bet_description',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '2',

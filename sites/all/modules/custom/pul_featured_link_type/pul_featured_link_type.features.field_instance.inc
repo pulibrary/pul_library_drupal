@@ -10,7 +10,7 @@
 function pul_featured_link_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-featured_pul_link-body'
+  // Exported field_instance: 'node-featured_pul_link-body'.
   $field_instances['node-featured_pul_link-body'] = array(
     'bundle' => 'featured_pul_link',
     'default_value' => NULL,
@@ -91,7 +91,7 @@ function pul_featured_link_type_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-featured_pul_link-field_featured_pul_link'
+  // Exported field_instance: 'node-featured_pul_link-field_featured_pul_link'.
   $field_instances['node-featured_pul_link-field_featured_pul_link'] = array(
     'bundle' => 'featured_pul_link',
     'default_value' => NULL,
@@ -187,7 +187,7 @@ function pul_featured_link_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_pul_link-field_featured_pul_terms'
+  // Exported field_instance: 'node-featured_pul_link-field_featured_pul_terms'.
   $field_instances['node-featured_pul_link-field_featured_pul_terms'] = array(
     'bundle' => 'featured_pul_link',
     'default_value' => NULL,
@@ -261,12 +261,17 @@ function pul_featured_link_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_pul_link-field_pul_featured_link_group'
+  // Exported field_instance:
+  // 'node-featured_pul_link-field_pul_featured_link_group'.
   $field_instances['node-featured_pul_link-field_pul_featured_link_group'] = array(
     'bundle' => 'featured_pul_link',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 5007,
+      ),
+    ),
     'deleted' => 0,
-    'description' => 'Groups the link should be filed under.',
+    'description' => 'Branch Libraries: Use a specific tag for your branch or leave this set to the default value of "Quick Links."',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -327,14 +332,15 @@ function pul_featured_link_type_field_default_field_instances() {
       'type' => 'options_buttons',
       'weight' => 34,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Branch Libraries: Use a specific tag for your branch or leave this set to the default value of "Quick Links."');
   t('Brief description of resource.');
   t('Description');
   t('Featured Link Group');
-  t('Groups the link should be filed under.');
   t('Interested Group');
   t('URL');
 

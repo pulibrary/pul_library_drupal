@@ -60,12 +60,10 @@ function all_search_best_bets_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "field_best_bet_url:title" : { "type" : "text" },
-        "field_best_bet_url:url" : { "type" : "uri" },
-        "field_search_terms" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_search_terms" : { "type" : "list\\u003Ctext\\u003E", "boost" : "8.0" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "integer" },
-        "title" : { "type" : "text" }
+        "title" : { "type" : "text", "boost" : "21.0" }
       },
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : [] },
