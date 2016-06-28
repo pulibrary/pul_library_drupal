@@ -1,10 +1,11 @@
 //alumni news
 
-.five_four_three_stacked-region--bottom .view-id-library_news {
+.alumni-landing-page .view-id-library_news {
   .views-row-1 {
     @include full;
     @include breakpoint($tab) {
       @include span(4 of 12);
+      clear: none;
       margin-left: 0;
     }
   }
@@ -14,6 +15,7 @@
 
     @include breakpoint($tab) {
       @include span(4 of 12);
+      clear: none;
     }
   }
 
@@ -22,8 +24,13 @@
 
     @include breakpoint($tab) {
       @include span(4 of 12);
+      clear: none;
       margin-right: 0;
     }
+  }
+
+  .views-field-title {
+    clear: both;
   }
 
   .field--name-field-news-featured-graphic img {
