@@ -239,7 +239,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -392,7 +392,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -589,6 +589,8 @@ function subject_page_listings_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Library Guides Pane', 'lib_guides_pane');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Research Help';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -616,6 +618,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['name']['empty_zero'] = TRUE;
   /* Field: Taxonomy term: Primary Library Guide */
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['id'] = 'field_subs_primary_library_guide';
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['table'] = 'field_data_field_subs_primary_library_guide';
@@ -627,6 +630,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_subs_primary_library_guide']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['click_sort_column'] = 'url';
   /* Field: Taxonomy term: Other Guides */
   $handler->display->display_options['fields']['field_subs_other_guides']['id'] = 'field_subs_other_guides';
@@ -780,7 +784,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -880,7 +884,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -1096,7 +1100,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';

@@ -726,6 +726,12 @@ function library_news_views_default_views() {
   );
   $handler->display->display_options['fields']['field_news_library_contact']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_news_library_contact']['field_api_classes'] = TRUE;
+  /* Field: Content: Tags */
+  $handler->display->display_options['fields']['field_tags']['id'] = 'field_tags';
+  $handler->display->display_options['fields']['field_tags']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
+  $handler->display->display_options['fields']['field_tags']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_tags']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

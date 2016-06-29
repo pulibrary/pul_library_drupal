@@ -314,6 +314,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'field_data_field_puluser_nick_name';
   $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
   $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';

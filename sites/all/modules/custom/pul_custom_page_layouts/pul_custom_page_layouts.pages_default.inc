@@ -3171,7 +3171,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'granularity' => 'none',
     ),
   );
-  $display->title = 'Subject Specialists';
+  $display->title = 'Subject Librarians';
   $display->uuid = 'a01f0ee6-2ca6-4d4f-ae0f-2c68a274a10b';
   $display->content = array();
   $display->panels = array();

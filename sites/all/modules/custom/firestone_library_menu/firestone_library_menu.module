@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Firestone Library Menu feature.
+ */
+
+include_once 'firestone_library_menu.features.inc';
