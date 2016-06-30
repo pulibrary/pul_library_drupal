@@ -165,6 +165,10 @@
 }
 
 .pane-all-search-best-bet-panel-pane-1 {
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: flash;
   border-bottom: 1px dotted $gray;
   clear: both;
   padding: 1em 0;
