@@ -10,7 +10,7 @@
 function spotlight_content_types_and_views_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-pul_landing_page-body'
+  // Exported field_instance: 'node-pul_landing_page-body'.
   $field_instances['node-pul_landing_page-body'] = array(
     'bundle' => 'pul_landing_page',
     'default_value' => NULL,
@@ -79,7 +79,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-pul_landing_page-field_pul_landing_background'
+  // 'node-pul_landing_page-field_pul_landing_background'.
   $field_instances['node-pul_landing_page-field_pul_landing_background'] = array(
     'bundle' => 'pul_landing_page',
     'deleted' => 0,
@@ -181,7 +181,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_logo'
+  // Exported field_instance: 'node-pul_landing_page-field_pul_landing_logo'.
   $field_instances['node-pul_landing_page-field_pul_landing_logo'] = array(
     'bundle' => 'pul_landing_page',
     'deleted' => 0,
@@ -284,7 +284,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-pul_landing_page-field_pul_landing_page_title'
+  // 'node-pul_landing_page-field_pul_landing_page_title'.
   $field_instances['node-pul_landing_page-field_pul_landing_page_title'] = array(
     'bundle' => 'pul_landing_page',
     'default_value' => NULL,
@@ -347,7 +347,94 @@ function spotlight_content_types_and_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-pul_spotlight_graphic-body'
+  // Exported field_instance: 'node-pul_landing_page-field_related_links'.
+  $field_instances['node-pul_landing_page-field_related_links'] = array(
+    'bundle' => 'pul_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_links',
+    'label' => 'Related Links',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 35,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-pul_spotlight_graphic-body'.
   $field_instances['node-pul_spotlight_graphic-body'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'default_value' => NULL,
@@ -410,7 +497,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-pul_spotlight_graphic-field_pul_spotlight_image'
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_image'.
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_image'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'deleted' => 0,
@@ -507,7 +594,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-pul_spotlight_graphic-field_pul_spotlight_tags'
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_tags'.
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_tags'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'default_value' => NULL,
@@ -564,7 +651,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-pul_spotlight_graphic-field_pul_spotlight_url'
+  // 'node-pul_spotlight_graphic-field_pul_spotlight_url'.
   $field_instances['node-pul_spotlight_graphic-field_pul_spotlight_url'] = array(
     'bundle' => 'pul_spotlight_graphic',
     'default_value' => NULL,
@@ -648,6 +735,7 @@ function spotlight_content_types_and_views_field_default_field_instances() {
   t('Image');
   t('Landing Page Title');
   t('Logo Graphic');
+  t('Related Links');
   t('Tags');
   t('URL');
 

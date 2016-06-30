@@ -1,10 +1,18 @@
 .section-collections-and-collection-development,
 .section-collections {
+  .three_six_three_stacked-region--top {
+    margin: 1em 0;
+
+    @include breakpoint($tab) {
+      width: 100%;
+    }
+  }
+
   .three_six_three_stacked-region--top,
   .single-region--top,
   .nine_three_stacked-region--top {
     background-color: darken($gray-darkest, 18);
-    background-image: url("/sites/all/themes/pul_base/images/trustee_reading_room_50.png");
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/trustee_reading_room_50.png");
     background-position: center top;
     background-repeat: no-repeat;
   }
@@ -13,5 +21,36 @@
     clear: both;
     margin-top: $vert-spacing-unit * 1.25;
     z-index: 1;
+  }
+}
+
+// cdl slideshow
+.flex-nav-container {
+  background: $black;
+  margin: 0;
+
+  .flexslider {
+    background: darken($gray-darkest, 18);;
+    border: 0;
+
+    ul.slides li img {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 1em;
+
+      a {
+        color: $white;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .flex-control-nav,
+  .flex-direction-nav {
+    display: none;
   }
 }

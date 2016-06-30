@@ -135,6 +135,9 @@ function spotlight_content_types_and_views_strongarm() {
         'xmlsitemap' => array(
           'weight' => '30',
         ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
@@ -255,9 +258,43 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pul_landing_page_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pul_landing_page_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_pul_spotlight_graphic_pattern';
   $strongarm->value = 'spotlights/[node:nid]';
   $export['pathauto_node_pul_spotlight_graphic_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_pul_spotlight_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_pul_spotlight_tags_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_pul_landing_page';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '1.0',
+  );
+  $export['xmlsitemap_settings_node_pul_landing_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_pul_spotlight_graphic';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_pul_spotlight_graphic'] = $strongarm;
 
   return $export;
 }
