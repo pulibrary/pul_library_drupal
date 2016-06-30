@@ -321,6 +321,14 @@
 
       $('.page-find-all-results .l-main').once('pul', function () {
 
+        // for best bet
+        $('.view-all-search-best-bet .best-bet').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Best Bet', $(this).text());
+          });
+        });
+
+        // for databases title
         $('.view-databases-keyword-search .item-list .database-title').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
@@ -410,7 +418,6 @@
               ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Homepage URL');
             });
         });
-
       });
     }
   };

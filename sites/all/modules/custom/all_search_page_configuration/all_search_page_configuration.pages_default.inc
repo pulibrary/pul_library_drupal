@@ -160,7 +160,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-books"></i> Books+ Search Results',
+      'override_title_text' => '<i class="icon-book"></i>Books+ Search Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -206,7 +206,7 @@ function all_search_page_configuration_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-articles"></i> Articles+ Search Results',
+      'override_title_text' => '<i class="icon-text"></i> Articles+ Search Results',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
