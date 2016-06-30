@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Department Listings feature.
+ */
+
+include_once 'department_listings.features.inc';
