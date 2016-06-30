@@ -1,12 +1,10 @@
 (function($) {
     $(document).ready(function() {
         var query_url = $('#pulfa-search-results').attr('data-source');
-        var file_icon = 'icon-file';
+        var file_icon = 'icon-data-file';
         var refine_hint = 'Explore finding aids content.';
-        var series_icon = 'icon-folder-closed';
-        var subseries_icon = 'icon-folder-open';
         var collection_icon = 'icon-collections';
-        var default_icon = 'icon-item';
+        var default_icon = 'icon-mixed-material';
         var breadcrumb_label = "<span class='breadcrumb-label'>Contained In:&nbsp;</span>";
         var refine_icon = '';
         var refine_message = "See All Finding Aids";
@@ -45,12 +43,8 @@
                             var icon_type;
                             if (result['type'] == 'file') {
                                 icon_type = file_icon;
-                            } else if (result['type'] == 'series') {
-                                icon_type = series_icon;
                             } else if (result['type'] == 'collection') {
                                 icon_type = collection_icon;
-                            } else if (result['type'] == 'subseries') {
-                                icon_type = subseries_icon;
                             } else {
                                 icon_type = default_icon;
                             }

@@ -4,6 +4,7 @@
 
     .leaf {
       display: block;
+      height: 26px;
       list-style: none;
       margin-bottom: 5px;
 
@@ -12,15 +13,20 @@
           font-size: 0.875rem;
         }
 
-        &:hover::before {
+        &:hover {
           text-decoration: none;
+
+          &::before {
+            color: $orange;
+          }
         }
       }
 
       [class^="ico-"]::before,
       [class*=" ico-"]::before {
         display: inline-block;
-        font-family: "pul_base_theme";
+        font-family: "pul-icons";
+        font-size: 1.2em;
         font-style: normal;
         font-variant: normal;
         font-weight: normal;
@@ -29,26 +35,28 @@
         margin-right: 0.5em;
         speak: none;
         text-transform: none;
+        vertical-align: middle;
       }
 
       .ico-chat::before {
-        content: "\e601";
+        content: "\f728";
+
       }
 
       .ico-mail::before {
-        content: "\f03b";
+        content: "\f813";
       }
 
       .ico-calendar::before {
-        content: "\e620";
+        content: "\f82c";
       }
 
       .ico-phone::before {
-        content: "\e60e";
+        content: "\f6a4";
       }
 
       .ico-book::before {
-        content: "\e61d";
+        content: "\f04a";
       }
     }
   }

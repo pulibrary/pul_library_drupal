@@ -4,9 +4,10 @@
         var file_icon = 'icon-file';
         var text_icon = 'icon-text';
         var book_icon = 'icon-book';
-        var music_icon = 'icon-text';
-        var image_icon = 'icon-image';
-        var map_icon = 'icon-book';
+        var music_icon = 'icon-musical-score';
+        var image_icon = 'icon-visual-material';
+        var map_icon = 'icon-map';
+        var manuscript_icon = 'icon-manuscript';
         var refine_hint = 'Explore Princeton University Digital Library content.';
         var refine_icon = '';
         var refine_message = "See All Digital Library Content";
@@ -31,12 +32,13 @@
                                 var icon_type = film_icon;
                             } else if (result['type'] == 'Text') {
                                 var icon_type = text_icon;
-                            } else if (result['type'] == 'Text (manuscript)' || result['type'] == 'Mixed material (manuscript)' || result['type'] == 'Cartographic (manuscript)') {
-                                var icon_type = book_icon;
+                            } else if (result['type'] == 'Cartographic') {
+                                var icon_type = map_icon;
+                            } else if (result['type'] == 'Text (manuscript)' || result['type'] == 'Mixed material (manuscript)' || result['type'] == 'Still image (manuscript)' || result['type'] == 'Cartographic (manuscript)') {
+                                var icon_type = manuscript_icon;
                             } else if (result['type'] == 'Notated music') {
-                                var icon_type = music_icon;    var icon_type = map_icon;
-                            }
-                            else {
+                                var icon_type = music_icon;
+                            } else {
                                 var icon_type = null;
                             }
                             if (index % 2 == 0) {

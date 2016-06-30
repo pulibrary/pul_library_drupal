@@ -31,11 +31,18 @@
 
 .user--email a {
   color: $gray-darkest;
-  text-decoration: none;
+
+  .icon-email {
+    vertical-align: middle;
+  }
 
   &:hover {
     color: $blue-dark;
-    text-decoration: underline;
+    text-decoration: none;
+
+    .icon-email {
+      color: $orange;
+    }
   }
 }
 
