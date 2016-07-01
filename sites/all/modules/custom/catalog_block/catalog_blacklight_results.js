@@ -61,11 +61,13 @@
                             var holdings = "";
                             if (result['holdings']) {
                                 holding_locations = JSON && JSON.parse(result['holdings']) || $.parseJSON(result['holdings']);
+                                holdings = holdings + "<div class='pulsearch-availability' data-record-id='" + id + "'>"
                                 for (var key in holding_locations) {
                                     if (holding_locations.hasOwnProperty(key)) {
-                                        holdings = holdings + "<div class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + holding_locations[key]['library'] + " " + holding_locations[key]['location'] + "</div>";
+                                        holdings = holdings + "<div class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + holding_locations[key]['library'] + " " + holding_locations[key]['location'] + holding_locations[key]['library'] + " " + holding_locations[key]['call_number'] + "</div>";
                                     }
                                 }
+                                holdings = holdings + "</div>";
                             }
                             var result_position = parseInt(index) + 1;
                             items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>' +
@@ -77,7 +79,7 @@
                         $('<ul/>', {
                             'class': 'all-search-results-list',
                             html: items.join('')
-                        }).appendTo('#blacklight-search-results');
+                        }).appendTo('#blacklight-search-results');  
                         // $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#blacklight-search-results');
                         $('#catalog_block-catalog_blacklight_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
