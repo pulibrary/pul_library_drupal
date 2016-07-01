@@ -556,6 +556,123 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_13';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -12;
+  $handler->conf = array(
+    'title' => 'Basic Page',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'help/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Title
+%node:menu-link',
+    'panels_breadcrumbs_paths' => 'help
+%node:menu-link',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'pul-base-nine-three';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = 'cfc28604-c1a7-4720-92ce-68bbc8acce26';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-2b7c1067-7ee1-447d-a4ba-cce09da42d27';
+    $pane->panel = 'first';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '2b7c1067-7ee1-447d-a4ba-cce09da42d27';
+    $display->content['new-2b7c1067-7ee1-447d-a4ba-cce09da42d27'] = $pane;
+    $display->panels['first'][0] = 'new-2b7c1067-7ee1-447d-a4ba-cce09da42d27';
+    $pane = new stdClass();
+    $pane->pid = 'new-d7d7f859-3e3e-49c5-a470-a37bcba437d9';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-get-help-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd7d7f859-3e3e-49c5-a470-a37bcba437d9';
+    $display->content['new-d7d7f859-3e3e-49c5-a470-a37bcba437d9'] = $pane;
+    $display->panels['second'][0] = 'new-d7d7f859-3e3e-49c5-a470-a37bcba437d9';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view_panel_context_13'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_15';
   $handler->task = 'node_view';
   $handler->subtask = '';
