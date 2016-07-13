@@ -14,7 +14,7 @@
  * Available variables:
  * - $index: The search index this search is based on.
  * - $url: URL of the result.
- * - $title: Title of the result.
+ * - $title: Title of the result (unsanitized).
  * - $snippet: A small preview of the result.
  * - $info: String of all the meta information ready for print. Applies
  *   only if the result is a node.

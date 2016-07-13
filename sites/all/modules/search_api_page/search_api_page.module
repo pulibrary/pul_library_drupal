@@ -71,6 +71,13 @@ function search_api_page_access($page_machine_name) {
  * Implements hook_theme().
  */
 function search_api_page_theme() {
+  $themes['search_api_page_full_page'] = array(
+    'variables' => array(
+      'form' => array(),
+      'results' => array(),
+    ),
+    'template' => 'search-api-page-full-page',
+  );
   $themes['search_api_page_results'] = array(
     'variables' => array(
       'index' => NULL,
@@ -162,20 +169,40 @@ function search_api_page_block_view($delta) {
     );
     return $block;
   }
+  return NULL;
 }
 
 /**
  * Implements hook_forms().
  */
 function search_api_page_forms($form_id, $args) {
-  $forms = array();
-  foreach (search_api_page_load_multiple(FALSE, array('enabled' => TRUE)) as $page) {
-    $forms['search_api_page_search_form_' . $page->machine_name] = array(
-      'callback' => 'search_api_page_search_form',
-      'callback arguments' => array(),
+  // Check whether the given form ID matches our pattern for dynamically
+  // generated form IDs.
+  $prefix = 'search_api_page_search_form_';
+  $prefix_length = strlen($prefix);
+  if (substr($form_id, 0, $prefix_length) != $prefix) {
+    return array();
+  }
+
+  // Make sure we do have a page as the first argument.
+  if (!$args || !($args[0] instanceof Entity)) {
+    return array();
+  }
+
+  // Retrieve the search page machine name from the form ID and compare it with
+  // the one from the page in the arguments. Also check the page is actually
+  // enabled.
+  $page_id = substr($form_id, $prefix_length);
+  $page = $args[0];
+  if ($page->machine_name == $page_id && $page->enabled) {
+    return array(
+      $form_id => array(
+        'callback' => 'search_api_page_search_form',
+        'callback arguments' => array(),
+      ),
     );
   }
-  return $forms;
+  return array();
 }
 
 /**
@@ -307,7 +334,7 @@ function search_api_page_search_api_page_insert(Entity $page) {
  * Rebuilds the menu table if a search page is edited.
  */
 function search_api_page_search_api_page_update(Entity $page) {
-  if ($page->enabled != $page->original->enabled || $page->path != $page->original->path) {
+  if ($page->enabled != $page->original->enabled || $page->name != $page->original->name || $page->path != $page->original->path) {
     menu_rebuild();
   }
 }
@@ -513,6 +540,14 @@ function search_api_page_search_form(array $form, array &$form_state, Entity $pa
       $form['text']['#markup'] = '<p>' . nl2br(check_plain($page->description)) . '</p>';
       $form['text']['#weight'] = -5;
     }
+  }
+
+  // Search forms generally don't need token validation for logged users.
+  // (Forms for anonymous users never get form tokens added, but if we set
+  // #token to FALSE here we'd run into a Form API bug that still tries to
+  // validate the (non-existent) token.)
+  if (user_is_logged_in()) {
+    $form['#token'] = FALSE;
   }
 
   return $form;

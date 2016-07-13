@@ -1,3 +1,24 @@
+Search API Pages 1.3 (2016-07-05):
+----------------------------------
+- #2755599 by Bès: Fixed template suggestion for search pages.
+- #2728487 by gnucifer: Fixed rendering code to fix item load if items are
+  already present.
+- #2711499 by drunken monkey, gnucifer: Fixed page manager integration for
+  non-standard datasources.
+- #1847686 by MiSc, Bès, jsst, drunken monkey, jossensei: Added a theme
+  template for the whole search page.
+- #2699913 by dsdeiz, drunken monkey: Fixed Page Manager integration.
+- #1664706 by Les Lim, drunken monkey: Added static caching to hook_forms()
+  implementation.
+- #1377292 by drunken monkey: Fixed search form block for anonymous users.
+- #2592143 by drunken monkey: Improved template documentation to state title is
+  unsanitized.
+- #2498525 by drunken monkey, GDrupal: Fixed warnings for empty results.
+- #2528592 by marcingy: Fixed old search page titles being displayed until
+  manual menu rebuild.
+- #2315713 by pontus_nilsson, DamienMcKenna, drunken monkey, kallehauge: Added
+  Panels support for search pages.
+
 Search API Pages 1.2 (2015-06-03):
 ----------------------------------
 - #2425179 by DamienMcKenna, drunken monkey: Added a CTools plugin for the

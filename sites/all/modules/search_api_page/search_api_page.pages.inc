@@ -11,11 +11,20 @@
  *   The search page's machine name.
  * @param string|null $keys
  *   The keys to search for.
+ * @param array $overridden_options
+ *   An associative array of page options that should be overridden for this
+ *   search only.
  */
-function search_api_page_view($id, $keys = NULL) {
+function search_api_page_view($id, $keys = NULL, $overridden_options = array()) {
   $page = search_api_page_load($id);
   if (!$page) {
     return MENU_NOT_FOUND;
+  }
+
+  // Merge in overridden options.
+  if ($overridden_options) {
+    $page->original_options = $page->options;
+    $page->options = $overridden_options + $page->options;
   }
 
   // Pre-process keys (unescape \ and /).
@@ -28,14 +37,22 @@ function search_api_page_view($id, $keys = NULL) {
     $keys = NULL;
   }
 
+  $ret = array(
+    '#theme' => 'search_api_page_full_page',
+  );
   $ret['#contextual_links']['search_api_page'] = array(
     'admin/config/search/search_api/page',
     array($page->machine_name),
   );
 
   if (!isset($page->options['result_page_search_form']) || $page->options['result_page_search_form']) {
-    $ret['form'] = drupal_get_form('search_api_page_search_form', $page, $keys);
+    $ret['#form'] = drupal_get_form('search_api_page_search_form', $page, $keys);
   }
+
+  $ret['#results']['#theme'] = "search_api_page_results__{$page->machine_name}";
+  $ret['#results']['#index'] = search_api_index_load($page->index_id);
+  $ret['#results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
+  $ret['#results']['#page'] = $page;
 
   // Do a search if we have keys, or our empty behavior and facets dictate.
   if ($keys || !empty($page->options['empty_behavior'])) {
@@ -59,13 +76,13 @@ function search_api_page_view($id, $keys = NULL) {
       return $ret;
     }
 
-    if (!$results) {
+    if (empty($results)) {
       return $ret;
     }
 
     // If spellcheck results were returned then add them to the render array.
     if (isset($results['search_api_spellcheck'])) {
-      $ret['results']['#spellcheck'] = array(
+      $ret['#results']['#spellcheck'] = array(
         '#theme' => 'search_api_spellcheck',
         '#spellcheck' => $results['search_api_spellcheck'],
       // Let the theme function know where the key is stored by passing its arg
@@ -78,17 +95,17 @@ function search_api_page_view($id, $keys = NULL) {
       );
     }
 
-    $ret['results']['#theme'] = "search_api_page_results__{$page->machine_name}";
-    $ret['results']['#index'] = search_api_index_load($page->index_id);
-    $ret['results']['#results'] = $results;
-    $ret['results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
-    $ret['results']['#keys'] = $keys;
-    $ret['results']['#page'] = $page;
+    $ret['#results']['#results'] = $results;
+    $ret['#results']['#keys'] = $keys;
+    // Add a clean-up function to reset page options to their original values.
+    if ($overridden_options) {
+      $ret['#results']['#post_render'] = array('search_api_page_reset_original_options');
+    }
 
     // Load pager.
     if ($results['result count'] > $limit) {
       pager_default_initialize($results['result count'], $limit);
-      $ret['results']['#pager']['#theme'] = 'pager';
+      $ret['#results']['#pager']['#theme'] = 'pager';
     }
 
     if (!empty($results['ignored'])) {
@@ -102,6 +119,20 @@ function search_api_page_view($id, $keys = NULL) {
   }
 
   return $ret;
+}
+
+/**
+ * Processes variables for search-api-page-full-page.tpl.php
+ *
+ * The $variables array contains the following arguments:
+ * - $form
+ * - $results
+ *
+ * @see search-api-page-full-page.tpl.php
+ */
+function template_preprocess_search_api_page_full_page(&$variables) {
+  $machine_name = $variables['results']['#page']->machine_name;
+  $variables['theme_hook_suggestions'][] = 'search-api-page-full-page__' . $machine_name;
 }
 
 /**
@@ -209,6 +240,29 @@ function _search_api_page_map_languages($lang) {
 }
 
 /**
+ * Resets the page's options, if they were overridden, to their original values.
+ *
+ * Used as a "#post_render" callback for the search page results in
+ * search_api_page_view().
+ *
+ * @param string $children
+ *   The rendered output of the element.
+ * @param array $element
+ *   The rendered element.
+ *
+ * @return array
+ *   The processed rendered output of the element.
+ */
+function search_api_page_reset_original_options($children, array $element) {
+  $page = $element['#page'];
+  if (!empty($page->original_options)) {
+    $page->options = $page->original_options;
+    unset($page->original_options);
+  }
+  return $children;
+}
+
+/**
  * Preprocess variables for search-api-page-results.tpl.php.
  *
  * @param array $variables
@@ -226,9 +280,14 @@ function _search_api_page_map_languages($lang) {
  */
 function template_preprocess_search_api_page_results(array &$variables) {
   $results = $variables['results'];
-
-  if (!empty($variables['results']['results'])) {
-    $variables['items'] = $variables['index']->loadItems(array_keys($variables['results']['results']));
+  $results += array(
+    'results' => array(),
+  );
+  $variables += array(
+    'items' => array(),
+  );
+  if ($results['results'] && empty($variables['items'])) {
+    $variables['items'] = $variables['index']->loadItems(array_keys($results['results']));
   }
   $variables['result_count'] = $results['result count'];
   $variables['sec'] = 0;
