@@ -181,21 +181,6 @@
   }
 
   h2 {
-    margin-top: .5em;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    background-color: $gray-lightest;
-  }
-  25% {
-    background-color: $yellow-light;
-  }
-  50 {
-    background-color: $gray-lightest;
-  }
-  75% {
-    background-color: $yellow-light;
+    margin-top: 0.5em;
   }
 }
