@@ -151,14 +151,14 @@ function summon_block_block_info() {
 
   $blocks['summon_search'] = array(
       // info: The name of the block.
-      'info' => t('Articles+ Search'),
+      'info' => t('Articles and More Search'),
       // Block caching options (per role, per user, etc.)
       'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
 
   $blocks['summon_search_results'] = array(
-    'info' => t('Articles+ Search Results'),
+    'info' => t('Articles and More Search Results'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   $blocks['summon_guide_results'] = array(
@@ -190,15 +190,15 @@ function summon_block_block_configure($delta = '') {
       '#type' => 'textfield',
       '#title' => t('Articles+ Search Hint'),
       '#size' => 60,
-      '#description' => t('This text will appear as the hint when the Articles+ (Summon) box is displayed.'),
+      '#description' => t('This text will appear as the hint when the Articles and More (Summon) box is displayed.'),
       '#default_value' => variable_get('summon_search_hint',  t('Hint you want to display.')),
     );
     $form['summon_search_error'] = array(
       '#type' => 'textfield',
       '#title' => t('Articles+ Search Error Message'),
       '#size' => 60,
-      '#description' => t('This text will appear as the warning message when an invalid Articles+ (Summon) box is displayed.'),
-      '#default_value' => variable_get('summon_search_error',  t('Please Supply an Articles+ Search Term.')),
+      '#description' => t('This text will appear as the warning message when an invalid Articles and More (Summon) box is displayed.'),
+      '#default_value' => variable_get('summon_search_error',  t('Please Supply an Articles and More Search Term.')),
     );
   }
   return $form;
@@ -233,7 +233,7 @@ function summon_block_block_view($delta = '') {
     //drupal_add_js(array('summon_block' => array('summon_search_hint' => variable_get('summon_search_hint'))), 'setting');
     //drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_block.js');
   } elseif ($delta == 'summon_search_results') {
-    $block['subject'] = t('Articles+ Search Results');
+    $block['subject'] = t('Articles and More Search Results');
     $block['content'] = summon_search_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'summon_block') .'/summon_search_results.js');
   } elseif ($delta == 'summon_guide_results') {
