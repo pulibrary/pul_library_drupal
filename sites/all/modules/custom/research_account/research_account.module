@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Research Account feature.
+ */
+
+include_once 'research_account.features.inc';
