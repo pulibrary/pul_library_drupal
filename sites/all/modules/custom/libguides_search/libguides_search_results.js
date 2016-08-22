@@ -47,13 +47,19 @@
                             $('.libguides-search-results').append('<div class="libguide more-link"><a title="" target="_blank" href="'+ data.more +'">See all Library Guides results</a></div>');
                             $('#libguides_block-libguides_search_results h2').replaceWith(function() {
                                 var url = $.trim($(this).text());
-                                return '<h2><a title="' + tooltip + '"  href="'+ data.more +'" target="_blank"><i class="icon-compass"></i>Library Guides Results</a></h2>';
+                                return '<h2><a title="' + tooltip + '"  href="'+ data.more +'" target="_blank"><i class="icon-compass"></i>Library Guides</a></h2>';
                             });
                         }
-
+                        //add hit count to preview
+                        var preview = $("a[href='#libguides_block-libguides_search_results']");
+                        if (data.number > 0) {
+                            $(preview).append(" ("+data.number+")");
+                        }
                     } else {
                         $('#libguides-search-results-spinner').hide();
-                        $('<div class="no-results">No library guides results found. <a href="' + libguides_url + '">Browse guides</a> for available topics</div>."').appendTo('.libguides-search-results');
+                        $('<div class="no-results">No library guides found. <a href="' + libguides_url + '">Browse guides</a> for available topics</div>."').appendTo('.libguides-search-results');
+                        var preview = $("a[href='#libguides_block-libguides_search_results']");
+                        $(preview).parent().hide();  
                     }
 
                 },

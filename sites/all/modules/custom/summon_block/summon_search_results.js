@@ -3,7 +3,7 @@
 
         var query_url = $('#summon-search-results').attr('data-source')
         var refine_message = "See All Scholarly Materials in Articles+";
-        var refine_tooltip = "Expand your search or See all scholarly materials in Articles and More.";
+        var refine_tooltip = "Expand your search to see all scholarly materials in Articles+.";
         var summon_url = "http://princeton.summon.serialssolutions.com";
         var max_display_results = 5;
         if (query_url == "/find/all" || query_url == undefined) {
@@ -73,10 +73,17 @@
                         // $('<div class="summon-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-search-results');
                         $('#summon_block-summon_search_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-text"></i>Articles and More Search Results</a></h2>';
+                            return '<h2><a title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-text"></i>Articles+</a></h2>';
                         });
                         if (data.number > max_display_results) {
-                            $('<div class="summon-search more-link"><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + more_link + '">See all ' + data.number + ' Articles and More results</a></div>"').appendTo('#summon-search-results');
+                            $('<div class="summon-search more-link"><a target="_blank" title="' + refine_tooltip + ' ' + data.number + ' total results." href="' + more_link + '">See all Articles+ Results</a></div>"').appendTo('#summon-search-results');
+                        }
+                        // update preview button with hit count
+                        var preview = $("a[href='#summon_block-summon_search_results']");
+                        if (data.number > 0) {
+                            $(preview).append(" ("+data.number+")");
+                        } else {
+                            $(preview).parent().hide();
                         }
 
                         // GA Tracking
@@ -102,12 +109,12 @@
                         });
                     } else {
                         $('#summon-search-results-spinner').hide();
-                        $('<div class="no-results">No matches in Articles and More.</div>"').appendTo('#summon-search-results');
+                        $('<div class="no-results">No matches in Articles+.</div>"').appendTo('#summon-search-results');
                     }
                 },
                 error: function(data) {
                     $('#summon-search-results-spinner').hide();
-                    $('<div class="all-fail-to-load-results">Articles and More results are not available at this time.</div>"').appendTo('#summon-search-results');
+                    $('<div class="all-fail-to-load-results">Articles+ results are not available at this time.</div>"').appendTo('#summon-search-results');
                 },
                 timeout: 5000
             });

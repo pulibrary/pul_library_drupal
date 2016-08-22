@@ -7,7 +7,7 @@
         var default_icon = 'icon-mixed-material';
         var breadcrumb_label = "<span class='breadcrumb-label'>Contained In:&nbsp;</span>";
         var refine_icon = '';
-        var refine_message = "See All Finding Aids";
+        var refine_message = "See all Finding Aids content.";
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#pulfa-search-results');
         } else {
@@ -64,10 +64,15 @@
                         // $('<div class="pulfa-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulfa-search-results');
                         $('#catalog_block-catalog_pulfa_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-archives"></i>Library Archives Results</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-archives"></i>Library Archives</a></h2>';
                         });
                         if (data.number > 3) {
-                            $('<div class="pulfa-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Finding Aids results</a></div>"').appendTo('#pulfa-search-results');
+                            $('<div class="pulfa-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Library Archives results</a></div>"').appendTo('#pulfa-search-results');
+                        }
+                        // update preview button with hit count
+                        var preview = $("a[href='#catalog_block-catalog_pulfa_results']");
+                        if (data.number > 0) {
+                            $(preview).append(" ("+data.number+")");
                         }
                         var section_heading = "PULFA"; // Should be in Drupal Settings
                         $('#catalog_block-catalog_pulfa_results h2 a').each(function(index, value) {
@@ -94,6 +99,8 @@
 
                         });
                     } else {
+                        var preview = $("a[href='#catalog_block-catalog_pulfa_results']");
+                        $(preview).parent().hide();
                         $('#pulfa-search-results-spinner').hide();
                         //$('<div class="no-results">No Finding Aids results.</div>"').appendTo('#pulfa-search-results');
                         $('<div class="no-results">No library archives results found. Try searching for another topic.</div>"').appendTo('#pulfa-search-results');

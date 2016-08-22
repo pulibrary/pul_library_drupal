@@ -252,7 +252,7 @@ function search_results_views_views_default_views() {
   /* Display: Databases Results Short Content Pane */
   $handler = $view->new_display('panel_pane', 'Databases Results Short Content Pane', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<i class="icon-databases"></i>Databases Results';
+  $handler->display->display_options['title'] = '<i class="icon-databases"></i>Databases';
   $handler->display->display_options['display_description'] = 'For the /find/all page. ';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -267,6 +267,12 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['empty'] = TRUE;
+  $handler->display->display_options['header']['result']['content'] = '<span data-hit-count="@total" data-search-service="databases_keyword_search-panel_pane_2"></span>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: View area */
   $handler->display->display_options['footer']['view']['id'] = 'view';
@@ -280,7 +286,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<p>No database results found. Try browsing by <a href="/research/databases">Title</a> or <a href="/research/databases/subjects">Subject</a>.';
+  $handler->display->display_options['empty']['area']['content'] = '<p>No databases found. Try browsing by <a href="/research/databases">Title</a> or <a href="/research/databases/subjects">Subject</a>.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -476,7 +482,7 @@ function search_results_views_views_default_views() {
   /* Display: General Site Search Results */
   $handler = $view->new_display('panel_pane', 'General Site Search Results', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<i class="icon-windows"></i>Library Website Results';
+  $handler->display->display_options['title'] = '<i class="icon-windows"></i>Library Website';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -490,6 +496,12 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['empty'] = TRUE;
+  $handler->display->display_options['header']['result']['content'] = '<span data-hit-count="@total" data-search-service="general_site_keyword_search-panel_pane_1"></span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -572,7 +584,7 @@ function search_results_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '<i class="icon-phone-book"></i>Library Staff Results';
+  $handler->display->display_options['title'] = '<i class="icon-phone-book"></i>Library Staff';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -853,6 +865,11 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '<span data-hit-count="@total" data-search-service="general_site_user_search-panel_pane_1"></span>';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';

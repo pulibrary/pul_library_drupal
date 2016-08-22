@@ -157,7 +157,7 @@ function catalog_block_page() {
 
   $page = array(
     '#type' => 'markup',
-    '#markup' => t('Configure The Books and More Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+    '#markup' => t('Configure The New Catalog Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
 
   return $page;
@@ -173,14 +173,14 @@ function catalog_block_block_info() {
 
   $blocks['catalog_search'] = array(
       // info: The name of the block.
-      'info' => t('Catalog Search'),
+      'info' => t('New Catalog Search'),
       // Block caching options (per role, per user, etc.)
       'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
    $blocks['catalog_search_results'] = array(
       // block for search results from "books+" aka primo
-      'info' => t('Books and More Search Results'),
+      'info' => t('New Catalog Search Results'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_journal_results'] = array(
@@ -196,11 +196,11 @@ function catalog_block_block_info() {
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_faq_results'] = array(
-      'info' => t('FAQ Results'),
+      'info' => t('FAQ'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_blacklight_results'] = array(
-      'info' => t('PUL Search Results'),
+      'info' => t('Books and More'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    return $blocks;
@@ -227,7 +227,7 @@ function catalog_block_block_configure($delta = '') {
       '#type' => 'textfield',
       '#title' => t('Invalid Search Error'),
       '#size' => 60,
-      '#description' => t('This message will display when the user submits and empty search for the Books+ Block.'),
+      '#description' => t('This message will display when the user submits and empty search for the New Catalog Block.'),
       '#default_value' => variable_get('catalog_search_error',  t('Supply a Books+ Search Term.')),
     );
   }
@@ -264,7 +264,7 @@ function catalog_block_block_view($delta = '') {
     $block['content'] = catalog_block_contents($delta);
 
   } elseif ($delta == 'catalog_search_results') {
-    $block['subject'] = t('Books and More Search Results');
+    $block['subject'] = t('New Catalog');
     $block['content'] = catalog_search_results_content($delta);
     drupal_add_js(array('catalog_block' => array('request' => 'query')), 'setting');
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_search_results.js');
@@ -281,11 +281,11 @@ function catalog_block_block_view($delta = '') {
     $block['content'] = catalog_pudl_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pudl_results.js');
   } elseif ($delta == 'catalog_faq_results') {
-    $block['subject'] = t('FAQ Results');
+    $block['subject'] = t('FAQ');
     $block['content'] = catalog_faq_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_faq_results.js');
   } elseif ($delta == 'catalog_blacklight_results') {
-    $block['subject'] = t('PUL Search Results');
+    $block['subject'] = t('New Catalog Results');
     $block['content'] = catalog_blacklight_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_blacklight_results.js');
   }
