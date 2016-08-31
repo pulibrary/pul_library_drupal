@@ -937,7 +937,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<i class="icon-links"></i> Library Guides Results',
+      'override_title_text' => '<i class="icon-links"></i> Library Guides',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();

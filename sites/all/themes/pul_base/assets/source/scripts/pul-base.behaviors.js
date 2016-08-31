@@ -108,9 +108,9 @@
       var href_databases = $('.page-find-all-results #databases_keyword_search-panel_pane_2 .more-link a').attr('href');
       //staff search
       var l_staff = $('#general_site_user_search-panel_pane_1 .item-list li').length;
-      if (l_staff > 2) {
+      if (l_staff > 3) {
         $('.page-find-all-results #general_site_user_search-panel_pane_1 h2').replaceWith(function() {
-            return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-phone-book"></i>Library Staff Results</a></h2>';
+            return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-phone-book"></i>Library Staff</a></h2>';
         });
       } else {
       }
@@ -118,7 +118,7 @@
       var l_site = $('#general_site_keyword_search-panel_pane_1 .item-list li').length;
       if(l_site > 2) {
         $('.page-find-all-results #general_site_keyword_search-panel_pane_1 h2').replaceWith(function() {
-            return '<h2><a href="' + href_website + '" title="See all library website results."><i class="icon-windows"></i>Library Website Results</a></h2>';
+            return '<h2><a href="' + href_website + '" title="See all library website results."><i class="icon-windows"></i>Library Website</a></h2>';
         });
       } else {
       }
@@ -126,11 +126,37 @@
       var l_db = $('#databases_keyword_search-panel_pane_2 .item-list li').length;
       if(l_db > 2) {
         $('.page-find-all-results #databases_keyword_search-panel_pane_2 h2').replaceWith(function() {
-          return '<h2><a href="' + href_databases + '" title="See all database results."><i class="icon-databases"></i>Databases Results</a></h2>';
+          return '<h2><a href="' + href_databases + '" title="See all database results."><i class="icon-databases"></i>Databases</a></h2>';
       });
       } else {
       }
 
+    }
+  };
+
+  Drupal.behaviors.pulSearchLocalTabBehavior = {
+    attach: function (context) {
+      var staff_preview = $("a[href='#general_site_user_search-panel_pane_1']");
+      var staff_query_total = $("span[data-search-service='general_site_user_search-panel_pane_1']").attr('data-hit-count');
+      if(staff_query_total > 0) {
+        $(staff_preview).append(" ("+staff_query_total+")");
+      } else {
+        $(staff_preview).parent().hide();
+      }
+      var db_preview = $("a[href='#databases_keyword_search-panel_pane_2']");
+      var db_query_total = $("span[data-search-service='databases_keyword_search-panel_pane_2']").attr('data-hit-count');
+      if(db_query_total > 0) {
+        $(db_preview).append(" ("+db_query_total+")");
+      } else {
+        $(db_preview).parent().hide();
+      }
+      var web_preview = $("a[href='#general_site_keyword_search-panel_pane_1']");
+      var web_query_total = $("span[data-search-service='general_site_keyword_search-panel_pane_1']").attr('data-hit-count');
+      if(web_query_total > 0) {
+        $(web_preview).append(" ("+web_query_total+")");
+      } else {
+        $(web_preview).parent().hide();
+      }
     }
   };
 

@@ -129,7 +129,7 @@ function libguides_block_block_info() {
    );
    $blocks['libguides_search_results'] = array(
       // block for search results from "books+" aka primo
-      'info' => t('Library Guides Results'),
+      'info' => t('Library Guides'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    return $blocks;
@@ -193,7 +193,7 @@ function libguides_block_block_view($delta = '') {
     $block['content'] = libguides_block_contents($delta);
  
   } elseif ($delta == 'libguides_search_results') {
-    $block['subject'] = t('Library Guides Results');
+    $block['subject'] = t('Library Guides');
     $block['content'] = libguides_search_results_content($delta);
     drupal_add_js(array('libguides_block' => array('request' => 'query')), 'setting');
     drupal_add_js(drupal_get_path('module', 'libguides_block') .'/libguides_search_results.js');  

@@ -50,10 +50,18 @@
                         // $('<div class="summon-guide refine-link">'+refine_icon+'<a target="_blank" title="'+refine_tooltip+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#summon-guide-results');
                         $('#summon_block-summon_guide_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + tooltip + '" href="' + data.more + '"><i class="icon-links"></i>Library Guides Results</a></h2>';
+                            return '<h2><a title="' + tooltip + '" href="' + data.more + '"><i class="icon-links"></i>Library Guides</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="summon-guide more-link"><a title="' + tooltip + '" target="_blank" href="' + data.more + '">See all ' + data.number + ' Library Guides result</a></div>"').appendTo('#summon-guide-results');
+                        }
+                        // update preview button with hit count
+                        var preview = $("a[href='#libguides_block-libguides_search_results']");
+                        console.log(preview);
+                        if (data.more > 0) {
+                            $(preview).append(" ("+data.more+")");
+                        } else {
+                            $(preview).hide();
                         }
                         var section_heading = "Summon Guide"; // Should be in Drupal Settings
                         $('#summon_block-summon_guide_results h2 a').each(function(index, value) {
