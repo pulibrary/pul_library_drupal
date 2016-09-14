@@ -52,7 +52,7 @@
 
   .date-nav {
     margin-bottom: 0;
-    padding-bottom: 0.5em;
+    padding: 0.5em 0;
 
     .date-prev,
     .date-next {
@@ -60,7 +60,7 @@
       border-radius: 4px;
       color: $white;
       height: 25px;
-      margin-top: 3px;
+      margin-top: 18px;
       padding: 0 4px;
       position: absolute;
       text-align: center;
