@@ -90,7 +90,7 @@
                             }
                             var online_access = "";
                             var online_span = '<span class="badge-notice availability-icon label label-primary" title="" data-toggle="tooltip" data-original-title="Electronic access" aria-describedby="tooltip552370">Online</span>';
-                            if(online_process == true) { 
+                            if(online_process == true) {
                                 if (result['online']) {
                                     var online_links = JSON && JSON.parse(result['online']) || $.parseJSON(result['online']);
                                     online_access = online_access + "<div class='pulsearch-online-access'>";
@@ -123,7 +123,7 @@
                             return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-book"></i>New Catalog</a></h2>';
                         });
                         if (data.number > 3) {
-                            $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all New Catalog results</a></div>"').appendTo('#blacklight-search-results');
+                            $('<div class="blacklight-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all New Catalog results</a></div>"').appendTo('#blacklight-search-results');
                         }
                         // update preview button with hit count
                         var preview = $("a[href='#catalog_block-catalog_blacklight_results']");
@@ -144,6 +144,13 @@
                             //var section_heading = $(this).closest('h2.pane-title').text();
                             $(this).click(function() {
                                 ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+                            });
+                        });
+
+                        $('#blacklight-search-results .all-search-results-list .pulsearch-online-access a').each(function(index, value) {
+                            //var section_heading = $(this).closest('h2.pane-title').text();
+                            $(this).click(function() {
+                                ga('send', 'event', 'All Search', section_heading, 'Online Item');
                             });
                         });
 
@@ -168,7 +175,7 @@
                 timeout: 5000
             }).done(function() {
                 var ids = [];
-                $('#blacklight-search-results .holdings').each(function() { 
+                $('#blacklight-search-results .holdings').each(function() {
                     var pos = $(this).position();
                     var id = $(this).data('ol-id');
                     if (!isNaN(id))
@@ -179,13 +186,13 @@
                 if (ids.length > 0) {
                     var availability_base = 'https://bibdata.princeton.edu/availability?'
                     var query_string = "&ids%5B%5D=" + ids.join('&ids%5B%5D=');
-                    var availability_url = availability_base + query_string;   
+                    var availability_url = availability_base + query_string;
                 }
                 $.ajax({
                      url: availability_url,
                      async: true,
                      type: 'GET',
-                     dataType: 'json',    
+                     dataType: 'json',
                      success: function(data) {
                         $.each(data, function(index, result) {
                             var mfhd_keys = Object.keys(result);
@@ -264,7 +271,7 @@
                                 // End Availability Block from Orangelight
                                 var badge = "<span class='badge-" + label_class + "'>" + label + "</span>";
                                 var holding_note = $("*[data-mfhd='" + mfhd + "']");
-                           
+
                                 if (badge_label != 'Online') {
                                     var note_text = $(holding_note).text();
                                     $(holding_note).html(badge + " " + note_text);

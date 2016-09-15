@@ -108,7 +108,7 @@
       var href_databases = $('.page-find-all-results #databases_keyword_search-panel_pane_2 .more-link a').attr('href');
       //staff search
       var l_staff = $('#general_site_user_search-panel_pane_1 .item-list li').length;
-      if (l_staff > 3) {
+      if (l_staff > 2) {
         $('.page-find-all-results #general_site_user_search-panel_pane_1 h2').replaceWith(function() {
             return '<h2><a href="' + href_staff + '" title="See all library staff results."><i class="icon-phone-book"></i>Library Staff</a></h2>';
         });
@@ -345,16 +345,32 @@
   Drupal.behaviors.pulTrackAllSearchUsage = {
     attach: function (context) {
 
-      $('.page-find-all-results .l-main').once('pul', function () {
+      $('.page-find-all-results', context).once('pul', function () {
 
-        // for best bet
-        $('.view-all-search-best-bet .best-bet').each(function () {
+        // track best bets
+        $('.view-all-search-best-bet .best-bet a').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'All Search', 'Best Bet', $(this).text());
           });
         });
 
-        // for databases title
+        // track libraries and collections - click on title
+        $('.view-search-libraries-and-collections h3 a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Title');
+          });
+        });
+
+        // track libraries and collections - click on homepage url
+        $('.view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Homepage URL');
+          });
+        });
+
+        // track position of database search
         $('.view-databases-keyword-search .item-list .database-title').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
@@ -362,88 +378,86 @@
           });
         });
 
-        // for subjects block
-        $(' .view-database-subject-search .item-list a').each(function (index, value) {
+        // track database search for more results - top
+        $('.pane-databases-keyword-search-panel-pane-2 h2 a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Expand All Search', 'Database', 'Top');
+          });
+        });
+
+        // track database search for more results - bottom
+        $('.view-databases-keyword-search .more-link a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Expand All Search', 'Database', 'Bottom');
+          });
+        });
+
+        // track position of database related subjects
+        $('.view-database-subject-search .item-list a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
             ga('send', 'event', 'All Search', 'Database Subject', 'Position ' + result_position);
           });
         });
 
-        //general keyword search view
-        $(' .view-general-site-keyword-search .item-list .database-titles a').each(function (index, value) {
+        // track database related subjects search for more results - bottom
+        $('.view-databases-subject-search .more-link a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Expand All Search', 'Subject Browse', 'Bottom');
+          });
+        });
+
+        // track position of site search
+        $('.view-general-site-keyword-search .item-list .database-titles a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
             ga('send', 'event', 'All Search', 'Website Search', 'Position ' + result_position);
           });
         });
 
-        //people search
-        $(' .view-general-site-user-search .item-list .user-link').each(function (index, value) {
+        // track site search for more results - top
+        $('.pane-general-site-keyword-search-panel-pane-1 h2 a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-              ga('send', 'event', 'All Search', 'People Search', 'Position ' + result_position);
-            });
+            ga('send', 'event', 'Expand All Search', 'Website Search', 'Top');
+          });
         });
 
-          // Add tracking codes to expand links on all search
-          // refine-link = top class more-link - bottom
-        $(' .view-databases-keyword-search .refine-link a').each(function (index, value) {
+        // track site search for more results - bottom
+        $('.view-general-site-keyword-search .more-link a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Database', 'Top');
-            });
+            ga('send', 'event', 'Expand All Search', 'Website Search', 'Bottom');
+          });
         });
 
-        // website search
-        $(' .view-general-site-keyword-search .refine-link a').each(function (index, value) {
+        // track position of staff search
+        $('.view-general-site-user-search .item-list .user-link').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Website Search', 'Top');
-            });
+            ga('send', 'event', 'All Search', 'People Search', 'Position ' + result_position);
+          });
         });
 
-        $(' .view-databases-keyword-search .more-link a').each(function (index, value) {
+        // track staff search for more results - top
+        $('.pane-general-site-user-search-panel-pane-1 h2 a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Database', 'Bottom');
-            });
+            ga('send', 'event', 'Expand All Search', 'People Search', 'Top');
+          });
         });
 
-        $(' .view-databases-subject-search .more-link a').each(function (index, value) {
+        // track staff search for more results - bottom
+        $('.view-general-site-user-search .more-link a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Subject Browse', 'Bottom');
-            });
+            ga('send', 'event', 'Expand All Search', 'People Search', 'Bottom');
+          });
         });
 
-        $(' .view-general-site-user-search .more-link a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'People Search', 'Bottom');
-            });
-        });
-
-        $(' .view-general-site-keyword-search .more-link a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Website Search', 'Bottom');
-            });
-        });
-        // libraries and collections
-        $(' .view-search-libraries-and-collections h3 a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Title');
-            });
-        });
-
-        $(' .view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-              ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Homepage URL');
-            });
-        });
       });
     }
   };
