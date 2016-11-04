@@ -160,10 +160,16 @@ function webform_validation_validate($form, &$form_state) {
 
   if ($rules) {
     $component_definitions = webform_validation_prefix_keys($node->webform['components']);
+    $sorter = webform_get_conditional_sorter($node);
+    // If the form was retrieved from the form cache, the conditionals may not
+    // have been executed yet.
+    if (!$sorter->isExecuted()) {
+      $sorter->executeConditionals(array(), 0);
+    }
     // Remove hidden components.
     foreach ($component_definitions as $key => $component) {
       if (defined('WebformConditionals::componentShown')) {
-        if (webform_get_conditional_sorter($node)->componentVisibility($component['cid'], $component['page_num']) !== WebformConditionals::componentShown) {
+        if ($sorter->componentVisibility($component['cid'], $component['page_num']) !== WebformConditionals::componentShown) {
           unset($flat_values[$key]);
         }
       }
