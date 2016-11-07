@@ -131,13 +131,13 @@ function menu_views_menu_breadcrumb_alter(&$active_trail, $item) {
         unset($active_trail[$key]);
       }
       else {
-        // Use overriden title if provided.
-        $title = $menu_view['view']['settings']['breadcrumb_title'];
+        // Use overridden title if provided.
+        $title = filter_xss_admin($menu_view['view']['settings']['breadcrumb_title']);
         // Use title provided by view next.
         if (empty($title)) {
           $view = views_get_view($menu_view['view']['name']);
           if ($view && $view->access($menu_view['view']['display']) && $view->set_display($menu_view['view']['display'])) {
-            $title = $view->get_title();
+            $title = filter_xss_admin($view->get_title());
             $view->destroy();
           }
         }

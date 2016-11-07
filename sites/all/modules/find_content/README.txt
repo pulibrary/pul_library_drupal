@@ -13,3 +13,7 @@ AUTHOR/MAINTAINER
 ======================
 Mike Spence (mikespence) - http://drupal.org/user/2007822
                          - http://twitter.com/mikespence
+
+CREDITS
+======================
+mcdruid - https://www.drupal.org/node/2528108

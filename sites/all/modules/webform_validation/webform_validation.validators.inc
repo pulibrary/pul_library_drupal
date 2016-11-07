@@ -601,7 +601,7 @@ function webform_validation_webform_validation_validate($validator_name, $items,
         $entry[$count]['key'] = key($items);
         $value = array_shift($items);
         if ($components[$entry[$count]['key']]['type'] === 'date') {
-          if (checkdate((int) $value['month'], (int) $value['day'], (int) $value['year'])) {
+          if (!empty($value) && checkdate((int) $value['month'], (int) $value['day'], (int) $value['year'])) {
             $entry[$count]['value'] = date('Y-m-d', mktime(0, 0, 0, (int) $value['month'], (int) $value['day'], (int) $value['year']));
           }
           else {
@@ -927,16 +927,23 @@ function _webform_validation_test(&$errors, $key, $rule, $test, array $error_str
  * Count the number of words in a value.
  *
  * Strip HTML first.
+ *
+ * @param string|array $val
+ *   A string or array of strings in which to count words.
+ *
+ * @return int
+ *   The number of words in the input.
  */
 function _webform_validation_count_words($val) {
   $val = _webform_validation_flatten_array($val);
 
+  // Strip any HTML tags so they're not counted in the word count.
   $val = strip_tags($val);
-  // Replace entities representing spaces with actual spaces.
-  $val = str_replace('&nbsp;', ' ', $val);
-  $val = str_replace('&#160;', ' ', $val);
+  // Convert character entities back to characters. Without this, entities for
+  // whitespace characters would not be counted as word boundaries.
+  $val = html_entity_decode($val);
 
-  return str_word_count($val);
+  return count(preg_split('/[[:space:]\xC2\xA0]+/', $val));
 }
 
 /**

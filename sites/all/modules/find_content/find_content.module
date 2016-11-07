@@ -80,6 +80,9 @@ function _find_content_submit($form, &$form_state) {
  */
 function find_content_query_node_access_alter(QueryAlterableInterface $query) {
   if ($_GET['q'] == 'admin/content' && isset($_SESSION['node_overview_search_term'])) {
-    $query->condition('n.title', '%' . $_SESSION['node_overview_search_term'] . '%', 'LIKE');
+    $tables =& $query->getTables();
+    if (isset($tables['n']['table']) && $tables['n']['table'] == 'node') {
+      $query->condition('n.title', '%' . $_SESSION['node_overview_search_term'] . '%', 'LIKE');
+    }
   }
 }

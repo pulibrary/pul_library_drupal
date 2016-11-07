@@ -32,9 +32,9 @@ function menu_views_form_menu_overview_form_alter(&$form, &$form_state) {
           if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
             $view->set_arguments(explode('/', $item['view']['arguments']));
             // Provide title options for the view.
-            $title = $item['view']['settings']['title_override'];
+            $title = filter_xss_admin($item['view']['settings']['title_override']);
             if (empty($title)) {
-              $title = $view->get_title();
+              $title = filter_xss_admin($view->get_title());
             }
           }
           $view->destroy();
@@ -725,11 +725,11 @@ function _menu_views_parents_recurse($tree, $menu_name, $indent, &$options, $exc
       _menu_views_tokenize($item);
       if ($item['type'] == 'view' && $item['view']['name'] && $item['view']['display']) {
         $title = t($item['view']['name']) . '-' . t($item['view']['display']);
-        $view_title = $item['view']['settings']['title_override'];
+        $view_title = filter_xss_admin($item['view']['settings']['title_override']);
         if (empty($view_title) && ($view = views_get_view($item['view']['name']))) {
           if ($view->access($item['view']['display']) && $view->set_display($item['view']['display'])) {
             $view->set_arguments(explode('/', $item['view']['arguments']));
-            $view_title = $view->get_title();
+            $view_title = filter_xss_admin($view->get_title());
           }
           $view->destroy();
         }
