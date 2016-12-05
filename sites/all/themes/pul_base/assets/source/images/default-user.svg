@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-picture-1.2.3.1">
+            <g id="Filled_Icons_1_">
+                <g id="Filled_Icons">
+                    <g id="Group">
+                        <polygon id="Shape" fill="#BCCEE5" points="19 0 0 0 0 22 19 22"></polygon>
+                        <path d="M17,20.5 C17,20.776 16.776,21 16.5,21 L2.5,21 C2.224,21 2,20.776 2,20.5 C2,17.414 4.007,15.081 7.099,14.292 C5.842,13.493 5,12.097 5,10.5 C5,8.019 7.019,6 9.5,6 C11.981,6 14,8.019 14,10.5 C14,12.097 13.158,13.493 11.901,14.292 C14.993,15.081 17,17.414 17,20.5 L17,20.5 Z" id="Path" stroke="#BCCEE5" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -198,7 +198,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'user--picture';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['picture']['empty'] = '<div class="user--picture"><img typeof="foaf:Image" src="/sites/all/themes/pul_base/assets/public/images/default-user.svg" width="150" height="200" alt=""></div>';
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo';
   /* Field: User: Name */
