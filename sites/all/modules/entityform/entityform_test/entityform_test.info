@@ -6,18 +6,14 @@ dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = features
 dependencies[] = field_sql_storage
-dependencies[] = rules
 dependencies[] = text
 features[entityform_type][] = simpletest_entityform
 features[features_api][] = api:1
 features[field][] = entityform-simpletest_entityform-field_text
-features[rules_config][] = rules_access_rule
-features[rules_config][] = rules_submission_rule_msg
-features[rules_config][] = rules_validation_rule
 
-; Information added by Drupal.org packaging script on 2013-12-10
-version = "7.x-1.4"
+; Information added by Drupal.org packaging script on 2017-01-04
+version = "7.x-2.0-rc3"
 core = "7.x"
 project = "entityform"
-datestamp = "1386702313"
+datestamp = "1483550056"
 

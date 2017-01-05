@@ -42,10 +42,13 @@ class EntityformMetadataController extends EntityDefaultMetadataController {
     );
     // type property is created in parent::entityPropertyInfo().
     $properties['type']['label'] = t("Entityform Type");
+    $properties['type']['type'] = 'entityform_type';
     $properties['type']['schema field'] = 'type';
     $properties['type']['description'] = t("The Entityform Type for the Entityform Submission.");
     // @todo This line could be removed depending on this http://drupal.org/node/1931376
     $properties['type']['required'] = TRUE;
+
+    $properties['draft']['setter callback'] = 'entity_property_verbatim_set';
 
     return $info;
   }
@@ -58,20 +61,27 @@ class EntityformTypeMetadataController extends EntityDefaultMetadataController {
   public function entityPropertyInfo() {
     $info = parent::entityPropertyInfo();
     $properties = &$info[$this->type]['properties'];
-    $properties['notification_text'] = array(
-        'label' => t("Notification Text"),
-        'description' => t("Custom text to display in notifications."),
+    $properties['type']['type'] = 'text';
+    // Add properties for translatable fields.
+    $labels = entity_get_controller('entityform_type')->get_text_labels();
+    foreach ($labels as $text_prop => $label) {
+      if (!isset($properties[$text_prop])) {
+        $properties[$text_prop] = array();
+      }
+      $properties[$text_prop] += array(
+        'label' => $label,
         'getter callback' => 'entityformtype_metadata_get_properties',
+        'setter callback' => 'entityformtype_metadata_set_properties',
         'type' => 'text',
-        'computed' => TRUE,
-    );
-    $properties['notify_emails'] = array(
-        'label' => t("Notification Emails"),
-        'description' => t("Emails to notify"),
-        'getter callback' => 'entityformtype_metadata_get_properties',
-        'type' => 'text',
-        'computed' => TRUE,
-    );
+        'translatable' => TRUE,
+        'i18n string' => TRUE,
+      );
+      // Testing if this will allow property to be translated.
+      // @todo remove flag all formatted properties.
+      if (in_array($text_prop, array('instruction_pre', 'submission_text'))) {
+        $properties[$text_prop]['format'] = 'format';
+      }
+    }
     return $info;
   }
 }

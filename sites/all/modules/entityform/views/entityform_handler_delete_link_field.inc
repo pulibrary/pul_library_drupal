@@ -15,13 +15,12 @@ class entityform_handler_delete_link_field extends entityform_handler_link_field
 
 
   function render($values) {
-    if (!entityform_access('delete', $this->create_dummyentityform($values))) {
-      return;
+    if ($entity = $this->get_value($values)) {
+      $uri = array(
+        'path' => 'entityform/' . $entity->entityform_id . '/delete',
+        'options' => array('query' => array('destination' => request_path())),
+      );
+      return $this->render_link($entity, 'delete', $uri, t('delete'));
     }
-
-    $text = !empty($this->options['text']) ? $this->options['text'] : t('delete');
-    $entityform_id = $values->{$this->aliases['entityform_id']};
-
-    return l($text, 'entityform/' . $entityform_id . '/delete');
   }
 }

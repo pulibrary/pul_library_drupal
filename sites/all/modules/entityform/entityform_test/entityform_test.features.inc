@@ -16,10 +16,6 @@ function entityform_test_default_entityform_type() {
       "draftable" : 1,
       "draft_button_text" : "",
       "draft_save_text" : { "value" : "", "format" : "filtered_html" },
-      "submission_rules" : { "rules_submission_rule_msg" : "rules_submission_rule_msg" },
-      "notification_text" : "",
-      "notify_emails" : "",
-      "validation_rules" : { "rules_validation_rule" : "rules_validation_rule" },
       "submit_button_text" : "",
       "submission_page_title" : "",
       "submission_text" : { "value" : "", "format" : "filtered_html" },
@@ -29,7 +25,6 @@ function entityform_test_default_entityform_type() {
       "form_status" : "ENTITYFORM_OPEN",
       "roles" : { "2" : "2", "1" : 0, "3" : 0 },
       "resubmit_action" : "new",
-      "access_rules" : { "rules_access_rule" : "rules_access_rule" },
       "redirect_path" : "",
       "instruction_pre" : { "value" : "Test Instructions", "format" : "filtered_html" }
     },

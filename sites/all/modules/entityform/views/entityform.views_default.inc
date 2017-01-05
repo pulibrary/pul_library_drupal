@@ -10,7 +10,7 @@
 function entityform_views_default_views() {
   $view = new view;
   $view->name = 'entityforms';
-  $view->description = 'A list of all entityforms submissions';
+  $view->description = 'A list of all entityforms submissions to be as an admin report';
   $view->tag = 'entityforms';
   $view->base_table = 'entityform';
   $view->human_name = 'Entityforms';
@@ -64,7 +64,7 @@ function entityform_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'Empty ';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No entityforms have been created yet';
+  $handler->display->display_options['empty']['area']['content'] = 'No form submissions available.';
   /* Relationship: Entityform: Uid */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'entityform';
@@ -490,7 +490,7 @@ function entityform_views_default_views() {
     $handler->display->display_options['pager']['options']['offset'] = '0';
     $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
     $handler->display->display_options['style_options']['provide_file'] = 1;
-    $handler->display->display_options['style_options']['filename'] = 'submission_%1-title.csv';
+    $handler->display->display_options['style_options']['filename'] = '%1-title_submissions_%timestamp-full.csv';
     $handler->display->display_options['style_options']['parent_sort'] = 1;
     $handler->display->display_options['style_options']['quote'] = 1;
     $handler->display->display_options['style_options']['trim'] = 0;
@@ -936,7 +936,7 @@ function entityform_views_default_views() {
 
   $view = new view;
   $view->name = 'user_entityforms';
-  $view->description = 'A list of all entityforms submissions';
+  $view->description = 'A list of all entityforms submissions to be displayed to the submitter.';
   $view->tag = 'entityforms';
   $view->base_table = 'entityform';
   $view->human_name = 'User Entityforms';
@@ -1013,7 +1013,7 @@ function entityform_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'Empty ';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No entityforms have been created yet';
+  $handler->display->display_options['empty']['area']['content'] = 'No form submissions available.';
   /* Relationship: Entityform: Uid */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'entityform';
