@@ -307,11 +307,12 @@ function webform_validation_manage_rule_submit($form, &$form_state) {
 function webform_validation_get_webform_components($node, $validator) {
   $ret = array();
   $components = $node->webform['components'];
-  $valid_components = webform_validation_valid_component_types($validator);
   if ($components) {
+    $valid_components = webform_validation_valid_component_types($validator);
+    $component_names = webform_component_list($node, NULL, 'path');
     foreach ($components as $cid => $component) {
       if (in_array($component['type'], $valid_components)) {
-        $ret[$cid] = $component['name'];
+        $ret[$cid] = $component_names[$cid];
       }
     }
   }

@@ -6,7 +6,7 @@
  * as fields.
  */
 
-class entityform_handler_link_field extends views_handler_field {
+class entityform_handler_link_field extends views_handler_field_entity {
   function construct() {
     parent::construct();
 
@@ -41,11 +41,12 @@ class entityform_handler_link_field extends views_handler_field {
   }
 
   function render($values) {
-    $text = !empty($this->options['text']) ? $this->options['text'] : t('view');
-    $entityform_id = $values->{$this->aliases['entityform_id']};
-
-    return l($text, 'entityform/' . $entityform_id);
+    if ($entity = $this->get_value($values)) {
+      $uri = entity_uri($this->entity_type, $entity);
+      return $this->render_link($entity, 'view', $uri, t('view'));
+    }
   }
+
   protected function create_dummyentityform($values) {
     $dummy_entityform = new stdClass();
     $dummy_entityform->type = $values->{$this->aliases['type']};
@@ -53,5 +54,19 @@ class entityform_handler_link_field extends views_handler_field {
       $dummy_entityform->uid = $values->{$this->aliases['uid']};
     }
     return $dummy_entityform;
+  }
+  /**
+   * Render whatever the data is as a link to the node.
+   *
+   * Data should be made XSS safe prior to calling this function.
+   */
+  function render_link($entity, $op, $uri, $text) {
+    if (entity_access($op, $this->entity_type, $entity)) {
+      $this->options['alter']['make_link'] = TRUE;
+      $this->options['alter']['path'] = $uri['path'];
+      $this->options['alter']['options'] = $uri['options'];
+      $text = !empty($this->options['text']) ? $this->options['text'] : $text;
+      return $text;
+    }
   }
 }

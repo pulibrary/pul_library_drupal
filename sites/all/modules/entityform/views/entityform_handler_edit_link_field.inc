@@ -15,13 +15,12 @@ class entityform_handler_edit_link_field extends entityform_handler_link_field {
 
 
   function render($values) {
-    if (!entityform_access('edit', $this->create_dummyentityform($values))) {
-      return;
+    if ($entity = $this->get_value($values)) {
+      $uri = array(
+        'path' => 'entityform/' . $entity->entityform_id . '/edit',
+        'options' => NULL,
+      );
+      return $this->render_link($entity, 'edit', $uri, t('edit'));
     }
-
-    $text = !empty($this->options['text']) ? $this->options['text'] : t('edit');
-    $entityform_id = $values->{$this->aliases['entityform_id']};
-
-    return l($text, 'entityform/' . $entityform_id . '/edit');
   }
 }

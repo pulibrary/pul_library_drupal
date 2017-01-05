@@ -674,7 +674,7 @@ function media_element_info() {
     '#value_callback' => 'media_file_value',
     '#element_validate' => array('media_element_validate'),
     '#pre_render' => array('media_element_pre_render'),
-    '#theme' => 'media_element',
+    '#theme' => 'media_widget',
     '#theme_wrappers' => array('form_element'),
     '#size' => 22,
     '#extended' => FALSE,

@@ -236,7 +236,7 @@
       if (info.attributes) {
         $.each(Drupal.settings.media.wysiwyg_allowed_attributes, function(i, a) {
           if (info.attributes[a]) {
-            element.attr(a, $('<textarea />').html(info.attributes[a]).text());
+            element.attr(a, info.attributes[a]);
           }
         });
         delete(info.attributes);
