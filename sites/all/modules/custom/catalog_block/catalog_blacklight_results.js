@@ -270,7 +270,7 @@
                                 }
                                 // End Availability Block from Orangelight
                                 var badge = "<span class='badge-" + label_class + "'>" + label + "</span>";
-                                var holding_note = $("*[data-mfhd='" + mfhd + "']");
+                                var holding_note = $("*[data-mfhd='" + mfhd + "']").first();
 
                                 if (badge_label != 'Online') {
                                     var note_text = $(holding_note).text();
