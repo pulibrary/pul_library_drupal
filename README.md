@@ -13,7 +13,7 @@
 ## Site Setup
 
 1. Clone the codebase to the directory your `library-local` domain uses as site root.
-2. Run the drupal permissions script pointed at that directory. On OSX the group user for the apache web user is usually ```_wwww```.  
+2. Run the drupal permissions script pointed at that directory. On OSX the group user for the apache web user is usually ```_www```.  
 3. Sync the local database with production using drush ```drush sql-sync @libraryprod @mylocalalias```
 4. Sync the local file system with production using drush ```drush rsync @libraryprod:%files/ @mylocalalias:%files```
 5. cd to `cd $DRUPAL_ROOT/sites/all/themes/pul_base/` and run `npm install`
