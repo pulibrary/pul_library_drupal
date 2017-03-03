@@ -167,6 +167,7 @@ function template_preprocess_views_slideshow(&$vars) {
       'view' => $view,
       'settings' => $settings,
       'rows' => $rows,
+      'options' => $options,
     ));
     $vars['slideshow'] = theme(views_theme_functions('views_slideshow_main_section', $view, $view->display[$view->current_display]), array(
       'vss_id' => $vss_id,
@@ -201,6 +202,7 @@ function theme_views_slideshow_pager_widget_render($vars) {
       $vars['vss_id'] => array(
         $vars['location'] => array(
           'type' => views_slideshow_format_addons_name($vars['settings']['type']),
+          'master_pager' => views_slideshow_format_addons_name($vars['settings']['master_pager']),
         ),
       ),
     ),
@@ -313,7 +315,6 @@ function template_preprocess_views_slideshow_pager_field_field(&$vars) {
     $vars['field_rendered'] = "<a href='#slideshow-${vars['count']}'>${vars['field_rendered']}</a>";
   }
 }
-
 
 /**
  * Views Slideshow: Controls.
@@ -429,4 +430,76 @@ function theme_views_slideshow_slide_counter_widget_render($vars) {
 function template_preprocess_views_slideshow_slide_counter(&$vars) {
   $vars['classes_array'][] = 'views_slideshow_slide_counter';
   $vars['slide_count'] = count($vars['rows']);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow().
+ */
+function _views_slideshow_preprocess_views_slideshow(&$vars) {
+ template_preprocess_views_slideshow($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_pager_fields().
+ */
+function _views_slideshow_preprocess_views_slideshow_pager_fields(&$vars) {
+  template_preprocess_views_slideshow_pager_fields($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_pager_field_item().
+ */
+function _views_slideshow_preprocess_views_slideshow_pager_field_item(&$vars) {
+  template_preprocess_views_slideshow_pager_field_item($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_controls_text().
+ */
+function _views_slideshow_preprocess_views_slideshow_controls_text(&$vars) {
+  template_preprocess_views_slideshow_controls_text($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_controls_text_previous().
+ */
+function _views_slideshow_preprocess_views_slideshow_controls_text_previous(&$vars) {
+  template_preprocess_views_slideshow_controls_text_previous($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_controls_text_pause().
+ */
+function _views_slideshow_preprocess_views_slideshow_controls_text_pause(&$vars) {
+  template_preprocess_views_slideshow_controls_text_pause($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_controls_text_next().
+ */
+function _views_slideshow_preprocess_views_slideshow_controls_text_next(&$vars) {
+  template_preprocess_views_slideshow_controls_text_next($vars);
+}
+
+/**
+ * Backwards compatability wrapper.
+ *
+ * @see template_preprocess_views_slideshow_slide_counter().
+ */
+function _views_slideshow_preprocess_views_slideshow_slide_counter(&$vars) {
+  template_preprocess_views_slideshow_slide_counter($vars);
 }
