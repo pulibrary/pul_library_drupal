@@ -694,3 +694,18 @@ function media_wysiwyg_form_file_entity_file_display_form_alter_submit(&$form, &
     drupal_write_record('media_restrict_wysiwyg', $record);
   }
 }
+
+/**
+ * Implements hook_media_browser_params_alter().
+ */
+function media_wysiwyg_media_browser_params_alter(&$params) {
+  // Set the media browser options as defined in the interface.
+  if (!empty($params['id']) && $params['id'] === 'media_wysiwyg') {
+    $params = array(
+      'enabledPlugins' => variable_get('media_wysiwyg_wysiwyg_browser_plugins', array()),
+      'file_directory' => variable_get('media_wysiwyg_wysiwyg_upload_directory', ''),
+      'types' => variable_get('media_wysiwyg_wysiwyg_allowed_types', array('audio', 'image', 'video', 'document')),
+      'id' => 'media_wysiwyg',
+    ) + $params;
+  }
+}

@@ -126,7 +126,7 @@ function media_field_widget_form(&$form, &$form_state, $field, $instance, $langc
   // on the elements for further usage in media_element_process().
   if (module_invoke('entity_translation', 'enabled', $element['#entity_type'], $element['#entity'])) {
     $translation_handler = entity_translation_get_handler($element['#entity_type'], $element['#entity']);
-    $element['#media_parent_entity_form_langcode'] = $translation_handler->getFormLanguage();
+    $element['#media_parent_entity_form_langcode'] = $translation_handler->getActiveLanguage();
     if ($source_langcode = $translation_handler->getSourceLanguage()) {
       $element['#media_parent_entity_source_langcode'] = $source_langcode;
     }
@@ -134,7 +134,7 @@ function media_field_widget_form(&$form, &$form_state, $field, $instance, $langc
   elseif (module_exists('translation') && $element['#entity_type'] == 'node' && translation_supported_type($element['#entity']->type)) {
     $element['#media_parent_entity_form_langcode'] = $element['#entity']->language;
     $element['#media_parent_entity_source_langcode'] = $element['#entity']->language;
-  } elseif ($element['#entity_type'] == 'field_collection_item' && property_exists($form['#entity'], 'language')) {
+  } elseif ($element['#entity_type'] == 'field_collection_item' && !empty($form['#entity']) && property_exists($form['#entity'], 'language')) {
     $element['#media_parent_entity_form_langcode'] = $form['#entity']->language;
   }
 
