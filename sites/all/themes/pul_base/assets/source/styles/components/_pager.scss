@@ -30,7 +30,7 @@ ul.pager {
 
   li a {
 
-    @include transition(all 0.2s ease-in-out);
+    transition: all 0.2s ease-in-out;
     background: $gray-lightest;
     border: 1px solid $gray-light;
     border-radius: $base-border-radius;

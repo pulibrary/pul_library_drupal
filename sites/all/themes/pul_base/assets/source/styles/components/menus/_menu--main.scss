@@ -118,8 +118,6 @@
       color: $centered-navigation-color;
       display: inline-block;
 
-      // @include transition (all 0.2s ease-in-out);
-
       &:hover {
         color: $centered-navigation-color-hover;
         text-decoration: none;
