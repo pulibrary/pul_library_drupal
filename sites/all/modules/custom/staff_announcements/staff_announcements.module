@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Staff Announcements feature.
+ */
+
+include_once 'staff_announcements.features.inc';
