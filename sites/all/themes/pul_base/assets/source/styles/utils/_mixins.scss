@@ -189,8 +189,7 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
   $stop-gradient: adjust-color($base-color, $saturation: 9%, $lightness: -11%);
   $text-shadow: adjust-color($base-color, $saturation: 15%, $lightness: -18%);
 
-  linear-gradient: $base-color, $stop-gradient;
-
+  background: linear-gradient($base-color, $stop-gradient);
   background-clip: padding-box;
   border: 1px solid $border;
   border-radius: 3px;
@@ -214,8 +213,7 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
       $stop-gradient-hover: grayscale($stop-gradient-hover);
     }
 
-    linear-gradient: $base-color-hover, $stop-gradient-hover;
-
+    background: linear-gradient($base-color-hover, $stop-gradient-hover);
     box-shadow: inset 0 1px 0 0 $inset-shadow-hover;
     cursor: pointer;
   }
