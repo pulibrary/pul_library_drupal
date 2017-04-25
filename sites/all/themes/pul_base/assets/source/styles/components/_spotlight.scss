@@ -69,11 +69,10 @@
   }
 
   .spotlight-container {
-    @include transition(all, 0.2s ease-in-out);
-
     background: inherit;
     color: $white;
     height: inherit;
+    transition: all 0.2s ease-in-out;
   }
 
   .spotlight-image {

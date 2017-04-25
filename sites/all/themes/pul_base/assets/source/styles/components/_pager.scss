@@ -29,8 +29,6 @@ ul.pager {
   }
 
   li a {
-
-    @include transition(all 0.2s ease-in-out);
     background: $gray-lightest;
     border: 1px solid $gray-light;
     border-radius: $base-border-radius;
@@ -38,6 +36,7 @@ ul.pager {
     outline: none;
     padding: 0.375em 0.75em;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 
     &:hover,
     &:focus {

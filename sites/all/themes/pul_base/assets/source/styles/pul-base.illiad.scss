@@ -53,7 +53,6 @@
   position: relative;
 
   .f-criteria {
-    @include transition(border-color);
     background-color: $white;
     border: 1px solid $base-border-color;
     border-radius: $base-border-radius;
