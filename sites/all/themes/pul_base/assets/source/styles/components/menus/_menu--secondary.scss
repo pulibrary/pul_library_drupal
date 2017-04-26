@@ -1,5 +1,6 @@
 .menu--secondary {
   margin-top: 1em;
+  position: relative;
 
   @include breakpoint($tab-desk) {
     margin-top: 2.5em;
