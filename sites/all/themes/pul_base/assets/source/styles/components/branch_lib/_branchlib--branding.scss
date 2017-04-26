@@ -2,7 +2,8 @@
 .page-marquand-resources-sales-catalogs,
 .section-econlib,
 .section-copyright,
-.section-tsd {
+.section-tsd,
+.firestone-library {
   @include breakpoint($tab) {
     .three_six_three_stacked-region--top,
     .three_three_three_three_stacked-region--top,
