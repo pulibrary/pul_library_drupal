@@ -11,8 +11,8 @@ $badges: (
 @each $badge-type, $color in $badges {
   .badge-#{$badge-type} {
     background-color: $color;
-    border-radius: $base-border-radius;
     border: solid darken($color, 20%) 1px;
+    border-radius: $base-border-radius;
     color: darken($color, 80%);
     display: inline-block;
     font-size: $small-font-size;
