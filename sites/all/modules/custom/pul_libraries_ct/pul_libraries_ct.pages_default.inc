@@ -471,7 +471,7 @@ eastasianlib',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/firestone',
+            'paths' => 'firestone',
           ),
           'context' => 'empty',
           'not' => FALSE,
