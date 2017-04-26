@@ -128,7 +128,7 @@
   }
 
   .quicktabs_main button {
-    background: $orange;
+    background: shade($orange, 20%);
     border: 1px solid $gray-dark;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 4px;
