@@ -19,3 +19,13 @@
     }
   }
 }
+
+.three_six_three_stacked-region--middle {
+  .renovation-news-block .renovation-news-lmg {
+    @include breakpoint($tab) {
+      > a {
+        width: auto;
+      }
+    }
+  }
+}

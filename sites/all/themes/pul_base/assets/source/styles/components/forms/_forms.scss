@@ -1,0 +1,57 @@
+.form-item {
+  margin-bottom: 1.5em;
+
+  &.webform-container-inline .form-text {
+    width: auto;
+  }
+
+  label {
+    display: block;
+  }
+
+  .form-text,
+  .field-prefix,
+  .field-suffix {
+    display: inline-block;
+  }
+
+  .description {
+    color: $gray-dark;
+    font-size: $font-size-small-2;
+    font-style: italic;
+  }
+}
+
+.form-wrapper {
+  .form-submit + .form-submit {
+    margin-left: 1em;
+  }
+}
+
+.form-textarea-wrapper textarea {
+  width: 100%;
+}
+
+.webform-container-inline input {
+  margin: 0;
+}
+
+.form-managed-file {
+  .form-file {
+    vertical-align: middle;
+  }
+
+  .form-submit {
+    border: solid darken($blue-dark, 10%) 1px;
+    margin-top: 0;
+    padding: 0.25em 0.5em;
+  }
+}
+
+.form-required {
+  color: $red;
+}
+
+.webform-component .form-item {
+  width: auto;
+}

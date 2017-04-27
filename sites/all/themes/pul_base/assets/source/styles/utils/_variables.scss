@@ -31,6 +31,7 @@ $orange-light: #f4aa6b;
 
 $red-dark: #a93225;
 $red-light: #d89088;
+$red: saturate($red-dark, 50%);
 
 $black-opacity-2: rgba($black, 0.2);
 $black-opacity-5: rgba($black, 0.5);

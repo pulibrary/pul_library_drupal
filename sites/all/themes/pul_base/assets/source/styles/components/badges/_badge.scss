@@ -1,4 +1,4 @@
-// Lifted from Refills 
+// Lifted from Refills
 $small-font-size: 0.75em;
 $badges: (
   "alert": #fff6bf,
@@ -11,8 +11,9 @@ $badges: (
 @each $badge-type, $color in $badges {
   .badge-#{$badge-type} {
     background-color: $color;
-    border-radius: $small-font-size * 5;
-    color: darken($color, 60%);
+    border: solid darken($color, 20%) 1px;
+    border-radius: $base-border-radius;
+    color: darken($color, 80%);
     display: inline-block;
     font-size: $small-font-size;
     line-height: 1;
