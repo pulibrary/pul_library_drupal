@@ -1,158 +1,245 @@
 <?php
-// $Id$
 
 /**
- * Implements hook_form_alter_X().
- *
- * Add setting to webform fieldset components.
+ * @file
+ * Hide/Show Webform items in fieldsets using add/remove buttons.
  */
-function webform_addmore_form_webform_component_edit_form_alter(&$form, $form_state) {
-  if ($form['type']['#value'] != 'fieldset') {
+
+/**
+ * Implements hook_FORM_ID_form_alter().
+ */
+function webform_addmore_form_webform_component_edit_form_alter(&$form, &$form_state) {
+  if ($form_state['build_info']['args'][1]['type'] !== 'fieldset') {
     return;
   }
-  $settings = variable_get('webform_addmore_' . $form['nid']['#value'], array());
-
-  $form['display']['addmore'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Add More fieldset'),
-    '#description' => t('A single Add More fieldset will be displayed with an Add More button.'),
-    '#default_value' => isset($settings[$form['cid']['#value']]) ? $settings[$form['cid']['#value']] : 0,
-    '#weight' => 99,
-    '#parents' => array('extra', 'addmore')
+  $addmore = array(
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => (empty($form_state['build_info']['args'][1]['extra']['webform_addmore'])),
+    '#title' => t('Add more'),
   );
+  $addmore['addmore'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Wrap children elements into a repeatable "Add more" behaviour'),
+    '#default_value' => !empty($form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore']) ? 1 : 0,
+  );
+  $addmore['addmore_add'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Add more text'),
+    '#default_value' => !empty($form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_add']) ? $form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_add'] : t('Add one'),
+  );
+  // Remove text can be blank.
+  $remove = t('Remove one');
+  if (!empty($form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_remove'])) {
+    $remove = $form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_remove'];
+  }
+  else {
+    if (!empty($form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_add'])) {
+      $remove = '';
+    }
+  }
+  $addmore['addmore_remove'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Remove text'),
+    '#default_value' => $remove,
+    '#description' => t('Leave blank to have no "Remove" button'),
+  );
+  $addmore['addmore_show'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Number of children to display'),
+    '#default_value' => !empty($form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_show']) ? $form_state['build_info']['args'][1]['extra']['webform_addmore']['addmore_show'] : 1,
+    '#description' => t('The number of children items that will be initially displayed'),
+    '#element_validate' => array('element_validate_integer'),
+  );
+  $form['extra']['webform_addmore'] = $addmore;
 }
 
 /**
- * Implements hook_node_load().
- *
- * Load addmore value for webform components on node load.
+ * Implements hook_webform_component_render_alter().
  */
-function webform_addmore_node_load($nodes, $types) {
-  foreach($nodes as $node) {
-    if(in_array($node->type, webform_variable_get('webform_node_types'))) {
-      if($settings = variable_get('webform_addmore_' . $node->nid, array())) {
-        foreach($node->webform['components'] as $cid => &$component) {
-          if(isset($settings[$cid])) {
-            $component['extra']['addmore'] = $settings[$cid];
-          }
+function webform_addmore_webform_component_render_alter(&$element, &$component) {
+  if (!empty($component['extra']['webform_addmore']['addmore'])) {
+    // Mark the fact our form uses addmore.
+    _webform_addmore_webform_uses_addmore_set($component['nid']);
+    // Because _webform_client_form_add_component is recursive,
+    // we should be able to alter of children from here.
+    foreach ($component['children'] as $cid => $child) {
+      $component['children'][$cid]['#webform_addmore']['pid'] = $component['cid'];
+    }
+    $element['#webform_addmore']['cid'] = $component['cid'];
+  }
+  // Alter children themselves.
+  if (!empty($component['#webform_addmore']['pid'])) {
+    $element['#webform_addmore']['pid'] = $component['#webform_addmore']['pid'];
+  }
+}
+
+/**
+ * Static setter for webform forms where addform is in use.
+ * @param int $nid a webform node nid.
+ */
+function _webform_addmore_webform_uses_addmore_set($nid) {
+  $nids = &drupal_static('_webform_addmore_webform_uses_addmore');
+  $nids[$nid] = $nid;
+}
+
+/**
+ * Static getter for webform forms where addform is in use.
+ * @param int $nid a webform node nid.
+ * @return int Either the $nid given as argument if found or 0 if not.
+ */
+function _webform_addmore_webform_uses_addmore_get($nid) {
+  $nids = &drupal_static('_webform_addmore_webform_uses_addmore');
+  return !empty($nids[$nid]) ? $nids[$nid] : 0;
+}
+
+/**
+ * Implements hook_form_webform_client_form_alter().
+ */
+function webform_addmore_form_webform_client_form_alter(&$form, &$form_state, $form_id) {
+  $node = $form['#node'];
+  if (_webform_addmore_webform_uses_addmore_get($node->nid)) {
+    _webform_addmore_client_form_ajaxify($form['submitted'], $form_state);
+    $form['#validate'][] = 'webform_addmore_form_webform_client_form_validate';
+  }
+}
+
+/**
+ * Helper function. Recursively traverse a form element,
+ * rendering or not children based on the form state.
+ * @param array $element of the form to proceed.
+ * @param array $form_state of current form.
+ */
+function _webform_addmore_client_form_ajaxify(&$element, &$form_state) {
+  // Rely on marker set earlier.
+  if (!empty($element['#webform_addmore']['cid'])) {
+    $cid = $element['#webform_addmore']['cid'];
+    if (empty($form_state['#webform_addmore'][$cid])) {
+      $form_state['#webform_addmore'][$cid] = 1;
+    }
+    if (!empty($form_state['triggering_element']['#name'])) {
+      if ($form_state['triggering_element']['#name'] === 'webformaddmore_add_' . $cid) {
+        $form_state['#webform_addmore'][$cid] ++;
+      }
+      else {
+        if ($form_state['triggering_element']['#name'] === 'webformaddmore_remove_' . $cid) {
+          $form_state['#webform_addmore'][$cid] --;
         }
       }
     }
-  }
-}
-
-/**
- * Save webform fieldset setting.
- *
- * @param $component
- *   The Webform component being saved.
- */
-function webform_addmore_webform_component_presave(&$component) {
-  if ($component['type'] != 'fieldset') {
-    return;
-  }
-  if(isset($component['extra']['addmore'])){
-    $settings = variable_get('webform_addmore_' . $component['nid'], array());
-    $settings[$component['cid']] = isset($component['extra']['addmore']) ? $component['extra']['addmore'] : '';
-    variable_set('webform_addmore_' . $component['nid'], $settings);
-  }
-}
-
- /**
- * Delete webform component.
- *
- * @param $component
- *   The Webform component being deleted.
- */
-function webform_addmore_webform_component_delete($component) {
-  if ($component['type'] != 'fieldset') {
-    return;
-  }
-  $settings = variable_get('webform_addmore_' . $component['nid'], array());
-  unset($settings[$component['cid']]);
-  variable_set('webform_addmore_' . $component['nid'], $settings);
-}
-
-/**
- * Implements hook_form_alter_X().
- *
- * Add setting to webform configure.
- */
-function webform_addmore_form_webform_configure_form_alter(&$form, $form_state) {
-  $settings = variable_get('webform_addmore_' . $form['nid']['#value'], array());
-
-  $form['advanced']['addmore_add'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Add More button text'),
-    '#default_value' => isset($settings['addlabel']) ? $settings['addlabel'] : '',
-  );
-  $form['advanced']['addmore_del'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Delete button text'),
-    '#default_value' => isset($settings['dellabel']) ? $settings['dellabel'] : '',
-  );
-
-  $form['#submit'][] = 'webform_addmore_webform_configure_submit';
-}
-
-/**
- * Save webform configure setting.
- *
- * @param $component
- *   The Webform component being saved.
- */
-function webform_addmore_webform_configure_submit($form, &$form_state) {
-  $settings = variable_get('webform_addmore_' . $form_state['values']['nid'], array());
-  $settings['addlabel'] = $form_state['values']['addmore_add'];
-  $settings['dellabel'] = $form_state['values']['addmore_del'];
-  variable_set('webform_addmore_' . $form_state['values']['nid'], $settings);
-}
-
-/**
- * Implements hook_form_alter().
- *
- * Find form_key from cid and add JS.
- */
-function webform_addmore_form_alter(&$form, &$form_state, $form_id) {
-  if (substr($form_id, 0, 19) != 'webform_client_form') {
-    return;
-  }
-
-  // Find form_key from cid.
-  $form_key = array();
-  $settings = variable_get('webform_addmore_' . $form['#node']->nid, array());
-  foreach ($settings as $cid => $enabled) {
-    if (is_int($cid) && $enabled) {
-      $parents = webform_component_parent_keys($form['#node'], $form['#node']->webform['components'][$cid]);
-      $component_id = str_replace('_', '-', array_pop($parents));
-      if (!empty($parents)) {
-        $form_key[] = 'webform-component-' . str_replace('_', '-', implode('--', $parents)) . '--' . $component_id;
+    $i = 0;
+    $max = count(element_children($element));
+    // Process children element, unsetting the ones
+    // to hide.
+    foreach (element_children($element) as $key) {
+      if ($i < $form_state['#webform_addmore'][$cid]) {
+        _webform_addmore_client_form_ajaxify($element[$key], $form_state);
+        $i++;
       }
       else {
-        $form_key[] = 'webform-component-' . $component_id;
+        // We can't just 'unset' these, as some other modules
+        // like clientside_validation expect them.
+        $element[$key]['#access'] = FALSE;
+        _webform_addmore_element_unrequire($element[$key]);
+      }
+    }
+    // Generate add and remove buttons.
+    $ops = array();
+    if ($i < $max) {
+      $ops[] = 'add';
+    }
+    if ($i > 1 && !empty($element['#webform_component']['extra']['webform_addmore']['addmore_remove'])) {
+      $ops[] = 'remove';
+    }
+    _webform_addmore_element_add_buttons($element, $ops);
+    $element['#attributes']['id'] = 'webform-addmore-' . $cid;
+  }
+  else {
+    if (!empty($element)) {
+      foreach (element_children($element) as $key) {
+        _webform_addmore_client_form_ajaxify($element[$key], $form_state);
       }
     }
   }
+}
 
-  // Add JS.
-  if (count($form_key) > 1) {
-    $js_settings = array(
-      'fieldsets' => $form_key,
-      'addlabel' => isset($settings['addlabel']) ? t($settings['addlabel']) : t('Add more'),
-      'dellabel' => isset($settings['dellabel']) ? t($settings['dellabel']) : t('Remove last'),
-    );
+/**
+ * Helper function. Sets the #required property of an element
+ * and its children to FALSE.
+ * @param array $element of a webform.
+ */
+function _webform_addmore_element_unrequire(&$element) {
+  $element['#required'] = FALSE;
+  foreach (element_children($element) as $key) {
+    _webform_addmore_element_unrequire($element[$key]);
+  }
+}
 
-    $form['#attached']['js'][] = array(
-      'data' => array('webform_addmore' => $js_settings),
-      'type' => 'setting',
-    );
-    $form['#attached']['js'][] = array(
-      'data' => drupal_get_path('module', 'webform_addmore') . '/js/webform_addmore.js',
-      'type' => 'file'
-    );
-    $form['#attached']['js'][] = array(
-      'data' => drupal_get_path('module', 'webform_addmore') . '/js/jquery.livequery.js',
-      'type' => 'file'
+/**
+ * Helper function. Recursively remove the
+ * add more element from $form_state values.
+ * @param array $values of a webform submission.
+ */
+function _webform_addmore_element_clean_values(&$values) {
+  if (empty($values) || !is_array($values)) {
+    return;
+  }
+  foreach (element_children($values) as $key) {
+    if ($key === 'webform_addmore') {
+      unset($values[$key]);
+    }
+    else {
+      _webform_addmore_element_clean_values($values[$key]);
+    }
+  }
+}
+
+/**
+ * Helper function. Builds the 'Add' and 'Remove' buttons.
+ * @param array $element to modify.
+ * @param array $ops to add to the form ('add', 'remove' or both values).
+ */
+function _webform_addmore_element_add_buttons(&$element, $ops) {
+
+  $element['webform_addmore'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array('container-inline'),
+    ),
+    '#weight' => 255,
+  );
+  foreach ($ops as $op) {
+    $element['webform_addmore']['webform_addmore_' . $op] = array(
+      '#type' => 'button',
+      '#value' => check_plain($element['#webform_component']['extra']['webform_addmore']['addmore_' . $op]),
+      '#name' => 'webformaddmore_' . $op . '_' . $element['#webform_component']['cid'],
+      '#limit_validation_errors' => array(),
+      '#ajax' => array(
+        'callback' => 'webform_addmore_form_webform_client_form_ajax',
+        'wrapper' => 'webform-addmore-' . $element['#webform_component']['cid'],
+      ),
     );
   }
+  // Let other modules alter this.
+  drupal_alter('webform_addmore_buttons', $element);
+}
+
+/**
+ * Ajax callback for Add/Remove buttons.
+ */
+function webform_addmore_form_webform_client_form_ajax($form, $form_state) {
+  if (!empty($form_state['triggering_element']['#name']) && strpos($form_state['triggering_element']['#name'], 'webformaddmore') === 0) {
+    // Iterate parents array to return the relevant part.
+    $return = $form;
+    foreach ($form_state['triggering_element']['#array_parents'] as $field) {
+      if ($field === 'webform_addmore') {
+        return $return;
+      }
+      $return = $return[$field];
+    }
+  }
+}
+
+function webform_addmore_form_webform_client_form_validate(&$form, &$form_state) {
+  _webform_addmore_element_clean_values($form_state['values']['submitted']);
 }

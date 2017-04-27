@@ -19,9 +19,8 @@ Webform
 
 Usage
 -------------
-After enabling the module, configure two or more webform fieldsets to use Add
-More. To change the Add more button label, edit the Form settings Advanced 
-settings.
+After enabling the module, configure a webform fieldset to use Add
+More, by ticking the relevant setting on the component configuration form.
 
 
 Download
@@ -31,17 +30,13 @@ project page on the Drupal web site.
 http://drupal.org/project/webform_addmore
 
 
-Todo List
--------------
-None
-
 
 Author
 -------------
 John Money
 ossemble LLC.
 http://ossemble.com
-
-
-
 All credit to span and kranklin who originally proposed the approach and code.
+
+Branch 7-x.2.x by Pascal Morin https://www.drupal.org/u/bellesmanieres
+
