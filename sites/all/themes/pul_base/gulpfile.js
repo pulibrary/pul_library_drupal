@@ -218,9 +218,27 @@ gulp.task('styleguide', function(){
  * Clear all caches for drupal 7 sites
  */
 gulp.task('clearcache', function() {
-  return shell.task([
+  return p.shell.task([
    'drush cc all'
   ]);
+});
+
+/**
+ * Gulp task: permissions
+ * Set drupal permissions if shell script exists
+ */
+gulp.task('permissions', function() {
+  var fs = require('fs'),
+      perm_script = '/usr/local/bin/drupal_set_permissions.sh';
+
+  if (fs.existsSync(perm_script)) {
+    return p.shell.task([
+      'sudo /usr/local/bin/drupal_set_permissions.sh . drupal'
+    ]);
+  } else {
+    console.log('FILE DOES NOT EXIST');
+  }
+
 });
 
 /**
@@ -267,6 +285,8 @@ gulp.task('deploy', function(callback){
     ['lint:scss'],
     ['styles', 'scripts'],
     ['fonts', 'images'],
+    'permissions',
+    'clearcache',
     callback);
 });
 
