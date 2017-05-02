@@ -233,7 +233,7 @@ gulp.task('permissions', function() {
 
   if (fs.existsSync(perm_script)) {
     return p.shell.task([
-      'sudo /usr/local/bin/drupal_set_permissions.sh . drupal'
+      'sudo /usr/local/bin/drupal_set_permissions.sh ../../../.. drupal'
     ]);
   } else {
     console.log('FILE DOES NOT EXIST');
