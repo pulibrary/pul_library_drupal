@@ -26,7 +26,6 @@
   <title><?php print $head_title; ?></title><?php print $head; ?><?php print $styles; ?><?php print $scripts; ?>
 </head>
 <body>
-  &gt;
   <div class="l-page">
     <header class="l-header" role="banner">
       <a class="skip2main" href="#main-content">Skip to main content</a>

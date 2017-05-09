@@ -1,4 +1,4 @@
-.form-item {
+.node-type-webform .form-item {
   margin-bottom: 1.5em;
 
   &.webform-container-inline .form-text {
@@ -54,4 +54,10 @@
 
 .webform-component .form-item {
   width: auto;
+}
+
+.cas-login-form .form-item,
+.user-login .form-item,
+.cas-links {
+  margin-bottom: 1em;
 }

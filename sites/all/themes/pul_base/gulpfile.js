@@ -285,8 +285,6 @@ gulp.task('deploy', function(callback){
     ['lint:scss'],
     ['styles', 'scripts'],
     ['fonts', 'images'],
-    'permissions',
-    'clearcache',
     callback);
 });
 
