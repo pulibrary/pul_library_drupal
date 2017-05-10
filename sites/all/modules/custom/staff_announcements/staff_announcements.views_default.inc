@@ -257,6 +257,107 @@ function staff_announcements_views_default_views() {
       'label' => 'Taxonomy term: Term ID',
     ),
   );
+
+  /* Display: Announcements Archive Page */
+  $handler = $view->new_display('page', 'Announcements Archive Page', 'page_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'name',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'created' => 'created',
+    'field_staff_announcement_pdf' => 'field_staff_announcement_pdf',
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = 'created';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_staff_announcement_pdf' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['created']['label'] = 'Date';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'search_api_facetapi_DAY';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  /* Field: Content: PDF */
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['id'] = 'field_staff_announcement_pdf';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['table'] = 'field_data_field_staff_announcement_pdf';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['field'] = 'field_staff_announcement_pdf';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['type'] = 'file_url_plain';
+  $handler->display->display_options['fields']['field_staff_announcement_pdf']['settings'] = array(
+    'text' => 'Download [file:name]',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[field_staff_announcement_pdf]">[title]</a>';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['path'] = 'staff/announcements';
   $export['staff_announcement_lists'] = $view;
 
   return $export;
