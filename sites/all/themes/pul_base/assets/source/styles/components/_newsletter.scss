@@ -6,3 +6,9 @@
 .field--name-field-news-letter-pdf {
   margin: 1em 0;
 }
+
+.views-table caption .field__item {
+  font-size: $font-size-large;
+  font-family: $font-serif;
+  margin-bottom: 0.5em;
+}
