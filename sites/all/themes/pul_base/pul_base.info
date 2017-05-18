@@ -8,8 +8,6 @@ core = 7.x
 ; ========================================
 ; Stylesheets
 ; ========================================
-stylesheets[all][] = pul-icons/style.css
-stylesheets[all][] = pul-icons/ie7/ie7.css
 stylesheets[print][] = assets/public/styles/pul-base.print.min.css
 stylesheets[all][] = assets/public/styles/pul-base.styles.min.css
 

@@ -5,3 +5,6 @@
 // For Drupal projects
 @include font-face(DejaVu Sans, "#{$base-path}/fonts/DejaVu/DejaVuSansCondensed");
 @include font-face(DejaVu Sans, "#{$base-path}/fonts/DejaVu/DejaVuSansCondensed-Bold", bold);
+
+// Icons
+@include font-face (pul-icons, "#{$base-path}/fonts/pul-icons/pul-icons");

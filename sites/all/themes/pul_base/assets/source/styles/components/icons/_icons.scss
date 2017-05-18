@@ -1,6 +1,15 @@
 [class^="icon-"],
 [class*=" icon-"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "pul-icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
   margin-left: 0;
+  speak: none;
+  text-transform: none;
 }
 
 .libraries-page {
