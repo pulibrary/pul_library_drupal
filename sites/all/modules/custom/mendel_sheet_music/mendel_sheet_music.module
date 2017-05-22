@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mendel Sheet Music feature.
+ */
+
+include_once 'mendel_sheet_music.features.inc';
