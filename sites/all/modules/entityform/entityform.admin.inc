@@ -191,10 +191,43 @@ class EntityformUIController extends EntityDefaultUIController {
 
 }
 
+/**
+ * Page callback: Displays the entityform submission page
+ *
+ * Handle the display of the entityform submission page. If the form is marked
+ * as closed then display the form intro text instead with a 'submissions are
+ * now closed' message. Users with 'administer entityform types'
+ * permission can still view the form as it would be inaccessible otherwise.
+ *
+ * @param $entityform_type
+ *   The entityform type to output.
+ *
+ * @return
+ *   A render array from entity_view or a string message.
+ */
 function entityform_type_submit_page($entityform_type) {
   $view = entity_view('entityform_type', array($entityform_type), 'full', NULL, TRUE);
-  return $view;
+
+  // The form is not closed for new submissions.
+  if (!isset($entityform_type->data['form_status']) || $entityform_type->data['form_status'] != ENTITYFORM_STATUS_CLOSED) {
+    return $view;
+  }
+  else {
+    // The form is closed but show it for administrators anyway with a warning
+    // message.
+    if (user_access('administer entityform types')) {
+      drupal_set_message(t('This form is closed for new submissions and is only being shown because of your administrator role.'));
+      return $view;
+    }
+    else {
+      // When closed display the form intro text instead of the form or access
+      // denied.
+      drupal_set_message(t('Submissions for this form are now closed.'));
+      return empty($entityform_type->data['instruction_pre']['value']) ? '' : $entityform_type->data['instruction_pre']['value'];
+    }
+  }
 }
+
 /**
  * Form callback wrapper: create or edit a entityform.
  *
@@ -283,6 +316,18 @@ function entityform_form_wrapper(Entityform $entityform, $mode = 'submit', $form
     $output['#contextual_links'] = $contextual_links;
   }
   return $output;
+}
+
+/**
+ * Form callback wrapper: preview an entityform.
+ *
+ * @param $entityform_type
+ *   The entityform type object being edited by this form.
+ * @see entityform_edit_form()
+ */
+function entityform_form_wrapper_preview(EntityformType $entityform_type) {
+  $entityform = entityform_empty_load($entityform_type->type);
+  return entityform_form_wrapper($entityform, 'submit', 'preview');
 }
 
 /**
