@@ -32,10 +32,10 @@ function allsearch_form_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
-    $form['#attached']['js'][] = drupal_get_path('module', 'allsearch_form') .'/allsearch_form.js'; 
+    $form['#attached']['js'][] = drupal_get_path('module', 'allsearch_form') .'/allsearch_form.js';
     $hint_settings = array('all_search_form_hint' => variable_get('all_search_form_hint'),
                            'all_search_form_error' => variable_get('all_search_form_error')
-                           );   
+                           );
     $form['#attached']['js'][] = array(
       'data' => array('allsearch_form' => $hint_settings),
       'type' => 'setting',
@@ -43,12 +43,12 @@ function allsearch_form_form($form, &$form_state) {
    //$form['#validate'] = array('allsearch_form_form_validate');
    //$form['#redirect'] = url('find/all/');
    #$form['#target'] = "_parent";
-   /* 
+   /*
     * sending this to the empty path url('')
     * will ensure this form always posts through the bare current path
-    * 
+    *
     */
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a></div>';
    $form['#action'] = url('');
    $form['#method'] = "post";
    $form['#submit'] = array('allsearch_form_form_redirect');
@@ -61,12 +61,12 @@ function allsearch_form_form_redirect($form, &$form_state) {
 }
 
 function allsearch_form_form_validate($form, &$form_state) {
-  
+
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('all_search_hint')) {
 
     form_set_error('term', t('What do you want to search for?'));
-  } 
+  }
 }
 
 
@@ -77,7 +77,7 @@ function allsearch_form_form_submit($form, &$form_state) {
 }
 
 function allsearch_form_contents() {
-  return drupal_get_form('allsearch_form_form'); // must define a function 
+  return drupal_get_form('allsearch_form_form'); // must define a function
 }
 
 
@@ -99,27 +99,27 @@ function allsearch_form_menu() {
 */
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function allsearch_form_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The All Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function allsearch_form_block_info() {
-  
+
   $blocks['allsearch_form_search'] = array(
       // info: The name of the block.
       'info' => t('All Search'),
@@ -127,7 +127,7 @@ function allsearch_form_block_info() {
       'cache' => DRUPAL_NO_CACHE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
-   
+
    return $blocks;
 }
 
@@ -137,7 +137,7 @@ function allsearch_form_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function allsearch_form_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'allsearch_form_search') { //in this case the delta is the name of block
 
@@ -162,7 +162,7 @@ function allsearch_form_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function allsearch_form_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -183,11 +183,11 @@ function allsearch_form_block_save($delta = '', $edit = array()) {
 function allsearch_form_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
   if ($delta == 'allsearch_form_search') {
-  
+
     $block['subject'] = t('All Search');
     $block['content'] = allsearch_form_contents($delta);
   }
- 
+
   return $block;
 }
 

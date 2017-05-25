@@ -49,7 +49,7 @@ function allsearch_block_form($form, &$form_state) {
     *
     */
    if(drupal_is_front_page()) {
-    $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a></div>';
+    $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a></div>';
    }
    else {
     $form_suffix = "";

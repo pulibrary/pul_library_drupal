@@ -6,7 +6,7 @@ function catalog_block_form($form, &$form_state) {
   $form = array();
   $path = $_GET['q'];
   if(drupal_is_front_page()) { // should keyed off <front>
-    // <a href="http://catalog.princeton.edu/">Main Catalog</a> 
+    // <a href="https://catalog.princeton.edu/">Main Catalog</a>
     $form_suffix = '<div class="homepage-tab-form-message"><a href="https://pulsearch.princeton.edu/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
