@@ -2,9 +2,9 @@
 
 
 function music_audio_block_form($form, &$form_state) {
-    
+
   $form = array();
-  $path = $_GET['q'];  
+  $path = $_GET['q'];
 
   $form['query'] = array (
     '#type'  => 'textfield',
@@ -23,16 +23,16 @@ function music_audio_block_form($form, &$form_state) {
      '#type' => 'hidden',
      '#value' => t("library- core"),
    );
-    $form['#attached']['js'][] = drupal_get_path('module', 'music_audio_block') .'/music_audio_block.js'; 
+    $form['#attached']['js'][] = drupal_get_path('module', 'music_audio_block') .'/music_audio_block.js';
     $hint_settings = array('music_audio_search_hint' => variable_get('music_audio_search_hint'),
                            'music_audio_search_error' => variable_get('music_audio_search_error')
-                           );   
+                           );
     $form['#attached']['js'][] = array(
       'data' => array('music_audio_block' => $hint_settings),
       'type' => 'setting',
      );
 
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a></div>';
    $form['#action'] = url('/utils/search/mendel', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
@@ -50,7 +50,7 @@ function music_audio_block_form_validate($form, &$form_state) {
 
 
 function music_audio_block_contents() {
-  return drupal_get_form('music_audio_block_form'); // must define a function 
+  return drupal_get_form('music_audio_block_form'); // must define a function
 }
 
 function music_audio_block_get_current_filter($path) {
@@ -76,7 +76,7 @@ function music_audio_search_results_content() {
   $ajax_spinner = "<div id='catalog-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='/utils/find/any?query={$path}&sid={$sid}' id='catalog-search-results'>" . $ajax_spinner . t('') . "</div>",
-  ); 
+  );
   return $block_content;
 }
 
@@ -97,27 +97,27 @@ function music_audio_block_menu() {
 */
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function music_audio_block_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The Books+ Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function music_audio_block_block_info() {
-  
+
   $blocks['music_audio_search'] = array(
       // info: The name of the block.
       'info' => t('Music Audio Search'),
@@ -139,7 +139,7 @@ function music_audio_block_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function music_audio_block_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'music_audio_search') { //in this case the delta is the name of block
 
@@ -164,7 +164,7 @@ function music_audio_block_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function music_audio_block_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -174,7 +174,7 @@ function music_audio_block_block_save($delta = '', $edit = array()) {
     variable_set('music_audio_search_hint', $edit['music_audio_search_hint']);
     variable_set('music_audio_search_error', $edit['music_audio_search_error']);
   }
-  
+
   return;
 }
 
@@ -185,16 +185,16 @@ function music_audio_block_block_save($delta = '', $edit = array()) {
  */
 function music_audio_block_block_view($delta = '') {
   //The $delta parameter tells us which block is being requested.
-  
+
   if ($delta == 'music_audio_search') {
     $block['subject'] = t('Music Audio Search');
     $block['content'] = music_audio_block_contents($delta);
- 
+
   } elseif ($delta == 'music_audio_search_results') {
     $block['subject'] = t('Music Audio Search Results');
     $block['content'] = music_audio_search_results_content($delta);
     drupal_add_js(array('music_audio_block' => array('request' => 'query')), 'setting');
-    drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/music_audio_search_results.js');  
-  } 
+    drupal_add_js(drupal_get_path('module', 'music_audio_block') .'/music_audio_search_results.js');
+  }
   return $block;
 }

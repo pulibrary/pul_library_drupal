@@ -34,7 +34,7 @@ function music_score_block_form($form, &$form_state) {
    $form['#action'] = url('/utils/search/mscores', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="http://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a> <a title="Go to the Articles+ Advanced Search Page" href="http://princeton.summon.serialssolutions.com/advanced#!/advanced">Articles+</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a> <a title="Go to the Articles+ Advanced Search Page" href="http://princeton.summon.serialssolutions.com/advanced#!/advanced">Articles+</a></div>';
    return $form;
 
 }
