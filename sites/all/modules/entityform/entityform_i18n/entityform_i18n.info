@@ -5,9 +5,9 @@ dependencies[] = i18n_string
 package = Multilingual - Internationalization
 core = 7.x
 
-; Information added by Drupal.org packaging script on 2017-01-04
-version = "7.x-2.0-rc3"
+; Information added by Drupal.org packaging script on 2017-05-08
+version = "7.x-2.0-rc4"
 core = "7.x"
 project = "entityform"
-datestamp = "1483550056"
+datestamp = "1494261790"
 

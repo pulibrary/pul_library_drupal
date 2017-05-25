@@ -34,11 +34,11 @@ function entityform_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 100,
   );
-  // @todo Add another config form to set whether to show preview form
+  // @todo Add another config form to set whether to show preview form.
   $items["$manage_path/preview"] = array(
     'title' => 'Form Preview',
-    'page callback' => 'entityform_form_wrapper',
-    'page arguments' => array($path_count - 1, 'submit', 'preview'),
+    'page callback' => 'entityform_form_wrapper_preview',
+    'page arguments' => array($path_count - 1),
     'access arguments' => array('administer entityform types'),
     'file' => 'entityform.admin.inc',
     'file path' => drupal_get_path('module', 'entityform'),
@@ -213,18 +213,18 @@ function entityform_permission() {
   return $permissions;
 }
 
-
 /**
  * Determines whether the given user has access to a entityform.
  *
- * @param $op
+ * @param string $op
  *   The operation being performed. One of 'view', 'update', 'create', 'delete'
  *   or just 'edit' (being the same as 'create' or 'update').
- * @param $entityform
- *   Optionally a entityform or a entityform type to check access for. If nothing is
- *   given, access for all entityforms is determined.
- * @param $account
+ * @param Entityform|EntityformType $entityform
+ *   Optionally a entityform or a entityform type to check access for. If
+ *   nothing is given, access for all entityforms is determined.
+ * @param object $account
  *   The user to check for. Leave it to NULL to check for the global user.
+ *
  * @return boolean
  *   Whether access is allowed or not.
  */
@@ -247,44 +247,42 @@ function entityform_access($op, $entityform = NULL, $account = NULL) {
     }
     $entityform_type = entityform_type_load($type_name);
   }
-  // Convert ops - For instance if user_access is called by VBO with 'update any entityform"
+  // Convert ops - For instance if user_access is called by VBO with
+  // 'update any entityform'.
   switch ($op) {
     case 'update':
       $op = 'edit';
       break;
+
     case 'create':
       $op = 'submit';
       break;
   }
 
   if ($op == 'submit' || $op == 'confirm') {
-    if (isset($entityform_type) && is_object($entityform_type) && is_array($entityform_type->data) && array_intersect($entityform_type->data['roles'], array_keys($user->roles))) {
+    if (isset($entityform_type) && is_object($entityform_type) && is_array($entityform_type->data) && array_intersect($entityform_type->data['roles'], array_keys($account->roles))) {
       $can_submit = TRUE;
     }
     else {
       $can_submit = FALSE;
     }
     if ($op == 'submit') {
-      if (!isset($entityform_type->data['form_status']) || $entityform_type->data['form_status'] != ENTITYFORM_STATUS_CLOSED) {
-        $access = $can_submit;
-      }
-      else {
-        $access = FALSE;
-      }
+      $access = $can_submit;
     }
     else {
-      //confirm page
+      // Confirm page.
       $entityform_id = isset($_GET['entityform_id']) ? $_GET['entityform_id'] : NULL;
       if (empty($entityform_id)) {
         return FALSE;
       }
       if (user_is_anonymous()) {
-        // If this is anonymous user then entityform_id should be stored in session
+        // If this is anonymous user then entityform_id should be stored
+        // in session.
         if (!isset($_SESSION['entityform_submission'])) {
           $access = FALSE;
         }
         else {
-          // Submission was stored in sesssion. Make sure it matches.
+          // Submission was stored in session. Make sure it matches.
           $match = $_SESSION['entityform_submission'] == $entityform_id;
           unset($_SESSION['entityform_submission']);
           $access = $match;
@@ -292,12 +290,12 @@ function entityform_access($op, $entityform = NULL, $account = NULL) {
       }
       else {
         if (!$entityform = entityform_load($entityform_id)) {
-          // entityform didn't load. It may have been deleted.
+          // Entityform didn't load. It may have been deleted.
           $access = FALSE;
         }
         else {
-          //only grant access if this is the user who made the submission
-          $access = $entityform->uid == $user->uid;
+          // Only grant access if this is the user who made the submission.
+          $access = $entityform->uid == $account->uid;
         }
       }
     }
@@ -307,21 +305,24 @@ function entityform_access($op, $entityform = NULL, $account = NULL) {
       if (user_access("$op any entityform", $account)) {
         $access = TRUE;
       }
-      elseif (!empty($user->uid) && $entityform->uid == $user->uid && user_access("$op own entityform", $account)) {
+      elseif (!empty($account->uid) && $entityform->uid == $account->uid && user_access("$op own entityform", $account)) {
         $access = TRUE;
       }
     }
   }
-  // If $access set then set to FALSE
+
+  // If $access set then set to FALSE.
   if ($access === NULL) {
     $access = FALSE;
   }
+
   // Allow other modules to change access.
   $context = array(
     'entityform' => $entityform,
     'account' => $account,
   );
   drupal_alter('entityform_access', $access, $op, $context);
+
   return $access;
 }
 
