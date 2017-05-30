@@ -15,7 +15,6 @@ stylesheets[all][] = assets/public/styles/pul-base.styles.min.css
 ; Scripts
 ; ========================================
 scripts[] = assets/public/scripts/pul-base.scripts.min.js
-scripts[] = pul-icons/ie7/ie7.js
 
 ; ========================================
 ; Plugins
