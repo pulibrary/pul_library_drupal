@@ -2136,6 +2136,10 @@ function file_entity_file_default_types() {
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       'application/vnd.openxmlformats-officedocument.presentationml.presentation',
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/zip',
+      'application/x-7z-compressed',
+      'application/x-tar',
+      'application/gzip',
     ),
   );
 
