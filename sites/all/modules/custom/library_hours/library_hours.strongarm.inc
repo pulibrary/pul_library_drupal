@@ -83,6 +83,27 @@ function library_hours_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_library_hours';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_library_hours';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_library_hours';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__library_hours';
   $strongarm->value = array(
     'view_modes' => array(
@@ -198,6 +219,26 @@ function library_hours_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_library_hours_calendars_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_library_hours_calendars_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_library_hours';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_library_hours'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_library_hours_calendars';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.3',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_library_hours_calendars'] = $strongarm;
 
   return $export;
 }

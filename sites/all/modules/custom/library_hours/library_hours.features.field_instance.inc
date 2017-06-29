@@ -10,52 +10,6 @@
 function library_hours_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-library_hours-body'.
-  $field_instances['node-library_hours-body'] = array(
-    'bundle' => 'library_hours',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-library_hours-field_hours_library_status'.
   $field_instances['node-library_hours-field_hours_library_status'] = array(
     'bundle' => 'library_hours',
@@ -110,6 +64,7 @@ function library_hours_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -325,6 +280,7 @@ function library_hours_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -441,7 +397,6 @@ function library_hours_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A descriptive statement about the days covered by the pattern being entered. Ex: Mondays, M-TH, Sat, Sunday, or Labor Day.');
-  t('Body');
   t('Calendar');
   t('Date Label');
   t('Hours');
