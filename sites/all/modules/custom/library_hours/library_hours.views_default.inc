@@ -289,6 +289,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'jump_menu';
   $handler->display->display_options['style_options']['hide'] = TRUE;
   $handler->display->display_options['style_options']['path'] = 'tid';
+  $handler->display->display_options['style_options']['label'] = 'Calendar list';
   $handler->display->display_options['style_options']['choose'] = '- Select Calendar -';
   $handler->display->display_options['style_options']['default_value'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -595,6 +596,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['field'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['label'] = '';
+  $handler->display->display_options['fields']['field_hours_library_status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours_library_status']['alter']['path'] = '[title]';
   $handler->display->display_options['fields']['field_hours_library_status']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status';
@@ -605,14 +607,18 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
     'format_type' => 'time_only',
+    'custom_date_format' => '',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;
@@ -1086,6 +1092,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['field'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['label'] = '';
+  $handler->display->display_options['fields']['field_hours_library_status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status data-status-[tid]';
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
@@ -1095,11 +1102,14 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_class'] = 'data-hours-[tid]';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
     'format_type' => 'time_only',
+    'custom_date_format' => '',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -2666,13 +2676,21 @@ function library_hours_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
     'name' => 'name',
+    'name_1' => 'name_1',
+    'field_hours_library_status' => 'field_hours_library_status',
+    'changed' => 'changed',
     'edit_node' => 'edit_node',
-    'timestamp' => 'timestamp',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -2687,14 +2705,28 @@ function library_hours_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'edit_node' => array(
+    'name_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'timestamp' => array(
+    'field_hours_library_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -3021,7 +3053,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Batch Update';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';

@@ -67,9 +67,11 @@
   <!-- JS for Chat Widget. -->
   <script type="text/javascript"> 
     (function() {
-      var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
-      x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
-      var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+      if(document.getElementById("menu-menu-get-help-menu") != null) {
+        var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+        x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?multi,poll";
+        var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+      }
     })();
   </script>
 </body>

@@ -10,7 +10,7 @@
 function articles_and_databases_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_affected_databases'
+  // Exported field_base: 'field_affected_databases'.
   $field_bases['field_affected_databases'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -78,7 +78,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_db_access_note'
+  // Exported field_base: 'field_db_access_note'.
   $field_bases['field_db_access_note'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -102,7 +102,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_db_access_onsite'
+  // Exported field_base: 'field_db_access_onsite'.
   $field_bases['field_db_access_onsite'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -127,7 +127,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_access_url'
+  // Exported field_base: 'field_db_access_url'.
   $field_bases['field_db_access_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -156,7 +156,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_db_alternative_urls'
+  // Exported field_base: 'field_db_alternative_urls'.
   $field_bases['field_db_alternative_urls'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -185,7 +185,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_db_alumni_access'
+  // Exported field_base: 'field_db_alumni_access'.
   $field_bases['field_db_alumni_access'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -213,7 +213,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_copyright_information'
+  // Exported field_base: 'field_db_copyright_information'.
   $field_bases['field_db_copyright_information'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -232,7 +232,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_db_date_coverage'
+  // Exported field_base: 'field_db_date_coverage'.
   $field_bases['field_db_date_coverage'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -253,7 +253,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_db_description_overrides'
+  // Exported field_base: 'field_db_description_overrides'.
   $field_bases['field_db_description_overrides'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -293,7 +293,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_db_display_active'
+  // Exported field_base: 'field_db_display_active'.
   $field_bases['field_db_display_active'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -321,7 +321,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_ezproxy_special'
+  // Exported field_base: 'field_db_ezproxy_special'.
   $field_bases['field_db_ezproxy_special'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -346,7 +346,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_grp_member_of'
+  // Exported field_base: 'field_db_grp_member_of'.
   $field_bases['field_db_grp_member_of'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -387,7 +387,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_db_importid'
+  // Exported field_base: 'field_db_importid'.
   $field_bases['field_db_importid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -408,7 +408,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_db_is_trial'
+  // Exported field_base: 'field_db_is_trial'.
   $field_bases['field_db_is_trial'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -433,7 +433,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_issue_date_reported'
+  // Exported field_base: 'field_db_issue_date_reported'.
   $field_bases['field_db_issue_date_reported'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -463,7 +463,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_db_issue_open_closed'
+  // Exported field_base: 'field_db_issue_open_closed'.
   $field_bases['field_db_issue_open_closed'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -489,7 +489,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_issue_solution'
+  // Exported field_base: 'field_db_issue_solution'.
   $field_bases['field_db_issue_solution'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -510,7 +510,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_db_keywords'
+  // Exported field_base: 'field_db_keywords'.
   $field_bases['field_db_keywords'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -536,7 +536,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_db_location_access_note'
+  // Exported field_base: 'field_db_location_access_note'.
   $field_bases['field_db_location_access_note'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -560,7 +560,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_db_mobile_support'
+  // Exported field_base: 'field_db_mobile_support'.
   $field_bases['field_db_mobile_support'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -585,7 +585,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_on_campus_only'
+  // Exported field_base: 'field_db_on_campus_only'.
   $field_bases['field_db_on_campus_only'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -610,7 +610,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_proxy_configuration'
+  // Exported field_base: 'field_db_proxy_configuration'.
   $field_bases['field_db_proxy_configuration'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -629,7 +629,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_db_restricted_access'
+  // Exported field_base: 'field_db_restricted_access'.
   $field_bases['field_db_restricted_access'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -654,7 +654,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_shibboleth_enabled'
+  // Exported field_base: 'field_db_shibboleth_enabled'.
   $field_bases['field_db_shibboleth_enabled'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -680,7 +680,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_suppressed'
+  // Exported field_base: 'field_db_suppressed'.
   $field_bases['field_db_suppressed'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -708,7 +708,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_title_import_id'
+  // Exported field_base: 'field_db_title_import_id'.
   $field_bases['field_db_title_import_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -729,7 +729,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_db_trial_start_date'
+  // Exported field_base: 'field_db_trial_start_date'.
   $field_bases['field_db_trial_start_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -759,7 +759,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_db_use_proxy'
+  // Exported field_base: 'field_db_use_proxy'.
   $field_bases['field_db_use_proxy'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -784,7 +784,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_db_voyager_id'
+  // Exported field_base: 'field_db_voyager_id'.
   $field_bases['field_db_voyager_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -805,7 +805,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_dbgrp_configuration_file'
+  // Exported field_base: 'field_dbgrp_configuration_file'.
   $field_bases['field_dbgrp_configuration_file'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -828,7 +828,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_dbgrp_proxy_configuration'
+  // Exported field_base: 'field_dbgrp_proxy_configuration'.
   $field_bases['field_dbgrp_proxy_configuration'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -847,7 +847,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_dboverride_database'
+  // Exported field_base: 'field_dboverride_database'.
   $field_bases['field_dboverride_database'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -889,7 +889,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_dboverride_date_coverage'
+  // Exported field_base: 'field_dboverride_date_coverage'.
   $field_bases['field_dboverride_date_coverage'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -910,7 +910,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_dboverride_dbmport_id'
+  // Exported field_base: 'field_dboverride_dbmport_id'.
   $field_bases['field_dboverride_dbmport_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -931,7 +931,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_dboverride_title_import_id'
+  // Exported field_base: 'field_dboverride_title_import_id'.
   $field_bases['field_dboverride_title_import_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -952,7 +952,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rsrc_import_id'
+  // Exported field_base: 'field_rsrc_import_id'.
   $field_bases['field_rsrc_import_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -973,7 +973,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rsrc_subject_librarian'
+  // Exported field_base: 'field_rsrc_subject_librarian'.
   $field_bases['field_rsrc_subject_librarian'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1010,7 +1010,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_rsrc_tier_one_resources'
+  // Exported field_base: 'field_rsrc_tier_one_resources'.
   $field_bases['field_rsrc_tier_one_resources'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1050,7 +1050,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_rsrc_tier_two_resources'
+  // Exported field_base: 'field_rsrc_tier_two_resources'.
   $field_bases['field_rsrc_tier_two_resources'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1090,7 +1090,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_subs_browse_hide'
+  // Exported field_base: 'field_subs_browse_hide'.
   $field_bases['field_subs_browse_hide'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1115,7 +1115,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_subs_hide_on_specialist'
+  // Exported field_base: 'field_subs_hide_on_specialist'.
   $field_bases['field_subs_hide_on_specialist'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1140,7 +1140,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_subs_import_id'
+  // Exported field_base: 'field_subs_import_id'.
   $field_bases['field_subs_import_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1161,7 +1161,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_subs_other_guides'
+  // Exported field_base: 'field_subs_other_guides'.
   $field_bases['field_subs_other_guides'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1190,7 +1190,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_subs_primary_library_guide'
+  // Exported field_base: 'field_subs_primary_library_guide'.
   $field_bases['field_subs_primary_library_guide'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1219,7 +1219,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_subs_specialist'
+  // Exported field_base: 'field_subs_specialist'.
   $field_bases['field_subs_specialist'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1256,7 +1256,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_subs_tier_one_resources'
+  // Exported field_base: 'field_subs_tier_one_resources'.
   $field_bases['field_subs_tier_one_resources'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1296,7 +1296,7 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_subs_tier_two_resources'
+  // Exported field_base: 'field_subs_tier_two_resources'.
   $field_bases['field_subs_tier_two_resources'] = array(
     'active' => 1,
     'cardinality' => -1,

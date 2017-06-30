@@ -3,7 +3,7 @@
     background-color: $orange;
     border: 1px solid $black;
     border-left: 0;
-    border-right: 2px solid $white;
+    border-right: 0;
     border-top: 0;
     height: auto;
     margin-bottom: 0;
@@ -19,6 +19,7 @@
     color: $gray-darkest;
     padding: 10px 20px;
     text-align: center;
+    width: 14%;
   }
 
   td.single-day,
@@ -160,13 +161,14 @@ div.view-content > table.views-table > tbody > tr > td {
   font-weight: normal;
 }
 
-.calendar-calendar td.empty {
-  color: darken($gray-lightest, 10);
+.calendar-calendar td.empty .month.day {
+  // color: darken($gray-lightest, 10);
+  display: none;
 }
 
 .calendar-calendar .month-view .full td.date-box.today,
 .calendar-calendar .month-view .full td.single-day.today {
-  background: $orange-light;
+  background: $yellow-light;
 }
 
 .calendar-calendar .month-view .full td.date-box.today {
@@ -181,4 +183,8 @@ div.view-content > table.views-table > tbody > tr > td {
 
 .calendar-calendar .month-view .full tr td.single-day.today {
   border-bottom: 2px solid $orange;
+}
+
+.view-library-hours.mini-vertical .view-header {
+  background-color: $gray-darkest;
 }

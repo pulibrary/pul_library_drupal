@@ -333,12 +333,20 @@ function articles_and_databases_views_default_views() {
 <div id="open[nid]" data-desc-id="[nid]" class="find-databases-show-desc"><i class="icon-plus-sign-alt"></i>Show Description</div>
 <div class="database-description" id="desc[nid]">[body]</div>
 </div>';
+  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_class'] = 'databases-find-description';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'data_element_key' => '',
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+    'skip_text_format' => 1,
+  );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -367,7 +375,7 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['filters']['field_db_display_active_value']['value'] = array(
     0 => '0',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';

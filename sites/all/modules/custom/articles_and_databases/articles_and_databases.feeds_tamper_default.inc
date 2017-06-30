@@ -103,6 +103,26 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'resource_list_importer-keywords-find_keyword_null_replace';
+  $feeds_tamper->importer = 'resource_list_importer';
+  $feeds_tamper->source = 'keywords';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'NULL',
+    'replace' => '',
+    'case_sensitive' => 0,
+    'word_boundaries' => 1,
+    'whole' => 0,
+    'regex' => TRUE,
+    'regex_find' => '/\\bNULL\\b/i',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace';
+  $export['resource_list_importer-keywords-find_keyword_null_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'resource_list_importer-libwebcomp-convert_to_boolean';
   $feeds_tamper->importer = 'resource_list_importer';
   $feeds_tamper->source = 'libwebcomp';
@@ -225,7 +245,7 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->importer = 'resource_list_importer';
   $feeds_tamper->source = 'url';
   $feeds_tamper->plugin_id = 'html_entity_encode';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'HTML entity encode';
   $export['resource_list_importer-url-html_entity_encode'] = $feeds_tamper;
@@ -244,6 +264,37 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Trim';
   $export['resource_list_importer-url-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'subject_importer-dbs-convert_subs_dbs_to_boolean';
+  $feeds_tamper->importer = 'subject_importer';
+  $feeds_tamper->source = 'dbs';
+  $feeds_tamper->plugin_id = 'convert_boolean';
+  $feeds_tamper->settings = array(
+    'true_value' => '0',
+    'false_value' => '-1',
+    'match_case' => 0,
+    'no_match' => 'false',
+    'other_text' => '',
+    'no_match_value' => FALSE,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Convert to boolean';
+  $export['subject_importer-dbs-convert_subs_dbs_to_boolean'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'subject_importer-subjectname-html_entity_decode';
+  $feeds_tamper->importer = 'subject_importer';
+  $feeds_tamper->source = 'subjectName';
+  $feeds_tamper->plugin_id = 'html_entity_decode';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'HTML entity decode';
+  $export['subject_importer-subjectname-html_entity_decode'] = $feeds_tamper;
 
   return $export;
 }
