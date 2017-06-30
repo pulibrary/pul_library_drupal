@@ -16,36 +16,43 @@ function pul_editor_html_profile_filter_default_formats() {
     'name' => 'Editor HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => 0,
+    'weight' => -10,
     'filters' => array(
       'filter_html' => array(
-        'weight' => -10,
+        'weight' => -50,
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <ul> <ol> <li> <dl> <dt> <dd> <table> <thead> <tbody> <tr> <td> <img> <div> <h2> <h3> <h4> <h5> <h6> <span>',
           'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
+          'filter_html_nofollow' => 1,
         ),
       ),
       'filter_autop' => array(
-        'weight' => 0,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'media_filter' => array(
-        'weight' => 2,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),
+      'media_filter_paragraph_fix' => array(
+        'weight' => -45,
+        'status' => 1,
+        'settings' => array(
+          'replace' => 1,
+        ),
+      ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),
