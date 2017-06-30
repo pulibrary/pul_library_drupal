@@ -10,7 +10,7 @@
 function articles_and_databases_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-alternative_database_title-body'
+  // Exported field_instance: 'node-alternative_database_title-body'.
   $field_instances['node-alternative_database_title-body'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => NULL,
@@ -72,7 +72,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_db_display_active'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_db_display_active'.
   $field_instances['node-alternative_database_title-field_db_display_active'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => array(
@@ -131,7 +132,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_db_suppressed'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_db_suppressed'.
   $field_instances['node-alternative_database_title-field_db_suppressed'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => array(
@@ -192,7 +194,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_dboverride_database'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_dboverride_database'.
   $field_instances['node-alternative_database_title-field_dboverride_database'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => NULL,
@@ -210,6 +213,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'override_db_title',
         ),
         'type' => 'entityreference_entity_view',
@@ -226,6 +230,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'database_description_only',
         ),
         'type' => 'entityreference_entity_view',
@@ -236,6 +241,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -263,7 +269,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_dboverride_date_coverage'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_dboverride_date_coverage'.
   $field_instances['node-alternative_database_title-field_dboverride_date_coverage'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => NULL,
@@ -323,7 +330,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_dboverride_dbmport_id'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_dboverride_dbmport_id'.
   $field_instances['node-alternative_database_title-field_dboverride_dbmport_id'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => NULL,
@@ -381,7 +389,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-alternative_database_title-field_dboverride_title_import_id'
+  // Exported field_instance:
+  // 'node-alternative_database_title-field_dboverride_title_import_id'.
   $field_instances['node-alternative_database_title-field_dboverride_title_import_id'] = array(
     'bundle' => 'alternative_database_title',
     'default_value' => NULL,
@@ -439,7 +448,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-body'
+  // Exported field_instance: 'node-database-body'.
   $field_instances['node-database-body'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -523,6 +532,11 @@ function articles_and_databases_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -536,9 +550,10 @@ function articles_and_databases_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 33,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-database-field_db_access_note'
+  // Exported field_instance: 'node-database-field_db_access_note'.
   $field_instances['node-database-field_db_access_note'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -631,7 +646,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_access_onsite'
+  // Exported field_instance: 'node-database-field_db_access_onsite'.
   $field_instances['node-database-field_db_access_onsite'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -722,7 +737,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_access_url'
+  // Exported field_instance: 'node-database-field_db_access_url'.
   $field_instances['node-database-field_db_access_url'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -830,7 +845,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_alternative_urls'
+  // Exported field_instance: 'node-database-field_db_alternative_urls'.
   $field_instances['node-database-field_db_alternative_urls'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -938,7 +953,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_alumni_access'
+  // Exported field_instance: 'node-database-field_db_alumni_access'.
   $field_instances['node-database-field_db_alumni_access'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1003,7 +1018,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_copyright_information'
+  // Exported field_instance: 'node-database-field_db_copyright_information'.
   $field_instances['node-database-field_db_copyright_information'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1101,7 +1116,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_date_coverage'
+  // Exported field_instance: 'node-database-field_db_date_coverage'.
   $field_instances['node-database-field_db_date_coverage'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -1179,7 +1194,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_display_active'
+  // Exported field_instance: 'node-database-field_db_display_active'.
   $field_instances['node-database-field_db_display_active'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1257,7 +1272,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_ezproxy_special'
+  // Exported field_instance: 'node-database-field_db_ezproxy_special'.
   $field_instances['node-database-field_db_ezproxy_special'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1335,7 +1350,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_grp_member_of'
+  // Exported field_instance: 'node-database-field_db_grp_member_of'.
   $field_instances['node-database-field_db_grp_member_of'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -1347,6 +1362,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -1381,6 +1397,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -1391,6 +1408,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -1401,6 +1419,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -1436,7 +1455,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_importid'
+  // Exported field_instance: 'node-database-field_db_importid'.
   $field_instances['node-database-field_db_importid'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -1524,7 +1543,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_is_trial'
+  // Exported field_instance: 'node-database-field_db_is_trial'.
   $field_instances['node-database-field_db_is_trial'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1613,7 +1632,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_keywords'
+  // Exported field_instance: 'node-database-field_db_keywords'.
   $field_instances['node-database-field_db_keywords'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -1677,7 +1696,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_location_access_note'
+  // Exported field_instance: 'node-database-field_db_location_access_note'.
   $field_instances['node-database-field_db_location_access_note'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -1755,7 +1774,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_mobile_support'
+  // Exported field_instance: 'node-database-field_db_mobile_support'.
   $field_instances['node-database-field_db_mobile_support'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1851,7 +1870,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_on_campus_only'
+  // Exported field_instance: 'node-database-field_db_on_campus_only'.
   $field_instances['node-database-field_db_on_campus_only'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -1942,7 +1961,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_proxy_configuration'
+  // Exported field_instance: 'node-database-field_db_proxy_configuration'.
   $field_instances['node-database-field_db_proxy_configuration'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -2034,7 +2053,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_restricted_access'
+  // Exported field_instance: 'node-database-field_db_restricted_access'.
   $field_instances['node-database-field_db_restricted_access'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -2123,7 +2142,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_shibboleth_enabled'
+  // Exported field_instance: 'node-database-field_db_shibboleth_enabled'.
   $field_instances['node-database-field_db_shibboleth_enabled'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -2200,7 +2219,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_suppressed'
+  // Exported field_instance: 'node-database-field_db_suppressed'.
   $field_instances['node-database-field_db_suppressed'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -2267,7 +2286,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_title_import_id'
+  // Exported field_instance: 'node-database-field_db_title_import_id'.
   $field_instances['node-database-field_db_title_import_id'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -2343,7 +2362,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_trial_start_date'
+  // Exported field_instance: 'node-database-field_db_trial_start_date'.
   $field_instances['node-database-field_db_trial_start_date'] = array(
     'bundle' => 'database',
     'deleted' => 0,
@@ -2440,7 +2459,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_use_proxy'
+  // Exported field_instance: 'node-database-field_db_use_proxy'.
   $field_instances['node-database-field_db_use_proxy'] = array(
     'bundle' => 'database',
     'default_value' => array(
@@ -2529,7 +2548,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database-field_db_voyager_id'
+  // Exported field_instance: 'node-database-field_db_voyager_id'.
   $field_instances['node-database-field_db_voyager_id'] = array(
     'bundle' => 'database',
     'default_value' => NULL,
@@ -2616,7 +2635,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_description-body'
+  // Exported field_instance: 'node-database_description-body'.
   $field_instances['node-database_description-body'] = array(
     'bundle' => 'database_description',
     'default_value' => NULL,
@@ -2674,7 +2693,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_description-field_db_description_overrides'
+  // Exported field_instance:
+  // 'node-database_description-field_db_description_overrides'.
   $field_instances['node-database_description-field_db_description_overrides'] = array(
     'bundle' => 'database_description',
     'default_value' => NULL,
@@ -2691,6 +2711,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -2700,6 +2721,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -2733,7 +2755,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_issue-body'
+  // Exported field_instance: 'node-database_issue-body'.
   $field_instances['node-database_issue-body'] = array(
     'bundle' => 'database_issue',
     'default_value' => NULL,
@@ -2785,7 +2807,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_issue-field_affected_databases'
+  // Exported field_instance: 'node-database_issue-field_affected_databases'.
   $field_instances['node-database_issue-field_affected_databases'] = array(
     'bundle' => 'database_issue',
     'default_value' => NULL,
@@ -2802,6 +2824,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -2835,7 +2858,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_issue-field_db_issue_date_reported'
+  // Exported field_instance:
+  // 'node-database_issue-field_db_issue_date_reported'.
   $field_instances['node-database_issue-field_db_issue_date_reported'] = array(
     'bundle' => 'database_issue',
     'deleted' => 0,
@@ -2856,6 +2880,7 @@ function articles_and_databases_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -2898,7 +2923,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_issue-field_db_issue_open_closed'
+  // Exported field_instance: 'node-database_issue-field_db_issue_open_closed'.
   $field_instances['node-database_issue-field_db_issue_open_closed'] = array(
     'bundle' => 'database_issue',
     'default_value' => array(
@@ -2946,7 +2971,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_issue-field_db_issue_solution'
+  // Exported field_instance: 'node-database_issue-field_db_issue_solution'.
   $field_instances['node-database_issue-field_db_issue_solution'] = array(
     'bundle' => 'database_issue',
     'default_value' => NULL,
@@ -2993,7 +3018,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_package-body'
+  // Exported field_instance: 'node-database_package-body'.
   $field_instances['node-database_package-body'] = array(
     'bundle' => 'database_package',
     'default_value' => NULL,
@@ -3044,7 +3069,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_package-field_dbgrp_configuration_file'
+  // Exported field_instance:
+  // 'node-database_package-field_dbgrp_configuration_file'.
   $field_instances['node-database_package-field_dbgrp_configuration_file'] = array(
     'bundle' => 'database_package',
     'deleted' => 0,
@@ -3102,7 +3128,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-database_package-field_dbgrp_proxy_configuration'
+  // Exported field_instance:
+  // 'node-database_package-field_dbgrp_proxy_configuration'.
   $field_instances['node-database_package-field_dbgrp_proxy_configuration'] = array(
     'bundle' => 'database_package',
     'default_value' => NULL,
@@ -3148,7 +3175,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_browse_hide'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_browse_hide'.
   $field_instances['taxonomy_term-database_subjects-field_subs_browse_hide'] = array(
     'bundle' => 'database_subjects',
     'default_value' => array(
@@ -3184,7 +3212,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_hide_on_specialist'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_hide_on_specialist'.
   $field_instances['taxonomy_term-database_subjects-field_subs_hide_on_specialist'] = array(
     'bundle' => 'database_subjects',
     'default_value' => array(
@@ -3220,7 +3249,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_import_id'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_import_id'.
   $field_instances['taxonomy_term-database_subjects-field_subs_import_id'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3261,7 +3291,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_other_guides'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_other_guides'.
   $field_instances['taxonomy_term-database_subjects-field_subs_other_guides'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3311,7 +3342,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_primary_library_guide'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_primary_library_guide'.
   $field_instances['taxonomy_term-database_subjects-field_subs_primary_library_guide'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3361,7 +3393,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_specialist'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_specialist'.
   $field_instances['taxonomy_term-database_subjects-field_subs_specialist'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3372,6 +3405,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -3382,6 +3416,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
@@ -3409,7 +3444,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_tier_one_resources'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_tier_one_resources'.
   $field_instances['taxonomy_term-database_subjects-field_subs_tier_one_resources'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3421,6 +3457,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -3431,6 +3468,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -3458,7 +3496,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-database_subjects-field_subs_tier_two_resources'
+  // Exported field_instance:
+  // 'taxonomy_term-database_subjects-field_subs_tier_two_resources'.
   $field_instances['taxonomy_term-database_subjects-field_subs_tier_two_resources'] = array(
     'bundle' => 'database_subjects',
     'default_value' => NULL,
@@ -3470,6 +3509,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -3480,6 +3520,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -3507,7 +3548,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-resource_types-field_rsrc_import_id'
+  // Exported field_instance:
+  // 'taxonomy_term-resource_types-field_rsrc_import_id'.
   $field_instances['taxonomy_term-resource_types-field_rsrc_import_id'] = array(
     'bundle' => 'resource_types',
     'default_value' => NULL,
@@ -3542,7 +3584,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-resource_types-field_rsrc_subject_librarian'
+  // Exported field_instance:
+  // 'taxonomy_term-resource_types-field_rsrc_subject_librarian'.
   $field_instances['taxonomy_term-resource_types-field_rsrc_subject_librarian'] = array(
     'bundle' => 'resource_types',
     'default_value' => NULL,
@@ -3554,6 +3597,7 @@ function articles_and_databases_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'full',
         ),
         'type' => 'entityreference_entity_view',
@@ -3581,7 +3625,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-resource_types-field_rsrc_tier_one_resources'
+  // Exported field_instance:
+  // 'taxonomy_term-resource_types-field_rsrc_tier_one_resources'.
   $field_instances['taxonomy_term-resource_types-field_rsrc_tier_one_resources'] = array(
     'bundle' => 'resource_types',
     'default_value' => NULL,
@@ -3592,6 +3637,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -3619,7 +3665,8 @@ function articles_and_databases_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-resource_types-field_rsrc_tier_two_resources'
+  // Exported field_instance:
+  // 'taxonomy_term-resource_types-field_rsrc_tier_two_resources'.
   $field_instances['taxonomy_term-resource_types-field_rsrc_tier_two_resources'] = array(
     'bundle' => 'resource_types',
     'default_value' => NULL,
@@ -3630,6 +3677,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
