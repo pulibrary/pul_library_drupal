@@ -194,6 +194,132 @@ function library_news_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'term_view__panel_context_9f61d907-6f55-424c-b985-3edf52218add';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -9;
+  $handler->conf = array(
+    'title' => 'Tags Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_bundle:taxonomy_term',
+          'settings' => array(
+            'type' => array(
+              'tags' => 'tags',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'pul-base-nine-three';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'News about %term:name';
+  $display->uuid = 'af65e512-8956-482b-91f1-31265ae293de';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'term_view__panel_context_9f61d907-6f55-424c-b985-3edf52218add';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-5c414b6f-09ca-4baa-8538-98303c3e1249';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5c414b6f-09ca-4baa-8538-98303c3e1249';
+  $display->content['new-5c414b6f-09ca-4baa-8538-98303c3e1249'] = $pane;
+  $display->panels['first'][0] = 'new-5c414b6f-09ca-4baa-8538-98303c3e1249';
+  $pane = new stdClass();
+  $pane->pid = 'new-866e01c0-5482-4767-b5fb-df564f0a1f5c';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'news_and_events_categories-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'News Categories',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '866e01c0-5482-4767-b5fb-df564f0a1f5c';
+  $display->content['new-866e01c0-5482-4767-b5fb-df564f0a1f5c'] = $pane;
+  $display->panels['second'][0] = 'new-866e01c0-5482-4767-b5fb-df564f0a1f5c';
+  $pane = new stdClass();
+  $pane->pid = 'new-7b757cc8-4ec0-4729-a2bb-1a9d70550978';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-library-news-and-events';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Library Blogs',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '7b757cc8-4ec0-4729-a2bb-1a9d70550978';
+  $display->content['new-7b757cc8-4ec0-4729-a2bb-1a9d70550978'] = $pane;
+  $display->panels['second'][1] = 'new-7b757cc8-4ec0-4729-a2bb-1a9d70550978';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['term_view__panel_context_9f61d907-6f55-424c-b985-3edf52218add'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'term_view_panel_context_17';
   $handler->task = 'term_view';
   $handler->subtask = '';
@@ -237,6 +363,8 @@ function library_news_default_page_manager_handlers() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -253,7 +381,11 @@ function library_news_default_page_manager_handlers() {
   $pane->subtype = 'library_news-panel_pane_4';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
