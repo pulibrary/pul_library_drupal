@@ -80,6 +80,7 @@ features[field_instance][] = node-library_news_item-field_pul_event_date
 features[field_instance][] = node-library_news_item-field_tags
 features[node][] = library_news_item
 features[page_manager_handlers][] = node_view_panel_context_2
+features[page_manager_handlers][] = term_view__panel_context_9f61d907-6f55-424c-b985-3edf52218add
 features[page_manager_handlers][] = term_view_panel_context_17
 features[page_manager_pages][] = news
 features[taxonomy][] = acquisition_material_type

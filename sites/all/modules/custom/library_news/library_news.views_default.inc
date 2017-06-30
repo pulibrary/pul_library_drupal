@@ -244,6 +244,8 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_article_snippet']['table'] = 'field_data_field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['field'] = 'field_news_article_snippet';
   $handler->display->display_options['fields']['field_news_article_snippet']['label'] = '';
+  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_news_article_snippet']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['field_news_article_snippet']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_article_snippet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_article_snippet']['element_wrapper_type'] = '0';
@@ -301,10 +303,12 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['field'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['label'] = 'Related to';
+  $handler->display->display_options['fields']['field_news_libraries']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_libraries']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_libraries']['settings'] = array(
+    'bypass_access' => 0,
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_news_libraries']['delta_offset'] = '0';
@@ -702,10 +706,12 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['field'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['label'] = 'Related to';
+  $handler->display->display_options['fields']['field_news_libraries']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_libraries']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_libraries']['settings'] = array(
+    'bypass_access' => 0,
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_news_libraries']['delta_offset'] = '0';
@@ -1031,10 +1037,12 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_libraries']['table'] = 'field_data_field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['field'] = 'field_news_libraries';
   $handler->display->display_options['fields']['field_news_libraries']['label'] = 'Related to';
+  $handler->display->display_options['fields']['field_news_libraries']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_libraries']['element_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_libraries']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_libraries']['settings'] = array(
+    'bypass_access' => 0,
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_news_libraries']['delta_offset'] = '0';
@@ -1064,6 +1072,15 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'library_news_item' => 'library_news_item',
   );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'panel',
