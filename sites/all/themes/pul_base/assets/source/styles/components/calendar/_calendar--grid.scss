@@ -184,3 +184,7 @@ div.view-content > table.views-table > tbody > tr > td {
 .calendar-calendar .month-view .full tr td.single-day.today {
   border-bottom: 2px solid $orange;
 }
+
+.view-library-hours.mini-vertical .view-header {
+  background-color: $gray-darkest;
+}
