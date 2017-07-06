@@ -72,7 +72,11 @@
 ?>
 <div class="l-page" id="l-page">
   <header class="l-header" role="banner">
-    <a href="#main-content" class="skip2main"><?php print t('Skip to main content'); ?></a>
+    <ul id="jump-links">
+      <li><a href="#edit-query" class="jump-link"><?php print t('Skip to search box'); ?></a></li>
+      <li><a href="#main-content" class="jump-link"><?php print t('Skip to main content'); ?></a></li>
+    </ul>
+    
     <div class="wrapper wrapper--branding">
       <section class="l-region l-region--branding">
         <?php if ($logo): ?>
