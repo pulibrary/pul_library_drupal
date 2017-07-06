@@ -1,10 +1,10 @@
-.skip2main {
+.jump-link {
   left: 6px;
   position: absolute;
   top: -99px;
 }
 
-.skip2main:focus {
+.jump-link:focus {
   background: $orange;
   box-shadow: 0 0 2px 2px $black-opacity-7;
   color: $white;

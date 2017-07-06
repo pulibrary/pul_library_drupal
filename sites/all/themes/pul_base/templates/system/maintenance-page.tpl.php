@@ -28,7 +28,10 @@
 <body>
   <div class="l-page">
     <header class="l-header" role="banner">
-      <a class="skip2main" href="#main-content">Skip to main content</a>
+      <ul id="jump-links">
+        <li><a href="#edit-query" class="jump-link"><?php print t('Skip to search box'); ?></a></li>
+        <li><a href="#main-content" class="jump-link"><?php print t('Skip to main content'); ?></a></li>
+      </ul>
       <div class="wrapper wrapper--branding">
         <section class="l-region l-region--branding">
           <h2><a class="site-logo" href="/" title="Princeton University Library - Home"><img alt="Home" src="/sites/all/themes/pul_base/assets/public/images/logo.png"><span class="site-name">Princeton University Library</span></a></h2>
