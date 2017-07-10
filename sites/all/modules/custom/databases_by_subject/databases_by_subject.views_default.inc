@@ -128,6 +128,7 @@ function databases_by_subject_views_default_views() {
   $handler->display->display_options['style_options']['hide'] = TRUE;
   $handler->display->display_options['style_options']['path'] = 'tid';
   $handler->display->display_options['style_options']['text'] = 'View Resources';
+  $handler->display->display_options['style_options']['label'] = 'Subjects';
   $handler->display->display_options['style_options']['choose'] = '-Choose Subject-';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
