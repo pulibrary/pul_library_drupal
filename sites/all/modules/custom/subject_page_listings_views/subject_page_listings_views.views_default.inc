@@ -221,6 +221,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
@@ -239,7 +240,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -360,6 +361,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   /* Field: Content: Also Known As */
   $handler->display->display_options['fields']['field_dboverride_database']['id'] = 'field_dboverride_database';
@@ -392,7 +394,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -768,12 +770,11 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname']['field_api_classes'] = TRUE;
-  /* Field: Content: Updated/commented date */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['relationship'] = 'field_subs_tier_one_resources_target_id';
-  $handler->display->display_options['fields']['last_updated']['date_format'] = 'long';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -784,7 +785,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -854,14 +855,13 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['relationship'] = 'field_subs_tier_two_resources_target_id';
-  /* Field: Content: Updated/commented date */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['relationship'] = 'field_subs_tier_two_resources_target_id';
   $handler->display->display_options['fields']['last_updated']['label'] = '';
   $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['last_updated']['date_format'] = 'long';
   /* Field: User: Link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
@@ -884,7 +884,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
@@ -1056,12 +1056,11 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname']['field_api_classes'] = TRUE;
-  /* Field: Content: Updated/commented date */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['last_updated']['id'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['relationship'] = 'field_subs_tier_one_resources_target_id';
-  $handler->display->display_options['fields']['last_updated']['date_format'] = 'long';
   /* Field: Content: Access URL */
   $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
   $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
@@ -1100,7 +1099,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'database_subjects' => 'database_subjects',
   );
-  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';
