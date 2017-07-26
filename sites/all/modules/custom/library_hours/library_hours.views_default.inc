@@ -1332,49 +1332,18 @@ function library_hours_views_default_views() {
   $handler->display->display_options['title'] = 'Today&#x2019;s Hours';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '13';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_hrs_lib_calendar' => 'field_hrs_lib_calendar',
-    'field_hours_library_status' => 'field_hours_library_status',
-    'field_open_hours' => 'field_open_hours',
-    'title' => 'title',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_hrs_lib_calendar' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_hours_library_status' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_open_hours' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'media';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'hours--today';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
@@ -1398,22 +1367,28 @@ function library_hours_views_default_views() {
   $handler->display->display_options['relationships']['field_library_hrs_target_id']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['relationships']['field_library_hrs_target_id']['label'] = 'Library';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Calendar image */
+  $handler->display->display_options['fields']['field_calendar_image']['id'] = 'field_calendar_image';
+  $handler->display->display_options['fields']['field_calendar_image']['table'] = 'field_data_field_calendar_image';
+  $handler->display->display_options['fields']['field_calendar_image']['field'] = 'field_calendar_image';
+  $handler->display->display_options['fields']['field_calendar_image']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['fields']['field_calendar_image']['label'] = '';
+  $handler->display->display_options['fields']['field_calendar_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_calendar_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_calendar_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_calendar_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
-  $handler->display->display_options['fields']['tid']['relationship'] = 'field_hrs_library_target_id';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
-  $handler->display->display_options['fields']['title']['label'] = 'Libraries';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Library Status */
   $handler->display->display_options['fields']['field_hours_library_status']['id'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
@@ -1429,31 +1404,69 @@ function library_hours_views_default_views() {
     'depth' => 0,
     'hidden' => 0,
   );
+  /* Field: Content: Calendar */
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['id'] = 'field_hrs_lib_calendar';
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['table'] = 'field_data_field_hrs_lib_calendar';
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['field'] = 'field_hrs_lib_calendar';
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['label'] = '';
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['alter']['text'] = '<div class="media--figure">[field_library_image]</div><div class="media--body"><h4>[field_hrs_lib_calendar]</h4>
+<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
+</div>';
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hrs_lib_calendar']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
   /* Field: Content: Hours */
   $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['label'] = 'Hours Open';
-  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
+  $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<div class="media--figure">[field_library_image]</div><div class="media--body"><h4>[field_hrs_lib_calendar]</h4>
+<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
+</div>';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
     'format_type' => 'time_only',
+    'custom_date_format' => '',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['delta_offset'] = '0';
+  /* Field: Taxonomy term: Calendar display name */
+  $handler->display->display_options['fields']['field_calendar_display_name']['id'] = 'field_calendar_display_name';
+  $handler->display->display_options['fields']['field_calendar_display_name']['table'] = 'field_data_field_calendar_display_name';
+  $handler->display->display_options['fields']['field_calendar_display_name']['field'] = 'field_calendar_display_name';
+  $handler->display->display_options['fields']['field_calendar_display_name']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['fields']['field_calendar_display_name']['label'] = '';
+  $handler->display->display_options['fields']['field_calendar_display_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_calendar_display_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure">[field_calendar_image]</div><div class="media--body"><h4>[field_calendar_display_name]</h4>
+<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
+</div>';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['relationship'] = 'field_library_hrs_target_id';
+  /* Sort criterion: Taxonomy term: Calendar display name (field_calendar_display_name) */
+  $handler->display->display_options['sorts']['field_calendar_display_name_value']['id'] = 'field_calendar_display_name_value';
+  $handler->display->display_options['sorts']['field_calendar_display_name_value']['table'] = 'field_data_field_calendar_display_name';
+  $handler->display->display_options['sorts']['field_calendar_display_name_value']['field'] = 'field_calendar_display_name_value';
+  $handler->display->display_options['sorts']['field_calendar_display_name_value']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';

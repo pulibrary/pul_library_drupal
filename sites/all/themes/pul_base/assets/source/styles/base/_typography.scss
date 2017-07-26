@@ -6,7 +6,7 @@ body {
   color: $black;
   font-family: $font-primary;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.45em;
 }
 
@@ -18,21 +18,16 @@ button {
 }
 
 p {
-  margin-bottom: 1.3em;
-
-  &:first-child {
-    margin-top: 0;
-  }
+  margin: 0 0 1.3em;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: $font-secondary;
-  font-weight: inherit;
+  font-weight: 600;
   line-height: 1.2em;
-  margin: 1.414em 0 0.5em;
+  margin: 0 0 0.5em;
 }
 
 h1 {
@@ -62,6 +57,10 @@ small,
   font-size: 0.833em;
 }
 
-.font-secondary {
-  font-family: $font-secondary;
+.font-primary {
+  font-family: $font-primary;
+}
+
+strong {
+  font-weight: bold;
 }

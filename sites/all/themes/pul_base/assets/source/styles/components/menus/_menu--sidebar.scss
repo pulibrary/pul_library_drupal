@@ -3,31 +3,30 @@
 .three_nine-region--first,
 .three_nine_stacked-region--first,
 .three_three_three_three_stacked-region--first {
-  .panel-pane > ul.menu {
-    margin-top: 1.75em;
-  }
-
   ul.menu li {
     a {
+      background: $gray-lightest;
+      color: $black;
       display: block;
       font-size: 1.4em;
+      font-weight: 600;
       margin: 0;
       padding: 0.5em;
     }
 
     a.active,
     &.expanded a.active {
-      background: $blue-dark;
+      background: $black;
       color: $white;
     }
 
     &.expanded {
       background: $gray-lightest;
-      border-radius: 4px;
+      border-radius: $base-border-radius;
 
-      a {
-        color: $blue-dark;
-      }
+      // a {
+      //   color: $black;
+      // }
     }
   }
 
@@ -37,7 +36,7 @@
 
   ul.menu > li > ul > li > a {
     font-size: $font-size-base;
-    padding-left: 1em;
+    padding-left: 2em;
   }
 
   ul.menu > li > ul > li > ul > li > a {

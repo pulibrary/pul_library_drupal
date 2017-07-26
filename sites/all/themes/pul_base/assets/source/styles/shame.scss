@@ -1,22 +1,21 @@
+@import "breakpoint";
 @import "utils/mixins";
+@import "utils/variables";
 
 // Hide the toolbar or admin menu on small screens.
-@media all and (max-width: 800px) {
+@include breakpoint($tab) {
   .hide-sm {
     @include visually-hidden;
-  }
-
-  .logged-in .toolbar {
-    display: none;
-  }
-
-  html {
-    body.toolbar,
-    body.admin-menu {
-      margin-top: 0;
-      padding-top: 0;
-    }
-  }
+  } // .logged-in .toolbar {
+  //   display: none;
+  // }
+  // html {
+  //   body.toolbar,
+  //   body.admin-menu {
+  //     margin-top: 0;
+  //     padding-top: 0;
+  //   }
+  // }
 }
 
 // hide summary count for database nav
@@ -39,4 +38,29 @@ span.icon-article-express--small-after::before {
 
 h1.icon-article-express--small-after::after {
   font-size: 0.75em;
+}
+
+.panel-pane {
+  margin-bottom: 1em;
+}
+
+.views-row {
+  margin-bottom: 1em;
+}
+
+// .news--item a:hover h3 {
+//   @include smart-underline(white, $black, #ffc, 91%, 2px);
+//   color: $black;
+//   // @include smart-underline;
+// }
+.alternative-database-landing-page,
+.database-resource-page {
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.sticky-header {
+  background: $black;
+  color: $white;
 }

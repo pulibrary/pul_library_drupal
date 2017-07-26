@@ -78,7 +78,7 @@ h2 {
   // font-size:4em;
 }
 
-.libraries-page .views-row .library-info {
+.libraries-page .library-info {
   display: block;
   padding: 0.5em 0;
 
@@ -118,17 +118,17 @@ h2 {
   }
 }
 
-.libraries-page .views-row .library-info:nth-of-type(1),
-.libraries-page .views-row .library-info:nth-of-type(3),
-.libraries-page .views-row .library-info:nth-of-type(4) {
+.libraries-page .library-info:nth-of-type(1),
+.libraries-page .library-info:nth-of-type(3),
+.libraries-page .library-info:nth-of-type(4) {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-right: 0.5em;
   }
 }
 
-.libraries-page .views-row .library-info:nth-of-type(2),
-.libraries-page .views-row .library-info:nth-of-type(5) {
+.libraries-page .library-info:nth-of-type(2),
+.libraries-page .library-info:nth-of-type(5) {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-right: 0.25em;

@@ -2,8 +2,12 @@
   clear: both;
 
   a {
-    @include button(simple, lighten($orange, 5));
+    @include button(flat, $black);
 
     color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: $orange;
+    }
   }
 }

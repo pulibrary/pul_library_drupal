@@ -1,10 +1,11 @@
 .menu--secondary {
-  margin-top: 1em;
+  // margin-top: 1em;
+  margin-bottom: 1em;
   position: relative;
 
-  @include breakpoint($tab-desk) {
-    margin-top: 2.5em;
-  }
+  // @include breakpoint($tab-desk) {
+  //   margin-top: 2.5em;
+  // }
 
 
   br {
@@ -13,7 +14,7 @@
 
   .jump-link {
     background: $gray-lightest;
-    color: $gray-darkest;
+    color: $black;
     display: block;
     left: 0;
     margin-bottom: 2px;
@@ -41,7 +42,7 @@
   }
 
   .show-section-menu {
-    background: $gray-dark;
+    background: $black;
     color: $white;
     display: block;
     padding: 10px;

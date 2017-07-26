@@ -105,7 +105,8 @@ gulp.task('scripts', function(){
   gulp.src(config.scripts.files)
     .pipe(p.sourcemaps.init())
     .pipe(p.concat('pul-base.scripts.js'))
-    .pipe(p.uglify({preserveComments: 'some'}))
+    .pipe(p.uglify())
+    .on('error', function (err) { p.util.log(p.util.colors.red('[Error]'), err.toString()); })
     .pipe(p.rename('pul-base.scripts.min.js'))
     .pipe(p.sourcemaps.write('.'))
     .pipe(chmod(644))
@@ -145,7 +146,7 @@ gulp.task('scripts', function(){
   */
 gulp.task('fonts', function(){
   gulp.src(config.fonts.files)
-    .pipe(chmod(644))
+    .pipe(chmod(640))
     .pipe(gulp.dest(config.fonts.dest))
     .pipe(reload({stream:true}));
 });
@@ -161,20 +162,8 @@ gulp.task('images', function(){
       optimizationLevel: 5,
       interlaced: true
     }))
-    .pipe(chmod(644))
+    .pipe(chmod(640))
     .pipe(gulp.dest(config.images.dest))
-    .pipe(reload({stream:true}));
-});
-
- /**
-  * Gulp task: patternlab
-  * Runs the Pattern Lab builder via PHP script
-  */
-gulp.task('patternlab', function(){
-  gulp.src('',{read:false})
-    .pipe(p.shell([
-      'php core/builder.php -gpn'
-      ]))
     .pipe(reload({stream:true}));
 });
 
@@ -214,34 +203,6 @@ gulp.task('styleguide', function(){
 });
 
 /**
- * Gulp task: clearcache
- * Clear all caches for drupal 7 sites
- */
-gulp.task('clearcache', function() {
-  return p.shell.task([
-   'drush cc all'
-  ]);
-});
-
-/**
- * Gulp task: permissions
- * Set drupal permissions if shell script exists
- */
-gulp.task('permissions', function() {
-  var fs = require('fs'),
-      perm_script = '/usr/local/bin/drupal_set_permissions.sh';
-
-  if (fs.existsSync(perm_script)) {
-    return p.shell.task([
-      'sudo /usr/local/bin/drupal_set_permissions.sh ../../../.. drupal'
-    ]);
-  } else {
-    console.log('FILE DOES NOT EXIST');
-  }
-
-});
-
-/**
  * Gulp task: reload
  * Refresh the page after clearing cache for drupal 7 sites
  */
@@ -271,7 +232,7 @@ gulp.task('watch4drupal', function () {
        domain: 'localhost:3000'
        // For external development (e.g on a mobile or tablet) use an external URL.
        // You will need to update this to whatever BS tells you is the external URL when you run Gulp.
-       //domain: '192.168.0.13:3000'
+       // domain: 'http://172.16.44.152:3000'
    }
  });
 });
@@ -296,7 +257,7 @@ gulp.task('deploy', function(callback){
 gulp.task('default', function(callback){
   runSequence(
     'clean',
-    ['lint:scss'],
+    'lint:scss',
     ['styles', 'scripts'],
     ['fonts', 'images'],
     ['browser-sync4drupal', 'watch4drupal'],

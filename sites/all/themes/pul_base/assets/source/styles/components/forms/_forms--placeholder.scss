@@ -7,13 +7,13 @@
 // }
 
 // Slide out on focus
-input:focus::-webkit-input-placeholder {
-  opacity: 1;
-  text-indent: -100%;
-  transition: text-indent 0.5s 1s ease;
-}
+// input:focus::-webkit-input-placeholder {
+//   opacity: 1;
+//   text-indent: -100%;
+//   transition: text-indent 0.5s 1s ease;
+// }
 
 // Fix firefox placeholder positioning
-input::-moz-placeholder {
-  line-height: 2.4em;
-}
+// input::-moz-placeholder {
+//   line-height: 2.4em;
+// }

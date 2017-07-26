@@ -1,6 +1,7 @@
 //alumni news
 
-.alumni-landing-page .view-id-library_news {
+.alumni-landing-page .view-id-library_news,
+.visitors-page .view-id-library_news {
   .views-row-1 {
     @include full;
     @include breakpoint($tab) {

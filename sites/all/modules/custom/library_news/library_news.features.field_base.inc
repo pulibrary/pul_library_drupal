@@ -221,6 +221,34 @@ function library_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_homepage_spotlight'.
+  $field_bases['field_homepage_spotlight'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_homepage_spotlight',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => 'Select as homepage spotlight item',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_material_access'.
   $field_bases['field_material_access'] = array(
     'active' => 1,

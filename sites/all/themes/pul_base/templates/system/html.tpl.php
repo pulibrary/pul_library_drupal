@@ -55,6 +55,7 @@
 <?php endif; ?>
 <head>
   <meta http-equiv="x-ua-compatible" content="IE=Edge">
+  <meta charset="UTF-8">
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
   <?php print $styles; ?>

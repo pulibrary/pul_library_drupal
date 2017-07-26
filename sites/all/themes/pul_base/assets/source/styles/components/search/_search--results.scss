@@ -3,6 +3,7 @@
 .view-databases-keyword-search ul,
 .view-general-site-keyword-search ul,
 .view-general-site-user-search ul {
+  font-family: $font-dejavu;
   margin-bottom: 1em;
 
   li.even,
@@ -26,13 +27,14 @@
   }
 
   h3 {
-    font-family: $font-sans;
+    font-family: $font-dejavu;
+    font-weight: normal;
     margin-top: 0;
   }
 }
 
 .view-all-search-best-bet h3 {
-  font-family: $font-sans;
+  font-family: $font-primary;
   margin-top: 0;
 }
 
@@ -109,7 +111,7 @@
 
     a {
       background: $gray-lightest;
-      color: $gray-darkest;
+      color: $black;
       display: block;
       padding: 7px 16px;
       text-decoration: none;

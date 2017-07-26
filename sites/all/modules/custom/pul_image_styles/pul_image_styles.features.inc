@@ -14,11 +14,11 @@ function pul_image_styles_image_default_styles() {
   $styles['branch_image_branding'] = array(
     'label' => 'Branch Image Branding',
     'effects' => array(
-      7 => array(
+      5 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1200,
-          'height' => 140,
+          'height' => 265,
         ),
         'weight' => 1,
       ),

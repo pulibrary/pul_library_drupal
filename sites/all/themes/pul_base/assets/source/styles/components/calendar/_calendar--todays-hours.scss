@@ -1,10 +1,35 @@
-.front .view-library-hours thead {
-  height: 1px;
-  left: -10000px;
-  overflow: hidden;
-  position: absolute;
-  top: auto;
-  width: 1px;
+.hours--today {
+  .media {
+    border: $border-thin $border-solid $border-light;
+    border-radius: $base-border-radius;
+    margin-bottom: 1em;
+    text-decoration: none;
+  }
+
+  .media--figure {
+    float: left;
+    height: 55px;
+  }
+
+  .media--figure img {
+    // border-bottom-left-radius: $base-border-radius;
+    // border-top-left-radius: $base-border-radius;
+    border-radius: $base-border-radius;
+    display: inline-block;
+    height: 55px;
+    width: 95px;
+  }
+
+  .media--body {
+    color: $black;
+    font-size: 1em;
+    padding: 0.5em;
+
+    h4 {
+      font-weight: 600;
+      margin: 0;
+    }
+  }
 }
 
 .is-Open {

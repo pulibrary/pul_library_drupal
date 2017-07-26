@@ -13,7 +13,7 @@
 }
 
 .user--name {
-  font-family: $font-sans;
+  font-family: $font-primary;
   margin-bottom: 0.5em;
 }
 
@@ -30,14 +30,13 @@
 }
 
 .user--email a {
-  color: $gray-darkest;
+  color: $black;
 
   .icon-email {
     vertical-align: middle;
   }
 
   &:hover {
-    color: $blue-dark;
     text-decoration: none;
 
     .icon-email {

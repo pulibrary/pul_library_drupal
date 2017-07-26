@@ -32,7 +32,7 @@ ul.pager {
     background: $gray-lightest;
     border: 1px solid $gray-light;
     border-radius: $base-border-radius;
-    color: $gray-darkest;
+    color: $black;
     outline: none;
     padding: 0.375em 0.75em;
     text-decoration: none;
@@ -41,12 +41,12 @@ ul.pager {
     &:hover,
     &:focus {
       background: $white;
-      color: $blue;
+      color: $black;
     }
 
     &:active {
       background: $white;
-      color: $blue;
+      color: $black;
     }
   }
 

@@ -1,6 +1,5 @@
 // Vertical centering
 // Usage: @include vertical-align();
-
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 50%;
@@ -9,7 +8,6 @@
 
 // Clearfix
 // Usage: @include clearfix;
-
 @mixin clearfix {
   &::after {
     clear: both;
@@ -20,7 +18,6 @@
 
 // Hide content visually. still visible to screen readers
 // @include visually-hidden;
-
 @mixin visually-hidden {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -33,7 +30,6 @@
 
 // Hide visually and hide from screen reader
 // @include hidden;
-
 @mixin hidden {
   display: none;
   visibility: hidden;
@@ -65,73 +61,65 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
 
 // @mixin placeholder-theme($styles) {
 //   @each $pseudo in $pseudo-phprefix {
-
 //     @at-root #{&}#{$pseudo} {
-
 //       @each $key, $value in $styles {
 //         #{$key}: #{$value};
 //       }
 //     }
-
 //   }
 // }
-
 // @mixin placeholder {
 //   @each $pseudo in $pseudo-phprefix {
-
 //     @at-root #{&}#{$pseudo} {
 //       @content
 //     }
-
 //   }
 // }
-
 // bourbon buttons
-
 @mixin button($style: simple, $base-color: #4294f0, $text-size: inherit, $padding: 7px 18px) {
-  @if type-of($style) == string and type-of($base-color) == color {
+  @if type-of($style)==string and type-of($base-color)==color {
     @include buttonstyle($style, $base-color, $text-size, $padding);
   }
 
-  @if type-of($style) == string and type-of($base-color) == number {
+  @if type-of($style)==string and type-of($base-color)==number {
     $padding: $text-size;
     $text-size: $base-color;
     $base-color: #4294f0;
 
-    @if $padding == inherit {
+    @if $padding==inherit {
       $padding: 7px 18px;
     }
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
   }
 
-  @if type-of($style) == color and type-of($base-color) == color {
+  @if type-of($style)==color and type-of($base-color)==color {
     $base-color: $style;
     $style: simple;
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
   }
 
-  @if type-of($style) == color and type-of($base-color) == number {
+  @if type-of($style)==color and type-of($base-color)==number {
     $padding: $text-size;
     $text-size: $base-color;
     $base-color: $style;
     $style: simple;
 
-    @if $padding == inherit {
+    @if $padding==inherit {
       $padding: 7px 18px;
     }
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
   }
 
-  @if type-of($style) == number {
+  @if type-of($style)==number {
     $padding: $base-color;
     $text-size: $style;
     $base-color: #4294f0;
     $style: simple;
 
-    @if $padding == #4294f0 {
+    @if $padding==#4294f0 {
       $padding: 7px 18px;
     }
 
@@ -147,36 +135,34 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
 // Selector Style Button
 @mixin buttonstyle($type, $b-color, $t-size, $pad) {
   // Grayscale button
-  @if $type == simple and $b-color == grayscale($b-color) {
+  @if $type==simple and $b-color==grayscale($b-color) {
     @include simple($b-color, true, $t-size, $pad);
   }
 
-  @if $type == shiny and $b-color == grayscale($b-color) {
+  @if $type==shiny and $b-color==grayscale($b-color) {
     @include shiny($b-color, true, $t-size, $pad);
   }
 
-  @if $type == pill and $b-color == grayscale($b-color) {
+  @if $type==pill and $b-color==grayscale($b-color) {
     @include pill($b-color, true, $t-size, $pad);
   }
 
-  @if $type == flat and $b-color == grayscale($b-color) {
+  @if $type==flat and $b-color==grayscale($b-color) {
     @include flat($b-color, true, $t-size, $pad);
-  }
-
-  // Colored button
-  @if $type == simple {
+  } // Colored button
+  @if $type==simple {
     @include simple($b-color, false, $t-size, $pad);
   }
 
-  @else if $type == shiny {
+  @else if $type==shiny {
     @include shiny($b-color, false, $t-size, $pad);
   }
 
-  @else if $type == pill {
+  @else if $type==pill {
     @include pill($b-color, false, $t-size, $pad);
   }
 
-  @else if $type == flat {
+  @else if $type==flat {
     @include flat($b-color, false, $t-size, $pad);
   }
 }
@@ -192,7 +178,7 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
   background: linear-gradient($base-color, $stop-gradient);
   background-clip: padding-box;
   border: 1px solid $border;
-  border-radius: 3px;
+  border-radius: $base-border-radius;
   box-shadow: inset 0 1px 0 0 $inset-shadow;
   color: $color;
   display: inline-block;
@@ -207,7 +193,7 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
     $inset-shadow-hover: adjust-color($base-color, $saturation: -7%, $lightness: 5%);
     $stop-gradient-hover: adjust-color($base-color, $saturation: 8%, $lightness: -14%);
 
-    @if $grayscale == true {
+    @if $grayscale==true {
       $base-color-hover: grayscale($base-color-hover);
       $inset-shadow-hover: grayscale($inset-shadow-hover);
       $stop-gradient-hover: grayscale($stop-gradient-hover);
@@ -223,12 +209,47 @@ $ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, li
     $border-active: adjust-color($base-color, $saturation: 9%, $lightness: -14%);
     $inset-shadow-active: adjust-color($base-color, $saturation: 7%, $lightness: -17%);
 
-    @if $grayscale == true {
+    @if $grayscale==true {
       $border-active: grayscale($border-active);
       $inset-shadow-active: grayscale($inset-shadow-active);
     }
 
     border: 1px solid $border-active;
-    box-shadow: inset 0 0 8px 4px $inset-shadow-active, inset 0 0 8px 4px $inset-shadow-active;
+    box-shadow: inset 0 0 8px 4px $inset-shadow-active,
+    inset 0 0 8px 4px $inset-shadow-active;
+  }
+}
+
+@mixin smart-underline {
+  background-color: transparent;
+  border-bottom: $border-thin $border-solid $smart-underline-color;
+  box-shadow: inset 0 -2px 0 $smart-underline-color;
+  color: $black;
+  overflow-wrap: break-word;
+  text-decoration: none;
+  transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+@mixin smart-underline-link {
+  color: $black;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    border-bottom: $border-med $border-solid $smart-underline-color;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    transition: 0.4s;
+    width: 0%;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    width: 100%;
   }
 }

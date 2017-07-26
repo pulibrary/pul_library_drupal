@@ -196,7 +196,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Library Image */
+  /* Field: Content: Library Banner Image */
   $handler->display->display_options['fields']['field_library_image']['id'] = 'field_library_image';
   $handler->display->display_options['fields']['field_library_image']['table'] = 'field_data_field_library_image';
   $handler->display->display_options['fields']['field_library_image']['field'] = 'field_library_image';
@@ -560,7 +560,10 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_long_description']['table'] = 'field_data_field_long_description';
   $handler->display->display_options['fields']['field_long_description']['field'] = 'field_long_description';
   $handler->display->display_options['fields']['field_long_description']['label'] = '';
+  $handler->display->display_options['fields']['field_long_description']['element_type'] = 'p';
   $handler->display->display_options['fields']['field_long_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_long_description']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_long_description']['type'] = 'text_plain';
   /* Field: Content: Library Homepage */
   $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';
@@ -622,7 +625,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['label'] = '';
   $handler->display->display_options['fields']['field_phone']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<span class="icon-large icon-phone"></span>[field_phone]';
+  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<span class="icon-large icon-phone"></span><a href="tel:[field_phone]">[field_phone]</a>';
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';
@@ -898,7 +901,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['field'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class=\'icon-mail icon-large\' > </i> [field_e_mail_address]';
+  $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<i class=\'icon-email\' > </i> [field_e_mail_address]';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';
@@ -910,7 +913,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['label'] = '';
   $handler->display->display_options['fields']['field_phone']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_phone']['alter']['text'] = 'Phone: [field_phone]';
+  $handler->display->display_options['fields']['field_phone']['alter']['text'] = '<i class="icon-phone"></i> Phone: [field_phone]';
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';

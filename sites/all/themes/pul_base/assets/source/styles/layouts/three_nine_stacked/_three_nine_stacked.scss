@@ -5,17 +5,21 @@
 @include breakpoint($tab) {
   .three_nine_stacked-region--top {
     @include full;
+    margin: 0;
   }
 
   .three_nine_stacked-region--first {
     @include span(first 3);
+    margin-left: 0;
   }
 
   .three_nine_stacked-region--second {
     @include span(last 9);
+    margin-right: 0;
   }
 
   .three_nine_stacked-region--bottom {
     @include full;
+    margin: 0;
   }
 }

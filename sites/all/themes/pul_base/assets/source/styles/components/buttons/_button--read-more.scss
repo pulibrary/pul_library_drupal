@@ -4,38 +4,42 @@
 }
 
 .more-link {
-  display: inline-block;
-  margin-top: 0.5em;
-  width: 100%;
+  color: $black;
+  font-size: 0.875em;
+
+  &::after {
+    content: ">";
+    padding-left: 0.45em;
+  }
 }
 
-.views-more-link,
-.node-readmore a,
-.more-link a {
-  background-color: $gray-lightest;
+.front .views-more-link {
+  background-color: $black;
   border: 0;
-  border-radius: 3px;
-  color: $orange-dark;
-  display: block;
+  border-radius: $base-border-radius;
+  color: $white;
+  display: inline-block;
   float: none;
-  font-family: $font-serif;
-  font-size: 0.875rem;
+  font-family: $font-primary;
+  font-size: 1em;
   font-style: italic;
-  font-weight: bold;
-  padding: 1em;
+  font-weight: 600;
+  margin-top: 0.5em;
+  padding: 7px 15px;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
 
   @include breakpoint($tab) {
-    display: inline;
-    float: right;
-    padding: 3px 7px;
+    // display: inline;
+    // float: right;
+    padding: 7px 15px;
+    width: auto;
   }
 
   &:visited {
-    background-color: $gray-lightest;
-    color: $orange-dark;
+    background-color: $black;
+    color: $white;
   }
 
   &:hover,

@@ -35,6 +35,21 @@ function library_news_views_api($module = NULL, $api = NULL) {
 function library_news_image_default_styles() {
   $styles = array();
 
+  // Exported image style: library-news.
+  $styles['library-news'] = array(
+    'label' => 'library-news',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 380,
+          'height' => 275,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: story.
   $styles['story'] = array(
     'label' => 'Story',

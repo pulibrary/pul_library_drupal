@@ -16,7 +16,7 @@
   th.days {
     background: $gray-lightest;
     border: 1px solid $gray-light;
-    color: $gray-darkest;
+    color: $black;
     padding: 10px 20px;
     text-align: center;
     width: 14%;
@@ -58,7 +58,7 @@
     .date-prev,
     .date-next {
       background: none;
-      border-radius: 4px;
+      border-radius: $base-border-radius;
       color: $white;
       height: 25px;
       margin-top: 18px;
@@ -131,7 +131,7 @@
 
 .library-hours .date-nav-wrapper .date-next,
 .library-hours .date-nav-wrapper .date-prev {
-  border-radius: 4px;
+  border-radius: $base-border-radius;
   color: $white;
   margin-top: 3px;
   padding: 0 4px;
@@ -186,5 +186,5 @@ div.view-content > table.views-table > tbody > tr > td {
 }
 
 .view-library-hours.mini-vertical .view-header {
-  background-color: $gray-darkest;
+  background-color: $black;
 }

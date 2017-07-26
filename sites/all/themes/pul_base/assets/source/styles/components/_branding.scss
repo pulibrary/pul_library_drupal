@@ -1,7 +1,6 @@
 // branding
 .wrapper--branding {
-  background-color: $gray-darkest;
-  border-top: 5px solid $orange;
+  background-color: $black;
   min-height: 50px;
 
   .site-name {
@@ -12,13 +11,10 @@
 .l-region--branding {
   padding: 0 1em;
 
-  @include breakpoint($desk) {
-    padding: 0;
-  }
-
 
   h2 {
     margin: 0;
+    padding: 25px 0 10px;
   }
 
   .homepage-tab-form-message {
@@ -65,11 +61,12 @@
   }
 
   .site-logo {
-    background: url("#{$base-path}/images/logo.svg") center center no-repeat;
+    background: url("#{$base-path}/images/pul-logo-new.svg") center center no-repeat;
     background-size: contain;
     display: block;
 
     @include breakpoint($tab) {
+      background-position: center left;
       margin-left: 0;
     }
   }

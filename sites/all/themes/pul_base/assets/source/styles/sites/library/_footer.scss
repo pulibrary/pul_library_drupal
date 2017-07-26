@@ -28,7 +28,7 @@
   address,
   .footer--copyright,
   a {
-    color: $gray-darkest;
+    color: $white;
     font-style: normal;
   }
 
@@ -38,7 +38,7 @@
 
   h2,
   h2 a {
-    color: $orange-dark;
+    color: $white;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0.75em;
@@ -92,13 +92,13 @@
   }
 
   .facebook-logo {
-    background-image: url("#{$base-path}/images/facebook.svg");
+    background-image: url("#{$base-path}/images/logo-facebook-white.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
 
   .twitter-logo {
-    background-image: url("#{$base-path}/images/twitter.svg");
+    background-image: url("#{$base-path}/images/logo-twitter-bird-white.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
@@ -116,9 +116,9 @@
   }
 
   .pu-logo {
-    background-image: url("#{$base-path}/images/pu.svg");
+    background-image: url("#{$base-path}/images/logo-white.svg");
     height: 40px;
     margin: 0.5em 0 0;
-    width: 142px;
+    width: 141px;
   }
 }
