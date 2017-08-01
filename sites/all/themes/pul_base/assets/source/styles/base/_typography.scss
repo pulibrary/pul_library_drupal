@@ -38,6 +38,11 @@ h4 {
 h1 {
   font-size: 2.074em;
   margin-top: 0.5em;
+  text-align: center;
+
+  @include breakpoint($tab) {
+    text-align: left;
+  }
 }
 
 h2 {

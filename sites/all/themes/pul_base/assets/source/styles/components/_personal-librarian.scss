@@ -1,0 +1,92 @@
+.personal-librarian {
+  clear: both;
+  overflow: hidden;
+
+  &--contact {
+    @include span(full);
+
+    text-align: center;
+
+    @include breakpoint($tab) {
+      @include span(4 of 12);
+
+      margin-right: 0;
+      padding-right: 1em;
+      text-align: left;
+    }
+  }
+
+  &--about {
+    @include span(full);
+
+    @include breakpoint($tab) {
+      @include span(8 of 12);
+    }
+  }
+
+  .user--picture img {
+    float: none;
+  }
+
+  .user--name {
+    font-size: 1.2em;
+  }
+
+  .user--title {
+    font-size: 1.1em;
+    margin-bottom: 0;
+  }
+
+  .user--department {
+    margin-bottom: 0.5em;
+  }
+
+  .user--building {
+    margin-bottom: 1em;
+
+    &::after {
+      clear: none;
+    }
+  }
+
+  .user--appointment a {
+    @include button(flat, $blue-dark);
+  }
+
+  @include breakpoint($tab) {
+    &--about .statement {
+      margin-top: 0;
+    }
+  }
+}
+
+
+// gallery
+.personal-librarians {
+  clear: both;
+
+  .librarian {
+    @include gallery(4);
+
+    margin-bottom: 1em;
+    padding: 0.5em;
+    text-align: center;
+
+    @include breakpoint($tab) {
+      @include gallery(2);
+    }
+  }
+
+  .user--name {
+    margin-bottom: 0;
+  }
+
+  img {
+    background: $blue-light;
+    height: 100px;
+  }
+}
+
+.personal-librarian-coordinator {
+  clear: both;
+}

@@ -46,6 +46,23 @@
   }
 }
 
+.user--phone a {
+  color: $gray-darkest;
+
+  .icon-phone {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    color: $blue-dark;
+    text-decoration: none;
+
+    .icon-phone {
+      color: $orange;
+    }
+  }
+}
+
 .user--dept {
   margin-bottom: 0.75em;
 }
