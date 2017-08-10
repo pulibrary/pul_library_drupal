@@ -22,7 +22,7 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
   }
 
   // Merge in overridden options.
-  if ($overridden_options) {
+  if ($overridden_options && is_array($overridden_options)) {
     $page->original_options = $page->options;
     $page->options = $overridden_options + $page->options;
   }
@@ -49,11 +49,6 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
     $ret['#form'] = drupal_get_form('search_api_page_search_form', $page, $keys);
   }
 
-  $ret['#results']['#theme'] = "search_api_page_results__{$page->machine_name}";
-  $ret['#results']['#index'] = search_api_index_load($page->index_id);
-  $ret['#results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
-  $ret['#results']['#page'] = $page;
-
   // Do a search if we have keys, or our empty behavior and facets dictate.
   if ($keys || !empty($page->options['empty_behavior'])) {
     // Override per_page setting with GET parameter.
@@ -79,6 +74,11 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
     if (empty($results)) {
       return $ret;
     }
+
+    $ret['#results']['#theme'] = "search_api_page_results__{$page->machine_name}";
+    $ret['#results']['#index'] = search_api_index_load($page->index_id);
+    $ret['#results']['#view_mode'] = isset($page->options['view_mode']) ? $page->options['view_mode'] : 'search_api_page_result';
+    $ret['#results']['#page'] = $page;
 
     // If spellcheck results were returned then add them to the render array.
     if (isset($results['search_api_spellcheck'])) {
@@ -230,13 +230,13 @@ function search_api_page_query_has_facets(SearchApiQueryInterface $query) {
  *   The ISO 639 language code of the language represented by $lang.
  */
 function _search_api_page_map_languages($lang) {
-    if ($lang == 'current') {
-      return $GLOBALS['language_content']->language;
-    }
-    elseif ($lang == 'default') {
-      return language_default('language');
-    }
-    return $lang;
+  if ($lang == 'current') {
+    return $GLOBALS['language_content']->language;
+  }
+  elseif ($lang == 'default') {
+    return language_default('language');
+  }
+  return $lang;
 }
 
 /**
