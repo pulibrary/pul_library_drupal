@@ -66,7 +66,7 @@ function search_api_page_result_content_type_edit_form($form, &$form_state) {
     $pages[$info->machine_name] = $info->name;
   }
 
-  if (isset($conf['page'])) {
+  if (!empty($conf['page'])) {
     $info = search_api_page_load($conf['page']);
     $index = search_api_index_load($info->index_id);
   }
