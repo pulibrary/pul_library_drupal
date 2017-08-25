@@ -21,7 +21,7 @@ function library_hours_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '6',
+    'weight' => '2',
     'children' => array(
       0 => 'field_open_hours',
       1 => 'field_hours_library_status',
@@ -31,16 +31,15 @@ function library_hours_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Details',
-      'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => ' group-displaygroup field-group-tab',
-        'description' => '',
-      ),
       'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-displaygroup field-group-tab',
+        'required_fields' => 1,
+      ),
     ),
   );
-  $field_groups['group_displaygroup|node|library_hours|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

@@ -77,7 +77,7 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = 'group_loc_det';
   $field_group->data = array(
     'label' => 'Library Address',
-    'weight' => '28',
+    'weight' => '27',
     'children' => array(
       0 => 'field_address_1',
       1 => 'field_address_2',
@@ -90,7 +90,7 @@ function pul_libraries_ct_field_group_info() {
       'label' => 'Library Address',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => ' group-lib-address field-group-tab',
+        'classes' => 'group-lib-address field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -147,7 +147,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => ' group-lib-contact field-group-tab',
+        'classes' => 'group-lib-contact field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -175,7 +175,7 @@ function pul_libraries_ct_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => ' group-lib-hours field-group-tab',
+        'classes' => 'group-lib-hours field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -201,12 +201,13 @@ function pul_libraries_ct_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Internal Links',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-lib-internal-links field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-lib-internal-links field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups[''] = $field_group;
@@ -231,12 +232,13 @@ function pul_libraries_ct_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'URLs and Paths',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => 'group-lib-links field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups[''] = $field_group;
@@ -259,12 +261,13 @@ function pul_libraries_ct_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Location Detail',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-loc-det field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-loc-det field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups[''] = $field_group;

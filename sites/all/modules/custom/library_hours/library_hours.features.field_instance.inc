@@ -94,7 +94,7 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -141,7 +141,7 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 3,
     ),
   );
 
@@ -190,7 +190,7 @@ function library_hours_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 14,
+      'weight' => 7,
     ),
   );
 
@@ -235,7 +235,7 @@ function library_hours_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -273,7 +273,7 @@ function library_hours_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
