@@ -142,7 +142,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: $base-border-radius;
     clear: none;
-    color: $black;
+    color: $orange;
     float: left;
     font-family: $font-primary; // height: 45px;
     margin: 0;
@@ -185,7 +185,7 @@
       @include breakpoint($tab) {
         border-right: 1px solid $white;
         display: inline;
-        font-size: 1.3em;
+        font-size: 1.1em;
 
         &:last-child {
           border: 0;
