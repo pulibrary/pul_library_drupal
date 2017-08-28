@@ -218,11 +218,9 @@
     >a {
       padding-right: 1.6em;
       position: relative;
-
-      @include breakpoint($desk) {
-        // margin-right: $centered-navigation-submenu-padding;
-      }
-
+      // @include breakpoint($desk) {
+      // margin-right: $centered-navigation-submenu-padding;
+      // }
 
       &::after {
         font-size: $font-size-larger;
