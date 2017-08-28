@@ -134,15 +134,15 @@
   }
 
   .quicktabs_main button {
-    background: transparent;
-    border: 5px solid transparent;
+    background: $orange;
+    border: 5px solid $black;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: $base-border-radius;
     border-left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: $base-border-radius;
     clear: none;
-    color: $orange;
+    color: $black;
     float: left;
     font-family: $font-primary; // height: 45px;
     margin: 0;
@@ -155,7 +155,7 @@
     }
 
     .icon-search {
-      font-size: 1.8em;
+      font-size: 18px;
       line-height: 0;
       vertical-align: middle;
     }
