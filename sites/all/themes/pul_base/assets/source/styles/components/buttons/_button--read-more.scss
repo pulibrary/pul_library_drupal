@@ -1,4 +1,4 @@
-// readmore collections
+  // readmore collections
 .links--inline li {
   float: right;
 }
@@ -50,32 +50,42 @@
   }
 }
 
-.page-find-all .more-link a {
-  background-color: $gray-lightest;
-  color: $orange-dark;
-  display: inline-block;
-  float: none;
-  width: 100%;
-
-  @include breakpoint($tab) {
-    background-color: $white;
-    color: $orange-dark;
-    float: right;
-    font-size: 1em;
-    margin-bottom: 1em;
-    width: auto;
-
-    &:hover {
-      background-color: $orange;
-      color: $white;
-    }
-  }
-
+.page-find-all .more-link {
 
   &::after {
-    @include pul-icon;
+    content: initial;
+    padding-left: inherit;
+  }
 
-    content: "\e909";
-    margin-left: 0.5em;
+  a {
+    background-color: $gray-lightest;
+    color: $orange-dark;
+    display: inline-block;
+    float: none;
+    padding: 0.5em;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      background-color: $white;
+      color: $orange-dark;
+      float: right;
+      font-size: 1em;
+      margin-bottom: 1em;
+      width: auto;
+
+      &:hover {
+        background: $orange;
+        border-radius: $slight-border-radius;
+        color: $white;
+      }
+    }
+
+
+    &::after {
+      @include pul-icon;
+
+      content: "\e909";
+      margin-left: 0.5em;
+    }
   }
 }
