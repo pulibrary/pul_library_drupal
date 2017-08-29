@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
-    <title>Slice 1</title>
+<svg width="150px" height="200px" viewBox="0 0 150 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>default-user</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="profile-picture-1.2.3.1">
-            <g id="Filled_Icons_1_">
-                <g id="Filled_Icons">
-                    <g id="Group">
-                        <polygon id="Shape" fill="#BCCEE5" points="19 0 0 0 0 22 19 22"></polygon>
-                        <path d="M17,20.5 C17,20.776 16.776,21 16.5,21 L2.5,21 C2.224,21 2,20.776 2,20.5 C2,17.414 4.007,15.081 7.099,14.292 C5.842,13.493 5,12.097 5,10.5 C5,8.019 7.019,6 9.5,6 C11.981,6 14,8.019 14,10.5 C14,12.097 13.158,13.493 11.901,14.292 C14.993,15.081 17,17.414 17,20.5 L17,20.5 Z" id="Path" stroke="#BCCEE5" fill="#FFFFFF"></path>
-                    </g>
-                </g>
-            </g>
+        <g id="default-user" fill-rule="nonzero">
+            <polygon id="Shape" fill="#BCCEE5" points="150 0 0 0 0 200 150 200"></polygon>
+            <path d="M134.210526,186.363636 C134.210526,188.872727 132.442105,190.909091 130.263158,190.909091 L19.7368421,190.909091 C17.5578947,190.909091 15.7894737,188.872727 15.7894737,186.363636 C15.7894737,158.309091 31.6342105,137.1 56.0447368,129.927273 C46.1210526,122.663636 39.4736842,109.972727 39.4736842,95.4545455 C39.4736842,72.9 55.4131579,54.5454545 75,54.5454545 C94.5868421,54.5454545 110.526316,72.9 110.526316,95.4545455 C110.526316,109.972727 103.878947,122.663636 93.9552632,129.927273 C118.365789,137.1 134.210526,158.309091 134.210526,186.363636 L134.210526,186.363636 Z" id="Path" stroke="#BCCEE5" fill="#FFFFFF"></path>
         </g>
     </g>
 </svg>

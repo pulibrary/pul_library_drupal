@@ -65,6 +65,10 @@
 .personal-librarians {
   clear: both;
 
+  ul {
+    margin-left: initial;
+  }
+
   .librarian {
     @include gallery(4);
 
@@ -73,6 +77,10 @@
     text-align: center;
 
     @include breakpoint($tab) {
+      @include gallery(3);
+    }
+
+    @include breakpoint($desk) {
       @include gallery(2);
     }
   }
@@ -80,13 +88,10 @@
   .user--name {
     margin-bottom: 0;
   }
-
-  img {
-    background: $blue-light;
-    height: 100px;
-  }
 }
 
-.personal-librarian-coordinator {
+.personal-librarian-coordinator,
+.pane-user-profile-panel-pane-2,
+.pane-menu-menu-personal-librarian-menu {
   clear: both;
 }
