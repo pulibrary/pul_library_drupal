@@ -8,24 +8,16 @@
     text-align: center;
 
     @include breakpoint($tab) {
-      @include span(4 of 12);
-
-      margin-right: 0;
-      padding-right: 1em;
       text-align: left;
     }
   }
 
   &--about {
     @include span(full);
-
-    @include breakpoint($tab) {
-      @include span(8 of 12);
-    }
   }
 
-  .user--picture img {
-    float: none;
+  .user--picture {
+    float: left;
   }
 
   .user--name {
@@ -41,8 +33,12 @@
     margin-bottom: 0.5em;
   }
 
-  .user--building {
+  .user--phone {
     margin-bottom: 1em;
+  }
+
+  .user--building {
+    margin-bottom: 0;
 
     &::after {
       clear: none;
@@ -50,13 +46,25 @@
   }
 
   .user--appointment a {
-    @include button(flat, $blue-dark);
+    @include button(flat, $black);
+
+    &:hover:not(:disabled),
+    &:focus {
+      background-color: $orange;
+    }
   }
 
   @include breakpoint($tab) {
     &--about .statement {
       margin-top: 0;
     }
+  }
+
+  .views-label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
   }
 }
 
