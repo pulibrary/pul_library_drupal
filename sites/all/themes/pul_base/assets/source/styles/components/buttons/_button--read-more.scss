@@ -67,7 +67,7 @@
 
     @include breakpoint($tab) {
       background-color: $white;
-      color: $orange-dark;
+      color: $black;
       float: right;
       font-size: 1em;
       margin-bottom: 1em;
@@ -77,6 +77,7 @@
         background: $orange;
         border-radius: $slight-border-radius;
         color: $white;
+        text-decoration: none;
       }
     }
 

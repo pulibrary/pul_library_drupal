@@ -12,7 +12,7 @@ $badges: (
   .badge-#{$badge-type} {
     background-color: $color;
     border: solid darken($color, 20%) 1px;
-    border-radius: $base-border-radius;
+    border-radius: $slight-border-radius;
     color: darken($color, 80%);
     display: inline-block;
     font-size: $small-font-size;

@@ -4,6 +4,7 @@
 .view-general-site-keyword-search ul,
 .view-general-site-user-search ul {
   font-family: $font-dejavu;
+  font-size: 14px;
   margin-bottom: 1em;
 
   li.even,
@@ -34,13 +35,19 @@
 }
 
 .view-all-search-best-bet h3 {
-  font-family: $font-primary;
+  font-family: $font-dejavu;
   margin-top: 0;
 }
 
 .pul_base_four_four_four_stacked-region--first,
 .pul_base_four_four_four_stacked-region--second,
 .pul_base_four_four_four_stacked-region--third {
+  h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.7em;
+  }
+
   li {
     clear: both;
   }
