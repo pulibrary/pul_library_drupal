@@ -156,7 +156,7 @@ function library_hours_strongarm() {
           'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '30',
         ),
         'workbench_access' => array(
           'weight' => '11',

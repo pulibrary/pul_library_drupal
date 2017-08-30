@@ -432,7 +432,7 @@ function library_news_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_homepage_spotlight',
-    'label' => 'Homepage spotlight',
+    'label' => 'Homepage Spotlight',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1230,7 +1230,7 @@ function library_news_field_default_field_instances() {
   t('Flagging an item will make it appear on the collections page.');
   t('Free tags that can be associated with items. ');
   t('Full Title');
-  t('Homepage spotlight');
+  t('Homepage Spotlight');
   t('Image will be scaled and cropped to 145 x 100 in order to fit into allocated space on homepage slideshow. Crop the image to a 14.5 x 10 aspect ratio to get optimal display.');
   t('Images');
   t('Images to be inserted inline into post content. ');

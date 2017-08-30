@@ -149,6 +149,7 @@ function library_news_field_group_info() {
       4 => 'field_news_category',
       5 => 'field_display_on_news_page',
       6 => 'field_news_libraries',
+      7 => 'field_homepage_spotlight',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

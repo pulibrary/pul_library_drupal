@@ -21,7 +21,7 @@ function library_hours_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '2',
+    'weight' => '6',
     'children' => array(
       0 => 'field_open_hours',
       1 => 'field_hours_library_status',
@@ -31,12 +31,13 @@ function library_hours_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Details',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-displaygroup field-group-tab',
         'required_fields' => 1,
+        'classes' => ' group-displaygroup field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups[''] = $field_group;
