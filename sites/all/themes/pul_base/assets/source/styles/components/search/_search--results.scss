@@ -34,9 +34,17 @@
   }
 }
 
-.view-all-search-best-bet h3 {
+.view-all-search-best-bet {
   font-family: $font-dejavu;
-  margin-top: 0;
+
+  h3 {
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 0.875em;
+  }
 }
 
 .pul_base_four_four_four_stacked-region--first,
