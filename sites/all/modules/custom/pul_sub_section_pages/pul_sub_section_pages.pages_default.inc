@@ -1005,7 +1005,7 @@ staff/committees',
     ),
   );
   $display = new panels_display();
-  $display->layout = 'nine-three-stacked';
+  $display->layout = 'six-six-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -1040,7 +1040,7 @@ staff/committees',
     'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'Email a Librarian',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -1082,7 +1082,7 @@ staff/committees',
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-ask-us';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -1105,7 +1105,7 @@ staff/committees',
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'block-30';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
