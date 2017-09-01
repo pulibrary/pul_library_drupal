@@ -43,6 +43,13 @@ $golden-layout: layout((1 1.618 2.618) 0.1 fluid float split);
   }
 }
 
+.l-region--branding .block--system-user-menu + .block--allsearch-block-allsearch-search {
+  @include breakpoint($tab) {
+    float: left;
+    width: calc(49% - 100px);
+  }
+}
+
 
 body {
   background: $black;
