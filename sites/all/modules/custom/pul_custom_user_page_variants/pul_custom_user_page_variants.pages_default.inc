@@ -13,6 +13,48 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'user_view__standard_user';
+  $handler->task = 'user_view';
+  $handler->subtask = '';
+  $handler->handler = 'http_response';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Standard User',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '404',
+    'destination' => '',
+    'name' => 'standard_user',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
+              1 => 6,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
+          'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '1',
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['user_view__standard_user'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'user_view_panel_context';
   $handler->task = 'user_view';
   $handler->subtask = '';
