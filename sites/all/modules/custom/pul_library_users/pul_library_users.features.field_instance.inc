@@ -76,12 +76,7 @@ function pul_library_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_personal_lib_contacts'.
   $field_instances['user-user-field_personal_lib_contacts'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => '<ul><li>Help you find sources for your research assignments, formulate research strategies, or focus your research question</li><li>Answer your questions about Library policies and services and refer you to the appropriate specialists when needed</li><li>Help you when you don’t even know where to begin!</li></ul>',
-        'format' => 'pul_editor_html',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -145,12 +140,7 @@ function pul_library_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_personal_lib_duties'.
   $field_instances['user-user-field_personal_lib_duties'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => '<p>Send you several timely emails with information about new library resources/workshops, extended library hours during exams, etc.</p>',
-        'format' => 'pul_editor_html',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -342,12 +332,7 @@ function pul_library_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_personal_lib_statement'.
   $field_instances['user-user-field_personal_lib_statement'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => '<p>I\'m so happy to be your Personal Librarian-- schedule an in-person or Skype meeting with me</p>',
-        'format' => 'pul_editor_html',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
