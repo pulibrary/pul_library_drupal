@@ -1,0 +1,9 @@
+name = PUL Undergraduate Student Import
+core = 7.x
+package = PUL Custom Features
+version = 7.x-1.0-alpha1
+dependencies[] = ctools
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = pul_undergraduate_student

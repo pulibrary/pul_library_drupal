@@ -3,9 +3,10 @@
 .media-story_image_center {
   margin-bottom: 1em;
   margin-top: 1em;
-  width: 410px;
+  // width: 410px;
 
-  .field--name-field-caption {
+  .field--name-field-caption,
+  .field-name-field-caption {
     font-size: 0.875em;
     font-style: italic;
   }
@@ -14,11 +15,21 @@
 .media-story_image_left {
   float: left;
   margin-right: 1em;
+
+  .field--name-field-caption,
+  .field-name-field-caption {
+    padding-right: 1em;
+  }
 }
 
 .media-story_image_right {
   float: right;
   margin-left: 1em;
+
+  .field--name-field-caption,
+  .field-name-field-caption {
+    padding-left: 1em;
+  }
 }
 
 .media-story_image_center {
@@ -26,21 +37,20 @@
   margin: 0 auto;
   padding: 1em;
 
-  .field--name-field-caption {
+  .field--name-field-caption,
+  .field-name-field-caption {
     text-align: center;
   }
 }
 
 .file-story-image-left {
   float: left;
-  margin-right: 10px;
-  margin-top: 5px;
+  margin: 5px 10px 10px 0;
 }
 
 .file-story-image-right {
   float: right;
-  margin-left: 10px;
-  margin-top: 5px;
+  margin: 5px 0 10px 10px;
 }
 
 .file-story-image-center {

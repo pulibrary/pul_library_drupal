@@ -15,7 +15,11 @@ function allsearch_block_form($form, &$form_state) {
   } else {
     $default_value = variable_get('all_search_hint');
   }
-  $form = array();
+  $form = array(
+    '#attributes' => array(
+      'role' => 'search',
+    )
+  );
 
   //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
   $form['query'] = array (
@@ -23,9 +27,10 @@ function allsearch_block_form($form, &$form_state) {
     '#title' =>  t('All Search Box'),
     '#size'  => 80,
     '#required' => TRUE,
-    '#default_value' => $default_value,
+    '#default_value' => '',
     '#attributes' => array(
         'placeholder' => $default_value,
+        'autocomplete' => 'off',
     )
   );
   $form['submit'] = array(
@@ -49,7 +54,12 @@ function allsearch_block_form($form, &$form_state) {
     *
     */
    if(drupal_is_front_page()) {
-    $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a></div>';
+    $form['#suffix'] = '<ul class="homepage-tab-form-message">
+      <li><a href="https://pulsearch.princeton.edu/">New Catalog</a></li>
+      <li><a href="https://catalog.princeton.edu/">Main Catalog</a></li>
+      <li><a href="https://princeton.summon.serialssolutions.com/">Articles+</a></li>
+      <li><a href="/research/databases">Databases</a></li>
+    </ul>';
    }
    else {
     $form_suffix = "";

@@ -5,26 +5,25 @@
 .wrapper--navigation {
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
-  $centered-navigation-background: $gray-lightest;
-  $centered-navigation-color: transparentize($base-font-color, 0.3);
+  $centered-navigation-background: $black;
+  $centered-navigation-color: $white;
   $centered-navigation-color-hover: $orange;
   $centered-navigation-height: 50px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
   $centered-navigation-submenu-width: 15em;
   $centered-navigation-item-nudge: 2.2em;
-  $horizontal-bar-mode: 820px;
+  $horizontal-bar-mode: $desk;
 
   background-color: $centered-navigation-background;
-  border-bottom: 1px solid darken($centered-navigation-background, 6);
-  font-family: $font-serif;
+  border-bottom: 5px solid $orange;
+  font-family: $font-primary;
+  font-size: 1.1rem;
   height: $centered-navigation-height;
   overflow: visible;
   position: relative;
   width: 100%;
-  z-index: 101; //4
-
-  // Mobile view
+  z-index: 101;
 
   .mobile-logo {
     display: inline;
@@ -48,7 +47,7 @@
     color: $centered-navigation-color;
     display: block;
     float: left;
-    font-weight: 700;
+    font-weight: bold;
     line-height: $centered-navigation-height;
     margin: 0;
     padding-left: $centered-navigation-submenu-padding;
@@ -64,8 +63,6 @@
     }
   }
 
-  // Nav menu
-
   .l-region--navigation {
     overflow: visible;
   }
@@ -78,7 +75,6 @@
     padding-left: 0;
     width: 100%;
     z-index: 999; //5
-
     @include breakpoint($horizontal-bar-mode) {
       display: block;
       text-align: left;
@@ -88,11 +84,13 @@
     @include breakpoint($desk) {
       padding-left: 0;
     }
+
+    >.menu {
+      text-align: center;
+    }
   }
 
-  // The nav items
-
-  .centered-navigation-menu > ul > li {
+  .centered-navigation-menu>ul>li {
     background: $centered-navigation-background;
     display: block;
     line-height: $centered-navigation-height;
@@ -101,34 +99,71 @@
     text-align: left;
     width: 100%;
     z-index: 99; //4
-
     @include breakpoint($horizontal-bar-mode) {
       background: transparent;
       display: inline;
       line-height: $centered-navigation-height;
       padding-left: 0;
 
+      &:nth-child(-n+4) {
+        border-right: 1px solid $white;
+      }
+
       a {
         padding-left: $centered-navigation-item-padding;
       }
     }
 
-
     a {
       color: $centered-navigation-color;
       display: inline-block;
 
+      @include breakpoint($max-tab) {
+        width: 100%;
+      }
+
       &:hover {
         color: $centered-navigation-color-hover;
+        text-decoration: underline;
+      }
+    }
+
+    &.last.expanded>a {
+      color: $orange;
+      font-family: $font-primary;
+      line-height: 50px;
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23e87411%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M23.5%2C0h-23c-0.276%2C0%20-0.5%2C0.224%20-0.5%2C0.5v16c0%2C0.276%200.224%2C0.5%200.5%2C0.5h6.5v3.5c0%2C0.444%200.54%2C0.668%200.853%2C0.354l3.854%2C-3.854h11.793c0.276%2C0%200.5%2C-0.224%200.5%2C-0.5v-16c0%2C-0.276%20-0.224%2C-0.5%20-0.5%2C-0.5Z%22%20transform%3D%22translate%280%2C%201%29%22%3E%3C/path%3E%0A%20%20%20%20%3C/g%3E%0A%20%20%20%20%3Cpath%20fill%3D%22none%22%20d%3D%22M0%2C0h24v24h-24Z%22%3E%3C/path%3E%0A%3C/svg%3E");
+        // background-size: contain;
+        color: $orange;
+        content: "";
+        display: inline-block;
+        height: 18px;
+        margin-right: 0.5em;
         text-decoration: none;
+        vertical-align: middle;
+        width: 18px;
+      }
+
+      &::after {
+        color: $orange;
+        right: 0.85em;
+      }
+
+      &:hover,
+      &:focus {
+        color: $white;
+
+        &::after {
+          color: $white;
+        }
       }
     }
   }
 
-  // Sub menus
-
   .menu-more-link {
-    border-top: 1px solid $gray-light;
+    border-top: 1px solid $gray-darkest;
     font-style: italic;
 
     a::after {
@@ -136,7 +171,7 @@
     }
   }
 
-  .centered-navigation-menu > ul > li.expanded {
+  .centered-navigation-menu>ul>li.expanded {
     padding-right: 0;
 
     @include breakpoint($desk) {
@@ -144,11 +179,11 @@
     }
 
 
-    > a {
+    >a {
       padding-right: 1.75em;
     }
 
-    > a::after {
+    >a::after {
       @include position(absolute, auto 0.45em auto auto);
 
       color: $centered-navigation-color;
@@ -167,7 +202,7 @@
       padding-right: $centered-navigation-submenu-padding;
       position: relative;
 
-      &:hover > .menu {
+      &:hover>.menu {
         display: block;
 
         @include breakpoint(max-width 800px) {
@@ -180,14 +215,12 @@
       padding-right: $centered-navigation-submenu-padding;
     }
 
-    > a {
+    >a {
       padding-right: 1.6em;
       position: relative;
-
-      @include breakpoint($desk) {
-        // margin-right: $centered-navigation-submenu-padding;
-      }
-
+      // @include breakpoint($desk) {
+      // margin-right: $centered-navigation-submenu-padding;
+      // }
 
       &::after {
         font-size: $font-size-larger;
@@ -197,15 +230,16 @@
     }
   }
 
-  li > ul.menu {
+  li>ul.menu {
     display: none;
     padding-left: 0;
 
     @include breakpoint($horizontal-bar-mode) {
-      box-shadow: 0 3px 8px $gray;
+      background: $black;
       left: -2em;
       margin-left: 2em;
       position: absolute;
+      top: 34px;
     }
 
 
@@ -215,13 +249,6 @@
         top: 0;
       }
     }
-
-    // @include breakpoint($horizontal-bar-mode) {
-    //   .last.leaf > a {
-    //     border-bottom-left-radius: $base-border-radius;
-    //     border-bottom-right-radius: $base-border-radius;
-    //   }
-    // }
 
     li {
       display: block;
@@ -233,8 +260,9 @@
 
 
       a {
-        background-color: darken($centered-navigation-background, 3);
+        background-color: lighten($centered-navigation-background, 3);
         display: inline-block;
+        font-size: 1rem;
         text-align: left;
         width: 100%;
 
@@ -244,10 +272,10 @@
           text-align: left;
           width: $centered-navigation-submenu-width;
         }
-      }
 
-      a:hover {
-        background: darken($centered-navigation-background, 6);
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

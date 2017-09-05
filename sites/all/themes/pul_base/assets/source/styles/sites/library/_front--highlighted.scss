@@ -2,11 +2,35 @@
   background: $highlighted-wrapper;
   background-size: 1600px auto;
   padding: 0;
+  position: relative;
 
   @include breakpoint($tab) {
-    background: linear-gradient($highlighted-wrapper, $highlighted-wrapper), url("../images/bg-studyroom.jpg") center no-repeat;
+    background: url("/sites/all/themes/pul_base/assets/public/images/studying-firestone-bg.jpg") center center no-repeat;
+    // background-position-y: -30px;
     background-size: cover;
+    height: 350px;
   }
+
+  @include breakpoint($tab-desk) {
+    height: 430px; //430px; or 50vh;
+    // max-width: 1680px;
+
+    // mask for hero image
+
+    // &::before {
+    //   background: linear-gradient(to right, $black 0%, transparent 49%, $black 100%);
+    //   content: "";
+    //   height: 100%;
+    //   left: 0;
+    //   position: absolute;
+    //   top: 0;
+    //   width: 100%;
+    // }
+  }
+
+  // @include breakpoint($desk) {
+  //   height: 55vh;
+  // }
 
   .l-region--highlighted {
     padding: 1em;
@@ -17,3 +41,7 @@
     }
   }
 }
+
+// .l-header {
+//   background: $black;
+// }

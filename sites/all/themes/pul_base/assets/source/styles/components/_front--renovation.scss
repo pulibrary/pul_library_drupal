@@ -1,10 +1,108 @@
-.front {
-  .pane-block-2 h2 {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-  }
+.front .firestone-renovation,
+.front .friends {
+  @include span(full);
+  border: $border-thin $border-solid $border-light;
 
-  .pane-block-2 a {
-    color: $blue-dark;
+  p {
+    .read-more {
+      clear: both;
+      color: $black;
+      display: block;
+      font-size: 0.875em;
+      font-weight: bold;
+      margin-top: 1em;
+      text-transform: uppercase;
+
+      &::after {
+        content: ">";
+        font-weight: bold;
+        padding-left: 0.45em;
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:hover .read-more {
+      text-decoration: underline;
+    }
+  }
+}
+
+.front .firestone-renovation {
+  @include breakpoint($tab-desk) {
+    @include span(4 of 8 last);
+  }
+}
+
+.front .friends {
+  @include breakpoint($tab-desk) {
+    @include span(4 of 8);
+  }
+}
+
+.friends {
+  clear: both;
+
+  p {
+    margin: 0;
+
+    &:first-child {
+      background: $black;
+      text-align: center;
+    }
+
+    &:nth-child(2) {
+      padding: 1em;
+    }
+
+    .friends-logo {
+      height: 27px;
+      margin: 0;
+      width: 100px;
+    }
+  }
+}
+
+.firestone-renovation {
+  background: $orange;
+}
+
+.renovation-news--image {
+  float: left;
+  padding: 1em;
+}
+
+.renovation-news--body {
+  background: $white;
+  margin-left: 105px;
+  padding: 1em;
+
+  p {
+    margin-bottom: 0;
+
+    .read-more {
+      color: $black;
+      display: block;
+      font-size: 0.875em;
+      font-weight: bold;
+      margin-top: 1em;
+      text-transform: uppercase;
+
+      &::after {
+        content: ">";
+        font-weight: bold;
+        padding-left: 0.45em;
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:hover .read-more {
+      text-decoration: underline;
+    }
   }
 }

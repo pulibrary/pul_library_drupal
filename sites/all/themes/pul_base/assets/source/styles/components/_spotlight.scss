@@ -1,10 +1,10 @@
 // .front .wrapper--highlighted {
-//   background: rgba(lighten($gray-darkest, 28), 0.75);
+//   background: rgba(lighten($black, 28), 0.75);
 //   background-size: 1600px auto;
 //   padding: 0;
 
 //   @include breakpoint($tab) {
-//     background: linear-gradient(rgba(lighten($gray-darkest, 28), 0.75), rgba(lighten($gray-darkest, 28), 0.75)), url(../public/assets/images/bg-studyroom.jpg) center no-repeat;
+//     background: linear-gradient(rgba(lighten($black, 28), 0.75), rgba(lighten($black, 28), 0.75)), url(../public/assets/images/bg-studyroom.jpg) center no-repeat;
 //     background-size: cover;
 //   }
 
@@ -21,7 +21,7 @@
 .block--views-spotlight-dispalsys-block {
   $hover-tile-height: 159px;
   background: $black-opacity-5;
-  border-radius: 4px;
+  border-radius: $base-border-radius;
   clear: both;
   cursor: pointer;
   display: none;
@@ -46,7 +46,7 @@
 
   a {
     color: $white;
-    font-family: $font-sans;
+    font-family: $font-primary;
     font-size: $font-size-base;
     margin: 0;
   }
@@ -57,7 +57,7 @@
   }
 
   .view-spotlight-dispalsys .views-row-1 {
-    border-radius: 4px;
+    border-radius: $base-border-radius;
   }
 
 
@@ -76,22 +76,21 @@
   }
 
   .spotlight-image {
-    border-radius: 4px;
+    border-radius: $base-border-radius;
     color: transparentize($white, 0.3);
     font-size: $font-size-larger;
-    font-weight: 200;
     padding: 0;
     text-align: center;
 
     img {
-      border-radius: 4px;
+      border-radius: $base-border-radius;
     }
   }
 
   .spotlight-text a {
     background-image: linear-gradient($black-opacity-7, $black-opacity-5);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
     font-weight: bold;
     height: 100%;
     padding: 0.5em 0.75em;
@@ -109,50 +108,5 @@
   img {
     height: 215px;
     width: 350px;
-  }
-}
-
-.block--pudl-highlight {
-  background: $black-opacity-2;
-  bottom: 0;
-  display: none;
-  margin-top: 1em;
-  padding: 0.5em;
-  position: absolute;
-  right: 0;
-  text-align: center;
-
-  @include breakpoint($tab) {
-    @include span(3 of 12);
-
-    display: block;
-    margin-right: 0;
-  }
-
-
-  @include breakpoint($desk) {
-    @include span(2 of 12);
-
-    display: block;
-    margin-right: 0;
-  }
-
-
-  a {
-    color: $white;
-    font-family: $font-sans;
-    font-size: $font-size-smaller;
-    margin: 0;
-    text-align: center;
-
-    .icon-newtab {
-      font-size: 1.1em;
-      margin-right: 0.5em;
-      vertical-align: middle;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
   }
 }

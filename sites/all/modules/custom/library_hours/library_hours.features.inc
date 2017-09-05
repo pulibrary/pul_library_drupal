@@ -27,6 +27,30 @@ function library_hours_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function library_hours_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: hours-thumbnail.
+  $styles['hours-thumbnail'] = array(
+    'label' => 'hours-thumbnail',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 95,
+          'height' => 55,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function library_hours_node_info() {

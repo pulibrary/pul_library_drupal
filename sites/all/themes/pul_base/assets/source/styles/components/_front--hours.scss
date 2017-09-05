@@ -1,14 +1,17 @@
 .front {
-  .pane-library-hours h2.pane-title {
-    font-size: 1.4em;
-    margin-bottom: 1em;
+  h2.pane-title {
+    font-size: 2em;
+    text-align: center;
   }
 
-  td {
-    font-size: 1.15em;
+  .library-hours-link {
+    width: 100%;
 
-    a {
-      color: $blue-dark;
+    &.views-more-link {
+      @include breakpoint($tab) {
+        float: left;
+        width: auto;
+      }
     }
   }
 }

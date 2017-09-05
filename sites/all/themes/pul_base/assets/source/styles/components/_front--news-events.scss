@@ -1,12 +1,17 @@
-.front {
-  .pane-library-news h2.pane-title {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-  }
+.front .view-library-news .view-content {
+  margin-bottom: 0;
+}
 
-  .library-news-link h3 {
-    color: $blue-dark;
-    font-family: $font-sans;
-    font-size: 1.15em;
+.front .view-library-news .view-footer {
+  @include breakpoint($tab) {
+    text-align: center;
+  }
+}
+
+.views-more-link.library-news-link {
+  width: 100%;
+
+  @include breakpoint($tab) {
+    width: auto;
   }
 }

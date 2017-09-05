@@ -1,13 +1,13 @@
-// princeton community member logoff button
-.block--block-34 {
+// Princeton community member and undergraduate student logoff button
+.block--system-user-menu ul {
   display: block;
   padding-right: 1em;
   position: absolute;
   right: 0;
   top: 0;
 
-  p {
-    height: 50px;
+  li {
+    height: 90px;
     line-height: 0;
     margin: 0;
     position: relative;
@@ -15,15 +15,16 @@
 
   a {
     @include vertical-align;
-
-    color: $black-opacity-7;
+    @include button(flat, $orange);
+    color: $black;
+    padding: 20px;
 
     &:hover {
-      color: $orange;
+      color: $white;
     }
   }
 }
 
-.l-region--navigation {
+.l-region--branding {
   position: relative;
 }

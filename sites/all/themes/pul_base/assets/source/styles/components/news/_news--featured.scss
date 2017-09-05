@@ -1,53 +1,113 @@
-.front .view-library-news {
-  @include breakpoint($desk) {
-    h3 {
-      margin-bottom: 0;
-    }
+.library-news {
+  clear: both;
+
+  .view-content .library-news-link {
+    display: block;
+    height: 100%;
   }
 }
 
-.front .library-news-link {
-  @include clearfix;
-  display: block;
-  margin-bottom: 1.5em;
-
-  &:hover {
-    color: $blue-dark;
-  }
-
-  &.views-more-link:hover {
-    color: $white;
-  }
-}
-
-.front .featured-new-item-image {
+.news__featured .featured-new-item-image {
   height: auto;
   overflow: hidden;
   width: 100%;
 
   @include breakpoint($desk) {
     float: left;
-    height: 100px;
+    height: 275px;
     margin: 0 1em 0 0;
-    width: 145px;
+    width: 100%;
   }
 
 
   img {
-    height: 100%;
-    min-height: 100px;
+    height: auto;
+    min-height: 275px;
     min-width: 145px;
     object-fit: cover;
     object-position: center;
-    width: auto;
+    width: 100%;
   }
 }
 
-.front .view-library-news .views-row {
-  padding-bottom: 0;
-}
+.news__featured {
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+  }
 
-.view-library-news .views-row,
-.view-library-news .view-footer {
-  clear: both;
+  .news--item:nth-of-type(1) {
+    order: 4;
+  }
+
+  .news--item:nth-of-type(2) {
+    order: 1;
+  }
+
+  .news--item:nth-of-type(3) {
+    order: 2;
+  }
+
+  .news--item:nth-of-type(4) {
+    order: 3;
+  }
+
+  .news--item {
+    @include span(full);
+    border: $border-thin $border-solid $border-light;
+    float: left;
+    margin-bottom: 1.5em;
+    position: relative;
+
+    @include breakpoint($tab) {
+      &:nth-child(even) {
+        @include span(4 of 8);
+      }
+
+      &:nth-child(odd) {
+        @include span(4 of 8 last);
+      }
+    }
+
+  }
+
+  .featured-news-item-body {
+    clear: both;
+    padding: 1em 1.875em;
+
+    .read-more {
+      color: $black;
+      font-size: 0.875em;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &::after {
+        content: ">";
+        font-weight: bold;
+        padding-left: 0.45em;
+      }
+    }
+  }
+
+  h3 {
+    color: $black;
+    font-size: 1.65em;
+    font-weight: 600;
+  }
+
+  .library-spotlight {
+    background-color: $white;
+    border: $border-med $border-solid $border-orange;
+    // border-bottom-left-radius: $base-border-radius;
+    // border-bottom-right-radius: $base-border-radius;
+    border-top: 0;
+    color: $black;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2em;
+    padding: 0.425em;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }

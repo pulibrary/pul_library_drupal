@@ -40,7 +40,7 @@ function library_hours_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $field_groups['group_displaygroup|node|library_hours|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

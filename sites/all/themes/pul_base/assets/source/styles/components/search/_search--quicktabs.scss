@@ -1,3 +1,12 @@
+.front .quicktabs-tabpage form {
+  height: 65px;
+}
+
+// .front .quicktabs-tabpage {
+//   background: $black;
+//   border-radius: $slight-border-radius;
+// }
+
 .block--quicktabs,
 .pane-quicktabs-mendel-search-tabs {
   margin: 0 auto;
@@ -7,31 +16,36 @@
     margin: 0;
   }
 
+  .allsearch-block-form {
+    position: relative;
+  }
+
   .quicktabs-tabs li.active {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 
   .quicktabs-tabs {
-    background: $gray-darkest;
+    background: $black;
     border: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    padding: 0;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    display: none;
+    padding: 0 0 0 4em;
   }
 
   .quicktabs_main {
-    background: darken($gray-lightest, 3);
-    border-bottom-left-radius: 0.25em;
-    border-bottom-right-radius: 0.25em;
+    // background: darken($gray-lightest, 3);
+    border-bottom-left-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
     clear: both;
     font-size: $font-size-base;
-    padding: 1em 1.4em;
+    padding: 0 1.4em;
   }
 
-  .quicktabs-tabs > li {
+  .quicktabs-tabs>li {
     // background: $gray-lightest;
     border: 0;
     clear: none;
@@ -41,22 +55,25 @@
     padding: 0;
     text-align: center;
     top: 0;
-    width: 25%;
+    width: auto;
 
     a {
-      background: $gray-darkest;
-      border-right: 1px solid darken($gray-lightest, 50%);
+      background: $black;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
       color: $white;
       display: inline-block;
-      font-family: $font-sans;
-      margin: 0;
-      padding: 0.4em 0;
+      font-family: $font-primary;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 0 1em 0 0;
+      min-width: 120px;
+      padding: 0.25em;
       text-align: center;
-      width: 100%;
     }
 
     a:hover {
-      background: lighten($gray-darkest, 10);
+      background: lighten($black, 10);
     }
 
     a:active {
@@ -64,23 +81,13 @@
     }
 
     a:focus {
-      background: lighten($gray-darkest, 10);
-    }
-
-    &:first-child a {
-      border-top-left-radius: 4px;
-    }
-
-    &:last-child a {
-      border-right: 0;
-      border-top-right-radius: 4px;
-      width: 100%;
+      background: lighten($black, 10);
     }
   }
 
   .quicktabs-tabs li.active a {
-    background: darken($gray-lightest, 3);
-    color: $black;
+    background: $black;
+    color: $white;
   }
 
   .quicktabs-tabs li.ui-state-active a,
@@ -98,24 +105,23 @@
   }
 
   .block__content {
-    overflow: auto;
+    overflow: hidden;
   }
 
   .form-item-query {
     display: inline;
-    overflow: auto;
   }
 
   input[type="text"] {
-    border: 1px solid $gray-dark;
-    border-radius: 4px;
+    border: 5px solid $black;
+    border-radius: $base-border-radius;
     display: block;
     float: left;
-    font-family: $font-sans;
-    height: 45px;
-    margin: 0.8em 0;
-    padding: 5px 10px;
-    width: 85%;
+    font-family: $font-primary;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    width: 100%;
 
     &:focus {
       box-shadow: none;
@@ -128,35 +134,68 @@
   }
 
   .quicktabs_main button {
-    background: shade($orange, 20%);
-    border: 1px solid $gray-dark;
+    background: $orange;
+    border: 5px solid $black;
     border-bottom-left-radius: 0;
-    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: $base-border-radius;
+    border-left: 0;
     border-top-left-radius: 0;
-    border-top-right-radius: 4px;
+    border-top-right-radius: $base-border-radius;
     clear: none;
-    color: $white;
+    color: $black;
     float: left;
-    font-family: $font-sans;
-    height: 45px;
-    margin: 0.8em 0 0 -7px;
-    padding: 0;
-    width: 15%;
+    font-family: $font-primary; // height: 45px;
+    line-height: normal;
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
 
     span {
       font-weight: bold;
     }
+
+    .icon-search {
+      font-size: 18px;
+      line-height: 0;
+      vertical-align: middle;
+    }
   }
 
   .quicktabs_main .icon-search .hide-sm {
-    font-family: $font-sans;
+    font-family: $font-primary;
   }
 
   .homepage-tab-form-message {
-    margin: 0.4em 0;
+    display: none;
+
+    @include breakpoint($tab) {
+      background: $black;
+      border-radius: $base-border-radius;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -10px;
+      padding: 10px 0 5px;
+      text-align: center;
+      width: 95%;
+
+    }
+
+    li {
+      @include breakpoint($tab) {
+        border-right: 1px solid $white;
+        display: inline;
+        font-size: 1.1em;
+
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
 
     a {
-      font-size: $font-size-smaller;
+      padding: 1em;
     }
   }
 }
@@ -164,7 +203,7 @@
 .pane-quicktabs-mendel-search-tabs .quicktabs-tabs {
   margin-left: 0;
 
-  > li {
+  >li {
     width: 33.33%;
   }
 }
@@ -172,4 +211,16 @@
 .pane-quicktabs-mendel-search-tabs h2 {
   display: block;
   margin-bottom: 1em;
+}
+
+.block--quicktabs-homepage-search-tabs {
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.front .block--quicktabs-homepage-search-tabs {
+  @include breakpoint($tab-desk) {
+    width: 70%;
+  }
 }

@@ -1,17 +1,16 @@
 .jump-link {
-  left: 6px;
+  left: 0;
   position: absolute;
   top: -99px;
 }
 
 .jump-link:focus {
-  background: $orange;
-  box-shadow: 0 0 2px 2px $black-opacity-7;
+  background: $black;
   color: $white;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: bold;
   padding: 15px 23px 14px;
-  top: 6px;
+  top: 0;
   transition: all 0.2s ease-in-out;
   z-index: 5;
 }
@@ -27,29 +26,23 @@
 
 .cd-top {
   background: $white-opacity-7 url("#{$base-path}/images/move-up.svg") no-repeat center 50%;
-  bottom: 40px;
-  box-shadow: 0 0 10px $black-opacity-5;
+  // border: $border-thin $border-solid $border-light;
+  bottom: 0;
+  // box-shadow: 0 0 10px $black-opacity-5;
   display: inline-block;
   height: 40px;
   opacity: 0;
   overflow: hidden;
   position: fixed;
-  right: 10px;
+  right: 0;
   text-indent: 100%;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
   visibility: hidden;
   white-space: nowrap;
   width: 40px;
 
-  @media only screen and (min-width: 768px) {
-    bottom: 20px;
-    right: 20px;
-  }
-
   @media only screen and (min-width: 1024px) {
-    bottom: 30px;
     height: 60px;
-    right: 30px;
     width: 60px;
   }
 }

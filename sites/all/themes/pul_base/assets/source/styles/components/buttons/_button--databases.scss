@@ -1,5 +1,4 @@
 //db resource button
-
 .field--name-field-ip-db-resource-url,
 .field--name-field-db-access-url.pul-processed,
 .field--name-field-cas-db-resource-url {
@@ -9,8 +8,15 @@
 .field--name-field-ip-db-resource-url a,
 .field--name-field-db-access-url.pul-processed a,
 .field--name-field-cas-db-resource-url a {
-  @include button(simple, lighten($orange, 5));
+  @include button(flat, $black);
 
   color: $white;
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0.75px;
   margin-bottom: 0.5em;
+
+  &:hover:not(:disabled) {
+    background-color: $orange;
+  }
 }

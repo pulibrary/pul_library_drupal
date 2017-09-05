@@ -460,7 +460,7 @@ eastasianlib',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-library',
+    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-library branch-libraries',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -578,6 +578,39 @@ eastasianlib',
   $display->content['new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5'] = $pane;
   $display->panels['first'][2] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane = new stdClass();
+  $pane->pid = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $pane->panel = 'first';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_library_exterior_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => '',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $display->content['new-53ba4930-9de5-4cf0-a379-40df7e8c076b'] = $pane;
+  $display->panels['first'][3] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $pane = new stdClass();
   $pane->pid = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -600,6 +633,39 @@ eastasianlib',
   $display->content['new-e036616e-7301-4c11-a8e0-fdd6017120bc'] = $pane;
   $display->panels['middle'][0] = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
   $pane = new stdClass();
+  $pane->pid = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
+  $pane->panel = 'middle';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_library_interior_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => '',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '2739e4c8-9004-4bfc-93aa-f82eb8195850';
+  $display->content['new-2739e4c8-9004-4bfc-93aa-f82eb8195850'] = $pane;
+  $display->panels['middle'][1] = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
+  $pane = new stdClass();
   $pane->pid = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $pane->panel = 'middle';
   $pane->type = 'entity_field';
@@ -615,7 +681,7 @@ eastasianlib',
     'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'About Firestone',
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -624,11 +690,11 @@ eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $display->content['new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182'] = $pane;
-  $display->panels['middle'][1] = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
+  $display->panels['middle'][2] = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $pane = new stdClass();
   $pane->pid = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
   $pane->panel = 'middle';
@@ -652,11 +718,11 @@ eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '6537b419-0ad7-436b-9252-1d7d651fd84a';
   $display->content['new-6537b419-0ad7-436b-9252-1d7d651fd84a'] = $pane;
-  $display->panels['middle'][2] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
+  $display->panels['middle'][3] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
   $pane = new stdClass();
   $pane->pid = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
   $pane->panel = 'second';
@@ -710,12 +776,14 @@ eastasianlib',
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'title',
-    'formatter' => 'file_rendered',
+    'formatter' => 'image',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
       'file_view_mode' => 'default',
+      'image_style' => 'branch_image_branding',
+      'image_link' => '',
     ),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,

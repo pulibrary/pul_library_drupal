@@ -14,7 +14,7 @@ label {
 #{$all-text-inputs},
 select[multiple="multiple"] {
   border: 1px solid $gray-light;
-  border-radius: 4px;
+  border-radius: $slight-border-radius;
   box-sizing: border-box;
   padding: 0.5em;
   width: 100%;
@@ -60,9 +60,9 @@ input[type="radio"] {
 }
 
 input[type="submit"] {
-  background-color: $blue-dark;
+  background-color: $black;
   border: 0;
-  border-radius: 4px;
+  border-radius: $slight-border-radius;
   color: $white;
   cursor: pointer;
   display: inline-block;
@@ -74,13 +74,13 @@ input[type="submit"] {
   white-space: nowrap;
 
   &:hover {
-    background-color: lighten($blue-dark, 5%);
+    background-color: $orange;
   }
 }
 
 button[type="submit"] {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
+  border-bottom-right-radius: $slight-border-radius;
+  border-top-right-radius: $slight-border-radius;
 }
 
 fieldset {

@@ -315,7 +315,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 35,
+      'weight' => 54,
     ),
     'workbench_access_field' => 0,
   );
@@ -401,6 +401,50 @@ function library_news_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 44,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_news_item-field_homepage_spotlight'.
+  $field_instances['node-library_news_item-field_homepage_spotlight'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_homepage_spotlight',
+    'label' => 'Homepage Spotlight',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 50,
     ),
     'workbench_access_field' => 0,
   );
@@ -520,7 +564,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 53,
     ),
     'workbench_access_field' => 0,
   );
@@ -836,7 +880,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 56,
     ),
     'workbench_access_field' => 0,
   );
@@ -883,7 +927,7 @@ function library_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 33,
+      'weight' => 52,
     ),
   );
 
@@ -940,7 +984,7 @@ function library_news_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 32,
+      'weight' => 51,
     ),
   );
 
@@ -978,7 +1022,7 @@ function library_news_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 36,
+      'weight' => 55,
     ),
   );
 
@@ -1160,7 +1204,7 @@ function library_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 38,
+      'weight' => 57,
     ),
   );
 
@@ -1186,6 +1230,7 @@ function library_news_field_default_field_instances() {
   t('Flagging an item will make it appear on the collections page.');
   t('Free tags that can be associated with items. ');
   t('Full Title');
+  t('Homepage Spotlight');
   t('Image will be scaled and cropped to 145 x 100 in order to fit into allocated space on homepage slideshow. Crop the image to a 14.5 x 10 aspect ratio to get optimal display.');
   t('Images');
   t('Images to be inserted inline into post content. ');

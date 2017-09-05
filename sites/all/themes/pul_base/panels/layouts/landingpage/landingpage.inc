@@ -16,7 +16,6 @@ $plugin = array(
     'first' => t('First'),
     'second' => t('Second'),
     'third' => t('Third'),
-    'fourth' => t('Fourth'),
   ),
 );
 

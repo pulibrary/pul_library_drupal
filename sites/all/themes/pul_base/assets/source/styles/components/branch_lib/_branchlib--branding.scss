@@ -19,22 +19,22 @@
       }
 
       h2 {
-        background: linear-gradient(to right, $white-opacity-7 0%, $white-opacity-0 100%);
+        background: $black;
         bottom: 0;
+        color: $white;
         display: block;
         font-size: 2rem;
-        margin-bottom: 25px;
+        margin-bottom: 0;
         padding: 0.3em;
-        position: absolute;
-        text-shadow: $white 2px 2px;
+        position: absolute; // text-shadow: $white 2px 2px;
         width: 100%;
         z-index: 1;
       }
 
       img,
       a {
-        display: block;
-        opacity: 0.4;
+        display: block; // opacity: 0.4;
+        padding-bottom: 50px;
       }
 
       p {
@@ -81,4 +81,44 @@
       opacity: 1;
     }
   }
+}
+
+.libraries-architecture .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $architecture;
+}
+
+.libraries-eal .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $eastasian;
+}
+
+.libraries-engineering .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $engineering;
+}
+
+.firestone-library .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $firestone;
+}
+
+.libraries-lewis .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $lewis;
+}
+
+.libraries-marquand .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $marquand;
+}
+
+.libraries-music .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $music;
+}
+
+.libraries-plasma .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $plasma;
+}
+
+.libraries-stokes .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $stokes;
+}
+
+.libraries-video .three_six_three_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $video;
 }

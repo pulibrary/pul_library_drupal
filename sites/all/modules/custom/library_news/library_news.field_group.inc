@@ -41,7 +41,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_catalog|node|library_news_item|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -71,7 +71,7 @@ function library_news_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $field_groups['group_cd_acquistions|node|library_news_item|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,7 +99,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_news_attachments|node|library_news_item|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -127,7 +127,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_news_dates_locs|node|library_news_item|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -149,6 +149,7 @@ function library_news_field_group_info() {
       4 => 'field_news_category',
       5 => 'field_display_on_news_page',
       6 => 'field_news_libraries',
+      7 => 'field_homepage_spotlight',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -160,7 +161,7 @@ function library_news_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_news_details|node|library_news_item|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

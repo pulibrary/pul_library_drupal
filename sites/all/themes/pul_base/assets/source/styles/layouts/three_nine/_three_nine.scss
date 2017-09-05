@@ -5,9 +5,11 @@
 @include breakpoint($tab) {
   .three_nine-region--first {
     @include span(first 3);
+    margin-left: 0;
   }
 
   .three_nine-region--second {
     @include span(last 9);
+    margin-right: 0;
   }
 }

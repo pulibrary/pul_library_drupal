@@ -4,18 +4,17 @@
 
 @include breakpoint($tab) {
   .landingpage-region--first {
-    @include span(first 3);
+    @include full;
+    margin: 0;
   }
 
   .landingpage-region--second {
-    @include span(last 9);
+    @include span(first 4);
+    margin-left: 0;
   }
 
   .landingpage-region--third {
-    @include span(first 6);
-  }
-
-  .landingpage-region--fourth {
-    @include span(last 6);
+    @include span(last 8 of 12);
+    margin-right: 0;
   }
 }

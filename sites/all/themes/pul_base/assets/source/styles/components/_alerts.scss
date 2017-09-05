@@ -13,25 +13,25 @@
 .messages--warning,
 .alert--message,
 .messages-error {
-  background: $orange;
+  background: $yellow-light;
   border: 0;
-  border-radius: 4px;
-  color: $white;
-  margin: 1em 0 0;
+  border-radius: $base-border-radius;
+  color: $black;
+  margin: 1em 0 2em;
   padding: 1em;
 
   a {
-    color: $white;
+    color: $black;
     text-decoration: underline;
   }
 
   h3 a,
   p {
-    color: $white;
+    color: $black;
   }
 
   h3 {
-    color: $white;
+    color: $black;
     display: inline-block;
     font-size: 1.3em;
     font-weight: bold;
@@ -43,7 +43,7 @@
     margin-bottom: 0;
 
     a {
-      color: $white;
+      color: $black;
       text-decoration: underline;
     }
 
@@ -53,13 +53,12 @@
   }
 
   i {
-    color: $white;
+    color: $black;
     margin-right: 0.5em;
   }
 }
 
 .page-node-27043 .messages--warning {
-  border-radius: 0;
   display: block;
   margin-top: 0;
   position: absolute;
@@ -72,7 +71,7 @@
 
   p,
   h3 a {
-    color: $white;
+    color: $black;
   }
 }
 

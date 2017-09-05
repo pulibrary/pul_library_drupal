@@ -1,9 +1,9 @@
 // for stokes special buttons
 .button--external-link {
   background-color: $blue-dark;
-  border-radius: 3px;
+  border-radius: $base-border-radius;
   color: $white;
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: 600;
   padding: 3px 7px;
 }

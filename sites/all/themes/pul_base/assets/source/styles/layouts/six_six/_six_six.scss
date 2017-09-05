@@ -5,9 +5,11 @@
 @include breakpoint($tab) {
   .six_six-region--first {
     @include span(first 6);
+    margin-left: 0;
   }
 
   .six_six-region--second {
     @include span(last 6);
+    margin-right: 0;
   }
 }

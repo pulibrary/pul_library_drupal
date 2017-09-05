@@ -1,3 +1,4 @@
+.contact-form .form-item,
 .node-type-webform .form-item {
   margin-bottom: 1.5em;
 
@@ -19,6 +20,12 @@
     color: $gray-dark;
     font-size: $font-size-small-2;
     font-style: italic;
+  }
+
+  &.form-type-checkbox {
+    label {
+      display: inline;
+    }
   }
 }
 

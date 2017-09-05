@@ -1,20 +1,22 @@
+.section-collections .l-content,
+.section-collections-and-collection-development .l-content {
+  padding-top: 0;
+}
+
 .section-collections-and-collection-development,
 .section-collections {
-  .three_six_three_stacked-region--top {
+  .three_six_three_stacked-region--top,
+  .single-region--top,
+  .nine_three_stacked-region--top {
+    background-color: darken($black, 18);
+    background-image: url("/sites/all/themes/pul_base/assets/public/images/trustee_reading_room_50.png");
+    background-position: center top;
+    background-repeat: no-repeat;
     margin: 1em 0;
 
     @include breakpoint($tab) {
       width: 100%;
     }
-  }
-
-  .three_six_three_stacked-region--top,
-  .single-region--top,
-  .nine_three_stacked-region--top {
-    background-color: darken($gray-darkest, 18);
-    background-image: url("/sites/all/themes/pul_base/assets/public/images/trustee_reading_room_50.png");
-    background-position: center top;
-    background-repeat: no-repeat;
   }
 
   .pane-spotlight-graphics-panel-pane-1 {
@@ -30,7 +32,7 @@
   margin: 0;
 
   .flexslider {
-    background: darken($gray-darkest, 18);;
+    background: darken($black, 18);
     border: 0;
 
     ul.slides li img {
@@ -53,4 +55,8 @@
   .flex-direction-nav {
     display: none;
   }
+}
+
+.views-exposed-form-subject-specialists-panel-pane-1 .views-exposed-widget:nth-child(-n+2) {
+  width: initial;
 }

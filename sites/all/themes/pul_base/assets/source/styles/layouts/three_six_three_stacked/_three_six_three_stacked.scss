@@ -5,22 +5,25 @@
 @include breakpoint($tab) {
   .three_six_three_stacked-region--top {
     @include full;
+    margin: 0;
   }
 
   .three_six_three_stacked-region--first {
     @include span(first 3 of 12);
+    margin-left: 0;
   }
 
   .three_six_three_stacked-region--middle {
     @include span(6 at 4);
-
   }
 
   .three_six_three_stacked-region--second {
     @include span(last 3 of 12);
+    margin-right: 0;
   }
 
   .three_six_three_stacked-region--bottom {
     @include full;
+    margin: 0;
   }
 }

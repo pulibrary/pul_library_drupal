@@ -606,6 +606,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -681,6 +682,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -756,6 +758,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -831,6 +834,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1185,6 +1189,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1379,6 +1384,112 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-libraries-field_library_exterior_image'.
+  $field_instances['node-libraries-field_library_exterior_image'] = array(
+    'bundle' => 'libraries',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 28,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_library_exterior_image',
+    'label' => 'Library Exterior Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'title_field_required' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'caption_from_title' => 1,
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_branch_image_branding' => 0,
+          'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
+          'image_hours-thumbnail' => 0,
+          'image_large' => 0,
+          'image_library-news' => 0,
+          'image_linkit_thumb' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
+          'image_profile-photo-small' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
+          'image_square_thumbnail' => 0,
+          'image_story' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 15,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-libraries-field_library_homepage'.
   $field_instances['node-libraries-field_library_homepage'] = array(
     'bundle' => 'libraries',
@@ -1502,7 +1613,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'branch_image_branding',
         ),
         'type' => 'image',
         'weight' => 20,
@@ -1529,7 +1640,7 @@ function pul_libraries_ct_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_library_image',
-    'label' => 'Library Image',
+    'label' => 'Library Banner Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -1560,14 +1671,19 @@ function pul_libraries_ct_field_default_field_instances() {
           'image_branch_image_branding' => 0,
           'image_flexslider_full' => 0,
           'image_homepage_callout' => 0,
+          'image_hours-thumbnail' => 0,
           'image_large' => 0,
           'image_library-news' => 0,
+          'image_linkit_thumb' => 0,
           'image_media_thumbnail' => 0,
           'image_medium' => 0,
           'image_news-image' => 0,
           'image_profile-photo' => 0,
+          'image_profile-photo-small' => 0,
           'image_pul_large_spotlight_graphic' => 0,
           'image_pul_logo_file' => 0,
+          'image_square_thumbnail' => 0,
+          'image_story' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -1577,6 +1693,112 @@ function pul_libraries_ct_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 13,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-libraries-field_library_interior_image'.
+  $field_instances['node-libraries-field_library_interior_image'] = array(
+    'bundle' => 'libraries',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 29,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_library_interior_image',
+    'label' => 'Library Interior Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'title_field_required' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'caption_from_title' => 1,
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_branch_image_branding' => 0,
+          'image_flexslider_full' => 0,
+          'image_homepage_callout' => 0,
+          'image_hours-thumbnail' => 0,
+          'image_large' => 0,
+          'image_library-news' => 0,
+          'image_linkit_thumb' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_news-image' => 0,
+          'image_profile-photo' => 0,
+          'image_profile-photo-small' => 0,
+          'image_pul_large_spotlight_graphic' => 0,
+          'image_pul_logo_file' => 0,
+          'image_square_thumbnail' => 0,
+          'image_story' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -2048,8 +2270,10 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Hours Calendar');
   t('Hours Code');
   t('Images');
+  t('Library Banner Image');
+  t('Library Exterior Image');
   t('Library Homepage');
-  t('Library Image');
+  t('Library Interior Image');
   t('Long Description');
   t('Main Menu Library Link');
   t('Phone');

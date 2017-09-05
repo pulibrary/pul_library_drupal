@@ -1,12 +1,16 @@
 // online resources for alumni
 .section-alumni {
   .button--connect a {
-    @include button(simple, lighten($orange, 5));
+    @include button(flat, $black);
 
     color: $white;
     display: inline-block;
-    font-family: $font-sans;
+    font-family: $font-primary;
     font-size: 0.6em;
     margin-left: 1em;
+
+    &:hover:not(:disabled) {
+      background-color: $orange;
+    }
   }
 }

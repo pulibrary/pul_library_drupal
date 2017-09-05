@@ -3,6 +3,8 @@
 .view-databases-keyword-search ul,
 .view-general-site-keyword-search ul,
 .view-general-site-user-search ul {
+  font-family: $font-dejavu;
+  font-size: 14px;
   margin-bottom: 1em;
 
   li.even,
@@ -26,19 +28,34 @@
   }
 
   h3 {
-    font-family: $font-sans;
+    font-family: $font-dejavu;
+    font-weight: normal;
     margin-top: 0;
   }
 }
 
-.view-all-search-best-bet h3 {
-  font-family: $font-sans;
-  margin-top: 0;
+.view-all-search-best-bet {
+  font-family: $font-dejavu;
+
+  h3 {
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 0.875em;
+  }
 }
 
 .pul_base_four_four_four_stacked-region--first,
 .pul_base_four_four_four_stacked-region--second,
 .pul_base_four_four_four_stacked-region--third {
+  h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.7em;
+  }
+
   li {
     clear: both;
   }
@@ -109,7 +126,7 @@
 
     a {
       background: $gray-lightest;
-      color: $gray-darkest;
+      color: $black;
       display: block;
       padding: 7px 16px;
       text-decoration: none;

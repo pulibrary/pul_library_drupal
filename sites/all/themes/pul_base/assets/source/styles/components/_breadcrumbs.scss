@@ -10,11 +10,14 @@
   $breadcrumb-background: darken($gray-lightest, 6);
   $breadcrumb-inactive-hover-color: $breadcrumb-background;
   $breadcrumb-color: $black;
-  $breadcrumb-color-hover: $gray-darkest;
+  $breadcrumb-color-hover: $black;
   $breadcrumb-color-active: $breadcrumb-color;
 
   li {
     // @include inline-block;
+    background-color: $breadcrumb-background;
+    border: $breadcrumb-border;
+    color: $breadcrumb-color;
     display: inline-block;
     margin-bottom: $base-line-height;
     position: relative;
@@ -37,6 +40,16 @@
       border: 0;
     }
 
+    &:first-child {
+      border-bottom-left-radius: $base-border-radius;
+      border-top-left-radius: $base-border-radius;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+    }
+
     &::before {
       border-left-color: $breadcrumb-arrow-color;
       margin-left: 1px;
@@ -50,9 +63,9 @@
 
   a {
     // @include inline-block;
-    background-color: $breadcrumb-background;
-    border: $breadcrumb-border;
-    color: $breadcrumb-color;
+    // background-color: $breadcrumb-background;
+    // border: $breadcrumb-border;
+    // color: $breadcrumb-color;
     display: inline-block;
     font-size: $font-size-smaller;
     line-height: $breadcrumb-height;
@@ -62,15 +75,14 @@
     text-decoration: none;
 
     &:first-child {
-      border-bottom-left-radius: $base-border-radius;
-      border-top-left-radius: $base-border-radius;
+      // border-bottom-left-radius: $base-border-radius;
+      // border-top-left-radius: $base-border-radius;
       padding-left: $breadcrumb-height / 2;
     }
 
     &:last-child {
-      background-color: $breadcrumb-background;
-      border-bottom-right-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
+      background-color: $breadcrumb-background; // border-bottom-right-radius: $base-border-radius;
+      // border-top-right-radius: $base-border-radius;
       color: $breadcrumb-color-active;
       padding-right: $breadcrumb-height / 2;
     }

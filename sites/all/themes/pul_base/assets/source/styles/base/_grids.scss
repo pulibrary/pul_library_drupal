@@ -1,11 +1,10 @@
-$susy: (
-  output: float,
+$susy: ( output: float,
   container: 1200px,
   columns: 12,
-  gutters: 0.6,
+  gutters: 0.3,
+  gutter-position: after,
   global-box-sizing: border-box,
-  debug: (
-    image: hide,
+  debug: ( image: hide,
     color: $aqua-dark,
     output: overlay,
     toggle: top right,
@@ -40,13 +39,20 @@ $golden-layout: layout((1 1.618 2.618) 0.1 fluid float split);
   @include span(12);
 
   @include breakpoint($tab) {
-    @include span(last 4);
+    @include span(last 6);
+  }
+}
+
+.l-region--branding .block--system-user-menu + .block--allsearch-block-allsearch-search {
+  @include breakpoint($tab) {
+    float: left;
+    width: calc(49% - 100px);
   }
 }
 
 
 body {
-  background: $gray-lightest;
+  background: $black;
   margin: 0;
 }
 
@@ -74,26 +80,19 @@ body {
   max-width: 1200px;
 }
 
-.block--quicktabs-homepage-search-tabs {
-  clear: both;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.l-main {
+.l-region--branding,
+.l-main,
+.l-content,
+.l-footer,
+.l-region--footer {
   padding: 1em;
 }
 
-.front .l-main {
-  @include breakpoint($desk) {
-    padding: 0;
-  }
+.branch-libraries .l-content {
+  padding-top: 0;
 }
 
-.l-content {
-  padding: 0 1em;
-
-  @include breakpoint($desk) {
-    padding: 0;
-  }
-}
+// .l-header {
+//   background: $black;
+//   position: relative;
+// }

@@ -5,10 +5,12 @@
 @include breakpoint($tab) {
   .five_four_three_stacked-region--top {
     @include full;
+    margin: 0;
   }
 
   .five_four_three_stacked-region--first {
     @include span(first 5);
+    margin-left: 0;
   }
 
   .five_four_three_stacked-region--second {
@@ -18,9 +20,11 @@
 
   .five_four_three_stacked-region--third {
     @include span(last 3);
+    margin-right: 0;
   }
 
   .five_four_three_stacked-region--bottom {
     @include full;
+    margin: 0;
   }
 }
