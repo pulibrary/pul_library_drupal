@@ -42,7 +42,10 @@
     border-bottom-right-radius: $base-border-radius;
     clear: both;
     font-size: $font-size-base;
-    padding: 0 1.4em;
+
+    @include breakpoint($tab) {
+      padding: 0 1.4em;
+    }
   }
 
   .quicktabs-tabs>li {
@@ -134,7 +137,7 @@
   }
 
   .quicktabs_main button {
-    background: $orange;
+    background: $black;
     border: 5px solid $black;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: $base-border-radius;
@@ -142,7 +145,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: $base-border-radius;
     clear: none;
-    color: $black;
+    color: $white;
     float: left;
     font-family: $font-primary; // height: 45px;
     line-height: normal;
@@ -150,6 +153,11 @@
     padding: 20px;
     position: absolute;
     right: 0;
+
+    @include breakpoint($tab) {
+      background: $orange;
+      color: $black;
+    }
 
     span {
       font-weight: bold;
