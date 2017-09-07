@@ -1,19 +1,9 @@
-// @include placeholder {
-//   color: darken($gray-lightest, 10);
-// }
+@include placeholder {
+  color: transparent;
+}
 
-// input {
-//   @include placeholder-theme($ph-styles);
-// }
-
-// Slide out on focus
-// input:focus::-webkit-input-placeholder {
-//   opacity: 1;
-//   text-indent: -100%;
-//   transition: text-indent 0.5s 1s ease;
-// }
-
-// Fix firefox placeholder positioning
-// input::-moz-placeholder {
-//   line-height: 2.4em;
-// }
+@include breakpoint($tab) {
+  @include placeholder {
+    color: initial;
+  }
+}

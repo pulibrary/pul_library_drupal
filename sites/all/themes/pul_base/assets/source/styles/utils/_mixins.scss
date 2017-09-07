@@ -55,26 +55,24 @@
 }
 
 // Placeholder
-$pseudo-phprefix: "::-webkit-input-placeholder" ":-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+@mixin placeholder {
+  input::-webkit-input-placeholder {
+    @content;
+  }
 
-$ph-styles: (font-style: normal, font-weight: normal, letter-spacing: normal, line-height: normal, text-align: inherit, text-decoration: inherit, padding: 0);
+  input:-moz-placeholder {
+    @content;
+  }
 
-// @mixin placeholder-theme($styles) {
-//   @each $pseudo in $pseudo-phprefix {
-//     @at-root #{&}#{$pseudo} {
-//       @each $key, $value in $styles {
-//         #{$key}: #{$value};
-//       }
-//     }
-//   }
-// }
-// @mixin placeholder {
-//   @each $pseudo in $pseudo-phprefix {
-//     @at-root #{&}#{$pseudo} {
-//       @content
-//     }
-//   }
-// }
+  input::-moz-placeholder {
+    @content;
+  }
+
+  input:-ms-input-placeholder {
+    @content;
+  }
+}
+
 // bourbon buttons
 @mixin button($style: simple, $base-color: #4294f0, $text-size: inherit, $padding: 7px 18px) {
   @if type-of($style)==string and type-of($base-color)==color {

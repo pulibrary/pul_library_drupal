@@ -1,10 +1,14 @@
 // Princeton community member and undergraduate student logoff button
 .block--system-user-menu ul {
-  display: block;
+  display: none;
   padding-right: 1em;
   position: absolute;
   right: 0;
   top: 0;
+
+  @include breakpoint($tab) {
+    display: block;
+  }
 
   li {
     height: 90px;

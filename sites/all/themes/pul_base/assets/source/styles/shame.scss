@@ -3,19 +3,16 @@
 @import "utils/variables";
 
 // Hide the toolbar or admin menu on small screens.
-@include breakpoint($tab) {
+@include breakpoint($max-tab) {
   .hide-sm {
     @include visually-hidden;
-  } // .logged-in .toolbar {
-  //   display: none;
-  // }
-  // html {
-  //   body.toolbar,
-  //   body.admin-menu {
-  //     margin-top: 0;
-  //     padding-top: 0;
-  //   }
-  // }
+  }
+}
+
+@include breakpoint($tab) {
+  .show-sm {
+    @include hidden;
+  }
 }
 
 // hide summary count for database nav
