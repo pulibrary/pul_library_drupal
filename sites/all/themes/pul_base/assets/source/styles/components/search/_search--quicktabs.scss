@@ -203,7 +203,15 @@
     }
 
     a {
+      color: $white;
       padding: 1em;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $orange;
+        text-decoration: underline;
+      }
     }
   }
 }
