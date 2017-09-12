@@ -20,12 +20,18 @@
       }
     }
 
-    a:hover {
+    a {
+      border-bottom: 0;
       text-decoration: none;
-    }
 
-    a:hover .read-more {
-      text-decoration: underline;
+      &:hover {
+        border-bottom: 0;
+        text-decoration: none;
+      }
+
+      &:hover .read-more {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -78,6 +84,10 @@
   background: $white;
   margin-left: 105px;
   padding: 1em;
+
+  h4 a:hover {
+    text-decoration: none;
+  }
 
   p {
     margin-bottom: 0;

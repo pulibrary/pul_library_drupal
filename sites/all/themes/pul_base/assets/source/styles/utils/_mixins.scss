@@ -39,7 +39,7 @@
 @mixin pul-icon {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: "pul-icons";
+  font-family: $font-icons;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;

@@ -2,7 +2,7 @@
 [class*=" icon-"] {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "pul-icons";
+  font-family: $font-icons;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -100,7 +100,7 @@ h2 {
     }
 
     a {
-      color: $blue-dark;
+      color: $black;
     }
   }
 

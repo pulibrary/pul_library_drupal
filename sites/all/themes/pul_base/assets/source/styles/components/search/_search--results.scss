@@ -31,6 +31,15 @@
     font-family: $font-dejavu;
     font-weight: normal;
     margin-top: 0;
+
+    a {
+      border-bottom: 1px solid $gray;
+
+      &:hover {
+        border-bottom: 1px solid $orange;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -84,8 +93,6 @@
     text-decoration: none;
 
     &:hover {
-      color: $blue-dark;
-
       [class^="icon-"],
       [class*=" icon-"] {
         color: $orange;
