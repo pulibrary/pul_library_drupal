@@ -27,9 +27,9 @@ function allsearch_block_form($form, &$form_state) {
     '#title' =>  t('All Search Box'),
     '#size'  => 80,
     '#required' => TRUE,
-    '#default_value' => '',
+    '#default_value' => $default_value,
     '#attributes' => array(
-        'placeholder' => $default_value,
+        'placeholder' => t('Search for library materials and website content'),
         'autocomplete' => 'off',
     )
   );
