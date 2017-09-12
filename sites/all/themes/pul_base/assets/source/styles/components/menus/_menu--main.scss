@@ -106,6 +106,10 @@
       line-height: $centered-navigation-height;
       padding-left: 0;
 
+      &.show-sm {
+        display: none;
+      }
+
       &:nth-child(-n+4) {
         border-right: 1px solid $white;
       }
