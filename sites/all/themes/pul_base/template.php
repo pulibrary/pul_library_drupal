@@ -22,6 +22,9 @@ function pul_base_css_alter(&$css) {
     'sites/all/modules/date/date_views/css/date_views.css' => FALSE,
     'sites/all/modules/office_hours/office_hours.css' => FALSE,
     'sites/all/modules/panels/plugins/layouts/twocol/twocol.css' => FALSE,
+    'sites/all/modules/ctools/css/ctools.css' => FALSE,
+    'sites/all/modules/panels/css/panels.css' => FALSE,
+    'sites/all/modules/quicktabs/css/quicktabs.css' => FALSE,
   );
   $css = array_diff_key($css, $exclude);
 }

@@ -9,15 +9,28 @@ a {
   }
 }
 
-.view-all-search-best-bet h3 a,
-.pul_base_four_four_four_stacked-region--first h3 a,
-.pul_base_four_four_four_stacked-region--second h3 a,
-.pul_base_four_four_four_stacked-region--third h3 a,
-.node--page--full p a,
-.three_six_three_stacked-region--middle p a,
-.pul_base_nine_three-region--first p a,
-.pul_base_nine_three-region--first .links--decorate tbody a {
+// .view-all-search-best-bet h3 a,
+// .pul_base_four_four_four_stacked-region--first h3 a,
+// .pul_base_four_four_four_stacked-region--second h3 a,
+// .pul_base_four_four_four_stacked-region--third h3 a,
+// .node--page--full p a,
+// .three_six_three_stacked-region--middle p a,
+// .pul_base_nine_three-region--first p a,
+// .pul_base_nine_three-region--first .links--decorate tbody a {
+//   border-bottom: 1px solid $gray;
+
+//   &:hover,
+//   &:active,
+//   &:focus {
+//     border-bottom: 1px solid $orange;
+//     text-decoration: none;
+//   }
+// }
+
+.resource-title a,
+p a {
   border-bottom: 1px solid $gray;
+  text-decoration: none;
 
   &:hover,
   &:active,
