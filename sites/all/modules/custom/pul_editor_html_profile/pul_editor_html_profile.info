@@ -2,6 +2,7 @@ name = PUL Editor HTML Profile
 core = 7.x
 package = PUL Features
 version = 7.x-1.0-alpha1
+dependencies[] = caption_filter
 dependencies[] = features
 dependencies[] = filter
 dependencies[] = media_wysiwyg

@@ -47,7 +47,7 @@ function pul_workgroup_listings_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo-small';
   /* Field: User: Formal Name */
   $handler->display->display_options['fields']['field_puluser_formalname']['id'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname']['table'] = 'field_data_field_puluser_formalname';
@@ -110,6 +110,14 @@ function pul_workgroup_listings_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'work_group' => 'work_group',
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'field_workgroup_members_target_id';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
   );
 
   /* Display: Staff Listing for Group */
@@ -195,7 +203,7 @@ function pul_workgroup_listings_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo-small';
   /* Field: User: Formal Name */
   $handler->display->display_options['fields']['field_puluser_formalname']['id'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname']['table'] = 'field_data_field_puluser_formalname';
@@ -239,6 +247,7 @@ function pul_workgroup_listings_views_default_views() {
 [field_puluser_phone_number]';
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_phone_number']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_phone_number']['field_api_classes'] = TRUE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -321,7 +330,7 @@ function pul_workgroup_listings_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo-small';
   /* Field: User: Formal Name */
   $handler->display->display_options['fields']['field_puluser_formalname']['id'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname']['table'] = 'field_data_field_puluser_formalname';

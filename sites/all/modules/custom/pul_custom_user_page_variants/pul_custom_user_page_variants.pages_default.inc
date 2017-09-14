@@ -297,10 +297,10 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $display->content['new-77fcb19a-3943-48ba-a006-509b28cf7011'] = $pane;
   $display->panels['first'][1] = 'new-77fcb19a-3943-48ba-a006-509b28cf7011';
   $pane = new stdClass();
-  $pane->pid = 'new-d1d504cb-3624-4fcd-911e-faac33ebcd88';
+  $pane->pid = 'new-41b8b990-51b0-4701-a477-5784db12973a';
   $pane->panel = 'first';
-  $pane->type = 'contact';
-  $pane->subtype = 'contact';
+  $pane->type = 'user_contact';
+  $pane->subtype = 'user_contact';
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
@@ -308,17 +308,16 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
         'name' => 'role',
         'settings' => array(
           'rids' => array(
-            0 => 3,
-            1 => 28,
-            2 => 29,
+            0 => 28,
           ),
         ),
-        'context' => 'logged-in-user',
+        'context' => 'argument_entity_id:user_1',
         'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
+    'context' => 'argument_entity_id:user_1',
     'override_title' => 1,
     'override_title_text' => 'Contact %user:field-puluser-nick-name',
     'override_title_heading' => 'h2',
@@ -327,13 +326,16 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'contact',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'd1d504cb-3624-4fcd-911e-faac33ebcd88';
-  $display->content['new-d1d504cb-3624-4fcd-911e-faac33ebcd88'] = $pane;
-  $display->panels['first'][2] = 'new-d1d504cb-3624-4fcd-911e-faac33ebcd88';
+  $pane->uuid = '41b8b990-51b0-4701-a477-5784db12973a';
+  $display->content['new-41b8b990-51b0-4701-a477-5784db12973a'] = $pane;
+  $display->panels['first'][2] = 'new-41b8b990-51b0-4701-a477-5784db12973a';
   $pane = new stdClass();
   $pane->pid = 'new-f6c516c3-dec4-44bb-8b71-6f0265cf7532';
   $pane->panel = 'second';

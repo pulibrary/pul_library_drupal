@@ -1359,7 +1359,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->panel = 'third';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -1376,7 +1376,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->configuration = array(
     'admin_title' => 'Staff Calendar of Events',
-    'title' => 'Staff Calendar of Events',
+    'title' => 'PUL Events Calendar',
     'title_heading' => 'h2',
     'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
@@ -1414,10 +1414,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
     ),
   );
   $pane->configuration = array(
-    'admin_title' => 'HipChat/Slack',
-    'title' => 'Slack',
+    'admin_title' => 'Staff Chat Room',
+    'title' => 'Staff Chat Room',
     'title_heading' => 'h2',
-    'body' => '<p>Join the PUL staff channel.&nbsp;</p>',
+    'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
     'substitute' => 1,
   );

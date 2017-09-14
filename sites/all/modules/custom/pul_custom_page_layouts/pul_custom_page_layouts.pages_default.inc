@@ -537,7 +537,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
@@ -2064,7 +2067,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
+    'css_id' => 'friends',
     'css_class' => 'friends',
   );
   $pane->extras = array();
@@ -2119,7 +2122,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
+    'css_id' => 'renovation',
     'css_class' => 'firestone-renovation',
   );
   $pane->extras = array();
@@ -2973,6 +2976,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -2997,7 +3002,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -3442,7 +3450,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();

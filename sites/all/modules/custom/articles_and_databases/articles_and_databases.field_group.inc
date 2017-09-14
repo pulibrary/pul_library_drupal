@@ -41,7 +41,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_access|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -73,7 +73,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $field_groups['group_db_admininfo|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -102,7 +102,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_copyright_access|node|database|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -130,7 +130,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_desc_group|node|database|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -157,7 +157,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups['group_db_display_otherurls|node|database|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -188,7 +188,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_ezproxyifno|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -220,7 +220,7 @@ function articles_and_databases_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_db_generalinfo|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -248,7 +248,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_issue_status|node|database_issue|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -276,7 +276,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_trial_info|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -304,7 +304,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_db_urlinfo|node|database|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -333,7 +333,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_dboverride_admininfo|node|alternative_database_title|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -361,7 +361,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_sub_guides|taxonomy_term|database_subjects|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -389,7 +389,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_subs_display_flags|taxonomy_term|database_subjects|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -417,7 +417,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_subs_specialist_info|taxonomy_term|database_subjects|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -444,7 +444,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_subs_tier_one_list|taxonomy_term|database_subjects|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -471,7 +471,7 @@ function articles_and_databases_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_subs_tier_two_list|taxonomy_term|database_subjects|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

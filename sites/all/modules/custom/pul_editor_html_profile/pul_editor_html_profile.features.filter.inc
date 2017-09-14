@@ -22,7 +22,7 @@ function pul_editor_html_profile_filter_default_formats() {
         'weight' => -50,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <ul> <ol> <li> <dl> <dt> <dd> <table> <thead> <tbody> <tr> <td> <img> <div> <h2> <h3> <h4> <h5> <h6> <span>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <ul> <ol> <li> <dl> <dt> <dd> <table> <thead> <tbody> <tr> <td> <img> <div> <h2> <h3> <h4> <h5> <h6> <span><p id class><iframe><br>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 1,
         ),
@@ -53,6 +53,11 @@ function pul_editor_html_profile_filter_default_formats() {
       ),
       'filter_htmlcorrector' => array(
         'weight' => -43,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'caption_filter' => array(
+        'weight' => 20,
         'status' => 1,
         'settings' => array(),
       ),
