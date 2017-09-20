@@ -1,9 +1,13 @@
 // for stokes special buttons
 .button--external-link {
-  background-color: $blue-dark;
+  background-color: $black;
   border-radius: $base-border-radius;
   color: $white;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 3px 7px;
+
+  &:hover {
+    background-color: $orange;
+  }
 }

@@ -39,7 +39,7 @@
 @mixin pul-icon {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: "pul-icons";
+  font-family: $font-icons;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -215,39 +215,5 @@
     border: 1px solid $border-active;
     box-shadow: inset 0 0 8px 4px $inset-shadow-active,
     inset 0 0 8px 4px $inset-shadow-active;
-  }
-}
-
-@mixin smart-underline {
-  background-color: transparent;
-  border-bottom: $border-thin $border-solid $smart-underline-color;
-  box-shadow: inset 0 -2px 0 $smart-underline-color;
-  color: $black;
-  overflow-wrap: break-word;
-  text-decoration: none;
-  transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
-  word-break: break-word;
-  word-wrap: break-word;
-}
-
-@mixin smart-underline-link {
-  color: $black;
-  position: relative;
-  text-decoration: none;
-
-  &::after {
-    border-bottom: $border-med $border-solid $smart-underline-color;
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    transition: 0.4s;
-    width: 0%;
-  }
-
-  &:hover::after,
-  &:focus::after,
-  &:active::after {
-    width: 100%;
   }
 }
