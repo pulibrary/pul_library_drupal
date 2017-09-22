@@ -26,3 +26,14 @@ p a {
     vertical-align: top;
   }
 }
+
+.links--decorate a[href*="mendel-music-library-student-manual"] {
+  border: 0;
+
+  &:hover,
+  &:active,
+  &:focus
+  &:visited {
+    border: 0;
+  }
+}
