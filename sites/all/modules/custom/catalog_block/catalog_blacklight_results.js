@@ -76,7 +76,7 @@
                                             if(holding_locations[key]['call_number']) {
                                                 call_number = holding_locations[key]['call_number'];
                                             }
-                                            holdings = holdings + "<div class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + holding_locations[key]['location'] + " " + call_number + "</div>";
+                                            holdings = holdings + "<div class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['location'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></div>";
                                         }
                                     }
                                     if(index == 2) {
@@ -273,8 +273,10 @@
                                 var holding_note = $("*[data-mfhd='" + mfhd + "']").first();
 
                                 if (badge_label != 'Online') {
-                                    var note_text = $(holding_note).text();
-                                    $(holding_note).html(badge + " " + note_text);
+                                    var location_label = result[mfhd].label;
+                                    var note_text = $(holding_note).html();
+                                    var results_location = $(holding_note).html(badge + " <span class='location'>" + location_label + "</span> " + note_text );
+                                    $(".location + .results_location").remove();
                                 } else {
                                     $(holding_note).html('');
                                 }
