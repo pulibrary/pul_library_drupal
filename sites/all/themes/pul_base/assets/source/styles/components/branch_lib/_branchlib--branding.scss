@@ -3,6 +3,7 @@
 .section-econlib,
 .section-copyright,
 .section-tsd,
+.section-services,
 .firestone-library {
   @include breakpoint($tab) {
     .three_six_three_stacked-region--top,
@@ -81,6 +82,10 @@
       opacity: 1;
     }
   }
+}
+
+.section-services .three_nine_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $firestone;
 }
 
 .libraries-architecture .three_six_three_stacked-region--top h2 {
