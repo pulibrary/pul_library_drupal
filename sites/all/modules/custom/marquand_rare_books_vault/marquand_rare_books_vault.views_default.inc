@@ -60,9 +60,9 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['field_rb_voyager_id']['label'] = '';
   $handler->display->display_options['fields']['field_rb_voyager_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['text'] = 'https://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['text'] = 'http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
   $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['path'] = 'https://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['path'] = 'http://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
   $handler->display->display_options['fields']['field_rb_voyager_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_rb_voyager_id']['settings'] = array(
     'thousand_separator' => '',

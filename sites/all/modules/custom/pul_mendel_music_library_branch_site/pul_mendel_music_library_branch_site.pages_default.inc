@@ -712,7 +712,7 @@ music/*',
       'nid' => '7791',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Music Resource Guides',
+    'override_title_text' => 'Resource Guides',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -1286,7 +1286,7 @@ music',
       'nid' => '%node:nid',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Music Resource Guides',
+    'override_title_text' => 'Resource Guides',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();

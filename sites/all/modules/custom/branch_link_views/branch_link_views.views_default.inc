@@ -68,6 +68,14 @@ function branch_link_views_views_default_views() {
 
   /* Display: External Links */
   $handler = $view->new_display('panel_pane', 'External Links', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: External Links */
   $handler->display->display_options['fields']['field_branch_external_links']['id'] = 'field_branch_external_links';
@@ -75,7 +83,9 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_branch_external_links']['field'] = 'field_branch_external_links';
   $handler->display->display_options['fields']['field_branch_external_links']['label'] = '';
   $handler->display->display_options['fields']['field_branch_external_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_branch_external_links']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_branch_external_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_branch_external_links']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_branch_external_links']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;

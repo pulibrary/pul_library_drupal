@@ -111,6 +111,27 @@ function protected_database_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_cas_protected_db_resource';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_cas_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_cas_protected_db_resource';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_cas_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_cas_protected_db_resource';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_cas_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__cas_protected_db_resource';
   $strongarm->value = array(
     'view_modes' => array(
@@ -290,6 +311,7 @@ function protected_database_content_types_strongarm() {
   $strongarm->name = 'node_options_cas_protected_db_resource';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_cas_protected_db_resource'] = $strongarm;
 
@@ -343,6 +365,16 @@ function protected_database_content_types_strongarm() {
   $strongarm->name = 'pathauto_node_ip_protected_db_resource_pattern';
   $strongarm->value = 'resource/restricted/[node:nid]';
   $export['pathauto_node_ip_protected_db_resource_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_cas_protected_db_resource';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_cas_protected_db_resource'] = $strongarm;
 
   return $export;
 }

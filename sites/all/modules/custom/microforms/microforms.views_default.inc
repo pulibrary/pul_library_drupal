@@ -232,6 +232,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
   $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';
@@ -330,6 +331,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -400,6 +402,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -503,6 +506,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: City */
   $handler->display->display_options['fields']['field_microforms_city']['id'] = 'field_microforms_city';
   $handler->display->display_options['fields']['field_microforms_city']['table'] = 'field_data_field_microforms_city';
@@ -587,6 +591,7 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Newspaper';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_microforms_country']['id'] = 'field_microforms_country';
   $handler->display->display_options['fields']['field_microforms_country']['table'] = 'field_data_field_microforms_country';

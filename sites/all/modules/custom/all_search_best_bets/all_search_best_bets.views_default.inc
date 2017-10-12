@@ -73,7 +73,6 @@ function all_search_best_bets_views_default_views() {
   $handler->display->display_options['fields']['field_best_bet_description']['field'] = 'field_best_bet_description';
   $handler->display->display_options['fields']['field_best_bet_description']['label'] = '';
   $handler->display->display_options['fields']['field_best_bet_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_best_bet_description']['type'] = 'text_plain';
   /* Contextual filter: Search: Fulltext search */
   $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_all_search_best_bets';

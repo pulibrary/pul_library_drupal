@@ -60,6 +60,7 @@ function all_search_best_bets_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
+        "field_best_bet_description:format" : { "type" : "string" },
         "field_search_terms" : { "type" : "list\\u003Ctext\\u003E", "boost" : "8.0" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "integer" },

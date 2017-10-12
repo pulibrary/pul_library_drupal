@@ -20,9 +20,10 @@ function cdl_pane_fragments_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => 'New Acquisitions Blurb',
     'title' => 'New Acquisitions',
-    'body' => '<p>Each year, Princeton University Library has the opportunity to add very special items to its holdings of print, digital, non-print and manuscript material either through acquisition or as gifts to the Library. We have chosen some of these titles added this year to highlight. They may also be found by searching the Library’s Online Catalog.</p><p><a href="collections/highlights">View Our Highlights</a></p><p><a href="https://graphicarts.princeton.edu/category/acquisitions/" target="_blank">New Acquisitions in Graphic Arts</a></p><p><a href="https://blogs.princeton.edu/rarebooks/new_acquisitions/">New Acquisitions in Rare Books</a></p>',
+    'body' => '<p>Each year, Princeton University Library has the opportunity to add very special items to its holdings of print, digital, non-print and manuscript material either through acquisition or as gifts to the Library. We have chosen some of these titles added this year to highlight. They may also be found by searching the Library’s Online Catalog.</p><p><a href="collections/highlights">View Our Highlights</a></p><p><a href="https://graphicarts.princeton.edu/category/acquisitions/" target="_blank">New Acquisitions in Graphic Arts</a></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title_heading' => 'h2',
   );
   $export['cdl_new_acq_spotlight'] = $content;
 

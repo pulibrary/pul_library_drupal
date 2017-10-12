@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function cdl_acqusition_highlights_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,7 +38,11 @@ function cdl_acqusition_highlights_field_group_info() {
       ),
     ),
   );
-  $export['group_cdl_highlights_rel|node|acquisitions_highlights|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Link to Related Content');
+
+  return $field_groups;
 }

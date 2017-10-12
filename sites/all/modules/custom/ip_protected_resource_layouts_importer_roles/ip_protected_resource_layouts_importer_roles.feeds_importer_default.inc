@@ -11,7 +11,7 @@ function ip_protected_resource_layouts_importer_roles_feeds_importer_default() {
   $export = array();
 
   $feeds_importer = new stdClass();
-  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->disabled = TRUE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'pul_ip_protected_resource_importer';
   $feeds_importer->config = array(

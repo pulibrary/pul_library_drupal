@@ -29,7 +29,7 @@ function pul_library_users_field_group_info() {
       3 => 'field_personal_lib_contacts',
       4 => 'field_current_personal_lib',
       5 => 'field_personal_lib_spec',
-      6 => 'field_personal_lib_fun_fact',
+      6 => 'field__personal_lib_fun_fact',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

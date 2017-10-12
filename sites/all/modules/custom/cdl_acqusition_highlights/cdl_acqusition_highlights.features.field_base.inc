@@ -10,7 +10,7 @@
 function cdl_acqusition_highlights_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_access'
+  // Exported field_base: 'field_access'.
   $field_bases['field_access'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -38,7 +38,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_bibliographic_record'
+  // Exported field_base: 'field_bibliographic_record'.
   $field_bases['field_bibliographic_record'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -70,7 +70,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_cdl_acq_type'
+  // Exported field_base: 'field_cdl_acq_type'.
   $field_bases['field_cdl_acq_type'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -100,7 +100,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_cdl_rel_database_page'
+  // Exported field_base: 'field_cdl_rel_database_page'.
   $field_bases['field_cdl_rel_database_page'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -143,7 +143,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_cdl_specialist_profile'
+  // Exported field_base: 'field_cdl_specialist_profile'.
   $field_bases['field_cdl_specialist_profile'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -183,7 +183,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_description'
+  // Exported field_base: 'field_description'.
   $field_bases['field_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -205,7 +205,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_image_new_item'
+  // Exported field_base: 'field_image_new_item'.
   $field_bases['field_image_new_item'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -230,7 +230,7 @@ function cdl_acqusition_highlights_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_specialist'
+  // Exported field_base: 'field_specialist'.
   $field_bases['field_specialist'] = array(
     'active' => 1,
     'cardinality' => -1,

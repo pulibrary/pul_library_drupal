@@ -82,32 +82,14 @@ function pul_core_search_indexes_default_search_api_index() {
     "server" : "search_api_library_staging",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "datasource" : { "bundles" : [] },
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
-        "nid" : { "type" : "integer" },
-        "title" : { "type" : "text", "boost" : "21.0" },
-        "url" : { "type" : "uri" },
-        "status" : { "type" : "integer" },
-        "field_db_restricted_access" : { "type" : "boolean" },
-        "field_db_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_db_suppressed" : { "type" : "boolean" },
-        "search_api_language" : { "type" : "string" },
-        "search_api_url" : { "type" : "uri" },
-        "search_api_viewed" : { "type" : "text" },
-        "body:value" : { "type" : "text" },
         "body:summary" : { "type" : "text" },
+        "body:value" : { "type" : "text" },
         "field_db_access_url:url" : { "type" : "text", "boost" : "3.0" },
-        "field_db_keywords:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_db_keywords:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_db_keywords:field_subs_tier_one_resources" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "node"
-        },
-        "field_db_keywords:field_subs_tier_two_resources" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "node"
-        },
+        "field_db_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_db_keywords:field_rsrc_tier_one_resources" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "node"
@@ -116,12 +98,31 @@ function pul_core_search_indexes_default_search_api_index() {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "node"
         },
-        "field_dboverride_database:title" : { "type" : "text", "boost" : "2.0" },
+        "field_db_keywords:field_subs_tier_one_resources" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "node"
+        },
+        "field_db_keywords:field_subs_tier_two_resources" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "node"
+        },
+        "field_db_keywords:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_db_keywords:tid" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_db_restricted_access" : { "type" : "boolean" },
+        "field_db_suppressed" : { "type" : "boolean" },
+        "field_dboverride_database:field_db_access_url:url" : { "type" : "text" },
         "field_dboverride_database:field_db_use_proxy" : { "type" : "boolean" },
-        "field_schemaorg_description:value" : { "type" : "text" },
-        "field_schemaorg_description:summary" : { "type" : "text" },
+        "field_dboverride_database:title" : { "type" : "text", "boost" : "2.0" },
         "field_schemaorg_description:format" : { "type" : "string" },
-        "field_dboverride_database:field_db_access_url:url" : { "type" : "text" }
+        "field_schemaorg_description:summary" : { "type" : "text" },
+        "field_schemaorg_description:value" : { "type" : "text" },
+        "nid" : { "type" : "integer" },
+        "search_api_language" : { "type" : "string" },
+        "search_api_url" : { "type" : "uri" },
+        "search_api_viewed" : { "type" : "text" },
+        "status" : { "type" : "integer" },
+        "title" : { "type" : "text", "boost" : "21.0" },
+        "url" : { "type" : "uri" }
       },
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : { "fields" : [] } },
@@ -218,17 +219,17 @@ function pul_core_search_indexes_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "tid" : { "type" : "integer" },
-        "name" : { "type" : "text", "boost" : "5.0" },
         "description" : { "type" : "text" },
-        "parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_rsrc_tier_one_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "field_subs_tier_one_resources:nid" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_subs_tier_one_resources:title" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_subs_tier_one_resources:url" : { "type" : "list\\u003Curi\\u003E" },
+        "name" : { "type" : "text", "boost" : "5.0" },
+        "parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
         "search_api_viewed" : { "type" : "text" },
-        "field_subs_tier_one_resources:nid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_subs_tier_one_resources:title" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_subs_tier_one_resources:url" : { "type" : "list\\u003Curi\\u003E" }
+        "tid" : { "type" : "integer" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -377,7 +378,8 @@ function pul_core_search_indexes_default_search_api_index() {
     "server" : "search_api_library_staging",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "datasource" : { "bundles" : [] },
+      "index_directly" : 1,
       "cron_limit" : "50",
       "data_alter_callbacks" : {
         "search_api_ranges_alter" : { "status" : 0, "weight" : "-50", "settings" : [] },
@@ -461,7 +463,6 @@ function pul_core_search_indexes_default_search_api_index() {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
-        "comment_count" : { "type" : "integer" },
         "created" : { "type" : "date" },
         "field_schemaorg_description:summary" : { "type" : "text" },
         "field_schemaorg_description:value" : { "type" : "text" },

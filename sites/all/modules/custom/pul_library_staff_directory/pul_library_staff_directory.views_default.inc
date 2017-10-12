@@ -286,7 +286,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo-small';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
@@ -348,7 +348,6 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_formalname']['field_api_classes'] = TRUE;
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -455,6 +454,7 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['style_options']['hide'] = TRUE;
   $handler->display->display_options['style_options']['path'] = 'name';
   $handler->display->display_options['style_options']['text'] = 'View';
+  $handler->display->display_options['style_options']['label'] = 'Librarians';
   $handler->display->display_options['style_options']['choose'] = '- Select Librarian -';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -737,7 +737,6 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_formalname']['field_api_classes'] = TRUE;
   /* Field: User: Official Title */
   $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
   $handler->display->display_options['fields']['field_puluser_officialtitle']['table'] = 'field_data_field_puluser_officialtitle';
@@ -877,6 +876,8 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['display_description'] = 'Displays all database subjects assigned to the librarian. ';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

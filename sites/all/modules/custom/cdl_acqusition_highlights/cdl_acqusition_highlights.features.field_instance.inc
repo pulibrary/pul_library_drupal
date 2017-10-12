@@ -10,7 +10,7 @@
 function cdl_acqusition_highlights_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_access'
+  // Exported field_instance: 'node-acquisitions_highlights-field_access'.
   $field_instances['node-acquisitions_highlights-field_access'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -73,7 +73,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-acquisitions_highlights-field_bibliographic_record'
+  // 'node-acquisitions_highlights-field_bibliographic_record'.
   $field_instances['node-acquisitions_highlights-field_bibliographic_record'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -153,7 +153,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_cdl_acq_type'
+  // Exported field_instance: 'node-acquisitions_highlights-field_cdl_acq_type'.
   $field_instances['node-acquisitions_highlights-field_cdl_acq_type'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -216,7 +216,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-acquisitions_highlights-field_cdl_rel_database_page'
+  // 'node-acquisitions_highlights-field_cdl_rel_database_page'.
   $field_instances['node-acquisitions_highlights-field_cdl_rel_database_page'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -233,6 +233,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -248,6 +249,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -288,7 +290,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-acquisitions_highlights-field_cdl_specialist_profile'
+  // 'node-acquisitions_highlights-field_cdl_specialist_profile'.
   $field_instances['node-acquisitions_highlights-field_cdl_specialist_profile'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -305,6 +307,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -320,6 +323,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -359,7 +363,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_description'
+  // Exported field_instance: 'node-acquisitions_highlights-field_description'.
   $field_instances['node-acquisitions_highlights-field_description'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
@@ -426,7 +430,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-acquisitions_highlights-field_image_new_item'
+  // 'node-acquisitions_highlights-field_image_new_item'.
   $field_instances['node-acquisitions_highlights-field_image_new_item'] = array(
     'bundle' => 'acquisitions_highlights',
     'deleted' => 0,
@@ -532,7 +536,7 @@ function cdl_acqusition_highlights_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-acquisitions_highlights-field_specialist'
+  // Exported field_instance: 'node-acquisitions_highlights-field_specialist'.
   $field_instances['node-acquisitions_highlights-field_specialist'] = array(
     'bundle' => 'acquisitions_highlights',
     'default_value' => NULL,
