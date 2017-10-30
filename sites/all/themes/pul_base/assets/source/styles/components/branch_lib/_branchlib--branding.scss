@@ -3,7 +3,7 @@
 .section-econlib,
 .section-copyright,
 .section-tsd,
-.section-services,
+.services--sco, // change to .section-services when all services/units have banner graphic
 .firestone-library {
   @include breakpoint($tab) {
     .three_six_three_stacked-region--top,
