@@ -5,7 +5,7 @@
   position: relative;
 
   @include breakpoint($tab) {
-    background: url("/sites/all/themes/pul_base/assets/public/images/studying-firestone-bg.jpg") center center no-repeat;
+    background: url("/sites/all/themes/pul_base/assets/public/images/studying-firestone-bg-alt.jpg") center center no-repeat;
     // background-position-y: -30px;
     background-size: cover;
     height: 350px;

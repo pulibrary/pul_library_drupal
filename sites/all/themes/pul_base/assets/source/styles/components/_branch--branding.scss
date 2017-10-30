@@ -1,11 +1,5 @@
 .three_six_three_stacked-region--top {
   @include breakpoint($tab) {
-    margin-left: -1em;
-    width: 110%;
-  }
-
-
-  @include breakpoint($desk) {
     margin-left: 0;
     width: 100%;
   }
