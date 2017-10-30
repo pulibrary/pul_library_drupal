@@ -10,6 +10,15 @@
     display: block;
   }
 
+  &.webform-container-inline .form-type-radio {
+    display: block;
+    margin-bottom: 0;
+
+    label {
+      display: inline-block;
+    }
+  }
+
   .form-text,
   .field-prefix,
   .field-suffix {
