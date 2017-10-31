@@ -71,10 +71,18 @@ function pul_base_date_nav_title($params) {
     }
 }
 
+function pul_base_allsearch_block_form_validate($form, &$form_state) {
+  $keys = $form_state['values']['query'];
+  if (!empty($keys) && substr($keys, 0, 1) == '.') {
+    $form_state['values']['query'] = substr($keys, 1);
+  }
+}
+
 function pul_base_form_alter(&$form, &$form_state, $form_id) {
     switch($form_id) {
         case 'allsearch_block_form':
-           $form['allsearch_block_form']['#attributes']['placeholder'] = t('Search');
+            $form['#validate'][] = 'pul_base_allsearch_block_form_validate';
+            $form['allsearch_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="allsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
