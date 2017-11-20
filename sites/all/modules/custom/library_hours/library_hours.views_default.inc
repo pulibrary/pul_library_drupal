@@ -1366,6 +1366,11 @@ function library_hours_views_default_views() {
   $handler->display->display_options['relationships']['field_library_hrs_target_id']['field'] = 'field_library_hrs_target_id';
   $handler->display->display_options['relationships']['field_library_hrs_target_id']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['relationships']['field_library_hrs_target_id']['label'] = 'Library';
+  /* Relationship: File Usage: File */
+  $handler->display->display_options['relationships']['taxonomy_term_to_file']['id'] = 'taxonomy_term_to_file';
+  $handler->display->display_options['relationships']['taxonomy_term_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['taxonomy_term_to_file']['field'] = 'taxonomy_term_to_file';
+  $handler->display->display_options['relationships']['taxonomy_term_to_file']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Calendar image */
   $handler->display->display_options['fields']['field_calendar_image']['id'] = 'field_calendar_image';
@@ -1449,6 +1454,16 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_calendar_display_name']['label'] = '';
   $handler->display->display_options['fields']['field_calendar_display_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_calendar_display_name']['element_label_colon'] = FALSE;
+  /* Field: File: Path */
+  $handler->display->display_options['fields']['uri']['id'] = 'uri';
+  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['uri']['field'] = 'uri';
+  $handler->display->display_options['fields']['uri']['relationship'] = 'taxonomy_term_to_file';
+  $handler->display->display_options['fields']['uri']['label'] = '';
+  $handler->display->display_options['fields']['uri']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1456,7 +1471,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure">[field_calendar_image]</div><div class="media--body"><h3>[field_calendar_display_name]</h3>
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure"><img src="[uri]" alt=""></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
 <span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
 </div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
