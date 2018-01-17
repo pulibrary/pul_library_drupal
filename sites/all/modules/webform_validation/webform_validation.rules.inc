@@ -2,11 +2,11 @@
 
 /**
  * @file
- * provides API and management functions for the webform validation rules
+ * Provides API and management functions for the webform validation rules.
  */
 
 /**
- * Get a rule entry
+ * Get a rule entry.
  */
 function webform_validation_get_rule($ruleid) {
   $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate, weight FROM {webform_validation_rule} WHERE ruleid = :ruleid", array(':ruleid' => $ruleid), array('fetch' => PDO::FETCH_ASSOC));
@@ -17,7 +17,7 @@ function webform_validation_get_rule($ruleid) {
 }
 
 /**
- * Get an array of rules assigned to a webform node
+ * Get an array of rules assigned to a webform node.
  */
 function webform_validation_get_node_rules($nid) {
   $rules = array();
@@ -31,7 +31,7 @@ function webform_validation_get_node_rules($nid) {
 }
 
 /**
- * Get an array of components linked to a rule
+ * Get an array of components linked to a rule.
  */
 function webform_validation_get_rule_components($ruleid, $nid) {
   $cids = array();
@@ -54,7 +54,7 @@ function webform_validation_get_rule_components($ruleid, $nid) {
 }
 
 /**
- * Get info on all components that are available on a webform
+ * Get info on all components that are available on a webform.
  */
 function webform_validation_get_all_components($nid) {
   $components = array();

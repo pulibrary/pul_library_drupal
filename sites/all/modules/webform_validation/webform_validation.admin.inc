@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Manages validation rules administration UI
+ * Manages validation rules administration UI.
  */
 
 /**
- * Menu callback function to show an overview of the existing validation rules, and the option to add a rule
+ * Menu callback function to show an overview of the existing validation rules, and the option to add a rule.
  */
 function webform_validation_manage($node) {
   $rules = webform_validation_get_webform_rules($node);
@@ -20,7 +20,7 @@ function webform_validation_manage($node) {
 }
 
 /**
- * Get the list of rules associated with the webform
+ * Get the list of rules associated with the webform.
  */
 function webform_validation_get_webform_rules($node) {
   if (in_array($node->type, webform_variable_get('webform_node_types'))) {
@@ -30,24 +30,29 @@ function webform_validation_get_webform_rules($node) {
   return $rules;
 }
 
-
 /**
- * Themable function to list and re-order the rules assigned to a webform
+ * Themable function to list and re-order the rules assigned to a webform.
  */
 function theme_webform_validation_manage_overview_form($variables) {
   $form = $variables['form'];
-  $header = array(t('Rule name'), t('Validator'), t('Components'), t('Weight'), array(
-    'data' => t('Operations'),
-    'colspan' => 2,
-  ));
+  $header = array(
+    t('Rule name'),
+    t('Validator'),
+    t('Components'),
+    t('Weight'), array(
+      'data' => t('Operations'),
+      'colspan' => 2,
+    ),
+  );
 
   $rows = array();
   foreach (element_children($form) as $rule) {
     $row = array();
     foreach (element_children($form[$rule]) as $item) {
-      //unset the titles of the form elements, since we are displaying them in a table with a header.
+      // Unset the titles of the form elements, since we are displaying them in
+      // a table with a header.
       unset($form[$rule][$item]['#title']);
-      //add a class to the weight field
+      // Add a class to the weight field.
       $form[$rule]['weight']['#attributes']['class'] = array('ruleid-weight');
       $row[] = array(
         'data' => drupal_render($form[$rule][$item]),
@@ -72,7 +77,13 @@ function theme_webform_validation_manage_overview_form($variables) {
       'colspan' => 5,
     );
   }
-  $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'webform-validation-overview-form')));
+  $output = theme('table', array(
+    'header' => $header,
+    'rows' => $rows,
+    'attributes' => array(
+      'id' => 'webform-validation-overview-form',
+    ),
+  ));
   $output .= drupal_render_children($form);
   if ($drag) {
     drupal_add_tabledrag('webform-validation-overview-form', 'order', 'sibling', 'ruleid-weight');
@@ -81,7 +92,7 @@ function theme_webform_validation_manage_overview_form($variables) {
 }
 
 /**
- * Form to list and reorder the rules assigned to a webform
+ * Form to list and reorder the rules assigned to a webform.
  */
 function webform_validation_manage_overview_form($form, &$form_state, $rules, $node) {
   $form = array();
@@ -138,24 +149,24 @@ function webform_validation_manage_overview_form($form, &$form_state, $rules, $n
  * Submit function for rule overview form.
  */
 function webform_validation_manage_overview_form_submit($form, $form_state) {
-  //Save the rule weights.
+  // Save the rule weights.
   foreach ($form_state['values'] as $ruleid => $value) {
     if (is_numeric($ruleid)) {
       $update = db_update('webform_validation_rule')
-        ->fields(array(
-          'weight' => $value['weight'],
-        ))
-        ->condition('ruleid', $ruleid)
-        ->execute();
+          ->fields(array(
+            'weight' => $value['weight'],
+          ))
+          ->condition('ruleid', $ruleid)
+          ->execute();
     }
   }
   drupal_set_message(t('The order of the validation rules has been saved.'));
 }
 
 /**
- * Callback function to add or edit a validation rule
+ * Callback function to add or edit a validation rule.
  */
-function webform_validation_manage_rule($form, $form_state, $node, $action = 'add', $validator, $rule = NULL) {
+function webform_validation_manage_rule($form, $form_state, $node, $action, $validator, $rule = NULL) {
   $form = array();
   $rule_validator = webform_validation_get_validator_info($validator);
 
@@ -266,7 +277,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action = 'ad
 }
 
 /**
- * Validation handler to add / edit a rule
+ * Validation handler to add / edit a rule.
  */
 function webform_validation_manage_rule_validate($form, &$form_state) {
   $values = $form_state['values'];
@@ -280,21 +291,20 @@ function webform_validation_manage_rule_validate($form, &$form_state) {
   $selected_components = count(array_filter($values['rule_components']));
   // Check validator min_components and min_components property when they are equal.
   if (isset($rule_validator['min_components']) && isset($rule_validator['max_components']) && $rule_validator['min_components'] === $rule_validator['max_components'] && $selected_components !== $rule_validator['min_components']) {
-      form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component', 'You need to select exactly @count components'));
+    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component', 'You need to select exactly @count components'));
   }
-  // check validator min_components property
+  // Check validator min_components property.
   elseif (isset($rule_validator['min_components']) && $selected_components < $rule_validator['min_components']) {
-      form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select at least @count component', 'You need to select at least @count components'));
+    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select at least @count component', 'You need to select at least @count components'));
   }
-  // check validator max_components property
+  // Check validator max_components property.
   elseif (isset($rule_validator['max_components']) && $selected_components > $rule_validator['max_components']) {
-      form_set_error('rule_components', format_plural($rule_validator['max_components'], 'You can select @count component at most', 'You can select @count components at most'));
+    form_set_error('rule_components', format_plural($rule_validator['max_components'], 'You can select @count component at most', 'You can select @count components at most'));
   }
 }
 
-
 /**
- * Submit handler to add / edit a rule
+ * Submit handler to add / edit a rule.
  */
 function webform_validation_manage_rule_submit($form, &$form_state) {
   $values = $form_state['values'];
@@ -302,9 +312,11 @@ function webform_validation_manage_rule_submit($form, &$form_state) {
 }
 
 /**
- * Get a list of components for a specific webform, filtered by the validator settings
+ * Get a list of components for a specific webform, filtered by the validator settings.
  */
 function webform_validation_get_webform_components($node, $validator) {
+  form_load_include($form_state, 'inc', 'webform', 'includes/webform.components');
+
   $ret = array();
   $components = $node->webform['components'];
   if ($components) {
@@ -320,7 +332,7 @@ function webform_validation_get_webform_components($node, $validator) {
 }
 
 /**
- * Confirmation form to delete a rule
+ * Confirmation form to delete a rule.
  */
 function webform_validation_delete_rule($form, &$form_state, $rule) {
   if (isset($rule['ruleid'])) {
@@ -330,17 +342,12 @@ function webform_validation_delete_rule($form, &$form_state, $rule) {
     );
   }
 
-  return confirm_form($form,
-    t('Are you sure you want to delete the rule %name?', array('%name' => $rule['rulename'])),
-    isset($_GET['destination']) ? $_GET['destination'] : $_GET['q'],
-    t('This action cannot be undone.'),
-    t('Delete'),
-    t('Cancel')
+  return confirm_form($form, t('Are you sure you want to delete the rule %name?', array('%name' => $rule['rulename'])), isset($_GET['destination']) ? $_GET['destination'] : $_GET['q'], t('This action cannot be undone.'), t('Delete'), t('Cancel')
   );
 }
 
 /**
- * Submit handler to delete a rule
+ * Submit handler to delete a rule.
  */
 function webform_validation_delete_rule_submit($form, &$form_state) {
   $ruleid = $form_state['values']['ruleid'];
