@@ -2,7 +2,7 @@
 
 /**
  * @file
- * webform_validation installation file
+ * Webform_validation installation file.
  */
 
 /**
@@ -123,22 +123,22 @@ function webform_validation_update_1() {
 }
 
 /**
- * Helper function: update numeric validator range to new syntax
+ * Helper function: update numeric validator range to new syntax.
  */
 function _webform_validation_update_range_syntax($range) {
-  // no longer use "0" as indicator for no validation. This should be an empty string
+  // No longer use "0" as indicator for no validation. This should be an empty string.
   if ($range === "0") {
     return "";
   }
 
-  // replace "0-VAL" with "|VAL" as indicator for less than or equal to
+  // Replace "0-VAL" with "|VAL" as indicator for less than or equal to.
   if (preg_match('/^0 ?-/', $range)) {
     $range_arr = explode('-', $range);
     $range_end = $range_arr[1];
     return "|" . trim($range_end);
   }
 
-  // replace "-" as separator between range values in favor of "|"
+  // Replace "-" as separator between range values in favor of "|".
   $range = str_replace("-", "|", $range);
   return $range;
 }
