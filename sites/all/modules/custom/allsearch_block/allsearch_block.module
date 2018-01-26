@@ -55,8 +55,7 @@ function allsearch_block_form($form, &$form_state) {
     */
    if(drupal_is_front_page()) {
     $form['#suffix'] = '<ul class="homepage-tab-form-message">
-      <li><a href="https://pulsearch.princeton.edu/">New Catalog</a></li>
-      <li><a href="https://catalog.princeton.edu/">Main Catalog</a></li>
+      <li><a href="https://catalog.princeton.edu/">Catalog</a></li>
       <li><a href="https://princeton.summon.serialssolutions.com/">Articles+</a></li>
       <li><a href="/research/databases">Databases</a></li>
     </ul>';

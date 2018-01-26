@@ -48,7 +48,7 @@ function allsearch_form_form($form, &$form_state) {
     * will ensure this form always posts through the bare current path
     *
     */
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the New Catalog" href="https://pulsearch.princeton.edu/">New Catalog</a> <a title="Go to the Main Catalog" href="https://catalog.princeton.edu/">Main Catalog</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Catalog" href="https://catalog.princeton.edu/">Catalog</a></div>';
    $form['#action'] = url('');
    $form['#method'] = "post";
    $form['#submit'] = array('allsearch_form_form_redirect');

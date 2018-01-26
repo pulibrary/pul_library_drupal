@@ -658,7 +658,7 @@ function pul_libraries_ct_field_default_field_instances() {
   $field_instances['node-libraries-field_branch_quick_link'] = array(
     'bundle' => 'libraries',
     'deleted' => 0,
-    'description' => 'Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Main Catalog) before creating a new one.',
+    'description' => 'Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Catalog) before creating a new one.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -2277,7 +2277,7 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Long Description');
   t('Main Menu Library Link');
   t('Phone');
-  t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Main Catalog) before creating a new one.');
+  t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Catalog) before creating a new one.');
   t('State');
   t('Tags');
   t('Use to link to library websites and other resources that are not Library databases or internal PUL content. ');
