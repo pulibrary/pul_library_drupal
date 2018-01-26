@@ -2,7 +2,6 @@
 .page-marquand-resources-sales-catalogs,
 .section-econlib,
 .section-copyright,
-.section-tsd,
 .services--sco, // change to .section-services when all services/units have banner graphic
 .firestone-library {
   @include breakpoint($tab) {
@@ -73,9 +72,11 @@
 .section-tsd .single-region--top {
   @include breakpoint($tab) {
     h2 {
-      background: none;
-      margin-left: 1.5em;
+      color: $black;
+      margin-left: 50px;
+      margin-top: 75px;
       padding-bottom: 0.1em;
+      position: absolute;
     }
 
     img {
