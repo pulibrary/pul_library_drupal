@@ -482,7 +482,7 @@
           });
         });
 
-        // stokes links to main catalog, databases, newspapers, on landing page
+        // stokes links to catalog, databases, newspapers, on landing page
         $('.branch-libraries.libraries-stokes a.button--external-link').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'Branch Quick Links', 'click', $(this).text(),

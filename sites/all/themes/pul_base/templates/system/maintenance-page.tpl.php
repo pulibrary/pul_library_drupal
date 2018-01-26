@@ -57,22 +57,19 @@
                 <a href="/research" title="Find library materials">Research Tools</a>
                 <ul class="menu">
                   <li class="first leaf">
-                    <a href="http://dss.princeton.edu">Data and Statistics</a>
+                    <a href="https://dss.princeton.edu">Data and Statistics</a>
                   </li>
                   <li class="leaf">
                     <a href="/research/databases">Databases</a>
                   </li>
                   <li class="leaf">
-                    <a href="http://findingaids.princeton.edu/">Finding Aids</a>
+                    <a href="https://findingaids.princeton.edu/">Finding Aids</a>
                   </li>
                   <li class="leaf">
-                    <a href="http://catalog.princeton.edu">Main Catalog</a>
+                    <a href="https://catalog.princeton.edu">Catalog</a>
                   </li>
                   <li class="leaf">
-                    <a href="http://libguides.princeton.edu/newspapers">Newspapers</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="https://pulsearch.princeton.edu/">New Catalog</a>
+                    <a href="https://libguides.princeton.edu/newspapers">Newspapers</a>
                   </li>
                   <li class="leaf">
                     <a href="/resource/4165">Worldcat</a>
@@ -138,7 +135,7 @@
                 <a href="/about" title="About the library">About the Library</a>
                 <ul class="menu">
                   <li class="first leaf">
-                    <a href="http://rbsc.princeton.edu/exhibitions">Exhibitions</a>
+                    <a href="https://rbsc.princeton.edu/exhibitions">Exhibitions</a>
                   </li>
                   <li class="leaf">
                     <a href="/alumni">For Alumni</a>
@@ -177,22 +174,19 @@
           <h2 class="block__title block__title"><a class="footer-link" href="/research">Research Tools</a></h2>
           <ul class="menu">
             <li class="first leaf">
-              <a class="footer-link" href="http://dss.princeton.edu">Data and Statistics</a>
+              <a class="footer-link" href="https://dss.princeton.edu">Data and Statistics</a>
             </li>
             <li class="leaf">
               <a class="footer-link" href="/research/databases" title="Browse Research Databases by Title or Subject">Databases</a>
             </li>
             <li class="leaf">
-              <a class="footer-link" href="http://getit.princeton.edu/" title="Browse Electronic Journal Titles">E-journals</a>
+              <a class="footer-link" href="https://getit.princeton.edu/" title="Browse Electronic Journal Titles">E-journals</a>
             </li>
             <li class="leaf">
               <a class="footer-link" href="/library-guides" title="Library Research Guides">Research Guides</a>
             </li>
             <li class="leaf">
-              <a class="footer-link" href="http://catalog.princeton.edu" title="Access the library's main catalog">Main Catalog</a>
-            </li>
-            <li class="leaf">
-              <a class="footer-link" href="https://pulsearch.princeton.edu/">New Catalog</a>
+              <a class="footer-link" href="https://catalog.princeton.edu" title="Access the library's catalog">Catalog</a>
             </li>
             <li class="last leaf">
               <a class="footer-link" href="/databases/subject/special-collections" title="Finding Aids for the Princeton University Archives and Special Collections">Special Collections</a>
@@ -238,7 +232,7 @@
               <a class="footer-link" href="/collections-and-collection-development">Collections and Collecting</a>
             </li>
             <li class="leaf">
-              <a class="footer-link" href="http://rbsc.princeton.edu/exhibitions">Exhibitions</a>
+              <a class="footer-link" href="https://rbsc.princeton.edu/exhibitions">Exhibitions</a>
             </li>
             <li class="leaf">
               <a class="footer-link" href="/about/locations">Library Locations</a>
@@ -264,7 +258,7 @@
           <div class="block__content block__content">
             <h2>Princeton University Library</h2>
             <div class="footer--icons">
-              <a class="facebook-logo" href="http://www.facebook.com/PULibrary" title="Friend us on Facebook"><img alt="Facebook" border="0" src="/sites/all/themes/pul_base/assets/public/images/facebook.png"></a> <a class="twitter-logo" href="http://twitter.com/PULibrary" title="Follow us on Twitter"><img alt="Twitter" border="0" src="/sites/all/themes/pul_base/assets/public/images/twitter.png"></a> <a class="govdocs-logo" href="http://libguides.princeton.edu/govdocs" title="Government Documents Depository"><img alt="Government Documents Depository" border="0" src="/sites/all/themes/pul_base/assets/public/images/depository.png"></a> <a class="friends-logo" href="http://fpul.princeton.edu/" title="Friends of the Library"><img alt="Friends of the Library" src="/sites/all/themes/pul_base/assets/public/images/friends.png"></a>
+              <a class="facebook-logo" href="https://www.facebook.com/PULibrary" title="Friend us on Facebook"><img alt="Facebook" border="0" src="/sites/all/themes/pul_base/assets/public/images/facebook.png"></a> <a class="twitter-logo" href="https://twitter.com/PULibrary" title="Follow us on Twitter"><img alt="Twitter" border="0" src="/sites/all/themes/pul_base/assets/public/images/twitter.png"></a> <a class="govdocs-logo" href="https://libguides.princeton.edu/govdocs" title="Government Documents Depository"><img alt="Government Documents Depository" border="0" src="/sites/all/themes/pul_base/assets/public/images/depository.png"></a> <a class="friends-logo" href="https://fpul.princeton.edu/" title="Friends of the Library"><img alt="Friends of the Library" src="/sites/all/themes/pul_base/assets/public/images/friends.png"></a>
             </div>
             <address>
               One Washington Road<br>
@@ -272,7 +266,7 @@
               (609) 258-1470 Phone
             </address>
             <div class="pu">
-              <a class="pu-logo" href="http://www.princeton.edu"><img alt="Princeton University" class="university-logo" src="/sites/default/files/images/pu_logo_trans.png"></a>
+              <a class="pu-logo" href="https://www.princeton.edu"><img alt="Princeton University" class="university-logo" src="/sites/default/files/images/pu_logo_trans.png"></a>
             </div>
             <p class="footer--copyright">© 2016 The Trustees of Princeton University. All rights reserved.</p>
           </div>

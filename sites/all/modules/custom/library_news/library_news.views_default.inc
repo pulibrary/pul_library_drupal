@@ -1454,7 +1454,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<div><a class="views-more-link" href="/news">More News</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Homepage spotlight */
+  /* Field: Content: Homepage Spotlight */
   $handler->display->display_options['fields']['field_homepage_spotlight']['id'] = 'field_homepage_spotlight';
   $handler->display->display_options['fields']['field_homepage_spotlight']['table'] = 'field_data_field_homepage_spotlight';
   $handler->display->display_options['fields']['field_homepage_spotlight']['field'] = 'field_homepage_spotlight';
@@ -1492,7 +1492,7 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Homepage spotlight (field_homepage_spotlight) */
+  /* Sort criterion: Content: Homepage Spotlight (field_homepage_spotlight) */
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['id'] = 'field_homepage_spotlight_value';
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['table'] = 'field_data_field_homepage_spotlight';
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['field'] = 'field_homepage_spotlight_value';
@@ -2598,6 +2598,12 @@ function library_news_views_default_views() {
   $handler->display->display_options['filters']['field_news_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_news_category_tid']['vocabulary'] = 'news_events_categories';
   $handler->display->display_options['filters']['field_news_category_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Post date */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = '>=';
+  $handler->display->display_options['filters']['created']['value']['value'] = '-7 days';
 
   /* Display: Single News Item Bibliographic Information */
   $handler = $view->new_display('panel_pane', 'Single News Item Bibliographic Information', 'panel_pane_13');
@@ -2729,7 +2735,7 @@ function library_news_views_default_views() {
   /* Display: Engineering Latest News */
   $handler = $view->new_display('panel_pane', 'Engineering Latest News', 'panel_pane_17');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Engineering News';
+  $handler->display->display_options['title'] = 'Engineering Library News';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;

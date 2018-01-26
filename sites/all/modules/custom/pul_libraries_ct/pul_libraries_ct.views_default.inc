@@ -196,7 +196,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Library Banner Image */
+  /* Field: Content: Banner Image */
   $handler->display->display_options['fields']['field_library_image']['id'] = 'field_library_image';
   $handler->display->display_options['fields']['field_library_image']['table'] = 'field_data_field_library_image';
   $handler->display->display_options['fields']['field_library_image']['field'] = 'field_library_image';
