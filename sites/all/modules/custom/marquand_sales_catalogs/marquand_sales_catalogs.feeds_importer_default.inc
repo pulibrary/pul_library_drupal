@@ -26,6 +26,7 @@ function marquand_sales_catalogs_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -33,6 +34,7 @@ function marquand_sales_catalogs_feeds_importer_default() {
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
+        'encoding' => 'UTF-8',
       ),
     ),
     'processor' => array(
@@ -43,34 +45,45 @@ function marquand_sales_catalogs_feeds_importer_default() {
         'authorize' => 1,
         'mappings' => array(
           0 => array(
+            'source' => 'ID',
+            'target' => 'guid',
+            'unique' => 1,
+            'language' => 'und',
+          ),
+          1 => array(
             'source' => 'Date',
             'target' => 'field_sc_date',
             'unique' => FALSE,
+            'language' => 'und',
           ),
-          1 => array(
+          2 => array(
             'source' => 'Auction House',
             'target' => 'field_sc_auction_house',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
           ),
-          2 => array(
+          3 => array(
             'source' => 'City',
             'target' => 'field_sc_city',
             'term_search' => '0',
             'autocreate' => 1,
-          ),
-          3 => array(
-            'source' => 'Sale',
-            'target' => 'field_sc_sale',
-            'unique' => FALSE,
+            'language' => 'und',
           ),
           4 => array(
+            'source' => 'Sale #',
+            'target' => 'field_sc_sale',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          5 => array(
             'source' => 'Name',
             'target' => 'field_sc_name',
             'unique' => FALSE,
+            'language' => 'und',
           ),
-          5 => array(
-            'source' => 'Notes',
+          6 => array(
+            'source' => 'Catalog',
             'target' => 'field_sc_notes',
             'unique' => FALSE,
           ),
@@ -79,6 +92,9 @@ function marquand_sales_catalogs_feeds_importer_default() {
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'marquand_sales_catalog',
+        'insert_new' => '1',
+        'update_non_existent' => 'delete',
+        'language' => 'und',
       ),
     ),
     'content_type' => '',
