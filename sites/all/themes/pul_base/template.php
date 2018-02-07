@@ -86,7 +86,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="allsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
 
@@ -95,7 +95,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="search-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm strong">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'catalog_block_form':
@@ -103,7 +103,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="catalog-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'summon_block_form':
@@ -111,7 +111,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="summon-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'dbsearch_block_form':
@@ -119,7 +119,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="dbsearch-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide-sm">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'music_audio_block_form':
@@ -127,7 +127,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="audio-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'music_score_block_form':
@@ -135,7 +135,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="score-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
         case 'music_video_block_form':
@@ -143,7 +143,7 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
             $form['button'] = array(
                 '#prefix' => '<button type="submit" id="video-submit-btn" name="op" class="form-submit">',
                 '#suffix' => '</button>',
-                '#markup' => '<span class="icon-search"> <span class="hide">Search</span></span>',
+                '#markup' => '<span class="hide">Search</span>',
             );
             break;
     }

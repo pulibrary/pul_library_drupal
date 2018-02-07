@@ -1,0 +1,38 @@
+/* line 3, LG_v2_chatbutton.scss */
+div.libraryh3lp > a.btn {
+  border-color: #bbbbbb #bbbbbb #a2a2a2;
+  -webkit-box-shadow: 0px 8px 6px -4px #aaaaaa;
+  -moz-box-shadow: 0px 8px 6px -4px #aaaaaa;
+  box-shadow: 0px 8px 6px -4px #aaaaaa;
+  color: #FFF;
+}
+/* line 7, LG_v2_chatbutton.scss */
+div.libraryh3lp > a.btn:hover {
+  background-color: #E87511 !important;
+  -webkit-transition: background-color 0.1s linear;
+  -webkit-transition-delay: 0s;
+  -moz-transition: background-color 0.1s linear 0s;
+  -o-transition: background-color 0.1s linear 0s;
+  transition: background-color 0.1s linear 0s;
+}
+/* line 11, LG_v2_chatbutton.scss */
+div.libraryh3lp > a.btn:active, div.libraryh3lp > a.btn:focus {
+  background-color: #E87511 !important;
+}
+
+/* line 15, LG_v2_chatbutton.scss */
+div.libraryh3lp > a.btn-primary {
+  width: 100%;
+  background-color: #EA8817 !important;
+  /*@include background-image(linear-gradient($button-gradient-top, $button-gradient-bottom));*/
+  color: #FFF;
+  background-image: none;
+  font-size: 19px;
+  font-weight: bold;
+  text-shadow: #333 1px 1px 3px;
+}
+
+/* line 22, LG_v2_chatbutton.scss */
+div.libraryh3lp i.fa {
+  color: #FFF;
+}
