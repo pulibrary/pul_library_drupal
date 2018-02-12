@@ -723,6 +723,47 @@ help/engineering-course-reserves-request-form',
   $display->content['new-6fc75bff-13ab-46b3-b9e3-b897ae74a987'] = $pane;
   $display->panels['middle'][3] = 'new-6fc75bff-13ab-46b3-b9e3-b897ae74a987';
   $pane = new stdClass();
+  $pane->pid = 'new-ebaf77f6-41c7-47c9-9ea6-8a479cc79bdc';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'engineering/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7786',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'ebaf77f6-41c7-47c9-9ea6-8a479cc79bdc';
+  $display->content['new-ebaf77f6-41c7-47c9-9ea6-8a479cc79bdc'] = $pane;
+  $display->panels['middle'][4] = 'new-ebaf77f6-41c7-47c9-9ea6-8a479cc79bdc';
+  $pane = new stdClass();
   $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane->panel = 'second';
   $pane->type = 'block';

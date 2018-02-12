@@ -579,6 +579,47 @@ function pul_video_library_default_page_manager_handlers() {
   $display->content['new-da6d2020-f96a-4dce-8edf-2d707988d576'] = $pane;
   $display->panels['middle'][1] = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
   $pane = new stdClass();
+  $pane->pid = 'new-8dd43c46-bc42-4332-899b-158cdd418501';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'vdl/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7788',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8dd43c46-bc42-4332-899b-158cdd418501';
+  $display->content['new-8dd43c46-bc42-4332-899b-158cdd418501'] = $pane;
+  $display->panels['middle'][2] = 'new-8dd43c46-bc42-4332-899b-158cdd418501';
+  $pane = new stdClass();
   $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane->panel = 'second';
   $pane->type = 'block';

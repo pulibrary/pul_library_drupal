@@ -254,6 +254,47 @@ plasma-physics/*',
   $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
   $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
   $pane = new stdClass();
+  $pane->pid = 'new-7e67c538-6e2c-4a5e-a549-240a45015eed';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'plasma-physics/about',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7793',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '7e67c538-6e2c-4a5e-a549-240a45015eed';
+  $display->content['new-7e67c538-6e2c-4a5e-a549-240a45015eed'] = $pane;
+  $display->panels['middle'][3] = 'new-7e67c538-6e2c-4a5e-a549-240a45015eed';
+  $pane = new stdClass();
   $pane->pid = 'new-b719a358-f409-47a0-bc66-5a7c4ae18c06';
   $pane->panel = 'second';
   $pane->type = 'views_panes';

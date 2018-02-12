@@ -823,6 +823,47 @@ stokes/*',
   $display->content['new-29f16e39-9fd6-4fdc-90bb-4af9b04969a6'] = $pane;
   $display->panels['middle'][4] = 'new-29f16e39-9fd6-4fdc-90bb-4af9b04969a6';
   $pane = new stdClass();
+  $pane->pid = 'new-c44beb29-40e9-4e27-ab14-fbe5c5fe0f5b';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'stokes/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7796',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = 'c44beb29-40e9-4e27-ab14-fbe5c5fe0f5b';
+  $display->content['new-c44beb29-40e9-4e27-ab14-fbe5c5fe0f5b'] = $pane;
+  $display->panels['middle'][5] = 'new-c44beb29-40e9-4e27-ab14-fbe5c5fe0f5b';
+  $pane = new stdClass();
   $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane->panel = 'second';
   $pane->type = 'block';

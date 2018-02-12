@@ -141,6 +141,7 @@ function pul_libraries_ct_field_group_info() {
       0 => 'field_phone',
       1 => 'field_fax',
       2 => 'field_e_mail_address',
+      3 => 'field_library_staff_members',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

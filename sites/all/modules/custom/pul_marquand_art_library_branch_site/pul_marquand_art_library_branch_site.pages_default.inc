@@ -1538,6 +1538,47 @@ marquand/rare-book-highlights',
   $display->content['new-ef1d512f-52f8-4841-9c33-a5a961bc60ed'] = $pane;
   $display->panels['middle'][4] = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
   $pane = new stdClass();
+  $pane->pid = 'new-0a8684aa-6d93-4bd9-ab16-21077b056acd';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'marquand/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7790',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '0a8684aa-6d93-4bd9-ab16-21077b056acd';
+  $display->content['new-0a8684aa-6d93-4bd9-ab16-21077b056acd'] = $pane;
+  $display->panels['middle'][5] = 'new-0a8684aa-6d93-4bd9-ab16-21077b056acd';
+  $pane = new stdClass();
   $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane->panel = 'second';
   $pane->type = 'block';

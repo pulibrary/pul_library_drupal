@@ -986,6 +986,202 @@ function pul_libraries_ct_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
+
+  /* Display: Branch Library - Staff List */
+  $handler = $view->new_display('panel_pane', 'Branch Library - Staff List', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Library Staff';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'branch--staff-member';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = 'list__visual';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Library staff members (field_library_staff_members) */
+  $handler->display->display_options['relationships']['field_library_staff_members_value']['id'] = 'field_library_staff_members_value';
+  $handler->display->display_options['relationships']['field_library_staff_members_value']['table'] = 'field_data_field_library_staff_members';
+  $handler->display->display_options['relationships']['field_library_staff_members_value']['field'] = 'field_library_staff_members_value';
+  $handler->display->display_options['relationships']['field_library_staff_members_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_library_staff_members_value']['delta'] = '-1';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_staff_member_target_id']['id'] = 'field_staff_member_target_id';
+  $handler->display->display_options['relationships']['field_staff_member_target_id']['table'] = 'field_data_field_staff_member';
+  $handler->display->display_options['relationships']['field_staff_member_target_id']['field'] = 'field_staff_member_target_id';
+  $handler->display->display_options['relationships']['field_staff_member_target_id']['relationship'] = 'field_library_staff_members_value';
+  $handler->display->display_options['relationships']['field_staff_member_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Library staff members */
+  $handler->display->display_options['fields']['field_library_staff_members']['id'] = 'field_library_staff_members';
+  $handler->display->display_options['fields']['field_library_staff_members']['table'] = 'field_data_field_library_staff_members';
+  $handler->display->display_options['fields']['field_library_staff_members']['field'] = 'field_library_staff_members';
+  $handler->display->display_options['fields']['field_library_staff_members']['label'] = '';
+  $handler->display->display_options['fields']['field_library_staff_members']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_library_staff_members']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_library_staff_members']['settings'] = array(
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'translate' => '',
+    'delete' => 'Delete',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_library_staff_members']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_library_staff_members']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_library_staff_members']['multi_type'] = 'ul';
+  /* Field: User: PUL Netid */
+  $handler->display->display_options['fields']['field_puluser_netid']['id'] = 'field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['table'] = 'field_data_field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['field'] = 'field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_netid']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_netid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_netid']['element_label_colon'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'user--picture';
+  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['picture']['empty'] = '<a href="/staff/[field_puluser_netid]"><img typeof="foaf:Image" src="/sites/all/themes/pul_base/assets/public/images/default-user.svg" width="150" height="200" alt=""></a>';
+  $handler->display->display_options['fields']['picture']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo';
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'field_data_field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['field'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_fname']['element_label_colon'] = FALSE;
+  /* Field: User: Last Name */
+  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'field_data_field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_lname']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_lname']['alter']['text'] = '[field_puluser_fname] [field_puluser_lname]';
+  $handler->display->display_options['fields']['field_puluser_lname']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_lname']['alter']['path'] = 'staff/[field_puluser_netid]';
+  $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_lname']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_lname']['element_wrapper_class'] = 'branch--staff-name';
+  $handler->display->display_options['fields']['field_puluser_lname']['element_default_classes'] = FALSE;
+  /* Field: User: Formal Name */
+  $handler->display->display_options['fields']['field_puluser_formalname']['id'] = 'field_puluser_formalname';
+  $handler->display->display_options['fields']['field_puluser_formalname']['table'] = 'field_data_field_puluser_formalname';
+  $handler->display->display_options['fields']['field_puluser_formalname']['field'] = 'field_puluser_formalname';
+  $handler->display->display_options['fields']['field_puluser_formalname']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_formalname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_formalname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_formalname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_puluser_formalname']['element_wrapper_class'] = 'branch--staff-name';
+  $handler->display->display_options['fields']['field_puluser_formalname']['element_default_classes'] = FALSE;
+  /* Field: Field collection item: Alternative description */
+  $handler->display->display_options['fields']['field_alternative_description']['id'] = 'field_alternative_description';
+  $handler->display->display_options['fields']['field_alternative_description']['table'] = 'field_data_field_alternative_description';
+  $handler->display->display_options['fields']['field_alternative_description']['field'] = 'field_alternative_description';
+  $handler->display->display_options['fields']['field_alternative_description']['relationship'] = 'field_library_staff_members_value';
+  $handler->display->display_options['fields']['field_alternative_description']['label'] = '';
+  $handler->display->display_options['fields']['field_alternative_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_alternative_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_alternative_description']['element_default_classes'] = FALSE;
+  /* Field: User: Official Title */
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['id'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['table'] = 'field_data_field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['field'] = 'field_puluser_officialtitle';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['alter']['text'] = '[field_puluser_officialtitle]
+<div class="branch--staff-desc">[field_alternative_description]</div>';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_wrapper_class'] = 'branch--staff-title';
+  $handler->display->display_options['fields']['field_puluser_officialtitle']['element_default_classes'] = FALSE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="icon-email"></i> [mail]';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['mail']['element_wrapper_class'] = 'branch--staff-email';
+  $handler->display->display_options['fields']['mail']['element_default_classes'] = FALSE;
+  /* Field: User: Phone Number */
+  $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'field_data_field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<i class="icon-phone"></i> [field_puluser_phone_number]';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['path'] = 'staff/[field_puluser_netid]';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_wrapper_class'] = 'branch--staff-phone';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['element_default_classes'] = FALSE;
+  /* Field: User: Building Location */
+  $handler->display->display_options['fields']['field_puluser_building_location']['id'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['table'] = 'field_data_field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
+  $handler->display->display_options['fields']['field_puluser_building_location']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_building_location']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
+  /* Field: User: Office */
+  $handler->display->display_options['fields']['field_puluser_office']['id'] = 'field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['table'] = 'field_data_field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
+  $handler->display->display_options['fields']['field_puluser_office']['relationship'] = 'field_staff_member_target_id';
+  $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_office']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_office']['alter']['text'] = '<i class="icon-location"></i> [field_puluser_office], [field_puluser_building_location]';
+  $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_office']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_puluser_office']['element_wrapper_class'] = 'branch--staff-office';
+  $handler->display->display_options['fields']['field_puluser_office']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['libraries'] = $view;
 
   $view = new view();

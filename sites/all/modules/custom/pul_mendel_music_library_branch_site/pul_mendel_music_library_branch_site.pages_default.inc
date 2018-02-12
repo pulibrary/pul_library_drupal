@@ -623,6 +623,47 @@ music/*',
   $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
   $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
   $pane = new stdClass();
+  $pane->pid = 'new-61068c87-675b-404f-8885-5d36b7951c24';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'music/about/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7791',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '61068c87-675b-404f-8885-5d36b7951c24';
+  $display->content['new-61068c87-675b-404f-8885-5d36b7951c24'] = $pane;
+  $display->panels['middle'][3] = 'new-61068c87-675b-404f-8885-5d36b7951c24';
+  $pane = new stdClass();
   $pane->pid = 'new-d98d401c-dac9-4bef-b33f-5de1747822cb';
   $pane->panel = 'second';
   $pane->type = 'views_panes';

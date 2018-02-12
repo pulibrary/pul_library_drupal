@@ -1,0 +1,35 @@
+.branch--staff-list .pane-title {
+  margin-bottom: 1em;
+}
+
+.branch--staff-member {
+  overflow: auto;
+  padding: 0.5em;
+
+  .user--picture img {
+    margin-bottom: 0;
+    width: 100px;
+  }
+
+  .branch--staff-name,
+  .branch--staff-title,
+  .branch--staff-email,
+  .branch--staff-phone,
+  .branch--staff-office {
+    margin-left: 120px;
+  }
+
+  &:nth-child(even) {
+    background: $gray-lightest;
+  }
+}
+
+.branch--staff-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.branch--staff-title {
+  margin-bottom: 0.75em;
+}

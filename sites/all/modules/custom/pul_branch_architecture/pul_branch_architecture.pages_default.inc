@@ -643,6 +643,47 @@ news/architecture',
   $display->content['new-da6d2020-f96a-4dce-8edf-2d707988d576'] = $pane;
   $display->panels['middle'][2] = 'new-da6d2020-f96a-4dce-8edf-2d707988d576';
   $pane = new stdClass();
+  $pane->pid = 'new-c737e50f-01bb-4ea2-9c27-a14d8a9db4db';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'architecture/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7784',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'c737e50f-01bb-4ea2-9c27-a14d8a9db4db';
+  $display->content['new-c737e50f-01bb-4ea2-9c27-a14d8a9db4db'] = $pane;
+  $display->panels['middle'][3] = 'new-c737e50f-01bb-4ea2-9c27-a14d8a9db4db';
+  $pane = new stdClass();
   $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane->panel = 'second';
   $pane->type = 'block';

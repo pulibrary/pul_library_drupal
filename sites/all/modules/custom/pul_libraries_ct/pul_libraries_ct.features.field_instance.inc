@@ -10,6 +10,88 @@
 function pul_libraries_ct_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'field_collection_item-field_library_staff_members-field_alternative_description'.
+  $field_instances['field_collection_item-field_library_staff_members-field_alternative_description'] = array(
+    'bundle' => 'field_library_staff_members',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_alternative_description',
+    'label' => 'Alternative description',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_library_staff_members-field_staff_member'.
+  $field_instances['field_collection_item-field_library_staff_members-field_staff_member'] = array(
+    'bundle' => 'field_library_staff_members',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'full',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_staff_member',
+    'label' => 'Staff member',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-libraries-body'.
   $field_instances['node-libraries-body'] = array(
     'bundle' => 'libraries',
@@ -1014,7 +1096,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -1803,6 +1885,74 @@ function pul_libraries_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-libraries-field_library_staff_members'.
+  $field_instances['node-libraries-field_library_staff_members'] = array(
+    'bundle' => 'libraries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 30,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_library_staff_members',
+    'label' => 'Library staff members',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 10,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-libraries-field_libs_cols_main_menu'.
   $field_instances['node-libraries-field_libs_cols_main_menu'] = array(
     'bundle' => 'libraries',
@@ -2249,6 +2399,7 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Add to Libraries & Collections Dropdown Menu');
   t('Address 1');
   t('Address 2');
+  t('Alternative description');
   t('Body');
   t('Branch Services Quick Links');
   t('Branch Spotlight');
@@ -2274,10 +2425,12 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Library Exterior Image');
   t('Library Homepage');
   t('Library Interior Image');
+  t('Library staff members');
   t('Long Description');
   t('Main Menu Library Link');
   t('Phone');
   t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Catalog) before creating a new one.');
+  t('Staff member');
   t('State');
   t('Tags');
   t('Use to link to library websites and other resources that are not Library databases or internal PUL content. ');

@@ -294,6 +294,47 @@ eastasian/*',
   $display->content['new-015efc53-508a-4f7c-8985-894329929bdf'] = $pane;
   $display->panels['middle'][3] = 'new-015efc53-508a-4f7c-8985-894329929bdf';
   $pane = new stdClass();
+  $pane->pid = 'new-53be1f85-9679-4341-af9a-7ec2dbe7ebea';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'eastasian/staff',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7785',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'branch--staff-list',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '53be1f85-9679-4341-af9a-7ec2dbe7ebea';
+  $display->content['new-53be1f85-9679-4341-af9a-7ec2dbe7ebea'] = $pane;
+  $display->panels['middle'][4] = 'new-53be1f85-9679-4341-af9a-7ec2dbe7ebea';
+  $pane = new stdClass();
   $pane->pid = 'new-b1a3a190-3927-43b5-8a9f-fc72adeff1d1';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
