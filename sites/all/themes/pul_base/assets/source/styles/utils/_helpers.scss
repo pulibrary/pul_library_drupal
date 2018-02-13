@@ -2,7 +2,8 @@
   font-weight: bold;
 }
 
-.hide {
+.hide,
+.sr-only {
   @include visually-hidden;
 }
 

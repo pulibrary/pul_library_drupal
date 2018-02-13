@@ -5,7 +5,7 @@ files:
   ignore:
     - '**/_keyframes.scss'
     - '**/_mixins.scss'
-    - '**/sites/libguides/**'
+    - '**/sites/**/**'
 rules:
   # Extends
   extends-before-mixins: 2

@@ -34,6 +34,8 @@ $base-path: "https://library.princeton.edu/sites/all/themes/pul_base/assets/publ
 @import "components/menus/menu--main";
 @import "components/search/search--header";
 
+@import "sites/library/footer";
+
 // Libguides custom styling
 @import "sites/libguides/LG_v2";
 @import "sites/libguides/LG_v2_chatbutton";
