@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif");
+// @import url("https://fonts.googleapis.com/css?family=Droid+Serif");
 
 // Vendor libraries
 @import "normalize";
@@ -11,8 +11,10 @@
 @import "utils/functions";
 @import "utils/variables";
 // @import "utils/variables--bootstrap";
-@import "utils/font-stack";
+// @import "utils/font-stack";
 @import "utils/helpers";
+
+$base-path: "https://library.princeton.edu/sites/all/themes/pul_base/assets/public";
 
 // Global styles
 @import "base/typography";
@@ -36,42 +38,8 @@
 @import "components/footer";
 @import "components/menus/menu--main";
 @import "components/search/search--header";
+@import "components/buttons/button--jump-link";
 
-// Illiad search bar
+@import "sites/library/footer";
 
-.search-bar {
-  $base-spacing: 1em;
-  $base-border-color: #dcdcdc !default;
-  $base-border-radius: 3px !default;
-  $base-line-height: 1.5em !default;
-  $base-accent-color: #477dca !default;
-  $dark-gray: $black !default;
-  $search-bar-border-color: $base-border-color;
-  $search-bar-border: 1px solid $search-bar-border-color;
-  $search-bar-background: lighten($search-bar-border-color, 10%);
-
-  position: relative;
-
-  .f-criteria {
-    background-color: $white;
-    border: 1px solid $base-border-color;
-    border-radius: $base-border-radius;
-    box-sizing: border-box;
-    display: block;
-    font-size: 1em;
-    font-style: italic;
-    margin: 0;
-    padding: ($base-spacing / 3);
-    position: relative;
-    width: 100%;
-  }
-
-  .f-submit {
-    @include button(simple, $base-accent-color);
-    @include position(absolute, 0 0 0 null);
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    outline: none;
-    padding: 5px 10px;
-  }
-}
+@import "sites/atlas/illiad";
