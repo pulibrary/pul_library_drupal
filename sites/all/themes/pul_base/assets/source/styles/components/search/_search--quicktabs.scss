@@ -154,23 +154,27 @@
     font-family: $font-primary; // height: 45px;
     line-height: normal;
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 19px;
     position: absolute;
     right: 0;
 
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-1 -1 24 24'%3E%3Cg fill='none' stroke='%23FFF' stroke-width='3' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Ccircle cx='8.5' cy='8.5' r='8'/%3E%3Cpath stroke-linecap='round' d='M14.156 14.156L23.5 23.5'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      content: "";
+      display: inline-block;
+      height: 19px;
+      text-decoration: none;
+      vertical-align: middle;
+      width: 19px;
+    }
+
     @include breakpoint($tab) {
       background: $orange;
-      color: $black;
-    }
 
-    span {
-      font-weight: bold;
-    }
-
-    .icon-search {
-      font-size: 18px;
-      line-height: 0;
-      vertical-align: middle;
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-1 -1 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='3' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Ccircle cx='8.5' cy='8.5' r='8'/%3E%3Cpath stroke-linecap='round' d='M14.156 14.156L23.5 23.5'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/svg%3E");
+      }
     }
   }
 

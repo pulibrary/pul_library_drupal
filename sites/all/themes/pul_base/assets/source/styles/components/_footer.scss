@@ -27,6 +27,7 @@
   h2,
   h2 a {
     color: $white;
+    font-family: $font-primary;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0.75em;
@@ -41,6 +42,10 @@
 
     a {
       line-height: 1.75em;
+
+      &:hover {
+        color: $white;
+      }
     }
   }
 }
@@ -110,6 +115,6 @@
     background-image: url("#{$base-path}/images/logo-white.svg");
     height: 40px;
     margin: 0.5em 0 0;
-    width: 142px;
+    width: 141px;
   }
 }

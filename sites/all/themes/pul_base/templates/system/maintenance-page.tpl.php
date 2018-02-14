@@ -41,7 +41,7 @@
                 <div>
                   <div class="form-item form-type-textfield form-item-query">
                     <label for="edit-query">All Search Box <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-query" maxlength="128" name="query" placeholder="Search for library materials and website content" size="80" type="text">
-                  </div><input class="form-submit" id="edit-submit" name="op" type="submit" value="Search"> <input name="form_id" type="hidden" value="allsearch_block_form"> <button class="form-submit" id="allsearch-submit-btn" name="op" type="submit"><span class="icon-search"><span class="hide">Search</span></span></button>
+                  </div><input class="form-submit" id="edit-submit" name="op" type="submit" value="Search"> <input name="form_id" type="hidden" value="allsearch_block_form"> <button class="form-submit" id="allsearch-submit-btn" name="op" type="submit"><span class="hide">Search</span></button>
                 </div>
               </form>
             </div>
