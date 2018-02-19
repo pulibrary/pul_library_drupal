@@ -62,7 +62,15 @@
 .ac-container {
   margin-bottom: 2em;
 
-  input {
+  .ac-group {
+    height: 0;
+    margin-top: -1px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  input[type="checkbox"] {
     display: none;
 
     &:checked + label,
@@ -74,10 +82,7 @@
     &:checked ~ .ac-group {
       box-shadow: 0 0 0 1px $black-opacity-2;
 
-      &.li-2,
-      &.li-3,
-      &.li-6,
-      &.li-7 {
+      &.collapsable {
         height: auto;
       }
     }
@@ -85,7 +90,8 @@
 
   label,
   a.nav-group:link,
-  a.nav-group:visited {
+  a.nav-group:visited,
+  .label {
     background: $blue-dark;
     border-color: transparent;
     box-shadow: 0 0 0 1px $black-opacity-2;
@@ -121,14 +127,6 @@
       background: $gray-lightest;
     }
   }
-
-  .ac-group {
-    height: 0;
-    margin-top: -1px;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-  }
 }
 
 
@@ -140,12 +138,12 @@ fieldset {
   margin: 1.5em 0;
 }
 
-.three_nine-region--second label select {
+label select {
   display: block;
   margin-bottom: 0;
 }
 
-.three_nine-region--second textarea {
+textarea {
   margin-bottom: 0;
 }
 
@@ -161,7 +159,8 @@ span.req {
   font-weight: 500;
 }
 
-span.valid {
+span.valid,
+span.bold {
   font-weight: 500;
 }
 
@@ -196,8 +195,24 @@ span.note-warning {
 
 button,
 input[type="submit"],
-.search-bar .f-submit {
+.f-submit-wrap .f-submit {
   background: $blue-dark;
+  border-radius: .1875em;
+  color: $white;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
+  padding: .75em 1em;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 input[type="submit"]:hover,
@@ -205,26 +220,60 @@ input[type="submit"]:hover,
   background: $blue-dark;
 }
 
+.simple-table th,
+.billing-table th,
 .notification-table th,
 .notes-table .row-headings th,
-.tracking-table .row-headings th {
-  background: $gray-darkest;
-  color: $white;
+.tracking-table .row-headings th,
+.notification-detail tr > td:first-child {
+  background: $gray-light;
+  color: $black;
   font-weight: 500;
   padding: 0.5em;
 }
 
-.notification-table .row-even {
+.notification-table .row-even,
+.simple-table .row-even {
   background: $gray-lightest;
 }
 
+.simple-table td,
+.billing-table td,
 .notification-table td,
 .transaction-table td,
 .notes-table td,
 .tracking-table td {
-  font-size: 0.875em;
+  font-size: 0.925em;
   padding: 0.5em;
   vertical-align: top;
+  border-bottom: 1px solid $gray-light;
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.select-button {
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.simple-table td,
+.simple-table th,
+.billing-table td,
+.billing-table th {
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ccc;
 }
 
 .notification-detail tr > td:first-child,
@@ -239,10 +288,15 @@ input[type="submit"]:hover,
   table-layout: auto;
 }
 
+.simple-table table {
+  table-layout: fixed;
+}
+
+.simple-table table,
 .transaction-table table,
 .notes-table table,
 .tracking-table table {
-  margin-top: 1em;
+  margin: 1em 0;
 }
 
 .transaction-table .row-header,
@@ -251,11 +305,20 @@ input[type="submit"]:hover,
   font-size: 0.85em;
 }
 
+.export .simple-table {
+  position: relative;
+
+  .table-export-link {
+    top: -62px;
+    font-size: 16px;
+  }
+}
+
 p.record--title {
   margin: 0;
 }
 
-.statusNormal {
+h1 + .statusNormal {
   display: none;
 }
 
@@ -263,7 +326,12 @@ form {
   position: relative;
 }
 
-.req-indicator {
+.three_nine-region--second.export {
+  position: relative;
+}
+
+.req-indicator,
+.table-export-link {
   clear: both;
   display: block;
 
@@ -351,14 +419,12 @@ body.archive .nav .archive {
   display: inline;
 }
 
-.row-header th {
+.row-header th,
+table caption {
   font-size: 1.7em;
   font-weight: normal;
   padding: 0 0 1em;
-}
-
-table {
-  margin: 0;
+  text-align: left;
 }
 
 .hidden {
@@ -394,4 +460,90 @@ label {
 
 .logon {
   margin-bottom: 1em;
+}
+
+
+.ac-container label[for="SearchCriteria"] {
+  background: none;
+  box-shadow: none;
+  color: $black;
+  cursor: initial;
+}
+
+.ac-container input[type="submit"] {
+  margin: 0 15px 15px;
+}
+
+a.button,
+.table-export-link a {
+  background: $blue-dark;
+  border-radius: 3px;
+  color: $white;
+  display: inline-block;
+  font-weight: 500;
+  margin: 0 0 0.7em;
+  padding: 0.25em 0.6em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: auto;
+
+  &:hover,
+  &:focus {
+    background: $orange;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+#ScheduledDate {
+	display:inline-block;
+}
+
+.ui-datepicker-trigger {
+	vertical-align: middle;
+}
+
+#status span {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: flash;
+  background: $orange;
+  border: 0;
+  border-radius: 4px;
+  color: $white;
+  display: block;
+  margin: 0 0 1em;
+  padding: 1em;
+}
+
+#researcher-tags-update button {
+  margin-top: 1em;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.list-break > li {
+    margin-bottom: 1em;
+}
+
+.f-submit-wrap {
+  margin-bottom: 1em;
+}
+
+.f-wrap-1 {
+  ul {
+    list-style-type: initial;
+    margin: 1.2em 0;
+    padding: 0 0 0 2em;
+  }
 }
