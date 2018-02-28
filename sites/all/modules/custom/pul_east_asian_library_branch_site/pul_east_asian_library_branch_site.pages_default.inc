@@ -92,7 +92,7 @@ eastasian/*',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_371e012c-d817-4143-a618-9be59b656015';
@@ -529,7 +529,7 @@ libraries/eastasianlib',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'East Asian Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_f3966023-9c0c-425b-960f-8d3749bfeb2d';
@@ -932,7 +932,7 @@ libraries/eastasianlib',
   $pane->uuid = 'e2913c81-2f96-4407-8214-057f8d857ca6';
   $display->content['new-e2913c81-2f96-4407-8214-057f8d857ca6'] = $pane;
   $display->panels['top'][1] = 'new-e2913c81-2f96-4407-8214-057f8d857ca6';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_f3966023-9c0c-425b-960f-8d3749bfeb2d'] = $handler;
