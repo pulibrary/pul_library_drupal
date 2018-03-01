@@ -760,7 +760,7 @@ marquand',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Marquand Art Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_aa13b93b-2ca9-4c15-8536-69b49a2eaa07';
@@ -1313,7 +1313,7 @@ marquand/rare-book-highlights',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_ed5c5fa7-55c5-4de7-af71-b5f420344c08';

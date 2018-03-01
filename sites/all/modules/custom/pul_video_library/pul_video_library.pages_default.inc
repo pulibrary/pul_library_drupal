@@ -92,7 +92,7 @@ function pul_video_library_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Video Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_194f0b9e-62d0-442a-8439-c7bceceaf789';
@@ -450,7 +450,7 @@ function pul_video_library_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_98c15859-eea2-4068-bf4b-c24b814ac306';

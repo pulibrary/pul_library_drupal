@@ -83,7 +83,7 @@ plasma-physics/*',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_58';
@@ -258,7 +258,7 @@ plasma-physics/*',
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'user_profile-panel_pane_4';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -389,7 +389,7 @@ plasma-physics',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Plasma Physics Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_59';

@@ -94,7 +94,7 @@ lewis',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Lewis Science Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_60';
@@ -293,7 +293,7 @@ lewis',
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
   $pane->subtype = 'lewis_library_feed-panel_pane_1';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
@@ -440,7 +440,7 @@ lewis',
   $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_amenities';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'title',
@@ -580,7 +580,7 @@ lewis/*',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_61';
@@ -807,7 +807,7 @@ lewis/*',
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_features-panel_pane_3';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(

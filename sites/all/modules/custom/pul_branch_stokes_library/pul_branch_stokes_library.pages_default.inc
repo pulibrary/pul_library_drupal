@@ -93,7 +93,7 @@ stokes',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Stokes Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_56';
@@ -591,7 +591,7 @@ stokes/*',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_57';

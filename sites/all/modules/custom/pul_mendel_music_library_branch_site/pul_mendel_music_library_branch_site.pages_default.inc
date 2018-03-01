@@ -452,7 +452,7 @@ music/*',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = '%node:title';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_228095c7-6111-4346-bea6-55a3d6b896d1';
@@ -712,7 +712,7 @@ music/*',
       'nid' => '7791',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Music Resource Guides',
+    'override_title_text' => 'Resource Guides',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -840,7 +840,7 @@ music',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Mendel Music Library';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_ac92d8e0-98f5-4119-9764-f7d3ef4f8652';
@@ -1286,7 +1286,7 @@ music',
       'nid' => '%node:nid',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Music Resource Guides',
+    'override_title_text' => 'Resource Guides',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
