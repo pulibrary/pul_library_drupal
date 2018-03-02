@@ -762,6 +762,13 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  /* Field: Content: Fax */
+  $handler->display->display_options['fields']['field_fax']['id'] = 'field_fax';
+  $handler->display->display_options['fields']['field_fax']['table'] = 'field_data_field_fax';
+  $handler->display->display_options['fields']['field_fax']['field'] = 'field_fax';
+  $handler->display->display_options['fields']['field_fax']['alter']['text'] = '[field_phone]<br>Fax: [field_fax] ';
+  $handler->display->display_options['fields']['field_fax']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_fax']['element_default_classes'] = FALSE;
   /* Field: Content: Hours Code */
   $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
   $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
