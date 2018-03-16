@@ -80,7 +80,7 @@
     <div class="wrapper wrapper--branding">
       <section class="l-region l-region--branding">
         <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" class="site-logo"><img src="/sites/all/themes/pul_base/assets/public/images/pul-logo-new.png" alt="<?php print t('Link to Princeton University Library home page'); ?>" /><span class="site-name"><?php print $site_name; ?></span></a>
+          <a href="<?php print $front_page; ?>" class="site-logo"><img src="/sites/all/themes/pul_base/assets/public/images/pul-logo-new.png" alt="<?php print t('Link to Princeton University Library home page'); ?>" /><span class="sr-only"><?php print $site_name; ?></span></a>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
       </section>
