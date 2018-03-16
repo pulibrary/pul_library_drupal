@@ -27,7 +27,7 @@ $golden-layout: layout((1 1.618 2.618) 0.1 fluid float split);
   @include container;
 }
 
-.l-region--branding h2 {
+.l-region--branding .site-logo {
   @include span(12);
 
   @include breakpoint($tab) {

@@ -76,11 +76,11 @@
       <li><a href="#edit-query" class="jump-link"><?php print t('Skip to search box'); ?></a></li>
       <li><a href="#main-content" class="jump-link"><?php print t('Skip to main content'); ?></a></li>
     </ul>
-    
+
     <div class="wrapper wrapper--branding">
       <section class="l-region l-region--branding">
         <?php if ($logo): ?>
-          <h2><a href="<?php print $front_page; ?>" title="<?php print t('Princeton University Library - Home'); ?>"  class="site-logo"><img src="/sites/all/themes/pul_base/assets/public/images/pul-logo-new.png" alt="<?php print t('Home'); ?>" /><span class="site-name"><?php print $site_name; ?></span></a></h2>
+          <a href="<?php print $front_page; ?>" class="site-logo"><img src="/sites/all/themes/pul_base/assets/public/images/pul-logo-new.png" alt="<?php print t('Link to Princeton University Library home page'); ?>" /><span class="sr-only"><?php print $site_name; ?></span></a>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
       </section>
