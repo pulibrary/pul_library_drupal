@@ -537,7 +537,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
@@ -1872,7 +1875,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Home Page';
+  $display->title = '';
   $display->uuid = '877e1448-6925-4c72-bf1d-638484ef393c';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_home_page_panel_context';
@@ -1883,7 +1886,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'views';
   $pane->subtype = 'emergency_alert_content_block';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -1899,7 +1902,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'url' => '',
     'display' => 'emergency_alert_block',
     'override_title' => 1,
-    'override_title_text' => 'Library Alert',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2064,7 +2068,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
+    'css_id' => 'friends',
     'css_class' => 'friends',
   );
   $pane->extras = array();
@@ -2119,7 +2123,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
+    'css_id' => 'renovation',
     'css_class' => 'firestone-renovation',
   );
   $pane->extras = array();
@@ -2128,7 +2132,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->uuid = 'e1ed7925-338e-4854-9ce7-1b4fade481a8';
   $display->content['new-e1ed7925-338e-4854-9ce7-1b4fade481a8'] = $pane;
   $display->panels['third'][5] = 'new-e1ed7925-338e-4854-9ce7-1b4fade481a8';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -2832,7 +2836,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'using-collections',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -2855,7 +2862,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'using-libraries',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -2878,7 +2888,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'research-services',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -2901,7 +2914,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'request-delivery',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -2973,6 +2989,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -2997,7 +3015,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -3442,7 +3463,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
