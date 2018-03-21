@@ -1,91 +1,64 @@
-.front .four_five_three_stacked-region--top {
-  margin: 0;
+.alert--message {
+  padding-top: 1em;
 }
 
-.front .four_five_three_stacked-region--top h2 {
-  @include visually-hidden;
-}
-
-.three_six_three_stacked-region--middle .alert--message {
-  margin-top: 2.5em;
-}
-
-.messages--warning,
-.alert--message,
-.messages-error {
-  background: $yellow-light;
-  border: 0;
-  border-radius: $base-border-radius;
-  color: $black;
-  margin: 1em 0 2em;
-  padding: 1em;
-
-  a {
-    color: $black;
-    text-decoration: underline;
+.alert--level {
+  &__info {
+    background: $blue-light;
   }
 
-  h3 a,
-  p {
-    color: $black;
+  &__warning {
+    background: $yellow-light;
   }
 
-  h3 {
-    color: $black;
-    display: inline-block;
-    font-size: 1.3em;
-    margin: 0;
-  }
-
-  p {
-    font-weight: bold;
-    margin-bottom: 0;
+  &__emergency {
+    background: $red;
+    color: $white;
 
     a {
-      color: $black;
-      text-decoration: underline;
+      border-bottom-color: $white;
+      color: $white;
     }
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  i {
-    color: $black;
-    margin-right: 0.5em;
-  }
-}
-
-.page-node-27043 .messages--warning {
-  display: block;
-  margin-top: 0;
-  position: absolute;
-  width: 1200px;
-  z-index: 10;
-}
-
-.alert--level__info {
-  background: $blue-dark;
-
-  p,
-  h3 a {
-    color: $black;
-  }
-}
-
-.alert--level__warning {
-  background: $yellow-light;
-
-  p,
-  h3 a,
-  p a {
-    color: $black;
   }
 }
 
 .messages--warning,
-.alert--message {
+.messages-error {
+  background: $yellow-light;
+}
+
+.l-content .alert--message,
+.messages--warning,
+.messages-error {
+  border: 0;
+  border-radius: $base-border-radius;
+  margin: 1em 0;
+  padding: 1em;
+
+  > a {
+    border-bottom: 1px solid $gray;
+    color: $black;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom-color: $orange;
+      text-decoration: none;
+    }
+  }
+
+  p:empty {
+    display: none;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.messages--warning,
+.l-content .alert--message {
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-name: flash;

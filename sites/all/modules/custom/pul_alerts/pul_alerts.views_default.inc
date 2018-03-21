@@ -75,8 +75,8 @@ function pul_alerts_views_default_views() {
     'page' => 'page',
   );
 
-  /* Display: Homepage Alert Block */
-  $handler = $view->new_display('block', 'Homepage Alert Block', 'emergency_alert_block');
+  /* Display: Site-wide Alert Block */
+  $handler = $view->new_display('block', 'Site-wide Alert Block', 'emergency_alert_block');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -123,13 +123,14 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['label'] = '';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_emergency_alert_blurb']['alter']['text'] = '<div class="alert--message alert--level__[field_emergency_alert_level]"><h3>[title]</h3><p>[field_emergency_alert_blurb]</p></div>';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['alter']['text'] = '<div class="alert--message alert--level__[field_emergency_alert_level]"><div class="l-region l-region--alert"><h3>[title]</h3><p>[field_emergency_alert_blurb]</p></div></div>';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_type'] = '0';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
@@ -207,7 +208,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -286,7 +287,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -365,7 +366,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -444,7 +445,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -523,7 +524,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -602,7 +603,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -681,7 +682,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
@@ -760,7 +761,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
-  /* Field: Content: Homepage Alert Blurb */
+  /* Field: Content: Site-wide Alert Message */
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';

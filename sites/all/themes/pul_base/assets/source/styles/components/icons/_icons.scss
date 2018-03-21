@@ -16,7 +16,7 @@
   color: $orange;
 }
 
-.libraries-page {
+.libraries-page .l-content {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-left: 1em;
@@ -44,7 +44,7 @@
 .format-type,
 .summon-format-type,
 .all-format-type,
-.section-research,
+.section-research .l-content,
 .pul_base_nine_three-region--second,
 .views-libraries.contextual-links-region,
 .view-search-libraries-and-collections,
@@ -62,8 +62,8 @@
   }
 }
 
-.page-staff-directory,
-h2 {
+.page-staff-directory .l-content,
+.l-content h2 {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-left: 0;
@@ -78,7 +78,7 @@ h2 {
   // font-size:4em;
 }
 
-.libraries-page .library-info {
+.libraries-page .l-content .library-info {
   display: block;
   padding: 0.5em 0;
 
@@ -118,31 +118,31 @@ h2 {
   }
 }
 
-.libraries-page .library-info:nth-of-type(1),
-.libraries-page .library-info:nth-of-type(3),
-.libraries-page .library-info:nth-of-type(4) {
+.libraries-page .l-content .library-info:nth-of-type(1),
+.libraries-page .l-content .library-info:nth-of-type(3),
+.libraries-page .l-content .library-info:nth-of-type(4) {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-right: 0.5em;
   }
 }
 
-.libraries-page .library-info:nth-of-type(2),
-.libraries-page .library-info:nth-of-type(5) {
+.libraries-page .l-content .library-info:nth-of-type(2),
+.libraries-page .l-content .library-info:nth-of-type(5) {
   [class^="icon-"],
   [class*=" icon-"] {
     margin-right: 0.25em;
   }
 }
 
-.page-node-6627 h1::after,
-.page-node-13204 h1::after,
+.page-node-6627 .l-content h1::after,
+.page-node-13204 .l-content h1::after,
 .icon-article-express--small-after::after {
   content: "(\e61d)";
 }
 
-.page-node-6627 h1::after,
-.page-node-13204 h1::after {
+.page-node-6627 .l-content h1::after,
+.page-node-13204 .l-content h1::after {
   font-family: "pul-icons";
   font-size: 0.75em;
   font-style: normal;
