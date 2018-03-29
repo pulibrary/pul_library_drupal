@@ -158,7 +158,7 @@ function cas_requirements($phase) {
         'title' => $t('CAS SSL certificate bundle'),
         'severity' => REQUIREMENT_ERROR,
         'value' => $t('Not set'),
-        'description' => $t('The CAS authentication process is not completely secure. Please <a href="@settings_url">visit the CAS settings page</a> and provide the path to the certificate authority bundle.'),
+        'description' => $t('The CAS authentication process is not completely secure. Please <a href="@settings_url">visit the CAS settings page</a> and provide the path to the certificate authority bundle.', array('@settings_url' => url('admin/config/people/cas'))),
       );
     }
   }

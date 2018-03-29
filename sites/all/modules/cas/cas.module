@@ -447,7 +447,8 @@ function cas_menu_site_status_alter(&$menu_site_status, $path) {
  * @see cas_translated_menu_link_alter()
  */
 function cas_menu_link_alter(&$item) {
-  if (strtolower($item['link_path']) == 'cas' || strtolower($item['link_path']) == 'caslogout') {
+  $link_path = strtolower($item['link_path']);
+  if ($link_path == 'cas' || $link_path == 'caslogout') {
     $item['options']['alter'] = TRUE;
   }
 }
@@ -455,14 +456,20 @@ function cas_menu_link_alter(&$item) {
 /**
  * Implements hook_translated_menu_item_alter().
  *
- * Append dynamic query 'destination' to several menu items.
+ * Append dynamic query 'destination' to CAS menu links.
  */
 function cas_translated_menu_link_alter(&$item) {
-  if (strtolower($item['href']) == 'cas') {
-    $item['localized_options']['query'] = drupal_get_destination();
-  }
-  elseif (strtolower($item['href']) == 'caslogout' && !variable_get('cas_logout_destination', '')) {
-    $item['localized_options']['query'] = drupal_get_destination();
+  $href = strtolower($item['href']);
+  $append_destination = $href == 'cas' || ($href == 'caslogout' && !variable_get('cas_logout_destination', ''));
+  if ($append_destination) {
+    // Don't overwrite existing query params that may exist in the menu link.
+    if (isset($item['localized_options']['query'])) {
+      $menu_link_query_params = array_merge(drupal_get_destination(), $item['localized_options']['query']);
+    }
+    else {
+      $menu_link_query_params = drupal_get_destination();
+    }
+    $item['localized_options']['query'] = $menu_link_query_params;
   }
 }
 
