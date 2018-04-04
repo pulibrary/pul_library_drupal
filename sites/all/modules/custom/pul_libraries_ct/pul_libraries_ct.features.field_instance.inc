@@ -52,6 +52,47 @@ function pul_libraries_ct_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'field_collection_item-field_library_staff_members-field_staff_list_group'.
+  $field_instances['field_collection_item-field_library_staff_members-field_staff_list_group'] = array(
+    'bundle' => 'field_library_staff_members',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_staff_list_group',
+    'label' => 'Staff List Group',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_library_staff_members-field_staff_member'.
   $field_instances['field_collection_item-field_library_staff_members-field_staff_member'] = array(
     'bundle' => 'field_library_staff_members',
@@ -2430,6 +2471,7 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Main Menu Library Link');
   t('Phone');
   t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Catalog) before creating a new one.');
+  t('Staff List Group');
   t('Staff member');
   t('State');
   t('Tags');

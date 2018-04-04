@@ -993,6 +993,13 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['title'] = 'Library Staff';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_staff_list_group',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['style_options']['row_class'] = 'branch--staff-member';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
@@ -1017,6 +1024,14 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['relationships']['field_staff_member_target_id']['relationship'] = 'field_library_staff_members_value';
   $handler->display->display_options['relationships']['field_staff_member_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Staff List Group */
+  $handler->display->display_options['fields']['field_staff_list_group']['id'] = 'field_staff_list_group';
+  $handler->display->display_options['fields']['field_staff_list_group']['table'] = 'field_data_field_staff_list_group';
+  $handler->display->display_options['fields']['field_staff_list_group']['field'] = 'field_staff_list_group';
+  $handler->display->display_options['fields']['field_staff_list_group']['relationship'] = 'field_library_staff_members_value';
+  $handler->display->display_options['fields']['field_staff_list_group']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_list_group']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_list_group']['element_label_colon'] = FALSE;
   /* Field: Content: Library staff members */
   $handler->display->display_options['fields']['field_library_staff_members']['id'] = 'field_library_staff_members';
   $handler->display->display_options['fields']['field_library_staff_members']['table'] = 'field_data_field_library_staff_members';

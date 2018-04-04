@@ -19,7 +19,7 @@
     margin-left: 120px;
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background: $gray-lightest;
   }
 }
