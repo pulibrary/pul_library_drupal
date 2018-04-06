@@ -164,11 +164,6 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
   $handler->display->display_options['block_description'] = 'Emergency Alert Overlay';
 
   /* Display: Marquand Library Alerts */
