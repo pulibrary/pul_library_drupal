@@ -90,6 +90,7 @@
     <div class="wrapper wrapper--navigation">
       <?php print render($page['navigation']); ?>
     </div>
+    <?php echo views_embed_view('emergency_alert_content_block', 'emergency_alert_block'); ?>
     <div class="wrapper wrapper--highlighted">
       <?php print render($page['highlighted']); ?>
     </div>

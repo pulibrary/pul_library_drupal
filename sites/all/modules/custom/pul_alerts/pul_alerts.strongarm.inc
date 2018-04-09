@@ -62,6 +62,27 @@ function pul_alerts_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_homepage_alert';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_homepage_alert'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_homepage_alert';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_homepage_alert'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_homepage_alert';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_homepage_alert'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__homepage_alert';
   $strongarm->value = array(
     'view_modes' => array(
@@ -108,16 +129,16 @@ function pul_alerts_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
-        ),
-        'xmlsitemap' => array(
           'weight' => '5',
         ),
+        'xmlsitemap' => array(
+          'weight' => '6',
+        ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
         'workbench_access' => array(
           'weight' => '0',

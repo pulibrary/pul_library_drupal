@@ -10,67 +10,12 @@
 function pul_alerts_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-homepage_alert-body'.
-  $field_instances['node-homepage_alert-body'] = array(
-    'bundle' => 'homepage_alert',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => 1,
-    'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-homepage_alert-field_emergency_alert_blurb'.
   $field_instances['node-homepage_alert-field_emergency_alert_blurb'] = array(
     'bundle' => 'homepage_alert',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Text you wish to appear on the homepage. ',
+    'description' => 'Text you wish to appear on the alert banner. Be clear and concise.  ',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -101,9 +46,14 @@ function pul_alerts_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_emergency_alert_blurb',
-    'label' => 'Homepage Alert Blurb',
+    'label' => 'Site-wide Alert Message',
     'required' => 1,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -114,8 +64,9 @@ function pul_alerts_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-homepage_alert-field_emergency_alert_dates'.
@@ -175,7 +126,7 @@ function pul_alerts_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -233,18 +184,17 @@ function pul_alerts_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
   t('Date range during which the message should appear on the homepage. ');
   t('Emergency Alert Dates');
   t('Emergency Alert Level');
-  t('Homepage Alert Blurb');
-  t('Text you wish to appear on the homepage. ');
+  t('Site-wide Alert Message');
+  t('Text you wish to appear on the alert banner. Be clear and concise.  ');
 
   return $field_instances;
 }
