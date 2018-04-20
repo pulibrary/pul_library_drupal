@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mendel Periodicals feature.
+ */
+
+include_once 'mendel_periodicals.features.inc';
