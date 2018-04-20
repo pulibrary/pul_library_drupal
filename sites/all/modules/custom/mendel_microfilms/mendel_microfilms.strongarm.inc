@@ -92,13 +92,16 @@ function mendel_microfilms_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'xmlsitemap' => array(
-          'weight' => '2',
+          'weight' => '3',
+        ),
+        'workbench_access' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -152,16 +155,6 @@ function mendel_microfilms_strongarm() {
     'priority' => '0.5',
   );
   $export['xmlsitemap_settings_node_mus_mendel_microfilm'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_mendel_collections';
-  $strongarm->value = array(
-    'status' => '0',
-    'priority' => '0.5',
-  );
-  $export['xmlsitemap_settings_taxonomy_term_mus_mendel_collections'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
