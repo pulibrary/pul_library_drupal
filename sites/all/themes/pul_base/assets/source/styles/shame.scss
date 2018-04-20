@@ -15,6 +15,11 @@
   }
 }
 
+// scroll wide tables that overflow ltr
+.view-content {
+  overflow: auto;
+}
+
 // hide summary count for database nav
 .summary-count {
   display: none;
