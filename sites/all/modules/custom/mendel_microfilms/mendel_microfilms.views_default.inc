@@ -440,7 +440,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25691 => '25691',
+    25895 => '25895',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -748,7 +748,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25689 => '25689',
+    25896 => '25896',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -1035,7 +1035,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25690 => '25690',
+    25894 => '25894',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -1273,7 +1273,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25687 => '25687',
+    25889 => '25889',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -1513,7 +1513,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25686 => '25686',
+    25890 => '25890',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -1782,7 +1782,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25681 => '25681',
+    25898 => '25898',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -2038,7 +2038,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25684 => '25684',
+    25897 => '25897',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -2233,7 +2233,7 @@ function mendel_microfilms_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    25693 => '25693',
+    25891 => '25891',
   );
   $handler->display->display_options['filters']['tid']['group'] = 1;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
