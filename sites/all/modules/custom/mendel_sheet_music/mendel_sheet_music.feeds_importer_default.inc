@@ -15,7 +15,7 @@ function mendel_sheet_music_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'mendel_sheet_music';
   $feeds_importer->config = array(
-    'name' => 'Mendel Sheet Music',
+    'name' => 'Mendel Valva Sheet Music',
     'description' => 'For Valva Collection',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
@@ -50,100 +50,86 @@ function mendel_sheet_music_feeds_importer_default() {
             'language' => 'und',
           ),
           1 => array(
-            'source' => 'Collection',
-            'target' => 'field_mus_collection',
-            'term_search' => '0',
-            'autocreate' => 0,
-            'language' => 'und',
-          ),
-          2 => array(
             'source' => 'Title',
             'target' => 'title',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          3 => array(
+          2 => array(
             'source' => 'Subtitle',
             'target' => 'field_mus_subtitle',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          4 => array(
+          3 => array(
             'source' => 'Scene Type',
             'target' => 'field_mus_valva_scene_type',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'Composer',
             'target' => 'field_mus_sheetmusic_composer',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'Lyrisist',
+            'target' => 'field_mus_lyricist',
+            'unique' => FALSE,
             'language' => 'und',
           ),
           6 => array(
-            'source' => 'Lyrisist',
-            'target' => 'field_mus_lyricist',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'source' => 'Arranger',
+            'target' => 'field_mus_arranger',
+            'unique' => FALSE,
             'language' => 'und',
           ),
           7 => array(
-            'source' => 'Arranger',
-            'target' => 'field_mus_arranger',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'source' => 'Publisher',
+            'target' => 'field_mus_publisher',
+            'unique' => FALSE,
             'language' => 'und',
           ),
           8 => array(
-            'source' => 'Publisher',
-            'target' => 'field_mus_publisher',
-            'term_search' => '0',
-            'autocreate' => 1,
-            'language' => 'und',
-          ),
-          9 => array(
-            'source' => 'Publisher City',
+            'source' => 'City',
             'target' => 'field_mus_publisher_citystate',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          9 => array(
             'source' => 'Publication Date',
             'target' => 'field_mus_publication_date',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          10 => array(
             'source' => 'Plate Number',
             'target' => 'field_mus_plate_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          12 => array(
+          11 => array(
             'source' => 'Instrumentation',
             'target' => 'field_mus_sh_instrumentation',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          12 => array(
+            'source' => 'Notes',
+            'target' => 'field_mus_longnote',
+            'unique' => FALSE,
             'language' => 'und',
           ),
           13 => array(
             'source' => 'Box',
             'target' => 'field_mus_box_number',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'unique' => FALSE,
             'language' => 'und',
           ),
           14 => array(
             'source' => 'Folder',
             'target' => 'field_mus_folder_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          15 => array(
-            'source' => 'Notes',
-            'target' => 'field_mus_longnote',
             'unique' => FALSE,
           ),
         ),
