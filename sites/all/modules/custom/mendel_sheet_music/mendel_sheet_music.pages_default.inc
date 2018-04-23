@@ -16,7 +16,10 @@ function mendel_sheet_music_default_page_manager_pages() {
   $page->admin_title = 'Mendel Valva Sheet Music Collection';
   $page->admin_description = 'Mendel Valva Collection';
   $page->path = 'music/valva';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

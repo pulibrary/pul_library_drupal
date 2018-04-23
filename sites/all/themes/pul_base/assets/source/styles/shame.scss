@@ -21,8 +21,25 @@
 }
 
 // mendel sheet music header spacing
-.view-header .search--description {
-  margin: 1em 0;
+.view-header {
+  .search--description {
+    margin: 1em 0;
+  }
+
+  .items-per-page {
+    display: inline-block;
+    float: right;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// mendel sheet music facets
+.facetapi-limit-link {
+  font-size: 0.9em;
+  text-decoration: underline;
 }
 
 // hide summary count for database nav

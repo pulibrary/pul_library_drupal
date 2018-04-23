@@ -476,6 +476,7 @@ function mendel_sheet_music_views_default_views() {
   $handler->display->display_options['header']['webform_result']['id'] = 'webform_result';
   $handler->display->display_options['header']['webform_result']['table'] = 'views';
   $handler->display->display_options['header']['webform_result']['field'] = 'webform_result';
+  $handler->display->display_options['header']['webform_result']['content'] = 'Displaying @start - @end of @total. <div class="items-per-page">@items_per_page_links</div>';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';

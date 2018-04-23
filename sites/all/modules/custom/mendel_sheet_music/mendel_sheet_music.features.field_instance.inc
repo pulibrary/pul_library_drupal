@@ -210,7 +210,7 @@ function mendel_sheet_music_field_default_field_instances() {
     'label' => 'Folder Number',
     'required' => 1,
     'settings' => array(
-      'max' => '050',
+      'max' => '',
       'min' => '',
       'prefix' => '',
       'suffix' => '',

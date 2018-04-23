@@ -140,7 +140,7 @@ function mendel_sheet_music_field_default_field_bases() {
   // Exported field_base: 'field_mus_plate_number'.
   $field_bases['field_mus_plate_number'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mus_plate_number',
@@ -222,7 +222,7 @@ function mendel_sheet_music_field_default_field_bases() {
   // Exported field_base: 'field_mus_publisher_citystate'.
   $field_bases['field_mus_publisher_citystate'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mus_publisher_citystate',
