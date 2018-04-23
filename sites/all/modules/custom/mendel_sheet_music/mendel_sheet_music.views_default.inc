@@ -480,7 +480,7 @@ function mendel_sheet_music_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Click on the title of a piece for a complete description, including instrumentation, lyricists, additional notes, and the archival box location within the collection. The search box searches across all of the texted fields (including two or more terms in any order from the same or different columns). To search by date, use the date facet in the left sidebar for a single year or resort the entire list by the date column.';
+  $handler->display->display_options['header']['area']['content'] = '<p class="search--description">Click on the title of a piece for a complete description, including instrumentation, lyricists, additional notes, and the archival box location within the collection. The search box searches across all of the texted fields (including two or more terms in any order from the same or different columns). To search by date, use the date facet in the left sidebar for a single year or resort the entire list by the date column.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Content: Title */

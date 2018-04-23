@@ -26,6 +26,7 @@ function mendel_sheet_music_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -70,25 +71,28 @@ function mendel_sheet_music_feeds_importer_default() {
           4 => array(
             'source' => 'Composer',
             'target' => 'field_mus_sheetmusic_composer',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           5 => array(
             'source' => 'Lyrisist',
             'target' => 'field_mus_lyricist',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
             'language' => 'und',
           ),
           6 => array(
             'source' => 'Arranger',
             'target' => 'field_mus_arranger',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
             'language' => 'und',
           ),
           7 => array(
             'source' => 'Publisher',
             'target' => 'field_mus_publisher',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
             'language' => 'und',
           ),
           8 => array(
@@ -100,8 +104,8 @@ function mendel_sheet_music_feeds_importer_default() {
           9 => array(
             'source' => 'Publication Date',
             'target' => 'field_mus_publication_date',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           10 => array(
             'source' => 'Plate Number',
@@ -112,8 +116,8 @@ function mendel_sheet_music_feeds_importer_default() {
           11 => array(
             'source' => 'Instrumentation',
             'target' => 'field_mus_sh_instrumentation',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           12 => array(
             'source' => 'Notes',
@@ -124,13 +128,14 @@ function mendel_sheet_music_feeds_importer_default() {
           13 => array(
             'source' => 'Box',
             'target' => 'field_mus_box_number',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           14 => array(
             'source' => 'Folder',
             'target' => 'field_mus_folder_number',
             'unique' => FALSE,
+            'language' => 'und',
           ),
         ),
         'insert_new' => '1',

@@ -680,6 +680,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -708,7 +709,6 @@ function mendel_microfilms_feeds_importer_default() {
             'target' => 'field_mus_collection',
             'term_search' => '0',
             'autocreate' => 0,
-            'language' => 'und',
           ),
           2 => array(
             'source' => 'Manuscript Type',

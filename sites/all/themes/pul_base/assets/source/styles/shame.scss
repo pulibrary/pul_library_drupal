@@ -20,6 +20,11 @@
   overflow: auto;
 }
 
+// mendel sheet music header spacing
+.view-header .search--description {
+  margin: 1em 0;
+}
+
 // hide summary count for database nav
 .summary-count {
   display: none;
