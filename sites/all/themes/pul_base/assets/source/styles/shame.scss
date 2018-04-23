@@ -21,7 +21,9 @@
 }
 
 // mendel sheet music header spacing
-.view-header {
+.section-music .view-header {
+  margin-bottom: 1em;
+
   .search--description {
     margin: 1em 0;
   }
