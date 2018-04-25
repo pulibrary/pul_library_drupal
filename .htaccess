@@ -57,31 +57,28 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
-## BAD IPs
-order allow,deny
-# OIT crawler
-deny from 128.112.132.117
-## spam from death masks kootation.com
-deny from 131.253.24.22
-deny from 198.27.67.59
-# turkish media crawler
-deny from 5.47.49.252
-allow from all
-
-
-RedirectMatch /papyrus /papyrus/
-# Redirect Rules
-RedirectMatch ^/searchit/(.*)$ /utils/$1
-RedirectPermanent /about/hours /hours
-RedirectPermanent /hr /staff/hr
-Redirect /favicon.ico /sites/default/files/libicon_0.ico
-RedirectPermanent /cdforum /collections/cdforum
-RedirectPermanent /collectiondevelopment /collections-and-collection-development
-RedirectPermanent /departments/collectiondevelopment /collections-and-collection-development
-RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research
-RedirectPermanent /collections/video http://libserv39.princeton.edu/departments/collectiondevelopment/forums/video/
+## BAD IPs	
+order allow,deny	
+# OIT crawler	
+deny from 128.112.132.117	
+## spam from death masks kootation.com	
+deny from 131.253.24.22	
+deny from 198.27.67.59	
+# turkish media crawler	
+deny from 5.47.49.252	
+allow from all	
+RedirectMatch /papyrus /papyrus/	
+# Redirect Rules	
+RedirectMatch ^/searchit/(.*)$ /utils/$1	
+RedirectPermanent /about/hours /hours	
+RedirectPermanent /hr /staff/hr	
+Redirect /favicon.ico /sites/default/files/libicon_0.ico	
+RedirectPermanent /cdforum /collections/cdforum	
+RedirectPermanent /collectiondevelopment /collections-and-collection-development	
+RedirectPermanent /departments/collectiondevelopment /collections-and-collection-development	
+RedirectMatch 301 ^/catalogs/$ http://library.princeton.edu/research	
+RedirectPermanent /collections/video http://libserv39.princeton.edu/departments/collectiondevelopment/forums/video/	
 RedirectMatch 301 /projects/bluemountain(.*) http://bluemountain.princeton.edu/
-
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
