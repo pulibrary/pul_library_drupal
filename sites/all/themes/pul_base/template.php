@@ -150,6 +150,27 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
 
 }
 
+function pul_base_tablesort_indicator($variables) {
+  if ($variables['style'] == "asc") {
+    return theme('image', array(
+      'path' => 'sites/all/themes/pul_base/assets/public/images/arrow-asc.png',
+      'width' => 10,
+      'height' => 10,
+      'alt' => t('sort ascending'),
+      'title' => t('sort ascending'),
+    ));
+  }
+  else {
+    return theme('image', array(
+      'path' => 'sites/all/themes/pul_base/assets/public/images/arrow-desc.png',
+      'width' => 10,
+      'height' => 10,
+      'alt' => t('sort descending'),
+      'title' => t('sort descending'),
+    ));
+  }
+}
+
 /**
  * Override of theme('textarea').
  * Deprecate misc/textarea.js in favor of using the 'resize' CSS3 property.
