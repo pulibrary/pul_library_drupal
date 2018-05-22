@@ -4,7 +4,7 @@
         var query_url = $('#summon-search-results').attr('data-source')
         var refine_message = "See All Scholarly Materials in Articles+";
         var refine_tooltip = "Expand your search to see all scholarly materials in Articles+.";
-        var summon_url = "http://princeton.summon.serialssolutions.com";
+        var summon_url = "https://princeton.summon.serialssolutions.com";
         var max_display_results = 5;
         if (query_url == "/find/all" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#summon-search-results');

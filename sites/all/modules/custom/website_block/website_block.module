@@ -34,7 +34,7 @@ function website_block_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
    );
-   //$form['#action'] = url('http://libwebprod.princeton.edu/utils/search/location', array('external' => true));
+   //$form['#action'] = url('https://library.princeton.edu/utils/search/location', array('external' => true));
    $form['#validate'] = array('website_block_form_validate');
    $form['#method'] = "post";
    $form['#submit'] = array('website_block_form_redirect');

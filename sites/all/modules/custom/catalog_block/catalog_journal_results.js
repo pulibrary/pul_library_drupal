@@ -5,7 +5,7 @@
         var refine_tooltip = "Refine your journal search in Books+";
         var icon_hint = '<i class="icon-newtab"></i>&nbsp';
         var request_hint = 'Check Journal Locations and Availability';
-        var pul_resolver = 'http://libwebprod.princeton.edu/resolve/lookup?url='; //FIXME move these to Drupal config settings
+        var pul_resolver = 'https://library.princeton.edu/resolve/lookup?url='; //FIXME move these to Drupal config settings
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#journal-search-results');
         } else {

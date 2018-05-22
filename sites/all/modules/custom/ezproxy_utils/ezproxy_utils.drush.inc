@@ -318,7 +318,7 @@ function drush_ezproxy_utils_databases_to_csv($filename = false, $use_proxy = 0,
 
 
     foreach($databases['node'] as $database) {
-        $base_url = "http://library.princeton.edu/resource/";
+        $base_url = "https://library.princeton.edu/resource/";
         $databases_csv_data = array();
         $database_fields = entity_metadata_wrapper('node', $database->nid);
         $changed = format_date($database_fields->changed->value());
@@ -370,7 +370,7 @@ function drush_ezproxy_utils_databases_to_json($filename = false, $inactive = fa
 
 
     foreach($databases['node'] as $database) {
-        $base_url = "http://library.princeton.edu/resource/";
+        $base_url = "https://library.princeton.edu/resource/";
         $databases_csv_data = array();
         $database_fields = entity_metadata_wrapper('node', $database->nid);
         $changed = format_date($database_fields->changed->value());

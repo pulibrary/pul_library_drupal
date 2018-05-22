@@ -640,7 +640,7 @@ staff/committees',
   $pane->configuration = array(
     'admin_title' => '',
     'title' => '',
-    'body' => '<h2><a href="http://www.princeton.edu/hr">Job Opportunities</a></h2>',
+    'body' => '<h2><a href="https://www.princeton.edu/hr">Job Opportunities</a></h2>',
     'format' => 'full_html',
     'substitute' => 1,
   );

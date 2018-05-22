@@ -2,7 +2,7 @@
     $(document).ready(function() {
         var query_url = $('#summon-guide-results').attr('data-source')
         var tooltip = "Browse Related Library Guides";
-        var libguides_url = "http://libguides.princeton.edu/";
+        var libguides_url = "https://libguides.princeton.edu/";
         var refine_tooltip = "See All Library Guides Results";
         var refine_message = "See all library guides results &rarr;";
 

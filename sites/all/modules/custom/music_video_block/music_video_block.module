@@ -34,7 +34,7 @@ function music_video_block_form($form, &$form_state) {
    $form['#action'] = url('/utils/search/mvideo', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
-   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Catalog" href="https://catalog.princeton.edu/">Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="http://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a></div>';
+   $form['#suffix'] = '<div class="homepage-tab-form-message"><a title="Go to the Catalog" href="https://catalog.princeton.edu/">Catalog</a> <a title="Go to the Books+ Advanced Search Page" href="https://princeton-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&vid=PRINCETON">Books+</a></div>';
    return $form;
 
 }

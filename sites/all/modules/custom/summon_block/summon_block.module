@@ -6,7 +6,7 @@ function summon_block_form($form, &$form_state) {
   $form = array();
   $path = $_GET['q'];
   if(drupal_is_front_page()) { // should keyed off <front>
-    $form_suffix = '<div class="homepage-tab-form-message"><a href="http://getit.princeton.edu/">E-Journals</a> <a href="http://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
+    $form_suffix = '<div class="homepage-tab-form-message"><a href="https://getit.princeton.edu/">E-Journals</a> <a href="https://princeton.summon.serialssolutions.com/advanced">Advanced Search</a></div>';
   } else {
     $form_suffix = "";
   }
