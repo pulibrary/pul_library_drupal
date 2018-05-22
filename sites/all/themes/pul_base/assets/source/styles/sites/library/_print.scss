@@ -56,7 +56,7 @@ li {
 
 //links
 p a::after {
-  content: " (http://library.princeton.edu/"attr(href)")";
+  content: " (https://library.princeton.edu/"attr(href)")";
   font-size: 80%;
 }
 

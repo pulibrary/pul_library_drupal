@@ -2059,7 +2059,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'admin_title' => 'Friends Block',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<p><a href="http://fpul.princeton.edu/" title="Friends of the Library" class="friends-logo"><img src="/sites/all/themes/pul_base/assets/public/images/friends.png" alt="Friends of the Library"></a></p><p><a href="http://fpul.princeton.edu/"><strong>JOIN US</strong> in supporting acquisitions and operations of the Library. Enjoy events, programs, exhibits and more. Students, please join the Student Friends initiative for unique opportunities.<span class="read-more">Read more</span></a></p>',
+    'body' => '<p><a href="https://fpul.princeton.edu/" title="Friends of the Library" class="friends-logo"><img src="/sites/all/themes/pul_base/assets/public/images/friends.png" alt="Friends of the Library"></a></p><p><a href="https://fpul.princeton.edu/"><strong>JOIN US</strong> in supporting acquisitions and operations of the Library. Enjoy events, programs, exhibits and more. Students, please join the Student Friends initiative for unique opportunities.<span class="read-more">Read more</span></a></p>',
     'format' => 'full_html',
     'substitute' => TRUE,
   );

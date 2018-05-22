@@ -8,7 +8,7 @@ function pul_base_preprocess_html(&$variables, $hook) {
   // to the theme function or template file.
 
   $pul_base_link_settings = array(
-                          'resolvePrefix' => 'http://library.princeton.edu/resolve/lookup?url='
+                          'resolvePrefix' => 'https://library.princeton.edu/resolve/lookup?url='
                            );
 
   drupal_add_js(array("pul_base_theme" => $pul_base_link_settings), 'setting');

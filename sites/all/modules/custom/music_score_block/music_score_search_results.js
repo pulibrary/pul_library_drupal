@@ -6,7 +6,7 @@
         var refine_message = "See all Books+ results &rarr;";
         var request_hint = 'See Available Items at ';
         var availability_hint = "Check for Available Copies";
-        var pul_resolver = 'http://library.princeton.edu/resolve/lookup?url=';
+        var pul_resolver = 'https://library.princeton.edu/resolve/lookup?url=';
         var icon_hint = 'icon-newtab';
         var book_icon = 'icon-book';
         var journal_icon = 'icon-journal';

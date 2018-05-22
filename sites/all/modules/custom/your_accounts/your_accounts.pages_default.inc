@@ -100,7 +100,7 @@ function your_accounts_default_page_manager_handlers() {
   $pane->configuration = array(
     'admin_title' => 'Library Account',
     'title' => 'Library Account',
-    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Find out more about <a href="http://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/account" target="_blank">Access Your Library Account</a></div>',
+    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Find out more about <a href="https://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/account" target="_blank">Access Your Library Account</a></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title_heading' => 'h2',
@@ -158,7 +158,7 @@ function your_accounts_default_page_manager_handlers() {
   $pane->configuration = array(
     'admin_title' => 'BorrowDirect',
     'title' => 'Borrow Direct',
-    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of material requested from other Borrow Direct partner libraries</li><li>Find out more about <a href="http://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/borrow-direct" target="_blank">Access Borrow Direct</a></div>',
+    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of material requested from other Borrow Direct partner libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/borrow-direct" target="_blank">Access Borrow Direct</a></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title_heading' => 'h2',

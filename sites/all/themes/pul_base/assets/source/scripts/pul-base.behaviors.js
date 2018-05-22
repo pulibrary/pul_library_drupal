@@ -18,8 +18,8 @@
 
   Drupal.theme.prototype.pulChatStatusBlock = function () {
     var chat_js_warning = '<span class="needs-js"></span>';
-    var chat_online = '<span class="libraryh3lp" jid="libchatpul-main@chat.libraryh3lp.com" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__online" href="http://library.princeton.edu/help/chat"> Online now</a></span>';
-    var chat_offline = '<span class="libraryh3lp" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__offline" href="http://library.princeton.edu/help/e-mail"> Offline now</a></span>';
+    var chat_online = '<span class="libraryh3lp" jid="libchatpul-main@chat.libraryh3lp.com" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__online" href="https://library.princeton.edu/help/chat"> Online now</a></span>';
+    var chat_offline = '<span class="libraryh3lp" style="display: none;"><a class=" button--libraryh3lp button--libraryh3lp__offline" href="https://library.princeton.edu/help/e-mail"> Offline now</a></span>';
     return chat_js_warning + chat_online + chat_offline;
   };
 
