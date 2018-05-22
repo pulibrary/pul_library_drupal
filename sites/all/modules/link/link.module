@@ -512,7 +512,7 @@ function _link_sanitize(&$item, $delta, &$field, $instance, &$entity) {
     $type = LINK_EXTERNAL;
   }
   $url = link_cleanup_url($item['url']);
-  $url_parts = _link_parse_url($url);
+  $url_parts = drupal_parse_url($url);
 
   if (!empty($url_parts['url'])) {
     $item['url'] = url($url_parts['url'],
@@ -1128,7 +1128,7 @@ function theme_link_formatter_link_separate($vars) {
 
   // @TODO static html markup looks not very elegant
   // needs smarter output solution and an optional title/url seperator
-  $url_parts = _link_parse_url($vars['element']['url']);
+  $url_parts = drupal_parse_url($vars['element']['url']);
   $output = '';
   $output .= '<div class="link-item ' . $class . '">';
   if (!empty($title)) {
