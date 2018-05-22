@@ -26,6 +26,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -81,39 +82,39 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           6 => array(
-            'source' => 'Reel #',
-            'target' => 'field_mus_reel_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          7 => array(
-            'source' => 'Reel Name',
-            'target' => 'field_mus_reel_name_enumeration',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          8 => array(
             'source' => 'BC',
             'target' => 'field_mus_secondary_catalog_no',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          7 => array(
             'source' => 'Composer',
             'target' => 'field_mus_microfilm_composer',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          10 => array(
+          8 => array(
             'source' => 'Shelfmark',
             'target' => 'field_mus_micro_snm',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          9 => array(
+            'source' => 'Reel #',
+            'target' => 'field_mus_reel_number',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          10 => array(
+            'source' => 'Reel Name',
+            'target' => 'field_mus_reel_name_enumeration',
             'unique' => FALSE,
           ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -145,6 +146,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -213,26 +215,26 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           8 => array(
-            'source' => 'Reel #',
-            'target' => 'field_mus_reel_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          9 => array(
             'source' => 'Reel Name',
             'target' => 'field_mus_reel_name_enumeration',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          9 => array(
             'source' => 'Shelfmark',
             'target' => 'field_mus_micro_snm',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          10 => array(
+            'source' => 'Reel #',
+            'target' => 'field_mus_reel_number',
             'unique' => FALSE,
           ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -264,6 +266,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -301,40 +304,40 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           3 => array(
-            'source' => 'Reel #',
-            'target' => 'field_mus_reel_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          4 => array(
             'source' => 'Composer',
             'target' => 'field_mus_microfilm_composer',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'Music Title',
             'target' => 'title',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          5 => array(
             'source' => 'Biblioteca Marciana Catalog Number',
             'target' => 'field_mus_primary_catalog_no',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          6 => array(
             'source' => 'Date',
             'target' => 'field_mus_year',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          7 => array(
+            'source' => 'Reel #',
+            'target' => 'field_mus_reel_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -366,6 +369,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -403,46 +407,46 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           3 => array(
-            'source' => 'Reel #',
-            'target' => 'field_mus_reel_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          4 => array(
             'source' => 'Order',
             'target' => 'field_mus_reel_name_enumeration',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'Fog and Schousboe Number',
             'target' => 'field_mus_primary_catalog_no',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          5 => array(
             'source' => 'Title',
             'target' => 'title',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          6 => array(
             'source' => 'Notes',
             'target' => 'field_mus_notes',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
+          7 => array(
             'source' => 'Composer',
             'target' => 'field_mus_microfilm_composer',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
+          8 => array(
+            'source' => 'Reel #',
+            'target' => 'field_mus_reel_number',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -474,6 +478,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -511,40 +516,40 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           3 => array(
-            'source' => 'Reel #',
-            'target' => 'field_mus_reel_number',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          4 => array(
             'source' => 'Composer',
             'target' => 'field_mus_microfilm_composer',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'Music Title',
             'target' => 'title',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          5 => array(
             'source' => 'Date',
             'target' => 'field_mus_year',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          6 => array(
             'source' => 'Notes',
             'target' => 'field_mus_notes',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          7 => array(
+            'source' => 'Reel #',
+            'target' => 'field_mus_reel_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -576,6 +581,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -645,7 +651,7 @@ function mendel_microfilms_feeds_importer_default() {
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -677,6 +683,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -705,7 +712,6 @@ function mendel_microfilms_feeds_importer_default() {
             'target' => 'field_mus_collection',
             'term_search' => '0',
             'autocreate' => 0,
-            'language' => 'und',
           ),
           2 => array(
             'source' => 'Manuscript Type',
@@ -738,39 +744,39 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           7 => array(
-            'source' => 'Shelf #',
-            'target' => 'field_mus_shelf_number_mark',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          8 => array(
             'source' => 'Microfilm #',
             'target' => 'field_mus_microfilm_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          8 => array(
             'source' => 'Reel #',
             'target' => 'field_mus_reel_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          9 => array(
             'source' => 'Calendar',
             'target' => 'field_mus_levy_calendar',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          10 => array(
             'source' => 'Folio',
             'target' => 'field_mus_levy_folio',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          11 => array(
+            'source' => 'Shelf #',
+            'target' => 'field_mus_micro_snm',
             'unique' => FALSE,
             'language' => 'und',
           ),
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',
@@ -802,6 +808,7 @@ function mendel_microfilms_feeds_importer_default() {
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -833,20 +840,20 @@ function mendel_microfilms_feeds_importer_default() {
             'language' => 'und',
           ),
           2 => array(
-            'source' => 'Music Title',
-            'target' => 'title',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          3 => array(
             'source' => 'Microfilm #',
             'target' => 'field_mus_microfilm_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          4 => array(
+          3 => array(
             'source' => 'Reel #',
             'target' => 'field_mus_reel_number',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          4 => array(
+            'source' => 'Music Title',
+            'target' => 'title',
             'unique' => FALSE,
             'language' => 'und',
           ),
@@ -884,7 +891,7 @@ function mendel_microfilms_feeds_importer_default() {
         ),
         'insert_new' => '1',
         'update_existing' => '1',
-        'update_non_existent' => 'skip',
+        'update_non_existent' => 'delete',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'mus_mendel_microfilm',

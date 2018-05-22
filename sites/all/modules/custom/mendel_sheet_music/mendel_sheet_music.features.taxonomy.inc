@@ -9,29 +9,6 @@
  */
 function mendel_sheet_music_taxonomy_default_vocabularies() {
   return array(
-    'mus_mendel_collections' => array(
-      'name' => 'Mendel Collections',
-      'machine_name' => 'mus_mendel_collections',
-      'description' => '',
-      'hierarchy' => 1,
-      'module' => 'taxonomy',
-      'weight' => 0,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
     'mus_sheet_music_arranger' => array(
       'name' => 'Mendel Sheet Music Arranger',
       'machine_name' => 'mus_sheet_music_arranger',

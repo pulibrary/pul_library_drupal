@@ -81,7 +81,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 25,
     ),
     'workbench_access_field' => 0,
   );
@@ -149,7 +149,7 @@ function mendel_microfilms_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );
@@ -225,7 +225,7 @@ function mendel_microfilms_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 29,
+      'weight' => 26,
     ),
     'workbench_access_field' => 0,
   );
@@ -302,7 +302,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -379,7 +379,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -456,7 +456,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -533,7 +533,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 23,
     ),
     'workbench_access_field' => 0,
   );
@@ -610,7 +610,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 22,
     ),
     'workbench_access_field' => 0,
   );
@@ -686,7 +686,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 21,
     ),
     'workbench_access_field' => 0,
   );
@@ -763,7 +763,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -839,7 +839,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 27,
     ),
     'workbench_access_field' => 0,
   );
@@ -911,7 +911,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -983,7 +983,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -1054,7 +1054,7 @@ function mendel_microfilms_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1132,7 +1132,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -1285,7 +1285,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1296,7 +1296,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
     'bundle' => 'mus_mendel_microfilm',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If there is a reel name and enumeration in the microfilm call number please add each separately.  Examples: Do not type positive/negative or Misc. A5/negative.  Instead input positive then click add more and input negative.  This field can be repeated as often as necessary.',
+    'description' => 'If there is a reel name in the microfilm call number please add each separately.  Examples: Do not type positive/negative or Misc. A5/negative.  Instead input positive then click add more and input negative.  This field can be repeated as often as necessary.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1344,7 +1344,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_mus_reel_name_enumeration',
-    'label' => 'Reel Name/Enumeration',
+    'label' => 'Reel Name (not order or enumeration)',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -1362,7 +1362,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -1372,8 +1372,7 @@ Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ',
     'bundle' => 'mus_mendel_microfilm',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter Microfilm reel number without spaces.  Only the reel number from the full Microfilm call number should be included, not the microfilm number or the enumeration. 
-Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
+    'description' => '',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1395,10 +1394,15 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 31,
       ),
       'featured_link_url' => array(
         'label' => 'above',
@@ -1422,24 +1426,98 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
     'entity_type' => 'node',
     'field_name' => 'field_mus_reel_number',
     'label' => 'Reel Number',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'node-mus_mendel_microfilm-field_mus_reel_order_enumeration'.
+  $field_instances['node-mus_mendel_microfilm-field_mus_reel_order_enumeration'] = array(
+    'bundle' => 'mus_mendel_microfilm',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This field is for Numbers ONLY, no "positive," "negative," "Misc," etc.',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-      'type' => 'text_textfield',
-      'weight' => 5,
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 30,
+      ),
+      'featured_link_url' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_mus_reel_order_enumeration',
+    'label' => 'Reel Order/Enumeration',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -1516,7 +1594,7 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 24,
     ),
     'workbench_access_field' => 0,
   );
@@ -1593,7 +1671,7 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -1670,7 +1748,7 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 29,
     ),
     'workbench_access_field' => 0,
   );
@@ -1746,7 +1824,7 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 31,
+      'weight' => 28,
     ),
     'workbench_access_field' => 0,
   );
@@ -1823,7 +1901,7 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -1841,22 +1919,22 @@ Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ',
   t('Description');
   t('Enter Microfilm number without spaces.  Only the main part of the Microfilm number should be included, not reel number or enumeration.  
 Example:  Microfilm 1458 reel 2 positive - only put in 1458 in this field. ');
-  t('Enter Microfilm reel number without spaces.  Only the reel number from the full Microfilm call number should be included, not the microfilm number or the enumeration. 
-Example:  Microfilm 1458 reel 2 positive - only put 2 in this field. ');
   t('Examples: BWV (Bach-Werke-Verzeichnis), FS (Fog and Schousboe-Nielsen).  If unknown please leave blank.');
   t('Folio');
   t('Holding Library');
-  t('If there is a reel name and enumeration in the microfilm call number please add each separately.  Examples: Do not type positive/negative or Misc. A5/negative.  Instead input positive then click add more and input negative.  This field can be repeated as often as necessary.');
+  t('If there is a reel name in the microfilm call number please add each separately.  Examples: Do not type positive/negative or Misc. A5/negative.  Instead input positive then click add more and input negative.  This field can be repeated as often as necessary.');
   t('Librettist');
   t('Manuscript type');
   t('Microfilm Number');
   t('Notes');
   t('Occasion');
   t('Primary Catalog Number');
-  t('Reel Name/Enumeration');
+  t('Reel Name (not order or enumeration)');
   t('Reel Number');
+  t('Reel Order/Enumeration');
   t('Secondary Catalog Number');
   t('Shelfmark/Number');
+  t('This field is for Numbers ONLY, no "positive," "negative," "Misc," etc.');
   t('This field should only be used if the manuscript belongs to the Levy Collection');
   t('Uncat Title');
   t('Uncataloged Composer etc');

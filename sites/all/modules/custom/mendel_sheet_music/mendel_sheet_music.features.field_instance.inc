@@ -149,74 +149,6 @@ function mendel_sheet_music_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-mendel_sheet_music-field_mus_collection'.
-  $field_instances['node-mendel_sheet_music-field_mus_collection'] = array(
-    'bundle' => 'mendel_sheet_music',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'database_description_only' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
-      ),
-      'featured_link_url' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'overridden_title_in_lists' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mus_collection',
-    'label' => 'Collection',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-mendel_sheet_music-field_mus_folder_number'.
   $field_instances['node-mendel_sheet_music-field_mus_folder_number'] = array(
     'bundle' => 'mendel_sheet_music',
@@ -278,7 +210,7 @@ function mendel_sheet_music_field_default_field_instances() {
     'label' => 'Folder Number',
     'required' => 1,
     'settings' => array(
-      'max' => '050',
+      'max' => '',
       'min' => '',
       'prefix' => '',
       'suffix' => '',
@@ -1036,7 +968,6 @@ function mendel_sheet_music_field_default_field_instances() {
   t('All lower case except proper nouns.');
   t('Arranger');
   t('Box Number');
-  t('Collection');
   t('Composer');
   t('Folder Number');
   t('Instrumentation');

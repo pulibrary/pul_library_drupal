@@ -29,6 +29,22 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'mendel_sheet_music-city-explode';
+  $feeds_tamper->importer = 'mendel_sheet_music';
+  $feeds_tamper->source = 'City';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ';',
+    'limit' => '',
+    'real_separator' => ';',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['mendel_sheet_music-city-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'mendel_sheet_music-composer-explode';
   $feeds_tamper->importer = 'mendel_sheet_music';
   $feeds_tamper->source = 'Composer';
@@ -77,18 +93,18 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mendel_sheet_music-publisher_city-explode';
+  $feeds_tamper->id = 'mendel_sheet_music-plate_number-explode';
   $feeds_tamper->importer = 'mendel_sheet_music';
-  $feeds_tamper->source = 'Publisher City';
+  $feeds_tamper->source = 'Plate Number';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => '&',
+    'separator' => ',',
     'limit' => '',
-    'real_separator' => '&',
+    'real_separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
-  $export['mendel_sheet_music-publisher_city-explode'] = $feeds_tamper;
+  $export['mendel_sheet_music-plate_number-explode'] = $feeds_tamper;
 
   return $export;
 }

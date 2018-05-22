@@ -92,13 +92,16 @@ function mendel_microfilms_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'xmlsitemap' => array(
-          'weight' => '2',
+          'weight' => '3',
+        ),
+        'workbench_access' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
