@@ -190,3 +190,15 @@ function pul_base_textarea($variables) {
   $output .= '</div>';
   return $output;
 }
+
+function pul_base_menu_link__main_menu(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+    $element['#localized_options']['attributes']['aria-haspopup'][] = 'true';
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+} 
