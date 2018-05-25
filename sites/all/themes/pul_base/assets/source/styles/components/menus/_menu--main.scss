@@ -127,7 +127,8 @@
         width: 100%;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $centered-navigation-color-hover;
         text-decoration: underline;
       }
@@ -207,7 +208,9 @@
       padding-right: $centered-navigation-submenu-padding;
       position: relative;
 
-      &:hover>.menu {
+      &:hover>.menu,
+      &:focus-within>.menu {
+        cursor: pointer;
         display: block;
 
         @include breakpoint(max-width 800px) {
@@ -278,7 +281,8 @@
           width: $centered-navigation-submenu-width;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: underline;
         }
       }
