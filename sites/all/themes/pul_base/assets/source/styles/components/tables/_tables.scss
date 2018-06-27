@@ -1,3 +1,4 @@
+table,
 .views-table {
   border-spacing: 0;
   margin: 1em 0;
@@ -18,11 +19,13 @@
     }
   }
 
-  tr.even {
+  tr.even,
+  tr:nth-child(even) {
     background: none;
   }
 
-  tr.odd > td {
+  tr.odd > td,
+  tr:nth-child(odd) {
     background: $gray-lightest;
   }
 
@@ -53,44 +56,44 @@ table caption {
   padding: 1em;
 }
 
-@include breakpoint($rwd-tables) {
-  // Force table to not be like tables anymore
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
+// @include breakpoint($rwd-tables) {
+//   // Force table to not be like tables anymore
+//   table,
+//   thead,
+//   tbody,
+//   th,
+//   td,
+//   tr {
+//     display: block;
+//   }
 
-  // Hide table headers (but not display: none;, for accessibility)
+//   // Hide table headers (but not display: none;, for accessibility)
 
-  thead tr {
-    @include visually-hidden;
-  }
+//   thead tr {
+//     @include visually-hidden;
+//   }
 
-  tr {
-    border-bottom: 1px solid $gray-light;
-  }
+//   tr {
+//     border-bottom: 1px solid $gray-light;
+//   }
 
-  tr.odd {
-    background: $gray-lightest;
-  }
+//   tr.odd {
+//     background: $gray-lightest;
+//   }
 
-  td {
-    // Behave  like a "row"
-    border: 0;
-    padding-left: 50%;
-    position: relative;
-  }
+//   td {
+//     // Behave  like a "row"
+//     border: 0;
+//     padding-left: 50%;
+//     position: relative;
+//   }
 
-  td::before {
-    left: 6px;
-    padding-right: 10px;
-    position: absolute;
-    top: 6px;
-    white-space: nowrap;
-    width: 45%;
-  }
-}
+//   td::before {
+//     left: 6px;
+//     padding-right: 10px;
+//     position: absolute;
+//     top: 6px;
+//     white-space: nowrap;
+//     width: 45%;
+//   }
+// }
