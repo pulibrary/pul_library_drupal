@@ -1,0 +1,31 @@
+.section-cams .three_nine_stacked-region--second {
+  a {
+    border-bottom: 1px solid $gray;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom: 1px solid $orange;
+      text-decoration: none;
+    }
+
+    img {
+      border: 0;
+      vertical-align: top;
+    }
+  }
+}
+
+.section-cams .book-navigation {
+	a {
+		border: 0;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border: 0;
+			text-decoration: underline;
+		}
+	}
+}
