@@ -10,7 +10,7 @@
 function pul_landing_page_spotlight_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_spotlight_details_link'
+  // Exported field_base: 'field_spotlight_details_link'.
   $field_bases['field_spotlight_details_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -20,7 +20,6 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -43,7 +42,7 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_spotlight_graphic'
+  // Exported field_base: 'field_spotlight_graphic'.
   $field_bases['field_spotlight_graphic'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -52,14 +51,6 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'field_name' => 'field_spotlight_graphic',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
     ),
     'indexes' => array(
       'fid' => array(
@@ -76,7 +67,7 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_spotlight_related'
+  // Exported field_base: 'field_spotlight_related'.
   $field_bases['field_spotlight_related'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -85,14 +76,6 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'field_name' => 'field_spotlight_related',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
     ),
     'indexes' => array(
       'target_id' => array(
@@ -127,7 +110,7 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_spotlight_staff'
+  // Exported field_base: 'field_spotlight_staff'.
   $field_bases['field_spotlight_staff'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -136,14 +119,6 @@ function pul_landing_page_spotlight_field_default_field_bases() {
     'field_name' => 'field_spotlight_staff',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-          'target_id' => 'uid',
-        ),
-        'table' => 'users',
-      ),
     ),
     'indexes' => array(
       'target_id' => array(

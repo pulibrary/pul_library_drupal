@@ -18,14 +18,14 @@
 }
 
 .section-cams .book-navigation {
-	a {
-		border: 0;
+  a {
+    border: 0;
 
-		&:hover,
-		&:active,
-		&:focus {
-			border: 0;
-			text-decoration: underline;
-		}
-	}
+    &:hover,
+    &:active,
+    &:focus {
+      border: 0;
+      text-decoration: underline;
+    }
+  }
 }

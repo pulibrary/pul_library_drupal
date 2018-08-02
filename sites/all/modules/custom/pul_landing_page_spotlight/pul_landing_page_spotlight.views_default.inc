@@ -37,26 +37,29 @@ function pul_landing_page_spotlight_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<em>Spotlight</em>: [title]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Sample Graphic */
   $handler->display->display_options['fields']['field_spotlight_graphic']['id'] = 'field_spotlight_graphic';
   $handler->display->display_options['fields']['field_spotlight_graphic']['table'] = 'field_data_field_spotlight_graphic';
   $handler->display->display_options['fields']['field_spotlight_graphic']['field'] = 'field_spotlight_graphic';
   $handler->display->display_options['fields']['field_spotlight_graphic']['label'] = '';
-  $handler->display->display_options['fields']['field_spotlight_graphic']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_spotlight_graphic']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_spotlight_graphic']['alter']['text'] = '<div class="spotlight-container"> 
+  <div class="spotlight-image">[field_spotlight_graphic]</div> 
+</div>';
   $handler->display->display_options['fields']['field_spotlight_graphic']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_spotlight_graphic']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_spotlight_graphic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_spotlight_graphic']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_spotlight_graphic']['settings'] = array(
-    'image_style' => 'homepage_callout',
+    'image_style' => '',
     'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_spotlight_graphic']['field_api_classes'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -80,6 +83,11 @@ function pul_landing_page_spotlight_views_default_views() {
   /* Display: Landing Page Callout */
   $handler = $view->new_display('block', 'Landing Page Callout', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $export['spotlight_dispalsys'] = $view;
 
   return $export;
