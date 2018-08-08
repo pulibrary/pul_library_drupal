@@ -208,8 +208,8 @@
       padding-right: $centered-navigation-submenu-padding;
       position: relative;
 
-      &:hover>.menu,
-      &:focus-within>.menu {
+      // &:focus-within>.menu,
+      &:hover>.menu {
         cursor: pointer;
         display: block;
 
