@@ -5,50 +5,62 @@
     border-top-right-radius: $base-border-radius;
     margin-bottom: 1em;
     text-decoration: none;
-
-    &:nth-of-type(1) .media--figure {
-      background: $architecture;
-    }
-
-    &:nth-of-type(3) .media--figure {
-      background: $eastasian;
-    }
-
-    &:nth-of-type(4) .media--figure {
-      background: $engineering;
-    }
-
-    &:nth-of-type(5) .media--figure {
-      background: $firestone;
-    }
-
-    &:nth-of-type(6) .media--figure {
-      background: $lewis;
-    }
-
-    &:nth-of-type(7) .media--figure {
-      background: $marquand;
-    }
-
-    &:nth-of-type(8) .media--figure {
-      background: $music;
-    }
-
-    &:nth-of-type(10) .media--figure {
-      background: $plasma;
-    }
-
-    &:nth-of-type(12) .media--figure {
-      background: $stokes;
-    }
   }
 
   .media--figure {
+    border-bottom-right-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
     float: left;
     height: 55px;
     width: 55px;
-    border-bottom-right-radius: $base-border-radius;
-    border-top-right-radius: $base-border-radius;
+
+    &.lib-3688 {
+      background: $architecture;
+    }
+
+    &.lib-25772 {
+      background: $cdh;
+    }
+
+    &.lib-3689 {
+      background: $eastasian;
+    }
+
+    &.lib-3690 {
+      background: $engineering;
+    }
+
+    &.lib-3694 {
+      background: $firestone;
+    }
+
+    &.lib-3704 {
+      background: $lewis;
+    }
+
+    &.lib-3706 {
+      background: $marquand;
+    }
+
+    &.lib-3707 {
+      background: $music;
+    }
+
+    &.lib-3709 {
+      background: $mudd;
+    }
+
+    &.lib-3710 {
+      background: $plasma;
+    }
+
+    &.lib-3700 {
+      background: $rbsc;
+    }
+
+    &.lib-3711 {
+      background: $stokes;
+    }
   }
 
   .media--figure img {
@@ -56,8 +68,8 @@
     border-top-right-radius: $base-border-radius;
     display: inline-block;
     height: 55px;
-    width: 50px;
     visibility: hidden;
+    width: 50px;
   }
 
   .media--body {

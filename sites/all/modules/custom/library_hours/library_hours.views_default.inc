@@ -1010,10 +1010,9 @@ function library_hours_views_default_views() {
     ),
   );
 
-  /* Display: Today&#x2019;s Hours */
-  $handler = $view->new_display('panel_pane', 'Today&#x2019;s Hours', 'panel_pane_2');
+  /* Display: Hours for */
+  $handler = $view->new_display('panel_pane', 'Hours for', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Library Hours';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'page_3';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -1471,7 +1470,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure"><img src="[uri]" alt=""></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure lib-[tid]"><img src="[uri]" alt=""></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
 <span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
 </div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
@@ -2086,10 +2085,32 @@ function library_hours_views_default_views() {
 
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'feed_1');
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'date_ical';
+  $handler->display->display_options['style_options']['cal_name'] = '';
+  $handler->display->display_options['style_options']['disable_webcal'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'date_ical';
   $handler->display->display_options['row_options']['date_field'] = 'field_data_field_open_hours.field_open_hours_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Calendar (field_hrs_lib_calendar) */
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['id'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['table'] = 'field_data_field_hrs_lib_calendar';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['field'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_hrs_lib_calendar_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_open_hours.field_open_hours_value' => 'field_data_field_open_hours.field_open_hours_value',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -2109,15 +2130,26 @@ function library_hours_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_open_hours.field_open_hours_value' => 'field_data_field_open_hours.field_open_hours_value',
   );
-  $handler->display->display_options['path'] = 'calendar/%/calendar.ics';
+  $handler->display->display_options['path'] = 'calendar/%/%/calendar.ics';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
+    'panel_pane_1' => 'panel_pane_1',
     'page_1' => 'page_1',
-    'page_2' => 'page_2',
-    'page_3' => 'page_3',
-    'block_1' => 'block_1',
     'block_2' => 'block_2',
+    'page_3' => 'page_3',
+    'page_2' => 'page_2',
+    'page' => 'page',
+    'block_1' => 'block_1',
     'default' => 0,
+    'panel_pane_3' => 0,
+    'panel_pane_5' => 0,
+    'panel_pane_2' => 0,
+    'page_5' => 0,
+    'block_3' => 0,
+    'block_5' => 0,
+    'panel_pane_4' => 0,
+    'panel_pane_6' => 0,
+    'panel_pane_7' => 0,
+    'ctools_context_1' => 0,
   );
 
   /* Display: Pane - Week Vertical */
@@ -2670,6 +2702,11 @@ function library_hours_views_default_views() {
       'label' => 'Content: Calendar',
     ),
   );
+
+  /* Display: Context */
+  $handler = $view->new_display('ctools_context', 'Context', 'ctools_context_1');
+  $handler->display->display_options['style_plugin'] = 'ctools_context';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $export['library_hours'] = $view;
 
   $view = new view();

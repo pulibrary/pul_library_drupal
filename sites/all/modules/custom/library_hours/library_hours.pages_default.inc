@@ -430,8 +430,9 @@ function library_hours_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'path' => 'calendar/day',
-    'override_title' => 1,
-    'override_title_text' => 'Today&#x2019;s Hours',
+    'override_title' => 0,
+    'override_title_text' => 'Hours for',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

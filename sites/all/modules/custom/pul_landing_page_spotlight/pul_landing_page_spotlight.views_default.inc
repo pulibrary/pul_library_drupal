@@ -51,7 +51,7 @@ function pul_landing_page_spotlight_views_default_views() {
   $handler->display->display_options['fields']['field_spotlight_graphic']['label'] = '';
   $handler->display->display_options['fields']['field_spotlight_graphic']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_spotlight_graphic']['alter']['text'] = '<div class="spotlight-container"> 
-  <div class="spotlight-image">[field_spotlight_graphic]</div> 
+  <div class="spotlight-image">[field_spotlight_graphic]</div>
 </div>';
   $handler->display->display_options['fields']['field_spotlight_graphic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_spotlight_graphic']['element_default_classes'] = FALSE;
@@ -60,11 +60,10 @@ function pul_landing_page_spotlight_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -83,11 +82,6 @@ function pul_landing_page_spotlight_views_default_views() {
   /* Display: Landing Page Callout */
   $handler = $view->new_display('block', 'Landing Page Callout', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $export['spotlight_dispalsys'] = $view;
 
   return $export;
