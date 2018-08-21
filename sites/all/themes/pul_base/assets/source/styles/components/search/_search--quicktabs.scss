@@ -240,11 +240,12 @@
 .block--quicktabs-homepage-search-tabs {
   clear: both;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
 }
 
 .front .block--quicktabs-homepage-search-tabs {
   @include breakpoint($tab-desk) {
-    width: 70%;
+    width: 100%;
+    max-width: 795px;
   }
 }
