@@ -1470,7 +1470,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_library_hrs_target_id';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure lib-[tid]"><img src="[uri]" alt=""></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure lib-[tid]"></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
 <span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
 </div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
