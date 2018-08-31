@@ -57,7 +57,6 @@
     border: 0;
     clear: none;
     display: inline-block;
-    float: left;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -240,11 +239,12 @@
 .block--quicktabs-homepage-search-tabs {
   clear: both;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
 }
 
 .front .block--quicktabs-homepage-search-tabs {
   @include breakpoint($tab-desk) {
-    width: 70%;
+    max-width: 795px;
+    width: 100%;
   }
 }

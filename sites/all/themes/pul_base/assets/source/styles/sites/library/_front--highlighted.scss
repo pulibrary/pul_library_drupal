@@ -1,47 +1,105 @@
-.front .wrapper--highlighted {
-  background: $highlighted-wrapper;
-  background-size: 1600px auto;
-  padding: 0;
+// .front .wrapper--highlighted {
+//   // background: $highlighted-wrapper;
+//   // background-size: 1600px auto;
+//   // padding: 0;
+//   position: relative;
+
+//   // @include breakpoint($tab) {
+//   //   background: url("/sites/all/themes/pul_base/assets/public/images/studying-firestone-bg-alt.jpg") center center no-repeat;
+//   //   // background-position-y: -30px;
+//   //   background-size: cover;
+//   //   height: 350px;
+//   // }
+
+//   // @include breakpoint($tab-desk) {
+//   //   height: 430px; //430px; or 50vh;
+//   //   // max-width: 1680px;
+
+//   //   // mask for hero image
+
+//   //   // &::before {
+//   //   //   background: linear-gradient(to right, $black 0%, transparent 49%, $black 100%);
+//   //   //   content: "";
+//   //   //   height: 100%;
+//   //   //   left: 0;
+//   //   //   position: absolute;
+//   //   //   top: 0;
+//   //   //   width: 100%;
+//   //   // }
+//   // }
+
+//   // @include breakpoint($desk) {
+//   //   height: 55vh;
+//   // }
+
+//   .l-region--highlighted {
+//     padding: 1em;
+//     position: relative;
+
+//     @include breakpoint($tab) {
+//       padding: 3em 0;
+//     }
+//   }
+// }
+
+// // .l-header {
+// //   background: $black;
+// // }
+
+.wrapper--highlighted {
   position: relative;
 
-  @include breakpoint($tab) {
-    background: url("/sites/all/themes/pul_base/assets/public/images/studying-firestone-bg-alt.jpg") center center no-repeat;
-    // background-position-y: -30px;
-    background-size: cover;
-    height: 350px;
-  }
-
-  @include breakpoint($tab-desk) {
-    height: 430px; //430px; or 50vh;
-    // max-width: 1680px;
-
-    // mask for hero image
-
-    // &::before {
-    //   background: linear-gradient(to right, $black 0%, transparent 49%, $black 100%);
-    //   content: "";
-    //   height: 100%;
-    //   left: 0;
-    //   position: absolute;
-    //   top: 0;
-    //   width: 100%;
-    // }
-  }
-
-  // @include breakpoint($desk) {
-  //   height: 55vh;
-  // }
-
-  .l-region--highlighted {
-    padding: 1em;
-    position: relative;
-
-    @include breakpoint($tab) {
-      padding: 3em 0;
-    }
+  .view-content,
+  .views-row {
+    margin: 0;
   }
 }
 
-// .l-header {
-//   background: $black;
-// }
+.block--views-spotlight-dispalsys-block {
+  position: relative;
+}
+
+.spotlight-container {
+  position: relative;
+}
+
+.spotlight-image {
+  overflow: hidden;
+  line-height: 0;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.1);
+    transition: all .3s linear;
+  }
+
+  img {
+    min-width:100vw;
+    height: 330px;
+    object-fit: cover;
+  }
+}
+
+.spotlight-text {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+
+  a {
+    background-color: rgba(30,30,30,0.7);
+    color: #fff;
+    padding: 10px 10px 5px;
+  }
+}
+
+.block--quicktabs-homepage-search-tabs {
+  position: absolute;
+  top: calc(50% -49px); left: 0; bottom: calc(50% - 49px); right: 0;
+  height: auto;
+}

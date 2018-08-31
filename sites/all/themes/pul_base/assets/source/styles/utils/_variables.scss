@@ -43,7 +43,7 @@ $black-opacity-7: rgba($black, 0.7);
 $white-opacity-0: rgba($white, 0);
 $white-opacity-7: rgba($white, 0.7);
 
-$highlighted-wrapper: $orange;
+$highlighted-wrapper: $gray-dark;
 
 //Princeton colors
 $cool-gray-10: #7f7f83;
@@ -53,13 +53,16 @@ $orange-coated: #f48325;
 
 //Branch colors
 $architecture: #c3d600;
+$cdh: rgb(0, 237, 255);
 $eastasian: #1a8648;
 $engineering: #3b7cca;
 $firestone: #ee7421;
 $lewis: #915baf;
 $marquand: #d12a2f;
-$music: #c41949;
-$plasma: #f6b220;
+$music: rgb(218, 24, 132);
+$mudd: rgb(242, 169, 0);
+$plasma: rgb(80, 7, 120);
+$rbsc: rgb(198, 146, 20);
 $stokes: #c24d01;
 $video: #00aebc;
 

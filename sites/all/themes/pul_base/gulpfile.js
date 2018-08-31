@@ -146,7 +146,7 @@ gulp.task('scripts', function(){
   */
 gulp.task('fonts', function(){
   gulp.src(config.fonts.files)
-    .pipe(chmod(640))
+    .pipe(chmod(644))
     .pipe(gulp.dest(config.fonts.dest))
     .pipe(reload({stream:true}));
 });
@@ -162,7 +162,7 @@ gulp.task('images', function(){
       optimizationLevel: 5,
       interlaced: true
     }))
-    .pipe(chmod(640))
+    .pipe(chmod(644))
     .pipe(gulp.dest(config.images.dest))
     .pipe(reload({stream:true}));
 });

@@ -1,23 +1,75 @@
 .hours--today {
   .media {
     border: $border-thin $border-solid $border-light;
-    border-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
     margin-bottom: 1em;
     text-decoration: none;
   }
 
   .media--figure {
+    border-bottom-right-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
     float: left;
     height: 55px;
+    width: 45px;
+
+    &.lib-3688 {
+      background: $architecture;
+    }
+
+    &.lib-25772 {
+      background: $cdh;
+    }
+
+    &.lib-3689 {
+      background: $eastasian;
+    }
+
+    &.lib-3690 {
+      background: $engineering;
+    }
+
+    &.lib-3694 {
+      background: $firestone;
+    }
+
+    &.lib-3704 {
+      background: $lewis;
+    }
+
+    &.lib-3706 {
+      background: $marquand;
+    }
+
+    &.lib-3707 {
+      background: $music;
+    }
+
+    &.lib-3709 {
+      background: $mudd;
+    }
+
+    &.lib-3710 {
+      background: $plasma;
+    }
+
+    &.lib-3700 {
+      background: $rbsc;
+    }
+
+    &.lib-3711 {
+      background: $stokes;
+    }
   }
 
   .media--figure img {
-    // border-bottom-left-radius: $base-border-radius;
-    // border-top-left-radius: $base-border-radius;
-    border-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
     display: inline-block;
     height: 55px;
-    width: 95px;
+    visibility: hidden;
+    width: 50px;
   }
 
   .media--body {
