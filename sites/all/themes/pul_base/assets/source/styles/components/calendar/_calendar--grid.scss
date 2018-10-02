@@ -31,10 +31,15 @@
   }
 
   .month-view td.date-box {
+    background: $white;
     border-bottom: 0;
     font-weight: bold;
     padding-bottom: 0;
     text-align: right;
+
+    &.empty {
+      background: none;
+    }
   }
 
   .month-view td.single-day {
