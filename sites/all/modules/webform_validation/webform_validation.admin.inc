@@ -6,7 +6,10 @@
  */
 
 /**
- * Menu callback function to show an overview of the existing validation rules, and the option to add a rule.
+ * Menu callback function.
+ *
+ * Shows an overview of the existing validation rules and the option to add a
+ * rule.
  */
 function webform_validation_manage($node) {
   $rules = webform_validation_get_webform_rules($node);
@@ -153,11 +156,11 @@ function webform_validation_manage_overview_form_submit($form, $form_state) {
   foreach ($form_state['values'] as $ruleid => $value) {
     if (is_numeric($ruleid)) {
       $update = db_update('webform_validation_rule')
-          ->fields(array(
-            'weight' => $value['weight'],
-          ))
-          ->condition('ruleid', $ruleid)
-          ->execute();
+        ->fields(array(
+          'weight' => $value['weight'],
+        ))
+        ->condition('ruleid', $ruleid)
+        ->execute();
     }
   }
   drupal_set_message(t('The order of the validation rules has been saved.'));
@@ -225,9 +228,15 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
   );
 
   if (!empty($rule_validator['custom_data']) && is_array($rule_validator['custom_data'])) {
+    $valid_types = array('textfield', 'textarea');
+    $type = isset($rule_validator['custom_data']['type']) ? $rule_validator['custom_data']['type'] : 'textfield';
+    if (!in_array($type, $valid_types)) {
+      $type = 'textfield';
+    }
+
     $required = isset($rule_validator['custom_data']['required']) ? $rule_validator['custom_data']['required'] : TRUE;
     $form['rule']['data'] = array(
-      '#type' => 'textfield',
+      '#type' => $type,
       '#title' => $rule_validator['custom_data']['label'],
       '#description' => $rule_validator['custom_data']['description'],
       '#required' => (bool) $required,
@@ -289,7 +298,8 @@ function webform_validation_manage_rule_validate($form, &$form_state) {
 
   $rule_validator = webform_validation_get_validator_info($values['validator']);
   $selected_components = count(array_filter($values['rule_components']));
-  // Check validator min_components and min_components property when they are equal.
+  // Check validator min_components and min_components property when they are
+  // equal.
   if (isset($rule_validator['min_components']) && isset($rule_validator['max_components']) && $rule_validator['min_components'] === $rule_validator['max_components'] && $selected_components !== $rule_validator['min_components']) {
     form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component', 'You need to select exactly @count components'));
   }
@@ -312,7 +322,9 @@ function webform_validation_manage_rule_submit($form, &$form_state) {
 }
 
 /**
- * Get a list of components for a specific webform, filtered by the validator settings.
+ * Get a filtered list of components for a specific webform.
+ *
+ * List is filtered by the validator settings.
  */
 function webform_validation_get_webform_components($node, $validator) {
   form_load_include($form_state, 'inc', 'webform', 'includes/webform.components');

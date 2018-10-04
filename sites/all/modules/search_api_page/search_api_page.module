@@ -507,12 +507,20 @@ function search_api_page_delete($id) {
  * @ingroup forms
  */
 function search_api_page_search_form(array $form, array &$form_state, Entity $page, $keys = NULL, $compact = FALSE) {
+  $max_length = 128;
+  if (isset($page->options['max_length'])) {
+    $max_length = $page->options['max_length'] > 0 ? $page->options['max_length'] : NULL;
+  }
+  if ($max_length) {
+    $keys = drupal_substr($keys, 0, $max_length);
+  }
   $form['keys_' . $page->id] = array(
     '#type' => 'textfield',
     '#title' => t('Enter your keywords'),
     '#title_display' => $compact ? 'invisible' : 'before',
     '#default_value' => $keys,
     '#size' => $compact ? 15 : 30,
+    '#maxlength' => $max_length,
   );
   if ($compact) {
     $form['keys_' . $page->id]['#attributes']['placeholder'] = t('Enter your keywords');

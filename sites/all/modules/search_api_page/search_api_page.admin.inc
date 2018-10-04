@@ -176,6 +176,14 @@ function search_api_page_admin_add(array $form, array &$form_state) {
     );
   }
 
+  $form['max_length'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum keywords length'),
+    '#description' => t('The maximum number of characters that should be allowed as search keywords. Set to an empty string to not have any limit.'),
+    '#element_validate' => array('element_validate_integer_positive'),
+    '#default_value' => 128,
+  );
+
   $form['per_page'] = array(
     '#type' => 'select',
     '#title' => t('Results per page'),
@@ -381,6 +389,18 @@ function search_api_page_admin_edit(array $form, array &$form_state, Entity $pag
       '#value' => array(),
     );
   }
+
+  $max_length = 128;
+  if (isset($page->options['max_length'])) {
+    $max_length = $page->options['max_length'] > 0 ? $page->options['max_length'] : NULL;
+  }
+  $form['options']['max_length'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum keywords length'),
+    '#description' => t('The maximum number of characters that should be allowed as search keywords. Set to an empty string to not have any limit.'),
+    '#element_validate' => array('element_validate_integer_positive'),
+    '#default_value' => $max_length,
+  );
 
   $form['options']['per_page'] = array(
     '#type' => 'select',

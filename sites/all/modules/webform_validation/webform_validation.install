@@ -126,7 +126,8 @@ function webform_validation_update_1() {
  * Helper function: update numeric validator range to new syntax.
  */
 function _webform_validation_update_range_syntax($range) {
-  // No longer use "0" as indicator for no validation. This should be an empty string.
+  // No longer use "0" as indicator for no validation. This should be an empty
+  // string.
   if ($range === "0") {
     return "";
   }
@@ -144,6 +145,12 @@ function _webform_validation_update_range_syntax($range) {
 }
 
 /**
+ * Implements hook_update_N().
+ */
+
+/**
+ * Adjust DB schema.
+ *
  * Add column to track negated rules.
  * Remove explicit length limit on data field.
  * Remove regex escaping of blacklist data.
@@ -164,7 +171,9 @@ function webform_validation_update_7101() {
     'not null' => FALSE,
   ));
 
-  $replace = array('.', '\\', '+', '*', '?', '[', '^', ']', '$', '(', ')', '{', '}', '=', '!', '<', '>', '|', ':', '-', '/');
+  $replace = array('.', '\\', '+', '*', '?', '[', '^', ']', '$', '(', ')', '{',
+    '}', '=', '!', '<', '>', '|', ':', '-', '/',
+  );
   $search = array();
   foreach ($replace as $value) {
     $search[] = '\\' . $value;

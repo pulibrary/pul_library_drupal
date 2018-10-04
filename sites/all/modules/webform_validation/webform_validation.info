@@ -3,12 +3,12 @@ description = Add validation rules to Webforms.
 core = 7.x
 package = Webform
 dependencies[] = webform
+test_dependencies[] = webform_validation_testing
 files[] = tests/WebformValidationTestCase.test
 php = 5.3
 
-; Information added by Drupal.org packaging script on 2017-09-05
-version = "7.x-1.14"
+; Information added by Drupal.org packaging script on 2018-10-01
+version = "7.x-1.15"
 core = "7.x"
 project = "webform_validation"
-datestamp = "1504625946"
-
+datestamp = "1538404086"

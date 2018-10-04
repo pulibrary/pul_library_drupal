@@ -66,7 +66,10 @@ function webform_validation_get_all_components($nid) {
 }
 
 /**
- * This helper function takes a list of full component info arrays and returns a basic representation of it for output purposes.
+ * Create basic version of component info.
+ *
+ * This helper function takes a list of full component info arrays and returns a
+ * basic representation of it for output purposes.
  */
 function webform_validation_rule_components_basic($components) {
   $ret = array();

@@ -29,6 +29,13 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
 
   // Pre-process keys (unescape \ and /).
   if (isset($keys) && $keys !== '') {
+    $max_length = 128;
+    if (isset($page->options['max_length'])) {
+      $max_length = $page->options['max_length'] > 0 ? $page->options['max_length'] : NULL;
+    }
+    if ($max_length && drupal_strlen($keys) > $max_length) {
+      $keys = drupal_substr($keys, 0, $max_length);
+    }
     $keys = explode("\\\\", $keys);
     $keys = str_replace("\\", "/", $keys);
     $keys = implode("\\", $keys);
@@ -38,7 +45,7 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
   }
 
   $ret = array(
-    '#theme' => 'search_api_page_full_page',
+    '#theme' => "search_api_page_full_page__{$page->machine_name}",
   );
   $ret['#contextual_links']['search_api_page'] = array(
     'admin/config/search/search_api/page',
@@ -119,20 +126,6 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
   }
 
   return $ret;
-}
-
-/**
- * Processes variables for search-api-page-full-page.tpl.php
- *
- * The $variables array contains the following arguments:
- * - $form
- * - $results
- *
- * @see search-api-page-full-page.tpl.php
- */
-function template_preprocess_search_api_page_full_page(&$variables) {
-  $machine_name = $variables['results']['#page']->machine_name;
-  $variables['theme_hook_suggestions'][] = 'search-api-page-full-page__' . $machine_name;
 }
 
 /**
@@ -279,6 +272,7 @@ function search_api_page_reset_original_options($children, array $element) {
  * @see search-api-page-results.tpl.php
  */
 function template_preprocess_search_api_page_results(array &$variables) {
+  $page = $variables['page'];
   $results = $variables['results'];
   $results += array(
     'results' => array(),
@@ -295,7 +289,7 @@ function template_preprocess_search_api_page_results(array &$variables) {
     $variables['sec'] = round($results['performance']['complete'], 3);
   }
   $variables['search_performance'] = array(
-    '#theme' => 'search_api_page_search_performance',
+    '#theme' => "search_api_page_search_performance__{$page->machine_name}",
     '#markup' => format_plural(
       $results['result count'],
       'The search found 1 result in @sec seconds.',
@@ -307,7 +301,7 @@ function template_preprocess_search_api_page_results(array &$variables) {
   );
 
   // Make the help text depend on the parse mode used.
-  switch ($variables['page']->options['mode']) {
+  switch ($page->options['mode']) {
     case 'direct':
       if ($variables['index']->server()->class == 'search_api_solr') {
         $variables['no_results_help'] = t('<ul>
@@ -341,7 +335,7 @@ function template_preprocess_search_api_page_results(array &$variables) {
   // Prepare CSS classes.
   $classes_array = array(
     'search-api-page',
-    'search-api-page-' . drupal_clean_css_identifier($variables['page']->machine_name),
+    'search-api-page-' . drupal_clean_css_identifier($page->machine_name),
     'view-mode-' . drupal_clean_css_identifier($variables['view_mode']),
   );
   $variables['classes'] = implode(' ', $classes_array);
@@ -359,7 +353,7 @@ function template_preprocess_search_api_page_results(array &$variables) {
     foreach ($results['results'] as $item) {
       if(!empty($variables['items'][$item['id']])) {
         $variables['search_results'][] = array(
-          '#theme' => 'search_api_page_result',
+          '#theme' => "search_api_page_result__{$page->machine_name}",
           '#index' => $variables['index'],
           '#result' => $item,
           '#item' => $variables['items'][$item['id']],

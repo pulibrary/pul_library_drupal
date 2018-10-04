@@ -82,12 +82,10 @@ function webform_validation_theme() {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_BASE_FORM_ID_alter().
  */
-function webform_validation_form_alter(&$form, &$form_state, $form_id) {
-  if (strpos($form_id, 'webform_client_form_') !== FALSE) {
-    $form['#validate'][] = 'webform_validation_validate';
-  }
+function webform_validation_form_webform_client_form_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = 'webform_validation_validate';
 }
 
 /**
@@ -150,8 +148,6 @@ function webform_validation_validate($form, &$form_state) {
   }
 
   if ($rules) {
-    $component_definitions = webform_validation_prefix_keys($node->webform['components']);
-
     // Remove hidden components.
     if (defined('WebformConditionals::componentShown')) {
       // New conditionals system.
@@ -161,7 +157,7 @@ function webform_validation_validate($form, &$form_state) {
       if (!$sorter->isExecuted()) {
         $sorter->executeConditionals(array(), 0);
       }
-      foreach ($component_definitions as $key => $component) {
+      foreach ($node->webform['components'] as $key => $component) {
         if ($sorter->componentVisibility($component['cid'], $component['page_num']) !== WebformConditionals::componentShown) {
           unset($flat_values[$key]);
         }
@@ -174,7 +170,7 @@ function webform_validation_validate($form, &$form_state) {
       if (!defined('WEBFORM_CONDITIONAL_INCLUDE')) {
         define('WEBFORM_CONDITIONAL_INCLUDE', 1);
       }
-      foreach ($component_definitions as $key => $component) {
+      foreach ($node->webform['components'] as $key => $component) {
         // In Webform 7.x-3.x, _webform_client_form_rule_check() returns
         // boolean.
         // Cast to int so that the function behaves as it does in 7.x-4.x.
@@ -193,15 +189,21 @@ function webform_validation_validate($form, &$form_state) {
           $items[$cid] = $flat_values[$cid];
         }
       }
-      // Prefix array keys to avoid reindexing by the module_invoke_all function
-      // call.
-      $items = webform_validation_prefix_keys($items);
       $rule['sid'] = $sid;
       // Have the submitted values validated.
-      $errors = module_invoke_all("webform_validation_validate", $rule['validator'], $items, $component_definitions, $rule);
+      $errors = module_invoke_all("webform_validation_validate", $rule['validator'], webform_validation_prefix_keys($items), webform_validation_prefix_keys($node->webform['components']), $rule);
       if ($errors) {
         $errors = webform_validation_unprefix_keys($errors);
-        $components = webform_validation_unprefix_keys($component_definitions);
+        // Create hook_webform_validation_validate_alter(). Allow other modules
+        // to alter error messages.
+        $context = array(
+          'validator_name' => $rule['validator'],
+          'items' => $items,
+          'components' => $node->webform['components'],
+          'rule' => $rule,
+        );
+        drupal_alter('webform_validation_validate', $errors, $context);
+
         foreach ($errors as $item_key => $error) {
           // Do not set error message if an identical message has already been
           // set.
@@ -212,7 +214,7 @@ function webform_validation_validate($form, &$form_state) {
 
           // Build the proper form element error key, taking into account
           // hierarchy.
-          $error_key = 'submitted][' . webform_validation_parent_tree($item_key, $components) . $components[$item_key]['form_key'];
+          $error_key = 'submitted][' . webform_validation_parent_tree($item_key, $node->webform['components']) . $node->webform['components'][$item_key]['form_key'];
           if (is_array($error)) {
             foreach ($error as $sub_item_key => $sub_error) {
               form_set_error($error_key . '][' . $sub_item_key, $sub_error);
@@ -256,7 +258,9 @@ function webform_validation_get_field_keys($submitted, $node) {
 }
 
 /**
- * Recursively add the parents for the element, to be used as first argument to form_set_error.
+ * Recursively add the parents for the element.
+ *
+ * These are used as the first argument to form_set_error().
  */
 function webform_validation_parent_tree($cid, $components) {
   $output = '';
@@ -283,7 +287,11 @@ function webform_validation_rule_get_formkeys($rule) {
 }
 
 /**
- * Prefix numeric array keys to avoid them being reindexed by module_invoke_all.
+ * Prefix numeric array keys to avoid them being reindexed.
+ *
+ * Reindexing done in module_invoke_all().
+ *
+ * Opposite of webform_validation_unprefix_keys().
  */
 function webform_validation_prefix_keys($arr) {
   $ret = array();
@@ -294,7 +302,9 @@ function webform_validation_prefix_keys($arr) {
 }
 
 /**
- * Undo prefixing numeric array keys to avoid them being reindexed by module_invoke_all.
+ * Undo prefixing numeric array keys.
+ *
+ * Opposite of webform_validation_prefix_keys().
  */
 function webform_validation_unprefix_keys($arr) {
   $ret = array();
@@ -323,19 +333,20 @@ function theme_webform_validation_manage_add_rule($variables) {
     $output = '<h3>' . t('Add a validation rule') . '</h3>';
     $output .= '<dl>';
     foreach ($validators as $validator_key => $validator_info) {
-      $url = 'node/' . $nid . '/webform/validation/add/' . $validator_key;
-      if (array_intersect($types, $validator_info['component_types'])) {
-        $title = l($validator_info['name'], $url, array('query' => drupal_get_destination()));
+      $validator_types = webform_validation_valid_component_types($validator_key);
+      $title = $validator_info['name'];
+      if (array_intersect($types, $validator_types)) {
+        $url = 'node/' . $nid . '/webform/validation/add/' . $validator_key;
+        $title = l($title, $url, array('query' => drupal_get_destination()));
         $component_list_postfix = '';
       }
       else {
-        $title = $validator_info['name'];
         $component_list_postfix = '; ' . t('none present in this form');
       }
       $item = '<dt>' . $title . '</dt>';
       $item .= '<dd>';
       $item .= $validator_info['description'];
-      $item .= ' ' . t('Works with: @component_types.', array('@component_types' => implode(', ', $validator_info['component_types']) . $component_list_postfix)) . '</dd>';
+      $item .= ' ' . t('Works with: @component_types.', array('@component_types' => implode(', ', $validator_types) . $component_list_postfix)) . '</dd>';
       $output .= $item;
     }
     $output .= '</dl>';
