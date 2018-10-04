@@ -8,16 +8,23 @@
 /**
  * Implements hook_webform_validation_validators().
  *
- * This function returns an array of validators, in the validator key => options array form.
- * Possible options:
- * - name (required): name of the validator
- * - component types (required): defines which component types can be validated by this validator. Specify 'all' to allow all types
- * - negatable (optional): define whether the rule can be negated, meaning it will validate the inverse of the rule.
- * - custom_error (optional): define whether a user can specify a custom error message upon creating the validation rule.
- * - custom_data (optional): define whether custom data can be added to the validation rule
- * - min_components (optional): define the minimum number of components to be selected for creating a validation rule
- * - max_components (optional): define the maximum number of components to be selected for creating a validation rule
- * - description (optional): provide a descriptive explanation about the validator.
+ * This function returns an array of validators, in the validator key => options
+ * array form. Possible options:
+ * - name (required): name of the validator.
+ * - component_types (required): defines which component types can be validated
+ *   by this validator. Specify 'all' to allow all types.
+ * - negatable (optional): define whether the rule can be negated, meaning it
+ *   will validate the inverse of the rule.
+ * - custom_error (optional): define whether a user can specify a custom error
+ *   message upon creating the validation rule.
+ * - custom_data (optional): define whether custom data can be added to the
+ *   validation rule.
+ * - min_components (optional): define the minimum number of components to be
+ *   selected for creating a validation rule.
+ * - max_components (optional): define the maximum number of components to be
+ *   selected for creating a validation rule.
+ * - description (optional): provide a descriptive explanation about the
+ *   validator.
  */
 function webform_validation_webform_validation_validators() {
   $validators = array(
@@ -30,7 +37,7 @@ function webform_validation_webform_validation_validators() {
       ),
       'custom_data' => array(
         'label' => t('Specify numeric validation range'),
-        'description' => t('Optionally specify the minimum-maximum range to validate the user-entered numeric value against.') . ' ' . t('Usage') . ':' . theme('item_list', array('items' => array(t('empty: no value validation'), t('"100": greater than or equal to 100'), t('"|100": less than or equal to 100 (including negative numbers)'), t('"0|100": greater than or equal to 0 &amp; less than or equal to 100'), t('"10|100": greater than or equal to 10 &amp; less than or equal to 100'), t('"-100|-10": greater than or equal to -100 &amp; less than or equal to -10')))),
+        'description' => t('Optionally specify the minimum-maximum range to validate the user-entered numeric value against. Usage:') . theme('item_list', array('items' => array(t('empty: no value validation'), t('"100": greater than or equal to 100'), t('"|100": less than or equal to 100 (including negative numbers)'), t('"0|100": greater than or equal to 0 &amp; less than or equal to 100'), t('"10|100": greater than or equal to 10 &amp; less than or equal to 100'), t('"-100|-10": greater than or equal to -100 &amp; less than or equal to -10')))),
         'required' => FALSE,
       ),
       'description' => t('Verifies that user-entered values are numeric, with the option to specify min and / or max values.'),
@@ -439,8 +446,9 @@ function webform_validation_webform_validation_validate($validator_name, $items,
     }
   }
 
-  // Some components, such as multiple select, send their values as arrays, others don't.
-  // Convert all to arrays and write the rules to handle them that way. Remove empty values.
+  // Some components, such as multiple select, send their values as arrays,
+  // others don't. Convert all to arrays and write the rules to handle them that
+  // way. Remove empty values.
   foreach ($items as $key => $val) {
     $new_values = array();
     foreach ((array) $val as $val_key => $val_val) {
@@ -468,7 +476,8 @@ function webform_validation_webform_validation_validate($validator_name, $items,
             continue;
           }
 
-          // Now validate the entered numeric value against the validator range settings, if appropriate
+          // Now validate the entered numeric value against the validator range
+          // settings, if appropriate.
           // a. validate min & max.
           if (isset($num_range['min']) && isset($num_range['max'])) {
             // Validate the min - max range.
@@ -673,9 +682,12 @@ function webform_validation_webform_validation_validate($validator_name, $items,
       foreach ($items as $key => $val) {
         $items[$key] = _webform_validation_flatten_array($val);
       }
-      // Now we count how many times each value appears, and find out which values appear more than once.
+      // Now we count how many times each value appears, and find out which
+      // values appear more than once.
       $items_count = array_count_values(array_map('drupal_strtolower', array_map('trim', $items)));
-      $doubles = array_filter($items_count, create_function('$x', 'return $x > 1;'));
+      $doubles = array_filter($items_count, function ($x) {
+        return $x > 1;
+      });
       foreach ($items as $key => $val) {
         if (in_array(drupal_strtolower($val), array_keys($doubles))) {
           $errors[$key] = t('The value of %item is not unique.', array('%item' => $components[$key]['name']));
@@ -687,7 +699,8 @@ function webform_validation_webform_validation_validate($validator_name, $items,
       $specific_values = explode(',', $rule['data']);
       $specific_values = array_map('trim', $specific_values);
       foreach ($items as $key => $val) {
-        // Selects: Fail if at least one checked and at least one not in the allowed values.
+        // Selects: Fail if at least one checked and at least one not in the
+        // allowed values.
         $val = array_filter($val);
         $test = count($val) && count(array_diff($val, $specific_values));
         _webform_validation_test($errors, $key, $rule, $test);
@@ -930,7 +943,9 @@ function _webform_validation_get_names_of_rule_components(array $rule) {
 }
 
 /**
- * Helper function to negate validation rules as needed and create the correct error message.
+ * Helper function to negate validation rules as needed.
+ *
+ * Creates the correct error message.
  */
 function _webform_validation_test(&$errors, $key, $rule, $test, array $error_strings = NULL, array $error_vars = NULL) {
   $rule['negate'] = !empty($rule['negate']);
@@ -998,7 +1013,8 @@ function webform_validation_get_validators() {
   }
 
   $validators = module_invoke_all('webform_validation_validators');
-  // Let modules use hook_webform_validator_alter($validators) to change validator settings.
+  // Let modules use hook_webform_validator_alter($validators) to change
+  // validator settings.
   drupal_alter('webform_validator', $validators);
 
   // Remove entries for which only partial information exists.
@@ -1090,7 +1106,10 @@ function _webform_validation_check_false($var) {
 }
 
 /**
- * Process the numeric value validation range that was provided in the numeric validator options.
+ * Helper function to check numeric data.
+ *
+ * Process the numeric value validation range that was provided in the numeric
+ * validator options.
  */
 function _webform_numeric_check_data($data) {
   $range = array('min' => NULL, 'max' => NULL);
