@@ -108,7 +108,17 @@ function catalog_pudl_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='pudl-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='/utils/pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='/utils/dpulsearch/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
+  );
+  return $block_content;
+}
+
+function catalog_pulmap_results_content() {
+  $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='pulmap-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
+  $block_content = array(
+    '#markup' => "<div data-source='/utils/pulmap/any?query={$path}&sid={$sid}' id='pulmap-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -192,6 +202,10 @@ function catalog_block_block_info() {
    );
    $blocks['catalog_pudl_results'] = array(
       'info' => t('Princeton University Digital Library'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
+   $blocks['catalog_pulmap_results'] = array(
+      'info' => t('Maps and Geographic Data'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_faq_results'] = array(
@@ -279,6 +293,10 @@ function catalog_block_block_view($delta = '') {
     $block['subject'] = t('Princeton University Digital Library');
     $block['content'] = catalog_pudl_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pudl_results.js');
+  } elseif ($delta == 'catalog_pulmap_results') {
+    $block['subject'] = t('Maps and Geographic Data');
+    $block['content'] = catalog_pulmap_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulmap_results.js');
   } elseif ($delta == 'catalog_faq_results') {
     $block['subject'] = t('FAQ');
     $block['content'] = catalog_faq_results_content($delta);

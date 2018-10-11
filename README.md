@@ -32,7 +32,7 @@ $conf['css_gzip_compression'] = FALSE;
 $conf['js_gzip_compression'] = FALSE;
 $conf['cache'] = 0;
 $conf['block_cache'] = 0;
-conf['preprocess_css'] = 0;
+$conf['preprocess_css'] = 0;
 $conf['preprocess_js'] = 0;
 /* end cache settings */
 /* Turn on theme debugging. Injects the path to every Template utilized in the HTML source. */
