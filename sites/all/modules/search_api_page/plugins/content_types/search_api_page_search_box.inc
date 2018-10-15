@@ -11,22 +11,28 @@ $plugin = array(
   'edit form' => 'search_api_page_search_box_content_type_edit_form',
   'render callback' => 'search_api_page_search_box_content_type_render',
   'admin title' => 'search_api_page_search_box_content_type_admin_title',
+  'all contexts' => TRUE,
   'defaults' => array(
     'page' => '',
+    'keys' => '',
   ),
 );
 
 /**
  * Renders the custom content type.
  */
-function search_api_page_search_box_content_type_render($subtype, $conf, $panel_args, $context) {
+function search_api_page_search_box_content_type_render($subtype, $conf, $panel_args, $contexts) {
   $page = search_api_page_load($conf['page']);
   if ($page && $page->enabled && search_api_page_access($conf['page'])) {
+    $keys = NULL;
+    if(!empty($conf['keys'])) {
+      $keys = ctools_context_keyword_substitute($conf['keys'], array(), $contexts);
+    }
     $block = new stdClass();
     $block->module  = 'search_api_page';
     $block->delta   = 'result';
     $block->subject = t($page->name);
-    $block->content = drupal_get_form('search_api_page_search_form_' . $page->machine_name, $page, NULL, TRUE);
+    $block->content = drupal_get_form('search_api_page_search_form_' . $page->machine_name, $page, $keys, TRUE);
     $block->content['#contextual_links']['search_api_page'] = array(
       'admin/config/search/search_api/page',
       array($page->machine_name),
@@ -55,6 +61,13 @@ function search_api_page_search_box_content_type_edit_form($form, &$form_state) 
     '#options' => $pages,
     '#default_value' => $conf['page'],
     '#required' => TRUE,
+  );
+
+  $form['keys'] = array(
+    '#type' => 'textfield',
+    '#default_value' => $conf['keys'],
+    '#title' => t('Keys'),
+    '#description' => t('Add keys to search box form. Keywords from contexts are allowed.'),
   );
 
   return $form;
