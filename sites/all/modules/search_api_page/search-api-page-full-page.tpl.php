@@ -16,8 +16,6 @@
 
 ?>
 
-<h1><?php print t('Search'); ?></h1>
-
 <?php print render($form); ?>
 
 <?php print render($results); ?>
