@@ -62,11 +62,15 @@
   <?php print $scripts; ?>
 </head>
 <body<?php print $attributes;?>>
+  <!-- No JS for Analytics -->
+  <noscript>
+    <img src="http://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-15870237-13&cid=1234&dl=nojs&dt=No%20Javascript%20User">
+  </noscript>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <!-- JS for Chat Widget. -->
-  <script type="text/javascript"> 
+  <script type="text/javascript">
     (function() {
       if(document.getElementById("menu-menu-get-help-menu") != null) {
         var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
