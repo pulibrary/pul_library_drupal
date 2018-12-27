@@ -61,7 +61,8 @@ function pul_video_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'vdl',
+            'paths' => 'vdl
+videoservices',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -92,7 +93,7 @@ function pul_video_library_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Video Library';
+  $display->title = 'Video Services';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__panel_context_194f0b9e-62d0-442a-8439-c7bceceaf789';
@@ -206,7 +207,7 @@ function pul_video_library_default_page_manager_handlers() {
     'admin_title' => 'Social Media',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<p><a href="https://videolib.princeton.edu">Blog</a> – <a href="https://www.facebook.com/VDL.Firestone/">FaceBook</a> - <a href="https://twitter.com/PuVideolib">Twitter</a></p>',
+    'body' => '<p><a href="https://videolib.princeton.edu">Blog</a> – <a href="https://www.facebook.com/PrincetonVideoServices">FaceBook</a> - <a href="https://twitter.com/PuVideoServices">Twitter</a></p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
   );
@@ -318,11 +319,30 @@ function pul_video_library_default_page_manager_handlers() {
   $display->content['new-9d7129b1-e194-466b-93d2-6a0269c3f4d0'] = $pane;
   $display->panels['middle'][1] = 'new-9d7129b1-e194-466b-93d2-6a0269c3f4d0';
   $pane = new stdClass();
+  $pane->pid = 'new-8e8675a4-492f-4a25-a0b1-840e72357663';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'paragraphs-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8e8675a4-492f-4a25-a0b1-840e72357663';
+  $display->content['new-8e8675a4-492f-4a25-a0b1-840e72357663'] = $pane;
+  $display->panels['middle'][2] = 'new-8e8675a4-492f-4a25-a0b1-840e72357663';
+  $pane = new stdClass();
   $pane->pid = 'new-3f144c73-23ea-4092-bb29-12712b959cd9';
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -340,6 +360,105 @@ function pul_video_library_default_page_manager_handlers() {
   $pane->uuid = '3f144c73-23ea-4092-bb29-12712b959cd9';
   $display->content['new-3f144c73-23ea-4092-bb29-12712b959cd9'] = $pane;
   $display->panels['second'][0] = 'new-3f144c73-23ea-4092-bb29-12712b959cd9';
+  $pane = new stdClass();
+  $pane->pid = 'new-aa2ff8ff-0a17-45ed-ad9b-79f59ae68a00';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_branch_quick_link';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'entityreference_entity_view',
+    'delta_limit' => '0',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(
+      'link' => 0,
+      'bypass_access' => 0,
+      'view_mode' => 'featured_link_url',
+      'links' => 1,
+      'use_content_language' => 1,
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Video Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'aa2ff8ff-0a17-45ed-ad9b-79f59ae68a00';
+  $display->content['new-aa2ff8ff-0a17-45ed-ad9b-79f59ae68a00'] = $pane;
+  $display->panels['second'][1] = 'new-aa2ff8ff-0a17-45ed-ad9b-79f59ae68a00';
+  $pane = new stdClass();
+  $pane->pid = 'new-876faaff-46cf-4664-a622-86d6c5242c41';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_branch_featured_resources';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'entityreference_label',
+    'delta_limit' => '0',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(
+      'link' => 0,
+      'bypass_access' => 0,
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Featured Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '876faaff-46cf-4664-a622-86d6c5242c41';
+  $display->content['new-876faaff-46cf-4664-a622-86d6c5242c41'] = $pane;
+  $display->panels['second'][2] = 'new-876faaff-46cf-4664-a622-86d6c5242c41';
+  $pane = new stdClass();
+  $pane->pid = 'new-f2ce0503-b91d-4688-a1d4-a346e438bc83';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_branch_external_links';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'link_default',
+    'delta_limit' => '0',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'External Links',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'f2ce0503-b91d-4688-a1d4-a346e438bc83';
+  $display->content['new-f2ce0503-b91d-4688-a1d4-a346e438bc83'] = $pane;
+  $display->panels['second'][3] = 'new-f2ce0503-b91d-4688-a1d4-a346e438bc83';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';
@@ -359,7 +478,7 @@ function pul_video_library_default_page_manager_handlers() {
     ),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Video Library',
+    'override_title_text' => 'Video Services',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -394,7 +513,15 @@ function pul_video_library_default_page_manager_handlers() {
     'body_classes_to_add' => 'branch-libraries libraries-video',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Branch Home',
+        'keyword' => 'node_2',
+        'name' => 'entity:node',
+        'entity_id' => '7788',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(
       0 => array(
         'identifier' => 'Calendar',
@@ -419,7 +546,8 @@ function pul_video_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'vdl/*',
+            'paths' => 'vdl/*
+videoservices/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -583,7 +711,7 @@ function pul_video_library_default_page_manager_handlers() {
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -601,6 +729,94 @@ function pul_video_library_default_page_manager_handlers() {
   $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
   $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
   $pane = new stdClass();
+  $pane->pid = 'new-26f96e50-2bb7-4659-942d-a3a28eee0649';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_branch_quick_link';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'entityreference_entity_view',
+    'delta_limit' => '0',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(
+      'view_mode' => 'featured_link_url',
+      'links' => 1,
+      'use_content_language' => 1,
+      'link' => 0,
+      'bypass_access' => 0,
+    ),
+    'context' => 'context_entity:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Video Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '26f96e50-2bb7-4659-942d-a3a28eee0649';
+  $display->content['new-26f96e50-2bb7-4659-942d-a3a28eee0649'] = $pane;
+  $display->panels['second'][1] = 'new-26f96e50-2bb7-4659-942d-a3a28eee0649';
+  $pane = new stdClass();
+  $pane->pid = 'new-5aa29b36-8fd9-48c3-9ae7-03cff1c69360';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_4';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7788',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Featured Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '5aa29b36-8fd9-48c3-9ae7-03cff1c69360';
+  $display->content['new-5aa29b36-8fd9-48c3-9ae7-03cff1c69360'] = $pane;
+  $display->panels['second'][2] = 'new-5aa29b36-8fd9-48c3-9ae7-03cff1c69360';
+  $pane = new stdClass();
+  $pane->pid = 'new-d10d5460-0072-4705-b07b-714ecd9ad99c';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7788',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'External Links',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'd10d5460-0072-4705-b07b-714ecd9ad99c';
+  $display->content['new-d10d5460-0072-4705-b07b-714ecd9ad99c'] = $pane;
+  $display->panels['second'][3] = 'new-d10d5460-0072-4705-b07b-714ecd9ad99c';
+  $pane = new stdClass();
   $pane->pid = 'new-30102572-fd55-487f-bd13-21a49e956a56';
   $pane->panel = 'top';
   $pane->type = 'views_panes';
@@ -612,7 +828,7 @@ function pul_video_library_default_page_manager_handlers() {
       'nid' => '7788',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Video Library',
+    'override_title_text' => 'Video Services',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
