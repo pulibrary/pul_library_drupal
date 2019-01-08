@@ -98,3 +98,7 @@ body {
 //   background: $black;
 //   position: relative;
 // }
+
+.not-front .panel-pane {
+  clear: both;
+}
