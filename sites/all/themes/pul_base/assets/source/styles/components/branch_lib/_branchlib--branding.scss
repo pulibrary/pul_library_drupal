@@ -129,3 +129,11 @@
 .libraries-video .three_six_three_stacked-region--top h2 {
   border-top: $border-thick $border-solid $video;
 }
+
+.digital-collections .three_nine_stacked-region--top h2 {
+  border-top: $border-thick $border-solid $digital-collections;
+}
+
+.digital-collections--banner {
+  position: relative;
+}
