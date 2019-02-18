@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_libraries_ct.features.field_instance.inc
@@ -384,7 +385,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 18,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -573,7 +574,7 @@ function pul_libraries_ct_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 16,
+      'weight' => 21,
     ),
     'workbench_access_field' => 0,
   );
@@ -649,7 +650,7 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 14,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -725,7 +726,7 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 15,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -1485,7 +1486,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 15,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -1798,7 +1799,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 14,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -2024,6 +2025,150 @@ function pul_libraries_ct_field_default_field_instances() {
       'type' => 'text_textfield',
       'weight' => 7,
     ),
+  );
+
+  // Exported field_instance: 'node-libraries-field_section'.
+  $field_instances['node-libraries-field_section'] = array(
+    'bundle' => 'libraries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 30,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_section',
+    'label' => 'Section',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'media_object' => 'media_object',
+      ),
+      'bundle_weights' => array(
+        'media_object' => 2,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Section',
+      'title_multiple' => 'Sections',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 18,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-libraries-field_section_library_promotion'.
+  $field_instances['node-libraries-field_section_library_promotion'] = array(
+    'bundle' => 'libraries',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_section_library_promotion',
+    'label' => 'Section Events Promotion',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 18,
+    ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-libraries-field_state'.
@@ -2278,6 +2423,8 @@ function pul_libraries_ct_field_default_field_instances() {
   t('Main Menu Library Link');
   t('Phone');
   t('Populate a "Quick" links to popular library services. Make sure to see if the link you want exists already (i.e. Catalog) before creating a new one.');
+  t('Section');
+  t('Section Events Promotion');
   t('State');
   t('Tags');
   t('Use to link to library websites and other resources that are not Library databases or internal PUL content. ');

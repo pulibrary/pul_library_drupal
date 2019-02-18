@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_libraries_ct.field_group.inc
@@ -21,7 +22,7 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Branding',
-    'weight' => '14',
+    'weight' => '16',
     'children' => array(
       0 => 'field_library_image',
       1 => 'field_library_exterior_image',
@@ -198,6 +199,7 @@ function pul_libraries_ct_field_group_info() {
       0 => 'field_branch_featured_resources',
       1 => 'field_branch_quick_link',
       2 => 'field_branch_external_links',
+      3 => 'field_section_library_promotion',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
