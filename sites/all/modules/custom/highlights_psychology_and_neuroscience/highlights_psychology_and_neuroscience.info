@@ -1,0 +1,9 @@
+name = Highlights - Psychology and Neuroscience
+core = 7.x
+package = Subsections
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__highlights-for-the-psychology-and-neuroscience-departments

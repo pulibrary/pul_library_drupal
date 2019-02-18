@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Highlights - Psychology and Neuroscience feature.
+ */
+
+include_once 'highlights_psychology_and_neuroscience.features.inc';
