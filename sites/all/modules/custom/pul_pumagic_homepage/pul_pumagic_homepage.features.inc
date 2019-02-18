@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_pumagic_homepage.features.inc

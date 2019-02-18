@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_branch_architecture.pages_default.inc
@@ -17,7 +18,7 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 13;
   $handler->conf = array(
     'title' => 'Architecture Library Landing Page',
     'no_blocks' => 1,
@@ -427,7 +428,7 @@ architecture',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 14;
   $handler->conf = array(
     'title' => 'Architecture Library Branch Pages',
     'no_blocks' => 1,

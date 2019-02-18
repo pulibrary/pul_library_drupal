@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_sub_section_pages.pages_default.inc
@@ -17,7 +18,7 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Committee Landing Page - LETC',
     'no_blocks' => 1,
@@ -328,7 +329,7 @@ staff/committees/letc',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -14;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Committee Landing Page',
     'no_blocks' => 1,
@@ -576,7 +577,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -10;
+  $handler->weight = -21;
   $handler->conf = array(
     'title' => 'Human Resources',
     'no_blocks' => 0,
@@ -847,7 +848,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -8;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'Firestone Floor Plans',
     'no_blocks' => 0,
@@ -978,7 +979,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 9;
+  $handler->weight = -2;
   $handler->conf = array(
     'title' => 'Contact Us',
     'no_blocks' => 1,
@@ -1000,8 +1001,17 @@ staff/committees',
           'context' => 'empty',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'ask-us',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
       ),
-      'logic' => 'and',
+      'logic' => 'or',
     ),
   );
   $display = new panels_display();
@@ -1040,7 +1050,7 @@ staff/committees',
     'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Email a Librarian',
+    'override_title_text' => 'Email Us',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -1157,7 +1167,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 10;
+  $handler->weight = -1;
   $handler->conf = array(
     'title' => 'Resource Sharing Pages',
     'no_blocks' => 0,
@@ -1596,7 +1606,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -22;
+  $handler->weight = -33;
   $handler->conf = array(
     'title' => 'Map and Geospatial Pages',
     'no_blocks' => 0,
@@ -1708,7 +1718,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 11;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Library Privileges Pages',
     'no_blocks' => 0,
@@ -1895,7 +1905,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 12;
+  $handler->weight = 1;
   $handler->conf = array(
     'title' => 'Technology Handbook Book Pages',
     'no_blocks' => 0,
@@ -2025,7 +2035,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 13;
+  $handler->weight = 2;
   $handler->conf = array(
     'title' => 'Systems Office Templates',
     'no_blocks' => 0,
@@ -2154,7 +2164,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -35;
   $handler->conf = array(
     'title' => 'Map and Geospatial Staff',
     'no_blocks' => 0,
@@ -2280,7 +2290,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -16;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'Working Group',
     'no_blocks' => 0,

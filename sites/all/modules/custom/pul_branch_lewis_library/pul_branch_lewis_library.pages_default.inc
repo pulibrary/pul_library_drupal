@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_branch_lewis_library.pages_default.inc
@@ -17,7 +18,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 28;
+  $handler->weight = 19;
   $handler->conf = array(
     'title' => 'Lewis Library Landing Page',
     'no_blocks' => 1,
@@ -513,7 +514,7 @@ lewis',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 29;
+  $handler->weight = 20;
   $handler->conf = array(
     'title' => 'Lewis Library Branch Pages',
     'no_blocks' => 1,

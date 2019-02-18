@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_video_library.pages_default.inc
@@ -17,7 +18,7 @@ function pul_video_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 22;
   $handler->conf = array(
     'title' => 'Video Library Landing Page',
     'no_blocks' => 1,
@@ -504,7 +505,7 @@ videoservices',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 25;
   $handler->conf = array(
     'title' => 'Video Library',
     'no_blocks' => 1,
