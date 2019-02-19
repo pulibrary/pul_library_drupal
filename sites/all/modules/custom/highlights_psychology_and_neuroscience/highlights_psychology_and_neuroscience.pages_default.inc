@@ -122,91 +122,6 @@ Highlights in Psychology and Neuroscience',
   $display->content['new-09424f61-14d7-41a7-9086-7790f33cc59f'] = $pane;
   $display->panels['first'][0] = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
   $pane = new stdClass();
-  $pane->pid = 'new-fc566e99-a723-4cf3-a536-06d30037e4c9';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3704',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'fc566e99-a723-4cf3-a536-06d30037e4c9';
-  $display->content['new-fc566e99-a723-4cf3-a536-06d30037e4c9'] = $pane;
-  $display->panels['first'][1] = 'new-fc566e99-a723-4cf3-a536-06d30037e4c9';
-  $pane = new stdClass();
-  $pane->pid = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_5';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '%node:nid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Contact Us',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'b78982e6-3a41-48bd-8d28-258b5d00d32d';
-  $display->content['new-b78982e6-3a41-48bd-8d28-258b5d00d32d'] = $pane;
-  $display->panels['first'][2] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
-  $pane = new stdClass();
-  $pane->pid = 'new-df54d9b7-91da-428d-aba5-c5a4db7f7dea';
-  $pane->panel = 'first';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_library_exterior_image';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(
-      'image_style' => '',
-      'image_link' => '',
-    ),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'df54d9b7-91da-428d-aba5-c5a4db7f7dea';
-  $display->content['new-df54d9b7-91da-428d-aba5-c5a4db7f7dea'] = $pane;
-  $display->panels['first'][3] = 'new-df54d9b7-91da-428d-aba5-c5a4db7f7dea';
-  $pane = new stdClass();
   $pane->pid = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -222,13 +137,16 @@ Highlights in Psychology and Neuroscience',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'liason-librarian',
+  );
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '20710499-fc1d-47b6-a750-e3304ed70b57';
   $display->content['new-20710499-fc1d-47b6-a750-e3304ed70b57'] = $pane;
-  $display->panels['first'][4] = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
+  $display->panels['first'][1] = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane = new stdClass();
   $pane->pid = 'new-b6a51450-c4e2-4ce7-8f20-0a1c285c02ff';
   $pane->panel = 'middle';
