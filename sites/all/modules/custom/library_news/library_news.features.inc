@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_news.features.inc
@@ -39,11 +40,11 @@ function library_news_image_default_styles() {
   $styles['library-news'] = array(
     'label' => 'library-news',
     'effects' => array(
-      1 => array(
+      4 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 380,
-          'height' => 275,
+          'width' => 760,
+          'height' => 550,
         ),
         'weight' => 1,
       ),

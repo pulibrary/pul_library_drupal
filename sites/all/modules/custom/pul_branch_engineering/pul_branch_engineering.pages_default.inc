@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_branch_engineering.pages_default.inc
@@ -17,7 +18,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 12;
   $handler->conf = array(
     'title' => 'Engineering Library Landing Page',
     'no_blocks' => 1,
@@ -480,7 +481,7 @@ engineering',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 27;
+  $handler->weight = 14;
   $handler->conf = array(
     'title' => 'Engineering Library Branch Pages',
     'no_blocks' => 1,

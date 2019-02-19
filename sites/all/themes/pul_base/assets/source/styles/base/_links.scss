@@ -37,7 +37,8 @@ p a {
   }
 }
 
-.links--decorate a[href*="mendel-music-library-student-manual"] {
+.links--decorate a[href*="mendel-music-library-student-manual"],
+a.image {
   border: 0;
 
   &:hover,

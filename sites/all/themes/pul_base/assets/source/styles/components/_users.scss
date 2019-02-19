@@ -69,3 +69,13 @@
 .user--building {
   @include clearfix;
 }
+
+.liason-librarian {
+  .user--name {
+    margin-top: 0.5em;
+  }
+
+  .user--office {
+    margin-bottom: 1em;
+  }
+}

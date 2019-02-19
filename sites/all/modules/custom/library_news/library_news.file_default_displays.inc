@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_news.file_default_displays.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_news.pages_default.inc
@@ -17,7 +18,7 @@ function library_news_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -41;
   $handler->conf = array(
     'title' => 'News item Landing Page',
     'no_blocks' => 0,

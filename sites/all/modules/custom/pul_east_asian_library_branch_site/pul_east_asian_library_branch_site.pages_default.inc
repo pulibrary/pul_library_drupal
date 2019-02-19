@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_east_asian_library_branch_site.pages_default.inc
@@ -17,7 +18,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 25;
+  $handler->weight = 10;
   $handler->conf = array(
     'title' => 'East Asian Library Branch Pages',
     'no_blocks' => 1,
@@ -452,7 +453,7 @@ eastasian/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 7;
   $handler->conf = array(
     'title' => 'East Asian Library Landing Page',
     'no_blocks' => 1,

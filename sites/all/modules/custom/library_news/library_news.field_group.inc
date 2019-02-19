@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_news.field_group.inc

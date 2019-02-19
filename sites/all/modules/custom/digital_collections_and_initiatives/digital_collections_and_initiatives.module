@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Digital Collections and Initiatives feature.
+ */
+
+include_once 'digital_collections_and_initiatives.features.inc';

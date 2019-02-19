@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_libraries_ct.features.inc
@@ -35,9 +36,9 @@ function pul_libraries_ct_views_api($module = NULL, $api = NULL) {
 function pul_libraries_ct_node_info() {
   $items = array(
     'libraries' => array(
-      'name' => t('Libraries'),
+      'name' => t('Section Landing Page'),
       'base' => 'node_content',
-      'description' => t('Configure settings and links for individual libraries.'),
+      'description' => t('Configure settings and content for the landing pages of sections on the site'),
       'has_title' => '1',
       'title_label' => t('Library Name'),
       'help' => '',

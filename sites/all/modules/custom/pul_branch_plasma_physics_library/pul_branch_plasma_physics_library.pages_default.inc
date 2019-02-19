@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_branch_plasma_physics_library.pages_default.inc
@@ -17,7 +18,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 31;
   $handler->conf = array(
     'title' => 'Plasma Physics Library Branch Pages',
     'no_blocks' => 1,
@@ -313,7 +314,7 @@ plasma-physics/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 32;
   $handler->conf = array(
     'title' => 'Plasma Physics Library Landing Page',
     'no_blocks' => 1,

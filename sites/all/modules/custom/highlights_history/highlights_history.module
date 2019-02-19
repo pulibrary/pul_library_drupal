@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Highlights - History feature.
+ */
+
+include_once 'highlights_history.features.inc';

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * branch_link_views.features.inc

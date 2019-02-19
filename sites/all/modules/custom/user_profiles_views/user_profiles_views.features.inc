@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * user_profiles_views.features.inc

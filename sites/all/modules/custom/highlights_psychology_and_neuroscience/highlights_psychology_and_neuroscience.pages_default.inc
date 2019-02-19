@@ -2,25 +2,25 @@
 
 /**
  * @file
- * pul_branch_lewis_library.pages_default.inc
+ * highlights_psychology_and_neuroscience.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function pul_branch_lewis_library_default_page_manager_handlers() {
+function highlights_psychology_and_neuroscience_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_60';
+  $handler->name = 'node_view__highlights-for-the-psychology-and-neuroscience-departments';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 16;
+  $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Lewis Library Landing Page',
+    'title' => 'Highlights for the Psychology and Neuroscience Departments',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -33,14 +33,6 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -62,9 +54,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/scilib
-scilib
-lewis',
+            'paths' => 'lewis/psychology-neuroscience',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -72,6 +62,13 @@ lewis',
       ),
       'logic' => 'and',
     ),
+    'name' => 'highlights-for-the-psychology-and-neuroscience-departments',
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Lewis Library
+Highlights in Psychology and Neuroscience',
+    'panels_breadcrumbs_paths' => '/lewis
+/lewis/psychology-neuroscience',
+    'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
@@ -95,22 +92,23 @@ lewis',
     ),
   );
   $display->cache = array();
-  $display->title = 'Lewis Science Library';
+  $display->title = 'Highlights for the Psychology and Neuroscience Departments';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_60';
+  $display->storage_id = 'node_view__highlights-for-the-psychology-and-neuroscience-departments';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane->pid = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
   $pane->panel = 'first';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-lewis';
+  $pane->subtype = 'menu-menu-highlights-for-neuroscience';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -120,114 +118,37 @@ lewis',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'fdf608da-86a5-4ca9-b436-b67272d04d2b';
-  $display->content['new-fdf608da-86a5-4ca9-b436-b67272d04d2b'] = $pane;
-  $display->panels['first'][0] = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane->uuid = '09424f61-14d7-41a7-9086-7790f33cc59f';
+  $display->content['new-09424f61-14d7-41a7-9086-7790f33cc59f'] = $pane;
+  $display->panels['first'][0] = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
   $pane = new stdClass();
-  $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
+  $pane->pid = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
+  $pane->subtype = 'user_profile-panel_pane_4';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:tid',
+      'uid' => '10660',
     ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'liason-librarian',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
-  $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
+  $pane->uuid = '20710499-fc1d-47b6-a750-e3304ed70b57';
+  $display->content['new-20710499-fc1d-47b6-a750-e3304ed70b57'] = $pane;
+  $display->panels['first'][1] = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane = new stdClass();
-  $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '%node:nid',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $pane = new stdClass();
-  $pane->pid = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
-  $pane->panel = 'first';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_library_exterior_image';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(
-      'image_style' => '',
-      'image_link' => '',
-    ),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
-  $display->content['new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569'] = $pane;
-  $display->panels['first'][3] = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
-  $pane = new stdClass();
-  $pane->pid = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '70fdc148-9c23-414d-9d76-78a6def80f21';
-  $display->content['new-70fdc148-9c23-414d-9d76-78a6def80f21'] = $pane;
-  $display->panels['middle'][0] = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
-  $pane = new stdClass();
-  $pane->pid = 'new-f6f9b67a-7947-4991-8ce1-11a1652e20ee';
+  $pane->pid = 'new-b6a51450-c4e2-4ce7-8f20-0a1c285c02ff';
   $pane->panel = 'middle';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_library_interior_image';
@@ -254,13 +175,13 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'f6f9b67a-7947-4991-8ce1-11a1652e20ee';
-  $display->content['new-f6f9b67a-7947-4991-8ce1-11a1652e20ee'] = $pane;
-  $display->panels['middle'][1] = 'new-f6f9b67a-7947-4991-8ce1-11a1652e20ee';
+  $pane->uuid = 'b6a51450-c4e2-4ce7-8f20-0a1c285c02ff';
+  $display->content['new-b6a51450-c4e2-4ce7-8f20-0a1c285c02ff'] = $pane;
+  $display->panels['middle'][0] = 'new-b6a51450-c4e2-4ce7-8f20-0a1c285c02ff';
   $pane = new stdClass();
-  $pane->pid = 'new-4607e519-59c4-4e4c-acb2-9d3453deffe5';
+  $pane->pid = 'new-12334b83-5ab9-42b1-b921-fab6e158bbec';
   $pane->panel = 'middle';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
@@ -284,17 +205,17 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '4607e519-59c4-4e4c-acb2-9d3453deffe5';
-  $display->content['new-4607e519-59c4-4e4c-acb2-9d3453deffe5'] = $pane;
-  $display->panels['middle'][2] = 'new-4607e519-59c4-4e4c-acb2-9d3453deffe5';
+  $pane->uuid = '12334b83-5ab9-42b1-b921-fab6e158bbec';
+  $display->content['new-12334b83-5ab9-42b1-b921-fab6e158bbec'] = $pane;
+  $display->panels['middle'][1] = 'new-12334b83-5ab9-42b1-b921-fab6e158bbec';
   $pane = new stdClass();
-  $pane->pid = 'new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
+  $pane->pid = 'new-a000d06e-2373-4c32-a54a-c77d9e9d7606';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
-  $pane->subtype = 'lewis_library_feed-panel_pane_1';
-  $pane->shown = FALSE;
+  $pane->subtype = 'library_news-panel_pane_23';
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
@@ -303,11 +224,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
-  $display->content['new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8'] = $pane;
-  $display->panels['middle'][3] = 'new-a7edab4f-b27f-4c0b-b8b6-b0b94f2ef2f8';
+  $pane->uuid = 'a000d06e-2373-4c32-a54a-c77d9e9d7606';
+  $display->content['new-a000d06e-2373-4c32-a54a-c77d9e9d7606'] = $pane;
+  $display->panels['middle'][2] = 'new-a000d06e-2373-4c32-a54a-c77d9e9d7606';
   $pane = new stdClass();
   $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
   $pane->panel = 'second';
@@ -376,24 +297,23 @@ lewis',
   $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
   $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
   $pane = new stdClass();
-  $pane->pid = 'new-4174914c-f642-455a-a0c5-d103320cc004';
+  $pane->pid = 'new-4f310bf6-7a3d-4816-a20f-d4b0b97ace5c';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_branch_quick_link';
+  $pane->subtype = 'node:field_section_library_promotion';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_label',
-    'delta_limit' => '5',
+    'label' => 'title',
+    'formatter' => 'text_default',
+    'delta_limit' => 0,
     'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(
-      'link' => 1,
-    ),
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Service Quick Links',
+    'override_title_text' => 'Events',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -403,11 +323,45 @@ lewis',
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '4174914c-f642-455a-a0c5-d103320cc004';
-  $display->content['new-4174914c-f642-455a-a0c5-d103320cc004'] = $pane;
-  $display->panels['second'][2] = 'new-4174914c-f642-455a-a0c5-d103320cc004';
+  $pane->uuid = '4f310bf6-7a3d-4816-a20f-d4b0b97ace5c';
+  $display->content['new-4f310bf6-7a3d-4816-a20f-d4b0b97ace5c'] = $pane;
+  $display->panels['second'][2] = 'new-4f310bf6-7a3d-4816-a20f-d4b0b97ace5c';
   $pane = new stdClass();
-  $pane->pid = 'new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
+  $pane->pid = 'new-89418c64-c041-437f-b316-176cc00761cc';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_branch_quick_link';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'entityreference_entity_view',
+    'delta_limit' => '5',
+    'delta_offset' => '0',
+    'delta_reversed' => 0,
+    'formatter_settings' => array(
+      'link' => 1,
+      'view_mode' => 'featured_link_url',
+      'links' => 1,
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Services',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '89418c64-c041-437f-b316-176cc00761cc';
+  $display->content['new-89418c64-c041-437f-b316-176cc00761cc'] = $pane;
+  $display->panels['second'][3] = 'new-89418c64-c041-437f-b316-176cc00761cc';
+  $pane = new stdClass();
+  $pane->pid = 'new-93404a59-2a59-4011-992b-e3ab9b91e43a';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_branch_external_links';
@@ -422,8 +376,7 @@ lewis',
     'formatter_settings' => array(),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Quick Links',
-    'override_title_heading' => 'h2',
+    'override_title_text' => 'Key Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -431,17 +384,17 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
-  $pane->uuid = '28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
-  $display->content['new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22'] = $pane;
-  $display->panels['second'][3] = 'new-28e92f7b-a547-4dd9-8fd2-eb1ad5a9bd22';
+  $pane->uuid = '93404a59-2a59-4011-992b-e3ab9b91e43a';
+  $display->content['new-93404a59-2a59-4011-992b-e3ab9b91e43a'] = $pane;
+  $display->panels['second'][4] = 'new-93404a59-2a59-4011-992b-e3ab9b91e43a';
   $pane = new stdClass();
   $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_amenities';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'title',
@@ -464,11 +417,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
   $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-  $display->panels['second'][4] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+  $display->panels['second'][5] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';
@@ -488,7 +441,7 @@ lewis',
     ),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Lewis Science Library',
+    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -505,18 +458,18 @@ lewis',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_60'] = $handler;
+  $export['node_view__highlights-for-the-psychology-and-neuroscience-departments'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_61';
+  $handler->name = 'node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 18;
+  $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Lewis Library Branch Pages',
+    'title' => 'Highlights for the Psychology and Neuroscience Departments - News Index',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -525,14 +478,6 @@ lewis',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -548,9 +493,7 @@ lewis',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'libraries/scilib/*
-scilib/*
-lewis/*',
+            'paths' => 'lewis/psychology-neuroscience/news',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -558,6 +501,13 @@ lewis/*',
       ),
       'logic' => 'and',
     ),
+    'name' => 'highlights-for-the-psychology-and-neuroscience-departments-news-index',
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Lewis Library
+Highlights in Psychology and Neuroscience',
+    'panels_breadcrumbs_paths' => '/lewis
+/lewis/psychology-neuroscience',
+    'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
@@ -581,22 +531,23 @@ lewis/*',
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title';
+  $display->title = 'Highlights for the Psychology and Neuroscience Departments';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_61';
+  $display->storage_id = 'node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
+  $pane->pid = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
   $pane->panel = 'first';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-lewis';
+  $pane->subtype = 'menu-menu-highlights-for-neuroscience';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -606,64 +557,40 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
-  $display->content['new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1'] = $pane;
-  $display->panels['first'][0] = 'new-9fba7e60-0af7-4766-af8a-21c16ae3d7a1';
+  $pane->uuid = '09424f61-14d7-41a7-9086-7790f33cc59f';
+  $display->content['new-09424f61-14d7-41a7-9086-7790f33cc59f'] = $pane;
+  $display->panels['first'][0] = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
   $pane = new stdClass();
-  $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+  $pane->pid = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
+  $pane->subtype = 'user_profile-panel_pane_4';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3704',
+      'uid' => '10660',
     ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'liason-librarian',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-  $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+  $pane->uuid = '20710499-fc1d-47b6-a750-e3304ed70b57';
+  $display->content['new-20710499-fc1d-47b6-a750-e3304ed70b57'] = $pane;
+  $display->panels['first'][1] = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
   $pane = new stdClass();
-  $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '7789',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Contact Us',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
-  $pane = new stdClass();
-  $pane->pid = 'new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
+  $pane->pid = 'new-7bad9e46-f98d-4ba3-a839-036203eb7018';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
-  $pane->subtype = 'emergency_alert_content_block-panel_pane_5';
+  $pane->subtype = 'library_news-panel_pane_25';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
@@ -675,58 +602,11 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
-  $display->content['new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d'] = $pane;
-  $display->panels['middle'][0] = 'new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
+  $pane->uuid = '7bad9e46-f98d-4ba3-a839-036203eb7018';
+  $display->content['new-7bad9e46-f98d-4ba3-a839-036203eb7018'] = $pane;
+  $display->panels['middle'][0] = 'new-7bad9e46-f98d-4ba3-a839-036203eb7018';
   $pane = new stdClass();
-  $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
-  $pane->panel = 'middle';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'bb6b1a21-e308-4754-85f7-61c08d988b08';
-  $display->content['new-bb6b1a21-e308-4754-85f7-61c08d988b08'] = $pane;
-  $display->panels['middle'][1] = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
-  $pane = new stdClass();
-  $pane->pid = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
-  $pane->panel = 'middle';
-  $pane->type = 'entity_field_extra';
-  $pane->subtype = 'node:webform';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '29ab6b62-7249-4620-b70a-fbf48315a11b';
-  $display->content['new-29ab6b62-7249-4620-b70a-fbf48315a11b'] = $pane;
-  $display->panels['middle'][2] = 'new-29ab6b62-7249-4620-b70a-fbf48315a11b';
-  $pane = new stdClass();
-  $pane->pid = 'new-b4effccd-18da-4109-9d84-a5adf4726a52';
+  $pane->pid = 'new-ea688704-73e2-4137-a515-de8a9a880130';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_features-panel_pane_4';
@@ -734,10 +614,11 @@ lewis/*',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '7789',
+      'nid' => '40878',
     ),
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Featured Resources',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -747,22 +628,23 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'b4effccd-18da-4109-9d84-a5adf4726a52';
-  $display->content['new-b4effccd-18da-4109-9d84-a5adf4726a52'] = $pane;
-  $display->panels['second'][0] = 'new-b4effccd-18da-4109-9d84-a5adf4726a52';
+  $pane->uuid = 'ea688704-73e2-4137-a515-de8a9a880130';
+  $display->content['new-ea688704-73e2-4137-a515-de8a9a880130'] = $pane;
+  $display->panels['second'][0] = 'new-ea688704-73e2-4137-a515-de8a9a880130';
   $pane = new stdClass();
-  $pane->pid = 'new-6e282a21-156c-4b82-9db3-c23d3465b4b4';
+  $pane->pid = 'new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
-  $pane->subtype = 'branch_features-panel_pane_2';
-  $pane->shown = FALSE;
+  $pane->subtype = 'branch_features-panel_pane_6';
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '7789',
+      'nid' => '40878',
     ),
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Events',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -772,24 +654,22 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '6e282a21-156c-4b82-9db3-c23d3465b4b4';
-  $display->content['new-6e282a21-156c-4b82-9db3-c23d3465b4b4'] = $pane;
-  $display->panels['second'][1] = 'new-6e282a21-156c-4b82-9db3-c23d3465b4b4';
+  $pane->uuid = '0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
+  $display->content['new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d'] = $pane;
+  $display->panels['second'][1] = 'new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
   $pane = new stdClass();
-  $pane->pid = 'new-f3979087-d6f5-4160-852b-60f2845d122f';
+  $pane->pid = 'new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_features-panel_pane_1';
   $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(),
-  );
+  $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '7789',
+      'nid' => '40878',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Quick Links',
+    'override_title_text' => 'Key Links',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -800,36 +680,11 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'f3979087-d6f5-4160-852b-60f2845d122f';
-  $display->content['new-f3979087-d6f5-4160-852b-60f2845d122f'] = $pane;
-  $display->panels['second'][2] = 'new-f3979087-d6f5-4160-852b-60f2845d122f';
+  $pane->uuid = '22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
+  $display->content['new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506'] = $pane;
+  $display->panels['second'][2] = 'new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
   $pane = new stdClass();
-  $pane->pid = 'new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'branch_features-panel_pane_3';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '7789',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
-  $display->content['new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0'] = $pane;
-  $display->panels['second'][3] = 'new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
-  $pane = new stdClass();
-  $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+  $pane->pid = 'new-8c76585f-7d44-4a01-be66-a5d429658379';
   $pane->panel = 'top';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_library_image-panel_pane_1';
@@ -837,10 +692,10 @@ lewis/*',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '7789',
+      'nid' => '40878',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Lewis Science Library',
+    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -851,13 +706,13 @@ lewis/*',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
-  $display->content['new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b'] = $pane;
-  $display->panels['top'][0] = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
+  $pane->uuid = '8c76585f-7d44-4a01-be66-a5d429658379';
+  $display->content['new-8c76585f-7d44-4a01-be66-a5d429658379'] = $pane;
+  $display->panels['top'][0] = 'new-8c76585f-7d44-4a01-be66-a5d429658379';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context_61'] = $handler;
+  $export['node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index'] = $handler;
 
   return $export;
 }

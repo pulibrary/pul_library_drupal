@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_libraries_ct.pages_default.inc
@@ -17,7 +18,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 28;
   $handler->conf = array(
     'title' => 'Branch Pages',
     'no_blocks' => 1,
@@ -70,7 +71,8 @@ libraries/music
 vdl
 stokes
 plasma-physics
-eastasianlib',
+eastasianlib
+digital-collections',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -80,7 +82,7 @@ eastasianlib',
     ),
   );
   $display = new panels_display();
-  $display->layout = 'pul-base-nine-three';
+  $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -284,7 +286,7 @@ eastasianlib',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -4;
+  $handler->weight = -15;
   $handler->conf = array(
     'title' => 'Stokes Library',
     'no_blocks' => 0,
@@ -454,7 +456,7 @@ eastasianlib',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -6;
+  $handler->weight = -17;
   $handler->conf = array(
     'title' => 'Firestone Library',
     'no_blocks' => 0,

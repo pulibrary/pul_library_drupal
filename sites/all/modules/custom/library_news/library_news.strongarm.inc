@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_news.strongarm.inc
