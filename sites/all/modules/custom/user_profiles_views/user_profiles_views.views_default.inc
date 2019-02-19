@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * user_profiles_views.views_default.inc
@@ -619,8 +620,15 @@ function user_profiles_views_views_default_views() {
   /* Display: Branch Librarian */
   $handler = $view->new_display('panel_pane', 'Branch Librarian', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Branch Librarian';
+  $handler->display->display_options['title'] = 'Departmental Librarian';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'profile-photo';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -687,7 +695,6 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_office']['table'] = 'field_data_field_puluser_office';
   $handler->display->display_options['fields']['field_puluser_office']['field'] = 'field_puluser_office';
   $handler->display->display_options['fields']['field_puluser_office']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_office']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_office']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_office']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_office']['hide_empty'] = TRUE;
@@ -696,6 +703,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_building_location']['table'] = 'field_data_field_puluser_building_location';
   $handler->display->display_options['fields']['field_puluser_building_location']['field'] = 'field_puluser_building_location';
   $handler->display->display_options['fields']['field_puluser_building_location']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_building_location']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_building_location']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_building_location']['alter']['text'] = '<div>[field_puluser_office] [field_puluser_building_location]</div>';
   $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
@@ -705,27 +713,167 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_section']['table'] = 'field_data_field_puluser_section';
   $handler->display->display_options['fields']['field_puluser_section']['field'] = 'field_puluser_section';
   $handler->display->display_options['fields']['field_puluser_section']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_section']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_section']['element_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_section']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_section']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_section']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_section']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_section']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_puluser_section']['field_api_classes'] = TRUE;
   /* Field: User: Division */
   $handler->display->display_options['fields']['field_puluser_division']['id'] = 'field_puluser_division';
   $handler->display->display_options['fields']['field_puluser_division']['table'] = 'field_data_field_puluser_division';
   $handler->display->display_options['fields']['field_puluser_division']['field'] = 'field_puluser_division';
   $handler->display->display_options['fields']['field_puluser_division']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_division']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_division']['element_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_division']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_division']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_puluser_division']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_division']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_division']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_puluser_division']['field_api_classes'] = TRUE;
+  /* Field: User: Appointment Calendar */
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['id'] = 'field_puluser_appt_calendar';
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['table'] = 'field_data_field_puluser_appt_calendar';
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['field'] = 'field_puluser_appt_calendar';
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_puluser_appt_calendar']['click_sort_column'] = 'url';
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'user',
       'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'User: Uid',
+    ),
+  );
+
+  /* Display: Edit Personal Librarian View */
+  $handler = $view->new_display('panel_pane', 'Edit Personal Librarian View', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Edit Personal Librarian Information';
+  $handler->display->display_options['display_description'] = 'Display if a user has rights to edit user profiles. ';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    28 => '28',
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'View Current Student Roster';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'staff/pl-list/[name]';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['element_wrapper_class'] = 'edit-staff-profile-btn';
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Profile';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+    28 => '28',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'User: Uid',
+    ),
+  );
+
+  /* Display: Expert Profile */
+  $handler = $view->new_display('panel_pane', 'Expert Profile', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_puluser_temp_staff_record_target_id']['id'] = 'field_puluser_temp_staff_record_target_id';
+  $handler->display->display_options['relationships']['field_puluser_temp_staff_record_target_id']['table'] = 'field_data_field_puluser_temp_staff_record';
+  $handler->display->display_options['relationships']['field_puluser_temp_staff_record_target_id']['field'] = 'field_puluser_temp_staff_record_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Expert Bio */
+  $handler->display->display_options['fields']['field_expert_bio']['id'] = 'field_expert_bio';
+  $handler->display->display_options['fields']['field_expert_bio']['table'] = 'field_data_field_expert_bio';
+  $handler->display->display_options['fields']['field_expert_bio']['field'] = 'field_expert_bio';
+  $handler->display->display_options['fields']['field_expert_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_expert_bio']['element_label_colon'] = FALSE;
+  /* Field: User: Expert Departments */
+  $handler->display->display_options['fields']['field_expert_departments']['id'] = 'field_expert_departments';
+  $handler->display->display_options['fields']['field_expert_departments']['table'] = 'field_data_field_expert_departments';
+  $handler->display->display_options['fields']['field_expert_departments']['field'] = 'field_expert_departments';
+  $handler->display->display_options['fields']['field_expert_departments']['label'] = 'Departments and Programs Served';
+  $handler->display->display_options['fields']['field_expert_departments']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['field_expert_departments']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_expert_departments']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_expert_departments']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_expert_departments']['multi_type'] = 'ul';
+  /* Field: User: Expert Subject Areas */
+  $handler->display->display_options['fields']['field_expert_subject_areas']['id'] = 'field_expert_subject_areas';
+  $handler->display->display_options['fields']['field_expert_subject_areas']['table'] = 'field_data_field_expert_subject_areas';
+  $handler->display->display_options['fields']['field_expert_subject_areas']['field'] = 'field_expert_subject_areas';
+  $handler->display->display_options['fields']['field_expert_subject_areas']['label'] = 'Specialities';
+  $handler->display->display_options['fields']['field_expert_subject_areas']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_expert_subject_areas']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
