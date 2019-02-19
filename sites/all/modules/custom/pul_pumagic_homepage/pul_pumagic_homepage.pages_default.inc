@@ -18,7 +18,7 @@ function pul_pumagic_homepage_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -36;
+  $handler->weight = -40;
   $handler->conf = array(
     'title' => 'PU Magic Collection Home',
     'no_blocks' => 0,

@@ -18,7 +18,7 @@ function highlights_psychology_and_neuroscience_default_page_manager_handlers() 
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 6;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Highlights for the Psychology and Neuroscience Departments',
     'no_blocks' => 1,
@@ -459,6 +459,260 @@ Highlights in Psychology and Neuroscience',
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__highlights-for-the-psychology-and-neuroscience-departments'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'Highlights for the Psychology and Neuroscience Departments - News Index',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'branch-libraries libraries-lewis',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      1 => array(
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'lewis/psychology-neuroscience/news',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'highlights-for-the-psychology-and-neuroscience-departments-news-index',
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Lewis Library
+Highlights in Psychology and Neuroscience',
+    'panels_breadcrumbs_paths' => '/lewis
+/lewis/psychology-neuroscience',
+    'panels_breadcrumbs_home' => 0,
+  );
+  $display = new panels_display();
+  $display->layout = 'three-six-three-stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'bottom_left' => NULL,
+      'bottom_right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'top' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Highlights for the Psychology and Neuroscience Departments';
+  $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-highlights-for-neuroscience';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '09424f61-14d7-41a7-9086-7790f33cc59f';
+  $display->content['new-09424f61-14d7-41a7-9086-7790f33cc59f'] = $pane;
+  $display->panels['first'][0] = 'new-09424f61-14d7-41a7-9086-7790f33cc59f';
+  $pane = new stdClass();
+  $pane->pid = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'user_profile-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'uid' => '10660',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'liason-librarian',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '20710499-fc1d-47b6-a750-e3304ed70b57';
+  $display->content['new-20710499-fc1d-47b6-a750-e3304ed70b57'] = $pane;
+  $display->panels['first'][1] = 'new-20710499-fc1d-47b6-a750-e3304ed70b57';
+  $pane = new stdClass();
+  $pane->pid = 'new-7bad9e46-f98d-4ba3-a839-036203eb7018';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_25';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7bad9e46-f98d-4ba3-a839-036203eb7018';
+  $display->content['new-7bad9e46-f98d-4ba3-a839-036203eb7018'] = $pane;
+  $display->panels['middle'][0] = 'new-7bad9e46-f98d-4ba3-a839-036203eb7018';
+  $pane = new stdClass();
+  $pane->pid = 'new-ea688704-73e2-4137-a515-de8a9a880130';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '40878',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Featured Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'ea688704-73e2-4137-a515-de8a9a880130';
+  $display->content['new-ea688704-73e2-4137-a515-de8a9a880130'] = $pane;
+  $display->panels['second'][0] = 'new-ea688704-73e2-4137-a515-de8a9a880130';
+  $pane = new stdClass();
+  $pane->pid = 'new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '40878',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Events',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
+  $display->content['new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d'] = $pane;
+  $display->panels['second'][1] = 'new-0d2729ad-41c6-466b-a92b-9b3c9e1c072d';
+  $pane = new stdClass();
+  $pane->pid = 'new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '40878',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Key Links',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
+  $display->content['new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506'] = $pane;
+  $display->panels['second'][2] = 'new-22a5bede-77c9-460d-a8d9-d1b4b1cd7506';
+  $pane = new stdClass();
+  $pane->pid = 'new-8c76585f-7d44-4a01-be66-a5d429658379';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_library_image-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '40878',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '8c76585f-7d44-4a01-be66-a5d429658379';
+  $display->content['new-8c76585f-7d44-4a01-be66-a5d429658379'] = $pane;
+  $display->panels['top'][0] = 'new-8c76585f-7d44-4a01-be66-a5d429658379';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__highlights-for-the-psychology-and-neuroscience-departments-news-index'] = $handler;
 
   return $export;
 }

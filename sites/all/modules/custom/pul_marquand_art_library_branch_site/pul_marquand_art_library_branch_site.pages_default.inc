@@ -18,7 +18,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 19;
   $handler->conf = array(
     'title' => 'Marquand Art Library Rare Books Highlights Page',
     'no_blocks' => 1,
@@ -360,7 +360,7 @@ marquand/rare-book-highlights',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 23;
   $handler->conf = array(
     'title' => 'Marquand Art Library News Page',
     'no_blocks' => 1,
@@ -685,7 +685,7 @@ news/marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -14;
+  $handler->weight = -18;
   $handler->conf = array(
     'title' => 'Marquand Art Library Landing Page',
     'no_blocks' => 1,
@@ -1230,7 +1230,7 @@ marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 27;
+  $handler->weight = 26;
   $handler->conf = array(
     'title' => 'Marquand Art Library Branch Pages',
     'no_blocks' => 1,

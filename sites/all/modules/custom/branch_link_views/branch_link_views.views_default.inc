@@ -341,6 +341,37 @@ function branch_link_views_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
+
+  /* Display: Section Custom Text Block */
+  $handler = $view->new_display('panel_pane', 'Section Custom Text Block', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Section Events Promotion */
+  $handler->display->display_options['fields']['field_section_library_promotion']['id'] = 'field_section_library_promotion';
+  $handler->display->display_options['fields']['field_section_library_promotion']['table'] = 'field_data_field_section_library_promotion';
+  $handler->display->display_options['fields']['field_section_library_promotion']['field'] = 'field_section_library_promotion';
+  $handler->display->display_options['fields']['field_section_library_promotion']['label'] = '';
+  $handler->display->display_options['fields']['field_section_library_promotion']['element_label_colon'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['branch_features'] = $view;
 
   return $export;

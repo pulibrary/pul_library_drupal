@@ -18,7 +18,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 29;
+  $handler->weight = 28;
   $handler->conf = array(
     'title' => 'Stokes Library Landing Page',
     'no_blocks' => 1,
@@ -518,7 +518,7 @@ stokes',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 29;
   $handler->conf = array(
     'title' => 'Stokes Library Branch Pages',
     'no_blocks' => 1,

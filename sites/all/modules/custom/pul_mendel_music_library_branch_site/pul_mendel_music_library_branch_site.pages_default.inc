@@ -18,7 +18,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 34;
+  $handler->weight = 35;
   $handler->conf = array(
     'title' => 'Mendel Music Library Branch News',
     'no_blocks' => 1,
@@ -379,7 +379,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 22;
   $handler->conf = array(
     'title' => 'Mendel Music Library Branch Pages',
     'no_blocks' => 1,
@@ -765,7 +765,7 @@ music/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 25;
   $handler->conf = array(
     'title' => 'Mendel Music Library Landing Page',
     'no_blocks' => 1,
