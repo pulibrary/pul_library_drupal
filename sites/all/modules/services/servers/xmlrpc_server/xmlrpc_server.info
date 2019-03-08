@@ -8,7 +8,7 @@ dependencies[] = services
 
 core = 7.x
 ; Information added by Drupal.org packaging script on 2019-02-27
-version = "7.x-3.22"
+version = "7.x-3.23"
 core = "7.x"
 project = "services"
-datestamp = "1551285489"
+datestamp = "1551302295"
