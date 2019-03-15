@@ -1,0 +1,10 @@
+name = Matomo (Piwik) noscript
+description = Adds Matomo (formerly Piwik) noscript tracking code to all your site's pages.
+core = 7.x
+files[] = piwik_noscript.test
+
+; Information added by Drupal.org packaging script on 2018-07-05
+version = "7.x-1.3"
+core = "7.x"
+project = "piwik_noscript"
+datestamp = "1530754424"
