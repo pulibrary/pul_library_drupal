@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_collections.strongarm.inc
@@ -58,6 +59,27 @@ function pul_collections_strongarm() {
   $strongarm->name = 'comment_subject_field_collection';
   $strongarm->value = 1;
   $export['comment_subject_field_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_collection';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_collection';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_collection';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_collection'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -135,6 +157,16 @@ function pul_collections_strongarm() {
   $strongarm->name = 'pathauto_node_collection_pattern';
   $strongarm->value = 'collections/[node:title]';
   $export['pathauto_node_collection_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_collection';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.7',
+  );
+  $export['xmlsitemap_settings_node_collection'] = $strongarm;
 
   return $export;
 }
