@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_faq.features.inc
