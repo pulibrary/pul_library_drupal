@@ -12,5 +12,7 @@ function pul_base_preprocess_html(&$variables, $hook) {
                            );
 
   drupal_add_js(array("pul_base_theme" => $pul_base_link_settings), 'setting');
-
+  drupal_add_css(
+    'https://use.typekit.net/gwb8hdb.css', array('type' => 'external')
+  );
 }
