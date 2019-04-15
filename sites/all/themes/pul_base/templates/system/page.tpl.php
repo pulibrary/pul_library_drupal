@@ -96,8 +96,8 @@
     </div>
   </header>
 
-  <section class="l-region l-region--main" id="main-content">
-    <div class="l-content" role="main">
+  <main class="l-region l-region--main" id="main-content" tabindex="-1">
+    <div class="l-content">
       <?php if(isset($node)): ?>
         <?php if (arg(0) == 'database' || $node->type == 'database' || $node->type == 'alternative_database_title') print $breadcrumb; ?>
       <?php endif; ?>
@@ -122,7 +122,7 @@
 
     <?php print render($page['sidebar_first']); ?>
     <?php print render($page['sidebar_second']); ?>
-  </section>
+  </main>
 
   <footer class="l-footer" role="contentinfo">
     <?php print render($page['footer']); ?>

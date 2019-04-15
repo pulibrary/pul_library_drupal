@@ -99,3 +99,7 @@ h1.icon-article-express--small-after::after {
 noscript {
   color: $cool-gray-10;
 }
+
+main:focus {
+  outline: none;
+}
