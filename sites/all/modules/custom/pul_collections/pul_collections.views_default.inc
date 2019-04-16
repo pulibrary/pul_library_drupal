@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_collections.views_default.inc
@@ -281,6 +282,7 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_collection_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_collection_url']['type'] = 'link_absolute';
   $export['collections'] = $view;
 
   return $export;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_faq.features.field_instance.inc
@@ -272,6 +273,7 @@ function library_faq_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',

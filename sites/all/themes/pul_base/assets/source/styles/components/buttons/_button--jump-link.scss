@@ -1,17 +1,29 @@
 .jump-link {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
   left: 0;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
   top: -99px;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .jump-link:focus {
   background: $black;
+  clip: auto;
   color: $white;
   font-size: 14px;
   font-weight: bold;
+  height: auto;
+  margin: 0;
   padding: 15px 23px 14px;
   top: 0;
   transition: all 0.2s ease-in-out;
+  width: auto;
   z-index: 5;
 }
 
