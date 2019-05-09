@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_landing_page_spotlight.views_default.inc
@@ -82,6 +83,59 @@ function pul_landing_page_spotlight_views_default_views() {
   /* Display: Landing Page Callout */
   $handler = $view->new_display('block', 'Landing Page Callout', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pul_spotlight' => 'pul_spotlight',
+  );
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['access_id'] = array(
+    5389 => '5389',
+  );
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
+
+  /* Display: Digital Collections Banners */
+  $handler = $view->new_display('panel_pane', 'Digital Collections Banners', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Digital Collections and Initiatives';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pul_spotlight' => 'pul_spotlight',
+  );
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['access_id'] = array(
+    5386 => '5386',
+  );
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
   $export['spotlight_dispalsys'] = $view;
 
   return $export;
