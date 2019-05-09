@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_landing_page_spotlight.strongarm.inc
