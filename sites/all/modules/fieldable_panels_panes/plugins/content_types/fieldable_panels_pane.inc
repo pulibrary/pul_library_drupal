@@ -164,8 +164,11 @@ function fieldable_panels_panes_build_content_type_info($bundle, array $ids) {
 
 /**
  * Callback to render our content type.
+ *
+ * Note: don't add the 'array' type hint for $panel_args or $context as they
+ * might be NULL.
  */
-function fieldable_panels_panes_fieldable_panels_pane_content_type_render($subtype, $conf, array $panel_args = array(), array $context = array()) {
+function fieldable_panels_panes_fieldable_panels_pane_content_type_render($subtype, $conf, $panel_args = array(), $context = array()) {
   $entity = fieldable_panels_panes_load_from_subtype($subtype);
   if (!empty($entity) && !empty($entity->fpid) && fieldable_panels_panes_access('view', $entity)) {
     $view_mode = isset($conf['view_mode']) ? $conf['view_mode'] : 'full';
