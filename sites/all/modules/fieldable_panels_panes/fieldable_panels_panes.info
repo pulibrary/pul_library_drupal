@@ -71,8 +71,8 @@ files[] = tests/fpp.services.test
 test_dependencies[] = revisioning
 files[] = tests/fpp.with_revisioning.test
 
-; Information added by Drupal.org packaging script on 2019-03-04
-version = "7.x-1.12"
+; Information added by Drupal.org packaging script on 2019-03-12
+version = "7.x-1.13"
 core = "7.x"
 project = "fieldable_panels_panes"
-datestamp = "1551731287"
+datestamp = "1552402090"

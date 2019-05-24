@@ -1,3 +1,12 @@
+Fieldable Panels Panes 7.x-1.13, 2019-03-12
+-------------------------------------------
+#3039427 by DamienMcKenna: Failure if an FPP can't be loaded in a Panelizer
+  page.
+#3039174 by junaidpv: FPP cause to redirect to non existing path like
+  "admin/structure/fieldable-panels-panes/article/fields" when taking "Manage
+  Fields" paths like "admin/structure/types/manage/article/fields".
+
+
 Fieldable Panels Panes 7.x-1.12, 2019-03-04
 -------------------------------------------
 #2826182 by Arrow: Inversed logic for checking if the title should be used.
