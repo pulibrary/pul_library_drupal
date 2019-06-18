@@ -1,0 +1,22 @@
+name: library-main
+recipe: drupal7
+config:
+  php: '7.2'
+  webroot: .
+services:
+  search:
+    type: 'solr:7'
+    core: libwww-dev
+    config:
+      conf: sites/all/modules/search_api_solr/solr-conf/7.x
+  node:
+    type: 'node:6.15'
+    globals:
+      gulp-cli: latest
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node

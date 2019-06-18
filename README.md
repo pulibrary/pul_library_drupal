@@ -1,26 +1,59 @@
-# Local Development Set-up  
+# Local Development With Lando
+# Rare Books and Special Collections
 
-## Prerequisites: 
+## Local development with Lando
 
-1. Install current versions of PHP, Apache, MySQL and NPM/Node.js
-2. Create an empty local database in mysql
-3. Obtain a copy of the drupal permissions script https://gist.github.com/kevinreiss/9e8f4a63500516c4454c.
-4. Make sure you a domain for the site to run at like `library-local` is in your /etc/hosts file.
-5. Define a vhost configuration for your `library-local` domain. 
-6. Set up your drush alias file with an alias for your local site and obtain the credentials for the library-stage and library-prod environments. Drush alias typicall lives at ~/.drush/aliases.drushrc.php```.
-7. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It needs to run at the path ```/utils```.
 
-## Site Setup
 
-1. Clone the codebase to the directory your `library-local` domain uses as site root.
-2. Run the drupal permissions script pointed at that directory. On OSX the group user for the apache web user is usually ```_www```.  
-3. Sync the local database with production using drush ```drush sql-sync @libraryprod @mylocalalias```
-4. Sync the local file system with production using drush ```drush rsync @libraryprod:%files/ @mylocalalias:%files```
-5. cd to `cd $DRUPAL_ROOT/sites/all/themes/pul_base/` and run `npm install`
-6. run `gulp deploy` in `sites/all/themes/pul_base/`
-7. Create or Copy a settings.php file from stage or production and add the settings suggested in the next section to it.
+1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
+2. Create a local `sites/default/settings.php` file including the following:
 
-## Settings.php 
+    ```
+    $databases = array (
+      'default' =>
+      array (
+        'default' =>
+        array (
+          'database' => 'drupal7',
+          'username' => 'drupal7',
+          'password' => 'drupal7',
+          'host' => 'database',
+          'port' => '3306',
+          'driver' => 'mysql',
+          'prefix' => '',
+        ),
+      ),
+    );
+    # needed for CAS logins to work
+    $base_url = "http://http://library-main.lndo.site";
+    ```
+3. `lando start`
+4. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
+5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file
+6. `drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
+7. `lando db-import dump.sql`
+8. `drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
+9. `lando drush uli your-username`
+
+### Solr / Search API
+
+1. In your browser, go to `/admin/config/search/search_api/server/`
+2. Edit **Solr host** to have the value of `search`
+3. Reindex to view search results in the lando dev/local site.
+
+### NPM and Gulp - build styles for drupal theme layer
+
+1. `cd sites/all/themes/pul_base`
+2. `lando npm install`
+3. `lando gulp deploy` (or any other gulp task)
+
+
+## Prerequisites:
+
+### Needs Work ###
+1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path ```/utils```.
+
+### Configure settings.php
 Here are some helpful things to add to your settings.php for local development:
 ```
 /* Overrides for the local environment */
@@ -42,3 +75,6 @@ $conf['theme_debug'] = TRUE;
 /* set to false in production */
 $conf['javascript_always_use_jquery'] = TRUE;
 ```
+
+## If you manually dump a drupal database make sure to dump only the tables you need
+```drush @librarymain.prod sql-dump --structure-tables-list=watchdog,session,cas_data_login,history,captcha_sessions,cache,cache_* > dumpfile.sql```
