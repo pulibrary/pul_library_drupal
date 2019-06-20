@@ -12,6 +12,9 @@ function pul_base_preprocess_html(&$variables, $hook) {
                            );
 
   drupal_add_js(array("pul_base_theme" => $pul_base_link_settings), 'setting');
+  drupal_add_js(
+    'https://v2.libanswers.com/load_chat.php?hash=e875b9ce5206b1a7eca9952d52a20543', array('type' => 'external')
+  );
   drupal_add_css(
     'https://use.typekit.net/gwb8hdb.css', array('type' => 'external')
   );
