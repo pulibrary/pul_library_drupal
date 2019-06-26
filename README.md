@@ -6,7 +6,8 @@
 
 
 1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
-2. Create a local `sites/default/settings.php` file including the following:
+2. `cp sites/default/default.settings.php sites/default/settings.php`
+3. In `sites/default/settings.php` includd the following lando-style db config values:
 
     ```
     $databases = array (
@@ -25,42 +26,15 @@
       ),
     );
     # needed for CAS logins to work
-    $base_url = "http://http://library-main.lndo.site";
+    $base_url = "http://library-main.lndo.site";
     ```
-3. `lando start`
-4. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
-5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file
-6. `drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
-7. `lando db-import dump.sql`
-8. `drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
-9. `lando drush uli your-username`
-
-### Solr / Search API
-
-1. In your browser, go to `/admin/config/search/search_api/server/`
-2. Edit **Solr host** to have the value of `search`
-3. Reindex to view search results in the lando dev/local site.
-
-### NPM and Gulp - build styles for drupal theme layer
-
-1. `cd sites/all/themes/pul_base`
-2. `lando npm install`
-3. `lando gulp deploy` (or any other gulp task)
-
-
-## Prerequisites:
-
-### Needs Work ###
-1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path ```/utils```.
-
-### Configure settings.php
-Here are some helpful things to add to your settings.php for local development:
+3. Add the following useful local development configuration to the end of `sites/default/settings.php`
 ```
 /* Overrides for the local environment */
 $conf['securepages_enable'] = 0;
 /* This should be set in your php.ini file */
 ini_set('memory_limit', '1G');
-/* Turn off Caching */
+/* Turn off all caching */
 $conf['css_gzip_compression'] = FALSE;
 $conf['js_gzip_compression'] = FALSE;
 $conf['cache'] = 0;
@@ -75,6 +49,63 @@ $conf['theme_debug'] = TRUE;
 /* set to false in production */
 $conf['javascript_always_use_jquery'] = TRUE;
 ```
+3. `mkdir .ssh` # excluded from version control
+4. `cp $HOME/.ssh/id_rsa .ssh/.`
+5. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
+3. `lando start` Start up lando
+4. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
+5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the remote drupal environment
+```
+$aliases['prod'] = array (
+   'uri' => 'https://library.princeton.edu',
+   'root' => '', // Add root
+   'remote-user' => 'deploy', // Add user
+   'remote-host' => 'app-server-name', // Add app server host name
+   'ssh-options' => 'PasswordAuthentication=no -i .ssh/id_rsa',
+   'path-aliases' => array(
+     '%dump-dir' => '/tmp',
+   ),
+   'source-command-specific' => array (
+     'sql-sync' => array (
+       'no-cache' => TRUE,
+       'structure-tables-key' => 'common',
+     ),
+   ),
+   'command-specific' => array (
+     'sql-sync' => array (
+       'sanitize' => TRUE,
+       'no-ordered-dump' => TRUE,
+       'structure-tables' => array(
+        // You can add more tables which contain data to be ignored by the database dump
+         'common' => array('cache', 'cache_*', 'history', 'sessions', 'watchdog', 'cas_data_login', 'captcha_sessions'),
+       ),
+     ),
+   ),
+ );
+```
+6. `lando drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
+7. `lando db-import dump.sql`
+8. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
+9. `lando drush uli your-username`
+
+### Index site content in Solr via Search API
+
+1. In your browser, go to `{CURRENT_LANDO_HOST_BASE_URL}/admin/config/search/search_api/server/`
+2. Edit **Solr hostname** to have the value of `search`
+3. `lando drush searchapi-index` will index all content to the local solr index
+
+
+### Use NPM and Gulp to build styles for drupal theme layer
+
+1. `cd sites/all/themes/pul_base`
+2. `lando npm install`
+3. `lando gulp deploy` (or any other gulp task)
+
+
+## Prerequisites:
+
+### Needs Work ###
+1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path ```/utils```.
 
 ## If you manually dump a drupal database make sure to dump only the tables you need
 ```drush @librarymain.prod sql-dump --structure-tables-list=watchdog,session,cas_data_login,history,captcha_sessions,cache,cache_* > dumpfile.sql```

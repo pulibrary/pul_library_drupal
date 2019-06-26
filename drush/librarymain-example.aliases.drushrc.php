@@ -5,7 +5,7 @@
  * Set the root and site_path values to point to your local site
  */
 // $aliases['local'] = array(
-//   'root' => '', // Path to project on local machine
+//   'root' => '/app', // Path to project on local machine
 //   'uri'  => 'http://rbscdrupal.lndo.site:8000',
 //   'path-aliases' => array(
 //     '%dump-dir' => '/tmp',
@@ -19,10 +19,10 @@
  */
 // $aliases['prod'] = array (
 //   'uri' => 'https://library.princeton.edu',
-//   'root' => '', // Add root
-//   'remote-user' => '', // Add user
-//   'remote-host' => '', // Add host
-//   'ssh-options' => '', // Add ssh
+//   'root' => '/var/www/drupal', // Add path to installaton on app server
+//   'remote-user' => 'deploy', // Add user
+//   'remote-host' => 'app-server-na', // Add app server host name
+//   'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_rsa',
 //   'path-aliases' => array(
 //     '%dump-dir' => '/tmp',
 //   ),
