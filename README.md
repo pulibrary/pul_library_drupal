@@ -54,14 +54,14 @@ $conf['javascript_always_use_jquery'] = TRUE;
 5. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
 3. `lando start` Start up lando
 4. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
-5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the remote drupal environment
+5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
 ```
 $aliases['prod'] = array (
    'uri' => 'https://library.princeton.edu',
    'root' => '', // Add root
    'remote-user' => 'deploy', // Add user
    'remote-host' => 'app-server-name', // Add app server host name
-   'ssh-options' => 'PasswordAuthentication=no -i .ssh/id_rsa',
+   'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_rsa',
    'path-aliases' => array(
      '%dump-dir' => '/tmp',
    ),
@@ -83,10 +83,21 @@ $aliases['prod'] = array (
    ),
  );
 ```
-6. `lando drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
-7. `lando db-import dump.sql`
-8. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
-9. `lando drush uli your-username`
+6. Uncomment the alias block for the local lando site
+```
+$aliases['local'] = array(
+  'root' => '/app', // Path to project on local machine
+  'uri'  => 'http://library-main.lndo.site:8000',
+  'path-aliases' => array(
+    '%dump-dir' => '/tmp',
+    '%files' => 'sites/default/files',
+  ),
+);
+```
+7. `lando drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
+8. `lando db-import dump.sql`
+9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
+10. `lando drush uli your-username`
 
 ### Index site content in Solr via Search API
 
