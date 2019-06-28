@@ -94,16 +94,19 @@ $aliases['local'] = array(
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump > dump.sql` # no lando to leverage host box ssh config
+7. `lando drush @librarymain.prod sql-dump --structure-tables-list=watchdog,session,cas_data_login,history,captcha_sessions,cache,cache_* > dump.sql`
 8. `lando db-import dump.sql`
-9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files` # no lando to leverage host box ssh config
+9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 10. `lando drush uli your-username`
 
 ### Index site content in Solr via Search API
 
-1. In your browser, go to `{CURRENT_LANDO_HOST_BASE_URL}/admin/config/search/search_api/server/`
-2. Edit **Solr hostname** to have the value of `search`
-3. `lando drush searchapi-index` will index all content to the local solr index
+1. In your browser, go to `{CURRENT_LANDO_HOST_BASE_URL}admin/config/search/search_api/server/search_api_library_staging/edit`
+   1. Edit **Solr hostname** to have the value of `search`
+   1. Edit **Solr path** to have a value of `/solr/libwww-dev`
+1. Clear the search index in the browser on the view page (you should be there after the edit) `{CURRENT_LANDO_HOST_BASE_URL}admin/config/search/search_api/server/search_api_library_staging` and click `Delete all indexed data` button on the bottom left of the page
+1. `lando drush search-api-index` will index all content to the local solr index
+1. `lando drush cc all` will update the caches to show the data
 
 
 ### Use NPM and Gulp to build styles for drupal theme layer
