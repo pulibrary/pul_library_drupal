@@ -78,7 +78,7 @@ function summon_search_results_content() {
   $sid = summon_block_get_sid();
   $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div id='summon-search-results' data-source='/utils/articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div id='summon-search-results' data-source='" . data_source_url_base() . "articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -88,7 +88,7 @@ function summon_search_guide_content() {
   $sid = summon_block_get_sid();
   $ajax_spinner = "<div id='guide-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div id='summon-guide-results' data-source='/utils/articles/guide?query={$path}&number=3&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div id='summon-guide-results' data-source='" . data_source_url_base() . "articles/guide?query={$path}&number=3&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -97,7 +97,7 @@ function summon_search_recommendations_content() {
   $path = summon_block_query_escape($_GET['q']);
   $sid = summon_block_get_sid();
   $block_content = array(
-    '#markup' => "<div id='summon-recommendation-results' data-source='/utils/articles/recommendations?query={$path}&sid={$sid}'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-recommendation-results' data-source='" . data_source_url_base() . "articles/recommendations?query={$path}&sid={$sid}'>" . t('') . "</div>",
   );
   return $block_content;
 }
@@ -106,7 +106,7 @@ function summon_search_spelling_suggestions_content() {
   $path = summon_block_query_escape($_GET['q']);
   $sid = summon_block_get_sid();
   $block_content = array(
-    '#markup' => "<div id='summon-spelling-results' data-source='/utils/articles/spelling?query={$path}&number=3&sid={$sid}'>" . t('') . "</div>",
+    '#markup' => "<div id='summon-spelling-results' data-source='" . data_source_url_base() . "articles/spelling?query={$path}&number=3&sid={$sid}'>" . t('') . "</div>",
   );
   return $block_content;
 }
