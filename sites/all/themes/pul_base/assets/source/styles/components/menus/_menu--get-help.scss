@@ -9,17 +9,12 @@
       list-style: none;
       margin-bottom: 5px;
 
-      a {
-        .libraryh3lp .button--libraryh3lp {
-          font-size: 0.875rem;
-        }
+      a:hover,
+      a:focus {
+        text-decoration: none;
 
-        &:hover {
-          text-decoration: none;
-
-          &::before {
-            color: $orange;
-          }
+        &::before {
+          color: $orange;
         }
       }
 
