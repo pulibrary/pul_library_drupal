@@ -172,7 +172,7 @@
                     $('#blacklight-search-results-spinner').hide();
                     $('<div class="all-fail-to-load-results">Catalog results are not available at this time.</div>"').appendTo('#blacklight-search-results');
                 },
-                timeout: 5000
+                timeout: 15000
             }).done(function() {
                 var ids = [];
                 $('#blacklight-search-results .holdings').each(function() {
