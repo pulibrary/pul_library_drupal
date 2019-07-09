@@ -8,9 +8,9 @@
         var image_icon = 'icon-visual-material';
         var map_icon = 'icon-map';
         var manuscript_icon = 'icon-manuscript';
-        var refine_hint = 'Explore Princeton University Digital Library content.';
+        var refine_hint = 'Explore Digital PUL content.';
         var refine_icon = '';
-        var refine_message = "See All Digital Library Content";
+        var refine_message = "See All Digital PUL Content";
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#pudl-search-results');
         } else {
@@ -61,12 +61,12 @@
                         // $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pudl-search-results');
                         $('#catalog_block-catalog_pudl_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-digital"></i>Digital Library</a></h2>';
+                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-digital"></i>Digital PUL</a></h2>';
                         });
                         if (data.number > 3) {
-                            $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Digital Library results</a></div>"').appendTo('#pudl-search-results');
+                            $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Digital PUL results</a></div>"').appendTo('#pudl-search-results');
                         }
-                        
+
                         // update preview button with hit count
                         var preview = $("a[href='#catalog_block-catalog_pudl_results']");
                         if (data.number > 0) {
@@ -106,7 +106,7 @@
                 },
                 error: function(data) {
                     $('#pudl-search-results-spinner').hide();
-                    $('<div class="all-fail-to-load-results">Princeton University Digital Library  results are not available at this time.</div>"').appendTo('#pudl-search-results');
+                    $('<div class="all-fail-to-load-results">Digital PUL  results are not available at this time.</div>"').appendTo('#pudl-search-results');
                 },
                 timeout: 5000
             });

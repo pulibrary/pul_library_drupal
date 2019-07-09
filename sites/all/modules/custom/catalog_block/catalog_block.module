@@ -113,7 +113,7 @@ function catalog_pudl_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='pudl-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='" . data_source_url_base() . "pudl/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='" . data_source_url_base() . "dpulsearch/any?query={$path}&sid={$sid}' id='pudl-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -216,7 +216,7 @@ function catalog_block_block_info() {
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_pudl_results'] = array(
-      'info' => t('Princeton University Digital Library'),
+      'info' => t('Digital PUL'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_pulmap_results'] = array(
@@ -309,7 +309,7 @@ function catalog_block_block_view($delta = '') {
     $block['content'] = catalog_pulfa_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfa_results.js');
   } elseif ($delta == 'catalog_pudl_results') {
-    $block['subject'] = t('Princeton University Digital Library');
+    $block['subject'] = t('Digital PUL');
     $block['content'] = catalog_pudl_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pudl_results.js');
   } elseif ($delta == 'catalog_pulmap_results') {
