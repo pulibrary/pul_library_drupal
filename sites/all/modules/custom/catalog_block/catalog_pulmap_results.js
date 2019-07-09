@@ -60,12 +60,12 @@
                         // $('<div class="puld-search refine-link">'+refine_icon+'<a target="_blank" title="'+refine_message+'" href="'+data.more+'">'+refine_message+'</a><div>').insertBefore('#pulmap-search-results');
                         $('#catalog_block-catalog_pulmap_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-digital"></i>Maps and Geographic Data</a></h2>';
+                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-map"></i>Maps and Geographic Data</a></h2>';
                         });
                         if (data.number > 3) {
                             $('<div class="puld-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Map and Geographic Data results</a></div>"').appendTo('#pulmap-search-results');
                         }
-                        
+
                         // update preview button with hit count
                         var preview = $("a[href='#catalog_block-catalog_pulmap_results']");
                         if (data.number > 0) {
