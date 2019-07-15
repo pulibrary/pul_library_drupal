@@ -277,7 +277,7 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-visual-material"></i>Art Objects',
+    'override_title_text' => '<i class="icon-visual-material"></i>Art Museum Collections',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -445,7 +445,7 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Results section anchor links',
     'title' => '',
-    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results"> Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2"> Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results"> Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results"> Digital Library</a></li><li><a href="#general_site_keyword_search-panel_pane_1"> Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1"> Library Staff</a></li><li><a href="#libguides_block-libguides_search_results"> Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">FAQs</a></li><li><a href="#catalog_block-catalog_arts_results">Art Objects</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps+</a></li></ul></div>',
+    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results"> Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2"> Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results"> Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results"> Digital Library</a></li><li><a href="#general_site_keyword_search-panel_pane_1"> Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1"> Library Staff</a></li><li><a href="#libguides_block-libguides_search_results"> Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">FAQs</a></li><li><a href="#catalog_block-catalog_arts_results">Art</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps+</a></li></ul></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title_heading' => 'h2',
