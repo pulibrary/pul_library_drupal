@@ -1,7 +1,7 @@
 (function($) {
     $(document).ready(function() {
         var query_url = $('#art-search-results').attr('data-source');
-        var refine_hint = 'Explore Art Objects.';
+        var refine_hint = 'Explore Art Museum Collections.';
         var default_icon = 'icon-mixed-material';
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#art-search-results');
@@ -39,17 +39,17 @@
                         }).appendTo('#art-search-results');
                         $('#catalog_block-catalog_arts_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-visual-material"></i>Art Objects</a></h2>';
+                            return '<h2><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-visual-material"></i>Art Museum Collections</a></h2>';
                         });
                         if (data.number > 3) {
-                            $('<div class="art-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Art results</a></div>"').appendTo('#art-search-results');
+                            $('<div class="art-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Art Museum Collections results</a></div>"').appendTo('#art-search-results');
                         }
                         // update preview button with hit count
                         var preview = $("a[href='#catalog_block-catalog_arts_results']");
                         if (data.number > 0) {
                             $(preview).append(" ("+data.number+")");
                         }
-                        var section_heading = "Art"; // Should be in Drupal Settings
+                        var section_heading = "Art Museum Collections"; // Should be in Drupal Settings
                         $('#catalog_block-catalog_arts_results h2 a').each(function(index, value) {
                             $(this).click(function() {
                                 ga('send', 'event', 'All Search', section_heading, 'Refine Top');
@@ -72,14 +72,14 @@
                         });
                     } else {
                         $('#art-search-results-spinner').hide();
-                        $('<div class="no-results">No Art Objects found. Try searching for another topic.</div>"').appendTo('#art-search-results');
+                        $('<div class="no-results">No Art Museum Collections found. Try searching for another topic.</div>"').appendTo('#art-search-results');
                         var preview = $("a[href='#catalog_block-catalog_art_results']");
                         $(preview).parent().hide();
                     }
                 },
                 error: function(data) {
                     $('#art-search-results-spinner').hide();
-                    $('<div class="all-fail-to-load-results">Art results are not available at this time.</div>"').appendTo('#art-search-results');
+                    $('<div class="all-fail-to-load-results">Art Museum Collection results are not available at this time.</div>"').appendTo('#art-search-results');
                 },
                 timeout: 5000
             });
