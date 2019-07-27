@@ -53,7 +53,7 @@ class DatabaseConnection_mysql extends DatabaseConnection {
     );
     $connection_options['pdo'] += array(
       // So we don't have to mess around with cursors and unbuffered queries by default.
-      PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE,
+      // PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE,
       // Because MySQL's prepared statements skip the query cache, because it's dumb.
       PDO::ATTR_EMULATE_PREPARES => TRUE,
     );
