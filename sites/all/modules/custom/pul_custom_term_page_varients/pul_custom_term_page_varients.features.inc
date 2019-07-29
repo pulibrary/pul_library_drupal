@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_custom_term_page_varients.features.inc
