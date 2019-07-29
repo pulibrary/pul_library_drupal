@@ -17,7 +17,6 @@ features[features_api][] = api:2
 features[feeds_importer][] = mendel_periodicals
 features[field_base][] = field_mus_periodical_location
 features[field_base][] = field_musper_catalog_url
-features[field_instance][] = node-mendel_periodical-body
 features[field_instance][] = node-mendel_periodical-field_mus_periodical_location
 features[field_instance][] = node-mendel_periodical-field_musper_catalog_url
 features[node][] = mendel_periodical
