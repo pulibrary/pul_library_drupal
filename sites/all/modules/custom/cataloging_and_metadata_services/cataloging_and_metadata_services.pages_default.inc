@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * cataloging_and_metadata_services.pages_default.inc
@@ -35,7 +36,9 @@ function cataloging_and_metadata_services_default_page_manager_handlers() {
           'settings' => array(
             'visibility_setting' => '1',
             'paths' => 'cataloging-and-metadata-services
-cataloging-and-metadata-services/*',
+cataloging-and-metadata-services/*
+cams
+cams/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
