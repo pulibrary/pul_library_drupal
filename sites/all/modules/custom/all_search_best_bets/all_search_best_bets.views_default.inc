@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * all_search_best_bets.views_default.inc
@@ -24,7 +25,11 @@ function all_search_best_bets_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<i class="icon-best-bet"></i>Best Bet';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    1 => '1',
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -73,7 +78,6 @@ function all_search_best_bets_views_default_views() {
   $handler->display->display_options['fields']['field_best_bet_description']['field'] = 'field_best_bet_description';
   $handler->display->display_options['fields']['field_best_bet_description']['label'] = '';
   $handler->display->display_options['fields']['field_best_bet_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_best_bet_description']['type'] = 'text_plain';
   /* Contextual filter: Search: Fulltext search */
   $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_all_search_best_bets';
@@ -81,8 +85,6 @@ function all_search_best_bets_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['not'] = 0;
   $handler->display->display_options['arguments']['search_api_views_fulltext']['fields'] = array(
     'field_search_terms' => 'field_search_terms',
     'title' => 'title',
