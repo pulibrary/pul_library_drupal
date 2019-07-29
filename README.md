@@ -87,17 +87,23 @@ $aliases['prod'] = array (
 ```
 $aliases['local'] = array(
   'root' => '/app', // Path to project on local machine
-  'uri'  => 'http://library-main.lndo.site:8000',
+  'uri'  => 'http://library-main.lndo.site',
   'path-aliases' => array(
     '%dump-dir' => '/tmp',
     '%files' => 'sites/default/files',
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump --structure-tables-list=watchdog,session,cas_data_login,history,captcha_sessions,cache,cache_* > dump.sql`
+7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' > dump.sql`
 8. `lando db-import dump.sql`
 9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 10. `lando drush uli your-username`
+
+### Use NPM and Gulp to build styles for drupal theme layer
+
+1. `cd sites/all/themes/pul_base`
+2. `lando npm install`
+3. `lando gulp deploy` (or any other gulp task)
 
 ### Index site content in Solr via Search API
 
@@ -108,18 +114,12 @@ $aliases['local'] = array(
 1. `lando drush search-api-index` will index all content to the local solr index
 1. `lando drush cc all` will update the caches to show the data
 
-
-### Use NPM and Gulp to build styles for drupal theme layer
-
-1. `cd sites/all/themes/pul_base`
-2. `lando npm install`
-3. `lando gulp deploy` (or any other gulp task)
-
-
 ## Prerequisites:
 
 ### Needs Work ###
-1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path ```/utils```.
+1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path `/utils`.
 
 ## If you manually dump a drupal database make sure to dump only the tables you need
-```drush @librarymain.prod sql-dump --structure-tables-list=watchdog,session,cas_data_login,history,captcha_sessions,cache,cache_* > dumpfile.sql```
+```
+drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' > dumpfile.sql
+```

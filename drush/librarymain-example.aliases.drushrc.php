@@ -6,7 +6,7 @@
  */
 // $aliases['local'] = array(
 //   'root' => '/app', // Path to project on local machine
-//   'uri'  => 'http://rbscdrupal.lndo.site:8000',
+//   'uri'  => 'http://library-main.lndo.site',
 //   'path-aliases' => array(
 //     '%dump-dir' => '/tmp',
 //     '%files' => 'sites/default/files',
