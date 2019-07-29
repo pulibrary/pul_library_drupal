@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * training_and_workshops.views_default.inc
@@ -60,7 +61,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Link */
+  /* Field: Content: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -142,7 +143,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -278,7 +279,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['field_training_room']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -287,7 +288,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Session Info';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -520,7 +521,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'Empty ';
   $handler->display->display_options['empty']['area']['content'] = 'No entityforms have been created yet';
-  /* Relationship: Entityform: Uid */
+  /* Relationship: Entityform Submission: Uid */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'entityform';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -529,7 +530,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['relationships']['field_zotero_reg_session_target_id']['table'] = 'field_data_field_zotero_reg_session';
   $handler->display->display_options['relationships']['field_zotero_reg_session_target_id']['field'] = 'field_zotero_reg_session_target_id';
   $handler->display->display_options['relationships']['field_zotero_reg_session_target_id']['label'] = 'Session';
-  /* Field: Entityform: Name */
+  /* Field: Entityform Submission: Name */
   $handler->display->display_options['fields']['field_zotero_reg_name']['id'] = 'field_zotero_reg_name';
   $handler->display->display_options['fields']['field_zotero_reg_name']['table'] = 'field_data_field_zotero_reg_name';
   $handler->display->display_options['fields']['field_zotero_reg_name']['field'] = 'field_zotero_reg_name';
@@ -543,7 +544,7 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'Netid';
-  /* Field: Entityform: E-mail */
+  /* Field: Entityform Submission: E-mail */
   $handler->display->display_options['fields']['field_zotero_reg_e_mail']['id'] = 'field_zotero_reg_e_mail';
   $handler->display->display_options['fields']['field_zotero_reg_e_mail']['table'] = 'field_data_field_zotero_reg_e_mail';
   $handler->display->display_options['fields']['field_zotero_reg_e_mail']['field'] = 'field_zotero_reg_e_mail';
@@ -569,7 +570,7 @@ function training_and_workshops_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_training_dtime']['field_api_classes'] = TRUE;
-  /* Field: Entityform: Comments */
+  /* Field: Entityform Submission: Comments */
   $handler->display->display_options['fields']['field_zotero_reg_comments']['id'] = 'field_zotero_reg_comments';
   $handler->display->display_options['fields']['field_zotero_reg_comments']['table'] = 'field_data_field_zotero_reg_comments';
   $handler->display->display_options['fields']['field_zotero_reg_comments']['field'] = 'field_zotero_reg_comments';
@@ -583,25 +584,25 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['fields']['label_1']['field'] = 'label';
   $handler->display->display_options['fields']['label_1']['label'] = 'Form Type';
   $handler->display->display_options['fields']['label_1']['exclude'] = TRUE;
-  /* Field: Entityform: Date submitted */
+  /* Field: Entityform Submission: Date submitted */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'entityform';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created']['date_format'] = 'medium';
-  /* Field: Entityform: Date changed */
+  /* Field: Entityform Submission: Date changed */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'entityform';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['exclude'] = TRUE;
   $handler->display->display_options['fields']['changed']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'long';
-  /* Field: Entityform: Link */
+  /* Field: Entityform Submission: Link */
   $handler->display->display_options['fields']['link_entityform']['id'] = 'link_entityform';
   $handler->display->display_options['fields']['link_entityform']['table'] = 'entityform';
   $handler->display->display_options['fields']['link_entityform']['field'] = 'link_entityform';
   $handler->display->display_options['fields']['link_entityform']['label'] = 'View';
-  /* Sort criterion: Entityform: Date submitted */
+  /* Sort criterion: Entityform Submission: Date submitted */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'entityform';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -612,13 +613,13 @@ function training_and_workshops_views_default_views() {
   $handler->display->display_options['sorts']['field_training_dtime_value']['field'] = 'field_training_dtime_value';
   $handler->display->display_options['sorts']['field_training_dtime_value']['relationship'] = 'field_zotero_reg_session_target_id';
   $handler->display->display_options['sorts']['field_training_dtime_value']['order'] = 'DESC';
-  /* Filter criterion: Entityform: Draft */
+  /* Filter criterion: Entityform Submission: Draft */
   $handler->display->display_options['filters']['draft']['id'] = 'draft';
   $handler->display->display_options['filters']['draft']['table'] = 'entityform';
   $handler->display->display_options['filters']['draft']['field'] = 'draft';
   $handler->display->display_options['filters']['draft']['operator'] = '!=';
   $handler->display->display_options['filters']['draft']['value']['value'] = '1';
-  /* Filter criterion: Entityform: Entityform Type */
+  /* Filter criterion: Entityform Submission: Entityform Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'entityform';
   $handler->display->display_options['filters']['type']['field'] = 'type';
