@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_plasma_physics_feed_view_panes.views_default.inc
@@ -23,7 +24,12 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    1 => '1',
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -57,6 +63,13 @@ function pul_plasma_physics_feed_view_panes_views_default_views() {
   /* Display: Plasma Physics - Nuclear Fusion Feed */
   $handler = $view->new_display('panel_pane', 'Plasma Physics - Nuclear Fusion Feed', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    1 => '1',
+    2 => '2',
+  );
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
