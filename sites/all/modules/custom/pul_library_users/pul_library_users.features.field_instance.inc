@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_library_users.features.field_instance.inc
@@ -68,7 +69,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 36,
     ),
     'workbench_access_field' => 0,
   );
@@ -132,7 +133,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 43,
     ),
     'workbench_access_field' => 0,
   );
@@ -196,7 +197,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 42,
     ),
     'workbench_access_field' => 0,
   );
@@ -242,7 +243,7 @@ function pul_library_users_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_personal_lib_fun_fact',
-    'label' => 'Fun Fact About Me',
+    'label' => 'Do Not Use',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -260,7 +261,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -324,7 +325,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 120,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 39,
     ),
     'workbench_access_field' => 0,
   );
@@ -388,7 +389,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 41,
     ),
     'workbench_access_field' => 0,
   );
@@ -454,7 +455,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 37,
+      'weight' => 42,
     ),
   );
 
@@ -528,7 +529,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 38,
     ),
   );
 
@@ -717,7 +718,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 39,
+      'weight' => 44,
     ),
   );
 
@@ -893,7 +894,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 45,
     ),
   );
 
@@ -951,7 +952,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 41,
     ),
   );
 
@@ -1121,6 +1122,11 @@ function pul_library_users_field_default_field_instances() {
     'label' => 'LibGuide Author ID',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -1131,8 +1137,9 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'user-user-field_puluser_librarystaffid'.
@@ -1189,7 +1196,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 40,
     ),
   );
 
@@ -1367,7 +1374,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 38,
     ),
   );
 
@@ -1668,7 +1675,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 39,
     ),
   );
 
@@ -1796,7 +1803,7 @@ function pul_library_users_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Flag a user as a subject librarian. ',
+    'description' => 'Flag a user as a subject librarian with an expert profile. Must be toggled on for the profile to display. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1847,6 +1854,7 @@ function pul_library_users_field_default_field_instances() {
       'type' => 'options_onoff',
       'weight' => 3,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'user-user-field_puluser_temp_staff_record'.
@@ -1907,7 +1915,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 41,
+      'weight' => 46,
     ),
     'workbench_access_field' => 0,
   );
@@ -2032,7 +2040,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 38,
+      'weight' => 43,
     ),
   );
 
@@ -2047,11 +2055,11 @@ function pul_library_users_field_default_field_instances() {
   t('Division');
   t('Division user belongs tol. ');
   t('Division/Section combo. For sorting only. ');
+  t('Do Not Use');
   t('First Name');
-  t('Flag a user as a subject librarian. ');
+  t('Flag a user as a subject librarian with an expert profile. Must be toggled on for the profile to display. ');
   t('For use with staff members who have dual roles. A "temporary staff user" entry should be linked here. All are prefaced with "temp_". ');
   t('Formal Name');
-  t('Fun Fact About Me');
   t('If you contact me, I will:');
   t('Import ID for subject librarians attached to DMG group. ');
   t('Last Name');

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_library_users.field_group.inc
@@ -13,6 +14,38 @@ function pul_library_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_expert_profile|user|user|form';
+  $field_group->group_name = 'group_expert_profile';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Expert Profile',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_puluser_libguide_author_id',
+      1 => 'field_puluser_sublibrarian',
+      2 => 'field_expert_bio',
+      3 => 'field_expert_subject_areas',
+      4 => 'field_expert_departments',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Expert Profile',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-expert-profile field-group-tab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $field_groups['group_expert_profile|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_personal_lib_info|user|user|form';
   $field_group->group_name = 'group_personal_lib_info';
   $field_group->entity_type = 'user';
@@ -21,7 +54,7 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal Librarian Information',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_puluser_appt_calendar',
       1 => 'field_personal_lib_statement',
@@ -29,7 +62,8 @@ function pul_library_users_field_group_info() {
       3 => 'field_personal_lib_contacts',
       4 => 'field_current_personal_lib',
       5 => 'field_personal_lib_spec',
-      6 => 'field_personal_lib_fun_fact',
+      6 => 'field__personal_lib_fun_fact',
+      7 => 'field_personal_lib_class_year',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -41,7 +75,7 @@ function pul_library_users_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_personal_lib_info|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -80,7 +114,7 @@ function pul_library_users_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_puluser_basicinfo|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -93,7 +127,7 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administrative Info',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_puluser_dmgimport_id',
       1 => 'field_puluser_librarystaffid',
@@ -116,7 +150,7 @@ function pul_library_users_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_user_admininfo|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -145,7 +179,7 @@ function pul_library_users_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_user_contact|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -158,11 +192,8 @@ function pul_library_users_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Subject Librarian Details',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_puluser_libguide_author_id',
-      1 => 'field_puluser_sublibrarian',
-    ),
+    'weight' => '7',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -173,13 +204,14 @@ function pul_library_users_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_user_sublibrarian|user|user|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Administrative Info');
   t('Basic Info');
   t('Contact Info');
+  t('Expert Profile');
   t('Personal Librarian Information');
   t('Subject Librarian Details');
 
