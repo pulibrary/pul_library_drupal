@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_custom_user_page_variants.features.inc

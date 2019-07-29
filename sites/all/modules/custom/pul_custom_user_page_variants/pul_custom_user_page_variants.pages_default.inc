@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_custom_user_page_variants.pages_default.inc
@@ -113,10 +114,12 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '%user:field_puluser_fname %user:field_puluser_lname';
+  $display->title = '%user:field-puluser-nick-name %user:field_puluser_lname';
   $display->uuid = 'b77daaab-bf6f-4968-8a9b-dcfac6c6ea24';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'user_view_panel_context';
@@ -148,6 +151,32 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $display->content['new-c9cab25c-4f50-4d4a-bb6b-bde8ca9c51de'] = $pane;
   $display->panels['first'][0] = 'new-c9cab25c-4f50-4d4a-bb6b-bde8ca9c51de';
   $pane = new stdClass();
+  $pane->pid = 'new-b0384442-7087-47f4-928e-2affe25d0ff4';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'user_profile-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:user_1',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Profile',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b0384442-7087-47f4-928e-2affe25d0ff4';
+  $display->content['new-b0384442-7087-47f4-928e-2affe25d0ff4'] = $pane;
+  $display->panels['first'][1] = 'new-b0384442-7087-47f4-928e-2affe25d0ff4';
+  $pane = new stdClass();
   $pane->pid = 'new-c49b02d8-3dcd-49ce-a97d-8aab0379a5d5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -161,11 +190,48 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'c49b02d8-3dcd-49ce-a97d-8aab0379a5d5';
   $display->content['new-c49b02d8-3dcd-49ce-a97d-8aab0379a5d5'] = $pane;
-  $display->panels['first'][1] = 'new-c49b02d8-3dcd-49ce-a97d-8aab0379a5d5';
+  $display->panels['first'][2] = 'new-c49b02d8-3dcd-49ce-a97d-8aab0379a5d5';
+  $pane = new stdClass();
+  $pane->pid = 'new-f1b65798-1d29-46aa-b9b2-3f4bb6294707';
+  $pane->panel = 'first';
+  $pane->type = 'user_contact';
+  $pane->subtype = 'user_contact';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 28,
+          ),
+        ),
+        'context' => 'argument_entity_id:user_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:user_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'f1b65798-1d29-46aa-b9b2-3f4bb6294707';
+  $display->content['new-f1b65798-1d29-46aa-b9b2-3f4bb6294707'] = $pane;
+  $display->panels['first'][3] = 'new-f1b65798-1d29-46aa-b9b2-3f4bb6294707';
   $pane = new stdClass();
   $pane->pid = 'new-c1ab58cc-5aa6-4328-8192-c1fc14f87975';
   $pane->panel = 'second';
@@ -175,7 +241,8 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '%user:field_puluser_fname\'s %title',
+    'override_title_text' => '%title',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -223,8 +290,25 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
           'context' => 'argument_entity_id:user_1',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'entity_field_value:user:user:field_puluser_sublibrarian',
+          'settings' => array(
+            'field_puluser_sublibrarian' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_puluser_sublibrarian_value' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
+          'not' => FALSE,
+        ),
       ),
-      'logic' => 'and',
+      'logic' => 'or',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff',
@@ -297,10 +381,10 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $display->content['new-77fcb19a-3943-48ba-a006-509b28cf7011'] = $pane;
   $display->panels['first'][1] = 'new-77fcb19a-3943-48ba-a006-509b28cf7011';
   $pane = new stdClass();
-  $pane->pid = 'new-d1d504cb-3624-4fcd-911e-faac33ebcd88';
+  $pane->pid = 'new-41b8b990-51b0-4701-a477-5784db12973a';
   $pane->panel = 'first';
-  $pane->type = 'contact';
-  $pane->subtype = 'contact';
+  $pane->type = 'user_contact';
+  $pane->subtype = 'user_contact';
   $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
@@ -308,17 +392,16 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
         'name' => 'role',
         'settings' => array(
           'rids' => array(
-            0 => 3,
-            1 => 28,
-            2 => 29,
+            0 => 28,
           ),
         ),
-        'context' => 'logged-in-user',
+        'context' => 'argument_entity_id:user_1',
         'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
+    'context' => 'argument_entity_id:user_1',
     'override_title' => 1,
     'override_title_text' => 'Contact %user:field-puluser-nick-name',
     'override_title_heading' => 'h2',
@@ -327,13 +410,16 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'contact',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'd1d504cb-3624-4fcd-911e-faac33ebcd88';
-  $display->content['new-d1d504cb-3624-4fcd-911e-faac33ebcd88'] = $pane;
-  $display->panels['first'][2] = 'new-d1d504cb-3624-4fcd-911e-faac33ebcd88';
+  $pane->uuid = '41b8b990-51b0-4701-a477-5784db12973a';
+  $display->content['new-41b8b990-51b0-4701-a477-5784db12973a'] = $pane;
+  $display->panels['first'][2] = 'new-41b8b990-51b0-4701-a477-5784db12973a';
   $pane = new stdClass();
   $pane->pid = 'new-f6c516c3-dec4-44bb-8b71-6f0265cf7532';
   $pane->panel = 'second';
@@ -343,7 +429,8 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '%user:field-puluser-nick-name\'s Subjects',
+    'override_title_text' => 'Subjects',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -361,7 +448,7 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
