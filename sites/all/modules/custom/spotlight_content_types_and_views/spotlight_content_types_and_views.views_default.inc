@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * spotlight_content_types_and_views.views_default.inc
@@ -60,7 +61,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -77,7 +78,9 @@ function spotlight_content_types_and_views_views_default_views() {
 
   /* Display: Spotlight News by Exhibitions  */
   $handler = $view->new_display('panel_pane', 'Spotlight News by Exhibitions ', 'panel_pane_1');
-  $handler->display->display_options['link_url'] = 'news/!1';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'news/categories/exhibitions';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -182,7 +185,6 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -252,7 +254,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_url']['click_sort_column'] = 'url';
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -273,7 +275,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -325,7 +327,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_url']['click_sort_column'] = 'url';
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
