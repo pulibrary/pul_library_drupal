@@ -151,10 +151,11 @@ function training_and_workshops_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => 1,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 2,
       ),
       'email' => array(
