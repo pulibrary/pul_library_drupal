@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_study_rooms.strongarm.inc
@@ -58,6 +59,27 @@ function library_study_rooms_strongarm() {
   $strongarm->name = 'comment_subject_field_study_room';
   $strongarm->value = 1;
   $export['comment_subject_field_study_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_study_room';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_study_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_study_room';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_study_room'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_study_room';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_study_room'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -184,6 +206,16 @@ function library_study_rooms_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_database_subjects_pattern';
   $strongarm->value = 'databases/subject/[term:name]';
   $export['pathauto_taxonomy_term_database_subjects_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_study_room';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_study_room'] = $strongarm;
 
   return $export;
 }

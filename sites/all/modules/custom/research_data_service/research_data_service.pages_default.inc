@@ -77,7 +77,7 @@ function research_data_service_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Princeton Research Data Service';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__research-data-services';
@@ -141,7 +141,7 @@ function research_data_service_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40934',
+      'nid' => '41161',
     ),
     'override_title' => 1,
     'override_title_text' => 'Contact',
@@ -226,7 +226,7 @@ function research_data_service_default_page_manager_handlers() {
     'admin_title' => 'PRDS - Director Pullquote',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<p><img src="http://library-stage.princeton.edu/sites/default/files/hwcowles.jpg" alt="Portrait of Wind Cowles" style="max-height: 220px;"></p><p>Wind Cowles, PhD<br>Director, Princeton Research Data Service</p><blockquote style="font-size: 1.5em; font-weight: 500; margin: 0;">“As a former university researcher, I know all too well how many claims there are on people’s time and one of my main goals to make sure that we make the process of data management as painless as possible.”</blockquote><p><a href="https://library.princeton.edu">Q&amp;A with Wind Cowles Wind</a></p>',
+    'body' => '<p><img src="https://library.princeton.edu/sites/default/files/hwcowles.jpg" alt="Portrait of Wind Cowles" style="max-height: 220px;"></p><p>Wind Cowles, PhD<br>Director, Princeton Research Data Service</p><blockquote style="font-size: 1.5em; font-weight: 500; margin: 0;">“As a former university researcher, I know all too well how many claims there are on people’s time and one of my main goals is to make sure that we make the process of data management as painless as possible.”</blockquote><p><a href="https://library.princeton.edu/news/general/2019-05-01/qa-wind-cowles-director-princeton-research-data-service">Q&amp;A with Wind Cowles</a></p>',
     'format' => 'full_html',
     'substitute' => 1,
   );
@@ -250,7 +250,7 @@ function research_data_service_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40934',
+      'nid' => '41161',
     ),
     'override_title' => 1,
     'override_title_text' => 'Princeton Research Data Service',

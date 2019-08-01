@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_undergraduate_student_import.feeds_importer_default.inc
@@ -22,7 +23,7 @@ function pul_undergraduate_student_import_feeds_importer_default() {
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
         'delete_uploaded_file' => 0,
-        'direct' => 1,
+        'direct' => 0,
         'directory' => 'private://feeds',
         'allowed_schemes' => array(
           'private' => 'private',
@@ -66,8 +67,10 @@ function pul_undergraduate_student_import_feeds_importer_default() {
           24 => 0,
           25 => 0,
           26 => 0,
-          27 => 0,
           28 => 0,
+          30 => 0,
+          31 => 0,
+          27 => 0,
         ),
         'status' => '1',
         'defuse_mail' => 0,
@@ -88,6 +91,7 @@ function pul_undergraduate_student_import_feeds_importer_default() {
             'source' => 'email',
             'target' => 'mail',
             'unique' => 1,
+            'language' => 'und',
           ),
           3 => array(
             'source' => 'First Name',
@@ -101,12 +105,17 @@ function pul_undergraduate_student_import_feeds_importer_default() {
             'unique' => FALSE,
             'language' => 'und',
           ),
+          5 => array(
+            'source' => 'class',
+            'target' => 'field_personal_lib_class_year',
+            'unique' => FALSE,
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '2',
         'update_non_existent' => 'skip',
         'input_format' => 'plain_text',
-        'skip_hash_check' => 0,
+        'skip_hash_check' => 1,
         'bundle' => 'user',
         'language' => 'und',
       ),
@@ -116,7 +125,7 @@ function pul_undergraduate_student_import_feeds_importer_default() {
     'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
-    'process_in_background' => 1,
+    'process_in_background' => 0,
   );
   $export['pul_undergraduate_student'] = $feeds_importer;
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_library_users.features.user_permission.inc
@@ -344,7 +345,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_current_personal_lib'] = array(
     'name' => 'edit field_current_personal_lib',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -374,7 +374,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_fun_fact'] = array(
     'name' => 'edit field_personal_lib_fun_fact',
     'roles' => array(
-      'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -513,6 +512,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_libguide_author_id'] = array(
     'name' => 'edit field_puluser_libguide_author_id',
     'roles' => array(
+      'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -633,6 +633,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_sublibrarian'] = array(
     'name' => 'edit field_puluser_sublibrarian',
     'roles' => array(
+      'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -673,7 +674,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_current_personal_lib'] = array(
     'name' => 'edit own field_current_personal_lib',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -703,8 +703,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_fun_fact'] = array(
     'name' => 'edit own field_personal_lib_fun_fact',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
-      'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -844,6 +842,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_libguide_author_id'] = array(
     'name' => 'edit own field_puluser_libguide_author_id',
     'roles' => array(
+      'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -964,6 +963,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_sublibrarian'] = array(
     'name' => 'edit own field_puluser_sublibrarian',
     'roles' => array(
+      'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1004,7 +1004,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_current_personal_lib'] = array(
     'name' => 'view field_current_personal_lib',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -1036,9 +1035,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_fun_fact'] = array(
     'name' => 'view field_personal_lib_fun_fact',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
-      'Undergraduate Student' => 'Undergraduate Student',
-      'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -1373,7 +1369,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_current_personal_lib'] = array(
     'name' => 'view own field_current_personal_lib',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
       'Undergraduate Student' => 'Undergraduate Student',
       'administrator' => 'administrator',
     ),
@@ -1404,8 +1399,6 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_fun_fact'] = array(
     'name' => 'view own field_personal_lib_fun_fact',
     'roles' => array(
-      'Personal Librarian' => 'Personal Librarian',
-      'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',

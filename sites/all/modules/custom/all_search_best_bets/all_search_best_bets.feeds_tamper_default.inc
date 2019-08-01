@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * all_search_best_bets.feeds_tamper_default.inc

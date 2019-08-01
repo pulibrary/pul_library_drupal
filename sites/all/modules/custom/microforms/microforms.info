@@ -65,6 +65,7 @@ features[variable][] = pathauto_node_microforms_newspapers_pattern
 features[variable][] = pathauto_taxonomy_term_newspaper_cities_pattern
 features[variable][] = pathauto_taxonomy_term_newspaper_countries_pattern
 features[variable][] = pathauto_taxonomy_term_newspaper_us_states_pattern
+features[variable][] = xmlsitemap_settings_menu_link_menu-selected-collections-and-ti
 features[views_view][] = microforms
 features[views_view][] = microforms_states_and_countries
 features_exclude[dependencies][ctools] = ctools

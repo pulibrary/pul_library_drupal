@@ -416,7 +416,7 @@ lewis',
   $pane->configuration = array(
     'label' => 'hidden',
     'formatter' => 'link_default',
-    'delta_limit' => '5',
+    'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter_settings' => array(),
@@ -469,6 +469,33 @@ lewis',
   $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
   $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
   $display->panels['second'][4] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+  $pane = new stdClass();
+  $pane->pid = 'new-3ec84489-f710-4118-b759-956186cc03a0';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'name' => 'lewis_highlights_for',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '3ec84489-f710-4118-b759-956186cc03a0';
+  $display->content['new-3ec84489-f710-4118-b759-956186cc03a0'] = $pane;
+  $display->panels['second'][5] = 'new-3ec84489-f710-4118-b759-956186cc03a0';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';
@@ -828,6 +855,32 @@ lewis/*',
   $pane->uuid = 'b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
   $display->content['new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0'] = $pane;
   $display->panels['second'][3] = 'new-b22b4508-ac43-4d6e-8474-70ea0f7f08e0';
+  $pane = new stdClass();
+  $pane->pid = 'new-19299b3a-1e18-44d9-aeca-a9da7e413343';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'lewis_highlights_for';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '19299b3a-1e18-44d9-aeca-a9da7e413343';
+  $display->content['new-19299b3a-1e18-44d9-aeca-a9da7e413343'] = $pane;
+  $display->panels['second'][4] = 'new-19299b3a-1e18-44d9-aeca-a9da7e413343';
   $pane = new stdClass();
   $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
   $pane->panel = 'top';

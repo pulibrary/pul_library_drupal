@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_custom_page_layouts.pages_default.inc
@@ -569,6 +570,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'display' => 'block',
     'override_title' => 1,
     'override_title_text' => 'Find a Subject Librarian',
+    'context' => array(
+      0 => '',
+    ),
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -681,7 +686,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
@@ -1171,10 +1179,12 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title';
+  $display->title = 'Digital Initiatives';
   $display->uuid = '2339d0bf-d92a-45ed-b6af-1ac355bad346';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_digital_initiatives_panel_context';
@@ -2132,7 +2142,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->uuid = 'e1ed7925-338e-4854-9ce7-1b4fade481a8';
   $display->content['new-e1ed7925-338e-4854-9ce7-1b4fade481a8'] = $pane;
   $display->panels['third'][5] = 'new-e1ed7925-338e-4854-9ce7-1b4fade481a8';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -3609,8 +3619,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'args' => '',
     'url' => '',
     'display' => 'block',
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Find a Subject Librarian',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4190,7 +4201,7 @@ find/website/%query',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'single';
+  $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -4213,7 +4224,7 @@ find/website/%query',
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-5641ed17-42c4-4b2c-8ff7-8773970967b6';
-  $pane->panel = 'middle';
+  $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'general_site_keyword_search-panel_pane_2';
   $pane->shown = TRUE;
@@ -4229,10 +4240,10 @@ find/website/%query',
   $pane->locks = array();
   $pane->uuid = '5641ed17-42c4-4b2c-8ff7-8773970967b6';
   $display->content['new-5641ed17-42c4-4b2c-8ff7-8773970967b6'] = $pane;
-  $display->panels['middle'][0] = 'new-5641ed17-42c4-4b2c-8ff7-8773970967b6';
+  $display->panels['first'][0] = 'new-5641ed17-42c4-4b2c-8ff7-8773970967b6';
   $pane = new stdClass();
   $pane->pid = 'new-72d62efb-2811-4c7b-929d-5da545a5303a';
-  $pane->panel = 'middle';
+  $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'general_site_user_search-panel_pane_1';
   $pane->shown = FALSE;
@@ -4248,7 +4259,30 @@ find/website/%query',
   $pane->locks = array();
   $pane->uuid = '72d62efb-2811-4c7b-929d-5da545a5303a';
   $display->content['new-72d62efb-2811-4c7b-929d-5da545a5303a'] = $pane;
-  $display->panels['middle'][1] = 'new-72d62efb-2811-4c7b-929d-5da545a5303a';
+  $display->panels['first'][1] = 'new-72d62efb-2811-4c7b-929d-5da545a5303a';
+  $pane = new stdClass();
+  $pane->pid = 'new-05ef493c-71da-46c2-88fa-37854c2a72c8';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'facetapi-R2AEH1rq0GDt4tPXW5YJy8gBEbPVTgPU';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Filter by Tags',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '05ef493c-71da-46c2-88fa-37854c2a72c8';
+  $display->content['new-05ef493c-71da-46c2-88fa-37854c2a72c8'] = $pane;
+  $display->panels['second'][0] = 'new-05ef493c-71da-46c2-88fa-37854c2a72c8';
   $pane = new stdClass();
   $pane->pid = 'new-b9add156-3e5a-40fe-bed2-ee7edbda2721';
   $pane->panel = 'top';

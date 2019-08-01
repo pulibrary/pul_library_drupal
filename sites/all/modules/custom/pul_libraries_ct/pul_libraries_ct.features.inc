@@ -40,7 +40,7 @@ function pul_libraries_ct_node_info() {
       'base' => 'node_content',
       'description' => t('Configure settings and content for the landing pages of sections on the site'),
       'has_title' => '1',
-      'title_label' => t('Library Name'),
+      'title_label' => t('Section Name'),
       'help' => '',
     ),
   );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * marquand_rare_books_vault.facetapi_defaults.inc

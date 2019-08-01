@@ -22,7 +22,7 @@ function pul_libraries_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Branding',
-    'weight' => '16',
+    'weight' => '14',
     'children' => array(
       0 => 'field_library_image',
       1 => 'field_library_exterior_image',

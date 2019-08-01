@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_periodicals.features.field_base.inc

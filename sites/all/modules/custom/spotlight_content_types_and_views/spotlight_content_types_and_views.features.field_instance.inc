@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * spotlight_content_types_and_views.features.field_instance.inc

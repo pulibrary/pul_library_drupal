@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * search_results_views.views_default.inc
@@ -77,7 +78,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['breadcrumb'] = 'Database %title';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
   /* Filter criterion: Indexed Content: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'search_api_index_database_keyword_index';
@@ -170,7 +170,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_db_access_url_url']['label'] = '';
   $handler->display->display_options['fields']['field_db_access_url_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_db_access_url_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_db_access_url_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_db_access_url_url']['link_to_entity'] = 0;
   /* Field: Indexed Content: Use EZproxy */
   $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
@@ -302,7 +301,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_db_access_url_url']['label'] = '';
   $handler->display->display_options['fields']['field_db_access_url_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_db_access_url_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_db_access_url_url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['field_db_access_url_url']['link_to_entity'] = 0;
   /* Field: Indexed Content: Use EZproxy */
   $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
@@ -458,7 +456,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
   /* Filter criterion: Indexed Content: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_node_index';
@@ -560,6 +557,8 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = 'Displaying @start - @end of @total
+<br><br>';
   $handler->display->display_options['argument_input'] = array(
     'search_api_views_fulltext' => array(
       'type' => 'panel',
@@ -646,7 +645,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
   /* Filter criterion: Indexed User: User roles */
   $handler->display->display_options['filters']['roles']['id'] = 'roles';
   $handler->display->display_options['filters']['roles']['table'] = 'search_api_index_staff_users';
@@ -953,7 +951,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'search_api_views_fulltext' => array(
       'type' => 'panel',
@@ -1249,7 +1246,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed User: User roles */
