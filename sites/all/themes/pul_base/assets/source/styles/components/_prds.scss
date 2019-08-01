@@ -1,0 +1,29 @@
+.section-prds .single-region--top .pane-branch-library-image-panel-pane-1,
+.section-prds .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+.section-prds .view-branch-library-image .view-content {
+  margin-bottom: 0;
+}
+
+.section-prds .pane-menu-menu-section-research-data-ser {
+  ul {
+    background: $orange-light;
+    border: 2px solid $black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+  }
+  a {
+    padding: 1rem;
+    text-decoration: none;
+    align-items: flex-start;
+
+    &:hover,
+    &:focus,
+    &.active-trail {
+      background: $gray-light;
+    }
+  }
+}
