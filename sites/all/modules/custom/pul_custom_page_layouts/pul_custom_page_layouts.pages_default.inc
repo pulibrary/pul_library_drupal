@@ -2690,7 +2690,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Find Databases related to <span class=\'query\'>%query</span>';
+  $display->title = '';
   $display->uuid = '8c252a09-0ce1-47a9-8c4e-31443fa68035';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_prds_search_results_page__panel_context_13c89ea1-deaa-44fa-8d38-24616ee45f01';
