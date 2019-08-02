@@ -1,0 +1,196 @@
+<?php
+
+function prdssearch_block_get_current_filter($path) {
+  $path_parts = explode("prds/search/", $path);
+  if(isset($path_parts[1])) {
+    return $path_parts[1];
+  }
+}
+
+function prdssearch_block_form($form, &$form_state) {
+  $path = $_GET['q'];
+  $query = prdssearch_block_get_current_filter($path);
+  if(isset($query)) {
+    $default_value = $query;
+  } else {
+    $default_value = variable_get('prds_search_hint');
+  }  
+
+  $form = array();
+
+  //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
+  
+  $form['query'] = array (
+    '#type'  => 'textfield',
+    '#title' =>  t('Search Research Data Service'),
+    '#size'  => 80,
+    '#default_value' => $default_value,
+    '#attributes' => array(
+        'placeholder' => $default_value,
+    )
+  );
+  $form['#attached']['js'][] = drupal_get_path('module', 'prdssearch_block') .'/prdssearch_block.js'; 
+  $hint_settings = array('prds_search_hint' => variable_get('prds_search_hint'),
+                         'prds_search_error' => variable_get('prds_search_error')
+                         );   
+  $form['#attached']['js'][] = array(
+    'data' => array('prdssearch_block' => $hint_settings),
+    'type' => 'setting',
+   );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+   );
+   /*
+    * Force form to post through the base url
+    */
+   $form['#action'] = url('');
+   $form['#attached']['js'][] = drupal_get_path('module', 'prdssearch_block') .'/prdssearch_block.js'; 
+   //$form['#validate'] = array('prdssearch_block_form_validate');
+   $form['#submit'] = array('prdssearch_block_form_redirect');
+   $form['#target'] = "_parent";
+   $form['#method'] = "post";
+   $form['#suffix'] = $form_suffix;
+   return $form;
+
+}
+
+function prdssearch_block_form_validate($form, &$form_state) {
+  
+  $term = $form_state['values']['query'];
+  if($term == "" || $term == variable_get('prds_search_hint')) {
+    form_set_error('term', t('Enter a Topic'));
+  }
+  
+  return $form;
+  
+}
+
+/*
+function prdssearch_block_form_validate($form, &$form_state) {
+  $query = 
+}
+*/
+
+function prdssearch_block_form_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'prds/search/' . $form_state['values']['query'];
+}
+
+function prdssearch_block_contents() {
+  return drupal_get_form('prdssearch_block_form'); // must define a function 
+}
+
+function prdssearch_block_form_submit($form, &$form_state) {
+  drupal_set_message(t('Submitting values: @values', array('@values' => var_export($form_state['values'], TRUE))));
+}
+
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a default page to explain what this module does.
+ */
+function prdssearch_block_menu() {
+  $items['prdssearch_block'] = array(
+    'page callback' => 'prdssearch_block_page',
+    'access callback' => TRUE,
+    'title' => 'Catalog Search',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_page()
+ * 
+ */
+ 
+function prdssearch_block_page() {
+    
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Configure The PRDS Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
+  );
+    
+  return $page;
+}
+
+
+/**
+ * Implements hook_block_info()
+ * 
+ */
+
+function prdssearch_block_block_info() {
+  
+  $blocks['prdssearch_search'] = array(
+      // info: The name of the block.
+      'info' => t('PRDS Search'),
+      // Block caching options (per role, per user, etc.)
+      'cache' => DRUPAL_CACHE_PER_PAGE, // default
+      'visibility' => BLOCK_VISIBILITY_LISTED,
+   );
+   
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * This hook declares configuration options for blocks provided by this module.
+ */
+function prdssearch_block_block_configure($delta = '') {
+ 
+  $form = array();
+  if ($delta == 'prdssearch_search') { //in this case the delta is the name of block
+
+    $form['prds_search_hint'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Search Box Hints'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the hint when PRDS search box is displayed.'),
+      '#default_value' => variable_get('prds_search_hint',  t('Hint you want to display.')),
+    );
+    $form['prds_search_error'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Error Message'),
+      '#size' => 60,
+      '#description' => t('This text will appear as the error message when the user submits an empty query.'),
+      '#default_value' => variable_get('prds_search_error',  t('Supply a Topic.')),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ *
+ * Make sure we can save the block 
+ */
+function prdssearch_block_block_save($delta = '', $edit = array()) {
+  // We need to save settings from the configuration form.
+  // We need to check $delta to make sure we are saving the right block.
+  if ($delta == 'prdssearch_search') {
+    // Have Drupal save the string to the database.
+    variable_set('prds_search_hint', $edit['prds_search_hint']);
+    variable_set('prds_search_error', $edit['prds_search_error']);
+  }
+  return;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function prdssearch_block_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  if ($delta == 'prdssearch_search') {
+    $block['content'] = prdssearch_block_contents($delta);
+  }
+  
+  return $block;
+}
+
+
+
+
