@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * all_search_best_bets.features.field_instance.inc
@@ -48,14 +49,14 @@ function all_search_best_bets_field_default_field_instances() {
         'enable' => 0,
         'profile' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 200,
       ),
       'type' => 'text_textfield',
       'weight' => 36,
@@ -145,6 +146,7 @@ function all_search_best_bets_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',

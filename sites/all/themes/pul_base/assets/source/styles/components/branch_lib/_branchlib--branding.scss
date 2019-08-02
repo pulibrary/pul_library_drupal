@@ -68,8 +68,8 @@
   }
 }
 
-.section-tsd .nine_three_stacked-region--top,
-.section-tsd .single-region--top {
+.section-cams .nine_three_stacked-region--top,
+.section-cams .single-region--top {
   @include breakpoint($tab) {
     h2 {
       color: $black;

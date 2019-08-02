@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ip_protected_resource_layouts_importer_roles.pages_default.inc
@@ -63,102 +64,104 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $display->cache = array();
   $display->title = '%node:title';
   $display->uuid = 'a98a76fa-fa85-4c80-814f-c100329e3e12';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view_panel_context_34';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-7368db21-8e77-416f-8daf-b8243307a217';
-    $pane->panel = 'first';
-    $pane->type = 'entity_view';
-    $pane->subtype = 'node';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 2,
-            ),
+  $pane = new stdClass();
+  $pane->pid = 'new-7368db21-8e77-416f-8daf-b8243307a217';
+  $pane->panel = 'first';
+  $pane->type = 'entity_view';
+  $pane->subtype = 'node';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7368db21-8e77-416f-8daf-b8243307a217';
-    $display->content['new-7368db21-8e77-416f-8daf-b8243307a217'] = $pane;
-    $display->panels['first'][0] = 'new-7368db21-8e77-416f-8daf-b8243307a217';
-    $pane = new stdClass();
-    $pane->pid = 'new-4e537281-8182-4cbd-8280-c89d659c81f5';
-    $pane->panel = 'first';
-    $pane->type = 'block';
-    $pane->subtype = 'cas-login';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 1,
-            ),
+    ),
+  );
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7368db21-8e77-416f-8daf-b8243307a217';
+  $display->content['new-7368db21-8e77-416f-8daf-b8243307a217'] = $pane;
+  $display->panels['first'][0] = 'new-7368db21-8e77-416f-8daf-b8243307a217';
+  $pane = new stdClass();
+  $pane->pid = 'new-4e537281-8182-4cbd-8280-c89d659c81f5';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'cas-login';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Sign in to View Connection Information',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4e537281-8182-4cbd-8280-c89d659c81f5';
-    $display->content['new-4e537281-8182-4cbd-8280-c89d659c81f5'] = $pane;
-    $display->panels['first'][1] = 'new-4e537281-8182-4cbd-8280-c89d659c81f5';
-    $pane = new stdClass();
-    $pane->pid = 'new-199dd781-7836-48bf-a578-b68d552c31ea';
-    $pane->panel = 'second';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-get-help-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '199dd781-7836-48bf-a578-b68d552c31ea';
-    $display->content['new-199dd781-7836-48bf-a578-b68d552c31ea'] = $pane;
-    $display->panels['second'][0] = 'new-199dd781-7836-48bf-a578-b68d552c31ea';
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Sign in to View Connection Information',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '4e537281-8182-4cbd-8280-c89d659c81f5';
+  $display->content['new-4e537281-8182-4cbd-8280-c89d659c81f5'] = $pane;
+  $display->panels['first'][1] = 'new-4e537281-8182-4cbd-8280-c89d659c81f5';
+  $pane = new stdClass();
+  $pane->pid = 'new-199dd781-7836-48bf-a578-b68d552c31ea';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-get-help-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '199dd781-7836-48bf-a578-b68d552c31ea';
+  $display->content['new-199dd781-7836-48bf-a578-b68d552c31ea'] = $pane;
+  $display->panels['second'][0] = 'new-199dd781-7836-48bf-a578-b68d552c31ea';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_information_for_pages.pages_default.inc
@@ -143,7 +144,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'visitor-services',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -171,7 +175,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'accessing-collections',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -193,7 +200,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'visiting-campus',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -277,6 +287,9 @@ function pul_information_for_pages_default_page_manager_handlers() {
       'middle_bottom' => array(),
       'right_bottom' => NULL,
       'right_side' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'third' => NULL,
     ),
     'right' => array(
       'style' => 'default',
@@ -313,7 +326,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->panel = 'bottom';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_news-panel_pane_5';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'context' => array(
@@ -1112,6 +1125,32 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $display->content['new-fe08fcee-3bfd-465e-9aad-bbd36f39e4fe'] = $pane;
   $display->panels['second'][2] = 'new-fe08fcee-3bfd-465e-9aad-bbd36f39e4fe';
   $pane = new stdClass();
+  $pane->pid = 'new-c065e0d8-6ba0-402d-8900-1a28a6a9a304';
+  $pane->panel = 'third';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Staff Intranet Login',
+    'title' => 'PUL Staff Intranet',
+    'title_heading' => 'h2',
+    'body' => '<p><a href="http://pulstaff.princeton.edu">Login via CAS to PUL Connecting</a>.&nbsp;</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c065e0d8-6ba0-402d-8900-1a28a6a9a304';
+  $display->content['new-c065e0d8-6ba0-402d-8900-1a28a6a9a304'] = $pane;
+  $display->panels['third'][0] = 'new-c065e0d8-6ba0-402d-8900-1a28a6a9a304';
+  $pane = new stdClass();
   $pane->pid = 'new-c9b01ce2-9c5e-4b58-992a-3a2a9b5d6cae';
   $pane->panel = 'third';
   $pane->type = 'block';
@@ -1142,17 +1181,17 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'c9b01ce2-9c5e-4b58-992a-3a2a9b5d6cae';
   $display->content['new-c9b01ce2-9c5e-4b58-992a-3a2a9b5d6cae'] = $pane;
-  $display->panels['third'][0] = 'new-c9b01ce2-9c5e-4b58-992a-3a2a9b5d6cae';
+  $display->panels['third'][1] = 'new-c9b01ce2-9c5e-4b58-992a-3a2a9b5d6cae';
   $pane = new stdClass();
   $pane->pid = 'new-3ad97791-df89-4717-a3b1-9415790c0650';
   $pane->panel = 'third';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_newsletter_listings-panel_pane_2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -1179,11 +1218,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '3ad97791-df89-4717-a3b1-9415790c0650';
   $display->content['new-3ad97791-df89-4717-a3b1-9415790c0650'] = $pane;
-  $display->panels['third'][1] = 'new-3ad97791-df89-4717-a3b1-9415790c0650';
+  $display->panels['third'][2] = 'new-3ad97791-df89-4717-a3b1-9415790c0650';
   $pane = new stdClass();
   $pane->pid = 'new-e1b74698-5d91-484c-a338-9ce45fe762ec';
   $pane->panel = 'third';
@@ -1214,17 +1253,17 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'e1b74698-5d91-484c-a338-9ce45fe762ec';
   $display->content['new-e1b74698-5d91-484c-a338-9ce45fe762ec'] = $pane;
-  $display->panels['third'][2] = 'new-e1b74698-5d91-484c-a338-9ce45fe762ec';
+  $display->panels['third'][3] = 'new-e1b74698-5d91-484c-a338-9ce45fe762ec';
   $pane = new stdClass();
   $pane->pid = 'new-ebbbd00d-7b0d-48be-8808-dcdadc8413a9';
   $pane->panel = 'third';
   $pane->type = 'views_panes';
   $pane->subtype = 'staff_announcement_lists-panel_pane_2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -1250,17 +1289,17 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'ebbbd00d-7b0d-48be-8808-dcdadc8413a9';
   $display->content['new-ebbbd00d-7b0d-48be-8808-dcdadc8413a9'] = $pane;
-  $display->panels['third'][3] = 'new-ebbbd00d-7b0d-48be-8808-dcdadc8413a9';
+  $display->panels['third'][4] = 'new-ebbbd00d-7b0d-48be-8808-dcdadc8413a9';
   $pane = new stdClass();
   $pane->pid = 'new-f57e8ae9-2d4e-4726-bc61-ecc1027ea162';
   $pane->panel = 'third';
   $pane->type = 'views_panes';
   $pane->subtype = 'staff_announcement_lists-panel_pane_1';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -1287,11 +1326,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'f57e8ae9-2d4e-4726-bc61-ecc1027ea162';
   $display->content['new-f57e8ae9-2d4e-4726-bc61-ecc1027ea162'] = $pane;
-  $display->panels['third'][4] = 'new-f57e8ae9-2d4e-4726-bc61-ecc1027ea162';
+  $display->panels['third'][5] = 'new-f57e8ae9-2d4e-4726-bc61-ecc1027ea162';
   $pane = new stdClass();
   $pane->pid = 'new-fc087a63-da78-4be6-8787-866bbc4e5b82';
   $pane->panel = 'third';
@@ -1313,11 +1352,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = 'fc087a63-da78-4be6-8787-866bbc4e5b82';
   $display->content['new-fc087a63-da78-4be6-8787-866bbc4e5b82'] = $pane;
-  $display->panels['third'][5] = 'new-fc087a63-da78-4be6-8787-866bbc4e5b82';
+  $display->panels['third'][6] = 'new-fc087a63-da78-4be6-8787-866bbc4e5b82';
   $pane = new stdClass();
   $pane->pid = 'new-6be21293-f4c3-4c6c-9fbf-f9142eb65d44';
   $pane->panel = 'third';
@@ -1349,11 +1388,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '6be21293-f4c3-4c6c-9fbf-f9142eb65d44';
   $display->content['new-6be21293-f4c3-4c6c-9fbf-f9142eb65d44'] = $pane;
-  $display->panels['third'][6] = 'new-6be21293-f4c3-4c6c-9fbf-f9142eb65d44';
+  $display->panels['third'][7] = 'new-6be21293-f4c3-4c6c-9fbf-f9142eb65d44';
   $pane = new stdClass();
   $pane->pid = 'new-19908441-b7d9-485d-9373-2486f9704cac';
   $pane->panel = 'third';
@@ -1376,7 +1415,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->configuration = array(
     'admin_title' => 'Staff Calendar of Events',
-    'title' => 'Staff Calendar of Events',
+    'title' => 'PUL Events Calendar',
     'title_heading' => 'h2',
     'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
@@ -1388,17 +1427,17 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '19908441-b7d9-485d-9373-2486f9704cac';
   $display->content['new-19908441-b7d9-485d-9373-2486f9704cac'] = $pane;
-  $display->panels['third'][7] = 'new-19908441-b7d9-485d-9373-2486f9704cac';
+  $display->panels['third'][8] = 'new-19908441-b7d9-485d-9373-2486f9704cac';
   $pane = new stdClass();
   $pane->pid = 'new-e18e3b91-c256-4f78-871e-bef1390d33ec';
   $pane->panel = 'third';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -1414,10 +1453,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
     ),
   );
   $pane->configuration = array(
-    'admin_title' => 'HipChat/Slack',
-    'title' => 'Slack',
+    'admin_title' => 'Staff Chat Room',
+    'title' => 'Staff Chat Room',
     'title_heading' => 'h2',
-    'body' => '<p>Join the PUL staff channel.&nbsp;</p>',
+    'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
     'substitute' => 1,
   );
@@ -1427,11 +1466,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = 'e18e3b91-c256-4f78-871e-bef1390d33ec';
   $display->content['new-e18e3b91-c256-4f78-871e-bef1390d33ec'] = $pane;
-  $display->panels['third'][8] = 'new-e18e3b91-c256-4f78-871e-bef1390d33ec';
+  $display->panels['third'][9] = 'new-e18e3b91-c256-4f78-871e-bef1390d33ec';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

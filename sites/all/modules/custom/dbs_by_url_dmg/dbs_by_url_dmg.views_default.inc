@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * dbs_by_url_dmg.views_default.inc
@@ -27,6 +28,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     3 => '3',
+    1 => '1',
     25 => '25',
     4 => '4',
     8 => '8',
@@ -168,13 +170,13 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -333,7 +335,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -347,7 +349,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Select';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
@@ -355,55 +357,6 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::node_assign_owner_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_delete_item' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'rules_component::rules_dmg_resource_update' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'rules_component::rules_library_news_item_alert' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_make_sticky_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_make_unsticky_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
       'postpone_processing' => 1,
@@ -417,96 +370,10 @@ function dbs_by_url_dmg_views_default_views() {
         ),
       ),
     ),
-    'rules_component::rules_new_database_notification' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'rules_component::rules_new_node_added' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::node_promote_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_publish_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_unpromote_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_save_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_unpublish_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::node_unpublish_by_keyword_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::auto_entitylabel_entity_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::pathauto_node_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -645,7 +512,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_access_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_db_access_url']['empty'] = 'No URL Provided';
   $handler->display->display_options['fields']['field_db_access_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_db_access_url']['type'] = 'link_url';
+  $handler->display->display_options['fields']['field_db_access_url']['type'] = 'link_plain';
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -700,7 +567,10 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['title'] = 'Libguides DB Export';
   $handler->display->display_options['display_description'] = 'Export Using Format Libguides Recommends';
   $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+  );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
@@ -728,14 +598,22 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = 'LINK URL';
   $handler->display->display_options['fields']['path']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Content: Date Coverage */
+  $handler->display->display_options['fields']['field_db_date_coverage']['id'] = 'field_db_date_coverage';
+  $handler->display->display_options['fields']['field_db_date_coverage']['table'] = 'field_data_field_db_date_coverage';
+  $handler->display->display_options['fields']['field_db_date_coverage']['field'] = 'field_db_date_coverage';
+  $handler->display->display_options['fields']['field_db_date_coverage']['label'] = '';
+  $handler->display->display_options['fields']['field_db_date_coverage']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_db_date_coverage']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'DESCRIPTION';
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body] 
+[field_db_date_coverage]';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '475';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
@@ -756,6 +634,14 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_access_note']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_db_access_note']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_db_access_note']['field_api_classes'] = TRUE;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'LAST UPDATED';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'search_api_facetapi_DAY';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'search_api_facetapi_YEAR';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -900,7 +786,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_db_ezproxy_special']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_db_ezproxy_special']['field_api_classes'] = TRUE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';

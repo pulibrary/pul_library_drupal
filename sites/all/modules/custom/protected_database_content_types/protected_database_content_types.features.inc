@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * protected_database_content_types.features.inc

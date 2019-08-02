@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * linked_data_4_production.pages_default.inc
@@ -51,7 +52,7 @@ function linked_data_4_production_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'tsd/cams/ld4p/news',
+            'paths' => 'cams/ld4p/news',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -93,61 +94,63 @@ function linked_data_4_production_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '4991b3f8-f0d6-443f-8126-703c8368e731';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__linked-data-news-index';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-491332a8-5279-4562-b7ec-4d8e2280deac';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'library_news-panel_pane_20';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '491332a8-5279-4562-b7ec-4d8e2280deac';
-    $display->content['new-491332a8-5279-4562-b7ec-4d8e2280deac'] = $pane;
-    $display->panels['middle'][0] = 'new-491332a8-5279-4562-b7ec-4d8e2280deac';
-    $pane = new stdClass();
-    $pane->pid = 'new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
-    $pane->panel = 'top';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_pul_landing_logo';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'image',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'file_view_mode' => 'default',
-        'image_style' => 'branch_image_branding',
-        'image_link' => '',
-      ),
-      'context' => 'context_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'LD4P at Princeton',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
-    $display->content['new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1'] = $pane;
-    $display->panels['top'][0] = 'new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
+  $pane = new stdClass();
+  $pane->pid = 'new-491332a8-5279-4562-b7ec-4d8e2280deac';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_20';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '491332a8-5279-4562-b7ec-4d8e2280deac';
+  $display->content['new-491332a8-5279-4562-b7ec-4d8e2280deac'] = $pane;
+  $display->panels['middle'][0] = 'new-491332a8-5279-4562-b7ec-4d8e2280deac';
+  $pane = new stdClass();
+  $pane->pid = 'new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
+  $pane->panel = 'top';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_pul_landing_logo';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'file_view_mode' => 'default',
+      'image_style' => 'branch_image_branding',
+      'image_link' => '',
+    ),
+    'context' => 'context_entity:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'LD4P at Princeton',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
+  $display->content['new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1'] = $pane;
+  $display->panels['top'][0] = 'new-529ab1c7-8c4c-4d15-bcdb-00cdeaf2ede1';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -177,7 +180,7 @@ function linked_data_4_production_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'tsd/cams/ld4p',
+            'paths' => 'cams/ld4p',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -219,122 +222,124 @@ function linked_data_4_production_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '4991b3f8-f0d6-443f-8126-703c8368e731';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__linked-data-project';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
-    $pane->panel = 'first';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'About the Project',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c076ecca-83b9-4466-9ee3-5da77b8e934f';
-    $display->content['new-c076ecca-83b9-4466-9ee3-5da77b8e934f'] = $pane;
-    $display->panels['first'][0] = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
-    $pane = new stdClass();
-    $pane->pid = 'new-c068bce0-9bff-425c-be37-ae30cbed154b';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'library_news-panel_pane_19';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c068bce0-9bff-425c-be37-ae30cbed154b';
-    $display->content['new-c068bce0-9bff-425c-be37-ae30cbed154b'] = $pane;
-    $display->panels['second'][0] = 'new-c068bce0-9bff-425c-be37-ae30cbed154b';
-    $pane = new stdClass();
-    $pane->pid = 'new-55fecbc9-268b-48c6-a084-4361f53c3c61';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'branch_features-panel_pane_5';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '27317',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '55fecbc9-268b-48c6-a084-4361f53c3c61';
-    $display->content['new-55fecbc9-268b-48c6-a084-4361f53c3c61'] = $pane;
-    $display->panels['second'][1] = 'new-55fecbc9-268b-48c6-a084-4361f53c3c61';
-    $pane = new stdClass();
-    $pane->pid = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
-    $pane->panel = 'top';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_pul_landing_logo';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'image',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'colorbox_node_style' => '',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'post',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'auto',
-        'colorbox_caption_custom' => '',
-        'image_style' => 'branch_image_branding',
-        'image_link' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'LD4P at Princeton',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5d223fff-4316-4331-8440-b15d74d84da4';
-    $display->content['new-5d223fff-4316-4331-8440-b15d74d84da4'] = $pane;
-    $display->panels['top'][0] = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
+  $pane = new stdClass();
+  $pane->pid = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
+  $pane->panel = 'first';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'text_default',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'About the Project',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c076ecca-83b9-4466-9ee3-5da77b8e934f';
+  $display->content['new-c076ecca-83b9-4466-9ee3-5da77b8e934f'] = $pane;
+  $display->panels['first'][0] = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
+  $pane = new stdClass();
+  $pane->pid = 'new-c068bce0-9bff-425c-be37-ae30cbed154b';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_19';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c068bce0-9bff-425c-be37-ae30cbed154b';
+  $display->content['new-c068bce0-9bff-425c-be37-ae30cbed154b'] = $pane;
+  $display->panels['second'][0] = 'new-c068bce0-9bff-425c-be37-ae30cbed154b';
+  $pane = new stdClass();
+  $pane->pid = 'new-55fecbc9-268b-48c6-a084-4361f53c3c61';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_features-panel_pane_5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '27317',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '55fecbc9-268b-48c6-a084-4361f53c3c61';
+  $display->content['new-55fecbc9-268b-48c6-a084-4361f53c3c61'] = $pane;
+  $display->panels['second'][1] = 'new-55fecbc9-268b-48c6-a084-4361f53c3c61';
+  $pane = new stdClass();
+  $pane->pid = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
+  $pane->panel = 'top';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_pul_landing_logo';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'colorbox_node_style' => '',
+      'colorbox_image_style' => '',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_caption' => 'auto',
+      'colorbox_caption_custom' => '',
+      'image_style' => 'branch_image_branding',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'LD4P at Princeton',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5d223fff-4316-4331-8440-b15d74d84da4';
+  $display->content['new-5d223fff-4316-4331-8440-b15d74d84da4'] = $pane;
+  $display->panels['top'][0] = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

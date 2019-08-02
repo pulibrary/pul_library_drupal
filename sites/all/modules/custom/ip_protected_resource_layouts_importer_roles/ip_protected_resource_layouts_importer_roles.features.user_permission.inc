@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ip_protected_resource_layouts_importer_roles.features.user_permission.inc

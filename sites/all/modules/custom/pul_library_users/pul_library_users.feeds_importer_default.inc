@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_library_users.feeds_importer_default.inc
@@ -26,7 +27,7 @@ function pul_library_users_feeds_importer_default() {
         'allowed_schemes' => array(
           'public' => 'public',
         ),
-        'delete_uploaded_file' => FALSE,
+        'delete_uploaded_file' => 0,
       ),
     ),
     'parser' => array(
@@ -109,18 +110,21 @@ function pul_library_users_feeds_importer_default() {
             'target' => 'field_puluser_department',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
           ),
           7 => array(
             'source' => 'Division',
             'target' => 'field_puluser_division',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
           ),
           8 => array(
             'source' => 'Section',
             'target' => 'field_puluser_section',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
           ),
           9 => array(
             'source' => 'NetID',
@@ -165,72 +169,67 @@ function pul_library_users_feeds_importer_default() {
             'language' => 'und',
           ),
           16 => array(
-            'source' => 'subjectSpec',
-            'target' => 'field_puluser_sublibrarian',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          17 => array(
             'source' => 'StaffSort',
             'target' => 'field_pul_user_staff_sort',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          18 => array(
+          17 => array(
             'source' => 'UnitSort',
             'target' => 'field_puluser_unit_sort',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          19 => array(
+          18 => array(
             'source' => 'DeptSort',
             'target' => 'field_puluser_department_sort',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          20 => array(
+          19 => array(
             'source' => 'Unit',
             'target' => 'field_puluser_unit',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
           ),
-          21 => array(
+          20 => array(
             'source' => 'DivSect',
             'target' => 'field_puluser_divsect',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          22 => array(
+          21 => array(
             'source' => 'Office',
             'target' => 'field_puluser_office',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          23 => array(
+          22 => array(
             'source' => 'Building',
             'target' => 'field_puluser_building_location',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          24 => array(
+          23 => array(
             'source' => 'lastName',
             'target' => 'field_puluser_lname',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          25 => array(
+          24 => array(
             'source' => 'firstName',
             'target' => 'field_puluser_fname',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          26 => array(
+          25 => array(
             'source' => 'middleName',
             'target' => 'field_puluser_middle_name',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          27 => array(
+          26 => array(
             'source' => 'nickName',
             'target' => 'field_puluser_nick_name',
             'unique' => FALSE,
@@ -248,7 +247,7 @@ function pul_library_users_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
+    'import_period' => '43200',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,

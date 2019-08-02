@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * training_and_workshops.strongarm.inc
@@ -135,6 +136,27 @@ function training_and_workshops_strongarm() {
   $strongarm->name = 'comment_training_session';
   $strongarm->value = '1';
   $export['comment_training_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_training_session';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_training_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_training_session';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_training_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_training_session';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_training_session'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -368,6 +390,16 @@ function training_and_workshops_strongarm() {
   $strongarm->name = 'pathauto_node_training_session_pattern';
   $strongarm->value = 'training/sessions/[node:nid]';
   $export['pathauto_node_training_session_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_training_session';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_training_session'] = $strongarm;
 
   return $export;
 }

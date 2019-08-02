@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * marquand_sales_catalogs.views_default.inc
@@ -30,7 +31,7 @@ function marquand_sales_catalogs_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -124,7 +125,7 @@ function marquand_sales_catalogs_views_default_views() {
   $handler->display->display_options['fields']['field_sc_notes']['id'] = 'field_sc_notes';
   $handler->display->display_options['fields']['field_sc_notes']['table'] = 'field_data_field_sc_notes';
   $handler->display->display_options['fields']['field_sc_notes']['field'] = 'field_sc_notes';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -312,16 +313,43 @@ function marquand_sales_catalogs_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Sales catalog text';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>Questions about sale catalog holdings may be directed to the Marquand reference desk or <a href="mailto:marquand@princeton.edu">e-mail</a> with the specifics of what is needed. Many current sales catalogs from Christie’s, Sotheby’s, Bonham’s, Hotel Drouot, Phillips, Swann and William Doyle have been boxed by city and date and are mostly out at ReCAP (browse below). Marquand has many more catalogs from c. 1820s-present for more than 250 auction houses, both cataloged and un-cataloged. Book and coin sales, unless mixed content, are handled by Rare Books & Special Collections in Firestone Library.</p>';
+  $handler->display->display_options['header']['area']['content'] = '<p>Questions about sale catalog holdings may be directed to the Marquand reference desk or e-mail  with the specifics of what is needed. Many current sales catalogs from Christie\'s, Sotheby\'s, Bonham\'s, Hotel Drouot, Phillips, Swann, William Doyle and others have been boxed by city and date and are mostly off-site out at ReCAP (browse below). These require 1-2 business days\' notice at least and up to a week if many catalogs are needed. Marquand has many more catalogs from c. 1820s-1990s for more than 250 auction houses, both cataloged and un-cataloged. Book and coin sales, unless mixed content, are handled by Rare Books & Special Collections in Firestone Library.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Header: Global: Result summary with an additional token to change the items/page */
   $handler->display->display_options['header']['webform_result']['id'] = 'webform_result';
   $handler->display->display_options['header']['webform_result']['table'] = 'views';
   $handler->display->display_options['header']['webform_result']['field'] = 'webform_result';
   $handler->display->display_options['header']['webform_result']['content'] = 'Displaying @start - @end of @total. <div class="pull-right">@items_per_page_links</div>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_sc_date']['id'] = 'field_sc_date';
+  $handler->display->display_options['fields']['field_sc_date']['table'] = 'field_data_field_sc_date';
+  $handler->display->display_options['fields']['field_sc_date']['field'] = 'field_sc_date';
+  /* Field: Content: Auction House */
+  $handler->display->display_options['fields']['field_sc_auction_house']['id'] = 'field_sc_auction_house';
+  $handler->display->display_options['fields']['field_sc_auction_house']['table'] = 'field_data_field_sc_auction_house';
+  $handler->display->display_options['fields']['field_sc_auction_house']['field'] = 'field_sc_auction_house';
+  $handler->display->display_options['fields']['field_sc_auction_house']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: City  */
+  $handler->display->display_options['fields']['field_sc_city']['id'] = 'field_sc_city';
+  $handler->display->display_options['fields']['field_sc_city']['table'] = 'field_data_field_sc_city';
+  $handler->display->display_options['fields']['field_sc_city']['field'] = 'field_sc_city';
+  $handler->display->display_options['fields']['field_sc_city']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Sale */
+  $handler->display->display_options['fields']['field_sc_sale']['id'] = 'field_sc_sale';
+  $handler->display->display_options['fields']['field_sc_sale']['table'] = 'field_data_field_sc_sale';
+  $handler->display->display_options['fields']['field_sc_sale']['field'] = 'field_sc_sale';
+  /* Field: Content: Name */
+  $handler->display->display_options['fields']['field_sc_name']['id'] = 'field_sc_name';
+  $handler->display->display_options['fields']['field_sc_name']['table'] = 'field_data_field_sc_name';
+  $handler->display->display_options['fields']['field_sc_name']['field'] = 'field_sc_name';
+  /* Field: Content: Notes */
+  $handler->display->display_options['fields']['field_sc_notes']['id'] = 'field_sc_notes';
+  $handler->display->display_options['fields']['field_sc_notes']['table'] = 'field_data_field_sc_notes';
+  $handler->display->display_options['fields']['field_sc_notes']['field'] = 'field_sc_notes';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

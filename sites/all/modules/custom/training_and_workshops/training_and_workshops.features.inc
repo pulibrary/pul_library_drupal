@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * training_and_workshops.features.inc

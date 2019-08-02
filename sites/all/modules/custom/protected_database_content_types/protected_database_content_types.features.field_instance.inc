@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * protected_database_content_types.features.field_instance.inc
@@ -10,7 +11,7 @@
 function protected_database_content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-cas_protected_db_resource-body'
+  // Exported field_instance: 'node-cas_protected_db_resource-body'.
   $field_instances['node-cas_protected_db_resource-body'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => NULL,
@@ -81,7 +82,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cas_protected_db_resource-field_cas_db_copyright_statement'
+  // Exported field_instance:
+  // 'node-cas_protected_db_resource-field_cas_db_copyright_statement'.
   $field_instances['node-cas_protected_db_resource-field_cas_db_copyright_statement'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => array(
@@ -151,7 +153,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cas_protected_db_resource-field_cas_db_form_setup'
+  // Exported field_instance:
+  // 'node-cas_protected_db_resource-field_cas_db_form_setup'.
   $field_instances['node-cas_protected_db_resource-field_cas_db_form_setup'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => NULL,
@@ -217,7 +220,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cas_protected_db_resource-field_cas_db_password'
+  // Exported field_instance:
+  // 'node-cas_protected_db_resource-field_cas_db_password'.
   $field_instances['node-cas_protected_db_resource-field_cas_db_password'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => NULL,
@@ -283,7 +287,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cas_protected_db_resource-field_cas_db_resource_url'
+  // Exported field_instance:
+  // 'node-cas_protected_db_resource-field_cas_db_resource_url'.
   $field_instances['node-cas_protected_db_resource-field_cas_db_resource_url'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => NULL,
@@ -365,7 +370,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-cas_protected_db_resource-field_cas_db_username'
+  // Exported field_instance:
+  // 'node-cas_protected_db_resource-field_cas_db_username'.
   $field_instances['node-cas_protected_db_resource-field_cas_db_username'] = array(
     'bundle' => 'cas_protected_db_resource',
     'default_value' => NULL,
@@ -431,7 +437,7 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-body'
+  // Exported field_instance: 'node-ip_protected_db_resource-body'.
   $field_instances['node-ip_protected_db_resource-body'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => array(
@@ -514,7 +520,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_additional_desc'
+  // Exported field_instance:
+  // 'node-ip_protected_db_resource-field_ip_db_additional_desc'.
   $field_instances['node-ip_protected_db_resource-field_ip_db_additional_desc'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => NULL,
@@ -544,6 +551,7 @@ function protected_database_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -554,6 +562,7 @@ function protected_database_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => TRUE,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -593,7 +602,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_copyright_info'
+  // Exported field_instance:
+  // 'node-ip_protected_db_resource-field_ip_db_copyright_info'.
   $field_instances['node-ip_protected_db_resource-field_ip_db_copyright_info'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => array(
@@ -692,7 +702,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_password'
+  // Exported field_instance:
+  // 'node-ip_protected_db_resource-field_ip_db_password'.
   $field_instances['node-ip_protected_db_resource-field_ip_db_password'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => NULL,
@@ -764,7 +775,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_resource_url'
+  // Exported field_instance:
+  // 'node-ip_protected_db_resource-field_ip_db_resource_url'.
   $field_instances['node-ip_protected_db_resource-field_ip_db_resource_url'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => NULL,
@@ -852,7 +864,8 @@ function protected_database_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ip_protected_db_resource-field_ip_db_username'
+  // Exported field_instance:
+  // 'node-ip_protected_db_resource-field_ip_db_username'.
   $field_instances['node-ip_protected_db_resource-field_ip_db_username'] = array(
     'bundle' => 'ip_protected_db_resource',
     'default_value' => NULL,

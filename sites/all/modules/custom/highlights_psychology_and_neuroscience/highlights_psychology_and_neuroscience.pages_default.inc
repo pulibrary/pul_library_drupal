@@ -614,7 +614,7 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40878',
+      'nid' => '40971',
     ),
     'override_title' => 1,
     'override_title_text' => 'Featured Resources',
@@ -640,7 +640,7 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40878',
+      'nid' => '40971',
     ),
     'override_title' => 1,
     'override_title_text' => 'Events',
@@ -666,7 +666,7 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40878',
+      'nid' => '40971',
     ),
     'override_title' => 1,
     'override_title_text' => 'Key Links',
@@ -692,7 +692,7 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
-      'nid' => '40878',
+      'nid' => '40971',
     ),
     'override_title' => 1,
     'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',

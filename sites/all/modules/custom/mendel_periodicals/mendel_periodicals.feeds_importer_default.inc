@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_periodicals.feeds_importer_default.inc

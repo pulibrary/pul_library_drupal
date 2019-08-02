@@ -385,7 +385,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 19,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -574,7 +574,7 @@ function pul_libraries_ct_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 21,
+      'weight' => 32,
     ),
     'workbench_access_field' => 0,
   );
@@ -650,7 +650,7 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 19,
+      'weight' => 30,
     ),
     'workbench_access_field' => 0,
   );
@@ -726,7 +726,7 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 20,
+      'weight' => 31,
     ),
     'workbench_access_field' => 0,
   );
@@ -1486,7 +1486,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 16,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -1799,7 +1799,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 15,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1813,7 +1813,7 @@ function pul_libraries_ct_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Deprecated. Do not use any longer. Will be removed. ',
+    'description' => 'Check if this entry should appear on the main list of libraries at /libraries.',
     'display' => array(
       'brief_faq_display' => array(
         'label' => 'above',
@@ -1862,7 +1862,7 @@ function pul_libraries_ct_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_libs_cols_main_menu',
-    'label' => 'Add to Libraries & Collections Dropdown Menu',
+    'label' => 'Add to Libraries List',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2096,7 +2096,7 @@ function pul_libraries_ct_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 18,
+      'weight' => 28,
     ),
     'workbench_access_field' => 0,
   );
@@ -2166,7 +2166,7 @@ function pul_libraries_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 29,
     ),
     'workbench_access_field' => 0,
   );
@@ -2391,17 +2391,17 @@ function pul_libraries_ct_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add links to specific library databases. If the database you want isn\'t listed contact e-support to have it added. ');
-  t('Add to Libraries & Collections Dropdown Menu');
+  t('Add to Libraries List');
   t('Address 1');
   t('Address 2');
   t('Body');
   t('Branch Services Quick Links');
   t('Branch Spotlight');
   t('Building');
+  t('Check if this entry should appear on the main list of libraries at /libraries.');
   t('City');
   t('Deprecated. Do not use any longer.');
   t('Deprecated. Do not use any longer. Will be removed.');
-  t('Deprecated. Do not use any longer. Will be removed. ');
   t('Displayed as the main "blurb" on the library landing page.');
   t('Displayed on the https://library.princeton.edu/libraries index page. ');
   t('E-Mail Address');
