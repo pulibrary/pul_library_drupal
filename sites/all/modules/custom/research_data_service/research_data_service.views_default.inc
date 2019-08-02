@@ -71,13 +71,28 @@ function research_data_service_views_default_views() {
   $handler->display->display_options['filters']['field_tags']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['filters']['field_tags']['field'] = 'field_tags';
   $handler->display->display_options['filters']['field_tags']['value'] = array(
-    0 => '30401',
+    0 => '30424',
   );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'section-search';
+
+  /* Display: PRDS Search Results Pane */
+  $handler = $view->new_display('panel_pane', 'PRDS Search Results Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Research Data Service Search Results';
+  $handler->display->display_options['argument_input'] = array(
+    'search_api_views_fulltext' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Search: Fulltext search',
+    ),
+  );
   $export['section_search'] = $view;
 
   return $export;
