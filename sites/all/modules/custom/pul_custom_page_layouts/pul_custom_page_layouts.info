@@ -22,6 +22,7 @@ features[page_manager_pages][] = home_page
 features[page_manager_pages][] = lewis_locker_request_form
 features[page_manager_pages][] = lewis_room_registration_form
 features[page_manager_pages][] = not_found_page
+features[page_manager_pages][] = prds_search_results_page
 features[page_manager_pages][] = research_categories_landing_page
 features[page_manager_pages][] = service_categories_landing_page
 features[page_manager_pages][] = staff_landing_page

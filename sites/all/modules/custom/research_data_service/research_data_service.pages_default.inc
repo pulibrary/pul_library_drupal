@@ -88,7 +88,7 @@ function research_data_service_default_page_manager_handlers() {
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-section---research-data-ser';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -747,6 +747,29 @@ prds/info-sessions',
   $pane->uuid = '0e09b36a-4943-4207-bf73-e4ed247eea4d';
   $display->content['new-0e09b36a-4943-4207-bf73-e4ed247eea4d'] = $pane;
   $display->panels['top'][1] = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
+  $pane = new stdClass();
+  $pane->pid = 'new-8b840c62-51c0-45e0-9e68-f7d66baee930';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8b840c62-51c0-45e0-9e68-f7d66baee930';
+  $display->content['new-8b840c62-51c0-45e0-9e68-f7d66baee930'] = $pane;
+  $display->panels['top'][2] = 'new-8b840c62-51c0-45e0-9e68-f7d66baee930';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
