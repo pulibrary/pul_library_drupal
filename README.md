@@ -94,7 +94,7 @@ $aliases['local'] = array(
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=./dump.sql`
+7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=/tmp/dump.sql; scp pulsys@library:/tmp/dump.sql .`
 8. `lando db-import dump.sql`
 9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 10. `lando drush uli your-username`
