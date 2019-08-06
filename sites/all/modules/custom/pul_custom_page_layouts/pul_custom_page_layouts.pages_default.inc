@@ -2660,7 +2660,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'prds-results-page one-sidebar sidebar-second',
+    'body_classes_to_add' => 'prds-results-page section-services branch-libraries',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -2690,7 +2690,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Search Results for %query in Princeton Research Data Service';
   $display->uuid = '8c252a09-0ce1-47a9-8c4e-31443fa68035';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_prds_search_results_page__panel_context_13c89ea1-deaa-44fa-8d38-24616ee45f01';
@@ -2726,8 +2726,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'arguments' => array(
       'nid' => '41161',
     ),
-    'override_title' => 0,
-    'override_title_text' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Princeton Research Data Service',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -2742,14 +2742,14 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->content['new-0d57f30b-bf4b-4def-bccb-cfc9d1d30f22'] = $pane;
   $display->panels['top'][0] = 'new-0d57f30b-bf4b-4def-bccb-cfc9d1d30f22';
   $pane = new stdClass();
-  $pane->pid = 'new-5ca35116-e96f-4897-b011-411351c5400d';
+  $pane->pid = 'new-c3de70b9-80bf-4c94-9aa0-80b940640865';
   $pane->panel = 'top';
   $pane->type = 'block';
-  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->subtype = 'menu-menu-section---research-data-ser';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -2761,9 +2761,32 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
+  $pane->uuid = 'c3de70b9-80bf-4c94-9aa0-80b940640865';
+  $display->content['new-c3de70b9-80bf-4c94-9aa0-80b940640865'] = $pane;
+  $display->panels['top'][1] = 'new-c3de70b9-80bf-4c94-9aa0-80b940640865';
+  $pane = new stdClass();
+  $pane->pid = 'new-5ca35116-e96f-4897-b011-411351c5400d';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
   $pane->uuid = '5ca35116-e96f-4897-b011-411351c5400d';
   $display->content['new-5ca35116-e96f-4897-b011-411351c5400d'] = $pane;
-  $display->panels['top'][1] = 'new-5ca35116-e96f-4897-b011-411351c5400d';
+  $display->panels['top'][2] = 'new-5ca35116-e96f-4897-b011-411351c5400d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
