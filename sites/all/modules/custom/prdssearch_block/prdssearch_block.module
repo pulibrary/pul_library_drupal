@@ -3,7 +3,7 @@
 function prdssearch_block_get_current_filter($path) {
   $path_parts = explode("prds/search/", $path);
   if(isset($path_parts[1])) {
-    return $path_parts[1];
+    return filter_xss($path_parts[1]);
   }
 }
 
