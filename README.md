@@ -94,7 +94,7 @@ $aliases['local'] = array(
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=./dump.sql`
+7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' > dump.sql` Please note: if you have a passphrase on your rsa key, you must enter it after running this command. It will not prompt you. Then you must remove the first line from the resulting file before continuing to the next step.
 8. `lando db-import dump.sql`
 9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 10. `lando drush uli your-username`
