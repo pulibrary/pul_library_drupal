@@ -1,10 +1,10 @@
-.section-prds .single-region--top .pane-branch-library-image-panel-pane-1,
-.section-prds .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
-.section-prds .view-branch-library-image .view-content {
+.section-research-data .single-region--top .pane-branch-library-image-panel-pane-1,
+.section-research-data .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+.section-research-data .view-branch-library-image .view-content {
   margin-bottom: 0;
 }
 
-.section-prds .pane-menu-menu-section-research-data-ser {
+.section-research-data .pane-menu-menu-section-research-data-ser {
   ul {
     background: $orange-light;
     border: 2px solid $black;
@@ -26,4 +26,8 @@
       background: $gray-light;
     }
   }
+}
+
+.prdssearch-block-form label {
+    @include visually-hidden;
 }

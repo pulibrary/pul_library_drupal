@@ -2,7 +2,8 @@
 .view-search-libraries-and-collections,
 .view-databases-keyword-search ul,
 .view-general-site-keyword-search ul,
-.view-general-site-user-search ul {
+.view-general-site-user-search ul,
+.view-section-search ul {
   font-family: $font-dejavu;
   font-size: 14px;
   margin-bottom: 1em;
@@ -207,4 +208,12 @@
   h2 {
     margin-top: 0.5em;
   }
+}
+
+.single-region--middle .view-section-search ul {
+    margin: 0;
+
+    li {
+        margin-bottom: 0;
+    }
 }

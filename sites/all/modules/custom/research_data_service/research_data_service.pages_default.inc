@@ -296,14 +296,14 @@ function research_data_service_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'prds/stage-1
-prds/stage-1/*
-prds/stage-2
-prds/stage-2/*
-prds/stage-3
-prds/stage-3/*
-prds/stage-4
-prds/stage-4/*',
+            'paths' => 'research-data/planning
+research-data/planning/*
+research-data/acquisition
+research-data/acquisition/*
+research-data/analysis
+research-data/analysis/*
+research-data/dissemination
+research-data/dissemination/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -342,24 +342,13 @@ prds/stage-4/*',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-d22cbc7a-eee0-4a1c-816a-5574d9156782';
+  $pane->pid = 'new-2855073f-8706-4acc-8153-88763cb6e5d3';
   $pane->panel = 'first';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-prds-stage-1';
+  $pane->subtype = 'menu-menu-prds-stages';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'prds/stage-1
-prds/stage-1/*',
-        ),
-        'context' => 'empty',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'override_title' => 1,
@@ -374,83 +363,9 @@ prds/stage-1/*',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'd22cbc7a-eee0-4a1c-816a-5574d9156782';
-  $display->content['new-d22cbc7a-eee0-4a1c-816a-5574d9156782'] = $pane;
-  $display->panels['first'][0] = 'new-d22cbc7a-eee0-4a1c-816a-5574d9156782';
-  $pane = new stdClass();
-  $pane->pid = 'new-b42a52ba-5d42-4982-8b59-c8b0105c1a43';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-prds-stage-2';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'prds/stage-2
-prds/stage-2/*',
-        ),
-        'context' => 'empty',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'b42a52ba-5d42-4982-8b59-c8b0105c1a43';
-  $display->content['new-b42a52ba-5d42-4982-8b59-c8b0105c1a43'] = $pane;
-  $display->panels['first'][1] = 'new-b42a52ba-5d42-4982-8b59-c8b0105c1a43';
-  $pane = new stdClass();
-  $pane->pid = 'new-2855073f-8706-4acc-8153-88763cb6e5d3';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-prds-stages';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'prds/stage-3
-prds/stage-3/*
-prds/stage-4
-prds/stage-4/*',
-        ),
-        'context' => 'empty',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
   $pane->uuid = '2855073f-8706-4acc-8153-88763cb6e5d3';
   $display->content['new-2855073f-8706-4acc-8153-88763cb6e5d3'] = $pane;
-  $display->panels['first'][2] = 'new-2855073f-8706-4acc-8153-88763cb6e5d3';
+  $display->panels['first'][0] = 'new-2855073f-8706-4acc-8153-88763cb6e5d3';
   $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane->panel = 'second';
@@ -525,6 +440,29 @@ prds/stage-4/*',
   $display->content['new-0e09b36a-4943-4207-bf73-e4ed247eea4d'] = $pane;
   $display->panels['top'][1] = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
   $pane = new stdClass();
+  $pane->pid = 'new-c655af12-82a6-431a-9363-b3848ee29ffd';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'c655af12-82a6-431a-9363-b3848ee29ffd';
+  $display->content['new-c655af12-82a6-431a-9363-b3848ee29ffd'] = $pane;
+  $display->panels['top'][2] = 'new-c655af12-82a6-431a-9363-b3848ee29ffd';
+  $pane = new stdClass();
   $pane->pid = 'new-1d8cd2b5-f04a-47a1-bd01-187af8b74d01';
   $pane->panel = 'top';
   $pane->type = 'custom';
@@ -558,11 +496,11 @@ prds/stage-1/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '1d8cd2b5-f04a-47a1-bd01-187af8b74d01';
   $display->content['new-1d8cd2b5-f04a-47a1-bd01-187af8b74d01'] = $pane;
-  $display->panels['top'][2] = 'new-1d8cd2b5-f04a-47a1-bd01-187af8b74d01';
+  $display->panels['top'][3] = 'new-1d8cd2b5-f04a-47a1-bd01-187af8b74d01';
   $pane = new stdClass();
   $pane->pid = 'new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
   $pane->panel = 'top';
@@ -597,11 +535,11 @@ prds/stage-2/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
   $display->content['new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42'] = $pane;
-  $display->panels['top'][3] = 'new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
+  $display->panels['top'][4] = 'new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
@@ -631,12 +569,12 @@ prds/stage-2/*',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'prds/about
-prds/why-rdm
-prds/calendar
-prds/workshops
-prds/faqs
-prds/info-sessions',
+            'paths' => 'research-data/about
+research-data/why-rdm
+research-data/calendar
+research-data/workshops
+research-data/faqs
+research-data/info-sessions',
           ),
           'context' => 'empty',
           'not' => FALSE,

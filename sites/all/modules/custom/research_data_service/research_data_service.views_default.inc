@@ -79,7 +79,7 @@ function research_data_service_views_default_views() {
   $handler->display->display_options['filters']['field_tags']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['filters']['field_tags']['field'] = 'field_tags';
   $handler->display->display_options['filters']['field_tags']['value'] = array(
-    0 => '30424',
+    0 => '30401',
   );
 
   /* Display: Page */
@@ -91,6 +91,12 @@ function research_data_service_views_default_views() {
   $handler = $view->new_display('panel_pane', 'PRDS Search Results Pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Search Results for <em>%1</em> in Princeton Research Data Service';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
     'search_api_views_fulltext' => array(
       'type' => 'panel',
