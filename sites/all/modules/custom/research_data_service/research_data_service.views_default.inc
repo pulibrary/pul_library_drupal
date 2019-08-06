@@ -90,7 +90,7 @@ function research_data_service_views_default_views() {
   /* Display: PRDS Search Results Pane */
   $handler = $view->new_display('panel_pane', 'PRDS Search Results Pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Research Data Service Search Results';
+  $handler->display->display_options['title'] = 'Search Results for <em>%1</em> in Princeton Research Data Service';
   $handler->display->display_options['argument_input'] = array(
     'search_api_views_fulltext' => array(
       'type' => 'panel',

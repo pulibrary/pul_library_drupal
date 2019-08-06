@@ -3,7 +3,7 @@
 function prdssearch_block_get_current_filter($path) {
   $path_parts = explode("prds/search/", $path);
   if(isset($path_parts[1])) {
-    return $path_parts[1];
+    return filter_xss($path_parts[1]);
   }
 }
 
@@ -44,7 +44,7 @@ function prdssearch_block_form($form, &$form_state) {
    /*
     * Force form to post through the base url
     */
-   $form['#action'] = url('');
+  //  $form['#action'] = url('');
    $form['#attached']['js'][] = drupal_get_path('module', 'prdssearch_block') .'/prdssearch_block.js'; 
    //$form['#validate'] = array('prdssearch_block_form_validate');
    $form['#submit'] = array('prdssearch_block_form_redirect');
