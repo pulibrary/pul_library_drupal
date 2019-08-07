@@ -128,7 +128,7 @@ namespace :drupal do
   desc "Enable SMTP module"
   task :enable_smtp do
       on release_roles :drupal_primary do
-          execute "cd #{release_path} && drush -r #{release_path} -y en --resolve-dependencies smtp"
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} -y en --resolve-dependencies smtp"
           info "Enabled the smtp module"
       end
   end
