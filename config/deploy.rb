@@ -155,6 +155,14 @@ namespace :drupal do
       end
   end
 
+  desc "Clear the drupal cache"
+  task :features_revert do
+      on release_roles :drupal_primary do
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} features-revert-all"
+          info "cleared the drupal cache"
+        end
+  end
+
   namespace :database do
 
     desc "Run Drush SQL Client against a local sql file SQL_DIR/SQL_FILE"
@@ -214,11 +222,13 @@ namespace :deploy do
       invoke "drupal:update_directory_owner"
       invoke "drupal:enable_smtp"
       invoke "drupal:cache_clear"
+      invoke "drupal:features_revert"
+      invoke! "drupal:cache_clear"
   end
      
   desc "Reset directory permissions and Restart apache"
   task :after_cleanup do
-      invoke "drupal:update_directory_owner"
+      invoke! "drupal:update_directory_owner"
       invoke "drupal:restart_apache2"
   end
 
