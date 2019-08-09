@@ -2611,6 +2611,191 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'prds_search_results_page';
+  $page->task = 'page';
+  $page->admin_title = 'PRDS Search Results Page';
+  $page->admin_description = 'PRDS Search Results';
+  $page->path = 'research-data/search/%query';
+  $page->access = array(
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array(
+    'type' => 'none',
+    'title' => '',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'query' => array(
+      'id' => 1,
+      'identifier' => 'String',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 1,
+      ),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_prds_search_results_page__panel_context_13c89ea1-deaa-44fa-8d38-24616ee45f01';
+  $handler->task = 'page';
+  $handler->subtask = 'prds_search_results_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'prds-results-page section-services branch-libraries',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'PRDS',
+    'panels_breadcrumbs_paths' => 'prds',
+    'panels_breadcrumbs_home' => 1,
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'single';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
+      'middle' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Search Results for %query in Princeton Research Data Service';
+  $display->uuid = '8c252a09-0ce1-47a9-8c4e-31443fa68035';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_prds_search_results_page__panel_context_13c89ea1-deaa-44fa-8d38-24616ee45f01';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-7ef9e86e-bc6a-4329-8b16-cf436f9471b6';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'section_search-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7ef9e86e-bc6a-4329-8b16-cf436f9471b6';
+  $display->content['new-7ef9e86e-bc6a-4329-8b16-cf436f9471b6'] = $pane;
+  $display->panels['middle'][0] = 'new-7ef9e86e-bc6a-4329-8b16-cf436f9471b6';
+  $pane = new stdClass();
+  $pane->pid = 'new-0d57f30b-bf4b-4def-bccb-cfc9d1d30f22';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_library_image-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '41161',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Princeton Research Data Service',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0d57f30b-bf4b-4def-bccb-cfc9d1d30f22';
+  $display->content['new-0d57f30b-bf4b-4def-bccb-cfc9d1d30f22'] = $pane;
+  $display->panels['top'][0] = 'new-0d57f30b-bf4b-4def-bccb-cfc9d1d30f22';
+  $pane = new stdClass();
+  $pane->pid = 'new-c3de70b9-80bf-4c94-9aa0-80b940640865';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-section---research-data-ser';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'c3de70b9-80bf-4c94-9aa0-80b940640865';
+  $display->content['new-c3de70b9-80bf-4c94-9aa0-80b940640865'] = $pane;
+  $display->panels['top'][1] = 'new-c3de70b9-80bf-4c94-9aa0-80b940640865';
+  $pane = new stdClass();
+  $pane->pid = 'new-5ca35116-e96f-4897-b011-411351c5400d';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '5ca35116-e96f-4897-b011-411351c5400d';
+  $display->content['new-5ca35116-e96f-4897-b011-411351c5400d'] = $pane;
+  $display->panels['top'][2] = 'new-5ca35116-e96f-4897-b011-411351c5400d';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['prds_search_results_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'research_categories_landing_page';
   $page->task = 'page';
   $page->admin_title = 'Research Categories Landing Page';

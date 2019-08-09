@@ -1,0 +1,80 @@
+.section-research-data .single-region--top .pane-branch-library-image-panel-pane-1,
+.section-research-data .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+.section-research-data .view-branch-library-image .view-content {
+  margin-bottom: 0;
+}
+
+.section-research-data .pane-menu-menu-section-research-data-ser {
+  ul {
+    background: $orange-light;
+    border: 2px solid $black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    align-items: flex-start;
+    padding: 1rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &.active-trail {
+      background: $gray-light;
+    }
+  }
+}
+
+.prdssearch-block-form label {
+  @include visually-hidden;
+}
+
+.section-research-data .single-region--top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .pane-menu-menu-section-research-data-ser {
+    width: 60%;
+  }
+
+  .pane-prdssearch-block-prdssearch-search {
+    width: 40%;
+  }
+}
+
+.section-research-data .prdssearch-block-form>div {
+  margin: 0;
+
+  input[type="text"] {
+    border-bottom: 2px solid $black;
+    border-right: 2px solid $black;
+    border-top: 2px solid $black;
+  }
+
+  button {
+    border-bottom: 2px solid $black;
+    border-right: 2px solid $black;
+    border-top: 2px solid $black;
+  }
+
+  div.form-item-query input[type="text"],
+  button {
+    background: $white;
+    border-radius: initial;
+    height: 59px;
+  }
+
+  button::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-1 -1 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='3' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Ccircle cx='8.5' cy='8.5' r='8'/%3E%3Cpath stroke-linecap='round' d='M14.156 14.156L23.5 23.5'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  button:hover,
+  button:focus {
+    background-color: none;
+  }
+}

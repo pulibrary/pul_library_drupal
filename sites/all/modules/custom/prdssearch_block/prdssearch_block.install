@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the catalog_search module.
+ */
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function prdssearch_block_uninstall() {
+  variable_del('prds_search_hint');
+}

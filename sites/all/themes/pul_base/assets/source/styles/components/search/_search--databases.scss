@@ -1,12 +1,14 @@
 .page-find,
 .section-research,
 .section-resource,
+.section-research-data,
 .branch-libraries {
   .dbsearch-block-form,
   .summon-block-form,
   .allsearch-block-form,
   .allsearch-block-form--2,
-  .website-block-form {
+  .website-block-form,
+  .prdssearch-block-form {
     > div {
       display: inline-block;
       margin-top: 0.9em;
