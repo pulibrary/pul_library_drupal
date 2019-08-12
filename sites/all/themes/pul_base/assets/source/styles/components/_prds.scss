@@ -33,7 +33,8 @@
   @include visually-hidden;
 }
 
-.section-research-data .single-region--top {
+.section-research-data .single-region--top,
+.section-research-data .three_nine_stacked-region--top {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -77,4 +78,37 @@
   button:focus {
     background-color: none;
   }
+}
+
+.prds--stages {
+  background: $gray-lightest;
+  display: flex;
+
+  .prds--stage {
+    width: 25%;
+  }
+
+  h2 {
+    background: $gray-light;
+    border-bottom: $border-solid $border-med $black;
+    border-top: $border-solid $border-med $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.25em;
+    text-align: center;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding: 1em;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+  }  
 }

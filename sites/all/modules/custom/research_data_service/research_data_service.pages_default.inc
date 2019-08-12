@@ -45,7 +45,7 @@ function research_data_service_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'prds',
+            'paths' => 'research-data',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -56,7 +56,7 @@ function research_data_service_default_page_manager_handlers() {
     'name' => 'research-data-services',
   );
   $display = new panels_display();
-  $display->layout = 'three-six-three-stacked';
+  $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -84,114 +84,6 @@ function research_data_service_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-section---research-data-ser';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '0e09b36a-4943-4207-bf73-e4ed247eea4d';
-  $display->content['new-0e09b36a-4943-4207-bf73-e4ed247eea4d'] = $pane;
-  $display->panels['first'][0] = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
-  $pane = new stdClass();
-  $pane->pid = 'new-dd004e53-5269-4da1-8232-9649a066cc22';
-  $pane->panel = 'first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Comin Soon PRDS',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<ul><li>Featured resources</li><li>Workshops</li><li>Managing Your Data</li><li>Curating Your Data</li><li>Retaining Your Data</li><li>Storing Your Data Repositories</li><li>Related articles</li><li>Helpful links</li></ul>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'dd004e53-5269-4da1-8232-9649a066cc22';
-  $display->content['new-dd004e53-5269-4da1-8232-9649a066cc22'] = $pane;
-  $display->panels['first'][1] = 'new-dd004e53-5269-4da1-8232-9649a066cc22';
-  $pane = new stdClass();
-  $pane->pid = 'new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '41161',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Contact',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
-  $display->content['new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba'] = $pane;
-  $display->panels['first'][2] = 'new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
-  $pane = new stdClass();
-  $pane->pid = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
-  $pane->panel = 'first';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_library_exterior_image';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(
-      'image_style' => '',
-      'image_link' => '',
-    ),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'bde42932-4c55-4c02-8a1b-31cb7a62db06';
-  $display->content['new-bde42932-4c55-4c02-8a1b-31cb7a62db06'] = $pane;
-  $display->panels['first'][3] = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
-  $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane->panel = 'middle';
   $pane->type = 'node_body';
@@ -216,17 +108,17 @@ function research_data_service_default_page_manager_handlers() {
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane = new stdClass();
-  $pane->pid = 'new-af94629b-1fa5-4b38-940f-13b8febdbd97';
-  $pane->panel = 'second';
+  $pane->pid = 'new-0433856f-e333-4938-b50c-c4429518ec4d';
+  $pane->panel = 'middle';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => 'PRDS - Director Pullquote',
+    'admin_title' => 'PRDS Stages',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<p><img src="https://library.princeton.edu/sites/default/files/hwcowles.jpg" alt="Portrait of Wind Cowles" style="max-height: 220px;"></p><p>Wind Cowles, PhD<br>Director, Princeton Research Data Service</p><blockquote style="font-size: 1.5em; font-weight: 500; margin: 0;">“As a former university researcher, I know all too well how many claims there are on people’s time and one of my main goals is to make sure that we make the process of data management as painless as possible.”</blockquote><p><a href="https://library.princeton.edu/news/general/2019-05-01/qa-wind-cowles-director-princeton-research-data-service">Q&amp;A with Wind Cowles</a></p>',
+    'body' => '<div class="prds--stage"><h2><a href="/research-data/planning">Planning</a></h2><ul><li>Data Management Plans &amp; Data Sharing Plans<ul><li>How do I know what my funder requires?</li><li>How do I create one?</li></ul></li><li>What can I do now to make handling data easier later?</li><li>What data should I be planning to share, and how?</li><li>What are my options if I’m working with very large datasets?</li></ul></div><div class="prds--stage"><h2><a href="/research-data/acquisition">Acquisition</a></h2><ul><li>What are data use agreements?</li><li>What should I be thinking of if I’m working with human subjects?</li><li>Data Security</li><li>Good practices for working with data</li><li>Finding datasets to work with</li></ul></div><div class="prds--stage"><h2><a href="/research-data/analysis">Analysis</a></h2><ul><li>What are Princeton’s Research Computing Resources?</li><li>How do I deal with large datasets?</li><li>What are some good options for sharing my active data with my collaborators?</li><li>Where can students get help with statistics?</li></ul></div><div class="prds--stage"><h2><a href="/research-data/dissemination">Dissemination</a></h2><ul><li>What are the advantages to publishing my data?</li><li>What does my publisher require?</li><li>How and where do I publish my dataset?</li><li>What’s a DOI?</li><li>What are my storage options if I don’t want to share my data publicly?</li></ul></div>',
     'format' => 'full_html',
     'substitute' => 1,
   );
@@ -234,13 +126,16 @@ function research_data_service_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'prds--stages',
+  );
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'af94629b-1fa5-4b38-940f-13b8febdbd97';
-  $display->content['new-af94629b-1fa5-4b38-940f-13b8febdbd97'] = $pane;
-  $display->panels['second'][0] = 'new-af94629b-1fa5-4b38-940f-13b8febdbd97';
+  $pane->uuid = '0433856f-e333-4938-b50c-c4429518ec4d';
+  $display->content['new-0433856f-e333-4938-b50c-c4429518ec4d'] = $pane;
+  $display->panels['middle'][1] = 'new-0433856f-e333-4938-b50c-c4429518ec4d';
   $pane = new stdClass();
   $pane->pid = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
   $pane->panel = 'top';
@@ -267,6 +162,137 @@ function research_data_service_default_page_manager_handlers() {
   $pane->uuid = '1bbb162e-5063-43cd-8dbf-37576edfd980';
   $display->content['new-1bbb162e-5063-43cd-8dbf-37576edfd980'] = $pane;
   $display->panels['top'][0] = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
+  $pane = new stdClass();
+  $pane->pid = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-section---research-data-ser';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '0e09b36a-4943-4207-bf73-e4ed247eea4d';
+  $display->content['new-0e09b36a-4943-4207-bf73-e4ed247eea4d'] = $pane;
+  $display->panels['top'][1] = 'new-0e09b36a-4943-4207-bf73-e4ed247eea4d';
+  $pane = new stdClass();
+  $pane->pid = 'new-a9084e35-0d91-4203-a09f-aa6d3da5b7c5';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'prdssearch_block-prdssearch_search';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'a9084e35-0d91-4203-a09f-aa6d3da5b7c5';
+  $display->content['new-a9084e35-0d91-4203-a09f-aa6d3da5b7c5'] = $pane;
+  $display->panels['top'][2] = 'new-a9084e35-0d91-4203-a09f-aa6d3da5b7c5';
+  $pane = new stdClass();
+  $pane->pid = 'new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_4';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '41161',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Contact',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
+  $display->content['new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba'] = $pane;
+  $display->panels['top'][3] = 'new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
+  $pane = new stdClass();
+  $pane->pid = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
+  $pane->panel = 'top';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_library_exterior_image';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => '',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'bde42932-4c55-4c02-8a1b-31cb7a62db06';
+  $display->content['new-bde42932-4c55-4c02-8a1b-31cb7a62db06'] = $pane;
+  $display->panels['top'][4] = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
+  $pane = new stdClass();
+  $pane->pid = 'new-af94629b-1fa5-4b38-940f-13b8febdbd97';
+  $pane->panel = 'top';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'PRDS - Director Pullquote',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<p><img src="https://library.princeton.edu/sites/default/files/hwcowles.jpg" alt="Portrait of Wind Cowles" style="max-height: 220px;"></p><p>Wind Cowles, PhD<br>Director, Princeton Research Data Service</p><blockquote style="font-size: 1.5em; font-weight: 500; margin: 0;">“As a former university researcher, I know all too well how many claims there are on people’s time and one of my main goals is to make sure that we make the process of data management as painless as possible.”</blockquote><p><a href="https://library.princeton.edu/news/general/2019-05-01/qa-wind-cowles-director-princeton-research-data-service">Q&amp;A with Wind Cowles</a></p>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = 'af94629b-1fa5-4b38-940f-13b8febdbd97';
+  $display->content['new-af94629b-1fa5-4b38-940f-13b8febdbd97'] = $pane;
+  $display->panels['top'][5] = 'new-af94629b-1fa5-4b38-940f-13b8febdbd97';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
@@ -474,8 +500,8 @@ research-data/dissemination/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'prds/stage-1
-prds/stage-1/*',
+          'paths' => 'research-data/planning
+research-data/planning/*',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -513,8 +539,8 @@ prds/stage-1/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'prds/stage-2
-prds/stage-2/*',
+          'paths' => 'research-data/acquisition
+research-data/acquisition/*',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -540,6 +566,84 @@ prds/stage-2/*',
   $pane->uuid = '2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
   $display->content['new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42'] = $pane;
   $display->panels['top'][4] = 'new-2fdb74ba-4e5a-4e93-ac34-09cf6adeed42';
+  $pane = new stdClass();
+  $pane->pid = 'new-a1ab4593-4c86-4683-af9f-51216c4ed61e';
+  $pane->panel = 'top';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'research-data/analysis
+research-data/analysis/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Stage 3 Heading',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h3>Stage 3: Analysis</h3><p>...</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = 'a1ab4593-4c86-4683-af9f-51216c4ed61e';
+  $display->content['new-a1ab4593-4c86-4683-af9f-51216c4ed61e'] = $pane;
+  $display->panels['top'][5] = 'new-a1ab4593-4c86-4683-af9f-51216c4ed61e';
+  $pane = new stdClass();
+  $pane->pid = 'new-c3eb97e2-3c0f-4e5e-a8ad-97570a153e72';
+  $pane->panel = 'top';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'research-data/dissemination
+research-data/dissemination/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Stage 4 Heading',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h3>Stage 4: Publishing and Preservation</h3><p>...</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = 'c3eb97e2-3c0f-4e5e-a8ad-97570a153e72';
+  $display->content['new-c3eb97e2-3c0f-4e5e-a8ad-97570a153e72'] = $pane;
+  $display->panels['top'][6] = 'new-c3eb97e2-3c0f-4e5e-a8ad-97570a153e72';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
