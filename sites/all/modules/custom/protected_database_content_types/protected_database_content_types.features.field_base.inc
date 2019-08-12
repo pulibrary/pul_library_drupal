@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * protected_database_content_types.features.field_base.inc
@@ -10,7 +11,7 @@
 function protected_database_content_types_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_cas_db_copyright_statement'
+  // Exported field_base: 'field_cas_db_copyright_statement'.
   $field_bases['field_cas_db_copyright_statement'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +33,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_cas_db_form_setup'
+  // Exported field_base: 'field_cas_db_form_setup'.
   $field_bases['field_cas_db_form_setup'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -54,7 +55,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_cas_db_password'
+  // Exported field_base: 'field_cas_db_password'.
   $field_bases['field_cas_db_password'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -78,7 +79,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_cas_db_resource_url'
+  // Exported field_base: 'field_cas_db_resource_url'.
   $field_bases['field_cas_db_resource_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -110,7 +111,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_cas_db_username'
+  // Exported field_base: 'field_cas_db_username'.
   $field_bases['field_cas_db_username'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -134,7 +135,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ip_db_additional_desc'
+  // Exported field_base: 'field_ip_db_additional_desc'.
   $field_bases['field_ip_db_additional_desc'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -174,7 +175,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ip_db_copyright_info'
+  // Exported field_base: 'field_ip_db_copyright_info'.
   $field_bases['field_ip_db_copyright_info'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -196,7 +197,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ip_db_password'
+  // Exported field_base: 'field_ip_db_password'.
   $field_bases['field_ip_db_password'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -220,7 +221,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ip_db_resource_url'
+  // Exported field_base: 'field_ip_db_resource_url'.
   $field_bases['field_ip_db_resource_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -252,7 +253,7 @@ function protected_database_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ip_db_username'
+  // Exported field_base: 'field_ip_db_username'.
   $field_bases['field_ip_db_username'] = array(
     'active' => 1,
     'cardinality' => 1,

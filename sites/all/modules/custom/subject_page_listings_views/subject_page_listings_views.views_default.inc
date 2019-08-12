@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * subject_page_listings_views.views_default.inc
@@ -483,6 +484,14 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_lname']['element_class'] = 'user--name';
   $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_lname']['element_default_classes'] = FALSE;
+  /* Field: User: PUL Netid */
+  $handler->display->display_options['fields']['field_puluser_netid']['id'] = 'field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['table'] = 'field_data_field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['field'] = 'field_puluser_netid';
+  $handler->display->display_options['fields']['field_puluser_netid']['relationship'] = 'field_subs_specialist_target_id';
+  $handler->display->display_options['fields']['field_puluser_netid']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_netid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_netid']['element_label_colon'] = FALSE;
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -490,12 +499,13 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['picture']['relationship'] = 'field_subs_specialist_target_id';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['picture']['alter']['text'] = '<a href="/staff/">[picture]
+  $handler->display->display_options['fields']['picture']['alter']['text'] = '<a href="/staff/[field_puluser_netid]">[picture]
 <h3 class="user--name">[field_puluser_lname]</h3></a>';
   $handler->display->display_options['fields']['picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['picture']['element_class'] = 'user--picture';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['picture']['empty'] = '<a href="/staff/[field_puluser_netid]"><div class="user--picture"><img typeof="foaf:Image" src="/sites/all/themes/pul_base/assets/public/images/default-user.svg" width="170" height="220" alt=""></div><h3 class="user--name">[field_puluser_lname]</h3></a>';
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
   /* Field: User: Official Title */
@@ -867,7 +877,7 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['fields']['last_updated']['relationship'] = 'field_subs_tier_two_resources_target_id';
   $handler->display->display_options['fields']['last_updated']['label'] = '';
   $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
-  /* Field: User: Link */
+  /* Field: User: Link to user */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
   $handler->display->display_options['fields']['view_user']['field'] = 'view_user';

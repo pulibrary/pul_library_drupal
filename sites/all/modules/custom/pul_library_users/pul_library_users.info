@@ -58,6 +58,7 @@ features[field_base][] = field_puluser_sublibrarian
 features[field_base][] = field_puluser_temp_staff_record
 features[field_base][] = field_puluser_unit
 features[field_base][] = field_puluser_unit_sort
+features[field_group][] = group_expert_profile|user|user|form
 features[field_group][] = group_personal_lib_info|user|user|form
 features[field_group][] = group_puluser_basicinfo|user|user|form
 features[field_group][] = group_user_admininfo|user|user|form

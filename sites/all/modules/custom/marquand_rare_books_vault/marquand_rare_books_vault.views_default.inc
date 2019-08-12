@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * marquand_rare_books_vault.views_default.inc
@@ -60,9 +61,9 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['field_rb_voyager_id']['label'] = '';
   $handler->display->display_options['fields']['field_rb_voyager_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['text'] = 'https://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['text'] = 'https://catalog.princeton.edu/catalog/[field_rb_voyager_id]';
   $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['path'] = 'https://catalog.princeton.edu/cgi-bin/Pwebrecon.cgi?BBID=[field_rb_voyager_id]';
+  $handler->display->display_options['fields']['field_rb_voyager_id']['alter']['path'] = 'https://catalog.princeton.edu/catalog/[field_rb_voyager_id]';
   $handler->display->display_options['fields']['field_rb_voyager_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_rb_voyager_id']['settings'] = array(
     'thousand_separator' => '',
@@ -126,7 +127,7 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['fields']['field_rb_format']['id'] = 'field_rb_format';
   $handler->display->display_options['fields']['field_rb_format']['table'] = 'search_api_index_marquand_rare_books';
   $handler->display->display_options['fields']['field_rb_format']['field'] = 'field_rb_format';
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -146,8 +147,6 @@ function marquand_rare_books_vault_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['not'] = 0;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_marquand_rare_books';
@@ -189,6 +188,13 @@ function marquand_rare_books_vault_views_default_views() {
 
   /* Display: Admin Page */
   $handler = $view->new_display('page', 'Admin Page', 'page');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    16 => '16',
+    8 => '8',
+  );
   $handler->display->display_options['path'] = 'marquand-rare-books-search';
 
   /* Display: Search Results  */

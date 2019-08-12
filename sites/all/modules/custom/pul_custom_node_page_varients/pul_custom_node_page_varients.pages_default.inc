@@ -800,7 +800,7 @@ help/ask-a-librarian',
   $pane->panel = 'second';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Chat Hours Block',

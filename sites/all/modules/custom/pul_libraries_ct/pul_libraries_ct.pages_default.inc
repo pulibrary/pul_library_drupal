@@ -72,7 +72,8 @@ vdl
 stokes
 plasma-physics
 eastasianlib
-digital-collections',
+digital-collections
+prds',
           ),
           'context' => 'empty',
           'not' => FALSE,

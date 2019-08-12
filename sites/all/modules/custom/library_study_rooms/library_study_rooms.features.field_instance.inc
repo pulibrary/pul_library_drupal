@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_study_rooms.features.field_instance.inc
@@ -121,7 +122,7 @@ function library_study_rooms_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_study_room_audience',
     'label' => 'Eligible Users',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -132,6 +133,7 @@ function library_study_rooms_field_default_field_instances() {
       'type' => 'options_buttons',
       'weight' => 2,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-study_room-field_study_room_department_url'.
@@ -231,6 +233,7 @@ function library_study_rooms_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -405,6 +408,7 @@ function library_study_rooms_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',

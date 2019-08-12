@@ -1040,6 +1040,32 @@ staff/committees',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-ec7d10d9-7f2c-495e-9955-33cfc65ddb44';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Email reference turnaround',
+    'title' => 'Email Us',
+    'title_heading' => 'h2',
+    'body' => '<p>We usually respond within 24 hours (M-F).</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'ec7d10d9-7f2c-495e-9955-33cfc65ddb44';
+  $display->content['new-ec7d10d9-7f2c-495e-9955-33cfc65ddb44'] = $pane;
+  $display->panels['first'][0] = 'new-ec7d10d9-7f2c-495e-9955-33cfc65ddb44';
+  $pane = new stdClass();
   $pane->pid = 'new-14544546-0c76-4300-9aec-2d4fe66879fc';
   $pane->panel = 'first';
   $pane->type = 'entity_field_extra';
@@ -1050,7 +1076,7 @@ staff/committees',
     'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Email Us',
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -1059,11 +1085,11 @@ staff/committees',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '14544546-0c76-4300-9aec-2d4fe66879fc';
   $display->content['new-14544546-0c76-4300-9aec-2d4fe66879fc'] = $pane;
-  $display->panels['first'][0] = 'new-14544546-0c76-4300-9aec-2d4fe66879fc';
+  $display->panels['first'][1] = 'new-14544546-0c76-4300-9aec-2d4fe66879fc';
   $pane = new stdClass();
   $pane->pid = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
   $pane->panel = 'second';

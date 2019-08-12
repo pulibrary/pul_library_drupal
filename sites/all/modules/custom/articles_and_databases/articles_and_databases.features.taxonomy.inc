@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * articles_and_databases.features.taxonomy.inc
