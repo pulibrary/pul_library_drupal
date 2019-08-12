@@ -156,11 +156,11 @@ namespace :drupal do
       end
   end
 
-  desc "Clear the drupal cache"
+  desc "Revert the features to the code"
   task :features_revert do
       on release_roles :drupal_primary do
           execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} features-revert-all"
-          info "cleared the drupal cache"
+          info "reverted the drupal features"
         end
   end
 
@@ -202,6 +202,13 @@ namespace :drupal do
     task :update_search_index do
         on release_roles :drupal_primary do
             execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} search-api-index"
+        end
+    end
+
+    desc "Update the drupal database"
+    task :update do
+        on release_roles :drupal_primary do
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} updatedb"
         end
     end
   end
