@@ -146,6 +146,7 @@ namespace :drupal do
   task :update_directory_owner_deploy do
       on release_roles :app do
         execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/*"
+        execute :chmod, "-R u+w /var/www/library_cap/releases/*"
       end
   end
 
@@ -156,10 +157,24 @@ namespace :drupal do
       end
   end
 
+  desc "Stop the apache2 process"
+  task :stop_apache2 do
+      on release_roles :app do
+        execute :sudo, "/usr/sbin/service apache2 stop"
+      end
+  end
+
+  desc "Start the apache2 process"
+  task :start_apache2 do
+      on release_roles :app do
+        execute :sudo, "/usr/sbin/service apache2 start"
+      end
+  end
+
   desc "Revert the features to the code"
   task :features_revert do
       on release_roles :drupal_primary do
-          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} features-revert-all"
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} -y features-revert-all"
           info "reverted the drupal features"
         end
   end
@@ -229,16 +244,22 @@ namespace :deploy do
       invoke "drupal:set_file_system_variables"
       invoke "drupal:update_directory_owner"
       invoke "drupal:enable_smtp"
+  end
+
+  task :before_release
+    invoke "drupal:stop_apache2"
+  end
+     
+  desc "Reset directory permissions and Restart apache"
+  task :after_release do
+      invoke! "drupal:update_directory_owner"
+      invoke "drupal:start_apache2"
       invoke "drupal:cache_clear"
       invoke "drupal:features_revert"
       invoke! "drupal:cache_clear"
   end
-     
-  desc "Reset directory permissions and Restart apache"
-  task :after_cleanup do
-      invoke! "drupal:update_directory_owner"
-      invoke "drupal:restart_apache2"
-  end
+
+  before :release, "deploy:before_release"
 
   after :check, "deploy:after_deploy_check"
 
@@ -247,5 +268,5 @@ namespace :deploy do
   after :updated, "deploy:after_deploy_updated"
 
   before :finishing, "drupal:update_directory_owner_deploy"
-  after :cleanup, "deploy:after_cleanup"
+  after :release, "deploy:after_release"
 end
