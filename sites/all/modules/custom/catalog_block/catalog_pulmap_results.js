@@ -48,8 +48,8 @@
                             }
                             var result_position = parseInt(index) + 1;
                             items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>' +
-                                '<div class="all-format-type"><i class="' + icon_type + '"></i>' +
-                                result['type'] +
+                                '<div class="all-search-excerpt"><i class="' + icon_type + '"></i>' +
+                                result['description'] +
                                 '</div></li>');
                         });
                         $('#pulmap-search-results-spinner').hide();
