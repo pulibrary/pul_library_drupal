@@ -50,7 +50,6 @@ function prdssearch_block_form($form, &$form_state) {
    $form['#submit'] = array('prdssearch_block_form_redirect');
    $form['#target'] = "_parent";
    $form['#method'] = "post";
-   $form['#suffix'] = $form_suffix;
    return $form;
 
 }
