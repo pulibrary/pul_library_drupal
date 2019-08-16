@@ -151,8 +151,15 @@ namespace :drupal do
 
   desc "change the owner of the directory to www-data for apache"
   task :restart_apache2 do
-      on release_roles :app do
+      on release_roles :drupal_primary do
+        info "starting restart on primary"
         execute :sudo, "/usr/sbin/service apache2 restart"
+        info "completed restart on primary"
+      end
+      on release_roles :drupal_secondary do
+        info "starting restart on secondary"
+        execute :sudo, "/usr/sbin/service apache2 restart"
+        info "completed restart on secondary"
       end
   end
 
