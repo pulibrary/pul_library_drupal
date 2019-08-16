@@ -4,31 +4,6 @@
   margin-bottom: 0;
 }
 
-.section-research-data .pane-menu-menu-section-research-data-ser {
-  ul {
-    background: $orange-light;
-    border: 2px solid $black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    align-items: flex-start;
-    padding: 1rem;
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &.active-trail {
-      background: $gray-light;
-    }
-  }
-}
-
 .prdssearch-block-form label {
   @include visually-hidden;
 }
@@ -39,12 +14,55 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  .pane-menu-menu-section-research-data-ser {
-    width: 60%;
+  .menu--secondary {
+    margin-bottom: 0;
+    width: 100%;
+
+    @include breakpoint($tab-desk) {
+      width: 65%;
+    }
   }
 
   .pane-prdssearch-block-prdssearch-search {
-    width: 40%;
+    width: 100%;
+
+    @include breakpoint($tab-desk) {
+      width: 35%;
+    }
+  }
+}
+
+.section-research-data .menu--secondary {
+  ul {
+    background: $orange-light;  
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint($tab) {
+      border: 2px solid $black;
+      display: flex;
+    }
+  }
+
+  .menu a {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      align-items: flex-start;
+      width: initial;
+    }
+
+    &:hover,
+    &:focus,
+    &.active-trail {
+      background: $gray-lightest;
+    }
   }
 }
 
@@ -52,9 +70,11 @@
   margin: 0;
 
   input[type="text"] {
-    border-bottom: 2px solid $black;
-    border-right: 2px solid $black;
-    border-top: 2px solid $black;
+    border: 2px solid $black;
+
+    @include breakpoint($tab-desk) {
+      border-left: 0;
+    }
   }
 
   button {
@@ -84,8 +104,25 @@
   background: $gray-lightest;
   display: flex;
 
+  @media screen and (max-width: $tab-desk) {
+    flex-wrap: wrap;
+  }
+
   .prds--stage {
-    width: 25%;
+    flex: 1;
+
+    @media screen and (max-width: $tab-desk) {
+      flex-basis: 50%;
+    }
+
+    @media screen and (max-width: $tab) {
+      flex-basis: 100%;
+    }
+
+    p {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   h2 {
@@ -95,6 +132,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 90px;
     padding: 0.25em;
     text-align: center;
   }
@@ -110,5 +148,15 @@
     li {
       margin-bottom: 0.75em;
     }
-  }  
+  }
+
+  .more {
+    display: inline-block;
+    font-family: $font-primary;
+
+    &::after {
+      content: ">";
+      padding-left: 0.45em;
+    }
+  }
 }
