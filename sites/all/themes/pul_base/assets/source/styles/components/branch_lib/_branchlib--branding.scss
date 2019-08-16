@@ -31,8 +31,7 @@
         z-index: 1;
       }
 
-      img,
-      a {
+      img {
         display: block; // opacity: 0.4;
         padding-bottom: 50px;
       }
@@ -50,8 +49,7 @@
     .single-region--top,
     .six_six_stacked-region--top,
     .nine_three_stacked-region--top {
-      img,
-      a {
+      img {
         display: none;
         opacity: 0.4;
       }

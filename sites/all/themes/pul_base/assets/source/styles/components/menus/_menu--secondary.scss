@@ -1,18 +1,12 @@
 .menu--secondary {
-  // margin-top: 1em;
   margin-bottom: 1em;
   position: relative;
-
-  // @include breakpoint($tab-desk) {
-  //   margin-top: 2.5em;
-  // }
-
 
   br {
     display: none;
   }
 
-  .jump-link {
+  .jump-link--secondary {
     background: $gray-lightest;
     color: $black;
     display: block;
@@ -22,8 +16,7 @@
     position: relative;
     text-decoration: none;
     top: 0;
-
-    // width: 95%;
+    width: 100%;
 
     @include breakpoint($tab) {
       display: none;
@@ -31,11 +24,12 @@
   }
 
   .menu {
+    display: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
 
-    @include breakpoint($tab-desk) {
+    @include breakpoint($tab) {
       display: block;
     }
   }
@@ -43,13 +37,14 @@
   .show-section-menu {
     background: $black;
     color: $white;
+    cursor: pointer;
     display: block;
     padding: 10px;
     text-align: left;
 
     // width: 95%;
 
-    @include breakpoint($tab-desk) {
+    @include breakpoint($tab) {
       display: none;
     }
   }
