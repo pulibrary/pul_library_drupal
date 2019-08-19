@@ -145,8 +145,16 @@ namespace :drupal do
   desc "change the owner of the directory to deploy"
   task :update_directory_owner_deploy do
       on release_roles :app do
-        execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/*"
-        execute :chmod, "-R u+w /var/www/library_cap/releases/*"
+        current_release_path = capture 'readlink /var/www/library_cap/current'
+        current_release = current_release_path.split('/').last
+        release_paths = capture 'ls /var/www/library_cap/releases/'
+        release_paths.split(release_paths[14]).each do |release|
+          next if release == current_release
+          execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/#{release}"
+          execute :chmod, "-R u+w /var/www/library_cap/releases/#{release}"
+        end
+        #execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/*"
+        #execute :chmod, "-R u+w /var/www/library_cap/releases/*"
       end
   end
 
@@ -253,7 +261,8 @@ namespace :deploy do
       invoke "drupal:enable_smtp"
   end
 
-  task :before_release
+  desc "stop apache before realease"
+  task :before_release do
     invoke "drupal:stop_apache2"
   end
      
@@ -266,7 +275,7 @@ namespace :deploy do
       invoke! "drupal:cache_clear"
   end
 
-  before :release, "deploy:before_release"
+  before 'symlink:release' , "deploy:before_release"
 
   after :check, "deploy:after_deploy_check"
 
@@ -275,5 +284,5 @@ namespace :deploy do
   after :updated, "deploy:after_deploy_updated"
 
   before :finishing, "drupal:update_directory_owner_deploy"
-  after :release, "deploy:after_release"
+  after 'symlink:release' , "deploy:after_release"
 end
