@@ -145,22 +145,52 @@ namespace :drupal do
   desc "change the owner of the directory to deploy"
   task :update_directory_owner_deploy do
       on release_roles :app do
-        execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/*"
+        current_release_path = capture 'readlink /var/www/library_cap/current'
+        current_release = current_release_path.split('/').last
+        release_paths = capture 'ls /var/www/library_cap/releases/'
+        release_paths.split(release_paths[14]).each do |release|
+          next if release == current_release
+          execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/#{release}"
+          execute :chmod, "-R u+w /var/www/library_cap/releases/#{release}"
+        end
+        #execute :sudo, "/bin/chown -R deploy /var/www/library_cap/releases/*"
+        #execute :chmod, "-R u+w /var/www/library_cap/releases/*"
       end
   end
 
   desc "change the owner of the directory to www-data for apache"
   task :restart_apache2 do
-      on release_roles :app do
+      on release_roles :drupal_primary do
+        info "starting restart on primary"
         execute :sudo, "/usr/sbin/service apache2 restart"
+        info "completed restart on primary"
+      end
+      on release_roles :drupal_secondary do
+        info "starting restart on secondary"
+        execute :sudo, "/usr/sbin/service apache2 restart"
+        info "completed restart on secondary"
       end
   end
 
-  desc "Clear the drupal cache"
+  desc "Stop the apache2 process"
+  task :stop_apache2 do
+      on release_roles :app do
+        execute :sudo, "/usr/sbin/service apache2 stop"
+      end
+  end
+
+  desc "Start the apache2 process"
+  task :start_apache2 do
+      on release_roles :app do
+        execute :sudo, "/usr/sbin/service apache2 start"
+      end
+  end
+
+  desc "Revert the features to the code"
   task :features_revert do
       on release_roles :drupal_primary do
-          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} features-revert-all"
-          info "cleared the drupal cache"
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} -y features-revert-all"
+          info "reverted the drupal features"
         end
   end
 
@@ -204,6 +234,13 @@ namespace :drupal do
             execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} search-api-index"
         end
     end
+
+    desc "Update the drupal database"
+    task :update do
+        on release_roles :drupal_primary do
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} updatedb"
+        end
+    end
   end
 end
 
@@ -222,16 +259,23 @@ namespace :deploy do
       invoke "drupal:set_file_system_variables"
       invoke "drupal:update_directory_owner"
       invoke "drupal:enable_smtp"
+  end
+
+  desc "stop apache before realease"
+  task :before_release do
+    invoke "drupal:stop_apache2"
+  end
+     
+  desc "Reset directory permissions and Restart apache"
+  task :after_release do
+      invoke! "drupal:update_directory_owner"
+      invoke "drupal:start_apache2"
       invoke "drupal:cache_clear"
       invoke "drupal:features_revert"
       invoke! "drupal:cache_clear"
   end
-     
-  desc "Reset directory permissions and Restart apache"
-  task :after_cleanup do
-      invoke! "drupal:update_directory_owner"
-      invoke "drupal:restart_apache2"
-  end
+
+  before 'symlink:release' , "deploy:before_release"
 
   after :check, "deploy:after_deploy_check"
 
@@ -240,5 +284,5 @@ namespace :deploy do
   after :updated, "deploy:after_deploy_updated"
 
   before :finishing, "drupal:update_directory_owner_deploy"
-  after :cleanup, "deploy:after_cleanup"
+  after 'symlink:release' , "deploy:after_release"
 end
