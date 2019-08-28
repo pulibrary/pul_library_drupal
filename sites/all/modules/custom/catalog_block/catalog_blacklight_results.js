@@ -62,7 +62,7 @@
                             var holdings = "";
                             var online_process = false;
                             if (result['holdings']) {
-                                holding_locations = JSON && JSON.parse(result['holdings']) || $.parseJSON(result['holdings']);
+                                holding_locations = result['holdings'];
                                 holdings = holdings + "<div class='pulsearch-availability' data-record-id='" + id + "'>"
                                 var mfhd_keys = Object.keys(holding_locations);
                                 $.each(mfhd_keys, function(index, key) {
@@ -92,7 +92,7 @@
                             var online_span = '<span class="badge-notice availability-icon label label-primary" title="" data-toggle="tooltip" data-original-title="Electronic access" aria-describedby="tooltip552370">Online</span>';
                             if(online_process == true) {
                                 if (result['online']) {
-                                    var online_links = JSON && JSON.parse(result['online']) || $.parseJSON(result['online']);
+                                    var online_links = result['online'];
                                     online_access = online_access + "<div class='pulsearch-online-access'>";
                                     for (var key in online_links) {
                                         if(online_links.hasOwnProperty(key)) {
