@@ -84,6 +84,116 @@ function research_data_service_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-65e0eed6-ff80-4cb5-8e79-f805a4271f75';
+  $pane->panel = 'bottom';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'News and Upcoming Events heading',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h2>News and Upcoming Events</h2>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '65e0eed6-ff80-4cb5-8e79-f805a4271f75';
+  $display->content['new-65e0eed6-ff80-4cb5-8e79-f805a4271f75'] = $pane;
+  $display->panels['bottom'][0] = 'new-65e0eed6-ff80-4cb5-8e79-f805a4271f75';
+  $pane = new stdClass();
+  $pane->pid = 'new-b017edd1-ca72-46cd-bd0a-340f2bea7a41';
+  $pane->panel = 'bottom';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_26';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'prds-news-widget',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b017edd1-ca72-46cd-bd0a-340f2bea7a41';
+  $display->content['new-b017edd1-ca72-46cd-bd0a-340f2bea7a41'] = $pane;
+  $display->panels['bottom'][1] = 'new-b017edd1-ca72-46cd-bd0a-340f2bea7a41';
+  $pane = new stdClass();
+  $pane->pid = 'new-73115ed4-cc49-457d-b8ef-9c4df85af5ba';
+  $pane->panel = 'bottom';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'PRDS LibCal',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<p><iframe style="border-width: 0;" src="https://api3.libcal.com/embed_mini_calendar.php?mode=month&amp;iid=771&amp;cal_id=11888&amp;l=5&amp;tar=0&amp;h=450&amp;audience=&amp;c=&amp;z=" frameborder="0" scrolling="no" width="275" height="300"></iframe></p>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'prds-calendar-widget',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '73115ed4-cc49-457d-b8ef-9c4df85af5ba';
+  $display->content['new-73115ed4-cc49-457d-b8ef-9c4df85af5ba'] = $pane;
+  $display->panels['bottom'][2] = 'new-73115ed4-cc49-457d-b8ef-9c4df85af5ba';
+  $pane = new stdClass();
+  $pane->pid = 'new-f9badaa0-a32b-4372-941f-906c7c96b252';
+  $pane->panel = 'bottom';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'PRDS Chat ',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div id="libchat_90703dc25c1de9479e71d257e75eb73e"></div><script type="text/javascript" src="https://v2.libanswers.com/load_chat.php?hash=90703dc25c1de9479e71d257e75eb73e"></script>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'prds-chat-widget',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'f9badaa0-a32b-4372-941f-906c7c96b252';
+  $display->content['new-f9badaa0-a32b-4372-941f-906c7c96b252'] = $pane;
+  $display->panels['bottom'][3] = 'new-f9badaa0-a32b-4372-941f-906c7c96b252';
+  $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane->panel = 'middle';
   $pane->type = 'node_body';
@@ -112,7 +222,7 @@ function research_data_service_default_page_manager_handlers() {
   $pane->panel = 'middle';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'PRDS Stages',
@@ -590,7 +700,7 @@ research-data/analysis/*',
     'admin_title' => 'Stage 3 Heading',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<h3>Stage 3: Analysis</h3><p>...</p>',
+    'body' => '<h3>Stage 3: Analysis</h3><p>Resources for working with active data, including analysis and collaboration</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
   );
@@ -629,7 +739,7 @@ research-data/dissemination/*',
     'admin_title' => 'Stage 4 Heading',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<h3>Stage 4: Publishing and Preservation</h3><p>...</p>',
+    'body' => '<h3>Stage 4: Publishing and Preservation</h3><p>Data management activities at the end of a project and/or the publication of results</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
   );

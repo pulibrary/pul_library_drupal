@@ -153,7 +153,7 @@
     padding: 1em;
 
     ul {
-      padding: 0;
+      padding: 0.5em 0 0 0;
     }
 
     li {
@@ -170,4 +170,25 @@
       padding-left: 0.45em;
     }
   }
+}
+
+.single-region--bottom {
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    flex: 1 100%;
+  }
+
+  @media (min-width: $bp-med) {
+    .prds-news-widget {
+      flex-basis: 50%;
+    }
+    
+    .prds-calendar-widget,
+    .prds-chat-widget {
+      flex-basis: 25%;
+      padding-left: 1em;
+    } 
+  } 
 }
