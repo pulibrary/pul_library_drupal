@@ -788,7 +788,8 @@ research-data/why-rdm
 research-data/calendar
 research-data/workshops
 research-data/faqs
-research-data/info-sessions',
+research-data/info-sessions
+research-data/news',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -850,6 +851,37 @@ research-data/info-sessions',
   $pane->uuid = '5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
+  $pane = new stdClass();
+  $pane->pid = 'new-b6e179ce-b778-483f-bf7a-8ab2a4103e60';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_27';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'research-data/news',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b6e179ce-b778-483f-bf7a-8ab2a4103e60';
+  $display->content['new-b6e179ce-b778-483f-bf7a-8ab2a4103e60'] = $pane;
+  $display->panels['middle'][1] = 'new-b6e179ce-b778-483f-bf7a-8ab2a4103e60';
   $pane = new stdClass();
   $pane->pid = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
   $pane->panel = 'top';

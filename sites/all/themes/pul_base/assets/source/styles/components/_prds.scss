@@ -34,7 +34,7 @@
 
 .section-research-data .menu--secondary {
   ul {
-    background: $orange-light;  
+    background: $orange-light;
     flex-wrap: wrap;
     justify-content: flex-start;
     list-style: none;
@@ -153,7 +153,7 @@
     padding: 1em;
 
     ul {
-      padding: 0.5em 0 0 0;
+      padding: 0.5em 0 0;
     }
 
     li {
@@ -184,11 +184,11 @@
     .prds-news-widget {
       flex-basis: 50%;
     }
-    
+
     .prds-calendar-widget,
     .prds-chat-widget {
       flex-basis: 25%;
       padding-left: 1em;
-    } 
-  } 
+    }
+  }
 }
