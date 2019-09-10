@@ -24,7 +24,7 @@ function research_data_service_default_page_manager_handlers() {
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'firestone-library branch-libraries',
+    'body_classes_to_add' => 'firestone-library branch-libraries section-services',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),

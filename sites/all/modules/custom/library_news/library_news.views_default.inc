@@ -3761,6 +3761,20 @@ function library_news_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Featured Graphic */
+  $handler->display->display_options['fields']['field_news_featured_graphic']['id'] = 'field_news_featured_graphic';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['field'] = 'field_news_featured_graphic';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['label'] = '';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_news_featured_graphic']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3784,21 +3798,6 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Featured Graphic */
-  $handler->display->display_options['fields']['field_news_featured_graphic']['id'] = 'field_news_featured_graphic';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['table'] = 'field_data_field_news_featured_graphic';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['field'] = 'field_news_featured_graphic';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['label'] = '';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_news_featured_graphic']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_featured_graphic']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_news_featured_graphic']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_featured_graphic']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
