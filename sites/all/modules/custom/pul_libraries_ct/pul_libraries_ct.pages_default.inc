@@ -547,7 +547,10 @@ prds',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'links--decorate',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -618,7 +621,7 @@ prds',
   $pane->panel = 'middle';
   $pane->type = 'block';
   $pane->subtype = 'block-2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -770,6 +773,59 @@ prds',
   $pane->uuid = '0c0d618b-7a69-4f82-b173-22ee038c3ba4';
   $display->content['new-0c0d618b-7a69-4f82-b173-22ee038c3ba4'] = $pane;
   $display->panels['second'][1] = 'new-0c0d618b-7a69-4f82-b173-22ee038c3ba4';
+  $pane = new stdClass();
+  $pane->pid = 'new-a56d38e3-8bed-4433-a61c-1c768b3b3583';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Firestone Study Rooms',
+    'title' => 'Study Rooms',
+    'title_heading' => 'h2',
+    'body' => '<p>Study&nbsp;rooms are designed for Princeton University students and/or faculty to work on various projects, and are available on a first-come, first-served basis or can be reserved ahead of time through the <a href="https://libcal.princeton.edu/reserve/firestone-study-rooms">room reservation system</a>.</p><p>Reservations have precedent over walk-in usage.&nbsp;</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'a56d38e3-8bed-4433-a61c-1c768b3b3583';
+  $display->content['new-a56d38e3-8bed-4433-a61c-1c768b3b3583'] = $pane;
+  $display->panels['second'][2] = 'new-a56d38e3-8bed-4433-a61c-1c768b3b3583';
+  $pane = new stdClass();
+  $pane->pid = 'new-18cdaad0-46c2-49d1-ae48-03636301af8c';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Tiger Tea Room Blurb',
+    'title' => 'Tiger Tea Room',
+    'title_heading' => 'h2',
+    'body' => '<p>Dining Services Calendar</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+    'name' => 'tiger_tea_room_blurb',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '18cdaad0-46c2-49d1-ae48-03636301af8c';
+  $display->content['new-18cdaad0-46c2-49d1-ae48-03636301af8c'] = $pane;
+  $display->panels['second'][3] = 'new-18cdaad0-46c2-49d1-ae48-03636301af8c';
   $pane = new stdClass();
   $pane->pid = 'new-7abbee4d-32a4-4e3b-91fb-a173697d1826';
   $pane->panel = 'top';

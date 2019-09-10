@@ -805,6 +805,16 @@ stokes/*',
         'context' => 'logged-in-user',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'stokes/faculty
+stokes/book-express',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
     ),
   );
   $pane->configuration = array(
