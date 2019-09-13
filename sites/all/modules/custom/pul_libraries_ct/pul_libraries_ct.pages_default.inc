@@ -787,6 +787,7 @@ prds',
     'body' => '<p>Study&nbsp;rooms are designed for Princeton University students and/or faculty to work on various projects, and are available on a first-come, first-served basis or can be reserved ahead of time through the <a href="https://libcal.princeton.edu/reserve/firestone-study-rooms">room reservation system</a>.</p><p>Reservations have precedent over walk-in usage.&nbsp;</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'name' => 'firestone_study_room_blurb',
   );
   $pane->cache = array();
   $pane->style = array(
