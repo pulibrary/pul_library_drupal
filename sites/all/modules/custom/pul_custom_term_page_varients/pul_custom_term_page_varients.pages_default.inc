@@ -603,43 +603,14 @@ research/databases/subjects',
   $pane->subtype = 'tier_one_resources-lib_guides_pane';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'entity_field_value:taxonomy_term:database_subjects:field_subs_primary_library_guide',
-        'settings' => array(
-          'field_subs_primary_library_guide' => array(
-            'und' => array(
-              0 => array(
-                'url' => '',
-              ),
-            ),
-          ),
-          'field_subs_primary_library_guide_url' => array(
-            0 => array(
-              'url' => '',
-            ),
-          ),
-          'field_subs_primary_library_guide_title' => array(
-            0 => array(
-              'url' => '',
-            ),
-          ),
-          'field_subs_primary_library_guide_attributes' => array(
-            0 => array(
-              'url' => '',
-            ),
-          ),
-        ),
-        'context' => 'argument_term_1',
-        'not' => TRUE,
-      ),
-    ),
-    'logic' => 'or',
+    'plugins' => array(),
+    'logic' => 'and',
   );
   $pane->configuration = array(
     'path' => '',
     'override_title' => 0,
-    'override_title_text' => '%term:field_subs_primary_library_guide',
+    'override_title_text' => 'Research Help',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

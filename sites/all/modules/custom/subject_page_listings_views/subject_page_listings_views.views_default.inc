@@ -605,9 +605,8 @@ function subject_page_listings_views_views_default_views() {
   /* Display: Library Guides Pane */
   $handler = $view->new_display('panel_pane', 'Library Guides Pane', 'lib_guides_pane');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Research Help';
+  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -623,19 +622,14 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="pane-title">Research Help</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'pul_editor_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['name']['empty_zero'] = TRUE;
   /* Field: Taxonomy term: Primary Library Guide */
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['id'] = 'field_subs_primary_library_guide';
   $handler->display->display_options['fields']['field_subs_primary_library_guide']['table'] = 'field_data_field_subs_primary_library_guide';
@@ -673,6 +667,20 @@ function subject_page_listings_views_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'database_subjects' => 'database_subjects',
+  );
+  /* Filter criterion: Taxonomy term: Primary Library Guide (field_subs_primary_library_guide:url) */
+  $handler->display->display_options['filters']['field_subs_primary_library_guide_url']['id'] = 'field_subs_primary_library_guide_url';
+  $handler->display->display_options['filters']['field_subs_primary_library_guide_url']['table'] = 'field_data_field_subs_primary_library_guide';
+  $handler->display->display_options['filters']['field_subs_primary_library_guide_url']['field'] = 'field_subs_primary_library_guide_url';
+  $handler->display->display_options['filters']['field_subs_primary_library_guide_url']['operator'] = 'not empty';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
