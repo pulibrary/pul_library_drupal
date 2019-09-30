@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Unit test Webform Validation module.
+ */
+class WebformValidationUnitTestCase extends DrupalUnitTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('Webform Validation Unit Tests'),
+      'description' => t('Unit tests for Webform Validation module.'),
+      'group' => t('Webform'),
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp();
+  }
+
+  /**
+   * The tests.
+   */
+  public function test() {
+
+    $validator_name = 'comparison';
+    $items = array(
+      'one' => array(
+        'hour' => 12,
+        'minute' => 1,
+        'ampm' => 'AM',
+      ),
+      'two' => array(
+        'hour' => 12,
+        'minute' => 4,
+        'ampm' => 'AM',
+      ),
+    );
+    $components = array(
+      'one' => array(
+        'type' => 'time',
+      ),
+      'two' => array(
+        'type' => 'time',
+      ),
+    );
+    $rule = array(
+      'data' => '<',
+      'components' => $components,
+      'error_message' => 'Error message.',
+    );
+    $test_value = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $value = array();
+    $this->assertIdentical($test_value, $value, 'No error for passing validation.');
+
+    $rule['data'] = '>';
+    $test_value = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $value = array('two' => 'Error message.');
+    $this->assertIdentical($test_value, $value, 'Error for failing validation.');
+  }
+
+}

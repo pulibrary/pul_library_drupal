@@ -7,9 +7,12 @@ dependencies[] = node
 dependencies[] = uuid_features
 dependencies[] = webform_validation
 hidden = TRUE
+features[features_api][] = api:2
+features[node][] = webform
+features[uuid_node][] = 4ca52408-9bbd-49fa-baae-698c37dc5f42
 
-; Information added by Drupal.org packaging script on 2018-10-01
-version = "7.x-1.15"
+; Information added by Drupal.org packaging script on 2019-08-26
+version = "7.x-1.16"
 core = "7.x"
 project = "webform_validation"
-datestamp = "1538404086"
+datestamp = "1566849187"

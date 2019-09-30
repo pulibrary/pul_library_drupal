@@ -18,6 +18,14 @@ function webform_validation_get_rule($ruleid) {
 
 /**
  * Get an array of rules assigned to a webform node.
+ *
+ * @param int $nid
+ *   The node ID.
+ *
+ * @return array
+ *   The rules for a node keyed by their rule ID.
+ *
+ * @see webform_validation_get_node_rules_assoc()
  */
 function webform_validation_get_node_rules($nid) {
   $rules = array();
@@ -28,6 +36,34 @@ function webform_validation_get_node_rules($nid) {
     $rules[$rule['ruleid']] = $rule;
   }
   return $rules;
+}
+
+/**
+ * Get an array of rules assigned to a webform node keyed by their rulename.
+ *
+ * @param int $nid
+ *   The node ID.
+ *
+ * @return array
+ *   The rules for a node keyed by their rulename.
+ *
+ * @see webform_validation_get_node_rules()
+ */
+function webform_validation_get_node_rules_assoc($nid) {
+  $assoc_rules = array();
+  if ($rules = webform_validation_get_node_rules($nid)) {
+    foreach ($rules as $rule) {
+      $components = array();
+      foreach ($rule['components'] as $cid => $component) {
+        $components[$cid] = $cid;
+      }
+      ksort($components);
+      $rule['components'] = $components;
+      $assoc_rules[$rule['rulename']] = $rule;
+    }
+    ksort($assoc_rules);
+  }
+  return $assoc_rules;
 }
 
 /**

@@ -5,10 +5,12 @@ package = Webform
 dependencies[] = webform
 test_dependencies[] = webform_validation_testing
 files[] = tests/WebformValidationTestCase.test
+files[] = tests/WebformValidationUnitTestCase.test
+files[] = tests/WebformValidationUuidFeaturesTestCase.test
 php = 5.3
 
-; Information added by Drupal.org packaging script on 2018-10-01
-version = "7.x-1.15"
+; Information added by Drupal.org packaging script on 2019-08-26
+version = "7.x-1.16"
 core = "7.x"
 project = "webform_validation"
-datestamp = "1538404086"
+datestamp = "1566849187"
