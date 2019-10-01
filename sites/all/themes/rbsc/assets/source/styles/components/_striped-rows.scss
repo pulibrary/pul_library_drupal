@@ -1,0 +1,11 @@
+.six_six_stacked-region--second .media,
+.landingpage-region--fourth .media,
+.view-blog-item .blog,
+.striped-list li {
+  border-radius: $global-border-radius;
+  padding: 0.75em;
+
+  &:nth-child(odd) {
+    background: $gray-lightest;
+  }
+}

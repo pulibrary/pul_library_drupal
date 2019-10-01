@@ -1,0 +1,10 @@
+.view-blog-item {
+  .more-link {
+    float: left;
+    margin-top: 0.3em;
+  }
+
+  &.views-more-link:hover {
+    color: $white;
+  }
+}

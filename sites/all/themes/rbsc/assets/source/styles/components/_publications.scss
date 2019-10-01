@@ -1,0 +1,57 @@
+.view-publication {
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  .field__label {
+    @include visually-hidden;
+  }
+
+  .field--type-text {
+    display: inline;
+    float: left;
+    font-size: 1.2em;
+    margin-right: 0.3em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .publication-authors {
+    line-height: 1em;
+  }
+
+  .field-collection-item-field-author {
+    display: inline-block;
+    margin-left: 0.5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .label.label-default {
+    background: $gray;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: $font-sans;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1em;
+    padding: 0.4em 0.75em 0.4em;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .publication-link,
+  .publication-publisher,
+  .publication-place,
+  .publication-year,
+  .publication-isbn {
+    font-size: 0.9em;
+  }
+}

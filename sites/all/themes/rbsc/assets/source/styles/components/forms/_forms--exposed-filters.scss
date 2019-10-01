@@ -1,0 +1,27 @@
+.views-exposed-form {
+  margin-bottom: 2em;
+
+  .views-exposed-widget label,
+  .views-widget {
+    display: inline;
+    float: left;
+  }
+
+  .views-exposed-widget label {
+    margin: 4px 10px 0 0;
+  }
+
+  .views-exposed-widget .form-select {
+    display: inline;
+  }
+
+  .views-exposed-widget .form-submit {
+    height: 30px;
+    margin-top: 0;
+    padding: 0.3em 0.5em;
+  }
+
+  select {
+    height: 30px;
+  }
+}

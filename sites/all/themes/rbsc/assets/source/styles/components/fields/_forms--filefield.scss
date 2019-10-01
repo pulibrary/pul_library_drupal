@@ -1,0 +1,45 @@
+/*
+Commeting Out because I'm not sure
+we want such a global override. If this is needed it
+should be more specific.
+*/
+/*
+.node__content img {
+  margin: 1em;
+}
+*/
+
+/* image styles for file field instances */
+
+.file-image {
+  border-bottom: 1px solid $gray-light;
+  color: $gray-dark;
+  font-family: $font-sans;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+
+  img {
+    background-color: $white;
+    border: 1px solid $gray-light;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 1em;
+    padding: 4px;
+  }
+}
+
+.field--name-field-file-image-caption,
+.field--name-field-file-image-citation,
+.field--name-field-citation-with-link {
+  color: $gray;
+  font-family: $font-sans;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.field--name-field-file-image-citation,
+.field--name-field-citation-with-link {
+  font-style: italic;
+}

@@ -1,0 +1,26 @@
+.node__content img {
+  margin: 0;
+}
+
+.views-field-field-location-image img,
+.current-exhibition.media img,
+.media-image img,
+.exhibition-image img,
+.topic-image img,
+.collections-image img,
+.cover-image img {
+  border: 1px solid $gray-light;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0.25em;
+}
+
+.views-field-field-location-image img {
+  margin: 0.7em 0 1em;
+}
+
+@include breakpoint($tab) {
+  .current-exhibition.media img {
+    margin-right: 1.5em;
+  }
+}

@@ -1,0 +1,272 @@
+.menu-grid .six_six_stacked-region--top {
+  border-bottom: 1px solid $gray-lightest;
+  padding: 0.5em 0 1.5em;
+}
+
+.menu-grid .six_six_stacked-region--top .panel-pane {
+  @include span(6);
+
+  margin-top: 0.1em;
+  position: relative;
+
+  @include breakpoint($bp-small-2) {
+    margin-top: 0.5em;
+  }
+
+  @include breakpoint($tab) {
+    @include span(3);
+
+    margin-top: 0.7em;
+  }
+
+  @include breakpoint($tab) {
+    margin-top: 1em;
+  }
+
+  &:first-child {
+    @include full;
+
+    @include breakpoint($tab) {
+      @include span(first 6 of 12);
+    }
+  }
+
+  @include breakpoint($max-tab) {
+    &:nth-child(2n+3) {
+      @include span(last 6);
+    }
+  }
+
+  @include breakpoint($tab) {
+    &:nth-child(3),
+    &:nth-child(7) {
+      @include span(last 3);
+    }
+  }
+}
+
+.menu-grid .landingpage-region--second>.panel-pane {
+  &:nth-child(even) {
+    @include span(first 6);
+  }
+
+  &:nth-child(odd) {
+    @include span(last 6);
+  }
+
+  margin-top: 0.1em;
+  position: relative;
+
+  @include breakpoint($bp-small-2) {
+    margin-top: 0.5em;
+  }
+
+  @include breakpoint($tab) {
+    margin-top: 0.7em;
+  }
+
+  @include breakpoint($tab) {
+    margin-top: 1em;
+  }
+
+  &:first-child {
+    @include full;
+
+    @include breakpoint($tab) {
+      @include span(first 6 of 12);
+    }
+  }
+
+  &:nth-child(2) {
+    @include breakpoint($max-tab) {
+      @include full;
+    }
+
+    @include breakpoint($tab) {
+      @include span(last 6 of 12);
+    }
+  }
+
+  &:nth-child(3) {
+    @include breakpoint($tab) {
+      @include span(first 3 of 12);
+    }
+  }
+
+  &:nth-child(4),
+  &:nth-child(5) {
+    @include breakpoint($tab) {
+      @include span(3);
+    }
+  }
+
+  &:nth-child(6) {
+    @include breakpoint($tab) {
+      @include span(last 3 of 12);
+    }
+  }
+}
+
+.menu-grid .six_six_stacked-region--top .panel-pane,
+.menu-grid .landingpage-region--second>.panel-pane,
+.menu-grid .pul_base_four_four_four_stacked-region--first>.panel-pane,
+.menu-grid .pul_base_four_four_four_stacked-region--second>.panel-pane,
+.menu-grid .pul_base_four_four_four_stacked-region--third>.panel-pane {
+  background: $black;
+  border-radius: $global-border-radius;
+  height: 120px;
+  margin-bottom: 0.4em;
+  position: relative;
+
+  @include breakpoint($tab) {
+    max-height: 180px;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    height: 0;
+    left: 10px;
+    margin: 0;
+    padding-right: 0.2em;
+    position: absolute;
+    text-shadow: 2px 2px $gray-darkest;
+    top: 10px;
+    width: 99%;
+    z-index: 1;
+  }
+
+  @include breakpoint($bp-small-2) {
+    height: 130px;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  @include breakpoint($tab) {
+    h2 {
+      font-size: 1.65em;
+    }
+  }
+
+  @include breakpoint($bp-med-2) {
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  @include breakpoint($tab-desk) {
+    height: 140px;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  @include breakpoint($desk) {
+    height: 160px;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  h2 a {
+    color: $white;
+  }
+
+  &:hover a {
+    color: $yellow;
+    text-decoration: none;
+  }
+
+  .field__item {
+    border-radius: $global-border-radius;
+
+    a {
+      // background: $black;
+      border-radius: $global-border-radius;
+      display: inline-block;
+      height: 120px;
+      padding: 0;
+      width: 100%;
+
+      @include breakpoint($bp-small-2) {
+        height: 130px;
+      }
+
+      @include breakpoint($tab-desk) {
+        height: 140px;
+      }
+
+      @include breakpoint($desk) {
+        height: 160px;
+      }
+    }
+
+    a:hover img {
+      opacity: 1;
+    }
+
+    img {
+      border-radius: $global-border-radius;
+      display: block;
+      height: 120px;
+      opacity: 0.4;
+      transition: all 0.1s linear;
+      width: 100%;
+
+      @include breakpoint($bp-small-2) {
+        height: 130px;
+      }
+
+      @include breakpoint($tab-desk) {
+        height: 140px;
+      }
+
+      @include breakpoint($desk) {
+        height: 160px;
+      }
+    }
+  }
+}
+
+.menu-grid .pul_base_four_four_four_stacked-region--first>.panel-pane,
+.menu-grid .pul_base_four_four_four_stacked-region--second>.panel-pane,
+.menu-grid .pul_base_four_four_four_stacked-region--third>.panel-pane {
+  height: 200px;
+  max-height: 200px;
+
+  .field__item {
+    height: 200px;
+
+    img,
+    a {
+      height: 200px;
+    }
+  }
+}
+
+.menu-grid .landingpage-region--second>.panel-pane h2 {
+  font-size: 1.75em;
+}
+
+.menu-grid .landingpage-region--second>.panel-pane:nth-child(n+3) h2 {
+  font-size: 1.2em;
+}
+
+.menu-grid .landingpage-region--second>.panel-pane,
+.menu-grid .landingpage-region--second>.panel-pane .field__item,
+.menu-grid .landingpage-region--second>.panel-pane .field__item a,
+.menu-grid .landingpage-region--second>.panel-pane .field__item img {
+  max-height: 110px;
+
+  @include breakpoint($tab) {
+    max-height: 130px;
+  }
+}
+
+.menu-gird .landingpage-region--second>.panel-pane {
+  background: $black;
+  border-radius: $global-border-radius;
+}

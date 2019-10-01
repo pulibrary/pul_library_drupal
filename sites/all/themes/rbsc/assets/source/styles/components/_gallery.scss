@@ -1,0 +1,78 @@
+.gallery {
+  @include clearfix;
+
+  .gallery-item {
+    @include breakpoint($bp-small-2) {
+      @include gallery(6);
+    }
+
+    @include breakpoint($tab) {
+      @include gallery(4);
+    }
+
+    @include breakpoint($bp-large-1) {
+      @include gallery(3);
+    }
+
+    margin-bottom: gutter(8);
+    padding-bottom: 0;
+    position: relative;
+
+    a {
+      color: $white;
+      display: block;
+      font-family: $font-sans;
+      height: 220px;
+      margin: 0 auto;
+      max-height: 220px;
+      text-shadow: 2px 2px 3px rgba($black, 0.7);
+      width: 220px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    img {
+      display: block;
+      margin: auto;
+    }
+
+    .gallery-item--overlay {
+      display: block;
+      margin: 0 auto;
+      width: 220px;
+    }
+  }
+
+  .gallery-item--title {
+    background: rgba($gray-darkest, 0.7);
+    font-size: 1.4em;
+    height: 220px;
+    line-height: 1.2em;
+    position: absolute;
+    top: 0;
+    width: 220px;
+
+    &:hover {
+      background: 0;
+    }
+
+    a {
+      padding: 20px;
+    }
+  }
+
+  .subtitle {
+    bottom: 0;
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    padding: 0 20px 20px 0;
+    position: absolute;
+  }
+}
+
+.view-content {
+  @include clearfix;
+}

@@ -1,0 +1,139 @@
+.wrapper--highlighted {
+  background-color: $gray-lightest;
+  border-color: $gray-light;
+}
+
+img.bookmark {
+  display: inline-block;
+  height: 100px;
+}
+
+.l-region--highlighted h2 {
+  margin-top: 0.15em;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+}
+
+.dept-name {
+  display: inline;
+  font-size: 0.85em;
+  line-height: 1em;
+  margin: 0;
+
+  @include breakpoint(65em) {
+    display: inline-block;
+    margin-left: 0.4em;
+    margin-top: 0.6em;
+  }
+
+  h2 {
+    font-size: 1em;
+    margin-left: 50px;
+
+    @include breakpoint(65em) {
+      font-size: 1.25em;
+      margin-left: 0;
+    }
+
+    @include breakpoint($bp-med) {
+      font-size: 1.3em;
+    }
+
+    @include breakpoint(59.8em) {
+      font-size: 1.2em;
+    }
+
+    @include breakpoint(63em) {
+      font-size: 1.3em;
+    }
+  }
+
+  span,
+  small {
+    color: $gray;
+    font-family: $font-sans;
+    font-size: 0.55em;
+    line-height: 0.6em;
+    padding-top: 0.2em;
+
+    @include breakpoint($tab) {
+      font-size: 0.6em;
+    }
+  }
+
+  span {
+    display: block;
+    margin-left: 50px;
+    padding-top: 1em;
+
+    @include breakpoint(65em) {
+      margin-left: 0;
+      padding-top: 0;
+    }
+  }
+
+}
+
+.navbar-brand {
+  background-color: transparent;
+  color: $black;
+  display: inline;
+  font-size: 1.75em;
+  margin-bottom: -0.6em;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.l-region--highlighted > * {
+  vertical-align: top;
+}
+
+// SVG logo
+.svg {
+  .rbsc-logo img {
+    display: none;
+  }
+
+  .rbsc-logo {
+    background: url("/sites/all/themes/rbsc/assets/public/images/rbsc_bookmark.svg") center center no-repeat;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+    height: 71px;
+    width: 36px;
+
+    @include breakpoint($tab) {
+      margin-left: 0;
+    }
+  }
+}
+
+.l-region--highlighted .site-branding {
+  @include breakpoint(60em) {
+    @include span(first 8);
+  }
+}
+
+.l-region--highlighted .site-search {
+  @include breakpoint(60em) {
+    @include span(last 4);
+  }
+}
+
+.l-region--highlighted .allsearch-block-form > div {
+  margin-top: 0;
+
+  @include breakpoint($bp-small) {
+    margin-top: 0.5em;
+  }
+
+  @include breakpoint(59.9em) {
+    margin-top: 1.2em;
+  }
+}

@@ -1,0 +1,41 @@
+.three_six_three-region--middle {
+  p:first-child {
+    margin-top: 0;
+  }
+
+  .pane-division-collection-strengths-panel-pane-3 {
+    border-top: 1px solid $gray-lightest;
+
+    h2 {
+      margin-top: 0.75em;
+    }
+
+    h3 {
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.collection-location,
+.generic-staff-address {
+  margin: 1em 0 0;
+}
+
+.three_six_three-region--first,
+.three_six_three-region--second {
+  h2 {
+    font-size: 1.2em;
+  }
+}
+
+.three_six_three-region--second .panel-pane:first-child h2 {
+  margin-top: 0;
+}
+
+.node-type-online-collections .external-link a {
+  font-size: 0.85em;
+}
+
+.view-research-guides .striped-list ul ul li:nth-child(odd) {
+  background: none;
+}

@@ -1,0 +1,31 @@
+
+.view-rbsc-databases select {
+  height: 100%;
+  min-width: 200px;
+}
+
+.view-rbsc-databases button {
+  width: 300px;
+}
+
+.view-rbsc-databases input[type=checkbox],
+.view-rbsc-databases input[type=radio] {
+  box-sizing: border-box;
+  display: inline;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  padding: 0;
+}
+
+.help-block {
+  color: $gray;
+  display: block;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  margin: 5px 0 10px;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}

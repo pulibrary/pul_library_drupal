@@ -1,0 +1,15 @@
+.section-visit-us .location-info {
+  margin-bottom: 2em;
+
+  &:first-child {
+    @include breakpoint($tab) {
+      @include span(first 6);
+    }
+  }
+
+  &:nth-child(2) {
+    @include breakpoint($tab) {
+      @include span(last 6);
+    }
+  }
+}

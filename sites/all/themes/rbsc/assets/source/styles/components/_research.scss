@@ -1,0 +1,59 @@
+.cover-image {
+  border-bottom: 1px solid $gray-lightest;
+  font-family: $font-sans;
+  font-size: 0.8em;
+  padding-bottom: 1em;
+}
+
+.section-catalogs-databases .pane-node-body {
+  @include clearfix;
+}
+
+.three-nine .pane-node-body h2:first-child {
+  margin-top: 0.5em;
+}
+
+// All search block
+.three_nine-region--second {
+  .allsearch-block-form {
+    @include clearfix;
+
+    label {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    input[type=text] {
+      display: inline-block;
+      float: left;
+      width: 65%;
+    }
+
+    input[type=submit] {
+      height: 37px;
+      margin-left: 0.5em;
+      padding: 0.5em;
+    }
+
+    button {
+      @include hidden;
+    }
+  }
+}
+
+li.media {
+  list-style: none;
+}
+
+.media-list ul {
+  margin: 0;
+}
+
+.item-list ul li {
+  list-style: disc;
+  margin: 0;
+}
+
+.btn-width-auto {
+  width: auto;
+}

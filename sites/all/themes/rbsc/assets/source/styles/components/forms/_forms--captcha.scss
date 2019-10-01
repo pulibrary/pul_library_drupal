@@ -1,0 +1,9 @@
+.captcha {
+  border: 0;
+  padding: 0;
+
+  legend,
+  .fieldset-description {
+    @include visually-hidden;
+  }
+}

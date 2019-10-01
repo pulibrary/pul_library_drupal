@@ -1,0 +1,25 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-sans;
+}
+
+.nine_three_stacked-region--second h2 {
+  margin-top: 0;
+}
+
+.downloadable-heading h2,
+h3.media-heading {
+  font-size: 1.2em;
+}
