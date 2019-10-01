@@ -15,8 +15,8 @@ class PiwikNoscriptTestCase extends DrupalWebTestCase {
    */
   public static function getInfo() {
     return array(
-      'name' => 'Matomo (Piwik) Noscript',
-      'description' => 'Tests Matomo (formerly Piwik) Noscript module.',
+      'name' => 'Matomo Noscript',
+      'description' => 'Tests Matomo Noscript module.',
       'group' => 'Matomo',
     );
   }
@@ -29,7 +29,7 @@ class PiwikNoscriptTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Tests that Piwik Noscript tags appear in the page.
+   * Tests that Matomo noscript tags appear in the page.
    */
   protected function testPiwikNoscript() {
     variable_set('piwik_site_id', 1);
@@ -38,7 +38,7 @@ class PiwikNoscriptTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Tests that Piwik Noscript tags appear in the page with Matomo module.
+   * Tests that Matomo noscript tags appear in the page with Matomo module.
    */
   protected function testMatomoNoscript() {
     variable_set('matomo_site_id', 1);
@@ -47,7 +47,7 @@ class PiwikNoscriptTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Tests that Piwik Noscript tags appear in the page with Matomo module.
+   * Tests that Matomo noscript tags appear in the page with Matomo module.
    */
   protected function piwikNoscriptTest() {
     $this->drupalGet(NULL);

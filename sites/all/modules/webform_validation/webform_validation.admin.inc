@@ -173,12 +173,13 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
   $form = array();
   $rule_validator = webform_validation_get_validator_info($validator);
 
-  $form['rule'] = array(
-    '#type' => 'fieldset',
-    '#title' => ($action == 'edit') ? t('Edit rule') : t('Add rule'),
-    '#collapsible' => FALSE,
-    '#collapsed' => FALSE,
-  );
+  if ($action === 'edit') {
+    $title = t('Edit validation rule %title', array('%title' => $rule['rulename']));
+  }
+  else {
+    $title = t('Add validation rule');
+  }
+  drupal_set_title($title, PASS_THROUGH);
 
   $form['rule']['validator'] = array(
     '#type' => 'hidden',
@@ -208,10 +209,16 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
     );
   }
 
+  $form['rule']['type'] = array(
+    '#type' => 'item',
+    '#title' => t('Rule type'),
+    '#markup' => $rule_validator['name'],
+  );
+
   $form['rule']['rulename'] = array(
     '#type' => 'textfield',
     '#title' => t('Rule name'),
-    '#default_value' => (isset($rule['rulename'])) ? $rule['rulename'] : '',
+    '#default_value' => isset($rule['rulename']) ? $rule['rulename'] : NULL,
     '#required' => TRUE,
     '#size' => 60,
     '#maxlength' => 255,
@@ -224,7 +231,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
     '#weight' => 3,
     '#description' => t('Select the components to be validated by this validation rule'),
     '#options' => webform_validation_get_webform_components($node, $validator),
-    '#default_value' => (isset($rule['components'])) ? array_keys($rule['components']) : array(),
+    '#default_value' => isset($rule['components']) ? array_keys($rule['components']) : array(),
   );
 
   if (!empty($rule_validator['custom_data']) && is_array($rule_validator['custom_data'])) {
@@ -272,7 +279,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
 
   $form['rule']['submit'] = array(
     '#type' => 'submit',
-    '#value' => (isset($rule['ruleid'])) ? t('Save rule') : t('Add rule'),
+    '#value' => isset($rule['ruleid']) ? t('Save rule') : t('Add rule'),
     '#weight' => 25,
   );
 
@@ -297,19 +304,25 @@ function webform_validation_manage_rule_validate($form, &$form_state) {
   }
 
   $rule_validator = webform_validation_get_validator_info($values['validator']);
+
+  // Validate custom data.
+  if ($values['data'] && !empty($rule_validator['custom_data']['validate_regex']) && !preg_match($rule_validator['custom_data']['validate_regex'], $values['data'])) {
+    form_set_error('data', $rule_validator['custom_data']['label'] . ' ' . t('is invalid.'));
+  }
+
   $selected_components = count(array_filter($values['rule_components']));
   // Check validator min_components and min_components property when they are
   // equal.
   if (isset($rule_validator['min_components']) && isset($rule_validator['max_components']) && $rule_validator['min_components'] === $rule_validator['max_components'] && $selected_components !== $rule_validator['min_components']) {
-    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component', 'You need to select exactly @count components'));
+    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select exactly @count component.', 'You need to select exactly @count components.'));
   }
   // Check validator min_components property.
   elseif (isset($rule_validator['min_components']) && $selected_components < $rule_validator['min_components']) {
-    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select at least @count component', 'You need to select at least @count components'));
+    form_set_error('rule_components', format_plural($rule_validator['min_components'], 'You need to select at least @count component.', 'You need to select at least @count components.'));
   }
   // Check validator max_components property.
   elseif (isset($rule_validator['max_components']) && $selected_components > $rule_validator['max_components']) {
-    form_set_error('rule_components', format_plural($rule_validator['max_components'], 'You can select @count component at most', 'You can select @count components at most'));
+    form_set_error('rule_components', format_plural($rule_validator['max_components'], 'You can select @count component at most.', 'You can select @count components at most.'));
   }
 }
 

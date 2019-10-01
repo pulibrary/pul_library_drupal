@@ -46,7 +46,8 @@ class WebformValidationTestCase extends WebformTestCase {
 
     // Rule creation page.
     $this->clickLink('Minimum length');
-    $this->assertTitle('Add validation | Drupal');
+    $this->assertTitle('Add validation rule | Drupal');
+    $this->assertText('Minimum length');
     $element = $this->xpath("//input[@id='edit-data'][@name='data'][@type='text']");
     $this->assertTrue($element, 'Page contains "edit-data" input.');
 
@@ -58,6 +59,27 @@ class WebformValidationTestCase extends WebformTestCase {
     );
     $this->drupalPost(NULL, $values, t('Add rule'));
     $this->assertText(htmlspecialchars($values['rulename'], ENT_QUOTES), 'Rule name appears on page.');
+
+    // Test rule creation validation.
+    $this->clickLink('Compare two values');
+    $this->assertTitle('Add validation rule | Drupal');
+    $this->assertText('Compare two values');
+    $values = array(
+      'rulename' => $this->randomString(),
+      'data' => 'invalid',
+    );
+    $this->drupalPost(NULL, $values, t('Add rule'));
+    $this->assertText('Comparison operator is invalid.', 'Custom data validation fails.');
+    $this->assertText('You need to select exactly 2 components.', 'Custom data validation fails.');
+    $this->assertText('Custom error message field is required.', 'Custom data validation fails.');
+
+    $values = array(
+      'rule_components[20]' => TRUE,
+      'rule_components[21]' => TRUE,
+      'data' => '<',
+      'error_message' => 'Error message.',
+    );
+    $this->drupalPost(NULL, $values, t('Add rule'));
 
     $this->clickLink('Webform Validation Testing 1');
     $element = $this->xpath("//textarea[@id='edit-data'][@name='data']");

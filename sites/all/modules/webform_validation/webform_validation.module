@@ -234,7 +234,9 @@ function webform_validation_validate($form, &$form_state) {
 /**
  * Helper function to get all field keys (including fields in fieldsets).
  *
- * @deprecated No longer used and will be removed in 7.x-2.x.
+ * @deprecated in webform_validation:7.x-1.14 and is removed from
+ * webform_validation:7.x-2.0. No longer used.
+ * @see https://www.drupal.org/project/webform_validation/issues/2841817
  */
 function webform_validation_get_field_keys($submitted, $node) {
   static $fields = array();
@@ -274,7 +276,9 @@ function webform_validation_parent_tree($cid, $components) {
 /**
  * Get array of formkeys for all components that have been assigned to a rule.
  *
- * @deprecated No longer used and will be removed in 7.x-2.x.
+ * @deprecated in webform_validation:7.x-1.14 and is removed from
+ * webform_validation:7.x-2.0. No longer used.
+ * @see https://www.drupal.org/project/webform_validation/issues/2841817
  */
 function webform_validation_rule_get_formkeys($rule) {
   $formkeys = array();
@@ -530,4 +534,66 @@ function webform_validation_webform_validator_alter(&$validators) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_uuid_node_features_export_alter().
+ */
+function webform_validation_uuid_node_features_export_alter(&$data, $node, $module) {
+  $nid = reset(entity_get_id_by_uuid('node', array($node->uuid)));
+  if (webform_validation_get_node_rules($nid)) {
+    $data['dependencies']['webform_validation'] = 'webform_validation';
+  }
+}
+
+/**
+ * Implements hook_uuid_node_features_export_render_alter().
+ */
+function webform_validation_uuid_node_features_export_render_alter(&$export, $node, $module) {
+  if (!empty($node->webform)) {
+    $rules = webform_validation_get_node_rules_assoc($node->nid);
+    foreach ($rules as &$rule) {
+      unset($rule['nid']);
+      unset($rule['ruleid']);
+    }
+    $export->webform['validation'] = $rules;
+  }
+}
+
+/**
+ * Implements hook_uuid_entity_uuid_save().
+ */
+function webform_validation_entity_uuid_save($node, $entity_type) {
+  if ($entity_type == 'node') {
+    if (isset($node->webform['validation'])) {
+      $rules = $node->webform['validation'];
+      $orig_rules = webform_validation_get_node_rules_assoc($node->nid);
+      // Delete obsolete rules.
+      $delete = array_diff_key($orig_rules, $rules);
+      foreach ($delete as $rule) {
+        webform_dynamic_delete_rule($rule['ruleid']);
+      }
+      // Add new rules.
+      $new = array_diff_key($rules, $orig_rules);
+      foreach ($new as $rule) {
+        $rule['action'] = 'add';
+        $rule['nid'] = $node->nid;
+        $rule['rule_components'] = $rule['components'];
+        webform_validation_rule_save($rule);
+      }
+      // Update existing rules.
+      $existing = array_diff_key($rules, $new + $delete);
+      foreach ($existing as $name => $rule) {
+        $orig_rule = $orig_rules[$name];
+        $rule['nid'] = $orig_rule['nid'];
+        $rule['ruleid'] = $orig_rule['ruleid'];
+        if ($rule != $orig_rule) {
+          $rule['action'] = 'edit';
+          $rule['rule_components'] = $rule['components'];
+          webform_validation_rule_save($rule);
+        }
+      }
+    }
+  }
+
 }

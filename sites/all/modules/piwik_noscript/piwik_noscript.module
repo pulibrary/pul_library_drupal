@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Adds Matomo (Piwik) noscript tracking code to all your site's pages.
+ * Adds Matomo noscript tracking code to all your site's pages.
  */
 
 /**
@@ -63,17 +63,12 @@ function piwik_noscript_page_build(&$page) {
  * Builds Matomo query parameters.
  */
 function piwik_noscript_options() {
+  global $base_root;
   return array(
     'query' => array(
       'idsite' => variable_get('matomo_site_id', variable_get('piwik_site_id', 0)),
       'rec' => 1,
-      'dimension1' => 'disabled',
-      'dimension2' => 'disabled',
-      'url' => url(drupal_is_front_page() ? '' : $_GET['q'], array(
-        'absolute' => TRUE,
-        'external' => FALSE,
-        'query' => drupal_get_query_parameters(),
-      )),
+      'url' => $base_root . request_uri(),
     ),
   );
 }

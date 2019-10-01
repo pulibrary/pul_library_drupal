@@ -1,5 +1,5 @@
-Matomo (Piwik) noscript
-=======================
+Matomo Noscript
+===============
 
 Some sites have a strict privacy policy which prohibits tracking of browser
 metadata tracked by the Matomo JavaScript client (piwik.js).
