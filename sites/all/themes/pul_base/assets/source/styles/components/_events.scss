@@ -1,0 +1,155 @@
+.events-item {
+  border-left: 1px solid $gray-light;
+  margin-bottom: 2.25rem;
+  padding-left: 1.425rem;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.events-title {
+  font-size: $font-size-large;
+  margin-bottom: 1rem;
+}
+
+.events-time,
+.events-location,
+.events-description {
+  color: $gray-darkest;
+  font-size: $font-size-med;
+}
+
+.events-time {
+  text-transform: uppercase;
+}
+
+.events-item [class^="icon-"] {
+  color: $gray-dark;
+  margin-right: 5px;
+}
+
+.events-description:not(:empty) {
+  padding-top: 1rem;
+
+  a {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.events-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.events-group--date,
+.events-group--events {
+  flex: 0 1;
+  padding: 1rem 0;
+}
+
+.events-group--date {
+  flex-basis: 19%;
+  line-height: 26px;
+
+  span {
+    color: $gray-darkest;
+    font-size: $font-size-med-2;
+    text-transform: uppercase;
+  }
+}
+
+.events-group--events {
+  flex-basis: 75%;
+
+  @media (min-width: $bp-med) {
+    flex-basis: 80%;
+  }
+}
+
+.events-title a::before {
+  background-color: transparent;
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.view-libcal-events .views-exposed-form {
+  .views-exposed-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 2rem 0;
+  }
+
+  .views-exposed-widget {
+    float: none;
+    padding-top: 0;
+
+    label {
+      color: $gray-darkest;
+      font-weight: normal;
+    }
+
+    .form-submit {
+      background-color: $white;
+      border: 0;
+      color: $gray-darkest;
+      font-size: $font-size-small-2;
+      height: 44px;
+      margin-top: 0;
+      padding: 0.5rem 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:first-child {
+      flex-basis: 100%;
+
+      @media (min-width: $bp-med) {
+        flex-basis: 50%;
+      }
+    }
+
+    &:nth-child(2) {
+      flex-basis: 100%;
+
+      @media (min-width: $bp-med) {
+        flex-basis: auto;
+        margin-left: auto;
+      }
+    }
+
+    &:last-child {
+      flex-basis: 100%;
+    }
+  }
+
+  input[type="text"],
+  select {
+    background-color: $white;
+    border: 1px solid $gray-light;
+    color: $gray-darkest;
+    height: 44px;
+
+    &:hover,
+    &:focus {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  .views-exposed-widget.views-submit-button {
+    clear: none;
+  }
+}
