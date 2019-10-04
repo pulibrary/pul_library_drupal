@@ -220,7 +220,7 @@ function pul_personal_librarian_default_page_manager_pages() {
     'admin_title' => 'Personal Librarian Header',
     'title' => 'About Princeton’s Personal Librarian Program',
     'title_heading' => 'h2',
-    'body' => '<p>Navigating the rich resources at Princeton University Library can be challenging for new students, so in fall ’17 we launched a “Personal Librarian” program that pairs every first year, second year, and junior student with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have!</p>',
+    'body' => '<p>Navigating the rich resources at Princeton University Library can be challenging for new students, so in fall ’17 we launched a “Personal Librarian” program that pairs every Princeton undergraduate with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have!</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
   );
