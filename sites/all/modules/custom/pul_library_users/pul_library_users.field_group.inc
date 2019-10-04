@@ -64,6 +64,7 @@ function pul_library_users_field_group_info() {
       5 => 'field_personal_lib_spec',
       6 => 'field__personal_lib_fun_fact',
       7 => 'field_personal_lib_class_year',
+      8 => 'field_pl_residential_college',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
