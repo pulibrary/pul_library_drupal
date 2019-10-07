@@ -76,39 +76,40 @@ function pul_undergraduate_student_import_feeds_importer_default() {
         'defuse_mail' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'pl_id',
-            'target' => 'field_current_personal_lib:label',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          1 => array(
             'source' => 'netid',
             'target' => 'name',
             'unique' => 1,
             'language' => 'und',
           ),
-          2 => array(
+          1 => array(
             'source' => 'email',
             'target' => 'mail',
             'unique' => 1,
             'language' => 'und',
           ),
-          3 => array(
+          2 => array(
             'source' => 'First Name',
             'target' => 'field_puluser_fname',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          4 => array(
+          3 => array(
             'source' => 'Last Name',
             'target' => 'field_puluser_lname',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'class',
             'target' => 'field_personal_lib_class_year',
             'unique' => FALSE,
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'Residential College - Description',
+            'target' => 'field_pl_residential_college',
+            'unique' => FALSE,
+            'language' => 'und',
           ),
         ),
         'insert_new' => '1',

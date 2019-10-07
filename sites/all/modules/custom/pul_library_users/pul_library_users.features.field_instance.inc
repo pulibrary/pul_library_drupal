@@ -133,7 +133,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 43,
+      'weight' => 44,
     ),
     'workbench_access_field' => 0,
   );
@@ -197,7 +197,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 42,
+      'weight' => 43,
     ),
     'workbench_access_field' => 0,
   );
@@ -325,7 +325,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 120,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 40,
     ),
     'workbench_access_field' => 0,
   );
@@ -389,7 +389,7 @@ function pul_library_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 41,
+      'weight' => 42,
     ),
     'workbench_access_field' => 0,
   );
@@ -529,7 +529,7 @@ function pul_library_users_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 38,
+      'weight' => 39,
     ),
   );
 
@@ -1137,7 +1137,7 @@ function pul_library_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 52,
     ),
     'workbench_access_field' => 0,
   );
@@ -1852,7 +1852,7 @@ function pul_library_users_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 48,
     ),
     'workbench_access_field' => 0,
   );
