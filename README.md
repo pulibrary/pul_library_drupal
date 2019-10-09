@@ -1,6 +1,7 @@
-# Local Development With Lando
-# Rare Books and Special Collections
+# Library Site
 
+  library.princeton.edu is supported by this repo.
+  
 ## Local development with Lando
 
 
@@ -124,6 +125,13 @@ $aliases['local'] = array(
 drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' > dumpfile.sql
 ```
 
+## Deploy to server
+
+1. We have capistrano set up to deploy our servers
+
+    1. `cap staging deploy` will deploy the master branch to staging
+    1. `BRANCH=other cap staging deploy` will deploy the other branch to staging
+    
 ## Uploading and importing a SQL dump
 capistrano can be used to import a sql dump onto one of the servers.  It will upload the dump file to the server, import the dump via drush, then clear and update the search index. You should create the sql dump and then run
 ```
@@ -132,5 +140,5 @@ SQL_DIR=<path_to_sql_dump_file> SQL_FILE=<dump_file_name> cap production drupal:
 
 For example if my sql dump file is in `/tmp/dump.sql` I would run:
 ```
-SQL_DIR=/tmp/ SQL_FILE=dump.sql cap production drupal:database:import_dump
+SQL_DIR=/tmp/ SQL_GZ=dump.sql.gz cap production drupal:database:import_dump
 ```
