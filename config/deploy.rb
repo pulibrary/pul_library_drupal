@@ -103,7 +103,7 @@ namespace :drupal do
   desc "Set the site offline"
   task :site_offline do
       on release_roles :app do
-          execute "drush -r #{release_path} vset --exact maintenance_mode 1"
+          execute "drush -r #{release_path} vset --exact maintenance_mode 1; true"
           info "set site to offline"
       end
   end
@@ -112,7 +112,7 @@ namespace :drupal do
   task :site_online do
       on release_roles :app do
           execute "drush -r #{release_path} vdel -y --exact maintenance_mode"
-          info "set site to onffline"
+          info "set site to online"
       end
   end
 
@@ -196,17 +196,25 @@ namespace :drupal do
 
   namespace :database do
 
-    desc "Run Drush SQL Client against a local sql file SQL_DIR/SQL_FILE"
+    desc "Run Drush SQL Client against a local sql file SQL_DIR/SQL_GZ"
     task :import_dump do
       invoke "drupal:site_offline"
-      on release_roles :drupal_primary do
-          upload! ENV["SQL_DIR"] + ENV["SQL_FILE"], '/tmp/'+ENV["SQL_FILE"]
-          execute "drush -r #{release_path} sql-cli < /tmp/"+ENV["SQL_FILE"]
-      end
+      invoke "drupal:database:upload_and_import"
       invoke "drupal:database:update_db_variables"
       invoke "drupal:site_online"
       invoke "drupal:database:clear_search_index"
       invoke "drupal:database:update_search_index"
+    end
+
+    desc "Upload the dump file and import it"
+    task :upload_and_import do
+      gz_sql_name = ENV["SQL_GZ"]
+      sql_file_name = gz_sql_name.sub('.gz','')
+      on release_roles :drupal_primary do
+        upload! ENV["SQL_DIR"] + gz_sql_name, '/tmp/'+gz_sql_name
+        execute "gzip -f -d /tmp/#{gz_sql_name}"
+        execute "drush -r #{release_path} sql-cli < /tmp/"+sql_file_name
+      end
     end
 
     desc "Update variables on a dump import"
