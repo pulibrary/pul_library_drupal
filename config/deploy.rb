@@ -91,6 +91,14 @@ namespace :drupal do
         end
   end
 
+  desc "run drush cron"
+  task :cron do
+      on release_roles :drupal_primary do
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} cron"
+          info "run drupal cron"
+        end
+  end
+
   desc "Update file permissions to follow best security practice: https://drupal.org/node/244924"
   task :set_permissions_for_runtime do
       on release_roles :app do
