@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_sheet_music.facetapi_defaults.inc
@@ -18,6 +19,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_mus_publication_date';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -46,6 +48,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_mus_sh_instrumentation';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -73,6 +76,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_mus_sheetmusic_composer';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -101,6 +105,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_arranger';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -126,6 +131,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Arranger',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_arranger'] = $facet;
 
@@ -137,6 +145,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_arranger:name';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -162,6 +171,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Arranger » Name',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_arranger:name'] = $facet;
 
@@ -173,6 +185,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_box_number';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -198,6 +211,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Box Number',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_box_number'] = $facet;
 
@@ -209,6 +225,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_folder_number';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -234,6 +251,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Folder Number',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_folder_number'] = $facet;
 
@@ -245,6 +265,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_longnote';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -270,6 +291,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Notes',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_longnote'] = $facet;
 
@@ -281,6 +305,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_lyricist';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -306,6 +331,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Lyricist',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_lyricist'] = $facet;
 
@@ -317,6 +345,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_lyricist:name';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -342,6 +371,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Lyricist » Name',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_lyricist:name'] = $facet;
 
@@ -353,6 +385,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_plate_number';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -378,6 +411,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Plate Number',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_plate_number'] = $facet;
 
@@ -389,6 +425,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_publication_date';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -427,6 +464,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'full_html',
     ),
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Publication Date',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_publication_date'] = $facet;
 
@@ -438,6 +478,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_publisher';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -463,6 +504,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Publisher',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_publisher'] = $facet;
 
@@ -474,6 +518,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_publisher_citystate';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -499,6 +544,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Publisher City &amp; State',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_publisher_citystate'] = $facet;
 
@@ -510,6 +558,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_sh_instrumentation';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -548,6 +597,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'full_html',
     ),
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Instrumentation',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_sh_instrumentation'] = $facet;
 
@@ -559,6 +611,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_sh_instrumentation:name';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -584,6 +637,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Instrumentation » Name',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_sh_instrumentation:name'] = $facet;
 
@@ -595,6 +651,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_sheetmusic_composer';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -633,6 +690,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'full_html',
     ),
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Composer',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_sheetmusic_composer'] = $facet;
 
@@ -644,6 +704,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_sheetmusic_composer:name';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -669,6 +730,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Composer » Name',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_sheetmusic_composer:name'] = $facet;
 
@@ -680,6 +744,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_subtitle';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -705,6 +770,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Subtitle',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_subtitle'] = $facet;
 
@@ -716,6 +784,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_mus_valva_scene_type';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -741,6 +810,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Scene Type',
   );
   $export['search_api@mendel_valva_sheet_music:block:field_mus_valva_scene_type'] = $facet;
 
@@ -752,6 +824,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'search_api_aggregation_1';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -777,6 +850,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Title',
   );
   $export['search_api@mendel_valva_sheet_music:block:search_api_aggregation_1'] = $facet;
 
@@ -788,6 +864,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'search_api_language';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -813,6 +890,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Item language',
   );
   $export['search_api@mendel_valva_sheet_music:block:search_api_language'] = $facet;
 
@@ -824,6 +904,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'search_api_url';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -849,6 +930,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'URI',
   );
   $export['search_api@mendel_valva_sheet_music:block:search_api_url'] = $facet;
 
@@ -860,6 +944,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'title';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -885,6 +970,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'Title',
   );
   $export['search_api@mendel_valva_sheet_music:block:title'] = $facet;
 
@@ -896,6 +984,7 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'url';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -921,6 +1010,9 @@ function mendel_sheet_music_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'display_count' => TRUE,
+    'title_override' => 0,
+    'title' => 'URL',
   );
   $export['search_api@mendel_valva_sheet_music:block:url'] = $facet;
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_sheet_music.views_default.inc
@@ -163,8 +164,6 @@ function mendel_sheet_music_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['search_api_views_fulltext']['not'] = 0;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_mendel_valva_sheet_music';
@@ -590,7 +589,7 @@ function mendel_sheet_music_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
