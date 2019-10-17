@@ -52,7 +52,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -90,7 +90,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_branch_external_links']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -136,14 +136,15 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_branch_quick_link']['label'] = '';
   $handler->display->display_options['fields']['field_branch_quick_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_branch_quick_link']['settings'] = array(
+    'bypass_access' => 0,
     'link' => 1,
   );
-  $handler->display->display_options['fields']['field_branch_quick_link']['delta_limit'] = '5';
+  $handler->display->display_options['fields']['field_branch_quick_link']['delta_limit'] = '';
   $handler->display->display_options['fields']['field_branch_quick_link']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_branch_quick_link']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -194,7 +195,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_amenities']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -232,6 +233,9 @@ function branch_link_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Featured Resources', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Resources';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Featured Resources */
   $handler->display->display_options['fields']['field_branch_featured_resources']['id'] = 'field_branch_featured_resources';
@@ -240,14 +244,15 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_branch_featured_resources']['label'] = '';
   $handler->display->display_options['fields']['field_branch_featured_resources']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_branch_featured_resources']['settings'] = array(
+    'bypass_access' => 0,
     'link' => 1,
   );
-  $handler->display->display_options['fields']['field_branch_featured_resources']['delta_limit'] = '5';
+  $handler->display->display_options['fields']['field_branch_featured_resources']['delta_limit'] = '';
   $handler->display->display_options['fields']['field_branch_featured_resources']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_branch_featured_resources']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -308,7 +313,7 @@ function branch_link_views_views_default_views() {
   $handler->display->display_options['fields']['field_related_links']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
