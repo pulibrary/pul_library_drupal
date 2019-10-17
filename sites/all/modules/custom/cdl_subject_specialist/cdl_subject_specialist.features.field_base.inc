@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * cdl_subject_specialist.features.field_base.inc
@@ -10,7 +11,7 @@
 function cdl_subject_specialist_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_bio'
+  // Exported field_base: 'field_bio'.
   $field_bases['field_bio'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +33,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_cdl_department_url'
+  // Exported field_base: 'field_cdl_department_url'.
   $field_bases['field_cdl_department_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -64,7 +65,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_collecting_policies_spec'
+  // Exported field_base: 'field_collecting_policies_spec'.
   $field_bases['field_collecting_policies_spec'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -96,7 +97,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_collections_assistants'
+  // Exported field_base: 'field_collections_assistants'.
   $field_bases['field_collections_assistants'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -120,7 +121,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department'
+  // Exported field_base: 'field_department'.
   $field_bases['field_department'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -152,7 +153,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'list_float',
   );
 
-  // Exported field_base: 'field_e_mail'
+  // Exported field_base: 'field_e_mail'.
   $field_bases['field_e_mail'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -176,7 +177,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_job_title'
+  // Exported field_base: 'field_job_title'.
   $field_bases['field_job_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -200,7 +201,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_last_name_first_name'
+  // Exported field_base: 'field_last_name_first_name'.
   $field_bases['field_last_name_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -274,7 +275,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_library'
+  // Exported field_base: 'field_library'.
   $field_bases['field_library'] = array(
     'active' => 1,
     'cardinality' => 2,
@@ -310,7 +311,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'list_float',
   );
 
-  // Exported field_base: 'field_library_directory_profile'
+  // Exported field_base: 'field_library_directory_profile'.
   $field_bases['field_library_directory_profile'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -348,7 +349,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_office_location'
+  // Exported field_base: 'field_office_location'.
   $field_bases['field_office_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -372,7 +373,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_profile_image'
+  // Exported field_base: 'field_profile_image'.
   $field_bases['field_profile_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -397,7 +398,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_research_guides_websites'
+  // Exported field_base: 'field_research_guides_websites'.
   $field_bases['field_research_guides_websites'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -429,7 +430,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_sel_first_name'
+  // Exported field_base: 'field_sel_first_name'.
   $field_bases['field_sel_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -453,7 +454,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sel_last_name'
+  // Exported field_base: 'field_sel_last_name'.
   $field_bases['field_sel_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -474,7 +475,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sel_library_department'
+  // Exported field_base: 'field_sel_library_department'.
   $field_bases['field_sel_library_department'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -503,7 +504,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sel_office_directions'
+  // Exported field_base: 'field_sel_office_directions'.
   $field_bases['field_sel_office_directions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -525,7 +526,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sel_office_hours'
+  // Exported field_base: 'field_sel_office_hours'.
   $field_bases['field_sel_office_hours'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -549,7 +550,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sel_pul_library'
+  // Exported field_base: 'field_sel_pul_library'.
   $field_bases['field_sel_pul_library'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -589,7 +590,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_selector_subject_areas'
+  // Exported field_base: 'field_selector_subject_areas'.
   $field_bases['field_selector_subject_areas'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -618,7 +619,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_subject_area'
+  // Exported field_base: 'field_subject_area'.
   $field_bases['field_subject_area'] = array(
     'active' => 1,
     'cardinality' => 3,
@@ -642,7 +643,7 @@ function cdl_subject_specialist_field_default_field_bases() {
         'Engineering' => 'Engineering',
         'General' => 'General',
         'Humanities and Social Sciences' => 'Humanities and Social Sciences',
-        'Rare Books and Special Collections' => 'Rare Books and Special Collections',
+        'Special Collections' => 'Special Collections',
         'Sciences' => 'Sciences',
       ),
       'allowed_values_function' => '',
@@ -651,7 +652,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_subject_databases'
+  // Exported field_base: 'field_subject_databases'.
   $field_bases['field_subject_databases'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -683,7 +684,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_subject_specialities'
+  // Exported field_base: 'field_subject_specialities'.
   $field_bases['field_subject_specialities'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -707,7 +708,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_subjects'
+  // Exported field_base: 'field_subjects'.
   $field_bases['field_subjects'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -729,7 +730,7 @@ function cdl_subject_specialist_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_telephone'
+  // Exported field_base: 'field_telephone'.
   $field_bases['field_telephone'] = array(
     'active' => 1,
     'cardinality' => 2,

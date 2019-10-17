@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * cdl_subject_specialist.field_group.inc
@@ -8,7 +9,7 @@
  * Implements hook_field_group_info().
  */
 function cdl_subject_specialist_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +41,7 @@ function cdl_subject_specialist_field_group_info() {
       ),
     ),
   );
-  $export['group_sel_profile_bio|node|subject_specialists|form'] = $field_group;
+  $field_groups['group_sel_profile_bio|node|subject_specialists|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -71,7 +72,7 @@ function cdl_subject_specialist_field_group_info() {
       ),
     ),
   );
-  $export['group_sel_profile_location|node|subject_specialists|form'] = $field_group;
+  $field_groups['group_sel_profile_location|node|subject_specialists|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -105,7 +106,7 @@ function cdl_subject_specialist_field_group_info() {
       ),
     ),
   );
-  $export['group_sel_profile_other|node|subject_specialists|form'] = $field_group;
+  $field_groups['group_sel_profile_other|node|subject_specialists|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -136,7 +137,14 @@ function cdl_subject_specialist_field_group_info() {
       ),
     ),
   );
-  $export['group_sel_profile_topics|node|subject_specialists|form'] = $field_group;
+  $field_groups['group_sel_profile_topics|node|subject_specialists|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Biographical Information');
+  t('Location Information');
+  t('Other');
+  t('Topics, Areas, Subjects');
+
+  return $field_groups;
 }
