@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * cdl_subject_specialist.views_default.inc
@@ -119,7 +120,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -521,7 +522,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['sorts']['field_subject_area_value']['id'] = 'field_subject_area_value';
   $handler->display->display_options['sorts']['field_subject_area_value']['table'] = 'field_data_field_subject_area';
   $handler->display->display_options['sorts']['field_subject_area_value']['field'] = 'field_subject_area_value';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -730,7 +731,7 @@ function cdl_subject_specialist_views_default_views() {
   $handler->display->display_options['sorts']['field_sel_last_name_value']['field'] = 'field_sel_last_name_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
