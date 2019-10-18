@@ -138,7 +138,7 @@ namespace :drupal do
   task :update_directory_owner do
       on release_roles :app do
         execute :sudo, "/bin/chown -R www-data #{release_path}"
-        execute :sudo, "/bin/chown -R www-data /var/www/library_cap/current/"
+        execute "sudo /bin/chown -R www-data /var/www/library_cap/current/; true"
       end
   end
   

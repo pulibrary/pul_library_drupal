@@ -4,6 +4,7 @@ set :files_dir, "production_files"
 
 server "library-prod1", user: fetch(:user), roles: %w{app drupal_primary}
 server "library-prod3", user: fetch(:user), roles: %w{app drupal_secondary}
+server "library-prod4", user: fetch(:user), roles: %w{app drupal_secondary}
 
 set :search_api_solr_host, 'lib-solr.princeton.edu'
 # TODO: This should be a production location
