@@ -1,80 +1,76 @@
-.section-research-data .single-region--top .pane-branch-library-image-panel-pane-1,
-.section-research-data .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
-.section-research-data .view-branch-library-image .view-content {
-  margin-bottom: 0;
-}
+// .section-research-data .single-region--top .pane-branch-library-image-panel-pane-1,
+// .section-research-data .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+// .section-research-data .view-branch-library-image .view-content {
+//   margin-bottom: 0;
+// }
 
 .prdssearch-block-form label {
   @include visually-hidden;
 }
 
-.section-research-data .single-region--top,
-.section-research-data .three_nine_stacked-region--top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+// .section-research-data .single-region--top,
+// .section-research-data .three_nine_stacked-region--top {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
 
-  .menu--secondary {
-    margin-bottom: 0;
-    width: 100%;
+//   .menu--secondary {
+//     margin-bottom: 0;
+//     width: 100%;
 
-    @include breakpoint($tab-desk) {
-      width: 65%;
-    }
-  }
+//     @include breakpoint($tab-desk) {
+//       width: 65%;
+//     }
+//   }
 
-  .pane-prdssearch-block-prdssearch-search {
-    width: 100%;
+//   .pane-prdssearch-block-prdssearch-search {
+//     width: 100%;
 
-    @include breakpoint($tab-desk) {
-      width: 35%;
-    }
-  }
-}
+//     @include breakpoint($tab-desk) {
+//       width: 35%;
+//     }
+//   }
+// }
 
-.section-research-data .menu--secondary {
-  ul {
-    background: $orange-light;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+// .section-research-data .menu--secondary {
+//   ul {
+//     background: $orange-light;
+//     flex-wrap: wrap;
+//     justify-content: flex-start;
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
 
-    @include breakpoint($tab) {
-      border: 2px solid $black;
-      display: flex;
-    }
-  }
+//     @include breakpoint($tab) {
+//       border: 2px solid $black;
+//       display: flex;
+//     }
+//   }
 
-  .menu a {
-    display: inline-block;
-    padding: 1rem;
-    text-decoration: none;
-    width: 100%;
+//   .menu a {
+//     display: inline-block;
+//     padding: 1rem;
+//     text-decoration: none;
+//     width: 100%;
 
-    @include breakpoint($tab) {
-      align-items: flex-start;
-      width: initial;
-    }
+//     @include breakpoint($tab) {
+//       align-items: flex-start;
+//       width: initial;
+//     }
 
-    &:hover,
-    &:focus,
-    &.active-trail {
-      background: $gray-lightest;
-    }
-  }
-}
+//     &:hover,
+//     &:focus,
+//     &.active-trail {
+//       background: $gray-lightest;
+//     }
+//   }
+// }
 
-.section-research-data .prdssearch-block-form>div {
+.section-research-data .prdssearch-block-form > div {
   margin: 0;
 
   input[type="text"] {
     border: 2px solid $black;
-
-    @include breakpoint($tab-desk) {
-      border-left: 0;
-    }
   }
 
   button {
@@ -101,20 +97,29 @@
 }
 
 .prds--stages {
-  background: $gray-lightest;
   display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 
-  @media screen and (max-width: $tab-desk) {
-    flex-wrap: wrap;
+  @media screen and (min-width: $tab) {
+    &::after {
+      background: url("#{$base-path}/images/prds-circle.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      bottom: 0;
+      content: "";
+      left: 0;
+      opacity: 0.25;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
   }
 
   .prds--stage {
-    border: 1px solid $black;
-    flex: 1;
-
-    @media screen and (max-width: $tab-desk) {
-      flex-basis: 50%;
-    }
+    flex: 1 0 50%;
 
     @media screen and (max-width: $tab) {
       flex-basis: 100%;
@@ -127,22 +132,23 @@
   }
 
   h2 {
-    background: $gray-light;
-    border-bottom: $border-solid $border-med $black;
-    border-top: $border-solid $border-med $black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 90px;
-    padding: 0.25em;
-    text-align: center;
+    text-transform: uppercase;
 
     a {
-      border-bottom: 0;
+      background: $blue-dark;
+      border: 1px solid $black;
+      border-radius: $slight-border-radius;
+      color: $white;
+      margin: 0.5rem;
+      min-height: 98px;
+      padding: 1rem;
+      text-align: center;
 
       &:hover,
       &:focus {
-        border-bottom: 0;
         text-decoration: underline;
       }
     }
@@ -172,7 +178,7 @@
   }
 }
 
-.single-region--bottom {
+.three_nine_stacked-region--bottom {
   display: flex;
   flex-flow: row wrap;
 
