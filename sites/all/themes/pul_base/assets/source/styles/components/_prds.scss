@@ -148,6 +148,7 @@
 
       &:hover,
       &:focus {
+        border-color: $black;
         text-decoration: underline;
       }
     }
