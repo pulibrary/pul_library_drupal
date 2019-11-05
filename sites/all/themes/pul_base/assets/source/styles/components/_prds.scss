@@ -121,8 +121,16 @@
   .prds--stage {
     flex: 1 0 50%;
 
+    &:nth-child(3) {
+      order: 4;
+    }
+
     @media screen and (max-width: $tab) {
       flex-basis: 100%;
+
+      &:nth-child(3) {
+        order: initial;
+      }
     }
 
     p {
