@@ -323,35 +323,6 @@ function research_data_service_default_page_manager_handlers() {
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['second'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane = new stdClass();
-  $pane->pid = 'new-0433856f-e333-4938-b50c-c4429518ec4d';
-  $pane->panel = 'second';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'PRDS Stages',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<div class="prds--stage"><h2 id="planning"><a href="/research-data/planning">Planning</a></h2><ul><li>Data Management Plans &amp; Data Sharing Plans<ul><li>How do I know what my funder requires?</li><li>How do I create one?</li></ul></li><li>What can I do now to make handling data easier later?</li><li>What data should I be planning to share, and how?</li><li>What are my options if I’m working with very large datasets?</li></ul><p><a href="/research-data/planning" class="more" id="lm1">Read More</a></p></div><div class="prds--stage"><h2 id="acquisition"><a href="/research-data/acquisition">Data Acquisition</a></h2><ul><li>What are data use agreements?</li><li>What should I be thinking of if I’m working with human subjects?</li><li>Data Security</li><li>Good practices for working with data</li><li>Finding datasets to work with</li></ul><p><a href="/research-data/acquisition" class="more" id="lm2">Read more</a></p></div><div class="prds--stage"><h2 id="analysis"><a href="/research-data/analysis">Analysis</a></h2><ul><li>What are Princeton’s Research Computing Resources?</li><li>How do I deal with large datasets?</li><li>What are some good options for sharing my active data with my collaborators?</li><li>Where can students get help with statistics?</li></ul><p><a href="/research-data/analysis" class="more" id="lm3">Read more</a></p></div><div class="prds--stage"><h2 id="dissemination"><a href="/research-data/dissemination">Publishing and Preservation</a></h2><ul><li>What are the advantages to publishing my data?</li><li>What does my publisher require?</li><li>How and where do I publish my dataset?</li><li>What’s a DOI?</li><li>What are my storage options if I don’t want to share my data publicly?</li></ul><p><a href="/research-data/dissemination" class="more" id="lm4">Read more</a></p></div>',
-    'format' => 'full_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'prds--stages',
-  );
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '0433856f-e333-4938-b50c-c4429518ec4d';
-  $display->content['new-0433856f-e333-4938-b50c-c4429518ec4d'] = $pane;
-  $display->panels['second'][1] = 'new-0433856f-e333-4938-b50c-c4429518ec4d';
-  $pane = new stdClass();
   $pane->pid = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
   $pane->panel = 'top';
   $pane->type = 'views_panes';
