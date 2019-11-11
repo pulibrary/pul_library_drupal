@@ -53,6 +53,7 @@
 // SVG logo
 .svg {
   .facebook-logo img,
+  .instagram-logo img,
   .twitter-logo img,
   .govdocs-logo img,
   .friends-logo img,
@@ -61,6 +62,7 @@
   }
 
   .facebook-logo,
+  .instagram-logo,
   .twitter-logo,
   .govdocs-logo,
   .friends-logo,
@@ -73,7 +75,6 @@
     @include breakpoint($tab) {
       margin-left: 0.5em;
     }
-
 
     &::before {
       content: " ";
@@ -93,6 +94,12 @@
 
   .facebook-logo {
     background-image: url("#{$base-path}/images/logo-facebook-white.svg");
+    margin: 0 0.2em 0.75em;
+    width: 24px;
+  }
+
+  .instagram-logo {
+    background-image: url("#{$base-path}/images/logo-instagram.svg");
     margin: 0 0.2em 0.75em;
     width: 24px;
   }
