@@ -22,25 +22,25 @@ function dbsearch_block_form($form, &$form_state) {
   } else {
     $prefix = "";
     $form_suffix = "";
-  }  
+  }
 
   $form = array();
 
   //$form_state['input']['form_token'] = drupal_get_token($form['#token']);
-  
+
   $form['query'] = array (
     '#type'  => 'textfield',
     '#title' =>  t('Search Databases'),
     '#size'  => 80,
-    '#default_value' => $default_value,
+    '#default_value' => '',
     '#attributes' => array(
         'placeholder' => $default_value,
     )
   );
-  $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
+  $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js';
   $hint_settings = array('db_search_hint' => variable_get('db_search_hint'),
                          'db_search_error' => variable_get('db_search_error')
-                         );   
+                         );
   $form['#attached']['js'][] = array(
     'data' => array('dbsearch_block' => $hint_settings),
     'type' => 'setting',
@@ -53,7 +53,7 @@ function dbsearch_block_form($form, &$form_state) {
     * Force form to post through the base url
     */
    $form['#action'] = url('');
-   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js'; 
+   $form['#attached']['js'][] = drupal_get_path('module', 'dbsearch_block') .'/dbsearch_block.js';
    //$form['#validate'] = array('dbsearch_block_form_validate');
    $form['#submit'] = array('dbsearch_block_form_redirect');
    $form['#target'] = "_parent";
@@ -64,19 +64,19 @@ function dbsearch_block_form($form, &$form_state) {
 }
 
 function dbsearch_block_form_validate($form, &$form_state) {
-  
+
   $term = $form_state['values']['query'];
   if($term == "" || $term == variable_get('db_search_hint')) {
     form_set_error('term', t('Enter a Database or Topic'));
   }
-  
+
   return $form;
-  
+
 }
 
 /*
 function dbsearch_block_form_validate($form, &$form_state) {
-  $query = 
+  $query =
 }
 */
 
@@ -85,7 +85,7 @@ function dbsearch_block_form_redirect($form, &$form_state) {
 }
 
 function dbsearch_block_contents() {
-  return drupal_get_form('dbsearch_block_form'); // must define a function 
+  return drupal_get_form('dbsearch_block_form'); // must define a function
 }
 
 function dbsearch_block_form_submit($form, &$form_state) {
@@ -109,27 +109,27 @@ function dbsearch_block_menu() {
 
 /**
  * Implements hook_page()
- * 
+ *
  */
- 
+
 function dbsearch_block_page() {
-    
+
   $page = array(
     '#type' => 'markup',
     '#markup' => t('Configure The Database Search Box <a href="@url">the block admin page</a>.', array('@url' => url('admin/structure/block'))),
   );
-    
+
   return $page;
 }
 
 
 /**
  * Implements hook_block_info()
- * 
+ *
  */
 
 function dbsearch_block_block_info() {
-  
+
   $blocks['dbsearch_search'] = array(
       // info: The name of the block.
       'info' => t('Database Search'),
@@ -137,7 +137,7 @@ function dbsearch_block_block_info() {
       'cache' => DRUPAL_CACHE_PER_PAGE, // default
       'visibility' => BLOCK_VISIBILITY_LISTED,
    );
-   
+
    return $blocks;
 }
 
@@ -147,7 +147,7 @@ function dbsearch_block_block_info() {
  * This hook declares configuration options for blocks provided by this module.
  */
 function dbsearch_block_block_configure($delta = '') {
- 
+
   $form = array();
   if ($delta == 'dbsearch_search') { //in this case the delta is the name of block
 
@@ -172,7 +172,7 @@ function dbsearch_block_block_configure($delta = '') {
 /**
  * Implements hook_block_save().
  *
- * Make sure we can save the block 
+ * Make sure we can save the block
  */
 function dbsearch_block_block_save($delta = '', $edit = array()) {
   // We need to save settings from the configuration form.
@@ -195,7 +195,7 @@ function dbsearch_block_block_view($delta = '') {
   if ($delta == 'dbsearch_search') {
     $block['content'] = dbsearch_block_contents($delta);
   }
-  
+
   return $block;
 }
 
