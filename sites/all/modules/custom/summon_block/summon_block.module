@@ -14,7 +14,7 @@ function summon_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('Search Articles'),
     '#size'  => 80,
-    '#default_value' => variable_get('summon_search_hint'),
+    '#default_value' => '',
     '#attributes' => array(
         'placeholder' => variable_get('summon_search_hint'),
     )
