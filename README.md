@@ -1,10 +1,8 @@
 # Library Site
 
-  library.princeton.edu is supported by this repo.
-  
+library.princeton.edu is supported by this repo.
+
 ## Local development with Lando
-
-
 
 1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
 2. `cp sites/default/default.settings.php sites/default/settings.php`
@@ -95,7 +93,7 @@ $aliases['local'] = array(
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=/tmp/dump.sql; scp pulsys@library:/tmp/dump.sql .`
+7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=/tmp/dump.sql; scp pulsys@library-prod3:/tmp/dump.sql .`
 8. `lando db-import dump.sql`
 9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 10. `lando drush uli your-username`
@@ -120,18 +118,13 @@ $aliases['local'] = array(
 ### Needs Work ###
 1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path `/utils`.
 
-## If you manually dump a drupal database make sure to dump only the tables you need
-```
-drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' > dumpfile.sql
-```
-
 ## Deploy to server
 
 1. We have capistrano set up to deploy our servers
 
     1. `cap staging deploy` will deploy the master branch to staging
-    1. `BRANCH=other cap staging deploy` will deploy the other branch to staging
-    
+    2. `BRANCH=other cap staging deploy` will deploy the other branch to staging
+
 ## Uploading and importing a SQL dump
 capistrano can be used to import a sql dump onto one of the servers.  It will upload the dump file to the server, import the dump via drush, then clear and update the search index. You should create the sql dump and then run
 ```
