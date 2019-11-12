@@ -1,0 +1,208 @@
+// .section-research-data .single-region--top .pane-branch-library-image-panel-pane-1,
+// .section-research-data .three_nine_stacked-region--top .pane-branch-library-image-panel-pane-1,
+// .section-research-data .view-branch-library-image .view-content {
+//   margin-bottom: 0;
+// }
+
+.prdssearch-block-form label {
+  @include visually-hidden;
+}
+
+// .section-research-data .single-region--top,
+// .section-research-data .three_nine_stacked-region--top {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: flex-start;
+
+//   .menu--secondary {
+//     margin-bottom: 0;
+//     width: 100%;
+
+//     @include breakpoint($tab-desk) {
+//       width: 65%;
+//     }
+//   }
+
+//   .pane-prdssearch-block-prdssearch-search {
+//     width: 100%;
+
+//     @include breakpoint($tab-desk) {
+//       width: 35%;
+//     }
+//   }
+// }
+
+// .section-research-data .menu--secondary {
+//   ul {
+//     background: $orange-light;
+//     flex-wrap: wrap;
+//     justify-content: flex-start;
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+
+//     @include breakpoint($tab) {
+//       border: 2px solid $black;
+//       display: flex;
+//     }
+//   }
+
+//   .menu a {
+//     display: inline-block;
+//     padding: 1rem;
+//     text-decoration: none;
+//     width: 100%;
+
+//     @include breakpoint($tab) {
+//       align-items: flex-start;
+//       width: initial;
+//     }
+
+//     &:hover,
+//     &:focus,
+//     &.active-trail {
+//       background: $gray-lightest;
+//     }
+//   }
+// }
+
+.section-research-data .prdssearch-block-form > div {
+  margin: 0;
+
+  input[type="text"] {
+    border: 2px solid $black;
+  }
+
+  button {
+    border-bottom: 2px solid $black;
+    border-right: 2px solid $black;
+    border-top: 2px solid $black;
+  }
+
+  div.form-item-query input[type="text"],
+  button {
+    background: $white;
+    border-radius: initial;
+    height: 59px;
+  }
+
+  button::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-1 -1 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='3' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Ccircle cx='8.5' cy='8.5' r='8'/%3E%3Cpath stroke-linecap='round' d='M14.156 14.156L23.5 23.5'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  button:hover,
+  button:focus {
+    background-color: none;
+  }
+}
+
+.prds--stages {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: $tab) {
+    &::after {
+      background: url("#{$base-path}/images/prds-circle.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      bottom: 0;
+      content: "";
+      left: 0;
+      opacity: 0.25;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  .prds--stage {
+    flex: 1 0 50%;
+
+    &:nth-child(3) {
+      order: 4;
+    }
+
+    @media screen and (max-width: $tab) {
+      flex-basis: 100%;
+
+      &:nth-child(3) {
+        order: initial;
+      }
+    }
+
+    p {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+
+    a {
+      background: $blue-dark;
+      border: 1px solid $black;
+      border-radius: $slight-border-radius;
+      color: $white;
+      margin: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+
+      &:hover,
+      &:focus {
+        border-color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding: 1em;
+
+    ul {
+      padding: 0.5em 0 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+  }
+
+  .more {
+    display: inline-block;
+    font-family: $font-primary;
+
+    &::after {
+      content: ">";
+      padding-left: 0.45em;
+    }
+  }
+}
+
+.three_nine_stacked-region--bottom {
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    flex: 1 100%;
+  }
+
+  @media (min-width: $bp-med) {
+    .prds-news-widget {
+      flex-basis: 50%;
+    }
+
+    .prds-calendar-widget,
+    .prds-chat-widget {
+      flex-basis: 25%;
+      padding-left: 1em;
+    }
+  }
+}

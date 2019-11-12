@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="e" x1=".23828" x2=".62109" y1=".17578" y2=".60547">
+   <stop stop-color="#b8d5f2" offset="0"/>
+   <stop stop-color="#005fbf" offset="1"/>
+  </linearGradient>
+  <linearGradient id="f" x1=".621" x2=".59367" y1=".6054" y2=".17961">
+   <stop stop-color="#b8d5f2" offset="0"/>
+   <stop stop-color="#005fbf" offset="1"/>
+  </linearGradient>
+  <linearGradient id="g" x1=".72656" x2=".29688" y1=".074219" y2=".13672">
+   <stop stop-color="#b8d5f2" offset="0"/>
+   <stop stop-color="#005fbf" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a" x1=".7904" x2="-.4318" y1=".21386" y2=".21386">
+   <stop stop-color="#6f918a" offset="0"/>
+   <stop stop-color="#6f918a" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="rotate(-13.273 401.3 284.53)" fill="url(#a)">
+  <path d="m519.31 126.88c0.92932 1.1792 35.285 83.606-15.666 170.67-61.158 104.51-177.2 103.57-179.63 102.19l-0.2123 42.43-75.796-95.151 79.165-90.111-0.8045 49.235c1.9879-0.042389 61.717 0.67343 95.3-55.29 22.024-36.701 13.007-76.276 12.765-77.447l61.292 11.67 23.591-58.196z" fill="url(#g)" fill-rule="evenodd" stroke="#005fbf"/>
+ </g>
+ <g fill-opacity=".98">
+  <g transform="rotate(-13.273 178.69 276.32)" fill="url(#a)">
+   <path d="m279.46 447.16c-1.4997 0.20453-91.029-11.654-141.98-98.722-61.158-104.51-2.3086-203.2 0.12045-204.58l-37.138-21.396 121.42-17.187 39.514 112.7-42.815-25.305c-0.95671 1.7197-31.45 52.396 0.88208 109.07 21.203 37.169 60.45 49.252 61.599 49.63l-40.889 46.535 39.288 49.255z" fill="url(#f)" fill-rule="evenodd" stroke="#005fbf"/>
+  </g>
+  <g transform="rotate(-13.273 310.28 104.31)" fill="url(#linearGradient3737)">
+   <path d="m123.03 79.416c0.57037-1.3836 55.745-71.952 157.64-71.952 122.32 3.4e-5 179.51 99.625 179.51 102.39l37.35-21.034-45.623 112.34-118.68-22.586 43.62-23.93c-1.0312-1.6773-30.267-53.07-96.182-53.783-43.227-0.46759-73.457 27.024-74.363 27.817l-20.402-58.204-62.879 8.9411z" fill="url(#e)" fill-rule="evenodd" stroke="#005fbf"/>
+  </g>
+ </g>
+</svg>

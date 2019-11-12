@@ -73,7 +73,7 @@ stokes
 plasma-physics
 eastasianlib
 digital-collections
-prds',
+research-data',
           ),
           'context' => 'empty',
           'not' => FALSE,

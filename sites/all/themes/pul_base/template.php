@@ -122,6 +122,14 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
                 '#markup' => '<span class="hide">Search</span>',
             );
             break;
+        case 'prdssearch_block_form':
+            $form['prdssearch_block_form']['#attributes']['placeholder'] = t('Search');
+            $form['button'] = array(
+                '#prefix' => '<button type="submit" id="prdssearch-submit-btn" name="op" class="form-submit">',
+                '#suffix' => '</button>',
+                '#markup' => '<span class="hide">Search</span>',
+            );
+            break;
         case 'music_audio_block_form':
             $form['music_audio_block_form']['#attributes']['placeholder'] = t('Search');
             $form['button'] = array(
