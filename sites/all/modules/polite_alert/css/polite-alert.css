@@ -1,0 +1,21 @@
+.block-polite-alert {
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+.block-polite-alert div.content {
+  position: relative;
+}
+.polite-alert-label {
+  margin-right: .4em;
+}
+.polite-alert-msg {
+  margin-right: 0.75em;
+}
+span.polite-alert-close {
+  display: block;
+  float: right;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
