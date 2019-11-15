@@ -1,0 +1,182 @@
+<?php
+/**
+ * @file
+ * A module for managing alerts on the site.
+ *
+ * This module provides a block that displays an active alert. It allows the end
+ * user to close the block and hide it for the remainder of the browser session.
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * {@inheritdoc}
+ */
+function polite_alert_help($path, $arg) {
+  if ($path == 'admin/help#polite_alert') {
+    return t('A module for managing the site-wide alert.');
+  }
+  return '';
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * {@inheritdoc}
+ */
+function polite_alert_block_info() {
+  $blocks = array();
+  $blocks['show_alert'] = array(
+    'info' => t('Polite Alert'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * {@inheritdoc}
+ */
+function polite_alert_block_view($delta = '') {
+  drupal_add_library('system', 'jquery.cookie');
+  $block = array();
+  if ($delta == 'show_alert') {
+    // Is the alert active?
+    if (variable_get('polite_alert_active') == 1) {
+      $link = "";
+      $allowed_tags = array('b', 'em', 'strong', 'span');
+      $text = filter_xss(variable_get('polite_alert_text', ''), $allowed_tags);
+      $msg = filter_xss(variable_get('polite_alert_msg', ''), $allowed_tags);
+      $url = variable_get('polite_alert_link_url', NULL);
+      $link_text = filter_xss(variable_get('polite_alert_link_title', 'Read more'), $allowed_tags);
+      if ($url) {
+        $link = l($link_text, $url, array());
+      }
+      $block = array(
+        'content' => '<span class="polite-alert-label">' . $text . '</span><span class="polite-alert-msg">' . $msg . '</span><div class="polite-alert-action">' . $link . '<span class="polite-alert-close">No, thanks</span></div>',
+      );
+    }
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function polite_alert_menu() {
+  $items = array();
+  // Create the area for the menu item on the config page.
+  $items['admin/config/polite-alert'] = array(
+    'title' => 'Polite Alert',
+    'description' => 'Polite Alert Settings.',
+    'position' => 'right',
+    'weight' => -15,
+    'page callback' => 'system_admin_menu_block_page', //DON'T CHANGE THIS!
+    'access arguments' => array('administer alert'),
+    'file' => 'system.admin.inc', //DON'T CHANGE THIS!
+    'file path' => drupal_get_path('module', 'system'), //DON'T CHANGE THIS!
+  );
+
+//Now, this the menu item inside the menu area.
+  $items['admin/config/polite-alert/settings'] = array(
+    'title' => 'Polite Alert Settings',
+    'description' => 'Configure the polite alert',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('polite_alert_config_form'),
+    'access arguments' => array('administer alert'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function polite_alert_permission() {
+  return array(
+    'administer alert' => array(
+      'title' => t('Administer polite alert'),
+    ),
+  );
+}
+
+/**
+ * Builds the site-wide alert configuration form.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @return array $form
+ */
+function polite_alert_config_form($form, &$form_state){
+  $form['polite_alert_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Alert Title'),
+    '#default_value' => variable_get('polite_alert_text', t('Alert:')),
+    '#size' => 25,
+    '#maxlength' => 128,
+    '#description' => t('The label/prefix for the alert.'),
+    '#required' => TRUE,
+  );
+  $form['polite_alert_msg'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Alert Message'),
+    '#default_value' => variable_get('polite_alert_msg', ''),
+    '#size' => 100,
+    '#maxlength' => 255,
+    '#description' => t('The main content for the alert. Recommend maximum length 100 characters.'),
+    '#required' => TRUE,
+  );
+  $form['polite_alert_link_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Link Title'),
+    '#default_value' => variable_get('polite_alert_link_title', t('Read more')),
+    '#size' => 25,
+    '#maxlength' => 128,
+    '#description' => t('The label/prefix for the alert.'),
+    '#required' => FALSE,
+  );
+  $form['polite_alert_link_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Link URL'),
+    '#default_value' => variable_get('polite_alert_link_url', ''),
+    '#size' => 100,
+    '#maxlength' => 255,
+    '#description' => t('Enter either an internal link starting with "/" or an external link starting with http, https, ftp, or feed.'),
+    '#required' => FALSE,
+    '#element_validate' => array('_polite_alert_validate_url'),
+  );
+  $form['polite_alert_active'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display the alert.'),
+    '#default_value' => variable_get('polite_alert_active', 0),
+    '#description' => t('Check the box to display alert. Uncheck to hide alert.'),
+  );
+  $form['#submit'][] = '_polite_alert_submit';
+  return system_settings_form($form);
+}
+
+function _polite_alert_validate_url($element, &$form_state){
+  // Only validate if there is content in field.
+  if (!empty($element['#value'])) {
+    $value = trim($element['#value']);
+    $msg = t("The URL %url is not valid. URLs must begin with 'http', 'https', 'ftp', 'feed', '/', '?', or '#'.", array('%url' => $value));
+    // External
+    if ((strpos($value, 'ftp') === 0) || (strpos($value, 'http') === 0) || (strpos($value, 'https') === 0) || (strpos($value, 'feed') === 0)) {
+      if (!valid_url($value, TRUE)) {
+        form_error($element, $msg);
+      }
+    }
+    // Internal
+    else {
+      if ((strpos($value, '/') !== 0) && (strpos($value, '#') !== 0) && (strpos($value, '?') !== 0)) {
+        form_error($element, $msg);
+      }
+    }
+  }
+}
+
+function _polite_alert_submit() {
+  cache_clear_all('*', 'cache_page', TRUE);
+}
