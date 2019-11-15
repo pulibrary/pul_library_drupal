@@ -35,7 +35,7 @@ function summon_block_form($form, &$form_state) {
      '#type' => 'hidden',
      '#value' => t("library-core"),
    );
-   $form['#action'] = url('/utils/search/summon', array('external' => true));
+   $form['#action'] = url('http://princeton.summon.serialssolutions.com/search?s.fvf=IsScholarly,true&keep_r=true&s.dym=t&s.ho=t#!/search?ho=t&fvf=IsScholarly,true,f&l=en&q=test&dym=t&s.q=', array('external' => true));
    $form['#target'] = "_parent";
    $form['#method'] = "get";
    $form['#suffix'] = $form_suffix;
