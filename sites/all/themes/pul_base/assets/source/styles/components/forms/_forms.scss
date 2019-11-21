@@ -15,20 +15,37 @@
     margin-bottom: 0;
 
     label {
-      display: inline-block;
+      display: inline;
     }
   }
 
   .form-text,
   .field-prefix,
-  .field-suffix {
-    display: inline-block;
+  .field-suffix,
+  .form-radio + label {
+    display: inline;
+  }
+
+  .field-prefix + input {
+    width: auto;
+  }
+
+  .form-item.form-type-radio,
+  .form-item.form-type-checkbox,
+  .form-radio + label {
+    margin-bottom: 0;
+    padding: 0.25rem;
+
+    input {
+      margin-right: 0.25rem;
+    }
   }
 
   .description {
     color: $gray-dark;
     font-size: $font-size-small-2;
     font-style: italic;
+    margin: 1rem 0;
   }
 
   &.form-type-checkbox {
