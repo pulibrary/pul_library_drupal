@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Contains Health check module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function health_check_menu() {
+  $items['health'] = array(
+    'page callback' => 'health_check_content',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Page callback for /health.
+ *
+ * @return string
+ *   The current time.
+ */
+function health_check_content() {
+  drupal_page_is_cacheable(FALSE);
+
+  echo (string) time();
+
+  drupal_exit();
+}
