@@ -69,7 +69,7 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -113,7 +113,7 @@ function pul_collections_views_default_views() {
   $handler->display->display_options['fields']['field_collection_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_collection_url']['click_sort_column'] = 'url';
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
