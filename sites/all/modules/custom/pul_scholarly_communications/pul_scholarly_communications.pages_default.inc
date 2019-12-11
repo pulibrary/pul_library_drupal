@@ -124,7 +124,7 @@ services/scholarly-communications/*',
   $pane->panel = 'second';
   $pane->type = 'entity_view';
   $pane->subtype = 'node';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
@@ -143,6 +143,113 @@ services/scholarly-communications/*',
   $pane->uuid = '2c452d45-9133-4ec3-b65a-b66d29369ebb';
   $display->content['new-2c452d45-9133-4ec3-b65a-b66d29369ebb'] = $pane;
   $display->panels['second'][0] = 'new-2c452d45-9133-4ec3-b65a-b66d29369ebb';
+  $pane = new stdClass();
+  $pane->pid = 'new-96e43006-9f51-483a-a05b-976bd59d9087';
+  $pane->panel = 'second';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '96e43006-9f51-483a-a05b-976bd59d9087';
+  $display->content['new-96e43006-9f51-483a-a05b-976bd59d9087'] = $pane;
+  $display->panels['second'][1] = 'new-96e43006-9f51-483a-a05b-976bd59d9087';
+  $pane = new stdClass();
+  $pane->pid = 'new-2bbe240f-953c-4ad5-94ec-b6024341f86a';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field_extra';
+  $pane->subtype = 'node:webform';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '2bbe240f-953c-4ad5-94ec-b6024341f86a';
+  $display->content['new-2bbe240f-953c-4ad5-94ec-b6024341f86a'] = $pane;
+  $display->panels['second'][2] = 'new-2bbe240f-953c-4ad5-94ec-b6024341f86a';
+  $pane = new stdClass();
+  $pane->pid = 'new-ca8b1c92-7aaa-4b10-b1c9-994965a7de3d';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'cas-login';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'services/scholarly-communications/oa-fund-appilcation',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'ca8b1c92-7aaa-4b10-b1c9-994965a7de3d';
+  $display->content['new-ca8b1c92-7aaa-4b10-b1c9-994965a7de3d'] = $pane;
+  $display->panels['second'][3] = 'new-ca8b1c92-7aaa-4b10-b1c9-994965a7de3d';
   $pane = new stdClass();
   $pane->pid = 'new-6e1c1b73-f9e5-4bf2-be62-57cbde9c353c';
   $pane->panel = 'top';
