@@ -631,12 +631,14 @@ function library_news_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'flexslider_fields',
+        'module' => 'image',
         'settings' => array(
           'flexslider_optionset' => 'default',
           'flexslider_reference_img_src' => NULL,
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'flexslider',
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
