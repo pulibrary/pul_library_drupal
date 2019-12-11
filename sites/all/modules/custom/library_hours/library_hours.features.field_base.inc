@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_hours.features.field_base.inc
@@ -290,6 +291,7 @@ function library_hours_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'all' => 'All Year',
         'fall' => 'Fall Semester',
         'fall_recess' => 'Fall Recess',
         'thanks_break' => 'Thanksgiving Break',
