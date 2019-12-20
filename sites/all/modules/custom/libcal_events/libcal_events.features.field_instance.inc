@@ -11,63 +11,6 @@
 function libcal_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-schemaorg_event-field_contacts'.
-  $field_instances['node-schemaorg_event-field_contacts'] = array(
-    'bundle' => 'schemaorg_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'brief_faq_display' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'content_body_mode' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_contacts',
-    'label' => 'Contacts',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-schemaorg_event-field_event_type'.
   $field_instances['node-schemaorg_event-field_event_type'] = array(
     'bundle' => 'schemaorg_event',
@@ -518,7 +461,6 @@ function libcal_events_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Contacts');
   t('Date');
   t('Description');
   t('Event Type');
