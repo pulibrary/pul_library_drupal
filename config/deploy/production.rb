@@ -6,6 +6,6 @@ server "library-prod1", user: fetch(:user), roles: %w{app drupal_primary}
 server "library-prod3", user: fetch(:user), roles: %w{app drupal_secondary}
 server "library-prod4", user: fetch(:user), roles: %w{app drupal_secondary}
 
-set :search_api_solr_host, 'lib-solr.princeton.edu'
+set :search_api_solr_host, 'library-solr-prod.princeton.edu'
 # TODO: This should be a production location
-set :search_api_solr_path, '/solr/libwww-production'
+set :search_api_solr_path, '/solr/library-prod'
