@@ -1,4 +1,5 @@
-.three_six_three_stacked-region--middle .view-library-news {
+.three_six_three_stacked-region--middle .view-library-news,
+.pul_base_nine_three-region--first {
   .item-list > ul {
     margin: 0;
   }
@@ -20,7 +21,8 @@
 }
 
 .view-library-news .field--name-field-news-featured-graphic img,
-.view-library-news img {
+.view-library-news img,
+.view-libcal-events .views-row img {
   float: left;
   margin: 0 1.75em 1.167em 0;
 }
