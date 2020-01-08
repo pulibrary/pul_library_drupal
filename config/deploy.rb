@@ -213,6 +213,7 @@ namespace :drupal do
       on release_roles :drupal_primary do
         upload! ENV["SQL_DIR"] + gz_sql_name, '/tmp/'+gz_sql_name
         execute "gzip -f -d /tmp/#{gz_sql_name}"
+        execute "/home/deploy/sql/set_permission.sh"
         execute "drush -r #{release_path} sql-cli < /tmp/"+sql_file_name
       end
     end
