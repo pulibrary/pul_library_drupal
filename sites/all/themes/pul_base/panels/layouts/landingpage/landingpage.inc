@@ -13,9 +13,10 @@ $plugin = array(
   'theme' => 'landingpage',
   'css' => '../../../assets/public/styles/pul-base.styles.min.css',
   'regions' => array(
+    'top' => t('Top'),
     'first' => t('First'),
     'second' => t('Second'),
-    'third' => t('Third'),
+    'bottom' => t('Bottom'),
   ),
 );
 

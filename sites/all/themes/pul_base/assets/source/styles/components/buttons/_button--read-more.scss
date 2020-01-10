@@ -24,15 +24,12 @@
   font-size: 1em;
   font-style: italic;
   font-weight: 500;
-  margin-top: 0.5em;
   padding: 7px 15px;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
 
   @include breakpoint($tab) {
-    // display: inline;
-    // float: right;
     padding: 7px 15px;
     width: auto;
   }

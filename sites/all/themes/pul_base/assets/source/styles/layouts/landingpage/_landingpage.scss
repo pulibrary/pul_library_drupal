@@ -3,18 +3,23 @@
 }
 
 @include breakpoint($tab) {
-  .landingpage-region--first {
+  .landingpage-region--top {
     @include full;
     margin: 0;
   }
 
-  .landingpage-region--second {
+  .landingpage-region--first {
     @include span(first 4);
     margin-left: 0;
   }
 
-  .landingpage-region--third {
+  .landingpage-region--second {
     @include span(last 8 of 12);
     margin-right: 0;
+  }
+
+  .landingpage-region--bottom {
+    @include full;
+    margin: 0;
   }
 }

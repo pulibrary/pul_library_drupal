@@ -513,10 +513,12 @@ function library_news_default_page_manager_pages() {
       'default' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'Library News and Events';
+  $display->title = 'Library News';
   $display->uuid = 'fdd31c4f-1359-4e38-8202-b0ef1dfe1754';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_news_panel_context';
@@ -605,7 +607,7 @@ function library_news_default_page_manager_pages() {
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'block-2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,

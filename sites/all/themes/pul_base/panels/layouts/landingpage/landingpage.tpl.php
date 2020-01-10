@@ -10,13 +10,16 @@
  */
 ?>
 <div<?php print $attributes ?>>
+  <div<?php print drupal_attributes($region_attributes_array['top'])?>>
+    <?php print $content['top']; ?>
+  </div>
   <div<?php print drupal_attributes($region_attributes_array['first'])?>>
     <?php print $content['first']; ?>
   </div>
   <div<?php print drupal_attributes($region_attributes_array['second'])?>>
     <?php print $content['second']; ?>
   </div>
-  <div<?php print drupal_attributes($region_attributes_array['third'])?>>
-    <?php print $content['third']; ?>
+  <div<?php print drupal_attributes($region_attributes_array['bottom'])?>>
+    <?php print $content['bottom']; ?>
   </div>
 </div>

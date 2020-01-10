@@ -265,6 +265,18 @@
     }
   };
 
+  Drupal.behaviors.pulTrackHomepageMoreLink = {
+    attach: function (context) {
+      $('.landingpage-region', context).once('pul', function () {
+        $('.views-more-link').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Library News', 'click', $(this).text());
+          });
+        });
+      });
+    }
+  };
+
 
   Drupal.behaviors.pulRewriteTempStaff = {
     attach: function (context) {

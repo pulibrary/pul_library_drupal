@@ -217,3 +217,8 @@
     inset 0 0 8px 4px $inset-shadow-active;
   }
 }
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
