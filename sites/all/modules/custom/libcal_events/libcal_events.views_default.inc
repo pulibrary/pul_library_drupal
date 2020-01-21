@@ -777,13 +777,6 @@ function libcal_events_views_default_views() {
     'image_style' => 'news-image',
     'image_link' => '',
   );
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['field_schemaorg_description']['id'] = 'field_schemaorg_description';
-  $handler->display->display_options['fields']['field_schemaorg_description']['table'] = 'field_data_field_schemaorg_description';
-  $handler->display->display_options['fields']['field_schemaorg_description']['field'] = 'field_schemaorg_description';
-  $handler->display->display_options['fields']['field_schemaorg_description']['label'] = '';
-  $handler->display->display_options['fields']['field_schemaorg_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_schemaorg_description']['element_default_classes'] = FALSE;
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_schemaorg_date']['id'] = 'field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date']['table'] = 'field_data_field_schemaorg_date';
@@ -834,16 +827,25 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_homepage_spotlight']['label'] = '';
   $handler->display->display_options['fields']['field_homepage_spotlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_homepage_spotlight']['element_label_colon'] = FALSE;
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_schemaorg_description']['id'] = 'field_schemaorg_description';
+  $handler->display->display_options['fields']['field_schemaorg_description']['table'] = 'field_data_field_schemaorg_description';
+  $handler->display->display_options['fields']['field_schemaorg_description']['field'] = 'field_schemaorg_description';
+  $handler->display->display_options['fields']['field_schemaorg_description']['label'] = '';
+  $handler->display->display_options['fields']['field_schemaorg_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schemaorg_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schemaorg_description']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schemaorg_description']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
+  $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
+  $handler->display->display_options['sorts']['field_schemaorg_date_value']['table'] = 'field_data_field_schemaorg_date';
+  $handler->display->display_options['sorts']['field_schemaorg_date_value']['field'] = 'field_schemaorg_date_value';
   /* Sort criterion: Content: Date - end date (field_schemaorg_date:value2) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['id'] = 'field_schemaorg_date_value2';
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['field'] = 'field_schemaorg_date_value2';
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['order'] = 'DESC';
-  /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
-  $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
-  $handler->display->display_options['sorts']['field_schemaorg_date_value']['table'] = 'field_data_field_schemaorg_date';
-  $handler->display->display_options['sorts']['field_schemaorg_date_value']['field'] = 'field_schemaorg_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
