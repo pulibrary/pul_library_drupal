@@ -170,7 +170,7 @@ function library_news_default_page_manager_handlers() {
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'block-2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,

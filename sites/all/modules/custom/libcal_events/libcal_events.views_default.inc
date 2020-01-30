@@ -497,11 +497,6 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_homepage_spotlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_homepage_spotlight']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Homepage Spotlight (field_homepage_spotlight) */
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['id'] = 'field_homepage_spotlight_value';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['table'] = 'field_data_field_homepage_spotlight';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['field'] = 'field_homepage_spotlight_value';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['order'] = 'DESC';
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['table'] = 'field_data_field_schemaorg_date';
@@ -676,6 +671,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['id'] = 'field_homepage_spotlight_value';
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['table'] = 'field_data_field_homepage_spotlight';
   $handler->display->display_options['sorts']['field_homepage_spotlight_value']['field'] = 'field_homepage_spotlight_value';
+  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['order'] = 'DESC';
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['table'] = 'field_data_field_schemaorg_date';
