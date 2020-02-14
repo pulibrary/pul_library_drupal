@@ -97,7 +97,26 @@ function libcal_events_default_page_manager_handlers() {
   $display->content['new-d773cdfd-2fe3-440d-ae2c-8f04bd85173b'] = $pane;
   $display->panels['first'][0] = 'new-d773cdfd-2fe3-440d-ae2c-8f04bd85173b';
   $pane = new stdClass();
-  $pane->pid = 'new-1b9ba5ff-ddd6-40d0-becb-bc2619c93b4f';
+  $pane->pid = 'new-b614de38-a6fd-410f-af27-de0d3e6fd710';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libcal_events-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b614de38-a6fd-410f-af27-de0d3e6fd710';
+  $display->content['new-b614de38-a6fd-410f-af27-de0d3e6fd710'] = $pane;
+  $display->panels['first'][1] = 'new-b614de38-a6fd-410f-af27-de0d3e6fd710';
+  $pane = new stdClass();
+  $pane->pid = 'new-db3fa363-47ed-4bbf-bad9-223d8460a860';
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
@@ -118,11 +137,11 @@ function libcal_events_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '1b9ba5ff-ddd6-40d0-becb-bc2619c93b4f';
-  $display->content['new-1b9ba5ff-ddd6-40d0-becb-bc2619c93b4f'] = $pane;
-  $display->panels['first'][1] = 'new-1b9ba5ff-ddd6-40d0-becb-bc2619c93b4f';
+  $pane->uuid = 'db3fa363-47ed-4bbf-bad9-223d8460a860';
+  $display->content['new-db3fa363-47ed-4bbf-bad9-223d8460a860'] = $pane;
+  $display->panels['first'][2] = 'new-db3fa363-47ed-4bbf-bad9-223d8460a860';
   $pane = new stdClass();
   $pane->pid = 'new-89c01358-3e86-43ae-a5a6-18505f1df2c4';
   $pane->panel = 'second';
