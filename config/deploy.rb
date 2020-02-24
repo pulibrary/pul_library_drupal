@@ -250,6 +250,24 @@ namespace :drupal do
           execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} updatedb"
         end
     end
+
+    desc "Update primary keys"
+    task :update_primary_keys do
+      sql_statements = [
+        "ALTER TABLE domain_export ADD CONSTRAINT domain_export_pk PRIMARY KEY (domain_id);",
+        "ALTER TABLE taxonomy_index ADD CONSTRAINT taxonomy_index_pk PRIMARY KEY (nid, tid);",
+        "ALTER TABLE views_data_export_object_cache ADD CONSTRAINT views_data_export_object_cache_pk PRIMARY KEY (eid, updated);",
+        "ALTER TABLE panels_allowed_types ADD CONSTRAINT panels_allowed_types_pk PRIMARY KEY (type);",
+        "ALTER TABLE media_view_mode_wysiwyg ADD CONSTRAINT media_view_mode_wysiwyg_pk PRIMARY KEY (type, view_mode);",
+        "ALTER TABLE media_restrict_wysiwyg ADD CONSTRAINT media_restrict_wysiwyg_pk PRIMARY KEY (type, display);",
+        "ALTER TABLE honeypot_user ADD CONSTRAINT honeypot_user_pk PRIMARY KEY (uid, timestamp);"
+      ]
+      on release_roles :drupal_primary do
+        sql_statements.each do |sql|
+          execute "drush -r #{release_path} sql-query \"#{sql}\""
+        end
+      end
+    end 
   end
 end
 
