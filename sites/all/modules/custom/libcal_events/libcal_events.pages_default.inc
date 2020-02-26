@@ -116,6 +116,25 @@ function libcal_events_default_page_manager_handlers() {
   $display->content['new-b614de38-a6fd-410f-af27-de0d3e6fd710'] = $pane;
   $display->panels['first'][1] = 'new-b614de38-a6fd-410f-af27-de0d3e6fd710';
   $pane = new stdClass();
+  $pane->pid = 'new-485fe73e-05ca-4ecd-914d-be1336f9000d';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libcal_events-panel_pane_5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '485fe73e-05ca-4ecd-914d-be1336f9000d';
+  $display->content['new-485fe73e-05ca-4ecd-914d-be1336f9000d'] = $pane;
+  $display->panels['first'][2] = 'new-485fe73e-05ca-4ecd-914d-be1336f9000d';
+  $pane = new stdClass();
   $pane->pid = 'new-db3fa363-47ed-4bbf-bad9-223d8460a860';
   $pane->panel = 'first';
   $pane->type = 'custom';
@@ -137,11 +156,11 @@ function libcal_events_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'db3fa363-47ed-4bbf-bad9-223d8460a860';
   $display->content['new-db3fa363-47ed-4bbf-bad9-223d8460a860'] = $pane;
-  $display->panels['first'][2] = 'new-db3fa363-47ed-4bbf-bad9-223d8460a860';
+  $display->panels['first'][3] = 'new-db3fa363-47ed-4bbf-bad9-223d8460a860';
   $pane = new stdClass();
   $pane->pid = 'new-89c01358-3e86-43ae-a5a6-18505f1df2c4';
   $pane->panel = 'second';
