@@ -7,10 +7,17 @@
 .l-region--footer {
   clear: both;
 
-  @include breakpoint($max-tab) {
-    nav ul {
-      display: none;
+  @media screen and (min-width: 425px) and (max-width: 750px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .block {
+      width: 48%;
     }
+  }
+
+  .block {
+    margin-bottom: 1.5rem;
   }
 
   address,

@@ -1,15 +1,6 @@
 .l-region--footer {
   clear: both;
 
-  // padding: 1em;
-
-  @include breakpoint($max-tab) {
-    nav ul {
-      display: none;
-    }
-  }
-
-
   nav,
   .block--block-1 {
     @include breakpoint($tab) {
