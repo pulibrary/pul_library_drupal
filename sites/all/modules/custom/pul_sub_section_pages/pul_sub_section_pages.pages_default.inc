@@ -2008,13 +2008,14 @@ services/technology',
   $pane->configuration = array(
     'links' => 1,
     'no_extras' => 1,
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_text' => '',
     'identifier' => '',
     'link' => 0,
     'leave_node_title' => 0,
     'build_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

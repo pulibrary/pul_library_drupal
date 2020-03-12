@@ -614,7 +614,6 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_date']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date']['field'] = 'field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date']['label'] = '';
-  $handler->display->display_options['fields']['field_schemaorg_date']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_schemaorg_date']['alter']['text'] = 'Open through [field_schemaorg_date]';
   $handler->display->display_options['fields']['field_schemaorg_date']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_schemaorg_date']['element_class'] = 'events-date--homepage';
@@ -623,7 +622,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_date']['settings'] = array(
     'format_type' => 'custom',
     'custom_date_format' => 'F j, Y',
-    'fromto' => 'value2',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
