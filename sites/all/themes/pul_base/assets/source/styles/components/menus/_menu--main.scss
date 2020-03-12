@@ -29,6 +29,10 @@
   width: 100%;
   z-index: 101;
 
+  button:focus {
+    outline: none;
+  }
+
   .mobile-logo {
     display: inline;
     float: left;
@@ -48,13 +52,14 @@
   }
 
   .centered-navigation-menu-button {
-    color: $white;
     background: $black;
     border: 0;
+    color: $white;
+    cursor: pointer;
     display: block;
     float: left;
     font-weight: bold;
-    line-height: $centered-navigation-height;
+    line-height: 42px;
     margin: 0;
     padding-left: $centered-navigation-submenu-padding;
     text-transform: uppercase;
@@ -66,6 +71,7 @@
 
 
     &:hover {
+      background-color: lighten($black, 10%);
       color: $centered-navigation-color-hover;
     }
   }
@@ -97,15 +103,17 @@
 
       @include breakpoint(max-width $desk) {
         >.expanded {
-          border-top: 1px solid $white;
+          border-top: 1px solid $cool-gray-10;
         }
       }
     }
 
     &.expanded {
+      background-color: $cool-gray-10;
       display: block;
 
       @media screen and (min-width: $tab) and (max-width: $desk) {
+        box-shadow: 0 10px 15px -3px $black-opacity-2, 0 4px 6px -2px $black-opacity-0;
         display: inline-block;
         width: 265px;
       }
@@ -249,9 +257,6 @@
     >a {
       padding-right: 1.6em;
       position: relative;
-      // @include breakpoint($desk) {
-      // margin-right: $centered-navigation-submenu-padding;
-      // }
 
       &::after {
         font-size: $font-size-larger;
@@ -264,7 +269,6 @@
   li>ul.submenu {
     display: none;
     padding-left: 0;
-    
 
     @include breakpoint($horizontal-bar-mode) {
       background: $black;
@@ -325,25 +329,28 @@
 
 
 .submenu-toggle {
-  min-width: 48px;
-  min-height: 48px;
-  color: $white;
   background: $black;
   border: 0;
-
+  color: $white;
   cursor: pointer;
   font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: 1px;
+  min-height: 48px;
+  min-width: 48px;
   padding: 15px;
   position: absolute;
   right: 0;
-  top: 0;
   text-decoration: none;
   text-transform: uppercase;
+  top: 0;
   z-index: 9;
 
   @include breakpoint($desk) {
     display: none;
+  }
+
+  &:hover {
+    background-color: lighten($black, 10%);
   }
 }
