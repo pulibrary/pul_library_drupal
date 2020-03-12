@@ -199,14 +199,50 @@ function pul_base_textarea($variables) {
   return $output;
 }
 
+function pul_base_menu_tree__main_menu($variables) {
+  return '<ul class="menu">' . $variables['tree'] . '</ul>';
+}
+
+function pul_base_menu_tree__main_menu_inner($variables) {
+  return '<button aria-label="Toggle submenu" class="submenu-toggle">+</button><ul class="submenu">' . $variables['tree'] . '</ul>';
+}
+
 function pul_base_menu_link__main_menu(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
   if ($element['#below']) {
+    foreach ($element['#below'] as $key => $val) {
+      if (is_numeric($key)) {             
+        $element['#below'][$key]['#theme'] = 'menu_link__main_menu_inner'; // 2 lavel <li>
+      }
+    }
+    $element['#below']['#theme_wrappers'][0] = 'menu_tree__main_menu_inner';  // 2 lavel <ul>
     $sub_menu = drupal_render($element['#below']);
-    $element['#localized_options']['attributes']['aria-haspopup'][] = 'true';
   }
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
-} 
+}
+
+// function pul_base_menu_link__main_menu(array $variables) {
+//   $element = $variables['element'];
+//   $sub_menu = '';
+
+//   if ($element['#below']) {
+//     $sub_menu = drupal_render($element['#below']);
+//     $element['#localized_options']['attributes']['aria-haspopup'][] = 'true';
+//   }
+//   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+//   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+// } 
+
+function pul_base_menu_link__main_menu_inner($variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}

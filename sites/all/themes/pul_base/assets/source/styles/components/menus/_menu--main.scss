@@ -2,6 +2,10 @@
   overflow: visible;
 }
 
+.l-region--navigation {
+  text-align: center;
+}
+
 .wrapper--navigation {
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
@@ -44,7 +48,9 @@
   }
 
   .centered-navigation-menu-button {
-    color: $centered-navigation-color;
+    color: $white;
+    background: $black;
+    border: 0;
     display: block;
     float: left;
     font-weight: bold;
@@ -88,6 +94,21 @@
 
     >.menu {
       text-align: center;
+
+      @include breakpoint(max-width $desk) {
+        >.expanded {
+          border-top: 1px solid $white;
+        }
+      }
+    }
+
+    &.expanded {
+      display: block;
+
+      @media screen and (min-width: $tab) and (max-width: $desk) {
+        display: inline-block;
+        width: 265px;
+      }
     }
   }
 
@@ -96,7 +117,6 @@
     display: block;
     line-height: $centered-navigation-height;
     overflow: hidden;
-    padding-left: $centered-navigation-submenu-padding;
     text-align: left;
     width: 100%;
     z-index: 99; //4
@@ -115,7 +135,7 @@
       }
 
       a {
-        padding-left: $centered-navigation-item-padding;
+        padding-left: $centered-navigation-submenu-padding;
       }
     }
 
@@ -123,7 +143,7 @@
       color: $centered-navigation-color;
       display: inline-block;
 
-      @include breakpoint($max-tab) {
+      @include breakpoint(max-width $desk) {
         width: 100%;
       }
 
@@ -169,8 +189,11 @@
   }
 
   .menu-more-link {
-    border-top: 1px solid $gray-darkest;
     font-style: italic;
+
+    @include breakpoint($desk) {
+      border-top: 1px solid $gray-darkest;
+    }
 
     a::after {
       content: "...";
@@ -186,7 +209,7 @@
 
 
     >a {
-      padding-right: 1.75em;
+      padding: 0 1.75em 0 $centered-navigation-submenu-padding;
     }
 
     >a::after {
@@ -194,7 +217,7 @@
 
       color: $centered-navigation-color;
 
-      @include breakpoint(800px) {
+      @include breakpoint(1200px) {
         content: "\25BE";
       }
     }
@@ -203,17 +226,17 @@
   li.expanded {
     overflow: visible;
     padding-right: 0;
+    position: relative;
 
-    @include breakpoint(800px) {
+    @include breakpoint($desk) {
       padding-right: $centered-navigation-submenu-padding;
-      position: relative;
 
       // &:focus-within>.menu,
-      &:hover>.menu {
+      &:hover>.submenu {
         cursor: pointer;
         display: block;
 
-        @include breakpoint(max-width 800px) {
+        @include breakpoint(max-width $desk) {
           display: none;
         }
       }
@@ -238,9 +261,10 @@
     }
   }
 
-  li>ul.menu {
+  li>ul.submenu {
     display: none;
     padding-left: 0;
+    
 
     @include breakpoint($horizontal-bar-mode) {
       background: $black;
@@ -250,8 +274,11 @@
       top: 34px;
     }
 
+    &.expanded {
+      display: block;
+    }
 
-    .menu {
+    .submenu {
       @include breakpoint($horizontal-bar-mode) {
         left: $centered-navigation-submenu-width - 0.2em;
         top: 0;
@@ -268,14 +295,20 @@
 
 
       a {
-        background-color: lighten($centered-navigation-background, 3);
+        background-color: $white;
+        color: $black;
         display: inline-block;
         font-size: 1rem;
         text-align: left;
         width: 100%;
 
+        @include breakpoint(max-width $desk) {
+          padding-left: 2.5rem;
+        }
+
         @include breakpoint($horizontal-bar-mode) {
           background-color: $centered-navigation-background;
+          color: $white;
           padding-left: $centered-navigation-submenu-padding;
           text-align: left;
           width: $centered-navigation-submenu-width;
@@ -287,5 +320,30 @@
         }
       }
     }
+  }
+}
+
+
+.submenu-toggle {
+  min-width: 48px;
+  min-height: 48px;
+  color: $white;
+  background: $black;
+  border: 0;
+
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 9;
+
+  @include breakpoint($desk) {
+    display: none;
   }
 }

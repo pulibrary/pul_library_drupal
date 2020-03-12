@@ -165,13 +165,17 @@
       $('.centered-navigation-menu', context).once('pul', function () {
         var menu = $('.centered-navigation-menu');
         var menuToggle = $('.centered-navigation-menu-button');
+        // var submenu = $('.submenu');
+        var submenuToggle = $('.submenu-toggle');
         $(menuToggle).click(function (e) {
           e.preventDefault();
-          menu.slideToggle(function () {
-            if (menu.is(':hidden')) {
-              menu.removeAttr('style');
-            }
-          });
+          menu.toggleClass('expanded');
+        });
+
+        $(submenuToggle).click(function (e) {
+          e.preventDefault();
+          // submenu.toggleClass('expanded');
+          $(this).siblings(".submenu").toggleClass("expanded");
         });
 
         // track main menu usage with Google Analytics

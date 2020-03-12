@@ -31,7 +31,7 @@
 ?>
 <?php if ($content): ?>
   <div<?php print $attributes; ?>>
-    <a href="#" class="centered-navigation-menu-button">MENU</a>
+    <button aria-label="Toggle Main Menu" class="centered-navigation-menu-button">Main Menu</button>
     <?php print $content; ?>
   </div>
 <?php endif; ?>
