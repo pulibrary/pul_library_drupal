@@ -38,9 +38,6 @@
 
 .cd-top {
   background: $white-opacity-7 url("#{$base-path}/images/move-up.svg") no-repeat center 50%;
-  // border: $border-thin $border-solid $border-light;
-  bottom: 0;
-  // box-shadow: 0 0 10px $black-opacity-5;
   display: inline-block;
   height: 40px;
   opacity: 0;
@@ -48,6 +45,7 @@
   position: fixed;
   right: 0;
   text-indent: 100%;
+  top: 50%;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
   visibility: hidden;
   white-space: nowrap;

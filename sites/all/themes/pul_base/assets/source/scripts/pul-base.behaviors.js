@@ -90,6 +90,13 @@
           }
         }
       });
+
+      $('.cd-top').each(function () {
+        $(this).click(function () {
+          ga('send', 'event', 'Back to Top', 'click', $(this).text(),
+            {'page': window.location.pathname });
+        });
+      });
     }
   };
 

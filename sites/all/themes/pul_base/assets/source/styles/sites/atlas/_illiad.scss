@@ -1,3 +1,7 @@
+h2 {
+  font-size: 1.425rem;
+}
+
 // Illiad search bar
 .search-bar {
   $base-spacing: 1em;
@@ -226,8 +230,8 @@ input[type="submit"]:hover,
 .notes-table .row-headings th,
 .tracking-table .row-headings th,
 .notification-detail tr > td:first-child {
-  background: $gray-light;
-  color: $black;
+  background: $gray-darkest;
+  color: $white;
   font-weight: 500;
   padding: 0.5em;
 }
@@ -316,6 +320,7 @@ input[type="submit"]:hover,
 
 p.record--title {
   margin: 0;
+  width: calc(100% - 175px);
 }
 
 h1 + .statusNormal {
@@ -450,8 +455,19 @@ aside h2 {
   margin-top: 0;
 }
 
+section.ill_requests li:nth-child(odd) {
+  background: $white;
+}
+
 section.ill_requests li:nth-child(even) {
   background: $gray-lightest;
+}
+
+.ill_requests .ill_request_status,
+.ill_requests .ill_request_date,
+.ill_requests .ill_request .ill_type,
+.ill_requests .ill_request_number {
+  color: $black;
 }
 
 label {
