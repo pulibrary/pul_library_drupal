@@ -70,6 +70,14 @@
   }
 }
 
+.events-item--homepage {
+  position: relative;
+}
+
+.events-item--homepage .events-title--homepage a {
+  position: static;
+}
+
 .events-title a::before {
   background-color: transparent;
   bottom: 0;
@@ -80,6 +88,11 @@
   right: 0;
   top: 0;
   z-index: 1;
+}
+
+.events-item--homepage a {
+  position: relative;
+  z-index: 2;
 }
 
 .view-libcal-events .views-exposed-form {
