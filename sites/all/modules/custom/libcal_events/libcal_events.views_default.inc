@@ -496,6 +496,16 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_homepage_spotlight']['label'] = '';
   $handler->display->display_options['fields']['field_homepage_spotlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_homepage_spotlight']['element_label_colon'] = FALSE;
+  /* Field: Content: Link to edit content */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_type'] = 'span';
+  $handler->display->display_options['fields']['edit_node']['element_class'] = 'edit-event';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit entry';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';

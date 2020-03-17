@@ -109,8 +109,11 @@
     }
 
     &.expanded {
-      background-color: $cool-gray-10;
       display: block;
+
+      @include breakpoint(max-width $desk) {
+        background-color: $cool-gray-10;
+      }
 
       @media screen and (min-width: $tab) and (max-width: $desk) {
         box-shadow: 0 10px 15px -3px $black-opacity-2, 0 4px 6px -2px $black-opacity-0;
@@ -336,6 +339,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: 1px;
+  line-height: 1;
   min-height: 48px;
   min-width: 48px;
   padding: 15px;
