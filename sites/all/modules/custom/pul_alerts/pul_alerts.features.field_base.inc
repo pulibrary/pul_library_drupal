@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_alerts.features.field_base.inc
@@ -17,9 +18,6 @@ function pul_alerts_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_emergency_alert_blurb',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

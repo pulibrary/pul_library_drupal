@@ -9,6 +9,7 @@ dependencies[] = field_formatter_css_class
 dependencies[] = text
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = views_json
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2

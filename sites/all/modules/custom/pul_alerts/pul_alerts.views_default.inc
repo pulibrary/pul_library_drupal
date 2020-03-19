@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_alerts.views_default.inc
@@ -28,8 +29,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
@@ -45,7 +45,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -136,7 +136,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -215,7 +215,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -294,7 +294,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -373,7 +373,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -452,7 +452,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -531,7 +531,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -610,7 +610,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -689,7 +689,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -768,7 +768,7 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -797,6 +797,86 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
+
+  /* Display: Site-wide Alert JSON */
+  $handler = $view->new_display('page', 'Site-wide Alert JSON', 'page_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_json';
+  $handler->display->display_options['style_options']['root_object'] = 'alerts';
+  $handler->display->display_options['style_options']['top_child_object'] = 'alert';
+  $handler->display->display_options['style_options']['plaintext_output'] = 0;
+  $handler->display->display_options['style_options']['remove_newlines'] = 0;
+  $handler->display->display_options['style_options']['jsonp_prefix'] = '';
+  $handler->display->display_options['style_options']['using_views_api_mode'] = 0;
+  $handler->display->display_options['style_options']['object_arrays'] = 0;
+  $handler->display->display_options['style_options']['numeric_strings'] = 0;
+  $handler->display->display_options['style_options']['bigint_string'] = 0;
+  $handler->display->display_options['style_options']['pretty_print'] = 0;
+  $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
+  $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
+  $handler->display->display_options['style_options']['char_encoding'] = array();
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Emergency Alert Level */
+  $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['field'] = 'field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['label'] = '';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
+  /* Field: Content: Site-wide Alert Message */
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['label'] = '';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'homepage_alert' => 'homepage_alert',
+  );
+  /* Filter criterion: Content: Emergency Alert Dates -  start date (field_emergency_alert_dates) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value']['id'] = 'field_emergency_alert_dates_value';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value']['field'] = 'field_emergency_alert_dates_value';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['access_id'] = array(
+    5389 => '5389',
+  );
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
+  $handler->display->display_options['path'] = 'json-alerts';
   $export['emergency_alert_content_block'] = $view;
 
   return $export;
