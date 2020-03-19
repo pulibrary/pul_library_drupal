@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_alerts.strongarm.inc
