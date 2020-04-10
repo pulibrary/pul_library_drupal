@@ -1,57 +1,12 @@
-.l-region--footer {
-  clear: both;
-
-  nav,
-  .block--block-1 {
-    @include breakpoint($tab) {
-      @include span(3);
-    }
-  }
-
-  nav:first-child {
-    margin-left: 0;
-  }
-
-  .block--block-1 {
-    margin-right: 0;
-  }
-
-  address,
-  .footer--copyright,
-  a {
-    color: $white;
-    font-style: normal;
-  }
-
-  .footer--copyright {
-    margin-top: 0.5em;
-  }
-
-  h2,
-  h2 a {
-    color: $white;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0.75em;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .leaf {
-    list-style: none;
-
-    a {
-      line-height: 1.75em;
-    }
-  }
+.footer--icons {
+  margin: 1rem 0;
 }
 
 // SVG logo
 .svg {
   .facebook-logo img,
   .twitter-logo img,
+  .instagram-logo img,
   .govdocs-logo img,
   .friends-logo img,
   .pu-logo img {
@@ -60,6 +15,7 @@
 
   .facebook-logo,
   .twitter-logo,
+  .instagram-logo,
   .govdocs-logo,
   .friends-logo,
   .pu-logo {
@@ -106,10 +62,16 @@
     width: 87px;
   }
 
+  .instagram-logo {
+    background-image: url("#{$base-path}/images/logo-instagram.svg");
+    margin: 0 0.2em 0.75em;
+    width: 24px;
+  }
+
   .pu-logo {
     background-image: url("#{$base-path}/images/logo-white.svg");
     height: 40px;
-    margin: 0.5em 0 0;
+    margin: 0;
     width: 141px;
   }
 }
