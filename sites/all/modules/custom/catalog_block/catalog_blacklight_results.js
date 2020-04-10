@@ -133,6 +133,10 @@
                             $(preview).parent().hide();
                         }
                         var section_heading = "blacklight"; // Should be in Drupal Settings
+                        $(preview).click(function() {
+                            ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
+                        });
+
                         $('#catalog_block-catalog_blacklight_results h2 a').each(function(index, value) {
                             //$(this).closest('h2.pane-title').text();
                             $(this).click(function() {

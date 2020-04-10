@@ -75,6 +75,10 @@
                             $(preview).append(" ("+data.number+")");
                         }
                         var section_heading = "PULFA"; // Should be in Drupal Settings
+                        $(preview).click(function() {
+                            ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
+                        });
+
                         $('#catalog_block-catalog_pulfa_results h2 a').each(function(index, value) {
                             //console.log('processing header');
                             //$(this).closest('h2.pane-title').text();

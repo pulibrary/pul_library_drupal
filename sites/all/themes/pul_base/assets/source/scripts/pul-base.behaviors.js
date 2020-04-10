@@ -91,10 +91,10 @@
         }
       });
 
+      // tracks usage of back to top feature
       $('.cd-top').each(function () {
         $(this).click(function () {
-          ga('send', 'event', 'Back to Top', 'click', $(this).text(),
-            {'page': window.location.pathname });
+          ga('send', 'event', 'Back to Top', 'click', window.location.pathname);
         });
       });
     }
@@ -139,6 +139,7 @@
       var staff_query_total = $("span[data-search-service='general_site_user_search-panel_pane_1']").attr('data-hit-count');
       if(staff_query_total > 0) {
         $(staff_preview).append(" ("+staff_query_total+")");
+        $(staff_preview).attr("data-label", "Library Staff");
       } else {
         $(staff_preview).parent().hide();
       }
@@ -146,6 +147,7 @@
       var db_query_total = $("span[data-search-service='databases_keyword_search-panel_pane_2']").attr('data-hit-count');
       if(db_query_total > 0) {
         $(db_preview).append(" ("+db_query_total+")");
+        $(db_preview).attr("data-label", "Library Staff");
       } else {
         $(db_preview).parent().hide();
       }
@@ -153,9 +155,15 @@
       var web_query_total = $("span[data-search-service='general_site_keyword_search-panel_pane_1']").attr('data-hit-count');
       if(web_query_total > 0) {
         $(web_preview).append(" ("+web_query_total+")");
+        $(web_preview).attr("data-label", "Library Staff");
       } else {
         $(web_preview).parent().hide();
       }
+
+      var preview = $(".result-section-menu a")
+      $(preview).click(function() {
+        ga('send', 'event', 'All Search', 'Skip to Section', $(this).attr("data-label"));
+      });
     }
   };
 
@@ -181,35 +189,18 @@
 
         $(submenuToggle).click(function (e) {
           e.preventDefault();
-          // submenu.toggleClass('expanded');
           $(this).siblings(".submenu").toggleClass("expanded");
         });
 
         // track main menu usage with Google Analytics
-
         $('.centered-navigation-menu ul.menu a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Main Menu', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Main Menu', 'click', $(this).text());
           });
         });
       });
-
-      // });
-      // Example Usage
-      // $('#block-system-main-menu', context).once('pul', function () {
-      //   // Now, we are invoking the previously declared theme function using two
-      //   // settings as arguments.
-      //   console.log(settings);
-      //   var $anchor = Drupal.theme('pulBaseExampleButton', 'cats', 'cats');
-
-      //   // The anchor is then appended to the current element.
-      //   $anchor.appendTo(this);
-      // });
-
     }
   };
-
 
   Drupal.behaviors.pulResourceButtonBehavior = {
     attach: function (context, settings) {
@@ -226,23 +217,44 @@
     }
   };
 
-  Drupal.behaviors.pulChatWidgetBehavior = {
+  Drupal.behaviors.pulTrackFooterMenuUsage = {
     attach: function (context) {
-      $('.library-three-help', context).once('pul', function () {
-        var chat_text_block = Drupal.theme('pulChatStatusBlock');
-        $(this).append(chat_text_block);
+      $('.l-footer', context).once('pul', function () {
+        $('.l-region--footer a').each(function () {
+          $(this).addClass('footer-link');
+          $(this).click(function () {
+            ga('send', 'event', 'Footer Menu', 'click', $(this).text());
+          });
+        });
+
+        $('.footer--icons a').each(function () {
+          $(this).addClass('footer-link');
+          $(this).click(function () {
+            ga('send', 'event', 'Footer Menu', 'click', $(this).attr("title"));
+          });
+        });
+
+        $('.pu--accessibility a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Footer Menu', 'click', $(this).text());
+          });
+        });
+
+        $('.pu--logo a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Footer Menu', 'click', $(this).attr("title"));
+          });
+        });
       });
     }
   };
 
-  Drupal.behaviors.pulTrackFooterMenuUsage = {
+  Drupal.behaviors.pulTrackNewsletterSubscriptionUsage = {
     attach: function (context) {
-      $('.l-region--footer', context).once('pul', function () {
-        $('.l-region--footer .block--menu a').each(function () {
-          $(this).addClass('footer-link');
+      $('.l-footer', context).once('pul', function () {
+        $('.l-footer input').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Footer Menu', 'click', $(this).text(),
-              {'page': window.location.pathname});
+            ga('send', 'event', 'Footer Newsletter Subscription', 'click', $(this).attr("type"));
           });
         });
       });
@@ -276,12 +288,25 @@
     }
   };
 
+  Drupal.behaviors.pulTrackEventsUsage = {
+    attach: function (context) {
+      $('.landingpage-region', context).once('pul', function () {
+        $('.events--homepage h3 a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'Library Events', 'click', $(this).text() + ' Position ' + result_position);
+          });
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.pulTrackHomepageMoreLink = {
     attach: function (context) {
       $('.landingpage-region', context).once('pul', function () {
         $('.views-more-link').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Library News', 'click', $(this).text());
+            ga('send', 'event', 'More Links - Homepage', 'click', $(this).text());
           });
         });
       });
@@ -308,12 +333,23 @@
 
   Drupal.behaviors.pulTrackHoursUsage = {
     attach: function (context) {
-      $('.pane-library-hours', context).once('pul', function () {
-        $('.pane-library-hours a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
+      $('.view-library-hours', context).once('pul', function () {
+        $('.view-display-id-block_3 a').each(function (index, value) {
           $(this).addClass('library-hours-link');
           $(this).click(function () {
-            ga('send', 'event', 'Library Daily Hours', 'click', $(this).text() + ' Position ' + result_position);
+            ga('send', 'event', 'Library Hours - Homepage', 'click', $(this).find("h3").text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackAllHoursUsage = {
+    attach: function (context) {
+      $('.view-library-hours', context).once('pul', function () {
+        $('.view-display-id-panel_pane_2 a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Library Hours', 'click', $(this).text());
           });
         });
       });
@@ -323,34 +359,16 @@
   Drupal.behaviors.pulTrackTabLinkUsage = {
     attach: function (context) {
       // all search tab
-      $('#quicktabs-tabpage-homepage_search_tabs-0 .homepage-tab-form-message', context).once('pul', function () {
+      $('#quicktabs-tabpage-homepage_search_tabs-0', context).once('pul', function () {
+        $('#quicktabs-tabpage-homepage_search_tabs-0 input').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Search Box - Homepage', 'click', 'All Search');
+          });
+        });
+
         $('#quicktabs-tabpage-homepage_search_tabs-0 .homepage-tab-form-message a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', $(this).text(), 'All Tab');
-          });
-        });
-      });
-      // books+ tab
-      $('#quicktabs-tabpage-homepage_search_tabs-1 .homepage-tab-form-message', context).once('pul', function () {
-        $('#quicktabs-tabpage-homepage_search_tabs-1 .homepage-tab-form-message a').each(function () {
-          $(this).click(function () {
-            ga('send', 'event', $(this).text(), 'Books+ Tab');
-          });
-        });
-      });
-      // articles+ tab
-      $('#quicktabs-tabpage-homepage_search_tabs-2 .homepage-tab-form-message', context).once('pul', function () {
-        $('#quicktabs-tabpage-homepage_search_tabs-2 .homepage-tab-form-message a').each(function () {
-          $(this).click(function () {
-            ga('send', 'event', $(this).text(), 'Articles+ Tab');
-          });
-        });
-      });
-      // databases tab
-      $('#quicktabs-tabpage-homepage_search_tabs-3 .homepage-tab-form-message', context).once('pul', function () {
-        $('#quicktabs-tabpage-homepage_search_tabs-3 .homepage-tab-form-message a').each(function () {
-          $(this).click(function () {
-            ga('send', 'event', $(this).text(), 'Databases Tab');
+            ga('send', 'event', 'Search Box - Homepage', 'click', $(this).text());
           });
         });
       });
@@ -369,19 +387,59 @@
           });
         });
 
-        // track libraries and collections - click on title
+        // track libraries and collections - click on library name
         $('.view-search-libraries-and-collections h3 a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Title');
+            ga('send', 'event', 'All Search', 'Libraries and Collections', $(this).text());
           });
         });
 
         // track libraries and collections - click on homepage url
         $('.view-search-libraries-and-collections .views-field-field-library-homepage-url a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Libraries and Collections', 'Homepage URL');
+            ga('send', 'event', 'All Search', 'Libraries and Collections', 'Library Homepage');
+          });
+        });
+
+        // track libraries and collections - click on telephone number
+        $('.view-search-libraries-and-collections .views-field-field-phone a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Libraries and Collections', 'Phone Number');
+          });
+        });
+
+        // track libraries and collections - click on email
+        $('.view-search-libraries-and-collections .views-field-field-e-mail-address a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Libraries and Collections', 'Email');
+          });
+        });
+
+        // track libraries and collections - click on collection homepage
+        $('.view-search-libraries-and-collections .views-field-field-collection-url-url a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Libraries and Collections', 'Collection Homepage');
+          });
+        });
+
+        // track libraries and collections - click on collection homepage
+        $('.view-search-libraries-and-collections .views-field-field-digital-project-url a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Libraries and Collections', 'Project Website');
+          });
+        });
+
+        // track database search for more results - top
+        $('.pane-databases-keyword-search-panel-pane-2 h2 a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Databases', 'Refine Top');
+          });
+        });
+
+        // track database search for more results - bottom
+        $('.view-databases-keyword-search .more-link a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Databases', 'Refine Bottom');
           });
         });
 
@@ -389,23 +447,14 @@
         $('.view-databases-keyword-search .item-list .database-title').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'All Search', 'Database Title', 'Position ' + result_position);
+            ga('send', 'event', 'All Search', 'Databases', 'Position ' + result_position);
           });
         });
 
-        // track database search for more results - top
-        $('.pane-databases-keyword-search-panel-pane-2 h2 a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
+        // track database related subjects search for more results - bottom
+        $('.view-databases-subject-search .more-link a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Database', 'Top');
-          });
-        });
-
-        // track database search for more results - bottom
-        $('.view-databases-keyword-search .more-link a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Database', 'Bottom');
+            ga('send', 'event', 'All Search', 'Databases - Related Subjects', 'Refine Bottom');
           });
         });
 
@@ -413,47 +462,29 @@
         $('.view-database-subject-search .item-list a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'All Search', 'Database Subject', 'Position ' + result_position);
-          });
-        });
-
-        // track database related subjects search for more results - bottom
-        $('.view-databases-subject-search .more-link a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Subject Browse', 'Bottom');
-          });
-        });
-
-        // track position of site search
-        $('.view-general-site-keyword-search .item-list .database-titles a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
-          $(this).click(function () {
-            ga('send', 'event', 'All Search', 'Website Search', 'Position ' + result_position);
+            ga('send', 'event', 'All Search', 'Databases - Related Subjects', 'Position ' + result_position);
           });
         });
 
         // track site search for more results - top
         $('.pane-general-site-keyword-search-panel-pane-1 h2 a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Website Search', 'Top');
+            ga('send', 'event', 'All Search', 'Library Website', 'Refine Top');
           });
         });
 
         // track site search for more results - bottom
         $('.view-general-site-keyword-search .more-link a').each(function (index, value) {
-          var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'Website Search', 'Bottom');
+            ga('send', 'event', 'All Search', 'Library Website', 'Refine Bottom');
           });
         });
-
-        // track position of staff search
-        $('.view-general-site-user-search .item-list .user-link').each(function (index, value) {
+        
+        // track position of site search
+        $('.view-general-site-keyword-search .item-list .database-titles a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'All Search', 'People Search', 'Position ' + result_position);
+            ga('send', 'event', 'All Search', 'Library Website', 'Position ' + result_position);
           });
         });
 
@@ -461,7 +492,7 @@
         $('.pane-general-site-user-search-panel-pane-1 h2 a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'People Search', 'Top');
+            ga('send', 'event', 'All Search', 'Library Staff', 'Refine Top');
           });
         });
 
@@ -469,10 +500,130 @@
         $('.view-general-site-user-search .more-link a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).click(function () {
-            ga('send', 'event', 'Expand All Search', 'People Search', 'Bottom');
+            ga('send', 'event', 'All Search', 'Library Staff', 'Refine Bottom');
           });
         });
 
+        // track position of staff search
+        $('.view-general-site-user-search .item-list .user-link').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Library Staff', 'Position ' + result_position);
+          });
+        });
+
+        // track staff search - email
+        $('.view-general-site-user-search .item-list .user-link').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Library Staff', 'Email');
+          });
+        });
+
+        // track staff search - phone
+        $('.view-general-site-user-search .item-list .user-link').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).click(function () {
+            ga('send', 'event', 'All Search', 'Library Staff', 'Phone');
+          });
+        });
+
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackDatabaseResourceUsage = {
+    attach: function (context) {
+      $('.section-resource', context).once('pul', function () {
+        $('.group-db-copyright-access a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Access Resource');
+          });
+        });
+
+        $('.node--override-db-title a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Alternative Title');
+          });
+        });
+
+        $('.group-db-desc-group a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Link in Description');
+          });
+        });
+
+        $('.view-database-access-credentials a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Related Subjects');
+          });
+        });
+
+        $('#dbsearch_block-dbsearch_search input').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Database Search Block');
+          });
+        });
+
+        $('#summon_block-summon_search input').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'click', 'Articles Search Block');
+          });
+        });
+
+        $('.breadcrumb a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database Resource', 'Breadcrumb', $(this).text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackDatabaseListingUsage = {
+    attach: function (context) {
+      $('.section-research', context).once('pul', function () {
+        $('#dbsearch-block-form input').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'Database Search Block');
+          });
+        });
+
+        $('#databases_by_subject select').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'Choose Subject Dropdown');
+          });
+        });
+
+        $('#databases_by_subject a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'See All Subjects');
+          });
+        });
+
+        $('.view-clone-of-glossary .view-summary a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'Starts With');
+          });
+        });
+
+        $('.view-clone-of-glossary table a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', $(this).text());
+          });
+        });
+
+        $('.pane-specialist-finder select').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'Find a Subject Librarian');
+          });
+        });
+
+        $('.pane-clone-of-glossary-panel-pane-3 a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database List', 'click', 'New Databases');
+          });
+        });
       });
     }
   };
@@ -484,48 +635,42 @@
         // branch main menus
         $('.branch-libraries .menu--secondary ul.menu a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch Menu', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch Menu', 'click', $(this).text());
           });
         });
 
         // branch quick links
         $('.branch-libraries .pane-node-field-branch-quick-link a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text());
           });
         });
 
         // stokes links to catalog, databases, newspapers, on landing page
         $('.branch-libraries.libraries-stokes a.button--external-link').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch Quick Links', 'click', $(this).text());
           });
         });
 
         // branch external links
         $('.branch-libraries .pane-node-field-branch-external-links a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch External Links', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch External Links', 'click', $(this).text());
           });
         });
 
         // mendel external links
         $('.branch-libraries .pane-branch-features-panel-pane-1 a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch External Links', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch External Links', 'click', $(this).text());
           });
         });
 
         // branch featured resources
         $('.branch-libraries .pane-node-field-branch-featured-resources a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Branch Featured Resources', 'click', $(this).text(),
-              {'page': window.location.pathname });
+            ga('send', 'event', 'Branch Featured Resources', 'click', $(this).text());
           });
         });
 

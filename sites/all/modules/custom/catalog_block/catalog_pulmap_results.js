@@ -71,7 +71,11 @@
                         if (data.number > 0) {
                             $(preview).append(" ("+data.number+")");
                         }
-                        var section_heading = "PUDL"; // Should be in Drupal Settings
+                        var section_heading = "Maps"; // Should be in Drupal Settings
+                        $(preview).click(function() {
+                            ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
+                        });
+
                         $('#catalog_block-catalog_pulmap_results h2 a').each(function(index, value) {
                             //console.log('processing header');
                             //$(this).closest('h2.pane-title').text();

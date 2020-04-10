@@ -50,6 +50,10 @@
                             $(preview).append(" ("+data.number+")");
                         } 
                         var section_heading = "FAQ"; // Should be in Drupal Settings
+                        $(preview).click(function() {
+                            ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
+                        });
+                        
                         $('#catalog_block-catalog_faq_results h2 a').each(function(index, value) {
                             $(this).click(function() {
                                 ga('send', 'event', 'All Search', section_heading, 'Refine Top');
