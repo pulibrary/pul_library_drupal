@@ -914,7 +914,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['mail']['alter']['text'] = '<span class="icon-email"></span>[mail] ';
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<span class="icon-email"></span><a href="mailto:[mail]">[mail]</a>';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['link_to_entity'] = 0;
   /* Field: Indexed User: Phone Number */
@@ -923,7 +923,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
   $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<span class="icon-phone"></span>[field_puluser_phone_number]';
+  $handler->display->display_options['fields']['field_puluser_phone_number']['alter']['text'] = '<span class="icon-phone"></span><a href="tel:[field_puluser_phone_number]">[field_puluser_phone_number]</a>';
   $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
   /* Field: Indexed User: Office */
   $handler->display->display_options['fields']['field_puluser_office']['id'] = 'field_puluser_office';
