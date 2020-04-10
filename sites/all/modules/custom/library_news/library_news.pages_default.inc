@@ -122,7 +122,7 @@ function library_news_default_page_manager_handlers() {
   $display->content['new-9603be03-2c69-4ce4-9109-4c4587e4792d'] = $pane;
   $display->panels['first'][1] = 'new-9603be03-2c69-4ce4-9109-4c4587e4792d';
   $pane = new stdClass();
-  $pane->pid = 'new-3d0affbe-fe8d-4cb7-9e4f-6cb13f8cd8fa';
+  $pane->pid = 'new-14ff034c-7fd0-4d2c-8923-880358718327';
   $pane->panel = 'second';
   $pane->type = 'custom';
   $pane->subtype = 'newsletter_sidebar';
@@ -144,9 +144,9 @@ function library_news_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '3d0affbe-fe8d-4cb7-9e4f-6cb13f8cd8fa';
-  $display->content['new-3d0affbe-fe8d-4cb7-9e4f-6cb13f8cd8fa'] = $pane;
-  $display->panels['second'][0] = 'new-3d0affbe-fe8d-4cb7-9e4f-6cb13f8cd8fa';
+  $pane->uuid = '14ff034c-7fd0-4d2c-8923-880358718327';
+  $display->content['new-14ff034c-7fd0-4d2c-8923-880358718327'] = $pane;
+  $display->panels['second'][0] = 'new-14ff034c-7fd0-4d2c-8923-880358718327';
   $pane = new stdClass();
   $pane->pid = 'new-89c01358-3e86-43ae-a5a6-18505f1df2c4';
   $pane->panel = 'second';
@@ -611,31 +611,18 @@ function library_news_default_page_manager_pages() {
   $display->content['new-db0c7ccf-3adf-4862-a706-fa1402d1489c'] = $pane;
   $display->panels['first'][0] = 'new-db0c7ccf-3adf-4862-a706-fa1402d1489c';
   $pane = new stdClass();
-  $pane->pid = 'new-effc0656-36fd-45a6-92ae-dbc1d36079b7';
+  $pane->pid = 'new-176a9526-7e47-4d46-8a0d-611d80505cdc';
   $pane->panel = 'second';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => 'Newsletter',
+    'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<div id="mc_embed_signup" class="newsletter-container">
-    <h2>Newsletter</h2>
-<p>Subscribe to Princeton University Library’s e-newsletter for the latest updates on our collections, subject specialists, teaching and learning support, and e-resources.</p>
-    <!-- <span><a href="/newsletter">More options</a></span> -->
-  <form action="https://princeton.us4.list-manage.com/subscribe/post?u=f1159e2c2a8bc35d62147f282&amp;id=6c19fe9a37" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <div id="mc_embed_signup_scroll" class="newsletter-signup">
-  
-  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
-      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f1159e2c2a8bc35d62147f282_6c19fe9a37" tabindex="-1" value=""></div>
-      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-      </div>
-  </form>
-  </div>',
-    'format' => 'full_html',
+    'body' => '',
+    'format' => 'pul_editor_html',
     'substitute' => TRUE,
     'name' => 'newsletter_sidebar',
   );
@@ -647,9 +634,9 @@ function library_news_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'effc0656-36fd-45a6-92ae-dbc1d36079b7';
-  $display->content['new-effc0656-36fd-45a6-92ae-dbc1d36079b7'] = $pane;
-  $display->panels['second'][0] = 'new-effc0656-36fd-45a6-92ae-dbc1d36079b7';
+  $pane->uuid = '176a9526-7e47-4d46-8a0d-611d80505cdc';
+  $display->content['new-176a9526-7e47-4d46-8a0d-611d80505cdc'] = $pane;
+  $display->panels['second'][0] = 'new-176a9526-7e47-4d46-8a0d-611d80505cdc';
   $pane = new stdClass();
   $pane->pid = 'new-961d69c4-63bd-4739-be19-afb505b9e510';
   $pane->panel = 'second';
