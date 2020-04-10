@@ -47,6 +47,10 @@
 .view-all-search-best-bet {
   font-family: $font-dejavu;
 
+  ul {
+    margin: 0;
+  }
+
   h3 {
     font-weight: normal;
     margin-top: 0;
@@ -166,7 +170,7 @@
     &::after {
       @include pul-icon;
 
-      content: "\e609";
+      content: $icon-down;
       margin-left: 0.5em;
     }
   }
@@ -216,4 +220,18 @@
   li {
     margin-bottom: 0;
   }
+}
+
+.badge-default {
+  background-color: $gray-light;
+}
+
+[class^="badge-"] {
+  margin-right: 0.5rem;
+}
+
+.pulsearch-online-access,
+.holdings,
+.pulsearch-availability div:not(.holding) {
+  margin-top: 0.725rem;
 }

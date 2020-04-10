@@ -128,21 +128,21 @@
   .newsletter-signup {
     border: 2px solid $white;
     display: flex;
-  
+
     &:focus-within,
     &:hover {
       border-color: $black;
-  
+
       input[type="submit"] {
         background-color: $orange;
       }
     }
-  
+
     input {
       border-color: $white;
       border-radius: 0;
       min-width: 0;
-  
+
       &:hover,
       &:focus {
         border-color: $white;
