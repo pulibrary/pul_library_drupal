@@ -52,7 +52,7 @@
   }
 
   .centered-navigation-menu-button {
-    background: $black;
+    background: $centered-navigation-background;
     border: 0;
     color: $white;
     cursor: pointer;
@@ -274,7 +274,7 @@
     padding-left: 0;
 
     @include breakpoint($horizontal-bar-mode) {
-      background: $black;
+      background: $centered-navigation-background;
       left: -2em;
       margin-left: 2em;
       position: absolute;

@@ -2,22 +2,92 @@
   background-color: $black;
   border-top: 5px solid $orange;
   font-size: $font-size-smaller;
+  padding: 0;
+}
+
+.pu--footer {
+  width: 100%;
+
+  .l-region--pu-footer {
+    align-items: center;
+    color: $white;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+
+    @media screen and (min-width: $tab) {
+      flex-direction: row;
+
+      .pu--copyright {
+        flex-basis: auto;
+      }
+    }
+
+    > div {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+
+    a {
+      color: $white;
+    }
+
+    .pu--accessibility a {
+      margin-right: auto;
+
+      &::after {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE4IDEzdjZhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWOGEyIDIgMCAwIDEgMi0yaDYiLz48cG9seWxpbmUgcG9pbnRzPSIxNSAzIDIxIDMgMjEgOSIvPjxsaW5lIHgxPSIxMCIgeDI9IjIxIiB5MT0iMTQiIHkyPSIzIi8+PC9zdmc+");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        display: inline-block;
+        filter: invert(100%);
+        height: 12px;
+        margin-left: 8px;
+        position: relative;
+        width: 12px;
+      }
+    }
+
+    .pu--logo a {
+      margin-left: auto;
+    }
+  }
+}
+
+.newsletter-container {
+  h2 {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    color: $white;
+    float: right;
+    font-size: $font-size-small-2;
+    font-style: italic;
+  }
 }
 
 .l-region--footer {
   clear: both;
-
-  @media screen and (min-width: 425px) and (max-width: 750px) {
-    display: flex;
-    flex-wrap: wrap;
-
-    .block {
-      width: 48%;
-    }
-  }
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2rem 1rem 0;
 
   .block {
+    flex-basis: 100%;
     margin-bottom: 1.5rem;
+  }
+
+  nav:first-child {
+    margin-left: 0;
   }
 
   address,
@@ -34,7 +104,6 @@
   h2,
   h2 a {
     color: $white;
-    font-family: $font-primary;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0.75em;
@@ -55,84 +124,54 @@
       }
     }
   }
-}
 
-// SVG logo
-.svg {
-  .facebook-logo img,
-  .instagram-logo img,
-  .twitter-logo img,
-  .govdocs-logo img,
-  .friends-logo img,
-  .pu-logo img {
-    display: none;
-  }
+  .newsletter-signup {
+    border: 2px solid $white;
+    display: flex;
 
-  .facebook-logo,
-  .instagram-logo,
-  .twitter-logo,
-  .govdocs-logo,
-  .friends-logo,
-  .pu-logo {
-    background-size: contain;
-    display: inline-block;
-    height: 24px;
-    line-height: 11px;
+    &:focus-within,
+    &:hover {
+      border-color: $black;
 
-    @include breakpoint($tab) {
-      margin-left: 0.5em;
+      input[type="submit"] {
+        background-color: $orange;
+      }
     }
 
-    &::before {
-      content: " ";
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
+    input {
+      border-color: $white;
+      border-radius: 0;
+      min-width: 0;
+
+      &:hover,
+      &:focus {
+        border-color: $white;
+      }
     }
   }
 
-  .footer--icons {
-    margin-top: 1em;
-
-    li {
-      float: left;
+  @media screen and (min-width: 600px) and (max-width: $tab) {
+    .block:nth-child(-n + 3) {
+      flex-basis: 33%;
     }
   }
 
-  .facebook-logo {
-    background-image: url("#{$base-path}/images/logo-facebook-white.svg");
-    margin: 0 0.2em 0.75em;
-    width: 24px;
+  @media screen and (min-width: $tab) {
+    .block:nth-child(-n + 3) {
+      flex-basis: 23%;
+    }
+
+    .block:last-child {
+      flex-basis: 31%;
+    }
   }
 
-  .instagram-logo {
-    background-image: url("#{$base-path}/images/logo-instagram.svg");
-    margin: 0 0.2em 0.75em;
-    width: 24px;
-  }
+  @media screen and (min-width: $desk) {
+    padding-top: 2.5rem;
 
-  .twitter-logo {
-    background-image: url("#{$base-path}/images/logo-twitter-bird-white.svg");
-    margin: 0 0.2em 0.75em;
-    width: 24px;
-  }
-
-  .govdocs-logo {
-    background-image: url("#{$base-path}/images/govdocs.svg");
-    margin: 0 0.2em 0.75em;
-    width: 24px;
-  }
-
-  .friends-logo {
-    background-image: url("#{$base-path}/images/friends.svg");
-    margin: 0 0.2em 0.75em;
-    width: 85px;
-  }
-
-  .pu-logo {
-    background-image: url("#{$base-path}/images/logo-white.svg");
-    height: 40px;
-    margin: 0.5em 0 0;
-    width: 141px;
+    .block--block-1 {
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 }

@@ -266,6 +266,33 @@ function research_data_service_default_page_manager_handlers() {
   $display->content['new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba'] = $pane;
   $display->panels['first'][2] = 'new-8afb3002-1a34-41cb-80b6-d1ca48ce83ba';
   $pane = new stdClass();
+  $pane->pid = 'new-1b3b7419-a1ae-490b-8588-cbd9bc037d4f';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'name' => 'prds_appointments',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '1b3b7419-a1ae-490b-8588-cbd9bc037d4f';
+  $display->content['new-1b3b7419-a1ae-490b-8588-cbd9bc037d4f'] = $pane;
+  $display->panels['first'][3] = 'new-1b3b7419-a1ae-490b-8588-cbd9bc037d4f';
+  $pane = new stdClass();
   $pane->pid = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
   $pane->panel = 'first';
   $pane->type = 'entity_field';
@@ -293,11 +320,11 @@ function research_data_service_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'bde42932-4c55-4c02-8a1b-31cb7a62db06';
   $display->content['new-bde42932-4c55-4c02-8a1b-31cb7a62db06'] = $pane;
-  $display->panels['first'][3] = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
+  $display->panels['first'][4] = 'new-bde42932-4c55-4c02-8a1b-31cb7a62db06';
   $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane->panel = 'second';

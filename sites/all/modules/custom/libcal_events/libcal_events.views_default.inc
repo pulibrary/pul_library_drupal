@@ -624,6 +624,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_date']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date']['field'] = 'field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schemaorg_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schemaorg_date']['alter']['text'] = 'Open through [field_schemaorg_date]';
   $handler->display->display_options['fields']['field_schemaorg_date']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_schemaorg_date']['element_class'] = 'events-date--homepage';
@@ -644,6 +645,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_date_1']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date_1']['field'] = 'field_schemaorg_date';
   $handler->display->display_options['fields']['field_schemaorg_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_schemaorg_date_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schemaorg_date_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schemaorg_date_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schemaorg_date_1']['element_wrapper_class'] = 'events-time--homepage';
@@ -662,6 +664,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_location']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_location']['element_class'] = 'events-location--homepage';
   $handler->display->display_options['fields']['field_location']['element_label_type'] = 'span';

@@ -3,7 +3,7 @@ $base-path: "/sites/all/themes/pul_base/assets/public";
 // Color palette
 $white: #fff;
 $off-white: #fdfaf8;
-$black: #040404;
+$black: #0e1111;
 
 $gray-lightest: #f5f4f1;
 $gray-light: #e0ddd3;
@@ -125,8 +125,7 @@ $border-solid: solid;
 $border-thin: 1px;
 $border-med: 4px;
 $border-thick: 9px;
-// $border-light: rgba(0, 0, 0, 0.21);
 $border-light: $gray-light;
 $border-orange: $orange;
-$base-border-radius: 10px;
-$slight-border-radius: 5px;
+$base-border-radius: 8px;
+$slight-border-radius: 4px;

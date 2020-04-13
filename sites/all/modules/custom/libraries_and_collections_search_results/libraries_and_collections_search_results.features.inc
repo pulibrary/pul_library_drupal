@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * libraries_and_collections_search_results.features.inc

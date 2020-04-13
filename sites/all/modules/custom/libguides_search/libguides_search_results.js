@@ -55,6 +55,30 @@
                         if (data.number > 0) {
                             $(preview).append(" ("+data.number+")");
                         }
+                        var section_heading = "Library Guides"; // Should be in Drupal Settings
+                        $(preview).click(function() {
+                            ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
+                        });
+                        
+                        $('.pane-libguides-block-libguides-search-results h2 a').each(function(index, value) {
+                            $(this).click(function() {
+                                ga('send', 'event', 'All Search', section_heading, 'Refine Top');
+                            });
+                        });
+
+                        $('.pane-libguides-block-libguides-search-results .more-link a').each(function(index, value) {
+                            $(this).click(function() {
+                                ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
+                            });
+                        });
+
+                        $('.pane-libguides-block-libguides-search-results .all-search-results-list a').each(function(index, value) {
+                            var result_position = parseInt(index, 10) + 1;
+                            $(this).click(function() {
+                                ga('send', 'event', 'All Search', section_heading, 'Position ' + result_position);
+                            });
+                        });
+
                     } else {
                         $('#libguides-search-results-spinner').hide();
                         $('<div class="no-results">No library guides found. <a href="' + libguides_url + '">Browse guides</a> for available topics</div>."').appendTo('.libguides-search-results');

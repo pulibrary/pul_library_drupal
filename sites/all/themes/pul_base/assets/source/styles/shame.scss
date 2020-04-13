@@ -74,11 +74,6 @@ h1.icon-article-express--small-after::after {
   margin-bottom: 1em;
 }
 
-// .news--item a:hover h3 {
-//   @include smart-underline(white, $black, #ffc, 91%, 2px);
-//   color: $black;
-//   // @include smart-underline;
-// }
 .alternative-database-landing-page,
 .database-resource-page {
   h1 {
@@ -90,7 +85,6 @@ h1.icon-article-express--small-after::after {
   background: $black;
   color: $white;
 }
-
 
 .front .panel-display--landingpage {
   padding-top: 1em;

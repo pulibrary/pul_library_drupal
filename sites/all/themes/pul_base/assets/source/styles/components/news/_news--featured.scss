@@ -7,6 +7,10 @@
   }
 }
 
+.news__featured .featured-new-item-image {
+  border-bottom: $border-thin $border-solid $border-light;
+}
+
 .news__featured .featured-new-item-image,
 .events--homepage .events-image--homepage {
   height: auto;
