@@ -38,13 +38,19 @@ function library_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -53,6 +59,7 @@ function library_news_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 3,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-library_news_item-field_acquisition_type'.
@@ -1211,6 +1218,52 @@ function library_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-library_news_item-field_video_embed_url'.
+  $field_instances['node-library_news_item-field_video_embed_url'] = array(
+    'bundle' => 'library_news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_embed_url',
+    'label' => 'Video Embed URL',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Acquisition Type');
@@ -1249,6 +1302,7 @@ function library_news_field_default_field_instances() {
   t('Select this option <b>only</b> if you wish this news item to display in the list of features on https://library.princeton.edu/news. ');
   t('Tag an item with it\'s primary category. ');
   t('Tags');
+  t('Video Embed URL');
 
   return $field_instances;
 }

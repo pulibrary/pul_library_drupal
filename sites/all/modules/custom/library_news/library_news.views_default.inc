@@ -758,6 +758,19 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tags']['delta_offset'] = '0';
+  /* Field: Content: Video Embed URL */
+  $handler->display->display_options['fields']['field_video_embed_url']['id'] = 'field_video_embed_url';
+  $handler->display->display_options['fields']['field_video_embed_url']['table'] = 'field_data_field_video_embed_url';
+  $handler->display->display_options['fields']['field_video_embed_url']['field'] = 'field_video_embed_url';
+  $handler->display->display_options['fields']['field_video_embed_url']['label'] = '';
+  $handler->display->display_options['fields']['field_video_embed_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_video_embed_url']['alter']['text'] = '<iframe src="[field_video_embed_url-value]" frameborder="0" width="450" height="450"></iframe>';
+  $handler->display->display_options['fields']['field_video_embed_url']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_video_embed_url']['element_class'] = 'video-wrapper';
+  $handler->display->display_options['fields']['field_video_embed_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_embed_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_video_embed_url']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_video_embed_url']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
