@@ -230,7 +230,7 @@
         $('.footer--icons a').each(function () {
           $(this).addClass('footer-link');
           $(this).click(function () {
-            ga('send', 'event', 'Footer Menu', 'click', $(this).attr("title"));
+            ga('send', 'event', 'Footer Menu', 'click', $(this).attr('title'));
           });
         });
 
@@ -242,7 +242,7 @@
 
         $('.pu--logo a').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Footer Menu', 'click', $(this).attr("title"));
+            ga('send', 'event', 'Footer Menu', 'click', $(this).attr('title'));
           });
         });
       });
@@ -251,10 +251,27 @@
 
   Drupal.behaviors.pulTrackNewsletterSubscriptionUsage = {
     attach: function (context) {
-      $('.l-footer', context).once('pul', function () {
-        $('.l-footer input').each(function () {
+      $('.l-page', context).once('pul', function () {
+        $('.pul_base_nine_three-region--second .newsletter-signup input').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'Footer Newsletter Subscription', 'click', $(this).attr("type"));
+            ga('send', 'event', 'Newsletter Subscription', 'Sidebar', $(this).attr('type'));
+          });
+        });
+        $('.l-footer .newsletter-signup input').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Newsletter Subscription', 'Footer', $(this).attr('type'));
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackVideoEmbedUsage = {
+    attach: function (context) {
+      $('.section-news', context).once('pul', function () {
+        $('.video-wrapper iframe').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Library News', 'Video Embed', $(this).attr('src'));
           });
         });
       });
@@ -277,11 +294,35 @@
   Drupal.behaviors.pulTrackNewsUsage = {
     attach: function (context) {
       $('.view-library-news', context).once('pul', function () {
-        $('.view-library-news a').each(function (index, value) {
+        $('.view-library-news .news__featured a').each(function (index, value) {
           var result_position = parseInt(index, 10) + 1;
           $(this).addClass('library-news-link');
           $(this).click(function () {
-            ga('send', 'event', 'Library News', 'click', $(this).text() + ' Position ' + result_position);
+            ga('send', 'event', 'Library News', 'Homepage', $(this).text() + ' Position ' + result_position);
+          });
+        });
+        $('.view-library-news .field--name-body a').each(function (index, value) {
+          var result_position = parseInt(index, 10) + 1;
+          $(this).addClass('library-news-link');
+          $(this).click(function () {
+            ga('send', 'event', 'Library News', 'Article', $(this).text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackNewsSidebarUsage = {
+    attach: function (context) {
+      $('.section-news', context).once('pul', function () {
+        $('.view-news-and-events-categories a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Library News', 'Sidebar - Categories', $(this).attr('href'));
+          });
+        });
+        $('.pane-menu-menu-library-news-and-events a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Library News', 'Sidebar - News and Events', $(this).attr('href'));
           });
         });
       });
@@ -306,7 +347,7 @@
       $('.landingpage-region', context).once('pul', function () {
         $('.views-more-link').each(function () {
           $(this).click(function () {
-            ga('send', 'event', 'More Links - Homepage', 'click', $(this).text());
+            ga('send', 'event', 'More Links', 'Homepage', $(this).text());
           });
         });
       });
@@ -337,7 +378,7 @@
         $('.view-display-id-block_3 a').each(function (index, value) {
           $(this).addClass('library-hours-link');
           $(this).click(function () {
-            ga('send', 'event', 'Library Hours - Homepage', 'click', $(this).find("h3").text());
+            ga('send', 'event', 'Library Hours', 'Homepage', $(this).find("h3").text());
           });
         });
       });
@@ -349,7 +390,7 @@
       $('.view-library-hours', context).once('pul', function () {
         $('.view-display-id-panel_pane_2 a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Library Hours', 'click', $(this).text());
+            ga('send', 'event', 'Library Hours', 'All Hours', $(this).text());
           });
         });
       });
@@ -537,43 +578,43 @@
       $('.section-resource', context).once('pul', function () {
         $('.group-db-copyright-access a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Access Resource');
+            ga('send', 'event', 'Database', 'Resource', 'Access Resource');
           });
         });
 
         $('.node--override-db-title a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Alternative Title');
+            ga('send', 'event', 'Database', 'Resource', 'Alternative Title');
           });
         });
 
         $('.group-db-desc-group a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Link in Description');
+            ga('send', 'event', 'Database', 'Resource', 'Link in Description');
           });
         });
 
         $('.view-database-access-credentials a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Related Subjects');
+            ga('send', 'event', 'Database', 'Resource', 'Related Subjects');
           });
         });
 
         $('#dbsearch_block-dbsearch_search input').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Database Search Block');
+            ga('send', 'event', 'Database', 'Resource', 'Database Search Block');
           });
         });
 
         $('#summon_block-summon_search input').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'click', 'Articles Search Block');
+            ga('send', 'event', 'Database', 'Resource', 'Articles Search Block');
           });
         });
 
         $('.breadcrumb a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database Resource', 'Breadcrumb', $(this).text());
+            ga('send', 'event', 'Database', 'Resource', $(this).text());
           });
         });
       });
@@ -585,43 +626,43 @@
       $('.section-research', context).once('pul', function () {
         $('#dbsearch-block-form input').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'Database Search Block');
+            ga('send', 'event', 'Database', 'List', 'Database Search Block');
           });
         });
 
         $('#databases_by_subject select').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'Choose Subject Dropdown');
+            ga('send', 'event', 'Database', 'List', 'Choose Subject Dropdown');
           });
         });
 
         $('#databases_by_subject a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'See All Subjects');
+            ga('send', 'event', 'Database', 'List', 'See All Subjects');
           });
         });
 
         $('.view-clone-of-glossary .view-summary a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'Starts With');
+            ga('send', 'event', 'Database', 'List', 'Starts With');
           });
         });
 
         $('.view-clone-of-glossary table a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', $(this).text());
+            ga('send', 'event', 'Database', 'List', $(this).text());
           });
         });
 
         $('.pane-specialist-finder select').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'Find a Subject Librarian');
+            ga('send', 'event', 'Database', 'List', 'Find a Subject Librarian');
           });
         });
 
         $('.pane-clone-of-glossary-panel-pane-3 a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database List', 'click', 'New Databases');
+            ga('send', 'event', 'Database ', 'click', 'New Databases');
           });
         });
       });

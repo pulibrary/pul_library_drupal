@@ -22,7 +22,7 @@ function library_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Catalog Details',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_authors',
       1 => 'field_call_number',
@@ -55,7 +55,7 @@ function library_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Collections Development',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_acquisition_type',
       1 => 'field_material_access',
@@ -85,7 +85,7 @@ function library_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Attachments',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_news_images',
       1 => 'field_news_file_attachemtns',
@@ -113,7 +113,7 @@ function library_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dates & Locations',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_pul_event_date',
       1 => 'field_news_event_location',
@@ -141,7 +141,7 @@ function library_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'News Details',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_news_library_contact',
       1 => 'field_news_more_information',

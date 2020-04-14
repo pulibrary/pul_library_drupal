@@ -109,13 +109,13 @@ function library_news_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'xmlsitemap' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'workbench_access' => array(
           'weight' => '1',
