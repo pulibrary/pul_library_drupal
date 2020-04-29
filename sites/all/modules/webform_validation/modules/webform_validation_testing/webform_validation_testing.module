@@ -5,8 +5,6 @@
  * Module file for webform_validation_testing.
  */
 
-include_once 'webform_validation_testing.features.inc';
-
 /**
  * Implements hook_webform_validation_validators().
  */

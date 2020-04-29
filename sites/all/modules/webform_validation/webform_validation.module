@@ -191,7 +191,22 @@ function webform_validation_validate($form, &$form_state) {
       }
       $rule['sid'] = $sid;
       // Have the submitted values validated.
-      $errors = module_invoke_all("webform_validation_validate", $rule['validator'], webform_validation_prefix_keys($items), webform_validation_prefix_keys($node->webform['components']), $rule);
+      $components = webform_validation_prefix_keys($node->webform['components']);
+      // Allow translation for all components item names if available.
+      if (module_exists('webform_localization')) {
+        module_load_include('inc', 'webform_localization', 'includes/webform_localization.i18n');
+        foreach ($components as &$component) {
+          $dummy_element = array(
+            '#title' => '',
+          );
+          _webform_localization_translate_component($dummy_element, $component);
+          if (isset($dummy_element['#title']) && (string) $dummy_element['#title']) {
+            $component['name'] = $dummy_element['#title'];
+          }
+        }
+      }
+
+      $errors = module_invoke_all("webform_validation_validate", $rule['validator'], webform_validation_prefix_keys($items), $components, $rule);
       if ($errors) {
         $errors = webform_validation_unprefix_keys($errors);
         // Create hook_webform_validation_validate_alter(). Allow other modules
@@ -540,7 +555,8 @@ function webform_validation_webform_validator_alter(&$validators) {
  * Implements hook_uuid_node_features_export_alter().
  */
 function webform_validation_uuid_node_features_export_alter(&$data, $node, $module) {
-  $nid = reset(entity_get_id_by_uuid('node', array($node->uuid)));
+  $nid = entity_get_id_by_uuid('node', array($node->uuid));
+  $nid = reset($nid);
   if (webform_validation_get_node_rules($nid)) {
     $data['dependencies']['webform_validation'] = 'webform_validation';
   }
