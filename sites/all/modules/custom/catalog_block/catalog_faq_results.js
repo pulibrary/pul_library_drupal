@@ -49,7 +49,7 @@
                         if (data.number > 0) {
                             $(preview).append(" ("+data.number+")");
                         } 
-                        var section_heading = "FAQ"; // Should be in Drupal Settings
+                        var section_heading = "Library FAQ"; // Should be in Drupal Settings
                         $(preview).click(function() {
                             ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
                         });
