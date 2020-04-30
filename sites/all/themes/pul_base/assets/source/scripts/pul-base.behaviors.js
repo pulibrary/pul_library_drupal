@@ -397,6 +397,86 @@
     }
   };
 
+  Drupal.behaviors.pulTrackStaffDirectoryUsage = {
+    attach: function (context) {
+      $('.section-staff', context).once('pul', function () {
+        $('.view-staff-list-browse a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Starts With', $(this).text());
+          });
+        });
+
+        $('.view-staff-department-list a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Departments', $(this).text());
+          });
+        });
+
+        $('.view-filters input').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Search', $(this).attr('type'));
+          });
+        });
+
+        $('.views-table thead a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'List', 'Sort by Name');
+          });
+        });
+
+        $('.views-table tbody a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'List', 'Clicked Name');
+          });
+        });
+
+        $('.pager a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Pagination', $(this).text());
+          });
+        });
+
+        // Individual staff page
+        $('.user--email a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Staff Page', 'Email');
+          });
+        });
+
+        $('.button--appointment a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Staff Page', 'Appointment');
+          });
+        });
+
+        $('.view-specialist-finder a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Staff Page', 'Subjects');
+          });
+        });
+
+        $('.pane-user-contact input[type="submit"]').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Directory', 'Staff Page', 'Contact Form');
+          });
+        });
+
+        // specialists
+        $('select option').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Specialist', 'Select a Subject', $(this).text());
+          });
+        });
+
+        $('.views-field-name-1 a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Staff Specialist', 'Subject', $(this).text());
+          });
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.pulTrackTabLinkUsage = {
     attach: function (context) {
       // all search tab
@@ -410,6 +490,67 @@
         $('#quicktabs-tabpage-homepage_search_tabs-0 .homepage-tab-form-message a').each(function () {
           $(this).click(function () {
             ga('send', 'event', 'Search Box - Homepage', 'click', $(this).text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackSectionPageUsage = {
+    attach: function (context) {
+      $('.pane-featured-pul-link-group-panel-pane-1', context).once('pul', function () {
+        $('.view-featured-pul-link-group h3 a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Section Page', window.location.pathname, $(this).text());
+          });
+        });
+
+        $('.view-featured-pul-link-group p a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Section Page', window.location.pathname, 'Link in Description');
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackLibrariesPageUsage = {
+    attach: function (context) {
+      $('.page-libraries', context).once('pul', function () {
+        $('h2 a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Section Page', 'Libraries', $(this).text());
+          });
+        });
+
+        $('.library-info a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Section Page', 'Libraries', $(this).closest('.views-row').find('h2').text() + ' - ' + $(this).text());
+          });
+        });
+
+        $('.pul_base_nine_three-region--second a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Section Page', 'Libraries', 'Collections - ' + $(this).text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackAccountsPageUsage = {
+    attach: function (context) {
+      $('.section-accounts', context).once('pul', function () {
+        $('.service-connect-btn a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Accounts', 'Access Button', $(this).text());
+          });
+        });
+
+        $('.panel-pane li a').each(function () {
+          console.log($(this).text())
+          $(this).click(function () {
+            ga('send', 'event', 'Accounts', 'More', 'Find out more about ' + $(this).text());
           });
         });
       });
@@ -573,6 +714,54 @@
     }
   };
 
+  Drupal.behaviors.pulTrackDatabaseSectionUsage = {
+    attach: function (context) {
+      $('.section-databases', context).once('pul', function () {
+        $('#tier_one_resources-panel_pane_1 .view-content a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Core Resources');
+          });
+        });
+
+        $('#tier_one_resources-panel_pane_1 .view-footer a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Core Resources - RSS Feed');
+          });
+        });
+
+        $('#tier_one_resources-panel_pane_2 .view-content a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Supplementary Resources');
+          });
+        });
+
+        $('#tier_one_resources-panel_pane_2 .view-footer a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Supplementary Resources - RSS Feed');
+          });
+        });
+
+        $('#tier_one_resources-panel_pane_3 .user--picture a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Librarian Photo');
+          });
+        });
+
+        $('#tier_one_resources-panel_pane_3 .user--email a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Librarian Email');
+          });
+        });
+
+        $('#tier_one_resources-lib_guides_pane a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Subject', 'Library Guide');
+          });
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.pulTrackDatabaseResourceUsage = {
     attach: function (context) {
       $('.section-resource', context).once('pul', function () {
@@ -662,7 +851,7 @@
 
         $('.pane-clone-of-glossary-panel-pane-3 a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database ', 'click', 'New Databases');
+            ga('send', 'event', 'Database ', 'List', 'New Databases');
           });
         });
       });
