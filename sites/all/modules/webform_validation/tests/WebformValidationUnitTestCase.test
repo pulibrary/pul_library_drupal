@@ -17,16 +17,10 @@ class WebformValidationUnitTestCase extends DrupalUnitTestCase {
   }
 
   /**
-   * {@inheritdoc}
-   */
-  public function setUp() {
-    parent::setUp();
-  }
-
-  /**
    * The tests.
    */
   public function test() {
+    require_once __DIR__ . '/../webform_validation.validators.inc';
 
     $validator_name = 'comparison';
     $items = array(
@@ -62,6 +56,31 @@ class WebformValidationUnitTestCase extends DrupalUnitTestCase {
     $test_value = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
     $value = array('two' => 'Error message.');
     $this->assertIdentical($test_value, $value, 'Error for failing validation.');
+
+    // Test the 'pattern' validator.
+    $validator_name = 'pattern';
+    $items = [];
+    $components = [];
+    $rule = [
+      'data' => 'D-25##|(###) ###-####|@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA',
+      'error_message' => 'Invalid value.',
+    ];
+
+    $items['item_1'] = 'D-25AA';
+    $test = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $this->assertIdentical(count($test), 1, $items['item_1'] . ' fails validation.');
+
+    $items['item_1'] = 'D-2500';
+    $test = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $this->assertIdentical(count($test), 0, $items['item_1'] . ' passes validation.');
+
+    $items['item_1'] = '(123)-456-7890';
+    $test = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $this->assertIdentical(count($test), 1, $items['item_1'] . ' fails validation.');
+
+    $items['item_1'] = '(123) 456-7890';
+    $test = webform_validation_webform_validation_validate($validator_name, $items, $components, $rule);
+    $this->assertIdentical(count($test), 0, $items['item_1'] . ' passes validation.');
   }
 
 }

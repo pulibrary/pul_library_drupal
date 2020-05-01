@@ -123,13 +123,14 @@ function webform_validation_webform_validation_validators() {
       ),
       'custom_data' => array(
         'label' => t('Number the fields add up to'),
-        'description' => t('Specify the number and the type of comparison. For example:') . theme('item_list', array(
-          'items' => array(
-            t('Enter "=3" if the components must add up to exactly 3.'),
-            t('Enter ">10" if the components must add up to greater than 10.'),
-            t('Enter ">=10" if the components must add up to greater than or equal to 10.'),
-            t('Enter "<20" if the components must add up to less than 20.'),
-            t('Enter "<=20" if the components must add up to less than or equal to 20.'),
+        'description' => t('Specify the number and the type of comparison. For example:') . theme('table', array(
+          'header' => array(t('Value'), t('Meaning')),
+          'rows' => array(
+            array('=3', t('The components must add up to exactly 3.')),
+            array('>10', t('The components must add up to greater than 10.')),
+            array('>=10', t('The components must add up to greater than or equal to 10.')),
+            array('<20', t('The components must add up to less than 20.')),
+            array('<=20', t('The components must add up to less than or equal to 20.')),
           ),
         )),
         'validate_regex' => '/^(=|>|>=|<|<=)(-?[\d.]+)$/',
@@ -239,11 +240,12 @@ function webform_validation_webform_validation_validators() {
       ),
       'custom_data' => array(
         'label' => t('Number to be completed'),
-        'description' => t('Specify the number that must be completed and the type of comparison. For example:') . theme('item_list', array(
-          'items' => array(
-            t('Enter ">=1" if the user must complete <b>at least</b> 1 of the selected components.'),
-            t('Enter "=3" if the user must complete <b>exactly</b> 3 of the selected components.'),
-            t('Enter "<=2" if the user must complete <b>at most</b> 2 of the selected components.'),
+        'description' => t('Specify the number that must be completed and the type of comparison. For example:') . theme('table', array(
+          'header' => array(t('Value'), t('Meaning')),
+          'rows' => array(
+            array('>=1', t('The user must complete <b>at least</b> 1 of the selected components.')),
+            array('=3', t('The user must complete <b>exactly</b> 3 of the selected components.')),
+            array('<=2', t('The user must complete <b>at most</b> 2 of the selected components.')),
           ),
         )),
         'validate_regex' => '/^[><]?=\d+$/',
@@ -341,7 +343,22 @@ function webform_validation_webform_validation_validators() {
       'custom_error' => TRUE,
       'custom_data' => array(
         'label' => t('Pattern'),
-        'description' => t('Specify a pattern where:') . theme('item_list', array('items' => array(t('@ = any letter A-Z'), t('# = any numeral 0-9'), t('| = separates two or more acceptable patterns'), t('Any other character must appear in its exact position')))) . t('Examples') . theme('item_list', array('items' => array(t('North American phone number: (###) ###-####'), t('D-2500 series model numbers: D-25##'), t('UK Postal Code: @# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA')))),
+        'description' => t('Specify a pattern where:') . theme('table', array(
+          'header' => array(t('Value'), t('Meaning')),
+          'rows' => array(
+            array('@', t('Any letter A-Z.')),
+            array('#', t('Any numeral 0-9.')),
+            array('|', t('Separates two or more acceptable patterns.')),
+            array('', t('Any other character must appear in its exact position.')),
+          ),
+        )) . t('Examples:') . theme('table', array(
+          'header' => array(t('Value'), t('Meaning')),
+          'rows' => array(
+            array('(###) ###-####', t('North American phone number.')),
+            array('D-25##', t('D-2500 series model numbers.')),
+            array('@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA', t('UK Postal Code.')),
+          ),
+        )),
       ),
       'description' => t('Verifies that a user-entered value follows to a specified pattern.'),
     ),
@@ -452,19 +469,6 @@ function webform_validation_webform_validation_validate($validator_name, $items,
     return NULL;
   }
 
-  // Allow translation for all components item names if available.
-  if (module_exists('webform_localization')) {
-    foreach ($components as &$component) {
-      $dummy_element = array(
-        '#title' => '',
-      );
-      _webform_localization_translate_component($dummy_element, $component);
-      if (isset($dummy_element['#title']) && (string) $dummy_element['#title']) {
-        $component['name'] = $dummy_element['#title'];
-      }
-    }
-  }
-
   // For certain validators, if all components to be compared are email
   // components, make the values lower-case to avoid case-sensitive comparison.
   if (in_array($validator_name, array('equal', 'comparison', 'unique'))) {
@@ -516,7 +520,11 @@ function webform_validation_webform_validation_validate($validator_name, $items,
           if (isset($num_range['min']) && isset($num_range['max'])) {
             // Validate the min - max range.
             if ($subval < $num_range['min'] || $subval > $num_range['max']) {
-              $errors[$key] = t('%item is not within the allowed range %range.', array('%item' => $components[$key]['name'], '%range' => str_replace('|', ' - ', $rule['data'])));
+              $options = array(
+                '%item' => $components[$key]['name'],
+                '%range' => str_replace('|', ' - ', $rule['data']),
+              );
+              $errors[$key] = t('%item is not within the allowed range %range.', $options);
             }
           }
           else {
@@ -859,7 +867,11 @@ function webform_validation_webform_validation_validate($validator_name, $items,
           'regular' => '%item must %verb with "%string".',
           'negated' => '%item must not %verb with "%string".',
         );
-        $error_vars = array('%item' => $components[$key]['name'], '%verb' => $verb, '%string' => $rule['data']);
+        $error_vars = array(
+          '%item' => $components[$key]['name'],
+          '%verb' => $verb,
+          '%string' => $rule['data'],
+        );
         foreach ($val as $subval) {
           $test = !preg_match($pattern, $subval);
           _webform_validation_test($errors, $key, $rule, $test, $error_strings, $error_vars);
@@ -870,7 +882,9 @@ function webform_validation_webform_validation_validate($validator_name, $items,
     case 'pattern':
       $pattern = preg_quote($rule['data'], '/');
       $pattern = str_replace('@', '[a-zA-Z]', $pattern);
-      $pattern = str_replace('#', '[0-9]', $pattern);
+      // Since PHP 7.3, the # character is quoted by preg_quote().
+      $quoted_hash = version_compare(PHP_VERSION, '7.3.0', '>=') ? '\\#' : '#';
+      $pattern = str_replace($quoted_hash, '[0-9]', $pattern);
       $pattern = '(' . $pattern . ')';
       // Un-escape "|" operator.
       $pattern = preg_replace('/(\\s*)(\\\\)(\\|)(\\s*)/', ')|(', $pattern);
@@ -909,7 +923,9 @@ function webform_validation_webform_validation_validate($validator_name, $items,
       return $errors;
 
     case 'blacklist':
-      $blacklist = preg_quote($rule['data'], '/');
+      $blacklist = $rule['data'];
+      $blacklist = token_replace($blacklist);
+      $blacklist = preg_quote($blacklist, '/');
       $blacklist = explode(',', $blacklist);
       $blacklist = array_map('trim', $blacklist);
       $blacklist = '/\b(' . implode('|', $blacklist) . ')\b/i';
@@ -1120,6 +1136,7 @@ function webform_validation_get_validator_info($validator_key) {
 function _webform_validation_i18n_error_message($rule) {
   $rule['error_message'] = filter_xss($rule['error_message']);
   if (module_exists('i18n')) {
+    $rule['ruleid'] = isset($rule['ruleid']) ? $rule['ruleid'] : NULL;
     return i18n_string('webform_validation:error_message:' . $rule['ruleid'] . ':message', $rule['error_message']);
   }
   return $rule['error_message'];
