@@ -109,14 +109,14 @@ gulp.task("lint:scss", function() {
 gulp.task("scripts", function() {
   gulp
     .src(config.scripts.files)
-    .pipe(p.sourcemaps.init())
+    // .pipe(p.sourcemaps.init())
     .pipe(p.concat("pul-base.scripts.js"))
     .pipe(p.uglify())
     .on("error", function(err) {
       p.util.log(p.util.colors.red("[Error]"), err.toString());
     })
     .pipe(p.rename("pul-base.scripts.min.js"))
-    .pipe(p.sourcemaps.write("."))
+    // .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
     .pipe(gulp.dest(config.scripts.dest))
     .pipe(reload({ stream: true }));

@@ -71,7 +71,7 @@
                         if (data.number > 0) {
                             $(preview).append(" ("+data.number+")");
                         }
-                        var section_heading = "Maps"; // Should be in Drupal Settings
+                        var section_heading = "Maps and Geographic Data"; // Should be in Drupal Settings
                         $(preview).click(function() {
                             ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
                         });

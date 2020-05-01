@@ -132,7 +132,7 @@
                         } else {
                             $(preview).parent().hide();
                         }
-                        var section_heading = "blacklight"; // Should be in Drupal Settings
+                        var section_heading = "Catalog"; // Should be in Drupal Settings
                         $(preview).click(function() {
                             ga('send', 'event', 'All Search', 'Skip to Section',section_heading);
                         });
