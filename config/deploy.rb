@@ -247,7 +247,7 @@ namespace :drupal do
     desc "Update the drupal database"
     task :update do
         on release_roles :drupal_primary do
-          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} updatedb"
+          execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} -y updatedb"
         end
     end
 
