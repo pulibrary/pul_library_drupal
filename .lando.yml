@@ -10,6 +10,9 @@ services:
     portforward: 9999
     config:
       dir: sites/all/modules/search_api_solr/solr-conf/7.x
+  cache:
+    type: redis
+    portforward: true
   node:
     type: 'node:6.15'
     globals:
@@ -21,3 +24,5 @@ tooling:
     service: node
   gulp:
     service: node
+  redis-cli:
+    service: cache
