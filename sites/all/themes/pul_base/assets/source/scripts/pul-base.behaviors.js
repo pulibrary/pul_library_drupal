@@ -820,7 +820,13 @@
           });
         });
 
-        $('.view-database-access-credentials a').each(function (index, value) {
+        $('#database_access_credentials-panel_pane_3 a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Resource', 'Primary Subjects');
+          });
+        });
+
+        $('#database_access_credentials-panel_pane_4 a').each(function (index, value) {
           $(this).click(function () {
             ga('send', 'event', 'Database', 'Resource', 'Related Subjects');
           });
@@ -840,7 +846,13 @@
 
         $('.breadcrumb a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database', 'Resource', $(this).text());
+            ga('send', 'event', 'Database', 'Resource', 'Back to Databases');
+          });
+        });
+
+        $('#menu-menu-get-help-menu a').each(function (index, value) {
+          $(this).click(function () {
+            ga('send', 'event', 'Database', 'Resource', 'Get Help - ' + $(this).text());
           });
         });
       });
@@ -876,7 +888,7 @@
 
         $('.view-clone-of-glossary table a').each(function (index, value) {
           $(this).click(function () {
-            ga('send', 'event', 'Database', 'List', $(this).text());
+            ga('send', 'event', 'Database', 'A - Z Browse', $(this).text());
           });
         });
 
