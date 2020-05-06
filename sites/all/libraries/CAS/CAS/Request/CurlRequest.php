@@ -67,7 +67,7 @@ implements CAS_Request_RequestInterface
         /*********************************************************
          * initialize the CURL session
         *********************************************************/
-        $ch = $this->_initAndConfigure();
+        $ch = $this->initAndConfigure();
 
         /*********************************************************
          * Perform the query
@@ -97,9 +97,9 @@ implements CAS_Request_RequestInterface
      * This method should NOT be used outside of the CurlRequest or the
      * CurlMultiRequest.
      *
-     * @return resource The cURL handle on success, false on failure
+     * @return resource|false The cURL handle on success, false on failure
      */
-    private function _initAndConfigure()
+    public function initAndConfigure()
     {
         /*********************************************************
          * initialize the CURL session
@@ -129,6 +129,7 @@ implements CAS_Request_RequestInterface
             phpCAS::trace('CURL: Set CURLOPT_CAINFO ' . $this->caCertPath);
         } else {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         }
 
         /*********************************************************
@@ -186,10 +187,10 @@ implements CAS_Request_RequestInterface
     /**
      * Internal method for capturing the headers from a curl request.
      *
-     * @param handle $ch     handle of curl
+     * @param resource $ch     handle of curl
      * @param string $header header
      *
-     * @return void
+     * @return int
      */
     private function _curlReadHeaders ($ch, $header)
     {
