@@ -3,136 +3,147 @@
 /**
  * Predis cache backend.
  */
-class Redis_Cache_PhpRedis extends Redis_Cache_Base {
+class Redis_Cache_PhpRedis extends Redis_Cache_Base
+{
+    public function setLastFlushTimeFor($time, $volatile = false)
+    {
+        $client = $this->getClient();
+        $key    = $this->getKey(self::LAST_FLUSH_KEY);
 
-  function get($cid) {
-    $client     = Redis_Client::getClient();
-    $key        = $this->getKey($cid);
-
-    $cached = $client->hgetall($key);
-
-    if (empty($cached)) {
-      return FALSE;
+        if ($volatile) {
+            $client->hset($key, 'volatile', $time);
+        } else {
+            $client->hmset($key, array(
+                'permanent' => $time,
+                'volatile' => $time,
+            ));
+        }
     }
 
-    $cached = (object)$cached;
+    public function getLastFlushTime()
+    {
+        $client = $this->getClient();
+        $key    = $this->getKey(self::LAST_FLUSH_KEY);
+        $values = $client->hmget($key, array("permanent", "volatile"));
 
-    if ($cached->serialized) {
-      $cached->data = unserialize($cached->data);
-    }
-
-    return $cached;
-  }
-
-  function getMultiple(&$cids) {
-    $client = Redis_Client::getClient();
-
-    $ret = array();
-    $keys = array_map(array($this, 'getKey'), $cids);
-
-    $pipe = $client->multi(Redis::PIPELINE);
-    foreach ($keys as $key) {
-      $pipe->hgetall($key);
-    }
-    $replies = $pipe->exec();
-
-    foreach ($replies as $reply) {
-      if (!empty($reply)) {
-        $cached = (object)$reply;
-
-        if ($cached->serialized) {
-          $cached->data = unserialize($cached->data);
+        if (empty($values) || !is_array($values)) {
+            $ret = array(0, 0);
+        } else {
+            if (empty($values['permanent'])) {
+                $values['permanent'] = 0;
+            }
+            if (empty($values['volatile'])) {
+                $values['volatile'] = 0;
+            }
+            $ret = array($values['permanent'], $values['volatile']);
         }
 
-        $ret[$cached->cid] = $cached;
-      }
+        return $ret;
     }
 
-    foreach ($cids as $index => $cid) {
-      if (isset($ret[$cid])) {
-        unset($cids[$index]);
-      }
+    public function get($id)
+    {
+        $client = $this->getClient();
+        $key    = $this->getKey($id);
+        $values = $client->hgetall($key);
+
+        // Recent versions of PhpRedis will return the Redis instance
+        // instead of an empty array when the HGETALL target key does
+        // not exists. I see what you did there.
+        if (empty($values) || !is_array($values)) {
+            return false;
+        }
+
+        return $values;
     }
 
-    return $ret;
-  }
+    public function getMultiple(array $idList)
+    {
+        $client = $this->getClient();
 
-  function set($cid, $data, $expire = CACHE_PERMANENT) {
-    $client = Redis_Client::getClient();
-    $key    = $this->getKey($cid);
+        $ret = array();
 
-    $hash = array(
-      'cid' => $cid,
-      'created' => time(),
-      'expire' => $expire,
-    );
+        $pipe = $client->multi(Redis::PIPELINE);
+        foreach ($idList as $id) {
+            $pipe->hgetall($this->getKey($id));
+        }
+        $replies = $pipe->exec();
 
-    // Let Redis handle the data types itself.
-    if (!is_scalar($data)) {
-      $hash['data'] = serialize($data);
-      $hash['serialized'] = 1;
-    }
-    else {
-      $hash['data'] = $data;
-      $hash['serialized'] = 0;
+        foreach (array_values($idList) as $line => $id) {
+            if (!empty($replies[$line]) && is_array($replies[$line])) {
+                $ret[$id] = $replies[$line];
+            }
+        }
+
+        return $ret;
     }
 
-    $pipe = $client->multi(Redis::PIPELINE);
-    $pipe->hmset($key, $hash);
+    public function set($id, $data, $ttl = null, $volatile = false)
+    {
+        // Ensure TTL consistency: if the caller gives us an expiry timestamp
+        // in the past the key will expire now and will never be read.
+        // Behavior between Predis and PhpRedis seems to change here: when
+        // setting a negative expire time, PhpRedis seems to ignore the
+        // command and leave the key permanent.
+        if (null !== $ttl && $ttl <= 0) {
+            return;
+        }
 
-    switch ($expire) {
+        $data['volatile'] = (int)$volatile;
 
-      // FIXME: Handle CACHE_TEMPORARY correctly.
-      case CACHE_TEMPORARY:
-      case CACHE_PERMANENT:
-        // We dont need the PERSIST command, since it's the default.
-        break;
+        $client = $this->getClient();
+        $key    = $this->getKey($id);
 
-      default:
-        $delay = $expire - time();
-        $pipe->expire($key, $delay);
+        $pipe = $client->multi(Redis::PIPELINE);
+        $pipe->hmset($key, $data);
+
+        if (null !== $ttl) {
+            $pipe->expire($key, $ttl);
+        }
+        $pipe->exec();
     }
 
-    $pipe->exec();
-  }
-
-  function clear($cid = NULL, $wildcard = FALSE) {
-    $client = Redis_Client::getClient();
-    $many   = FALSE;
-
-    // We cannot determine which keys are going to expire, so we need to flush
-    // the full bin case we have an explicit NULL provided. This means that
-    // stuff like block and cache pages may be expired too often.
-    if (NULL === $cid) {
-      $key = $this->getKey('*');
-      $many = TRUE;
-    }
-    else if ('*' !== $cid && $wildcard) {
-      $key  = $this->getKey($cid . '*');
-      $many = TRUE;
-    }
-    else if ('*' === $cid) {
-      $key  = $this->getKey($cid);
-      $many = TRUE;
-    }
-    else {
-      $key = $this->getKey($cid);
+    public function delete($id)
+    {
+        $this->getClient()->del($this->getKey($id));
     }
 
-    if ($many) {
-      $keys = $client->keys($key);
+    public function deleteMultiple(array $idList)
+    {
+        $client = $this->getClient();
 
-      // Attempt to clear an empty array will raise exceptions.
-      if (!empty($keys)) {
-        $client->del($keys);
-      }
+        $pipe = $client->multi(Redis::PIPELINE);
+        foreach ($idList as $id) {
+            $pipe->del($this->getKey($id));
+        }
+        // Don't care if something failed.
+        $pipe->exec();
     }
-    else {
-      $client->del(array($key));
-    }
-  }
 
-  function isEmpty() {
-    // FIXME: Todo.
-  }
+    public function deleteByPrefix($prefix)
+    {
+        $client = $this->getClient();
+        $ret = $client->eval(self::EVAL_DELETE_PREFIX, array($this->getKey($prefix . '*')));
+        if (1 != $ret) {
+            trigger_error(sprintf("EVAL failed: %s", $client->getLastError()), E_USER_ERROR);
+        }
+    }
+
+    public function flush()
+    {
+        $client = $this->getClient();
+        $ret = $client->eval(self::EVAL_DELETE_PREFIX, array($this->getKey('*')));
+        if (1 != $ret) {
+            trigger_error(sprintf("EVAL failed: %s", $client->getLastError()), E_USER_ERROR);
+        }
+    }
+
+    public function flushVolatile()
+    {
+        $client = $this->getClient();
+        $ret = $client->eval(self::EVAL_DELETE_VOLATILE, array($this->getKey('*')));
+        if (1 != $ret) {
+            trigger_error(sprintf("EVAL failed: %s", $client->getLastError()), E_USER_ERROR);
+        }
+    }
 }

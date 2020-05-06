@@ -6,7 +6,7 @@ library.princeton.edu is supported by this repo.
 
 1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
 2. `cp sites/default/default.settings.php sites/default/settings.php`
-3. In `sites/default/settings.php` includd the following lando-style db config values:
+3. In `sites/default/settings.php` include the following lando-style db config values:
 
     ```
     $databases = array (
@@ -112,6 +112,50 @@ $aliases['local'] = array(
 1. Clear the search index in the browser on the view page (you should be there after the edit) `{CURRENT_LANDO_HOST_BASE_URL}admin/config/search/search_api/server/search_api_library_staging` and click `Delete all indexed data` button on the bottom left of the page
 1. `lando drush search-api-index` will index all content to the local solr index
 1. `lando drush cc all` will update the caches to show the data
+
+
+### Test Redis Cache Backend
+Redis can be used as a cache backend. To test this on a local dev instance do the following.
+
+1. Comment out the following two lines from settngs.php
+    ```
+    $conf['cache'] = 0;
+    $conf['block_cache'] = 0;
+    ```
+1. Adding the following to the end of settings.php
+    ```
+    $conf['redis_client_interface'] = 'Predis'; // Can be "Predis".
+    $conf['redis_client_host']      = 'cache';  // Your Redis instance hostname.
+    $conf['lock_inc']               = 'sites/all/modules/redis/redis.lock.inc';
+    $conf['path_inc']               = 'sites/all/modules/redis/redis.path.inc';
+    $conf['cache_backends'][]       = 'sites/all/modules/redis/redis.autoload.inc';
+    $conf['cache_default_class']    = 'Redis_Cache';
+    $conf['cache_class_cache'] = 'Redis_Cache';
+    $conf['cache_class_cache_bootstrap'] = 'Redis_Cache';
+    $conf['cache_class_cache_menu'] = 'Redis_Cache';
+    $conf['cache_class_cache_block'] = 'Redis_Cache';
+    $conf['cache_class_cache_content'] = 'Redis_Cache';
+    $conf['cache_class_cache_filter'] = 'Redis_Cache';
+    $conf['cache_class_cache_form'] = 'Redis_Cache';
+    $conf['cache_class_cache_page'] = 'Redis_Cache';
+    ```
+1. Load a few pages. Test to confirm cache is working:
+    ```
+    lando drush redis-cli
+    > keys "*cache_bootstrap*"
+    ```
+    You will output like:
+      ```
+      1) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:module_implements"
+      2) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:system_list"
+      3) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:bootstrap_modules"
+      4) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:variables"
+      5) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:hook_info"
+      6) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:workbench_access_tree"
+      7) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:lookup_cache"
+      8) "74c6c62ca2afc9b801af0982f645d4a3:cache_bootstrap:_last_flush"
+      ```
+
 
 ## Prerequisites:
 

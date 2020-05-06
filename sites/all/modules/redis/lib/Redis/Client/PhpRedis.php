@@ -3,18 +3,23 @@
 /**
  * PhpRedis client specific implementation.
  */
-class Redis_Client_PhpRedis implements Redis_Client_Interface {
+class Redis_Client_PhpRedis implements Redis_Client_FactoryInterface {
 
-  public function getClient($host = NULL, $port = NULL, $base = NULL, $password = NULL) {
+  public function getClient($options = array()) {
     $client = new Redis;
-    $client->connect($host, $port);
 
-    if (isset($password)) {
-      $client->auth($password);
+    if (!empty($options['socket'])) {
+      $client->connect($options['socket']);
+    } else {
+      $client->connect($options['host'], $options['port']);
     }
 
-    if (isset($base)) {
-      $client->select($base);
+    if (isset($options['password'])) {
+      $client->auth($options['password']);
+    }
+
+    if (isset($options['base'])) {
+      $client->select($options['base']);
     }
 
     // Do not allow PhpRedis serialize itself data, we are going to do it

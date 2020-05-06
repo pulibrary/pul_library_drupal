@@ -1,13 +1,13 @@
 Predis cache backend
 ====================
 
+This module will work with the Predis 1.x version. Any earlier versions
+are unsupported.
+
 This client, for now, is only able to use the Predis PHP library.
 
 The Predis library requires PHP 5.3 minimum. If your hosted environment does
 not ships with at least PHP 5.3, please do not use this cache backend.
-
-This code is ALPHA code. This means: DO NOT USE IT IN PRODUCTION. Not until
-I don't ship any BETA release as a full Drupal.org module.
 
 Please consider using an OPCode cache such as APC. Predis is a good and fully
 featured API, the cost is that the code is a lot more than a single file in
@@ -34,17 +34,17 @@ Once done, you either have to clone it into:
 
 So that you have the following directory tree:
 
-  sites/all/libraries/lib/Predis # Where the PHP code stands
+  sites/all/libraries/predis/src/ # Where the PHP code stands
 
 Or, any other place in order to share it:
-For example, into your libraries folder, in order to get:
+For example, from your install profiles libraries folder:
 
-  some/dir/predis/lib
+  profiles/example/libraries/predis
 
 If you choose this solution, you have to alter a bit your $conf array into
 the settings.php file as this:
 
-  define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/some/dir/predis/lib/');
+  define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/profiles/example/libraries/predis/');
 
 Connect to a remote host and database
 -------------------------------------
