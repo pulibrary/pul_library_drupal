@@ -198,6 +198,13 @@
             ga('send', 'event', 'Main Menu', 'click', $(this).text());
           });
         });
+
+        // More links
+        $('.centered-navigation-menu .menu-more-link a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Main Menu', 'More', $(this).attr('title'));
+          });
+        });
       });
     }
   };
@@ -496,6 +503,25 @@
     }
   };
 
+  Drupal.behaviors.pulTrackHeaderUsage = {
+    attach: function (context) {
+      // all search in header
+      $('.l-region--branding', context).once('pul', function () {
+        $('#block-allsearch-block-allsearch-search input').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Search Box - Header', 'All Search', window.location.pathname);
+          });
+        });
+
+        $('.site-logo').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Header Logo', 'Click', window.location.pathname);
+          });
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.pulTrackSectionPageUsage = {
     attach: function (context) {
       $('.pane-featured-pul-link-group-panel-pane-1', context).once('pul', function () {
@@ -548,9 +574,20 @@
         });
 
         $('.panel-pane li a').each(function () {
-          console.log($(this).text())
           $(this).click(function () {
             ga('send', 'event', 'Accounts', 'More', 'Find out more about ' + $(this).text());
+          });
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.pulTrackRemoteSupportPageUsage = {
+    attach: function (context) {
+      $('.page-node-43526', context).once('pul', function () {
+        $('.pul_base_nine_three-region--first .view-content a').each(function () {
+          $(this).click(function () {
+            ga('send', 'event', 'Remote Support', 'click', $(this).text());
           });
         });
       });
