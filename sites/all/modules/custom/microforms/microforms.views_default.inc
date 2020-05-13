@@ -41,97 +41,57 @@ function microforms_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
+    'field_microforms_country' => 'field_microforms_country',
+    'field_microforms_city' => 'field_microforms_city',
+    'field_microforms_us_states' => 'field_microforms_us_states',
+    'field_microforms_call_number' => 'field_microforms_call_number',
+    'field_microforms_holdings_date' => 'field_microforms_holdings_date',
   );
+  $handler->display->display_options['style_options']['class'] = '';
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_microforms_country' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_microforms_city' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-  );
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'City';
-  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
-    'newspaper_cities' => 'newspaper_cities',
-    'audiences' => 0,
-    'database_keywords' => 0,
-    'database_subjects' => 0,
-    'departments' => 0,
-    'division' => 0,
-    'editing_groups' => 0,
-    'lib_event_types' => 0,
-    'faq_topics' => 0,
-    'library_hours_calendars' => 0,
-    'pul_location_type' => 0,
-    'news_events_categories' => 0,
-    'newspaper_countries' => 0,
-    'newspaper_us_states' => 0,
-    'princeton_library_blog_tags' => 0,
-    'subjects' => 0,
-    'resource_types' => 0,
-    'section' => 0,
-    'tags' => 0,
-    'unit' => 0,
-  );
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid_1']['id'] = 'term_node_tid_1';
-  $handler->display->display_options['relationships']['term_node_tid_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid_1']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid_1']['label'] = 'Country';
-  $handler->display->display_options['relationships']['term_node_tid_1']['vocabularies'] = array(
-    'newspaper_countries' => 'newspaper_countries',
-    'audiences' => 0,
-    'database_keywords' => 0,
-    'database_subjects' => 0,
-    'departments' => 0,
-    'division' => 0,
-    'editing_groups' => 0,
-    'lib_event_types' => 0,
-    'faq_topics' => 0,
-    'library_hours_calendars' => 0,
-    'pul_location_type' => 0,
-    'news_events_categories' => 0,
-    'newspaper_cities' => 0,
-    'newspaper_us_states' => 0,
-    'princeton_library_blog_tags' => 0,
-    'subjects' => 0,
-    'resource_types' => 0,
-    'section' => 0,
-    'tags' => 0,
-    'unit' => 0,
-  );
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid_2']['id'] = 'term_node_tid_2';
-  $handler->display->display_options['relationships']['term_node_tid_2']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid_2']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid_2']['label'] = 'State';
-  $handler->display->display_options['relationships']['term_node_tid_2']['vocabularies'] = array(
-    'newspaper_us_states' => 'newspaper_us_states',
-    'audiences' => 0,
-    'database_keywords' => 0,
-    'database_subjects' => 0,
-    'departments' => 0,
-    'division' => 0,
-    'editing_groups' => 0,
-    'lib_event_types' => 0,
-    'faq_topics' => 0,
-    'library_hours_calendars' => 0,
-    'pul_location_type' => 0,
-    'news_events_categories' => 0,
-    'newspaper_cities' => 0,
-    'newspaper_countries' => 0,
-    'princeton_library_blog_tags' => 0,
-    'subjects' => 0,
-    'resource_types' => 0,
-    'section' => 0,
-    'tags' => 0,
-    'unit' => 0,
+    'field_microforms_us_states' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_microforms_call_number' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_microforms_holdings_date' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -187,21 +147,6 @@ function microforms_views_default_views() {
   $handler->display->display_options['fields']['field_microforms_holdings_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_microforms_holdings_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_microforms_holdings_date']['field_api_classes'] = TRUE;
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  $handler->display->display_options['sorts']['name']['relationship'] = 'term_node_tid_1';
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['sorts']['name_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
-  $handler->display->display_options['sorts']['name_1']['relationship'] = 'term_node_tid_2';
-  /* Sort criterion: Taxonomy term: Name */
-  $handler->display->display_options['sorts']['name_2']['id'] = 'name_2';
-  $handler->display->display_options['sorts']['name_2']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name_2']['field'] = 'name';
-  $handler->display->display_options['sorts']['name_2']['relationship'] = 'term_node_tid';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
