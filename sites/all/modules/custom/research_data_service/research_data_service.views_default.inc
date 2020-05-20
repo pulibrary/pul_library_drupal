@@ -79,7 +79,7 @@ function research_data_service_views_default_views() {
   $handler->display->display_options['filters']['field_tags']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['filters']['field_tags']['field'] = 'field_tags';
   $handler->display->display_options['filters']['field_tags']['value'] = array(
-    0 => '30401',
+    0 => '30424',
   );
 
   /* Display: Page */
