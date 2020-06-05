@@ -1103,7 +1103,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
   $handler->display->display_options['fields']['field_open_hours']['label'] = '';
   $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>';
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span><span class="pickup-only lib-[tid] is-[field_hours_library_status]"> (Pick-up Only)</span>';
   $handler->display->display_options['fields']['field_open_hours']['element_class'] = 'data-hours-[tid]';
   $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
@@ -1473,6 +1473,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="media--figure lib-[tid]"></div><div class="media--body"><h3>[field_calendar_display_name]</h3>
 <span class="is-[field_hours_library_status]">[field_hours_library_status]</span> <span class="hours-[field_hours_library_status]">[field_open_hours]</span>
+<span class="pickup-only lib-[tid] is-[field_hours_library_status]"> (Pick-up Only)</span>
 </div>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -2570,6 +2571,23 @@ function library_hours_views_default_views() {
     'field_open_hours' => 'field_open_hours',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['id'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['table'] = 'field_data_field_hrs_lib_calendar';
+  $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['field'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['relationships']['field_hrs_lib_calendar_target_id']['label'] = 'Calendar';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_library_hrs_target_id']['id'] = 'field_library_hrs_target_id';
+  $handler->display->display_options['relationships']['field_library_hrs_target_id']['table'] = 'field_data_field_library_hrs';
+  $handler->display->display_options['relationships']['field_library_hrs_target_id']['field'] = 'field_library_hrs_target_id';
+  $handler->display->display_options['relationships']['field_library_hrs_target_id']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['relationships']['field_library_hrs_target_id']['label'] = 'Library';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['id'] = 'field_hours_calendar_target_id';
+  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['table'] = 'field_data_field_hours_calendar';
+  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['field'] = 'field_hours_calendar_target_id';
+  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['label'] = 'Library';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Calendar */
   $handler->display->display_options['fields']['field_hrs_lib_calendar']['id'] = 'field_hrs_lib_calendar';
@@ -2587,6 +2605,15 @@ function library_hours_views_default_views() {
     'link' => '0',
     'check_access' => 1,
   );
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'field_hrs_lib_calendar_target_id';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Field: Content: Library Status */
   $handler->display->display_options['fields']['field_hours_library_status']['id'] = 'field_hours_library_status';
   $handler->display->display_options['fields']['field_hours_library_status']['table'] = 'field_data_field_hours_library_status';
@@ -2598,25 +2625,6 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_library_status']['element_class'] = 'library-hours-status';
   $handler->display->display_options['fields']['field_hours_library_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_library_status']['element_default_classes'] = FALSE;
-  /* Field: Content: Hours */
-  $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
-  $handler->display->display_options['fields']['field_open_hours']['label'] = '';
-  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> [field_open_hours]';
-  $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
-    'format_type' => 'time_only',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_open_hours']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -2628,6 +2636,27 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Hours */
+  $handler->display->display_options['fields']['field_open_hours']['id'] = 'field_open_hours';
+  $handler->display->display_options['fields']['field_open_hours']['table'] = 'field_data_field_open_hours';
+  $handler->display->display_options['fields']['field_open_hours']['field'] = 'field_open_hours';
+  $handler->display->display_options['fields']['field_open_hours']['label'] = '';
+  $handler->display->display_options['fields']['field_open_hours']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_open_hours']['alter']['text'] = '<span class="is-[field_hours_library_status]">[field_hours_library_status]</span> [field_open_hours] <span class="pickup-only lib-[tid] is-[field_hours_library_status]"> (Pick-up Only)</span>';
+  $handler->display->display_options['fields']['field_open_hours']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_open_hours']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_open_hours']['settings'] = array(
+    'format_type' => 'time_only',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_open_hours']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_open_hours']['delta_offset'] = '0';
   /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -2642,7 +2671,7 @@ function library_hours_views_default_views() {
   $handler->display->display_options['fields']['field_hours_code']['relationship'] = 'field_hrs_lib_calendar_target_id';
   $handler->display->display_options['fields']['field_hours_code']['label'] = '';
   $handler->display->display_options['fields']['field_hours_code']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_hours_code']['alter']['text'] = '<div class="view-full-schedule">For summer, holidays or recess hours, please consult the <a href="/hours/[field_hours_code]">full schedule</a></div>';
+  $handler->display->display_options['fields']['field_hours_code']['alter']['text'] = '<p class="view-full-schedule">For summer, holidays or recess hours, please consult the <a href="/hours/[field_hours_code]">full schedule</a></p>';
   $handler->display->display_options['fields']['field_hours_code']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours_code']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
