@@ -15,3 +15,16 @@
     }
   }
 }
+
+.pickup-only {
+  display: none;
+}
+
+.lib-3688.pickup-only.is-Open, // Architecture 
+.lib-3689.pickup-only.is-Open, // East Asian
+.lib-3707.pickup-only.is-Open, // Mendel
+.lib-3711.pickup-only.is-Open, // Stokes
+.lib-3694.pickup-only.is-Open // Firestone
+{
+  display: inline;
+}
