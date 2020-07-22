@@ -4080,6 +4080,72 @@ function library_news_views_default_views() {
   $handler = $view->new_display('panel_pane', 'News Categories', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'News Categories';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  /* Sort criterion: COUNT(DISTINCT Taxonomy term: Name) */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['group_type'] = 'count_distinct';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = '!=';
+  $handler->display->display_options['filters']['name']['value'] = 'Acquisition Highlights';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['filters']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_1']['field'] = 'name';
+  $handler->display->display_options['filters']['name_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_1']['value'] = 'Buildings & facilities';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_2']['field'] = 'name';
+  $handler->display->display_options['filters']['name_2']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_2']['value'] = 'Databases';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_3']['id'] = 'name_3';
+  $handler->display->display_options['filters']['name_3']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_3']['field'] = 'name';
+  $handler->display->display_options['filters']['name_3']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_3']['value'] = 'Digital Library';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_4']['id'] = 'name_4';
+  $handler->display->display_options['filters']['name_4']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_4']['field'] = 'name';
+  $handler->display->display_options['filters']['name_4']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_4']['value'] = 'Grants';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_5']['id'] = 'name_5';
+  $handler->display->display_options['filters']['name_5']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_5']['field'] = 'name';
+  $handler->display->display_options['filters']['name_5']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_5']['value'] = 'Instruction';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_6']['id'] = 'name_6';
+  $handler->display->display_options['filters']['name_6']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_6']['field'] = 'name';
+  $handler->display->display_options['filters']['name_6']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_6']['value'] = 'ld4p';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_7']['id'] = 'name_7';
+  $handler->display->display_options['filters']['name_7']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_7']['field'] = 'name';
+  $handler->display->display_options['filters']['name_7']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_7']['value'] = 'Library staff events';
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name_8']['id'] = 'name_8';
+  $handler->display->display_options['filters']['name_8']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name_8']['field'] = 'name';
+  $handler->display->display_options['filters']['name_8']['operator'] = '!=';
+  $handler->display->display_options['filters']['name_8']['value'] = 'services';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
