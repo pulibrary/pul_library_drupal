@@ -47,6 +47,7 @@ function pul_editor_html_profile_wysiwyg_default_profiles() {
           'Table' => 1,
           'SpellChecker' => 1,
           'Scayt' => 1,
+          'CopyFormatting' => 1,
         ),
         'linkit' => array(
           'linkit' => 1,
@@ -77,7 +78,7 @@ function pul_editor_html_profile_wysiwyg_default_profiles() {
       'user_choose' => 0,
       'show_toggle' => 1,
       'add_to_summaries' => 0,
-      'version' => '4.9.2.95e5d83',
+      'version' => '4.14.0.8a12b04171',
     ),
     'name' => 'formatpul_editor_html',
     'rdf_mapping' => array(),

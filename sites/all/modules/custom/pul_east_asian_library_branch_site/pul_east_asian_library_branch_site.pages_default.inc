@@ -537,16 +537,19 @@ libraries/eastasianlib',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
+  $pane->pid = 'new-d5ab4cdd-ed51-4161-837a-4c0960ea59b5';
   $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-east-asian';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+    'admin_title' => 'Study-Browse EAL',
+    'title' => 'Study Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>12:00 p.m. - 4:00&nbsp;p.m. (Begins&nbsp;Monday, August 17th.)</p><p><a href="https://libcal.princeton.edu/reserve/eastasian" rel="nofollow">By Appointment Only</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -556,9 +559,9 @@ libraries/eastasianlib',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'd52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
-  $display->content['new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f'] = $pane;
-  $display->panels['first'][0] = 'new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
+  $pane->uuid = 'd5ab4cdd-ed51-4161-837a-4c0960ea59b5';
+  $display->content['new-d5ab4cdd-ed51-4161-837a-4c0960ea59b5'] = $pane;
+  $display->panels['first'][0] = 'new-d5ab4cdd-ed51-4161-837a-4c0960ea59b5';
   $pane = new stdClass();
   $pane->pid = 'new-b5cded3a-a6f5-4a2b-82a1-1dfaa45ffae7';
   $pane->panel = 'first';
@@ -586,6 +589,29 @@ libraries/eastasianlib',
   $display->content['new-b5cded3a-a6f5-4a2b-82a1-1dfaa45ffae7'] = $pane;
   $display->panels['first'][1] = 'new-b5cded3a-a6f5-4a2b-82a1-1dfaa45ffae7';
   $pane = new stdClass();
+  $pane->pid = 'new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-east-asian';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'd52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
+  $display->content['new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f'] = $pane;
+  $display->panels['first'][2] = 'new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -605,11 +631,11 @@ libraries/eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $pane->panel = 'first';
@@ -638,11 +664,11 @@ libraries/eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $display->content['new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f'] = $pane;
-  $display->panels['first'][3] = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
+  $display->panels['first'][4] = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $pane = new stdClass();
   $pane->pid = 'new-8404cf75-c431-49c9-9701-1499c368da2c';
   $pane->panel = 'middle';

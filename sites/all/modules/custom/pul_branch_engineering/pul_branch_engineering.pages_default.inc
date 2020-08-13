@@ -101,15 +101,19 @@ engineering',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $pane->pid = 'new-b28ad348-c1ab-43ef-8349-614e26d78be0';
   $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-engineering';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
+    'admin_title' => 'Study - Browse Engineering',
+    'title' => 'Study-Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>9:00 a.m. - 2:00 p.m. (Starting Monday, August 17th)</p><p><a href="http://libcal.princeton.edu/reserve/engineering">By Appointment</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -119,9 +123,9 @@ engineering',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
-  $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-  $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $pane->uuid = 'b28ad348-c1ab-43ef-8349-614e26d78be0';
+  $display->content['new-b28ad348-c1ab-43ef-8349-614e26d78be0'] = $pane;
+  $display->panels['first'][0] = 'new-b28ad348-c1ab-43ef-8349-614e26d78be0';
   $pane = new stdClass();
   $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane->panel = 'first';
@@ -149,6 +153,28 @@ engineering',
   $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
   $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane = new stdClass();
+  $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-engineering';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
+  $display->panels['first'][2] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -168,11 +194,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane->panel = 'first';
@@ -201,11 +227,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $display->content['new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94'] = $pane;
-  $display->panels['first'][3] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
+  $display->panels['first'][4] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane = new stdClass();
   $pane->pid = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
   $pane->panel = 'middle';
