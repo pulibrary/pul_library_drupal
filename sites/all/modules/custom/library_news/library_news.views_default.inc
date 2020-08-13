@@ -4080,6 +4080,16 @@ function library_news_views_default_views() {
   $handler = $view->new_display('panel_pane', 'News Categories', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'News Categories';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  /* Sort criterion: COUNT(DISTINCT Taxonomy term: Name) */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['group_type'] = 'count_distinct';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
