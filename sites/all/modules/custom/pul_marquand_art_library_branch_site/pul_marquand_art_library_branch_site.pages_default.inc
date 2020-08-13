@@ -768,16 +768,19 @@ marquand',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fd18fcf4-ff59-4c74-8451-28432d06de09';
+  $pane->pid = 'new-d5b2812a-540d-4e3e-bbe0-2c1d8f261f41';
   $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-marquand';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+    'admin_title' => 'Study-Browse Marquand',
+    'title' => 'Study-Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>10:00 a.m. - 3:00 p.m. (Starting Monday, August 17th)</p><p><a href="http://libcal.princeton.edu/reserve/marquand">By Appointment</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -787,9 +790,9 @@ marquand',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'fd18fcf4-ff59-4c74-8451-28432d06de09';
-  $display->content['new-fd18fcf4-ff59-4c74-8451-28432d06de09'] = $pane;
-  $display->panels['first'][0] = 'new-fd18fcf4-ff59-4c74-8451-28432d06de09';
+  $pane->uuid = 'd5b2812a-540d-4e3e-bbe0-2c1d8f261f41';
+  $display->content['new-d5b2812a-540d-4e3e-bbe0-2c1d8f261f41'] = $pane;
+  $display->panels['first'][0] = 'new-d5b2812a-540d-4e3e-bbe0-2c1d8f261f41';
   $pane = new stdClass();
   $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane->panel = 'first';
@@ -817,6 +820,29 @@ marquand',
   $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
   $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane = new stdClass();
+  $pane->pid = 'new-fd18fcf4-ff59-4c74-8451-28432d06de09';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-marquand';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'fd18fcf4-ff59-4c74-8451-28432d06de09';
+  $display->content['new-fd18fcf4-ff59-4c74-8451-28432d06de09'] = $pane;
+  $display->panels['first'][2] = 'new-fd18fcf4-ff59-4c74-8451-28432d06de09';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -836,11 +862,11 @@ marquand',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
   $pane->panel = 'first';
@@ -862,11 +888,11 @@ marquand',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'c25831d8-8914-48ba-94f4-b3e2233e2ec0';
   $display->content['new-c25831d8-8914-48ba-94f4-b3e2233e2ec0'] = $pane;
-  $display->panels['first'][3] = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
+  $display->panels['first'][4] = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
   $pane = new stdClass();
   $pane->pid = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
   $pane->panel = 'first';
@@ -895,11 +921,11 @@ marquand',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'd0baed64-6775-4b92-961d-29266a39b49a';
   $display->content['new-d0baed64-6775-4b92-961d-29266a39b49a'] = $pane;
-  $display->panels['first'][4] = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
+  $display->panels['first'][5] = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
   $pane = new stdClass();
   $pane->pid = 'new-780ed68a-1bf7-44d7-b8e2-8fc24a9524e7';
   $pane->panel = 'middle';

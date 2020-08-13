@@ -529,6 +529,32 @@ research-data',
   $display->content['new-c0061303-16bf-4ac1-b62f-7759f84c0c13'] = $pane;
   $display->panels['first'][0] = 'new-c0061303-16bf-4ac1-b62f-7759f84c0c13';
   $pane = new stdClass();
+  $pane->pid = 'new-4344d93b-c381-4923-a46e-a8247c039480';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Study Browse Firestone',
+    'title' => 'Study-Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>10:00 a.m. - 4:00&nbsp;p.m.</p><p><a href="https://libcal.princeton.edu/seats" rel="nofollow">By Appointment Only</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '4344d93b-c381-4923-a46e-a8247c039480';
+  $display->content['new-4344d93b-c381-4923-a46e-a8247c039480'] = $pane;
+  $display->panels['first'][1] = 'new-4344d93b-c381-4923-a46e-a8247c039480';
+  $pane = new stdClass();
   $pane->pid = 'new-7500883f-0569-4054-88ff-89652ae7476a';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -552,11 +578,11 @@ research-data',
     'css_class' => 'links--decorate',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '7500883f-0569-4054-88ff-89652ae7476a';
   $display->content['new-7500883f-0569-4054-88ff-89652ae7476a'] = $pane;
-  $display->panels['first'][1] = 'new-7500883f-0569-4054-88ff-89652ae7476a';
+  $display->panels['first'][2] = 'new-7500883f-0569-4054-88ff-89652ae7476a';
   $pane = new stdClass();
   $pane->pid = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane->panel = 'first';
@@ -578,11 +604,11 @@ research-data',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $display->content['new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5'] = $pane;
-  $display->panels['first'][2] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
+  $display->panels['first'][3] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane = new stdClass();
   $pane->pid = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $pane->panel = 'first';
@@ -611,11 +637,11 @@ research-data',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $display->content['new-53ba4930-9de5-4cf0-a379-40df7e8c076b'] = $pane;
-  $display->panels['first'][3] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $display->panels['first'][4] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $pane = new stdClass();
   $pane->pid = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
   $pane->panel = 'middle';

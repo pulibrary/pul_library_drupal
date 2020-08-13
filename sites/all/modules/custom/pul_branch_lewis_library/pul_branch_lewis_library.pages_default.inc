@@ -102,15 +102,19 @@ lewis',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane->pid = 'new-b065ad94-7d3c-4b7c-965e-6f5eb9d4055d';
   $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-lewis';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
+    'admin_title' => 'Study-Browse Lewis',
+    'title' => 'Study-Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>9:00 a.m. - 2:00 p.m. (Starting Monday, August 17th)</p><p><a href="http://libcal.princeton.edu/reserve/lewis">By Appointment</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -120,9 +124,9 @@ lewis',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'fdf608da-86a5-4ca9-b436-b67272d04d2b';
-  $display->content['new-fdf608da-86a5-4ca9-b436-b67272d04d2b'] = $pane;
-  $display->panels['first'][0] = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane->uuid = 'b065ad94-7d3c-4b7c-965e-6f5eb9d4055d';
+  $display->content['new-b065ad94-7d3c-4b7c-965e-6f5eb9d4055d'] = $pane;
+  $display->panels['first'][0] = 'new-b065ad94-7d3c-4b7c-965e-6f5eb9d4055d';
   $pane = new stdClass();
   $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane->panel = 'first';
@@ -150,6 +154,28 @@ lewis',
   $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
   $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane = new stdClass();
+  $pane->pid = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-lewis';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $display->content['new-fdf608da-86a5-4ca9-b436-b67272d04d2b'] = $pane;
+  $display->panels['first'][2] = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -169,11 +195,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $pane->panel = 'first';
@@ -202,11 +228,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $display->content['new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569'] = $pane;
-  $display->panels['first'][3] = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
+  $display->panels['first'][4] = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $pane = new stdClass();
   $pane->pid = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
   $pane->panel = 'middle';
