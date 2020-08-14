@@ -54,7 +54,7 @@ function polite_alert_block_view($delta = '') {
         $link = l($link_text, $url, array());
       }
       $block = array(
-        'content' => '<span class="polite-alert-label">' . $text . '</span><span class="polite-alert-msg">' . $msg . '</span><div class="polite-alert-action">' . $link . '<span class="polite-alert-close">No, thanks</span></div>',
+        'content' => '<span class="polite-alert-label">' . $text . '</span><span class="polite-alert-msg">' . $msg . '</span><div class="polite-alert-action">' . $link . '<span class="polite-alert-close">Dismiss</span></div>',
       );
     }
   }

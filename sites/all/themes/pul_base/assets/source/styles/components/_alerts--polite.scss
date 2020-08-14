@@ -1,14 +1,15 @@
 .block--polite-alert {
   background: $gray-lightest-opacity-9;
-  bottom: 0;
-  padding: 2rem;
-  position: fixed;
+  // bottom: 0;
+  padding: 1.5rem;
+  // position: fixed;
   width: 100%;
   z-index: 999;
 
   .block__content {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin: 0 auto;
     max-width: 1200px;
   }
@@ -16,8 +17,8 @@
   .polite-alert-label {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 1rem;
-    width: calc(100% - 100px);
+    // margin-bottom: 1rem;
+    // width: calc(100% - 100px);
   }
 
   .polite-alert-msg {
