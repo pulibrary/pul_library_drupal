@@ -848,16 +848,19 @@ music',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
+  $pane->pid = 'new-dfcafcec-c174-45b6-a7ec-ace1790c343e';
   $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-branch-music';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
+    'admin_title' => 'Study-Browse Mendel',
+    'title' => 'Study-Browse',
+    'title_heading' => 'h2',
+    'body' => '<p>10:00 a.m. - 3:30 p.m. (Starting Monday, August 24th)</p><p><a href="http://libcal.princeton.edu/reserve/music">By Appointment</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -867,9 +870,9 @@ music',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
-  $display->content['new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb'] = $pane;
-  $display->panels['first'][0] = 'new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
+  $pane->uuid = 'dfcafcec-c174-45b6-a7ec-ace1790c343e';
+  $display->content['new-dfcafcec-c174-45b6-a7ec-ace1790c343e'] = $pane;
+  $display->panels['first'][0] = 'new-dfcafcec-c174-45b6-a7ec-ace1790c343e';
   $pane = new stdClass();
   $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane->panel = 'first';
@@ -897,6 +900,29 @@ music',
   $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
   $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
   $pane = new stdClass();
+  $pane->pid = 'new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-music';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
+  $display->content['new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb'] = $pane;
+  $display->panels['first'][2] = 'new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
+  $pane = new stdClass();
   $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -914,11 +940,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+  $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -939,11 +965,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $pane->panel = 'first';
@@ -965,11 +991,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $display->content['new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c'] = $pane;
-  $display->panels['first'][4] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
+  $display->panels['first'][5] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $pane = new stdClass();
   $pane->pid = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
   $pane->panel = 'first';
@@ -998,11 +1024,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = 'd21f98ab-41ea-4323-86d0-ed80e146e526';
   $display->content['new-d21f98ab-41ea-4323-86d0-ed80e146e526'] = $pane;
-  $display->panels['first'][5] = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
+  $display->panels['first'][6] = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
   $pane = new stdClass();
   $pane->pid = 'new-0d7ed5d2-a1ab-4b41-8fc7-338d30286bee';
   $pane->panel = 'middle';

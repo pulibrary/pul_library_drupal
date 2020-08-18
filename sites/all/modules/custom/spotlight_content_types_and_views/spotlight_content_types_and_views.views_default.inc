@@ -291,6 +291,22 @@ function spotlight_content_types_and_views_views_default_views() {
 
   /* Display: Spotlight Graphics by Tag */
   $handler = $view->new_display('panel_pane', 'Spotlight Graphics by Tag', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'resources-item--homepage';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<b>Welcome to Princeton University Library!</b> Whether you are on or off campus this fall term, we are ready to help you with your research, teaching and learning.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -301,11 +317,14 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_pul_spotlight_image']['id'] = 'field_pul_spotlight_image';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['table'] = 'field_data_field_pul_spotlight_image';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['field'] = 'field_pul_spotlight_image';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['label'] = '';
+  $handler->display->display_options['fields']['field_pul_spotlight_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pul_spotlight_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_image']['element_wrapper_type'] = '0';
@@ -315,22 +334,29 @@ function spotlight_content_types_and_views_views_default_views() {
     'image_style' => 'pul_large_spotlight_graphic',
     'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_pul_spotlight_image']['field_api_classes'] = TRUE;
   /* Field: Content: URL */
   $handler->display->display_options['fields']['field_pul_spotlight_url']['id'] = 'field_pul_spotlight_url';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['table'] = 'field_data_field_pul_spotlight_url';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['field'] = 'field_pul_spotlight_url';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['label'] = '';
-  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['alter']['text'] = '<div class="resources-item">
+  <div class="resources-item--image">[field_pul_spotlight_image]</div>
+  <h3 class="resources-item--title"><a href="[field_pul_spotlight_url]"><span class="sr-only">Resources for</span> [title]<div class="more-link" aria-hidden="true">Learn more</div></a></h3>
+</div>';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pul_spotlight_url']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['field_pul_spotlight_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_pul_spotlight_url']['settings'] = array(
+    'custom_title' => '',
+  );
   /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Spotlight';
   $handler->display->display_options['allow']['use_pager'] = 0;
