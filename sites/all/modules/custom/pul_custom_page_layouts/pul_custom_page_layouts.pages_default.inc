@@ -6,6 +6,410 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers().
+ */
+function pul_custom_page_layouts_default_page_manager_handlers() {
+  $export = array();
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__fall-2020-resources';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 47;
+  $handler->conf = array(
+    'title' => 'Fall 2020 Resources',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'section-services branch-libraries fall-2020',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'fall-2020
+fall-2020/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'fall-2020-resources',
+  );
+  $display = new panels_display();
+  $display->layout = 'three-nine-stacked';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'bottom_left' => NULL,
+      'bottom_right' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'top' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Princeton Research Data Service';
+  $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__fall-2020-resources';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-5360ecbd-fe52-4f82-9b63-cc8213bd6c5f';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-fall-2020-resources';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'fall-2020/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5360ecbd-fe52-4f82-9b63-cc8213bd6c5f';
+  $display->content['new-5360ecbd-fe52-4f82-9b63-cc8213bd6c5f'] = $pane;
+  $display->panels['first'][0] = 'new-5360ecbd-fe52-4f82-9b63-cc8213bd6c5f';
+  $pane = new stdClass();
+  $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
+  $pane->panel = 'second';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'fall-2020/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5e3798c4-d508-4e35-87b7-e4d99e69c402';
+  $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
+  $display->panels['second'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
+  $pane = new stdClass();
+  $pane->pid = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_library_image-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '43980',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Fall 2020 Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '1bbb162e-5063-43cd-8dbf-37576edfd980';
+  $display->content['new-1bbb162e-5063-43cd-8dbf-37576edfd980'] = $pane;
+  $display->panels['top'][0] = 'new-1bbb162e-5063-43cd-8dbf-37576edfd980';
+  $pane = new stdClass();
+  $pane->pid = 'new-c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'spotlight_graphics-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'fall-2020',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'tid' => '30620',
+    ),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a';
+  $display->content['new-c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a'] = $pane;
+  $display->panels['top'][1] = 'new-c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a';
+  $pane = new stdClass();
+  $pane->pid = 'new-40cef769-6672-4e2f-8678-30452c88d76e';
+  $pane->panel = 'top';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'fall-2020',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Phased resumption of service announcements',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<p><strong><a href="/phased-planning-updates">Phased resumption of service announcements</a></strong></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'center-text',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '40cef769-6672-4e2f-8678-30452c88d76e';
+  $display->content['new-40cef769-6672-4e2f-8678-30452c88d76e'] = $pane;
+  $display->panels['top'][2] = 'new-40cef769-6672-4e2f-8678-30452c88d76e';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
+  $handler->conf['display'] = $display;
+  $export['node_view__fall-2020-resources'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__fall-2020-services';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 48;
+  $handler->conf = array(
+    'title' => 'Fall 2020 Services',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'services/study-browse
+services/book-pick-up
+services/in-house-digitization',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Services',
+    'panels_breadcrumbs_paths' => 'services',
+    'panels_breadcrumbs_home' => 1,
+    'name' => 'fall-2020-services',
+  );
+  $display = new panels_display();
+  $display->layout = 'three-six-three';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'first' => NULL,
+      'middle' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = '18e728fd-55f3-445e-9726-f9e8c7632600';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__fall-2020-services';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-59a5530e-cbfc-4f92-a5dd-d8be2c6174aa';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-fall-2020-services';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '59a5530e-cbfc-4f92-a5dd-d8be2c6174aa';
+  $display->content['new-59a5530e-cbfc-4f92-a5dd-d8be2c6174aa'] = $pane;
+  $display->panels['first'][0] = 'new-59a5530e-cbfc-4f92-a5dd-d8be2c6174aa';
+  $pane = new stdClass();
+  $pane->pid = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $pane->panel = 'middle';
+  $pane->type = 'node_content';
+  $pane->subtype = 'node_content';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'links' => 1,
+    'no_extras' => 1,
+    'override_title' => 1,
+    'override_title_text' => '',
+    'identifier' => '',
+    'link' => 1,
+    'leave_node_title' => 0,
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $display->content['new-4034f21f-2466-4a4a-8412-1c6f2882ccff'] = $pane;
+  $display->panels['middle'][0] = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $pane = new stdClass();
+  $pane->pid = 'new-183fce29-5c58-4faf-b242-ece452fb0130';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-get-help-menu';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '0',
+          'paths' => 'services/reserves
+services/reserves/*
+',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '183fce29-5c58-4faf-b242-ece452fb0130';
+  $display->content['new-183fce29-5c58-4faf-b242-ece452fb0130'] = $pane;
+  $display->panels['second'][0] = 'new-183fce29-5c58-4faf-b242-ece452fb0130';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $handler->conf['display'] = $display;
+  $export['node_view__fall-2020-services'] = $handler;
+
+  return $export;
+}
+
+/**
  * Implements hook_default_page_manager_pages().
  */
 function pul_custom_page_layouts_default_page_manager_pages() {
@@ -2068,6 +2472,35 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->uuid = 'a42d739c-2196-47ee-b3ba-1fb4f66056bf';
   $display->content['new-a42d739c-2196-47ee-b3ba-1fb4f66056bf'] = $pane;
   $display->panels['top'][1] = 'new-a42d739c-2196-47ee-b3ba-1fb4f66056bf';
+  $pane = new stdClass();
+  $pane->pid = 'new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'spotlight_graphics-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'tid' => '30620',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Fall 2020 Resources',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'resources--homepage',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
+  $display->content['new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a'] = $pane;
+  $display->panels['top'][2] = 'new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2942,6 +3375,32 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-08157df2-3e2e-40f9-a090-7fd5134cff54';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'featured_pul_link_group-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'tid' => '30621',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Navigating Fall 2020 Services',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '08157df2-3e2e-40f9-a090-7fd5134cff54';
+  $display->content['new-08157df2-3e2e-40f9-a090-7fd5134cff54'] = $pane;
+  $display->panels['first'][0] = 'new-08157df2-3e2e-40f9-a090-7fd5134cff54';
+  $pane = new stdClass();
   $pane->pid = 'new-12d6311d-f924-4674-9140-4a9ce025c84b';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -2962,11 +3421,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '12d6311d-f924-4674-9140-4a9ce025c84b';
   $display->content['new-12d6311d-f924-4674-9140-4a9ce025c84b'] = $pane;
-  $display->panels['first'][0] = 'new-12d6311d-f924-4674-9140-4a9ce025c84b';
+  $display->panels['first'][1] = 'new-12d6311d-f924-4674-9140-4a9ce025c84b';
   $pane = new stdClass();
   $pane->pid = 'new-1990251f-5830-470d-9c11-1e220e7871ab';
   $pane->panel = 'first';
@@ -2988,11 +3447,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '1990251f-5830-470d-9c11-1e220e7871ab';
   $display->content['new-1990251f-5830-470d-9c11-1e220e7871ab'] = $pane;
-  $display->panels['first'][1] = 'new-1990251f-5830-470d-9c11-1e220e7871ab';
+  $display->panels['first'][2] = 'new-1990251f-5830-470d-9c11-1e220e7871ab';
   $pane = new stdClass();
   $pane->pid = 'new-3064c05f-2827-4ac7-ac7e-32c9d764453d';
   $pane->panel = 'second';

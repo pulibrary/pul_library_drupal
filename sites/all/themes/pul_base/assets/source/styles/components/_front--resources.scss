@@ -1,0 +1,77 @@
+.front .view-spotlight-graphics ul,
+.fall-2020 .view-spotlight-graphics ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.front .view-spotlight-graphics p,
+.fall-2020 .view-spotlight-graphics p,
+.section-fall-2020 .center-text p {
+  text-align: center;
+}
+
+.fall-2020 .view-spotlight-graphics p {
+  padding: 1rem;
+}
+
+.resources-item--homepage {
+  @include span(full);
+  border: $border-thin $border-solid $border-light;
+  margin-bottom: 1.5em;
+  position: relative;
+
+  @include breakpoint($tab) {
+    @include span(4 of 12);
+
+    &:last-child {
+      @include span(4 of 12 last);
+    }
+  }
+
+  .resources-item--image {
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      height: 245px;
+      margin: 0 1em 0 0;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      min-height: 245px;
+      min-width: 145px;
+      object-fit: cover;
+      object-position: center;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  a::before {
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .resources-item--title {
+    margin: 0;
+    padding: 16px 24px 16px 16px;
+    text-align: center;
+  }
+
+  .more-link {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+}
