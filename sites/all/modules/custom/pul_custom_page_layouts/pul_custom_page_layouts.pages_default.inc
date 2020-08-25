@@ -2344,7 +2344,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'views';
   $pane->subtype = 'library_hours';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -2374,6 +2374,29 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->uuid = '7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
   $display->content['new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57'] = $pane;
   $display->panels['first'][0] = 'new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
+  $pane = new stdClass();
+  $pane->pid = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours-libhours';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Locations and Hours',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'eb58174b-63d6-416a-848c-4c81ebee41ac';
+  $display->content['new-eb58174b-63d6-416a-848c-4c81ebee41ac'] = $pane;
+  $display->panels['first'][1] = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
   $pane = new stdClass();
   $pane->pid = 'new-c02dafc1-d1ba-47a1-a2f1-9d892573c72c';
   $pane->panel = 'second';
