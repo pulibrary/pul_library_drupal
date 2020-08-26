@@ -68,7 +68,7 @@ fall-2020/*',
     ),
   );
   $display->cache = array();
-  $display->title = 'Princeton Research Data Service';
+  $display->title = 'Fall 2020 Resources';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__fall-2020-resources';
@@ -2375,6 +2375,32 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->content['new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57'] = $pane;
   $display->panels['first'][0] = 'new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
   $pane = new stdClass();
+  $pane->pid = 'new-136db3d2-38da-4ab8-b58f-688d163ac90d';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => 'Locations and Hours',
+    'title_heading' => 'h2',
+    'body' => '',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '136db3d2-38da-4ab8-b58f-688d163ac90d';
+  $display->content['new-136db3d2-38da-4ab8-b58f-688d163ac90d'] = $pane;
+  $display->panels['first'][1] = 'new-136db3d2-38da-4ab8-b58f-688d163ac90d';
+  $pane = new stdClass();
   $pane->pid = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -2392,11 +2418,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'eb58174b-63d6-416a-848c-4c81ebee41ac';
   $display->content['new-eb58174b-63d6-416a-848c-4c81ebee41ac'] = $pane;
-  $display->panels['first'][1] = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
+  $display->panels['first'][2] = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
   $pane = new stdClass();
   $pane->pid = 'new-c02dafc1-d1ba-47a1-a2f1-9d892573c72c';
   $pane->panel = 'second';

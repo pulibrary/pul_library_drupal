@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Create a search block
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function libhours_engineering_block_info() {
+  $blocks['libhours_engineering'] = array(
+    'info' => t('Library Hours - Engineering'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function libhours_engineering_block_view() {
+
+/**
+ * Block content
+ */
+
+  $mainStart = "<ul class='hours--today__branch links--decorate'>";
+  $mainEnd = "</ul>";
+  
+  $engRss = new DOMDocument();
+  $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=11490&format=xml&systemTime=1');
+  $engHours = $engRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $engPickUpHours = $engRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $eng = "<li class='hours'>".$engTitle.$engHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=7832'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$engPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+
+  $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
+  
+  $hoursMain = $mainStart.$eng.$mainEnd.$fullSchedule;
+
+  $content = $hoursMain;
+  $block = array(
+    'subject' => t("Today's Hours"),
+    'content' => $content,
+  );
+  return $block;
+
+}

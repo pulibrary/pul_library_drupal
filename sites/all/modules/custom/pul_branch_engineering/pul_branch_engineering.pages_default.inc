@@ -105,7 +105,7 @@ engineering',
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Study - Browse Engineering',
@@ -131,7 +131,7 @@ engineering',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -175,6 +175,29 @@ engineering',
   $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
   $display->panels['first'][2] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
   $pane = new stdClass();
+  $pane->pid = 'new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_engineering-libhours_engineering';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
+  $display->content['new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1'] = $pane;
+  $display->panels['first'][3] = 'new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -194,11 +217,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane->panel = 'first';
@@ -227,11 +250,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $display->content['new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94'] = $pane;
-  $display->panels['first'][4] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
+  $display->panels['first'][5] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane = new stdClass();
   $pane->pid = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
   $pane->panel = 'middle';
@@ -607,7 +630,7 @@ help/engineering-course-reserves-request-form',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -628,6 +651,29 @@ help/engineering-course-reserves-request-form',
   $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
   $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $pane = new stdClass();
+  $pane->pid = 'new-017b4eb1-bf32-4e52-a33d-2596ff47511b';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_engineering-libhours_engineering';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '017b4eb1-bf32-4e52-a33d-2596ff47511b';
+  $display->content['new-017b4eb1-bf32-4e52-a33d-2596ff47511b'] = $pane;
+  $display->panels['first'][2] = 'new-017b4eb1-bf32-4e52-a33d-2596ff47511b';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -647,11 +693,11 @@ help/engineering-course-reserves-request-form',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
   $pane->panel = 'middle';

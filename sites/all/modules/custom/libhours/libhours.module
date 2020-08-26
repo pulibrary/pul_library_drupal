@@ -11,7 +11,7 @@
 function libhours_block_info() {
   $blocks['libhours'] = array(
     'info' => t('Library Hours'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
+    'cache' => DRUPAL_NO_CACHE,
   );
   return $blocks;
 }
@@ -20,12 +20,6 @@ function libhours_block_info() {
  * Implements hook_block_view().
  */
 function libhours_block_view() {
-
-/**
- * Calling the js file
- */
-
-drupal_add_js(drupal_get_path('module', 'libhours') . '/libhours.js');
 
 /**
  * Calling the css file
@@ -43,63 +37,85 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $archRss = new DOMDocument();
   $archRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12309&format=xml&systemTime=1');
   $archHours = $archRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $archHours = "<span class='hours'>".$archHours."</span>";
+  $archHours = "<div class='hours'>".$archHours." (Study-Browse)</div>";
+  $archPickUpHours = $archRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $archPickUpHours = "<div class='hours'>".$archPickUpHours." (Pick-Up)</div>";
   $archTitle = "<h3>Architecture Library</h3>";
   $archColor = $archRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $arch = "<li><a href='/architecture' class='library-hours-link' style='border-left:".$archColor." 35px solid'>".$archTitle.$archHours."</a></li>";
+  $arch = "<li><a href='/architecture' class='library-hours-link' style='border-left:".$archColor." 35px solid'>".$archTitle.$archHours.$archPickUpHours."</a></li>";
   
+  $cdhRss = new DOMDocument();
+  $cdhRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14274&format=xml&systemTime=1');
+  $cdhHours = $cdhRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $cdhHours = "<div class='hours'>".$cdhHours."</div>";
+  $cdhTitle = "<h3>Center for Digital Humanities</h3>";
+  $cdhColor = $cdhRss->getElementsByTagName('color')->item(0)->nodeValue;
+  $cdh = "<li><a href='https://cdh.princeton.edu' class='library-hours-link' style='border-left:".$cdhColor." 35px solid'>".$cdhTitle.$cdhHours."</a></li>";
+
   $ealRss = new DOMDocument();
   $ealRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12310&format=xml&systemTime=1');
   $ealHours = $ealRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $ealHours = "<span class='hours'>".$ealHours."</span>";
+  $ealHours = "<div class='hours'>".$ealHours." (Study-Browse)</div>";
+  $ealPickUpHours = $ealRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $ealPickUpHours = "<div class='hours'>".$ealPickUpHours." (Pick-Up)</div>";
   $ealTitle = "<h3>East Asian Library</h3>";
   $ealColor = $ealRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $eal = "<li><a href='/eastasian' class='library-hours-link' style='border-left:".$ealColor." 35px solid'>".$ealTitle.$ealHours."</a></li>";
+  $eal = "<li><a href='/eastasian' class='library-hours-link' style='border-left:".$ealColor." 35px solid'>".$ealTitle.$ealHours.$ealPickUpHours."</a></li>";
 
   $engRss = new DOMDocument();
   $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=11490&format=xml&systemTime=1');
   $engHours = $engRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $engHours = "<span class='hours'>".$engHours."</span>";
+  $engHours = "<div class='hours'>".$engHours." (Study-Browse)</div>";
+  $engPickUpHours = $engRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $engPickUpHours = "<div class='hours'>".$engPickUpHours." (Pick-Up)</div>";
   $engTitle = "<h3>Engineering Library</h3>";
   $engColor = $engRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $eng = "<li><a href='/engineering' class='library-hours-link' style='border-left:".$engColor." 35px solid'>".$engTitle.$engHours."</a></li>";
+  $eng = "<li><a href='/engineering' class='library-hours-link' style='border-left:".$engColor." 35px solid'>".$engTitle.$engHours.$engPickUpHours."</a></li>";
 
   $fstRss = new DOMDocument();
   $fstRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=6975&format=xml&systemTime=1');
   $fstHours = $fstRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $fstHours = "<span class='hours'>".$fstHours."</span>";
+  $fstHours = "<div class='hours'>".$fstHours." (Study-Browse)</div>";
+  $fstPickUpHours = $fstRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $fstPickUpHours = "<div class='hours'>".$fstPickUpHours." (Pick-Up)</div>";
   $fstTitle = "<h3>Firestone Library</h3>";
   $fstColor = $fstRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $fst = "<li><a href='/firestone' class='library-hours-link' style='border-left:".$fstColor." 35px solid'>".$fstTitle.$fstHours."</a></li>";
+  $fst = "<li><a href='/firestone' class='library-hours-link' style='border-left:".$fstColor." 35px solid'>".$fstTitle.$fstHours.$fstPickUpHours."</a></li>";
 
   $lewRss = new DOMDocument();
   $lewRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
   $lewHours = $lewRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $lewHours = "<span class='hours'>".$lewHours."</span>";
+  $lewHours = "<div class='hours'>".$lewHours." (Study-Browse)</div>";
+  $lewPickUpHours = $lewRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $lewPickUpHours = "<div class='hours'>".$lewPickUpHours." (Pick-Up)</div>";
   $lewTitle = "<h3>Lewis Science Library</h3>";
   $lewColor = $lewRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $lew = "<li><a href='/lewis' class='library-hours-link' style='border-left:".$lewColor." 35px solid'>".$lewTitle.$lewHours."</a></li>";
+  $lew = "<li><a href='/lewis' class='library-hours-link' style='border-left:".$lewColor." 35px solid'>".$lewTitle.$lewHours.$lewPickUpHours."</a></li>";
 
   $marqRss = new DOMDocument();
   $marqRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12313&format=xml&systemTime=1');
   $marqHours = $marqRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $marqHours = "<span class='hours'>".$marqHours."</span>";
+  $marqHours = "<div class='hours'>".$marqHours." (Study-Browse)</div>";
+  $marqPickUpHours = $marqRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $marqPickUpHours = "<div class='hours'>".$marqPickUpHours." (Pick-Up)</div>";
   $marqTitle = "<h3>Marquand Art Library</h3>";
   $marqColor = $marqRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $marq = "<li><a href='/marquand' class='library-hours-link' style='border-left:".$marqColor." 35px solid'>".$marqTitle.$marqHours."</a></li>";
+  $marq = "<li><a href='/marquand' class='library-hours-link' style='border-left:".$marqColor." 35px solid'>".$marqTitle.$marqHours.$marqPickUpHours."</a></li>";
 
   $mendRss = new DOMDocument();
   $mendRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12314&format=xml&systemTime=1');
   $mendHours = $mendRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $mendHours = "<span class='hours'>".$mendHours."</span>";
+  $mendHours = "<div class='hours'>".$mendHours." (Study-Browse)</div>";
+  $mendPickUpHours = $mendRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $mendPickUpHours = "<div class='hours'>".$mendPickUpHours." (Pick-Up)</div>";
   $mendTitle = "<h3>Mendel Music Library</h3>";
   $mendColor = $mendRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $mend = "<li><a href='/music' class='library-hours-link' style='border-left:".$mendColor." 35px solid'>".$mendTitle.$mendHours."</a></li>";
+  $mend = "<li><a href='/music' class='library-hours-link' style='border-left:".$mendColor." 35px solid'>".$mendTitle.$mendHours.$mendPickUpHours."</a></li>";
 
   $muddRss = new DOMDocument();
   $muddRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12315&format=xml&systemTime=1');
   $muddHours = $muddRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $muddHours = "<span class='hours'>".$muddHours."</span>";
+  $muddHours = "<div class='hours'>".$muddHours."</div>";
   $muddTitle = "<h3>Mudd Library</h3>";
   $muddColor = $muddRss->getElementsByTagName('color')->item(0)->nodeValue;
   $mudd = "<li><a href='/special-collections/mudd' class='library-hours-link' style='border-left:".$muddColor." 35px solid'>".$muddTitle.$muddHours."</a></li>";
@@ -107,15 +123,15 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $pplRss = new DOMDocument();
   $pplRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12311&format=xml&systemTime=1');
   $pplHours = $pplRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $pplHours = "<span class='hours'>".$pplHours."</span>";
+  $pplHours = "<div class='hours'>".$pplHours."</div>";
   $pplTitle = "<h3>Plasma Physics Library</h3>";
   $pplColor = $pplRss->getElementsByTagName('color')->item(0)->nodeValue;
   $ppl = "<li><a href='/plasma-physics' class='library-hours-link' style='border-left:".$pplColor." 35px solid'>".$pplTitle.$pplHours."</a></li>";
 
   $scRss = new DOMDocument();
-  $scRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14236&format=xml&systemTime=1');
+  $scRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14275&format=xml&systemTime=1');
   $scHours = $scRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $scHours = "<span class='hours'>".$scHours."</span>";
+  $scHours = "<div class='hours'>".$scHours."</div>";
   $scTitle = "<h3>Special Collections</h3>";
   $scColor = $scRss->getElementsByTagName('color')->item(0)->nodeValue;
   $sc = "<li><a href='/special-collections' class='library-hours-link' style='border-left:".$scColor." 35px solid'>".$scTitle.$scHours."</a></li>";
@@ -123,10 +139,12 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $stokRss = new DOMDocument();
   $stokRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7227&format=xml&systemTime=1');
   $stokHours = $stokRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $stokHours = "<span class='hours'>".$stokHours."</span>";
+  $stokHours = "<div class='hours'>".$stokHours." (Study-Browse)</div>";
+  $stokPickUpHours = $stokRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $stokPickUpHours = "<div class='hours'>".$stokPickUpHours." (Pick-Up)</div>";
   $stokTitle = "<h3>Stokes Library</h3>";
   $stokColor = $stokRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $stok = "<li><a href='/stokes' class='library-hours-link' style='border-left:".$stokColor." 35px solid'>".$stokTitle.$stokHours."</a></li>";
+  $stok = "<li><a href='/stokes' class='library-hours-link' style='border-left:".$stokColor." 35px solid'>".$stokTitle.$stokHours.$stokPickUpHours."</a></li>";
 
   $moreHours = "<a href='https://libcal.princeton.edu/hours' class='views-more-link'>More Hours</a>";
   

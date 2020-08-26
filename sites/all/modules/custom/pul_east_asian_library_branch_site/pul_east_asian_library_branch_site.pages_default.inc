@@ -127,7 +127,7 @@ eastasian/*',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -149,6 +149,29 @@ eastasian/*',
   $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
   $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $pane = new stdClass();
+  $pane->pid = 'new-dcd55986-eacd-4249-b9d4-62c5b8fabe52';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_eastasian-libhours_eastasian';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'dcd55986-eacd-4249-b9d4-62c5b8fabe52';
+  $display->content['new-dcd55986-eacd-4249-b9d4-62c5b8fabe52'] = $pane;
+  $display->panels['first'][2] = 'new-dcd55986-eacd-4249-b9d4-62c5b8fabe52';
+  $pane = new stdClass();
   $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -166,11 +189,11 @@ eastasian/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+  $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -192,11 +215,11 @@ eastasian/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-f6b296df-91f7-462a-ba34-cd6de5705220';
   $pane->panel = 'middle';
@@ -541,7 +564,7 @@ libraries/eastasianlib',
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Study-Browse EAL',
@@ -567,7 +590,7 @@ libraries/eastasianlib',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -612,6 +635,29 @@ libraries/eastasianlib',
   $display->content['new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f'] = $pane;
   $display->panels['first'][2] = 'new-d52a33c4-69c3-43d6-b0a3-d6859f3cb27f';
   $pane = new stdClass();
+  $pane->pid = 'new-3bac95a0-32c0-4af4-9e81-babc55e68907';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_eastasian-libhours_eastasian';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '3bac95a0-32c0-4af4-9e81-babc55e68907';
+  $display->content['new-3bac95a0-32c0-4af4-9e81-babc55e68907'] = $pane;
+  $display->panels['first'][3] = 'new-3bac95a0-32c0-4af4-9e81-babc55e68907';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -631,11 +677,11 @@ libraries/eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $pane->panel = 'first';
@@ -664,11 +710,11 @@ libraries/eastasianlib',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $display->content['new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f'] = $pane;
-  $display->panels['first'][4] = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
+  $display->panels['first'][5] = 'new-ef75c8f2-5162-45e7-92b7-5d6af6ca032f';
   $pane = new stdClass();
   $pane->pid = 'new-8404cf75-c431-49c9-9701-1499c368da2c';
   $pane->panel = 'middle';

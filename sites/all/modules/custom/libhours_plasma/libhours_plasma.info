@@ -1,0 +1,7 @@
+name= Library Hours - Plasma Physics
+description = "Create a block to display Plasma Physics Library hours from the Princeton University Library Libcal account."
+package = Princeton University Library
+version = 7.x.1.0
+core = 7.x
+files[] = libhours_plasma.module,
+dependencies[] = block

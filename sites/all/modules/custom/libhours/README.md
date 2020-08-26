@@ -1,1 +1,0 @@
-This Drupal module creates a block to display hours from the Princeton University Library Libcal account.
