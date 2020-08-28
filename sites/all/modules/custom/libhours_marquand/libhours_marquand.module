@@ -31,8 +31,7 @@ function libhours_marquand_block_view() {
   $marqRss = new DOMDocument();
   $marqRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12313&format=xml&systemTime=1');
   $marqHours = $marqRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $marqPickUpHours = $marqRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $marq = "<li class='hours'>".$marqTitle.$marqHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10656'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$marqPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+  $marq = "<li class='hours'>".$marqTitle.$marqHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10656'>Study-browse service<br>Access by appointment only</a></div></li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   

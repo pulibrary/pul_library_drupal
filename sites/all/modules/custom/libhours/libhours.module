@@ -96,11 +96,9 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $marqRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12313&format=xml&systemTime=1');
   $marqHours = $marqRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $marqHours = "<div class='hours'>".$marqHours." (Study-Browse)</div>";
-  $marqPickUpHours = $marqRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $marqPickUpHours = "<div class='hours'>".$marqPickUpHours." (Pick-Up)</div>";
   $marqTitle = "<h3>Marquand Art Library</h3>";
   $marqColor = $marqRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $marq = "<li><a href='/marquand' class='library-hours-link' style='border-left:".$marqColor." 35px solid'>".$marqTitle.$marqHours.$marqPickUpHours."</a></li>";
+  $marq = "<li><a href='/marquand' class='library-hours-link' style='border-left:".$marqColor." 35px solid'>".$marqTitle.$marqHours."</a></li>";
 
   $mendRss = new DOMDocument();
   $mendRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12314&format=xml&systemTime=1');
