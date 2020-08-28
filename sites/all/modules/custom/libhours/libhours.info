@@ -1,0 +1,9 @@
+name= Library Hours
+description = "Create a block to display hours from the Princeton University Library Libcal account."
+package = Princeton University Library
+version = 7.x.1.0
+core = 7.x
+files[] = libhours.module,
+files[] = libhours.js,
+files[] = libhours.css,
+dependencies[] = block

@@ -1,0 +1,7 @@
+name= Library Hours - East Asian
+description = "Create a block to display East Asian Library hours from the Princeton University Library Libcal account."
+package = Princeton University Library
+version = 7.x.1.0
+core = 7.x
+files[] = libhours_eastasian.module,
+dependencies[] = block

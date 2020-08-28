@@ -483,11 +483,34 @@ music/*',
   $display->content['new-071a0575-87b0-4da9-86a0-2c8299513224'] = $pane;
   $display->panels['first'][0] = 'new-071a0575-87b0-4da9-86a0-2c8299513224';
   $pane = new stdClass();
+  $pane->pid = 'new-70a00674-34a0-48ed-858e-8a44bceaacd1';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_mendel-libhours_mendel';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '70a00674-34a0-48ed-858e-8a44bceaacd1';
+  $display->content['new-70a00674-34a0-48ed-858e-8a44bceaacd1'] = $pane;
+  $display->panels['first'][1] = 'new-70a00674-34a0-48ed-858e-8a44bceaacd1';
+  $pane = new stdClass();
   $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -503,11 +526,11 @@ music/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-  $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
+  $display->panels['first'][2] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $pane = new stdClass();
   $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane->panel = 'first';
@@ -526,11 +549,11 @@ music/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['first'][2] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+  $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -552,11 +575,11 @@ music/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-df925888-61e2-4fa8-adf5-299d9eb6a805';
   $pane->panel = 'middle';
@@ -852,7 +875,7 @@ music',
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Study-Browse Mendel',
@@ -878,7 +901,7 @@ music',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -923,6 +946,29 @@ music',
   $display->content['new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb'] = $pane;
   $display->panels['first'][2] = 'new-23b607ab-a416-4cbb-8fae-fdfaf9ae58bb';
   $pane = new stdClass();
+  $pane->pid = 'new-4fc7d300-33eb-4d87-9b6d-55dbf7fcc8f7';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_mendel-libhours_mendel';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '4fc7d300-33eb-4d87-9b6d-55dbf7fcc8f7';
+  $display->content['new-4fc7d300-33eb-4d87-9b6d-55dbf7fcc8f7'] = $pane;
+  $display->panels['first'][3] = 'new-4fc7d300-33eb-4d87-9b6d-55dbf7fcc8f7';
+  $pane = new stdClass();
   $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -940,11 +986,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+  $display->panels['first'][4] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -965,11 +1011,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][5] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $pane->panel = 'first';
@@ -991,11 +1037,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = 'f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $display->content['new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c'] = $pane;
-  $display->panels['first'][5] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
+  $display->panels['first'][6] = 'new-f91eb3d0-c2e2-428f-ab37-68ac5294b49c';
   $pane = new stdClass();
   $pane->pid = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
   $pane->panel = 'first';
@@ -1024,11 +1070,11 @@ music',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'd21f98ab-41ea-4323-86d0-ed80e146e526';
   $display->content['new-d21f98ab-41ea-4323-86d0-ed80e146e526'] = $pane;
-  $display->panels['first'][6] = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
+  $display->panels['first'][7] = 'new-d21f98ab-41ea-4323-86d0-ed80e146e526';
   $pane = new stdClass();
   $pane->pid = 'new-0d7ed5d2-a1ab-4b41-8fc7-338d30286bee';
   $pane->panel = 'middle';

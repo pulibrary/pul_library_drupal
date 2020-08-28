@@ -1,0 +1,27 @@
+/* CSS Document */
+.hours--today {
+	display: block;
+}
+
+.hours--today li {
+	display: flex;
+	margin-bottom: 1rem;
+	border: 1px solid #e0ddd3;
+
+	color: #0e1111;
+	font-size: 1em;
+}
+
+.hours--today h3 {
+	font-size: 1.1em;
+	font-weight: 500;
+	margin: 0;
+}
+
+.hours--today .views-more-link {
+	margin-top: 1rem;
+}
+
+.library-hours-link {
+	padding: 5px 1rem;
+}

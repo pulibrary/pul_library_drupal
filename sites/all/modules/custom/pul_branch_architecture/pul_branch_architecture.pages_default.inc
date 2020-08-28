@@ -105,7 +105,7 @@ architecture',
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Study-Browse Architecture',
@@ -131,7 +131,7 @@ architecture',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -175,6 +175,29 @@ architecture',
   $display->content['new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7'] = $pane;
   $display->panels['first'][2] = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
   $pane = new stdClass();
+  $pane->pid = 'new-48abebe2-3c6e-46f5-b643-43ce05685c08';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_architecture-libhours_architecture';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '48abebe2-3c6e-46f5-b643-43ce05685c08';
+  $display->content['new-48abebe2-3c6e-46f5-b643-43ce05685c08'] = $pane;
+  $display->panels['first'][3] = 'new-48abebe2-3c6e-46f5-b643-43ce05685c08';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -194,11 +217,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
   $pane->panel = 'first';
@@ -227,11 +250,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '022e8064-7545-4991-b8b4-a736f2facfb9';
   $display->content['new-022e8064-7545-4991-b8b4-a736f2facfb9'] = $pane;
-  $display->panels['first'][4] = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
+  $display->panels['first'][5] = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
   $pane = new stdClass();
   $pane->pid = 'new-321da70b-8322-4c80-a874-6e533505af73';
   $pane->panel = 'middle';
@@ -555,7 +578,7 @@ news/architecture',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -576,6 +599,29 @@ news/architecture',
   $display->content['new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae'] = $pane;
   $display->panels['first'][1] = 'new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
   $pane = new stdClass();
+  $pane->pid = 'new-87ed0e7a-96c8-4993-80c4-c19004df3880';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_architecture-libhours_architecture';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '87ed0e7a-96c8-4993-80c4-c19004df3880';
+  $display->content['new-87ed0e7a-96c8-4993-80c4-c19004df3880'] = $pane;
+  $display->panels['first'][2] = 'new-87ed0e7a-96c8-4993-80c4-c19004df3880';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -595,11 +641,11 @@ news/architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-82a850ee-f1bf-4b71-98ae-2cb9a56c81ca';
   $pane->panel = 'middle';

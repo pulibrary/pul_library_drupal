@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Create a search block
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function libhours_eastasian_block_info() {
+  $blocks['libhours_eastasian'] = array(
+    'info' => t('Library Hours - East Asian'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function libhours_eastasian_block_view() {
+
+/**
+ * Block content
+ */
+
+  $mainStart = "<ul class='hours--today__branch links--decorate'>";
+  $mainEnd = "</ul>";
+  
+  $ealRss = new DOMDocument();
+  $ealRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12310&format=xml&systemTime=1');
+  $ealHours = $ealRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $ealPickUpHours = $ealRss->getElementsByTagName('rendered')->item(1)->nodeValue;
+  $eal = "<li class='hours'>".$ealHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10604'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$ealPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+
+  $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
+  
+  $hoursMain = $mainStart.$eal.$mainEnd.$fullSchedule;
+
+  $content = $hoursMain;
+  $block = array(
+    'subject' => t("Today's Hours"),
+    'content' => $content,
+  );
+  return $block;
+
+}

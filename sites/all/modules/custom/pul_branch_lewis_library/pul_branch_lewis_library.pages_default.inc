@@ -106,7 +106,7 @@ lewis',
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Study-Browse Lewis',
@@ -132,7 +132,7 @@ lewis',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -176,6 +176,29 @@ lewis',
   $display->content['new-fdf608da-86a5-4ca9-b436-b67272d04d2b'] = $pane;
   $display->panels['first'][2] = 'new-fdf608da-86a5-4ca9-b436-b67272d04d2b';
   $pane = new stdClass();
+  $pane->pid = 'new-265c8429-095b-4e3b-93ed-c621cab81543';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_lewis-libhours_lewis';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '265c8429-095b-4e3b-93ed-c621cab81543';
+  $display->content['new-265c8429-095b-4e3b-93ed-c621cab81543'] = $pane;
+  $display->panels['first'][3] = 'new-265c8429-095b-4e3b-93ed-c621cab81543';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -195,11 +218,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $pane->panel = 'first';
@@ -228,11 +251,11 @@ lewis',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $display->content['new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569'] = $pane;
-  $display->panels['first'][4] = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
+  $display->panels['first'][5] = 'new-cbc3a3d8-44fa-4e86-9c27-43bf29bcd569';
   $pane = new stdClass();
   $pane->pid = 'new-70fdc148-9c23-414d-9d76-78a6def80f21';
   $pane->panel = 'middle';
@@ -667,7 +690,7 @@ lewis/*',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
@@ -688,6 +711,29 @@ lewis/*',
   $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
   $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
   $pane = new stdClass();
+  $pane->pid = 'new-a0f38608-fbd8-429e-8031-5b675b8085c3';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'libhours_lewis-libhours_lewis';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'a0f38608-fbd8-429e-8031-5b675b8085c3';
+  $display->content['new-a0f38608-fbd8-429e-8031-5b675b8085c3'] = $pane;
+  $display->panels['first'][2] = 'new-a0f38608-fbd8-429e-8031-5b675b8085c3';
+  $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -707,11 +753,11 @@ lewis/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-4bb2eb3c-77ba-4823-8dd8-640f25907b1d';
   $pane->panel = 'middle';
