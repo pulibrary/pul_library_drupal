@@ -111,6 +111,11 @@ function pul_undergraduate_student_import_feeds_importer_default() {
             'unique' => FALSE,
             'language' => 'und',
           ),
+          6 => array(
+            'source' => 'PL',
+            'target' => 'field_current_personal_lib:label',
+            'unique' => FALSE,
+          ),
         ),
         'insert_new' => '1',
         'update_existing' => '2',

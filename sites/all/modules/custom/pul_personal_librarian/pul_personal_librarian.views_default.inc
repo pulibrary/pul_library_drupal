@@ -1042,8 +1042,8 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2020';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2022';
   $handler->display->display_options['path'] = 'staff/pl-list/upper/%';
 
   /* Display: PL Assignment First/Second Years */
@@ -1198,8 +1198,8 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2022';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2023';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2023';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2024';
   $handler->display->display_options['path'] = 'staff/pl-list/lower/%';
 
   /* Display: CSV Upper by PL */
@@ -1283,8 +1283,8 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2020';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2022';
   $handler->display->display_options['path'] = 'staff/pl-list/upper/data/%/upper.csv';
   $handler->display->display_options['displays'] = array(
     'page_3' => 'page_3',
@@ -1377,8 +1377,8 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2022';
-  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2023';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2023';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2024';
   $handler->display->display_options['path'] = 'staff/pl-list/lower/data/%/lower.csv';
   $handler->display->display_options['displays'] = array(
     'page_4' => 'page_4',
@@ -1622,6 +1622,258 @@ function pul_personal_librarian_views_default_views() {
     'panel_pane_1' => 0,
     'panel_pane_2' => 0,
     'page_1' => 0,
+  );
+
+  /* Display: PL Assignment 2020 */
+  $handler = $view->new_display('page', 'PL Assignment 2020', 'page_6');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    28 => '28',
+    8 => '8',
+  );
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'field_puluser_fname' => 'field_puluser_fname',
+    'field_puluser_lname' => 'field_puluser_lname',
+    'mail' => 'mail',
+    'field_personal_lib_class_year' => 'field_personal_lib_class_year',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_puluser_lname';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_fname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_puluser_lname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_personal_lib_class_year' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['id'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['table'] = 'field_data_field_current_personal_lib';
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['field'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Last Name */
+  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'field_data_field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'field_data_field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['field'] = 'field_puluser_fname';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Field: User: Class Year */
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['id'] = 'field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['table'] = 'field_data_field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['field'] = 'field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['label'] = 'Class';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: User: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'users';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Sort criterion: User: Personal Librarian (field_current_personal_lib) */
+  $handler->display->display_options['sorts']['field_current_personal_lib_target_id']['id'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['sorts']['field_current_personal_lib_target_id']['table'] = 'field_data_field_current_personal_lib';
+  $handler->display->display_options['sorts']['field_current_personal_lib_target_id']['field'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Name */
+  $handler->display->display_options['arguments']['name']['id'] = 'name';
+  $handler->display->display_options['arguments']['name']['table'] = 'users';
+  $handler->display->display_options['arguments']['name']['field'] = 'name';
+  $handler->display->display_options['arguments']['name']['relationship'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['name']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'and';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    29 => '29',
+  );
+  $handler->display->display_options['filters']['rid']['group'] = 1;
+  /* Filter criterion: User: Class Year (field_personal_lib_class_year) */
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['id'] = 'field_personal_lib_class_year_value';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2022';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['value'] = '2020';
+  $handler->display->display_options['path'] = 'staff/pl-list/2020/%';
+
+  /* Display: CSV Upper by 2020 */
+  $handler = $view->new_display('views_data_export', 'CSV Upper by 2020', 'views_data_export_5');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    28 => '28',
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['id'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['table'] = 'field_data_field_current_personal_lib';
+  $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['field'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Last Name */
+  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'field_data_field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['exclude'] = TRUE;
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'field_data_field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['field'] = 'field_puluser_fname';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: Class Year */
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['id'] = 'field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['table'] = 'field_data_field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['field'] = 'field_personal_lib_class_year';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['label'] = 'Class';
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_personal_lib_class_year']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Name */
+  $handler->display->display_options['arguments']['name']['id'] = 'name';
+  $handler->display->display_options['arguments']['name']['table'] = 'users';
+  $handler->display->display_options['arguments']['name']['field'] = 'name';
+  $handler->display->display_options['arguments']['name']['relationship'] = 'field_current_personal_lib_target_id';
+  $handler->display->display_options['arguments']['name']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['name']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    29 => '29',
+  );
+  /* Filter criterion: User: Class Year (field_personal_lib_class_year) */
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['id'] = 'field_personal_lib_class_year_value';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['table'] = 'field_data_field_personal_lib_class_year';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['field'] = 'field_personal_lib_class_year_value';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['min'] = '2021';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['max'] = '2022';
+  $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['value'] = '2020';
+  $handler->display->display_options['path'] = 'staff/pl-list/2020/data/%/2020.csv';
+  $handler->display->display_options['displays'] = array(
+    'page_6' => 'page_6',
+    'default' => 0,
+    'panel_pane_1' => 0,
+    'panel_pane_2' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_4' => 0,
+    'page_5' => 0,
   );
   $export['pul_personal_librarian'] = $view;
 
