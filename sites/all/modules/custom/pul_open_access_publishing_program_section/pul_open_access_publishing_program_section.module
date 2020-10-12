@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the PUL Open Access Publishing Program Section feature.
+ */
+
+include_once 'pul_open_access_publishing_program_section.features.inc';
