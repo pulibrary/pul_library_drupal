@@ -74,7 +74,8 @@ plasma-physics
 eastasianlib
 digital-collections
 research-data
-fall-2020',
+fall-2020
+services/open-access-publishing-program',
           ),
           'context' => 'empty',
           'not' => FALSE,
