@@ -26,6 +26,7 @@ function allsearch_block_form($form, &$form_state) {
     '#type'  => 'textfield',
     '#title' =>  t('All Search Box'),
     '#size'  => 80,
+    '#maxlength' => 1096,
     '#required' => TRUE,
     '#default_value' => $default_value,
     '#attributes' => array(
