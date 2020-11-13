@@ -7,3 +7,5 @@ server "library-staging2", user: fetch(:user), roles: %w{app drupal_secondary}
 
 set :search_api_solr_host, 'library-solr-staging.princeton.edu'
 set :search_api_solr_path, '/solr/library-staging'
+set :smtp_host, "localhost"
+set :smtp_port, "1025"

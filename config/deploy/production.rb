@@ -9,3 +9,5 @@ server "library-prod4", user: fetch(:user), roles: %w{app drupal_secondary}
 set :search_api_solr_host, 'library-solr-prod.princeton.edu'
 # TODO: This should be a production location
 set :search_api_solr_path, '/solr/library-prod'
+set :smtp_host, "lib-ponyexpr.princeton.edu"
+set :smtp_port, "25"
