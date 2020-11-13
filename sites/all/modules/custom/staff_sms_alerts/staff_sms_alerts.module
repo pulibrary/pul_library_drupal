@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Staff SMS Alerts feature.
+ */
+
+include_once 'staff_sms_alerts.features.inc';
