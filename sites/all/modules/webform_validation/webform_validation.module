@@ -59,10 +59,23 @@ function webform_validation_menu() {
 }
 
 /**
- * Loads validation rule from menu parameter.
+ * Load a validation rule.
+ *
+ * @param int $ruleid
+ *   The rule ID.
+ *
+ * @return array|false
+ *   The rule or FALSE if no rule exists.
  */
 function webform_validation_rule_load($ruleid) {
-  return webform_validation_get_rule($ruleid);
+  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate, weight FROM {webform_validation_rule} WHERE ruleid = :ruleid", array(':ruleid' => $ruleid), array('fetch' => PDO::FETCH_ASSOC));
+  $rule = $result->fetchAssoc();
+  if (!$rule) {
+    return FALSE;
+  }
+  $rule['components'] = webform_validation_get_rule_components($ruleid, $rule['nid']);
+  $rule['negate'] = (bool) $rule['negate'];
+  return $rule;
 }
 
 /**
@@ -86,6 +99,29 @@ function webform_validation_theme() {
  */
 function webform_validation_form_webform_client_form_alter(&$form, &$form_state, $form_id) {
   $form['#validate'][] = 'webform_validation_validate';
+  if (module_exists('maxlength')) {
+    $nid = substr($form_id, strlen('webform_client_form') + 1);
+    $rules = webform_validation_get_node_rules($nid);
+    foreach ($rules as $ruleid => $rule) {
+      if ($rule['validator'] == 'max_length') {
+        $length_limit = $rule['data'];
+        $components = $rule['components'];
+        foreach ($components as $cid => $component) {
+          // Define $form_element as the webform element representing this
+          // component, even if it's nested in multiple arrays, as webform
+          // elemens often are (e.g., fieldsets). Assign by reference here,
+          // since we need to modify the form element itself and don't know
+          // its array depth or keys by which to access it.
+          $form_element = &_webform_validation_get_webform_element($component, $form);
+          // Append to this form element the relevant properties which are
+          // supported by maxlength module.
+          $form_element['#pre_render'][] = 'maxlength_pre_render';
+          $form_element['#maxlength'] = $length_limit;
+          $form_element['#maxlength_js'] = TRUE;
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -399,6 +435,7 @@ function webform_validation_node_insert($node) {
 function webform_validation_node_delete($node) {
   $rules = webform_validation_get_node_rules($node->nid);
   if ($rules) {
+    $transaction = db_transaction();
     foreach (array_keys($rules) as $ruleid) {
       webform_dynamic_delete_rule($ruleid);
     }
@@ -457,6 +494,8 @@ function webform_validation_rule_save(array $values) {
   else {
     return FALSE;
   }
+
+  $transaction = db_transaction();
 
   drupal_write_record('webform_validation_rule', $values, $primary_keys);
 
@@ -577,13 +616,14 @@ function webform_validation_uuid_node_features_export_render_alter(&$export, $no
 }
 
 /**
- * Implements hook_uuid_entity_uuid_save().
+ * Implements hook_entity_uuid_save().
  */
 function webform_validation_entity_uuid_save($node, $entity_type) {
   if ($entity_type == 'node') {
     if (isset($node->webform['validation'])) {
       $rules = $node->webform['validation'];
       $orig_rules = webform_validation_get_node_rules_assoc($node->nid);
+      $transaction = db_transaction();
       // Delete obsolete rules.
       $delete = array_diff_key($orig_rules, $rules);
       foreach ($delete as $rule) {
@@ -611,5 +651,47 @@ function webform_validation_entity_uuid_save($node, $entity_type) {
       }
     }
   }
+}
 
+/**
+ * Get a reference to a specific webform element.
+ *
+ * (For a given webform_validation rule component, and a given Drupal webform
+ * form, get a reference to the webform element represented by the rule
+ * component; return the correct element regardless of how deeply it's nested
+ * in webform fieldsets or other wrappers.)
+ *
+ * @param array $component
+ *   Webform validation rule component.
+ * @param array $form
+ *   Drupal webform form.
+ *
+ * @return array
+ *   Reference to the webform element represented by the rule component.
+ */
+function &_webform_validation_get_webform_element(array $component, array &$form) {
+  // Define an array of ancestors, beginning with the component itself.
+  $component_ancestors = array($component['form_key']);
+  // Define the parent-id, starting with the parent-id of the component itself,
+  // if any.
+  $pid = $component['pid'];
+  // Look into $form['#node']->webform['components'][$pid] to get any parent
+  // of the component, and continue working up the family tree until there is
+  // no more parent-id.
+  while ($pid) {
+    $parent = $form['#node']->webform['components'][$pid];
+    // Prepend the parent form_key to the array of ancestors. This causes the
+    // array of ancestors to be ordered from ancestor to descendant.
+    array_unshift($component_ancestors, $parent['form_key']);
+    // Note this parent's parent-id, if any.
+    $pid = $parent['pid'];
+  }
+  // $component_ancestors now contains the ordered ancestry. Cycle through it to
+  // get the correct member of $form['submitted']. Assign by reference so that
+  // we have a good reference to $webform_element to return.
+  $webform_element = &$form['submitted'];
+  foreach ($component_ancestors as $ancestor) {
+    $webform_element = &$webform_element[$ancestor];
+  }
+  return $webform_element;
 }
