@@ -12,7 +12,7 @@
  * rule.
  */
 function webform_validation_manage($node) {
-  $rules = webform_validation_get_webform_rules($node);
+  $rules = webform_validation_get_node_rules($node->nid);
   $output = array();
   $output['webform_validation_manage_overview_form'] = drupal_get_form('webform_validation_manage_overview_form', $rules, $node);
   $output['webform_validation_manage_add_rule'] = array(
@@ -24,13 +24,14 @@ function webform_validation_manage($node) {
 
 /**
  * Get the list of rules associated with the webform.
+ *
+ * @deprecated in webform_validation:7.x-1.18 and is removed from webform_validation:7.x-2.0. Use webform_validation_get_node_rules().
+ * @see https://www.drupal.org/project/webform_validation/issues/3104316
  */
 function webform_validation_get_webform_rules($node) {
   if (in_array($node->type, webform_variable_get('webform_node_types'))) {
-    $webform_nid = $node->nid;
-    $rules = webform_validation_get_node_rules($node->nid);
+    return webform_validation_get_node_rules($node->nid);
   }
-  return $rules;
 }
 
 /**
@@ -249,7 +250,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
       '#required' => (bool) $required,
       '#size' => 60,
       '#maxlength' => NULL,
-      '#default_value' => $rule['data'],
+      '#default_value' => isset($rule['data']) ? $rule['data'] : NULL,
       '#weight' => 4,
     );
   }
@@ -259,7 +260,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
       '#type' => 'checkbox',
       '#title' => t('Negate rule'),
       '#description' => t('Validate the inverse of the rule.'),
-      '#default_value' => $rule['negate'],
+      '#default_value' => isset($rule['negate']) ? $rule['negate'] : NULL,
       '#weight' => 5,
     );
   }
@@ -272,7 +273,7 @@ function webform_validation_manage_rule($form, $form_state, $node, $action, $val
       '#required' => TRUE,
       '#size' => 60,
       '#maxlength' => 2048,
-      '#default_value' => $rule['error_message'],
+      '#default_value' => isset($rule['error_message']) ? $rule['error_message'] : NULL,
       '#weight' => 5,
     );
   }
@@ -306,7 +307,7 @@ function webform_validation_manage_rule_validate($form, &$form_state) {
   $rule_validator = webform_validation_get_validator_info($values['validator']);
 
   // Validate custom data.
-  if ($values['data'] && !empty($rule_validator['custom_data']['validate_regex']) && !preg_match($rule_validator['custom_data']['validate_regex'], $values['data'])) {
+  if (!empty($values['data']) && !empty($rule_validator['custom_data']['validate_regex']) && !preg_match($rule_validator['custom_data']['validate_regex'], $values['data'])) {
     form_set_error('data', $rule_validator['custom_data']['label'] . ' ' . t('is invalid.'));
   }
 
@@ -367,8 +368,12 @@ function webform_validation_delete_rule($form, &$form_state, $rule) {
     );
   }
 
-  return confirm_form($form, t('Are you sure you want to delete the rule %name?', array('%name' => $rule['rulename'])), isset($_GET['destination']) ? $_GET['destination'] : $_GET['q'], t('This action cannot be undone.'), t('Delete'), t('Cancel')
-  );
+  return confirm_form(
+    $form,
+    t('Are you sure you want to delete the rule %name?', array('%name' => $rule['rulename'])),
+    'node/' . $rule['nid'] . '/webform/validation',
+    NULL,
+    t('Delete'));
 }
 
 /**

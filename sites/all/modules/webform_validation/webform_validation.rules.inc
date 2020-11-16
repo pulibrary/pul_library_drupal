@@ -7,13 +7,12 @@
 
 /**
  * Get a rule entry.
+ *
+ * @deprecated in webform_validation:7.x-1.18 and is removed from webform_validation:7.x-2.0. Use webform_validation_rule_load().
+ * @see https://www.drupal.org/project/webform_validation/issues/3104320
  */
 function webform_validation_get_rule($ruleid) {
-  $result = db_query("SELECT ruleid, rulename, nid, validator, data, error_message, negate, weight FROM {webform_validation_rule} WHERE ruleid = :ruleid", array(':ruleid' => $ruleid), array('fetch' => PDO::FETCH_ASSOC));
-  $rule = $result->fetchAssoc();
-  $rule['components'] = webform_validation_get_rule_components($ruleid, $rule['nid']);
-  $rule['negate'] = (bool) $rule['negate'];
-  return $rule;
+  return webform_validation_rule_load($ruleid);
 }
 
 /**
@@ -124,6 +123,7 @@ function webform_validation_rule_components_basic($components) {
  *   The ruleid of the rule to delete.
  */
 function webform_dynamic_delete_rule($ruleid) {
+  $transaction = db_transaction();
   // Delete rule.
   db_delete('webform_validation_rule')
     ->condition('ruleid', $ruleid)

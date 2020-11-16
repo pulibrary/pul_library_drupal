@@ -10,7 +10,8 @@ The following validation rules are currently included:
 
 - Numeric values (optionally specify min and / or max value)
 - Minimum length
-- Maximum length
+- Maximum length (automatically integrates a JavaScript counter if the optional
+  Maxlength module is installed)
 - Minimum number of words
 - Maximum number of words
 - Equal values on multiple fields

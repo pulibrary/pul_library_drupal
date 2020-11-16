@@ -458,6 +458,10 @@ function webform_validation_webform_validation_validators() {
     );
   }
 
+  if (module_exists('maxlength')) {
+    $validators['max_length']['description'] .= ' ' . t('A JavaScript counter will show the number of characters remaining as the user types.');
+  }
+
   return $validators;
 }
 
