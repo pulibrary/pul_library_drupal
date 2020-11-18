@@ -6,6 +6,7 @@ dependencies[] = caption_filter
 dependencies[] = features
 dependencies[] = filter
 dependencies[] = media_wysiwyg
+dependencies[] = srcwhitelist
 dependencies[] = wysiwyg
 dependencies[] = wysiwyg_filter
 features[features_api][] = api:2
