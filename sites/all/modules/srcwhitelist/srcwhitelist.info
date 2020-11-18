@@ -1,0 +1,11 @@
+name = Src whitelist
+description = Provides an output filter that allows admins to configure a whitelist for the src attribute for the HTML elements img and iframe
+core = 7.x
+dependencies[] = advanced_help_hint
+dependencies[] = wysiwyg_filter
+
+; Information added by Drupal.org packaging script on 2018-09-04
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "srcwhitelist"
+datestamp = "1536050584"

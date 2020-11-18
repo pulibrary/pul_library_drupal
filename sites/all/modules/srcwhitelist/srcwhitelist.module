@@ -1,0 +1,259 @@
+<?php
+/**
+ * @file
+ * Whitelist filter for img and iframe.
+ *
+ * Provides an output filter that allows admins to configure a
+ * whitelist for the src attribute for the HTML elements img and
+ * iframe.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function srcwhitelist_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#srcwhitelist':
+      return t('<p>The <strong>Src whitelist</strong> module lets the admin manage a whitelist the <code>src</code> attribute for the HTML elements <code>img</code> and <code>iframe</code>.</p>') .
+      '<p>' . advanced_help_hint_docs('srcwhitelist', NULL, TRUE) . '</p>';
+      break;
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_filter_elements_blacklist_alter().
+ *
+ * Remove iframe from blacklist.
+ */
+function srcwhitelist_wysiwyg_filter_elements_blacklist_alter(&$blacklist) {
+  if(_srcwhitelist_filter_variable_get('srcwhitelist', 'srcwhitelist_iframe_allow_elemnt')
+    && ($key = array_search('iframe', $blacklist)) !== false) {
+    unset($blacklist[$key]);
+  }
+}
+
+/*
+ * Implements hook_form_FORM_ID_alter
+ *
+ * Add validate and submit handlers.
+ * We add the submit callback to the beginning of the array because we need to
+ * prepare data for system_settings_form_submit().
+ */
+function srcwhitelist_form_filter_admin_format_form_alter(&$form, &$form_state, $form_id) {
+  array_unshift($form['#submit'], 'srcwhitelist_filter_srcwl_settings_submit');
+}
+
+/**
+ * Implements hook_filter_info().
+ *
+ */
+function srcwhitelist_filter_info() {
+  $filters = array();
+  $defaults = array(
+    'srcwhitelist_shwtxtfordisallowed' => 1,
+    'srcwhitelist_imgsrc_allow_extrnl' => 0,
+    'srcwhitelist_iframe_allow_elemnt' => 0,
+    'srcwhitelist_iframe_bootstrpcomp' => 0,
+    'srcwhitelist_iframesrc_whitelist' => array('google.com'),
+    'srcwhitelist_video_src_whitelist' => array('youtube.com','vimeo.com','dailymotion.com'),
+  );
+  $filters['filter_srcwhitelist'] = array(
+    'title' => t('Src whitelist '),
+    'description' => t('Whitelist the <code>src</code> attribute for the HTML elements <code>img</code> and <code>iframe</code>.'),
+    'process callback' => '_srcwhitelist_filter_srcwl_process',
+    'settings callback' => '_srcwhitelist_filter_srcwl_settings',
+    'tips callback' => '_srcwhitelist_filter_srcwl_tips',
+    'default settings' => $defaults,
+  );
+  return $filters;
+}
+
+/**
+ * Settings callback for the img filter.
+ *
+ * Make use of $format to have different replacements for every input format.
+ * Since we allow the administrator to define the string that gets substituted
+ * when "foo" is encountered, we need to provide an interface for this kind of
+ * customization. The object format is also an argument of the callback.
+ *
+ * The settings defined in this form are stored in database by the filter
+ * module, and they will be available in the $filter argument.
+ */
+function _srcwhitelist_filter_srcwl_settings($form, $form_state, $filter, $format, $defaults) {
+  $settings = $filter->settings;
+  $settings += $defaults;
+  $filterform = array();
+
+  $filterform['general'] = array(
+    '#markup' => '<strong>' . t('General setting') . '</strong>',
+  );
+
+  $filterform['srcwhitelist_shwtxtfordisallowed'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Replace disallowed media assets with text'),
+    '#default_value' => !empty($settings['srcwhitelist_shwtxtfordisallowed']),
+    '#description' => t('If you enable this, media assets disallowed by the filter will be by replaced text, explaining why the asset is missing.'),
+  );
+
+  $filterform['heading'] = array(
+    '#markup' => '<strong>' . t('Settings for the <code>src</code> attribute and video embed') . '</strong>',
+  );
+
+  $filterform['srcwhitelist_imgsrc_allow_extrnl'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Allow images to link to external URLs'),
+    '#default_value' => !empty($settings['srcwhitelist_imgsrc_allow_extrnl']),
+    '#description' => t('Allowing an image src to be linked externally may lead to security vulnerabilities. Only grant this filter to trusted roles.'),
+  );
+
+  $filterform['srcwhitelist_iframe_allow_elemnt'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Allow iframes'),
+    '#default_value' => !empty($settings['srcwhitelist_iframe_allow_elemnt']),
+    '#description' => t('If you allow this, you also need to whitelist trusted content and/or video iframe domains.<br/>Note that when you whilelist a domain, all subdomains will also be included. Example: example.com will match example.com, www.example.com, etc.'),
+  );
+
+  $srcwhitelist_iframesrc_whitelist = wysiwyg_filter_array2csv($settings['srcwhitelist_iframesrc_whitelist']);
+  $filterform['srcwhitelist_iframesrc_whitelist'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Whitelisted trusted content iframe domains'),
+    '#default_value' => $srcwhitelist_iframesrc_whitelist,
+    '#cols' => 60,
+    '#rows' => 5,
+    '#description' => t('Enter a comma separated list of trusted domain names that are allowed to use iframe for embedded content.'),
+  );
+
+  $filterform['srcwhitelist_iframe_bootstrpcomp'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enforce compatibility with Twitter Bootstrap video classes'),
+    '#default_value' => !empty($settings['srcwhitelist_iframe_bootstrpcomp']),
+    '#description' => t('If you enable this, some extra checks to ensure that an embedded video is compatible with <em>Twitter Bootstrap</em>  classes are enabled.'),
+  );
+
+  $srcwhitelist_video_src_whitelist = wysiwyg_filter_array2csv($settings['srcwhitelist_video_src_whitelist']);
+  $filterform['srcwhitelist_video_src_whitelist'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Whitelisted trusted video iframe domains'),
+    '#default_value' => $srcwhitelist_video_src_whitelist,
+    '#cols' => 60,
+    '#rows' => 5,
+    '#description' => t('Enter a comma separated list of trusted domain names that are allowed to use iframe for embedded video.'),
+  );
+
+  return $filterform;
+}
+
+/**
+ * Submit processing for the filter settings form.
+ *
+ * The reason I am using HTML-ENTITIES:
+ * https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly
+ */
+function srcwhitelist_filter_srcwl_settings_submit($form, &$form_state) {
+  $values = $form_state['values']['filters']['filter_srcwhitelist']['settings'];
+  $values['srcwhitelist_iframesrc_whitelist'] = wysiwyg_filter_csv2array($values['srcwhitelist_iframesrc_whitelist']);
+  $values['srcwhitelist_video_src_whitelist'] = wysiwyg_filter_csv2array($values['srcwhitelist_video_src_whitelist']);
+  $form_state['values']['filters']['filter_srcwhitelist']['settings'] = $values;
+}
+
+/**
+ * Img filter process callback.
+ */
+function _srcwhitelist_filter_srcwl_process($text, $filter) {
+  if (empty($text)) {
+    return;
+  }
+  $srcwhitelist_video_src_whitelist = wysiwyg_filter_array2csv($filter->settings['srcwhitelist_video_src_whitelist']);
+  $srcwhitelist_iframesrc_whitelist = wysiwyg_filter_array2csv($filter->settings['srcwhitelist_iframesrc_whitelist']);
+ 
+  $shwtxt = $filter->settings['srcwhitelist_shwtxtfordisallowed'];
+  $dom = new DOMDocument;
+  $dom->loadHtml(mb_convert_encoding($text, 'HTML-ENTITIES', 'utf-8'));
+  $xp = new DOMXPath($dom);
+  $elements = $xp->query('//img');
+  foreach ($elements as $element) {
+    $src = $element->getAttribute('src');
+    $pos = strpos($src, '/');
+    if (!$filter->settings['srcwhitelist_imgsrc_allow_extrnl'] && 0 !== $pos) {
+      $txt = $shwtxt ? t('** off-site images are not allowed **') : '';
+      $frag = $dom->createTextNode($txt);
+      $element->parentNode->insertBefore($frag, $element);
+      $element->parentNode->removeChild($element);
+    }
+  }
+  $elements = $xp->query('//iframe');
+  foreach ($elements as $element) {
+    if (!$filter->settings['srcwhitelist_iframe_allow_elemnt']) {
+      $txt = $shwtxt ? t('** iframes are not allowed **') : '';
+      $frag = $dom->createTextNode($txt);
+      $element->parentNode->insertBefore($frag, $element);
+      $element->parentNode->removeChild($element);
+      continue;
+    }
+    // Check for whitelisted domain.
+    $src = parse_url($element->getAttribute('src'));
+    $src = $src['host'];
+    $domain_found = false;
+    $cwl = array_merge($filter->settings['srcwhitelist_video_src_whitelist'], $filter->settings['srcwhitelist_iframesrc_whitelist']);
+    foreach ($cwl as $domain) {
+      $domain = str_replace('.', '\.', $domain); // Escape dots.
+      if (preg_match('/(^|\.)' . $domain . '$/i', $src)) {
+        $domain_found = true;
+        break;
+      }
+    }
+    if ($domain_found) {
+      $afs = $element->hasAttribute('frameborder');
+      if ($afs && $filter->settings['srcwhitelist_iframe_bootstrpcomp']) {
+        $vwl = $filter->settings['srcwhitelist_video_src_whitelist'];
+        $domain_bsc = false;
+        foreach ($vwl as $domain) {
+          $domain = str_replace('.', '\.', $domain); // Escape dots.
+          if (preg_match('/(^|\.)' . $domain . '$/i', $src)) {
+            $domain_bsc = true;
+            break;
+          }
+        }
+        if ($domain_bsc) {
+          $txt = $shwtxt ? t('** please use bootstrap-compatible video classes **') : '';
+          $frag = $dom->createTextNode($txt);
+          $element->parentNode->insertBefore($frag, $element);
+          $element->parentNode->removeChild($element);
+        }
+      }
+    }
+    else {
+      $whitelisted = wysiwyg_filter_array2csv($filter->settings['srcwhitelist_iframesrc_whitelist']);
+      if (!empty($whitelisted)) {
+        $whitelisted .= ', ';
+      }
+      $whitelisted .= wysiwyg_filter_array2csv($filter->settings['srcwhitelist_video_src_whitelist']);
+      $txt = $shwtxt ? t('** you may only embed content from the following domains: @wl  **', array('@wl' => $whitelisted)) : '';
+      $frag = $dom->createTextNode($txt);
+      $element->parentNode->insertBefore($frag, $element);
+      $element->parentNode->removeChild($element);
+    }
+  }
+  $text = filter_dom_serialize($dom);
+  return $text;
+}
+
+/**
+ * Filter tips callback for img the filter.
+ *
+ * This is shown in the node creation form, below body field, and when
+ * the user clicks "More information about text formats Text formats".
+ */
+function _srcwhitelist_filter_srcwl_tips($filter, $format, $long = FALSE) {
+  return t('If the <code>img</code> and <code>iframe</code> HTML tags are permitted, the <code>src</code> attribute is compared to a whitelist. If the source of the content is not whitelisted, embedded elements may not appear.');
+}
+
+/**
+ * Helper function to get a filter variable.
+ */
+function _srcwhitelist_filter_variable_get($module, $filtername) {
+  $setting = db_query('SELECT settings FROM {filter}
+    WHERE module = :module', array(':module' => $module))->fetchField();
+  $settings = unserialize($setting);
+  return isset($settings[$filtername]) ? $settings[$filtername] : NULL;
+}
