@@ -768,6 +768,7 @@ function pul_core_search_indexes_default_search_api_index() {
         "search_api_aggregation_1" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
+        "status" : { "type" : "integer" },
         "url" : { "type" : "uri" }
       },
       "data_alter_callbacks" : {

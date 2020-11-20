@@ -652,6 +652,14 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['filters']['roles']['value'] = array(
     5 => '5',
   );
+  /* Filter criterion: Indexed User: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '<>';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: Top Level Staff Directory */
   $handler = $view->new_display('page', 'Top Level Staff Directory', 'page');
@@ -831,6 +839,14 @@ function search_results_views_views_default_views() {
     12 => 0,
     13 => 0,
   );
+  /* Filter criterion: Indexed User: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '<>';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    0 => '0',
+  );
   $handler->display->display_options['path'] = 'staff/searchview';
 
   /* Display: Block */
@@ -943,6 +959,14 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_building_location']['alter']['text'] = '<span class="icon-library"></span>[field_puluser_building_location]';
   $handler->display->display_options['fields']['field_puluser_building_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_building_location']['hide_empty'] = TRUE;
+  /* Field: Indexed User: Status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['status']['format_name'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Search: Fulltext search */
   $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
@@ -1017,90 +1041,6 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['field_puluser_formalname_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-
-  /* Display: Staff A to Z List */
-  $handler = $view->new_display('page', 'Staff A to Z List', 'page_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '400';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_puluser_lname',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed User: Last Name */
-  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
-  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
-  $handler->display->display_options['fields']['field_puluser_lname']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_lname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_lname']['alter']['max_length'] = '1';
-  $handler->display->display_options['fields']['field_puluser_lname']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_lname']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['field_puluser_lname']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
-  /* Field: Indexed User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_entity'] = 0;
-  /* Field: Indexed User: User ID */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_entity'] = 0;
-  /* Field: Indexed User: Formal Name */
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['id'] = 'field_puluser_formalname_1';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['field'] = 'field_puluser_formalname';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['path'] = 'staff/[name]';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alt'] = 'View Staff Member Details';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['link_class'] = 'user-link';
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['element_label_colon'] = FALSE;
-  /* Field: Indexed User: Email */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['label'] = '';
-  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['mail']['link_to_entity'] = 0;
-  /* Field: Indexed User: Phone Number */
-  $handler->display->display_options['fields']['field_puluser_phone_number']['id'] = 'field_puluser_phone_number';
-  $handler->display->display_options['fields']['field_puluser_phone_number']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['fields']['field_puluser_phone_number']['field'] = 'field_puluser_phone_number';
-  $handler->display->display_options['fields']['field_puluser_phone_number']['label'] = '';
-  $handler->display->display_options['fields']['field_puluser_phone_number']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed User: User roles */
-  $handler->display->display_options['filters']['roles']['id'] = 'roles';
-  $handler->display->display_options['filters']['roles']['table'] = 'search_api_index_staff_users';
-  $handler->display->display_options['filters']['roles']['field'] = 'roles';
-  $handler->display->display_options['filters']['roles']['value'] = array(
-    5 => '5',
-  );
-  $handler->display->display_options['path'] = 'staff/a-z';
 
   /* Display: Filter - Top Level Staff Directory */
   $handler = $view->new_display('page', 'Filter - Top Level Staff Directory', 'page_2');
@@ -1254,6 +1194,14 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['filters']['roles']['field'] = 'roles';
   $handler->display->display_options['filters']['roles']['value'] = array(
     5 => '5',
+  );
+  /* Filter criterion: Indexed User: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '<>';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    0 => '0',
   );
   $handler->display->display_options['path'] = 'staff/find/directory/%';
   $export['general_site_user_search'] = $view;
