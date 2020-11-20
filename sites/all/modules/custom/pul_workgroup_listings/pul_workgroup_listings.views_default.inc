@@ -120,6 +120,12 @@ function pul_workgroup_listings_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     5 => '5',
   );
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'users';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_workgroup_members_target_id';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
 
   /* Display: Staff Listing for Group */
   $handler = $view->new_display('panel_pane', 'Staff Listing for Group', 'panel_pane_1');

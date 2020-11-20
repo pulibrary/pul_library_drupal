@@ -1324,6 +1324,11 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'context',

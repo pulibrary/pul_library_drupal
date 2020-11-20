@@ -569,6 +569,12 @@ function cdl_subject_specialist_views_default_views() {
     21 => 0,
     22 => 0,
   );
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'users';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -822,6 +828,12 @@ function cdl_subject_specialist_views_default_views() {
       ),
     ),
   );
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'users';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_library_directory_profile_target_id';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['path'] = 'collections/subject-specialists';
 
   /* Display: Block */
