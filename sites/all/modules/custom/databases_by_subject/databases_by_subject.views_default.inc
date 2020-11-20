@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * databases_by_subject.views_default.inc
@@ -227,16 +228,6 @@ function databases_by_subject_views_default_views() {
   $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['name']['field'] = 'name';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Taxonomy term: Parent term */
-  $handler->display->display_options['arguments']['parent']['id'] = 'parent';
-  $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
-  $handler->display->display_options['arguments']['parent']['field'] = 'parent';
-  $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['parent']['default_argument_options']['argument'] = '0';
-  $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
