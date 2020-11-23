@@ -35,8 +35,8 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'fall-2020
-fall-2020/*',
+            'paths' => '2020-21-resources
+2020-21-resources/*',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -68,7 +68,7 @@ fall-2020/*',
     ),
   );
   $display->cache = array();
-  $display->title = 'Fall 2020 Resources';
+  $display->title = '2020-2021 Resources';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__fall-2020-resources';
@@ -86,7 +86,7 @@ fall-2020/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'fall-2020/*',
+          'paths' => '2020-21-resources/*',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -121,7 +121,7 @@ fall-2020/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'fall-2020/*',
+          'paths' => '2020-21-resources/*',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -157,7 +157,7 @@ fall-2020/*',
       'nid' => '43980',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Fall 2020 Resources',
+    'override_title_text' => '2020-21 Resources',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -183,7 +183,7 @@ fall-2020/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'fall-2020',
+          'paths' => '2020-21-resources',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -221,7 +221,7 @@ fall-2020/*',
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'fall-2020',
+          'paths' => '2020-21-resources',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -2533,7 +2533,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'tid' => '30620',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Fall 2020 Resources',
+    'override_title_text' => '2020-21 Resources',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();

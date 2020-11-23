@@ -75,6 +75,7 @@ eastasianlib
 digital-collections
 research-data
 fall-2020
+2020-21-resources
 services/open-access-publishing-program',
           ),
           'context' => 'empty',
