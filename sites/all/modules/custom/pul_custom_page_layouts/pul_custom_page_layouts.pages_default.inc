@@ -2104,6 +2104,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'fourth' => NULL,
       'fifth' => NULL,
       'first' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -2113,28 +2115,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->storage_id = 'page_front_page_panel_context';
   $display->content = array();
   $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-2df3f2b9-ac86-4cbc-96f1-d6897940f778';
-  $pane->panel = 'fifth';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '2df3f2b9-ac86-4cbc-96f1-d6897940f778';
-  $display->content['new-2df3f2b9-ac86-4cbc-96f1-d6897940f778'] = $pane;
-  $display->panels['fifth'][0] = 'new-2df3f2b9-ac86-4cbc-96f1-d6897940f778';
   $pane = new stdClass();
   $pane->pid = 'new-9d9a98cf-9a8a-46e5-a0e5-8f8b87c1b2b5';
   $pane->panel = 'first';
@@ -2157,77 +2137,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->uuid = '9d9a98cf-9a8a-46e5-a0e5-8f8b87c1b2b5';
   $display->content['new-9d9a98cf-9a8a-46e5-a0e5-8f8b87c1b2b5'] = $pane;
   $display->panels['first'][0] = 'new-9d9a98cf-9a8a-46e5-a0e5-8f8b87c1b2b5';
-  $pane = new stdClass();
-  $pane->pid = 'new-6379fa4c-4085-4e08-a35c-65163dd669b4';
-  $pane->panel = 'fourth';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'news_spotlights_by_category-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'more_link' => 1,
-    'arguments' => array(
-      'tid' => '',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '6379fa4c-4085-4e08-a35c-65163dd669b4';
-  $display->content['new-6379fa4c-4085-4e08-a35c-65163dd669b4'] = $pane;
-  $display->panels['fourth'][0] = 'new-6379fa4c-4085-4e08-a35c-65163dd669b4';
-  $pane = new stdClass();
-  $pane->pid = 'new-6ce114cf-ff44-423a-89b5-fa67b6dffdf9';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'path' => 'calendar/day',
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '6ce114cf-ff44-423a-89b5-fa67b6dffdf9';
-  $display->content['new-6ce114cf-ff44-423a-89b5-fa67b6dffdf9'] = $pane;
-  $display->panels['second'][0] = 'new-6ce114cf-ff44-423a-89b5-fa67b6dffdf9';
-  $pane = new stdClass();
-  $pane->pid = 'new-e7d4d0da-bfc7-49a5-81b2-1e5d79a9d9c1';
-  $pane->panel = 'third';
-  $pane->type = 'block';
-  $pane->subtype = 'block-2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Firestone Renovation',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'e7d4d0da-bfc7-49a5-81b2-1e5d79a9d9c1';
-  $display->content['new-e7d4d0da-bfc7-49a5-81b2-1e5d79a9d9c1'] = $pane;
-  $display->panels['third'][0] = 'new-e7d4d0da-bfc7-49a5-81b2-1e5d79a9d9c1';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2340,41 +2249,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->content['new-b04f016a-4d65-4934-8423-8918655cbfcf'] = $pane;
   $display->panels['bottom'][1] = 'new-b04f016a-4d65-4934-8423-8918655cbfcf';
   $pane = new stdClass();
-  $pane->pid = 'new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
-  $pane->panel = 'first';
-  $pane->type = 'views';
-  $pane->subtype = 'library_hours';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '13',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'block_3',
-    'override_title' => 1,
-    'override_title_text' => 'Locations and Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
-  $display->content['new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57'] = $pane;
-  $display->panels['first'][0] = 'new-7741fc82-f58e-45ac-9bc9-6104f3bf8b57';
-  $pane = new stdClass();
   $pane->pid = 'new-136db3d2-38da-4ab8-b58f-688d163ac90d';
   $pane->panel = 'first';
   $pane->type = 'custom';
@@ -2395,11 +2269,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '136db3d2-38da-4ab8-b58f-688d163ac90d';
   $display->content['new-136db3d2-38da-4ab8-b58f-688d163ac90d'] = $pane;
-  $display->panels['first'][1] = 'new-136db3d2-38da-4ab8-b58f-688d163ac90d';
+  $display->panels['first'][0] = 'new-136db3d2-38da-4ab8-b58f-688d163ac90d';
   $pane = new stdClass();
   $pane->pid = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
   $pane->panel = 'first';
@@ -2418,11 +2292,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'eb58174b-63d6-416a-848c-4c81ebee41ac';
   $display->content['new-eb58174b-63d6-416a-848c-4c81ebee41ac'] = $pane;
-  $display->panels['first'][2] = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
+  $display->panels['first'][1] = 'new-eb58174b-63d6-416a-848c-4c81ebee41ac';
   $pane = new stdClass();
   $pane->pid = 'new-c02dafc1-d1ba-47a1-a2f1-9d892573c72c';
   $pane->panel = 'second';
@@ -4539,31 +4413,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->storage_id = 'page_today_s_hours_panel_context';
   $display->content = array();
   $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-59b0200a-e0b7-4f64-a3ad-c3d484ac40de';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'path' => 'calendar/month',
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '59b0200a-e0b7-4f64-a3ad-c3d484ac40de';
-  $display->content['new-59b0200a-e0b7-4f64-a3ad-c3d484ac40de'] = $pane;
-  $display->panels['middle'][0] = 'new-59b0200a-e0b7-4f64-a3ad-c3d484ac40de';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-59b0200a-e0b7-4f64-a3ad-c3d484ac40de';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['today_s_hours'] = $page;

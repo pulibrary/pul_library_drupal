@@ -113,31 +113,6 @@ plasma-physics/*',
   $display->content['new-9b00f811-6a8e-46cc-9a63-deed652cd817'] = $pane;
   $display->panels['first'][0] = 'new-9b00f811-6a8e-46cc-9a63-deed652cd817';
   $pane = new stdClass();
-  $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3710',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-  $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane = new stdClass();
   $pane->pid = 'new-55be364a-7f32-447a-9625-3f2d5d3ea7d7';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -155,34 +130,11 @@ plasma-physics/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '55be364a-7f32-447a-9625-3f2d5d3ea7d7';
   $display->content['new-55be364a-7f32-447a-9625-3f2d5d3ea7d7'] = $pane;
-  $display->panels['first'][2] = 'new-55be364a-7f32-447a-9625-3f2d5d3ea7d7';
-  $pane = new stdClass();
-  $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'calendar_details-panel_pane_4';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'tid' => '3710',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-  $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['first'][3] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
+  $display->panels['first'][1] = 'new-55be364a-7f32-447a-9625-3f2d5d3ea7d7';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -203,11 +155,11 @@ plasma-physics/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-faf854d7-40bf-46af-9a88-912f954839b6';
   $pane->panel = 'middle';
@@ -442,32 +394,6 @@ plasma-physics',
   $display->content['new-82ad6790-34f7-44f4-abe8-f23f9c0918ad'] = $pane;
   $display->panels['first'][0] = 'new-82ad6790-34f7-44f4-abe8-f23f9c0918ad';
   $pane = new stdClass();
-  $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:tid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
-  $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane = new stdClass();
   $pane->pid = 'new-9b69bd4a-71fb-469b-8ef7-bd9c435ac318';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -485,11 +411,11 @@ plasma-physics',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '9b69bd4a-71fb-469b-8ef7-bd9c435ac318';
   $display->content['new-9b69bd4a-71fb-469b-8ef7-bd9c435ac318'] = $pane;
-  $display->panels['first'][2] = 'new-9b69bd4a-71fb-469b-8ef7-bd9c435ac318';
+  $display->panels['first'][1] = 'new-9b69bd4a-71fb-469b-8ef7-bd9c435ac318';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -510,11 +436,11 @@ plasma-physics',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-2298786d-1396-42ff-8e2c-dba54288c1a8';
   $pane->panel = 'first';
@@ -543,11 +469,11 @@ plasma-physics',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '2298786d-1396-42ff-8e2c-dba54288c1a8';
   $display->content['new-2298786d-1396-42ff-8e2c-dba54288c1a8'] = $pane;
-  $display->panels['first'][4] = 'new-2298786d-1396-42ff-8e2c-dba54288c1a8';
+  $display->panels['first'][3] = 'new-2298786d-1396-42ff-8e2c-dba54288c1a8';
   $pane = new stdClass();
   $pane->pid = 'new-f9af377d-c322-4bbc-a30f-26bb8f188b1e';
   $pane->panel = 'middle';

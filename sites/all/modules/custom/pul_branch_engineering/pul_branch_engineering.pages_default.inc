@@ -101,58 +101,6 @@ engineering',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-b28ad348-c1ab-43ef-8349-614e26d78be0';
-  $pane->panel = 'first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Study - Browse Engineering',
-    'title' => 'Study-Browse',
-    'title_heading' => 'h2',
-    'body' => '<p>9:00 a.m. - 2:00 p.m. (Starting Monday, August 17th)</p><p><a href="http://libcal.princeton.edu/reserve/engineering">By Appointment</a></p>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'b28ad348-c1ab-43ef-8349-614e26d78be0';
-  $display->content['new-b28ad348-c1ab-43ef-8349-614e26d78be0'] = $pane;
-  $display->panels['first'][0] = 'new-b28ad348-c1ab-43ef-8349-614e26d78be0';
-  $pane = new stdClass();
-  $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:tid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
-  $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane = new stdClass();
   $pane->pid = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -169,11 +117,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '5eb46f46-ffc5-442a-88f1-51c5485ff048';
   $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
-  $display->panels['first'][2] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
+  $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
   $pane = new stdClass();
   $pane->pid = 'new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
   $pane->panel = 'first';
@@ -192,11 +140,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
   $display->content['new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1'] = $pane;
-  $display->panels['first'][3] = 'new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
+  $display->panels['first'][1] = 'new-b01fd3fa-5a84-459e-9fee-7394a0b2bcd1';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -217,11 +165,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane->panel = 'first';
@@ -250,11 +198,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $display->content['new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94'] = $pane;
-  $display->panels['first'][5] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
+  $display->panels['first'][3] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane = new stdClass();
   $pane->pid = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
   $pane->panel = 'middle';
@@ -626,31 +574,6 @@ help/engineering-course-reserves-request-form',
   $display->content['new-5eb46f46-ffc5-442a-88f1-51c5485ff048'] = $pane;
   $display->panels['first'][0] = 'new-5eb46f46-ffc5-442a-88f1-51c5485ff048';
   $pane = new stdClass();
-  $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3690',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-  $display->panels['first'][1] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane = new stdClass();
   $pane->pid = 'new-017b4eb1-bf32-4e52-a33d-2596ff47511b';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -668,11 +591,11 @@ help/engineering-course-reserves-request-form',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '017b4eb1-bf32-4e52-a33d-2596ff47511b';
   $display->content['new-017b4eb1-bf32-4e52-a33d-2596ff47511b'] = $pane;
-  $display->panels['first'][2] = 'new-017b4eb1-bf32-4e52-a33d-2596ff47511b';
+  $display->panels['first'][1] = 'new-017b4eb1-bf32-4e52-a33d-2596ff47511b';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -693,11 +616,11 @@ help/engineering-course-reserves-request-form',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-bb6b1a21-e308-4754-85f7-61c08d988b08';
   $pane->panel = 'middle';

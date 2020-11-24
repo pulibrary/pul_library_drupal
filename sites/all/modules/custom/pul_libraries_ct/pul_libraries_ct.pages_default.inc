@@ -101,6 +101,9 @@ services/open-access-publishing-program',
       'bottom_right' => NULL,
       'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
+      'middle' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -134,103 +137,6 @@ services/open-access-publishing-program',
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['first'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane = new stdClass();
-  $pane->pid = 'new-77f81642-e4a6-4611-b3a2-7de98117b67c';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_3';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'path' => 'calendar/week',
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:nid',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '%cal:nid',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '77f81642-e4a6-4611-b3a2-7de98117b67c';
-  $display->content['new-77f81642-e4a6-4611-b3a2-7de98117b67c'] = $pane;
-  $display->panels['first'][1] = 'new-77f81642-e4a6-4611-b3a2-7de98117b67c';
-  $pane = new stdClass();
-  $pane->pid = 'new-ffb439cc-00cf-4d36-82c5-b7e4d9593be6';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'calendar_details-panel_pane_5';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'tid' => '%cal:nid',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'ffb439cc-00cf-4d36-82c5-b7e4d9593be6';
-  $display->content['new-ffb439cc-00cf-4d36-82c5-b7e4d9593be6'] = $pane;
-  $display->panels['first'][2] = 'new-ffb439cc-00cf-4d36-82c5-b7e4d9593be6';
-  $pane = new stdClass();
-  $pane->pid = 'new-d7d341b9-f98e-47ec-a709-c1ebf67612ab';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'building_maps-panel_pane_1';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '%building:nid',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'd7d341b9-f98e-47ec-a709-c1ebf67612ab';
-  $display->content['new-d7d341b9-f98e-47ec-a709-c1ebf67612ab'] = $pane;
-  $display->panels['first'][3] = 'new-d7d341b9-f98e-47ec-a709-c1ebf67612ab';
-  $pane = new stdClass();
-  $pane->pid = 'new-b410bbf5-6832-4725-b1aa-13471b06be74';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:nid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today&#x2019;s Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = 'b410bbf5-6832-4725-b1aa-13471b06be74';
-  $display->content['new-b410bbf5-6832-4725-b1aa-13471b06be74'] = $pane;
-  $display->panels['first'][4] = 'new-b410bbf5-6832-4725-b1aa-13471b06be74';
-  $pane = new stdClass();
   $pane->pid = 'new-09a05689-416a-46db-beea-bf08dd380368';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
@@ -255,29 +161,6 @@ services/open-access-publishing-program',
   $pane->uuid = '09a05689-416a-46db-beea-bf08dd380368';
   $display->content['new-09a05689-416a-46db-beea-bf08dd380368'] = $pane;
   $display->panels['second'][0] = 'new-09a05689-416a-46db-beea-bf08dd380368';
-  $pane = new stdClass();
-  $pane->pid = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'calendar_details-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'tid' => '%cal:nid',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'ac2abf14-0345-47b0-8b21-62a91dc61e76';
-  $display->content['new-ac2abf14-0345-47b0-8b21-62a91dc61e76'] = $pane;
-  $display->panels['second'][1] = 'new-ac2abf14-0345-47b0-8b21-62a91dc61e76';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
@@ -509,55 +392,6 @@ services/open-access-publishing-program',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-5d34e6a5-f639-4504-9f38-2d879c7dc0af';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-firestone-library';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '5d34e6a5-f639-4504-9f38-2d879c7dc0af';
-  $display->content['new-5d34e6a5-f639-4504-9f38-2d879c7dc0af'] = $pane;
-  $display->panels['first'][0] = 'new-5d34e6a5-f639-4504-9f38-2d879c7dc0af';
-  $pane = new stdClass();
-  $pane->pid = 'new-4344d93b-c381-4923-a46e-a8247c039480';
-  $pane->panel = 'first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Study Browse Firestone',
-    'title' => 'Study-Browse',
-    'title_heading' => 'h2',
-    'body' => '<p>10:00 a.m. - 4:00&nbsp;p.m.</p><p><a href="https://libcal.princeton.edu/seats" rel="nofollow">By Appointment Only</a></p>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '4344d93b-c381-4923-a46e-a8247c039480';
-  $display->content['new-4344d93b-c381-4923-a46e-a8247c039480'] = $pane;
-  $display->panels['first'][1] = 'new-4344d93b-c381-4923-a46e-a8247c039480';
-  $pane = new stdClass();
   $pane->pid = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -575,40 +409,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $display->content['new-c834e26e-7795-4abd-9f1c-b86fdfe0636e'] = $pane;
-  $display->panels['first'][2] = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
-  $pane = new stdClass();
-  $pane->pid = 'new-7500883f-0569-4054-88ff-89652ae7476a';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3694',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'links--decorate',
-  );
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '7500883f-0569-4054-88ff-89652ae7476a';
-  $display->content['new-7500883f-0569-4054-88ff-89652ae7476a'] = $pane;
-  $display->panels['first'][3] = 'new-7500883f-0569-4054-88ff-89652ae7476a';
+  $display->panels['first'][0] = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $pane = new stdClass();
   $pane->pid = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane->panel = 'first';
@@ -630,11 +435,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $display->content['new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5'] = $pane;
-  $display->panels['first'][4] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
+  $display->panels['first'][1] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane = new stdClass();
   $pane->pid = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $pane->panel = 'first';
@@ -663,33 +468,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $display->content['new-53ba4930-9de5-4cf0-a379-40df7e8c076b'] = $pane;
-  $display->panels['first'][5] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
-  $pane = new stdClass();
-  $pane->pid = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
-  $pane->panel = 'middle';
-  $pane->type = 'block';
-  $pane->subtype = 'block-2';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Renovation Updates',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'e036616e-7301-4c11-a8e0-fdd6017120bc';
-  $display->content['new-e036616e-7301-4c11-a8e0-fdd6017120bc'] = $pane;
-  $display->panels['middle'][0] = 'new-e036616e-7301-4c11-a8e0-fdd6017120bc';
+  $display->panels['first'][2] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $pane = new stdClass();
   $pane->pid = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
   $pane->panel = 'middle';
@@ -718,11 +501,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '2739e4c8-9004-4bfc-93aa-f82eb8195850';
   $display->content['new-2739e4c8-9004-4bfc-93aa-f82eb8195850'] = $pane;
-  $display->panels['middle'][1] = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
+  $display->panels['middle'][0] = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
   $pane = new stdClass();
   $pane->pid = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $pane->panel = 'middle';
@@ -748,11 +531,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $display->content['new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182'] = $pane;
-  $display->panels['middle'][2] = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
+  $display->panels['middle'][1] = 'new-65b9a9ad-c670-4fdb-afa2-aa81d9d05182';
   $pane = new stdClass();
   $pane->pid = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
   $pane->panel = 'middle';
@@ -776,11 +559,11 @@ services/open-access-publishing-program',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '6537b419-0ad7-436b-9252-1d7d651fd84a';
   $display->content['new-6537b419-0ad7-436b-9252-1d7d651fd84a'] = $pane;
-  $display->panels['middle'][3] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
+  $display->panels['middle'][2] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
   $pane = new stdClass();
   $pane->pid = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
   $pane->panel = 'second';
