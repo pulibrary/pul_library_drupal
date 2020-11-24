@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Library Hours feature.
- */
-
-include_once 'library_hours.features.inc';
