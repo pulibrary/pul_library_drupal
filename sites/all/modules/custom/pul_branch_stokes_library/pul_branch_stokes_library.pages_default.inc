@@ -101,58 +101,6 @@ stokes',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-88bb4391-554d-42fc-8cee-96a217d33c98';
-  $pane->panel = 'first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Study Browse Stokes',
-    'title' => 'Study-Browse',
-    'title_heading' => 'h2',
-    'body' => '<p>12:00 p.m. - 4:00 p.m. (Starting Monday, August 17th)</p><p><a href="http://libcal.princeton.edu/reserve/stokes">By Appointment</a></p>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '88bb4391-554d-42fc-8cee-96a217d33c98';
-  $display->content['new-88bb4391-554d-42fc-8cee-96a217d33c98'] = $pane;
-  $display->panels['first'][0] = 'new-88bb4391-554d-42fc-8cee-96a217d33c98';
-  $pane = new stdClass();
-  $pane->pid = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:tid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $display->content['new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a'] = $pane;
-  $display->panels['first'][1] = 'new-1e3da5b5-e23e-46e9-81a4-8aa1b3abe09a';
-  $pane = new stdClass();
   $pane->pid = 'new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -169,11 +117,11 @@ stokes',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
   $display->content['new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a'] = $pane;
-  $display->panels['first'][2] = 'new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
+  $display->panels['first'][0] = 'new-88b6ea07-f6c7-445e-8b03-72c6fbeadd1a';
   $pane = new stdClass();
   $pane->pid = 'new-e10b76d3-67b2-4083-9589-77733db8d8de';
   $pane->panel = 'first';
@@ -192,11 +140,11 @@ stokes',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'e10b76d3-67b2-4083-9589-77733db8d8de';
   $display->content['new-e10b76d3-67b2-4083-9589-77733db8d8de'] = $pane;
-  $display->panels['first'][3] = 'new-e10b76d3-67b2-4083-9589-77733db8d8de';
+  $display->panels['first'][1] = 'new-e10b76d3-67b2-4083-9589-77733db8d8de';
   $pane = new stdClass();
   $pane->pid = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
   $pane->panel = 'first';
@@ -218,11 +166,11 @@ stokes',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'b78982e6-3a41-48bd-8d28-258b5d00d32d';
   $display->content['new-b78982e6-3a41-48bd-8d28-258b5d00d32d'] = $pane;
-  $display->panels['first'][4] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
+  $display->panels['first'][2] = 'new-b78982e6-3a41-48bd-8d28-258b5d00d32d';
   $pane = new stdClass();
   $pane->pid = 'new-df54d9b7-91da-428d-aba5-c5a4db7f7dea';
   $pane->panel = 'first';
@@ -251,11 +199,11 @@ stokes',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'df54d9b7-91da-428d-aba5-c5a4db7f7dea';
   $display->content['new-df54d9b7-91da-428d-aba5-c5a4db7f7dea'] = $pane;
-  $display->panels['first'][5] = 'new-df54d9b7-91da-428d-aba5-c5a4db7f7dea';
+  $display->panels['first'][3] = 'new-df54d9b7-91da-428d-aba5-c5a4db7f7dea';
   $pane = new stdClass();
   $pane->pid = 'new-7ec6490d-1981-436a-9f84-9f05b0e914e2';
   $pane->panel = 'middle';
@@ -693,31 +641,6 @@ stokes/*',
   $display->content['new-1d69eef0-c43c-4768-8f61-f8be89017802'] = $pane;
   $display->panels['first'][1] = 'new-1d69eef0-c43c-4768-8f61-f8be89017802';
   $pane = new stdClass();
-  $pane->pid = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3711',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $display->content['new-6d8cc8bc-71b5-4b12-87df-6557f117d98e'] = $pane;
-  $display->panels['first'][2] = 'new-6d8cc8bc-71b5-4b12-87df-6557f117d98e';
-  $pane = new stdClass();
   $pane->pid = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
   $pane->panel = 'first';
   $pane->type = 'views_panes';
@@ -738,11 +661,11 @@ stokes/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'afdd33ac-fb36-431d-8c4e-05f8b085567d';
   $display->content['new-afdd33ac-fb36-431d-8c4e-05f8b085567d'] = $pane;
-  $display->panels['first'][3] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
+  $display->panels['first'][2] = 'new-afdd33ac-fb36-431d-8c4e-05f8b085567d';
   $pane = new stdClass();
   $pane->pid = 'new-27a42e25-6319-4fbf-a39b-ec606a614a53';
   $pane->panel = 'middle';
@@ -906,28 +829,6 @@ stokes/book-express',
   $display->content['new-29f16e39-9fd6-4fdc-90bb-4af9b04969a6'] = $pane;
   $display->panels['middle'][4] = 'new-29f16e39-9fd6-4fdc-90bb-4af9b04969a6';
   $pane = new stdClass();
-  $pane->pid = 'new-f308f274-2410-4536-badf-74f83a5a6489';
-  $pane->panel = 'second';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'f308f274-2410-4536-badf-74f83a5a6489';
-  $display->content['new-f308f274-2410-4536-badf-74f83a5a6489'] = $pane;
-  $display->panels['second'][0] = 'new-f308f274-2410-4536-badf-74f83a5a6489';
-  $pane = new stdClass();
   $pane->pid = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
   $pane->panel = 'second';
   $pane->type = 'block';
@@ -945,11 +846,11 @@ stokes/book-express',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'fd3d7db3-973e-47e5-98da-68fcf50c84c5';
   $display->content['new-fd3d7db3-973e-47e5-98da-68fcf50c84c5'] = $pane;
-  $display->panels['second'][1] = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
+  $display->panels['second'][0] = 'new-fd3d7db3-973e-47e5-98da-68fcf50c84c5';
   $pane = new stdClass();
   $pane->pid = 'new-75555f92-99e1-4fe2-9644-998fcbf52221';
   $pane->panel = 'second';
@@ -978,37 +879,11 @@ stokes/book-express',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '75555f92-99e1-4fe2-9644-998fcbf52221';
   $display->content['new-75555f92-99e1-4fe2-9644-998fcbf52221'] = $pane;
-  $display->panels['second'][2] = 'new-75555f92-99e1-4fe2-9644-998fcbf52221';
-  $pane = new stdClass();
-  $pane->pid = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'branch_features-panel_pane_2';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '7796',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Services',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '1df13d2d-afe9-4296-9f47-03b9e9137cf2';
-  $display->content['new-1df13d2d-afe9-4296-9f47-03b9e9137cf2'] = $pane;
-  $display->panels['second'][3] = 'new-1df13d2d-afe9-4296-9f47-03b9e9137cf2';
+  $display->panels['second'][1] = 'new-75555f92-99e1-4fe2-9644-998fcbf52221';
   $pane = new stdClass();
   $pane->pid = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
   $pane->panel = 'second';
@@ -1030,11 +905,11 @@ stokes/book-express',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '6f8dd1ee-b040-466c-87b1-739fa95e8175';
   $display->content['new-6f8dd1ee-b040-466c-87b1-739fa95e8175'] = $pane;
-  $display->panels['second'][4] = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
+  $display->panels['second'][2] = 'new-6f8dd1ee-b040-466c-87b1-739fa95e8175';
   $pane = new stdClass();
   $pane->pid = 'new-b87b9cbe-fcf6-4ff7-b8a6-6280abcbef1b';
   $pane->panel = 'top';

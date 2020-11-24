@@ -964,6 +964,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['status']['table'] = 'search_api_index_staff_users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['exclude'] = TRUE;
   $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['status']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['status']['format_name'] = 1;

@@ -101,58 +101,6 @@ architecture',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-68eef35b-53e0-4f42-99d6-e159d7f9d5f3';
-  $pane->panel = 'first';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Study-Browse Architecture',
-    'title' => 'Study-Browse',
-    'title_heading' => 'h2',
-    'body' => '<p>2:00 p.m. - 5:00 p.m. (Begins&nbsp;Monday, August 17th.)</p><p><a href="https://libcal.princeton.edu/reserve/architecture">By Appointment Only</a></p>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '68eef35b-53e0-4f42-99d6-e159d7f9d5f3';
-  $display->content['new-68eef35b-53e0-4f42-99d6-e159d7f9d5f3'] = $pane;
-  $display->panels['first'][0] = 'new-68eef35b-53e0-4f42-99d6-e159d7f9d5f3';
-  $pane = new stdClass();
-  $pane->pid = 'new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '%cal:tid',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
-  $display->content['new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564'] = $pane;
-  $display->panels['first'][1] = 'new-0b248b5b-5dea-4ea6-aaf0-abb93ae47564';
-  $pane = new stdClass();
   $pane->pid = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -169,11 +117,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
   $display->content['new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7'] = $pane;
-  $display->panels['first'][2] = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
+  $display->panels['first'][0] = 'new-e8a1d34c-b3d4-4975-8562-0d7624dcf9e7';
   $pane = new stdClass();
   $pane->pid = 'new-48abebe2-3c6e-46f5-b643-43ce05685c08';
   $pane->panel = 'first';
@@ -192,11 +140,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '48abebe2-3c6e-46f5-b643-43ce05685c08';
   $display->content['new-48abebe2-3c6e-46f5-b643-43ce05685c08'] = $pane;
-  $display->panels['first'][3] = 'new-48abebe2-3c6e-46f5-b643-43ce05685c08';
+  $display->panels['first'][1] = 'new-48abebe2-3c6e-46f5-b643-43ce05685c08';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -217,11 +165,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][4] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
   $pane->panel = 'first';
@@ -250,11 +198,11 @@ architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '022e8064-7545-4991-b8b4-a736f2facfb9';
   $display->content['new-022e8064-7545-4991-b8b4-a736f2facfb9'] = $pane;
-  $display->panels['first'][5] = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
+  $display->panels['first'][3] = 'new-022e8064-7545-4991-b8b4-a736f2facfb9';
   $pane = new stdClass();
   $pane->pid = 'new-321da70b-8322-4c80-a874-6e533505af73';
   $pane->panel = 'middle';
@@ -574,31 +522,6 @@ news/architecture',
   $display->content['new-09b7c299-4841-4808-b22e-b969f6a5785d'] = $pane;
   $display->panels['first'][0] = 'new-09b7c299-4841-4808-b22e-b969f6a5785d';
   $pane = new stdClass();
-  $pane->pid = 'new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3688',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Today\'s Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
-  $display->content['new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae'] = $pane;
-  $display->panels['first'][1] = 'new-b42c5cdd-fc51-4f5b-aba1-aa357e6adeae';
-  $pane = new stdClass();
   $pane->pid = 'new-87ed0e7a-96c8-4993-80c4-c19004df3880';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -616,11 +539,11 @@ news/architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '87ed0e7a-96c8-4993-80c4-c19004df3880';
   $display->content['new-87ed0e7a-96c8-4993-80c4-c19004df3880'] = $pane;
-  $display->panels['first'][2] = 'new-87ed0e7a-96c8-4993-80c4-c19004df3880';
+  $display->panels['first'][1] = 'new-87ed0e7a-96c8-4993-80c4-c19004df3880';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -641,11 +564,11 @@ news/architecture',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-82a850ee-f1bf-4b71-98ae-2cb9a56c81ca';
   $pane->panel = 'middle';

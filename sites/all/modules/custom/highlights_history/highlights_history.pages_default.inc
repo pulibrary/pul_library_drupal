@@ -93,32 +93,6 @@ function highlights_history_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-8004fde8-a334-464b-a145-c018da119c19';
-  $pane->panel = 'first';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3694',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '8004fde8-a334-464b-a145-c018da119c19';
-  $display->content['new-8004fde8-a334-464b-a145-c018da119c19'] = $pane;
-  $display->panels['first'][0] = 'new-8004fde8-a334-464b-a145-c018da119c19';
-  $pane = new stdClass();
   $pane->pid = 'new-11e1f1cc-e576-49e3-8698-5625f78677e8';
   $pane->panel = 'first';
   $pane->type = 'views_panes';

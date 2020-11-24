@@ -794,123 +794,6 @@ help/ask-a-librarian',
   $display->content['new-b9fe8d47-14c9-4d90-ad3f-fc6efd90336d'] = $pane;
   $display->panels['second'][0] = 'new-b9fe8d47-14c9-4d90-ad3f-fc6efd90336d';
   $pane = new stdClass();
-  $pane->pid = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_7';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3702',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Hours Today',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-  $display->content['new-78ce78a2-9fac-47d0-9fd0-c25365d597ae'] = $pane;
-  $display->panels['second'][1] = 'new-78ce78a2-9fac-47d0-9fd0-c25365d597ae';
-  $pane = new stdClass();
-  $pane->pid = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
-  $pane->panel = 'second';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Chat Hours Block',
-    'title' => '',
-    'body' => '<p>For more information consult the full chat <a href="/hours/ask-a-librarian">schedule</a>&nbsp;</p>',
-    'format' => 'filtered_html',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '48e32453-1b16-4581-9ca3-3e68b549d646';
-  $display->content['new-48e32453-1b16-4581-9ca3-3e68b549d646'] = $pane;
-  $display->panels['second'][2] = 'new-48e32453-1b16-4581-9ca3-3e68b549d646';
-  $pane = new stdClass();
-  $pane->pid = 'new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
-  $pane->panel = 'second';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'taxonomy_term:field_cal_academic_hours';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'office_hours',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(
-      'daysformat' => 'long',
-      'hoursformat' => '1',
-      'compress' => 0,
-      'grouped' => 0,
-      'showclosed' => 0,
-      'closedformat' => 'Closed',
-      'separator_days' => '<br>',
-      'separator_grouped_days' => ' - ',
-      'separator_day_hours' => ': ',
-      'separator_hours_hours' => '-',
-      'separator_more_hours' => ', ',
-    ),
-    'context' => 'context_entity:taxonomy_term_1',
-    'override_title' => 1,
-    'override_title_text' => 'Current Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
-  $display->content['new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1'] = $pane;
-  $display->panels['second'][3] = 'new-56a09321-e6fa-4cdc-af13-16ae67ef2cb1';
-  $pane = new stdClass();
-  $pane->pid = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_hours-panel_pane_5';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'path' => 'calendar/week',
-    'arguments' => array(
-      'field_hrs_lib_calendar_target_id' => '3702',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Hours',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '1d3cbd16-8d42-44f3-9583-58b0e2447bca';
-  $display->content['new-1d3cbd16-8d42-44f3-9583-58b0e2447bca'] = $pane;
-  $display->panels['second'][4] = 'new-1d3cbd16-8d42-44f3-9583-58b0e2447bca';
-  $pane = new stdClass();
   $pane->pid = 'new-c5ad453e-1752-40b6-aede-1b28896c3665';
   $pane->panel = 'second';
   $pane->type = 'block';
@@ -928,11 +811,11 @@ help/ask-a-librarian',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'c5ad453e-1752-40b6-aede-1b28896c3665';
   $display->content['new-c5ad453e-1752-40b6-aede-1b28896c3665'] = $pane;
-  $display->panels['second'][5] = 'new-c5ad453e-1752-40b6-aede-1b28896c3665';
+  $display->panels['second'][1] = 'new-c5ad453e-1752-40b6-aede-1b28896c3665';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-8b302848-39ad-43b5-84b5-8840ccb6b6bf';
   $handler->conf['display'] = $display;
