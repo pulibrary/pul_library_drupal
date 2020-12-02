@@ -297,6 +297,31 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane = new stdClass();
+  $pane->pid = 'new-53d51ddb-684b-4228-ba39-865dbe5b9a05';
+  $pane->panel = 'middle';
+  $pane->type = 'entity_field_extra';
+  $pane->subtype = 'node:webform';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '53d51ddb-684b-4228-ba39-865dbe5b9a05';
+  $display->content['new-53d51ddb-684b-4228-ba39-865dbe5b9a05'] = $pane;
+  $display->panels['middle'][1] = 'new-53d51ddb-684b-4228-ba39-865dbe5b9a05';
+  $pane = new stdClass();
   $pane->pid = 'new-afc8ffed-c0bc-4b24-b4f7-165b3e8172d3';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
