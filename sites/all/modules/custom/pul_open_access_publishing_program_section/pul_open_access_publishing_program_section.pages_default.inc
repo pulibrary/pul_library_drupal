@@ -302,7 +302,20 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->type = 'entity_field_extra';
   $pane->subtype = 'node:webform';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
