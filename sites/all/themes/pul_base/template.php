@@ -158,6 +158,47 @@ function pul_base_form_alter(&$form, &$form_state, $form_id) {
 
 }
 
+/**
+* Replacement for theme_webform_element() to enable descriptions to come BEFORE the field to be filled out.
+*/
+function pul_base_webform_element($variables) {
+  $element = $variables['element'];
+  $value = $variables['element']['#children'];
+  $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
+  $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
+
+  if (isset($element['#format']) && $element['#format'] == 'html') {
+    $type = 'display';
+  }
+  else {
+    $type = ($element['#webform_component']['type'] == 'select' && isset($element['#type'])) ? $element['#type'] : $element['#webform_component']['type'];
+  }
+
+  $wrapper_classes = array(
+    'form-item',
+    'webform-component',
+    'webform-component-' . str_replace('_', '-', $type),
+    'webform-component--' . $parents,
+  );
+  $output = '<div class="' . implode(' ', $wrapper_classes) . '">' . "\n";
+  $required = !empty($element['#required']) ? '<span class="form-required" title="' . t('This field is required.') . '">*</span>' : '';
+
+  if (!empty($element['#title'])) {
+    $title = $element['#title'];
+    $output .= ' <label for="' . $element['#id'] . '">' . t('!title: !required', array('!title' => filter_xss_admin($title), '!required' => $required)) . "</label>\n";
+  }
+
+  if (!empty($element['#description'])) {
+    $output .= ' <div class="description">' . $element['#description'] . "</div>\n";
+  }
+
+  $output .= ''. $value . '' . "\n";
+
+  $output .= "</div>\n";
+
+  return $output;
+}
+
 function pul_base_tablesort_indicator($variables) {
   if ($variables['style'] == "asc") {
     return theme('image', array(

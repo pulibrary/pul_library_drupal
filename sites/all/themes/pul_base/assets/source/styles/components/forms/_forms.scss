@@ -8,6 +8,7 @@
 
   label {
     display: block;
+    margin-bottom: 0.25rem;
   }
 
   &.webform-container-inline .form-type-radio {
@@ -45,7 +46,7 @@
     color: $gray-dark;
     font-size: $font-size-small-2;
     font-style: italic;
-    margin: 1rem 0;
+    margin-bottom: 0.5rem;
   }
 
   &.form-type-checkbox {
@@ -53,6 +54,10 @@
       display: inline;
     }
   }
+}
+
+.webform-progressbar {
+  margin-bottom: 1rem;
 }
 
 .form-wrapper {
