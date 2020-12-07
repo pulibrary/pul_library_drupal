@@ -18,7 +18,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 19;
+  $handler->weight = 11;
   $handler->conf = array(
     'title' => 'Marquand Art Library Rare Books Highlights Page',
     'no_blocks' => 1,
@@ -29,14 +29,6 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -289,7 +281,7 @@ marquand/rare-book-highlights',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 12;
   $handler->conf = array(
     'title' => 'Marquand Art Library News Page',
     'no_blocks' => 1,
@@ -300,14 +292,6 @@ marquand/rare-book-highlights',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -543,7 +527,7 @@ news/marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = 9;
   $handler->conf = array(
     'title' => 'Marquand Art Library Landing Page',
     'no_blocks' => 1,
@@ -558,14 +542,6 @@ news/marquand',
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -1060,7 +1036,7 @@ marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 10;
   $handler->conf = array(
     'title' => 'Marquand Art Library Branch Pages',
     'no_blocks' => 1,
@@ -1079,14 +1055,6 @@ marquand',
       ),
     ),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',

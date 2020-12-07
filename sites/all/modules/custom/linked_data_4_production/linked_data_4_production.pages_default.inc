@@ -18,7 +18,7 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 34;
+  $handler->weight = 30;
   $handler->conf = array(
     'title' => 'Linked Data News Index',
     'no_blocks' => 1,
@@ -163,7 +163,7 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 33;
+  $handler->weight = 29;
   $handler->conf = array(
     'title' => 'Linked Data Project',
     'no_blocks' => 1,

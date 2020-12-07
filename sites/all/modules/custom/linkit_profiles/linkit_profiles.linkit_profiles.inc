@@ -105,7 +105,6 @@ function linkit_profiles_default_linkit_profiles() {
         'comment_node_library_committee' => 0,
         'comment_node_library_committee_with_terms' => 0,
         'comment_node_library_guide' => 0,
-        'comment_node_library_hours' => 0,
         'comment_node_library_meeting_space_locations' => 0,
         'comment_node_library_news_item' => 0,
         'comment_node_library_newsletter' => 0,
@@ -167,7 +166,6 @@ function linkit_profiles_default_linkit_profiles() {
         'pul_landing_page' => 0,
         'library_buildings' => 0,
         'library_guide' => 0,
-        'library_hours' => 0,
         'library_meeting_space_locations' => 0,
         'library_newsletter' => 0,
         'library_privilege_group' => 0,
@@ -221,7 +219,6 @@ function linkit_profiles_default_linkit_profiles() {
       'result_description' => '',
       'bundles' => array(
         'departments' => 'departments',
-        'library_hours_calendars' => 'library_hours_calendars',
         'faq_topics' => 'faq_topics',
         'tags' => 0,
         'subjects' => 0,

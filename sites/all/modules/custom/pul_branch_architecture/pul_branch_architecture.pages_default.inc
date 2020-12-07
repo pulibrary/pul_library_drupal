@@ -18,7 +18,7 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 5;
+  $handler->weight = -3;
   $handler->conf = array(
     'title' => 'Architecture Library Landing Page',
     'no_blocks' => 1,
@@ -33,14 +33,6 @@ function pul_branch_architecture_default_page_manager_handlers() {
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -425,7 +417,7 @@ architecture',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 6;
+  $handler->weight = -2;
   $handler->conf = array(
     'title' => 'Architecture Library Branch Pages',
     'no_blocks' => 1,
@@ -436,14 +428,6 @@ architecture',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',

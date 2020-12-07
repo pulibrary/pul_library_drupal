@@ -31,7 +31,7 @@ function libhours_plasma_block_view() {
   $pplRss = new DOMDocument();
   $pplRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12311&format=xml&systemTime=1');
   $pplHours = $pplRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $ppl = "<li class='hours'>".$pplTitle.$pplHours."</li>";
+  $ppl = "<li class='hours'>".$pplHours."</li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   

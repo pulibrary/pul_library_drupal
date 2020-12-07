@@ -42,11 +42,6 @@ function pul_libraries_ct_views_default_views() {
   );
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['id'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['table'] = 'field_data_field_hours_calendar';
-  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['field'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['relationships']['field_hours_calendar_target_id']['label'] = 'Calendar';
-  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_building_target_id']['id'] = 'field_building_target_id';
   $handler->display->display_options['relationships']['field_building_target_id']['table'] = 'field_data_field_building';
   $handler->display->display_options['relationships']['field_building_target_id']['field'] = 'field_building_target_id';
@@ -60,18 +55,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   /* Field: Content: Library Homepage */
   $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';
@@ -138,30 +121,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: Hours Code */
-  $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['field'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['label'] = '';
-  $handler->display->display_options['fields']['field_lib_hours_code']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['type'] = 'text_plain';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<i class="icon-large icon-calendar"> </i> <a href="/hours/[field_lib_hours_code]">Location Hours</a>';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'library-info';
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -310,18 +269,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_fax']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_fax']['alter']['text'] = 'Fax: [field_fax]';
   $handler->display->display_options['fields']['field_fax']['element_label_colon'] = FALSE;
-  /* Field: Content: Hours Code */
-  $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['field'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['label'] = '';
-  $handler->display->display_options['fields']['field_lib_hours_code']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['type'] = 'text_plain';
   /* Field: Content: E-Mail Address */
   $handler->display->display_options['fields']['field_e_mail_address']['id'] = 'field_e_mail_address';
   $handler->display->display_options['fields']['field_e_mail_address']['table'] = 'field_data_field_e_mail_address';
@@ -333,17 +280,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_default_classes'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="icon-large icon-clock"></span> <a href="/hours/[field_lib_hours_code]">Location Hours</a>';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -511,19 +447,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_campus_state']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_campus_state']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_campus_state']['element_default_classes'] = FALSE;
-  /* Field: Content: Hours Calendar */
-  $handler->display->display_options['fields']['field_hours_calendar']['id'] = 'field_hours_calendar';
-  $handler->display->display_options['fields']['field_hours_calendar']['table'] = 'field_data_field_hours_calendar';
-  $handler->display->display_options['fields']['field_hours_calendar']['field'] = 'field_hours_calendar';
-  $handler->display->display_options['fields']['field_hours_calendar']['label'] = 'calendar';
-  $handler->display->display_options['fields']['field_hours_calendar']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_hours_calendar']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_hours_calendar']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_hours_calendar']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_hours_calendar']['type'] = 'entityreference_entity_id';
-  $handler->display->display_options['fields']['field_hours_calendar']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -536,32 +459,57 @@ function pul_libraries_ct_views_default_views() {
 
   /* Display: Detail List */
   $handler = $view->new_display('panel_pane', 'Detail List', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_library_homepage' => 'field_library_homepage',
+    'field_campus_building_loc_id' => 'field_campus_building_loc_id',
+    'title_1' => 'title_1',
+    'field_e_mail_address' => 'field_e_mail_address',
+    'field_phone' => 'field_phone',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Library Homepage */
+  $handler->display->display_options['fields']['field_library_homepage_1']['id'] = 'field_library_homepage_1';
+  $handler->display->display_options['fields']['field_library_homepage_1']['table'] = 'field_data_field_library_homepage';
+  $handler->display->display_options['fields']['field_library_homepage_1']['field'] = 'field_library_homepage';
+  $handler->display->display_options['fields']['field_library_homepage_1']['label'] = '';
+  $handler->display->display_options['fields']['field_library_homepage_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_library_homepage_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_library_homepage_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_library_homepage_1']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_library_homepage_1']['settings'] = array(
+    'custom_title' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<h2><a href="[field_library_homepage_1]">[title]</a></h2>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_type'] = '0';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
-  /* Field: Content: Link to edit content */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Library';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Long Description */
   $handler->display->display_options['fields']['field_long_description']['id'] = 'field_long_description';
   $handler->display->display_options['fields']['field_long_description']['table'] = 'field_data_field_long_description';
   $handler->display->display_options['fields']['field_long_description']['field'] = 'field_long_description';
   $handler->display->display_options['fields']['field_long_description']['label'] = '';
-  $handler->display->display_options['fields']['field_long_description']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_long_description']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_long_description']['element_label_type'] = 'p';
   $handler->display->display_options['fields']['field_long_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_long_description']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_long_description']['type'] = 'text_plain';
   /* Field: Content: Library Homepage */
   $handler->display->display_options['fields']['field_library_homepage']['id'] = 'field_library_homepage';
   $handler->display->display_options['fields']['field_library_homepage']['table'] = 'field_data_field_library_homepage';
@@ -612,7 +560,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_e_mail_address']['label'] = '';
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_e_mail_address']['alter']['text'] = '<span class="icon-large icon-email"></span>[field_e_mail_address]';
-  $handler->display->display_options['fields']['field_e_mail_address']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_e_mail_address']['element_wrapper_class'] = 'library-info';
@@ -628,28 +575,18 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  /* Field: Content: Hours Code */
-  $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['field'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['label'] = '';
-  $handler->display->display_options['fields']['field_lib_hours_code']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['alter']['text'] = '<span class=\'icon-large icon-clock\'>&nbsp;</span>[field_hours_code]';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['type'] = 'text_plain';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="icon-large icon-clock"></span> <a href="/hours/[field_lib_hours_code]">Location Hours</a>';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'library-info';
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: Content: Link to edit content */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<span class="icon-large"></span>[edit_node] ';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['edit_node']['element_wrapper_class'] = 'library-info';
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Library';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -790,31 +727,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_fax']['alter']['text'] = '[field_phone]<br>Fax: [field_fax] ';
   $handler->display->display_options['fields']['field_fax']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_fax']['element_default_classes'] = FALSE;
-  /* Field: Content: Hours Code */
-  $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['field'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['label'] = '';
-  $handler->display->display_options['fields']['field_lib_hours_code']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['type'] = 'text_plain';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<i class="icon-large icon-calendar"> </i> <a href="/hours/[field_lib_hours_code]">Location Hours</a>';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'library-info';
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -954,31 +866,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_fax']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_fax']['alter']['text'] = 'Fax: [field_fax]';
   $handler->display->display_options['fields']['field_fax']['element_label_colon'] = FALSE;
-  /* Field: Content: Hours Code */
-  $handler->display->display_options['fields']['field_lib_hours_code']['id'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['table'] = 'field_data_field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['field'] = 'field_lib_hours_code';
-  $handler->display->display_options['fields']['field_lib_hours_code']['label'] = '';
-  $handler->display->display_options['fields']['field_lib_hours_code']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_lib_hours_code']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_lib_hours_code']['type'] = 'text_plain';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_hours_calendar_target_id';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<i class="icon-large icon-calendar"> </i> <a href="/hours/[field_lib_hours_code]">Location Hours</a>';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'library-info';
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

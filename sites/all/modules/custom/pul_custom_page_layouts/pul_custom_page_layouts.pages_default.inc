@@ -18,7 +18,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 47;
+  $handler->weight = 41;
   $handler->conf = array(
     'title' => 'Fall 2020 Resources',
     'no_blocks' => 1,
@@ -262,7 +262,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 48;
+  $handler->weight = 42;
   $handler->conf = array(
     'title' => 'Fall 2020 Services',
     'no_blocks' => 0,
@@ -2374,28 +2374,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->content['new-7ff21ea7-c718-4484-b2f2-82b9dd63504f'] = $pane;
   $display->panels['top'][0] = 'new-7ff21ea7-c718-4484-b2f2-82b9dd63504f';
   $pane = new stdClass();
-  $pane->pid = 'new-a42d739c-2196-47ee-b3ba-1fb4f66056bf';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'a42d739c-2196-47ee-b3ba-1fb4f66056bf';
-  $display->content['new-a42d739c-2196-47ee-b3ba-1fb4f66056bf'] = $pane;
-  $display->panels['top'][1] = 'new-a42d739c-2196-47ee-b3ba-1fb4f66056bf';
-  $pane = new stdClass();
   $pane->pid = 'new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
   $pane->panel = 'top';
   $pane->type = 'views_panes';
@@ -2419,11 +2397,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'css_class' => 'resources--homepage',
   );
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
   $display->content['new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a'] = $pane;
-  $display->panels['top'][2] = 'new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
+  $display->panels['top'][1] = 'new-5bc452f6-dc1c-4369-9436-1833b6a7fe4a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -4362,65 +4340,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
 
   $page = new stdClass();
   $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'today_s_hours';
-  $page->task = 'page';
-  $page->admin_title = 'Today\'s Hours';
-  $page->admin_description = '';
-  $page->path = 'hours/today';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
-  $page->menu = array();
-  $page->arguments = array();
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_today_s_hours_panel_context';
-  $handler->task = 'page';
-  $handler->subtask = 'today_s_hours';
-  $handler->handler = 'panel_context';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-  );
-  $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'middle' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = '6ff5bf4f-aa14-45c2-8ab0-c0db26560eb3';
-  $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_today_s_hours_panel_context';
-  $display->content = array();
-  $display->panels = array();
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['today_s_hours'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'topic_page';
   $page->task = 'page';

@@ -18,7 +18,7 @@ function highlights_psychology_and_neuroscience_default_page_manager_handlers() 
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -16;
   $handler->conf = array(
     'title' => 'Highlights for the Psychology and Neuroscience Departments',
     'no_blocks' => 1,
@@ -467,7 +467,7 @@ Highlights in Psychology and Neuroscience',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -13;
   $handler->conf = array(
     'title' => 'Highlights for the Psychology and Neuroscience Departments - News Index',
     'no_blocks' => 1,

@@ -1650,8 +1650,10 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_featured_graphic']['label'] = '';
   $handler->display->display_options['fields']['field_news_featured_graphic']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['text'] = '[field_news_featured_graphic]';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['alter']['text'] = '<div class="library-news-link">[field_news_featured_graphic]</div>';
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_news_featured_graphic']['element_wrapper_class'] = 'library-news-link';
   $handler->display->display_options['fields']['field_news_featured_graphic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_featured_graphic']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_news_featured_graphic']['settings'] = array(

@@ -18,7 +18,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 49;
+  $handler->weight = 43;
   $handler->conf = array(
     'title' => 'The PUL Open Access Publishing Program',
     'no_blocks' => 1,
@@ -194,7 +194,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 50;
+  $handler->weight = 44;
   $handler->conf = array(
     'title' => 'The PUL Open Access Publishing Program - Subpages',
     'no_blocks' => 1,

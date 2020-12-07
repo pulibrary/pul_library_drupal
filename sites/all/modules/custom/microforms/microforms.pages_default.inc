@@ -18,7 +18,7 @@ function microforms_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -11;
+  $handler->weight = -21;
   $handler->conf = array(
     'title' => 'Microforms Pages',
     'no_blocks' => 0,
@@ -192,7 +192,7 @@ collections/microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Microforms Staff',
     'no_blocks' => 0,
@@ -451,7 +451,7 @@ collections/microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -37;
   $handler->conf = array(
     'title' => 'Microforms Newspaper Individual Title',
     'no_blocks' => 0,
@@ -635,7 +635,7 @@ collections/microforms/newspapers',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Microforms Student Assistant Manual',
     'no_blocks' => 0,

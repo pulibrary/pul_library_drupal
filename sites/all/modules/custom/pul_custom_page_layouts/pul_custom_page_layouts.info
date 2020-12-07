@@ -32,7 +32,6 @@ features[page_manager_pages][] = staff_search_landing_page
 features[page_manager_pages][] = subject_specialists_page
 features[page_manager_pages][] = subjects_home_page
 features[page_manager_pages][] = systems_office
-features[page_manager_pages][] = today_s_hours
 features[page_manager_pages][] = topic_page
 features[page_manager_pages][] = website_content_search
 features[page_manager_pages][] = website_search_landing_page

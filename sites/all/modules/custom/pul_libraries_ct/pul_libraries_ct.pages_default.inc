@@ -12,13 +12,13 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_18';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 28;
+  $handler->weight = -4;
   $handler->conf = array(
     'title' => 'Branch Pages',
     'no_blocks' => 1,
@@ -29,14 +29,6 @@ function pul_libraries_ct_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -167,13 +159,13 @@ services/open-access-publishing-program',
   $export['node_view_panel_context_18'] = $handler;
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_21';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Stokes Library',
     'no_blocks' => 0,
@@ -183,16 +175,7 @@ services/open-access-publishing-program',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
+    'relationships' => array(),
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -203,15 +186,6 @@ services/open-access-publishing-program',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
-        ),
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'content/stokes-library',
-          ),
-          'context' => 'empty',
           'not' => FALSE,
         ),
       ),
@@ -343,7 +317,7 @@ services/open-access-publishing-program',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -17;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Firestone Library',
     'no_blocks' => 0,

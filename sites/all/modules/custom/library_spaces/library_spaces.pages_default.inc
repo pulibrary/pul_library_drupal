@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_spaces.pages_default.inc
@@ -17,7 +18,7 @@ function library_spaces_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = -20;
   $handler->conf = array(
     'title' => 'Room Pages',
     'no_blocks' => 0,
@@ -57,56 +58,58 @@ function library_spaces_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '136d5cc1-d09b-412f-b847-a4111e858835';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view_panel_context_17';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'meeting_rooms-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '%node:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
-    $display->content['new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d'] = $pane;
-    $display->panels['first'][0] = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
-    $pane = new stdClass();
-    $pane->pid = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
-    $pane->panel = 'second';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'meeting_rooms-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '%node:nid',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Reserving',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
-    $display->content['new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0'] = $pane;
-    $display->panels['second'][0] = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
+  $pane = new stdClass();
+  $pane->pid = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'meeting_rooms-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '%node:nid',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
+  $display->content['new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d'] = $pane;
+  $display->panels['first'][0] = 'new-9738ab4c-842a-44e0-a8a7-e2da41e8be0d';
+  $pane = new stdClass();
+  $pane->pid = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'meeting_rooms-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '%node:nid',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Reserving',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
+  $display->content['new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0'] = $pane;
+  $display->panels['second'][0] = 'new-0d9b1e69-f64e-4161-9f42-58e4f2f348c0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

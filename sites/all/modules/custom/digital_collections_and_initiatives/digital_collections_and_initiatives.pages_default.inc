@@ -18,7 +18,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 41;
+  $handler->weight = 36;
   $handler->conf = array(
     'title' => 'Digital Collections Secondary Pages',
     'no_blocks' => 1,
@@ -210,7 +210,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 40;
+  $handler->weight = 35;
   $handler->conf = array(
     'title' => 'Digital Collections Landing Page',
     'no_blocks' => 1,

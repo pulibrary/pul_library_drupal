@@ -32,7 +32,7 @@ function libhours_mendel_block_view() {
   $mendRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12314&format=xml&systemTime=1');
   $mendHours = $mendRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $mendPickUpHours = $mendRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $mend = "<li class='hours'>".$mendTitle.$mendHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10653'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$mendPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+  $mend = "<li class='hours'>".$mendHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10653'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$mendPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   

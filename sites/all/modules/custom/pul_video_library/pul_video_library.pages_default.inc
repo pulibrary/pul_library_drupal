@@ -18,7 +18,7 @@ function pul_video_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 26;
   $handler->conf = array(
     'title' => 'Video Library Landing Page',
     'no_blocks' => 1,
@@ -33,14 +33,6 @@ function pul_video_library_default_page_manager_handlers() {
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -433,7 +425,7 @@ videoservices',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 28;
   $handler->conf = array(
     'title' => 'Video Library',
     'no_blocks' => 1,
@@ -452,14 +444,6 @@ videoservices',
       ),
     ),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',

@@ -18,7 +18,7 @@ function preservation_office_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 38;
+  $handler->weight = 34;
   $handler->conf = array(
     'title' => 'Preservation Office',
     'no_blocks' => 1,

@@ -18,7 +18,7 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -2;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'Collections Landing Page',
     'no_blocks' => 0,
@@ -133,7 +133,7 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -39;
   $handler->conf = array(
     'title' => 'Collections Page',
     'no_blocks' => 0,

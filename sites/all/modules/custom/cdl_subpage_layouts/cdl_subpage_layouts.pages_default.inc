@@ -18,7 +18,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 6;
+  $handler->weight = 17;
   $handler->conf = array(
     'title' => 'Collection Development Department Page',
     'no_blocks' => 1,
@@ -312,7 +312,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -12;
   $handler->conf = array(
     'title' => 'Collection Development Acquisitions Page',
     'no_blocks' => 1,
@@ -538,7 +538,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 3;
+  $handler->weight = -8;
   $handler->conf = array(
     'title' => 'Subject Selector Profile',
     'no_blocks' => 1,
@@ -845,7 +845,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 2;
+  $handler->weight = -10;
   $handler->conf = array(
     'title' => 'Collection Development Specialists Page',
     'no_blocks' => 1,
@@ -1004,7 +1004,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 4;
+  $handler->weight = -6;
   $handler->conf = array(
     'title' => 'Collections Forum Layout',
     'no_blocks' => 1,
@@ -1194,7 +1194,7 @@ collections/adelman07102008',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 5;
+  $handler->weight = -5;
   $handler->conf = array(
     'title' => 'Collection Development Staff Page',
     'no_blocks' => 1,

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * your_accounts.pages_default.inc
@@ -17,7 +18,7 @@ function your_accounts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 16;
+  $handler->weight = 21;
   $handler->conf = array(
     'title' => 'Your Accounts',
     'no_blocks' => 1,
@@ -27,24 +28,7 @@ function your_accounts_default_page_manager_handlers() {
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
+    'relationships' => array(),
     'access' => array(
       'plugins' => array(
         1 => array(

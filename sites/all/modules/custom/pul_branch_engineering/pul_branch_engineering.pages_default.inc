@@ -18,7 +18,7 @@ function pul_branch_engineering_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 12;
+  $handler->weight = 2;
   $handler->conf = array(
     'title' => 'Engineering Library Landing Page',
     'no_blocks' => 1,
@@ -33,14 +33,6 @@ function pul_branch_engineering_default_page_manager_handlers() {
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
@@ -286,25 +278,6 @@ engineering',
   $display->content['new-ee9cd44e-3811-4342-a636-06a588d5b4bd'] = $pane;
   $display->panels['middle'][2] = 'new-ee9cd44e-3811-4342-a636-06a588d5b4bd';
   $pane = new stdClass();
-  $pane->pid = 'new-47bb5bef-a675-44fa-9b3a-aa238cf15689';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_news-panel_pane_17';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '47bb5bef-a675-44fa-9b3a-aa238cf15689';
-  $display->content['new-47bb5bef-a675-44fa-9b3a-aa238cf15689'] = $pane;
-  $display->panels['middle'][3] = 'new-47bb5bef-a675-44fa-9b3a-aa238cf15689';
-  $pane = new stdClass();
   $pane->pid = 'new-5c1e881c-edb6-42c2-ad19-8b61c7cbbaa6';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
@@ -372,36 +345,6 @@ engineering',
   $display->content['new-4a7e8630-60ac-4b66-b428-9053907bb89a'] = $pane;
   $display->panels['second'][1] = 'new-4a7e8630-60ac-4b66-b428-9053907bb89a';
   $pane = new stdClass();
-  $pane->pid = 'new-24a5a8eb-33fb-44e3-85fd-d29d368134f0';
-  $pane->panel = 'second';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_branch_external_links';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'link_default',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => 'External Links',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '24a5a8eb-33fb-44e3-85fd-d29d368134f0';
-  $display->content['new-24a5a8eb-33fb-44e3-85fd-d29d368134f0'] = $pane;
-  $display->panels['second'][2] = 'new-24a5a8eb-33fb-44e3-85fd-d29d368134f0';
-  $pane = new stdClass();
   $pane->pid = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
@@ -429,11 +372,11 @@ engineering',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'e3691a6d-205f-49b0-a046-4195215f16d5';
   $display->content['new-e3691a6d-205f-49b0-a046-4195215f16d5'] = $pane;
-  $display->panels['second'][3] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
+  $display->panels['second'][2] = 'new-e3691a6d-205f-49b0-a046-4195215f16d5';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';
@@ -478,7 +421,7 @@ engineering',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 14;
+  $handler->weight = 3;
   $handler->conf = array(
     'title' => 'Engineering Library Branch Pages',
     'no_blocks' => 1,
@@ -489,14 +432,6 @@ engineering',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
