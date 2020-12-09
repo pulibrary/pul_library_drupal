@@ -1,10 +1,54 @@
+.webform-progressbar {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.webform-progressbar-outer {
+  display: flex;
+
+  position: unset;
+  border: unset;
+  height: auto;
+  margin: unset;
+}
+
 .webform-progressbar-inner {
-  background-color: $blue;
+  background-color: transparent;
 }
 
 .webform-progressbar-page {
+  position: unset;
+  flex-grow: 1;
+  width: auto;
+  height: auto;
+  border-color: transparent;
+  border-radius: unset;
+  margin: unset;
+  padding: 5px 5px 15px;
+
+
   &.current,
   &.completed {
     @extend .webform-progressbar-inner;
+    font-weight: bold;
   }
+}
+
+.webform-progressbar-page .webform-progressbar-page-number {
+  display: block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: $black;
+  color: $white;
+  line-height: 1.8;
+  margin: auto;
+}
+
+.webform-progressbar-page .webform-progressbar-page-label {
+  margin: unset;
+  display: block;
+  font-size: 14px;
+  padding: 5px;
+  line-height: 1.4;
 }
