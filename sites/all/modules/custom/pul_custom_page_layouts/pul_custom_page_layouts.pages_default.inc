@@ -232,7 +232,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
     'admin_title' => 'Phased resumption of service announcements',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<p><strong><a href="/phased-planning-updates">Phased resumption of service announcements</a></strong></p>',
+    'body' => '<p><strong><a href="/news/general/2020-05-29/phased-plan-resumption-services-pul">Phased resumption of service announcements</a></strong></p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
   );
@@ -4361,7 +4361,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pages['systems_office'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'today_s_hours';
   $page->task = 'page';

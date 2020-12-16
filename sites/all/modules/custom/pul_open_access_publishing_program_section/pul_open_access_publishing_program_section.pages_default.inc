@@ -297,7 +297,82 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
   $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $pane = new stdClass();
-  $pane->pid = 'new-53d51ddb-684b-4228-ba39-865dbe5b9a05';
+  $pane->pid = 'new-d3380b45-8cab-4a65-9562-d9ed512c7259';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<p>The PUL OA Publishing Program is available to Princeton faculty, researchers, students and staff.</p><p>To submit an OA journal proposal, please login.</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'd3380b45-8cab-4a65-9562-d9ed512c7259';
+  $display->content['new-d3380b45-8cab-4a65-9562-d9ed512c7259'] = $pane;
+  $display->panels['middle'][1] = 'new-d3380b45-8cab-4a65-9562-d9ed512c7259';
+  $pane = new stdClass();
+  $pane->pid = 'new-34df807d-ce9e-48e5-b6ba-4c8b42cc95f4';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'cas-login';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '34df807d-ce9e-48e5-b6ba-4c8b42cc95f4';
+  $display->content['new-34df807d-ce9e-48e5-b6ba-4c8b42cc95f4'] = $pane;
+  $display->panels['middle'][2] = 'new-34df807d-ce9e-48e5-b6ba-4c8b42cc95f4';
+  $pane = new stdClass();
+  $pane->pid = 'new-66a70b7b-4256-4e5e-b536-50638cad7613';
   $pane->panel = 'middle';
   $pane->type = 'entity_field_extra';
   $pane->subtype = 'node:webform';
@@ -329,11 +404,11 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '53d51ddb-684b-4228-ba39-865dbe5b9a05';
-  $display->content['new-53d51ddb-684b-4228-ba39-865dbe5b9a05'] = $pane;
-  $display->panels['middle'][1] = 'new-53d51ddb-684b-4228-ba39-865dbe5b9a05';
+  $pane->uuid = '66a70b7b-4256-4e5e-b536-50638cad7613';
+  $display->content['new-66a70b7b-4256-4e5e-b536-50638cad7613'] = $pane;
+  $display->panels['middle'][3] = 'new-66a70b7b-4256-4e5e-b536-50638cad7613';
   $pane = new stdClass();
   $pane->pid = 'new-afc8ffed-c0bc-4b24-b4f7-165b3e8172d3';
   $pane->panel = 'second';
