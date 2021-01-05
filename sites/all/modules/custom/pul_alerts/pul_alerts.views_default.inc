@@ -164,6 +164,14 @@ function pul_alerts_views_default_views() {
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
   $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['access_id'] = array(
+    5389 => '5389',
+  );
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
   $handler->display->display_options['block_description'] = 'Emergency Alert Overlay';
 
   /* Display: Marquand Library Alerts */
