@@ -1700,10 +1700,13 @@ function library_news_views_default_views() {
   $handler->display->display_options['fields']['field_catalog_url']['field'] = 'field_catalog_url';
   $handler->display->display_options['fields']['field_catalog_url']['label'] = '';
   $handler->display->display_options['fields']['field_catalog_url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_catalog_url']['alter']['text'] = '<div class="media--stacked">[field_news_featured_graphic]
+  $handler->display->display_options['fields']['field_catalog_url']['alter']['text'] = '<div class="media--stacked"><div class="library-news-link">[field_news_featured_graphic]</a>
 <div class="copy"><p>[field_authors]<br><em>[field_full_title]</em><br>[field_publisher]<br>[field_physical_description]<br>[field_call_number]<br>[field_catalog_url]</p></div></div>';
   $handler->display->display_options['fields']['field_catalog_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_catalog_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_catalog_url']['settings'] = array(
+    'custom_title' => '',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
