@@ -18,7 +18,7 @@ function pul_scholarly_communications_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 17;
+  $handler->weight = 22;
   $handler->conf = array(
     'title' => 'Scholarly Communications Office',
     'no_blocks' => 0,
@@ -295,7 +295,7 @@ services/scholarly-communications/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 18;
+  $handler->weight = 23;
   $handler->conf = array(
     'title' => 'Scholarly Communications Office Staff',
     'no_blocks' => 0,

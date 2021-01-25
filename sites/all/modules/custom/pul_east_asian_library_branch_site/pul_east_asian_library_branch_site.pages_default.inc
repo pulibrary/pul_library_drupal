@@ -18,7 +18,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 10;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'East Asian Library Branch Pages',
     'no_blocks' => 1,
@@ -37,14 +37,6 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
       ),
     ),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -427,7 +419,7 @@ eastasian/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 7;
+  $handler->weight = -1;
   $handler->conf = array(
     'title' => 'East Asian Library Landing Page',
     'no_blocks' => 1,
@@ -438,14 +430,6 @@ eastasian/*',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',

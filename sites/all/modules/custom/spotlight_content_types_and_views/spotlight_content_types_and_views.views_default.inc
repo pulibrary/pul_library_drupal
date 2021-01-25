@@ -206,7 +206,6 @@ function spotlight_content_types_and_views_views_default_views() {
     'lib_event_types' => 0,
     'faq_topics' => 0,
     'featured_pul_link_categories' => 0,
-    'library_hours_calendars' => 0,
     'pul_location_type' => 0,
     'news_events_categories' => 0,
     'newspaper_cities' => 0,
@@ -330,7 +329,7 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['field_pul_spotlight_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pul_spotlight_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pul_spotlight_image']['settings'] = array(
-    'image_style' => 'pul_large_spotlight_graphic',
+    'image_style' => 'large',
     'image_link' => '',
   );
   /* Field: Content: URL */
@@ -350,14 +349,6 @@ function spotlight_content_types_and_views_views_default_views() {
   $handler->display->display_options['fields']['field_pul_spotlight_url']['settings'] = array(
     'custom_title' => '',
   );
-  /* Field: Content: Link to edit content */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Spotlight';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

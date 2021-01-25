@@ -18,7 +18,7 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -35;
   $handler->conf = array(
     'title' => 'Committee Landing Page - LETC',
     'no_blocks' => 1,
@@ -329,7 +329,7 @@ staff/committees/letc',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -33;
   $handler->conf = array(
     'title' => 'Committee Landing Page',
     'no_blocks' => 1,
@@ -577,7 +577,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -21;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Human Resources',
     'no_blocks' => 0,
@@ -848,7 +848,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -19;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'Firestone Floor Plans',
     'no_blocks' => 0,
@@ -979,7 +979,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -2;
+  $handler->weight = -18;
   $handler->conf = array(
     'title' => 'Contact Us',
     'no_blocks' => 1,
@@ -1193,7 +1193,7 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -1;
+  $handler->weight = -17;
   $handler->conf = array(
     'title' => 'Resource Sharing Pages',
     'no_blocks' => 0,
@@ -1632,7 +1632,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -33;
+  $handler->weight = -42;
   $handler->conf = array(
     'title' => 'Map and Geospatial Pages',
     'no_blocks' => 0,
@@ -1744,7 +1744,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -14;
   $handler->conf = array(
     'title' => 'Library Privileges Pages',
     'no_blocks' => 0,
@@ -1931,7 +1931,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -11;
   $handler->conf = array(
     'title' => 'Technology Handbook Book Pages',
     'no_blocks' => 0,
@@ -2062,7 +2062,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 2;
+  $handler->weight = -9;
   $handler->conf = array(
     'title' => 'Systems Office Templates',
     'no_blocks' => 0,
@@ -2191,7 +2191,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -35;
+  $handler->weight = -43;
   $handler->conf = array(
     'title' => 'Map and Geospatial Staff',
     'no_blocks' => 0,
@@ -2317,7 +2317,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -36;
   $handler->conf = array(
     'title' => 'Working Group',
     'no_blocks' => 0,

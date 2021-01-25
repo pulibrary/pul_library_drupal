@@ -18,7 +18,7 @@ function pul_pliny_fisk_library_of_economics_and_finance_default_page_manager_ha
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 19;
+  $handler->weight = 24;
   $handler->conf = array(
     'title' => 'Pliny Fisk Library of Economics and Finance',
     'no_blocks' => 0,
@@ -172,7 +172,7 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 20;
+  $handler->weight = 25;
   $handler->conf = array(
     'title' => 'Pliny Fisk Library of Economics and Finance Staff',
     'no_blocks' => 0,
@@ -362,7 +362,7 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 27;
   $handler->conf = array(
     'title' => 'Pliny Fisk Landing Page',
     'no_blocks' => 0,

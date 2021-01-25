@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_spaces.features.field_instance.inc
@@ -10,7 +11,7 @@
 function library_spaces_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-library_meeting_space_locations-body'
+  // Exported field_instance: 'node-library_meeting_space_locations-body'.
   $field_instances['node-library_meeting_space_locations-body'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -62,7 +63,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_guidelines_for_reserving'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_guidelines_for_reserving'.
   $field_instances['node-library_meeting_space_locations-field_guidelines_for_reserving'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -109,7 +111,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_location_in_library'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_location_in_library'.
   $field_instances['node-library_meeting_space_locations-field_location_in_library'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -126,6 +129,7 @@ function library_spaces_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -159,7 +163,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_location_type'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_location_type'.
   $field_instances['node-library_meeting_space_locations-field_location_type'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -176,6 +181,7 @@ function library_spaces_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -205,7 +211,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_maximum_occupancy'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_maximum_occupancy'.
   $field_instances['node-library_meeting_space_locations-field_maximum_occupancy'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -258,7 +265,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_meeting_library'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_meeting_library'.
   $field_instances['node-library_meeting_space_locations-field_meeting_library'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,
@@ -275,6 +283,7 @@ function library_spaces_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -304,7 +313,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_reservation_link'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_reservation_link'.
   $field_instances['node-library_meeting_space_locations-field_reservation_link'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => array(
@@ -325,7 +335,9 @@ function library_spaces_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 5,
       ),
@@ -371,7 +383,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_reservation_schedule'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_reservation_schedule'.
   $field_instances['node-library_meeting_space_locations-field_reservation_schedule'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => array(
@@ -392,7 +405,9 @@ function library_spaces_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -438,7 +453,8 @@ function library_spaces_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_meeting_space_locations-field_user_type'
+  // Exported field_instance:
+  // 'node-library_meeting_space_locations-field_user_type'.
   $field_instances['node-library_meeting_space_locations-field_user_type'] = array(
     'bundle' => 'library_meeting_space_locations',
     'default_value' => NULL,

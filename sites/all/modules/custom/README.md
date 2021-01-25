@@ -9,7 +9,6 @@ Current Features
 Search Blocks for
 All Search (not working)
 Catalog+
-Library Hours
 Library, Collections, Subject, Taxonomies
 Library Landing Pages
 Articles and Database Listings

@@ -31,7 +31,7 @@ function spotlight_content_types_and_views_image_default_styles() {
   $styles['pul_large_spotlight_graphic'] = array(
     'label' => 'pul_large_spotlight_graphic',
     'effects' => array(
-      6 => array(
+      7 => array(
         'name' => 'image_scale',
         'data' => array(
           'height' => 294,

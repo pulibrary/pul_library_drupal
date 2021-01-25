@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_spaces.features.field_base.inc
@@ -10,7 +11,7 @@
 function library_spaces_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_guidelines_for_reserving'
+  // Exported field_base: 'field_guidelines_for_reserving'.
   $field_bases['field_guidelines_for_reserving'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +33,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_location_in_library'
+  // Exported field_base: 'field_location_in_library'.
   $field_bases['field_location_in_library'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -71,7 +72,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_location_type'
+  // Exported field_base: 'field_location_type'.
   $field_bases['field_location_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -110,7 +111,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_maximum_occupancy'
+  // Exported field_base: 'field_maximum_occupancy'.
   $field_bases['field_maximum_occupancy'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -128,7 +129,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_meeting_library'
+  // Exported field_base: 'field_meeting_library'.
   $field_bases['field_meeting_library'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -168,7 +169,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_reservation_link'
+  // Exported field_base: 'field_reservation_link'.
   $field_bases['field_reservation_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -200,7 +201,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_reservation_schedule'
+  // Exported field_base: 'field_reservation_schedule'.
   $field_bases['field_reservation_schedule'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -232,7 +233,7 @@ function library_spaces_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_user_type'
+  // Exported field_base: 'field_user_type'.
   $field_bases['field_user_type'] = array(
     'active' => 1,
     'cardinality' => -1,

@@ -18,7 +18,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -40;
+  $handler->weight = -45;
   $handler->conf = array(
     'title' => 'Individual Database Landing Page',
     'no_blocks' => 1,
@@ -343,7 +343,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -40;
   $handler->conf = array(
     'title' => 'OFA Staff',
     'no_blocks' => 0,
@@ -455,7 +455,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -31;
+  $handler->weight = -41;
   $handler->conf = array(
     'title' => 'OFA Security',
     'no_blocks' => 0,
@@ -567,7 +567,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -31;
   $handler->conf = array(
     'title' => 'Basic Page',
     'no_blocks' => 0,
@@ -686,7 +686,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -32;
   $handler->conf = array(
     'title' => 'Chat Landing Page',
     'no_blocks' => 1,
@@ -828,7 +828,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Alternative Database Landing Page',
     'no_blocks' => 1,
@@ -1005,7 +1005,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -12;
+  $handler->weight = -22;
   $handler->conf = array(
     'title' => 'Database Platform Page',
     'no_blocks' => 1,
@@ -1213,7 +1213,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 3;
+  $handler->weight = -7;
   $handler->conf = array(
     'title' => 'Research Data Management',
     'no_blocks' => 0,
@@ -1340,7 +1340,7 @@ research-data-management/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -38;
   $handler->conf = array(
     'title' => 'Office of Finance Administration',
     'no_blocks' => 0,

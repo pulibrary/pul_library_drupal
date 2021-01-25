@@ -18,7 +18,7 @@ function libcal_events_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 46;
+  $handler->weight = 39;
   $handler->conf = array(
     'title' => 'Exhibitions Index Page',
     'no_blocks' => 0,

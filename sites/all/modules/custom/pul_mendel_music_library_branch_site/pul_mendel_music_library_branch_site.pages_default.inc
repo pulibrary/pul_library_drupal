@@ -18,7 +18,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 35;
+  $handler->weight = 8;
   $handler->conf = array(
     'title' => 'Mendel Music Library Branch News',
     'no_blocks' => 1,
@@ -37,14 +37,6 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
       ),
     ),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -330,7 +322,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 7;
   $handler->conf = array(
     'title' => 'Mendel Music Library Branch Pages',
     'no_blocks' => 1,
@@ -349,14 +341,6 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
       ),
     ),
     'relationships' => array(
-      0 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
       1 => array(
         'identifier' => 'Building',
         'keyword' => 'building',
@@ -690,7 +674,7 @@ music/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 25;
+  $handler->weight = 6;
   $handler->conf = array(
     'title' => 'Mendel Music Library Landing Page',
     'no_blocks' => 1,
@@ -705,14 +689,6 @@ music/*',
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
         'delta' => 0,
         'context' => 'argument_entity_id:node_1',
         'id' => 1,

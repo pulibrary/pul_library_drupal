@@ -18,7 +18,7 @@ function cataloging_and_metadata_services_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 37;
+  $handler->weight = 32;
   $handler->conf = array(
     'title' => 'Cataloging and Metadata Services',
     'no_blocks' => 0,
