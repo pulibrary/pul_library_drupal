@@ -62,7 +62,7 @@
   }
 
   h1 {
-    display: none;
+    @include visually-hidden;
   }
 }
 

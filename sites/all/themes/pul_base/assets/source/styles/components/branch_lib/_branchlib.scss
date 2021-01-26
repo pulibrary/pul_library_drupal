@@ -39,3 +39,17 @@
 .page-libraries .views-row {
   margin-bottom: 2rem;
 }
+
+.section-makerspace .caption {
+  margin-bottom: 1rem;
+
+  .caption-inner {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  .caption-text {
+    text-align: right;
+  }
+}
