@@ -30,9 +30,9 @@ function libhours_makerspace_block_view() {
   
   $makerRss = new DOMDocument();
   $makerRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=15700&format=xml&systemTime=1');
-  $makerHours = $makerRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $makerHours = $makerRss->getElementsByTagName('rendered')->item(2)->nodeValue;
   $makerPickUpHours = $makerRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $maker = "<li class='hours'>".$makerHours."<div class='seats'>Access by appointment only</div></li>";
+  $maker = "<li class='hours'>".$makerHours."<div class='seats'><a href='https://libcal.princeton.edu/reserve/makerspace'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$makerPickUpHours."<div><a href='https://libcal.princeton.edu/appointments?lid=387&g=12520'>Equipment / Consultations<br>Access by appointment only</a></div></li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   
