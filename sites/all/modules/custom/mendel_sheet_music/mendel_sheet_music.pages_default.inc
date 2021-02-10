@@ -18,8 +18,8 @@ function mendel_sheet_music_default_page_manager_pages() {
   $page->admin_description = 'Mendel Valva Collection';
   $page->path = 'music/valva';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -36,27 +36,27 @@ function mendel_sheet_music_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => 'branch-libraries libraries-music',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'panel',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-music',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => 'panel',
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'first' => NULL,
       'second' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -75,8 +75,8 @@ function mendel_sheet_music_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Publication Date',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Publication Date',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -98,8 +98,8 @@ function mendel_sheet_music_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Composer',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Composer',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -121,8 +121,8 @@ function mendel_sheet_music_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Instrumentation',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Instrumentation',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -166,8 +166,8 @@ function mendel_sheet_music_default_page_manager_pages() {
       'nid' => '7791',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Mendel Music Library',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Mendel Music Library',
   );
   $pane->cache = array();
   $pane->style = array(

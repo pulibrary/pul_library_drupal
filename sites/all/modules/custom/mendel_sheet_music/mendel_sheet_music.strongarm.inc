@@ -107,26 +107,52 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__mendel_sheet_music';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '2',
+        ),
+        'redirect' => array(
+          'weight' => '1',
+        ),
+        'title' => array(
+          'weight' => '5',
+        ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '3',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
       'brief_faq_display' => array(
-        'custom_settings' => TRUE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => TRUE,
-      ),
-      'overridden_title_in_lists' => array(
         'custom_settings' => TRUE,
       ),
       'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
+      'database_description_only' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
       'featured_link_url' => array(
         'custom_settings' => TRUE,
       ),
       'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -138,38 +164,12 @@ function mendel_sheet_music_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '5',
-        ),
-        'path' => array(
-          'weight' => '2',
-        ),
-        'redirect' => array(
-          'weight' => '1',
-        ),
-        'workbench_access' => array(
-          'weight' => '0',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '3',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__mendel_sheet_music'] = $strongarm;
@@ -216,8 +216,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_mendel_sheet_music';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_mendel_sheet_music'] = $strongarm;
 
@@ -226,8 +226,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheetmusic_boxnumber';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheetmusic_boxnumber'] = $strongarm;
 
@@ -236,8 +236,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheetmusic_composers';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheetmusic_composers'] = $strongarm;
 
@@ -246,8 +246,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheetmusic_instrumentation';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheetmusic_instrumentation'] = $strongarm;
 
@@ -256,8 +256,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheet_music_arranger';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheet_music_arranger'] = $strongarm;
 
@@ -266,8 +266,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheet_music_date';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheet_music_date'] = $strongarm;
 
@@ -276,8 +276,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheet_music_lyricists';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheet_music_lyricists'] = $strongarm;
 
@@ -286,8 +286,8 @@ function mendel_sheet_music_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_sheet_music_publisher';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_sheet_music_publisher'] = $strongarm;
 

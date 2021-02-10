@@ -20,71 +20,71 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -45;
   $handler->conf = array(
-    'title' => 'Individual Database Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'database-resource-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Content from Content (on Content: Affected Databases [field_affected_databases])',
-        'keyword' => 'node_2',
-        'name' => 'entity_from_field:field_affected_databases-node-node',
-        'delta' => '0',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'Content from Content (on Content: Also Known As [field_dboverride_database])',
-        'keyword' => 'overridden_title',
-        'name' => 'entity_from_field:field_dboverride_database-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      2 => array(
-        'identifier' => 'Term from node',
-        'keyword' => 'term',
-        'name' => 'term_from_node',
-        'vid' => '12',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'database' => 'database',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'database-resource-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Back to Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => '0',
+        'id' => 1,
+        'identifier' => 'Content from Content (on Content: Affected Databases [field_affected_databases])',
+        'keyword' => 'node_2',
+        'name' => 'entity_from_field:field_affected_databases-node-node',
+      ),
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Content from Content (on Content: Also Known As [field_dboverride_database])',
+        'keyword' => 'overridden_title',
+        'name' => 'entity_from_field:field_dboverride_database-node-node',
+      ),
+      2 => array(
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+        'identifier' => 'Term from node',
+        'keyword' => 'term',
+        'name' => 'term_from_node',
+        'vid' => '12',
+      ),
+    ),
+    'title' => 'Individual Database Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'right' => NULL,
-      'left' => NULL,
-    ),
     'left' => array(
       'style' => '-1',
+    ),
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -145,15 +145,15 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => 'database',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => 'database',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -240,7 +240,9 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -248,8 +250,6 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -345,45 +345,45 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -40;
   $handler->conf = array(
-    'title' => 'OFA Staff',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
-    'css_id' => 'ofa-landing-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'staff/ofa/staff',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'staff/ofa/staff',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'ofa-landing-page',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'OFA Staff',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -402,10 +402,10 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Header',
-    'title' => '',
     'body' => '<h1>Office of Finance and Administration</h1>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -457,45 +457,45 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -41;
   $handler->conf = array(
-    'title' => 'OFA Security',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
-    'css_id' => 'ofa-landing-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'staff/ofa/safety/library-security',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'staff/ofa/safety/library-security',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'ofa-landing-page',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'OFA Security',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -514,10 +514,10 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Header',
-    'title' => '',
     'body' => '<h1>Office of Finance and Administration</h1>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -569,42 +569,42 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -31;
   $handler->conf = array(
-    'title' => 'Basic Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'help/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'id' => 1,
         'identifier' => 'Token',
         'keyword' => 'token',
         'name' => 'token',
-        'id' => 1,
       ),
     ),
-    'relationships' => array(),
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'help/*',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'help
+%node:menu-link',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Title
 %node:menu-link',
-    'panels_breadcrumbs_paths' => 'help
-%node:menu-link',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Basic Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -612,10 +612,10 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'middle' => NULL,
-      'left' => NULL,
-      'right' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
     ),
   );
@@ -634,11 +634,11 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -660,8 +660,8 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -688,39 +688,39 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -32;
   $handler->conf = array(
-    'title' => 'Chat Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second chat-page',
-    'css_id' => 'chat-home-page',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Taxonomy term',
-        'keyword' => 'taxonomy_term',
-        'name' => 'entity:taxonomy_term',
-        'entity_id' => '3702',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'help/chat
 help/chat/*
 help/ask-a-librarian',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second chat-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '3702',
+        'id' => 1,
+        'identifier' => 'Taxonomy term',
+        'keyword' => 'taxonomy_term',
+        'name' => 'entity:taxonomy_term',
+      ),
+    ),
+    'css' => '',
+    'css_id' => 'chat-home-page',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Chat Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -728,9 +728,9 @@ help/ask-a-librarian',
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -749,15 +749,15 @@ help/ask-a-librarian',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -779,8 +779,8 @@ help/ask-a-librarian',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -802,8 +802,8 @@ help/ask-a-librarian',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -830,34 +830,34 @@ help/ask-a-librarian',
   $handler->handler = 'panel_context';
   $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Alternative Database Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second alternative-database-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'entity_bundle:node',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'alternative_database_title' => 'alternative_database_title',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second alternative-database-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Alternative Database Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -884,15 +884,15 @@ help/ask-a-librarian',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1007,30 +1007,30 @@ help/ask-a-librarian',
   $handler->handler = 'panel_context';
   $handler->weight = -22;
   $handler->conf = array(
-    'title' => 'Database Platform Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'database-platform-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'entity_bundle:node',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'database_package' => 'database_package',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'database-platform-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Database Platform Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -1058,7 +1058,9 @@ help/ask-a-librarian',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -1066,19 +1068,17 @@ help/ask-a-librarian',
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -1102,7 +1102,9 @@ help/ask-a-librarian',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -1110,8 +1112,6 @@ help/ask-a-librarian',
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1139,7 +1139,9 @@ help/ask-a-librarian',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -1147,8 +1149,6 @@ help/ask-a-librarian',
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1173,7 +1173,9 @@ help/ask-a-librarian',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -1181,8 +1183,6 @@ help/ask-a-librarian',
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1215,30 +1215,30 @@ help/ask-a-librarian',
   $handler->handler = 'panel_context';
   $handler->weight = -7;
   $handler->conf = array(
-    'title' => 'Research Data Management',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'research-data-management
 research-data-management/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Research Data Management',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -1266,10 +1266,10 @@ research-data-management/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
     'body' => '<p><img src="/sites/all/themes/pul_base/images/sco-logo.png" alt="Scholarly Communications Office" /></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1312,10 +1312,10 @@ research-data-management/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1342,48 +1342,48 @@ research-data-management/*',
   $handler->handler = 'panel_context';
   $handler->weight = -38;
   $handler->conf = array(
-    'title' => 'Office of Finance Administration',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
-    'css_id' => 'ofa-landing-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'staff/ofa/*
 staff/ofa',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second ofa',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'ofa-landing-page',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Office of Finance Administration',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'top' => NULL,
-      'bottom' => NULL,
-      'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1446,10 +1446,10 @@ staff/ofa',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Header',
-    'title' => 'Office of Finance and Administration',
     'body' => '<h2>%node:title</h2>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Office of Finance and Administration',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1493,10 +1493,10 @@ staff/ofa',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
