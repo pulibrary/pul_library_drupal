@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * eal_news_importer.feeds_importer_default.inc
@@ -15,81 +16,87 @@ function eal_news_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'eal_feed_importer';
   $feeds_importer->config = array(
-    'name' => 'EAL_Feed_importer',
+    'content_type' => '',
     'description' => 'EAL Feeds',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
+        'accept_invalid_cert' => FALSE,
         'auto_detect_feeds' => FALSE,
-        'use_pubsubhubbub' => FALSE,
+        'auto_scheme' => 'http',
         'designated_hub' => '',
         'request_timeout' => NULL,
-        'auto_scheme' => 'http',
-        'accept_invalid_cert' => FALSE,
+        'use_pubsubhubbub' => FALSE,
       ),
+      'plugin_key' => 'FeedsHTTPFetcher',
     ),
+    'import_on_create' => TRUE,
+    'import_period' => 1800,
+    'name' => 'EAL_Feed_importer',
     'parser' => array(
-      'plugin_key' => 'FeedsExXml',
       'config' => array(
-        'use_tidy' => FALSE,
-        'sources' => array(
-          'title' => array(
-            'name' => 'title',
-            'value' => 'title',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '1',
-          ),
-          'pubdate' => array(
-            'name' => 'pubDate',
-            'value' => 'pubDate',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '2',
-          ),
-          'category' => array(
-            'name' => 'category',
-            'value' => 'category',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '3',
-          ),
-          'content_encoded' => array(
-            'name' => 'content:encoded',
-            'value' => 'content:encoded',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '4',
-          ),
-          'guid' => array(
-            'name' => 'guid',
-            'value' => 'guid',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '5',
-          ),
-        ),
         'context' => array(
           'value' => '/rss/channel/item',
         ),
+        'debug_mode' => 0,
         'display_errors' => 0,
         'source_encoding' => array(
           0 => 'auto',
         ),
-        'debug_mode' => 0,
+        'sources' => array(
+          'category' => array(
+            'debug' => 0,
+            'inner' => 0,
+            'name' => 'category',
+            'raw' => 0,
+            'value' => 'category',
+            'weight' => '3',
+          ),
+          'content_encoded' => array(
+            'debug' => 0,
+            'inner' => 0,
+            'name' => 'content:encoded',
+            'raw' => 0,
+            'value' => 'content:encoded',
+            'weight' => '4',
+          ),
+          'guid' => array(
+            'debug' => 0,
+            'inner' => 0,
+            'name' => 'guid',
+            'raw' => 0,
+            'value' => 'guid',
+            'weight' => '5',
+          ),
+          'pubdate' => array(
+            'debug' => 0,
+            'inner' => 0,
+            'name' => 'pubDate',
+            'raw' => 0,
+            'value' => 'pubDate',
+            'weight' => '2',
+          ),
+          'title' => array(
+            'debug' => 0,
+            'inner' => 0,
+            'name' => 'title',
+            'raw' => 0,
+            'value' => 'title',
+            'weight' => '1',
+          ),
+        ),
+        'use_tidy' => FALSE,
       ),
+      'plugin_key' => 'FeedsExXml',
     ),
+    'process_in_background' => FALSE,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '707',
         'authorize' => 1,
+        'bundle' => 'library_news_item',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -97,9 +104,9 @@ function eal_news_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
+            'format' => 'filtered_html',
             'source' => 'content_encoded',
             'target' => 'body',
-            'format' => 'filtered_html',
           ),
           2 => array(
             'source' => 'pubdate',
@@ -117,19 +124,13 @@ function eal_news_importer_feeds_importer_default() {
             'unique' => 1,
           ),
         ),
+        'skip_hash_check' => 0,
         'update_existing' => '1',
         'update_non_existent' => 'skip',
-        'input_format' => 'plain_text',
-        'skip_hash_check' => 0,
-        'bundle' => 'library_news_item',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => 1800,
-    'expire_period' => 3600,
-    'import_on_create' => TRUE,
-    'process_in_background' => FALSE,
   );
   $export['eal_feed_importer'] = $feeds_importer;
 

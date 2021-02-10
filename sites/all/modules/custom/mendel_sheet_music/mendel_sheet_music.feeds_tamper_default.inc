@@ -19,9 +19,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'Arranger';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -35,9 +35,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'City';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -51,9 +51,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'Composer';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -67,9 +67,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'Instrumentation';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -83,9 +83,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'Lyrisist';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -99,9 +99,9 @@ function mendel_sheet_music_feeds_tamper_default() {
   $feeds_tamper->source = 'Plate Number';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';

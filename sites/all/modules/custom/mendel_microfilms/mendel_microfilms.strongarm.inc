@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_microfilms.strongarm.inc
@@ -85,27 +86,27 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__mus_mendel_microfilm';
   $strongarm->value = array(
-    'view_modes' => array(),
     'extra_fields' => array(
+      'display' => array(),
       'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
         'path' => array(
           'weight' => '4',
         ),
         'redirect' => array(
           'weight' => '2',
         ),
-        'xmlsitemap' => array(
-          'weight' => '3',
+        'title' => array(
+          'weight' => '0',
         ),
         'workbench_access' => array(
           'weight' => '1',
         ),
+        'xmlsitemap' => array(
+          'weight' => '3',
+        ),
       ),
-      'display' => array(),
     ),
+    'view_modes' => array(),
   );
   $export['field_bundle_settings_node__mus_mendel_microfilm'] = $strongarm;
 
@@ -151,8 +152,8 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_mus_mendel_microfilm';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_mus_mendel_microfilm'] = $strongarm;
 
@@ -161,8 +162,8 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_mendel_collections';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_mendel_collections'] = $strongarm;
 
@@ -171,21 +172,23 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_authors';
   $strongarm->value = array(
-    'entity' => 'taxonomy_term',
     'bundle' => 'mendel_microfilm_authors',
+    'entity' => 'taxonomy_term',
     'info' => array(
-      'label' => 'Mendel Microfilm Authors',
       'admin' => array(
-        'path' => 'admin/structure/taxonomy/%taxonomy_vocabulary_machine_name/edit',
-        'real path' => 'admin/structure/taxonomy/mendel_microfilm_authors/edit',
-        'bundle argument' => 3,
         'access arguments' => array(
           0 => 'administer taxonomy',
         ),
+        'bundle argument' => 3,
+        'path' => 'admin/structure/taxonomy/%taxonomy_vocabulary_machine_name/edit',
+        'real path' => 'admin/structure/taxonomy/mendel_microfilm_authors/edit',
       ),
+      'label' => 'Mendel Microfilm Authors',
       'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:Concept',
+        'description' => array(
+          'predicates' => array(
+            0 => 'skos:definition',
+          ),
         ),
         'name' => array(
           'predicates' => array(
@@ -193,10 +196,14 @@ function mendel_microfilms_strongarm() {
             1 => 'skos:prefLabel',
           ),
         ),
-        'description' => array(
+        'parent' => array(
           'predicates' => array(
-            0 => 'skos:definition',
+            0 => 'skos:broader',
           ),
+          'type' => 'rel',
+        ),
+        'rdftype' => array(
+          0 => 'skos:Concept',
         ),
         'vid' => array(
           'predicates' => array(
@@ -204,22 +211,16 @@ function mendel_microfilms_strongarm() {
           ),
           'type' => 'rel',
         ),
-        'parent' => array(
-          'predicates' => array(
-            0 => 'skos:broader',
-          ),
-          'type' => 'rel',
-        ),
       ),
       'xmlsitemap' => array(
-        'entity' => 'taxonomy_term',
         'bundle' => 'mendel_microfilm_authors',
-        'status' => '0',
+        'entity' => 'taxonomy_term',
         'priority' => '0.5',
+        'status' => '0',
       ),
     ),
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_authors'] = $strongarm;
 
@@ -228,8 +229,8 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_composers';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_composers'] = $strongarm;
 
@@ -238,8 +239,8 @@ function mendel_microfilms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_librettist';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mus_mendel_microfilm_librettist'] = $strongarm;
 

@@ -192,7 +192,7 @@ br,span,u,em,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd,h2,h3,h4,h5,h6,thead,
         'status' => 1,
         'settings' => array(
           'srcwhitelist_shwtxtfordisallowed' => 1,
-          'srcwhitelist_imgsrc_allow_extrnl' => 0,
+          'srcwhitelist_imgsrc_allow_extrnl' => 1,
           'srcwhitelist_iframe_allow_elemnt' => 1,
           'srcwhitelist_iframe_bootstrpcomp' => 0,
           'srcwhitelist_iframesrc_whitelist' => array(),

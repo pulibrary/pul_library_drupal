@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * eal_news_importer.features.inc

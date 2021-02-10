@@ -20,36 +20,36 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $handler->handler = 'http_response';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Standard User',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '404',
-    'destination' => '',
-    'name' => 'standard_user',
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:user_1',
           'name' => 'role',
+          'not' => TRUE,
           'settings' => array(
             'rids' => array(
               0 => 5,
               1 => 6,
             ),
           ),
-          'context' => 'argument_entity_id:user_1',
-          'not' => TRUE,
         ),
         1 => array(
+          'context' => 'logged-in-user',
           'name' => 'context_exists',
+          'not' => FALSE,
           'settings' => array(
             'exists' => '1',
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'code' => '404',
+    'contexts' => array(),
+    'destination' => '',
+    'name' => 'standard_user',
+    'relationships' => array(),
+    'title' => 'Standard User',
   );
   $export['user_view__standard_user'] = $handler;
 
@@ -62,19 +62,13 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Subject Librarian Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second subject-librarian-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:user_1',
           'name' => 'entity_field_value:user:user:field_puluser_sublibrarian',
+          'not' => FALSE,
           'settings' => array(
             'field_puluser_sublibrarian' => array(
               'und' => array(
@@ -85,26 +79,32 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
             ),
             'field_puluser_sublibrarian_value' => '1',
           ),
-          'context' => 'argument_entity_id:user_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:user_1',
           'name' => 'role',
+          'not' => FALSE,
           'settings' => array(
             'rids' => array(
               0 => 5,
             ),
           ),
-          'context' => 'argument_entity_id:user_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second subject-librarian-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff/specialists',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Subject Specialists',
-    'panels_breadcrumbs_paths' => 'staff/specialists',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Subject Librarian Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -112,9 +112,9 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -162,8 +162,8 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
       0 => 'argument_entity_id:user_1',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Profile',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Profile',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -204,22 +204,22 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'argument_entity_id:user_1',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 28,
           ),
         ),
-        'context' => 'argument_entity_id:user_1',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'context' => 'argument_entity_id:user_1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -241,8 +241,8 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '%title',
     'override_title_heading' => 'h2',
+    'override_title_text' => '%title',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -269,29 +269,23 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Staff Member Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second staff-member-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'or',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:user_1',
           'name' => 'role',
+          'not' => FALSE,
           'settings' => array(
             'rids' => array(
               0 => 5,
             ),
           ),
-          'context' => 'argument_entity_id:user_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:user_1',
           'name' => 'entity_field_value:user:user:field_puluser_sublibrarian',
+          'not' => FALSE,
           'settings' => array(
             'field_puluser_sublibrarian' => array(
               'und' => array(
@@ -304,16 +298,22 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
               0 => 1,
             ),
           ),
-          'context' => 'argument_entity_id:user_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'or',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second staff-member-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff/directory',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff',
-    'panels_breadcrumbs_paths' => 'staff/directory',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Staff Member Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -321,9 +321,9 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -389,30 +389,30 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'argument_entity_id:user_1',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 28,
           ),
         ),
-        'context' => 'argument_entity_id:user_1',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'context' => 'argument_entity_id:user_1',
     'override_title' => 1,
-    'override_title_text' => 'Contact %user:field-puluser-nick-name',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact %user:field-puluser-nick-name',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'contact',
     'css_class' => '',
+    'css_id' => 'contact',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -429,8 +429,8 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Subjects',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Subjects',
   );
   $pane->cache = array();
   $pane->style = array(

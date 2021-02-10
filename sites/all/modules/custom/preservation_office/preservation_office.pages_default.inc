@@ -20,60 +20,60 @@ function preservation_office_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 34;
   $handler->conf = array(
-    'title' => 'Preservation Office',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'preservation
 preservation/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'preservation-office',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
-    'name' => 'preservation-office',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Preservation Office',
   );
   $display = new panels_display();
-  $display->layout = 'three-six-three-stacked';
+  $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
+    'style' => 'naked',
     'style_settings' => array(
-      'top' => NULL,
+      'bottom' => NULL,
+      'branding' => NULL,
+      'content' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
       'left' => NULL,
       'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'default' => NULL,
-      'branding' => NULL,
-      'header' => NULL,
       'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
-      'content' => NULL,
+      'right' => NULL,
+      'second' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'first' => NULL,
-      'second' => NULL,
+      'top' => NULL,
     ),
-    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = '';
@@ -91,8 +91,8 @@ preservation/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -107,22 +107,22 @@ preservation/*',
   $display->panels['first'][0] = 'new-a1074aab-b6da-4097-8455-c575d60f5a62';
   $pane = new stdClass();
   $pane->pid = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
-  $pane->panel = 'middle';
+  $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -134,33 +134,7 @@ preservation/*',
   $pane->locks = array();
   $pane->uuid = 'c076ecca-83b9-4466-9ee3-5da77b8e934f';
   $display->content['new-c076ecca-83b9-4466-9ee3-5da77b8e934f'] = $pane;
-  $display->panels['middle'][0] = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
-  $pane = new stdClass();
-  $pane->pid = 'new-ed010de6-8307-41a3-8cce-4a1a9bb1e091';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'branch_features-panel_pane_5';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '27653',
-    ),
-    'override_title' => 1,
-    'override_title_text' => 'Quick Links',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'ed010de6-8307-41a3-8cce-4a1a9bb1e091';
-  $display->content['new-ed010de6-8307-41a3-8cce-4a1a9bb1e091'] = $pane;
-  $display->panels['second'][0] = 'new-ed010de6-8307-41a3-8cce-4a1a9bb1e091';
+  $display->panels['second'][0] = 'new-c076ecca-83b9-4466-9ee3-5da77b8e934f';
   $pane = new stdClass();
   $pane->pid = 'new-5d223fff-4316-4331-8440-b15d74d84da4';
   $pane->panel = 'top';
@@ -169,25 +143,25 @@ preservation/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'branch_image_branding',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Preservation Office',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Preservation Office',
   );
   $pane->cache = array();
   $pane->style = array(

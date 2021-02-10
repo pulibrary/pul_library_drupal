@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * mendel_microfilms.feeds_tamper_default.inc
@@ -18,9 +19,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'BC';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -34,9 +35,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Reel Name';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => '/',
     'limit' => '',
     'real_separator' => '/',
+    'separator' => '/',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -50,9 +51,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Shelfmark';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => '/',
     'limit' => '',
     'real_separator' => '/',
+    'separator' => '/',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -66,9 +67,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Shelfmark';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -82,9 +83,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Composer';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -98,9 +99,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Barcode(s)';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -114,9 +115,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Composer / Author / Library';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ' / ',
     'limit' => '',
     'real_separator' => ' / ',
+    'separator' => ' / ',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -130,9 +131,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Calendar';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -146,9 +147,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Century';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -162,9 +163,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Reel #';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ',',
     'limit' => '',
     'real_separator' => ',',
+    'separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
@@ -178,9 +179,9 @@ function mendel_microfilms_feeds_tamper_default() {
   $feeds_tamper->source = 'Year';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
