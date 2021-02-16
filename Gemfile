@@ -7,4 +7,5 @@ group :development do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'byebug'
+  gem 'whenever', require: false
 end
