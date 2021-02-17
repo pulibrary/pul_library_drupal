@@ -17,6 +17,7 @@ set :drupal_file_private_path, "sites/default/files/private"
 set :cas_cert_location, "/etc/ssl/certs/ssl-cert-snakeoil.pem"
 
 set :user, "deploy"
+set :whenever_roles, :drupal_primary
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -302,6 +303,13 @@ namespace :deploy do
       invoke! "drupal:cache_clear"
   end
 
+  desc "Bundle as sudo to make whenever run"
+  task :bundle_install do
+    on release_roles :drupal_primary do
+      execute "cd #{release_path} && sudo /usr/local/bin/bundle install"
+    end
+  end
+
   before 'symlink:release' , "deploy:before_release"
 
   after :check, "deploy:after_deploy_check"
@@ -312,4 +320,5 @@ namespace :deploy do
 
   before :finishing, "drupal:update_directory_owner_deploy"
   after 'symlink:release' , "deploy:after_release"
+  before "whenever:update_crontab", "deploy:bundle_install"
 end
