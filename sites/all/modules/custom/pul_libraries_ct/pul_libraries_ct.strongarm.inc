@@ -58,8 +58,8 @@ function pul_libraries_ct_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_libraries';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.9',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_libraries'] = $strongarm;
 
@@ -68,8 +68,8 @@ function pul_libraries_ct_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_amenities';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_amenities'] = $strongarm;
 
@@ -78,8 +78,8 @@ function pul_libraries_ct_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_tags';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.3',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_tags'] = $strongarm;
 

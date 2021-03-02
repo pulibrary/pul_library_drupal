@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Office of Research Data and Open Scholarship feature.
+ */
+
+include_once 'office_of_research_data_and_open_scholarship.features.inc';

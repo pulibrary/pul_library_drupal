@@ -20,30 +20,23 @@ function pul_libraries_ct_default_services_endpoint() {
   $endpoint->authentication = array();
   $endpoint->server_settings = array(
     'formatters' => array(
+      'bencode' => FALSE,
       'json' => TRUE,
       'jsonp' => TRUE,
+      'php' => FALSE,
       'rss' => TRUE,
       'xml' => TRUE,
-      'bencode' => FALSE,
-      'php' => FALSE,
     ),
     'parsers' => array(
       'application/json' => TRUE,
+      'application/vnd.php.serialized' => FALSE,
+      'application/x-www-form-urlencoded' => FALSE,
       'application/xml' => TRUE,
       'multipart/form-data' => TRUE,
       'text/xml' => TRUE,
-      'application/vnd.php.serialized' => FALSE,
-      'application/x-www-form-urlencoded' => FALSE,
     ),
   );
   $endpoint->resources = array(
-    'views' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
     'hours' => array(
       'operations' => array(
         'index' => array(
@@ -54,6 +47,13 @@ function pul_libraries_ct_default_services_endpoint() {
     'libraries' => array(
       'operations' => array(
         'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'views' => array(
+      'operations' => array(
+        'retrieve' => array(
           'enabled' => '1',
         ),
       ),
