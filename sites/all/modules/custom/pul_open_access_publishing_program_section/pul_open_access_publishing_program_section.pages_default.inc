@@ -18,7 +18,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 43;
+  $handler->weight = 39;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -194,7 +194,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 44;
+  $handler->weight = 40;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

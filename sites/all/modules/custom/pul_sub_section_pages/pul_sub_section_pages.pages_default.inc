@@ -18,41 +18,41 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -35;
+  $handler->weight = -36;
   $handler->conf = array(
-    'title' => 'Committee Landing Page - LETC',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second individual-committee-landing-page',
-    'css_id' => 'letc-home-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'committee/letc
 committee/letc/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second individual-committee-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'letc-home-page',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff
+staff/committees
+staff/committees/letc',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff
 Committees
 Letc
 ',
-    'panels_breadcrumbs_paths' => 'staff
-staff/committees
-staff/committees/letc',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Committee Landing Page - LETC',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -60,9 +60,9 @@ staff/committees/letc',
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -81,13 +81,13 @@ staff/committees/letc',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -110,13 +110,13 @@ staff/committees/letc',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -139,13 +139,13 @@ staff/committees/letc',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -244,10 +244,10 @@ staff/committees/letc',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -268,19 +268,19 @@ staff/committees/letc',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'field_collection_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'field_collection_view',
     'formatter_settings' => array(
-      'edit' => 'Edit',
-      'delete' => 'Delete',
       'add' => 'Add',
+      'delete' => 'Delete',
       'description' => 1,
+      'edit' => 'Edit',
       'view_mode' => 'full',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -329,39 +329,39 @@ staff/committees/letc',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -33;
+  $handler->weight = -34;
   $handler->conf = array(
-    'title' => 'Committee Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second individual-committee-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'library_committee' => 'library_committee',
               'library_committee_with_terms' => 'library_committee_with_terms',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second individual-committee-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff
+staff/committees',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff
 Committees',
-    'panels_breadcrumbs_paths' => 'staff
-staff/committees',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Committee Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -388,13 +388,13 @@ staff/committees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -417,13 +417,13 @@ staff/committees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -446,13 +446,13 @@ staff/committees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -577,51 +577,51 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Human Resources',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second human-resources',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'staff/hr',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'staff/hr',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second human-resources',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff',
-    'panels_breadcrumbs_paths' => 'staff',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Human Resources',
   );
   $display = new panels_display();
   $display->layout = 'six-six-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left_top' => NULL,
-      'middle_top' => NULL,
-      'right_top' => NULL,
-      'left_bottom' => NULL,
-      'middle_bottom' => NULL,
       'bottom' => NULL,
-      'top' => NULL,
+      'default' => NULL,
       'left' => NULL,
+      'left_bottom' => NULL,
+      'left_top' => NULL,
+      'middle_bottom' => NULL,
+      'middle_top' => NULL,
       'right' => NULL,
+      'right_top' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -640,10 +640,10 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
     'body' => '<h2><a href="https://www.princeton.edu/hr">Job Opportunities</a></h2>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -709,10 +709,10 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'HR Forms',
-    'title' => '',
     'body' => '<h2>HR Forms</h2>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -848,31 +848,31 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Firestone Floor Plans',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-maps',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/firestone/floor-plans',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries/firestone/floor-plans',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-maps',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Firestone Floor Plans',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -899,15 +899,15 @@ staff/committees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 0,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -928,12 +928,12 @@ staff/committees',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '7517',
-    'links' => 0,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
+    'links' => 0,
+    'nid' => '7517',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -979,57 +979,57 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -19;
   $handler->conf = array(
-    'title' => 'Contact Us',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'or',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'help/contact-us',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'help/contact-us',
+            'visibility_setting' => '1',
+          ),
         ),
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'ask-us',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'ask-us',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'or',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Contact Us',
   );
   $display = new panels_display();
   $display->layout = 'six-six-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
+      'fifth' => NULL,
+      'first' => NULL,
+      'fourth' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
       'third' => NULL,
-      'fourth' => NULL,
-      'fifth' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -1048,11 +1048,11 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Email reference turnaround',
-    'title' => 'Email Us',
-    'title_heading' => 'h2',
     'body' => '<p>We usually respond within 24 hours (M-F).</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => 'Email Us',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1073,11 +1073,11 @@ staff/committees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1099,8 +1099,8 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Chat Live with a Librarian',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Chat Live with a Librarian',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1122,8 +1122,8 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1145,8 +1145,8 @@ staff/committees',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => 'Chat Live',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Chat Live',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1193,23 +1193,16 @@ staff/committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -17;
+  $handler->weight = -18;
   $handler->conf = array(
-    'title' => 'Resource Sharing Pages',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'services/resource-sharing
 services/borrowdirect
 services/borrowdirect/*
@@ -1218,17 +1211,24 @@ services/article-express
 services/article-express/*
 services/interlibrary-services
 services/interlibrary-services/lender-fees',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'services',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Services',
-    'panels_breadcrumbs_paths' => 'services',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Resource Sharing Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
@@ -1279,23 +1279,23 @@ services/interlibrary-services/lender-fees',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => FALSE,
         'settings' => array(
-          'visibility_setting' => '0',
           'paths' => 'services/borrowdirect
 services/interlibrary-services/lender-fees',
+          'visibility_setting' => '0',
         ),
-        'context' => 'empty',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Contact Document Delivery',
-    'title' => 'Contact',
     'body' => '<p>ILSBorr@princeton.edu</p><p>609.258.3272</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Contact',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1317,22 +1317,22 @@ services/interlibrary-services/lender-fees',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/borrowdirect',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/borrowdirect',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Borrow Direct Contact Info',
-    'title' => 'Contact',
     'body' => '<p>bdirect@princeton.edu</p><p>609.258.7469</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Contact',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1354,23 +1354,23 @@ services/interlibrary-services/lender-fees',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/interlibrary-services/lender-fees',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/interlibrary-services/lender-fees',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'ILL Lender Info',
-    'title' => 'Contact Information',
-    'title_heading' => 'h2',
     'body' => '<p class="p1"><span class="s1"><a href="mailto:ilslend@princeton.edu">ilslend@princeton.edu</a></span></p><p class="p1">609-258-3327</p><p class="p1"><span class="s1">&nbsp;</span></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Contact Information',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1391,11 +1391,11 @@ services/interlibrary-services/lender-fees',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'link' => 0,
-    'markup' => 'h1',
-    'id' => '',
     'class' => '',
     'context' => 'argument_entity_id:node_1',
+    'id' => '',
+    'link' => 0,
+    'markup' => 'h1',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -1418,15 +1418,15 @@ services/interlibrary-services/lender-fees',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 0,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1448,15 +1448,15 @@ services/interlibrary-services/lender-fees',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => FALSE,
         'settings' => array(
-          'visibility_setting' => '1',
           'paths' => 'services/borrowdirect
 services/borrowdirect/*
 ',
+          'visibility_setting' => '1',
         ),
-        'context' => 'empty',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1484,13 +1484,13 @@ services/borrowdirect/*
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/article*',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/article*',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -1518,22 +1518,22 @@ services/borrowdirect/*
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/interlibrary*',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/interlibrary*',
+          'visibility_setting' => '1',
+        ),
       ),
       1 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/interlibrary-services/lender-fees',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => TRUE,
+        'settings' => array(
+          'paths' => 'services/interlibrary-services/lender-fees',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -1561,13 +1561,13 @@ services/borrowdirect/*
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/interlibrary-services/lender-fees',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/interlibrary-services/lender-fees',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -1595,13 +1595,13 @@ services/borrowdirect/*
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/resource-sharing',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/resource-sharing',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -1632,35 +1632,35 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -42;
+  $handler->weight = -43;
   $handler->conf = array(
-    'title' => 'Map and Geospatial Pages',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/pumagic/*',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections/pumagic/*',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Map and Geospatial Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -1668,9 +1668,9 @@ services/borrowdirect/*
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -1711,15 +1711,15 @@ services/borrowdirect/*
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 0,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1744,40 +1744,40 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -14;
+  $handler->weight = -15;
   $handler->conf = array(
-    'title' => 'Library Privileges Pages',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'services/reserves
 services/reserves/*
 services/privileges
 services/privileges/*
 services/access
 services/access/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'services',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Services',
-    'panels_breadcrumbs_paths' => 'services',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Library Privileges Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
@@ -1827,15 +1827,15 @@ services/access/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1857,14 +1857,14 @@ services/access/*',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => FALSE,
         'settings' => array(
-          'visibility_setting' => '1',
           'paths' => 'services/reserves
 services/reserves/*',
+          'visibility_setting' => '1',
         ),
-        'context' => 'empty',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1892,15 +1892,15 @@ services/reserves/*',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => FALSE,
         'settings' => array(
-          'visibility_setting' => '0',
           'paths' => 'services/reserves
 services/reserves/*
 ',
+          'visibility_setting' => '0',
         ),
-        'context' => 'empty',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1931,32 +1931,32 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -11;
+  $handler->weight = -12;
   $handler->conf = array(
-    'title' => 'Technology Handbook Book Pages',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'services/technology/*
 services/technology',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Technology Handbook Book Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
@@ -1965,8 +1965,8 @@ services/technology',
     'style_settings' => array(
       'default' => NULL,
       'first' => NULL,
-      'second' => NULL,
       'middle' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -2006,16 +2006,16 @@ services/technology',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
-    'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2062,36 +2062,36 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = -10;
   $handler->conf = array(
-    'title' => 'Systems Office Templates',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'staff/systems_office
 staff/systems_office/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff',
-    'panels_breadcrumbs_paths' => 'staff',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Systems Office Templates',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -2163,10 +2163,10 @@ staff/systems_office/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2191,52 +2191,52 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -43;
+  $handler->weight = -44;
   $handler->conf = array(
-    'title' => 'Map and Geospatial Staff',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections/pumagic/staff',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '5509',
+        'id' => 1,
         'identifier' => 'Content',
         'keyword' => 'node_2',
         'name' => 'entity:node',
-        'entity_id' => '5509',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '',
+    'pipeline' => 'standard',
     'relationships' => array(
       0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => '0',
+        'id' => 1,
         'identifier' => 'Content from Content (on Content: Members [field_workgroup_members])',
         'keyword' => 'node_3',
         'name' => 'entity_from_field:field_workgroup_members-node-node',
-        'delta' => '0',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/pumagic/staff',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'title' => 'Map and Geospatial Staff',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -2244,10 +2244,10 @@ staff/systems_office/*',
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'middle' => NULL,
-      'left' => NULL,
-      'right' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
     ),
   );
@@ -2317,41 +2317,41 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -36;
+  $handler->weight = -37;
   $handler->conf = array(
-    'title' => 'Working Group',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Content from Content (on Content: Members [field_workgroup_members])',
-        'keyword' => 'node_3',
-        'name' => 'entity_from_field:field_workgroup_members-node-node',
-        'delta' => '0',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'work_group' => 'work_group',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => '0',
+        'id' => 1,
+        'identifier' => 'Content from Content (on Content: Members [field_workgroup_members])',
+        'keyword' => 'node_3',
+        'name' => 'entity_from_field:field_workgroup_members-node-node',
+      ),
+    ),
+    'title' => 'Working Group',
   );
   $display = new panels_display();
   $display->layout = 'single';
@@ -2359,8 +2359,8 @@ staff/systems_office/*',
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'middle' => NULL,
       'left' => NULL,
+      'middle' => NULL,
       'right' => NULL,
     ),
   );

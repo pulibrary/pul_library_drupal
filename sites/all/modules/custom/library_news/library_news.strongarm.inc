@@ -86,42 +86,42 @@ function library_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__library_news_item';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '12',
+        ),
+        'redirect' => array(
+          'weight' => '13',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'workbench_access' => array(
+          'weight' => '1',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '11',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'brief_faq_display' => array(
-        'custom_settings' => FALSE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => FALSE,
-      ),
-      'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
       'content_body_mode' => array(
         'custom_settings' => FALSE,
       ),
+      'database_description_only' => array(
+        'custom_settings' => FALSE,
+      ),
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '12',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '11',
-        ),
-        'redirect' => array(
-          'weight' => '13',
-        ),
-        'workbench_access' => array(
-          'weight' => '1',
-        ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
       ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__library_news_item'] = $strongarm;
@@ -198,8 +198,8 @@ function library_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_library_news_item';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.8',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_library_news_item'] = $strongarm;
 
@@ -208,8 +208,8 @@ function library_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_audiences';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_audiences'] = $strongarm;
 
@@ -218,8 +218,8 @@ function library_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_news_events_categories';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_news_events_categories'] = $strongarm;
 

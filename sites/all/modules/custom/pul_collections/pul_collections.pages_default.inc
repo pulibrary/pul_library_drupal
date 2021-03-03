@@ -18,45 +18,45 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -19;
+  $handler->weight = -20;
   $handler->conf = array(
-    'title' => 'Collections Landing Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar second-sidebar collections',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'User Details',
-        'keyword' => 'user_details',
-        'name' => 'entity_from_field:field_col_contact-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'collection' => 'collection',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar second-sidebar collections',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => 'collections',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'User Details',
+        'keyword' => 'user_details',
+        'name' => 'entity_from_field:field_col_contact-node-node',
+      ),
+    ),
+    'title' => 'Collections Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -133,35 +133,35 @@ function pul_collections_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -39;
+  $handler->weight = -40;
   $handler->conf = array(
-    'title' => 'Collections Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second collections-home-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'about/collections',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'about/collections',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second collections-home-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections',
-    'panels_breadcrumbs_paths' => 'collections',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collections Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -188,15 +188,15 @@ function pul_collections_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 0,
     'no_extras' => 0,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -218,10 +218,10 @@ function pul_collections_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Contacts',
-    'title' => 'Contact Collection Development',
     'body' => '<p>Collection Development Department<br />B-18-M Firestone Library<br />One Washington Road<br />Princeton University<br />Princeton, NJ 08544<br />T: 609-258-6668<br />F: 609-258-6950</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Contact Collection Development',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -280,8 +280,8 @@ function pul_collections_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'collections';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -298,15 +298,15 @@ function pul_collections_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Collections Page',
+    'body_classes_to_add' => 'one-sidebar sidebar-second page-collections',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second page-collections',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Collections Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -314,9 +314,9 @@ function pul_collections_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -335,12 +335,12 @@ function pul_collections_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '5493',
-    'links' => 1,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'teaser',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
+    'links' => 1,
+    'nid' => '5493',
     'override_title' => 1,
     'override_title_text' => '',
   );

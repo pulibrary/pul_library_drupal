@@ -44,7 +44,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
         ),
       ),
     ),
-    'body_classes_to_add' => 'branch-libraries',
+    'body_classes_to_add' => 'libraries-makerspace',
     'body_classes_to_remove' => '',
     'contexts' => array(),
     'css' => '',
@@ -52,24 +52,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
     'name' => 'office-of-research-data-and-open-scholarship',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'relationships' => array(
-      1 => array(
-        'context' => 'argument_entity_id:node_1',
-        'delta' => 0,
-        'id' => 1,
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-      ),
-      2 => array(
-        'context' => 'argument_entity_id:node_1',
-        'delta' => 0,
-        'id' => 1,
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
-      ),
-    ),
+    'relationships' => array(),
     'title' => 'Office of Research Data and Open Scholarship',
   );
   $display = new panels_display();
@@ -101,7 +84,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-2b157fa1-aba6-40a8-822f-ae3d50ef6b6d';
+  $pane->pid = 'new-83b441b3-8c72-45bd-a9c7-92151347c2dc';
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-office-of-research-data-and';
@@ -120,11 +103,75 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '2b157fa1-aba6-40a8-822f-ae3d50ef6b6d';
-  $display->content['new-2b157fa1-aba6-40a8-822f-ae3d50ef6b6d'] = $pane;
-  $display->panels['first'][0] = 'new-2b157fa1-aba6-40a8-822f-ae3d50ef6b6d';
+  $pane->uuid = '83b441b3-8c72-45bd-a9c7-92151347c2dc';
+  $display->content['new-83b441b3-8c72-45bd-a9c7-92151347c2dc'] = $pane;
+  $display->panels['first'][0] = 'new-83b441b3-8c72-45bd-a9c7-92151347c2dc';
   $pane = new stdClass();
-  $pane->pid = 'new-ee9cd44e-3811-4342-a636-06a588d5b4bd';
+  $pane->pid = 'new-fb15bf48-763a-43d1-affe-38b89c5301a4';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Consultation RDOS',
+    'body' => '<script type="text/javascript">// <![CDATA[
+jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
+    jQuery("#mysched_0").LibCalMySched({iid: 771, lid: 387, gid: 8429, uid: 0, width: 560, height: 680, title: \'Make an Appointment - \', domain: \'https://api3.libcal.com\'});
+});
+// ]]></script>
+<button id="mysched_0">Make a consultation appointment</button>',
+    'format' => 'full_html',
+    'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'fb15bf48-763a-43d1-affe-38b89c5301a4';
+  $display->content['new-fb15bf48-763a-43d1-affe-38b89c5301a4'] = $pane;
+  $display->panels['first'][1] = 'new-fb15bf48-763a-43d1-affe-38b89c5301a4';
+  $pane = new stdClass();
+  $pane->pid = 'new-d8282980-c714-4635-ac91-c4b47e2a0175';
+  $pane->panel = 'second';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_library_interior_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter' => 'image',
+    'formatter_settings' => array(
+      'image_link' => '',
+      'image_style' => '',
+    ),
+    'label' => 'title',
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd8282980-c714-4635-ac91-c4b47e2a0175';
+  $display->content['new-d8282980-c714-4635-ac91-c4b47e2a0175'] = $pane;
+  $display->panels['second'][0] = 'new-d8282980-c714-4635-ac91-c4b47e2a0175';
+  $pane = new stdClass();
+  $pane->pid = 'new-08acf324-b334-4cf3-93f9-04e38b1e19a4';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:body';
@@ -148,11 +195,11 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'ee9cd44e-3811-4342-a636-06a588d5b4bd';
-  $display->content['new-ee9cd44e-3811-4342-a636-06a588d5b4bd'] = $pane;
-  $display->panels['second'][0] = 'new-ee9cd44e-3811-4342-a636-06a588d5b4bd';
+  $pane->uuid = '08acf324-b334-4cf3-93f9-04e38b1e19a4';
+  $display->content['new-08acf324-b334-4cf3-93f9-04e38b1e19a4'] = $pane;
+  $display->panels['second'][1] = 'new-08acf324-b334-4cf3-93f9-04e38b1e19a4';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';
@@ -172,8 +219,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
     ),
     'label' => 'hidden',
     'override_title' => 1,
-    'override_title_heading' => 'h2',
-    'override_title_text' => 'Office of Research Data and Open Scholarship',
+    'override_title_text' => 'Architecture Library',
   );
   $pane->cache = array();
   $pane->style = array(

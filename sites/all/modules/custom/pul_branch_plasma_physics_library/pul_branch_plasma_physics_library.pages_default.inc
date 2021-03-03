@@ -18,61 +18,61 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 14;
+  $handler->weight = 11;
   $handler->conf = array(
-    'title' => 'Plasma Physics Library Branch Pages',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries/plasma-physics/*
+plasma-physics/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
+    'body_classes_to_add' => 'branch-libraries libraries-plasma',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-plasma',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(
       1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/plasma-physics/*
-plasma-physics/*',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'title' => 'Plasma Physics Library Branch Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -113,8 +113,8 @@ plasma-physics/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -165,8 +165,8 @@ plasma-physics/*',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'alert--message',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -205,10 +205,10 @@ plasma-physics/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -281,71 +281,71 @@ plasma-physics/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 13;
+  $handler->weight = 10;
   $handler->conf = array(
-    'title' => 'Plasma Physics Library Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-plasma',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'libraries/plasma-physics
 plasma-physics',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries libraries-plasma',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+      ),
+    ),
+    'title' => 'Plasma Physics Library Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -386,8 +386,8 @@ plasma-physics',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -433,19 +433,19 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -485,19 +485,19 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -518,16 +518,16 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -553,8 +553,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-1',
     'css_class' => '',
+    'css_id' => 'tab-1',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -575,8 +575,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-2',
     'css_class' => '',
+    'css_id' => 'tab-2',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -597,8 +597,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-3',
     'css_class' => '',
+    'css_id' => 'tab-3',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -619,8 +619,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-4',
     'css_class' => '',
+    'css_id' => 'tab-4',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -641,8 +641,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-5',
     'css_class' => '',
+    'css_id' => 'tab-5',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -663,8 +663,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-6',
     'css_class' => '',
+    'css_id' => 'tab-6',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -685,8 +685,8 @@ plasma-physics',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'tab-7',
     'css_class' => '',
+    'css_id' => 'tab-7',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -702,16 +702,16 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '1',
     'delta_offset' => '0',
     'delta_reversed' => 1,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
       'links' => 0,
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -734,19 +734,19 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_label',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_label',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
-      'links' => 1,
-      'link' => 1,
-      'text' => '[entity:label]',
       'check_access' => 1,
+      'link' => 1,
+      'links' => 1,
+      'text' => '[entity:label]',
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'Featured Resources',
   );
@@ -769,20 +769,20 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
       'link' => 1,
-      'view_mode' => 'featured_link_url',
       'links' => 1,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Service Quick Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Service Quick Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -803,13 +803,13 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'link_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'link_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'External Resources',
   );
@@ -832,17 +832,17 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'taxonomy_term_reference_plain',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'taxonomy_term_reference_plain',
     'formatter_settings' => array(
-      'target' => 'node',
       'depth' => '0',
       'hidden' => 1,
+      'target' => 'node',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => 'Amenities',
   );
@@ -865,16 +865,16 @@ plasma-physics',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'Plasma Physics Library',
   );

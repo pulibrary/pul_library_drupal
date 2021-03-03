@@ -17,8 +17,8 @@ function library_news_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'story',
     'image_link' => '',
+    'image_style' => 'story',
   );
   $export['image__story_image_center__file_field_image'] = $file_display;
 
@@ -28,8 +28,8 @@ function library_news_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'story',
     'image_link' => '',
+    'image_style' => 'story',
   );
   $export['image__story_image_left__file_field_image'] = $file_display;
 
@@ -39,8 +39,8 @@ function library_news_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'story',
     'image_link' => '',
+    'image_style' => 'story',
   );
   $export['image__story_image_right__file_field_image'] = $file_display;
 

@@ -3,6 +3,8 @@ options:
 files:
   include: '**/*.s+(a|c)ss'
   ignore:
+    - 'assets/source/styles/components/buttons/_button--appointment.scss'
+    - 'assets/source/styles/components/forms/_forms--progress-bar.scss'
     - '**/_keyframes.scss'
     - '**/_mixins.scss'
     - '**/sites/**/**'

@@ -21,8 +21,6 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Catalog Details',
-    'weight' => '7',
     'children' => array(
       0 => 'field_authors',
       1 => 'field_call_number',
@@ -32,15 +30,17 @@ function library_news_field_group_info() {
       5 => 'field_publisher',
       6 => 'field_credit',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => '',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Catalog Details',
+    'weight' => '7',
   );
   $field_groups['group_catalog|node|library_news_item|form'] = $field_group;
 
@@ -54,23 +54,23 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Collections Development',
-    'weight' => '10',
     'children' => array(
       0 => 'field_acquisition_type',
       1 => 'field_material_access',
       2 => 'field_feat_collection',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Collections Development',
+      'formatter' => 'closed',
       'instance_settings' => array(
-        'required_fields' => 1,
         'classes' => '',
         'description' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'closed',
+      'label' => 'Collections Development',
     ),
+    'format_type' => 'tab',
+    'label' => 'Collections Development',
+    'weight' => '10',
   );
   $field_groups['group_cd_acquistions|node|library_news_item|form'] = $field_group;
 
@@ -84,21 +84,21 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Attachments',
-    'weight' => '9',
     'children' => array(
       0 => 'field_news_images',
       1 => 'field_news_file_attachemtns',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => '',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Attachments',
+    'weight' => '9',
   );
   $field_groups['group_news_attachments|node|library_news_item|form'] = $field_group;
 
@@ -112,21 +112,21 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Dates & Locations',
-    'weight' => '8',
     'children' => array(
       0 => 'field_pul_event_date',
       1 => 'field_news_event_location',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => '',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Dates & Locations',
+    'weight' => '8',
   );
   $field_groups['group_news_dates_locs|node|library_news_item|form'] = $field_group;
 
@@ -140,8 +140,6 @@ function library_news_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'News Details',
-    'weight' => '6',
     'children' => array(
       0 => 'field_news_library_contact',
       1 => 'field_news_more_information',
@@ -152,15 +150,17 @@ function library_news_field_group_info() {
       6 => 'field_news_libraries',
       7 => 'field_homepage_spotlight',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => '',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'News Details',
+    'weight' => '6',
   );
   $field_groups['group_news_details|node|library_news_item|form'] = $field_group;
 

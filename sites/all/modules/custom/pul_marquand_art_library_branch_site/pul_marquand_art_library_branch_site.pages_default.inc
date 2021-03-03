@@ -18,62 +18,62 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 11;
+  $handler->weight = 8;
   $handler->conf = array(
-    'title' => 'Marquand Art Library Rare Books Highlights Page',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries/marquand/rare-book-highlights
+marquand/rare-book-highlights',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
+    'body_classes_to_add' => 'branch-libraries libraries-marquand',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'marquand-art-library-rare-books-highlights-page',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-marquand',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(
       1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/rare-book-highlights
-marquand/rare-book-highlights',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-    'name' => 'marquand-art-library-rare-books-highlights-page',
+    'title' => 'Marquand Art Library Rare Books Highlights Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -92,8 +92,8 @@ marquand/rare-book-highlights',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -118,8 +118,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Contact Us',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact Us',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -182,10 +182,10 @@ marquand/rare-book-highlights',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -229,8 +229,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -255,8 +255,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Marquand Library of Art and Archaeology',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Marquand Library of Art and Archaeology',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -281,61 +281,61 @@ marquand/rare-book-highlights',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 12;
+  $handler->weight = 9;
   $handler->conf = array(
-    'title' => 'Marquand Art Library News Page',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries/marquand/news
+news/marquand',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
+    'body_classes_to_add' => 'branch-libraries libraries-marquand',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-marquand',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(
       1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/news
-news/marquand',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'title' => 'Marquand Art Library News Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -354,8 +354,8 @@ news/marquand',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -380,8 +380,8 @@ news/marquand',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Contact Us',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact Us',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -407,8 +407,8 @@ news/marquand',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'library-news',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -447,10 +447,10 @@ news/marquand',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -475,8 +475,8 @@ news/marquand',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -501,8 +501,8 @@ news/marquand',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Marquand Library of Art and Archaeology',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Marquand Library of Art and Archaeology',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -527,71 +527,71 @@ news/marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 9;
+  $handler->weight = 6;
   $handler->conf = array(
-    'title' => 'Marquand Art Library Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-marquand',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'libraries/marquand
 marquand',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries libraries-marquand',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+      ),
+    ),
+    'title' => 'Marquand Art Library Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -610,8 +610,8 @@ marquand',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -633,8 +633,8 @@ marquand',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -659,8 +659,8 @@ marquand',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Contact Us',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact Us',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -681,19 +681,19 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -714,19 +714,19 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -766,16 +766,16 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -834,16 +834,16 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '1',
     'delta_offset' => '0',
     'delta_reversed' => 1,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
       'links' => 0,
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -866,19 +866,19 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_label',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_label',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
-      'links' => 1,
-      'link' => 1,
-      'text' => '[entity:label]',
       'check_access' => 1,
+      'link' => 1,
+      'links' => 1,
+      'text' => '[entity:label]',
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'Featured Resources',
   );
@@ -901,17 +901,17 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'taxonomy_term_reference_plain',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'taxonomy_term_reference_plain',
     'formatter_settings' => array(
-      'target' => 'node',
       'depth' => '0',
       'hidden' => 1,
+      'target' => 'node',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => 'Amenities',
   );
@@ -934,16 +934,16 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'link_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'link_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -964,21 +964,21 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
       'link' => 1,
-      'view_mode' => 'featured_link_url',
       'links' => 1,
       'use_content_language' => 1,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Quick Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Quick Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -999,19 +999,19 @@ marquand',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Marquand Library of Art and Archaeology',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Marquand Library of Art and Archaeology',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1036,79 +1036,79 @@ marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 10;
+  $handler->weight = 7;
   $handler->conf = array(
-    'title' => 'Marquand Art Library Branch Pages',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries/marquand/*
+marquand/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+        2 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => TRUE,
+          'settings' => array(
+            'paths' => 'libraries/marquand/rare-book-highlights
+marquand/rare-book-highlights',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => 'branch-libraries libraries-marquand',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '7790',
+        'id' => 1,
         'identifier' => 'Branch Home',
         'keyword' => 'library',
         'name' => 'entity:node',
-        'entity_id' => '7790',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
     'relationships' => array(
       1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/*
-marquand/*',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-        2 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries/marquand/rare-book-highlights
-marquand/rare-book-highlights',
-          ),
-          'context' => 'empty',
-          'not' => TRUE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'title' => 'Marquand Art Library Branch Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -1127,8 +1127,8 @@ marquand/rare-book-highlights',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1150,8 +1150,8 @@ marquand/rare-book-highlights',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1176,8 +1176,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Contact Us',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact Us',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1203,8 +1203,8 @@ marquand/rare-book-highlights',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'alert--message',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1222,8 +1222,8 @@ marquand/rare-book-highlights',
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1244,10 +1244,10 @@ marquand/rare-book-highlights',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1288,13 +1288,13 @@ marquand/rare-book-highlights',
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'libraries/marquand/resources/sale',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'libraries/marquand/resources/sale',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -1341,8 +1341,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1363,20 +1363,20 @@ marquand/rare-book-highlights',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'context_entity:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'view_mode' => 'featured_link_url',
       'links' => 1,
       'use_content_language' => 1,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Quick Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Quick Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1401,8 +1401,8 @@ marquand/rare-book-highlights',
       'nid' => '7790',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Marquand Library of Art and Archaeology',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Marquand Library of Art and Archaeology',
   );
   $pane->cache = array();
   $pane->style = array(

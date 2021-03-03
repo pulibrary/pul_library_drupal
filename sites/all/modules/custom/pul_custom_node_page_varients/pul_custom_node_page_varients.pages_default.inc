@@ -18,7 +18,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -45;
+  $handler->weight = -46;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -343,7 +343,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -40;
+  $handler->weight = -41;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -455,7 +455,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -41;
+  $handler->weight = -42;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -567,7 +567,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -31;
+  $handler->weight = -32;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -686,7 +686,7 @@ function pul_custom_node_page_varients_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -32;
+  $handler->weight = -33;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -828,7 +828,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -28;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1005,7 +1005,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -22;
+  $handler->weight = -24;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1213,7 +1213,7 @@ help/ask-a-librarian',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -7;
+  $handler->weight = -8;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1340,7 +1340,7 @@ research-data-management/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -38;
+  $handler->weight = -39;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -86,6 +86,20 @@ function microforms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__microforms_newspapers';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'content_body_mode' => array(
         'custom_settings' => FALSE,
@@ -93,20 +107,6 @@ function microforms_strongarm() {
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__microforms_newspapers'] = $strongarm;
@@ -184,8 +184,8 @@ function microforms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_menu_link_menu-selected-collections-and-ti';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_menu_link_menu-selected-collections-and-ti'] = $strongarm;
 
@@ -194,8 +194,8 @@ function microforms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_microforms_newspapers';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_microforms_newspapers'] = $strongarm;
 

@@ -18,70 +18,70 @@ function cdl_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -16;
   $handler->conf = array(
-    'title' => 'Collection Development Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections-and-collection-development',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections-and-collection-development',
+            'visibility_setting' => '1',
+          ),
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'pul_landing_page' => 'pul_landing_page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
+    'style' => 'naked',
     'style_settings' => array(
-      'top' => NULL,
+      'bottom' => NULL,
+      'branding' => NULL,
+      'content' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
       'left' => NULL,
       'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'default' => NULL,
-      'branding' => NULL,
-      'header' => NULL,
       'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
-      'content' => NULL,
+      'right' => NULL,
+      'second' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'first' => NULL,
-      'second' => NULL,
+      'top' => NULL,
     ),
-    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = '';
@@ -99,11 +99,11 @@ function cdl_layouts_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
     'body' => '',
     'format' => 'full_html',
-    'substitute' => TRUE,
     'name' => 'cdl_new_acq_spotlight',
+    'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -124,13 +124,13 @@ function cdl_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => 'Collecting for Princeton',
   );
@@ -153,12 +153,12 @@ function cdl_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'more_link' => 1,
-    'override_title' => 1,
-    'override_title_text' => 'News and Events',
     'arguments' => array(
       'tid' => '3779',
     ),
+    'more_link' => 1,
+    'override_title' => 1,
+    'override_title_text' => 'News and Events',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -202,22 +202,22 @@ function cdl_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'pul_logo_file',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -248,8 +248,8 @@ function cdl_layouts_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'cdl-menu',
     'css_class' => '',
+    'css_id' => 'cdl-menu',
   );
   $pane->extras = array();
   $pane->position = 1;

@@ -18,77 +18,77 @@ function highlights_psychology_and_neuroscience_default_page_manager_handlers() 
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -16;
+  $handler->weight = -17;
   $handler->conf = array(
-    'title' => 'Highlights for the Psychology and Neuroscience Departments',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-lewis',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'lewis/psychology-neuroscience',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'lewis/psychology-neuroscience',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries libraries-lewis',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'highlights-for-the-psychology-and-neuroscience-departments',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '/lewis
+/lewis/psychology-neuroscience',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Lewis Library
 Highlights in Psychology and Neuroscience',
-    'panels_breadcrumbs_paths' => '/lewis
-/lewis/psychology-neuroscience',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+      ),
+    ),
+    'title' => 'Highlights for the Psychology and Neuroscience Departments',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -107,8 +107,8 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -138,8 +138,8 @@ Highlights in Psychology and Neuroscience',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'liason-librarian',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -155,19 +155,19 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -188,16 +188,16 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -237,16 +237,16 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '1',
     'delta_offset' => '0',
     'delta_reversed' => 1,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
       'links' => 0,
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -269,19 +269,19 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_label',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_label',
     'formatter_settings' => array(
-      'view_mode' => 'teaser',
-      'links' => 1,
-      'link' => 1,
-      'text' => '[entity:label]',
       'check_access' => 1,
+      'link' => 1,
+      'links' => 1,
+      'text' => '[entity:label]',
+      'view_mode' => 'teaser',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'Featured Resources',
   );
@@ -304,16 +304,16 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Events',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Events',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -334,20 +334,20 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
       'link' => 1,
-      'view_mode' => 'featured_link_url',
       'links' => 1,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Services',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Services',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -368,13 +368,13 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'link_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '5',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'link_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => 'Key Links',
   );
@@ -397,17 +397,17 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'taxonomy_term_reference_plain',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'taxonomy_term_reference_plain',
     'formatter_settings' => array(
-      'target' => 'node',
       'depth' => '0',
       'hidden' => 1,
+      'target' => 'node',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => 'Amenities',
   );
@@ -430,19 +430,19 @@ Highlights in Psychology and Neuroscience',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -467,67 +467,67 @@ Highlights in Psychology and Neuroscience',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -13;
+  $handler->weight = -14;
   $handler->conf = array(
-    'title' => 'Highlights for the Psychology and Neuroscience Departments - News Index',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-lewis',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'lewis/psychology-neuroscience/news',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'lewis/psychology-neuroscience/news',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries libraries-lewis',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'highlights-for-the-psychology-and-neuroscience-departments-news-index',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '/lewis
+/lewis/psychology-neuroscience',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Lewis Library
 Highlights in Psychology and Neuroscience',
-    'panels_breadcrumbs_paths' => '/lewis
-/lewis/psychology-neuroscience',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+      ),
+    ),
+    'title' => 'Highlights for the Psychology and Neuroscience Departments - News Index',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -546,8 +546,8 @@ Highlights in Psychology and Neuroscience',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -577,8 +577,8 @@ Highlights in Psychology and Neuroscience',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'liason-librarian',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -617,8 +617,8 @@ Highlights in Psychology and Neuroscience',
       'nid' => '40971',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -643,8 +643,8 @@ Highlights in Psychology and Neuroscience',
       'nid' => '40971',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Events',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Events',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -669,8 +669,8 @@ Highlights in Psychology and Neuroscience',
       'nid' => '40971',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Key Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Key Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -695,8 +695,8 @@ Highlights in Psychology and Neuroscience',
       'nid' => '40971',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Highlights for the Psychology and Neuroscience Departments',
   );
   $pane->cache = array();
   $pane->style = array(

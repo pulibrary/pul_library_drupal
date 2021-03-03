@@ -12,13 +12,13 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_18';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -4;
+  $handler->weight = 45;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -38,22 +38,31 @@ function pul_libraries_ct_default_page_manager_handlers() {
           'name' => 'path_visibility',
           'not' => FALSE,
           'settings' => array(
-            'paths' => 'libraries/engineering
-libraries/architecture
-libraries/stokes
-libraries/plasma-physics
-libraries/scilib
-libraries/music
-vdl
-stokes
-plasma-physics
-eastasianlib
+            'paths' => '2020-21-resources
+architecture
 digital-collections
-research-data
+eastasian
+eastasianlib
+engineering
 fall-2020
-2020-21-resources
+lewis
+libraries/architecture
+libraries/engineering
+libraries/music
+libraries/plasma-physics
+libraries/recap
+libraries/scilib
+libraries/stokes
+makerspace
+marquand
+music
+plasma-physics
+rdos
+research-data
 services/open-access-publishing-program
-rdos',
+stokes
+videoservices
+vdl',
             'visibility_setting' => '0',
           ),
         ),
@@ -66,16 +75,7 @@ rdos',
     'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'relationships' => array(
-      1 => array(
-        'context' => 'argument_entity_id:node_1',
-        'delta' => 0,
-        'id' => 1,
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-      ),
-    ),
+    'relationships' => array(),
     'title' => 'Branch Pages',
   );
   $display = new panels_display();
@@ -108,7 +108,7 @@ rdos',
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
-  $pane->panel = 'first';
+  $pane->panel = 'middle';
   $pane->type = 'node_body';
   $pane->subtype = 'node_body';
   $pane->shown = TRUE;
@@ -128,32 +128,7 @@ rdos',
   $pane->locks = array();
   $pane->uuid = '5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
-  $display->panels['first'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
-  $pane = new stdClass();
-  $pane->pid = 'new-09a05689-416a-46db-beea-bf08dd380368';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '%node:nid',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '09a05689-416a-46db-beea-bf08dd380368';
-  $display->content['new-09a05689-416a-46db-beea-bf08dd380368'] = $pane;
-  $display->panels['second'][0] = 'new-09a05689-416a-46db-beea-bf08dd380368';
+  $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
@@ -166,7 +141,7 @@ rdos',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -25;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -318,7 +293,7 @@ rdos',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -26;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
