@@ -84,7 +84,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-83b441b3-8c72-45bd-a9c7-92151347c2dc';
+  $pane->pid = 'new-97b5a645-7b85-4162-a947-c6bc641992ce';
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-office-of-research-data-and';
@@ -103,11 +103,11 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '83b441b3-8c72-45bd-a9c7-92151347c2dc';
-  $display->content['new-83b441b3-8c72-45bd-a9c7-92151347c2dc'] = $pane;
-  $display->panels['first'][0] = 'new-83b441b3-8c72-45bd-a9c7-92151347c2dc';
+  $pane->uuid = '97b5a645-7b85-4162-a947-c6bc641992ce';
+  $display->content['new-97b5a645-7b85-4162-a947-c6bc641992ce'] = $pane;
+  $display->panels['first'][0] = 'new-97b5a645-7b85-4162-a947-c6bc641992ce';
   $pane = new stdClass();
-  $pane->pid = 'new-fb15bf48-763a-43d1-affe-38b89c5301a4';
+  $pane->pid = 'new-45b1222f-ecec-4075-af38-9323c23f356f';
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
@@ -119,8 +119,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
 jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
     jQuery("#mysched_0").LibCalMySched({iid: 771, lid: 387, gid: 8429, uid: 0, width: 560, height: 680, title: \'Make an Appointment - \', domain: \'https://api3.libcal.com\'});
 });
-// ]]></script>
-<button id="mysched_0">Make a consultation appointment</button>',
+// ]]></script><button id="mysched_0">Make a consultation appointment</button>',
     'format' => 'full_html',
     'substitute' => 1,
     'title' => '',
@@ -134,11 +133,11 @@ jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'fb15bf48-763a-43d1-affe-38b89c5301a4';
-  $display->content['new-fb15bf48-763a-43d1-affe-38b89c5301a4'] = $pane;
-  $display->panels['first'][1] = 'new-fb15bf48-763a-43d1-affe-38b89c5301a4';
+  $pane->uuid = '45b1222f-ecec-4075-af38-9323c23f356f';
+  $display->content['new-45b1222f-ecec-4075-af38-9323c23f356f'] = $pane;
+  $display->panels['first'][1] = 'new-45b1222f-ecec-4075-af38-9323c23f356f';
   $pane = new stdClass();
-  $pane->pid = 'new-d8282980-c714-4635-ac91-c4b47e2a0175';
+  $pane->pid = 'new-7251adb8-64a4-418b-974d-6d891a70f394';
   $pane->panel = 'second';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_library_interior_image';
@@ -167,9 +166,9 @@ jQuery.getScript("https://api3.libcal.com/js/myscheduler.min.js", function() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'd8282980-c714-4635-ac91-c4b47e2a0175';
-  $display->content['new-d8282980-c714-4635-ac91-c4b47e2a0175'] = $pane;
-  $display->panels['second'][0] = 'new-d8282980-c714-4635-ac91-c4b47e2a0175';
+  $pane->uuid = '7251adb8-64a4-418b-974d-6d891a70f394';
+  $display->content['new-7251adb8-64a4-418b-974d-6d891a70f394'] = $pane;
+  $display->panels['second'][0] = 'new-7251adb8-64a4-418b-974d-6d891a70f394';
   $pane = new stdClass();
   $pane->pid = 'new-08acf324-b334-4cf3-93f9-04e38b1e19a4';
   $pane->panel = 'second';
