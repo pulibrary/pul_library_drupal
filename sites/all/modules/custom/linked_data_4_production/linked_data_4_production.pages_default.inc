@@ -18,78 +18,78 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 30;
+  $handler->weight = 27;
   $handler->conf = array(
-    'title' => 'Linked Data News Index',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'cams/ld4p/news',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '27317',
+        'id' => 1,
         'identifier' => 'Content',
         'keyword' => 'node_2',
         'name' => 'entity:node',
-        'entity_id' => '27317',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'linked-data-news-index',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '',
+    'pipeline' => 'standard',
     'relationships' => array(
       0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'File from Content (on Content: Logo Graphic [field_pul_landing_logo])',
         'keyword' => 'file',
         'name' => 'entity_from_field:field_pul_landing_logo-node-file',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'cams/ld4p/news',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
-    'name' => 'linked-data-news-index',
+    'title' => 'Linked Data News Index',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
+    'style' => 'naked',
     'style_settings' => array(
-      'top' => NULL,
+      'bottom' => NULL,
+      'branding' => NULL,
+      'content' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
       'left' => NULL,
       'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'default' => NULL,
-      'branding' => NULL,
-      'header' => NULL,
       'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
-      'content' => NULL,
+      'right' => NULL,
+      'second' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'first' => NULL,
-      'second' => NULL,
+      'top' => NULL,
     ),
-    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = '';
@@ -125,20 +125,20 @@ function linked_data_4_production_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
       'file_view_mode' => 'default',
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'LD4P at Princeton',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'LD4P at Princeton',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -163,61 +163,61 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 29;
+  $handler->weight = 26;
   $handler->conf = array(
-    'title' => 'Linked Data Project',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'cams/ld4p',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'cams/ld4p',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'linked-data-project',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
-    'name' => 'linked-data-project',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Linked Data Project',
   );
   $display = new panels_display();
   $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
+    'style' => 'naked',
     'style_settings' => array(
-      'top' => NULL,
+      'bottom' => NULL,
+      'branding' => NULL,
+      'content' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
       'left' => NULL,
       'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'default' => NULL,
-      'branding' => NULL,
-      'header' => NULL,
       'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
-      'content' => NULL,
+      'right' => NULL,
+      'second' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'first' => NULL,
-      'second' => NULL,
+      'top' => NULL,
     ),
-    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = '';
@@ -234,16 +234,16 @@ function linked_data_4_production_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'About the Project',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'About the Project',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -287,8 +287,8 @@ function linked_data_4_production_default_page_manager_handlers() {
       'nid' => '27317',
     ),
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -309,25 +309,25 @@ function linked_data_4_production_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'branch_image_branding',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'LD4P at Princeton',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'LD4P at Princeton',
   );
   $pane->cache = array();
   $pane->style = array(

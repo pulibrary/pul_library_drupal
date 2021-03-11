@@ -18,45 +18,45 @@ function libcal_events_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 39;
+  $handler->weight = 35;
   $handler->conf = array(
-    'title' => 'Exhibitions Index Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'exhibitions',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => 'one-sidebar sidebar-second exhibitions-page',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'exhibitions-index-page',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'news',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'News and Events',
+    'pipeline' => 'standard',
     'relationships' => array(
       0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Library Contact',
         'keyword' => 'contact',
         'name' => 'entity_from_field:field_news_library_contact-node-user',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'exhibitions',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'News and Events',
-    'panels_breadcrumbs_paths' => 'news',
-    'panels_breadcrumbs_home' => 1,
-    'name' => 'exhibitions-index-page',
+    'title' => 'Exhibitions Index Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -64,9 +64,9 @@ function libcal_events_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -143,12 +143,12 @@ function libcal_events_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '',
     'format' => 'pul_editor_html',
-    'substitute' => TRUE,
     'name' => 'exhibitions_footer',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

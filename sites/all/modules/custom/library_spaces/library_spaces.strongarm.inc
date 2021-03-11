@@ -86,36 +86,36 @@ function library_spaces_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__library_meeting_space_locations';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '11',
+        ),
+        'redirect' => array(
+          'weight' => '10',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '12',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'database_description_only' => array(
-        'custom_settings' => FALSE,
-      ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => FALSE,
-      ),
       'content_body_mode' => array(
+        'custom_settings' => FALSE,
+      ),
+      'database_description_only' => array(
         'custom_settings' => FALSE,
       ),
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '11',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '12',
-        ),
-        'redirect' => array(
-          'weight' => '10',
-        ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
       ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__library_meeting_space_locations'] = $strongarm;
@@ -171,8 +171,8 @@ function library_spaces_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_library_meeting_space_locations';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_library_meeting_space_locations'] = $strongarm;
 

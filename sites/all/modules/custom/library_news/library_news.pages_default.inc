@@ -18,45 +18,45 @@ function library_news_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -46;
+  $handler->weight = -47;
   $handler->conf = array(
-    'title' => 'News item Landing Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second news-item-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'Library Contact',
-        'keyword' => 'contact',
-        'name' => 'entity_from_field:field_news_library_contact-node-user',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'entity_bundle:node',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'library_news_item' => 'library_news_item',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second news-item-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'news',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'News and Events',
-    'panels_breadcrumbs_paths' => 'news',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Library Contact',
+        'keyword' => 'contact',
+        'name' => 'entity_from_field:field_news_library_contact-node-user',
+      ),
+    ),
+    'title' => 'News item Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -64,9 +64,9 @@ function library_news_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -130,11 +130,11 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '',
     'format' => 'pul_editor_html',
     'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -227,31 +227,31 @@ function library_news_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -9;
   $handler->conf = array(
-    'title' => 'Tags Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'name' => '',
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'entity_bundle:taxonomy_term',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'tags' => 'tags',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Tags Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -279,8 +279,8 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -302,8 +302,8 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'News Categories',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'News Categories',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -325,8 +325,8 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Library Blogs',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Library Blogs',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -353,34 +353,34 @@ function library_news_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -13;
   $handler->conf = array(
-    'title' => 'News Category Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'news-category-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               21 => '21',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'news-category-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'news',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'News and Events',
-    'panels_breadcrumbs_paths' => 'news',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'News Category Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -388,9 +388,9 @@ function library_news_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -410,8 +410,8 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -433,11 +433,11 @@ function library_news_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '',
     'format' => 'pul_editor_html',
     'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -515,8 +515,8 @@ function library_news_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'news';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -533,29 +533,29 @@ function library_news_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Basic News Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second news-page',
-    'css_id' => 'library-news-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'news',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'news',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second news-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'library-news-page',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Basic News Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -563,9 +563,9 @@ function library_news_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -584,20 +584,20 @@ function library_news_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '10',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '10',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -619,12 +619,12 @@ function library_news_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '',
     'format' => 'pul_editor_html',
-    'substitute' => TRUE,
     'name' => 'newsletter_sidebar',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

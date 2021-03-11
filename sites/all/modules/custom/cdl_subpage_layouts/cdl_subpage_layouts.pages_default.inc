@@ -18,76 +18,76 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 17;
+  $handler->weight = 15;
   $handler->conf = array(
-    'title' => 'Collection Development Department Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Development Dept Home',
-        'keyword' => 'collection_dev',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'Collection Dev Staff',
-        'keyword' => 'col_dev_staff',
-        'name' => 'entity:node',
-        'entity_id' => '6557',
-        'id' => 2,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/*
 ',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'acquisitions_highlights' => 'acquisitions_highlights',
               'page' => 'page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Development Dept Home',
+        'keyword' => 'collection_dev',
+        'name' => 'entity:node',
+      ),
+      1 => array(
+        'entity_id' => '6557',
+        'id' => 2,
+        'identifier' => 'Collection Dev Staff',
+        'keyword' => 'col_dev_staff',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Department Page',
   );
   $display = new panels_display();
   $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
-      'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -105,10 +105,10 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
     'override_title_text' => '%node:title',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -130,31 +130,31 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'collections/people',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'collections/people',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '60',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '60',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -221,17 +221,17 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'cssclass_formatter',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'cssclass_formatter',
     'formatter_settings' => array(
-      'target' => 'node',
       'depth' => '0',
       'hidden' => 1,
+      'target' => 'node',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -254,16 +254,16 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'pul_logo_file',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -312,65 +312,65 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -12;
+  $handler->weight = -13;
   $handler->conf = array(
-    'title' => 'Collection Development Acquisitions Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Dev Homepage ',
-        'keyword' => 'colldev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/highlights',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections/highlights',
+            'visibility_setting' => '1',
+          ),
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'page' => 'page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Dev Homepage ',
+        'keyword' => 'colldev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Acquisitions Page',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -388,17 +388,17 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'cssclass_formatter',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'cssclass_formatter',
     'formatter_settings' => array(
-      'target' => 'node',
       'depth' => '0',
       'hidden' => 1,
+      'target' => 'node',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -421,20 +421,20 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '30',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '30',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '%node:title',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -474,22 +474,22 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'pul_logo_file',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -538,73 +538,73 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -8;
+  $handler->weight = -9;
   $handler->conf = array(
-    'title' => 'Subject Selector Profile',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Development Dept Home',
-        'keyword' => 'collection_dev',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'Collection Dev Staff',
-        'keyword' => 'col_dev_staff',
-        'name' => 'entity:node',
-        'entity_id' => '6557',
-        'id' => 2,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/*
 ',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'subject_specialists' => 'subject_specialists',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Development Dept Home',
+        'keyword' => 'collection_dev',
+        'name' => 'entity:node',
+      ),
+      1 => array(
+        'entity_id' => '6557',
+        'id' => 2,
+        'identifier' => 'Collection Dev Staff',
+        'keyword' => 'col_dev_staff',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Subject Selector Profile',
   );
   $display = new panels_display();
   $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -622,11 +622,11 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'link' => 0,
-    'markup' => 'h1',
-    'id' => 'selector-name',
     'class' => '',
     'context' => 'argument_entity_id:node_1',
+    'id' => 'selector-name',
+    'link' => 0,
+    'markup' => 'h1',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -673,31 +673,31 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'collections/people',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'collections/people',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '60',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '60',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -787,16 +787,16 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'pul_logo_file',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -845,65 +845,65 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -10;
+  $handler->weight = -11;
   $handler->conf = array(
-    'title' => 'Collection Development Specialists Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Dev Homepage ',
-        'keyword' => 'colldev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/people',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections/people',
+            'visibility_setting' => '1',
+          ),
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'page' => 'page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Dev Homepage ',
+        'keyword' => 'colldev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Specialists Page',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -940,22 +940,22 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'pul_logo_file',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -1004,41 +1004,26 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -6;
+  $handler->weight = -7;
   $handler->conf = array(
-    'title' => 'Collections Forum Layout',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Development Home',
-        'keyword' => 'collections_dev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'page' => 'page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/cdforum
 collections/cdforum/*
 collections/reilly08202008
@@ -1046,27 +1031,42 @@ collections/pathways10102010
 collections/futureaccess02262010
 collections/futureaccess02262010-bio
 collections/adelman07102008',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Development Home',
+        'keyword' => 'collections_dev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections-and-collection-development',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collection Development Home',
-    'panels_breadcrumbs_paths' => 'collections-and-collection-development',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collections Forum Layout',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
       'bottom' => NULL,
+      'default' => NULL,
       'middle' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1084,11 +1084,11 @@ collections/adelman07102008',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'link' => 0,
-    'markup' => 'h1',
-    'id' => '',
     'class' => '',
     'context' => 'argument_entity_id:node_1',
+    'id' => '',
+    'link' => 0,
+    'markup' => 'h1',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -1111,11 +1111,11 @@ collections/adelman07102008',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '%title',
     'override_title_heading' => 'h2',
+    'override_title_text' => '%title',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1136,16 +1136,16 @@ collections/adelman07102008',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'pul_logo_file',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -1194,65 +1194,65 @@ collections/adelman07102008',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -5;
+  $handler->weight = -6;
   $handler->conf = array(
-    'title' => 'Collection Development Staff Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Dev Homepage ',
-        'keyword' => 'colldev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'collections/staff',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'collections/staff',
+            'visibility_setting' => '1',
+          ),
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'page' => 'page',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Dev Homepage ',
+        'keyword' => 'colldev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Staff Page',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1281,8 +1281,8 @@ collections/adelman07102008',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'administration',
     'css_class' => '',
+    'css_id' => 'administration',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1309,8 +1309,8 @@ collections/adelman07102008',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'support-staff',
     'css_class' => '',
+    'css_id' => 'support-staff',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -1326,22 +1326,22 @@ collections/adelman07102008',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'colorbox_node_style' => '',
-      'colorbox_image_style' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
       'colorbox_caption' => 'auto',
       'colorbox_caption_custom' => '',
-      'image_style' => 'pul_logo_file',
+      'colorbox_gallery' => 'post',
+      'colorbox_gallery_custom' => '',
+      'colorbox_image_style' => '',
+      'colorbox_node_style' => '',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -1392,42 +1392,42 @@ collections/adelman07102008',
   $handler->handler = 'panel_context';
   $handler->weight = -19;
   $handler->conf = array(
-    'title' => 'Collections Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second collection-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               7 => '7',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second collection-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Collections',
-    'panels_breadcrumbs_paths' => 'collections',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collections Page',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
+      'default' => NULL,
     ),
   );
   $display->cache = array();
@@ -1451,52 +1451,52 @@ collections/adelman07102008',
   $handler->handler = 'panel_context';
   $handler->weight = -10;
   $handler->conf = array(
-    'title' => 'Collection Development Department Taxonomy',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Development Home Page',
-        'keyword' => 'coldev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'machine_name' => array(
               'selector_departments' => 'selector_departments',
               'selector_subject_areas' => 'selector_subject_areas',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Development Home Page',
+        'keyword' => 'coldev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Collection Development Department Taxonomy',
   );
   $display = new panels_display();
   $display->layout = 'six-six-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
-      'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1514,16 +1514,16 @@ collections/adelman07102008',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -1581,8 +1581,8 @@ function cdl_subpage_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'collections/highlights/archive';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -1599,40 +1599,40 @@ function cdl_subpage_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Collection Dev Homepage',
-        'keyword' => 'collection_dev_home',
-        'name' => 'entity:node',
-        'entity_id' => '12505',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '12505',
+        'id' => 1,
+        'identifier' => 'Collection Dev Homepage',
+        'keyword' => 'collection_dev_home',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
       'bottom' => NULL,
+      'default' => NULL,
       'middle' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1650,20 +1650,20 @@ function cdl_subpage_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1684,16 +1684,16 @@ function cdl_subpage_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'pul_logo_file',
       'image_link' => '',
+      'image_style' => 'pul_logo_file',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
     'override_title_text' => '',
   );

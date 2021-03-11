@@ -18,51 +18,51 @@ function cataloging_and_metadata_services_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 32;
+  $handler->weight = 30;
   $handler->conf = array(
-    'title' => 'Cataloging and Metadata Services',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'cataloging-and-metadata-services
 cataloging-and-metadata-services/*
 cams
 cams/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'cataloging-and-metadata-services',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
-    'name' => 'cataloging-and-metadata-services',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Cataloging and Metadata Services',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
       'first' => NULL,
       'middle' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -81,8 +81,8 @@ cams/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -103,15 +103,15 @@ cams/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -134,8 +134,8 @@ cams/*',
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(

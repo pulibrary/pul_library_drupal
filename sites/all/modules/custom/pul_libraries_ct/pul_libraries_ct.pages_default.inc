@@ -18,84 +18,85 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -4;
+  $handler->weight = 45;
   $handler->conf = array(
-    'title' => 'Branch Pages',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '0',
-            'paths' => 'libraries/engineering
-libraries/architecture
-libraries/stokes
-libraries/plasma-physics
-libraries/scilib
-libraries/music
-vdl
-stokes
-plasma-physics
-eastasianlib
-digital-collections
-research-data
-fall-2020
-2020-21-resources
-services/open-access-publishing-program',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => '2020-21-resources
+architecture
+digital-collections
+eastasian
+eastasianlib
+engineering
+fall-2020
+lewis
+libraries/architecture
+libraries/engineering
+libraries/music
+libraries/plasma-physics
+libraries/recap
+libraries/scilib
+libraries/stokes
+makerspace
+marquand
+music
+plasma-physics
+rdos
+research-data
+services/open-access-publishing-program
+stokes
+videoservices
+vdl',
+            'visibility_setting' => '0',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Branch Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -107,7 +108,7 @@ services/open-access-publishing-program',
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
-  $pane->panel = 'first';
+  $pane->panel = 'middle';
   $pane->type = 'node_body';
   $pane->subtype = 'node_body';
   $pane->shown = TRUE;
@@ -127,32 +128,7 @@ services/open-access-publishing-program',
   $pane->locks = array();
   $pane->uuid = '5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $display->content['new-5e3798c4-d508-4e35-87b7-e4d99e69c402'] = $pane;
-  $display->panels['first'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
-  $pane = new stdClass();
-  $pane->pid = 'new-09a05689-416a-46db-beea-bf08dd380368';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'libraries-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'arguments' => array(
-      'nid' => '%node:nid',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '09a05689-416a-46db-beea-bf08dd380368';
-  $display->content['new-09a05689-416a-46db-beea-bf08dd380368'] = $pane;
-  $display->panels['second'][0] = 'new-09a05689-416a-46db-beea-bf08dd380368';
+  $display->panels['middle'][0] = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;
@@ -165,32 +141,32 @@ services/open-access-publishing-program',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -25;
   $handler->conf = array(
-    'title' => 'Stokes Library',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Stokes Library',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -317,45 +293,45 @@ services/open-access-publishing-program',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Firestone Library',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-library branch-libraries',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'firestone',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'firestone',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second firestone-library branch-libraries',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Firestone Library',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'middle' => NULL,
-      'top' => NULL,
       'bottom' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -374,8 +350,8 @@ services/open-access-publishing-program',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -400,8 +376,8 @@ services/open-access-publishing-program',
       'nid' => '%node:nid',
     ),
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -422,19 +398,19 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -455,19 +431,19 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -488,16 +464,16 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -518,12 +494,12 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '7553',
-    'links' => 1,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
+    'links' => 1,
+    'nid' => '7553',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -565,11 +541,11 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'sanitize' => 1,
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'sanitize' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -591,12 +567,12 @@ services/open-access-publishing-program',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Firestone Study Rooms',
-    'title' => 'Study Rooms',
-    'title_heading' => 'h2',
     'body' => '<p>Study&nbsp;rooms are designed for Princeton University students and/or faculty to work on various projects, and are available on a first-come, first-served basis or can be reserved ahead of time through the <a href="https://libcal.princeton.edu/reserve/firestone-study-rooms">room reservation system</a>.</p><p>Reservations have precedent over walk-in usage.&nbsp;</p>',
     'format' => 'pul_editor_html',
-    'substitute' => 1,
     'name' => 'firestone_study_room_blurb',
+    'substitute' => 1,
+    'title' => 'Study Rooms',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -618,12 +594,12 @@ services/open-access-publishing-program',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Tiger Tea Room Blurb',
-    'title' => 'Tiger Tea Room',
-    'title_heading' => 'h2',
     'body' => '<p>Dining Services Calendar</p>',
     'format' => 'pul_editor_html',
-    'substitute' => 1,
     'name' => 'tiger_tea_room_blurb',
+    'substitute' => 1,
+    'title' => 'Tiger Tea Room',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -644,20 +620,20 @@ services/open-access-publishing-program',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
       'file_view_mode' => 'default',
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Firestone Library',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Firestone Library',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -706,29 +682,29 @@ function pul_libraries_ct_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Libraries',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second libraries-page',
-    'css_id' => 'libraries-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'libraries',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'libraries',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second libraries-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'libraries-page',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Libraries',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -736,9 +712,9 @@ function pul_libraries_ct_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -780,20 +756,20 @@ function pul_libraries_ct_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Libraries Page Block',
-    'title' => 'Collections',
     'body' => '<ul>
 <li><a href="/collections-and-collection-development">Collection Development at Princeton</a></li>
 </ul>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => 'Collections',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'collections',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;

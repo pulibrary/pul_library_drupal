@@ -18,36 +18,36 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 18;
+  $handler->weight = 16;
   $handler->conf = array(
-    'title' => 'IP Protected Resource',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'ip_protected_db_resource' => 'ip_protected_db_resource',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'IP Protected Resource',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -55,9 +55,9 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -77,22 +77,22 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -114,14 +114,14 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );

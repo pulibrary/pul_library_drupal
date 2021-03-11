@@ -18,36 +18,36 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 19;
+  $handler->weight = 17;
   $handler->conf = array(
-    'title' => 'CAS Protected Resources',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'cas_protected_db_resource' => 'cas_protected_db_resource',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'CAS Protected Resources',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -55,9 +55,9 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -77,19 +77,20 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
       1 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => TRUE,
         'settings' => array(
-          'visibility_setting' => '1',
           'paths' => 'resource/14505
 resource/13225
 resource/13227
@@ -98,18 +99,17 @@ resource/13222
 resource/13238
 resource/13255
 resource/13549',
+          'visibility_setting' => '1',
         ),
-        'context' => 'empty',
-        'not' => TRUE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'On Campus Users',
-    'title' => 'Non Princeton Patrons',
     'body' => '<p>If you do not have Princeton University Faculty, Student, Staff, or affliate account and are working at public terminal in one of our libraries please see the circulation or reference desk for information on how to access this resource.&nbsp;</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Non Princeton Patrons',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -131,14 +131,14 @@ resource/13549',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -166,27 +166,27 @@ resource/13549',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(

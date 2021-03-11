@@ -18,62 +18,62 @@ function research_account_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 31;
+  $handler->weight = 29;
   $handler->conf = array(
-    'title' => 'Research Account',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'services/research-account
 services/research-account/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'research-account',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
-    'name' => 'research-account',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Research Account',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
+    'style' => 'naked',
     'style_settings' => array(
-      'top' => NULL,
+      'bottom' => NULL,
+      'branding' => NULL,
+      'content' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
       'left' => NULL,
       'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'default' => NULL,
-      'branding' => NULL,
-      'header' => NULL,
       'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
-      'content' => NULL,
+      'right' => NULL,
+      'second' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'first' => NULL,
-      'second' => NULL,
+      'top' => NULL,
     ),
-    'style' => 'naked',
   );
   $display->cache = array();
   $display->title = 'Special Collections Research Account';
@@ -91,8 +91,8 @@ services/research-account/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -113,16 +113,16 @@ services/research-account/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -144,10 +144,10 @@ services/research-account/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Aeon Login',
-    'title' => '',
     'body' => '<h2>Account Login</h2><form action="https://library.princeton.edu/aeon/aeon.dll" method="post" name="LogonPU"><input type="hidden" name="AeonForm" value="Logon"><div id="logonform"><label for="username"> <span class="field"> <span class="bold">Princeton NetID</span> </span> <input id="username" class="f-name" tabindex="0" type="text" name="Username"> </label> <label for="password"> <span class="field"> <span class="bold">Password</span> </span> <input id="password" class="f-name" tabindex="0" type="password" name="Password"></label><input tabindex="0" type="submit" name="SubmitButton" value="Logon to Aeon"></div></form><h3 class="login_field" style="margin-top: 1em;">First-Time User?</h3><div class="login_field"><ul><li>Princeton NetID Holders sign in with your ID and Password in the form above</li><li>Non Princeton Patrons: <a href="https://library.princeton.edu/aeon/aeon.dll?Action=10&amp;Form=79">Register</a></li></ul></div>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
     'title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -155,8 +155,8 @@ services/research-account/*',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'links--decorate',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;

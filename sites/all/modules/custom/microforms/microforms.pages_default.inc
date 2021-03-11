@@ -18,64 +18,64 @@ function microforms_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -21;
+  $handler->weight = -23;
   $handler->conf = array(
-    'title' => 'Microforms Pages',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'microforms',
-        'keyword' => 'microforms',
-        'name' => 'entity:node',
-        'entity_id' => '7954',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/microforms*
 collections/microforms/*
 microforms',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '7954',
+        'id' => 1,
+        'identifier' => 'microforms',
+        'keyword' => 'microforms',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'left' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-    ),
     'left' => array(
       'style' => '-1',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -101,8 +101,8 @@ collections/microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -126,8 +126,8 @@ collections/microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => '',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -192,73 +192,73 @@ collections/microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -27;
   $handler->conf = array(
-    'title' => 'Microforms Staff',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'microforms',
-        'keyword' => 'microforms',
-        'name' => 'entity:node',
-        'entity_id' => '7954',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/microforms*
 collections/microforms/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'work_group' => 'work_group',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '7954',
+        'id' => 1,
+        'identifier' => 'microforms',
+        'keyword' => 'microforms',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Staff',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'left' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-    ),
     'left' => array(
       'style' => '-1',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -284,8 +284,8 @@ collections/microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -309,8 +309,8 @@ collections/microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => '',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -373,12 +373,12 @@ collections/microforms',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '11513',
-    'links' => 0,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
+    'links' => 0,
+    'nid' => '11513',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -451,73 +451,73 @@ collections/microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -37;
+  $handler->weight = -38;
   $handler->conf = array(
-    'title' => 'Microforms Newspaper Individual Title',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'microforms',
-        'keyword' => 'microforms',
-        'name' => 'entity:node',
-        'entity_id' => '7954',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/microforms*
 collections/microforms/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'microforms_newspapers' => 'microforms_newspapers',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second page-microforms subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '7954',
+        'id' => 1,
+        'identifier' => 'microforms',
+        'keyword' => 'microforms',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms
 Newspapers',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms
-collections/microforms/newspapers',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Newspaper Individual Title',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'left' => NULL,
-    ),
     'left' => array(
       'style' => '-1',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -543,8 +543,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -568,8 +568,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => '',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -585,10 +585,10 @@ collections/microforms/newspapers',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -635,71 +635,71 @@ collections/microforms/newspapers',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -31;
   $handler->conf = array(
-    'title' => 'Microforms Student Assistant Manual',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar page-microforms subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'microforms',
-        'keyword' => 'microforms',
-        'name' => 'entity:node',
-        'entity_id' => '7954',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'collections/microforms*
 collections/microforms/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'book' => 'book',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar page-microforms subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '7954',
+        'id' => 1,
+        'identifier' => 'microforms',
+        'keyword' => 'microforms',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '/collections
+/collections/microforms',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms',
-    'panels_breadcrumbs_paths' => '/collections
-/collections/microforms',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Student Assistant Manual',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
-      'left' => NULL,
-    ),
     'left' => array(
       'style' => '-1',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -725,8 +725,8 @@ Microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -750,8 +750,8 @@ Microforms',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => '',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -819,51 +819,51 @@ Microforms',
   $handler->handler = 'panel_context';
   $handler->weight = -12;
   $handler->conf = array(
-    'title' => 'Microforms Foreign Newspapers by Country',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               26 => '26',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms
 Newspapers',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms
-collections/microforms/newspapers',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Foreign Newspapers by Country',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'top' => NULL,
-      'first' => NULL,
       'second' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -889,8 +889,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1000,68 +1000,68 @@ collections/microforms/newspapers',
   $handler->handler = 'panel_context';
   $handler->weight = -14;
   $handler->conf = array(
-    'title' => 'Microforms Newspapers - US',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               26 => '26',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '26',
+            1 => array(),
+            4 => array(),
             9 => array(),
-            18 => array(),
-            12 => array(),
             10 => array(),
-            17 => array(),
-            24 => array(),
+            12 => array(),
+            13 => array(),
             14 => array(),
-            20 => array(),
-            19 => array(),
             15 => array(),
+            16 => array(),
+            17 => array(),
+            18 => array(),
+            19 => array(),
+            20 => array(),
             21 => array(),
+            22 => array(),
+            23 => array(),
+            24 => array(),
             25 => array(),
             26 => array(
               4502 => '4502',
             ),
             27 => array(),
-            23 => array(),
-            4 => array(),
-            13 => array(),
-            16 => array(),
-            1 => array(),
-            22 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms
 Newspapers',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms
-collections/microforms/newspapers',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Newspapers - US',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -1096,8 +1096,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1207,38 +1207,38 @@ collections/microforms/newspapers',
   $handler->handler = 'panel_context';
   $handler->weight = -13;
   $handler->conf = array(
-    'title' => 'Microforms Newspapers - By State',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               27 => '27',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'collections
+collections/microforms
+collections/microforms/newspapers',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Collections
 Microforms
 Newspapers',
-    'panels_breadcrumbs_paths' => 'collections
-collections/microforms
-collections/microforms/newspapers',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Newspapers - By State',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -1273,8 +1273,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1384,30 +1384,30 @@ collections/microforms/newspapers',
   $handler->handler = 'panel_context';
   $handler->weight = -11;
   $handler->conf = array(
-    'title' => 'Microforms Newspaper - By City',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               25 => '25',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Microforms Newspaper - By City',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -1442,8 +1442,8 @@ collections/microforms/newspapers',
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1560,8 +1560,8 @@ function microforms_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'collections/microforms/newspapers';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -1578,32 +1578,32 @@ function microforms_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Newspapers on Microfilm',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'subsite',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'subsite',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Newspapers on Microfilm',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
-      'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1629,8 +1629,8 @@ function microforms_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'left-col-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;

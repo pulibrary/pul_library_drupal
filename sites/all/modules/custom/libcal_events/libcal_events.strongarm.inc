@@ -86,30 +86,17 @@ function libcal_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__schemaorg_event';
   $strongarm->value = array(
-    'view_modes' => array(
-      'database_description_only' => array(
-        'custom_settings' => FALSE,
-      ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => FALSE,
-      ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
     'extra_fields' => array(
+      'display' => array(),
       'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
         'path' => array(
           'weight' => '9',
         ),
         'redirect' => array(
           'weight' => '10',
+        ),
+        'title' => array(
+          'weight' => '0',
         ),
         'workbench_access' => array(
           'weight' => '1',
@@ -118,7 +105,20 @@ function libcal_events_strongarm() {
           'weight' => '11',
         ),
       ),
-      'display' => array(),
+    ),
+    'view_modes' => array(
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
+      'database_description_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
   );
   $export['field_bundle_settings_node__schemaorg_event'] = $strongarm;
@@ -181,8 +181,8 @@ function libcal_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_schemaorg_event';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_schemaorg_event'] = $strongarm;
 
@@ -191,8 +191,8 @@ function libcal_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_lib_event_types';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_lib_event_types'] = $strongarm;
 

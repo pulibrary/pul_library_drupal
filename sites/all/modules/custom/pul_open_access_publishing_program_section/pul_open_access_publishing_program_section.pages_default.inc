@@ -18,62 +18,62 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 43;
+  $handler->weight = 39;
   $handler->conf = array(
-    'title' => 'The PUL Open Access Publishing Program',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'firestone-library branch-libraries section-services',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'services/open-access-publishing-program',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'services/open-access-publishing-program',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'firestone-library branch-libraries section-services',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'the-pul-open-access-publishing-program',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'The PUL Open Access Publishing Program',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -92,8 +92,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -116,8 +116,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -135,15 +135,15 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_features-panel_pane_1';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
       'nid' => '44096',
     ),
     'override_title' => 1,
-    'override_title_text' => 'POAPP Projects',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'POAPP Projects',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -168,8 +168,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
       'nid' => '44096',
     ),
     'override_title' => 1,
-    'override_title_text' => 'The PUL Open Access Publishing Program',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'The PUL Open Access Publishing Program',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -194,52 +194,52 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 44;
+  $handler->weight = 40;
   $handler->conf = array(
-    'title' => 'The PUL Open Access Publishing Program - Subpages',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'firestone-library branch-libraries section-services',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'services/open-access-publishing-program/*',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'services/open-access-publishing-program/*',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'firestone-library branch-libraries section-services',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'the-pul-open-access-publishing-program-subpages',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'The PUL Open Access Publishing Program - Subpages',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -258,8 +258,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -282,8 +282,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -305,24 +305,33 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
+      ),
+      1 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/open-access-publishing-program/journal-proposal-form',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '<p>The PUL OA Publishing Program is available to Princeton faculty, researchers, students and staff.</p><p>To submit an OA journal proposal, please login.</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -344,21 +353,30 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
+      ),
+      1 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/open-access-publishing-program/journal-proposal-form',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -380,23 +398,23 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -414,15 +432,15 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'branch_features-panel_pane_1';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
       'nid' => '44096',
     ),
     'override_title' => 1,
-    'override_title_text' => 'POAPP Projects',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'POAPP Projects',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -447,8 +465,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
       'nid' => '44096',
     ),
     'override_title' => 1,
-    'override_title_text' => 'The PUL Open Access Publishing Program',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'The PUL Open Access Publishing Program',
   );
   $pane->cache = array();
   $pane->style = array(

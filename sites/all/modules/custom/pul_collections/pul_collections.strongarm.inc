@@ -86,6 +86,20 @@ function pul_collections_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__collection';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '2',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '3',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'content_body_mode' => array(
         'custom_settings' => TRUE,
@@ -93,20 +107,6 @@ function pul_collections_strongarm() {
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '2',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '3',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__collection'] = $strongarm;
@@ -163,8 +163,8 @@ function pul_collections_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_collection';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.7',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_collection'] = $strongarm;
 

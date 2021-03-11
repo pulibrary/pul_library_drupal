@@ -16,32 +16,38 @@ function microforms_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'newspapers_for_microforms';
   $feeds_importer->config = array(
-    'name' => 'Newspapers for microforms',
+    'content_type' => '',
     'description' => 'Imports Newspaper Microforms Content',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Newspapers for microforms',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '394',
         'authorize' => 1,
+        'bundle' => 'microforms_newspapers',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -49,10 +55,10 @@ function microforms_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
+            'autocreate' => 1,
             'source' => 'city',
             'target' => 'field_microforms_city',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'coverage',
@@ -65,16 +71,16 @@ function microforms_feeds_importer_default() {
             'unique' => FALSE,
           ),
           4 => array(
+            'autocreate' => 1,
             'source' => 'country',
             'target' => 'field_microforms_country',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           5 => array(
+            'autocreate' => 1,
             'source' => 'state',
             'target' => 'field_microforms_us_states',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           6 => array(
             'source' => 'digital_url',
@@ -87,18 +93,12 @@ function microforms_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '1',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'microforms_newspapers',
+        'update_existing' => '1',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['newspapers_for_microforms'] = $feeds_importer;
 

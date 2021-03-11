@@ -18,53 +18,53 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 41;
+  $handler->weight = 36;
   $handler->conf = array(
-    'title' => 'Fall 2020 Resources',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'section-services branch-libraries fall-2020',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => '2020-21-resources
 2020-21-resources/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'section-services branch-libraries fall-2020',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'fall-2020-resources',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Fall 2020 Resources',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -83,20 +83,20 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => '2020-21-resources/*',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => '2020-21-resources/*',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -118,21 +118,21 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => '2020-21-resources/*',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => '2020-21-resources/*',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -157,8 +157,8 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
       'nid' => '43980',
     ),
     'override_title' => 1,
-    'override_title_text' => '2020-21 Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => '2020-21 Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -180,13 +180,13 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => '2020-21-resources',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => '2020-21-resources',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -195,8 +195,8 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
       'tid' => '30620',
     ),
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -218,31 +218,31 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => '2020-21-resources',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => '2020-21-resources',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Phased resumption of service announcements',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '<p><strong><a href="/news/general/2020-05-29/phased-plan-resumption-services-pul">Phased resumption of service announcements</a></strong></p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'center-text',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -262,38 +262,38 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 42;
+  $handler->weight = 37;
   $handler->conf = array(
-    'title' => 'Fall 2020 Services',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'services/study-browse
 services/book-pick-up
 services/in-house-digitization',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'fall-2020-services',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'services',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Services',
-    'panels_breadcrumbs_paths' => 'services',
-    'panels_breadcrumbs_home' => 1,
-    'name' => 'fall-2020-services',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Fall 2020 Services',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three';
@@ -322,8 +322,8 @@ services/in-house-digitization',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -344,15 +344,15 @@ services/in-house-digitization',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 1,
     'links' => 1,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 1,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -374,15 +374,15 @@ services/in-house-digitization',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'empty',
         'name' => 'path_visibility',
+        'not' => FALSE,
         'settings' => array(
-          'visibility_setting' => '0',
           'paths' => 'services/reserves
 services/reserves/*
 ',
+          'visibility_setting' => '0',
         ),
-        'context' => 'empty',
-        'not' => FALSE,
       ),
     ),
   );
@@ -422,8 +422,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Panel for Administrative View of DMG Subject List';
   $page->path = 'admin/dmg/subjects';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -440,19 +440,19 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'admin/dmg',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'DMG Panel',
-    'panels_breadcrumbs_paths' => 'admin/dmg',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -479,20 +479,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '10',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '10',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -539,8 +539,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Staff Committee Listings';
   $page->path = 'staff/committees';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -557,19 +557,19 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => 'one-sidebar sidebar-second committee-landing-page',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff',
-    'panels_breadcrumbs_paths' => 'staff',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -644,8 +644,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Displays Database platform Content';
   $page->path = 'research/databases/platforms';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -662,15 +662,15 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => 'database-platform-list one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'database-platform-list one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -698,7 +698,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -706,8 +708,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -732,7 +732,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -740,8 +742,6 @@ function pul_custom_page_layouts_default_page_manager_pages() {
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -776,20 +776,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'research/databases/!letter';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'menu-find',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'letter' => array(
@@ -814,22 +814,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => 'find-databases-home',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'find-databases-home',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Research',
-    'panels_breadcrumbs_paths' => 'research',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -837,17 +837,17 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
   $display->cache = array(
     'method' => 'simple',
     'settings' => array(
-      'lifetime' => '15',
       'granularity' => 'args',
+      'lifetime' => '15',
     ),
   );
   $display->title = 'Databases <em>%letter:html_safe</em>';
@@ -886,20 +886,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block_1',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 1,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -920,31 +920,31 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
-    'display' => 'page',
-    'override_title' => 1,
-    'override_title_text' => '',
     'context' => array(
       0 => 'argument_string_1.raw',
     ),
+    'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
+    'override_title' => 1,
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'links--decorate',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -960,32 +960,32 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
-    'display' => 'block',
-    'override_title' => 1,
-    'override_title_text' => 'Find a Subject Librarian',
     'context' => array(
       0 => '',
     ),
+    'display' => 'block',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
+    'override_title' => 1,
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Find a Subject Librarian',
+    'pager_id' => '0',
+    'panel_args' => 1,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'ctools-jump-menu',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1091,8 +1091,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'links--decorate',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -1116,20 +1116,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'research/databases/search/%query';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'query' => array(
@@ -1154,36 +1154,36 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'database-results-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'database-results-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top' => NULL,
       'bottom' => NULL,
-      'middle' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1245,23 +1245,23 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '10',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
-    'display' => 'page',
     'context' => array(
       0 => 'argument_string_1.html_safe',
     ),
+    'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '10',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Database Titles',
+    'pager_id' => '0',
+    'panel_args' => 1,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1365,8 +1365,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-links"></i> Library Guides',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-links"></i> Library Guides',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1395,20 +1395,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'staff/departments';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -1424,22 +1424,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second department-list-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second department-list-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'staff/directory',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Staff Directory',
-    'panels_breadcrumbs_paths' => 'staff/directory',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -1447,17 +1447,17 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
   $display->cache = array(
     'method' => 'simple',
     'settings' => array(
-      'lifetime' => '86400',
       'granularity' => 'none',
+      'lifetime' => '86400',
     ),
   );
   $display->title = 'Library Departments';
@@ -1474,20 +1474,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block_1',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1537,8 +1537,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'diglib';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -1555,36 +1555,36 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '12502',
+        'id' => 1,
         'identifier' => 'Digital Initiatives',
         'keyword' => 'node',
         'name' => 'entity:node',
-        'entity_id' => '12502',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'six-six-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
-      'first' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1622,10 +1622,10 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
     'body' => '',
     'format' => 'full_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1647,11 +1647,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Digital Initiatives Mission Statement',
-    'title' => 'Mission',
     'body' => 'Princeton University Library Digital Initiatives (PULDI) promotes and develops new ways of harnessing digital technologies to advance the Library\'s strategic mission.
 ',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Mission',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1697,16 +1697,16 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -1736,9 +1736,12 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Dashboard for DMG Users';
   $page->path = 'admin/dmg';
   $page->access = array(
+    'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -1746,25 +1749,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
             2 => 4,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
-    'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -1780,26 +1780,26 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1839,20 +1839,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '50',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '50',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1962,8 +1962,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Blank Find All Page. ';
   $page->path = 'find/all';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -1980,15 +1980,15 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => 'find-all-search-page-empty',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'find-all-search-page-empty',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -2003,8 +2003,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->cache = array(
     'method' => 'simple',
     'settings' => array(
-      'lifetime' => '300',
       'granularity' => 'args',
+      'lifetime' => '300',
     ),
   );
   $display->title = 'All Search';
@@ -2050,8 +2050,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Homepage';
   $page->path = 'test';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -2068,44 +2068,44 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'landingpage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
+      'bottom' => NULL,
       'branding' => NULL,
-      'header' => NULL,
-      'navigation' => NULL,
-      'highlighted' => NULL,
-      'help' => NULL,
       'content' => NULL,
+      'default' => NULL,
+      'fifth' => NULL,
+      'first' => NULL,
+      'footer' => NULL,
+      'fourth' => NULL,
+      'header' => NULL,
+      'help' => NULL,
+      'highlighted' => NULL,
+      'last' => NULL,
+      'main' => NULL,
+      'navigation' => NULL,
+      'second' => NULL,
+      'secondary' => NULL,
       'sidebar_first' => NULL,
       'sidebar_second' => NULL,
-      'footer' => NULL,
-      'main' => NULL,
-      'secondary' => NULL,
       'tertiary-first' => NULL,
       'tertiary-second' => NULL,
       'tertiary-third' => NULL,
-      'last' => NULL,
-      'second' => NULL,
       'third' => NULL,
-      'fourth' => NULL,
-      'fifth' => NULL,
-      'first' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -2152,8 +2152,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'home';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -2170,31 +2170,31 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'landingpage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'top' => NULL,
       'first' => NULL,
       'second' => NULL,
       'third' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -2217,8 +2217,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'events--homepage',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -2239,8 +2239,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'events--homepage',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -2257,11 +2257,11 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Locations and Hours',
-    'title_heading' => 'h2',
     'body' => '',
     'format' => 'full_html',
     'substitute' => TRUE,
+    'title' => 'Locations and Hours',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2283,8 +2283,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Locations and Hours',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Locations and Hours',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2305,29 +2305,29 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '4',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block_1',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '4',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'News',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'News',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'library-news',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -2343,29 +2343,29 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '1',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'emergency_alert_block',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '1',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => '',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -2385,16 +2385,16 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'tid' => '30620',
     ),
     'override_title' => 1,
-    'override_title_text' => '2020-21 Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => '2020-21 Resources',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'resources--homepage',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -2417,8 +2417,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'libraries/scilib/locker-request';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -2435,27 +2435,27 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Lewis Library Group Study Room Request',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '2',
+        'id' => 1,
         'identifier' => 'Entityform Type',
         'keyword' => 'entityform_type',
         'name' => 'entity:entityform_type',
-        'entity_id' => '2',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
     'relationships' => array(),
-    'access' => array(
-      'plugins' => array(),
-      'logic' => 'and',
-    ),
+    'title' => 'Lewis Library Group Study Room Request',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2482,23 +2482,23 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Lewis Library Locker Request',
     'body' => '<p>To request a locker, you must be a Princeton student.&nbsp; Please login using your netid and password in order to request a locker.</p><p>Any problems? <a href="mailto:scilib.princeton.edu">Email</a> us.</p><p>&nbsp;</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Lewis Library Locker Request',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2520,14 +2520,14 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -2555,22 +2555,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'context_entity:entityform_type_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2598,8 +2598,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'libraries/scilib/room-reservations';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -2616,27 +2616,27 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Lewis Library Group Study Room Request',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '1',
+        'id' => 1,
         'identifier' => 'Entityform Type',
         'keyword' => 'entityform_type',
         'name' => 'entity:entityform_type',
-        'entity_id' => '1',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
     'relationships' => array(),
-    'access' => array(
-      'plugins' => array(),
-      'logic' => 'and',
-    ),
+    'title' => 'Lewis Library Group Study Room Request',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2663,23 +2663,23 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Lewis Library Group Study Room Request',
     'body' => '<p>To request a room, a patron must be a Princeton University affiliate.&nbsp; Please login using your netid and password in order to request a room.</p><p>Any problems? <a href="mailto:scilib.princeton.edu">Email</a> us.</p><p>&nbsp;</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Lewis Library Group Study Room Request',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2701,14 +2701,14 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -2736,22 +2736,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'context_entity:entityform_type_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2780,20 +2780,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'not-found';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -2809,18 +2809,18 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '#not-found',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '#not-found',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2829,8 +2829,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'left' => NULL,
-      'right' => NULL,
       'middle' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -2878,20 +2878,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'research-data/search/%query';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'query' => array(
@@ -2916,37 +2916,37 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'prds-results-page section-services branch-libraries',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'prds-results-page section-services branch-libraries',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'prds',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'PRDS',
-    'panels_breadcrumbs_paths' => 'prds',
-    'panels_breadcrumbs_home' => 1,
-    'name' => '',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top' => NULL,
       'bottom' => NULL,
-      'middle' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -2965,8 +2965,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2988,8 +2988,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3033,8 +3033,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'nid' => '41161',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Princeton Research Data Service',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Princeton Research Data Service',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3062,8 +3062,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Page of PUL Featured Links related to Research';
   $page->path = 'research';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -3080,15 +3080,15 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'six-six';
@@ -3096,9 +3096,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -3126,8 +3126,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'quick-links',
     'css_class' => '',
+    'css_id' => 'quick-links',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3152,8 +3152,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'specialized-research-resources',
     'css_class' => '',
+    'css_id' => 'specialized-research-resources',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -3178,8 +3178,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'pul-research-resources',
     'css_class' => '',
+    'css_id' => 'pul-research-resources',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3204,8 +3204,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'additional-research-tools',
     'css_class' => '',
+    'css_id' => 'additional-research-tools',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -3228,8 +3228,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Holds lists of Top PUL Service Categories';
   $page->path = 'services';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -3246,15 +3246,15 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 1,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'six-six';
@@ -3262,9 +3262,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -3287,8 +3287,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'tid' => '30621',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Spring 2021 Services',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Spring 2021 Services',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3318,8 +3318,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'using-collections',
     'css_class' => '',
+    'css_id' => 'using-collections',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -3344,8 +3344,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'using-libraries',
     'css_class' => '',
+    'css_id' => 'using-libraries',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -3370,8 +3370,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'research-services',
     'css_class' => '',
+    'css_id' => 'research-services',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3396,8 +3396,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'request-delivery',
     'css_class' => '',
+    'css_id' => 'request-delivery',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -3420,8 +3420,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'staff/directory/%letter';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array(
@@ -3447,20 +3447,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => 'staff-index-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
-    'relationships' => array(),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Staff List',
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
     'panels_breadcrumbs_paths' => 'staff/directory
 ',
-    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Staff List',
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -3468,9 +3468,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
     ),
   );
@@ -3497,8 +3497,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'links--decorate',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3514,20 +3514,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '25',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '25',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3578,20 +3578,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'find/staff/%query';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'query' => array(
@@ -3616,22 +3616,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'staff-find-results-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'staff-find-results-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'find/all/%query:html_safe',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Find All %query:html_safe',
-    'panels_breadcrumbs_paths' => 'find/all/%query:html_safe',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_9_3';
@@ -3658,23 +3658,23 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '25',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
-    'display' => 'page_2',
-    'override_title' => 0,
-    'override_title_text' => '',
     'context' => array(
       0 => 'argument_string_1.html_safe',
     ),
+    'display' => 'page_2',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '25',
+    'offset' => '0',
+    'override_pager_settings' => 0,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 1,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3725,20 +3725,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'staff/specialists';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -3754,43 +3754,43 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second specialist-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second specialist-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'single';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'middle' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array(
     'method' => 'simple',
     'settings' => array(
-      'lifetime' => '14400',
       'granularity' => 'none',
+      'lifetime' => '14400',
     ),
   );
   $display->title = 'Subject Librarians';
@@ -3807,12 +3807,12 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '1913',
-    'links' => 1,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
+    'links' => 1,
+    'nid' => '1913',
     'override_title' => 0,
     'override_title_text' => '',
   );
@@ -3857,20 +3857,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3891,20 +3891,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 1,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block_2',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 1,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3925,28 +3925,28 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 1,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'links--decorate',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -3970,20 +3970,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'research/databases/subjects';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -3999,22 +3999,22 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second find-subjects-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second find-subjects-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'research/databases',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Databases',
-    'panels_breadcrumbs_paths' => 'research/databases',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -4022,9 +4022,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
+      'first' => NULL,
       'left' => NULL,
       'right' => NULL,
-      'first' => NULL,
       'second' => NULL,
       'third' => NULL,
     ),
@@ -4044,20 +4044,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'page',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4078,21 +4078,21 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
     'display' => 'block',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Find a Subject Librarian',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Find a Subject Librarian',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4180,8 +4180,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'staff/systems_office/staff';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -4198,31 +4198,31 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'right' => NULL,
       'bottom' => NULL,
-      'left_top' => NULL,
-      'middle_top' => NULL,
-      'right_top' => NULL,
+      'default' => NULL,
+      'left' => NULL,
       'left_bottom' => NULL,
+      'left_top' => NULL,
       'middle_bottom' => NULL,
+      'middle_top' => NULL,
+      'right' => NULL,
+      'right_top' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -4347,8 +4347,8 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->admin_description = 'Topic Page';
   $page->path = 'subject/%name';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array(
@@ -4357,26 +4357,26 @@ function pul_custom_page_layouts_default_page_manager_pages() {
       'identifier' => 'Taxonomy term: ID',
       'name' => 'term',
       'settings' => array(
-        'input_form' => 'tid',
-        'vids' => array(
-          12 => '12',
-          9 => 0,
-          7 => 0,
-          18 => 0,
-          10 => 0,
-          17 => 0,
-          14 => 0,
-          20 => 0,
-          8 => 0,
-          19 => 0,
-          15 => 0,
-          13 => 0,
-          16 => 0,
-          4 => 0,
-          1 => 0,
-        ),
         'breadcrumb' => 1,
+        'input_form' => 'tid',
         'transform' => 0,
+        'vids' => array(
+          1 => 0,
+          4 => 0,
+          7 => 0,
+          8 => 0,
+          9 => 0,
+          10 => 0,
+          12 => '12',
+          13 => 0,
+          14 => 0,
+          15 => 0,
+          16 => 0,
+          17 => 0,
+          18 => 0,
+          19 => 0,
+          20 => 0,
+        ),
       ),
     ),
   );
@@ -4393,19 +4393,19 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => 'topic-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'subjects',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Subjects',
-    'panels_breadcrumbs_paths' => 'subjects',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -4452,7 +4452,9 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'argument_term_1',
         'name' => 'entity_field_value:taxonomy_term:database_subjects:field_subs_primary_library_guide',
+        'not' => FALSE,
         'settings' => array(
           'field_subs_primary_library_guide' => array(
             'und' => array(
@@ -4461,7 +4463,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
               ),
             ),
           ),
-          'field_subs_primary_library_guide_url' => array(
+          'field_subs_primary_library_guide_attributes' => array(
             0 => array(
               'url' => '',
             ),
@@ -4471,14 +4473,12 @@ function pul_custom_page_layouts_default_page_manager_pages() {
               'url' => '',
             ),
           ),
-          'field_subs_primary_library_guide_attributes' => array(
+          'field_subs_primary_library_guide_url' => array(
             0 => array(
               'url' => '',
             ),
           ),
         ),
-        'context' => 'argument_term_1',
-        'not' => FALSE,
       ),
     ),
   );
@@ -4532,20 +4532,20 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $page->path = 'find/website/%query';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'query' => array(
@@ -4570,38 +4570,38 @@ function pul_custom_page_layouts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Website Search Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'find/website
+find/website/%query',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Website Search
 Search for %query',
-    'panels_breadcrumbs_paths' => 'find/website
-find/website/%query',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Website Search Panel',
   );
   $display = new panels_display();
   $display->layout = 'nine-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'right' => NULL,
       'bottom' => NULL,
+      'default' => NULL,
       'first' => NULL,
-      'second' => NULL,
+      'left' => NULL,
       'middle' => NULL,
+      'right' => NULL,
+      'second' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -4658,8 +4658,8 @@ find/website/%query',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Filter by Tags',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Filter by Tags',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4710,20 +4710,20 @@ find/website/%query',
   $page->path = 'find/website';
   $page->access = array(
     'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -4739,18 +4739,18 @@ find/website/%query',
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'website-search-page one-sidebar sidebar-second',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'website-search-page one-sidebar sidebar-second',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'twocol';
@@ -4806,10 +4806,10 @@ find/website/%query',
   $page->admin_description = '';
   $page->path = 'training/zotero/registrations';
   $page->access = array(
-    'plugins' => array(),
     'logic' => 'and',
-    'type' => 'none',
+    'plugins' => array(),
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -4826,15 +4826,15 @@ find/website/%query',
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -4861,14 +4861,14 @@ find/website/%query',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );

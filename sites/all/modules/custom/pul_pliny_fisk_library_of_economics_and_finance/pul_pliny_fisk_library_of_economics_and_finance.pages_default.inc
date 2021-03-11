@@ -18,46 +18,46 @@ function pul_pliny_fisk_library_of_economics_and_finance_default_page_manager_ha
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 24;
+  $handler->weight = 21;
   $handler->conf = array(
-    'title' => 'Pliny Fisk Library of Economics and Finance',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'econlib/contact-us
 econlib/services/*
 econlib/resources
 econlib/resources/*',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Pliny Fisk Library of Economics and Finance',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
       'first' => NULL,
-      'second' => NULL,
       'middle' => NULL,
+      'second' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -97,10 +97,10 @@ econlib/resources/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -144,10 +144,10 @@ econlib/resources/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Pliny Fisk Library of Economics and Finance',
     'body' => '<p><img src="/sites/default/files/firestone-pliny-fisk.png" alt="Pliny Fisk Library of Economics and Finance" width="1200" height="140" /></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Pliny Fisk Library of Economics and Finance',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -172,45 +172,36 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 25;
+  $handler->weight = 22;
   $handler->conf = array(
-    'title' => 'Pliny Fisk Library of Economics and Finance Staff',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'econlib/about-us',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'econlib/about-us',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Pliny Fisk Library of Economics and Finance Staff',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => array(),
-      'first' => array(),
-      'second' => array(),
-      'middle' => array(),
-      'top' => NULL,
-      'bottom' => NULL,
-    ),
-    'style' => 'stylizer',
     'first' => array(
       'style' => 'stylizer',
     ),
@@ -219,6 +210,15 @@ econlib/resources/*',
     ),
     'second' => array(
       'style' => 'stylizer',
+    ),
+    'style' => 'stylizer',
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => array(),
+      'first' => array(),
+      'middle' => array(),
+      'second' => array(),
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -259,10 +259,10 @@ econlib/resources/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -334,10 +334,10 @@ econlib/resources/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Pliny Fisk Library of Economics and Finance',
     'body' => '<p><img src="/sites/default/files/firestone-pliny-fisk.png" alt="Pliny Fisk Library of Economics and Finance" width="1200" height="140" /></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Pliny Fisk Library of Economics and Finance',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -362,31 +362,31 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 27;
+  $handler->weight = 24;
   $handler->conf = array(
-    'title' => 'Pliny Fisk Landing Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'econlib',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'econlib',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Pliny Fisk Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-three-three-three-stacked';
@@ -395,11 +395,11 @@ econlib/resources/*',
     'style_settings' => array(
       'default' => NULL,
       'first' => NULL,
-      'second' => NULL,
-      'middle' => NULL,
-      'top' => NULL,
-      'third' => NULL,
       'fourth' => NULL,
+      'middle' => NULL,
+      'second' => NULL,
+      'third' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -418,8 +418,8 @@ econlib/resources/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -444,8 +444,8 @@ econlib/resources/*',
       'tid' => '5374',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Guides',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Guides',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -466,10 +466,10 @@ econlib/resources/*',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -516,8 +516,8 @@ econlib/resources/*',
       'tid' => '5374',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Guides',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Guides',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -542,8 +542,8 @@ econlib/resources/*',
       'tid' => '5372',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Articles and Books',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Articles and Books',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -568,8 +568,8 @@ econlib/resources/*',
       'tid' => '5372',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Articles and Books',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Articles and Books',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -594,8 +594,8 @@ econlib/resources/*',
       'tid' => '5373',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Data',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Data',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -620,8 +620,8 @@ econlib/resources/*',
       'tid' => '5373',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Data',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Data',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -643,10 +643,10 @@ econlib/resources/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Pliny Fisk Library of Economics and Finance',
     'body' => '<p><img src="/sites/default/files/firestone-pliny-fisk.png" alt="Pliny Fisk Library of Economics and Finance" width="1200" height="140" /></p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Pliny Fisk Library of Economics and Finance',
   );
   $pane->cache = array();
   $pane->style = array(

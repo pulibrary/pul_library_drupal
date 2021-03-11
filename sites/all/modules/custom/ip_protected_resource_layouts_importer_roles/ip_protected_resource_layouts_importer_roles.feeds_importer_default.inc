@@ -16,32 +16,38 @@ function ip_protected_resource_layouts_importer_roles_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'pul_ip_protected_resource_importer';
   $feeds_importer->config = array(
-    'name' => 'IP Protected Resource Importer',
+    'content_type' => '',
     'description' => 'Imports username/password resources.',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'IP Protected Resource Importer',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '421',
         'authorize' => 1,
+        'bundle' => 'ip_protected_db_resource',
+        'expire' => '-1',
+        'input_format' => 'filtered_html',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -64,18 +70,12 @@ function ip_protected_resource_layouts_importer_roles_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
-        'input_format' => 'filtered_html',
         'skip_hash_check' => 0,
-        'bundle' => 'ip_protected_db_resource',
+        'update_existing' => '0',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['pul_ip_protected_resource_importer'] = $feeds_importer;
 

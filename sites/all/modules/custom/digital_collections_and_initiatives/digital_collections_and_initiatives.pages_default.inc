@@ -18,52 +18,52 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 36;
+  $handler->weight = 33;
   $handler->conf = array(
-    'title' => 'Digital Collections Secondary Pages',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries digital-collections',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'digital-collections/*',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'digital-collections/*',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries digital-collections',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'digital-collections-secondary-pages',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Digital Collections Secondary Pages',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -82,8 +82,8 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -106,8 +106,8 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -129,13 +129,13 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'digital-collections/news',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'digital-collections/news',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -159,11 +159,11 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -189,8 +189,8 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'digital-collections--banner',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -210,62 +210,62 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 35;
+  $handler->weight = 32;
   $handler->conf = array(
-    'title' => 'Digital Collections Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries digital-collections',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'digital-collections',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'digital-collections',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries digital-collections',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'digital-projects',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Digital Collections Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -284,8 +284,8 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -308,8 +308,8 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -350,16 +350,16 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Digital Collections and Initiatives',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Digital Collections and Initiatives',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'digital-collections--banner',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;

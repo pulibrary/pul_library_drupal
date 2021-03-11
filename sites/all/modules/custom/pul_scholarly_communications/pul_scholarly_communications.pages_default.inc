@@ -18,51 +18,51 @@ function pul_scholarly_communications_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 22;
+  $handler->weight = 19;
   $handler->conf = array(
-    'title' => 'Scholarly Communications Office',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'services/scholarly-communications
+services/scholarly-communications/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '13198',
+        'id' => 1,
         'identifier' => 'Section Home Page',
         'keyword' => 'section_home',
         'name' => 'entity:node',
-        'entity_id' => '13198',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
     'relationships' => array(),
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'services/scholarly-communications
-services/scholarly-communications/*',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'title' => 'Scholarly Communications Office',
   );
   $display = new panels_display();
   $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
       'first' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -81,10 +81,10 @@ services/scholarly-communications/*',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => '',
     'body' => '<img src="/sites/all/themes/pul_base/assets/public/images/sco-logo.png" alt="Scholarly Communications Office" />',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -127,10 +127,10 @@ services/scholarly-communications/*',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -153,8 +153,8 @@ services/scholarly-communications/*',
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -176,23 +176,23 @@ services/scholarly-communications/*',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -214,30 +214,30 @@ services/scholarly-communications/*',
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
       1 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'services/scholarly-communications/oa-fund-appilcation',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/scholarly-communications/oa-fund-appilcation',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -258,19 +258,19 @@ services/scholarly-communications/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'image',
+    'context' => 'context_entity:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Scholarly Communications Office',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Scholarly Communications Office',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -295,31 +295,31 @@ services/scholarly-communications/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 23;
+  $handler->weight = 20;
   $handler->conf = array(
-    'title' => 'Scholarly Communications Office Staff',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'services/scholarly-communications/about-us',
-          ),
           'context' => 'empty',
+          'name' => 'path_visibility',
           'not' => FALSE,
+          'settings' => array(
+            'paths' => 'services/scholarly-communications/about-us',
+            'visibility_setting' => '1',
+          ),
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Scholarly Communications Office Staff',
   );
   $display = new panels_display();
   $display->layout = 'three-nine';
@@ -368,10 +368,10 @@ services/scholarly-communications/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(

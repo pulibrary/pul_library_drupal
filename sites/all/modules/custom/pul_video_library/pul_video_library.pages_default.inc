@@ -18,71 +18,71 @@ function pul_video_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 23;
   $handler->conf = array(
-    'title' => 'Video Library Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'branch-libraries libraries-video',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      1 => array(
-        'identifier' => 'Building',
-        'keyword' => 'building',
-        'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'libraries' => 'libraries',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'vdl
 videoservices',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'branch-libraries libraries-video',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
+        'identifier' => 'Building',
+        'keyword' => 'building',
+        'name' => 'entity_from_field:field_building-node-node',
+      ),
+    ),
+    'title' => 'Video Library Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -101,8 +101,8 @@ videoservices',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -149,11 +149,11 @@ videoservices',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Social Media',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '<p><a href="https://videolib.princeton.edu">Blog</a> – <a href="https://www.facebook.com/PrincetonVideoServices">FaceBook</a> - <a href="https://twitter.com/PuVideoServices">Twitter</a></p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -174,19 +174,19 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -207,19 +207,19 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => '',
       'image_link' => '',
+      'image_style' => '',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -240,16 +240,16 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'text_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'text_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -289,22 +289,22 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'link' => 0,
       'bypass_access' => 0,
-      'view_mode' => 'featured_link_url',
+      'link' => 0,
       'links' => 1,
       'use_content_language' => 1,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Video Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Video Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -325,19 +325,19 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'entityreference_label',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_label',
     'formatter_settings' => array(
-      'link' => 0,
       'bypass_access' => 0,
+      'link' => 0,
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Featured Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Featured Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -358,16 +358,16 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'link_default',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'link_default',
     'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'External Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'External Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -388,19 +388,19 @@ videoservices',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:node_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'branch_image_branding',
       'image_link' => '',
+      'image_style' => 'branch_image_branding',
     ),
-    'context' => 'argument_entity_id:node_1',
+    'label' => 'hidden',
     'override_title' => 1,
-    'override_title_text' => 'Video Services',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Video Services',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -425,69 +425,69 @@ videoservices',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 28;
+  $handler->weight = 25;
   $handler->conf = array(
-    'title' => 'Video Library',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => FALSE,
+          'settings' => array(
+            'paths' => 'vdl/*
+videoservices/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+      ),
+    ),
     'body_classes_to_add' => 'branch-libraries libraries-video',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'entity_id' => '7788',
+        'id' => 1,
         'identifier' => 'Branch Home',
         'keyword' => 'node_2',
         'name' => 'entity:node',
-        'entity_id' => '7788',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
     'relationships' => array(
       1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'Building',
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
-        'delta' => 0,
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
       ),
     ),
-    'access' => array(
-      'plugins' => array(
-        1 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'vdl/*
-videoservices/*',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
+    'title' => 'Video Library',
   );
   $display = new panels_display();
   $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'top_left' => NULL,
-      'top_right' => NULL,
-      'middle_left' => NULL,
-      'middle_right' => NULL,
+      'bottom' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'middle_left' => NULL,
+      'middle_right' => NULL,
+      'right' => NULL,
       'second' => NULL,
       'top' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
+      'top_left' => NULL,
+      'top_right' => NULL,
     ),
   );
   $display->cache = array();
@@ -506,8 +506,8 @@ videoservices/*',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -532,8 +532,8 @@ videoservices/*',
       'nid' => '7788',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Contact Us',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Contact Us',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -577,10 +577,10 @@ videoservices/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -601,22 +601,22 @@ videoservices/*',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'entityreference_entity_view',
+    'context' => 'context_entity:node_1',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
+    'formatter' => 'entityreference_entity_view',
     'formatter_settings' => array(
-      'view_mode' => 'featured_link_url',
+      'bypass_access' => 0,
+      'link' => 0,
       'links' => 1,
       'use_content_language' => 1,
-      'link' => 0,
-      'bypass_access' => 0,
+      'view_mode' => 'featured_link_url',
     ),
-    'context' => 'context_entity:node_1',
+    'label' => 'title',
     'override_title' => 1,
-    'override_title_text' => 'Video Resources',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Video Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -641,8 +641,8 @@ videoservices/*',
       'nid' => '7788',
     ),
     'override_title' => 1,
-    'override_title_text' => 'External Links',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'External Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -667,8 +667,8 @@ videoservices/*',
       'nid' => '7788',
     ),
     'override_title' => 1,
-    'override_title_text' => 'Video Services',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Video Services',
   );
   $pane->cache = array();
   $pane->style = array(
