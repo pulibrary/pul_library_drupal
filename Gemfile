@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem 'whenever', require: false
+
 group :development do
   gem "capistrano", "~> 3.11", require: false
   gem 'capistrano-composer'
@@ -7,5 +9,4 @@ group :development do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'byebug'
-  gem 'whenever', require: false
 end

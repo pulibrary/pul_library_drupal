@@ -17,7 +17,7 @@ set :drupal_file_private_path, "sites/default/files/private"
 set :cas_cert_location, "/etc/ssl/certs/ssl-cert-snakeoil.pem"
 
 set :user, "deploy"
-set :whenever_roles, :drupal_primary
+set :whenever_roles, [:drupal_primary, :drupal_secondary]
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -305,7 +305,7 @@ namespace :deploy do
 
   desc "Bundle as sudo to make whenever run"
   task :bundle_install do
-    on release_roles :drupal_primary do
+    on release_roles :app do
       execute "cd #{release_path} && sudo /usr/local/bin/bundle install"
     end
   end

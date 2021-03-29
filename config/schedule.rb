@@ -25,8 +25,17 @@ every 1.hours, roles: [:drupal_primary] do
   command "sudo -u www-data drush @prod cron"
 end
 
-# Run at 6:05 am EST or 7:05 EDT (after the 6am staff list is generated from OIT and finance data)
+# Run at 6:30 am EST or 7:30 EDT (after the 6am staff list is generated from OIT and finance data)
 every 1.day, at: '11:30 am', roles: [:drupal_primary] do
   command "/usr/bin/get_staff_updates.sh"
 end
 
+# Run at 12:30 am EST or 1:30 am EDT reboot the primary machine
+every 1.day, at: '04:30 am', roles: [:drupal_primary] do
+  command "sudo /sbin/shutdown -r now"
+end
+
+# Run at 1:30 am EST or 2:30 am EDT reboot the secondary machine(s)
+every 1.day, at: '05:30 am', roles: [:drupal_secondary] do
+  command "sudo /sbin/shutdown -r now"
+end
