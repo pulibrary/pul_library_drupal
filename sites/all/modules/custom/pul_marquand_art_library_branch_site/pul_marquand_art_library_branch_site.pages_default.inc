@@ -721,7 +721,7 @@ marquand',
     'formatter' => 'image',
     'formatter_settings' => array(
       'image_link' => '',
-      'image_style' => '',
+      'image_style' => 'max',
     ),
     'label' => 'hidden',
     'override_title' => 1,

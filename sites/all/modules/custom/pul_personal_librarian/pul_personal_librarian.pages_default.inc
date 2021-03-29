@@ -18,8 +18,8 @@ function pul_personal_librarian_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'personal-librarian';
   $page->access = array(
-    'plugins' => array(),
     'logic' => 'or',
+    'plugins' => array(),
   );
   $page->menu = array();
   $page->arguments = array();
@@ -36,34 +36,34 @@ function pul_personal_librarian_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
+    'body_classes_to_remove' => '',
     'contexts' => array(
       0 => array(
+        'id' => 1,
         'identifier' => 'User',
         'keyword' => 'user',
         'name' => 'user',
         'type' => 'current',
         'uid' => '',
-        'id' => 1,
       ),
     ),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
     'relationships' => array(
       0 => array(
+        'context' => 'context_user_1',
+        'delta' => 0,
+        'id' => 1,
         'identifier' => 'User from User (on User: Personal Librarian [field_current_personal_lib])',
         'keyword' => 'user_2',
         'name' => 'entity_from_field:field_current_personal_lib-user-user',
-        'delta' => 0,
-        'context' => 'context_user_1',
-        'id' => 1,
       ),
     ),
-    'name' => 'panel',
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -91,21 +91,21 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'context_user_1',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'context_user_1',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Find Your Personal Librarian',
     'override_title_heading' => 'h3',
+    'override_title_text' => 'Find Your Personal Librarian',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -127,15 +127,15 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'context_user_1',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
             1 => 28,
           ),
         ),
-        'context' => 'context_user_1',
-        'not' => FALSE,
       ),
     ),
   );
@@ -164,7 +164,9 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'context_user_1',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 3,
@@ -172,8 +174,6 @@ function pul_personal_librarian_default_page_manager_pages() {
             2 => 29,
           ),
         ),
-        'context' => 'context_user_1',
-        'not' => FALSE,
       ),
     ),
   );
@@ -187,8 +187,8 @@ function pul_personal_librarian_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'personal-librarian',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -205,24 +205,24 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'context_user_1',
         'name' => 'role',
+        'not' => TRUE,
         'settings' => array(
           'rids' => array(
             0 => 29,
           ),
         ),
-        'context' => 'context_user_1',
-        'not' => TRUE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Personal Librarian Header',
-    'title' => 'About Princeton’s Personal Librarian Program',
-    'title_heading' => 'h2',
     'body' => '<p>Navigating the rich resources at Princeton University Library can be challenging for new students, so in fall ’17 we launched a “Personal Librarian” program that pairs every Princeton undergraduate with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have!</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => 'About Princeton’s Personal Librarian Program',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -244,14 +244,14 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'context_user_1',
         'name' => 'role',
+        'not' => TRUE,
         'settings' => array(
           'rids' => array(
             0 => 29,
           ),
         ),
-        'context' => 'context_user_1',
-        'not' => TRUE,
       ),
     ),
   );
@@ -261,8 +261,8 @@ function pul_personal_librarian_default_page_manager_pages() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'personal-librarians',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -279,8 +279,8 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Ask Us!',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Ask Us!',
   );
   $pane->cache = array();
   $pane->style = array(
