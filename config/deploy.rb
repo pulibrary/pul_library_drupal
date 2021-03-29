@@ -4,6 +4,8 @@ lock "~> 3.11.0"
 set :application, "library"
 set :repo_url, "git@github.com:pulibrary/pul_library_drupal.git"
 
+set :branch, ENV["BRANCH"] || "main"
+
 set :keep_releases, 5
 
 set :deploy_to, "/var/www/library_cap"
