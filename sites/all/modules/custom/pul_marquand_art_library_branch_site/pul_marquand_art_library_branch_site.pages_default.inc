@@ -1311,6 +1311,48 @@ marquand/rare-book-highlights',
   $display->content['new-ef1d512f-52f8-4841-9c33-a5a961bc60ed'] = $pane;
   $display->panels['middle'][4] = 'new-ef1d512f-52f8-4841-9c33-a5a961bc60ed';
   $pane = new stdClass();
+  $pane->pid = 'new-4d1370f9-b38b-4db0-a074-009759a6a2ec';
+  $pane->panel = 'middle';
+  $pane->type = 'node';
+  $pane->subtype = 'node';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'logic' => 'or',
+    'plugins' => array(
+      0 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'marquand/services/carrels',
+          'visibility_setting' => '1',
+        ),
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link_node_title' => 0,
+    'links' => 0,
+    'nid' => '44315',
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => 'Request a Study Shelf',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '4d1370f9-b38b-4db0-a074-009759a6a2ec';
+  $display->content['new-4d1370f9-b38b-4db0-a074-009759a6a2ec'] = $pane;
+  $display->panels['middle'][5] = 'new-4d1370f9-b38b-4db0-a074-009759a6a2ec';
+  $pane = new stdClass();
   $pane->pid = 'new-db1242d4-5321-4868-8fc6-73f9579d969d';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
