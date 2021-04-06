@@ -27,7 +27,7 @@ library.princeton.edu is supported by this repo.
     # needed for CAS logins to work
     $base_url = "http://library-main.lndo.site";
     ```
-3. Add the following useful local development configuration to the end of `sites/default/settings.php`
+4. Add the following useful local development configuration to the end of `sites/default/settings.php`
 ```
 /* Overrides for the local environment */
 $conf['securepages_enable'] = 0;
@@ -48,12 +48,12 @@ $conf['theme_debug'] = TRUE;
 /* set to false in production */
 $conf['javascript_always_use_jquery'] = TRUE;
 ```
-3. `mkdir .ssh` # excluded from version control
-4. `cp $HOME/.ssh/id_rsa .ssh/.`
-5. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
-3. `lando start` Start up lando
-4. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
-5. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
+5. `mkdir .ssh` # excluded from version control
+6. `cp $HOME/.ssh/id_rsa .ssh/.`
+7. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
+8. `lando start` Start up lando
+9. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
+10. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
 ```
 $aliases['prod'] = array (
    'uri' => 'https://library.princeton.edu',
@@ -82,7 +82,7 @@ $aliases['prod'] = array (
    ),
  );
 ```
-6. Uncomment the alias block for the local lando site
+11. Uncomment the alias block for the local lando site
 ```
 $aliases['local'] = array(
   'root' => '/app', // Path to project on local machine
@@ -93,10 +93,10 @@ $aliases['local'] = array(
   ),
 );
 ```
-7. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=/tmp/dump.sql; scp pulsys@library-prod3:/tmp/dump.sql .`
-8. `lando db-import dump.sql`
-9. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
-10. `lando drush uli your-username`
+12. `lando drush @librarymain.prod sql-dump --structure-tables-list='watchdog,sessions,cas_data_login,history,captcha_sessions,cache,cache_*' --result-file=/tmp/dump.sql; scp pulsys@library-prod3:/tmp/dump.sql .`
+13. `lando db-import dump.sql`
+14. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
+15. `lando drush uli your-username`
 
 ### Use NPM and Gulp to build styles for drupal theme layer
 
@@ -157,25 +157,28 @@ Redis can be used as a cache backend. To test this on a local dev instance do th
       ```
 
 
-## Prerequisites:
+## Using discoveryutils Locally
+In order to use a local instance of [discoveryutils](https://github.com/pulibrary/discoveryutils), you will need to have both the library site and discoveryutils running via lando.
 
-### Needs Work ###
-1. Set-up https://github.com/pulibrary/discoveryutils. Make sure to define an alias to this application in your vhost configuration. It currently needs to run at the path `/utils`.
+1. In the root directory of your local instance of the library site run `lando start`
+1. In the root directory of your local instance of discoveryutils run `lando start`
+1. Comment out line 4 in `sites/all/modules/custom/catalog_block/catalog_block.module`
+1. Uncomment line 6 in `sites/all/modules/custom/catalog_block/catalog_block.module`
 
 ## Deploy to server
 
-1. We have capistrano set up to deploy our servers
+We have capistrano set up to deploy our servers
 
-    1. `cap staging deploy` will deploy the master branch to staging
-    2. `BRANCH=other cap staging deploy` will deploy the other branch to staging
+1. `cap staging deploy` will deploy the master branch to staging
+1. `BRANCH=other cap staging deploy` will deploy the other branch to staging
 
 ## Uploading and importing a SQL dump
-capistrano can be used to import a sql dump onto one of the servers.  It will upload the dump file to the server, import the dump via drush, then clear and update the search index. You should create the sql dump and then run
+capistrano can be used to upload and import a sql dump onto one of the servers. It will upload the dump file to the server, import the dump via drush, then clear and update the search index. You should create the sql dump and then run
 ```
-SQL_DIR=<path_to_sql_dump_file> SQL_FILE=<dump_file_name> cap production drupal:database:import_dump
+SQL_DIR=<path_to_sql_dump_file> SQL_GZ=<dump_file_name> cap staging drupal:database:upload_and_import
 ```
 
 For example if my sql dump file is in `/tmp/dump.sql` I would run:
 ```
-SQL_DIR=/tmp/ SQL_GZ=dump.sql.gz cap production drupal:database:import_dump
+SQL_DIR=/tmp/ SQL_GZ=dump.sql.gz cap staging drupal:database:upload_and_import
 ```

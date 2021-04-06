@@ -854,6 +854,11 @@ function pul_personal_librarian_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
+  /* Field: User: Residential College */
+  $handler->display->display_options['fields']['field_pl_residential_college']['id'] = 'field_pl_residential_college';
+  $handler->display->display_options['fields']['field_pl_residential_college']['table'] = 'field_data_field_pl_residential_college';
+  $handler->display->display_options['fields']['field_pl_residential_college']['field'] = 'field_pl_residential_college';
+  $handler->display->display_options['fields']['field_pl_residential_college']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
