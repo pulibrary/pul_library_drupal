@@ -69,7 +69,8 @@
                                 '<div class="all-search-excerpt">' + description.slice(0, 150) + '...' + '</div>' +
                                 '<div class="all-format-type"><i class="' + icon_type + '"></i>' +
                                 result['type'] +
-                                '</div>' + repository + '</li>');
+                                repository + 
+                                '</div>' + '</li>');
                         });
                         $('#pulfalight-search-results-spinner').hide();
                         $('<ul/>', {
