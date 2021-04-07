@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * all_search_page_configuration.features.inc
