@@ -510,3 +510,39 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+$databases = array (
+  'default' =>
+  array (
+    'default' =>
+    array (
+      'database' => 'drupal7',
+      'username' => 'drupal7',
+      'password' => 'drupal7',
+      'host' => 'database',
+      'port' => '3306',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
+# needed for CAS logins to work
+$base_url = "http://library-main.lndo.site";
+
+/* Overrides for the local environment */
+$conf['securepages_enable'] = 0;
+/* This should be set in your php.ini file */
+ini_set('memory_limit', '1G');
+/* Turn off all caching */
+$conf['css_gzip_compression'] = FALSE;
+$conf['js_gzip_compression'] = FALSE;
+$conf['cache'] = 0;
+$conf['block_cache'] = 0;
+$conf['preprocess_css'] = 0;
+$conf['preprocess_js'] = 0;
+/* end cache settings */
+/* Turn on theme debugging. Injects the path to every Template utilized in the HTML source. */
+$conf['theme_debug'] = TRUE;
+
+/* Makes sure jquery is loaded on every page */
+/* set to false in production */
+$conf['javascript_always_use_jquery'] = TRUE;
