@@ -178,29 +178,6 @@ function all_search_page_configuration_default_page_manager_pages() {
   $display->content['new-98924198-8e44-4ad0-8988-41db3b74904c'] = $pane;
   $display->panels['first'][1] = 'new-98924198-8e44-4ad0-8988-41db3b74904c';
   $pane = new stdClass();
-  $pane->pid = 'new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'catalog_block-catalog_pulfa_results';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_heading' => 'h2',
-    'override_title_text' => '<i class="icon-archives"></i>Library Archives',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e';
-  $display->content['new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e'] = $pane;
-  $display->panels['first'][2] = 'new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e';
-  $pane = new stdClass();
   $pane->pid = 'new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -218,11 +195,11 @@ function all_search_page_configuration_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
   $display->content['new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e'] = $pane;
-  $display->panels['first'][3] = 'new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
+  $display->panels['first'][2] = 'new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
   $pane = new stdClass();
   $pane->pid = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
   $pane->panel = 'first';
@@ -241,11 +218,11 @@ function all_search_page_configuration_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'e276c37f-ba5a-47c5-b366-b8ad7176db2a';
   $display->content['new-e276c37f-ba5a-47c5-b366-b8ad7176db2a'] = $pane;
-  $display->panels['first'][4] = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
+  $display->panels['first'][3] = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
   $pane = new stdClass();
   $pane->pid = 'new-89943dfe-29c1-422d-aec8-55484fe1a116';
   $pane->panel = 'second';
@@ -468,7 +445,7 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Results section anchor links',
-    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results">Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pulfalight_results">NEW Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital PUL</a></li><li><a href="#catalog_block-catalog_arts_results">Art Museum Collections</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps and Geographic Data</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#libguides_block-libguides_search_results">Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">Library FAQs</a></li></ul></div>',
+    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results">Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pulfalight_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital PUL</a></li><li><a href="#catalog_block-catalog_arts_results">Art Museum Collections</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps and Geographic Data</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#libguides_block-libguides_search_results">Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">Library FAQs</a></li></ul></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title' => '',

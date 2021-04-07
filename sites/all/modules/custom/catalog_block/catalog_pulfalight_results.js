@@ -48,30 +48,40 @@
 
                             var id = result['id'];
 
+                            var description = "";
+                            if (result['description']){
+                              var description = "<div class='all-search-excerpt'>" + result['description'] + "</div>";
+                            }
+
+                            var dates = "";
+                            if (result['dates']) {
+                              var dates = "<div class='all-search-excerpt'>Dates: " + result['dates'] + "</div>";
+                            }
+
                             var repository = "";
                             if (result['repository']) {
-                                for(var i=0, len=result['repository'].length; i < len; i++){
-                                    author = author + "<div class='author'>" + result['repository'][i] + "</div>";
-                                }
+                              var repository = "<div class='all-search-excerpt'><em>" + result['repository'] + "</em></div>";
                             }
 
                             var result_position = parseInt(index) + 1;
-                            items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>' +
+                            items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['collection'] + '</a></h3>' +
+                                dates +
+                                '<div class="all-search-excerpt">' + description.slice(0, 150) + '...' + '</div>' +
                                 '<div class="all-format-type"><i class="' + icon_type + '"></i>' +
                                 result['type'] +
                                 '</div>' + repository + '</li>');
                         });
-                        $('#blacklight-search-results-spinner').hide();
+                        $('#pulfalight-search-results-spinner').hide();
                         $('<ul/>', {
                             'class': 'all-search-results-list',
                             html: items.join('')
-                        }).appendTo('#blacklight-search-results');
+                        }).appendTo('#pulfalight-search-results');
                         $('#catalog_block-catalog_pulfalight_results h2').replaceWith(function() {
                             var url = $.trim($(this).text());
-                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-book"></i>Catalog</a></h2>';
+                            return '<h2><a title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '"><i class="icon-archives"></i>Library Archives</a></h2>';
                         });
                         if (data.number > 3) {
-                            $('<div class="blacklight-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Finding Aids results</a></div>"').appendTo('#blacklight-search-results');
+                            $('<div class="pulfalight-search more-link"><a target="_blank" title="' + refine_hint + ' ' + data.number + ' total results." href="' + data.more + '">See all Finding Aids results</a></div>"').appendTo('#pulfalight-search-results');
                         }
                         // update preview button with hit count
                         var preview = $("a[href='#catalog_block-catalog_pulfalight_results']");
@@ -92,14 +102,14 @@
                             });
                         });
 
-                        $('.blacklight-search.more-link a').each(function(index, value) {
+                        $('.pulfalight-search.more-link a').each(function(index, value) {
                             //var section_heading = $(this).closest('h2.pane-title').text();
                             $(this).click(function() {
                                 ga('send', 'event', 'All Search', section_heading, 'Refine Bottom');
                             });
                         });
 
-                        $('#blacklight-search-results .all-search-results-list h3 a').each(function(index, value) {
+                        $('#pulfalight-search-results .all-search-results-list h3 a').each(function(index, value) {
                             //var section_heading = $(this).closest('h2.pane-title').text();
                             var result_position = parseInt(index, 10) + 1;
                             $(this).click(function() {
@@ -109,17 +119,16 @@
                         });
 
                     } else {
-                        $('#blacklight-search-results-spinner').hide();
-                        $('<div class="no-results">No Finding Aids results found. Try searching for another topic.</div>"').appendTo('#blacklight-search-results');
+                        $('#pulfalight-search-results-spinner').hide();
+                        $('<div class="no-results">No Finding Aids results found. Try searching for another topic.</div>"').appendTo('#pulfalight-search-results');
                     }
                 },
                 error: function(data) {
-                    $('#blacklight-search-results-spinner').hide();
-                    $('<div class="all-fail-to-load-results">Finding Aids results are not available at this time.</div>"').appendTo('#blacklight-search-results');
+                    $('#pulfalight-search-results-spinner').hide();
+                    $('<div class="all-fail-to-load-results">Finding Aids results are not available at this time.</div>"').appendTo('#pulfalight-search-results');
                 },
                 timeout: 15000
             })
-
         }
     });
 }(jQuery));
