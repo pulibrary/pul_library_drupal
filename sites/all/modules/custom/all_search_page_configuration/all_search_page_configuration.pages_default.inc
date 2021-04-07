@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * all_search_page_configuration.pages_default.inc
@@ -17,32 +18,32 @@ function all_search_page_configuration_default_page_manager_pages() {
   $page->admin_description = 'All Search View';
   $page->path = 'find/all/%query';
   $page->access = array(
+    'logic' => 'and',
     'plugins' => array(
       0 => array(
-        'name' => 'string_length',
-        'settings' => array(
-          'operator' => '>=',
-          'length' => '1',
-        ),
         'context' => 'argument_string_1',
+        'name' => 'string_length',
         'not' => FALSE,
+        'settings' => array(
+          'length' => '1',
+          'operator' => '>=',
+        ),
       ),
     ),
-    'logic' => 'and',
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'query' => array(
@@ -67,52 +68,52 @@ function all_search_page_configuration_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-find-all-results',
-    'css_id' => 'all-search-page',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => 'page-find-all-results',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'all-search-page',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-four-four-four-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => array(
-        'list_type' => 'ul',
-      ),
-      'bottom' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'third' => NULL,
-      'fourth' => NULL,
-      'fifth' => NULL,
-    ),
-    'middle' => array(
+    'left' => array(
       'style' => 'default',
     ),
-    'left' => array(
+    'middle' => array(
       'style' => 'default',
     ),
     'right' => array(
       'style' => 'default',
     ),
     'style' => 'list',
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => array(
+        'list_type' => 'ul',
+      ),
+      'fifth' => NULL,
+      'first' => NULL,
+      'fourth' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'second' => NULL,
+      'third' => NULL,
+      'top' => NULL,
+    ),
     'top' => array(
       'style' => '-1',
     ),
@@ -120,8 +121,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $display->cache = array(
     'method' => 'simple',
     'settings' => array(
-      'lifetime' => '3600',
       'granularity' => 'args',
+      'lifetime' => '3600',
     ),
   );
   $display->title = 'Search results for %query:html_safe';
@@ -139,8 +140,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-book"></i>Catalog',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-book"></i>Catalog',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -162,8 +163,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-book"></i>Books+ Search Results',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-book"></i>Books+ Search Results',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -185,8 +186,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-archives"></i>Library Archives',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-archives"></i>Library Archives',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -200,16 +201,16 @@ function all_search_page_configuration_default_page_manager_pages() {
   $display->content['new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e'] = $pane;
   $display->panels['first'][2] = 'new-2a1cfe7d-6d86-4e09-b8e2-c4d9b7e50e7e';
   $pane = new stdClass();
-  $pane->pid = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
+  $pane->pid = 'new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
   $pane->panel = 'first';
   $pane->type = 'block';
-  $pane->subtype = 'catalog_block-catalog_pulmap_results';
+  $pane->subtype = 'catalog_block-catalog_pulfalight_results';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '<i class="icon-map"></i>Maps and Geographic Data',
+    'override_title' => 0,
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -219,9 +220,32 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
+  $pane->uuid = 'e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
+  $display->content['new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e'] = $pane;
+  $display->panels['first'][3] = 'new-e76cf10f-23ec-4ae6-a549-7a1e4bbd429e';
+  $pane = new stdClass();
+  $pane->pid = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'catalog_block-catalog_pulmap_results';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-map"></i>Maps and Geographic Data',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
   $pane->uuid = 'e276c37f-ba5a-47c5-b366-b8ad7176db2a';
   $display->content['new-e276c37f-ba5a-47c5-b366-b8ad7176db2a'] = $pane;
-  $display->panels['first'][3] = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
+  $display->panels['first'][4] = 'new-e276c37f-ba5a-47c5-b366-b8ad7176db2a';
   $pane = new stdClass();
   $pane->pid = 'new-89943dfe-29c1-422d-aec8-55484fe1a116';
   $pane->panel = 'second';
@@ -231,8 +255,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-text"></i>Articles+',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-text"></i>Articles+',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -254,8 +278,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-digital"></i>Digital PUL',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-digital"></i>Digital PUL',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -277,8 +301,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-visual-material"></i>Art Museum Collections',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-visual-material"></i>Art Museum Collections',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -376,8 +400,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-compass"></i>Library Guides',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-compass"></i>Library Guides',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -399,8 +423,8 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '<i class="icon-question"></i>Library FAQ',
     'override_title_heading' => 'h2',
+    'override_title_text' => '<i class="icon-question"></i>Library FAQ',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -444,10 +468,10 @@ function all_search_page_configuration_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Results section anchor links',
-    'title' => '',
-    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results">Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital PUL</a></li><li><a href="#catalog_block-catalog_arts_results">Art Museum Collections</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps and Geographic Data</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#libguides_block-libguides_search_results">Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">Library FAQs</a></li></ul></div>',
+    'body' => '<div class="results-section"><label class="show-result-section-menu" for="show-result-section-menu">Skip to Section</label><input id="show-result-section-menu" type="checkbox" /><ul id="result-section-menu" class="result-section-menu"><li><a href="#catalog_block-catalog_blacklight_results">Catalog</a></li><li><a href="#summon_block-summon_search_results">Articles+</a></li><li><a href="#databases_keyword_search-panel_pane_2">Databases</a></li><li><a href="#catalog_block-catalog_pulfa_results">Library Archives</a></li><li><a href="#catalog_block-catalog_pulfalight_results">NEW Library Archives</a></li><li><a href="#catalog_block-catalog_pudl_results">Digital PUL</a></li><li><a href="#catalog_block-catalog_arts_results">Art Museum Collections</a></li><li><a href="#catalog_block-catalog_pulmap_results">Maps and Geographic Data</a></li><li><a href="#general_site_keyword_search-panel_pane_1">Library Website</a></li><li><a href="#general_site_user_search-panel_pane_1">Library Staff</a></li><li><a href="#libguides_block-libguides_search_results">Library Guides</a></li><li><a href="#catalog_block-catalog_faq_results">Library FAQs</a></li></ul></div>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => '',
     'title_heading' => 'h2',
   );
   $pane->cache = array();
