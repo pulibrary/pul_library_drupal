@@ -67,9 +67,9 @@
                             items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['collection'] + '</a></h3>' +
                                 dates +
                                 '<div class="all-search-excerpt">' + description.slice(0, 150) + '...' + '</div>' +
+                                repository + 
                                 '<div class="all-format-type"><i class="' + icon_type + '"></i>' +
                                 result['type'] +
-                                repository + 
                                 '</div>' + '</li>');
                         });
                         $('#pulfalight-search-results-spinner').hide();
