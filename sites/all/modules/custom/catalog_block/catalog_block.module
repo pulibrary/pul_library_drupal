@@ -1,9 +1,9 @@
 <?php
 
 function data_source_url_base() {
-  return '/utils/';
+  // return '/utils/';
   /** Uncomment the line below to connect to local lando discovery utils and comment out the line above **/
-  /** return 'http://discovery-utils.lndo.site/'; **/
+  return 'http://discovery-utils.lndo.site/';
 }
 
 function catalog_block_form($form, &$form_state) {
@@ -212,6 +212,10 @@ function catalog_block_block_info() {
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
    $blocks['catalog_pulfa_results'] = array(
+      'info' => t('Archives Results'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
+   $blocks['catalog_pulfalight_results'] = array(
       'info' => t('Archives Results'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
