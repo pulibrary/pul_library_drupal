@@ -138,7 +138,7 @@ RedirectMatch 301 /projects/bluemountain(.*) http://bluemountain.princeton.edu/
 
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
-  RewriteCond %{REQUEST_URI} !=/server-status"
+  RewriteCond %{REQUEST_URI} !=/server-status
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
