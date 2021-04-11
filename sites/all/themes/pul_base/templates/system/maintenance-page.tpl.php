@@ -14,7 +14,8 @@
  */
 ?>
 <!DOCTYPE html>
-<?php if (omega_extension_enabled('compatibility') && omega_theme_get_setting('omega_conditional_classes_html', TRUE)): ?><!--[if IEMobile 7]><html class="ie iem7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"><![endif]-->
+<?php if (omega_extension_enabled('compatibility') && omega_theme_get_setting('omega_conditional_classes_html', TRUE)): ?>
+<!--[if IEMobile 7]><html class="ie iem7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"><![endif]-->
 <!--[if lte IE 6]><html class="ie lt-ie9 lt-ie8 lt-ie7" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"><![endif]-->
 <!--[if (IE 7)&(!IEMobile)]><html class="ie lt-ie9 lt-ie8" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"><![endif]-->
 <!--[if IE 8]><html class="ie lt-ie9" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"><![endif]-->
@@ -22,9 +23,11 @@
 <![if !IE]>
 <html dir="<?php print $language->dir; ?>" lang="<?php print $language->language; ?>">
 <![endif]><?php else: ?><?php endif; ?>
+
 <head>
   <title><?php print $head_title; ?></title><?php print $head; ?><?php print $styles; ?><?php print $scripts; ?>
 </head>
+
 <body>
   <div class="l-page">
     <header class="l-header" role="banner">
@@ -51,111 +54,63 @@
       <div class="wrapper wrapper--navigation">
         <div class="l-region l-region--navigation">
           <a class="centered-navigation-menu-button" href="#">MENU</a>
-          <nav class="block block--system block--menu block--system-main-menu centered-navigation-menu pul-processed" id="block-system-main-menu" role="navigation">
+          <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu block--system-main-menu centered-navigation-menu pul-processed">
+
             <ul class="menu">
-              <li class="first expanded">
-                <a href="/research" title="Find library materials">Research Tools</a>
-                <ul class="menu">
-                  <li class="first leaf">
-                    <a href="https://dss.princeton.edu">Data and Statistics</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/research/databases">Databases</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="https://findingaids.princeton.edu/">Finding Aids</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="https://catalog.princeton.edu">Catalog</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="https://libguides.princeton.edu/newspapers">Newspapers</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/resource/4165">Worldcat</a>
-                  </li>
-                  <li class="last leaf menu-more-link">
-                    <a href="/research" title="View more research tools">More</a>
-                  </li>
+              <li class="first expanded"><a href="/research" title="Find library materials">Research Tools</a><button aria-label="Toggle submenu" class="submenu-toggle">+</button>
+                <ul class="submenu">
+                  <li class="first leaf"><a href="http://dss.princeton.edu">Data and Statistics</a></li>
+                  <li class="leaf"><a href="/research/databases">Databases</a></li>
+                  <li class="leaf"><a href="https://findingaids.princeton.edu/">Finding Aids</a></li>
+                  <li class="leaf"><a href="http://libguides.princeton.edu/newspapers">Newspapers</a></li>
+                  <li class="leaf"><a href="https://catalog.princeton.edu/">Catalog</a></li>
+                  <li class="leaf"><a href="/resource/4165">Worldcat</a></li>
+                  <li class="last leaf menu-more-link"><a href="/research" title="View more research tools">More</a></li>
                 </ul>
               </li>
-              <li class="expanded">
-                <a href="/libraries" title="View a list of our Libraries and Collections">Libraries and Collections</a>
-                <ul class="menu">
-                  <li class="first leaf">
-                    <a href="/collections">Collections</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/libraries">Libraries</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/help/recommend-purchase">Recommend a Purchase</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/collections-and-collection-development">Collections and Collecting</a>
-                  </li>
-                  <li class="last leaf menu-more-link">
-                    <a href="/libraries" title="View more libraries and collections">More</a>
-                  </li>
+              <li class="expanded"><a href="/libraries" title="View a list of our Libraries and Collections">Libraries and Collections</a><button aria-label="Toggle submenu" class="submenu-toggle">+</button>
+                <ul class="submenu">
+                  <li class="first leaf"><a href="/collections">Collections</a></li>
+                  <li class="leaf"><a href="/libraries">Libraries</a></li>
+                  <li class="leaf"><a href="/help/recommend-purchase">Recommend a Purchase</a></li>
+                  <li class="leaf"><a href="/collections-and-collection-development">Collections and Collecting</a></li>
+                  <li class="last leaf menu-more-link"><a href="/libraries" title="View more libraries and collections">More</a></li>
                 </ul>
               </li>
-              <li class="expanded">
-                <a href="/services" title="View a list of our Library Services">Library Services</a>
-                <ul class="menu">
-                  <li class="first leaf">
-                    <a href="/services/article-express">Article Express</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/borrowdirect">Borrow Direct</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/access/circulation-policies">Circulation</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/reserves">Course Reserves</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/interlibrary-services">Interlibrary Loan (ILL)</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/help">Research Help</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/technology">Technology</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/accounts">Your Accounts</a>
-                  </li>
-                  <li class="last leaf menu-more-link">
-                    <a href="/services" title="View more library services">More</a>
-                  </li>
+              <li class="expanded"><a href="/services" title="View a list of our Library Services">Library Services</a><button aria-label="Toggle submenu" class="submenu-toggle">+</button>
+                <ul class="submenu">
+                  <li class="first leaf"><a href="/2020-21-resources">2020-21 Resources</a></li>
+                  <li class="leaf"><a href="/services/study-browse">Reserve a Seat</a></li>
+                  <li class="leaf"><a href="/services/book-pick-up">Book Pick-Up</a></li>
+                  <li class="leaf"><a href="/services/technology/off-campus-access">Off-Campus Access</a></li>
+                  <li class="leaf"><a href="/services/in-house-digitization">In-House Digitization</a></li>
+                  <li class="leaf"><a href="/services/article-express">Article Express</a></li>
+                  <li class="leaf"><a href="/accounts">Your Accounts</a></li>
+                  <li class="last leaf menu-more-link"><a href="/services" title="View more library services">More</a></li>
                 </ul>
               </li>
-              <li class="expanded">
-                <a href="/about" title="About the library">About the Library</a>
-                <ul class="menu">
-                  <li class="first leaf">
-                    <a href="https://rbsc.princeton.edu/exhibitions">Exhibitions</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/alumni">For Alumni</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/services/access">Policies and Guidelines</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/staff/directory">Staff Directory</a>
-                  </li>
-                  <li class="leaf">
-                    <a href="/visitors">Visitors</a>
-                  </li>
-                  <li class="last leaf menu-more-link">
-                    <a href="/about" title="View more about the library">More</a>
-                  </li>
+              <li class="expanded"><a href="/about">About the Library</a><button aria-label="Toggle submenu" class="submenu-toggle">+</button>
+                <ul class="submenu">
+                  <li class="first leaf"><a href="https://libcal.princeton.edu/calendar/?cid=12260&amp;t=d&amp;d=0000-00-00&amp;cal=12260">Events and Workshops</a></li>
+                  <li class="leaf"><a href="/exhibitions">Exhibitions</a></li>
+                  <li class="leaf"><a href="/alumni">For Alumni</a></li>
+                  <li class="leaf"><a href="/about/policies-guidelines">Policies and Guidelines</a></li>
+                  <li class="leaf"><a href="/staff/directory">Staff Directory</a></li>
+                  <li class="leaf"><a href="/visitors">Visitors</a></li>
+                  <li class="leaf menu-more-link"><a href="/about" title="View more about the library">More</a></li>
                 </ul>
               </li>
-              <li class="last leaf">
-                <a href="/help/contact-us" title="Contact the Library">Contact Us</a>
+              <li class="last expanded"><a href="/ask-us" title="Contact the Library" class="ask-us">Ask Us! Chat and more</a><button aria-label="Toggle submenu" class="submenu-toggle">+</button>
+                <ul class="submenu">
+                  <li class="first leaf"><a href="/help/ask-a-librarian">Ask a Librarian!</a></li>
+                  <li class="leaf"><a href="/help/email-us">Email Us</a></li>
+                  <li class="leaf"><a href="/staff/specialists">Find Your Subject Librarian</a></li>
+                  <li class="leaf"><a href="/help/appointments">Research Consultations</a></li>
+                  <li class="leaf"><a href="/personal-librarian">Find Your Personal Librarian</a></li>
+                  <li class="leaf"><a href="/help/phone">Library Phone Numbers</a></li>
+                  <li class="leaf"><a href="http://libguides.princeton.edu/">Research Guides</a></li>
+                  <li class="last leaf"><a href="https://faq.library.princeton.edu/">Frequently Asked Questions</a></li>
+                </ul>
               </li>
             </ul>
           </nav>
@@ -275,4 +230,5 @@
     </footer>
   </div>
 </body>
+
 </html>
