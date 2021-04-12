@@ -3,7 +3,7 @@
 function data_source_url_base() {
   return '/utils/';
   /** Uncomment the line below to connect to local lando discovery utils and comment out the line above **/
-  /** return 'http://discovery-utils.lndo.site/'; **/
+  // return 'http://discovery-utils.lndo.site/';
 }
 
 function catalog_block_form($form, &$form_state) {
@@ -104,6 +104,16 @@ function catalog_pulfa_results_content() {
   $ajax_spinner = "<div id='pulfa-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
     '#markup' => "<div data-source='" . data_source_url_base() . "pulfa/any?query={$path}&sid={$sid}' id='pulfa-search-results'>" . $ajax_spinner . t('') . "</div>",
+  );
+  return $block_content;
+}
+
+function catalog_pulfalight_results_content() {
+  $path = catalog_block_query_escape($_GET['q']);
+  $sid = catalog_block_get_sid();
+  $ajax_spinner = "<div id='pulfalight-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
+  $block_content = array(
+    '#markup' => "<div data-source='" . data_source_url_base() . "pulfalightsearch/any?query={$path}&sid={$sid}' id='pulfalight-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
@@ -215,6 +225,10 @@ function catalog_block_block_info() {
       'info' => t('Archives Results'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
    );
+   $blocks['catalog_pulfalight_results'] = array(
+      'info' => t('Archives Pulfalight Results'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+   );
    $blocks['catalog_pudl_results'] = array(
       'info' => t('Digital PUL'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
@@ -308,6 +322,10 @@ function catalog_block_block_view($delta = '') {
     $block['subject'] = t('Library Archives Results');
     $block['content'] = catalog_pulfa_results_content($delta);
     drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfa_results.js');
+  } elseif ($delta == 'catalog_pulfalight_results') {
+    $block['subject'] = t('Library Archives Results');
+    $block['content'] = catalog_pulfalight_results_content($delta);
+    drupal_add_js(drupal_get_path('module', 'catalog_block') .'/catalog_pulfalight_results.js');
   } elseif ($delta == 'catalog_pudl_results') {
     $block['subject'] = t('Digital PUL');
     $block['content'] = catalog_pudl_results_content($delta);
