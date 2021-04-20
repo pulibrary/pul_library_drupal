@@ -61,14 +61,6 @@ function pul_makerspace_default_page_manager_handlers() {
         'keyword' => 'building',
         'name' => 'entity_from_field:field_building-node-node',
       ),
-      2 => array(
-        'context' => 'argument_entity_id:node_1',
-        'delta' => 0,
-        'id' => 1,
-        'identifier' => 'Calendar',
-        'keyword' => 'cal',
-        'name' => 'entity_from_field:field_hours_calendar-node-taxonomy_term',
-      ),
     ),
     'title' => 'The PUL Makerspace',
   );
