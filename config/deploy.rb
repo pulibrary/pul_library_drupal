@@ -89,6 +89,9 @@ namespace :drupal do
   task :cache_clear do
       on release_roles :drupal_primary do
           execute "sudo -u www-data /usr/local/bin/drush -r #{release_path} cc all"
+          redis_prefix = fetch(:redis_prefix)
+          redis_host = fetch(:redis_host)
+          execute "redis-cli -h #{redis_host} keys \"#{redis_prefix}:*\" | xargs redis-cli -h #{redis_host} DEL"
           info "cleared the drupal cache"
         end
   end
