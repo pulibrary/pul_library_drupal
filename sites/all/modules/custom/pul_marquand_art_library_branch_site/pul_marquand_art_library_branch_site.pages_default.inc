@@ -939,11 +939,13 @@ marquand',
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter' => 'link_default',
-    'formatter_settings' => array(),
+    'formatter_settings' => array(
+      'custom_title' => '',
+    ),
     'label' => 'title',
     'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => 'Featured Resources',
+    'override_title_text' => 'Quick Links',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1384,7 +1386,7 @@ marquand/rare-book-highlights',
     ),
     'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => 'Featured Resources',
+    'override_title_text' => 'Quick Links',
   );
   $pane->cache = array();
   $pane->style = array(
