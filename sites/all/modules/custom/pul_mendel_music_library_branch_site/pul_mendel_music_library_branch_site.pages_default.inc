@@ -337,6 +337,16 @@ music/*',
             'visibility_setting' => '1',
           ),
         ),
+        2 => array(
+          'context' => 'argument_entity_id:node_1',
+          'name' => 'node_type',
+          'not' => TRUE,
+          'settings' => array(
+            'type' => array(
+              'mendel_sheet_music' => 'mendel_sheet_music',
+            ),
+          ),
+        ),
       ),
     ),
     'body_classes_to_add' => 'branch-libraries libraries-music',

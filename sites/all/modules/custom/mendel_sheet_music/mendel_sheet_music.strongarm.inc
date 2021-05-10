@@ -214,6 +214,62 @@ function mendel_sheet_music_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_mendel_sheet_music_pattern';
+  $strongarm->value = 'music/valva/[node:title]';
+  $export['pathauto_node_mendel_sheet_music_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheetmusic_boxnumber_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheetmusic_boxnumber_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheetmusic_composers_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheetmusic_composers_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheetmusic_instrumentation_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheetmusic_instrumentation_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheet_music_arranger_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheet_music_arranger_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheet_music_date_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheet_music_date_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheet_music_lyricists_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheet_music_lyricists_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_mus_sheet_music_publisher_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_mus_sheet_music_publisher_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_mendel_sheet_music';
   $strongarm->value = array(
     'priority' => '0.5',
