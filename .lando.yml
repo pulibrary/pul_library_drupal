@@ -1,8 +1,9 @@
 name: library-main
 recipe: drupal7
 config:
-  php: '7.2'
+  php: '7.4'
   webroot: .
+  database: mariadb
 services:
   search:
     type: 'solr:7'
