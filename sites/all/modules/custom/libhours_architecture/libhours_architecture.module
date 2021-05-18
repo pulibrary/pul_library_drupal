@@ -31,8 +31,7 @@ function libhours_architecture_block_view() {
   $archRss = new DOMDocument();
   $archRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12309&format=xml&systemTime=1');
   $archHours = $archRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $archPickUpHours = $archRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $arch = "<li class='hours'>".$archHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=10655'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$archPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+  $arch = "<li class='hours'><p>".$archHours."</p><p class='seats'><a href='https://libcal.princeton.edu/seats?lid=10655'>Study-browse</a> and <a href='/services/book-pick-up'>Book Pick-up</a> services are available during these hours.</p></li>";
 
   $moreHours = "<a href='https://libcal.princeton.edu/hours' class='views-more-link'>More Hours</a>";
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";

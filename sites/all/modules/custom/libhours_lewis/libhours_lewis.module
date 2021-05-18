@@ -31,8 +31,7 @@ function libhours_lewis_block_view() {
   $lewRss = new DOMDocument();
   $lewRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
   $lewHours = $lewRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $lewPickUpHours = $lewRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $lew = "<li class='hours'>".$lewHours."<div class='seats'><a href='https://libcal.princeton.edu/seats?lid=3508'>Study-browse service<br>Access by appointment only</a></div></li><li class='pickup-hours'>".$lewPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+  $lew = "<li class='hours'><p>".$lewHours."</p><p class='seats'><a href='https://libcal.princeton.edu/seats?lid=3508'>Study-browse</a> and <a href='/services/book-pick-up'>Book Pick-up</a> services are available during these hours.</p></li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   
