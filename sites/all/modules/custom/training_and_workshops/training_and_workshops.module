@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Training and Workshops feature.
- */
-
-include_once 'training_and_workshops.features.inc';
