@@ -1,0 +1,1015 @@
+<?php
+
+/**
+ * @file
+ * Checks to see if your installed modules are available for the next major
+ * release of Drupal.
+ */
+
+/**
+ * Default version of core we want to query for.
+ */
+define('UPGRADE_STATUS_CORE_VERSION', '8.x');
+
+/**
+ * Project has a new release available, but it is not a security release.
+ */
+define('UPGRADE_STATUS_DEVELOPMENT', 1000);
+
+/**
+ * Project is available.
+ */
+define('UPGRADE_STATUS_STABLE', 5);
+
+/**
+ * Project has been moved into core.
+ */
+define('UPGRADE_STATUS_CORE', 5000);
+
+/**
+ * Project has become obsolete by an alternative.
+ */
+define('UPGRADE_STATUS_OBSOLETE', 3000);
+
+/**
+ * Implementation of hook_help().
+ */
+function upgrade_status_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#module':
+      $file = drupal_get_path('module', 'upgrade_status') .'/README.txt';
+      if (file_exists($file)) {
+        return _filter_autop(file_get_contents($file));
+      }
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function upgrade_status_menu() {
+  $items['admin/reports/updates/upgrade'] = array(
+    'title' => 'Upgrade status',
+    'page callback' => 'upgrade_status_status',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+    'file' => 'upgrade_status.report.inc'
+  );
+  $items['admin/reports/updates/upgrade/check'] = array(
+    'page callback' => 'upgrade_status_manual_status',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'upgrade_status.fetch.inc'
+  );
+  return $items;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function upgrade_status_theme() {
+  return array(
+    'upgrade_status_last_check' => array(
+      'variables' => array('last' => NULL),
+    ),
+    'upgrade_status_report' => array(
+      'variables' => array('data' => NULL),
+      'file' => 'upgrade_status.report.inc',
+    ),
+    'upgrade_status_status_label' => array(
+      'variables' => array('status' => NULL, 'project' => NULL),
+    ),
+  );
+}
+
+/**
+ * Tries to get update information from cache and refreshes it when necessary.
+ *
+ * In addition to checking the cache lifetime, this function also ensures that
+ * there are no .info files for enabled modules or themes that have a newer
+ * modification timestamp than the last time we checked for available update
+ * data. If any .info file was modified, it almost certainly means a new version
+ * of something was installed. Without fresh available update data, the logic in
+ * update_calculate_project_data() will be wrong and produce confusing, bogus
+ * results.
+ *
+ * @param $refresh
+ *   (optional) Boolean to indicate if this method should refresh the cache
+ *   automatically if there's no data. Defaults to FALSE.
+ *
+ * @return
+ *   Array of data about available releases, keyed by project shortname.
+ *
+ * @see upgrade_status_refresh()
+ * @see update_get_projects()
+ */
+function upgrade_status_get_available($refresh = FALSE) {
+  module_load_include('inc', 'upgrade_status', 'upgrade_status.compare');
+  $needs_refresh = FALSE;
+
+  // Grab whatever data we currently have cached in the DB.
+  $available = _upgrade_status_get_cached_available_releases();
+  $num_avail = count($available);
+
+  $projects = update_get_projects();
+  foreach ($projects as $key => $project) {
+    // If there's no data at all, we clearly need to fetch some.
+    if (empty($available[$key])) {
+      upgrade_status_create_fetch_task($project);
+      $needs_refresh = TRUE;
+      continue;
+    }
+
+    // See if the .info file is newer than the last time we checked for data,
+    // and if so, mark this project's data as needing to be re-fetched. Any
+    // time an admin upgrades their local installation, the .info file will
+    // be changed, so this is the only way we can be sure we're not showing
+    // bogus information right after they upgrade.
+    if ($project['info']['_info_file_ctime'] > $available[$key]['last_fetch']) {
+      $available[$key]['fetch_status'] = UPDATE_FETCH_PENDING;
+    }
+
+    // If we have project data but no release data, we need to fetch. This
+    // can be triggered when we fail to contact a release history server.
+    if (empty($available[$key]['releases'])) {
+      $available[$key]['fetch_status'] = UPDATE_FETCH_PENDING;
+    }
+
+    // If we think this project needs to fetch, actually create the task now
+    // and remember that we think we're missing some data.
+    if (!empty($available[$key]['fetch_status']) && $available[$key]['fetch_status'] == UPDATE_FETCH_PENDING) {
+      upgrade_status_create_fetch_task($project);
+      $needs_refresh = TRUE;
+    }
+  }
+
+  if ($needs_refresh && $refresh) {
+    // Attempt to drain the queue of fetch tasks.
+    upgrade_status_fetch_data();
+    // After processing the queue, we've (hopefully) got better data, so pull
+    // the latest from the cache again and use that directly.
+    $available = _upgrade_status_get_cached_available_releases();
+  }
+
+  return $available;
+}
+
+/**
+ * Creates a new fetch task after loading the necessary include file.
+ *
+ * @param $project
+ *   Associative array of information about a project. See update_get_projects()
+ *   for the keys used.
+ *
+ * @see _upgrade_status_create_fetch_task()
+ */
+function upgrade_status_create_fetch_task($project) {
+  module_load_include('inc', 'upgrade_status', 'upgrade_status.fetch');
+  return _upgrade_status_create_fetch_task($project);
+}
+
+/**
+ * Refreshes the release data after loading the necessary include file.
+ *
+ * @see _upgrade_status_refresh()
+ */
+function upgrade_status_refresh() {
+  module_load_include('inc', 'upgrade_status', 'upgrade_status.fetch');
+  return _upgrade_status_refresh();
+}
+
+/**
+ * Attempts to fetch update data after loading the necessary include file.
+ *
+ * @see _upgrade_status_fetch_data()
+ */
+function upgrade_status_fetch_data() {
+  module_load_include('inc', 'upgrade_status', 'upgrade_status.fetch');
+  return _upgrade_status_fetch_data();
+}
+
+/**
+ * Returns all currently cached data about available releases for all projects.
+ *
+ * @return
+ *   Array of data about available releases, keyed by project shortname.
+ */
+function _upgrade_status_get_cached_available_releases() {
+  $data = array();
+  $cache_items = _update_get_cache_multiple('upgrade_status_available_releases');
+  foreach ($cache_items as $cid => $cache) {
+    $cache->data['last_fetch'] = $cache->created;
+    if ($cache->expire < REQUEST_TIME) {
+      $cache->data['fetch_status'] = UPDATE_FETCH_PENDING;
+    }
+    // The project shortname is embedded in the cache ID, even if there's no
+    // data for this project in the DB at all, so use that for the indexes in
+    // the array.
+    $parts = explode('::', $cid, 2);
+    $data[$parts[1]] = $cache->data;
+  }
+  return $data;
+}
+
+/**
+ * Returns HTML for the last time we checked for update data.
+ *
+ * In addition to properly formatting the given timestamp, this function also
+ * provides a "Check manually" link that refreshes the available update and
+ * redirects back to the same page.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - last: The timestamp when the site last checked for available updates.
+ *
+ * @see theme_upgrade_status_report()
+ * @ingroup themeable
+ */
+function theme_upgrade_status_last_check($variables) {
+  $last = $variables['last'];
+  $output = '<div class="update checked">';
+  $output .= $last ? t('Last checked: @time ago', array('@time' => format_interval(REQUEST_TIME - $last))) : t('Last checked: never');
+  $output .= ' <span class="check-manually">(' . l(t('Check manually'), 'admin/reports/updates/upgrade/check', array('query' => drupal_get_destination())) . ')</span>';
+  $output .= "</div>\n";
+  return $output;
+}
+
+/**
+ * Return status and notice about modules moved into Core.
+ *
+ * Assign custom upgrade information for certain modules.
+ *
+ * @param $projects
+ *   Array of projects from upgrade_status_calculate_project_data(). This
+ *   parameter is passed by reference, and metadata for the project can added
+ *   to the $projects[$project] array for use later. Three additional keys are
+ *   supported:
+ *   - in_core_since: The major version since which the module is in core.
+ *   - in_core_complete: Boolean flag indicating whether the complete
+ *     functionality of the project is in core. Set this to FALSE when the core
+ *     replacement does not include the full functionality of the project.
+ *   - in_core_note: Note to display to the user. This should be succinct and
+ *     describe:
+ *     - What core module or API replaces the project, if the module was not
+ *       moved directly into core with the same name.
+ *     - What functionality of the project is not included in core, if the
+ *       'in_core_complete' flag is false.
+ * @param $project
+ *   Project name to check.
+ *
+ * @return
+ *   TRUE if module has been moved into core.
+ */
+function upgrade_status_moved_into_core(&$projects, $project) {
+
+  // Only include in core statuses for the configured major version and below.
+  // Set the oldest version's data first, so that the latest version of core may
+  // update the previous version's information.
+  // @todo What about modules moved into core and then back out?
+  $core_version = variable_get('upgrade_status_core_version', UPGRADE_STATUS_CORE_VERSION);
+
+  switch ($core_version) {
+    case '7.x':
+      $core = _upgrade_status_d7_core($projects, $project);
+      break;
+
+    case '8.x':
+      $d7_core = _upgrade_status_d7_core($projects, $project);
+      $d8_core = _upgrade_status_d8_core($projects, $project);
+      $core = $d7_core || $d8_core;
+      break;
+  }
+
+  return $core;
+}
+
+/**
+ * Modules in core in Drupal 8.
+ *
+ * @see upgrades_status_moved_into_core()
+ */
+function _upgrade_status_d8_core(&$projects, $project) {
+
+  // Specifying a case for the module in this switch statement will mark it as
+  // included in core on the status report.
+  $core = TRUE;
+  switch ($project) {
+
+    case 'admin_language':
+    case 'entity_translation':
+    case 'fallback_language_negotiation':
+    case 'i18n':
+    case 'i18nviews':
+    case 'l10n_install':
+    case 'l10n_update':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by core localization functionality, the core Language module, and the core Configuration, Content, and Interface Translation modules.');
+      break;
+
+    case 'admin_views':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('Integrated with the core Views module. No comment admin view in 8.0.x.');
+      break;
+
+    case 'bean':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by the core Custom Block module.');
+      break;
+
+    case 'breakpoint':
+    case 'breakpoints':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'cachetags':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by core APIs.');
+      break;
+
+    case 'caption_filter':
+    case 'float_filter':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by functionality in the core Editor module.');
+      break;
+
+    case 'ckeditor':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'ctools':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('Mostly replaced by core APIs, including modal dialogs, exportables, and plugins. Excludes <a href="@url">Page Manager</a> and Form Wizard.', array(
+        '@url' => 'https://www.drupal.org/project/page_manager',
+      ));
+      break;
+
+    case 'date':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('No recurring dates support. See <a href="@extras">Datetime Extras: Provide a field for repeating / recuring dates</a> and <a href="@field">Recurring Dates Field</a>', array(
+        '@extras' => 'https://www.drupal.org/project/datetime_extras/issues/2775249',
+        '@field' => 'https://www.drupal.org/project/date_recur',
+      ));
+      break;
+
+    case 'date_popup_authored':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'edit':
+    case 'quickedit':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'email':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('E-mail address contact forms are not supported by core.');
+      break;
+
+    case 'entityreference':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'entity':
+    case 'entity_view_mode':
+    case 'file_entity':
+    case 'title':
+    case 'user_picture_field':
+    case 'uuid':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by core Entity system functionality.');
+      break;
+
+    case 'features':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The original intended functionality of the Features module is not provided by core, but the core Configuration system provides support for importing, exporting, and overriding site configuration.');
+      break;
+
+    case 'field_extrawidgets':
+    case 'hidden_field':
+    case 'field_hidden':
+    case 'hidden_widget':
+    case 'formfilter':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('Fields can be hidden natively from the Form Display configuration. To make fields read-only, use the <a href="@url">Read-only Field Widget</a> module.', array(
+        '@url' => 'https://www.drupal.org/project/readonly_field_widget',
+      ));
+      break;
+
+    case 'field_formatter_settings':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'fieldable_panels_panes':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('Custom block types provide all of the functionality that is necessary.');
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'link':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('No support for internal links.');
+      break;
+
+    case 'migrate':
+    case 'migrate_d2d':
+    case 'migrate_drupal':
+      $projects[$project]['in_core_since'] = '8.x';
+      break;
+
+    case 'module_filter':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('A search functionality is included on the core modules page. The re-designed modules page in the 2.x branch is not in core.');
+      break;
+
+    case 'navbar':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by the updated core Toolbar module.');
+      break;
+
+    case 'options_element':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Taxonomy Term Reference fields have much better usability with fewer drawbacks.');
+      break;
+
+    case 'panels':
+    case 'panelizer':
+      $projects[$project]['in_core_since'] = '8.5';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Use the <a href="@url">Layout Builder</a> module.', array(
+        '@url' => 'https://www.drupal.org/node/2924128',
+      ));
+      break;
+
+    case 'phone':
+    case 'telephone':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'picture':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by the core Responsive Image module.');
+      break;
+
+    case 'elements':
+    case 'placeholder':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by HTML5 form API functionality.');
+      break;
+
+    case 'references':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'restws':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by the core REST module.');
+      break;
+
+    case 'schemaorg':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The default RDF mappings of Drupal core have been updated to include schema.org in Drupal 8. Also, a lot of the backend code of this module was ported into Drupal 8 core. The user interface that allows one to set the mappings now lives in the <a href="@url">RDF UI</a> module.', array(
+        '@url' => 'https://www.drupal.org/project/rdfui',
+      ));
+      break;
+
+    case 'services':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The core REST module provides most of the functionality from previous versions of the Services module.');
+      break;
+
+    case 'stringoverrides':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The core Interface Translation module allows custom translations to be provided for strings in any language, including English.');
+      break;
+
+    case 'transliteration':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('Replaced by core APIs. No direct support for transliterating path aliases or file names.');
+      break;
+
+    case 'variable':
+    case 'defaultconfig':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Replaced by the core Configuration system.');
+      break;
+
+    case 'views':
+    case 'extra_columns':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'views_bulk_operations':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The core Views module provides bulk operations on simple actions only. No support for batch operations or configurable actions.');
+      break;
+
+    case 'views_datasource':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('The basic functionality is in core, but some advanced features (such as outputting a Views attachment as JSON) are not.');
+      break;
+
+    case 'views_between_dates_filter':
+      $projects[$project]['in_core_since'] = '8.6';
+      $projects[$project]['in_core_note'] = t('While <a href="@change_record">Views integration for the Datetime Range module</a> is now in core, <a href="@granularity">Views Date Filter Datetime Granularity Option</a> is still missing, but will hopefully land in core soon.', array(
+        '@change_record' => 'https://www.drupal.org/node/2857691',
+        '@granularity' => 'https://www.drupal.org/project/drupal/issues/2868014',
+      ));
+      break;
+
+    case 'views_filters_populate':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('When adding a filter, select Combine Fields Filter from the Global category.');
+      break;
+
+    case 'views_responsive_grid':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('This module will not be ported for Drupal 8. Views grids in core have been replaced with DIVs.');
+      break;
+
+    case 'wysiwyg':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('API support added to the core "Editor" module. No support for multiple text editors per text format.');
+      break;
+
+      // Also correct information about D7 modules.
+    case 'cck':
+      $projects[$project]['in_core_note'] = '';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+
+    default:
+      // Any other module is not included in core.
+      $core = FALSE;
+  }
+  return $core;
+}
+
+/**
+ * Modules in core in Drupal 7.
+ *
+ * @see upgrades_status_moved_into_core()
+ */
+function _upgrade_status_d7_core(&$projects, $project) {
+
+  // Specifying a case for the module in this switch statement will mark it as
+  // included in core on the status report.
+  $core = TRUE;
+  switch ($project) {
+
+    case 'ahah_helper':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Allows Drupal modules to implement AHAH/AJAX functionality without touching JavaScript. Entirely covered by the new AJAX framework in Drupal 7, which is based on <a href="@ctools-url">CTools</a>.', array(
+        '@ctools-url' => 'http://drupal.org/project/ctools',
+      ));
+      break;
+
+    case 'autoload':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('Allows Drupal modules to lazy-load any class that has not been loaded yet. A major performance improvement in Drupal 7, and the only part of the <a href="@issue-url">Registry</a> that was introduced earlier, but later removed from Drupal 7.', array(
+        '@issue-url' => 'http://drupal.org/node/221964',
+      ));
+      break;
+
+    case 'auto_menutitle':
+    case 'automaticmenu':
+    case 'automenu':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('When creating new content, Drupal 7 automatically takes over the title of the content as menu link title, while still allowing you to alter it.');
+      break;
+
+    case 'admin_hover':
+    case 'block_edit':
+    case 'contextual':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('The new <a href="@issue-url">Contextual links</a> module in Drupal 7 allows you to manage page elements from the page you are looking at, i.e., you have direct access to "Edit" and "Delete" pages for content, or "Configure" pages for blocks, "List links" for menu blocks, etc. Every module can integrate with Contextual module.', array(
+        '@issue-url' => 'http://drupal.org/node/473268',
+      ));
+      break;
+
+    case 'adminrole':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('The <a href="@issue-url">administration role</a> is based on regular Drupal user roles and every user role can be configured to be the administration role. All new permissions (and only new) are automatically granted to the configured administration role. Permissions can still be removed from the role.', array(
+        '@issue-url' => 'http://drupal.org/node/480660',
+      ));
+      break;
+
+    case 'advuser':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'block_node_visibility':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'blocks404':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'button_style':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'canonical_url':
+    case 'shortlink':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'cck':
+    case 'content':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('You still need <a href="@cck-url">CCK</a> for the Nodereference and Userreference field types, and to upgrade your fields to Drupal 7. There is an overall CCK to field <a href="@upgrade-issue-url">upgrade path discussion</a>. Contributed modules may use <a href="@field-convert-url">Field converter</a> as dependency to properly upgrade their non-field data to fields. Custom programmed field type modules, which may be obsolete now, might be easier to upgrade using <a href="@migrate-url">Migrate</a> module.', array(
+        '@upgrade-issue-url' => 'http://drupal.org/node/366364',
+        '@cck-url' => 'http://drupal.org/project/cck',
+        '@field-convert-url' => 'http://drupal.org/project/field_convert',
+        '@migrate-url' => 'http://drupal.org/project/migrate',
+      ));
+      break;
+
+    case 'checkbox_validate':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'comment_display':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'config_perms':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'content_dependency':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Use the Relationship feature in Views.');
+      break;
+
+    case 'content_taxonomy':
+    case 'field_taxonomy':
+    case 'term_fields':
+    case 'taxidermy':
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_since'] = '7.x';
+      break;
+
+    // @todo Allow to target a module (not project).
+    case 'date_timezone':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'dbtng':
+    case 'transaction':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Drupal 7 implements an entirely new <a href="@issue-url">database layer</a>, which allows Drupal to work with any database. Modules are able to alter most database queries and there is support for transactions.', array(
+        '@issue-url' => 'http://drupal.org/node/225450',
+      ));
+      break;
+
+    case 'dragndrop_upload':
+      $projects[$project]['in_core_since'] = 'TBD';
+      $projects[$project]['in_core_note'] = t('In development for addition to Drupal core.  See <a href="@issue-url">File Field design update</a> for details. In the meantime, <a href="@contrib1">Plupload integration</a> and/or <a href="@contrib2">PlUPload File Widget</a> can be used.', array(
+        '@issue-url' => 'https://www.drupal.org/node/2113931',
+        '@contrib1' => 'https://www.drupal.org/project/plupload',
+        '@contrib2' => 'https://www.drupal.org/project/plupload_widget',
+      ));
+      break;
+
+    case 'edit_term':
+    case 'taxonomy_intro':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'elements':
+    case 'element_themehook':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('In Drupal 7, almost all content is generated as "renderable array", which allows to consider any element on a page as atomic, alterable, and themeable element that can be still be altered until it is rendered into a string.');
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'hook_file':
+    case 'storage_api':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Drupal 7 natively uses PHP 5 stream wrappers, which allow to store and access files in almost any location, even remotely. There is also a clean separation between the public and private filesystem, and both can be used at the same time.');
+      break;
+
+    case 'filefield':
+      // @todo Allow to target a module (not project).
+    case 'upload':
+    case 'upload_element':
+    case 'upload_preview':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('<a href="@issue-url">Upload</a> module has been replaced with File field.', array(
+        '@issue-url' => 'http://drupal.org/node/563000',
+      ));
+      break;
+
+    case 'filter_default':
+    case 'input_format_permissions':
+    case 'user_default_filter':
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_since'] = '7.x';
+      break;
+
+    case 'ife':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('See <a href="@url">the documentation</a>.', array(
+        '@url' => 'https://www.drupal.org/docs/8/core/modules/inline-form-errors/inline-form-errors-module-overview',
+      ));
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'image':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('The most common use-case of <a href="@image-url">Image</a> module, an image field type, is contained in Drupal core. The Image project is required to <a href="@upgrade-issue-url">upgrade</a> existing data, and its main image module has been renamed to image_node module, since Drupal core took over the namespace. Image Node module is required for use-cases like restricting access, direct image access through a URL, attached data like comments, votes, or geo coordinates.', array(
+        '@image-url' => 'http://drupal.org/project/image',
+        '@upgrade-issue-url' => 'http://drupal.org/node/513096',
+      ));
+      break;
+
+    case 'imageapi':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('The <a href="@imageapi-url">ImageAPI</a> module for Drupal 7 only provides the ImageMagick toolkit and an unsharpen mask action. Everything else has been moved into Drupal core.', array(
+        '@imageapi-url' => 'http://drupal.org/project/imageapi',
+      ));
+      break;
+
+    case 'imagecache':
+    case 'imagefield':
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_since'] = '7.x';
+      break;
+
+    case 'jq':
+    case 'jqp':
+    case 'plugins':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('Drupal 7 allows modules to register custom libraries, consisting of JavaScript and CSS files, which can then be loaded at once. External libraries, i.e., code that is not shipped with a module, is not supported by Drupal core and requires the <a href="@libraries-url">Libraries API</a> module.', array(
+        '@libraries-url' => 'http://drupal.org/project/libraries',
+      ));
+      break;
+
+    case 'jquery_cookie':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'jquery_form_update':
+    case 'jsalter':
+    case 'wysiwygcck':
+    case 'tinymce_ahah':
+    case 'tinymce_dragdrop':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'jquery_ui':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('Advanced jQuery UI features (like Theme Roller support) are not in Drupal core.');
+      break;
+
+    case 'jquery_update':
+    case 'jqmulti':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_note'] = t('No longer needed in Drupal 8, which ships with the latest version of the library.  The plan is to continue increasing the shipped version, with backwards compatibility, in minor releases.');
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'login_security':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('Drupal core provides no UI. If required, the internal variables may be configured using the <a href="@flood-control-url">Flood control</a> module.', array(
+        '@flood-control-url' => 'http://drupal.org/project/flood_control',
+      ));
+      break;
+
+    case 'media':
+      $projects[$project]['in_core_since'] = '8.4';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'menuless_nodetype':
+    case 'ctm':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'multiupload_filefield_widget':
+      $projects[$project]['in_core_since'] = '8.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'nodepreview_by_type':
+    case 'preview':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'permissions_api':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'phpass':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('All stored user passwords will be additionally salted');
+      break;
+
+    case 'plugin_manager':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'poormanscron':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'protect_critical_users':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'drupal_queue':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'rdf':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'seven':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'simplecdn':
+    case 'abssrc':
+    case 'parallel':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('The new File API and handling of JavaScript  and CSS in Drupal 7 allows modules to alter the URLs of all files. Everyone is encouraged to switch to the joined community effort, the <a href="@cdn-url">CDN</a> project.', array(
+        '@cdn-url' => 'http://drupal.org/project/cdn',
+      ));
+      break;
+
+    case 'simpletest':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'tar':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'taxonomy_delegate':
+    case 'vocabperms':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'token':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_note'] = t('Drupal core does not provide a user interface to browse tokens (in forms).');
+      break;
+
+    case 'url_alter':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'user_cancellation':
+    case 'user_delete':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'vertical_tabs':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'view_unpublished':
+      $projects[$project]['in_core_since'] = '7.x';
+      $projects[$project]['in_core_complete'] = TRUE;
+      break;
+
+    case 'workflow':
+    case 'revisioning':
+    case 'workbench_files':
+    case 'workbench_media':
+    case 'workbench_moderation':
+      $projects[$project]['in_core_since'] = '8.5';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('See the <a href="@url">Content Moderation documentation</a>.', array(
+        '@url' => 'https://www.drupal.org/docs/8/core/modules/content-moderation/overview',
+      ));
+      break;
+
+    case 'workspace':
+      $projects[$project]['in_core_since'] = '8.6';
+      $projects[$project]['in_core_note'] = t('Renamed to <a href="@workspaces">Workspaces</a>.', array(
+        '@workspaces' => 'https://www.drupal.org/node/2968491',
+      ));
+      break;
+
+    case 'wysiwyg_filter':
+      $projects[$project]['in_core_since'] = '8.0';
+      $projects[$project]['in_core_complete'] = TRUE;
+      $projects[$project]['in_core_note'] = t('See the <a href="@url">Text Editor documentation</a>.', array(
+        '@url' => 'https://www.drupal.org/docs/8/core/modules/editor/overview',
+      ));
+      break;
+
+    default:
+      // Any other module is not included in core.
+      $core = FALSE;
+  }
+  return $core;
+}
+
+/**
+ * Form to display Drupal core version selection.
+ */
+function upgrade_status_core_version_form($form, &$form_state) {
+  $form['upgrade_status_core_version'] = array(
+    '#type' => 'select',
+    '#title' => t('Target version of Drupal core'),
+    '#options' => drupal_map_assoc(array('7.x', '8.x')),
+    '#default_value' => variable_get('upgrade_status_core_version', UPGRADE_STATUS_CORE_VERSION),
+    '#description' => t('Select the version of Drupal core you wish to check for project status.'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Change'),
+  );
+  return $form;
+}
+
+/**
+ * Set the new Drupal core version in a variable; refresh project data.
+ *
+ * @todo Why do we do these shenanigans with the variable and not just let
+ * system_settings_form_submit do its thang?
+ */
+function upgrade_status_core_version_form_submit($form, &$form_state) {
+  // Refresh status if a different version than the default has been selected.
+  if ($form_state['values']['upgrade_status_core_version'] != UPGRADE_STATUS_CORE_VERSION) {
+    variable_set('upgrade_status_core_version', $form_state['values']['upgrade_status_core_version']);
+    upgrade_status_refresh();
+  }
+  // Refresh status if the default version has been selected, but only if it
+  // was not selected before (noob protection).
+  else if (variable_get('upgrade_status_core_version', UPGRADE_STATUS_CORE_VERSION) != UPGRADE_STATUS_CORE_VERSION) {
+    variable_del('upgrade_status_core_version');
+    upgrade_status_refresh();
+  }
+  // ...or just ensure that we've got no stale variable set.
+  else {
+    variable_del('upgrade_status_core_version');
+  }
+  drupal_set_message(t('The configuration options have been saved.'));
+}

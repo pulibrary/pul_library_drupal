@@ -1,0 +1,12 @@
+name = Upgrade status
+description = Checks to see if the installed modules are available for the next major version of Drupal.
+core = 7.x
+dependencies[] = update
+
+configure = admin/reports/updates/upgrade
+
+; Information added by Drupal.org packaging script on 2019-01-03
+version = "7.x-1.0-beta1"
+core = "7.x"
+project = "upgrade_status"
+datestamp = "1546551784"

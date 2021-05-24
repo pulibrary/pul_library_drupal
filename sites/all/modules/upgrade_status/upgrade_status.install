@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Upgrade Status module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function upgrade_status_install() {
+  $queue = DrupalQueue::get('upgrade_status_fetch_tasks', TRUE);
+  $queue->createQueue();
+}
+
+/**
+ * @addtogroup updates-6.x-to-7.x
+ * @{
+ */
+
+/**
+ * Create a queue to store tasks for requests to fetch available update data.
+ */
+function upgrade_status_update_7000() {
+  module_load_include('inc', 'system', 'system.queue');
+  $queue = DrupalQueue::get('upgrade_status_fetch_tasks');
+  $queue->createQueue();
+}
+
+/**
+ * @} End of "addtogroup updates-6.x-to-7.x".
+ */
