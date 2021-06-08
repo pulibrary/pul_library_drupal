@@ -62,47 +62,6 @@ function library_news_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-library_news_item-field_acquisition_type'.
-  $field_instances['node-library_news_item-field_acquisition_type'] = array(
-    'bundle' => 'library_news_item',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 16,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_acquisition_type',
-    'label' => 'Acquisition Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 40,
-    ),
-  );
-
   // Exported field_instance: 'node-library_news_item-field_authors'.
   $field_instances['node-library_news_item-field_authors'] = array(
     'bundle' => 'library_news_item',
@@ -222,6 +181,7 @@ function library_news_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -981,6 +941,7 @@ function library_news_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -1133,6 +1094,7 @@ function library_news_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1270,7 +1232,6 @@ function library_news_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Acquisition Type');
   t('Article "teaser" to be displayed on homepage and in search results. Use HTML carefully since this snippet will be displayed on the homepage slider view. Mal-formed HTML can cause display errors. ');
   t('Article Snippet');
   t('Audiences');

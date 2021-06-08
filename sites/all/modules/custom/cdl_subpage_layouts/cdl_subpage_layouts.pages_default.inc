@@ -39,7 +39,6 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
           'not' => FALSE,
           'settings' => array(
             'type' => array(
-              'acquisitions_highlights' => 'acquisitions_highlights',
               'page' => 'page',
             ),
           ),
@@ -76,7 +75,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
     'title' => 'Collection Development Department Page',
   );
   $display = new panels_display();
-  $display->layout = 'nine-three-stacked';
+  $display->layout = 'three-six-three-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -91,15 +90,38 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Acquisition Highlight - %node:title';
+  $display->title = 'Collections and Collection Development';
   $display->uuid = '4991b3f8-f0d6-443f-8126-703c8368e731';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_29';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-a49bdc51-7b20-4b4b-994c-92974182fce1';
+  $pane->pid = 'new-e8fd779f-7152-414e-840b-cc7f0c8432aa';
   $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-collection-development-webs';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e8fd779f-7152-414e-840b-cc7f0c8432aa';
+  $display->content['new-e8fd779f-7152-414e-840b-cc7f0c8432aa'] = $pane;
+  $display->panels['first'][0] = 'new-e8fd779f-7152-414e-840b-cc7f0c8432aa';
+  $pane = new stdClass();
+  $pane->pid = 'new-a49bdc51-7b20-4b4b-994c-92974182fce1';
+  $pane->panel = 'middle';
   $pane->type = 'entity_view';
   $pane->subtype = 'node';
   $pane->shown = TRUE;
@@ -120,10 +142,10 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->locks = array();
   $pane->uuid = 'a49bdc51-7b20-4b4b-994c-92974182fce1';
   $display->content['new-a49bdc51-7b20-4b4b-994c-92974182fce1'] = $pane;
-  $display->panels['first'][0] = 'new-a49bdc51-7b20-4b4b-994c-92974182fce1';
+  $display->panels['middle'][0] = 'new-a49bdc51-7b20-4b4b-994c-92974182fce1';
   $pane = new stdClass();
   $pane->pid = 'new-a3867681-2f6f-4fc7-afda-c33ae3d1062e';
-  $pane->panel = 'first';
+  $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'subject_specialists';
   $pane->shown = TRUE;
@@ -166,18 +188,21 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->locks = array();
   $pane->uuid = 'a3867681-2f6f-4fc7-afda-c33ae3d1062e';
   $display->content['new-a3867681-2f6f-4fc7-afda-c33ae3d1062e'] = $pane;
-  $display->panels['first'][1] = 'new-a3867681-2f6f-4fc7-afda-c33ae3d1062e';
+  $display->panels['middle'][1] = 'new-a3867681-2f6f-4fc7-afda-c33ae3d1062e';
   $pane = new stdClass();
-  $pane->pid = 'new-a977c0e3-d6cc-458b-9876-b1829eb2a3da';
+  $pane->pid = 'new-e336fa53-c816-4554-8d8a-31ca6be99429';
   $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'news_spotlights_by_category-panel_pane_2';
+  $pane->type = 'custom';
+  $pane->subtype = 'cdl_new_acq_spotlight';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'more_link' => 1,
-    'override_title' => 0,
-    'override_title_text' => '',
+    'admin_title' => '',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -187,349 +212,13 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'a977c0e3-d6cc-458b-9876-b1829eb2a3da';
-  $display->content['new-a977c0e3-d6cc-458b-9876-b1829eb2a3da'] = $pane;
-  $display->panels['second'][0] = 'new-a977c0e3-d6cc-458b-9876-b1829eb2a3da';
-  $pane = new stdClass();
-  $pane->pid = 'new-205996bb-27dd-4446-9d2b-5299fbbe4d7d';
-  $pane->panel = 'second';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'news_spotlights_by_category-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'more_link' => 1,
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '205996bb-27dd-4446-9d2b-5299fbbe4d7d';
-  $display->content['new-205996bb-27dd-4446-9d2b-5299fbbe4d7d'] = $pane;
-  $display->panels['second'][1] = 'new-205996bb-27dd-4446-9d2b-5299fbbe4d7d';
-  $pane = new stdClass();
-  $pane->pid = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $pane->panel = 'top';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_page_title';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'cssclass_formatter',
-    'formatter_settings' => array(
-      'depth' => '0',
-      'hidden' => 1,
-      'target' => 'node',
-    ),
-    'label' => 'title',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $display->content['new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed'] = $pane;
-  $display->panels['top'][0] = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $pane = new stdClass();
-  $pane->pid = 'new-93315735-e8e1-4b76-9db5-f95a6e162a2a';
-  $pane->panel = 'top';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_logo';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'context_entity:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'image',
-    'formatter_settings' => array(
-      'image_link' => '',
-      'image_style' => 'pul_logo_file',
-    ),
-    'label' => 'title',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '93315735-e8e1-4b76-9db5-f95a6e162a2a';
-  $display->content['new-93315735-e8e1-4b76-9db5-f95a6e162a2a'] = $pane;
-  $display->panels['top'][1] = 'new-93315735-e8e1-4b76-9db5-f95a6e162a2a';
-  $pane = new stdClass();
-  $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'nice_menus-2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
-  $display->panels['top'][2] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $pane->uuid = 'e336fa53-c816-4554-8d8a-31ca6be99429';
+  $display->content['new-e336fa53-c816-4554-8d8a-31ca6be99429'] = $pane;
+  $display->panels['second'][0] = 'new-e336fa53-c816-4554-8d8a-31ca6be99429';
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_29'] = $handler;
-
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_31';
-  $handler->task = 'node_view';
-  $handler->subtask = '';
-  $handler->handler = 'panel_context';
-  $handler->weight = -13;
-  $handler->conf = array(
-    'access' => array(
-      'logic' => 'and',
-      'plugins' => array(
-        1 => array(
-          'context' => 'empty',
-          'name' => 'path_visibility',
-          'not' => FALSE,
-          'settings' => array(
-            'paths' => 'collections/highlights',
-            'visibility_setting' => '1',
-          ),
-        ),
-        2 => array(
-          'context' => 'argument_entity_id:node_1',
-          'name' => 'node_type',
-          'not' => FALSE,
-          'settings' => array(
-            'type' => array(
-              'page' => 'page',
-            ),
-          ),
-        ),
-      ),
-    ),
-    'body_classes_to_add' => '',
-    'body_classes_to_remove' => '',
-    'contexts' => array(
-      0 => array(
-        'entity_id' => '12505',
-        'id' => 1,
-        'identifier' => 'Collection Dev Homepage ',
-        'keyword' => 'colldev_home',
-        'name' => 'entity:node',
-      ),
-    ),
-    'css' => '',
-    'css_id' => '',
-    'no_blocks' => 1,
-    'panels_breadcrumbs_home' => 0,
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'pipeline' => 'standard',
-    'relationships' => array(),
-    'title' => 'Collection Development Acquisitions Page',
-  );
-  $display = new panels_display();
-  $display->layout = 'single';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'bottom' => NULL,
-      'default' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'top' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Collections and Collection Development';
-  $display->uuid = '4991b3f8-f0d6-443f-8126-703c8368e731';
-  $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_31';
-  $display->content = array();
-  $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $pane->panel = 'middle';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_page_title';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'cssclass_formatter',
-    'formatter_settings' => array(
-      'depth' => '0',
-      'hidden' => 1,
-      'target' => 'node',
-    ),
-    'label' => 'title',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $display->content['new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed'] = $pane;
-  $display->panels['middle'][0] = 'new-1e5b12c3-e5de-4d7e-ba73-e688eaeb79ed';
-  $pane = new stdClass();
-  $pane->pid = 'new-3247c631-c788-4214-b10d-a3520a2aff6c';
-  $pane->panel = 'middle';
-  $pane->type = 'views';
-  $pane->subtype = 'acquisitions_highlights';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'args' => '',
-    'display' => 'page',
-    'feed_icons' => 0,
-    'link_to_view' => 0,
-    'more_link' => 0,
-    'nodes_per_page' => '30',
-    'offset' => '0',
-    'override_pager_settings' => 0,
-    'override_title' => 1,
-    'override_title_text' => '%node:title',
-    'pager_id' => '0',
-    'panel_args' => 0,
-    'url' => '',
-    'use_pager' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '3247c631-c788-4214-b10d-a3520a2aff6c';
-  $display->content['new-3247c631-c788-4214-b10d-a3520a2aff6c'] = $pane;
-  $display->panels['middle'][1] = 'new-3247c631-c788-4214-b10d-a3520a2aff6c';
-  $pane = new stdClass();
-  $pane->pid = 'new-2a891f1e-1ed7-4809-b0fd-91d840d2d875';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'acquisitions_highlights-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '2a891f1e-1ed7-4809-b0fd-91d840d2d875';
-  $display->content['new-2a891f1e-1ed7-4809-b0fd-91d840d2d875'] = $pane;
-  $display->panels['middle'][2] = 'new-2a891f1e-1ed7-4809-b0fd-91d840d2d875';
-  $pane = new stdClass();
-  $pane->pid = 'new-795314d9-f44a-49fd-b7d1-03db93f48506';
-  $pane->panel = 'top';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_logo';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'context_entity:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'image',
-    'formatter_settings' => array(
-      'colorbox_caption' => 'auto',
-      'colorbox_caption_custom' => '',
-      'colorbox_gallery' => 'post',
-      'colorbox_gallery_custom' => '',
-      'colorbox_image_style' => '',
-      'colorbox_node_style' => '',
-      'image_link' => '',
-      'image_style' => 'pul_logo_file',
-    ),
-    'label' => 'title',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '795314d9-f44a-49fd-b7d1-03db93f48506';
-  $display->content['new-795314d9-f44a-49fd-b7d1-03db93f48506'] = $pane;
-  $display->panels['top'][0] = 'new-795314d9-f44a-49fd-b7d1-03db93f48506';
-  $pane = new stdClass();
-  $pane->pid = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'nice_menus-2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $display->content['new-14eaf0cf-2012-4cdc-b734-115ad9518642'] = $pane;
-  $display->panels['top'][1] = 'new-14eaf0cf-2012-4cdc-b734-115ad9518642';
-  $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $export['node_view_panel_context_31'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
@@ -839,7 +528,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $export['node_view_panel_context_32'] = $handler;
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_33';
   $handler->task = 'node_view';
@@ -1059,26 +748,51 @@ collections/adelman07102008',
     'title' => 'Collections Forum Layout',
   );
   $display = new panels_display();
-  $display->layout = 'single';
+  $display->layout = 'three-nine-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'bottom' => NULL,
       'default' => NULL,
+      'first' => NULL,
       'middle' => NULL,
+      'second' => NULL,
       'top' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Collections and Collection Development';
   $display->uuid = '09a533e2-37dc-48d9-8522-3c2d2d607d94';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view_panel_context_35';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-34b3dd4e-f320-480e-8163-61543437b79f';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-collection-development-webs';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '34b3dd4e-f320-480e-8163-61543437b79f';
+  $display->content['new-34b3dd4e-f320-480e-8163-61543437b79f'] = $pane;
+  $display->panels['first'][0] = 'new-34b3dd4e-f320-480e-8163-61543437b79f';
+  $pane = new stdClass();
   $pane->pid = 'new-ea8959d1-22dc-4b2c-9314-210fc121c247';
-  $pane->panel = 'middle';
+  $pane->panel = 'second';
   $pane->type = 'node_title';
   $pane->subtype = 'node_title';
   $pane->shown = TRUE;
@@ -1102,10 +816,10 @@ collections/adelman07102008',
   $pane->locks = array();
   $pane->uuid = 'ea8959d1-22dc-4b2c-9314-210fc121c247';
   $display->content['new-ea8959d1-22dc-4b2c-9314-210fc121c247'] = $pane;
-  $display->panels['middle'][0] = 'new-ea8959d1-22dc-4b2c-9314-210fc121c247';
+  $display->panels['second'][0] = 'new-ea8959d1-22dc-4b2c-9314-210fc121c247';
   $pane = new stdClass();
   $pane->pid = 'new-fa195b1a-f834-4534-885b-a4243818faba';
-  $pane->panel = 'middle';
+  $pane->panel = 'second';
   $pane->type = 'entity_view';
   $pane->subtype = 'node';
   $pane->shown = TRUE;
@@ -1127,68 +841,14 @@ collections/adelman07102008',
   $pane->locks = array();
   $pane->uuid = 'fa195b1a-f834-4534-885b-a4243818faba';
   $display->content['new-fa195b1a-f834-4534-885b-a4243818faba'] = $pane;
-  $display->panels['middle'][1] = 'new-fa195b1a-f834-4534-885b-a4243818faba';
-  $pane = new stdClass();
-  $pane->pid = 'new-c8dbab16-e5a8-4308-be3e-bbac04afce79';
-  $pane->panel = 'top';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_logo';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'context_entity:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'image',
-    'formatter_settings' => array(
-      'image_link' => '',
-      'image_style' => 'pul_logo_file',
-    ),
-    'label' => 'hidden',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'c8dbab16-e5a8-4308-be3e-bbac04afce79';
-  $display->content['new-c8dbab16-e5a8-4308-be3e-bbac04afce79'] = $pane;
-  $display->panels['top'][0] = 'new-c8dbab16-e5a8-4308-be3e-bbac04afce79';
-  $pane = new stdClass();
-  $pane->pid = 'new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'nice_menus-2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
-  $display->content['new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c'] = $pane;
-  $display->panels['top'][1] = 'new-3f4063cd-0faf-441b-a114-7eeeaf0b9a7c';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->panels['second'][1] = 'new-fa195b1a-f834-4534-885b-a4243818faba';
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-fa195b1a-f834-4534-885b-a4243818faba';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_35'] = $handler;
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_36';
   $handler->task = 'node_view';
@@ -1566,176 +1226,4 @@ collections/adelman07102008',
   $export['term_view_panel_context_8'] = $handler;
 
   return $export;
-}
-
-/**
- * Implements hook_default_page_manager_pages().
- */
-function cdl_subpage_layouts_default_page_manager_pages() {
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'cdl_acquistions_highlight_page';
-  $page->task = 'page';
-  $page->admin_title = 'CDL Acquistions Highlight Page';
-  $page->admin_description = '';
-  $page->path = 'collections/highlights/archive';
-  $page->access = array(
-    'settings' => NULL,
-    'type' => 'none',
-  );
-  $page->menu = array();
-  $page->arguments = array();
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_cdl_acquistions_highlight_page_panel_context';
-  $handler->task = 'page';
-  $handler->subtask = 'cdl_acquistions_highlight_page';
-  $handler->handler = 'panel_context';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'access' => array(
-      'logic' => 'and',
-    ),
-    'body_classes_to_add' => '',
-    'body_classes_to_remove' => '',
-    'contexts' => array(
-      0 => array(
-        'entity_id' => '12505',
-        'id' => 1,
-        'identifier' => 'Collection Dev Homepage',
-        'keyword' => 'collection_dev_home',
-        'name' => 'entity:node',
-      ),
-    ),
-    'css' => '',
-    'css_id' => '',
-    'no_blocks' => 1,
-    'panels_breadcrumbs_home' => 0,
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'pipeline' => 'standard',
-    'relationships' => array(),
-    'title' => 'Panel',
-  );
-  $display = new panels_display();
-  $display->layout = 'single';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'bottom' => NULL,
-      'default' => NULL,
-      'middle' => NULL,
-      'top' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = 'a724ff46-d416-4cce-b361-ced2cb1ea4b1';
-  $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_cdl_acquistions_highlight_page_panel_context';
-  $display->content = array();
-  $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
-  $pane->panel = 'middle';
-  $pane->type = 'views';
-  $pane->subtype = 'acquisitions_highlights';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'args' => '',
-    'display' => 'page',
-    'feed_icons' => 0,
-    'link_to_view' => 0,
-    'more_link' => 0,
-    'nodes_per_page' => '0',
-    'offset' => '0',
-    'override_pager_settings' => 0,
-    'override_title' => 0,
-    'override_title_text' => '',
-    'pager_id' => '0',
-    'panel_args' => 0,
-    'url' => '',
-    'use_pager' => 0,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '477bd6a1-68c5-4573-a687-e21f372f3c74';
-  $display->content['new-477bd6a1-68c5-4573-a687-e21f372f3c74'] = $pane;
-  $display->panels['middle'][0] = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
-  $pane = new stdClass();
-  $pane->pid = 'new-ed1e57cf-3938-4f43-90f3-cfe743ab2424';
-  $pane->panel = 'top';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_pul_landing_logo';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'context_entity:node_1',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter' => 'image',
-    'formatter_settings' => array(
-      'image_link' => '',
-      'image_style' => 'pul_logo_file',
-    ),
-    'label' => 'title',
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'ed1e57cf-3938-4f43-90f3-cfe743ab2424';
-  $display->content['new-ed1e57cf-3938-4f43-90f3-cfe743ab2424'] = $pane;
-  $display->panels['top'][0] = 'new-ed1e57cf-3938-4f43-90f3-cfe743ab2424';
-  $pane = new stdClass();
-  $pane->pid = 'new-eb236ed0-678e-4997-a361-591044984f05';
-  $pane->panel = 'top';
-  $pane->type = 'block';
-  $pane->subtype = 'nice_menus-2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'eb236ed0-678e-4997-a361-591044984f05';
-  $display->content['new-eb236ed0-678e-4997-a361-591044984f05'] = $pane;
-  $display->panels['top'][1] = 'new-eb236ed0-678e-4997-a361-591044984f05';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-477bd6a1-68c5-4573-a687-e21f372f3c74';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['cdl_acquistions_highlight_page'] = $page;
-
-  return $pages;
-
 }
