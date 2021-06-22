@@ -63,7 +63,7 @@
                             var online_process = false;
                             if (result['holdings']) {
                                 holding_locations = result['holdings'];
-                                holdings = holdings + "<div class='pulsearch-availability' data-record-id='" + id + "'>"
+                                holdings = holdings + "<ul class='pulsearch-availability' data-record-id='" + id + "'>"
                                 var mfhd_keys = Object.keys(holding_locations);
                                 $.each(mfhd_keys, function(index, key) {
                                     // only display online if there is an online holding library
@@ -76,17 +76,11 @@
                                             if(holding_locations[key]['call_number']) {
                                                 call_number = holding_locations[key]['call_number'];
                                             }
-                                            holdings = holdings + "<div class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['location'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></div>";
+                                            holdings = holdings + "<li class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['location'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></li>";
                                         }
                                     }
-                                    if(index == 2) {
-                                        view_all_msg = "View Record for Full Availability";
-                                        see_more_badge = "<span class='badge-default'>" + view_all_msg + "</span>";
-                                        holdings = holdings + "<div>" + see_more_badge + "</div>";
-                                    }
-                                //}
                                 });
-                                holdings = holdings + "</div>";
+                                holdings = holdings + "</ul>";
                             }
                             var online_access = "";
                             var online_span = '<span class="badge-notice availability-icon label label-primary" title="" data-toggle="tooltip" data-original-title="Electronic access" aria-describedby="tooltip552370">Online</span>';
@@ -186,112 +180,6 @@
                     {
                         ids.push(id);
                     }
-                });
-                if (ids.length > 0) {
-                    var availability_base = 'https://bibdata.princeton.edu/availability?'
-                    var query_string = "&ids%5B%5D=" + ids.join('&ids%5B%5D=');
-                    var availability_url = availability_base + query_string;
-                }
-                $.ajax({
-                     url: availability_url,
-                     async: true,
-                     type: 'GET',
-                     dataType: 'json',
-                     success: function(data) {
-                        $.each(data, function(index, result) {
-                            var mfhd_keys = Object.keys(result);
-                            // at most there are two holdings in the availabilibility response per mfhd
-                            $.each(mfhd_keys, function(index, mfhd) {
-                                var badge_label = result[mfhd].status
-                                // begin availability from orangelight availability.js
-                                function title_case(str) {
-                                    return str[0].toUpperCase() + str.slice(1, (str.length - 1 + 1) || 9e9).toLowerCase();
-                                };
-                                var status = title_case(badge_label);
-                                var on_site_status = 'On-site'
-                                var on_site_unavailable = 'On-site - '
-                                var circ_desk = 'Check with front desk'
-                                var available_statuses = ['Not charged', 'On shelf']
-                                var returned_statuses = ['Discharged']
-                                var in_process_statuses = ['In process']
-                                var checked_out_statuses = ['Charged', 'Renewed', 'Overdue', 'On hold',
-                                'In transit', 'In transit on hold', 'At bindery',
-                                'Remote storage request', 'Hold request', 'Recall request']
-                                var missing_statuses = ['Missing', 'Lost--library applied',
-                                'Lost--system applied', 'Claims returned', 'Withdrawn']
-                                var available_labels = ['Available', 'Returned', 'In process', 'Requestable',
-                                    'On shelf', 'All items available']
-                                var open_location_labels = ['Available', 'All items available']
-                                var unavailable_labels = ['Checked out', 'Missing']
-                                var __indexOf = Array.prototype.indexOf || function(item) {
-                                  for (var i = 0, l = this.length; i < l; i++) {
-                                    if (this[i] === item) return i;
-                                  }
-                                  return -1;
-                                };
-                                var label;
-                                label = (function() {
-                                  switch (false) {
-                                    case __indexOf.call(available_statuses, status) < 0:
-                                      return 'Available';
-                                    case __indexOf.call(returned_statuses, status) < 0:
-                                      return 'Returned';
-                                    case status !== 'In transit discharged':
-                                      return 'In transit';
-                                    case __indexOf.call(in_process_statuses, status) < 0:
-                                      return 'In process';
-                                    case __indexOf.call(checked_out_statuses, status) < 0:
-                                      return 'Checked out';
-                                    case __indexOf.call(missing_statuses, status) < 0:
-                                      return 'Missing';
-                                    case !status.match(on_site_unavailable):
-                                      return circ_desk;
-                                    case !status.match(on_site_status):
-                                      return 'On-site access';
-                                    case !status.match('Order received'):
-                                      return 'Order received';
-                                    case !status.match('Pending order'):
-                                      return 'Pending order';
-                                    case !status.match('On-order'):
-                                      return 'On-order';
-                                    default:
-                                      return status;
-                                  }
-                                })();
-                                var label_class;
-                                if (__indexOf.call(unavailable_labels, label) >= 0) {
-                                  label_class = "error";
-                                } else if (__indexOf.call(available_labels, label) >= 0) {
-                                  label_class = "success";
-                                } else if (label === 'On-site access') {
-                                  label_class = "alert";
-                                } else if (label === circ_desk) {
-                                  label_class = "alert";
-                                } else if (label === 'Online') {
-                                  label_class = "notice";
-                                } else {
-                                  label_class = "default";
-                                }
-                                // End Availability Block from Orangelight
-                                var badge = "<span class='badge-" + label_class + "'>" + label + "</span>";
-                                var holding_note = $("*[data-mfhd='" + mfhd + "']").first();
-
-                                if (badge_label != 'Online') {
-                                    var location_label = result[mfhd].label;
-                                    var note_text = $(holding_note).html();
-                                    var results_location = $(holding_note).html(badge + " <span class='location'>" + location_label + "</span> " + note_text );
-                                    $(".location + .results_location").remove();
-                                } else {
-                                    $(holding_note).html('');
-                                }
-                            });
-                        });
-
-                     },
-                    error: function(data) {
-                        console.log("Can't load availability data.");
-                    },
-                    timeout: 5000
                 });
             });
         }
