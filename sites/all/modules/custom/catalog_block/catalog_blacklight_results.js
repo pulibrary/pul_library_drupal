@@ -76,7 +76,7 @@
                                             if(holding_locations[key]['call_number']) {
                                                 call_number = holding_locations[key]['call_number'];
                                             }
-                                            holdings = holdings + "<li class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['location'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></li>";
+                                            holdings = holdings + "<li class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['library'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></li>";
                                         }
                                     }
                                 });
