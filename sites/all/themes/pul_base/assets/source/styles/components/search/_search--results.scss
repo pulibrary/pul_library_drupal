@@ -236,3 +236,11 @@
 .pulsearch-availability div:not(.holding) {
   margin-top: 0.725rem;
 }
+
+.pulsearch-availability {
+  margin-bottom: 0;
+
+  .holding {
+    padding: 0;
+  }
+}
