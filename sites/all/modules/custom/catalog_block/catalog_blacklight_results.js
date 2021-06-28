@@ -84,7 +84,8 @@
                             }
                             var online_access = "";
                             var online_span = '<span class="badge-notice availability-icon label label-primary" title="" data-toggle="tooltip" data-original-title="Electronic access" aria-describedby="tooltip552370">Online</span>';
-                            if(online_process == true) {
+                            // displays online link
+                            // if(online_process == true) {
                                 if (result['online']) {
                                     var online_links =result['online'];
                                     online_access = online_access + "<div class='pulsearch-online-access'>";
@@ -100,7 +101,7 @@
                                     }
                                     online_access = online_access + "</div>";
                                 }
-                            }
+                            // }
                             var result_position = parseInt(index) + 1;
                             items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>' +
                                 '<div class="all-format-type"><i class="' + icon_type + '"></i>' +
