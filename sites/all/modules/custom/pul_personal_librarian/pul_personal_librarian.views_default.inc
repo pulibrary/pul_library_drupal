@@ -481,6 +481,14 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_user_cancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -1594,6 +1602,11 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['fields']['field_pl_residential_college']['id'] = 'field_pl_residential_college';
   $handler->display->display_options['fields']['field_pl_residential_college']['table'] = 'field_data_field_pl_residential_college';
   $handler->display->display_options['fields']['field_pl_residential_college']['field'] = 'field_pl_residential_college';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'users';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Net ID';
   /* Field: User: Personal Librarian */
   $handler->display->display_options['fields']['field_current_personal_lib']['id'] = 'field_current_personal_lib';
   $handler->display->display_options['fields']['field_current_personal_lib']['table'] = 'field_data_field_current_personal_lib';
@@ -1603,11 +1616,6 @@ function pul_personal_librarian_views_default_views() {
     'bypass_access' => 0,
     'link' => 0,
   );
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'users';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Net ID';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
