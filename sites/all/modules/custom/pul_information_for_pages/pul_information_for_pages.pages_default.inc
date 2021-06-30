@@ -20,74 +20,74 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -8;
   $handler->conf = array(
-    'title' => 'Visitors Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second visitors-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               9 => '9',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '9',
+            1 => array(),
+            4 => array(),
+            7 => array(),
+            8 => array(),
             9 => array(
               147 => '147',
             ),
-            7 => array(),
-            18 => array(),
-            12 => array(),
             10 => array(),
-            17 => array(),
-            14 => array(),
-            8 => array(),
-            19 => array(),
-            15 => array(),
+            12 => array(),
             13 => array(),
+            14 => array(),
+            15 => array(),
             16 => array(),
-            4 => array(),
-            1 => array(),
+            17 => array(),
+            18 => array(),
+            19 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second visitors-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Visitors Landing Page',
   );
   $display = new panels_display();
-  $display->layout = 'three-six-three-stacked';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
       'bottom' => NULL,
-      'left_top' => NULL,
-      'middle_top' => NULL,
-      'right_top' => NULL,
-      'left_bottom' => NULL,
-      'middle_bottom' => NULL,
+      'default' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'left_bottom' => NULL,
+      'left_top' => NULL,
+      'middle' => NULL,
+      'middle_bottom' => NULL,
+      'middle_top' => NULL,
+      'right' => NULL,
+      'right_top' => NULL,
       'second' => NULL,
       'third' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -98,11 +98,73 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
+  $pane->panel = 'first';
+  $pane->type = 'node';
+  $pane->subtype = 'node';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link_node_title' => 0,
+    'links' => 1,
+    'nid' => '6680',
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_class' => '',
+    'css_id' => 'visitor-services',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
+  $display->content['new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243'] = $pane;
+  $display->panels['first'][0] = 'new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
+  $pane = new stdClass();
+  $pane->pid = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
+  $pane->panel = 'first';
+  $pane->type = 'node';
+  $pane->subtype = 'node';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link_node_title' => 0,
+    'links' => 0,
+    'nid' => '6679',
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_class' => '',
+    'css_id' => 'accessing-collections',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'ea729d9a-02d3-40d0-a57d-0f62731c4340';
+  $display->content['new-ea729d9a-02d3-40d0-a57d-0f62731c4340'] = $pane;
+  $display->panels['first'][1] = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
+  $pane = new stdClass();
   $pane->pid = 'new-133f4149-47b7-4a40-a7d7-cb60fce16e70';
-  $pane->panel = 'bottom';
+  $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_news-panel_pane_5';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'context' => array(
@@ -114,83 +176,50 @@ function pul_information_for_pages_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'pane-library-news-panel-pane',
+    'css_id' => '',
   );
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '133f4149-47b7-4a40-a7d7-cb60fce16e70';
   $display->content['new-133f4149-47b7-4a40-a7d7-cb60fce16e70'] = $pane;
-  $display->panels['bottom'][0] = 'new-133f4149-47b7-4a40-a7d7-cb60fce16e70';
+  $display->panels['first'][2] = 'new-133f4149-47b7-4a40-a7d7-cb60fce16e70';
   $pane = new stdClass();
-  $pane->pid = 'new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
+  $pane->pid = 'new-552f6957-158e-46c5-bddd-3a0384910111';
   $pane->panel = 'first';
   $pane->type = 'node';
   $pane->subtype = 'node';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'nid' => '6680',
-    'links' => 1,
-    'leave_node_title' => 0,
-    'identifier' => '',
     'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
     'link_node_title' => 0,
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_id' => 'visitor-services',
-    'css_class' => '',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
-  $display->content['new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243'] = $pane;
-  $display->panels['first'][0] = 'new-a405b8a1-03a5-4b23-9a9c-91a20d1f6243';
-  $pane = new stdClass();
-  $pane->pid = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
-  $pane->panel = 'middle';
-  $pane->type = 'node';
-  $pane->subtype = 'node';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'nid' => '6679',
     'links' => 0,
-    'leave_node_title' => 0,
-    'identifier' => '',
-    'build_mode' => 'full',
-    'link_node_title' => 0,
-    'override_title' => 0,
+    'nid' => '44512',
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
     'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => 'accessing-collections',
-    'css_class' => '',
-  );
+  $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = 'ea729d9a-02d3-40d0-a57d-0f62731c4340';
-  $display->content['new-ea729d9a-02d3-40d0-a57d-0f62731c4340'] = $pane;
-  $display->panels['middle'][0] = 'new-ea729d9a-02d3-40d0-a57d-0f62731c4340';
+  $pane->uuid = '552f6957-158e-46c5-bddd-3a0384910111';
+  $display->content['new-552f6957-158e-46c5-bddd-3a0384910111'] = $pane;
+  $display->panels['first'][3] = 'new-552f6957-158e-46c5-bddd-3a0384910111';
   $pane = new stdClass();
   $pane->pid = 'new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-directions-parking-and-gene';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -201,8 +230,8 @@ function pul_information_for_pages_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'visiting-campus',
     'css_class' => '',
+    'css_id' => 'visiting-campus',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -210,6 +239,29 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->uuid = '09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
   $display->content['new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae'] = $pane;
   $display->panels['second'][0] = 'new-09d3f737-f978-4b03-b4a7-04ada2cdb3ae';
+  $pane = new stdClass();
+  $pane->pid = 'new-14855b2e-44b4-46b9-a1fb-051378778d4f';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-get-help-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => 'Get Help',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '14855b2e-44b4-46b9-a1fb-051378778d4f';
+  $display->content['new-14855b2e-44b4-46b9-a1fb-051378778d4f'] = $pane;
+  $display->panels['second'][1] = 'new-14855b2e-44b4-46b9-a1fb-051378778d4f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -224,94 +276,94 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -10;
   $handler->conf = array(
-    'title' => 'Alumni Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second alumni-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '9',
+            1 => array(),
+            4 => array(),
+            7 => array(),
+            8 => array(),
             9 => array(
               148 => '148',
             ),
-            7 => array(),
-            18 => array(),
-            12 => array(),
             10 => array(),
-            17 => array(),
-            14 => array(),
-            8 => array(),
-            19 => array(),
-            15 => array(),
+            12 => array(),
             13 => array(),
+            14 => array(),
+            15 => array(),
             16 => array(),
-            4 => array(),
-            1 => array(),
+            17 => array(),
+            18 => array(),
+            19 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second alumni-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Alumni Landing Page',
   );
   $display = new panels_display();
-  $display->layout = 'five-four-three-stacked';
+  $display->layout = 'pul-base-nine-three';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => array(),
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'bottom' => array(),
-      'right' => NULL,
-      'left_below' => NULL,
-      'right_below' => NULL,
-      'left_top' => array(),
-      'middle_top' => array(),
-      'right_top' => array(),
-      'left_bottom' => array(),
-      'middle_bottom' => array(),
-      'right_bottom' => NULL,
-      'right_side' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'third' => NULL,
-    ),
-    'right' => array(
-      'style' => 'default',
-    ),
     'bottom' => array(
-      'style' => 'stylizer',
-    ),
-    'style' => 'stylizer',
-    'left_top' => array(
-      'style' => 'stylizer',
-    ),
-    'middle_top' => array(
-      'style' => 'stylizer',
-    ),
-    'right_top' => array(
       'style' => 'stylizer',
     ),
     'left_bottom' => array(
       'style' => 'stylizer',
     ),
+    'left_top' => array(
+      'style' => 'stylizer',
+    ),
     'middle_bottom' => array(
       'style' => 'stylizer',
+    ),
+    'middle_top' => array(
+      'style' => 'stylizer',
+    ),
+    'right' => array(
+      'style' => 'default',
+    ),
+    'right_top' => array(
+      'style' => 'stylizer',
+    ),
+    'style' => 'stylizer',
+    'style_settings' => array(
+      'bottom' => array(),
+      'default' => array(),
+      'first' => NULL,
+      'left' => NULL,
+      'left_below' => NULL,
+      'left_bottom' => array(),
+      'left_top' => array(),
+      'middle' => NULL,
+      'middle_bottom' => array(),
+      'middle_top' => array(),
+      'right' => NULL,
+      'right_below' => NULL,
+      'right_bottom' => NULL,
+      'right_side' => NULL,
+      'right_top' => array(),
+      'second' => NULL,
+      'third' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -322,126 +374,8 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fb614b27-5605-4e65-8409-45f7f8c4b57c';
-  $pane->panel = 'bottom';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'library_news-panel_pane_5';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => array(
-      0 => 'argument_term_1',
-    ),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(),
-    'style' => 'stylizer',
-  );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'pane-library-news-panel-pane ',
-  );
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'fb614b27-5605-4e65-8409-45f7f8c4b57c';
-  $display->content['new-fb614b27-5605-4e65-8409-45f7f8c4b57c'] = $pane;
-  $display->panels['bottom'][0] = 'new-fb614b27-5605-4e65-8409-45f7f8c4b57c';
-  $pane = new stdClass();
-  $pane->pid = 'new-50c86b3d-dc4d-49bc-8fa9-add9d72de552';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-alumni---services';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Alumni Services',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(),
-    'style' => 'stylizer',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '50c86b3d-dc4d-49bc-8fa9-add9d72de552';
-  $display->content['new-50c86b3d-dc4d-49bc-8fa9-add9d72de552'] = $pane;
-  $display->panels['first'][0] = 'new-50c86b3d-dc4d-49bc-8fa9-add9d72de552';
-  $pane = new stdClass();
-  $pane->pid = 'new-280cca95-286a-4e49-910c-77952f15ccaa';
-  $pane->panel = 'first';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-alumni---giving-back';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Giving Back',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(),
-    'style' => 'stylizer',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '280cca95-286a-4e49-910c-77952f15ccaa';
-  $display->content['new-280cca95-286a-4e49-910c-77952f15ccaa'] = $pane;
-  $display->panels['first'][1] = 'new-280cca95-286a-4e49-910c-77952f15ccaa';
-  $pane = new stdClass();
-  $pane->pid = 'new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
-  $pane->panel = 'second';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-directions-parking-and-gene';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
-  $display->content['new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c'] = $pane;
-  $display->panels['second'][0] = 'new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
-  $pane = new stdClass();
-  $pane->pid = 'new-0663ceca-41ce-4861-9681-876c15aff9ee';
-  $pane->panel = 'third';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(),
-    'style' => 'stylizer',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '0663ceca-41ce-4861-9681-876c15aff9ee';
-  $display->content['new-0663ceca-41ce-4861-9681-876c15aff9ee'] = $pane;
-  $display->panels['third'][0] = 'new-0663ceca-41ce-4861-9681-876c15aff9ee';
-  $pane = new stdClass();
   $pane->pid = 'new-0ae4ce93-cc6f-4ef7-8e57-5c2c65a6496e';
-  $pane->panel = 'top';
+  $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-alumni---returning';
   $pane->shown = FALSE;
@@ -461,7 +395,154 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->locks = array();
   $pane->uuid = '0ae4ce93-cc6f-4ef7-8e57-5c2c65a6496e';
   $display->content['new-0ae4ce93-cc6f-4ef7-8e57-5c2c65a6496e'] = $pane;
-  $display->panels['top'][0] = 'new-0ae4ce93-cc6f-4ef7-8e57-5c2c65a6496e';
+  $display->panels['first'][0] = 'new-0ae4ce93-cc6f-4ef7-8e57-5c2c65a6496e';
+  $pane = new stdClass();
+  $pane->pid = 'new-50c86b3d-dc4d-49bc-8fa9-add9d72de552';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-alumni---services';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Alumni Services',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'stylizer',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '50c86b3d-dc4d-49bc-8fa9-add9d72de552';
+  $display->content['new-50c86b3d-dc4d-49bc-8fa9-add9d72de552'] = $pane;
+  $display->panels['first'][1] = 'new-50c86b3d-dc4d-49bc-8fa9-add9d72de552';
+  $pane = new stdClass();
+  $pane->pid = 'new-280cca95-286a-4e49-910c-77952f15ccaa';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-alumni---giving-back';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Giving Back',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'stylizer',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '280cca95-286a-4e49-910c-77952f15ccaa';
+  $display->content['new-280cca95-286a-4e49-910c-77952f15ccaa'] = $pane;
+  $display->panels['first'][2] = 'new-280cca95-286a-4e49-910c-77952f15ccaa';
+  $pane = new stdClass();
+  $pane->pid = 'new-fb614b27-5605-4e65-8409-45f7f8c4b57c';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_5';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_term_1',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'stylizer',
+  );
+  $pane->css = array(
+    'css_class' => 'pane-library-news-panel-pane ',
+    'css_id' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'fb614b27-5605-4e65-8409-45f7f8c4b57c';
+  $display->content['new-fb614b27-5605-4e65-8409-45f7f8c4b57c'] = $pane;
+  $display->panels['first'][3] = 'new-fb614b27-5605-4e65-8409-45f7f8c4b57c';
+  $pane = new stdClass();
+  $pane->pid = 'new-87189ae5-07e8-4898-b1a6-3c172abf280a';
+  $pane->panel = 'first';
+  $pane->type = 'node';
+  $pane->subtype = 'node';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'build_mode' => 'full',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link_node_title' => 0,
+    'links' => 0,
+    'nid' => '44513',
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '87189ae5-07e8-4898-b1a6-3c172abf280a';
+  $display->content['new-87189ae5-07e8-4898-b1a6-3c172abf280a'] = $pane;
+  $display->panels['first'][4] = 'new-87189ae5-07e8-4898-b1a6-3c172abf280a';
+  $pane = new stdClass();
+  $pane->pid = 'new-0663ceca-41ce-4861-9681-876c15aff9ee';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-get-help-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'stylizer',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0663ceca-41ce-4861-9681-876c15aff9ee';
+  $display->content['new-0663ceca-41ce-4861-9681-876c15aff9ee'] = $pane;
+  $display->panels['second'][0] = 'new-0663ceca-41ce-4861-9681-876c15aff9ee';
+  $pane = new stdClass();
+  $pane->pid = 'new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
+  $pane->panel = 'second';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-directions-parking-and-gene';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
+  $display->content['new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c'] = $pane;
+  $display->panels['second'][1] = 'new-5c8ec765-0f0d-4c09-8ac6-b0f8df7d940c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -476,63 +557,63 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -12;
   $handler->conf = array(
-    'title' => 'Faculty Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second faculty-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '9',
+            1 => array(),
+            4 => array(),
+            7 => array(),
+            8 => array(),
             9 => array(
               146 => '146',
             ),
-            7 => array(),
+            10 => array(),
             11 => array(),
             12 => array(),
-            10 => array(),
-            8 => array(),
             13 => array(),
-            4 => array(),
-            1 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second faculty-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Faculty Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-four-four-four-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
-      'right' => NULL,
-      'left_below' => NULL,
-      'right_below' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'third' => NULL,
-    ),
     'right' => array(
       'style' => 'default',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'left' => NULL,
+      'left_below' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'right_below' => NULL,
+      'second' => NULL,
+      'third' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -559,8 +640,8 @@ function pul_information_for_pages_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'pane-library-news-panel-pane',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -692,66 +773,66 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -11;
   $handler->conf = array(
-    'title' => 'Student Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second student-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '9',
+            1 => array(),
+            4 => array(),
+            7 => array(),
+            8 => array(),
             9 => array(
               145 => '145',
             ),
-            7 => array(),
+            10 => array(),
             11 => array(),
             12 => array(),
-            10 => array(),
-            8 => array(),
             13 => array(),
-            4 => array(),
-            1 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second student-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Student Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-four-four-four-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'bottom' => NULL,
-      'right' => NULL,
-      'left_top' => NULL,
-      'middle_top' => NULL,
-      'right_top' => NULL,
-      'left_bottom' => NULL,
-      'middle_bottom' => NULL,
-      'first' => NULL,
-      'second' => NULL,
-      'third' => NULL,
-    ),
     'right' => array(
       'style' => 'default',
+    ),
+    'style_settings' => array(
+      'bottom' => NULL,
+      'default' => NULL,
+      'first' => NULL,
+      'left' => NULL,
+      'left_bottom' => NULL,
+      'left_top' => NULL,
+      'middle' => NULL,
+      'middle_bottom' => NULL,
+      'middle_top' => NULL,
+      'right' => NULL,
+      'right_top' => NULL,
+      'second' => NULL,
+      'third' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -778,8 +859,8 @@ function pul_information_for_pages_default_page_manager_handlers() {
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'pane-library-news-panel-pane ',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -911,76 +992,76 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -9;
   $handler->conf = array(
-    'title' => 'Library Staff Landing Page',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second staff-landing-page',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Taxonomy term',
-        'keyword' => 'taxonomy_term',
-        'name' => 'entity:taxonomy_term',
-        'entity_id' => '149',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_term_1',
           'name' => 'term',
+          'not' => FALSE,
           'settings' => array(
             'vid' => '9',
+            1 => array(),
+            4 => array(),
+            7 => array(),
+            8 => array(),
             9 => array(
               149 => '149',
             ),
-            7 => array(),
-            18 => array(),
-            12 => array(),
             10 => array(),
-            17 => array(),
-            14 => array(),
-            8 => array(),
-            15 => array(),
+            12 => array(),
             13 => array(),
+            14 => array(),
+            15 => array(),
             16 => array(),
-            4 => array(),
-            1 => array(),
+            17 => array(),
+            18 => array(),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second staff-landing-page',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '149',
+        'id' => 1,
+        'identifier' => 'Taxonomy term',
+        'keyword' => 'taxonomy_term',
+        'name' => 'entity:taxonomy_term',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'about',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'About',
-    'panels_breadcrumbs_paths' => 'about',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Library Staff Landing Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-four-four-four-stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
+      'bottom' => NULL,
       'default' => NULL,
-      'left' => NULL,
-      'right' => NULL,
-      'left_top' => NULL,
-      'middle_top' => NULL,
-      'right_top' => NULL,
-      'left_bottom' => NULL,
-      'middle_bottom' => NULL,
-      'right_bottom' => NULL,
-      'middle' => NULL,
-      'top' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'left_bottom' => NULL,
+      'left_top' => NULL,
+      'middle' => NULL,
+      'middle_bottom' => NULL,
+      'middle_top' => NULL,
+      'right' => NULL,
+      'right_bottom' => NULL,
+      'right_top' => NULL,
       'second' => NULL,
       'third' => NULL,
-      'bottom' => NULL,
+      'top' => NULL,
     ),
   );
   $display->cache = array();
@@ -998,10 +1079,10 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'argument_term_1',
     'override_title' => 0,
     'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1133,11 +1214,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Staff Intranet Login',
-    'title' => 'PUL Staff Intranet',
-    'title_heading' => 'h2',
     'body' => '<p><a href="http://pulstaff.princeton.edu">Login via CAS to PUL Connecting</a>.&nbsp;</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
+    'title' => 'PUL Staff Intranet',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1159,21 +1240,21 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Library Staff Login',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Library Staff Login',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1195,22 +1276,22 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'more_link' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Library Newsletters',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Library Newsletters',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1232,14 +1313,14 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1267,21 +1348,21 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Staff Announcements',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Staff Announcements',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1301,24 +1382,24 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->subtype = 'staff_announcement_lists-panel_pane_1';
   $pane->shown = FALSE;
   $pane->access = array(
+    'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
-    'logic' => 'and',
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Staff Announcements',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Staff Announcements',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1340,11 +1421,11 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Staff News',
-    'title' => 'Staff News',
-    'title_heading' => 'h2',
     'body' => '<ul><li>Staff One</li><li>Staff One</li></ul>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Staff News',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1366,14 +1447,14 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
@@ -1402,24 +1483,24 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Staff Calendar of Events',
-    'title' => 'PUL Events Calendar',
-    'title_heading' => 'h2',
     'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'PUL Events Calendar',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1441,24 +1522,24 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Staff Chat Room',
-    'title' => 'Staff Chat Room',
-    'title_heading' => 'h2',
     'body' => '<p>Coming soon</p>',
     'format' => 'full_html',
     'substitute' => 1,
+    'title' => 'Staff Chat Room',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
