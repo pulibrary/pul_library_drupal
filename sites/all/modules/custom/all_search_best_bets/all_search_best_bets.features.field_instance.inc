@@ -74,21 +74,27 @@ function all_search_best_bets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 2,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 2,
       ),
@@ -107,6 +113,7 @@ function all_search_best_bets_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),

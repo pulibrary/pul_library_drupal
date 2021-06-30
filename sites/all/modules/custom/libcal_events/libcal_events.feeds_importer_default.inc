@@ -46,7 +46,7 @@ function libcal_events_feeds_importer_default() {
     'process_in_background' => 0,
     'processor' => array(
       'config' => array(
-        'author' => '3557',
+        'author' => '6543',
         'authorize' => 1,
         'bundle' => 'schemaorg_event',
         'expire' => '-1',

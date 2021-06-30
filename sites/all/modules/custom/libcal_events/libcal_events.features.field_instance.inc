@@ -111,6 +111,7 @@ function libcal_events_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -339,6 +340,7 @@ function libcal_events_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -354,6 +356,7 @@ function libcal_events_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
