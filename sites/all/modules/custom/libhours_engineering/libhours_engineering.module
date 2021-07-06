@@ -31,7 +31,7 @@ function libhours_engineering_block_view() {
   $engRss = new DOMDocument();
   $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=11490&format=xml&systemTime=1');
   $engHours = $engRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $eng = "<li class='hours'><p>".$engHours."</p><p class='seats'><a href='https://libcal.princeton.edu/seats?lid=7832'>Study-browse</a> and <a href='/services/book-pick-up'>Book Pick-up</a> services are available during these hours.</p></li>";
+  $eng = "<li class='hours'>".$engHours."</li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   
