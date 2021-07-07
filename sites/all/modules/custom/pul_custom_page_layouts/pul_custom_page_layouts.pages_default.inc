@@ -209,47 +209,6 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $pane->uuid = 'c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a';
   $display->content['new-c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a'] = $pane;
   $display->panels['top'][1] = 'new-c6e2e366-4f63-44b8-9b8a-d1bed2bbb24a';
-  $pane = new stdClass();
-  $pane->pid = 'new-40cef769-6672-4e2f-8678-30452c88d76e';
-  $pane->panel = 'top';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'context' => 'empty',
-        'name' => 'path_visibility',
-        'not' => FALSE,
-        'settings' => array(
-          'paths' => '2020-21-resources',
-          'visibility_setting' => '1',
-        ),
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'admin_title' => 'Phased resumption of service announcements',
-    'body' => '<p><strong><a href="/news/general/2020-05-29/phased-plan-resumption-services-pul">Phased resumption of service announcements</a></strong></p>',
-    'format' => 'pul_editor_html',
-    'substitute' => 1,
-    'title' => '',
-    'title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array(
-    'css_class' => 'center-text',
-    'css_id' => '',
-  );
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '40cef769-6672-4e2f-8678-30452c88d76e';
-  $display->content['new-40cef769-6672-4e2f-8678-30452c88d76e'] = $pane;
-  $display->panels['top'][2] = 'new-40cef769-6672-4e2f-8678-30452c88d76e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5e3798c4-d508-4e35-87b7-e4d99e69c402';
   $handler->conf['display'] = $display;

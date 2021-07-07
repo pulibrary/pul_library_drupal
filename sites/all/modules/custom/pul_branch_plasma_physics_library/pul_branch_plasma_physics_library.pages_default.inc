@@ -109,7 +109,7 @@ plasma-physics/*',
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'libhours_plasma-libhours_plasma';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -132,7 +132,7 @@ plasma-physics/*',
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'libraries-panel_pane_4';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'arguments' => array(
