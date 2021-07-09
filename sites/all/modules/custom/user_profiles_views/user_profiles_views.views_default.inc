@@ -812,8 +812,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '<div><a href="staff/pl-list/lower/[name]">First/Second Year Student Roster</a></div>
-<div><a href="staff/pl-list/upper/[name]">Junior/Senior Student Roster</a></div>
-<div><a href="staff/pl-list/2020/[name]">2020 Student Roster</a></div>';
+<div><a href="staff/pl-list/upper/[name]">Junior/Senior Student Roster</a></div>';
   $handler->display->display_options['fields']['name']['alter']['path'] = 'staff/pl-list/[name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
