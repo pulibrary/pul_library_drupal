@@ -346,6 +346,7 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'status' => 'status',
     'name' => 'name',
     'field_puluser_fname' => 'field_puluser_fname',
     'field_puluser_lname' => 'field_puluser_lname',
@@ -354,10 +355,18 @@ function pul_personal_librarian_views_default_views() {
     'field_personal_lib_class_year' => 'field_personal_lib_class_year',
     'edit_node' => 'edit_node',
     'views_bulk_operations' => 'views_bulk_operations',
+    'views_bulk_operations_1' => 'views_bulk_operations_1',
   );
   $handler->display->display_options['style_options']['class'] = '';
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'name' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -394,7 +403,7 @@ function pul_personal_librarian_views_default_views() {
       'empty_column' => 0,
     ),
     'field_personal_lib_class_year' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -410,7 +419,13 @@ function pul_personal_librarian_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'views_bulk_operations_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -425,6 +440,11 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['table'] = 'field_data_field_current_personal_lib';
   $handler->display->display_options['relationships']['field_current_personal_lib_target_id']['field'] = 'field_current_personal_lib_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Active status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -499,6 +519,7 @@ function pul_personal_librarian_views_default_views() {
       'settings' => array(
         'show_all_tokens' => 1,
         'display_values' => array(
+          'status' => 'status',
           'user::field_current_personal_lib' => 'user::field_current_personal_lib',
         ),
       ),
@@ -537,13 +558,6 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['arguments']['name']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -660,6 +674,20 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_pl_residential_college_value']['expose']['operator'] = 'field_pl_residential_college_value_op';
   $handler->display->display_options['filters']['field_pl_residential_college_value']['expose']['identifier'] = 'field_pl_residential_college_value';
   $handler->display->display_options['filters']['field_pl_residential_college_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  /* Filter criterion: User: Active status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
     2 => '2',
   );
   $handler->display->display_options['path'] = 'admin/personal-librarians';
@@ -1883,7 +1911,6 @@ function pul_personal_librarian_views_default_views() {
   $handler->display->display_options['filters']['field_personal_lib_class_year_value']['value']['value'] = '2020';
   $handler->display->display_options['path'] = 'staff/pl-list/2020/data/%/2020.csv';
   $handler->display->display_options['displays'] = array(
-    'page_6' => 'page_6',
     'default' => 0,
     'panel_pane_1' => 0,
     'panel_pane_2' => 0,
@@ -1892,6 +1919,7 @@ function pul_personal_librarian_views_default_views() {
     'page_3' => 0,
     'page_4' => 0,
     'page_5' => 0,
+    'page_6' => 0,
   );
   $export['pul_personal_librarian'] = $view;
 
