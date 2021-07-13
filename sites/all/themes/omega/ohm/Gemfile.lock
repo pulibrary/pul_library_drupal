@@ -1,7 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.4)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     breakpoint (2.0.5)
       compass (>= 0.12.1)
       sass (>= 3.2.0)
@@ -60,6 +61,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    public_suffix (4.0.6)
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.3)
