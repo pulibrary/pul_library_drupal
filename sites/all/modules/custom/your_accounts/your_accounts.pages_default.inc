@@ -83,7 +83,7 @@ function your_accounts_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Library Account',
-    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Find out more about <a href="https://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/account" target="_blank">Access Your Library Account</a></div>',
+    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Review and renew material you’ve borrowed</li><li>View information about library requests, fines and blocks</li><li>Find out more about <a href="https://library.princeton.edu/services/privileges/circulation-policies">circulation policies</a></li></ul><div class="service-connect-btn"><a href="https://princeton.alma.exlibrisgroup.com/discovery/account?vid=01PRI_INST:Services&amp;lang=EN&amp;section=overview" target="_blank">Access Your Library Account</a></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title' => 'Library Account',
