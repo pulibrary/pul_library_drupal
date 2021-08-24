@@ -33,7 +33,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
 
   $mainStart = "<ul class='hours--today'>";
   $mainEnd = "</ul>";
-  
+
   $archRss = new DOMDocument();
   $archRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12309&format=xml&systemTime=1');
   $archHours = $archRss->getElementsByTagName('rendered')->item(0)->nodeValue;
@@ -41,7 +41,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $archTitle = "<h3>Architecture Library</h3>";
   $archColor = $archRss->getElementsByTagName('color')->item(0)->nodeValue;
   $arch = "<li><a href='/architecture' class='library-hours-link' style='border-left:".$archColor." 35px solid'>".$archTitle.$archHours."</a></li>";
-  
+
   $cdhRss = new DOMDocument();
   $cdhRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14274&format=xml&systemTime=1');
   $cdhHours = $cdhRss->getElementsByTagName('rendered')->item(0)->nodeValue;
@@ -70,11 +70,9 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $fstRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=6975&format=xml&systemTime=1');
   $fstHours = $fstRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $fstHours = "<div class='hours'>".$fstHours."</div>";
-  $fstPickUpHours = $fstRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $fstPickUpHours = "<div class='hours'>".$fstPickUpHours." (Pick-Up)</div>";
   $fstTitle = "<h3>Firestone Library</h3>";
   $fstColor = $fstRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $fst = "<li><a href='/firestone' class='library-hours-link' style='border-left:".$fstColor." 35px solid'>".$fstTitle.$fstHours.$fstPickUpHours."</a></li>";
+  $fst = "<li><a href='/firestone' class='library-hours-link' style='border-left:".$fstColor." 35px solid'>".$fstTitle.$fstHours."</a></li>";
 
   $lewRss = new DOMDocument();
   $lewRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
@@ -133,7 +131,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $stok = "<li><a href='/stokes' class='library-hours-link' style='border-left:".$stokColor." 35px solid'>".$stokTitle.$stokHours."</a></li>";
 
   $moreHours = "<a href='https://libcal.princeton.edu/hours' class='views-more-link'>More Hours</a>";
-  
+
   $hoursMain = $mainStart.$arch.$eal.$eng.$fst.$lew.$marq.$mend.$mudd.$ppl.$sc.$stok.$moreHours.$mainEnd;
 
   $content = $hoursMain;
