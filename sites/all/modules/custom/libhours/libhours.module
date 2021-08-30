@@ -101,7 +101,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $muddRss = new DOMDocument();
   $muddRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12315&format=xml&systemTime=1');
   $muddHours = $muddRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $muddHours = "<div class='hours'>".$muddHours." for renovations</div>";
+  $muddHours = "<div class='hours'>".$muddHours."</div>";
   $muddTitle = "<h3>Mudd Library</h3>";
   $muddColor = $muddRss->getElementsByTagName('color')->item(0)->nodeValue;
   $mudd = "<li><a href='/special-collections/mudd' class='library-hours-link' style='border-left:".$muddColor." 35px solid'>".$muddTitle.$muddHours."</a></li>";
