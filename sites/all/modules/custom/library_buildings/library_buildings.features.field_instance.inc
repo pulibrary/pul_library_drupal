@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * library_buildings.features.field_instance.inc
@@ -10,7 +11,7 @@
 function library_buildings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-library_buildings-body'
+  // Exported field_instance: 'node-library_buildings-body'.
   $field_instances['node-library_buildings-body'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -78,7 +79,7 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_address_1'
+  // Exported field_instance: 'node-library_buildings-field_campus_address_1'.
   $field_instances['node-library_buildings-field_campus_address_1'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -143,7 +144,7 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_address_2'
+  // Exported field_instance: 'node-library_buildings-field_campus_address_2'.
   $field_instances['node-library_buildings-field_campus_address_2'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -208,7 +209,8 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_building_loc_id'
+  // Exported field_instance:
+  // 'node-library_buildings-field_campus_building_loc_id'.
   $field_instances['node-library_buildings-field_campus_building_loc_id'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -279,7 +281,7 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_city'
+  // Exported field_instance: 'node-library_buildings-field_campus_city'.
   $field_instances['node-library_buildings-field_campus_city'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -344,7 +346,98 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_state'
+  // Exported field_instance: 'node-library_buildings-field_campus_map_url'.
+  $field_instances['node-library_buildings-field_campus_map_url'] = array(
+    'bundle' => 'library_buildings',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'brief_faq_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'custom_title' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 12,
+      ),
+      'overridden_title_in_lists' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_campus_map_url',
+    'label' => 'campus_map_url',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'convert_aliases' => 0,
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 31,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-library_buildings-field_campus_state'.
   $field_instances['node-library_buildings-field_campus_state'] = array(
     'bundle' => 'library_buildings',
     'default_value' => NULL,
@@ -409,7 +502,7 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_campus_zip'
+  // Exported field_instance: 'node-library_buildings-field_campus_zip'.
   $field_instances['node-library_buildings-field_campus_zip'] = array(
     'bundle' => 'library_buildings',
     'default_value' => array(
@@ -478,7 +571,7 @@ function library_buildings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-library_buildings-field_geofield_locations'
+  // Exported field_instance: 'node-library_buildings-field_geofield_locations'.
   $field_instances['node-library_buildings-field_geofield_locations'] = array(
     'bundle' => 'library_buildings',
     'default_value' => array(
@@ -576,6 +669,7 @@ function library_buildings_field_default_field_instances() {
   t('Geo Locations');
   t('State');
   t('Zip');
+  t('campus_map_url');
 
   return $field_instances;
 }
