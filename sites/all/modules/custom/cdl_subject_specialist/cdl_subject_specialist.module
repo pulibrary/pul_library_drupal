@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the CDL Subject Specialist feature.
- */
-
-include_once 'cdl_subject_specialist.features.inc';
