@@ -614,7 +614,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'libraries' => 'libraries',
   );
-  /* Filter criterion: Content: Add to Libraries &amp; Collections Dropdown Menu (field_libs_cols_main_menu) */
+  /* Filter criterion: Content: Add to Libraries List (field_libs_cols_main_menu) */
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['id'] = 'field_libs_cols_main_menu_value';
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['table'] = 'field_data_field_libs_cols_main_menu';
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['field'] = 'field_libs_cols_main_menu_value';
@@ -1046,7 +1046,7 @@ function pul_libraries_ct_views_default_views() {
     'collection' => 'collection',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Content: Add to Libraries &amp; Collections Dropdown Menu (field_libs_cols_main_menu) */
+  /* Filter criterion: Content: Add to Libraries List (field_libs_cols_main_menu) */
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['id'] = 'field_libs_cols_main_menu_value';
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['table'] = 'field_data_field_libs_cols_main_menu';
   $handler->display->display_options['filters']['field_libs_cols_main_menu_value']['field'] = 'field_libs_cols_main_menu_value';
