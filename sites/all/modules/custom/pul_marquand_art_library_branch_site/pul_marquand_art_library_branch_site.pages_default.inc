@@ -674,6 +674,32 @@ marquand',
   $display->content['new-c25831d8-8914-48ba-94f4-b3e2233e2ec0'] = $pane;
   $display->panels['first'][2] = 'new-c25831d8-8914-48ba-94f4-b3e2233e2ec0';
   $pane = new stdClass();
+  $pane->pid = 'new-742df44c-0794-4ff7-a96b-2ba099f3a547';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'body' => '<p><a href="https://library.princeton.edu/marquand/resources/collections/floor-plans">Browse Floorplans</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+    'title' => 'Location Details',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '742df44c-0794-4ff7-a96b-2ba099f3a547';
+  $display->content['new-742df44c-0794-4ff7-a96b-2ba099f3a547'] = $pane;
+  $display->panels['first'][3] = 'new-742df44c-0794-4ff7-a96b-2ba099f3a547';
+  $pane = new stdClass();
   $pane->pid = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
   $pane->panel = 'first';
   $pane->type = 'entity_field';
@@ -701,11 +727,11 @@ marquand',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'd0baed64-6775-4b92-961d-29266a39b49a';
   $display->content['new-d0baed64-6775-4b92-961d-29266a39b49a'] = $pane;
-  $display->panels['first'][3] = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
+  $display->panels['first'][4] = 'new-d0baed64-6775-4b92-961d-29266a39b49a';
   $pane = new stdClass();
   $pane->pid = 'new-71c42d93-a7a2-4356-971e-a33d8eb96b29';
   $pane->panel = 'middle';
@@ -793,7 +819,7 @@ marquand',
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_news-panel_pane_6';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
@@ -807,6 +833,25 @@ marquand',
   $pane->uuid = '5e0cc6e5-690a-41e3-a3d6-686b7f6a0736';
   $display->content['new-5e0cc6e5-690a-41e3-a3d6-686b7f6a0736'] = $pane;
   $display->panels['middle'][3] = 'new-5e0cc6e5-690a-41e3-a3d6-686b7f6a0736';
+  $pane = new stdClass();
+  $pane->pid = 'new-369c7743-00cb-4b85-8f5c-4cbadfb21bc9';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_28';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '369c7743-00cb-4b85-8f5c-4cbadfb21bc9';
+  $display->content['new-369c7743-00cb-4b85-8f5c-4cbadfb21bc9'] = $pane;
+  $display->panels['middle'][4] = 'new-369c7743-00cb-4b85-8f5c-4cbadfb21bc9';
   $pane = new stdClass();
   $pane->pid = 'new-3ac16927-08f2-4a11-a074-4d665a11974a';
   $pane->panel = 'second';
