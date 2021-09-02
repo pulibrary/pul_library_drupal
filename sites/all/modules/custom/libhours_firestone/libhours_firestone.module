@@ -31,8 +31,7 @@ function libhours_firestone_block_view() {
   $fstRss = new DOMDocument();
   $fstRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=6975&format=xml&systemTime=1');
   $fstHours = $fstRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $fstPickUpHours = $fstRss->getElementsByTagName('rendered')->item(1)->nodeValue;
-  $fst = "<li class='hours'>".$fstHours."</li><li class='pickup-hours'>".$fstPickUpHours."<div><a href='/services/book-pick-up'>Book Pick-up service</a></div></li>";
+  $fst = "<li class='hours'>".$fstHours."</li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
   
