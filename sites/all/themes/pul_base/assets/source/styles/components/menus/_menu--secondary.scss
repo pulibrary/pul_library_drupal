@@ -32,6 +32,11 @@
     @include breakpoint($tab) {
       display: block;
     }
+
+  }
+
+  .expanded.active-trail .menu {
+    display: block;
   }
 
   .show-section-menu {
@@ -45,7 +50,7 @@
     // width: 95%;
 
     @include breakpoint($tab) {
-      display: none;
+      display: block;
     }
   }
 
