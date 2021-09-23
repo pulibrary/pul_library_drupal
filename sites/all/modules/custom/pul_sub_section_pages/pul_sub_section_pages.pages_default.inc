@@ -1797,6 +1797,32 @@ services/access/*',
   $display->content['new-a2444132-eb00-4ed3-a801-b86d209c0ce9'] = $pane;
   $display->panels['first'][0] = 'new-a2444132-eb00-4ed3-a801-b86d209c0ce9';
   $pane = new stdClass();
+  $pane->pid = 'new-01c7c8f1-331b-4b94-bc04-0785392e5939';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Visitor Policy',
+    'body' => '<p><strong><em>Updated July 13, 2021</em></strong></p><p><strong>Please note:&nbsp;PUL will continue to limit access to Library locations to Princeton University faculty, students, and staff with activated card access to buildings through the end of August. For patrons affiliated with a member of University faculty, graduate student, or staff, a small number of exceptions may be possible on a case-by-case basis. To submit a request for consideration, please visit&nbsp;the&nbsp;<a href="https://ehs.princeton.edu/VisitorPolicy" target="_blank">EHS&nbsp;visitor page</a>&nbsp;and complete the form linked on the right. Please note that the Library will need to approve this form, not the sponsor\'s department head. Send completed forms to&nbsp;<a href="mailto:refdesk@princeton.edu">refdesk@princeton.edu</a>&nbsp;and include&nbsp;the collections to be accessed by the visitor. Allow three business days for review of requests.</strong></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '01c7c8f1-331b-4b94-bc04-0785392e5939';
+  $display->content['new-01c7c8f1-331b-4b94-bc04-0785392e5939'] = $pane;
+  $display->panels['middle'][0] = 'new-01c7c8f1-331b-4b94-bc04-0785392e5939';
+  $pane = new stdClass();
   $pane->pid = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $pane->panel = 'middle';
   $pane->type = 'node_content';
@@ -1820,11 +1846,11 @@ services/access/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $display->content['new-4034f21f-2466-4a4a-8412-1c6f2882ccff'] = $pane;
-  $display->panels['middle'][0] = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $display->panels['middle'][1] = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $pane = new stdClass();
   $pane->pid = 'new-31d36910-3344-4700-8aab-462c13c37309';
   $pane->panel = 'second';
