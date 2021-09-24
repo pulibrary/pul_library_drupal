@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Remove Old Users feature.
+ */
+
+include_once 'remove_old_users.features.inc';
