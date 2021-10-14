@@ -1802,7 +1802,26 @@ services/access/*',
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/access/visitors/ias
+services/access/policies/library-account
+services/access/circulation-policies
+services/access/renewing
+services/access/offsite-material
+services/reserves
+services/access/policies/confidentiality
+',
+          'visibility_setting' => '0',
+        ),
+      ),
+    ),
+  );
   $pane->configuration = array(
     'admin_title' => 'Visitor Policy',
     'body' => '<p><strong><em>Updated July 13, 2021</em></strong></p><p><strong>Please note:&nbsp;PUL will continue to limit access to Library locations to Princeton University faculty, students, and staff with activated card access to buildings through the end of August. For patrons affiliated with a member of University faculty, graduate student, or staff, a small number of exceptions may be possible on a case-by-case basis. To submit a request for consideration, please visit&nbsp;the&nbsp;<a href="https://ehs.princeton.edu/VisitorPolicy" target="_blank">EHS&nbsp;visitor page</a>&nbsp;and complete the form linked on the right. Please note that the Library will need to approve this form, not the sponsor\'s department head. Send completed forms to&nbsp;<a href="mailto:refdesk@princeton.edu">refdesk@princeton.edu</a>&nbsp;and include&nbsp;the collections to be accessed by the visitor. Allow three business days for review of requests.</strong></p>',
