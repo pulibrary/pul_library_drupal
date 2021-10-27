@@ -1809,13 +1809,13 @@ services/access/*',
         'name' => 'path_visibility',
         'not' => FALSE,
         'settings' => array(
-          'paths' => 'services/access/visitors/ias
-services/access/policies/library-account
-services/access/circulation-policies
-services/access/renewing
-services/access/offsite-material
-services/reserves
-services/access/policies/confidentiality
+          'paths' => 'services/access/visitors/ias/*
+services/access/policies/library-account/*
+services/access/circulation-policies/*
+services/access/renewing/*
+services/access/offsite-material/*
+services/access/policies/confidentiality/*
+services/reserves/*
 ',
           'visibility_setting' => '0',
         ),
@@ -1824,8 +1824,8 @@ services/access/policies/confidentiality
   );
   $pane->configuration = array(
     'admin_title' => 'Visitor Policy',
-    'body' => '<p><strong><em>Updated July 13, 2021</em></strong></p><p><strong>Please note:&nbsp;PUL will continue to limit access to Library locations to Princeton University faculty, students, and staff with activated card access to buildings through the end of August. For patrons affiliated with a member of University faculty, graduate student, or staff, a small number of exceptions may be possible on a case-by-case basis. To submit a request for consideration, please visit&nbsp;the&nbsp;<a href="https://ehs.princeton.edu/VisitorPolicy" target="_blank">EHS&nbsp;visitor page</a>&nbsp;and complete the form linked on the right. Please note that the Library will need to approve this form, not the sponsor\'s department head. Send completed forms to&nbsp;<a href="mailto:refdesk@princeton.edu">refdesk@princeton.edu</a>&nbsp;and include&nbsp;the collections to be accessed by the visitor. Allow three business days for review of requests.</strong></p>',
-    'format' => 'pul_editor_html',
+    'body' => '<h3>Limited Access Note</h3><p>PUL is allowing a limited number of visitors with urgent research needs and a connection to the Princeton research community. To submit a request for consideration, please visit&nbsp;the&nbsp;<a href="https://ehs.princeton.edu/VisitorPolicy" target="_blank">EHS&nbsp;visitor page</a>&nbsp;and complete the form linked on the right. Your sponsor must be a Princeton University faculty member, staff member, or graduate student. Please note that the Library will need to approve this form, not the sponsor\'s department head. Send completed forms to&nbsp;<a href="mailto:refdesk@princeton.edu">refdesk@princeton.edu</a>&nbsp;and include&nbsp;the collections that are required to complete on-site research. Allow three business days for review of requests.</p><p>Special Collections is accepting appointments for non-Princeton researchers on a very limited basis. Visitors interested in researching within Special Collections&nbsp;must&nbsp;first contact the department through their&nbsp;<a href="https://library.princeton.edu/special-collections/ask-us">Ask Us! form</a>. Requests to visit Special Collections will only be considered through this form.</p><hr>',
+    'format' => 'full_html',
     'substitute' => 1,
     'title' => '',
     'title_heading' => 'h2',

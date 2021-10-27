@@ -306,11 +306,37 @@ function pul_makerspace_default_page_manager_handlers() {
   $display->content['new-ee9cd44e-3811-4342-a636-06a588d5b4bd'] = $pane;
   $display->panels['middle'][2] = 'new-ee9cd44e-3811-4342-a636-06a588d5b4bd';
   $pane = new stdClass();
+  $pane->pid = 'new-cc8d0f07-8a7a-44b7-8473-433e0fe82a61';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'makerspace events and workshops',
+    'body' => '<div id="api_upc_cid12260_iid771"></div><script src="https://api3.libcal.com/api_events.php?iid=771&m=upc&cid=12260&audience=&c=&d=52973&l=5&simple=ul_date&context=object&format=js"> </script>',
+    'format' => 'full_html',
+    'substitute' => 1,
+    'title' => 'Events and Workshops',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'cc8d0f07-8a7a-44b7-8473-433e0fe82a61';
+  $display->content['new-cc8d0f07-8a7a-44b7-8473-433e0fe82a61'] = $pane;
+  $display->panels['second'][0] = 'new-cc8d0f07-8a7a-44b7-8473-433e0fe82a61';
+  $pane = new stdClass();
   $pane->pid = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-get-help-menu';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -323,11 +349,30 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '957e8a07-f61a-4551-bdd3-aedbdbbdc163';
   $display->content['new-957e8a07-f61a-4551-bdd3-aedbdbbdc163'] = $pane;
-  $display->panels['second'][0] = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
+  $display->panels['second'][1] = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
+  $pane = new stdClass();
+  $pane->pid = 'new-569a4a87-8899-491e-91a4-7dfe07522fd9';
+  $pane->panel = 'second';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'library_news-panel_pane_30';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '569a4a87-8899-491e-91a4-7dfe07522fd9';
+  $display->content['new-569a4a87-8899-491e-91a4-7dfe07522fd9'] = $pane;
+  $display->panels['second'][2] = 'new-569a4a87-8899-491e-91a4-7dfe07522fd9';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';

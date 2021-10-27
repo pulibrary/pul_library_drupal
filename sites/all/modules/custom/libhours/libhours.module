@@ -106,14 +106,6 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $muddColor = $muddRss->getElementsByTagName('color')->item(0)->nodeValue;
   $mudd = "<li><a href='/special-collections/mudd' class='library-hours-link' style='border-left:".$muddColor." 35px solid'>".$muddTitle.$muddHours."</a></li>";
 
-  $pplRss = new DOMDocument();
-  $pplRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12311&format=xml&systemTime=1');
-  $pplHours = $pplRss->getElementsByTagName('rendered')->item(0)->nodeValue;
-  $pplHours = "<div class='hours'>".$pplHours."</div>";
-  $pplTitle = "<h3>Plasma Physics Library</h3>";
-  $pplColor = $pplRss->getElementsByTagName('color')->item(0)->nodeValue;
-  $ppl = "<li><a href='/plasma-physics' class='library-hours-link' style='border-left:".$pplColor." 35px solid'>".$pplTitle.$pplHours."</a></li>";
-
   $scRss = new DOMDocument();
   $scRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14275&format=xml&systemTime=1');
   $scHours = $scRss->getElementsByTagName('rendered')->item(0)->nodeValue;
@@ -132,7 +124,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
 
   $moreHours = "<a href='https://libcal.princeton.edu/hours' class='views-more-link'>More Hours</a>";
 
-  $hoursMain = $mainStart.$arch.$eal.$eng.$fst.$lew.$marq.$mend.$mudd.$ppl.$sc.$stok.$moreHours.$mainEnd;
+  $hoursMain = $mainStart.$arch.$eal.$eng.$fst.$lew.$marq.$mend.$mudd.$sc.$stok.$moreHours.$mainEnd;
 
   $content = $hoursMain;
   $block = array(
