@@ -319,8 +319,7 @@ function library_spaces_field_default_field_instances() {
     'bundle' => 'library_meeting_space_locations',
     'default_value' => array(
       0 => array(
-        'title' => '',
-        'url' => 'http://libweb5.princeton.edu/rooms/rooms.asp',
+        'url' => 'https://libcal.princeton.edu/',
       ),
     ),
     'deleted' => 0,
@@ -357,17 +356,26 @@ function library_spaces_field_default_field_instances() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
       'title' => 'value',
-      'title_label_use_field_label' => FALSE,
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => 'Reserve',
       'url' => 0,
@@ -381,6 +389,7 @@ function library_spaces_field_default_field_instances() {
       'type' => 'link_field',
       'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance:
@@ -389,8 +398,7 @@ function library_spaces_field_default_field_instances() {
     'bundle' => 'library_meeting_space_locations',
     'default_value' => array(
       0 => array(
-        'title' => '',
-        'url' => 'http://libweb5.princeton.edu/rooms/list.asp',
+        'url' => 'https://libcal.princeton.edu/',
       ),
     ),
     'deleted' => 0,
@@ -427,17 +435,26 @@ function library_spaces_field_default_field_instances() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
       'title' => 'value',
-      'title_label_use_field_label' => FALSE,
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => 'Reservation Schedule',
       'url' => 0,
@@ -451,6 +468,7 @@ function library_spaces_field_default_field_instances() {
       'type' => 'link_field',
       'weight' => 8,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance:

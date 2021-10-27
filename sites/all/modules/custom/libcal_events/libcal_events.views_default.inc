@@ -856,6 +856,11 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schemaorg_description']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schemaorg_description']['element_default_classes'] = FALSE;
+  /* Field: Content: Link to edit content */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Update Exhibition';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
@@ -1035,6 +1040,11 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schemaorg_description']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schemaorg_description']['element_default_classes'] = FALSE;
+  /* Field: Content: Link to edit content */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Update Exhibition';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
@@ -1214,6 +1224,11 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_schemaorg_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schemaorg_description']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schemaorg_description']['element_default_classes'] = FALSE;
+  /* Field: Content: Link to edit content */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Update Exhibition';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Date - end date (field_schemaorg_date:value2) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['id'] = 'field_schemaorg_date_value2';
