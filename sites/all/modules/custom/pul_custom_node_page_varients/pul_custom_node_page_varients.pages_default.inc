@@ -775,7 +775,7 @@ help/ask-a-librarian',
   $pane->panel = 'second';
   $pane->type = 'block';
   $pane->subtype = 'libhours_ask-libhours_ask';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,

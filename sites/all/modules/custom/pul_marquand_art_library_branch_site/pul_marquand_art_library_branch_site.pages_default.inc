@@ -838,7 +838,7 @@ marquand',
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_news-panel_pane_28';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
