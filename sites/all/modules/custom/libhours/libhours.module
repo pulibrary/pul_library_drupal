@@ -83,7 +83,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $lew = "<li><a href='/lewis' class='library-hours-link' style='border-left:".$lewColor." 35px solid'>".$lewTitle.$lewHours."</a></li>";
 
   $marqRss = new DOMDocument();
-  $marqRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=12313&format=xml&systemTime=1');
+  $marqRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=18259&format=xml&systemTime=1');
   $marqHours = $marqRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $marqHours = "<div class='hours'>".$marqHours."</div>";
   $marqTitle = "<h3>Marquand Art Library</h3>";
