@@ -752,6 +752,20 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed User: Last Name */
+  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
+  /* Field: Indexed User: Nick Name */
+  $handler->display->display_options['fields']['field_puluser_nick_name']['id'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: Indexed User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'search_api_index_staff_users';
@@ -769,6 +783,8 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname_1']['table'] = 'search_api_index_staff_users';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['field'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['label'] = 'Name';
+  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['text'] = '[field_puluser_lname], [field_puluser_nick_name]';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['path'] = 'staff/[name]';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alt'] = 'View Staff Member Details';
@@ -901,6 +917,20 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_entity'] = 0;
+  /* Field: Indexed User: Last Name */
+  $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['field_puluser_lname']['field'] = 'field_puluser_lname';
+  $handler->display->display_options['fields']['field_puluser_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_lname']['element_label_colon'] = FALSE;
+  /* Field: Indexed User: Nick Name */
+  $handler->display->display_options['fields']['field_puluser_nick_name']['id'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['field'] = 'field_puluser_nick_name';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_nick_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_nick_name']['element_label_colon'] = FALSE;
   /* Field: Indexed User: User ID */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'search_api_index_staff_users';
@@ -912,6 +942,8 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname_1']['table'] = 'search_api_index_staff_users';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['field'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['text'] = '[field_puluser_lname], [field_puluser_nick_name] ';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['path'] = 'staff/[name]';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alt'] = 'View Staff Member Details';
