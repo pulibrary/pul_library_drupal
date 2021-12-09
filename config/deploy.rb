@@ -304,6 +304,7 @@ namespace :deploy do
       invoke! "drupal:update_directory_owner"
       invoke "drupal:start_apache2"
       invoke "drupal:cache_clear"
+      invoke "drupal:database:update"
       invoke "drupal:features_revert"
       invoke! "drupal:cache_clear"
   end

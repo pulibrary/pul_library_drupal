@@ -1,3 +1,6 @@
+Search API Pages 1.x, dev (xxxx-xx-xx):
+---------------------------------------
+
 Search API Pages 1.5 (2018-09-17):
 ----------------------------------
 - #2995320 by drunken monkey: Added a length limit for keywords.
