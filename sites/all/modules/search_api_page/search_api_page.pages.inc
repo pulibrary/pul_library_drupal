@@ -103,7 +103,7 @@ function search_api_page_view($id, $keys = NULL, $overridden_options = array()) 
     }
 
     $ret['#results']['#results'] = $results;
-    $ret['#results']['#keys'] = $keys;
+    $ret['#results']['#keys'] = check_plain($keys);
     // Add a clean-up function to reset page options to their original values.
     if ($overridden_options) {
       $ret['#results']['#post_render'] = array('search_api_page_reset_original_options');

@@ -2,9 +2,8 @@ name = Health check for load balancers
 description = Simple end point for load balancers to check Drupal site health
 core = 7.x
 
-; Information added by Drupal.org packaging script on 2017-03-04
+; Information added by Drupal.org packaging script on 2021-07-27
 version = "7.x-1.x-dev"
 core = "7.x"
 project = "health_check"
-datestamp = "1488615487"
-
+datestamp = "1627388775"
