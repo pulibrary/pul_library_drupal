@@ -27,14 +27,14 @@ function libhours_engineering_block_view() {
 
   $mainStart = "<ul class='hours--today__branch links--decorate'>";
   $mainEnd = "</ul>";
-  
+
   $engRss = new DOMDocument();
-  $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=11490&format=xml&systemTime=1');
+  $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
   $engHours = $engRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $eng = "<li class='hours'>".$engHours."</li>";
 
   $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
-  
+
   $hoursMain = $mainStart.$eng.$mainEnd.$fullSchedule;
 
   $content = $hoursMain;
