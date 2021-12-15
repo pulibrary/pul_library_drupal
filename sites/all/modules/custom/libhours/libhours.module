@@ -58,6 +58,14 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $ealColor = $ealRss->getElementsByTagName('color')->item(0)->nodeValue;
   $eal = "<li><a href='/eastasian' class='library-hours-link' style='border-left:".$ealColor." 35px solid'>".$ealTitle.$ealHours."</a></li>";
 
+  $engRss = new DOMDocument();
+  $engRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
+  $engHours = $engRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $engHours = "<div class='hours'>".$engHours."</div>";
+  $engTitle = "<h3>Engineering Library</h3>";
+  $engColor = "#3B7CCA";
+  $eng = "<li><a href='/engineering' class='library-hours-link' style='border-left:".$engColor." 35px solid'>".$engTitle.$engHours."</a></li>";
+
   $fstRss = new DOMDocument();
   $fstRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=6975&format=xml&systemTime=1');
   $fstHours = $fstRss->getElementsByTagName('rendered')->item(0)->nodeValue;
@@ -70,7 +78,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $lewRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=7899&format=xml&systemTime=1');
   $lewHours = $lewRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $lewHours = "<div class='hours'>".$lewHours."</div>";
-  $lewTitle = "<h3>Lewis & Engineering Library</h3>";
+  $lewTitle = "<h3>Lewis Science Library</h3>";
   $lewColor = $lewRss->getElementsByTagName('color')->item(0)->nodeValue;
   $lew = "<li><a href='/lewis' class='library-hours-link' style='border-left:".$lewColor." 35px solid'>".$lewTitle.$lewHours."</a></li>";
 
@@ -116,7 +124,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
 
   $moreHours = "<a href='https://libcal.princeton.edu/hours' class='views-more-link'>More Hours</a>";
 
-  $hoursMain = $mainStart.$arch.$eal.$fst.$lew.$marq.$mend.$mudd.$sc.$stok.$moreHours.$mainEnd;
+  $hoursMain = $mainStart.$arch.$eal.$eng.$fst.$lew.$marq.$mend.$mudd.$sc.$stok.$moreHours.$mainEnd;
 
   $content = $hoursMain;
   $block = array(
