@@ -84,26 +84,47 @@ function marquand_sales_catalogs_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_marquand_sales_catalog';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_marquand_sales_catalog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_marquand_sales_catalog';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_marquand_sales_catalog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_marquand_sales_catalog';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_marquand_sales_catalog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__marquand_sales_catalog';
   $strongarm->value = array(
-    'view_modes' => array(),
     'extra_fields' => array(
+      'display' => array(),
       'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
         'path' => array(
           'weight' => '30',
         ),
         'redirect' => array(
           'weight' => '30',
         ),
+        'title' => array(
+          'weight' => '-5',
+        ),
         'xmlsitemap' => array(
           'weight' => '30',
         ),
       ),
-      'display' => array(),
     ),
+    'view_modes' => array(),
   );
   $export['field_bundle_settings_node__marquand_sales_catalog'] = $strongarm;
 
@@ -166,6 +187,16 @@ function marquand_sales_catalogs_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_sales_catalog_city_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_sales_catalog_city_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_marquand_sales_catalog';
+  $strongarm->value = array(
+    'priority' => '0.5',
+    'status' => '0',
+  );
+  $export['xmlsitemap_settings_node_marquand_sales_catalog'] = $strongarm;
 
   return $export;
 }

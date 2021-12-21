@@ -49,6 +49,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -119,6 +125,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'weight' => 3,
       ),
       'featured_link_url' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -195,6 +207,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -261,6 +279,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'weight' => 1,
       ),
       'featured_link_url' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -337,6 +361,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -408,6 +438,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -474,6 +510,12 @@ function marquand_sales_catalogs_field_default_field_instances() {
         'weight' => 4,
       ),
       'featured_link_url' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_econ_library_content_types.features.field_base.inc
@@ -10,7 +11,7 @@
 function pul_econ_library_content_types_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_econ_lecon_lib_se_current'
+  // Exported field_base: 'field_econ_lecon_lib_se_current'.
   $field_bases['field_econ_lecon_lib_se_current'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +33,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_cd_call_number'
+  // Exported field_base: 'field_econ_lib_cd_call_number'.
   $field_bases['field_econ_lib_cd_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -54,7 +55,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_cd_covers'
+  // Exported field_base: 'field_econ_lib_cd_covers'.
   $field_bases['field_econ_lib_cd_covers'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -83,7 +84,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_cd_electronic'
+  // Exported field_base: 'field_econ_lib_cd_electronic'.
   $field_bases['field_econ_lib_cd_electronic'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -105,7 +106,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_cd_print'
+  // Exported field_base: 'field_econ_lib_cd_print'.
   $field_bases['field_econ_lib_cd_print'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -127,7 +128,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_se_binding_color'
+  // Exported field_base: 'field_econ_lib_se_binding_color'.
   $field_bases['field_econ_lib_se_binding_color'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -156,7 +157,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_se_binding_freq'
+  // Exported field_base: 'field_econ_lib_se_binding_freq'.
   $field_bases['field_econ_lib_se_binding_freq'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -185,7 +186,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_se_call_number'
+  // Exported field_base: 'field_econ_lib_se_call_number'.
   $field_bases['field_econ_lib_se_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -207,7 +208,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_se_country'
+  // Exported field_base: 'field_econ_lib_se_country'.
   $field_bases['field_econ_lib_se_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -236,7 +237,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_se_exchange'
+  // Exported field_base: 'field_econ_lib_se_exchange'.
   $field_bases['field_econ_lib_se_exchange'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -265,7 +266,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_se_last_bound'
+  // Exported field_base: 'field_econ_lib_se_last_bound'.
   $field_bases['field_econ_lib_se_last_bound'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -287,7 +288,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_se_notes'
+  // Exported field_base: 'field_econ_lib_se_notes'.
   $field_bases['field_econ_lib_se_notes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -309,7 +310,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econ_lib_se_web_site'
+  // Exported field_base: 'field_econ_lib_se_web_site'.
   $field_bases['field_econ_lib_se_web_site'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -341,7 +342,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_econ_lib_wp_bound_holdings'
+  // Exported field_base: 'field_econ_lib_wp_bound_holdings'.
   $field_bases['field_econ_lib_wp_bound_holdings'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -365,7 +366,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econ_lib_wp_call_number'
+  // Exported field_base: 'field_econ_lib_wp_call_number'.
   $field_bases['field_econ_lib_wp_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -389,7 +390,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econ_lib_wp_continues'
+  // Exported field_base: 'field_econ_lib_wp_continues'.
   $field_bases['field_econ_lib_wp_continues'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -411,7 +412,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_econ_lib_wp_publisher'
+  // Exported field_base: 'field_econ_lib_wp_publisher'.
   $field_bases['field_econ_lib_wp_publisher'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -440,7 +441,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econ_lib_wp_unbound'
+  // Exported field_base: 'field_econ_lib_wp_unbound'.
   $field_bases['field_econ_lib_wp_unbound'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -472,7 +473,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_econlib_cbh_bank_name'
+  // Exported field_base: 'field_econlib_cbh_bank_name'.
   $field_bases['field_econlib_cbh_bank_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -501,7 +502,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econlib_cbh_bank_website'
+  // Exported field_base: 'field_econlib_cbh_bank_website'.
   $field_bases['field_econlib_cbh_bank_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -533,7 +534,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_econlib_cbh_binding_freq'
+  // Exported field_base: 'field_econlib_cbh_binding_freq'.
   $field_bases['field_econlib_cbh_binding_freq'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -562,7 +563,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econlib_cbh_call_number'
+  // Exported field_base: 'field_econlib_cbh_call_number'.
   $field_bases['field_econlib_cbh_call_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -586,7 +587,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econlib_cbh_color'
+  // Exported field_base: 'field_econlib_cbh_color'.
   $field_bases['field_econlib_cbh_color'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -615,7 +616,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_econlib_cbh_current_issues'
+  // Exported field_base: 'field_econlib_cbh_current_issues'.
   $field_bases['field_econlib_cbh_current_issues'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -639,7 +640,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econlib_cbh_last_bound'
+  // Exported field_base: 'field_econlib_cbh_last_bound'.
   $field_bases['field_econlib_cbh_last_bound'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -663,7 +664,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econlib_cbh_notes'
+  // Exported field_base: 'field_econlib_cbh_notes'.
   $field_bases['field_econlib_cbh_notes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -685,7 +686,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_econlib_cbh_po_number'
+  // Exported field_base: 'field_econlib_cbh_po_number'.
   $field_bases['field_econlib_cbh_po_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -709,7 +710,7 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_econlib_cbh_region'
+  // Exported field_base: 'field_econlib_cbh_region'.
   $field_bases['field_econlib_cbh_region'] = array(
     'active' => 1,
     'cardinality' => 1,

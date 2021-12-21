@@ -40,6 +40,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -95,6 +101,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -164,6 +176,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -223,6 +241,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -292,6 +316,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -351,6 +381,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -425,6 +461,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -469,7 +511,9 @@ function pul_library_users_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 19,
       ),
@@ -480,6 +524,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 9,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -512,6 +562,7 @@ function pul_library_users_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -554,6 +605,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -626,6 +683,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -683,6 +746,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -749,6 +818,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -809,6 +884,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -860,6 +941,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -923,6 +1010,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -980,6 +1073,12 @@ function pul_library_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'staff_brief_listing' => array(
@@ -1043,6 +1142,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1102,6 +1207,12 @@ function pul_library_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
@@ -1167,6 +1278,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1226,6 +1343,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1281,6 +1404,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1345,6 +1474,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1399,6 +1534,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1465,6 +1606,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1524,6 +1671,12 @@ function pul_library_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
@@ -1587,6 +1740,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1645,6 +1804,12 @@ function pul_library_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
@@ -1705,6 +1870,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1756,6 +1927,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 8,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1823,6 +2000,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1881,6 +2064,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1946,6 +2135,12 @@ function pul_library_users_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'staff_brief_listing' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2005,6 +2200,12 @@ function pul_library_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

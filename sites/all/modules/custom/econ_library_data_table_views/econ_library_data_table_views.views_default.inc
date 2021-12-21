@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * econ_library_data_table_views.views_default.inc
@@ -147,7 +148,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['table'] = 'field_data_field_econ_lib_se_binding_freq';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['field'] = 'field_econ_lib_se_binding_freq';
   $handler->display->display_options['fields']['field_econ_lib_se_binding_freq']['element_default_classes'] = FALSE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -157,7 +158,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -212,7 +213,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -326,7 +327,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['table'] = 'field_data_field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['field'] = 'field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['element_default_classes'] = FALSE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -334,7 +335,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -619,13 +620,13 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['table'] = 'field_data_field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['field'] = 'field_econ_lib_cd_electronic';
   $handler->display->display_options['fields']['field_econ_lib_cd_electronic']['element_default_classes'] = FALSE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -823,13 +824,13 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['table'] = 'field_data_field_econlib_cbh_notes';
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['field'] = 'field_econlib_cbh_notes';
   $handler->display->display_options['fields']['field_econlib_cbh_notes']['element_default_classes'] = FALSE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1039,7 +1040,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1337,13 +1338,13 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_econ_lib_wp_unbound']['type'] = 'link_short';
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1478,7 +1479,7 @@ function econ_library_data_table_views_views_default_views() {
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

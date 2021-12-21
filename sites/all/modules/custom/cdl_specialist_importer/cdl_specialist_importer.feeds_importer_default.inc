@@ -16,32 +16,38 @@ function cdl_specialist_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'cdl_specialist_import';
   $feeds_importer->config = array(
-    'name' => 'Specialist Import',
+    'content_type' => '',
     'description' => 'Import Subject Specialists',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Specialist Import',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '568',
         'authorize' => 1,
+        'bundle' => 'subject_specialists',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'Bio',
@@ -129,52 +135,52 @@ function cdl_specialist_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           17 => array(
+            'autocreate' => 1,
             'source' => 'SUBJECT SPECIALTY 01',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           18 => array(
+            'autocreate' => 1,
             'source' => 'SUBJECT SPECIALTY 02',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           19 => array(
+            'autocreate' => 1,
             'source' => 'SUBJECT SPECIALTY 03',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           20 => array(
+            'autocreate' => 1,
             'source' => 'SUBJECT SPECIALTY 04',
             'target' => 'field_selector_subject_areas',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           21 => array(
+            'autocreate' => 1,
             'source' => 'Departments & Programs Served 01',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           22 => array(
+            'autocreate' => 1,
             'source' => 'Departments & Programs Served 02',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           23 => array(
+            'autocreate' => 1,
             'source' => 'Departments & Programs Served 03',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           24 => array(
+            'autocreate' => 1,
             'source' => 'Departments & Programs Served 04',
             'target' => 'field_sel_library_department',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           25 => array(
             'source' => 'Display Name',
@@ -192,18 +198,12 @@ function cdl_specialist_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '2',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'subject_specialists',
+        'update_existing' => '2',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['cdl_specialist_import'] = $feeds_importer;
 

@@ -49,6 +49,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -131,6 +137,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -202,6 +214,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -267,6 +285,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 21,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -328,6 +352,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 27,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -423,6 +453,12 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 26,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -526,6 +562,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 25,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -616,6 +658,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 22,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -692,6 +740,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 23,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -767,6 +821,12 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 24,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -845,6 +905,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 19,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -931,6 +997,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -997,6 +1069,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 12,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1072,6 +1150,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1138,6 +1222,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 6,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1217,6 +1307,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1290,6 +1386,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1356,6 +1458,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 14,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1433,6 +1541,12 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 28,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -1546,6 +1660,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1638,6 +1758,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 20,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1749,6 +1875,12 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 29,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -1864,6 +1996,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1930,6 +2068,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 1,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2012,6 +2156,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2078,6 +2228,12 @@ function pul_libraries_ct_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 30,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -2150,6 +2306,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 31,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -2227,6 +2389,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2293,6 +2461,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 2,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2368,6 +2542,12 @@ function pul_libraries_ct_field_default_field_instances() {
         'weight' => 11,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

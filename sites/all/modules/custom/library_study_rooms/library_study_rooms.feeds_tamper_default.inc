@@ -19,9 +19,9 @@ function library_study_rooms_feeds_tamper_default() {
   $feeds_tamper->source = 'Room Numbers';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => '%s//%s',
     'limit' => '',
     'real_separator' => ' // ',
+    'separator' => '%s//%s',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';

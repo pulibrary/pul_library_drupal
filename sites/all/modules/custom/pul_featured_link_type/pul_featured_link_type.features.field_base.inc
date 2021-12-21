@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_featured_link_type.features.field_base.inc

@@ -21,23 +21,23 @@ function pul_fields_for_basic_pages_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Attachments',
-    'weight' => '3',
     'children' => array(
       0 => 'field_basic_page_files',
       1 => 'field_basic_page_images',
       2 => 'field_library_image',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Attachments',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'required_fields' => 0,
         'classes' => ' group-basic-page-attachments field-group-tab',
         'description' => '',
+        'required_fields' => 0,
       ),
-      'formatter' => 'open',
+      'label' => 'Attachments',
     ),
+    'format_type' => 'tab',
+    'label' => 'Attachments',
+    'weight' => '3',
   );
   $field_groups['group_basic_page_attachments|node|page|form'] = $field_group;
 

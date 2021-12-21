@@ -156,6 +156,26 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pul_landing_page';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'content_body_mode' => array(
         'custom_settings' => TRUE,
@@ -163,26 +183,6 @@ function spotlight_content_types_and_views_strongarm() {
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'redirect' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-        'workbench_access' => array(
-          'weight' => '0',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__pul_landing_page'] = $strongarm;
@@ -192,6 +192,23 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pul_spotlight_graphic';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'content_body_mode' => array(
         'custom_settings' => FALSE,
@@ -199,23 +216,6 @@ function spotlight_content_types_and_views_strongarm() {
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'redirect' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__pul_spotlight_graphic'] = $strongarm;
@@ -324,8 +324,8 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_pul_landing_page';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '1.0',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_pul_landing_page'] = $strongarm;
 
@@ -334,8 +334,8 @@ function spotlight_content_types_and_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_pul_spotlight_graphic';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_pul_spotlight_graphic'] = $strongarm;
 

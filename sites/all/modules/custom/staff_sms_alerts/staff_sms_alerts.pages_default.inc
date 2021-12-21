@@ -19,6 +19,8 @@ function staff_sms_alerts_default_page_manager_pages() {
   $page->path = 'staff/sms-alerts';
   $page->access = array(
     'logic' => 'and',
+    'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -35,27 +37,27 @@ function staff_sms_alerts_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Content',
-        'keyword' => 'node',
-        'name' => 'entity:node',
-        'entity_id' => '44118',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
-    'name' => 'panel',
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(
+      0 => array(
+        'entity_id' => '44118',
+        'id' => 1,
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+      ),
+    ),
+    'css' => '',
+    'css_id' => '',
+    'name' => 'panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -83,25 +85,25 @@ function staff_sms_alerts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'admin_title' => 'Sign-Up for SMS Alerts (Staff Only)',
-    'title' => '',
-    'title_heading' => 'h2',
     'body' => '<p>Please <a href="/user">log in</a> to view this form.</p>',
     'format' => 'pul_editor_html',
-    'substitute' => 1,
     'name' => 'login_site',
+    'substitute' => 1,
+    'title' => '',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -123,21 +125,21 @@ function staff_sms_alerts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -159,22 +161,22 @@ function staff_sms_alerts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'context' => 'context_entity:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -196,23 +198,23 @@ function staff_sms_alerts_default_page_manager_pages() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 5,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
-    'view_mode' => 'full',
     'context' => 'context_entity:node_1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(

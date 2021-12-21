@@ -21,8 +21,6 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Expert Profile',
-    'weight' => '6',
     'children' => array(
       0 => 'field_puluser_libguide_author_id',
       1 => 'field_puluser_sublibrarian',
@@ -30,16 +28,18 @@ function pul_library_users_field_group_info() {
       3 => 'field_expert_subject_areas',
       4 => 'field_expert_departments',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Expert Profile',
+      'formatter' => 'closed',
       'instance_settings' => array(
-        'required_fields' => 1,
         'classes' => 'group-expert-profile field-group-tab',
         'description' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'closed',
+      'label' => 'Expert Profile',
     ),
+    'format_type' => 'tab',
+    'label' => 'Expert Profile',
+    'weight' => '6',
   );
   $field_groups['group_expert_profile|user|user|form'] = $field_group;
 
@@ -53,8 +53,6 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Personal Librarian Information',
-    'weight' => '4',
     'children' => array(
       0 => 'field_puluser_appt_calendar',
       1 => 'field_personal_lib_statement',
@@ -66,15 +64,17 @@ function pul_library_users_field_group_info() {
       7 => 'field_personal_lib_class_year',
       8 => 'field_pl_residential_college',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => '',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Personal Librarian Information',
+    'weight' => '4',
   );
   $field_groups['group_personal_lib_info|user|user|form'] = $field_group;
 
@@ -88,8 +88,6 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Basic Info',
-    'weight' => '1',
     'children' => array(
       0 => 'field_puluser_department',
       1 => 'field_puluser_displaytitle',
@@ -105,15 +103,17 @@ function pul_library_users_field_group_info() {
       11 => 'field_puluser_middle_name',
       12 => 'picture',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => ' group-puluser-basicinfo field-group-tab',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Basic Info',
+    'weight' => '1',
   );
   $field_groups['group_puluser_basicinfo|user|user|form'] = $field_group;
 
@@ -127,8 +127,6 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Administrative Info',
-    'weight' => '3',
     'children' => array(
       0 => 'field_puluser_dmgimport_id',
       1 => 'field_puluser_librarystaffid',
@@ -141,15 +139,17 @@ function pul_library_users_field_group_info() {
       8 => 'field_puluser_temp_staff_record',
       9 => 'timezone',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => ' group-user-admininfo field-group-tab',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Administrative Info',
+    'weight' => '3',
   );
   $field_groups['group_user_admininfo|user|user|form'] = $field_group;
 
@@ -163,22 +163,22 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Contact Info',
-    'weight' => '2',
     'children' => array(
       0 => 'field_puluser_office',
       1 => 'field_puluser_phone_number',
       2 => 'field_puluser_building_location',
     ),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => ' group-user-contact field-group-tab',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Contact Info',
+    'weight' => '2',
   );
   $field_groups['group_user_contact|user|user|form'] = $field_group;
 
@@ -192,18 +192,18 @@ function pul_library_users_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Subject Librarian Details',
-    'weight' => '7',
     'children' => array(),
-    'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
-        'description' => '',
         'classes' => ' group-user-sublibrarian field-group-tab',
+        'description' => '',
         'required_fields' => 1,
       ),
     ),
+    'format_type' => 'tab',
+    'label' => 'Subject Librarian Details',
+    'weight' => '7',
   );
   $field_groups['group_user_sublibrarian|user|user|form'] = $field_group;
 

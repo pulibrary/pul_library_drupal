@@ -86,20 +86,52 @@ function library_study_rooms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__study_room';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '10',
+        ),
+        'redirect' => array(
+          'weight' => '9',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '8',
+        ),
       ),
+    ),
+    'view_modes' => array(
       'brief_faq_display' => array(
         'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
       ),
       'database_description_only' => array(
         'custom_settings' => TRUE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
       'overridden_title_in_lists' => array(
         'custom_settings' => TRUE,
       ),
-      'full' => array(
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -111,44 +143,12 @@ function library_study_rooms_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'content_body_mode' => array(
-        'custom_settings' => FALSE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '10',
-        ),
-        'redirect' => array(
-          'weight' => '9',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '8',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__study_room'] = $strongarm;
@@ -212,8 +212,8 @@ function library_study_rooms_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_study_room';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_study_room'] = $strongarm;
 

@@ -44,8 +44,8 @@ function pul_library_users_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_departments';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.3',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_departments'] = $strongarm;
 
@@ -54,8 +54,8 @@ function pul_library_users_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_division';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.3',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_division'] = $strongarm;
 
@@ -64,8 +64,8 @@ function pul_library_users_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_section';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_section'] = $strongarm;
 
@@ -74,8 +74,8 @@ function pul_library_users_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_unit';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_unit'] = $strongarm;
 

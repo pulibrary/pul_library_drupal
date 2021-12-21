@@ -16,70 +16,70 @@ function mendel_periodicals_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'mendel_periodicals';
   $feeds_importer->config = array(
-    'name' => 'Mendel Periodicals',
+    'content_type' => '',
     'description' => '',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'delete_uploaded_file' => FALSE,
-        'direct' => FALSE,
-        'directory' => 'private://feeds',
         'allowed_schemes' => array(
           0 => 'public',
           1 => 'private',
         ),
+        'delete_uploaded_file' => FALSE,
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Mendel Periodicals',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'encoding' => 'UTF-8',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '4516',
         'authorize' => 1,
+        'bundle' => 'mendel_periodical',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
+        'insert_new' => '1',
+        'language' => 'und',
         'mappings' => array(
           0 => array(
+            'language' => 'und',
             'source' => 'Title',
             'target' => 'title',
             'unique' => FALSE,
-            'language' => 'und',
           ),
           1 => array(
+            'language' => 'und',
             'source' => 'Catalog Link',
             'target' => 'field_musper_catalog_url:url',
             'unique' => FALSE,
-            'language' => 'und',
           ),
           2 => array(
+            'language' => 'und',
             'source' => 'Location',
             'target' => 'field_mus_periodical_location',
             'unique' => FALSE,
-            'language' => 'und',
           ),
         ),
-        'insert_new' => '1',
+        'skip_hash_check' => 0,
         'update_existing' => '2',
         'update_non_existent' => 'delete',
-        'input_format' => 'plain_text',
-        'skip_hash_check' => 0,
-        'bundle' => 'mendel_periodical',
-        'language' => 'und',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['mendel_periodicals'] = $feeds_importer;
 

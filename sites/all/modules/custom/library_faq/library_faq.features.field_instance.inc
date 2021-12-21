@@ -44,6 +44,12 @@ function library_faq_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -102,6 +108,12 @@ function library_faq_field_default_field_instances() {
         'weight' => 2,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -185,6 +197,12 @@ function library_faq_field_default_field_instances() {
         'weight' => 1,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -285,6 +303,12 @@ function library_faq_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -337,11 +361,19 @@ function library_faq_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 4,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -368,6 +400,7 @@ function library_faq_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -416,6 +449,12 @@ function library_faq_field_default_field_instances() {
         'weight' => 3,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -478,6 +517,12 @@ function library_faq_field_default_field_instances() {
         'weight' => 5,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * database_keyword_search_view.features.inc

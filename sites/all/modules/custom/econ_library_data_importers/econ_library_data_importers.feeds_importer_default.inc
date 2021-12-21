@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * econ_library_data_importers.feeds_importer_default.inc
@@ -15,44 +16,50 @@ function econ_library_data_importers_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'econ_lib_central_bank_holdings';
   $feeds_importer->config = array(
-    'name' => 'Econ Library Central Bank Holdings',
+    'content_type' => '',
     'description' => 'Econ Library Central Bank Holdings',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Econ Library Central Bank Holdings',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '413',
         'authorize' => 1,
+        'bundle' => 'econ_lib_central_bank_holdings',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
+            'autocreate' => 1,
             'source' => 'Region',
             'target' => 'field_econlib_cbh_region',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           1 => array(
+            'autocreate' => 1,
             'source' => 'Bank Name',
             'target' => 'field_econlib_cbh_bank_name',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'Title',
@@ -85,16 +92,16 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
           8 => array(
+            'autocreate' => 1,
             'source' => 'Color',
             'target' => 'field_econlib_cbh_color',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           9 => array(
+            'autocreate' => 1,
             'source' => 'Binding Frequency',
             'target' => 'field_econlib_cbh_binding_freq',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           10 => array(
             'source' => 'Notes',
@@ -102,18 +109,12 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'econ_lib_central_bank_holdings',
+        'update_existing' => '0',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['econ_lib_central_bank_holdings'] = $feeds_importer;
 
@@ -122,32 +123,38 @@ function econ_library_data_importers_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'econ_library_company_directories';
   $feeds_importer->config = array(
-    'name' => 'Econ Library Company Directories',
+    'content_type' => '',
     'description' => 'Econ Library Company Directories',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Econ Library Company Directories',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '413',
         'authorize' => 1,
+        'bundle' => 'econ_library_company_directories',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'Title',
@@ -155,10 +162,10 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => 0,
           ),
           1 => array(
+            'autocreate' => 1,
             'source' => 'Covers',
             'target' => 'field_econ_lib_cd_covers',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'Print',
@@ -176,18 +183,12 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'econ_library_company_directories',
+        'update_existing' => '0',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['econ_library_company_directories'] = $feeds_importer;
 
@@ -196,44 +197,50 @@ function econ_library_data_importers_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'econ_library_stock_exchange_holdings';
   $feeds_importer->config = array(
-    'name' => 'Econ Library Stock Exchange Holdings',
+    'content_type' => '',
     'description' => 'Econ Library Stock Exchange Holdings',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Econ Library Stock Exchange Holdings',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '413',
         'authorize' => 1,
+        'bundle' => 'econ_library_stock_exchange_hold',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
+            'autocreate' => 1,
             'source' => 'Country',
             'target' => 'field_econ_lib_se_country',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           1 => array(
+            'autocreate' => 1,
             'source' => 'Exchange',
             'target' => 'field_econ_lib_se_exchange',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'Title',
@@ -266,30 +273,24 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
           8 => array(
+            'autocreate' => 1,
             'source' => 'Binding Color',
             'target' => 'field_econ_lib_se_binding_color',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           9 => array(
+            'autocreate' => 1,
             'source' => 'Binding Frequency',
             'target' => 'field_econ_lib_se_binding_freq',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
         ),
-        'update_existing' => '0',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'econ_library_stock_exchange_hold',
+        'update_existing' => '0',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['econ_library_stock_exchange_holdings'] = $feeds_importer;
 
@@ -298,32 +299,38 @@ function econ_library_data_importers_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'econ_working_papers';
   $feeds_importer->config = array(
-    'name' => 'Econ Working Papers',
+    'content_type' => '',
     'description' => 'Econlib Working Papers',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'public://feeds',
         'allowed_schemes' => array(
           0 => 'public',
         ),
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Econ Working Papers',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'expire' => '-1',
         'author' => '413',
         'authorize' => 1,
+        'bundle' => 'econ_working_papers',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'Title',
@@ -331,10 +338,10 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
+            'autocreate' => 1,
             'source' => 'Publisher',
             'target' => 'field_econ_lib_wp_publisher',
             'term_search' => '0',
-            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'Continues',
@@ -357,18 +364,12 @@ function econ_library_data_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
-        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'econ_working_papers',
+        'update_existing' => '0',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['econ_working_papers'] = $feeds_importer;
 

@@ -20,34 +20,34 @@ function library_faq_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -14;
   $handler->conf = array(
-    'title' => 'FAQ Page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'one-sidebar sidebar-second faq',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         1 => array(
+          'context' => 'argument_term_1',
           'name' => 'term_vocabulary',
+          'not' => FALSE,
           'settings' => array(
             'vids' => array(
               20 => '20',
             ),
           ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => 'one-sidebar sidebar-second faq',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_paths' => 'help',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Help',
-    'panels_breadcrumbs_paths' => 'help',
-    'panels_breadcrumbs_home' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'FAQ Page',
   );
   $display = new panels_display();
   $display->layout = 'pul-base-nine-three';
@@ -55,10 +55,10 @@ function library_faq_default_page_manager_handlers() {
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'middle' => NULL,
-      'left' => NULL,
-      'right' => NULL,
       'first' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
       'second' => NULL,
     ),
   );
@@ -100,23 +100,23 @@ function library_faq_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '',
-    'url' => '',
-    'display' => 'default',
     'context' => array(
       0 => 'argument_term_1.tid',
     ),
+    'display' => 'default',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
     'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -138,13 +138,13 @@ function library_faq_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'faq/microforms-service',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'faq/microforms-service',
+          'visibility_setting' => '1',
+        ),
       ),
     ),
   );
@@ -172,13 +172,13 @@ function library_faq_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '0',
-          'paths' => 'faq/microforms-service',
-        ),
         'context' => 'empty',
+        'name' => 'path_visibility',
         'not' => FALSE,
+        'settings' => array(
+          'paths' => 'faq/microforms-service',
+          'visibility_setting' => '0',
+        ),
       ),
     ),
   );

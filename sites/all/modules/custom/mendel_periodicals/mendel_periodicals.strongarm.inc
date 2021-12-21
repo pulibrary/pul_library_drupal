@@ -86,17 +86,17 @@ function mendel_periodicals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__mendel_periodical';
   $strongarm->value = array(
-    'view_modes' => array(),
     'extra_fields' => array(
+      'display' => array(),
       'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
         'path' => array(
           'weight' => '30',
         ),
         'redirect' => array(
           'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
         ),
         'workbench_access' => array(
           'weight' => '0',
@@ -105,8 +105,8 @@ function mendel_periodicals_strongarm() {
           'weight' => '30',
         ),
       ),
-      'display' => array(),
     ),
+    'view_modes' => array(),
   );
   $export['field_bundle_settings_node__mendel_periodical'] = $strongarm;
 
@@ -152,8 +152,8 @@ function mendel_periodicals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_mendel_periodical';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_mendel_periodical'] = $strongarm;
 
@@ -162,8 +162,8 @@ function mendel_periodicals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_mendel_periodical_location';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_mendel_periodical_location'] = $strongarm;
 
