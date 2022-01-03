@@ -153,6 +153,7 @@
     a {
       color: $centered-navigation-color;
       display: inline-block;
+      text-decoration: none;
 
       @include breakpoint(max-width $desk) {
         width: 100%;
