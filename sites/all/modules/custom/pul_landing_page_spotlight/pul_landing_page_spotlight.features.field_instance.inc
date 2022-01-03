@@ -43,6 +43,12 @@ function pul_landing_page_spotlight_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -114,6 +120,12 @@ function pul_landing_page_spotlight_field_default_field_instances() {
         ),
         'type' => 'link_default',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -197,6 +209,12 @@ function pul_landing_page_spotlight_field_default_field_instances() {
           'image_style' => 'medium',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
@@ -309,6 +327,12 @@ function pul_landing_page_spotlight_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -377,6 +401,12 @@ function pul_landing_page_spotlight_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',

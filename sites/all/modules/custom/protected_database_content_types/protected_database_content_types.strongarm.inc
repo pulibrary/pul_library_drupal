@@ -119,9 +119,23 @@ function protected_database_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_ip_protected_db_resource';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_ip_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_show_preview_changes_node_cas_protected_db_resource';
   $strongarm->value = 1;
   $export['diff_show_preview_changes_node_cas_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_ip_protected_db_resource';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_ip_protected_db_resource'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -133,23 +147,62 @@ function protected_database_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_ip_protected_db_resource';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_ip_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__cas_protected_db_resource';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
+    ),
+    'view_modes' => array(
       'brief_faq_display' => array(
         'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => FALSE,
       ),
       'database_description_only' => array(
         'custom_settings' => TRUE,
       ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => TRUE,
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -160,44 +213,12 @@ function protected_database_content_types_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'content_body_mode' => array(
-        'custom_settings' => FALSE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'redirect' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__cas_protected_db_resource'] = $strongarm;
@@ -207,21 +228,53 @@ function protected_database_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__ip_protected_db_resource';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'teaser' => array(
+      'brief_faq_display' => array(
         'custom_settings' => TRUE,
       ),
-      'brief_faq_display' => array(
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
       'database_description_only' => array(
         'custom_settings' => TRUE,
       ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => TRUE,
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -232,44 +285,12 @@ function protected_database_content_types_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'redirect' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__ip_protected_db_resource'] = $strongarm;
@@ -372,10 +393,20 @@ function protected_database_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_cas_protected_db_resource';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_cas_protected_db_resource'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_ip_protected_db_resource';
+  $strongarm->value = array(
+    'priority' => '0.5',
+    'status' => '0',
+  );
+  $export['xmlsitemap_settings_node_ip_protected_db_resource'] = $strongarm;
 
   return $export;
 }

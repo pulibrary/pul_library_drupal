@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * econ_library_data_table_views.features.inc

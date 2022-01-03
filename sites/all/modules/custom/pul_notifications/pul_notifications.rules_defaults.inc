@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pul_notifications.rules_defaults.inc
@@ -32,7 +33,7 @@ function pul_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
+            "roles" : { "value" : { "4" : "4" } },
             "subject" : "A DMG resource has been updated. ",
             "message" : "A DMG [entity:content-type], [entity:title],  at [entity:url] has been updated by [site:current-user] created by [entity:author]"
           }
@@ -62,9 +63,9 @@ function pul_notifications_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "3" : "3", "8" : "8", "4" : "4" } },
+            "roles" : { "value" : { "4" : "4" } },
             "subject" : "A new DMG Resource has been created. ",
-            "message" : "A new primary DMG has been created at [entity:url]. It\\u0027s proxy value is \\ufeff\\ufeff\\ufeff[entity:field-db-use-proxy]. "
+            "message" : "A new primary DMG has been created at [entity:url] by [site:current-user]. It\\u0027s proxy value is \\ufeff\\ufeff\\ufeff[entity:field-db-use-proxy]. "
           }
         }
       ],

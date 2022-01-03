@@ -43,6 +43,12 @@ function library_buildings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -111,6 +117,12 @@ function library_buildings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -175,6 +187,12 @@ function library_buildings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -247,6 +265,12 @@ function library_buildings_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -312,6 +336,12 @@ function library_buildings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -379,6 +409,12 @@ function library_buildings_field_default_field_instances() {
         ),
         'type' => 'link_default',
         'weight' => 12,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -469,6 +505,12 @@ function library_buildings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
         'settings' => array(),
@@ -537,6 +579,12 @@ function library_buildings_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',
@@ -617,6 +665,12 @@ function library_buildings_field_default_field_instances() {
         ),
         'type' => 'geofield_wkt',
         'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'overridden_title_in_lists' => array(
         'label' => 'above',

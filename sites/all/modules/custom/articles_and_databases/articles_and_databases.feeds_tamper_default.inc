@@ -34,12 +34,12 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'active';
   $feeds_tamper->plugin_id = 'convert_boolean';
   $feeds_tamper->settings = array(
-    'true_value' => '-1',
     'false_value' => '0',
     'match_case' => 0,
     'no_match' => 'true',
-    'other_text' => '',
     'no_match_value' => TRUE,
+    'other_text' => '',
+    'true_value' => '-1',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Convert to boolean';
@@ -53,13 +53,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'body';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';
@@ -73,13 +73,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'coverDates';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace Null';
@@ -93,9 +93,9 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'keywords';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => ';',
     'limit' => '',
     'real_separator' => ';',
+    'separator' => ';',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode Database Keywords';
@@ -109,13 +109,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'keywords';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 0,
-    'word_boundaries' => 1,
-    'whole' => 0,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/\\bNULL\\b/i',
+    'replace' => '',
+    'whole' => 0,
+    'word_boundaries' => 1,
   );
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Find replace';
@@ -129,12 +129,12 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'libwebcomp';
   $feeds_tamper->plugin_id = 'convert_boolean';
   $feeds_tamper->settings = array(
-    'true_value' => '-1',
     'false_value' => '',
     'match_case' => 0,
     'no_match' => 'null',
-    'other_text' => '',
     'no_match_value' => NULL,
+    'other_text' => '',
+    'true_value' => '-1',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Convert to boolean';
@@ -148,13 +148,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'locationAccess';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';
@@ -168,13 +168,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'longDescription';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';
@@ -188,13 +188,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'moreInformation';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';
@@ -208,12 +208,12 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'noProxy';
   $feeds_tamper->plugin_id = 'convert_boolean';
   $feeds_tamper->settings = array(
-    'true_value' => '0',
     'false_value' => '-1',
     'match_case' => 0,
     'no_match' => 'true',
-    'other_text' => '',
     'no_match_value' => TRUE,
+    'other_text' => '',
+    'true_value' => '0',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Convert to boolean';
@@ -227,13 +227,13 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'notes';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'NULL',
-    'replace' => '',
     'case_sensitive' => 1,
-    'word_boundaries' => 0,
-    'whole' => 1,
+    'find' => 'NULL',
     'regex' => TRUE,
     'regex_find' => '/^NULL$/',
+    'replace' => '',
+    'whole' => 1,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';
@@ -274,12 +274,12 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->source = 'dbs';
   $feeds_tamper->plugin_id = 'convert_boolean';
   $feeds_tamper->settings = array(
-    'true_value' => '0',
     'false_value' => '-1',
     'match_case' => 0,
     'no_match' => 'false',
-    'other_text' => '',
     'no_match_value' => FALSE,
+    'other_text' => '',
+    'true_value' => '0',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Convert to boolean';

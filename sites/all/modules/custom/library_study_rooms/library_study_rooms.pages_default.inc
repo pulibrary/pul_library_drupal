@@ -18,8 +18,8 @@ function library_study_rooms_default_page_manager_pages() {
   $page->admin_description = 'Study Spaces for Firestone.';
   $page->path = 'libraries/firestone/study-rooms';
   $page->access = array(
-    'type' => 'none',
     'settings' => NULL,
+    'type' => 'none',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -36,15 +36,15 @@ function library_study_rooms_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Panel',
   );
   $display = new panels_display();
   $display->layout = 'single';
@@ -53,8 +53,8 @@ function library_study_rooms_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'left' => NULL,
-      'right' => NULL,
       'middle' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();

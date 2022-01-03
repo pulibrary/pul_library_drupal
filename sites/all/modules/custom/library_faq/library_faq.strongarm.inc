@@ -51,8 +51,8 @@ function library_faq_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_frequently_asked_question';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_frequently_asked_question'] = $strongarm;
 
@@ -61,8 +61,8 @@ function library_faq_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_faq_topics';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_faq_topics'] = $strongarm;
 

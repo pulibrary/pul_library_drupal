@@ -16,28 +16,33 @@ function articles_and_databases_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'db_title_override_importer';
   $feeds_importer->config = array(
-    'name' => 'DB Title Override Importer',
+    'content_type' => '',
     'description' => 'Import Overridden titles',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'DB Title Override Importer',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => FALSE,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
+        'author' => '1',
         'content_type' => 'alternative_database_title',
-        'update_existing' => '1',
         'expire' => '-1',
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -70,16 +75,11 @@ function articles_and_databases_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'input_format' => 'plain_text',
-        'author' => '1',
+        'update_existing' => '1',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => FALSE,
   );
   $export['db_title_override_importer'] = $feeds_importer;
 
@@ -88,27 +88,33 @@ function articles_and_databases_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'resource_list_importer';
   $feeds_importer->config = array(
-    'name' => 'DMG Resource List Importer',
+    'content_type' => '',
     'description' => 'Import DMG Resources',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'DMG Resource List Importer',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'update_existing' => '1',
+        'author' => '650',
+        'bundle' => 'database',
         'expire' => '-1',
+        'input_format' => 'full_html',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -191,17 +197,11 @@ function articles_and_databases_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'input_format' => 'full_html',
-        'author' => '650',
-        'bundle' => 'database',
+        'update_existing' => '1',
       ),
+      'plugin_key' => 'FeedsNodeProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['resource_list_importer'] = $feeds_importer;
 
@@ -210,27 +210,31 @@ function articles_and_databases_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'resource_type_importer';
   $feeds_importer->config = array(
-    'name' => 'Resource Type Importer',
+    'content_type' => '',
     'description' => 'Import Resource Type Categories',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Resource Type Importer',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => FALSE,
     'processor' => array(
-      'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
-        'vocabulary' => 'resource_types',
         'force_update' => 1,
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'typeName',
@@ -244,15 +248,11 @@ function articles_and_databases_feeds_importer_default() {
           ),
         ),
         'update_existing' => '0',
-        'input_format' => 'plain_text',
+        'vocabulary' => 'resource_types',
       ),
+      'plugin_key' => 'FeedsTermProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => FALSE,
   );
   $export['resource_type_importer'] = $feeds_importer;
 
@@ -261,26 +261,32 @@ function articles_and_databases_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'subject_importer';
   $feeds_importer->config = array(
-    'name' => 'Database Subject Importer',
+    'content_type' => '',
     'description' => 'Import Database Subjects',
+    'expire_period' => 3600,
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'direct' => FALSE,
         'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
       ),
+      'plugin_key' => 'FeedsFileFetcher',
     ),
+    'import_on_create' => 1,
+    'import_period' => '-1',
+    'name' => 'Database Subject Importer',
     'parser' => array(
-      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
         'no_headers' => 0,
       ),
+      'plugin_key' => 'FeedsCSVParser',
     ),
+    'process_in_background' => 0,
     'processor' => array(
-      'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
+        'bundle' => 'database_subjects',
         'force_update' => 1,
+        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'subjectName',
@@ -304,16 +310,10 @@ function articles_and_databases_feeds_importer_default() {
           ),
         ),
         'update_existing' => '0',
-        'input_format' => 'plain_text',
-        'bundle' => 'database_subjects',
       ),
+      'plugin_key' => 'FeedsTermProcessor',
     ),
-    'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
-    'expire_period' => 3600,
-    'import_on_create' => 1,
-    'process_in_background' => 0,
   );
   $export['subject_importer'] = $feeds_importer;
 

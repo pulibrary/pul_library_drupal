@@ -86,14 +86,49 @@ function pul_alerts_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__homepage_alert';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '5',
+        ),
+        'redirect' => array(
+          'weight' => '7',
+        ),
+        'title' => array(
+          'weight' => '1',
+        ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '6',
+        ),
       ),
+    ),
+    'view_modes' => array(
       'brief_faq_display' => array(
         'custom_settings' => TRUE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
+      'database_description_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
       'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -105,47 +140,12 @@ function pul_alerts_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => FALSE,
-      ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => FALSE,
-      ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
-          'weight' => '5',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '6',
-        ),
-        'redirect' => array(
-          'weight' => '7',
-        ),
-        'workbench_access' => array(
-          'weight' => '0',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__homepage_alert'] = $strongarm;
@@ -201,8 +201,8 @@ function pul_alerts_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_homepage_alert';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_homepage_alert'] = $strongarm;
 

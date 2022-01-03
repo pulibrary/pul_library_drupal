@@ -19,13 +19,13 @@ function cdl_specialist_importer_feeds_tamper_default() {
   $feeds_tamper->source = 'NetID';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => '@princeton.edu',
-    'replace' => '',
     'case_sensitive' => 0,
-    'word_boundaries' => 0,
-    'whole' => 0,
-    'regex' => FALSE,
+    'find' => '@princeton.edu',
     'func' => 'str_ireplace',
+    'regex' => FALSE,
+    'replace' => '',
+    'whole' => 0,
+    'word_boundaries' => 0,
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace';

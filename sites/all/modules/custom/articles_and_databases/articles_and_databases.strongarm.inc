@@ -296,20 +296,49 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__alternative_database_title';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '7',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'brief_faq_display' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
       'database_description_only' => array(
         'custom_settings' => FALSE,
       ),
-      'teaser' => array(
-        'custom_settings' => TRUE,
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
       ),
       'ical' => array(
         'custom_settings' => TRUE,
       ),
-      'full' => array(
+      'overridden_title_in_lists' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -321,41 +350,12 @@ function articles_and_databases_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => TRUE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '30',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '7',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__alternative_database_title'] = $strongarm;
@@ -365,11 +365,49 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__database';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '10',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'teaser' => array(
+      'brief_faq_display' => array(
+        'custom_settings' => FALSE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
+      'database_description_only' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
       'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -381,50 +419,12 @@ function articles_and_databases_strongarm() {
       'search_result' => array(
         'custom_settings' => TRUE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'brief_faq_display' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => TRUE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => TRUE,
-      ),
-      'overridden_title_in_lists' => array(
-        'custom_settings' => FALSE,
-      ),
-      'colorbox' => array(
-        'custom_settings' => FALSE,
-      ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '10',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '30',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__database'] = $strongarm;
@@ -434,26 +434,26 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__database_description';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(),
+    ),
     'view_modes' => array(
       'brief_faq_display' => array(
-        'custom_settings' => FALSE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => TRUE,
-      ),
-      'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
       'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
+      'database_description_only' => array(
+        'custom_settings' => TRUE,
+      ),
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(),
-      'display' => array(),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
   );
   $export['field_bundle_settings_node__database_description'] = $strongarm;
@@ -463,26 +463,26 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__database_issue';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(),
+    ),
     'view_modes' => array(
       'brief_faq_display' => array(
-        'custom_settings' => FALSE,
-      ),
-      'database_description_only' => array(
-        'custom_settings' => FALSE,
-      ),
-      'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
       'content_body_mode' => array(
         'custom_settings' => TRUE,
       ),
+      'database_description_only' => array(
+        'custom_settings' => FALSE,
+      ),
       'featured_link_url' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(),
-      'display' => array(),
+      'overridden_title_in_lists' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
   );
   $export['field_bundle_settings_node__database_issue'] = $strongarm;
@@ -492,20 +492,36 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__database_package';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(),
+    ),
     'view_modes' => array(
       'brief_faq_display' => array(
         'custom_settings' => FALSE,
       ),
+      'content_body_mode' => array(
+        'custom_settings' => TRUE,
+      ),
       'database_description_only' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured_link_url' => array(
+        'custom_settings' => FALSE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
         'custom_settings' => FALSE,
       ),
       'overridden_title_in_lists' => array(
         'custom_settings' => FALSE,
       ),
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
+      'print' => array(
         'custom_settings' => FALSE,
       ),
       'rss' => array(
@@ -517,28 +533,12 @@ function articles_and_databases_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'print' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'content_body_mode' => array(
-        'custom_settings' => TRUE,
-      ),
-      'featured_link_url' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__database_package'] = $strongarm;
@@ -758,8 +758,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_alternative_database_title';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.1',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_alternative_database_title'] = $strongarm;
 
@@ -768,8 +768,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_database';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.5',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_node_database'] = $strongarm;
 
@@ -778,8 +778,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_database_description';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_database_description'] = $strongarm;
 
@@ -788,8 +788,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_node_database_package';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_node_database_package'] = $strongarm;
 
@@ -798,8 +798,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_database_keywords';
   $strongarm->value = array(
-    'status' => '0',
     'priority' => '0.5',
+    'status' => '0',
   );
   $export['xmlsitemap_settings_taxonomy_term_database_keywords'] = $strongarm;
 
@@ -808,8 +808,8 @@ function articles_and_databases_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_settings_taxonomy_term_database_subjects';
   $strongarm->value = array(
-    'status' => '1',
     'priority' => '0.8',
+    'status' => '1',
   );
   $export['xmlsitemap_settings_taxonomy_term_database_subjects'] = $strongarm;
 
