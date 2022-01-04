@@ -51,6 +51,10 @@
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
   a::before {
     bottom: 0;
     content: "";
