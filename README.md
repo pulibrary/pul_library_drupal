@@ -5,6 +5,7 @@ library.princeton.edu is supported by this repo.
 ## Local development with Lando
 
 1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
+2. `cd pul_library_drupal`
 2. `cp sites/default/default.settings.php sites/default/settings.php`
 3. In `sites/default/settings.php` include the following lando-style db config values:
 
@@ -53,7 +54,7 @@ $conf['javascript_always_use_jquery'] = TRUE;
 7. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
 8. `lando start` Start up lando
 9. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
-10. Adjust the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
+10. Adjust and uncomment the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
 ```
 $aliases['prod'] = array (
    'uri' => 'https://library.princeton.edu',
@@ -85,7 +86,7 @@ $aliases['prod'] = array (
 11. Uncomment the alias block for the local lando site
 ```
 $aliases['local'] = array(
-  'root' => '/app', // Path to project on local machine
+  'root' => '/app',
   'uri'  => 'http://library-main.lndo.site',
   'path-aliases' => array(
     '%dump-dir' => '/tmp',
