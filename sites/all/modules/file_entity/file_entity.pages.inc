@@ -384,7 +384,7 @@ function file_entity_usage_page($file) {
 
   // Determine all of the locations where a file is used, then loop through the
   // occurrences and filter out any duplicates.
-  foreach (file_usage_list($file) as $type) {
+  foreach (file_usage_list($file) as $module => $type) {
     foreach ($type as $entity_type => $entity_ids) {
       // There are cases where the actual entity doesn't exist.
       // We have to handle this.
@@ -434,6 +434,11 @@ function file_entity_usage_page($file) {
               }
             }
           }
+        }
+        // For file_lock module, display relevant usage information.
+        elseif ($module == 'file_lock') {
+          $entity_label = t('File lock');
+          $entity_id = '--';
         }
         else {
           $entity_label = check_plain($label);
@@ -1273,12 +1278,9 @@ function file_entity_get_upload_validators(array $options = array()) {
     $validators['file_validate_extensions'] = array(variable_get('file_entity_default_allowed_extensions', 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm'));
   }
 
-  // Cap the upload size according to the system or user defined limit. Note: In
-  // PHP 8 file_upload_max_size() returns a string instead of an integer, so
-  // cast it to an integer to avoid a critical error; do the same for the
-  // variable, just in case.
-  $max_filesize = parse_size(intval(file_upload_max_size()));
-  $file_entity_max_filesize = parse_size(intval(variable_get('file_entity_max_filesize', '')));
+  // Cap the upload size according to the system or user defined limit.
+  $max_filesize = parse_size(file_upload_max_size());
+  $file_entity_max_filesize = parse_size(variable_get('file_entity_max_filesize', ''));
 
   // If the user defined a size limit, use the smaller of the two.
   if (!empty($file_entity_max_filesize)) {
