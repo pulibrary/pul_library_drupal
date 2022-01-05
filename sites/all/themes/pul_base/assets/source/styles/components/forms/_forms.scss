@@ -104,6 +104,15 @@
   margin-bottom: 1em;
 }
 
+.ctools-jump-menu-select {
+
+  &:hover,
+  &:focus {
+    background: $blue-dark;
+    color: $white;
+  }
+}
+
 .form-item.webform-component {
   margin-bottom: 1.25rem;
 
