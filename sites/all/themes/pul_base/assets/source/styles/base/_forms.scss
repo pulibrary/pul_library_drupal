@@ -24,7 +24,7 @@ select[multiple="multiple"] {
   }
 
   &:focus {
-    border-color: $orange;
+    border: 2px solid  $orange;
     outline: none;
   }
 
@@ -47,6 +47,13 @@ select {
   max-width: 100%;
   outline: none;
   width: auto;
+
+  &:hover,
+  &:focus {
+    background: $blue-a11y;
+    color: $white;
+  }
+
 }
 
 input[type="checkbox"],
@@ -73,8 +80,10 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover {
-    background-color: $orange;
+  &:hover,
+  &:focus {
+    background-color: $orange-medium;
+    color: $black;
   }
 }
 
