@@ -67,11 +67,14 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
   );
 
   if (!empty($editor['deprecation message'])) {
-    $form['basic']['info']['deprecated'] = array(
-      '#prefix' => '<div class="messages warning">',
-      '#markup' => $editor['deprecation message'],
-      '#suffix' => '</div>',
-    );
+    $deprecation_message = is_callable($editor['deprecation message']) ? $editor['deprecation message']($editor) : $editor['deprecation message'];
+    if (!empty($deprecation_message)) {
+      $form['basic']['info']['deprecated'] = array(
+        '#prefix' => '<div class="messages warning">',
+        '#markup' => $deprecation_message,
+        '#suffix' => '</div>',
+      );
+    }
   }
 
   $version_verified = $editor['installed version verified'];
@@ -644,7 +647,10 @@ function wysiwyg_profile_overview($form, &$form_state) {
         $editor_message = '<div class="messages error">' . t('Unable to find @library. Expected version: %profile_version. Reinstall the library to edit this profile.', array('@library' => $editors[$editor_name]['title'], '%profile_version' => $profile_version)) . '</div>';
       }
       if (!empty($editors[$editor_name]['deprecation message'])) {
-        $editor_message .= '<div class="messages warning">' . $editors[$editor_name]['deprecation message'] . '</div>';
+        $deprecation_message = is_callable($editors[$editor_name]['deprecation message']) ? $editors[$editor_name]['deprecation message']($editors[$editor_name]) : $editors[$editor_name]['deprecation message'];
+        if (!empty($deprecation_message)) {
+          $editor_message .= '<div class="messages warning">' . $deprecation_message . '</div>';
+        }
       }
       $form['formats'][$id]['editor']['#markup'] = $editor_message;
       if ($editors[$profile->editor]['installed']) {
