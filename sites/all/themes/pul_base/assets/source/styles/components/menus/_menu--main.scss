@@ -29,6 +29,10 @@
   width: 100%;
   z-index: 101;
 
+  li:focus-within > ul.submenu {
+    display: block;
+  }
+
   button:focus {
     outline: none;
   }
