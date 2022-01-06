@@ -47,6 +47,7 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
   $profile_version = $preferences['version'];
   $formats = filter_formats();
   drupal_set_title(t('%editor profile for %format', array('%editor' => $editor['title'], '%format' => $formats[$profile->format]->name)), PASS_THROUGH);
+  $module_drupal_path = base_path() . drupal_get_path('module', 'wysiwyg');
 
   $form['basic'] = array(
     '#type' => 'fieldset',
@@ -222,6 +223,93 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
           '#description' => isset($meta['url']) ? l($meta['url'], $meta['url']) : NULL,
         );
       }
+    }
+  }
+
+  $form['security'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Security'),
+    '#description' => '<p>' . t('The Wysiwyg security system protects you from executing malicious code that is already in your database. In plain textareas database content is harmless because it is not executed, but WYSIWYG editors may interpret HTML like a web browser and thus the content needs to be filtered before it is loaded.') . '</p>',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#group' => 'advanced',
+    '#attached' => array(
+      'css' => array(
+        drupal_get_path('module', 'wysiwyg') . '/css/wysiwyg.admin.css',
+      ),
+    ),
+  );
+
+  $form['security']['filters'] = array(
+    '#id' => 'wysiwyg-security-filters',
+    '#type' => 'container',
+    '#tree' => TRUE,
+  );
+
+  $enabled_label = t('Enabled');
+  $disabled_label = t('Disabled');
+  $form['security']['filters']['__header'] = array(
+    '#type' => 'item',
+    '#title' => t('Security filters'),
+    '#description' => t('Below is a list of security filters along with their status for the text format the editor profile is assigned to.<br /><br />The following statuses are available: !img_enabled - the filter is configured the text format and will be run on the content during the filtering process. !img_disabled - the filter is disabled for the text format and will not be run on the content during the filtering process.<br /><br />In order to modify the security filters settings for the text format, you need to visit the <a href="!format_link" title="Configure @format_title" target="_blank">text format configuration page</a>', array(
+      '!img_enabled' => '<br /><img title="' . $enabled_label . '" alt="' . $enabled_label . '" src="' . $module_drupal_path . '/images/tick.png" />',
+      '!img_disabled' => '<br /><img title="' . $disabled_label . '" alt="' . $disabled_label . '" src="' . $module_drupal_path . '/images/delete.png" />',
+      '!format_link' => url('/admin/config/content/formats/' . $profile->format),
+      '@format_title' => $formats[$profile->format]->name,
+    )),
+    '#weight' => -10,
+  );
+
+  // Get text formats filters.
+  $input_format_filters = array();
+  foreach ($formats as $key => $value) {
+    $input_format_filters[$key] = array();
+    $filters = filter_list_format($key);
+    foreach ($filters as $filter_name => $filter_settings) {
+      if ($filter_settings->status == 1) {
+        $input_format_filters[$key][$filter_name] = TRUE;
+      }
+    }
+  }
+
+  $format_filters = filter_list_format($profile->format);
+  $security_filters = wysiwyg_security_filters();
+  foreach ((array) $security_filters['modules'] as $module_name => $module_conf) {
+    if (isset($module_conf['project_page']) && strlen($module_conf['project_page']) > 0) {
+      $form['security']['filters'][$module_name] = array(
+        '#type' => 'item',
+        '#title' => t(
+          '!title <a href="!link" title="!title" target="_blank">project page</a>', array(
+            '!title' => $module_conf['title'],
+            '!link' => $module_conf['project_page'],
+          )
+        ),
+        '#weight' => $module_conf['weight'],
+      );
+    }
+    else {
+      $form['security']['filters'][$module_name] = array(
+        '#type' => 'item',
+        '#title' => t('!title', array('!title' => $module_conf['title'])),
+        '#weight' => $module_conf['weight'],
+      );
+    }
+
+    if ($module_conf['installed'] == TRUE) {
+      foreach ((array) $module_conf['filters'] as $filter_name => $filter_conf) {
+        $form['security']['filters'][$module_name][$filter_name] = array(
+          '#type' => 'item',
+          '#title' => t('@data', array('@data' => $filter_conf['title'])),
+          '#description' => t('!data', array('!data' => $filter_conf['description'])),
+          '#prefix' => '<div class="filter-wrapper filter-status-' . (!empty($format_filters[$filter_name]) && $format_filters[$filter_name]->status ? 'enabled' : 'disabled') . '">',
+          '#suffix' => '</div>',
+        );
+      }
+    }
+    else {
+      $form['security']['filters'][$module_name]['not_installed'] = array(
+        '#markup' => t('<i>Not installed</i>'),
+      );
     }
   }
 
