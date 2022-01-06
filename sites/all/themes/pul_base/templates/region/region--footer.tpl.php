@@ -37,7 +37,7 @@
 
 <div class="pu--footer">
   <div class="l-region--pu-footer">
-    <div class="pu--accessibility"><a href="https://accessibility.princeton.edu/" target="_blank">Accessibility</a></div>
+    <div class="pu--accessibility"><a href="https://accessibility.princeton.edu/help" target="_blank">Accessibility</a></div>
     <div class="pu--copyright">&copy; <?php echo date("Y"); ?> The Trustees of Princeton University</div>
     <div class="pu--logo"><a href="https://www.princeton.edu" title="Princeton University" class="pu-logo"><img src="/sites/all/themes/pul_base/assets/public/images/logo-white.svg" alt="Princeton University" width="428" height="121" class="university-logo"></a></div>
   </div>
