@@ -42,5 +42,5 @@ end
 
 # Run at 6:35 am EST or 7:35 EDT remove old users
 every 1.day, at: '11:35 am', roles: [:drupal_primary] do
-  command "sudo -u www-data drush @prod vbo-execute remove_old_users action::views_bulk_operations_user_cancel_action"
+  command "sudo -u www-data drush @prod vbo-execute remove_old_users action::views_bulk_operations_delete_item"
 end
