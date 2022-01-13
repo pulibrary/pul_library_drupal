@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the remove cams feature.
+ */
+
+include_once 'remove_cams.features.inc';
