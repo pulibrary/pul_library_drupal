@@ -6,7 +6,10 @@ config:
   database: mariadb
 services:
   search:
-    type: 'solr:7'
+    type: solr:custom
+    overrides:
+      image: pulibrary/ci-solr:8.4-v1.0.0
+      command: server/scripts/lando-start.sh
     core: libwww-dev
     portforward: 9999
     config:
