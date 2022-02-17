@@ -1,9 +1,9 @@
 <?php
 
 function data_source_url_base() {
-  return '/utils/';
+  // return '/utils/';
   /** Uncomment the line below to connect to local lando discovery utils and comment out the line above **/
-  // return 'http://discovery-utils.lndo.site/';
+  return 'https://library.princeton.edu/utils/';
 }
 
 function catalog_block_form($form, &$form_state) {
@@ -143,7 +143,7 @@ function catalog_faq_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='faq-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='" . data_source_url_base() . "faq/get?query=$path&sid={$sid}' id='faq-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='" . data_source_url_base() . "faq/get?query={$path}&sid={$sid}' id='faq-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
