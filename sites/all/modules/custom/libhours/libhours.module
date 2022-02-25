@@ -107,7 +107,7 @@ drupal_add_css(drupal_get_path('module', 'libhours') . '/libhours.css');
   $mudd = "<li><a href='/special-collections/mudd' class='library-hours-link' style='border-left:".$muddColor." 35px solid'>".$muddTitle.$muddHours."</a></li>";
 
   $scRss = new DOMDocument();
-  $scRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=14275&format=xml&systemTime=1');
+  $scRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=18717&format=xml&systemTime=1');
   $scHours = $scRss->getElementsByTagName('rendered')->item(0)->nodeValue;
   $scHours = "<div class='hours'>".$scHours."</div>";
   $scTitle = "<h3>Special Collections</h3>";
