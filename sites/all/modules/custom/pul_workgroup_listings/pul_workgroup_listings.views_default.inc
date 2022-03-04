@@ -395,6 +395,47 @@ function pul_workgroup_listings_views_default_views() {
       'label' => 'Node ID to reference',
     ),
   );
+
+  /* Display: Workgroup with Terms */
+  $handler = $view->new_display('panel_pane', 'Workgroup with Terms', 'panel_pane_4');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_staff_with_terms' => 'field_staff_with_terms',
+  );
+  $handler->display->display_options['style_options']['class'] = '';
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_staff_with_terms' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Staff with terms */
+  $handler->display->display_options['fields']['field_staff_with_terms']['id'] = 'field_staff_with_terms';
+  $handler->display->display_options['fields']['field_staff_with_terms']['table'] = 'field_data_field_staff_with_terms';
+  $handler->display->display_options['fields']['field_staff_with_terms']['field'] = 'field_staff_with_terms';
+  $handler->display->display_options['fields']['field_staff_with_terms']['label'] = 'Subject Specialists';
+  $handler->display->display_options['fields']['field_staff_with_terms']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_staff_with_terms']['settings'] = array(
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_staff_with_terms']['delta_offset'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['workgroup'] = $view;
 
   return $export;

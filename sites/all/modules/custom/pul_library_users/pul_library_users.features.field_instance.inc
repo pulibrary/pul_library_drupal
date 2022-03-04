@@ -50,7 +50,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'token' => array(
         'label' => 'above',
@@ -116,7 +116,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'token' => array(
         'label' => 'above',
@@ -186,7 +186,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'token' => array(
         'label' => 'above',
@@ -256,7 +256,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'token' => array(
         'label' => 'above',
@@ -326,7 +326,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'token' => array(
         'label' => 'above',
@@ -396,7 +396,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'token' => array(
         'label' => 'above',
@@ -471,7 +471,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 35,
       ),
       'token' => array(
         'label' => 'above',
@@ -539,7 +539,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 34,
       ),
       'token' => array(
         'label' => 'above',
@@ -620,7 +620,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'token' => array(
         'label' => 'above',
@@ -693,7 +693,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 21,
       ),
       'token' => array(
         'label' => 'above',
@@ -761,7 +761,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 37,
       ),
       'token' => array(
         'label' => 'above',
@@ -828,7 +828,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 20,
       ),
       'token' => array(
         'label' => 'above',
@@ -894,7 +894,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 31,
       ),
       'token' => array(
         'label' => 'above',
@@ -956,7 +956,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 39,
       ),
       'token' => array(
         'label' => 'above',
@@ -1020,7 +1020,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 26,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1085,7 +1085,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 23,
       ),
       'token' => array(
         'label' => 'above',
@@ -1218,7 +1218,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 27,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1288,7 +1288,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 30,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1353,7 +1353,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 24,
       ),
       'token' => array(
         'label' => 'above',
@@ -1419,7 +1419,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'token' => array(
         'label' => 'above',
@@ -1484,7 +1484,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 29,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1549,7 +1549,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'token' => array(
         'label' => 'above',
@@ -1616,7 +1616,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 19,
       ),
       'token' => array(
         'label' => 'above',
@@ -1748,9 +1748,10 @@ function pul_library_users_field_default_field_instances() {
       ),
       'staff_brief_listing' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'token' => array(
         'label' => 'above',
@@ -1815,7 +1816,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 28,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -1880,7 +1881,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 32,
       ),
       'token' => array(
         'label' => 'above',
@@ -1942,7 +1943,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 33,
       ),
       'token' => array(
         'label' => 'above',
@@ -2010,7 +2011,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 22,
       ),
       'token' => array(
         'label' => 'above',
@@ -2079,7 +2080,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'token' => array(
         'label' => 'above',
@@ -2145,7 +2146,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 38,
       ),
       'token' => array(
         'label' => 'above',
@@ -2215,7 +2216,7 @@ function pul_library_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 36,
       ),
       'token' => array(
         'label' => 'above',
