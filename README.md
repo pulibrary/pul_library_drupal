@@ -94,8 +94,8 @@ $aliases['local'] = array(
   ),
 );
 ```
-12. `lando drush @librarymain.prod sql-dump --result-file=/tmp/dump.sql; scp pulsys@{insert app-server-name}:/tmp/dump.sql .`
-13. `lando db-import dump.sql`
+12. `lando drush @librarymain.prod sql-dump --gzip --result-file=/tmp/dump.sql; scp pulsys@{insert app-server-name}:/tmp/dump.sql.gz .`
+13. `lando db-import dump.sql.gz`
 14. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 15. `lando drush vset --exact file_temporary_path /tmp`
 16. `lando drush uli your-username`

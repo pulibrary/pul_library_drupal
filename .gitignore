@@ -3,6 +3,7 @@ sites/*/settings*.php
 .ssh/*
 drush/librarymain.aliases.drushrc.php
 *.sql
+*.sql.gz
 
 # Ignore paths that contain user-generated content.
 sites/*/files
