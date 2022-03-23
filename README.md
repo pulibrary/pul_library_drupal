@@ -58,9 +58,9 @@ $conf['javascript_always_use_jquery'] = TRUE;
 ```
 $aliases['prod'] = array (
    'uri' => 'https://library.princeton.edu',
-   'root' => '', // Add root
+   'root' => '/var/www/library_cap/current', // Path to directory on app server
    'remote-user' => 'deploy', // Add user
-   'remote-host' => 'app-server-name', // Add app server host name
+   'remote-host' => 'app-server-name.princeton.edu', // Add app server name, including .princeton.edu
    'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_rsa',
    'path-aliases' => array(
      '%dump-dir' => '/tmp',
