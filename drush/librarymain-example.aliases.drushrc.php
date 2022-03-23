@@ -19,9 +19,9 @@
  */
 // $aliases['prod'] = array (
 //   'uri' => 'https://library.princeton.edu',
-//   'root' => '/var/www/drupal', // Add path to installaton on app server
+//   'root' => '/var/www/library_cap/current', // Path to directory on app server
 //   'remote-user' => 'deploy', // Add user
-//   'remote-host' => 'app-server-na', // Add app server host name
+//   'remote-host' => 'app-server-name.princeton.edu', // Add app server name, including .princeton.edu
 //   'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_rsa',
 //   'path-aliases' => array(
 //     '%dump-dir' => '/tmp',
