@@ -18,7 +18,7 @@ services:
     type: redis
     portforward: true
   node:
-    type: 'node:6.15'
+    type: 'node:11.15'
     globals:
       gulp-cli: latest
 tooling:
