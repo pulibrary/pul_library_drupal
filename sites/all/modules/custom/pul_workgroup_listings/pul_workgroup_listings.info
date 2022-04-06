@@ -4,6 +4,7 @@ core = 7.x
 package = PUL Custom Features
 version = 7.x-1.0-dev
 project = pul_workgroup_listings
+dependencies[] = entity
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0

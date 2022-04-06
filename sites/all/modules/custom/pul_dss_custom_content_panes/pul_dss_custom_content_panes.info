@@ -1,0 +1,11 @@
+name = DSS Custom Content Panes
+description = DSS Custom Blocks
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+dependencies[] = ctools
+dependencies[] = ctools_custom_content
+features[ctools][] = ctools_custom_content:ctools_content:1
+features[ctools_custom_content][] = dss_data_catalog_form
+features[ctools_custom_content][] = dss_make_appointment_block
+features[features_api][] = api:2

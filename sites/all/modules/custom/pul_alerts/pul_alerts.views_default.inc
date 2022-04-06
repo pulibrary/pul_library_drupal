@@ -886,6 +886,85 @@ function pul_alerts_views_default_views() {
   );
   $handler->display->display_options['filters']['access_id']['size'] = '5';
   $handler->display->display_options['path'] = 'json-alerts';
+
+  /* Display: DSS Section Alerts */
+  $handler = $view->new_display('panel_pane', 'DSS Section Alerts', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Emergency Alert Level */
+  $handler->display->display_options['fields']['field_emergency_alert_level']['id'] = 'field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['table'] = 'field_data_field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['field'] = 'field_emergency_alert_level';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['label'] = '';
+  $handler->display->display_options['fields']['field_emergency_alert_level']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_emergency_alert_level']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_emergency_alert_level']['element_default_classes'] = FALSE;
+  /* Field: Content: Site-wide Alert Message */
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['id'] = 'field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['table'] = 'field_data_field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['field'] = 'field_emergency_alert_blurb';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['label'] = '';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['alter']['text'] = '<div class="alert--message alert--level__[field_emergency_alert_level]"><h3>[title]</h3><p>[field_emergency_alert_blurb]</p></div>';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_emergency_alert_blurb']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'homepage_alert' => 'homepage_alert',
+  );
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['access_id'] = array(
+    30681 => '30681',
+  );
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Content: Emergency Alert Dates - end date (field_emergency_alert_dates:value2) */
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['id'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['table'] = 'field_data_field_emergency_alert_dates';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['field'] = 'field_emergency_alert_dates_value2';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_emergency_alert_dates_value2']['default_date'] = 'now';
   $export['emergency_alert_content_block'] = $view;
 
   return $export;
