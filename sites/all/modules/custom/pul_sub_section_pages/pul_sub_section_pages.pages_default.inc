@@ -1820,6 +1820,15 @@ services/reserves/*
           'visibility_setting' => '0',
         ),
       ),
+      1 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'services/reserves',
+          'visibility_setting' => '0',
+        ),
+      ),
     ),
   );
   $pane->configuration = array(
