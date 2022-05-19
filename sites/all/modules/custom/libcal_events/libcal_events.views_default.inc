@@ -679,11 +679,6 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['fields']['field_homepage_spotlight']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_homepage_spotlight']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Homepage Spotlight (field_homepage_spotlight) */
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['id'] = 'field_homepage_spotlight_value';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['table'] = 'field_data_field_homepage_spotlight';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['field'] = 'field_homepage_spotlight_value';
-  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['order'] = 'DESC';
   /* Sort criterion: Content: Date -  start date (field_schemaorg_date) */
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['id'] = 'field_schemaorg_date_value';
   $handler->display->display_options['sorts']['field_schemaorg_date_value']['table'] = 'field_data_field_schemaorg_date';
@@ -693,6 +688,11 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['field'] = 'field_schemaorg_date_value2';
   $handler->display->display_options['sorts']['field_schemaorg_date_value2']['order'] = 'DESC';
+  /* Sort criterion: Content: Homepage Spotlight (field_homepage_spotlight) */
+  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['id'] = 'field_homepage_spotlight_value';
+  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['table'] = 'field_data_field_homepage_spotlight';
+  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['field'] = 'field_homepage_spotlight_value';
+  $handler->display->display_options['sorts']['field_homepage_spotlight_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published status */
@@ -709,6 +709,7 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'schemaorg_event' => 'schemaorg_event',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Event Type (field_event_type) */
   $handler->display->display_options['filters']['field_event_type_tid']['id'] = 'field_event_type_tid';
   $handler->display->display_options['filters']['field_event_type_tid']['table'] = 'field_data_field_event_type';
@@ -717,13 +718,20 @@ function libcal_events_views_default_views() {
   $handler->display->display_options['filters']['field_event_type_tid']['value'] = array(
     0 => '1753',
   );
+  $handler->display->display_options['filters']['field_event_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_event_type_tid']['vocabulary'] = 'lib_event_types';
   /* Filter criterion: Content: Date - end date (field_schemaorg_date:value2) */
   $handler->display->display_options['filters']['field_schemaorg_date_value2']['id'] = 'field_schemaorg_date_value2';
   $handler->display->display_options['filters']['field_schemaorg_date_value2']['table'] = 'field_data_field_schemaorg_date';
   $handler->display->display_options['filters']['field_schemaorg_date_value2']['field'] = 'field_schemaorg_date_value2';
   $handler->display->display_options['filters']['field_schemaorg_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schemaorg_date_value2']['group'] = 1;
   $handler->display->display_options['filters']['field_schemaorg_date_value2']['default_date'] = 'now';
+  /* Filter criterion: Content: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Exhibitions Index - Current List */
   $handler = $view->new_display('panel_pane', 'Exhibitions Index - Current List', 'panel_pane_3');
