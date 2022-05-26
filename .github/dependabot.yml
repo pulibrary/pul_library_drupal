@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/sites/all/themes/pul_base"
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "dependencies"
+      - "maintenance"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "ruby"
+      - "dependencies"
+      - "maintenance"
