@@ -26,7 +26,7 @@
     "gulp-watch": "^4.3.11",
     "node-normalize-scss": "^1.5.0",
     "run-sequence": "^1.2.2",
-    "susy": "^2.2.6"
+    "susy": "^3.0.7"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
