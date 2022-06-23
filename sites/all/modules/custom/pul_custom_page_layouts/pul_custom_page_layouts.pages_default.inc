@@ -71,7 +71,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '2021-2022 Resources';
+  $display->title = '2022 Resources';
   $display->uuid = 'ed7ae6e8-9a5e-407a-a37d-6cff957def0b';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'node_view__fall-2020-resources';
@@ -163,7 +163,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
     ),
     'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => '2021-22 Resources',
+    'override_title_text' => '2022 Resources',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2352,7 +2352,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
     'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => '2021-22 Resources',
+    'override_title_text' => '2022 Resources',
   );
   $pane->cache = array();
   $pane->style = array(
