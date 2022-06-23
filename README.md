@@ -2,6 +2,10 @@
 
 library.princeton.edu is supported by this repo.
 
+## Before deploying main Library Drupal to production
+
+1. Check if end users have changed any settings. Follow https://github.com/pulibrary/pul_library_drupal/wiki/Sync-a-Feature(s)-from-Production
+
 ## Local development with Lando
 
 1. `git clone git@github.com:pulibrary/pul_library_drupal.git`
