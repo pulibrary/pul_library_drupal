@@ -1,6 +1,6 @@
 # Library Site
 
-library.princeton.edu is supported by this repo.
+https://library.princeton.edu/ is supported by this repo.
 
 ## Before deploying main Library Drupal to production
 
