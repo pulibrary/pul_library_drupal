@@ -4,7 +4,4 @@ node_modules
 # We absolutely don't want to have the .sass-cache in git.
 .sass-cache
 
-# Ignore package-lock.json
-package-lock.json
-
 assets/public/*
