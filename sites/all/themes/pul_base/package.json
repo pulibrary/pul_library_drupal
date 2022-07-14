@@ -10,6 +10,7 @@
     "esbuild": "^0.14.49",
     "imagemin-cli": "^5.0.0",
     "normalize.css": "^8.0.1",
+    "npx": "^10.2.2",
     "sass": "^1.53.0",
     "sass-lint": "^1.13.1",
     "susy": "^2.2.6"
