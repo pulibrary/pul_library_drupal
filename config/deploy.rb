@@ -78,7 +78,7 @@ namespace :drupal do
   task :install_assets do
     on roles(:app) do |host|
       execute "cd #{release_path}/sites/all/themes/pul_base && rm -rf node_modules && npm install"
-      execute "cd #{release_path}/sites/all/themes/pul_base && gulp deploy"
+      execute "cd #{release_path}/sites/all/themes/pul_base && npm run build"
       info "Installed Assets"
     end
   end

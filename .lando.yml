@@ -19,14 +19,10 @@ services:
     portforward: true
   node:
     type: 'node:11.15'
-    globals:
-      gulp-cli: latest
 tooling:
   npm:
     service: node
   node:
-    service: node
-  gulp:
     service: node
   redis-cli:
     service: cache

@@ -104,11 +104,11 @@ $aliases['local'] = array(
 15. `lando drush vset --exact file_temporary_path /tmp`
 16. `lando drush uli your-username`
 
-### Use NPM and Gulp to build styles for drupal theme layer
+### Use NPM to build styles for drupal theme layer
 
 1. `cd sites/all/themes/pul_base`
 2. `lando npm install`
-3. `lando gulp deploy` (or any other gulp task)
+3. `lando npm run build`
 
 ### Index site content in Solr via Search API
 
