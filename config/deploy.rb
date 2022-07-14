@@ -55,7 +55,6 @@ namespace :drupal do
   task :prepare_shared_paths do
       on release_roles :app do
           execute :mkdir, '-p', "#{shared_path}/tmp"
-          execute :mkdir, '-p', "#{shared_path}/node_modules"
       end
   end
 
@@ -71,7 +70,6 @@ namespace :drupal do
   task :link_files do
     on roles(:app) do |host|
       execute "cd #{release_path}/sites/#{fetch(:drupal_site)} && ln -sf #{fetch(:drupal_fileshare_mount)}/#{fetch(:files_dir)} files"
-      execute "cd #{release_path}/sites/all/themes/pul_base && ln -sf #{shared_path}/node_modules node_modules"
       info "linked files mount into #{fetch(:drupal_site)} site"
     end
   end
@@ -79,7 +77,7 @@ namespace :drupal do
   desc "Install Assets"
   task :install_assets do
     on roles(:app) do |host|
-      execute "cd #{release_path}/sites/all/themes/pul_base && npm install"
+      execute "cd #{release_path}/sites/all/themes/pul_base && rm -rf node_modules && npm install"
       execute "cd #{release_path}/sites/all/themes/pul_base && gulp deploy"
       info "Installed Assets"
     end
