@@ -10,13 +10,12 @@
     "esbuild": "^0.14.49",
     "imagemin-cli": "^5.0.0",
     "normalize.css": "^8.0.1",
-    "npx": "^10.2.2",
     "sass": "^1.53.0",
     "sass-lint": "^1.13.1",
     "susy": "^2.2.6"
   },
   "scripts": {
-    "build": "npm run clean && npm run sass-lint && npm run styles && npm run scripts && npm run fonts && npm run images",
+    "build": "npm run clean && npm run sass-lint && npm run styles && npm run scripts && npm run fonts && npm run images && npm run permissions",
     "clean": "rm -rf assets/public",
     "fonts": "cp -R assets/source/fonts assets/public/fonts",
     "images": "npx imagemin assets/source/images/* --out-dir=assets/public/images",
