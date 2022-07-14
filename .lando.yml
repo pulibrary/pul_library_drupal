@@ -19,8 +19,13 @@ services:
     portforward: true
   node:
     type: 'node:11.15'
+  optipng:
+    - apt-get update -y
+    - apt-get install optipng
 tooling:
   npm:
+    service: node
+  npx:
     service: node
   node:
     service: node
