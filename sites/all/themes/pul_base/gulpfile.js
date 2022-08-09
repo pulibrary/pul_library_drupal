@@ -220,10 +220,10 @@ gulp.task("styleguide", function() {
  * Gulp task: reload
  * Refresh the page after clearing cache for drupal 7 sites
  */
-gulp.task("reload", gulp.series("clearcache", function() {
-  browserSync.reload();
-}));
-
+function reload() {
+  return browserSync.reload();
+}
+exports.reload = gulp.series(clearcache, reload)
 /**
  * Gulp task: watch4drupal
  * Watch scss files for changes & recompile
