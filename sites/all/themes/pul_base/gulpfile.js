@@ -219,9 +219,9 @@ gulp.task("styleguide", function() {
  * Gulp task: reload
  * Refresh the page after clearing cache for drupal 7 sites
  */
-gulp.task("reload", ["clearcache"], function() {
-  browserSync.reload();
-});
+// gulp.task("reload", ["clearcache"], function() {
+//   browserSync.reload();
+// });
 
 /**
  * Gulp task: watch4drupal
