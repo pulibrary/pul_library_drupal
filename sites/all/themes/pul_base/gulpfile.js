@@ -11,8 +11,8 @@ var config = require("./build.config.json");
 var p = require("gulp-load-plugins")();
 
 // Load BrowserSync and simplify reload
-// var browserSync = require("browser-sync");
-// var reload = browserSync.reload;
+var browserSync = require("browser-sync");
+var reload = browserSync.reload;
 
 // Load delete module to clean public assets directory
 var del = require("del");
