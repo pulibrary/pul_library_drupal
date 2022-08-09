@@ -131,24 +131,24 @@ gulp.task("scripts", function() {
  * Gulp task: modernizr
  * Adds custom modernizr
  */
-gulp.task("modernizr", function() {
-  gulp
-    .src(config.scripts.files)
-    .pipe(
-      p.modernizr({
-        options: [
-          "setClasses",
-          "addTest",
-          "html5printshiv",
-          "testProp",
-          "fnBind"
-        ],
-        tests: ["svg"]
-      })
-    )
-    .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.base));
-});
+// gulp.task("modernizr", function() {
+//   gulp
+//     .src(config.scripts.files)
+//     .pipe(
+//       p.modernizr({
+//         options: [
+//           "setClasses",
+//           "addTest",
+//           "html5printshiv",
+//           "testProp",
+//           "fnBind"
+//         ],
+//         tests: ["svg"]
+//       })
+//     )
+//     .pipe(chmod(644))
+//     .pipe(gulp.dest(config.scripts.base));
+// });
 
 /**
  * Gulp task: fonts
