@@ -11,8 +11,8 @@ var config = require("./build.config.json");
 var p = require("gulp-load-plugins")();
 
 // Load BrowserSync and simplify reload
-var browserSync = require("browser-sync");
-var reload = browserSync.reload;
+// var browserSync = require("browser-sync");
+// var reload = browserSync.reload;
 
 // Load delete module to clean public assets directory
 var del = require("del");
@@ -79,8 +79,8 @@ gulp.task("styles", function() {
     .pipe(p.rename({ suffix: ".min" }))
     .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.styles.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.styles.dest));
+    // .pipe(reload({ stream: true }));
 });
 
 /**
@@ -118,13 +118,13 @@ gulp.task("scripts", function() {
     .pipe(p.rename("pul-base.scripts.min.js"))
     // .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.scripts.dest));
+    // .pipe(reload({ stream: true }));
   gulp
     .src(config.scripts.vendor)
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.scripts.dest));
+    // .pipe(reload({ stream: true }));
 });
 
 /**
@@ -158,8 +158,8 @@ gulp.task("fonts", function() {
   gulp
     .src(config.fonts.files)
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.fonts.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.fonts.dest));
+    // .pipe(reload({ stream: true }));
 });
 
 /**
@@ -177,8 +177,8 @@ gulp.task("images", function() {
       })
     )
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.images.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.images.dest));
+    // .pipe(reload({ stream: true }));
 });
 
 /**
