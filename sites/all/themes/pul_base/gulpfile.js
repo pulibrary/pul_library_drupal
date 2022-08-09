@@ -43,7 +43,7 @@ var onError = function(err) {
  * Removes asset files before running other tasks
  */
 gulp.task("clean", function() {
-  del([config.assets.dest]);
+  return del([config.assets.dest]);
 });
 
 /**
@@ -189,6 +189,7 @@ gulp.task("watch", function() {
   gulp.watch(config.styles.files, ["styles", "lint:scss"]);
   gulp.watch(config.scripts.files, ["scripts"]);
   gulp.watch(config.images.files, ["images"]);
+  done();
 });
 
 /**
@@ -219,9 +220,9 @@ gulp.task("styleguide", function() {
  * Gulp task: reload
  * Refresh the page after clearing cache for drupal 7 sites
  */
-gulp.task("reload", ["clearcache"], function() {
+gulp.task("reload", gulp.series("clearcache", function() {
   browserSync.reload();
-});
+}));
 
 /**
  * Gulp task: watch4drupal
@@ -239,7 +240,7 @@ gulp.task("watch4drupal", function() {
 /**
  * Launch BrowserSync for drupal 7 sites
  */
-gulp.task("browser-sync4drupal", ["styles"], function() {
+gulp.task("browser-sync4drupal", gulp.series("styles", function() {
   browserSync.init({
     // Change as required
     proxy: "library-local.princeton.edu",
@@ -251,7 +252,7 @@ gulp.task("browser-sync4drupal", ["styles"], function() {
       // domain: 'http://172.16.44.152:3000'
     }
   });
-});
+}));
 
 /**
  * Compile all static assets
