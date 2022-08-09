@@ -228,30 +228,30 @@ gulp.task("styleguide", function() {
  * Watch scss files for changes & recompile
  * Clear cache when Drupal related files are changed
  */
-gulp.task("watch4drupal", function() {
-  gulp.watch(
-    ["assets/source/styles/*.scss", "assets/source/styles/**/*.scss"],
-    ["styles", "lint:scss"]
-  );
-  gulp.watch("**/*.{php,inc,info}", ["reload"]);
-});
+// gulp.task("watch4drupal", function() {
+//   gulp.watch(
+//     ["assets/source/styles/*.scss", "assets/source/styles/**/*.scss"],
+//     ["styles", "lint:scss"]
+//   );
+//   gulp.watch("**/*.{php,inc,info}", ["reload"]);
+// });
 
 /**
  * Launch BrowserSync for drupal 7 sites
  */
-gulp.task("browser-sync4drupal", ["styles"], function() {
-  browserSync.init({
-    // Change as required
-    proxy: "library-local.princeton.edu",
-    socket: {
-      // For local development only use the default Browsersync local URL.
-      domain: "localhost:3000"
-      // For external development (e.g on a mobile or tablet) use an external URL.
-      // You will need to update this to whatever BS tells you is the external URL when you run Gulp.
-      // domain: 'http://172.16.44.152:3000'
-    }
-  });
-});
+// gulp.task("browser-sync4drupal", ["styles"], function() {
+//   browserSync.init({
+//     // Change as required
+//     proxy: "library-local.princeton.edu",
+//     socket: {
+//       // For local development only use the default Browsersync local URL.
+//       domain: "localhost:3000"
+//       // For external development (e.g on a mobile or tablet) use an external URL.
+//       // You will need to update this to whatever BS tells you is the external URL when you run Gulp.
+//       // domain: 'http://172.16.44.152:3000'
+//     }
+//   });
+// });
 
 /**
  * Compile all static assets
@@ -271,13 +271,13 @@ gulp.task("deploy", function(callback) {
  * Builds Pattern Lab, triggers BrowserSync, builds all assets, and starts the
  * watcher
  */
-gulp.task("default", function(callback) {
-  runSequence(
-    "clean",
-    "lint:scss",
-    ["styles", "scripts"],
-    ["fonts", "images"],
-    ["browser-sync4drupal", "watch4drupal"],
-    callback
-  );
-});
+// gulp.task("default", function(callback) {
+//   runSequence(
+//     "clean",
+//     "lint:scss",
+//     ["styles", "scripts"],
+//     ["fonts", "images"],
+//     ["browser-sync4drupal", "watch4drupal"],
+//     callback
+//   );
+// });
