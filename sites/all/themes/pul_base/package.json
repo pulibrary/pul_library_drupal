@@ -1,14 +1,11 @@
 {
   "name": "pul_base",
   "version": "1.0.0",
-  "dependencies": {
-    "decompress": ">=4.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "bourbon": "^4.3.4",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.18.13",
-    "decompress": ">=4.2.1",
     "del": "^6.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
