@@ -11,8 +11,8 @@ var config = require("./build.config.json");
 var p = require("gulp-load-plugins")();
 
 // Load BrowserSync and simplify reload
-var browserSync = require("browser-sync");
-var reload = browserSync.reload;
+// var browserSync = require("browser-sync");
+// var reload = browserSync.reload;
 
 // Load delete module to clean public assets directory
 var del = require("del");
@@ -195,15 +195,15 @@ gulp.task("watch", function() {
  * Gulp task: browser-sync
  * Starts the proxied BrowserSync server
  */
-gulp.task("browser-sync", function() {
-  browserSync({
-    server: {
-      baseDir: config.root
-    },
-    ghostMode: true,
-    open: "external"
-  });
-});
+// gulp.task("browser-sync", function() {
+//   browserSync({
+//     server: {
+//       baseDir: config.root
+//     },
+//     ghostMode: true,
+//     open: "external"
+//   });
+// });
 
 /**
  * Gulp task: styleguide
