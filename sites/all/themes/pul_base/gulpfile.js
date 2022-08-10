@@ -42,8 +42,9 @@ var onError = function(err) {
  * Gulp task: clean
  * Removes asset files before running other tasks
  */
-gulp.task("clean", function() {
+gulp.task("clean", function(done) {
   del([config.assets.dest]);
+  done();
 });
 
 /**
