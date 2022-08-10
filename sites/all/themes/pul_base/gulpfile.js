@@ -56,7 +56,7 @@ gulp.task("clean", function(done) {
  * source/ and public/ directories -- otherwise the changes would be lost when
  * the Pattern Lab generator is run the next time...
  */
-gulp.task("styles", function() {
+gulp.task("styles", function(done) {
   gulp
     .src(config.styles.files)
     .pipe(p.plumber({ errorHandler: onError }))
@@ -80,8 +80,9 @@ gulp.task("styles", function() {
     .pipe(p.rename({ suffix: ".min" }))
     .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.styles.dest));
+    .pipe(gulp.dest(config.styles.dest))
     // .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
