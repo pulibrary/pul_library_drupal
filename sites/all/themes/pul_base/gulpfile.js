@@ -108,7 +108,7 @@ gulp.task("lint:scss", function() {
  * source/ and public/ directories -- otherwise the changes would be lost when
  * the Pattern Lab generator is run the next time...
  */
-gulp.task("scripts", function() {
+gulp.task("scripts", function(done) {
   gulp
     .src(config.scripts.files)
     // .pipe(p.sourcemaps.init())
@@ -125,8 +125,9 @@ gulp.task("scripts", function() {
   gulp
     .src(config.scripts.vendor)
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.dest));
+    .pipe(gulp.dest(config.scripts.dest))
     // .pipe(reload({ stream: true }));
+  done()
 });
 
 /**
