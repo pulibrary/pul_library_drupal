@@ -256,18 +256,19 @@ gulp.task("styleguide", function() {
 /**
  * Compile all static assets
  */
-gulp.task("deploy", function(callback) {
-  runSequence(
-    "clean",
-    gulp.series(
-      "lint:scss",
-      "styles", 
-      "scripts",
-      "fonts", 
-      "images",
-      callback
-  ));
-});
+// gulp.task("deploy", function(callback) {
+//   runSequence(
+//     "clean",
+//     gulp.series["lint:scss"],
+//     ["styles", "scripts"],
+//     ["fonts", "images"],
+//     callback
+//   );
+// });
+
+gulp.task('deploy', gulp.series('clean', 'lint:scss', 'styles', 'scripts', 'fonts', 'images', function (done) {
+  done();
+}));
 
 /**
  * Gulp task: default
