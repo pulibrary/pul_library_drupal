@@ -265,7 +265,7 @@ gulp.task("deploy", function(callback) {
       "scripts",
       "fonts", 
       "images",
-    callback
+      callback
   ));
 });
 
