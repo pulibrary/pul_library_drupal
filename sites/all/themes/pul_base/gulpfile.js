@@ -17,12 +17,8 @@ var p = require("gulp-load-plugins")();
 // Load delete module to clean public assets directory
 var del = require("del");
 
-// Load sass
-const sass = require('gulp-sass')(require('sass'));
-
 // Load linters
 var scsslint = require("gulp-sass-lint");
-
 
 // Load runSequence to run multiple tasks in a series (synchronously)
 // Gulp 4 will have this native, we need to use an external module for now
