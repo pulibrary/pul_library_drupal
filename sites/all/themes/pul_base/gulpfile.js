@@ -157,19 +157,20 @@ gulp.task("scripts", function(done) {
  * Gulp task: fonts
  * Copy fonts to public/ directory
  */
-gulp.task("fonts", function() {
+gulp.task("fonts", function(done) {
   gulp
     .src(config.fonts.files)
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.fonts.dest));
+    .pipe(gulp.dest(config.fonts.dest))
     // .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
  * Gulp task: images
  * Optimizes (compresses) images for performance.
  */
-gulp.task("images", function() {
+gulp.task("images", function(done) {
   gulp
     .src(config.images.files)
     .pipe(
@@ -180,8 +181,9 @@ gulp.task("images", function() {
       })
     )
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.images.dest));
+    .pipe(gulp.dest(config.images.dest))
     // .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
