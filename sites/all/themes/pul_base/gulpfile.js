@@ -18,7 +18,7 @@ var p = require("gulp-load-plugins")();
 var del = require("del");
 
 // Load sass
-const sass = require('gulp-sass')(require('sass'));
+var sass = require('gulp-sass')(require('sass'));
 
 // Load linters
 var scsslint = require("gulp-sass-lint");
@@ -66,7 +66,7 @@ gulp.task("styles", function(done) {
     .pipe(p.plumber({ errorHandler: onError }))
     .pipe(p.sourcemaps.init())
     .pipe(
-      p.sass({
+      sass({
         includePaths: [
           require("node-normalize-scss").includePaths,
           require("bourbon").includePaths,
