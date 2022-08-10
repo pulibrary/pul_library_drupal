@@ -259,11 +259,14 @@ gulp.task("styleguide", function() {
 gulp.task("deploy", function(callback) {
   runSequence(
     "clean",
-    ["lint:scss"],
-    ["styles", "scripts"],
-    ["fonts", "images"],
+    gulp.series(
+      "lint:scss",
+      "styles", 
+      "scripts",
+      "fonts", 
+      "images",
     callback
-  );
+  ));
 });
 
 /**
