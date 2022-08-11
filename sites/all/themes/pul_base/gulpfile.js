@@ -64,9 +64,7 @@ gulp.task("styles", function(done) {
       })
     )
     .pipe(
-      p.autoprefixer({
-        browsers: ["last 2 versions"]
-      })
+      p.autoprefixer()
     )
     .pipe(p.cssmin())
     .pipe(p.rename({ suffix: ".min" }))
