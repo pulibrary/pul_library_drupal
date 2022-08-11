@@ -19,6 +19,8 @@ services:
     portforward: true
   node:
     type: 'node:11.15'
+    overrides:
+      platform: linux/amd64
     globals:
       gulp-cli: latest
 tooling:
