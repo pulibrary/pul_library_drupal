@@ -10,19 +10,11 @@ var config = require("./build.config.json");
 // Load all plugins into the p variable
 var p = require("gulp-load-plugins")();
 
-// Load BrowserSync and simplify reload
-var browserSync = require("browser-sync");
-var reload = browserSync.reload;
-
 // Load delete module to clean public assets directory
 var del = require("del");
 
 // Load linters
 var scsslint = require("gulp-sass-lint");
-
-// Load runSequence to run multiple tasks in a series (synchronously)
-// Gulp 4 will have this native, we need to use an external module for now
-var runSequence = require("run-sequence");
 
 // Growl-like Notifier
 var notify = require("gulp-notify");
@@ -42,8 +34,9 @@ var onError = function(err) {
  * Gulp task: clean
  * Removes asset files before running other tasks
  */
-gulp.task("clean", function() {
+gulp.task("clean", function(done) {
   del([config.assets.dest]);
+  done();
 });
 
 /**
@@ -55,7 +48,7 @@ gulp.task("clean", function() {
  * source/ and public/ directories -- otherwise the changes would be lost when
  * the Pattern Lab generator is run the next time...
  */
-gulp.task("styles", function() {
+gulp.task("styles", function(done) {
   gulp
     .src(config.styles.files)
     .pipe(p.plumber({ errorHandler: onError }))
@@ -80,7 +73,7 @@ gulp.task("styles", function() {
     .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
     .pipe(gulp.dest(config.styles.dest))
-    .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
@@ -106,67 +99,41 @@ gulp.task("lint:scss", function() {
  * source/ and public/ directories -- otherwise the changes would be lost when
  * the Pattern Lab generator is run the next time...
  */
-gulp.task("scripts", function() {
+gulp.task("scripts", function(done) {
   gulp
     .src(config.scripts.files)
-    // .pipe(p.sourcemaps.init())
     .pipe(p.concat("pul-base.scripts.js"))
     .pipe(p.uglify())
     .on("error", function(err) {
       p.util.log(p.util.colors.red("[Error]"), err.toString());
     })
     .pipe(p.rename("pul-base.scripts.min.js"))
-    // .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.dest))
-    .pipe(reload({ stream: true }));
+    .pipe(gulp.dest(config.scripts.dest));
   gulp
     .src(config.scripts.vendor)
     .pipe(chmod(644))
     .pipe(gulp.dest(config.scripts.dest))
-    .pipe(reload({ stream: true }));
-});
-
-/**
- * Gulp task: modernizr
- * Adds custom modernizr
- */
-gulp.task("modernizr", function() {
-  gulp
-    .src(config.scripts.files)
-    .pipe(
-      p.modernizr({
-        options: [
-          "setClasses",
-          "addTest",
-          "html5printshiv",
-          "testProp",
-          "fnBind"
-        ],
-        tests: ["svg"]
-      })
-    )
-    .pipe(chmod(644))
-    .pipe(gulp.dest(config.scripts.base));
+  done()
 });
 
 /**
  * Gulp task: fonts
  * Copy fonts to public/ directory
  */
-gulp.task("fonts", function() {
+gulp.task("fonts", function(done) {
   gulp
     .src(config.fonts.files)
     .pipe(chmod(644))
     .pipe(gulp.dest(config.fonts.dest))
-    .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
  * Gulp task: images
  * Optimizes (compresses) images for performance.
  */
-gulp.task("images", function() {
+gulp.task("images", function(done) {
   gulp
     .src(config.images.files)
     .pipe(
@@ -178,7 +145,7 @@ gulp.task("images", function() {
     )
     .pipe(chmod(644))
     .pipe(gulp.dest(config.images.dest))
-    .pipe(reload({ stream: true }));
+  done();
 });
 
 /**
@@ -192,20 +159,6 @@ gulp.task("watch", function() {
 });
 
 /**
- * Gulp task: browser-sync
- * Starts the proxied BrowserSync server
- */
-gulp.task("browser-sync", function() {
-  browserSync({
-    server: {
-      baseDir: config.root
-    },
-    ghostMode: true,
-    open: "external"
-  });
-});
-
-/**
  * Gulp task: styleguide
  * Copy styleguide folder from core/ to public/
  */
@@ -216,68 +169,8 @@ gulp.task("styleguide", function() {
 });
 
 /**
- * Gulp task: reload
- * Refresh the page after clearing cache for drupal 7 sites
+ * Compile all assets
  */
-gulp.task("reload", ["clearcache"], function() {
-  browserSync.reload();
-});
-
-/**
- * Gulp task: watch4drupal
- * Watch scss files for changes & recompile
- * Clear cache when Drupal related files are changed
- */
-gulp.task("watch4drupal", function() {
-  gulp.watch(
-    ["assets/source/styles/*.scss", "assets/source/styles/**/*.scss"],
-    ["styles", "lint:scss"]
-  );
-  gulp.watch("**/*.{php,inc,info}", ["reload"]);
-});
-
-/**
- * Launch BrowserSync for drupal 7 sites
- */
-gulp.task("browser-sync4drupal", ["styles"], function() {
-  browserSync.init({
-    // Change as required
-    proxy: "library-local.princeton.edu",
-    socket: {
-      // For local development only use the default Browsersync local URL.
-      domain: "localhost:3000"
-      // For external development (e.g on a mobile or tablet) use an external URL.
-      // You will need to update this to whatever BS tells you is the external URL when you run Gulp.
-      // domain: 'http://172.16.44.152:3000'
-    }
-  });
-});
-
-/**
- * Compile all static assets
- */
-gulp.task("deploy", function(callback) {
-  runSequence(
-    "clean",
-    ["lint:scss"],
-    ["styles", "scripts"],
-    ["fonts", "images"],
-    callback
-  );
-});
-
-/**
- * Gulp task: default
- * Builds Pattern Lab, triggers BrowserSync, builds all assets, and starts the
- * watcher
- */
-gulp.task("default", function(callback) {
-  runSequence(
-    "clean",
-    "lint:scss",
-    ["styles", "scripts"],
-    ["fonts", "images"],
-    ["browser-sync4drupal", "watch4drupal"],
-    callback
-  );
-});
+gulp.task('deploy', gulp.series('clean', 'lint:scss', 'styles', 'scripts', 'fonts', 'images', function (done) {
+  done();
+}));
