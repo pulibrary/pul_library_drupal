@@ -1797,60 +1797,6 @@ services/access/*',
   $display->content['new-a2444132-eb00-4ed3-a801-b86d209c0ce9'] = $pane;
   $display->panels['first'][0] = 'new-a2444132-eb00-4ed3-a801-b86d209c0ce9';
   $pane = new stdClass();
-  $pane->pid = 'new-01c7c8f1-331b-4b94-bc04-0785392e5939';
-  $pane->panel = 'middle';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'context' => 'empty',
-        'name' => 'path_visibility',
-        'not' => FALSE,
-        'settings' => array(
-          'paths' => 'services/access/visitors/ias/*
-services/access/policies/library-account/*
-services/access/circulation-policies/*
-services/access/renewing/*
-services/access/offsite-material/*
-services/access/policies/confidentiality/*
-services/reserves/*
-',
-          'visibility_setting' => '0',
-        ),
-      ),
-      1 => array(
-        'context' => 'empty',
-        'name' => 'path_visibility',
-        'not' => FALSE,
-        'settings' => array(
-          'paths' => 'services/reserves',
-          'visibility_setting' => '0',
-        ),
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'admin_title' => 'Visitor Policy',
-    'body' => '<h3>Limited Access Note</h3><p>PUL is allowing a limited number of visitors with urgent research needs and a connection to the Princeton research community. To submit a request for consideration, please visit&nbsp;the&nbsp;<a href="https://ehs.princeton.edu/VisitorPolicy" target="_blank">EHS&nbsp;visitor page</a>&nbsp;and complete the form linked on the right. Your sponsor must be a Princeton University faculty member, staff member, or graduate student. Please note that the Library will need to approve this form, not the sponsor\'s department head. Send completed forms to&nbsp;<a href="mailto:refdesk@princeton.edu">refdesk@princeton.edu</a>&nbsp;and include&nbsp;the collections that are required to complete on-site research. Allow three business days for review of requests.</p><p>Special Collections is accepting appointments for non-Princeton researchers on a very limited basis. Visitors interested in researching within Special Collections&nbsp;must&nbsp;first contact the department through their&nbsp;<a href="https://library.princeton.edu/special-collections/ask-us">Ask Us! form</a>. Requests to visit Special Collections will only be considered through this form.</p><hr>',
-    'format' => 'full_html',
-    'substitute' => 1,
-    'title' => '',
-    'title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '01c7c8f1-331b-4b94-bc04-0785392e5939';
-  $display->content['new-01c7c8f1-331b-4b94-bc04-0785392e5939'] = $pane;
-  $display->panels['middle'][0] = 'new-01c7c8f1-331b-4b94-bc04-0785392e5939';
-  $pane = new stdClass();
   $pane->pid = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $pane->panel = 'middle';
   $pane->type = 'node_content';
@@ -1874,11 +1820,11 @@ services/reserves/*
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $display->content['new-4034f21f-2466-4a4a-8412-1c6f2882ccff'] = $pane;
-  $display->panels['middle'][1] = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
+  $display->panels['middle'][0] = 'new-4034f21f-2466-4a4a-8412-1c6f2882ccff';
   $pane = new stdClass();
   $pane->pid = 'new-31d36910-3344-4700-8aab-462c13c37309';
   $pane->panel = 'second';
