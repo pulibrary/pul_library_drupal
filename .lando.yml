@@ -18,7 +18,7 @@ services:
     type: redis
     portforward: true
   node:
-    type: 'node:11.15'
+    type: 'node:12'
     overrides:
       platform: linux/amd64
     globals:
