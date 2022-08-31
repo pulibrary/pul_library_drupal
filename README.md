@@ -188,3 +188,6 @@ For example if my sql dump file is in `/tmp/dump.sql` I would run:
 ```
 SQL_DIR=/tmp/ SQL_GZ=dump.sql.gz cap staging drupal:database:upload_and_import
 ```
+
+### Sync a feature(s) from production
+See https://github.com/pulibrary/pul_library_drupal/wiki/Sync-a-Feature(s)-from-Production 
