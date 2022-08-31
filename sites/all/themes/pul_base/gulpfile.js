@@ -77,12 +77,6 @@ gulp.task("styles", function(done) {
   done();
 });
 
-// gulp.task('minify-css', () => {
-//   return gulp.src('styles/*.css')
-//     .pipe(cleanCSS({compatibility: 'ie8'}))
-//     .pipe(gulp.dest('dist'));
-// });
-
 /**
  * Gulp task: lint:scss
  * SCSS Linter
