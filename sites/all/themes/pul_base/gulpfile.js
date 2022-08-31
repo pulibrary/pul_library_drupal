@@ -10,6 +10,9 @@ var config = require("./build.config.json");
 // Load all plugins into the p variable
 var p = require("gulp-load-plugins")();
 
+// Minifies css
+const cleanCSS = require('gulp-clean-css');
+
 // Load delete module to clean public assets directory
 var del = require("del");
 
@@ -66,7 +69,7 @@ gulp.task("styles", function(done) {
     .pipe(
       p.autoprefixer()
     )
-    .pipe(p.cssmin())
+    .pipe(cleanCSS())
     .pipe(p.rename({ suffix: ".min" }))
     .pipe(p.sourcemaps.write("."))
     .pipe(chmod(644))
