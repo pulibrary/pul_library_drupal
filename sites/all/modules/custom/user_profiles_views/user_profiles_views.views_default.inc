@@ -262,6 +262,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_unit']['table'] = 'field_data_field_puluser_unit';
   $handler->display->display_options['fields']['field_puluser_unit']['field'] = 'field_puluser_unit';
   $handler->display->display_options['fields']['field_puluser_unit']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_unit']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_unit']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_puluser_unit']['element_class'] = 'user--unit';
   $handler->display->display_options['fields']['field_puluser_unit']['element_label_colon'] = FALSE;
@@ -272,6 +273,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_section']['table'] = 'field_data_field_puluser_section';
   $handler->display->display_options['fields']['field_puluser_section']['field'] = 'field_puluser_section';
   $handler->display->display_options['fields']['field_puluser_section']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_section']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_section']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_puluser_section']['element_class'] = 'user--section';
   $handler->display->display_options['fields']['field_puluser_section']['element_label_colon'] = FALSE;
@@ -284,6 +286,7 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_division']['table'] = 'field_data_field_puluser_division';
   $handler->display->display_options['fields']['field_puluser_division']['field'] = 'field_puluser_division';
   $handler->display->display_options['fields']['field_puluser_division']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_division']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_division']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_puluser_division']['element_class'] = 'user--division';
   $handler->display->display_options['fields']['field_puluser_division']['element_label_colon'] = FALSE;
