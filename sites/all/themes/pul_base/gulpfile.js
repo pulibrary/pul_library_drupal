@@ -13,6 +13,9 @@ var p = require("gulp-load-plugins")();
 // Minifies css
 const cleanCSS = require('gulp-clean-css');
 
+// Sass compiler 
+const sass = require('gulp-sass')(require('node-sass'));
+
 // Load delete module to clean public assets directory
 var del = require("del");
 
@@ -57,7 +60,7 @@ gulp.task("styles", function(done) {
     .pipe(p.plumber({ errorHandler: onError }))
     .pipe(p.sourcemaps.init())
     .pipe(
-      p.sass({
+      sass({
         includePaths: [
           require("node-normalize-scss").includePaths,
           require("bourbon").includePaths,
