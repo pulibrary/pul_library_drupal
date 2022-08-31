@@ -440,6 +440,15 @@ function pul_library_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     5 => '5',
   );
+  /* Filter criterion: Taxonomy term: Hide on Specialist Page (field_subs_hide_on_specialist) */
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['id'] = 'field_subs_hide_on_specialist_value';
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['table'] = 'field_data_field_subs_hide_on_specialist';
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['field'] = 'field_subs_hide_on_specialist_value';
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['relationship'] = 'reverse_field_subs_specialist_taxonomy_term';
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_subs_hide_on_specialist_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'about/staff/specialists';
 
   /* Display: Subject Specialist Finder Block */
