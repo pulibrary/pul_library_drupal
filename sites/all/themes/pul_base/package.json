@@ -21,7 +21,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-shell": "^0.8.0",
-    "gulp-sourcemaps": "^1.12.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
     "node-normalize-scss": "^1.5.0",
