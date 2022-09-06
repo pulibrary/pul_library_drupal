@@ -1,29 +1,63 @@
-// Load in gulp
-var gulp = require("gulp");
+'use strict'
 
-// set permissions
-var chmod = require("gulp-chmod");
+import gulp from 'gulp';
+import {deleteAsync} from 'del';
+import normalizeScss from 'node-normalize-scss';
 
-// Load in config JSON
-var config = require("./build.config.json");
+import autoprefixer from 'gulp-autoprefixer';
+import chmod from 'gulp-chmod';
+import cleanCSS from 'gulp-clean-css';
+import concat from 'gulp-concat';
+import imagemin from 'gulp-imagemin';
+import notify from 'gulp-notify';
+import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
+import scsslint from "gulp-sass-lint";
+import sourcemaps from 'gulp-sourcemaps';
+import uglify from 'gulp-uglify';
 
-// Load all plugins into the p variable
-var p = require("gulp-load-plugins")();
-
-// Minifies css
-const cleanCSS = require('gulp-clean-css');
+const config = {
+  "root": "./assets/public",
+  "assets": {
+    "base": "assets/source",
+    "dest": "assets/public"
+  },
+  "scripts": {
+    "base"  : "assets/source/scripts/",
+    "vendor": "assets/source/scripts/vendor/**/*.js",
+    "files" : [
+      "assets/source/scripts/**/*.js",
+      "!assets/source/scripts/vendor/*"
+    ],
+    "dest"  : "assets/public/scripts"
+  },
+  "styles": {
+    "base" : "assets/source/styles/",
+    "files": [
+      "assets/source/styles/**/*.scss"
+    ],
+    "dest" : "assets/public/styles/"
+  },
+  "fonts": {
+    "base" : "assets/source/fonts/",
+    "files": [
+      "assets/source/fonts/**/*"
+    ],
+    "dest" : "assets/public/fonts/"
+  },
+  "images": {
+    "base" : "assets/source/images/",
+    "files": [
+      "assets/source/images/**/*"
+    ],
+    "dest" : "assets/public/images/"
+  }
+}
 
 // Sass compiler 
-const sass = require('gulp-sass')(require('node-sass'));
-
-// Load delete module to clean public assets directory
-var del = require("del");
-
-// Load linters
-var scsslint = require("gulp-sass-lint");
-
-// Growl-like Notifier
-var notify = require("gulp-notify");
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 
 // Error handling
 var onError = function(err) {
@@ -41,8 +75,7 @@ var onError = function(err) {
  * Removes asset files before running other tasks
  */
 gulp.task("clean", function(done) {
-  del([config.assets.dest]);
-  done();
+  deleteAsync([config.assets.dest]).then(done());
 });
 
 /**
@@ -57,24 +90,24 @@ gulp.task("clean", function(done) {
 gulp.task("styles", function(done) {
   gulp
     .src(config.styles.files)
-    .pipe(p.plumber({ errorHandler: onError }))
-    .pipe(p.sourcemaps.init())
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(sourcemaps.init())
     .pipe(
       sass({
         includePaths: [
-          require("node-normalize-scss").includePaths,
-          require("bourbon").includePaths,
+          normalizeScss.includePaths,
+          "node_modules/bourbon/app/assets/stylesheets",
           "./node_modules/susy/sass",
           "./node_modules/breakpoint-sass/stylesheets"
         ]
       })
     )
     .pipe(
-      p.autoprefixer()
+      autoprefixer()
     )
     .pipe(cleanCSS())
-    .pipe(p.rename({ suffix: ".min" }))
-    .pipe(p.sourcemaps.write("."))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(sourcemaps.write("."))
     .pipe(chmod(644))
     .pipe(gulp.dest(config.styles.dest))
   done();
@@ -87,7 +120,7 @@ gulp.task("styles", function(done) {
 gulp.task("lint:scss", function() {
   return gulp
     .src(config.styles.files)
-    .pipe(p.plumber({ errorHandler: onError }))
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(scsslint())
     .pipe(scsslint.format())
     .pipe(scsslint.failOnError());
@@ -106,12 +139,12 @@ gulp.task("lint:scss", function() {
 gulp.task("scripts", function(done) {
   gulp
     .src(config.scripts.files)
-    .pipe(p.concat("pul-base.scripts.js"))
-    .pipe(p.uglify())
+    .pipe(concat("pul-base.scripts.js"))
+    .pipe(uglify())
     .on("error", function(err) {
       p.util.log(p.util.colors.red("[Error]"), err.toString());
     })
-    .pipe(p.rename("pul-base.scripts.min.js"))
+    .pipe(rename("pul-base.scripts.min.js"))
     .pipe(chmod(644))
     .pipe(gulp.dest(config.scripts.dest));
   gulp
@@ -141,7 +174,7 @@ gulp.task("images", function(done) {
   gulp
     .src(config.images.files)
     .pipe(
-      p.imagemin({
+      imagemin({
         progressive: true,
         optimizationLevel: 5,
         interlaced: true
