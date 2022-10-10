@@ -6,7 +6,7 @@
  */
 
 function ezproxy_utils_drush_help($command) {
-    switch($commnd) {
+    switch($command) {
         case 'drush:total-databases':
             return dt('Show total databases');
     }
