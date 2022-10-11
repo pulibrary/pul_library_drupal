@@ -3,7 +3,7 @@
 /**
  *  Example for a proxy with session usage
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     example_proxy_serviceWeb_chaining.php
  * @category Authentication
@@ -20,7 +20,9 @@ require_once 'config.php';
 require_once $phpcas_path . '/CAS.php';
 
 // Enable debugging
-phpCAS::setDebug();
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(true);
 
 // Initialize phpCAS
 phpCAS::proxy(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);

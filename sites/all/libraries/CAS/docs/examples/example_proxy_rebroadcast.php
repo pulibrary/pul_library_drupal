@@ -4,7 +4,7 @@
  *  Example for a proxy that rebroadcasts all PGTs to different servers in the
  *  cluster
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     example_proxy_rebroadcast.php
  * @category Authentication
@@ -21,7 +21,9 @@ require_once 'config.php';
 require_once $phpcas_path . '/CAS.php';
 
 // Enable debugging
-phpCAS::setDebug();
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(true);
 
 // Initialize phpCAS
 phpCAS::proxy(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);

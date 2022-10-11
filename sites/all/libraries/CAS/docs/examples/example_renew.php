@@ -3,9 +3,9 @@
 /**
  *   Example for a simple cas 2.0 client
  *
- * PHP Version 5
+ * PHP Version 7
  *
- * @file     example_simple.php
+ * @file     example_renew.php
  * @category Authentication
  * @package  PhpCAS
  * @author   Joachim Fritschi <jfritschi@freenet.de>
@@ -19,11 +19,13 @@ require_once 'config.php';
 // Load the CAS lib
 require_once $phpcas_path . '/CAS.php';
 
-// Uncomment to enable debugging
-phpCAS::setDebug();
+// Enable debugging
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(true);
 
 // Initialize phpCAS
-phpCAS::proxy(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
+phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
 
 // For production use set the CA certificate that is the issuer of the cert
 // on the CAS server and uncomment the line below
@@ -35,14 +37,22 @@ phpCAS::proxy(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
 phpCAS::setNoCasServerValidation();
 
 // force CAS authentication
-phpCAS::forceAuthentication();
+phpCAS::renewAuthentication();
 
 // at this step, the user has been authenticated by the CAS server
 // and the user's login name can be read with phpCAS::getUser().
-$pt = phpCAS::retrievePT('http://localhost/test', $err_code, $err_msg);
+
 // logout if desired
 if (isset($_REQUEST['logout'])) {
-	phpCAS::logout();
+    phpCAS::logout();
+}
+
+// logout if desired
+if (isset($_REQUEST['session'])) {
+    session_unset();
+    session_destroy();
+    unset($_REQUEST['session']);
+    header("Location: ".$_SERVER['PHP_SELF']);
 }
 
 // for this test, simply print that the authentication was successfull
@@ -56,7 +66,7 @@ if (isset($_REQUEST['logout'])) {
     <?php require 'script_info.php' ?>
     <p>the user's login is <b><?php echo phpCAS::getUser(); ?></b>.</p>
     <p>phpCAS version is <b><?php echo phpCAS::getVersion(); ?></b>.</p>
-    <p>phpCAS PT is <b><?php echo $pt ?></b>.</p>
     <p><a href="?logout=">Logout</a></p>
+    <p><a href="?session=">Kill local Session</a></p>
   </body>
 </html>

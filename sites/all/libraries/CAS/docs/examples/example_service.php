@@ -3,7 +3,7 @@
 /**
  * Example for proxied service with session support
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     example_service.php
  * @category Authentication
@@ -20,7 +20,9 @@ require_once 'config.php';
 require_once $phpcas_path . '/CAS.php';
 
 // Enable debugging
-phpCAS::setDebug();
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(true);
 
 // Initialize phpCAS
 phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
@@ -67,11 +69,11 @@ phpCAS::allowProxyChain(
 // For quick testing or in certain production screnarios you might want to
 // allow allow any other valid service to proxy your service. To do so, add
 // the "Any" chain:
-// 		phpcas::allowProxyChain(new CAS_ProxyChain_Any);
+// 		phpCAS::allowProxyChain(new CAS_ProxyChain_Any);
 // THIS SETTING IS HOWEVER NOT RECOMMENDED FOR PRODUCTION AND HAS SECURITY
 // IMPLICATIONS: YOU ARE ALLOWING ANY SERVICE TO ACT ON BEHALF OF A USER
 // ON THIS SERVICE.
-//phpcas::allowProxyChain(new CAS_ProxyChain_Any);
+//phpCAS::allowProxyChain(new CAS_ProxyChain_Any);
 
 // force CAS authentication
 phpCAS::forceAuthentication();

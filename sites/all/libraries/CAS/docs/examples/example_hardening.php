@@ -3,7 +3,7 @@
 /**
  * Advanced example for hardening the phpcas client
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     example_hardening.php
  * @category Authentication
@@ -20,7 +20,9 @@ require_once 'config.php';
 require_once $phpcas_path . '/CAS.php';
 
 // Enable debugging
-phpCAS::setDebug();
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(false);
 
 // Harden session cookie to prevent some attacks on the cookie (e.g. XSS)
 session_set_cookie_params($client_lifetime, $client_path, $client_domain, $client_secure, $client_httpOnly);
