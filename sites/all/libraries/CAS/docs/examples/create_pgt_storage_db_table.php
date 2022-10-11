@@ -10,7 +10,7 @@
  *  have to filled out directly. Option examples can be found in the
  *  config.example.php
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     create_pgt_storage_table.php
  * @category Authentication
@@ -28,7 +28,7 @@ require_once $phpcas_path . '/CAS.php';
 
 // Dummy client because we need a 'client' object
 $client = new CAS_Client(
-    CAS_VERSION_2_0, true, $cas_host, $cas_port, $cas_context, false
+    CAS_VERSION_2_0, true, $cas_host, $cas_port, $cas_context, $client_service_name, false
 );
 
 // Set the torage object

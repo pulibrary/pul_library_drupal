@@ -3,7 +3,7 @@
 /**
  * Advanced example for SAML with attributes and single logout
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     example_advanced_saml11.php
  * @category Authentication
@@ -20,10 +20,12 @@ require_once 'config.php';
 require_once $phpcas_path . '/CAS.php';
 
 // Enable debugging
-phpCAS::setDebug();
+phpCAS::setLogger();
+// Enable verbose error messages. Disable in production!
+phpCAS::setVerbose(true);
 
 // Initialize phpCAS
-phpCAS::client(SAML_VERSION_1_1, $cas_host, $cas_port, $cas_context);
+phpCAS::client(SAML_VERSION_1_1, $cas_host, $cas_port, $cas_context, $client_service_name);
 
 // For production use set the CA certificate that is the issuer of the cert
 // on the CAS server and uncomment the line below
