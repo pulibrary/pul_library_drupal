@@ -19,28 +19,28 @@
  *
  * PHP Version 7
  *
- * @file     CAS/Language/French.php
+ * @file     CAS/Language/ChineseSimplified.php
  * @category Authentication
  * @package  PhpCAS
- * @author   Pascal Aubry <pascal.aubry@univ-rennes1.fr>
+ * @author   Pascal Aubry <pascal.aubry@univ-rennes1.fr>, Phy25 <caslang@phy25.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @link     https://wiki.jasig.org/display/CASC/phpCAS
  */
 
 /**
- * French language class
+ * Chinese Simplified language class
  *
- * @class    CAS_Languages_French
+ * @class    CAS_Languages_ChineseSimplified
  * @category Authentication
  * @package  PhpCAS
- * @author   Pascal Aubry <pascal.aubry@univ-rennes1.fr>
+ * @author   Pascal Aubry <pascal.aubry@univ-rennes1.fr>, Phy25 <caslang@phy25.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
  * @link     https://wiki.jasig.org/display/CASC/phpCAS
  *
  * @sa @link internalLang Internationalization @endlink
  * @ingroup internalLang
  */
-class CAS_Languages_French implements CAS_Languages_LanguageInterface
+class CAS_Languages_ChineseSimplified implements CAS_Languages_LanguageInterface
 {
     /**
      * Get the using server string
@@ -49,7 +49,7 @@ class CAS_Languages_French implements CAS_Languages_LanguageInterface
      */
     public function getUsingServer()
     {
-        return 'utilisant le serveur';
+        return '连接的服务器';
     }
 
     /**
@@ -59,7 +59,7 @@ class CAS_Languages_French implements CAS_Languages_LanguageInterface
      */
     public function getAuthenticationWanted()
     {
-        return 'Authentication CAS nécessaire&nbsp;!';
+        return '请进行 CAS 认证！';
     }
 
     /**
@@ -69,7 +69,7 @@ class CAS_Languages_French implements CAS_Languages_LanguageInterface
      */
     public function getLogout()
     {
-        return 'Déconnexion demandée&nbsp;!';
+        return '请进行 CAS 登出！';
     }
 
     /**
@@ -79,38 +79,36 @@ class CAS_Languages_French implements CAS_Languages_LanguageInterface
      */
     public function getShouldHaveBeenRedirected()
     {
-        return 'Vous auriez du etre redirigé(e) vers le serveur CAS. Cliquez <a href="%s">ici</a> pour continuer.';
+        return '你正被重定向到 CAS 服务器。<a href="%s">点击这里</a>继续。';
     }
 
     /**
-     * Get authentication failed string
-     *
-     * @return string authentication failed
-     */
+    * Get authentication failed string
+    *
+    * @return string authentication failed
+    */
     public function getAuthenticationFailed()
     {
-        return 'Authentification CAS infructueuse&nbsp;!';
+        return 'CAS 认证失败！';
     }
 
     /**
-     * Get the your were not authenticated string
-     *
-     * @return string not authenticated
-     */
+    * Get the your were not authenticated string
+    *
+    * @return string not authenticated
+    */
     public function getYouWereNotAuthenticated()
     {
-        return '<p>Vous n\'avez pas été authentifié(e).</p><p>Vous pouvez soumettre votre requete à nouveau en cliquant <a href="%s">ici</a>.</p><p>Si le problème persiste, vous pouvez contacter <a href="mailto:%s">l\'administrateur de ce site</a>.</p>';
+        return '<p>你没有成功登录。</p><p>你可以<a href="%s">点击这里重新登录</a>。</p><p>如果问题依然存在，请<a href="mailto:%s">联系本站管理员</a>。</p>';
     }
 
     /**
-     * Get the service unavailable string
-     *
-     * @return string service unavailable
-     */
+    * Get the service unavailable string
+    *
+    * @return string service unavailable
+    */
     public function getServiceUnavailable()
     {
-        return 'Le service `<b>%s</b>\' est indisponible (<b>%s</b>)';
+        return '服务器 <b>%s</b> 不可用（<b>%s</b>）。';
     }
 }
-
-?>

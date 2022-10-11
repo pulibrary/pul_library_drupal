@@ -6,7 +6,7 @@
  * Just configure all the items in this config according to your environment
  * and rename the file to config.php
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     config.php
  * @category Authentication
@@ -96,7 +96,7 @@ $cas_url = $cas_url . $cas_context;
 // doesn't share its session with a proxied script.
 // This is just useful when running the example code, but not normally.
 session_name(
-    'session_for:'
+    'session_for-'
     . preg_replace('/[^a-z0-9-]/i', '_', basename($_SERVER['SCRIPT_NAME']))
 );
 // Set an UTF-8 encoding header for internation characters (User attributes)
