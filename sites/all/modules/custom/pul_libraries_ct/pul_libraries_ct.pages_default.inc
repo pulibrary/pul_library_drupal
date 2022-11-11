@@ -303,7 +303,8 @@ vdl',
           'name' => 'path_visibility',
           'not' => FALSE,
           'settings' => array(
-            'paths' => 'firestone',
+            'paths' => 'firestone
+firestone/*',
             'visibility_setting' => '1',
           ),
         ),
@@ -342,6 +343,29 @@ vdl',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-2f766f08-48aa-4e1a-b38d-17a2885038b7';
+  $pane->panel = 'first';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-branch-firestone';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '2f766f08-48aa-4e1a-b38d-17a2885038b7';
+  $display->content['new-2f766f08-48aa-4e1a-b38d-17a2885038b7'] = $pane;
+  $display->panels['first'][0] = 'new-2f766f08-48aa-4e1a-b38d-17a2885038b7';
+  $pane = new stdClass();
   $pane->pid = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $pane->panel = 'first';
   $pane->type = 'block';
@@ -359,11 +383,11 @@ vdl',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $display->content['new-c834e26e-7795-4abd-9f1c-b86fdfe0636e'] = $pane;
-  $display->panels['first'][0] = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
+  $display->panels['first'][1] = 'new-c834e26e-7795-4abd-9f1c-b86fdfe0636e';
   $pane = new stdClass();
   $pane->pid = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane->panel = 'first';
@@ -385,11 +409,11 @@ vdl',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $display->content['new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5'] = $pane;
-  $display->panels['first'][1] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
+  $display->panels['first'][2] = 'new-fca19c8b-2b66-46a1-92c5-f8a4fce945e5';
   $pane = new stdClass();
   $pane->pid = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $pane->panel = 'first';
@@ -418,11 +442,49 @@ vdl',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '53ba4930-9de5-4cf0-a379-40df7e8c076b';
   $display->content['new-53ba4930-9de5-4cf0-a379-40df7e8c076b'] = $pane;
-  $display->panels['first'][2] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $display->panels['first'][3] = 'new-53ba4930-9de5-4cf0-a379-40df7e8c076b';
+  $pane = new stdClass();
+  $pane->pid = 'new-da5bbe9d-0fbb-41cc-abc9-b12eaddcab58';
+  $pane->panel = 'first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'libraries-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'firestone/*',
+          'visibility_setting' => '1',
+        ),
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7787',
+    ),
+    'override_title' => 0,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'da5bbe9d-0fbb-41cc-abc9-b12eaddcab58';
+  $display->content['new-da5bbe9d-0fbb-41cc-abc9-b12eaddcab58'] = $pane;
+  $display->panels['first'][4] = 'new-da5bbe9d-0fbb-41cc-abc9-b12eaddcab58';
   $pane = new stdClass();
   $pane->pid = 'new-2739e4c8-9004-4bfc-93aa-f82eb8195850';
   $pane->panel = 'middle';
@@ -492,7 +554,19 @@ vdl',
   $pane->type = 'node';
   $pane->subtype = 'node';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'firestone',
+          'visibility_setting' => '1',
+        ),
+      ),
+    ),
+  );
   $pane->configuration = array(
     'build_mode' => 'full',
     'identifier' => '',
@@ -646,6 +720,44 @@ vdl',
   $pane->uuid = '7abbee4d-32a4-4e3b-91fb-a173697d1826';
   $display->content['new-7abbee4d-32a4-4e3b-91fb-a173697d1826'] = $pane;
   $display->panels['top'][0] = 'new-7abbee4d-32a4-4e3b-91fb-a173697d1826';
+  $pane = new stdClass();
+  $pane->pid = 'new-6d53f61b-754f-4bad-9c5b-a44017847277';
+  $pane->panel = 'top';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'branch_library_image-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'context' => 'empty',
+        'name' => 'path_visibility',
+        'not' => FALSE,
+        'settings' => array(
+          'paths' => 'firestone/*',
+          'visibility_setting' => '1',
+        ),
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'arguments' => array(
+      'nid' => '7787',
+    ),
+    'override_title' => 1,
+    'override_title_heading' => 'h2',
+    'override_title_text' => 'Firestone Library',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '6d53f61b-754f-4bad-9c5b-a44017847277';
+  $display->content['new-6d53f61b-754f-4bad-9c5b-a44017847277'] = $pane;
+  $display->panels['top'][1] = 'new-6d53f61b-754f-4bad-9c5b-a44017847277';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
