@@ -568,7 +568,6 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Libguides DB Export';
   $handler->display->display_options['display_description'] = 'Export Using Format Libguides Recommends';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -585,32 +584,22 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_one_resources_taxonomy_term']['id'] = 'reverse_field_subs_tier_one_resources_taxonomy_term';
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_one_resources_taxonomy_term']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_one_resources_taxonomy_term']['field'] = 'reverse_field_subs_tier_one_resources_taxonomy_term';
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_two_resources_taxonomy_term']['id'] = 'reverse_field_subs_tier_two_resources_taxonomy_term';
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_two_resources_taxonomy_term']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_subs_tier_two_resources_taxonomy_term']['field'] = 'reverse_field_subs_tier_two_resources_taxonomy_term';
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_dboverride_database_node']['id'] = 'reverse_field_dboverride_database_node';
-  $handler->display->display_options['relationships']['reverse_field_dboverride_database_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_dboverride_database_node']['field'] = 'reverse_field_dboverride_database_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'Drupal ID';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'name';
+  $handler->display->display_options['fields']['title']['label'] = 'LINK TITLE';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = 'LINK URL';
+  $handler->display->display_options['fields']['path']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
   /* Field: Content: Date Coverage */
   $handler->display->display_options['fields']['field_db_date_coverage']['id'] = 'field_db_date_coverage';
   $handler->display->display_options['fields']['field_db_date_coverage']['table'] = 'field_data_field_db_date_coverage';
@@ -622,7 +611,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'description';
+  $handler->display->display_options['fields']['body']['label'] = 'DESCRIPTION';
   $handler->display->display_options['fields']['body']['alter']['text'] = '[body] 
 [field_db_date_coverage]';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '475';
@@ -640,7 +629,7 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['field_db_access_note']['id'] = 'field_db_access_note';
   $handler->display->display_options['fields']['field_db_access_note']['table'] = 'field_data_field_db_access_note';
   $handler->display->display_options['fields']['field_db_access_note']['field'] = 'field_db_access_note';
-  $handler->display->display_options['fields']['field_db_access_note']['label'] = 'more_info';
+  $handler->display->display_options['fields']['field_db_access_note']['label'] = 'MORE INFORMATION';
   $handler->display->display_options['fields']['field_db_access_note']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_db_access_note']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['field_db_access_note']['element_type'] = '0';
@@ -655,46 +644,6 @@ function dbs_by_url_dmg_views_default_views() {
   $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'search_api_facetapi_DAY';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'search_api_facetapi_YEAR';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'reverse_field_subs_tier_one_resources_taxonomy_term';
-  $handler->display->display_options['fields']['name']['label'] = 'best_bets';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['relationship'] = 'reverse_field_subs_tier_two_resources_taxonomy_term';
-  $handler->display->display_options['fields']['name_1']['label'] = 'subjects';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'reverse_field_dboverride_database_node';
-  $handler->display->display_options['fields']['title_1']['label'] = 'keywords';
-  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Field: Content: Path */
-  $handler->display->display_options['fields']['path_1']['id'] = 'path_1';
-  $handler->display->display_options['fields']['path_1']['table'] = 'node';
-  $handler->display->display_options['fields']['path_1']['field'] = 'path';
-  $handler->display->display_options['fields']['path_1']['label'] = 'slug';
-  /* Field: Content: Use EZproxy */
-  $handler->display->display_options['fields']['field_db_use_proxy']['id'] = 'field_db_use_proxy';
-  $handler->display->display_options['fields']['field_db_use_proxy']['table'] = 'field_data_field_db_use_proxy';
-  $handler->display->display_options['fields']['field_db_use_proxy']['field'] = 'field_db_use_proxy';
-  $handler->display->display_options['fields']['field_db_use_proxy']['label'] = 'enable_proxy';
-  $handler->display->display_options['fields']['field_db_use_proxy']['type'] = 'list_key';
-  /* Field: Content: Access URL */
-  $handler->display->display_options['fields']['field_db_access_url']['id'] = 'field_db_access_url';
-  $handler->display->display_options['fields']['field_db_access_url']['table'] = 'field_data_field_db_access_url';
-  $handler->display->display_options['fields']['field_db_access_url']['field'] = 'field_db_access_url';
-  $handler->display->display_options['fields']['field_db_access_url']['label'] = 'url';
-  $handler->display->display_options['fields']['field_db_access_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_db_access_url']['type'] = 'link_plain';
-  $handler->display->display_options['fields']['field_db_access_url']['settings'] = array(
-    'custom_title' => '',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
