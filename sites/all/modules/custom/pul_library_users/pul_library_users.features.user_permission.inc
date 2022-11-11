@@ -25,6 +25,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_personal_lib_contacts'] = array(
     'name' => 'create field_personal_lib_contacts',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -35,6 +36,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_personal_lib_duties'] = array(
     'name' => 'create field_personal_lib_duties',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -45,6 +47,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_personal_lib_fun_fact'] = array(
     'name' => 'create field_personal_lib_fun_fact',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -55,6 +58,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_personal_lib_spec'] = array(
     'name' => 'create field_personal_lib_spec',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -65,6 +69,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_personal_lib_statement'] = array(
     'name' => 'create field_personal_lib_statement',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -75,6 +80,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_pul_user_staff_sort'] = array(
     'name' => 'create field_pul_user_staff_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -85,6 +91,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_appt_calendar'] = array(
     'name' => 'create field_puluser_appt_calendar',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -95,6 +102,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_building_location'] = array(
     'name' => 'create field_puluser_building_location',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -105,6 +113,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_department'] = array(
     'name' => 'create field_puluser_department',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -115,6 +124,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_department_sort'] = array(
     'name' => 'create field_puluser_department_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -125,6 +135,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_displaytitle'] = array(
     'name' => 'create field_puluser_displaytitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -135,6 +146,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_division'] = array(
     'name' => 'create field_puluser_division',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -145,6 +157,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_divsect'] = array(
     'name' => 'create field_puluser_divsect',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -155,6 +168,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_dmgimport_id'] = array(
     'name' => 'create field_puluser_dmgimport_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -165,6 +179,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_fname'] = array(
     'name' => 'create field_puluser_fname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -175,6 +190,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_formalname'] = array(
     'name' => 'create field_puluser_formalname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -185,6 +201,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_libguide_author_id'] = array(
     'name' => 'create field_puluser_libguide_author_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -195,6 +212,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_librarystaffid'] = array(
     'name' => 'create field_puluser_librarystaffid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -205,6 +223,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_lname'] = array(
     'name' => 'create field_puluser_lname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -215,6 +234,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_middle_name'] = array(
     'name' => 'create field_puluser_middle_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -225,6 +245,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_netid'] = array(
     'name' => 'create field_puluser_netid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -235,6 +256,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_nick_name'] = array(
     'name' => 'create field_puluser_nick_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -245,6 +267,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_office'] = array(
     'name' => 'create field_puluser_office',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -255,6 +278,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_officialtitle'] = array(
     'name' => 'create field_puluser_officialtitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -265,6 +289,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_phone_number'] = array(
     'name' => 'create field_puluser_phone_number',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -275,6 +300,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_princetonid'] = array(
     'name' => 'create field_puluser_princetonid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -285,6 +311,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_section'] = array(
     'name' => 'create field_puluser_section',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -295,6 +322,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_short_title'] = array(
     'name' => 'create field_puluser_short_title',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -305,6 +333,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_sublibrarian'] = array(
     'name' => 'create field_puluser_sublibrarian',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -325,6 +354,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_unit'] = array(
     'name' => 'create field_puluser_unit',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -335,6 +365,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['create field_puluser_unit_sort'] = array(
     'name' => 'create field_puluser_unit_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -354,6 +385,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_contacts'] = array(
     'name' => 'edit field_personal_lib_contacts',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -364,6 +396,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_duties'] = array(
     'name' => 'edit field_personal_lib_duties',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -374,6 +407,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_fun_fact'] = array(
     'name' => 'edit field_personal_lib_fun_fact',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -383,6 +417,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_spec'] = array(
     'name' => 'edit field_personal_lib_spec',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -392,6 +427,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_personal_lib_statement'] = array(
     'name' => 'edit field_personal_lib_statement',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -402,6 +438,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_pul_user_staff_sort'] = array(
     'name' => 'edit field_pul_user_staff_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -412,6 +449,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_appt_calendar'] = array(
     'name' => 'edit field_puluser_appt_calendar',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -422,6 +460,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_building_location'] = array(
     'name' => 'edit field_puluser_building_location',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -432,6 +471,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_department'] = array(
     'name' => 'edit field_puluser_department',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -442,6 +482,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_department_sort'] = array(
     'name' => 'edit field_puluser_department_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -452,6 +493,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_displaytitle'] = array(
     'name' => 'edit field_puluser_displaytitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -462,6 +504,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_division'] = array(
     'name' => 'edit field_puluser_division',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -472,6 +515,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_divsect'] = array(
     'name' => 'edit field_puluser_divsect',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -482,6 +526,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_dmgimport_id'] = array(
     'name' => 'edit field_puluser_dmgimport_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -492,6 +537,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_fname'] = array(
     'name' => 'edit field_puluser_fname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -502,6 +548,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_formalname'] = array(
     'name' => 'edit field_puluser_formalname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -512,6 +559,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_libguide_author_id'] = array(
     'name' => 'edit field_puluser_libguide_author_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
@@ -523,6 +571,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_librarystaffid'] = array(
     'name' => 'edit field_puluser_librarystaffid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -533,6 +582,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_lname'] = array(
     'name' => 'edit field_puluser_lname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -543,6 +593,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_middle_name'] = array(
     'name' => 'edit field_puluser_middle_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -553,6 +604,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_netid'] = array(
     'name' => 'edit field_puluser_netid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -563,6 +615,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_nick_name'] = array(
     'name' => 'edit field_puluser_nick_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -573,6 +626,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_office'] = array(
     'name' => 'edit field_puluser_office',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -583,6 +637,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_officialtitle'] = array(
     'name' => 'edit field_puluser_officialtitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -593,6 +648,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_phone_number'] = array(
     'name' => 'edit field_puluser_phone_number',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -603,6 +659,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_princetonid'] = array(
     'name' => 'edit field_puluser_princetonid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -613,6 +670,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_section'] = array(
     'name' => 'edit field_puluser_section',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -623,6 +681,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_short_title'] = array(
     'name' => 'edit field_puluser_short_title',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -633,6 +692,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_sublibrarian'] = array(
     'name' => 'edit field_puluser_sublibrarian',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
@@ -654,6 +714,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_unit'] = array(
     'name' => 'edit field_puluser_unit',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -664,6 +725,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit field_puluser_unit_sort'] = array(
     'name' => 'edit field_puluser_unit_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -683,6 +745,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_contacts'] = array(
     'name' => 'edit own field_personal_lib_contacts',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -693,6 +756,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_duties'] = array(
     'name' => 'edit own field_personal_lib_duties',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -703,6 +767,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_fun_fact'] = array(
     'name' => 'edit own field_personal_lib_fun_fact',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -712,6 +777,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_spec'] = array(
     'name' => 'edit own field_personal_lib_spec',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -722,6 +788,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_personal_lib_statement'] = array(
     'name' => 'edit own field_personal_lib_statement',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -732,6 +799,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_pul_user_staff_sort'] = array(
     'name' => 'edit own field_pul_user_staff_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -742,6 +810,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_appt_calendar'] = array(
     'name' => 'edit own field_puluser_appt_calendar',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -752,6 +821,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_building_location'] = array(
     'name' => 'edit own field_puluser_building_location',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -762,6 +832,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_department'] = array(
     'name' => 'edit own field_puluser_department',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -772,6 +843,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_department_sort'] = array(
     'name' => 'edit own field_puluser_department_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -782,6 +854,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_displaytitle'] = array(
     'name' => 'edit own field_puluser_displaytitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -792,6 +865,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_division'] = array(
     'name' => 'edit own field_puluser_division',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -802,6 +876,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_divsect'] = array(
     'name' => 'edit own field_puluser_divsect',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -812,6 +887,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_dmgimport_id'] = array(
     'name' => 'edit own field_puluser_dmgimport_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -822,6 +898,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_fname'] = array(
     'name' => 'edit own field_puluser_fname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -832,6 +909,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_formalname'] = array(
     'name' => 'edit own field_puluser_formalname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -842,6 +920,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_libguide_author_id'] = array(
     'name' => 'edit own field_puluser_libguide_author_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
@@ -853,6 +932,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_librarystaffid'] = array(
     'name' => 'edit own field_puluser_librarystaffid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -863,6 +943,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_lname'] = array(
     'name' => 'edit own field_puluser_lname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -873,6 +954,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_middle_name'] = array(
     'name' => 'edit own field_puluser_middle_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -883,6 +965,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_netid'] = array(
     'name' => 'edit own field_puluser_netid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -893,6 +976,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_nick_name'] = array(
     'name' => 'edit own field_puluser_nick_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -903,6 +987,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_office'] = array(
     'name' => 'edit own field_puluser_office',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -913,6 +998,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_officialtitle'] = array(
     'name' => 'edit own field_puluser_officialtitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -923,6 +1009,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_phone_number'] = array(
     'name' => 'edit own field_puluser_phone_number',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -933,6 +1020,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_princetonid'] = array(
     'name' => 'edit own field_puluser_princetonid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -943,6 +1031,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_section'] = array(
     'name' => 'edit own field_puluser_section',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -953,6 +1042,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_short_title'] = array(
     'name' => 'edit own field_puluser_short_title',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -963,6 +1053,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_sublibrarian'] = array(
     'name' => 'edit own field_puluser_sublibrarian',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Author' => 'Web Author',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
@@ -984,6 +1075,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_unit'] = array(
     'name' => 'edit own field_puluser_unit',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -994,6 +1086,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['edit own field_puluser_unit_sort'] = array(
     'name' => 'edit own field_puluser_unit_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1013,6 +1106,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_contacts'] = array(
     'name' => 'view field_personal_lib_contacts',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'Undergraduate Student' => 'Undergraduate Student',
       'administrator' => 'administrator',
@@ -1024,6 +1118,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_duties'] = array(
     'name' => 'view field_personal_lib_duties',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'Undergraduate Student' => 'Undergraduate Student',
       'administrator' => 'administrator',
@@ -1035,6 +1130,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_fun_fact'] = array(
     'name' => 'view field_personal_lib_fun_fact',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -1044,6 +1140,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_spec'] = array(
     'name' => 'view field_personal_lib_spec',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'Undergraduate Student' => 'Undergraduate Student',
       'administrator' => 'administrator',
@@ -1055,6 +1152,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_personal_lib_statement'] = array(
     'name' => 'view field_personal_lib_statement',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'Undergraduate Student' => 'Undergraduate Student',
       'administrator' => 'administrator',
@@ -1066,6 +1164,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_pul_user_staff_sort'] = array(
     'name' => 'view field_pul_user_staff_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1077,6 +1176,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_appt_calendar'] = array(
     'name' => 'view field_puluser_appt_calendar',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1088,6 +1188,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_building_location'] = array(
     'name' => 'view field_puluser_building_location',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1100,6 +1201,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_department'] = array(
     'name' => 'view field_puluser_department',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1111,6 +1213,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_department_sort'] = array(
     'name' => 'view field_puluser_department_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1122,6 +1225,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_displaytitle'] = array(
     'name' => 'view field_puluser_displaytitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1133,6 +1237,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_division'] = array(
     'name' => 'view field_puluser_division',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1144,6 +1249,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_divsect'] = array(
     'name' => 'view field_puluser_divsect',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1155,6 +1261,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_dmgimport_id'] = array(
     'name' => 'view field_puluser_dmgimport_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1167,6 +1274,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_fname'] = array(
     'name' => 'view field_puluser_fname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1178,6 +1286,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_formalname'] = array(
     'name' => 'view field_puluser_formalname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1189,6 +1298,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_libguide_author_id'] = array(
     'name' => 'view field_puluser_libguide_author_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1200,6 +1310,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_librarystaffid'] = array(
     'name' => 'view field_puluser_librarystaffid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1211,6 +1322,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_lname'] = array(
     'name' => 'view field_puluser_lname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1222,6 +1334,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_middle_name'] = array(
     'name' => 'view field_puluser_middle_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1234,6 +1347,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_netid'] = array(
     'name' => 'view field_puluser_netid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1245,6 +1359,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_nick_name'] = array(
     'name' => 'view field_puluser_nick_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1257,6 +1372,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_office'] = array(
     'name' => 'view field_puluser_office',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1268,6 +1384,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_officialtitle'] = array(
     'name' => 'view field_puluser_officialtitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1279,6 +1396,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_phone_number'] = array(
     'name' => 'view field_puluser_phone_number',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1290,6 +1408,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_princetonid'] = array(
     'name' => 'view field_puluser_princetonid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1302,6 +1421,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_section'] = array(
     'name' => 'view field_puluser_section',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1313,6 +1433,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_short_title'] = array(
     'name' => 'view field_puluser_short_title',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1324,6 +1445,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_sublibrarian'] = array(
     'name' => 'view field_puluser_sublibrarian',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1347,6 +1469,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_unit'] = array(
     'name' => 'view field_puluser_unit',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
@@ -1358,6 +1481,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view field_puluser_unit_sort'] = array(
     'name' => 'view field_puluser_unit_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -1379,6 +1503,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_contacts'] = array(
     'name' => 'view own field_personal_lib_contacts',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -1389,6 +1514,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_duties'] = array(
     'name' => 'view own field_personal_lib_duties',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -1399,6 +1525,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_fun_fact'] = array(
     'name' => 'view own field_personal_lib_fun_fact',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -1408,6 +1535,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_spec'] = array(
     'name' => 'view own field_personal_lib_spec',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -1418,6 +1546,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_personal_lib_statement'] = array(
     'name' => 'view own field_personal_lib_statement',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Personal Librarian' => 'Personal Librarian',
       'administrator' => 'administrator',
     ),
@@ -1428,6 +1557,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_pul_user_staff_sort'] = array(
     'name' => 'view own field_pul_user_staff_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1438,6 +1568,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_appt_calendar'] = array(
     'name' => 'view own field_puluser_appt_calendar',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1448,6 +1579,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_building_location'] = array(
     'name' => 'view own field_puluser_building_location',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1458,6 +1590,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_department'] = array(
     'name' => 'view own field_puluser_department',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1468,6 +1601,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_department_sort'] = array(
     'name' => 'view own field_puluser_department_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1478,6 +1612,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_displaytitle'] = array(
     'name' => 'view own field_puluser_displaytitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1488,6 +1623,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_division'] = array(
     'name' => 'view own field_puluser_division',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1498,6 +1634,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_divsect'] = array(
     'name' => 'view own field_puluser_divsect',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1508,6 +1645,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_dmgimport_id'] = array(
     'name' => 'view own field_puluser_dmgimport_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1518,6 +1656,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_fname'] = array(
     'name' => 'view own field_puluser_fname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1528,6 +1667,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_formalname'] = array(
     'name' => 'view own field_puluser_formalname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1538,6 +1678,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_libguide_author_id'] = array(
     'name' => 'view own field_puluser_libguide_author_id',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1548,6 +1689,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_librarystaffid'] = array(
     'name' => 'view own field_puluser_librarystaffid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1558,6 +1700,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_lname'] = array(
     'name' => 'view own field_puluser_lname',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1568,6 +1711,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_middle_name'] = array(
     'name' => 'view own field_puluser_middle_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1578,6 +1722,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_netid'] = array(
     'name' => 'view own field_puluser_netid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1588,6 +1733,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_nick_name'] = array(
     'name' => 'view own field_puluser_nick_name',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1598,6 +1744,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_office'] = array(
     'name' => 'view own field_puluser_office',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1608,6 +1755,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_officialtitle'] = array(
     'name' => 'view own field_puluser_officialtitle',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1618,6 +1766,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_phone_number'] = array(
     'name' => 'view own field_puluser_phone_number',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1628,6 +1777,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_princetonid'] = array(
     'name' => 'view own field_puluser_princetonid',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1638,6 +1788,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_section'] = array(
     'name' => 'view own field_puluser_section',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1648,6 +1799,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_short_title'] = array(
     'name' => 'view own field_puluser_short_title',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1658,6 +1810,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_sublibrarian'] = array(
     'name' => 'view own field_puluser_sublibrarian',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1678,6 +1831,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_unit'] = array(
     'name' => 'view own field_puluser_unit',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
@@ -1688,6 +1842,7 @@ function pul_library_users_user_default_permissions() {
   $permissions['view own field_puluser_unit_sort'] = array(
     'name' => 'view own field_puluser_unit_sort',
     'roles' => array(
+      'Library HR Manager' => 'Library HR Manager',
       'Web Manager' => 'Web Manager',
       'administrator' => 'administrator',
     ),
