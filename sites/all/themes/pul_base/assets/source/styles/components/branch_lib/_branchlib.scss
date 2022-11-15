@@ -1,5 +1,5 @@
 .branch-libraries,
-.section-services  {
+.section-services {
   .three_six_three_stacked-region--first h2,
   .three_six_three_stacked-region--second h2 {
     line-height: 1.4em;
@@ -12,7 +12,6 @@
     @include breakpoint($tab-desk) {
       display: inline;
     }
-
 
     .oh-display-hours {
       display: block;

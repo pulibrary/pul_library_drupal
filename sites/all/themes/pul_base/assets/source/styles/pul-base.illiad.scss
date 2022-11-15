@@ -8,6 +8,7 @@
 @import "utils/mixins";
 @import "utils/functions";
 @import "utils/variables";
+
 // @import "utils/variables--bootstrap";
 // @import "utils/font-stack";
 @import "utils/helpers";
@@ -35,7 +36,5 @@ $base-path: "https://library.princeton.edu/sites/all/themes/pul_base/assets/publ
 @import "components/menus/menu--main";
 @import "components/search/search--header";
 @import "components/buttons/button--jump-link";
-
 @import "sites/library/footer";
-
 @import "sites/atlas/illiad";

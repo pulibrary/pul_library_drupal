@@ -3,7 +3,7 @@
 }
 
 .front .view-library-news .view-footer,
-.front .view-libcal-events .view-footer  {
+.front .view-libcal-events .view-footer {
   @include breakpoint($tab) {
     text-align: center;
   }

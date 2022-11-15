@@ -1,35 +1,44 @@
 /* line 16, pul-springy-base.scss */
-html, body, button, input, select, textarea {
+html,
+body,
+button,
+input,
+select,
+textarea {
   font-family: "DejaVu Sans", Roboto, Arial, serif;
-  color: #333333;
+  color: #333;
 }
 
 /* line 20, pul-springy-base.scss */
 body {
   min-height: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
-  /*font-size: $font-size;*/
+  padding-left: 0;
+  padding-right: 0;
+
+  /* font-size: $font-size; */
 }
 
 /* line 26, pul-springy-base.scss */
-ul.nav-tabs, ul.nav-pills {
+ul.nav-tabs,
+ul.nav-pills {
   font-family: "Droid Serif", Georgia, Times, serif;
 }
 
 /* line 29, pul-springy-base.scss */
-a, .ui-widget-content a {
-  color: #3D77C7;
+a,
+.ui-widget-content a {
+  color: #3d77c7;
   text-decoration: none;
   font-weight: 500;
   overflow-wrap: break-word;
 }
+
 /* line 33, pul-springy-base.scss */
-a:hover, .ui-widget-content a:hover {
-  -webkit-transition: color 0.1s linear;
-  -webkit-transition-delay: 0s;
-  -moz-transition: color 0.1s linear 0s;
-  -o-transition: color 0.1s linear 0s;
+a:hover,
+.ui-widget-content a:hover {
+  transition-delay: 0s;
+  transition: color 0.1s linear 0s;
+  transition: color 0.1s linear 0s;
   transition: color 0.1s linear 0s;
 }
 
@@ -39,18 +48,23 @@ a:hover {
 }
 
 /* line 38, pul-springy-base.scss */
-a:active, a:focus {
+a:active,
+a:focus {
   color: #2c5999;
   outline: none;
 }
 
 /* line 42, pul-springy-base.scss */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Droid Serif", Georgia, Times, serif;
 }
 
 /* line 45, pul-springy-base.scss */
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: "DejaVu Sans", Roboto, Arial, serif;
 }
 
@@ -108,49 +122,57 @@ h3 a {
 
 /* line 82, pul-springy-base.scss */
 hr {
-  border-color: #CCC;
+  border-color: #ccc;
 }
 
-/*pul_base_styles overrides start*/
+/* pul_base_styles overrides start */
+
 /* line 87, pul-springy-base.scss */
 footer h2 {
-  color: #333333;
+  color: #333;
 }
+
 /* line 90, pul-springy-base.scss */
 footer a {
   font-weight: normal;
 }
 
-/*needed to add this to make search box spacing right*/
+/* needed to add this to make search box spacing right */
+
 /* line 96, pul-springy-base.scss */
-.form-item, .form-action {
+.form-item,
+.form-action {
   margin-bottom: 1em;
 }
 
 /* line 99, pul-springy-base.scss */
-.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type=text] {
+.l-region--branding .block--allsearch-block-allsearch-search form > div div.form-item-query input[type="text"] {
   line-height: 1.25em;
 }
 
 /* line 102, pul-springy-base.scss */
-.l-region--branding .block--allsearch-block-allsearch-search form > div input[type=submit] {
-  padding: 2px 10px 5px 10px;
+.l-region--branding .block--allsearch-block-allsearch-search form > div input[type="submit"] {
+  padding: 2px 10px 5px;
 }
 
 /* line 105, pul-springy-base.scss */
 #block-system-main-menu ul {
-  padding: 0px;
+  padding: 0;
+
   /* to align the PUL header menu to the left */
-  /*margin: 0px;*/
+
+  /* margin: 0px; */
 }
 
 /* line 109, pul-springy-base.scss */
 footer nav ul {
-  padding: 0px;
-  /*to make footer flush*/
+  padding: 0;
+
+  /* to make footer flush */
 }
 
-/*pul_base_styles overrides end*/
+/* pul_base_styles overrides end */
+
 /* line 4, LG_v2.scss */
 #s-lg-guide-name {
   font-size: 2em;
@@ -162,12 +184,15 @@ footer nav ul {
 }
 
 /* line 10, LG_v2.scss */
-#s-lib-bc .breadcrumb, #s-lib-admin-bc .breadcrumb {
+#s-lib-bc .breadcrumb,
+#s-lib-admin-bc .breadcrumb {
   font-size: 1em;
   font-family: "Droid Serif", Georgia, Times, serif;
 }
+
 /* line 13, LG_v2.scss */
-#s-lib-bc .breadcrumb a, #s-lib-admin-bc .breadcrumb a {
+#s-lib-bc .breadcrumb a,
+#s-lib-admin-bc .breadcrumb a {
   font-weight: bold;
 }
 
@@ -177,60 +202,63 @@ footer nav ul {
 }
 
 /* line 24, LG_v2.scss */
-#s-lg-tabs-container .nav-tabs > li > a, #s-lg-tabs-container .nav-pills > li > a {
+#s-lg-tabs-container .nav-tabs > li > a,
+#s-lg-tabs-container .nav-pills > li > a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #696b70), color-stop(100%, #4f5155));
-  background-image: -webkit-linear-gradient(#696b70, #4f5155);
-  background-image: -moz-linear-gradient(#696b70, #4f5155);
-  background-image: -o-linear-gradient(#696b70, #4f5155);
   background-image: linear-gradient(#696b70, #4f5155);
-  color: #dddddd;
+  background-image: linear-gradient(#696b70, #4f5155);
+  background-image: linear-gradient(#696b70, #4f5155);
+  background-image: linear-gradient(#696b70, #4f5155);
+  color: #ddd;
 }
 
 /* line 28, LG_v2.scss */
-#s-lg-tabs-container .nav-tabs > .active > a, #s-lg-tabs-container .nav-pills > .active > a {
+#s-lg-tabs-container .nav-tabs > .active > a,
+#s-lg-tabs-container .nav-pills > .active > a {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7962d), color-stop(100%, #e87511));
-  background-image: -webkit-linear-gradient(#f7962d, #e87511);
-  background-image: -moz-linear-gradient(#f7962d, #e87511);
-  background-image: -o-linear-gradient(#f7962d, #e87511);
+  background-image: linear-gradient(#f7962d, #e87511);
+  background-image: linear-gradient(#f7962d, #e87511);
+  background-image: linear-gradient(#f7962d, #e87511);
   background-image: linear-gradient(#f7962d, #e87511);
 }
 
 /* line 31, LG_v2.scss */
 .s-lib-box {
-  color: #333333;
+  color: #333;
 }
 
 /* line 34, LG_v2.scss */
 .s-lib-box-std .s-lib-box-title {
   color: #7f3d00;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f1f1f1), color-stop(100%, #dbdbdb));
-  background-image: -webkit-linear-gradient(#f1f1f1, #dbdbdb);
-  background-image: -moz-linear-gradient(#f1f1f1, #dbdbdb);
-  background-image: -o-linear-gradient(#f1f1f1, #dbdbdb);
+  background-image: linear-gradient(#f1f1f1, #dbdbdb);
+  background-image: linear-gradient(#f1f1f1, #dbdbdb);
+  background-image: linear-gradient(#f1f1f1, #dbdbdb);
   background-image: linear-gradient(#f1f1f1, #dbdbdb);
   font-size: 1.1em;
 }
 
 /* line 39, LG_v2.scss */
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7962d), color-stop(100%, #e87511));
-  background-image: -webkit-linear-gradient(#f7962d, #e87511);
-  background-image: -moz-linear-gradient(#f7962d, #e87511);
-  background-image: -o-linear-gradient(#f7962d, #e87511);
   background-image: linear-gradient(#f7962d, #e87511);
-  color: #FFF;
-  -webkit-transition-duration: 0s;
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
+  background-image: linear-gradient(#f7962d, #e87511);
+  background-image: linear-gradient(#f7962d, #e87511);
+  background-image: linear-gradient(#f7962d, #e87511);
+  color: #fff;
+  transition-duration: 0s;
+  transition-duration: 0s;
   transition-duration: 0s;
 }
 
-/*for homepage*/
+/* for homepage */
+
 /* line 46, LG_v2.scss */
 #s-lg-content-2935457 table {
   text-indent: -15px;
   margin-left: 20px;
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 /* line 51, LG_v2.scss */
@@ -238,38 +266,43 @@ footer nav ul {
   padding-top: 10px;
 }
 
-/*tabs header on group homepages*/
+/* tabs header on group homepages */
+
 /* line 55, LG_v2.scss */
 #s-lg-hp-nav {
-  -moz-border-radius-bottomleft: 0px;
-  -webkit-border-bottom-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  -moz-border-radius-bottomright: 0px;
-  -webkit-border-bottom-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  /*@include background-image(linear-gradient($box-gradient-top, $box-gradient-bottom));*/
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+
+  /* @include background-image(linear-gradient($box-gradient-top, $box-gradient-bottom)); */
   font-size: 1.1em;
   margin-bottom: 10px;
 }
 
 /* line 61, LG_v2.scss */
-#s-lg-hp-nav .s-lg-index-nav-btn > a:hover, #s-lg-hp-nav .s-lg-index-nav-btn > a:focus {
-  background-color: #FFF;
+#s-lg-hp-nav .s-lg-index-nav-btn > a:hover,
+#s-lg-hp-nav .s-lg-index-nav-btn > a:focus {
+  background-color: #fff;
 }
 
 /* line 64, LG_v2.scss */
-#s-lg-hp-nav li.active > a, #s-lg-hp-nav li.active > a:hover, #s-lg-hp-nav li.active > a:focus {
-  color: #FFF;
-  background-color: #428BCA;
+#s-lg-hp-nav li.active > a,
+#s-lg-hp-nav li.active > a:hover,
+#s-lg-hp-nav li.active > a:focus {
+  color: #fff;
+  background-color: #428bca;
 }
 
-/*fix spacing on certain ui popups*/
+/* fix spacing on certain ui popups */
+
 /* line 69, LG_v2.scss */
 .ui-dialog .ui-dialog-content {
   padding: 0.5em 2em;
 }
 
-/*hide guide update and view count on group homepages*/
+/* hide guide update and view count on group homepages */
+
 /* line 73, LG_v2.scss */
 #s-lg-index-cols .s-lg-gmeta {
   display: none;
@@ -277,12 +310,19 @@ footer nav ul {
 
 @media print {
   /* line 77, LG_v2.scss */
-  header, footer, iframe, #s-lib-bc, .s-lg-rss, .s-lib-profile-image, .noprint {
+  header,
+  footer,
+  iframe,
+  #s-lib-bc,
+  .s-lg-rss,
+  .s-lib-profile-image,
+  .noprint {
     display: none;
   }
 
   /* line 80, LG_v2.scss */
-  #s-lib-footer-public a[href]:after, #s-lg-tabs-container a[href]:after {
+  #s-lib-footer-public a[href]::after,
+  #s-lg-tabs-container a[href]::after {
     content: none;
   }
 }
@@ -292,25 +332,36 @@ footer nav ul {
     max-width: 50%;
   }
 }
+
 @media (min-width: 481px) and (max-width: 991px) {
   .s-lib-profile-image img {
     max-width: 35%;
   }
 }
-/*hide option for adding subjects in edit mode*/
+
+/* hide option for adding subjects in edit mode */
 #s-lg-guide-header-info #s-lg-guide-header-subjects {
-    display:none;
-}
-/*make library search boxes a bit bigger*/
-.pulsearch .form-control {height:34px; width:75%; display:inline;}
-.pulsearch .btn-sm {font-size: 14px; margin-top:-2.5px;
+  display: none;
 }
 
-/*hide RSS feed date*/
-.s-lg-rss-date {display: none;}
-/*hide tag and guide type filters on search results page*/
-#s-lg-facet-div-guide_tag_ids, #s-lg-facet-div-guide_type_id {display: none;}
-/*adjust search results page filter div heights*/
-#s-lg-facet-div-guide_owner_id > .s-lg-facet-div-content, #s-lg-facet-div-group_id > .s-lg-facet-div-content {max-height: 500px;}
-/*make search query highlights actually show up*/
-.s-srch-result-highlights mark {background-color: #FFEEA5;}
+/* make library search boxes a bit bigger */
+.pulsearch .form-control { height: 34px; width: 75%; display: inline; }
+
+.pulsearch .btn-sm {
+  font-size: 14px;
+  margin-top: -2.5px;
+}
+
+/* hide RSS feed date */
+.s-lg-rss-date { display: none; }
+
+/* hide tag and guide type filters on search results page */
+#s-lg-facet-div-guide_tag_ids,
+#s-lg-facet-div-guide_type_id { display: none; }
+
+/* adjust search results page filter div heights */
+#s-lg-facet-div-guide_owner_id > .s-lg-facet-div-content,
+#s-lg-facet-div-group_id > .s-lg-facet-div-content { max-height: 500px; }
+
+/* make search query highlights actually show up */
+.s-srch-result-highlights mark { background-color: #ffeea5; }

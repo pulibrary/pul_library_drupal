@@ -8,6 +8,7 @@
 @import "utils/mixins";
 @import "utils/functions";
 @import "utils/variables";
+
 // @import "utils/variables--bootstrap";
 @import "utils/font-stack";
 @import "utils/helpers";
@@ -20,6 +21,7 @@
 @import "base/lists";
 @import "base/media";
 @import "base/tables";
+
 // @import "base/print";
 
 // Layouts
@@ -138,5 +140,4 @@
 // Site-specific
 @import "sites/library/front--highlighted";
 @import "sites/library/footer";
-
 @import "shame";

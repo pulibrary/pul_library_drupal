@@ -42,8 +42,7 @@ a.image {
 
   &:hover,
   &:active,
-  &:focus
-  &:visited {
+  &:focus &:visited {
     border: 0;
   }
 }
