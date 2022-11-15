@@ -12,7 +12,6 @@ import imagemin from 'gulp-imagemin';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
-import scsslint from "gulp-sass-lint";
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 
@@ -114,16 +113,13 @@ gulp.task("styles", function(done) {
 });
 
 /**
- * Gulp task: lint:scss
- * SCSS Linter
+ * I don't understand why this step is necessary,
+ * but the CSS doesn't get generated properly
+ * without it
  */
-gulp.task("lint:scss", function() {
+gulp.task("prepare-styles", function() {
   return gulp
-    .src(config.styles.files)
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(scsslint())
-    .pipe(scsslint.format())
-    .pipe(scsslint.failOnError());
+    .src(config.styles.files);
 });
 
 /**
@@ -208,6 +204,6 @@ gulp.task("styleguide", function() {
 /**
  * Compile all assets
  */
-gulp.task('deploy', gulp.series('clean', 'lint:scss', 'styles', 'scripts', 'fonts', 'images', function (done) {
+gulp.task('deploy', gulp.series('clean', 'prepare-styles', 'styles', 'scripts', 'fonts', 'images', function (done) {
   done();
 }));
