@@ -23,4 +23,5 @@ class entityform_handler_edit_link_field extends entityform_handler_link_field {
       return $this->render_link($entity, 'edit', $uri, t('edit'));
     }
   }
+
 }

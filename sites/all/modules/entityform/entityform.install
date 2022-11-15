@@ -122,7 +122,22 @@ function entityform_schema() {
         'serialize' => TRUE,
         'description' => 'A serialized array of additional data related to this entityform type.',
       ),
-    ) + entity_exportable_schema_fields(),
+      'status' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        // Set the default to ENTITY_CUSTOM without using the constant as it is
+        // not safe to use it at this point.
+        'default' => 0x01,
+        'size' => 'tiny',
+        'description' => 'The exportable status of the entity.',
+      ),
+      'module' => array(
+        'description' => 'The name of the providing module if the entity has been defined in code.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
     'primary key' => array('id'),
     'unique keys' => array(
       'type' => array('type'),
@@ -131,6 +146,7 @@ function entityform_schema() {
 
   return $schema;
 }
+
 /**
  * Implements hook_update_N().
  * Adds draft column
@@ -173,7 +189,7 @@ function entityform_update_7002(&$sandbox = NULL) {
 }
 
 /**
- * Enable entityform_notifications if necessary
+ * Enable entityform_notifications if necessary.
  */
 function entityform_update_7003(&$sandbox = NULL) {
   $ret = array();
@@ -198,7 +214,7 @@ function entityform_update_7003(&$sandbox = NULL) {
  * Change textarea values to support filters.
  */
 function entityform_update_7004(&$sandbox = NULL) {
-  // Set array of text fields that will use filters
+  // Set array of text fields that will use filters.
   $filter_text_fields = array('draft_save_text', 'submission_text', 'instruction_pre');
   $entityform_types = entityform_get_types();
   foreach ($entityform_types as $entityform_type) {
@@ -217,7 +233,8 @@ function entityform_update_7004(&$sandbox = NULL) {
 /**
  * Update 7005 is unused.
  */
-function entityform_update_7005(&$sandbox = NULL) { }
+function entityform_update_7005(&$sandbox = NULL) {
+}
 
 /**
  * Delete old Entityform menu links.

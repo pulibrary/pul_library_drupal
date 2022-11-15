@@ -12,6 +12,6 @@
     "require": {
       "mtdowling/jmespath.php": "^2.0",
       "flow/jsonpath": "~0.3",
-      "querypath/QueryPath": "^3.0"
+      "querypath/querypath": "^3.0"
     }
 }

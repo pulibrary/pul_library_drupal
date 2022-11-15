@@ -2,16 +2,16 @@
 
 /**
  * @file
- * Update functions for Entityform Notifications
+ * Update functions for Entityform Notifications.
  */
 
 /**
  * Implements hook_enable().
  *
- * Make sure Entityform is enabled from for entity_rules
+ * Make sure Entityform is enabled from for entity_rules.
  */
 function entityform_notifications_enable() {
-  $enabled_types = variable_get('entity_rules_types', explode(',' , ENTITY_RULES_DEFAULT_TYPES));
+  $enabled_types = variable_get('entity_rules_types', explode(',', ENTITY_RULES_DEFAULT_TYPES));
   if (!in_array('entityform', $enabled_types, TRUE)) {
     $enabled_types[] = 'entityform';
     variable_set('entity_rules_types', $enabled_types);

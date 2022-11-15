@@ -23,4 +23,5 @@ class entityform_handler_delete_link_field extends entityform_handler_link_field
       return $this->render_link($entity, 'delete', $uri, t('delete'));
     }
   }
+
 }

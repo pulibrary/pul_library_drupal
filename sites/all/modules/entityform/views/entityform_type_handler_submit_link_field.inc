@@ -16,8 +16,8 @@ class entityform_type_handler_submit_link_field extends views_handler_field {
     $options = parent::option_definition();
 
     $options['text'] = array(
-        'default' => '',
-        'translatable' => TRUE,
+      'default' => '',
+      'translatable' => TRUE,
     );
 
     return $options;
@@ -26,9 +26,9 @@ class entityform_type_handler_submit_link_field extends views_handler_field {
     parent::options_form($form, $form_state);
 
     $form['text'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Text to display'),
-        '#default_value' => $this->options['text'],
+      '#type' => 'textfield',
+      '#title' => t('Text to display'),
+      '#default_value' => $this->options['text'],
     );
   }
   function query() {
@@ -46,4 +46,5 @@ class entityform_type_handler_submit_link_field extends views_handler_field {
 
     return l($text, 'eform/submit/' . str_replace('_', '-', $type));
   }
+
 }

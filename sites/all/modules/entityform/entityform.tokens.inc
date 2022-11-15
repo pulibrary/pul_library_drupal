@@ -1,6 +1,8 @@
 <?php
+
 /**
- * @file Token related hooks.
+ * @file
+ * Token related hooks.
  */
 
 /**
@@ -34,7 +36,8 @@ function entityform_tokens($type, $tokens, array $data = array(), array $options
       switch ($name) {
         case 'submit_url':
           $return[$original] = url(_entityform_type_get_submit_url($entityform_type->type), array(
-            'absolute' => TRUE));
+            'absolute' => TRUE,
+          ));
           break;
 
       }

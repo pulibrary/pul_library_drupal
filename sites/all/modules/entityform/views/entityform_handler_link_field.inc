@@ -69,4 +69,5 @@ class entityform_handler_link_field extends views_handler_field_entity {
       return $text;
     }
   }
+
 }

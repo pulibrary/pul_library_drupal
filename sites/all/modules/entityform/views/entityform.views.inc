@@ -5,7 +5,6 @@
  * Providing extra functionality for the Entityform UI via views.
  */
 
-
 /**
  * Implements hook_views_data().
  */
@@ -35,7 +34,7 @@ function entityform_views_data_alter(&$data) {
   );
 
   // This content of this field are decided based on the menu structure that
-  // follows entityforms/entityform/%entityform_id/op
+  // follows entityforms/entityform/%entityform_id/op.
   $data['entityform']['operations'] = array(
     'field' => array(
       'title' => t('Operations links'),
@@ -48,15 +47,15 @@ function entityform_views_data_alter(&$data) {
     'entityform' => array(
       'left_field' => 'type',
       'field' => 'type',
-      //'type' => 'INNER', // all nodes have an author.
+      // 'type' => 'INNER', // all nodes have an author.
     ),
   );
   $data['entityform_type']['submit_entityform_type'] = array(
-      'field' => array(
-          'title' => t('Submit Link'),
-          'help' => t('Provide a link to the submit form for the entityform type.'),
-          'handler' => 'entityform_type_handler_submit_link_field',
-      ),
+    'field' => array(
+      'title' => t('Submit Link'),
+      'help' => t('Provide a link to the submit form for the entityform type.'),
+      'handler' => 'entityform_type_handler_submit_link_field',
+    ),
   );
   // @todo This should be handled by entity api remove
   $data['entityform']['uid']['relationship'] = array(
