@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
 jobs:
-  sass-lint:
+  stylelint:
     executor: node/default
     steps:
       - checkout
@@ -12,10 +12,10 @@ jobs:
           pkg-manager: npm
           app-dir: sites/all/themes/pul_base
       - run:
-          command: npx sass-lint assets/source/styles
+          command: npx stylelint assets/source/styles
           name: Lint SASS
           working_directory: sites/all/themes/pul_base
 workflows:
   node:
     jobs:
-      - sass-lint
+      - stylelint

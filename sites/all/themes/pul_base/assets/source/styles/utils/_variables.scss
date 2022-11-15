@@ -4,49 +4,37 @@ $base-path: "/sites/all/themes/pul_base/assets/public";
 $white: #fff;
 $off-white: #fdfaf8;
 $black: #0e1111;
-
 $gray-lightest: #f5f4f1;
 $gray-light: #e0ddd3;
 $gray: #83888f;
 $gray-dark: #666d78;
 $gray-darkest: #494f57;
-
 $blue-dark: #2762ae;
 $blue: #7398c8;
 $blue-light: #bccee5;
 $blue-a11y: #3d77c7;
-
 $aqua-dark: #87c9e2;
 $aqua-light: #c4e5f1;
-
 $green-dark: #006838;
 $green: #89afa2;
 $green-light: #c3d7d1;
-
 $yellow-dark: #c98c00;
 $yellow-light: #fee7ba;
-
 $orange-dark: #89440a;
 $orange: #e87411;
 $orange-medium: #f58025;
 $orange-light: #f4aa6b;
-
 $red-dark: #a93225;
 $red-light: #d89088;
 $red: saturate($red-dark, 50%);
-
 $smart-underline-color: $orange;
-
 $black-opacity-0: rgba($black, 0.05);
 $black-opacity-2: rgba($black, 0.2);
 $black-opacity-5: rgba($black, 0.5);
 $black-opacity-7: rgba($black, 0.7);
-
 $white-opacity-0: rgba($white, 0);
 $white-opacity-7: rgba($white, 0.7);
-
 $gray-lightest-opacity-9: rgba($gray-lightest, 0.99);
-
 $highlighted-wrapper: $gray-dark;
 
 //Princeton colors
@@ -57,38 +45,37 @@ $orange-coated: #f48325;
 
 //Branch colors
 $architecture: #c3d600;
-$cdh: rgb(0, 237, 255);
+$cdh: rgb(0 237 255);
 $eastasian: #1a8648;
 $engineering: #3b7cca;
 $firestone: #ee7421;
 $lewis: #915baf;
 $marquand: #d12a2f;
-$music: rgb(218, 24, 132);
-$mudd: rgb(242, 169, 0);
-$plasma: rgb(80, 7, 120);
-$rbsc: rgb(198, 146, 20);
+$music: rgb(218 24 132);
+$mudd: rgb(242 169 0);
+$plasma: rgb(80 7 120);
+$rbsc: rgb(198 146 20);
 $stokes: #c24d01;
 $video: #00aebc;
 $digital-collections: #900;
 
 //Typography
-$font-primary: "franklin-gothic-urw", "Helvetica Neue", Arial, sans-serif;
-$font-dejavu: "DejaVu Sans", "Helvetica Neue", Arial, sans-serif;
+$font-primary: "franklin-gothic-urw", "Helvetica Neue", arial, sans-serif;
+$font-dejavu: "DejaVu Sans", "Helvetica Neue", arial, sans-serif;
 $font-icons: "pul-icons", "franklin-gothic-urw", sans-serif;
 $font-size-small: 0.75em;
 $font-size-small-2: 0.875em;
 $font-size-med: 1em;
 $font-size-med-2: 1.0625em;
 $font-size-large: 1.4375em;
+
 // $modular-scale-ratio: $minor-third;
 $text-color: $black !default;
 $sans-serif: $font-primary;
-
 $base-font-color: $black;
 $base-border-color: $black;
 $base-font-size: 14px;
 $base-line-height: 23px;
-
 $round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
 $rhythm-unit: "rem"; // Sets rhythm unit to rem. Remove to use default em unit.
 $font-size-base: 1rem;
@@ -110,15 +97,12 @@ $bp-large-2: 66em;
 $bp-xl: 73em;
 $bp-xxl: 89em;
 $bp-xxxl: 93em;
-
 $tab: 720px;
 $tab-desk: 992px;
 $desk: 1200px;
 $max-width: 1400px;
-
 $max-tab: max-width ($tab - 1px);
 $max-tab-desk: max-width ($tab-desk - 1px);
-
 $rwd-tables: $max-tab-desk;
 
 //Borders

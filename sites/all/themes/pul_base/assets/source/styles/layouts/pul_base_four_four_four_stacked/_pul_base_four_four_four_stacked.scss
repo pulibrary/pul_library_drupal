@@ -5,11 +5,13 @@
 @include breakpoint($tab) {
   .pul_base_four_four_four_stacked-region--top {
     @include full;
+
     margin: 0;
   }
 
   .pul_base_four_four_four_stacked-region--first {
     @include span(first 4);
+
     margin-left: 0;
   }
 
@@ -19,11 +21,13 @@
 
   .pul_base_four_four_four_stacked-region--third {
     @include span(last 4);
+
     margin-right: 0;
   }
 
   .pul_base_four_four_four_stacked-region--bottom {
     @include full;
+
     margin: 0;
   }
 }

@@ -36,6 +36,7 @@ select[multiple="multiple"] {
 
 textarea {
   resize: vertical;
+
   // width: 100%;
 }
 
@@ -53,7 +54,6 @@ select {
     background: $blue-a11y;
     color: $white;
   }
-
 }
 
 input[type="checkbox"],

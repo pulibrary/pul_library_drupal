@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif");
+@import "https://fonts.googleapis.com/css?family=Droid+Serif";
 
 // Vendor libraries
 @import "normalize";
@@ -10,14 +10,18 @@
 @import "utils/mixins";
 @import "utils/functions";
 @import "utils/variables";
+
 $base-path: "https://library.princeton.edu/sites/all/themes/pul_base/assets/public";
+
 // @import "utils/font-stack";
 @import "utils/helpers";
 
 // Global styles
 @import "base/typography";
+
 // @import "base/forms";
 @import "base/grids";
+
 // @import "base/links";
 // @import "base/lists";
 // @import "base/media";
@@ -33,7 +37,6 @@ $base-path: "https://library.princeton.edu/sites/all/themes/pul_base/assets/publ
 @import "components/footer";
 @import "components/menus/menu--main";
 @import "components/search/search--header";
-
 @import "sites/library/footer";
 
 // Libguides custom styling

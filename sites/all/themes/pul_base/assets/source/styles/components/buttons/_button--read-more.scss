@@ -1,4 +1,4 @@
-  // readmore collections
+// readmore collections
 .links--inline li {
   float: right;
 }
@@ -48,7 +48,6 @@
 }
 
 .page-find-all .more-link {
-
   &::after {
     content: initial;
     padding-left: inherit;
@@ -77,7 +76,6 @@
         text-decoration: none;
       }
     }
-
 
     &::after {
       @include pul-icon;

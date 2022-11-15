@@ -13,14 +13,17 @@
 }
 
 #mysched_0 {
-  background: #FFFFFF;
-  border: 1px solid #CCCCCC;
+  background: #fff;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  color: #333333;
+  color: #333;
   font: 14px Arial, Helvetica, Verdana;
   padding: 8px 20px;
   cursor: pointer;
 }
-#mysched_0:hover, #mysched_0:active, #mysched_0:focus {
+
+#mysched_0:hover,
+#mysched_0:active,
+#mysched_0:focus {
   opacity: 0.9;
 }

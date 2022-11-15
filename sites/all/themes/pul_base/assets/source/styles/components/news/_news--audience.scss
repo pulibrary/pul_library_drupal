@@ -4,15 +4,16 @@
 .student-landing-page .view-id-library_news,
 .faculty-landing-page .view-id-library_news,
 .visitors-page .view-id-library_news {
-
   li {
     border: $border-thin $border-solid $border-light;
   }
 
   .views-row-1 {
     @include full;
+
     @include breakpoint($bp-small) {
       @include span(4 of 12);
+
       clear: none;
       margin-left: 0;
     }
@@ -23,6 +24,7 @@
 
     @include breakpoint($bp-small) {
       @include span(4 of 12);
+
       clear: none;
     }
   }
@@ -32,6 +34,7 @@
 
     @include breakpoint($bp-small) {
       @include span(4 of 12);
+
       clear: none;
       margin-right: 0;
     }

@@ -5,16 +5,19 @@
 @include breakpoint($tab) {
   .single-region--top {
     @include full;
+
     margin: 0;
   }
 
   .single-region--middle {
     @include full;
+
     margin: 0;
   }
 
   .single-region--bottom {
     @include full;
+
     margin: 0;
   }
 }

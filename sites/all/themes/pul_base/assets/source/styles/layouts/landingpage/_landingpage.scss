@@ -5,21 +5,25 @@
 @include breakpoint($tab) {
   .landingpage-region--top {
     @include full;
+
     margin: 0;
   }
 
   .landingpage-region--first {
     @include span(first 4);
+
     margin-left: 0;
   }
 
   .landingpage-region--second {
     @include span(last 8 of 12);
+
     margin-right: 0;
   }
 
   .landingpage-region--bottom {
     @include full;
+
     margin: 0;
   }
 }

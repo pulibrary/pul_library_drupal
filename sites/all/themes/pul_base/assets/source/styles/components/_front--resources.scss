@@ -16,6 +16,7 @@
 
 .resources-item--homepage {
   @include span(full);
+
   border: $border-thin $border-solid $border-light;
   margin-bottom: 1.5em;
   position: relative;

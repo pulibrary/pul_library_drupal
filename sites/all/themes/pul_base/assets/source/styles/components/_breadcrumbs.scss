@@ -1,6 +1,7 @@
 //breadcrumbs - we turned off breadcrumbs in drupal
 .breadcrumb {
   @include clearfix;
+
   margin-top: 1em;
 
   $breadcrumb-border-color: $white;
@@ -26,6 +27,7 @@
     &::after,
     &::before {
       @include position(absolute, 0 auto 0 100%);
+
       border-bottom: ($breadcrumb-height / 2) solid transparent;
       border-left: ($breadcrumb-height / 4) solid transparent;
       border-top: ($breadcrumb-height / 2) solid transparent;

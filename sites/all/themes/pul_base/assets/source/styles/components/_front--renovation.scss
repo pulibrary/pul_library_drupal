@@ -1,6 +1,7 @@
 .front .firestone-renovation,
 .front .friends {
   @include span(full);
+
   border: $border-thin $border-solid $border-light;
 
   p {

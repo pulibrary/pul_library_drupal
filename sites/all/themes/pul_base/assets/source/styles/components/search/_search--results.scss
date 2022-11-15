@@ -125,13 +125,13 @@
       display: block;
     }
 
-
     li {
       margin-bottom: 2px;
       width: 100%;
 
       @include breakpoint($tab-desk) {
         display: inline-block;
+
         // float: left;
         margin-right: 0.5em;
         width: auto;
@@ -167,7 +167,6 @@
     @include breakpoint($tab-desk) {
       display: none;
     }
-
 
     &::after {
       @include pul-icon;

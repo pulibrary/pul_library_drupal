@@ -30,7 +30,9 @@ h2 {
 
   .f-submit {
     background: $blue-dark;
+
     @include position(absolute, 0 0 0 null);
+
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     outline: none;
@@ -133,7 +135,6 @@ h2 {
   }
 }
 
-
 fieldset {
   position: relative;
 }
@@ -201,19 +202,18 @@ button,
 input[type="submit"],
 .f-submit-wrap .f-submit {
   background: $blue-dark;
-  border-radius: .1875em;
+  border-radius: 0.1875em;
   color: $white;
   display: inline-block;
   font-size: 1em;
   font-weight: 700;
   line-height: 1;
-  padding: .75em 1em;
+  padding: 0.75em 1em;
   text-decoration: none;
   border: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  user-select: none;
+  user-select: none;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -478,7 +478,6 @@ label {
   margin-bottom: 1em;
 }
 
-
 .ac-container label[for="SearchCriteria"] {
   background: none;
   box-shadow: none;
@@ -513,11 +512,11 @@ a.button,
 }
 
 #ScheduledDate {
-	display:inline-block;
+  display: inline-block;
 }
 
 .ui-datepicker-trigger {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 #status span {
@@ -549,7 +548,7 @@ a.button,
 }
 
 .list-break > li {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .f-submit-wrap {
