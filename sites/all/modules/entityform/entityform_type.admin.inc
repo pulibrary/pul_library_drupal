@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @file
+ */
+
 define('ENTITYFORM_TYPE_DEFAULT_PROP_TEXT', 'Leave this field blank to use default setting. Use &lt;none&gt; to show no text');
 /**
  * @file
@@ -34,6 +39,7 @@ class EntityformTypeUIController extends EntityDefaultUIController {
     $render['#header'][] = t('Submit Link');
     return $render;
   }
+
 }
 
 /**
@@ -95,7 +101,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
     '#description' => t('These user instructions will appear at the top of every page within this form.'),
   );
   if (module_exists('menu')) {
-    // Menu Settings
+    // Menu Settings.
     $link = $entityform_type->menu;
 
     $form['menu'] = array(
@@ -129,18 +135,18 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
 
     // Populate the element with the link data.
     foreach (array(
-               'mlid',
-               'module',
-               'hidden',
-               'has_children',
-               'customized',
-               'options',
-               'expanded',
-               'hidden'
-             ) as $key) {
+      'mlid',
+      'module',
+      'hidden',
+      'has_children',
+      'customized',
+      'options',
+      'expanded',
+      'hidden',
+    ) as $key) {
       $form['menu']['link'][$key] = array(
         '#type' => 'value',
-        '#value' => $link[$key]
+        '#value' => $link[$key],
       );
     }
 
@@ -238,7 +244,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
   }
   else {
     $form['tokens'] = array(
-      '#markup' => '<p>' . t('Enable the <a href="@drupal-token">Token module</a> to view the available token browser.', array('@drupal-token' => 'http://drupal.org/project/token')) . '</p>',
+      '#markup' => '<p>' . t('Enable the <a href="@drupal-token">Token module</a> to view the available token browser.', array('@drupal-token' => 'https://drupal.org/project/token')) . '</p>',
     );
   }
 
@@ -247,6 +253,7 @@ function entityform_type_form($form, &$form_state, $entityform_type, $op = 'edit
 
 /**
  * Prepare Entityform Type to be edited.
+ *
  * @param EntityformType $entityform_type
  */
 function entityform_type_prepare_edit(&$entityform_type) {
@@ -260,29 +267,31 @@ function entityform_type_prepare_edit(&$entityform_type) {
     }
     // Set default values.
     $entityform_type->menu = $item + array(
-        'link_title' => '',
-        'mlid' => 0,
-        'plid' => 0,
-        'menu_name' => '',
-        'weight' => 0,
-        'options' => array(),
-        'module' => 'entityform',
-        'expanded' => 0,
-        'hidden' => 0,
-        'has_children' => 0,
-        'customized' => 0,
-      );
+      'link_title' => '',
+      'mlid' => 0,
+      'plid' => 0,
+      'menu_name' => '',
+      'weight' => 0,
+      'options' => array(),
+      'module' => 'entityform',
+      'expanded' => 0,
+      'hidden' => 0,
+      'has_children' => 0,
+      'customized' => 0,
+    );
   }
 }
 
 /**
- * Entityform global setting form
+ * Entityform global setting form.
+ *
  * @param array $form
  * @param array $form_state
+ *
  * @return array
  */
 function entityform_settings($form, &$form_state) {
-  //choose the default View for viewing for submissions
+  // Choose the default View for viewing for submissions.
   $defaults = entity_get_controller('entityform_type')->create(array(), TRUE);
   $form = _entityform_type_settings_elements($defaults, 'defaults');
   $form['#entityform_type'] = $defaults;
@@ -304,7 +313,7 @@ function entityform_settings($form, &$form_state) {
     'entityform_type_defaults',
     'data',
   );
-  //collaspe all fieldsets
+  // Collaspe all fieldsets.
   foreach (element_children($form['entityform_type_defaults']['data']) as $key) {
     if (isset($form['entityform_type_defaults']['data'][$key]['#type']) && $form['entityform_type_defaults']['data'][$key]['#type'] == 'fieldset') {
       $form['entityform_type_defaults']['data'][$key]['#collapsed'] = TRUE;
@@ -316,8 +325,10 @@ function entityform_settings($form, &$form_state) {
 /**
  * Create Form elements that are shared between EntityformType add/edit form and EntityformType default settings form
  * This allows default settings to set for most form settings.
+ *
  * @param $entityform_type
  * @param $op
+ *
  * @return array
  *   Form elements
  */
@@ -459,7 +470,7 @@ function _entityform_type_settings_elements($entityform_type, $op) {
   $parts = explode(':', $submission_view);
   $submission_view = $parts[0];
   if ($op == 'defaults') {
-    //If selected Views are no longer available select defaults.
+    // If selected Views are no longer available select defaults.
     if (!array_key_exists($submission_view, $view_options)) {
       $submission_view = 'entityforms';
     }
@@ -563,10 +574,10 @@ function _entityform_paths_form_element_validate($element, &$form_state, $comple
 
 }
 
-/*
+/**
  * Email form validate function.
  *
- * Should contain either no value or emails separated by commas
+ * Should contain either no value or emails separated by commas.
  */
 function _entityform_form_email_list_validate($element, &$form_state, $form) {
   $emails = explode(', ', $element['#value']);
@@ -578,7 +589,6 @@ function _entityform_form_email_list_validate($element, &$form_state, $form) {
     }
   }
 }
-
 
 /**
  * Form API submit callback for the type form.
@@ -594,7 +604,6 @@ function entityform_type_form_submit(&$form, &$form_state) {
   }
   $entityform_type->save();
 }
-
 
 /**
  * Form API submit callback for the delete button.

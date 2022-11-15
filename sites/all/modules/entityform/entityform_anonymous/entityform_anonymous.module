@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
- * Main functions and hook implementations
+ * Main functions and hook implementations.
  */
+
 /**
  * Implements hook_token_info().
  */
@@ -18,6 +20,7 @@ function entityform_anonymous_token_info() {
  * Utility function to get array of tokens provide by this module.
  *
  * @param $tokens
+ *
  * @return array
  */
 function _entityform_anonymous_get_provided_tokens() {
@@ -69,12 +72,15 @@ function entityform_anonymous_tokens($type, $tokens, array $data = array(), arra
         case 'anonymous_submission_token':
           $return[$original] = $anonymous_token;
           break;
+
         case 'anonymous_submission_view_link':
           $return[$original] = url('entityform/' . $entityform->entityform_id, $options);
           break;
+
         case 'anonymous_submission_edit_link':
           $return[$original] = url("entityform/{$entityform->entityform_id}/edit", $options);
           break;
+
         case 'anonymous_submission_submit_link':
           $return[$original] = url("eform/submit/{$entityform->type}", $options);
           break;
@@ -87,8 +93,10 @@ function entityform_anonymous_tokens($type, $tokens, array $data = array(), arra
 }
 
 /**
- * Return hashed secure token for an entityform_id
+ * Return hashed secure token for an entityform_id.
+ *
  * @param $entityform_id
+ *
  * @return string
  */
 function _entityform_anonymous_get_token($entityform_id) {
@@ -98,11 +106,10 @@ function _entityform_anonymous_get_token($entityform_id) {
 /**
  * Implements hook_entityform_access_alter().
  *
- * If user is anonymous determine if they should have access to submission
+ * If user is anonymous determine if they should have access to submission.
  */
 function entityform_anonymous_entityform_access_alter(&$access, $op, $context) {
-  // Only alter if $access not TRUE
-
+  // Only alter if $access not TRUE.
   $account = $context['account'];
   $entityform = $context['entityform'];
   if (!$access && isset($entityform->uid) && $account->uid == 0 && $entityform->uid == 0) {
@@ -112,8 +119,7 @@ function entityform_anonymous_entityform_access_alter(&$access, $op, $context) {
       }
       else {
         if (user_access("$op own entityform")) {
-          // This is an anonymously submitted and the current user is anonymous
-
+          // This is an anonymously submitted and the current user is anonymous.
           $access = TRUE;
         }
       }
@@ -124,8 +130,10 @@ function entityform_anonymous_entityform_access_alter(&$access, $op, $context) {
 /**
  * Utility function to determine if current user submitted the form.
  *
- * Currently only supports query string token
+ * Currently only supports query string token.
+ *
  * @param $entityform
+ *
  * @return bool
  */
 function _entityform_anonymous_user_submitted_form($entityform) {
@@ -152,7 +160,7 @@ function entityform_anonymous_entityform_previous_submission_alter(&$submission,
     $entityform_type = entityform_type_load($type);
     if (!empty($entityform_type->data['anonymous_links']) && !empty($_GET['token']) && !empty($_GET['id'])) {
       if ($_GET['token'] == _entityform_anonymous_get_token($_GET['id'])) {
-        // Correct token. Load the full entityform
+        // Correct token. Load the full entityform.
         $entityform = entityform_load($_GET['id']);
         if ($entityform->draft == $draft && $entityform->type == $type) {
           $submission = $entityform;
@@ -201,9 +209,10 @@ function entityform_anonymous_form_entityform_type_form_alter(&$form, &$form_sta
 }
 
 /**
- * Validation callback for entityform_type_form
+ * Validation callback for entityform_type_form.
  *
  * Ensures that anonymous users have access to entityform types with anonymous tracking.
+ *
  * @param $form
  * @param $form_state
  */
@@ -214,18 +223,20 @@ function entityform_anonymous_entityform_type_form_validate($form, &$form_state)
     form_error($form['data']['access_set']['roles'], t('You have set anonymous tracking but anonymous users don\'t have access to the form'));
   }
 }
+
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  *
  * Form id entityform_edit_form
- * Allow access to draft button if form allows anonymous submissions
+ * Allow access to draft button if form allows anonymous submissions.
+ *
  * @todo Should this "allow anonymous" drafts be a setting?
  */
 function entityform_anonymous_form_entityform_edit_form_alter(&$form, &$form_state, $form_id) {
   if (user_is_anonymous()) {
     if (!isset($form['review'])) {
       $entityform_type = entityform_type_load($form['#bundle']);
-      // Make sure for is draftable and not in Review mode
+      // Make sure for is draftable and not in Review mode.
       if (!empty($entityform_type->data['anonymous_links']) && $entityform_type->data['draftable']) {
         $form['actions']['save']['#access'] = TRUE;
       }
@@ -244,11 +255,15 @@ function entityform_anonymous_entityform_presave($entityform) {
     }
   }
 }
+
+/**
+ *
+ */
 function entityform_anonymous_get_submissions($type = NULL, $draft = 0, $limit = NULL) {
   $submissions = array();
   $sid = session_api_get_sid(TRUE);
   if (empty($sid)) {
-    // No session yet couldn't have made submission
+    // No session yet couldn't have made submission.
     return array();
   }
   $query = new EntityFieldQuery();
@@ -259,7 +274,7 @@ function entityform_anonymous_get_submissions($type = NULL, $draft = 0, $limit =
   if ($draft !== NULL) {
     $query->propertyCondition('draft', $draft);
   }
-  // Add session id
+  // Add session id.
   $query->propertyCondition('sid', $sid);
   if ($limit !== NULL) {
     $query->range(0, $limit);

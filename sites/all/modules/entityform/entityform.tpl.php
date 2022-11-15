@@ -2,7 +2,7 @@
 
 /**
  * @file
- * A basic template for entityform entities
+ * A basic template for entityform entities.
  *
  * Available variables:
  * - $content: An array of field items. Use render($content) to print them all, or

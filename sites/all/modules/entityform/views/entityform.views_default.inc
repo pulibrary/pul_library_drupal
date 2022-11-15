@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default views.
@@ -8,7 +9,7 @@
  * Implements hook_views_default_views().
  */
 function entityform_views_default_views() {
-  $view = new view;
+  $view = new view();
   $view->name = 'entityforms';
   $view->description = 'A list of all entityforms submissions to be as an admin report';
   $view->tag = 'entityforms';
@@ -37,23 +38,23 @@ function entityform_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-      'name' => 'name',
-      'entityform_id' => 'entityform_id',
+    'name' => 'name',
+    'entityform_id' => 'entityform_id',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-      'name' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-      ),
-      'entityform_id' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-      ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+    ),
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+    ),
   );
   $handler->display->display_options['style_options']['override'] = 1;
   $handler->display->display_options['style_options']['sticky'] = 0;
@@ -96,63 +97,63 @@ function entityform_views_default_views() {
     $handler->display->display_options['fields']['views_bulk_operations']['hide_alter_empty'] = 1;
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['entity_load_capacity'] = '10';
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['operations'] = array(
-        'action::views_bulk_operations_delete_item' => array(
-            'selected' => 1,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 1,
-            'label' => 'Delete Submissions',
+      'action::views_bulk_operations_delete_item' => array(
+        'selected' => 1,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 1,
+        'label' => 'Delete Submissions',
+      ),
+      'action::system_message_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::views_bulk_operations_script_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::views_bulk_operations_modify_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+        'settings' => array(
+          'show_all_tokens' => 1,
+          'display_values' => array(
+            '_all_' => '_all_',
+          ),
         ),
-        'action::system_message_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
+      ),
+      'action::views_bulk_operations_argument_selector_action' => array(
+        'selected' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+        'settings' => array(
+          'url' => '',
         ),
-        'action::views_bulk_operations_script_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
-        'action::views_bulk_operations_modify_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-            'settings' => array(
-                'show_all_tokens' => 1,
-                'display_values' => array(
-                    '_all_' => '_all_',
-                ),
-            ),
-        ),
-        'action::views_bulk_operations_argument_selector_action' => array(
-            'selected' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-            'settings' => array(
-                'url' => '',
-            ),
-        ),
-        'action::system_goto_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
-        'action::system_send_email_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
+      ),
+      'action::system_goto_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::system_send_email_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
     );
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['enable_select_all_pages'] = 1;
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['display_type'] = '1';
@@ -478,10 +479,10 @@ function entityform_views_default_views() {
     $handler->display->display_options['arguments']['type']['break_phrase'] = 0;
     $handler->display->display_options['path'] = 'entityform-submissions/downloads/%/xml';
     $handler->display->display_options['displays'] = array(
-        'entityforms_admin_page' => 'entityforms_admin_page',
-        'autofields_table' => 'autofields_table',
-        'block_1' => 'block_1',
-        'default' => 0,
+      'entityforms_admin_page' => 'entityforms_admin_page',
+      'autofields_table' => 'autofields_table',
+      'block_1' => 'block_1',
+      'default' => 0,
     );
 
     /* Display: CSV Data export */
@@ -602,9 +603,9 @@ function entityform_views_default_views() {
     $handler->display->display_options['arguments']['type']['break_phrase'] = 0;
     $handler->display->display_options['path'] = 'entityform-submissions/downloads/%/csv';
     $handler->display->display_options['displays'] = array(
-        'entityforms_admin_page' => 'entityforms_admin_page',
-        'autofields_table' => 'autofields_table',
-        'default' => 0,
+      'entityforms_admin_page' => 'entityforms_admin_page',
+      'autofields_table' => 'autofields_table',
+      'default' => 0,
     );
   }
   /* Display: Table */
@@ -636,63 +637,63 @@ function entityform_views_default_views() {
     $handler->display->display_options['fields']['views_bulk_operations']['hide_alter_empty'] = 1;
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['entity_load_capacity'] = '10';
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['operations'] = array(
-        'action::views_bulk_operations_delete_item' => array(
-            'selected' => 1,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 1,
-            'label' => 'Delete Submissions',
+      'action::views_bulk_operations_delete_item' => array(
+        'selected' => 1,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 1,
+        'label' => 'Delete Submissions',
+      ),
+      'action::system_message_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::views_bulk_operations_script_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::views_bulk_operations_modify_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+        'settings' => array(
+          'show_all_tokens' => 1,
+          'display_values' => array(
+            '_all_' => '_all_',
+          ),
         ),
-        'action::system_message_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
+      ),
+      'action::views_bulk_operations_argument_selector_action' => array(
+        'selected' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+        'settings' => array(
+          'url' => '',
         ),
-        'action::views_bulk_operations_script_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
-        'action::views_bulk_operations_modify_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-            'settings' => array(
-                'show_all_tokens' => 1,
-                'display_values' => array(
-                    '_all_' => '_all_',
-                ),
-            ),
-        ),
-        'action::views_bulk_operations_argument_selector_action' => array(
-            'selected' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-            'settings' => array(
-                'url' => '',
-            ),
-        ),
-        'action::system_goto_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
-        'action::system_send_email_action' => array(
-            'selected' => 0,
-            'use_queue' => 0,
-            'skip_confirmation' => 0,
-            'override_label' => 0,
-            'label' => '',
-        ),
+      ),
+      'action::system_goto_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
+      'action::system_send_email_action' => array(
+        'selected' => 0,
+        'use_queue' => 0,
+        'skip_confirmation' => 0,
+        'override_label' => 0,
+        'label' => '',
+      ),
     );
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['enable_select_all_pages'] = 1;
     $handler->display->display_options['fields']['views_bulk_operations']['vbo']['display_type'] = '1';
@@ -815,12 +816,11 @@ function entityform_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
 
-
   $views[$view->name] = $view;
   /*
    * Views to Display Entityform types that will links to submissions
    */
-  $view = new view;
+  $view = new view();
   $view->name = 'entityform_type_list';
   $view->description = 'Provide an index of entityform types that link to submission View';
   $view->tag = 'default';
@@ -843,25 +843,25 @@ function entityform_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-      'type' => 'type',
-      'label' => 'label',
+    'type' => 'type',
+    'label' => 'label',
   );
   $handler->display->display_options['style_options']['default'] = 'type';
   $handler->display->display_options['style_options']['info'] = array(
-      'type' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
-      'label' => array(
-          'sortable' => 1,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
+    'type' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'label' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   $handler->display->display_options['style_options']['override'] = 1;
   $handler->display->display_options['style_options']['sticky'] = 0;
@@ -934,7 +934,7 @@ function entityform_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $views[$view->name] = $view;
 
-  $view = new view;
+  $view = new view();
   $view->name = 'user_entityforms';
   $view->description = 'A list of all entityforms submissions to be displayed to the submitter.';
   $view->tag = 'entityforms';
@@ -948,7 +948,8 @@ function entityform_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'List';
   $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'view own entityform';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -962,47 +963,47 @@ function entityform_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-      'name' => 'name',
-      'link_entityform' => 'link_entityform',
-      'label_1' => 'label_1',
-      'created' => 'created',
-      'changed' => 'changed',
+    'name' => 'name',
+    'link_entityform' => 'link_entityform',
+    'label_1' => 'label_1',
+    'created' => 'created',
+    'changed' => 'changed',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-      'name' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
-      'link_entityform' => array(
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
-      'label_1' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
-      'created' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
-      'changed' => array(
-          'sortable' => 0,
-          'default_sort_order' => 'asc',
-          'align' => '',
-          'separator' => '',
-          'empty_column' => 0,
-      ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'link_entityform' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'label_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   $handler->display->display_options['style_options']['override'] = 1;
   $handler->display->display_options['style_options']['sticky'] = 0;

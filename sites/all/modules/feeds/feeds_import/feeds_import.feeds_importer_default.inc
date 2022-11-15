@@ -16,30 +16,26 @@ function feeds_import_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'node';
   $feeds_importer->config = array(
-    'content_type' => '',
+    'name' => 'Node import',
     'description' => 'Import nodes from CSV file.',
-    'expire_period' => 3600,
     'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'direct' => FALSE,
       ),
-      'plugin_key' => 'FeedsFileFetcher',
     ),
-    'import_on_create' => 1,
-    'import_period' => '-1',
-    'name' => 'Node import',
     'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
       ),
-      'plugin_key' => 'FeedsCSVParser',
     ),
     'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'author' => 0,
         'bundle' => 'article',
+        'update_existing' => 1,
         'expire' => '-1',
-        'input_format' => 'plain_text',
         'mappings' => array(
           0 => array(
             'source' => 'title',
@@ -62,11 +58,15 @@ function feeds_import_feeds_importer_default() {
             'unique' => 1,
           ),
         ),
-        'update_existing' => 1,
+        'input_format' => 'plain_text',
+        'author' => 0,
       ),
-      'plugin_key' => 'FeedsNodeProcessor',
     ),
+    'content_type' => '',
     'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
   );
   $export['node'] = $feeds_importer;
 
@@ -75,27 +75,27 @@ function feeds_import_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'user';
   $feeds_importer->config = array(
-    'content_type' => '',
+    'name' => 'User import',
     'description' => 'Import users from CSV file.',
-    'expire_period' => 3600,
     'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
         'direct' => FALSE,
       ),
-      'plugin_key' => 'FeedsFileFetcher',
     ),
-    'import_on_create' => 1,
-    'import_period' => '-1',
-    'name' => 'User import',
     'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ',',
       ),
-      'plugin_key' => 'FeedsCSVParser',
     ),
     'processor' => array(
+      'plugin_key' => 'FeedsUserProcessor',
       'config' => array(
         'bundle' => 'user',
+        'roles' => array(),
+        'update_existing' => 0,
+        'status' => 1,
         'mappings' => array(
           0 => array(
             'source' => 'name',
@@ -113,13 +113,13 @@ function feeds_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'roles' => array(),
-        'status' => 1,
-        'update_existing' => 0,
       ),
-      'plugin_key' => 'FeedsUserProcessor',
     ),
+    'content_type' => '',
     'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
   );
   $export['user'] = $feeds_importer;
 

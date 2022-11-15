@@ -10,10 +10,10 @@ dependencies[] = text
 features[entityform_type][] = simpletest_entityform
 features[features_api][] = api:1
 features[field][] = entityform-simpletest_entityform-field_text
+hidden = true
 
-; Information added by Drupal.org packaging script on 2017-05-08
-version = "7.x-2.0-rc4"
+; Information added by Drupal.org packaging script on 2022-10-18
+version = "7.x-2.0-rc5"
 core = "7.x"
 project = "entityform"
-datestamp = "1494261790"
-
+datestamp = "1666073538"
