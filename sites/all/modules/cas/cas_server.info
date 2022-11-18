@@ -4,9 +4,8 @@ core = 7.x
 description = "Provides protocol compliant CAS Server"
 configure = admin/config/people/cas_server
 
-; Information added by Drupal.org packaging script on 2018-02-12
-version = "7.x-1.7"
+; Information added by Drupal.org packaging script on 2022-11-18
+version = "7.x-1.7+3-dev"
 core = "7.x"
 project = "cas"
-datestamp = "1518448970"
-
+datestamp = "1668789548"

@@ -34,6 +34,10 @@ function cas_drush_command() {
       'drush cas-user-create newcasuser' => 'Create a new user with CAS username newcasuser',
     ),
   );
+  $items['cas-phpcas-version'] = array(
+    'callback' => 'cas_drush_phpcas_version',
+    'description' => dt('Displays version of the installed phpCAS library.'),
+  );
   return $items;
 }
 
@@ -46,6 +50,8 @@ function cas_drush_help($section) {
       return dt('Create a CAS user account with the specified CAS username.');
     case 'drush:cas-user-add-role':
       return dt('Add a role to the specified CAS usernames.');
+    case 'drush:cas-phpcas-version':
+      return dt('Displays version of installed phpCAS library.');
   }
 }
 
@@ -100,6 +106,18 @@ function cas_drush_user_add_role($role, $users = '') {
   }
   else {
     return drush_set_error("Could not find any valid uids!");
+  }
+}
+
+/**
+ * Displays version of the installed phpCAS library.
+ */
+function cas_drush_phpcas_version() {
+  if ($version = @cas_phpcas_load()) {
+    drush_log(dt('phpCAS version: @version', array('@version' => $version)), 'ok');
+  }
+  else {
+    drush_set_error(dt('phpCAS could not be loaded. Please download phpCAS and configure its location.'));
   }
 }
 
