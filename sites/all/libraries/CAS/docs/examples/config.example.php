@@ -6,7 +6,7 @@
  * Just configure all the items in this config according to your environment
  * and rename the file to config.php
  *
- * PHP Version 5
+ * PHP Version 7
  *
  * @file     config.php
  * @category Authentication
@@ -42,6 +42,9 @@ $cas_server_ca_cert_path = '/path/to/cachain.pem';
 // The "real" hosts of clustered cas server that send SAML logout messages
 // Assumes the cas server is load balanced across multiple hosts
 $cas_real_hosts = array('cas-real-1.example.com', 'cas-real-2.example.com');
+
+// Client config for the required domain name, should be protocol, hostname and port
+$client_service_name = 'http://127.0.0.1';
 
 // Client config for cookie hardening
 $client_domain = '127.0.0.1';
@@ -96,7 +99,7 @@ $cas_url = $cas_url . $cas_context;
 // doesn't share its session with a proxied script.
 // This is just useful when running the example code, but not normally.
 session_name(
-    'session_for:'
+    'session_for-'
     . preg_replace('/[^a-z0-9-]/i', '_', basename($_SERVER['SCRIPT_NAME']))
 );
 // Set an UTF-8 encoding header for internation characters (User attributes)

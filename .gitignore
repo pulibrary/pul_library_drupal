@@ -11,3 +11,5 @@ sites/*/private
 
 # Ignores capistrano log
 log/
+
+.DS_Store

@@ -33,7 +33,7 @@ Installation
 
 * Download phpCAS from https://wiki.jasig.org/display/CASC/phpCAS. You will
   need version 1.3.2 or later (1.3.3 for CAS 3.0 support). The most recent
-  release is available at https://developer.jasig.org/cas-clients/php/current.tgz
+  release is available at https://github.com/apereo/phpCAS/releases
 
 * There are several locations you can install the phpCAS library.
 
