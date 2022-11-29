@@ -1,9 +1,10 @@
 name: library-main
 recipe: drupal7
 config:
-  php: '7.4'
+  php: '8.0'
   webroot: .
   database: mariadb
+  drush: '8.4.11'
 services:
   search:
     type: solr:custom

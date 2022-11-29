@@ -116,7 +116,7 @@ class QuickBlockContent extends QuickContent {
       ->condition('module', $module, '=')
       ->condition('delta',  $delta,  '=')
       ->execute()
-      ->fetchCol('rid');
+      ->fetchCol();
 
     // Return whether the user can access the block:
     // - Either all roles have access - no record in {block_role}
