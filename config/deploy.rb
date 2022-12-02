@@ -1,5 +1,5 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.17.0"
+# Heaven doesn't know how to handle capistrano 3.17
+lock "~> 3.16.0"
 
 set :application, "library"
 set :repo_url, "https://github.com/pulibrary/pul_library_drupal.git"
