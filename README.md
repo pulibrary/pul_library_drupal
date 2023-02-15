@@ -98,7 +98,7 @@ $aliases['local'] = array(
   ),
 );
 ```
-12. `lando drush @librarymain.prod sql-dump --gzip --result-file=/tmp/dump.sql; scp pulsys@{insert app-server-name}:/tmp/dump.sql.gz .`
+12. `bundle exec cap production database_dump; scp pulsys@mysql-db-prod1:/tmp/dump.sql.gz .`
 13. `lando db-import dump.sql.gz`
 14. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 15. `lando drush vset --exact file_temporary_path /tmp`
