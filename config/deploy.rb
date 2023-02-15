@@ -326,3 +326,10 @@ namespace :deploy do
   after 'symlink:release' , "deploy:after_release"
   before "whenever:update_crontab", "deploy:bundle_install"
 end
+
+desc "Database dump"
+task :database_dump do
+  on release_roles :db do
+    execute "sudo -u root -i mysqldump #{ fetch(:db_name) } | gzip > /tmp/dump.sql.gz"
+  end
+end
