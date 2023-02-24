@@ -98,8 +98,8 @@ $aliases['local'] = array(
   ),
 );
 ```
-12. `bundle exec cap production database_dump; scp pulsys@mysql-db-prod1:/tmp/dump.sql.gz .`
-13. `lando db-import dump.sql.gz`
+12. `bundle exec cap production database_dump; // this will produce a datestamped dump file in the format "backup-YYYY-MM-DD-{environment}.sql.gz".
+13. `lando db-import backup-YYYY-MM-DD-{environment}.sql.gz`
 14. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 15. `lando drush vset --exact file_temporary_path /tmp`
 16. `lando drush uli your-username`
