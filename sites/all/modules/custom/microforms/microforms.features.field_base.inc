@@ -55,8 +55,8 @@ function microforms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'newspaper_cities',
           'parent' => 0,
+          'vocabulary' => 'newspaper_cities',
         ),
       ),
     ),
@@ -84,8 +84,8 @@ function microforms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'newspaper_countries',
           'parent' => 0,
+          'vocabulary' => 'newspaper_countries',
         ),
       ),
     ),
@@ -169,8 +169,8 @@ function microforms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'newspaper_us_states',
           'parent' => 0,
+          'vocabulary' => 'newspaper_us_states',
         ),
       ),
     ),

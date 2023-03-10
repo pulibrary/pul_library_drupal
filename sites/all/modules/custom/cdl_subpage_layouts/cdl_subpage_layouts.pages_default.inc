@@ -18,7 +18,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 15;
+  $handler->weight = 9;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -227,7 +227,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = -14;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -534,7 +534,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -11;
+  $handler->weight = -16;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -693,7 +693,7 @@ function cdl_subpage_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -7;
+  $handler->weight = -12;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -854,7 +854,7 @@ collections/adelman07102008',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -6;
+  $handler->weight = -11;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

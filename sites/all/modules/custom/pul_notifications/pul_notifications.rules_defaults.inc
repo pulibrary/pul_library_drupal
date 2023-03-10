@@ -31,14 +31,7 @@ function pul_notifications_default_rules_configuration() {
           }
         }
       ],
-      "DO" : [
-        { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "4" : "4" } },
-            "subject" : "A DMG resource has been updated. ",
-            "message" : "A DMG [entity:content-type], [entity:title],  at [entity:url] has been updated by [site:current-user] created by [entity:author]"
-          }
-        }
-      ],
+      "DO" : [],
       "PROVIDES VARIABLES" : [ "continue" ]
     }
   }');

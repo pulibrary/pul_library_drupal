@@ -18,7 +18,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 39;
+  $handler->weight = 34;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -194,7 +194,7 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 40;
+  $handler->weight = 35;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -367,7 +367,8 @@ function pul_open_access_publishing_program_section_default_page_manager_handler
         'name' => 'path_visibility',
         'not' => FALSE,
         'settings' => array(
-          'paths' => 'services/open-access-publishing-program/journal-proposal-form',
+          'paths' => 'services/open-access-publishing-program/journal-proposal-form
+https://library.princeton.edu/services/scholarly-communications/how-to-make-a-deposit',
           'visibility_setting' => '1',
         ),
       ),

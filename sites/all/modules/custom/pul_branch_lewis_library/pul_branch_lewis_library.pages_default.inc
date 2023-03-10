@@ -18,7 +18,7 @@ function pul_branch_lewis_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -4;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -496,7 +496,7 @@ lewis',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 2;
+  $handler->weight = -3;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -18,7 +18,7 @@ function pul_scholarly_communications_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 19;
+  $handler->weight = 14;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -30,6 +30,15 @@ function pul_scholarly_communications_default_page_manager_handlers() {
           'settings' => array(
             'paths' => 'services/scholarly-communications
 services/scholarly-communications/*',
+            'visibility_setting' => '1',
+          ),
+        ),
+        1 => array(
+          'context' => 'empty',
+          'name' => 'path_visibility',
+          'not' => TRUE,
+          'settings' => array(
+            'paths' => 'services/scholarly-communications/how-to-make-a-deposit',
             'visibility_setting' => '1',
           ),
         ),
@@ -149,7 +158,9 @@ services/scholarly-communications/*',
   $pane->type = 'node_body';
   $pane->subtype = 'node_body';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(),
+  );
   $pane->configuration = array(
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
@@ -228,7 +239,8 @@ services/scholarly-communications/*',
         'name' => 'path_visibility',
         'not' => FALSE,
         'settings' => array(
-          'paths' => 'services/scholarly-communications/oa-fund-appilcation',
+          'paths' => 'services/scholarly-communications/oa-fund-appilcation
+services/scholarly-communications/how-to-make-a-deposit',
           'visibility_setting' => '1',
         ),
       ),
@@ -295,7 +307,7 @@ services/scholarly-communications/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 20;
+  $handler->weight = 16;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

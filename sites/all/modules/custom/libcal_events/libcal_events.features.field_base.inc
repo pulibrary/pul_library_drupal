@@ -31,8 +31,8 @@ function libcal_events_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'lib_event_types',
           'parent' => 0,
+          'vocabulary' => 'lib_event_types',
         ),
       ),
     ),

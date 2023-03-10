@@ -31,8 +31,8 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'sales_catalog_auction_house',
           'parent' => 0,
+          'vocabulary' => 'sales_catalog_auction_house',
         ),
       ),
     ),
@@ -60,8 +60,8 @@ function marquand_sales_catalogs_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'sales_catalog_city',
           'parent' => 0,
+          'vocabulary' => 'sales_catalog_city',
         ),
       ),
     ),

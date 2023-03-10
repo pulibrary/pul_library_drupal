@@ -18,7 +18,7 @@ function pul_pumagic_homepage_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -45;
+  $handler->weight = -49;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

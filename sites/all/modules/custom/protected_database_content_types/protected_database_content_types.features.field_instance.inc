@@ -483,9 +483,9 @@ function protected_database_content_types_field_default_field_instances() {
     'bundle' => 'ip_protected_db_resource',
     'default_value' => array(
       0 => array(
+        'format' => 'filtered_html',
         'summary' => '',
         'value' => 'Manual login required for access to articles in the journals listed below. Please make a note of BOTH user name and password before following the "Access Resource" Button. You will need them later in order to view full text.',
-        'format' => 'filtered_html',
       ),
     ),
     'deleted' => 0,
@@ -661,6 +661,7 @@ function protected_database_content_types_field_default_field_instances() {
     'bundle' => 'ip_protected_db_resource',
     'default_value' => array(
       0 => array(
+        'format' => 'filtered_html',
         'value' => '<p>This publication or database and the information in it is protected by copyright. All reproductions of this copyrighted material must be for non-commercial educational “fair use” as defined by 17 U.S.C. 107.</p>
 <table>
 <thead>
@@ -684,7 +685,6 @@ function protected_database_content_types_field_default_field_instances() {
 </tr>
 </tbody>
 </table>',
-        'format' => 'filtered_html',
       ),
     ),
     'deleted' => 0,

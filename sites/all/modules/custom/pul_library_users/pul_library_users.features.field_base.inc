@@ -256,8 +256,8 @@ function pul_library_users_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'departments',
           'parent' => 0,
+          'vocabulary' => 'departments',
         ),
       ),
     ),
@@ -327,8 +327,8 @@ function pul_library_users_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'division',
           'parent' => 0,
+          'vocabulary' => 'division',
         ),
       ),
     ),
@@ -692,8 +692,8 @@ function pul_library_users_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'section',
           'parent' => 0,
+          'vocabulary' => 'section',
         ),
       ),
     ),
@@ -811,8 +811,8 @@ function pul_library_users_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'unit',
           'parent' => 0,
+          'vocabulary' => 'unit',
         ),
       ),
     ),

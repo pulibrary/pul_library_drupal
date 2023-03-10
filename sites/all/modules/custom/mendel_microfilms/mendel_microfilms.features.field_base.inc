@@ -55,8 +55,8 @@ function mendel_microfilms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_mendel_collections',
           'parent' => 0,
+          'vocabulary' => 'mus_mendel_collections',
         ),
       ),
     ),
@@ -298,8 +298,8 @@ function mendel_microfilms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_mendel_microfilm_authors',
           'parent' => 0,
+          'vocabulary' => 'mus_mendel_microfilm_authors',
         ),
       ),
     ),
@@ -327,8 +327,8 @@ function mendel_microfilms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_mendel_microfilm_composers',
           'parent' => 0,
+          'vocabulary' => 'mus_mendel_microfilm_composers',
         ),
       ),
     ),
@@ -353,8 +353,8 @@ function mendel_microfilms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_mendel_microfilm_librettist',
           'parent' => 0,
+          'vocabulary' => 'mus_mendel_microfilm_librettist',
         ),
       ),
     ),

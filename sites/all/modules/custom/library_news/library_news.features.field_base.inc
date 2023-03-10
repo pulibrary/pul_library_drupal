@@ -293,8 +293,8 @@ function library_news_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'news_events_categories',
           'parent' => 0,
+          'vocabulary' => 'news_events_categories',
         ),
       ),
     ),
@@ -545,8 +545,8 @@ function library_news_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'audiences',
           'parent' => 0,
+          'vocabulary' => 'audiences',
         ),
       ),
     ),
@@ -660,8 +660,8 @@ function library_news_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'tags',
           'parent' => 0,
+          'vocabulary' => 'tags',
         ),
       ),
     ),

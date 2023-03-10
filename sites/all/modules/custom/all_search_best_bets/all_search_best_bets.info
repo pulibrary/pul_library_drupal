@@ -48,5 +48,6 @@ features[variable][] = menu_parent_all_search_best_bets
 features[variable][] = node_options_all_search_best_bets
 features[variable][] = node_preview_all_search_best_bets
 features[variable][] = node_submitted_all_search_best_bets
+features[variable][] = pathauto_node_all_search_best_bets_pattern
 features[variable][] = xmlsitemap_settings_node_all_search_best_bets
 features[views_view][] = all_search_best_bet

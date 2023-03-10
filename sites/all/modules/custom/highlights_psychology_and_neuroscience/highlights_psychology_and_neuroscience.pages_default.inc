@@ -18,7 +18,7 @@ function highlights_psychology_and_neuroscience_default_page_manager_handlers() 
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -17;
+  $handler->weight = -21;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -467,7 +467,7 @@ Highlights in Psychology and Neuroscience',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -14;
+  $handler->weight = -18;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
