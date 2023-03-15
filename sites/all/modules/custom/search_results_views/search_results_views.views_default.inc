@@ -922,6 +922,13 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_entity'] = 0;
+  /* Field: Indexed User: First Name */
+  $handler->display->display_options['fields']['field_puluser_fname']['id'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['table'] = 'search_api_index_staff_users';
+  $handler->display->display_options['fields']['field_puluser_fname']['field'] = 'field_puluser_fname';
+  $handler->display->display_options['fields']['field_puluser_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_puluser_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_puluser_fname']['element_label_colon'] = FALSE;
   /* Field: Indexed User: Last Name */
   $handler->display->display_options['fields']['field_puluser_lname']['id'] = 'field_puluser_lname';
   $handler->display->display_options['fields']['field_puluser_lname']['table'] = 'search_api_index_staff_users';
@@ -948,7 +955,7 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['field_puluser_formalname_1']['field'] = 'field_puluser_formalname';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['label'] = '';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['text'] = '[field_puluser_lname], [field_puluser_nick_name] ';
+  $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['text'] = '[field_puluser_lname], [field_puluser_fname]';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['path'] = 'staff/[name]';
   $handler->display->display_options['fields']['field_puluser_formalname_1']['alter']['alt'] = 'View Staff Member Details';
