@@ -75,8 +75,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econ_lib_cdir_covers',
           'parent' => 0,
+          'vocabulary' => 'econ_lib_cdir_covers',
         ),
       ),
     ),
@@ -148,8 +148,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econ_library_stock_exchange_holdings_binding_colors',
           'parent' => 0,
+          'vocabulary' => 'econ_library_stock_exchange_holdings_binding_colors',
         ),
       ),
     ),
@@ -177,8 +177,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econ_library_stock_exchange_holdings_binding_frequency',
           'parent' => 0,
+          'vocabulary' => 'econ_library_stock_exchange_holdings_binding_frequency',
         ),
       ),
     ),
@@ -228,8 +228,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econ_library_stock_exchange_holdings_country',
           'parent' => 0,
+          'vocabulary' => 'econ_library_stock_exchange_holdings_country',
         ),
       ),
     ),
@@ -257,8 +257,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econ_library_stock_exchange_holdings_exchange',
           'parent' => 0,
+          'vocabulary' => 'econ_library_stock_exchange_holdings_exchange',
         ),
       ),
     ),
@@ -432,8 +432,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econlib_wp_publishers',
           'parent' => 0,
+          'vocabulary' => 'econlib_wp_publishers',
         ),
       ),
     ),
@@ -493,8 +493,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econlib_cbh_bank_name',
           'parent' => 0,
+          'vocabulary' => 'econlib_cbh_bank_name',
         ),
       ),
     ),
@@ -554,8 +554,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econlib_cbh_binding_freq',
           'parent' => 0,
+          'vocabulary' => 'econlib_cbh_binding_freq',
         ),
       ),
     ),
@@ -607,8 +607,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econlib_cbh_color',
           'parent' => 0,
+          'vocabulary' => 'econlib_cbh_color',
         ),
       ),
     ),
@@ -730,8 +730,8 @@ function pul_econ_library_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'econlib_cbh_region',
           'parent' => 0,
+          'vocabulary' => 'econlib_cbh_region',
         ),
       ),
     ),

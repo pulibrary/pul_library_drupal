@@ -154,8 +154,8 @@ function library_study_rooms_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'database_subjects',
           'parent' => 0,
+          'vocabulary' => 'database_subjects',
         ),
       ),
     ),

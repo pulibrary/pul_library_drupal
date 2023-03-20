@@ -31,8 +31,8 @@ function mendel_periodicals_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mendel_periodical_location',
           'parent' => 0,
+          'vocabulary' => 'mendel_periodical_location',
         ),
       ),
     ),

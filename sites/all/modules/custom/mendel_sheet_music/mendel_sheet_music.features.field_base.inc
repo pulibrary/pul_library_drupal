@@ -31,8 +31,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheet_music_arranger',
           'parent' => 0,
+          'vocabulary' => 'mus_sheet_music_arranger',
         ),
       ),
     ),
@@ -60,8 +60,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheetmusic_boxnumber',
           'parent' => 0,
+          'vocabulary' => 'mus_sheetmusic_boxnumber',
         ),
       ),
     ),
@@ -129,8 +129,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheet_music_lyricists',
           'parent' => 0,
+          'vocabulary' => 'mus_sheet_music_lyricists',
         ),
       ),
     ),
@@ -182,8 +182,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheet_music_date',
           'parent' => 0,
+          'vocabulary' => 'mus_sheet_music_date',
         ),
       ),
     ),
@@ -211,8 +211,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheet_music_publisher',
           'parent' => 0,
+          'vocabulary' => 'mus_sheet_music_publisher',
         ),
       ),
     ),
@@ -264,8 +264,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheetmusic_instrumentation',
           'parent' => 0,
+          'vocabulary' => 'mus_sheetmusic_instrumentation',
         ),
       ),
     ),
@@ -293,8 +293,8 @@ function mendel_sheet_music_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'mus_sheetmusic_composers',
           'parent' => 0,
+          'vocabulary' => 'mus_sheetmusic_composers',
         ),
       ),
     ),

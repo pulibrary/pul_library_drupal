@@ -211,12 +211,6 @@ function pul_library_users_feeds_importer_default() {
             'target' => 'field_puluser_middle_name',
             'unique' => FALSE,
           ),
-          26 => array(
-            'language' => 'und',
-            'source' => 'nickName',
-            'target' => 'field_puluser_nick_name',
-            'unique' => FALSE,
-          ),
         ),
         'roles' => array(
           3 => 0,

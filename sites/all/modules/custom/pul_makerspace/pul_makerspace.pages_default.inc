@@ -18,7 +18,7 @@ function pul_makerspace_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 43;
+  $handler->weight = 37;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -116,11 +116,37 @@ function pul_makerspace_default_page_manager_handlers() {
   $display->content['new-0771cf47-741b-4e4e-ba73-83407405bb0e'] = $pane;
   $display->panels['first'][0] = 'new-0771cf47-741b-4e4e-ba73-83407405bb0e';
   $pane = new stdClass();
+  $pane->pid = 'new-0b7e881f-0968-4322-8b31-5044d5e78e02';
+  $pane->panel = 'first';
+  $pane->type = 'custom';
+  $pane->subtype = 'makerspace_equipment';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '0b7e881f-0968-4322-8b31-5044d5e78e02';
+  $display->content['new-0b7e881f-0968-4322-8b31-5044d5e78e02'] = $pane;
+  $display->panels['first'][1] = 'new-0b7e881f-0968-4322-8b31-5044d5e78e02';
+  $pane = new stdClass();
   $pane->pid = 'new-4603487f-b83d-494f-bc92-69f929d5dc54';
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'libhours_makerspace-libhours_makerspace';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -133,11 +159,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '4603487f-b83d-494f-bc92-69f929d5dc54';
   $display->content['new-4603487f-b83d-494f-bc92-69f929d5dc54'] = $pane;
-  $display->panels['first'][1] = 'new-4603487f-b83d-494f-bc92-69f929d5dc54';
+  $display->panels['first'][2] = 'new-4603487f-b83d-494f-bc92-69f929d5dc54';
   $pane = new stdClass();
   $pane->pid = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane->panel = 'first';
@@ -159,11 +185,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $display->content['new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5'] = $pane;
-  $display->panels['first'][2] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
+  $display->panels['first'][3] = 'new-a0b83abd-55a1-4c8a-b999-5cd8f6b6b4f5';
   $pane = new stdClass();
   $pane->pid = 'new-a1af99aa-ff1e-4b35-a8ca-3ff5342564fe';
   $pane->panel = 'first';
@@ -186,11 +212,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'a1af99aa-ff1e-4b35-a8ca-3ff5342564fe';
   $display->content['new-a1af99aa-ff1e-4b35-a8ca-3ff5342564fe'] = $pane;
-  $display->panels['first'][3] = 'new-a1af99aa-ff1e-4b35-a8ca-3ff5342564fe';
+  $display->panels['first'][4] = 'new-a1af99aa-ff1e-4b35-a8ca-3ff5342564fe';
   $pane = new stdClass();
   $pane->pid = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane->panel = 'first';
@@ -219,11 +245,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $display->content['new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94'] = $pane;
-  $display->panels['first'][4] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
+  $display->panels['first'][5] = 'new-755db5d4-9e24-40f4-af4f-4d9a26d0ee94';
   $pane = new stdClass();
   $pane->pid = 'new-6c1f67a5-2673-4c7b-a159-5d23251d0cf1';
   $pane->panel = 'middle';

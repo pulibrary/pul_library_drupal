@@ -130,45 +130,30 @@ function pul_core_search_indexes_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : {
-            "default" : "0",
-            "bundles" : {
-              "alternative_database_title" : "alternative_database_title",
-              "database" : "database"
-            }
-          }
+          "settings" : { "default" : "0", "bundles" : { "database" : "database" } }
         },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_viewed_entity" : { "status" : 1, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
+        "search_api_alter_add_viewed_entity" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "mode" : "full", "global_language_switch" : 0 }
+        },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] }
       },
       "processors" : {
         "search_api_case_ignore" : {
           "status" : 0,
           "weight" : "0",
-          "settings" : { "fields" : {
-              "title" : true,
-              "field_db_access_note" : true,
-              "field_db_location_access_note" : true,
-              "body:value" : true,
-              "field_db_access_url:url" : true
-            }
-          }
+          "settings" : { "fields" : { "title" : true, "body:value" : true, "field_db_access_url:url" : true } }
         },
         "search_api_html_filter" : {
           "status" : 0,
           "weight" : "10",
           "settings" : {
-            "fields" : {
-              "title" : true,
-              "field_db_access_note" : true,
-              "field_db_location_access_note" : true,
-              "body:value" : true,
-              "field_db_access_url:url" : true
-            },
+            "fields" : { "title" : true, "body:value" : true, "field_db_access_url:url" : true },
             "title" : 0,
             "alt" : 1,
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
@@ -178,13 +163,7 @@ function pul_core_search_indexes_default_search_api_index() {
           "status" : 0,
           "weight" : "20",
           "settings" : {
-            "fields" : {
-              "title" : true,
-              "field_db_access_note" : true,
-              "field_db_location_access_note" : true,
-              "body:value" : true,
-              "field_db_access_url:url" : true
-            },
+            "fields" : { "title" : true, "body:value" : true, "field_db_access_url:url" : true },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
           }
@@ -193,15 +172,41 @@ function pul_core_search_indexes_default_search_api_index() {
           "status" : 0,
           "weight" : "30",
           "settings" : {
-            "fields" : {
-              "title" : true,
-              "field_db_access_note" : true,
-              "field_db_location_access_note" : true,
-              "body:value" : true,
-              "field_db_access_url:url" : true
-            },
+            "fields" : { "title" : true, "body:value" : true, "field_db_access_url:url" : true },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_porter_stemmer" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "search_api_viewed" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_dboverride_database:title" : true,
+              "field_db_access_url:url" : true,
+              "field_db_keywords:name" : true,
+              "field_schemaorg_description:value" : true,
+              "field_schemaorg_description:summary" : true,
+              "field_dboverride_database:field_db_access_url:url" : true
+            },
+            "exceptions" : "texan=texa"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "40",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always",
+            "highlight_partial" : 0
           }
         }
       }

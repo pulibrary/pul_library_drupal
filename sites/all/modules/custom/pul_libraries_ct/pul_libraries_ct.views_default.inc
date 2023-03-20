@@ -790,21 +790,18 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Campus Building LOC ID */
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['id'] = 'field_campus_building_loc_id';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['table'] = 'field_data_field_campus_building_loc_id';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['field'] = 'field_campus_building_loc_id';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['relationship'] = 'field_building_target_id';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['label'] = '';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_campus_building_loc_id']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
+  /* Field: Content: campus_map_url */
+  $handler->display->display_options['fields']['field_campus_map_url']['id'] = 'field_campus_map_url';
+  $handler->display->display_options['fields']['field_campus_map_url']['table'] = 'field_data_field_campus_map_url';
+  $handler->display->display_options['fields']['field_campus_map_url']['field'] = 'field_campus_map_url';
+  $handler->display->display_options['fields']['field_campus_map_url']['relationship'] = 'field_building_target_id';
+  $handler->display->display_options['fields']['field_campus_map_url']['label'] = '';
+  $handler->display->display_options['fields']['field_campus_map_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_campus_map_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_campus_map_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_campus_map_url']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_campus_map_url']['settings'] = array(
+    'custom_title' => '',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -814,7 +811,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['alter']['text'] = '<i class=\'icon-location icon-large\' > </i> <a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[title_1]</a>';
+  $handler->display->display_options['fields']['title_1']['alter']['text'] = '<a href="[field_campus_map_url]">[title_1]</a>';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['title_1']['element_wrapper_class'] = 'library-info';
@@ -826,7 +823,7 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_address_1']['field'] = 'field_address_1';
   $handler->display->display_options['fields']['field_address_1']['label'] = '';
   $handler->display->display_options['fields']['field_address_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address_1']['alter']['text'] = '<i class=\'icon-location icon-large\' > </i> <a href="http://etcweb.princeton.edu/pumap/#[field_campus_building_loc_id]" target="_blank">[field_address_1]</a>';
+  $handler->display->display_options['fields']['field_address_1']['alter']['text'] = '<i class=\'icon-location icon-large\' > </i> <a href="[field_campus_map_url]" target="_blank">[field_address_1]</a>';
   $handler->display->display_options['fields']['field_address_1']['element_label_colon'] = FALSE;
   /* Field: Content: Address 2 */
   $handler->display->display_options['fields']['field_address_2']['id'] = 'field_address_2';

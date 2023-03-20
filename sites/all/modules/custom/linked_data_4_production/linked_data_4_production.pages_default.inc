@@ -18,7 +18,7 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 27;
+  $handler->weight = 23;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -163,7 +163,7 @@ function linked_data_4_production_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 26;
+  $handler->weight = 22;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

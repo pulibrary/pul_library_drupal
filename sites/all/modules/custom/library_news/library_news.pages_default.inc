@@ -18,7 +18,7 @@ function library_news_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -47;
+  $handler->weight = -51;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

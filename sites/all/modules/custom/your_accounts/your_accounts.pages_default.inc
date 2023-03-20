@@ -18,7 +18,7 @@ function your_accounts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 18;
+  $handler->weight = 13;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -141,7 +141,7 @@ function your_accounts_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'BorrowDirect',
-    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of material requested from other Borrow Direct partner libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="https://catalog.princeton.edu/borrow-direct" target="_blank">Access Borrow Direct</a></div>',
+    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request and check the status of material requested from other Borrow Direct partner libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/borrowdirect">Borrow Direct</a></li></ul><div class="service-connect-btn"><a href="https://princeton-borrowdirect.reshare.indexdata.com/" target="_blank">Access Borrow Direct</a></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title' => 'Borrow Direct',
@@ -170,10 +170,11 @@ function your_accounts_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'ILLiad',
-    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request, renew and check the status of material requested from other libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">Article Express</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan and Article Express</a></div>',
+    'body' => '<ul style="list-style-type: disc; margin-left: 1em; margin-bottom: 1.5em;"><li>Request or renew material requested from other libraries</li><li>Find out more about <a href="https://library.princeton.edu/services/interlibrary-services">Interlibrary Loan</a>&nbsp;and <a href="https://library.princeton.edu/services/article-express">Article Express</a></li></ul><div class="service-connect-btn"><a href="https://lib-illiad.princeton.edu/illiad/illiad.dll" target="_blank">Access Interlibrary Loan and Article Express</a></div>',
     'format' => 'full_html',
     'substitute' => 1,
     'title' => 'Interlibrary Loan & Article Express',
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

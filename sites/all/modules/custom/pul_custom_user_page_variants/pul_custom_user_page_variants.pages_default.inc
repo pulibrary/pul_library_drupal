@@ -328,7 +328,7 @@ function pul_custom_user_page_variants_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '%user:field-puluser-nick-name %user:field_puluser_lname';
+  $display->title = '%user:field_puluser_fname %user:field_puluser_lname';
   $display->uuid = '5417b150-b4f8-4688-a71e-09254f596b22';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'user_view_panel_context_2';

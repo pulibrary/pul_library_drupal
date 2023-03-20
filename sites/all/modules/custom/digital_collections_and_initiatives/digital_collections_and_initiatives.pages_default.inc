@@ -18,7 +18,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 33;
+  $handler->weight = 29;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -210,7 +210,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 32;
+  $handler->weight = 28;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -327,7 +327,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $pane->panel = 'second';
   $pane->type = 'views_panes';
   $pane->subtype = 'library_news-panel_pane_22';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();

@@ -63,8 +63,8 @@ function pul_featured_link_type_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'audiences',
           'parent' => 0,
+          'vocabulary' => 'audiences',
         ),
       ),
     ),
@@ -92,8 +92,8 @@ function pul_featured_link_type_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'featured_pul_link_categories',
           'parent' => 0,
+          'vocabulary' => 'featured_pul_link_categories',
         ),
       ),
     ),

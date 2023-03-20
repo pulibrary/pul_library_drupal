@@ -18,7 +18,7 @@ function cdl_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -16;
+  $handler->weight = -20;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

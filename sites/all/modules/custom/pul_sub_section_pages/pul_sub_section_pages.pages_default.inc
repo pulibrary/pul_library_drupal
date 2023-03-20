@@ -18,7 +18,7 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -36;
+  $handler->weight = -40;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -329,7 +329,7 @@ Letc
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -34;
+  $handler->weight = -38;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -577,7 +577,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -34;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -848,7 +848,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -33;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -979,7 +979,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -19;
+  $handler->weight = -23;
   $handler->conf = array(
     'access' => array(
       'logic' => 'or',
@@ -1114,6 +1114,32 @@ Committees',
   $display->content['new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1'] = $pane;
   $display->panels['second'][0] = 'new-c47aef78-fdae-483f-bc3c-e45fe79ae4d1';
   $pane = new stdClass();
+  $pane->pid = 'new-8aaf8e3d-a25a-460e-819f-face585bd470';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Appointment Blurb',
+    'body' => '<p><a href="http://libcal.princeton.edu/appointments" rel="nofollow" target="_blank">Request an individual appointment</a>&nbsp;directly with a&nbsp;<a href="https://library.princeton.edu/staff/specialists" target="_blank">subject specialist</a>.</p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+    'title' => 'Subject Specialist Help for Students',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '8aaf8e3d-a25a-460e-819f-face585bd470';
+  $display->content['new-8aaf8e3d-a25a-460e-819f-face585bd470'] = $pane;
+  $display->panels['second'][1] = 'new-8aaf8e3d-a25a-460e-819f-face585bd470';
+  $pane = new stdClass();
   $pane->pid = 'new-48b25ef7-d14a-484c-921b-789884da7534';
   $pane->panel = 'second';
   $pane->type = 'block';
@@ -1131,11 +1157,11 @@ Committees',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '48b25ef7-d14a-484c-921b-789884da7534';
   $display->content['new-48b25ef7-d14a-484c-921b-789884da7534'] = $pane;
-  $display->panels['second'][1] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
+  $display->panels['second'][2] = 'new-48b25ef7-d14a-484c-921b-789884da7534';
   $pane = new stdClass();
   $pane->pid = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
   $pane->panel = 'second';
@@ -1153,11 +1179,11 @@ Committees',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
   $display->content['new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98'] = $pane;
-  $display->panels['second'][2] = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
+  $display->panels['second'][3] = 'new-ae6322dc-50c2-40d7-beeb-e9b3320e1a98';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1170,7 +1196,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -22;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1609,7 +1635,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -43;
+  $handler->weight = -47;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1721,7 +1747,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -15;
+  $handler->weight = -19;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1908,7 +1934,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -12;
+  $handler->weight = -17;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2039,7 +2065,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -10;
+  $handler->weight = -15;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2168,7 +2194,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -44;
+  $handler->weight = -48;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2294,7 +2320,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -37;
+  $handler->weight = -41;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

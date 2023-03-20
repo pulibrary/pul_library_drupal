@@ -18,7 +18,7 @@ function library_spaces_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -21;
+  $handler->weight = -26;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
