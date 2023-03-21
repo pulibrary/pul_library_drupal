@@ -57,6 +57,10 @@ DirectoryIndex index.php index.html index.htm
   </FilesMatch>
 </IfModule>
 
+# Local Redirect Rules
+Redirect /favicon.ico /sites/default/files/libicon_0.ico
+RedirectPermanent /collections/video http://libserv39.princeton.edu/departments/collectiondevelopment/forums/video/
+
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
@@ -116,6 +120,7 @@ DirectoryIndex index.php index.html index.htm
 
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
+  RewriteCond %{REQUEST_URI} !=/server-status
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
