@@ -1,7 +1,7 @@
-name= Library Hours - Video Library 
-description = "Create a block to display Video Library hours from the Princeton University Library Libcal account."
+name= Library Hours - Access Office 
+description = "Create a block to display Access Office hours from the Princeton University Library Libcal account."
 package = Princeton University Library
 version = 7.x.1.0
 core = 7.x
-files[] = libhours_video.module,
+files[] = libhours_access.module,
 dependencies[] = block
