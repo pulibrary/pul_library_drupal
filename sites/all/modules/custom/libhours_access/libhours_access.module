@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Create a search block
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function libhours_access_block_info() {
+  $blocks['libhours_access'] = array(
+    'info' => t('Library Hours - Access Office'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function libhours_access_block_view() {
+
+/**
+ * Block content
+ */
+
+  $mainStart = "<ul class='hours--today__branch links--decorate'>";
+  $mainEnd = "</ul>";
+
+  $accessRss = new DOMDocument();
+  $accessRss->load('https://libcal.princeton.edu/api_hours_today.php?iid=771&lid=18228&format=xml&systemTime=1');
+  $accessHours = $accessRss->getElementsByTagName('rendered')->item(0)->nodeValue;
+  $access = "<li class='hours'>".$accessHours."</li>";
+
+  $fullSchedule = "<p>For summer, holidays or recess hours, please consult the <a href='https://libcal.princeton.edu/hours'>full schedule</a>.</p>";
+  
+  $hoursMain = $mainStart.$access.$mainEnd.$fullSchedule;
+
+  $content = $hoursMain;
+  $block = array(
+    'subject' => t("Today's Hours"),
+    'content' => $content,
+  );
+  return $block;
+
+}
