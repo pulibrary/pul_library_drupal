@@ -86,7 +86,14 @@ class SmtpMailSystem implements MailSystemInterface {
       $mailer->SMTPDebug = TRUE;
     }
 
-    // Set the from name. First we try to get the name from i18n, in the case
+    // Set the From Name.
+    $from_name = FALSE;
+    $from_comp = $this->_get_components($from);
+    // If the From Name has been passed to this function, use that first.
+    if($from_comp['name'] != '') {
+      $from_name = $from_comp['name'];
+    }
+    // If we don't have a From Name set, try to get the name from i18n, in the case
     // that it has been translated. The name is set according to the language
     // of the email being sent.
     if (empty($from_name)) {
@@ -125,20 +132,28 @@ class SmtpMailSystem implements MailSystemInterface {
       $mailer->Helo = variable_get('smtp_client_helo', '');
     }
 
-    //Hack to fix reply-to issue.
-    if (!isset($headers['Reply-To']) || empty($headers['Reply-To'])) {
-      if (strpos($from, '<')) {
-        $reply = preg_replace('/>.*/', '', preg_replace('/.*</', '', $from));
-      }
-      else {
-        $reply = $from;
-      }
-      $headers['Reply-To'] = $reply;
+    if (variable_get('smtp_client_hostname', '') != '') {
+      $mailer->Hostname = variable_get('smtp_client_hostname', '');
     }
-    $properfrom = variable_get('smtp_from', '');
-    if (!empty($properfrom)) {
-      $headers['From'] = $properfrom;
-      $from = $properfrom;
+
+    if (variable_get('smtp_client_helo', '') != '') {
+      $mailer->Helo = variable_get('smtp_client_helo', '');
+    }
+
+    // To pass DMARC, the email sender and headers should match.
+    // Set the Reply-To header to the original 'From' email address.
+    $from = $from_comp['email'];
+    if (!isset($headers['Reply-To']) || empty($headers['Reply-To'])) {
+      $headers['Reply-To'] = $from;
+    }
+    // If the 'From' address has been set in the SMTP module admin settings, use that as the sender.
+    $smtp_from_var = variable_get('smtp_from', FALSE);
+    if(($smtp_from_var) && valid_email_address($smtp_from_var)) {
+      $from = $smtp_from_var;
+    }
+    // If we still don't have a 'From' address, fallback to the site's email.
+    if(empty($from)) {
+      $from = variable_get('site_mail', '');
     }
 
     if ($from == NULL || $from == '') {
@@ -154,9 +169,7 @@ class SmtpMailSystem implements MailSystemInterface {
         }
       }
     }
-    $from_comp = $this->_get_components($from);
-
-    if (!valid_email_address($from_comp['email'])) {
+    if (!valid_email_address($from)) {
       drupal_set_message(t('The submitted from address (@from) is not valid.', array('@from' => $from_comp['email'])), 'error');
       if ($logging) {
         watchdog('smtp', 'The submitted from address (@from) is not valid.', array('@from' => $from_comp['email']), WATCHDOG_ERROR);
@@ -164,11 +177,8 @@ class SmtpMailSystem implements MailSystemInterface {
       return FALSE;
     }
 
-    // Defines the From value to what we expect.
-    $mailer->From     = $from_comp['email'];
-    $mailer->FromName = empty($from_comp['name']) ? $from_name : $from_comp['name'];
-    $mailer->Sender   = $from_comp['email'];
-
+    // Set headers to match sender to prevent e-mail from looking like spam
+    $headers['From'] = $headers['Sender'] = $headers['Return-Path'] = $from;
 
     // Create the list of 'To:' recipients.
     $torecipients = explode(',', $to);
@@ -177,24 +187,16 @@ class SmtpMailSystem implements MailSystemInterface {
       $mailer->AddAddress($to_comp['email'], $to_comp['name']);
     }
 
-
     // Parse the headers of the message and set the PHPMailer object's settings
     // accordingly.
     foreach ($headers as $key => $value) {
       //watchdog('error', 'Key: ' . $key . ' Value: ' . $value);
       switch (drupal_strtolower($key)) {
         case 'from':
-          if ($from == NULL or $from == '') {
-            // If a from value was already given, then set based on header.
-            // Should be the most common situation since drupal_mail moves the
-            // from to headers.
-            $from           = $value;
-            $mailer->From     = $value;
-            // then from can be out of sync with from_name !
-            $mailer->FromName = '';
-            $mailer->Sender   = $value;
-          }
+          // set the correct From headers
+          $mailer->setFrom($from, $from_name);
           break;
+
         case 'content-type':
           // Parse several values on the Content-type header, storing them in an array like
           // key=value -> $vars['key']='value'
@@ -480,6 +482,24 @@ class SmtpMailSystem implements MailSystemInterface {
     // Process mimemail attachments, which are prepared in mimemail_mail().
     if (isset($message['params']['attachments'])) {
       foreach ($message['params']['attachments'] as $attachment) {
+        // Allow file objects, handled as mimemail_html_body() does.
+        if (is_object($attachment)) {
+          $file = $attachment;
+          $attachment = array();
+          $attchmentArray = array('filecontent', 'filename', 'filemime');
+          if (isset($file->filepath)) {
+            $attchmentArray = array('filepath', 'filename', 'filemime');
+          }
+          foreach ($attchmentArray as $key) {
+            if (isset($file->{$key})) {
+              $attachment[$key] = $file->{$key};
+            }
+          }
+          if (isset($file->uri)) {
+            $attachment['filepath'] = $file->uri;
+          }
+        }
+
         if (isset($attachment['filecontent'])) {
           $mailer->AddStringAttachment($attachment['filecontent'], $attachment['filename'], 'base64', $attachment['filemime']);
         }
