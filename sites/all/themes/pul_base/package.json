@@ -6,7 +6,7 @@
   "devDependencies": {
     "bourbon": "^4.3.4",
     "breakpoint-sass": "^2.7.1",
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.29.1",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
