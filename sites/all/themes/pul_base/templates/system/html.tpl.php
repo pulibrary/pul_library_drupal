@@ -64,7 +64,7 @@
 <body<?php print $attributes;?>>
   <!-- No JS for Analytics -->
   <noscript>
-    <img src="http://www.google-analytics.com/collect?v=1&tid=UA-15870237-13&aip=1&t=pageview&cid=1234&dp=/<?php print htmlspecialchars(drupal_get_path_alias(current_path())); ?>&dt=<?php print drupal_get_title(); ?> (No Javascript User)" alt="">
+    <img src="http://www.google-analytics.com/collect?v=1&tid=UA-15870237-13&aip=1&t=pageview&cid=1234&dp=/<?php print filter_xss(drupal_get_path_alias(current_path())); ?>&dt=<?php print drupal_get_title(); ?> (No Javascript User)" alt="">
   </noscript>
   <?php print $page_top; ?>
   <?php print $page; ?>
