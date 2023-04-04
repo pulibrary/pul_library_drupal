@@ -1,5 +1,5 @@
 # Heaven doesn't know how to handle capistrano 3.17
-lock "~> 3.16.0"
+lock "~> 3.0"
 
 set :application, "library"
 set :repo_url, "https://github.com/pulibrary/pul_library_drupal.git"
