@@ -1684,7 +1684,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 8,
     ),
   );
 
@@ -1911,7 +1911,7 @@ function articles_and_databases_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_db_libguides_asset_id',
-    'label' => 'libguides_asset_id',
+    'label' => 'Libguides Asset ID',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -2558,7 +2558,7 @@ function articles_and_databases_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_buttons',
-      'weight' => 42,
+      'weight' => 11,
     ),
   );
 
@@ -2640,7 +2640,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -2931,7 +2931,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 7,
     ),
   );
 
@@ -4195,6 +4195,7 @@ function articles_and_databases_field_default_field_instances() {
   t('Issue Status');
   t('Keywords');
   t('Level two resources. ');
+  t('Libguides Asset ID');
   t('Library Web Computer Only');
   t('Location Access Note');
   t('Main URL users should use to access this resource. ');
@@ -4233,7 +4234,6 @@ function articles_and_databases_field_default_field_instances() {
   t('Use to Suppress title from browse, search, and subject listings.');
   t('Use when you want to provide a date coverage statement different than the default database. ');
   t('Voyager ID');
-  t('libguides_asset_id');
 
   return $field_instances;
 }
