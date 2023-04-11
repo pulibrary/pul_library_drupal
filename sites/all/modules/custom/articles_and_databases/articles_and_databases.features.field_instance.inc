@@ -231,6 +231,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'override_db_title',
@@ -254,6 +255,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => 1,
           'use_content_language' => TRUE,
           'view_mode' => 'database_description_only',
@@ -265,6 +267,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -285,6 +288,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -1486,6 +1490,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -1527,6 +1532,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -1538,6 +1544,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -1549,6 +1556,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -1676,7 +1684,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 39,
     ),
   );
 
@@ -1843,6 +1851,83 @@ function articles_and_databases_field_default_field_instances() {
       'type' => 'taxonomy_autocomplete',
       'weight' => 34,
     ),
+  );
+
+  // Exported field_instance: 'node-database-field_db_libguides_asset_id'.
+  $field_instances['node-database-field_db_libguides_asset_id'] = array(
+    'bundle' => 'database',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'content_body_mode' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'database_description_only' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_db_libguides_asset_id',
+    'label' => 'libguides_asset_id',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 37,
+    ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-database-field_db_location_access_note'.
@@ -2473,7 +2558,7 @@ function articles_and_databases_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 42,
     ),
   );
 
@@ -2555,7 +2640,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 40,
     ),
   );
 
@@ -2846,7 +2931,7 @@ function articles_and_databases_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 38,
     ),
   );
 
@@ -2973,6 +3058,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -3088,6 +3174,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -3727,6 +3814,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'full',
@@ -3753,6 +3841,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -3774,6 +3863,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -3785,6 +3875,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -3811,6 +3902,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -3832,6 +3924,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -3843,6 +3936,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -3869,6 +3963,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -3932,6 +4027,7 @@ function articles_and_databases_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'full',
@@ -3958,6 +4054,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -4004,6 +4101,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -4050,6 +4148,7 @@ function articles_and_databases_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -4134,6 +4233,7 @@ function articles_and_databases_field_default_field_instances() {
   t('Use to Suppress title from browse, search, and subject listings.');
   t('Use when you want to provide a date coverage statement different than the default database. ');
   t('Voyager ID');
+  t('libguides_asset_id');
 
   return $field_instances;
 }

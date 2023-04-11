@@ -371,6 +371,9 @@ function articles_and_databases_strongarm() {
         'path' => array(
           'weight' => '10',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
         'title' => array(
           'weight' => '-5',
         ),

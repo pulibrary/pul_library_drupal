@@ -382,7 +382,7 @@ function articles_and_databases_views_default_views() {
   $handler->display->display_options['filters']['field_db_display_active_value']['value'] = array(
     0 => '0',
   );
-  /* Filter criterion: Content: Suppress This Title (field_db_suppressed) */
+  /* Filter criterion: Content: Suppress Title (field_db_suppressed) */
   $handler->display->display_options['filters']['field_db_suppressed_value']['id'] = 'field_db_suppressed_value';
   $handler->display->display_options['filters']['field_db_suppressed_value']['table'] = 'field_data_field_db_suppressed';
   $handler->display->display_options['filters']['field_db_suppressed_value']['field'] = 'field_db_suppressed_value';

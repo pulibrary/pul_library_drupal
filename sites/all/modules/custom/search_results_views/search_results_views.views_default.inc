@@ -254,13 +254,14 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['title'] = '<i class="icon-databases"></i>Databases';
   $handler->display->display_options['display_description'] = 'For the /find/all page. ';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'See all Databases results';
-  $handler->display->display_options['link_url'] = 'research/databases/search/!1';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'https://libguides.princeton.edu/az.php?p=1&q=!1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -321,13 +322,14 @@ function search_results_views_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_database_keyword_index';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="database-title" href="/node/[nid]"><span data-ezproxy-access="[field_db_use_proxy]" data-access-url="[field_db_access_url_url]">[title]</span></a>';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="database-title" href="[field_db_access_url_url]">[title]</span></a>';
   $handler->display->display_options['fields']['title']['alter']['path'] = 'resource/[nid]';
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_class'] = 'database-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
   /* Field: Indexed Content: Date Coverage */
   $handler->display->display_options['fields']['field_db_date_coverage_1']['id'] = 'field_db_date_coverage_1';
   $handler->display->display_options['fields']['field_db_date_coverage_1']['table'] = 'search_api_index_database_keyword_index';
