@@ -545,6 +545,26 @@ function articles_and_databases_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_db_libguides_asset_id'.
+  $field_bases['field_db_libguides_asset_id'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_db_libguides_asset_id',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(),
+    'linkchecker_exclude' => 0,
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_db_location_access_note'.
   $field_bases['field_db_location_access_note'] = array(
     'active' => 1,

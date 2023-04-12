@@ -29,6 +29,38 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'libguides_database_asset_importer-alt_names-explode';
+  $feeds_tamper->importer = 'libguides_database_asset_importer';
+  $feeds_tamper->source = 'alt_names';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'limit' => '',
+    'real_separator' => ';',
+    'separator' => ';',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['libguides_database_asset_importer-alt_names-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'libguides_database_asset_importer-subjects-explode';
+  $feeds_tamper->importer = 'libguides_database_asset_importer';
+  $feeds_tamper->source = 'subjects';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'limit' => '',
+    'real_separator' => ';',
+    'separator' => ';',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['libguides_database_asset_importer-subjects-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'resource_list_importer-active-convert_to_active_az_boolean';
   $feeds_tamper->importer = 'resource_list_importer';
   $feeds_tamper->source = 'active';
@@ -292,7 +324,7 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->importer = 'subject_importer';
   $feeds_tamper->source = 'subjectName';
   $feeds_tamper->plugin_id = 'html_entity_decode';
-  $feeds_tamper->settings = array();
+  $feeds_tamper->settings = '';
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'HTML entity decode';
   $export['subject_importer-subjectname-html_entity_decode'] = $feeds_tamper;

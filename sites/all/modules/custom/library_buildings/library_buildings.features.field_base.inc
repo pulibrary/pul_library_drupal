@@ -194,7 +194,10 @@ function library_buildings_field_default_field_bases() {
     'indexes' => array(),
     'locked' => 0,
     'module' => 'geofield',
-    'settings' => array(),
+    'settings' => array(
+      'backend' => 'default',
+      'srid' => 4326,
+    ),
     'translatable' => 0,
     'type' => 'geofield',
   );

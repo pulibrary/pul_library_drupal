@@ -84,6 +84,103 @@ function articles_and_databases_feeds_importer_default() {
   $export['db_title_override_importer'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'libguides_database_asset_importer';
+  $feeds_importer->config = array(
+    'content_type' => '',
+    'description' => 'Keep databases in search in sync with Libguides',
+    'expire_period' => 3600,
+    'fetcher' => array(
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+        'delete_uploaded_file' => FALSE,
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+      ),
+      'plugin_key' => 'FeedsFileFetcher',
+    ),
+    'import_on_create' => TRUE,
+    'import_period' => 1800,
+    'name' => 'Libguides Database Asset Importer',
+    'parser' => array(
+      'config' => array(
+        'delimiter' => ',',
+        'encoding' => 'UTF-8',
+        'no_headers' => 0,
+      ),
+      'plugin_key' => 'FeedsCSVParser',
+    ),
+    'process_in_background' => FALSE,
+    'processor' => array(
+      'config' => array(
+        'author' => '13183',
+        'authorize' => 1,
+        'bundle' => 'database',
+        'expire' => '-1',
+        'input_format' => 'plain_text',
+        'insert_new' => '1',
+        'language' => 'und',
+        'mappings' => array(
+          0 => array(
+            'language' => 'und',
+            'source' => 'name',
+            'target' => 'title',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'language' => 'und',
+            'source' => 'description',
+            'target' => 'body',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'autocreate' => 1,
+            'language' => 'und',
+            'source' => 'alt_names',
+            'target' => 'field_db_keywords',
+            'term_search' => '0',
+          ),
+          3 => array(
+            'language' => 'und',
+            'source' => 'friendly_url',
+            'target' => 'field_db_access_url:url',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'autocreate' => 1,
+            'language' => 'und',
+            'source' => 'subjects',
+            'target' => 'field_db_keywords',
+            'term_search' => '0',
+          ),
+          5 => array(
+            'language' => 'und',
+            'source' => 'id',
+            'target' => 'field_db_libguides_asset_id',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'id',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+        ),
+        'skip_hash_check' => 0,
+        'update_existing' => '2',
+        'update_non_existent' => 'skip',
+      ),
+      'plugin_key' => 'FeedsNodeProcessor',
+    ),
+    'update' => 0,
+  );
+  $export['libguides_database_asset_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
   $feeds_importer->disabled = TRUE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'resource_list_importer';
