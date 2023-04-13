@@ -6,6 +6,13 @@ config:
   database: mariadb
   drush: '8.4.12'
 services:
+  mailservice:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+  appserver:
+    type: php
   search:
     type: solr:custom
     overrides:
