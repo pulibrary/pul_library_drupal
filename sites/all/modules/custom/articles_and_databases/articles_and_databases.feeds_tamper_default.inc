@@ -324,7 +324,7 @@ function articles_and_databases_feeds_tamper_default() {
   $feeds_tamper->importer = 'subject_importer';
   $feeds_tamper->source = 'subjectName';
   $feeds_tamper->plugin_id = 'html_entity_decode';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'HTML entity decode';
   $export['subject_importer-subjectname-html_entity_decode'] = $feeds_tamper;

@@ -93,19 +93,18 @@ function articles_and_databases_feeds_importer_default() {
     'expire_period' => 3600,
     'fetcher' => array(
       'config' => array(
-        'allowed_extensions' => 'txt csv tsv xml opml',
-        'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
-        ),
-        'delete_uploaded_file' => FALSE,
-        'direct' => FALSE,
-        'directory' => 'private://feeds',
+        'accept_invalid_cert' => FALSE,
+        'auto_detect_feeds' => FALSE,
+        'auto_scheme' => 'http',
+        'cache_http_result' => TRUE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+        'use_pubsubhubbub' => FALSE,
       ),
-      'plugin_key' => 'FeedsFileFetcher',
+      'plugin_key' => 'FeedsHTTPFetcher',
     ),
-    'import_on_create' => TRUE,
-    'import_period' => 1800,
+    'import_on_create' => 1,
+    'import_period' => '3600',
     'name' => 'Libguides Database Asset Importer',
     'parser' => array(
       'config' => array(
@@ -115,7 +114,7 @@ function articles_and_databases_feeds_importer_default() {
       ),
       'plugin_key' => 'FeedsCSVParser',
     ),
-    'process_in_background' => FALSE,
+    'process_in_background' => 0,
     'processor' => array(
       'config' => array(
         'author' => '13183',
