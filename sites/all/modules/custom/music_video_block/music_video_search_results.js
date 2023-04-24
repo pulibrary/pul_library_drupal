@@ -6,7 +6,6 @@
         var refine_message = "See all Books+ results &rarr;";
         var request_hint = 'See Available Items at ';
         var availability_hint = "Check for Available Copies";
-        var pul_resolver = 'https://library.princeton.edu/resolve/lookup?url=';
         var icon_hint = 'icon-newtab';
         var book_icon = 'icon-book';
         var journal_icon = 'icon-journal';
@@ -40,12 +39,9 @@
                             }
 
                             if (result['fulltextavail'] == "Y") {
-                                if (~result['full_text_link'].indexOf(pul_resolver)) {
-                                    pul_resolver = "";
-                                }
                                 online_avail = "<div class='all-full-text'>" +
                                     icon_hint +
-                                    '<a target="_blank" class="all-search-link full-text-link" href="' + pul_resolver + result['full_text_link'] +
+                                    '<a target="_blank" class="all-search-link full-text-link" href="' + result['full_text_link'] +
                                     '" title="Go to Resource">' +
                                     'Online Access' +
                                     "</a></div>";
