@@ -10,7 +10,6 @@
         var refine_hint = 'Catalog';
         var refine_icon = '';
         var refine_message = "Expand your search to explore all Catalog results.";
-        var pul_resolver = 'https://library.princeton.edu/resolve/lookup?url=';
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#blacklight-search-results');
         } else {
@@ -96,7 +95,7 @@
                                             } else {
                                                 var link_label = "";
                                             }
-                                            online_access = online_access + online_span + " " + link_label + "<a href='" + pul_resolver + key + "'>" + online_links[key][0] + "</a>";
+                                            online_access = online_access + online_span + " " + link_label + "<a href='" + key + "'>" + online_links[key][0] + "</a>";
                                         }
                                     }
                                     online_access = online_access + "</div>";

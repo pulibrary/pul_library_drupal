@@ -7,7 +7,6 @@
         var default_icon = 'icon-mixed-material';
         var refine_icon = '';
         var refine_message = "See all Finding Aids content.";
-        var pul_resolver = 'https://library.princeton.edu/resolve/lookup?url=';
         if (query_url === "" || query_url == undefined) {
             $('<div class="message">Please supply search terms</div>').appendTo('#pulfalight-search-results');
         } else {

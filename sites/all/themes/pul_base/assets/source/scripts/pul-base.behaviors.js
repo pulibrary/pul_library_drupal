@@ -216,8 +216,7 @@
           var viewOnlineLink = $(this).attr('href');
           var undecodeViewOnline = viewOnlineLink.replace(/\&amp%3B|&amp;/g, '&');
           //console.log(undecodeViewOnline);
-          var resolvePrefix = settings.pul_base_theme.resolvePrefix;
-          $(this).attr('href', resolvePrefix + undecodeViewOnline);
+          $(this).attr('href', undecodeViewOnline);
           $(this).attr('target', '_blank');
         });
       });

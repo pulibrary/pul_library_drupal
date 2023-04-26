@@ -7,11 +7,6 @@ function pul_base_preprocess_html(&$variables, $hook) {
   // You can use preprocess hooks to modify the variables before they are passed
   // to the theme function or template file.
 
-  $pul_base_link_settings = array(
-                          'resolvePrefix' => 'https://library.princeton.edu/resolve/lookup?url='
-                           );
-
-  drupal_add_js(array("pul_base_theme" => $pul_base_link_settings), 'setting');
   drupal_add_js(
     'https://v2.libanswers.com/load_chat.php?hash=0e8593aa5106c85b64bb91506c53806e', array('type' => 'external')
   );
