@@ -87,7 +87,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'cas-login';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -123,7 +123,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'user_profile-panel_pane_5';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -160,7 +160,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'views_panes';
   $pane->subtype = 'pul_personal_librarian-panel_pane_2';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -201,7 +201,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(

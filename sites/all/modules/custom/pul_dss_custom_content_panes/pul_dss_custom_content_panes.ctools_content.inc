@@ -51,7 +51,7 @@ function pul_dss_custom_content_panes_default_ctools_custom_content() {
   $content->category = '';
   $content->settings = array(
     'admin_title' => 'DSS Make an Appointment',
-    'body' => '<div class="service-connect-btn"><p>The Data Lab (Firestone Library - A.12G) offers walk-in hours without an appointment for help with statistical packages and social science methodology weekdays from 2-5 pm.&nbsp;&nbsp;</p><p>For other times, you can <a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" id="dss-make-appointment" rel="nofollow">make an appointment</a>. Please limit to 1 appointment for the service per day.</p></div>',
+    'body' => '<div class="service-connect-btn"><p>The Statistical Consultants are available by appointment for help with statistical packages and social science methodology weekdays.&nbsp; Walk-in hours will resume in the fall semester.&nbsp; Please email data@princeton.edu and provide all times available weekdays 9-5 you are available; your question you are trying to solve; and the statistical package you are using<span style="font-size: 13.008px;">.</span></p></div>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
     'title' => 'Need help?',
