@@ -54,8 +54,8 @@ $conf['theme_debug'] = TRUE;
 $conf['javascript_always_use_jquery'] = TRUE;
 ```
 5. `mkdir .ssh` # excluded from version control
-6. `cp $HOME/.ssh/id_rsa .ssh/.`
-7. `cp $HOME/.ssh/id_rsa.pub .ssh/.` // key should be registered in princeton_ansible deploy role
+6. `cp $HOME/.ssh/id_ed25519 .ssh/.`
+7. `cp $HOME/.ssh/id_ed25519.pub .ssh/.` // key should be registered in princeton_ansible deploy role
 8. `lando start` Start up lando
 9. `cp drush/librarymain-example.aliases.drushrc.php drush/librarymain.aliases.drushrc.php`
 10. Adjust and uncomment the config values in the  `drush/librarymain.aliases.drushrc.php` file to match the current remote drupal environment
@@ -64,8 +64,8 @@ $aliases['prod'] = array (
    'uri' => 'https://library.princeton.edu',
    'root' => '/var/www/library_cap/current', // Path to directory on app server
    'remote-user' => 'deploy', // Add user
-   'remote-host' => 'app-server-name.princeton.edu', // Add app server name, including .princeton.edu
-   'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_rsa',
+   'remote-host' => 'library-prod3.princeton.edu', // Add app server name, including .princeton.edu
+   'ssh-options' => '-o PasswordAuthentication=no -i .ssh/id_ed25519',
    'path-aliases' => array(
      '%dump-dir' => '/tmp',
    ),
@@ -98,7 +98,7 @@ $aliases['local'] = array(
   ),
 );
 ```
-12. `bundle exec cap production database_dump; // this will produce a datestamped dump file in the format "backup-YYYY-MM-DD-{environment}.sql.gz".
+12. `bundle exec cap production database_dump` // this will produce a datestamped dump file in the format "backup-YYYY-MM-DD-{environment}.sql.gz".
 13. `lando db-import backup-YYYY-MM-DD-{environment}.sql.gz`
 14. `lando drush rsync @librarymain.prod:%files @librarymain.local:%files`
 15. `lando drush vset --exact file_temporary_path /tmp`
