@@ -8,6 +8,6 @@ set :search_api_solr_path, '/solr/library-staging'
 set :smtp_host, "localhost"
 set :smtp_port, "1025"
 set :redis_prefix, "library-staging"
-set :redis_host, "lib-redis.princeton.edu"
+set :redis_host, "lib-redis-staging1.princeton.edu"
 
 set :db_name, "libwww_staging"
