@@ -103,6 +103,7 @@ $desk: 1200px;
 $max-width: 1400px;
 $max-tab: max-width ($tab - 1px);
 $max-tab-desk: max-width ($tab-desk - 1px);
+$max-desk: max-width ($desk - 1px);
 $rwd-tables: $max-tab-desk;
 
 //Borders

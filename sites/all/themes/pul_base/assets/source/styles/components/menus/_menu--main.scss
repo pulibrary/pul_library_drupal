@@ -103,7 +103,7 @@
     >.menu {
       text-align: center;
 
-      @include breakpoint(max-width $desk) {
+      @include breakpoint($max-desk) {
         >.expanded {
           border-top: 1px solid $cool-gray-10;
         }
@@ -113,7 +113,7 @@
     &.expanded {
       display: block;
 
-      @include breakpoint(max-width $desk) {
+      @include breakpoint($max-desk) {
         background-color: $cool-gray-10;
       }
 
@@ -158,7 +158,7 @@
       display: inline-block;
       text-decoration: none;
 
-      @include breakpoint(max-width $desk) {
+      @include breakpoint($max-desk) {
         width: 100%;
       }
 
@@ -233,7 +233,7 @@
 
       color: $centered-navigation-color;
 
-      @include breakpoint(1200px) {
+      @include breakpoint($desk) {
         content: "\25BE";
       }
     }
@@ -252,7 +252,7 @@
         cursor: pointer;
         display: block;
 
-        @include breakpoint(max-width $desk) {
+        @include breakpoint($max-desk) {
           display: none;
         }
       }
@@ -313,7 +313,7 @@
         text-align: left;
         width: 100%;
 
-        @include breakpoint(max-width $desk) {
+        @include breakpoint($max-desk) {
           padding-left: 2.5rem;
         }
 
