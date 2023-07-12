@@ -132,10 +132,9 @@ function articles_and_databases_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
-            'language' => 'und',
+            'format' => 'pul_editor_html',
             'source' => 'description',
             'target' => 'body',
-            'unique' => FALSE,
           ),
           2 => array(
             'autocreate' => 1,
@@ -164,6 +163,7 @@ function articles_and_databases_feeds_importer_default() {
             'unique' => FALSE,
           ),
           6 => array(
+            'language' => 'und',
             'source' => 'id',
             'target' => 'guid',
             'unique' => 1,

@@ -536,8 +536,8 @@ function articles_and_databases_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'database_keywords',
           'parent' => 0,
+          'vocabulary' => 'database_keywords',
         ),
       ),
     ),
