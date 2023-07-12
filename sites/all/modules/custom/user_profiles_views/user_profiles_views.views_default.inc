@@ -439,6 +439,10 @@ function user_profiles_views_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['element_wrapper_class'] = 'edit-staff-profile-btn';
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Profile';
+  /* Field: User: Expert Bio */
+  $handler->display->display_options['fields']['field_expert_bio']['id'] = 'field_expert_bio';
+  $handler->display->display_options['fields']['field_expert_bio']['table'] = 'field_data_field_expert_bio';
+  $handler->display->display_options['fields']['field_expert_bio']['field'] = 'field_expert_bio';
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'panel',
