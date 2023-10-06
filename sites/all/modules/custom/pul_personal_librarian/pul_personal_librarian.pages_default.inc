@@ -201,7 +201,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   $pane->panel = 'first';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -218,7 +218,7 @@ function pul_personal_librarian_default_page_manager_pages() {
   );
   $pane->configuration = array(
     'admin_title' => 'Personal Librarian Header',
-    'body' => '<p>Navigating the rich resources at Princeton University Library can be challenging for new students, so in fall ’17 we launched a “Personal Librarian” program that pairs every Princeton undergraduate with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have!</p>',
+    'body' => '<p>Great news! You have been paired with a "Personal Librarian" (for your whole time at Princeton) who can help you with research, finding materials, point you to a subject specialist, and answer questions about library policies and procedures. Your Personal Librarian will send you a few emails each semester to remind you that they are available to help. (Questions about the program? Email abw@princeton.edu)</p>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
     'title' => 'About Princeton’s Personal Librarian Program',

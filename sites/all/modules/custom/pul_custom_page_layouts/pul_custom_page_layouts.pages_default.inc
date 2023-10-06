@@ -2352,7 +2352,7 @@ function pul_custom_page_layouts_default_page_manager_pages() {
     ),
     'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => '2023 Resources',
+    'override_title_text' => '2023-2024 Resources',
   );
   $pane->cache = array();
   $pane->style = array(

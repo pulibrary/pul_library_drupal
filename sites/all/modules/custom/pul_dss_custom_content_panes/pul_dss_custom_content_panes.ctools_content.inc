@@ -51,7 +51,7 @@ function pul_dss_custom_content_panes_default_ctools_custom_content() {
   $content->category = '';
   $content->settings = array(
     'admin_title' => 'DSS Make an Appointment',
-    'body' => '<div class="service-connect-btn"><p>The Statistical Consultants are available by appointment for help with statistical packages and social science methodology weekdays.&nbsp; Walk-in hours will resume in the fall semester.&nbsp; Please email data@princeton.edu and provide all times available weekdays 9-5 you are available; your question you are trying to solve; and the statistical package you are using<span style="font-size: 13.008px;">.</span></p></div>',
+    'body' => '<div class="service-connect-btn"><p>Please email data@princeton.edu and provide all times available weekdays 9-5 you are available; your question you are trying to solve; and the statistical package you are using<span>.</span></p><p>Data Services Specialists are available by&nbsp;<a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" rel="nofollow">appointment</a>&nbsp;on Zoom to help you in downloading, formatting, reshaping, or analyzing data. They also provide assistance with social science methodology.&nbsp;If you need assistance in identifying and locating data, contact a&nbsp;<a href="https://library.princeton.edu/dss/specialists">subject specialist</a>.</p></div>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
     'title' => 'Need help?',
