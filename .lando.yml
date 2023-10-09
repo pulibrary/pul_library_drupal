@@ -21,7 +21,7 @@ services:
     config:
       dir: sites/all/modules/search_api_solr/solr-conf/7.x
   cache:
-    type: redis
+    type: redis:7
     portforward: true
   node:
     type: 'node:14'

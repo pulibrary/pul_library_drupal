@@ -589,6 +589,32 @@ firestone/*',
   $display->content['new-6537b419-0ad7-436b-9252-1d7d651fd84a'] = $pane;
   $display->panels['middle'][2] = 'new-6537b419-0ad7-436b-9252-1d7d651fd84a';
   $pane = new stdClass();
+  $pane->pid = 'new-c2039e21-4b25-454f-8b31-68fdd2a8e638';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Firestone Explore Block',
+    'body' => '<p><a href="https://princeton.stackmap.com/explore/?lib=10">Spaces</a></p>',
+    'format' => 'pul_editor_html',
+    'substitute' => 1,
+    'title' => 'Explore Firestone',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c2039e21-4b25-454f-8b31-68fdd2a8e638';
+  $display->content['new-c2039e21-4b25-454f-8b31-68fdd2a8e638'] = $pane;
+  $display->panels['second'][0] = 'new-c2039e21-4b25-454f-8b31-68fdd2a8e638';
+  $pane = new stdClass();
   $pane->pid = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
   $pane->panel = 'second';
   $pane->type = 'views_panes';
@@ -602,11 +628,11 @@ firestone/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
   $display->content['new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee'] = $pane;
-  $display->panels['second'][0] = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
+  $display->panels['second'][1] = 'new-7e61c9c0-89f3-406d-93db-00cc9e47f4ee';
   $pane = new stdClass();
   $pane->pid = 'new-0c0d618b-7a69-4f82-b173-22ee038c3ba4';
   $pane->panel = 'second';
@@ -627,11 +653,11 @@ firestone/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '0c0d618b-7a69-4f82-b173-22ee038c3ba4';
   $display->content['new-0c0d618b-7a69-4f82-b173-22ee038c3ba4'] = $pane;
-  $display->panels['second'][1] = 'new-0c0d618b-7a69-4f82-b173-22ee038c3ba4';
+  $display->panels['second'][2] = 'new-0c0d618b-7a69-4f82-b173-22ee038c3ba4';
   $pane = new stdClass();
   $pane->pid = 'new-a56d38e3-8bed-4433-a61c-1c768b3b3583';
   $pane->panel = 'second';
@@ -654,11 +680,11 @@ firestone/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a56d38e3-8bed-4433-a61c-1c768b3b3583';
   $display->content['new-a56d38e3-8bed-4433-a61c-1c768b3b3583'] = $pane;
-  $display->panels['second'][2] = 'new-a56d38e3-8bed-4433-a61c-1c768b3b3583';
+  $display->panels['second'][3] = 'new-a56d38e3-8bed-4433-a61c-1c768b3b3583';
   $pane = new stdClass();
   $pane->pid = 'new-18cdaad0-46c2-49d1-ae48-03636301af8c';
   $pane->panel = 'second';
@@ -681,11 +707,11 @@ firestone/*',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '18cdaad0-46c2-49d1-ae48-03636301af8c';
   $display->content['new-18cdaad0-46c2-49d1-ae48-03636301af8c'] = $pane;
-  $display->panels['second'][3] = 'new-18cdaad0-46c2-49d1-ae48-03636301af8c';
+  $display->panels['second'][4] = 'new-18cdaad0-46c2-49d1-ae48-03636301af8c';
   $pane = new stdClass();
   $pane->pid = 'new-7abbee4d-32a4-4e3b-91fb-a173697d1826';
   $pane->panel = 'top';
