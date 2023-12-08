@@ -12,4 +12,4 @@ set :smtp_port, "25"
 set :redis_prefix, "library-prod"
 set :redis_host, "lib-redis.princeton.edu"
 
-set :db_name, "libwww-prod"
+set :db_name, "libwww_prod"

@@ -95,7 +95,7 @@ function pul_libraries_ct_field_group_info() {
     ),
     'format_type' => 'tab',
     'label' => 'Library Address',
-    'weight' => '28',
+    'weight' => '29',
   );
   $field_groups['group_lib_address|node|libraries|form'] = $field_group;
 
@@ -255,7 +255,8 @@ function pul_libraries_ct_field_group_info() {
   $field_group->data = array(
     'children' => array(
       0 => 'field_building',
-      1 => 'group_lib_address',
+      1 => 'field_library_floorplan_link',
+      2 => 'group_lib_address',
     ),
     'format_settings' => array(
       'formatter' => 'closed',

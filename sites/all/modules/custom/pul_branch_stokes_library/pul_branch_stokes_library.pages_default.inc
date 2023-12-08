@@ -18,7 +18,7 @@ function pul_branch_stokes_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 7;
+  $handler->weight = 8;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -507,7 +507,7 @@ stokes',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 8;
+  $handler->weight = 9;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

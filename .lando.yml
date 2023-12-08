@@ -1,7 +1,7 @@
 name: library-main
 recipe: drupal7
 config:
-  php: '8.0'
+  php: '8.1'
   webroot: .
   database: mariadb
   drush: '8.4.12'
@@ -24,7 +24,7 @@ services:
     type: redis:7
     portforward: true
   node:
-    type: 'node:14'
+    type: 'node:18'
     overrides:
       platform: linux/amd64
     globals:

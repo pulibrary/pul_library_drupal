@@ -202,6 +202,7 @@ function all_search_best_bets_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,

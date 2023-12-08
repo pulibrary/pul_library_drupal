@@ -18,7 +18,7 @@ function ip_protected_resource_layouts_importer_roles_default_page_manager_handl
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 11;
+  $handler->weight = 12;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -18,7 +18,7 @@ function pul_scholarly_communications_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 14;
+  $handler->weight = 15;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -307,7 +307,7 @@ services/scholarly-communications/how-to-make-a-deposit',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 16;
+  $handler->weight = 17;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

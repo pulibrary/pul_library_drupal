@@ -18,7 +18,7 @@ function microforms_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -26;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -192,7 +192,7 @@ Microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -31;
+  $handler->weight = -30;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -451,7 +451,7 @@ Microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -42;
+  $handler->weight = -41;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -635,7 +635,7 @@ Newspapers',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -35;
+  $handler->weight = -34;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - node/install:
-          node-version: '14'
+          node-version: '18'
       - node/install-packages:
           pkg-manager: npm
           app-dir: sites/all/themes/pul_base

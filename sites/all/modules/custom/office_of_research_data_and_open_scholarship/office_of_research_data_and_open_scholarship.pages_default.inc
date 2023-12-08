@@ -18,7 +18,7 @@ function office_of_research_data_and_open_scholarship_default_page_manager_handl
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 41;
+  $handler->weight = 42;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

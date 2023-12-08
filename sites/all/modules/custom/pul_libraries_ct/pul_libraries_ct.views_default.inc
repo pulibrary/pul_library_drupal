@@ -586,6 +586,19 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'library-info';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  /* Field: Content: Floorplan Link */
+  $handler->display->display_options['fields']['field_library_floorplan_link']['id'] = 'field_library_floorplan_link';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['table'] = 'field_data_field_library_floorplan_link';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['field'] = 'field_library_floorplan_link';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['label'] = '';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_library_floorplan_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_library_floorplan_link']['alter']['text'] = '<span class="icon-large icon-map"></span><a href="[field_library_floorplan_link-value]">Floorplans</a>';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_library_floorplan_link']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['element_wrapper_class'] = 'library-info';
+  $handler->display->display_options['fields']['field_library_floorplan_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_library_floorplan_link']['hide_empty'] = TRUE;
   /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';

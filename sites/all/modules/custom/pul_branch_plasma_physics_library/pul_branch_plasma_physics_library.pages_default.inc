@@ -18,7 +18,7 @@ function pul_branch_plasma_physics_library_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 6;
+  $handler->weight = 7;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -281,7 +281,7 @@ plasma-physics/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 5;
+  $handler->weight = 6;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
