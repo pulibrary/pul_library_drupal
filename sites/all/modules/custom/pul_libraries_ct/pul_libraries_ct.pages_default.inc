@@ -18,7 +18,7 @@ function pul_libraries_ct_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 39;
+  $handler->weight = 40;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -141,7 +141,7 @@ vdl',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -28;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -293,7 +293,7 @@ vdl',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
