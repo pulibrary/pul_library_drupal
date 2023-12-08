@@ -18,7 +18,7 @@ function pul_makerspace_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 37;
+  $handler->weight = 38;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -360,6 +360,58 @@ function pul_makerspace_default_page_manager_handlers() {
   $display->content['new-cc8d0f07-8a7a-44b7-8473-433e0fe82a61'] = $pane;
   $display->panels['second'][0] = 'new-cc8d0f07-8a7a-44b7-8473-433e0fe82a61';
   $pane = new stdClass();
+  $pane->pid = 'new-b21325dd-1d02-47a1-9ee4-1ba9ce0141e7';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'pul_fine_news_events_trainings';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b21325dd-1d02-47a1-9ee4-1ba9ce0141e7';
+  $display->content['new-b21325dd-1d02-47a1-9ee4-1ba9ce0141e7'] = $pane;
+  $display->panels['second'][1] = 'new-b21325dd-1d02-47a1-9ee4-1ba9ce0141e7';
+  $pane = new stdClass();
+  $pane->pid = 'new-5623b917-7190-4bb4-85c6-1cfd6aac4f05';
+  $pane->panel = 'second';
+  $pane->type = 'custom';
+  $pane->subtype = 'pul_fine_news_events_trainings_button';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'body' => '',
+    'format' => 'pul_editor_html',
+    'substitute' => TRUE,
+    'title' => '',
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '5623b917-7190-4bb4-85c6-1cfd6aac4f05';
+  $display->content['new-5623b917-7190-4bb4-85c6-1cfd6aac4f05'] = $pane;
+  $display->panels['second'][2] = 'new-5623b917-7190-4bb4-85c6-1cfd6aac4f05';
+  $pane = new stdClass();
   $pane->pid = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
   $pane->panel = 'second';
   $pane->type = 'block';
@@ -377,11 +429,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '957e8a07-f61a-4551-bdd3-aedbdbbdc163';
   $display->content['new-957e8a07-f61a-4551-bdd3-aedbdbbdc163'] = $pane;
-  $display->panels['second'][1] = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
+  $display->panels['second'][3] = 'new-957e8a07-f61a-4551-bdd3-aedbdbbdc163';
   $pane = new stdClass();
   $pane->pid = 'new-569a4a87-8899-491e-91a4-7dfe07522fd9';
   $pane->panel = 'second';
@@ -396,11 +448,11 @@ function pul_makerspace_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '569a4a87-8899-491e-91a4-7dfe07522fd9';
   $display->content['new-569a4a87-8899-491e-91a4-7dfe07522fd9'] = $pane;
-  $display->panels['second'][2] = 'new-569a4a87-8899-491e-91a4-7dfe07522fd9';
+  $display->panels['second'][4] = 'new-569a4a87-8899-491e-91a4-7dfe07522fd9';
   $pane = new stdClass();
   $pane->pid = 'new-d4e21373-0c6d-47b1-92bb-5ca5896df51d';
   $pane->panel = 'top';

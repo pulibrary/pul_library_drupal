@@ -18,7 +18,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = 1;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -322,7 +322,7 @@ function pul_mendel_music_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -1;
+  $handler->weight = 0;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -684,7 +684,7 @@ music/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -2;
+  $handler->weight = -1;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -18,7 +18,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 29;
+  $handler->weight = 30;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -210,7 +210,7 @@ function digital_collections_and_initiatives_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 28;
+  $handler->weight = 29;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

@@ -1100,7 +1100,7 @@ function pul_information_for_pages_default_page_manager_handlers() {
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-staff---departments-and-off';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,

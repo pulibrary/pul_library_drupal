@@ -18,7 +18,7 @@ function pul_marquand_art_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 3;
+  $handler->weight = 4;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -281,7 +281,7 @@ marquand/rare-book-highlights',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 4;
+  $handler->weight = 5;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -527,7 +527,7 @@ news/marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = 2;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1083,7 +1083,7 @@ marquand',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 2;
+  $handler->weight = 3;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

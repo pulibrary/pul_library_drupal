@@ -597,6 +597,7 @@ function protected_database_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => 1,
           'use_content_language' => TRUE,
           'view_mode' => 'teaser',
@@ -608,6 +609,7 @@ function protected_database_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'hide_title' => FALSE,
           'links' => TRUE,
           'use_content_language' => TRUE,
           'view_mode' => 'default',
@@ -646,6 +648,7 @@ function protected_database_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'hide_ids' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
