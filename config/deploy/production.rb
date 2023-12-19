@@ -10,6 +10,6 @@ set :search_api_solr_path, '/solr/library-prod'
 set :smtp_host, "lib-ponyexpr.princeton.edu"
 set :smtp_port, "25"
 set :redis_prefix, "library-prod"
-set :redis_host, "lib-redis.princeton.edu"
+set :redis_host, "lib-redis-prod1.princeton.edu"
 
 set :db_name, "libwww_prod"
