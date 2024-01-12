@@ -51,7 +51,7 @@ function pul_dss_custom_content_panes_default_ctools_custom_content() {
   $content->category = '';
   $content->settings = array(
     'admin_title' => 'DSS Make an Appointment',
-    'body' => '<div class="service-connect-btn"><p>The DSS Lab has open hours on Mondays and Fridays from 2-5.&nbsp; No appointments necessary.&nbsp; In addition, Data Services Specialists are available by&nbsp;<a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" rel="nofollow">appointment</a> at other times on Zoom to help you in downloading, formatting, reshaping, or analyzing data. They also provide assistance with social science methodology.&nbsp;If you need assistance in identifying and locating data, contact a&nbsp;<a href="https://library.princeton.edu/dss/specialists">subject specialist</a>.</p></div>',
+    'body' => '<div class="service-connect-btn"><p>The DSS Lab will resume open hours on Mondays and Fridays from 1-5 on January 29.&nbsp; No appointments necessary.&nbsp; In addition, Data Services Specialists are available by&nbsp;<a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" rel="nofollow">appointment</a> at other times on Zoom to help you in downloading, formatting, reshaping, or analyzing data. They also provide assistance with social science methodology.&nbsp; If you need assistance prior to January 29, email data@princeton.edu and state the software you are using; department; methods; and research question.</p><p>If you need assistance in identifying and locating data, contact a&nbsp;<a href="https://library.princeton.edu/dss/specialists">subject specialist</a>.</p></div>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
     'title' => 'Need help?',
