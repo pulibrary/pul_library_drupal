@@ -160,6 +160,28 @@ class EntityReference_SelectionHandler_Views implements EntityReference_Selectio
         list($id,, $bundle) = entity_extract_ids($target_type, $entity);
         $return[$bundle][$id] = $result[$id];
       }
+      // Options will be flattened, so we don't need the bundle really.
+      $var = $return[$bundle];
+      $countable = (is_array($var) || $var instanceof Countable) ? TRUE : FALSE;
+      if ($countable && count($return[$bundle]) > 1) {
+        $max_children = 0;
+        $temp_key = drupal_random_key(10);
+        $return[$temp_key] = array();
+        foreach ($return as $bundle => $items) {
+          if ($bundle == $temp_key) continue;
+          $num_children = count($items);
+          $return[$temp_key] += $items;
+          if ($num_children > $max_children) {
+            $max_children = $num_children;
+            $max_children_key = $bundle;
+          }
+          unset($return[$bundle]);
+        }
+        $return[$max_children_key] = $return[$temp_key];
+        unset($return[$temp_key]);
+        $bundle = $max_children_key;
+      }
+      $return[$bundle] = array_replace($result, $return[$bundle]);
     }
     return $return;
   }

@@ -105,7 +105,7 @@ function template_preprocess_views_data_export_csv_header(&$vars) {
 
   // Format header values.
   foreach ($vars['header'] as $key => $value) {
-    $output = decode_entities($value);
+    $output = decode_entities((string) $value);
     $output = (empty($vars['options']['keep_html'])) ? strip_tags($output) : $output;
     if (!empty($vars['options']['trim'])) {
       $output = trim($output);
@@ -151,7 +151,7 @@ function template_preprocess_views_data_export_csv_body(&$vars) {
   // Format row values.
   foreach ($vars['themed_rows'] as $i => $values) {
     foreach ($values as $j => $value) {
-      $output = decode_entities($value);
+      $output = decode_entities((string) $value);
       $output = (empty($vars['options']['keep_html'])) ? strip_tags($output) : $output;
       if (!empty($vars['options']['trim'])) {
         $output = trim($output);
@@ -416,16 +416,18 @@ function template_preprocess_views_data_export_xml_body(&$vars) {
   foreach ($vars['themed_rows'] as $num => $row) {
     foreach ($row as $field => $content) {
 
-      // Perform xml entity encoding unless excluded by style options.
-      if (empty($no_encode[$field]) && empty($cdata_wrapper[$field])) {
-
-        // Prevent double encoding of the ampersand. Look for the entities produced by check_plain().
-        $content = preg_replace('/&(?!(amp|quot|#039|lt|gt);)/', '&amp;', $content);
-        // Convert < and > to HTML entities.
-        $content = str_replace(
-          array('<', '>'),
-          array('&lt;', '&gt;'),
-          $content);
+      if (!is_null($content)) {
+        // Perform xml entity encoding unless excluded by style options.
+        if (empty($no_encode[$field]) && empty($cdata_wrapper[$field])) {
+          // Prevent double encoding of the ampersand. Look for the entities produced by check_plain().
+          $content = preg_replace('/&(?!(amp|quot|#039|lt|gt);)/', '&amp;', $content);
+          // Convert < and > to HTML entities.
+          $content = str_replace(
+            array('<', '>'),
+            array('&lt;', '&gt;'),
+            $content
+          );
+        }
       }
 
       // Perform wrapping the field data using the CDATA tag

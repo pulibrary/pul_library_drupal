@@ -18,7 +18,7 @@ Date iCal has several required dependencies, and an optional one:
   feeds from other sites.
 
 To install the iCalcreator library, download the project's latest zip file:
-https://github.com/lkmorlan/iCalcreator/releases
+https://github.com/joejoseph00/iCalcreator/releases
 
 Extract it, and copy iCalcreator.class.php to a folder in your Drupal site
 named sites/all/libraries/iCalcreator (you'll need to create that folder). Be

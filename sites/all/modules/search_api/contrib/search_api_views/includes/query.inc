@@ -319,8 +319,11 @@ class SearchApiViewsQuery extends views_plugin_query {
       $this->query->setOption('search_api_bypass_access', TRUE);
     }
 
-    // Store the Views base path.
-    $this->query->setOption('search_api_base_path', $this->view->get_path());
+    // Store the Views base path, if we have one.
+    $path = $this->view->get_url();
+    if ($path) {
+      $this->query->setOption('search_api_base_path', $path);
+    }
 
     // Save query information for Views UI.
     $view->build_info['query'] = (string) $this->query;

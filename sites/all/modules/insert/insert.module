@@ -7,9 +7,24 @@
  */
 
 // Load default implementations of insert hooks for core modules.
-require dirname(__FILE__) . '/includes/file.inc';
-require dirname(__FILE__) . '/includes/image.inc';
-require dirname(__FILE__) . '/includes/insert.inc';
+require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'insert') . '/includes/file.inc';
+require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'insert') . '/includes/image.inc';
+require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'insert') . '/includes/insert.inc';
+
+define("INSERT_DEFAULT_CONFIG", serialize(array(
+  'insert_file_extensions_image' => array('png', 'jpg', 'jpeg', 'gif'),
+  'insert_file_extensions_audio' => array(),
+  'insert_file_extensions_video' => array(),
+)));
+
+define("INSERT_DEFAULT_SETTINGS", serialize(array(
+  'insert' => 0,
+  'insert_absolute' => FALSE,
+  'insert_styles' => array('auto'),
+  'insert_default' => array('auto'),
+  'insert_class' => '',
+  'insert_width' => '',
+)));
 
 /**
  * Implements hook_element_info().
@@ -24,6 +39,70 @@ function insert_element_info() {
   }
 
   return $elements;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function insert_menu() {
+  $items = array();
+
+  $items['admin/config/content/insert'] = array(
+    'title' => 'Insert module settings',
+    'description' => 'Global configuration for the Insert module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('insert_admin'),
+    'access arguments' => array('administer filters'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Creates the global module configuration form.
+ *
+ * @return array
+ */
+function insert_admin() {
+  $form = array();
+
+  $form['insert'] = array(
+    '#type' => 'container',
+  );
+
+  $form['insert']['file_extensions'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('File type detection'),
+    '#description' => t('In order for Insert to be able to handle particular file types (i.e. detecting image files when using the <em>Automatic</em> Insert option on generic file fields, detecting if files may be embedded as audio or video), the module needs be aware of which file extensions shall map to which file type. Be sure to enable these file extensions for upload in the file field settings as well.'),
+  );
+
+  foreach ([
+   'insert_file_extensions_image' => t('Image file extensions'),
+   'insert_file_extensions_audio' => t('Audio file extensions'),
+   'insert_file_extensions_video' => t('Video file extensions'),
+  ] as $key => $title) {
+    $form['insert']['file_extensions'][$key] = array(
+      '#type' => 'textfield',
+      '#title' => $title,
+      '#default_value' => join(', ', variable_get(
+        $key,
+        unserialize(INSERT_DEFAULT_CONFIG)[$key]
+      )),
+      '#description' => t('Separate extensions with a space or comma and do not include the leading dot.'),
+      '#element_validate' => ['_insert_string_to_array'],
+    );
+  }
+
+  return system_settings_form($form);
+}
+
+/**
+ * Element validation callback.
+ */
+function _insert_string_to_array(array $element, array &$form_state, array $form) {
+  $value = str_replace(',', ' ', strtolower(trim($element['#value'])));
+  $form_state['values'][$element['#name']] = preg_split('/\s+/', $value);
 }
 
 /**
@@ -53,6 +132,16 @@ function insert_theme() {
     'insert_icon_link' => array(
       'variables' => array('item' => NULL, 'widget' => NULL),
       'template' => 'templates/insert-icon-link',
+      'file' => 'includes/insert.inc',
+    ),
+    'insert_video' => array(
+      'variables' => array('item' => NULL, 'widget' => NULL),
+      'template' => 'templates/insert-video',
+      'file' => 'includes/insert.inc',
+    ),
+    'insert_audio' => array(
+      'variables' => array('item' => NULL, 'widget' => NULL),
+      'template' => 'templates/insert-audio',
       'file' => 'includes/insert.inc',
     ),
 
@@ -150,8 +239,8 @@ function insert_widget_load($widget_type) {
 /**
  * Given an item and an insert style, return the output.
  */
-function insert_content($item, $style, $widget) {
-  return module_invoke($style['module'], 'insert_content', $item, $style, $widget);
+function insert_content($item, $style, $widget, $element) {
+  return module_invoke($style['module'], 'insert_content', $item, $style, $widget, $element);
 }
 
 /**
@@ -210,11 +299,29 @@ function insert_element_process($element) {
     if (!isset($insert_styles[$default])) {
       $insert_styles[$default] = $default;
     }
+
+    $file = file_load($item['fid']);
+    $info = @pathinfo($file->uri);
+
+    $audioExtensions = variable_get(
+      'insert_file_extensions_audio',
+      unserialize(INSERT_DEFAULT_CONFIG)['insert_file_extensions_audio']
+    );
+    $videoExtensions = variable_get(
+      'insert_file_extensions_video',
+      unserialize(INSERT_DEFAULT_CONFIG)['insert_file_extensions_video']
+    );
+
     foreach ($insert_styles as $style_name => $enabled) {
-      if ($enabled && ($style = insert_style_load($style_name))) {
+      if (
+        ($enabled && ($style = insert_style_load($style_name)))
+        // Hide styles that are not compatible to the file type:
+        && ($style_name !== 'video' || in_array($info['extension'], $videoExtensions))
+        && ($style_name !== 'audio' || in_array($info['extension'], $audioExtensions))
+      ) {
         $element['insert_templates'][$style_name] = array(
           '#type' => 'hidden',
-          '#value' => insert_content($item, $style, $instance['widget']),
+          '#value' => insert_content($item, $style, $instance['widget'], $element),
           '#id' => $element['#id'] . '-insert-template-' . str_replace('_', '-', $style_name),
           '#name' => $element['#name'] . '[insert_template][' . $style_name . ']',
           '#attributes' => array('class' => array('insert-template')),
@@ -260,33 +367,17 @@ function insert_form_field_ui_field_edit_form_alter(&$form, $form_state) {
 }
 
 /**
- * Implements hook_field_widget_info_alter().
- *
- * A list of settings needed by Insert module on widgets.
- */
-function insert_field_widget_info_alter(&$info) {
-  $settings = array(
-    'insert' => 0,
-    'insert_absolute' => variable_get('insert_absolute_paths', FALSE),
-    'insert_styles' => array('auto'),
-    'insert_default' => array('auto'),
-    'insert_class' => '',
-    'insert_width' => '',
-  );
-
-  foreach (insert_widgets() as $widget_type => $widget) {
-    if (isset($info[$widget_type]['settings'])) {
-      $info[$widget_type]['settings'] += $settings;
-    }
-  }
-}
-
-/**
  * Configuration form for editing insert settings for a field instance.
  */
 function insert_field_widget_settings_form($field, $instance) {
-  $widget = $instance['widget'];
-  $settings = $widget['settings'];
+  $settings = array_merge(
+    unserialize(INSERT_DEFAULT_SETTINGS),
+    array('insert_absolute' => variable_get(
+      'insert_absolute_paths',
+      unserialize(INSERT_DEFAULT_SETTINGS)['insert_absolute']
+    )),
+    $instance['widget']['settings']
+  );
 
   $form['insert'] = array(
     '#type' => 'fieldset',

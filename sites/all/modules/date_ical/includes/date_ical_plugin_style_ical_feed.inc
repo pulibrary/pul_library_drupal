@@ -451,4 +451,30 @@ class date_ical_plugin_style_ical_feed extends views_plugin_style {
 
     return $output;
   }
+
+  /**
+   * Get the raw field value.
+   *
+   * @param int $index
+   *   The index count of the row.
+   * @param string $field
+   *   The id of the field.
+   */
+  public function get_field_value($index, $field) {
+    if (isset($this->display->handler->handlers['field'][$field]->wrappers[$index])) {
+      $field = $this->display->handler->handlers['field'][$field];
+      $value = EntityFieldHandlerHelper::get_value($field, $this->view->result[$index]);
+    }
+    else {
+      $this->view->row_index = $index;
+      $value = $this->view->field[$field]->get_value($this->view->result[$index]);
+      unset($this->view->row_index);
+    }
+    if ($field->field_info['cardinality'] == '1') {
+      $value = array($value);
+    }
+
+    return $value;
+  }
+
 }

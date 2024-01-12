@@ -86,6 +86,9 @@ class SearchApiAlterAddViewedEntity extends SearchApiAbstractAlterCallback {
     $original_user = $GLOBALS['user'];
     $GLOBALS['user'] = drupal_anonymous_user();
 
+    // Switch to the default theme for rendering if it's not the current one.
+    $old_theme = _search_api_swap_theme(variable_get('theme_default'));
+
     $type = $this->index->getEntityType();
     $mode = empty($this->options['mode']) ? 'full' : $this->options['mode'];
     foreach ($items as &$item) {
@@ -128,6 +131,11 @@ class SearchApiAlterAddViewedEntity extends SearchApiAbstractAlterCallback {
       $GLOBALS['language'] = $global_language['language'];
       $GLOBALS['language_url'] = $global_language['language_url'];
       $GLOBALS['language_content'] = $global_language['language_content'];
+    }
+
+    // Switch back to the previous theme, if necessary.
+    if ($old_theme) {
+      _search_api_swap_theme($old_theme);
     }
 
     // Restore the user.

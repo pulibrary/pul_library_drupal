@@ -294,6 +294,9 @@ abstract class SearchApiAbstractProcessor implements SearchApiProcessorInterface
   protected function normalizeTokens($tokens, $score = 1) {
     $ret = array();
     foreach ($tokens as $token) {
+      if (!is_array($token)) {
+        continue;
+      }
       if (empty($token['value']) && !is_numeric($token['value'])) {
         // Filter out empty tokens.
         continue;

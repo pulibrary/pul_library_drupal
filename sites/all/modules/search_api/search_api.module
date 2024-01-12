@@ -1542,7 +1542,7 @@ function search_api_execute_pending_tasks(SearchApiServer $server = NULL) {
 /**
  * Executes pending server tasks as part of a batch operation.
  */
-function search_api_execute_pending_tasks_batch(SearchApiServer $server = NULL, &$context) {
+function search_api_execute_pending_tasks_batch(SearchApiServer $server = NULL, &$context = array()) {
   if (!isset($context['results']['total'])) {
     $context['results']['total'] = search_api_server_tasks_count($server);
   }
@@ -1555,7 +1555,7 @@ function search_api_execute_pending_tasks_batch(SearchApiServer $server = NULL, 
 
   $args['@remaining'] = $remaining;
   $context['message'] = format_plural($executed, 'Successfully executed @count task, @remaining remaining.', 'Successfully executed @count tasks, @remaining remaining.', $args);
-  $context['finished'] = $executed / $total;
+  $context['finished'] = $total > 0 ? $executed / $total : 1.0;
 }
 
 /**
@@ -1818,6 +1818,16 @@ function search_api_index_specific_items(SearchApiIndex $index, array $ids) {
       $index->datasource()->trackItemChange($diff, array($index));
     }
   }
+
+  // When indexing via Drush, multiple iterations of a batch will happen in the
+  // same PHP process, so the static cache will quickly fill up. To prevent
+  // this, clear it after each batch of items gets indexed.
+  if (function_exists('drush_backend_batch_process') && batch_get()) {
+    foreach (array_keys(entity_get_info()) as $entity_type) {
+      entity_get_controller($entity_type)->resetCache();
+    }
+  }
+
   return $indexed;
 }
 
@@ -1843,7 +1853,10 @@ function &search_api_index_specific_items_delayed(SearchApiIndex $index = NULL, 
 
   // Only register the shutdown function once.
   if (empty($registered)) {
-    drupal_register_shutdown_function('_search_api_index_queued_items');
+    // Instead of registering the shutdown function directly, do it in a way
+    // that ensures it will run last. This helps avoid issues with other
+    // modules' shutdown functions, especially workbench_moderation_store().
+    drupal_register_shutdown_function('drupal_register_shutdown_function', '_search_api_index_queued_items');
     $registered = TRUE;
   }
 
@@ -3495,4 +3508,61 @@ function _search_api_batch_indexing_finished($success, $results) {
     $drupal_set_message($t("An error occurred while trying to index items. Check the logs for details."), 'error');
   }
 
+}
+
+/**
+ * Swaps the current theme for the given one.
+ *
+ * Can be used when needing the theme layer during indexing, to produce
+ * predictable results.
+ *
+ * Based on the mailsystem module's mailsystem_theme_swap_theme().
+ *
+ * @param string $new_theme
+ *   The new theme to set.
+ *
+ * @return string|false
+ *   The old theme on success, FALSE if the new theme doesn't exist.
+ *
+ * @see mailsystem_theme_swap_theme()
+ */
+function _search_api_swap_theme($new_theme) {
+  // Make sure the theme exists.
+  $themes = list_themes();
+  if (empty($themes[$new_theme])) {
+    return FALSE;
+  }
+
+  // Both theme/theme_key are set to the new theme.
+  global $theme, $theme_key;
+
+  // Nothing to do here.
+  if ($theme == $new_theme) {
+    return $theme;
+  }
+
+  $old_theme = $theme;
+  $theme = $theme_key = $new_theme;
+
+  // Create the base_theme_info.
+  global $base_theme_info;
+  $base_theme = array();
+  $ancestor = $theme;
+  while ($ancestor && isset($themes[$ancestor]->base_theme)) {
+    $ancestor = $themes[$ancestor]->base_theme;
+    $base_theme[] = $themes[$ancestor];
+  }
+  $base_theme_info = array_reverse($base_theme);
+
+  // Some other theme related globals.
+  global $theme_engine, $theme_info, $theme_path;
+  $theme_engine = $themes[$theme]->engine;
+  $theme_info = $themes[$theme];
+  $theme_path = dirname($themes[$theme]->filename);
+
+  // We need to reset the drupal_alter and module_implements statics.
+  drupal_static_reset('drupal_alter');
+  drupal_static_reset('module_implements');
+
+  return $old_theme;
 }

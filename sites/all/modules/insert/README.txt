@@ -48,10 +48,22 @@ Theming
 
 Insert can be configured to work with non-HTML filters like BBCode or Markdown.
 To do this, copy the template file you would like to change from the "templates"
-directory to your active theme's directory. Then empty your Drupal caches at
+directory to your ADMIN theme's directory. Then empty your Drupal caches at
 admin/config/development/performance.
 
 The Image templates may also be used per Image style. You can copy the
 image-insert-image.tpl.php file to your theme directory and then rename it to
 image-insert-image--[style-name].tpl.php, where [style-name] is the name of the
 Image style. Change underscores to hyphens in the style name.
+
+Known issues
+------------
+
+* File (Field) Paths module:
+  When configuring the File (Field) Paths module to store unprocessed files in
+  the temporary folder, be sure to add the temporary folder to
+  $conf['404_fast_paths_exclude'] in your settings.php, i.e.:
+  $conf['404_fast_paths_exclude'] = '/\/(?:styles)|(?:system\/(files|temporary))\//';
+
+* Insert does not support running multiple WYSIWYG editors (i.e. TinyMCE and
+  CKEditor) in the same form.

@@ -35,9 +35,10 @@ Drupal.behaviors.insert.attach = function(context) {
   }
 
   function insert() {
-    var widgetType = $(this).attr('rel');
+    var $insertButton = $(this);
+    var widgetType = $insertButton.attr('rel');
     var settings = Drupal.settings.insert.widgets[widgetType];
-    var wrapper = $(this).parents(settings.wrapper).filter(':first').get(0);
+    var wrapper = $insertButton.parents(settings.wrapper).filter(':first').get(0);
     var style = $('.insert-style', wrapper).val();
     var content = $('input.insert-template[name$="[' + style + ']"]', wrapper).val();
     var filename = $('input.insert-filename', wrapper).val();
@@ -91,11 +92,13 @@ Drupal.behaviors.insert.attach = function(context) {
 
     // Allow other modules to perform replacements.
     options['content'] = content;
-    $.event.trigger('insertIntoActiveEditor', [options]);
+    $insertButton.trigger('insertIntoActiveEditor', [options]);
     content = options['content'];
 
     // Cleanup unused replacements.
-    content = content.replace(/"__([a-z0-9_]+)__"/g, '""');
+    for (var fieldName in settings.fields) {
+      content = content.replace(new RegExp('__' + fieldName + '__', 'g'), '');
+    }
 
     // Cleanup empty attributes (other than alt).
     content = content.replace(/([a-z]+)[ ]*=[ ]*""/g, function(match, tagName) {

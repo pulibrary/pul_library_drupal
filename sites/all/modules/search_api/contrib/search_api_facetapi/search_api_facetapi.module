@@ -290,7 +290,8 @@ function search_api_facetapi_current_search_path(SearchApiQueryInterface $query 
   if ($query && $query->getOption('search_api_base_path')) {
     $path = $query->getOption('search_api_base_path');
   }
-  return $path;
+  // If the path has not been set (yet), return the current path as a fallback.
+  return $path ? $path : current_path();
 }
 
 /**

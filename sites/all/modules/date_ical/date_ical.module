@@ -224,7 +224,7 @@ function date_ical_feeds_processor_targets_alter(&$targets, $entity_type, $bundl
 function date_ical_sanitize_text($text = '') {
   // HTML tags may get converted to &lt; and such by the View code, so we need
   // to convert them back to HTML so we can remove them with strip_tags().
-  $text = decode_entities($text);
+  $text = decode_entities((string) $text);
 
   // Convert <p> tags to double newlines.
   $text = trim(preg_replace("/<p.*?>/i", "\n\n", $text));
