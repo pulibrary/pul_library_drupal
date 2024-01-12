@@ -539,7 +539,12 @@ function drush_search_api_execute_tasks($server_id = NULL) {
   // Process batch op with drush.
   try {
     search_api_execute_pending_tasks($server);
-    drush_log(dt('!server tasks have been successfully executed.', array('!server' => $server->machine_name ? $server->machine_name : 'All')), 'ok');
+    if ($server) {
+      drush_log(dt('!server tasks have been successfully executed.', array('!server' => $server->machine_name ?: 'All')), 'ok');
+    }
+    else {
+      drush_log(dt('All tasks have been successfully executed.'), 'ok');
+    }
   }
   catch (SearchApiException $e) {
     drush_log($e->getMessage(), 'error');
@@ -714,7 +719,6 @@ function drush_search_api_server_disable($server_id = NULL) {
   $server = search_api_server_load($server_id);
   if (empty($server)) {
     drush_print(dt('The server was not able to load.'));
-    return;
   }
   else {
     $server->update(array('enabled' => 0));

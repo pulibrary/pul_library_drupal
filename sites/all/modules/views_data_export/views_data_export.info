@@ -22,9 +22,8 @@ files[] = "tests/txt_export.test"
 files[] = "tests/xls_export.test"
 files[] = "tests/xml_export.test"
 
-; Information added by Drupal.org packaging script on 2017-04-05
-version = "7.x-3.2"
+; Information added by Drupal.org packaging script on 2024-01-10
+version = "7.x-3.3"
 core = "7.x"
 project = "views_data_export"
-datestamp = "1491379387"
-
+datestamp = "1704889527"

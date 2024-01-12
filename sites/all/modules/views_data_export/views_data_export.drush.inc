@@ -169,7 +169,7 @@ function drush_views_data_export($view_name, $display_id, $output_file) {
   }
 
   $arguments = drush_get_option('arguments', '');
-  if(!empty($arguments) && is_array($arguments)) {
+  if(!empty($arguments) && is_string($arguments)) {
     $arguments = explode(',', $arguments);
   }
 

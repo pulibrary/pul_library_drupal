@@ -48,6 +48,10 @@ class SearchApiPorterStemmer extends SearchApiAbstractProcessor {
    * {@inheritdoc}
    */
   protected function process(&$value) {
+    if (!$value) {
+      return;
+    }
+
     // Load custom exceptions.
     $exceptions = $this->getExceptions();
 

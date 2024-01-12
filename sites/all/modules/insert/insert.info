@@ -1,10 +1,11 @@
 name = Insert
 description = Assists in inserting files, images, or other media into the body field or other text areas.
 core = 7.x
+package = Fields
+configure = admin/config/content/insert
 
-; Information added by Drupal.org packaging script on 2017-09-17
-version = "7.x-1.4"
+; Information added by Drupal.org packaging script on 2023-11-01
+version = "7.x-1.5"
 core = "7.x"
 project = "insert"
-datestamp = "1505657351"
-
+datestamp = "1698849364"

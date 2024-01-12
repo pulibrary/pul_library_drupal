@@ -164,8 +164,9 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
     // Create the event by starting with the date array from this row.
     $event = $date;
 
-    $entity = $row->_field_data[$this->view->base_field]['entity'];
-    $entity_type = $row->_field_data[$this->view->base_field]['entity_type'];
+    $field = $this->view->field[$date_field_name];
+    $entity = $row->_field_data[$field->field_alias]['entity'];
+    $entity_type = $row->_field_data[$field->field_alias]['entity_type'];
     // Add the CREATED, LAST-MODIFIED, and URL components based on the entity.
     // According to the iCal standard, CREATED and LAST-MODIFIED must be UTC.
     // Fortunately, Drupal stores timestamps in the DB as UTC, so we just need
@@ -196,10 +197,12 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
       // the $row, so it's possible that it will sometimes be missing. If it
       // is, make an educated guess about the delta by comparing this row's
       // start date to each of the entity's dates.
-      foreach ($entity->{$date_field_name}['und'] as $ndx => $date_array) {
-        if ($date['start']->originalTime == $date_array['value']) {
-          $date_field_delta = $ndx;
-          break;
+      if (!empty($entity->{$date_field_name}['und'])) {
+        foreach ($entity->{$date_field_name}['und'] as $ndx => $date_array) {
+          if ($date['start']->originalTime == $date_array['value']) {
+            $date_field_delta = $ndx;
+            break;
+          }
         }
       }
     }
@@ -217,7 +220,7 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
       // We couldn't obtain enough info to determine the real $date_field_delta.
       // So we just leave it as 0. Hopefully this won't cause problems.
     }
-    $entity_id = $row->{$this->view->base_field};
+    $entity_id = $row->{$field->field_alias};
     global $base_url;
     $domain = preg_replace('#^https?://#', '', $base_url);
     if (!$is_relationaship) {
@@ -379,6 +382,7 @@ class date_ical_plugin_row_ical_fields extends views_plugin_row {
       $handler_class = get_class($handlers[$alias]);
       if ($handler_class == 'views_handler_field_date'
           || ($handler_class == 'views_handler_field_field'
+          || $handler_class == 'entity_views_handler_field_field'
             && in_array($handlers[$alias]->field_info['type'], $date_fields))) {
         $field_candidates[$alias] = $label;
       }

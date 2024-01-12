@@ -1,3 +1,23 @@
+Search API 1.29 (2023-11-02):
+-----------------------------
+- #3372728 by hitesh-jain, drunken monkey: Fixed uncaught TypeError during
+  indexing with PHP 8 in rare situations.
+- #1826006 by Hankthetank666, drunken monkey, florianmuellerCH, Ronino: Fixed
+  inconsistent theme used when rendering entities during indexing.
+- #3321246 by Ronino, drunken monkey: Fixed memory leak when indexing via Drush.
+- #3344569 by circuscowboy, drunken monkey: Fixed deprecation warning in the
+  SearchApiPorterStemmer processor.
+- #3338975 by drunken monkey, meyerrob: Fixed deprecation warning in PHP 8.0.
+- #3339336 by drunken monkey, meyerrob: Fixed Drush bug when executing all
+  tasks.
+- #2930706 by donquixote, Graber, mibfire, drunken monkey, joel_osc: Fixed
+  "index items immediately" functionality in connection with Workbench
+  Moderation.
+- #2159827 by .bert, drunken monkey: Fixed regression with wrong search base
+  paths in Facet API adapter.
+- #3215213 by drunken monkey: Fixed undefined index "#value" in
+  SearchApiViewsHandlerFilterFulltext::exposed_validate().
+
 Search API 1.28 (2021-07-19):
 -----------------------------
 - #3208036 by DamienMcKenna, Taran2L, drunken monkey: Fixed PHP 8.0
