@@ -591,7 +591,6 @@ function pul_libraries_ct_views_default_views() {
   $handler->display->display_options['fields']['field_library_floorplan_link']['table'] = 'field_data_field_library_floorplan_link';
   $handler->display->display_options['fields']['field_library_floorplan_link']['field'] = 'field_library_floorplan_link';
   $handler->display->display_options['fields']['field_library_floorplan_link']['label'] = '';
-  $handler->display->display_options['fields']['field_library_floorplan_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_library_floorplan_link']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_library_floorplan_link']['alter']['text'] = '<span class="icon-large icon-map"></span><a href="[field_library_floorplan_link-value]">Floorplans</a>';
   $handler->display->display_options['fields']['field_library_floorplan_link']['element_label_colon'] = FALSE;

@@ -33,6 +33,16 @@ function pul_custom_term_page_varients_default_page_manager_handlers() {
             ),
           ),
         ),
+        1 => array(
+          'context' => 'logged-in-user',
+          'name' => 'role',
+          'not' => FALSE,
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
+            ),
+          ),
+        ),
       ),
     ),
     'body_classes_to_add' => 'one-sidebar sidebar-second division-page',
@@ -145,6 +155,16 @@ function pul_custom_term_page_varients_default_page_manager_handlers() {
             ),
           ),
         ),
+        1 => array(
+          'context' => 'logged-in-user',
+          'name' => 'role',
+          'not' => FALSE,
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
+            ),
+          ),
+        ),
       ),
     ),
     'body_classes_to_add' => 'one-sidebar sidebar-second section-page',
@@ -254,6 +274,16 @@ function pul_custom_term_page_varients_default_page_manager_handlers() {
           'settings' => array(
             'vids' => array(
               22 => '22',
+            ),
+          ),
+        ),
+        1 => array(
+          'context' => 'logged-in-user',
+          'name' => 'role',
+          'not' => FALSE,
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
             ),
           ),
         ),
@@ -648,6 +678,16 @@ Subjects',
           'settings' => array(
             'vids' => array(
               10 => '10',
+            ),
+          ),
+        ),
+        1 => array(
+          'context' => 'logged-in-user',
+          'name' => 'role',
+          'not' => FALSE,
+          'settings' => array(
+            'rids' => array(
+              0 => 5,
             ),
           ),
         ),

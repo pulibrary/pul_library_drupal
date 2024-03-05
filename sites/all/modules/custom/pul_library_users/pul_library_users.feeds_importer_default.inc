@@ -32,7 +32,7 @@ function pul_library_users_feeds_importer_default() {
       'plugin_key' => 'FeedsFileFetcher',
     ),
     'import_on_create' => 1,
-    'import_period' => '43200',
+    'import_period' => '10800',
     'name' => 'PUL Library Staff Importer',
     'parser' => array(
       'config' => array(
