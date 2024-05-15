@@ -18,7 +18,7 @@ function microforms_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -27;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -115,7 +115,7 @@ Microforms',
   $pane->panel = 'first';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-selected-collections-and-ti';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 0,
@@ -192,7 +192,7 @@ Microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -31;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -451,7 +451,7 @@ Microforms',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -41;
+  $handler->weight = -42;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -635,7 +635,7 @@ Newspapers',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -34;
+  $handler->weight = -35;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

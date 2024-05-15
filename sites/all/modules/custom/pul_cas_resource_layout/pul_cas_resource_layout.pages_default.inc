@@ -18,7 +18,7 @@ function pul_cas_resource_layout_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 13;
+  $handler->weight = 12;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
