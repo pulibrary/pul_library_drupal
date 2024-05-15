@@ -18,7 +18,7 @@ function pul_pliny_fisk_library_of_economics_and_finance_default_page_manager_ha
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 18;
+  $handler->weight = 17;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -172,7 +172,7 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 19;
+  $handler->weight = 18;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -362,7 +362,7 @@ econlib/resources/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 21;
+  $handler->weight = 20;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

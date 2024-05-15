@@ -18,7 +18,7 @@ function pul_sub_section_pages_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -39;
+  $handler->weight = -40;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -329,7 +329,7 @@ Letc
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -37;
+  $handler->weight = -38;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -577,7 +577,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -33;
+  $handler->weight = -34;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -848,7 +848,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -32;
+  $handler->weight = -33;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -979,7 +979,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -22;
+  $handler->weight = -23;
   $handler->conf = array(
     'access' => array(
       'logic' => 'or',
@@ -1196,7 +1196,7 @@ Committees',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -21;
+  $handler->weight = -22;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1635,7 +1635,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -46;
+  $handler->weight = -47;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1747,7 +1747,7 @@ services/borrowdirect/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -18;
+  $handler->weight = -19;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -1934,7 +1934,7 @@ services/reserves/*
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -16;
+  $handler->weight = -17;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2065,7 +2065,7 @@ services/technology',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -14;
+  $handler->weight = -15;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2194,7 +2194,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -47;
+  $handler->weight = -48;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -2320,7 +2320,7 @@ staff/systems_office/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -40;
+  $handler->weight = -41;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

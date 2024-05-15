@@ -18,7 +18,7 @@ function pul_makerspace_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 38;
+  $handler->weight = 37;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

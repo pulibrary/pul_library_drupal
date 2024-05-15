@@ -18,7 +18,7 @@ function pul_east_asian_library_branch_site_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -6;
+  $handler->weight = -7;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -419,7 +419,7 @@ eastasian/*',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -8;
+  $handler->weight = -9;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

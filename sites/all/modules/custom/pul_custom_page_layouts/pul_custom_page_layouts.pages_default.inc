@@ -18,7 +18,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 32;
+  $handler->weight = 31;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -228,7 +228,7 @@ function pul_custom_page_layouts_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 33;
+  $handler->weight = 32;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',

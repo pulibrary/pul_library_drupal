@@ -18,7 +18,7 @@ function pul_branch_architecture_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -7;
+  $handler->weight = -8;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
@@ -417,7 +417,7 @@ architecture',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = -10;
   $handler->conf = array(
     'access' => array(
       'logic' => 'and',
