@@ -47,56 +47,32 @@
                             var id = result['id'];
                             var publisher = "";
                             if (result['publisher']) {
-                                //publisher = "<div class='publisher'>" + result['publisher'][0] + "</div>";
-                                for(var i=0, len=result['publisher'].length; i < len; i++){
-                                    publisher = publisher + "<div class='publisher'>" + result['publisher'][i] + "</div>";
-                                }
+                                publisher = "<div class='publisher'>" + result['publisher'] + "</div>";
                             }
                             var author = "";
-                            if (result['author']) {
-                                for(var i=0, len=result['author'].length; i < len; i++){
-                                    author = author + "<div class='author'>" + result['author'][i] + "</div>";
-                                }
+                            if (result['creator']) {
+                                author = "<div class='author'>" + result['creator'] + "</div>";
                             }
                             var holdings = "";
                             var online_process = false;
-                            if (result['holdings']) {
-                                holding_locations = result['holdings'];
+                            if (result['other_fields']['first_library']) {
                                 holdings = holdings + "<ul class='pulsearch-availability' data-record-id='" + id + "'>"
-                                var mfhd_keys = Object.keys(holding_locations);
-                                $.each(mfhd_keys, function(index, key) {
-                                    // only display online if there is an online holding library
-                                    if (holding_locations[key]['library'] == 'Online') {
-                                            online_process = true;
-                                    }
-                                    if(index < 2) {
-                                        if (holding_locations.hasOwnProperty(key)) {
-                                            call_number = "";
-                                            if(holding_locations[key]['call_number']) {
-                                                call_number = holding_locations[key]['call_number'];
-                                            }
-                                            holdings = holdings + "<li class='holding' data-mfhd='" + key +"' data-loc='" + holding_locations[key]['location_code'] + "'>" + "<span class='results_location'>" + holding_locations[key]['library'] + "</span> &raquo; <span class='call-number'>" + call_number + "</span></li>";
-                                        }
-                                    }
-                                });
+                                holdings = holdings + `<li class="holding"><span class="results_location">${result['other_fields']['first_library']}</span> » <span class="call-number">${result['other_fields']['first_call_number'] || ''}</span></li>`
+                                if (result['other_fields']['second_library']) {
+                                    holdings = holdings + `<li class="holding"><span class="results_location">${result['other_fields']['second_library']}</span> » <span class="call-number">${result['other_fields']['second_call_number'] || ''}</span></li>`
+                                }
                                 holdings = holdings + "</ul>";
                             }
                             var online_access = "";
                             var online_span = '<span class="badge-notice availability-icon label label-primary" title="" data-toggle="tooltip" data-original-title="Electronic access" aria-describedby="tooltip552370">Online</span>';
                             // displays online link
                             // if(online_process == true) {
-                                if (result['online']) {
-                                    var online_links =result['online'];
+                                if (result['other_fields']['resource_url']) {
+                                    var online_links =result['other_fields']['resource_url'];
                                     online_access = online_access + "<div class='pulsearch-online-access'>";
-                                    for (var key in online_links) {
-                                        if(online_links.hasOwnProperty(key)) {
-                                            if (online_links[key][1]) {
-                                                var link_label = online_links[key][1] + ": ";
-                                            } else {
-                                                var link_label = "";
-                                            }
-                                            online_access = online_access + online_span + " " + link_label + "<a href='" + key + "'>" + online_links[key][0] + "</a>";
-                                        }
+                                    if (online_links) {
+                                        var link_label = result['other_fields']['resource_url_label'] || "Eresource";
+                                        online_access = online_access + online_span + " " + "<a href='" + online_links + "'>" + link_label + "</a>";
                                     }
                                     online_access = online_access + "</div>";
                                 }
