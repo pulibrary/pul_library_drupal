@@ -51,7 +51,7 @@ function pul_dss_custom_content_panes_default_ctools_custom_content() {
   $content->category = '';
   $content->settings = array(
     'admin_title' => 'DSS Make an Appointment',
-    'body' => '<div class="service-connect-btn"><p>Assistance with a statistical package (R, Stata, or SPSS) or social science statistical methodology, is available&nbsp;by&nbsp;<a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" rel="nofollow">appointment</a>. &nbsp;DSS will not be staffed May 20-24 due to staff training. Data Services Specialists can help you in downloading, formatting, reshaping, or analyzing data. They also provide assistance with social science methodology. To identify and locate data, contact a&nbsp;<a href="https://library.princeton.edu/dss/specialists">subject specialist</a>.</p></div>',
+    'body' => '<div class="service-connect-btn"><p>Assistance with a statistical package (R, Stata, or SPSS) or social science statistical methodology, is available&nbsp;by&nbsp;<a href="https://libcal.princeton.edu/appointments?lid=387&amp;g=8848" rel="nofollow">appointment</a>.&nbsp; Data Services Specialists can help you in downloading, formatting, reshaping, or analyzing data. They also provide assistance with social science methodology.&nbsp; <strong>Service will not be available July 15-25. </strong>To identify and locate data, contact a&nbsp;<a href="https://library.princeton.edu/dss/specialists">subject specialist</a>.</p></div>',
     'format' => 'pul_editor_html',
     'substitute' => 1,
     'title' => 'Need help?',
