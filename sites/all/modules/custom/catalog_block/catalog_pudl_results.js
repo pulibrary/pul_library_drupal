@@ -82,7 +82,7 @@
                   result["title"] +
                   "</a></h3>" +
                   '<div class="all-search-excerpt">Collection: ' +
-                  result["collection"] +
+                  result["other_fields"]["collection"] +
                   "</div>" +
                   '<div class="all-format-type"><i class="' +
                   icon_type +
