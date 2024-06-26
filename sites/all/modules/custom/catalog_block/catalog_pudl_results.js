@@ -29,7 +29,9 @@
           var icon_type;
           if (data.number > 0) {
             $.each(data.records, function(index, result) {
-              if (
+              if (result["type"] === undefined) {
+                var icon_type = null;
+              } else if (
                 result["type"][0] == "Still image" ||
                 result["type"][0] == "Prints (visual works)" ||
                 result["type"][0] == "Visual material"
@@ -82,7 +84,7 @@
                   result["title"] +
                   "</a></h3>" +
                   '<div class="all-search-excerpt">Collection: ' +
-                  result["collection"] +
+                  result["other_fields"]["collection"] +
                   "</div>" +
                   '<div class="all-format-type"><i class="' +
                   icon_type +
