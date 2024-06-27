@@ -133,7 +133,7 @@ function catalog_pulmap_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='pulmap-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='" . data_source_url_base() . "mapsearch/any?query={$path}&sid={$sid}' id='pulmap-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='https://allsearch-api.princeton.edu/search/pulmap?query={$path}' id='pulmap-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
