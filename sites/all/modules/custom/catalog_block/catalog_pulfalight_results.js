@@ -53,17 +53,17 @@
                             }
 
                             var dates = "";
-                            if (result['dates']) {
-                              var dates = "<div class='all-search-excerpt'>Dates: " + result['dates'] + "</div>";
+                            if (result['other_fields']['date']) {
+                              var dates = "<div class='all-search-excerpt'>Dates: " + result['other_fields']['date'] + "</div>";
                             }
 
                             var repository = "";
-                            if (result['repository']) {
-                              var repository = "<div class='all-search-excerpt'><em>" + result['repository'] + "</em></div>";
+                            if (result['other_fields']['repository']) {
+                              var repository = "<div class='all-search-excerpt'><em>" + result['other_fields']['repository'] + "</em></div>";
                             }
 
                             var result_position = parseInt(index) + 1;
-                            items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['collection'] + '</a></h3>' +
+                            items.push('<li class="' + row_class + '"><h3><a target="_blank" href="' + result['url'] + '" target="_blank">' + result['title'] + '</a></h3>' +
                                 dates +
                                 '<div class="all-search-excerpt">' + description.slice(0, 150) + '...' + '</div>' +
                                 repository + 
