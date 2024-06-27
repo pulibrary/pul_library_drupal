@@ -163,7 +163,7 @@ function catalog_art_results_content() {
   $sid = catalog_block_get_sid();
   $ajax_spinner = "<div id='art-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh icon-4x'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='" . data_source_url_base() . "arts/artobjects?query={$path}&sid={$sid}' id='art-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='https://allsearch-api.princeton.edu/search/artmuseum?query={$path}' id='art-search-results'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
