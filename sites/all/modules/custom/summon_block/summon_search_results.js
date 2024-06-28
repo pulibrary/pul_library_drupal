@@ -64,7 +64,7 @@
                             }
                             var result_position = parseInt(index) + 1;
                             items.push('<li class="' + row_class + '"><h3><a title="' +
-                                abstract +
+                                abstract.replaceAll('"', "&quot;") +
                                 '" href="' +
                                 result['url'] +
                                 '" target="_blank">' +
