@@ -76,7 +76,7 @@ function libguides_search_results_content() {
   // $sid = libguides_block_get_sid();
   $ajax_spinner = "<div id='libguides-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div data-source='" . data_source_url_base() . "guides/any?query={$path}' class='libguides-search-results' id='libguides-search-results'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div data-source='https://allsearch-api.princeton.edu/search/libguides?query={$path}' class='libguides-search-results' id='libguides-search-results'>" . $ajax_spinner . t('') . "</div>",
   ); 
   return $block_content;
 }

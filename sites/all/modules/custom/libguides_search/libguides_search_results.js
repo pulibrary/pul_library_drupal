@@ -32,7 +32,7 @@
                                 var row_class = "even"
                             }
 
-                            items.push('<li class="'+ row_class +'"><h3><a title="' + result['name'] + '" href="' + result['url'] +'" target="_blank">' + result['name'] + '</a></h3><div class="libguide-description">' + result['description'] + '</div></li>');
+                            items.push('<li class="'+ row_class +'"><h3><a title="' + result['title'] + '" href="' + result['url'] +'" target="_blank">' + result['title'] + '</a></h3><div class="libguide-description">' + result['description'] + '</div></li>');
                         
                         });
                         $('<ul/>', {
