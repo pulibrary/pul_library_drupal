@@ -26,28 +26,39 @@
                             } else {
                                 var row_class = "even"
                             }
-                            if (result['fulltextavail']) {
-                                var holdings_statement = "<span class='all-full-text'><i class='icon-text'></i>" + result['format'] + " - Full-Text Available</span>";
+                            if (result['other_fields']['fulltext_available'] === 'Full-text available') {
+                                var holdings_statement = "<span class='all-full-text'><i class='icon-text'></i>" + result['type'] + " - Full-Text Available</span>";
                             } else {
                                 var holdings_statement = "<i class='icon-text'></i>" + result['format'];
                             }
-                            if (result['publication_title']) {
-                                var pub_title = '<div><em>' + result['publication_title'] + '</em></div>';
+                            if (result['other_fields']['publication_title']) {
+                                var pub_title = '<div><em>' + result['other_fields']['publication_title'] + '</em></div>';
                             } else {
                                 var pub_title = '';
                             }
-                            if (result['formatted_pub_date']) {
-                                var pub_date = '<div><span>' + result['formatted_pub_date'] + '</div>';
+                            if (result['other_fields']['publication_year']) {
+                                let chronology = [];
+                                if (result['other_fields']['volume']) {
+                                    chronology.push(`Vol. ${result['other_fields']['publication_year']}`);
+                                }
+                                if (result['other_fields']['issue']) {
+                                    chronology.push(`No. ${result['other_fields']['issue']}`);
+                                }
+                                chronology.push(result['other_fields']['publication_year']);
+                                if (result['other_fields']['start_page'] && result['other_fields']['end_page']) {
+                                    chronology.push(`pp. ${result['other_fields']['start_page']}-${result['other_fields']['end_page']}`);
+                                }
+                                var pub_date = '<div><span>' + chronology.join(', ') + '</div>';
                             } else {
                                 var pub_date = "";
                             }
-                            if (result['abstract']) {
-                                abstract = result['abstract'];
+                            if (result['other_fields']['abstract']) {
+                                abstract = result['other_fields']['abstract'];
                             } else {
                                 abstract = "Abstract not available.";
                             }
-                            if (result['author']) {
-                                var author = '<div><span>' + result['author'] + '</span></div>';
+                            if (result['creator']) {
+                                var author = '<div><span>' + result['creator'] + '</span></div>';
                             } else {
                                 var author = "";
                             }

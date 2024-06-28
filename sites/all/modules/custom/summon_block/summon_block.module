@@ -78,7 +78,7 @@ function summon_search_results_content() {
   $sid = summon_block_get_sid();
   $ajax_spinner = "<div id='summon-search-results-spinner' class='results-spinner-large'><i class='icon-spinner icon-spin icon-refresh'></i></div>";
   $block_content = array(
-    '#markup' => "<div id='summon-search-results' data-source='" . data_source_url_base() . "articles/any?query={$path}&sid={$sid}'>" . $ajax_spinner . t('') . "</div>",
+    '#markup' => "<div id='summon-search-results' data-source='https://allsearch-api.princeton.edu/search/article?query={$path}'>" . $ajax_spinner . t('') . "</div>",
   );
   return $block_content;
 }
