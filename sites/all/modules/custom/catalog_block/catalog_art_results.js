@@ -25,8 +25,8 @@
                             icon_type = default_icon;
 
                             var result_position = parseInt(index) + 1;
-                            var creator = result['creator'] || result['date'];
-                            var object_number = result['object_number'];
+                            var creator = result['creator'] || result['other_fields']['date'];
+                            var object_number = result['other_fields']['object_number'];
                             items.push('<li class="' + row_class + '"><h3><a href="' + result['url'] +
                                 '" target="_blank">' + result['title'] + '</a></h3>' + 
                                 '<div class="all-search-excerpt">' + creator + ', ' + object_number + '</div>' +
